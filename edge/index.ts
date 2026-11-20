@@ -4,7 +4,7 @@ import { handle as submitTest } from '__LIB__/submit-test.js';
 import { handle as marking } from '__LIB__/marking.js';
 import { handle as account } from '__LIB__/account.js';
 import { G, setUnits } from '__LIB__/supa.js';
-import { UNITS } from './units.js';
+import { UNITS } from '__UNITS__';
 setUnits(UNITS);
 
 const ROUTES: Record<string, (req: unknown) => Promise<[number, unknown, Record<string, string>?]>> = { 'submit-test': submitTest, marking, account };
