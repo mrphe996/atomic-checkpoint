@@ -122,8 +122,8 @@ with sync_playwright() as p:
     go(pg, 'home'); ok(pg.query_selector('#freeBanner') is not None, '3a Dashboard shows the free-plan banner')
     go(pg, 'profile'); pg.click('#sim3-1'); pg.wait_for_timeout(800)
     ok(pg.evaluate("!!Core.secLock(Core.cur(), Core.sec('3.2')) && Core.secLock(Core.cur(), Core.sec('3.2')).paywall"), '3b Section 3.2 is behind the paywall after finishing 3.1 on the free plan')
-    go(pg, 'ex-3-2'); ok('part of the full Stage 7 course' in txt(pg), '3c Practice 3.2 shows the paywall lock screen')
-    go(pg, 'test'); ok('needs a Stage 7 plan' in txt(pg), '3d Unit Test needs a plan')
+    go(pg, 'ex-3-2'); ok('part of the full Cambridge Stage 7 course' in txt(pg), '3c Practice 3.2 shows the paywall lock screen')
+    go(pg, 'test'); ok('needs a Cambridge Stage 7 plan' in txt(pg), '3d Unit Test needs a plan')
     r = pg.evaluate("Backend.submitTest({learnerId: Core.cur().id, unit: Core.UNIT, form:'A', answers:{}, clientKey:'x'}).then(()=> 'ok', e => e.code)")
     ok(r == 'subscription_required', '3e Backend refuses a test submission without a plan (402)')
     go(pg, 'pricing'); pg.click('#buy-yearly'); pg.wait_for_timeout(300); pg.click('.modal .btn.primary'); pg.wait_for_timeout(1000)
@@ -190,7 +190,7 @@ with sync_playwright() as p:
     pg.screenshot(path=f'{SHOTS}/06_settings.png', full_page=True)
 
     # ---------- 8. certificate ----------
-    go(pg, 'cert'); ok('Your Stage 7 certificate' in txt(pg) and pg.query_selector('#certCode') is None, '8a Certificate locked until all 14 units and an end-of-year exam are passed')
+    go(pg, 'cert'); ok('Your Cambridge Stage 7 certificate' in txt(pg) and pg.query_selector('#certCode') is None, '8a Certificate locked until all 14 units and an end-of-year exam are passed')
     go(pg, 'profile'); pg.click('#simOthers'); pg.wait_for_timeout(900)
     go(pg, 'cert'); ok(pg.query_selector('#certCode') is None and 'end-of-year exam' in txt(pg), '8a2 Still locked with all units passed but no end-of-year exam')
     go(pg, 'profile'); pg.click('#simFinal'); pg.wait_for_timeout(900)

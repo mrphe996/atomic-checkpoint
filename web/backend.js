@@ -79,7 +79,7 @@
       async allStates(lid) { mine(lid); return JSON.parse(JSON.stringify(D.progress[lid] || {})); },
       async enrolments(lid) { mine(lid); return ((D.enrol || {})[lid] || []).slice(); },
       async enrol(lid, stage, amount) { mine(lid); D.enrol = D.enrol || {}; const l = (D.enrol[lid] = D.enrol[lid] || []); if (!l.some(e => e.stage === stage)) l.push({ stage, method: 'test', amount: amount || null, status: 'active', created_at: new Date().toISOString() });
-        note(need(), lid, 'billing', `You are enrolled in Stage ${stage}`, 'Test checkout – no money was taken.'); save(); return 'ok'; },
+        note(need(), lid, 'billing', `You are enrolled in Cambridge Stage ${stage}`, 'Test checkout – no money was taken.'); save(); return 'ok'; },
       async startTest({ learnerId, unit, form }) { mine(learnerId); D.starts = D.starts || {}; const k = `${learnerId}|${unit}|${form}`; D.starts[k] = D.starts[k] || new Date().toISOString(); save();
         const minutes = /-final$/.test(unit) ? 60 : TestRules.UNIT_MINUTES; return { startedAt: D.starts[k], minutes, deadline: new Date(Date.parse(D.starts[k]) + minutes * 60000).toISOString(), now: new Date().toISOString() }; },
       async saveProgress(lid, unit, state) { mine(lid); (D.progress[lid] = D.progress[lid] || {})[unit] = JSON.parse(JSON.stringify(state)); save(); },
@@ -158,7 +158,7 @@
       async certificate(lid) { mine(lid); return D.certs[lid] || null; },
       async verifyCertificate(code) { const c = Object.values(D.certs).find(x => x.code === String(code || '').trim().toUpperCase()); return c ? { name_on_certificate: c.name, stage: 7, issued_at: c.date } : null; },
       async subscription() { const a = need(); return { active: subActive(a), ...(a.subscription || { status: 'none' }) }; },
-      async checkout(plan) { const a = need(); const end = new Date(Date.now() + 7 * 864e5).toISOString(); a.subscription = { plan: 'stage7_' + plan, status: 'trialing', current_period_end: end, provider: 'demo' }; note(a, null, 'billing', 'Your 7-day free trial has started', 'Stage 7 is unlocked for every child on your account.'); save(); return a.subscription; },
+      async checkout(plan) { const a = need(); const end = new Date(Date.now() + 7 * 864e5).toISOString(); a.subscription = { plan: 'stage7_' + plan, status: 'trialing', current_period_end: end, provider: 'demo' }; note(a, null, 'billing', 'Your 7-day free trial has started', 'Cambridge Stage 7 is unlocked for every child on your account.'); save(); return a.subscription; },
       async cancelSubscription() { const a = need(); if (a.subscription) a.subscription.status = 'canceled'; save(); },
       async consents() { return need().consents.slice().reverse(); },
       async exportData() { const a = need(); const ids = a.learners.map(l => l.id);

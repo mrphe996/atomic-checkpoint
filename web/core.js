@@ -147,7 +147,7 @@
   const secIndex = sid => C.sections.findIndex(s => s.id === sid);
   function secLock(st, s) {
     if (!canOpen(s.id)) return S.guest ? { reason: `Guests can try the first topic of every unit. Create a free account to unlock topic ${s.id} and save your progress.`, what: 'a free account', route: 'signup', paywall: true, guest: true }
-      : { reason: 'This topic is part of the full Stage 7 course.', what: 'a Stage 7 plan (7-day free trial)', route: 'pricing', paywall: true };
+      : { reason: 'This topic is part of the full Cambridge Stage 7 course.', what: 'a Cambridge Stage 7 plan (7-day free trial)', route: 'pricing', paywall: true };
     return seqLock(C, st, s, UNIT());
   }
   const unitOpen = unit => TestRules.OPEN_UNITS.includes(unit);
@@ -274,7 +274,7 @@
   function nextActivity(st) {
     for (const s of secs()) {
       const lock = secLock(st, s);
-      if (lock) { if (lock.guest) return { label: `Sign up free to unlock topic ${s.id}`, route: 'signup' }; if (lock.paywall) return { label: 'Unlock the rest of Stage 7', route: 'pricing' }; break; }
+      if (lock) { if (lock.guest) return { label: `Sign up free to unlock topic ${s.id}`, route: 'signup' }; if (lock.paywall) return { label: 'Unlock the rest of Cambridge Stage 7', route: 'pricing' }; break; }
       if (!videoDone(st, s)) return { label: `Watch the section ${s.id} video`, route: 'v-' + s.id.replace('.', '-') };
       const q = reqLeft(st, s)[0]; if (q) return { label: `Core practice for section ${s.id}`, route: 'ex-' + s.id.replace('.', '-'), tab: 'req', idx: s.req.indexOf(q) };
     }
