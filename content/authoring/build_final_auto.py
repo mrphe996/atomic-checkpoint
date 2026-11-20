@@ -7,7 +7,7 @@ H = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(H, "..", "src")
 g = int(sys.argv[1])
 rnd = random.Random(1000 + g)
-STRUCT = ("grid", "match", "order")
+STRUCT = ("grid", "table", "match", "order")
 
 
 def clean(q, obj):
@@ -33,8 +33,17 @@ for n in range(1, 15):
             if q["type"] == "mcq": m2.append(q)
             elif q["type"] == "explain": W.append((o, q))
     for L in (st, m1, m2): rnd.shuffle(L)
-    if len(m2) < 10: m1, m2 = m1[: len(m1) - (10 - len(m2))], m2 + m1[len(m1) - (10 - len(m2)):]
+    # short units (one section): top up from the Core pool so every paper still gets a different block
+    if len(st) < 4:
+        extra = [q for s in d["sections"] for q in s["req"] if q["type"] in STRUCT]; rnd.shuffle(extra); st += extra[: 4 - len(st)]
+    st.sort(key=lambda q: q["type"] not in ("grid", "table"))  # data questions first
     nst = min(4, len(st))
+    need = 10 - nst
+    if len(m1) + len(m2) < 2 * need:
+        extra = [q for s in d["sections"] for q in s["req"] if q["type"] == "mcq"]; rnd.shuffle(extra); m1 += extra
+    allm = m2 + m1  # harder first
+    m2, m1 = allm[:need], allm[need:]
+    assert len(m1) >= need, (n, "not enough mcq", len(m1), need)
     blocks = [[(clean(q, o), 3)] for q in st[:nst]]
     for i in range(10 - nst):
         blocks.append([(clean(m1[i], o), 1), (clean(m2[i], o), 2)])
