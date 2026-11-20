@@ -61,7 +61,7 @@ with sync_playwright() as p:
     # ---------- 1. public pages ----------
     pg.goto(BASE); pg.wait_for_selector('#heroStart')
     t = txt(pg)
-    ok('Start learning now' in t and 'No sign-up needed' in t and 'not affiliated with or endorsed by Cambridge' in t, '1a Landing page: start without sign-up, with disclaimer')
+    ok('Try the whole course' in t and 'No sign-up' in t and pg.query_selector('.lp-step') is not None and len(pg.query_selector_all('.lp-unit')) == 14 and 'not affiliated with or endorsed by Cambridge' in t, '1a Landing page: designed hero, 4-step demo boxes, 14 unit boxes, disclaimer')
     ok("Learner's Book" not in t and "LET'S MAP" not in t and not re.search(r'\bp\.\s?\d', t), '1b No textbook names or page numbers on the landing page')
     ok('Compiled by' not in t and 'Written by the Atomic teaching team' in t, '1b2 Footer credits the Atomic teaching team only')
     pg.screenshot(path=f'{SHOTS}/01_landing.png')
@@ -75,7 +75,12 @@ with sync_playwright() as p:
     go(pg, 'test'); ok(h(pg) == '#signin', '1f Unit Test needs an account when logged out')
 
     # ---------- 1g. guest mode ----------
-    go(pg, 'home'); pg.click('#heroStart'); pg.wait_for_function("location.hash==='#v-3-1'"); pg.wait_for_timeout(400)
+    go(pg, 'home'); pg.click('[data-step="practise"]'); pg.click('.lp-qb .lp-opt >> nth=2'); pg.wait_for_timeout(200)
+    ok('Correct' in pg.inner_text('.lp-fbbox'), '1f2 Visitors can answer demo questions on the home page without signing in')
+    pg.click('[data-step="test"]'); pg.click('#demoStartTest')
+    for i in [1, 2, 0]: pg.click(f'.lp-test .lp-opt >> nth={i}'); pg.click('#demoTNext'); pg.wait_for_timeout(150)
+    ok(pg.inner_text('#demoScore') == '100%', '1f3 Mini test in the demo box gives a score')
+    pg.click('#heroGuest'); pg.wait_for_function("location.hash==='#v-3-1'"); pg.wait_for_timeout(400)
     ok(pg.evaluate('Core.S.guest') and pg.query_selector('#signUpLink') is not None, '1g Guest starts topic 3.1 straight away with a Sign-up button in the header')
     go(pg, 'ex-3-1'); ok(pg.query_selector('#guestWall') is None and 'part of the full' not in txt(pg), '1h Guest can practise 3.1')
     pg.evaluate("(()=>{const st=Core.cur(); const q=Core.sec('3.1').req[0]; st.items[q.id]={done:true,ok:true,tries:1,score:1}; Core.persist(); Core.flush();})()"); pg.wait_for_timeout(300)

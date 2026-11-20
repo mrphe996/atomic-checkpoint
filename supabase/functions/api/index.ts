@@ -1,9 +1,9 @@
 // One Edge Function, three routes: /api/submit-test, /api/marking, /api/account  (+ /api/health self-check)
 // Shared code is imported from the commit-pinned public repo; answer keys come from ./units.js (deployed only, never in git).
-import { handle as submitTest } from '../_shared/submit-test.js';
-import { handle as marking } from '../_shared/marking.js';
-import { handle as account } from '../_shared/account.js';
-import { G, setUnits } from '../_shared/supa.js';
+import { handle as submitTest } from 'https://cdn.jsdelivr.net/gh/mrphe996/atomic-checkpoint@60d2d55e6e73fe8de215f0860e04a37cfd20a76c/supabase/functions/_shared/submit-test.js';
+import { handle as marking } from 'https://cdn.jsdelivr.net/gh/mrphe996/atomic-checkpoint@60d2d55e6e73fe8de215f0860e04a37cfd20a76c/supabase/functions/_shared/marking.js';
+import { handle as account } from 'https://cdn.jsdelivr.net/gh/mrphe996/atomic-checkpoint@60d2d55e6e73fe8de215f0860e04a37cfd20a76c/supabase/functions/_shared/account.js';
+import { G, setUnits } from 'https://cdn.jsdelivr.net/gh/mrphe996/atomic-checkpoint@60d2d55e6e73fe8de215f0860e04a37cfd20a76c/supabase/functions/_shared/supa.js';
 import { UNITS } from './units.js';
 setUnits(UNITS);
 

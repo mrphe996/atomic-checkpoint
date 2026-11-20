@@ -813,24 +813,145 @@
   const errBox = () => el('p', { class: 'err', role: 'alert' });
   const narrow = (...kids) => el('section', { class: 'card narrow' }, ...kids);
 
-  /* ---------- public landing ---------- */
+  /* ---------- public landing (Design: "Main" – try the course in small boxes, no sign-up) ---------- */
+  const DEMO_PQ = [['Its surface area', true], ['The thickness of its cell wall', false], ['The number of nuclei', false]];
+  const DEMO_PRAC = [
+    { id: 'p1', diff: 'M', p: 'What is a microorganism?', o: [['Any organism with one organ', 'That is not the definition.'], ['An organism so small you need a microscope to see it', 'Correct!'], ['A part of a cell', 'Parts of cells are not organisms.'], ['Only bacteria', 'Yeast and amoebae are microorganisms too.']], ok: 1 },
+    { id: 'p2', diff: 'H', p: 'Which change would make a root hair cell absorb water more slowly?', o: [['A longer extension', 'That would speed absorption up.'], ['More root hairs', 'That would speed absorption up.'], ['A shorter extension (smaller surface area)', 'Correct! Less surface area, slower absorption.'], ['Wetter soil', 'Wetter soil means more water to absorb.']], ok: 2 },
+    { id: 'p3', diff: 'H', p: 'Palisade cells are near the upper surface of a leaf. Why is this useful?', o: [['It is where most light reaches, so chloroplasts absorb more light energy', 'Correct!'], ['It is closest to the soil water', 'Roots are closest to soil water.'], ['It protects the leaf from insects', 'That is the job of the epidermis.'], ['It is where oxygen is stored', 'Leaves do not store oxygen there.']], ok: 0 },
+    { id: 'p4', diff: 'VH', p: 'Algae are unicellular, live in water and contain chloroplasts. Which statement is correct?', o: [['They are animals because they move', 'Moving alone does not make them animals.'], ['They are plants because they have chloroplasts', 'Plants are multicellular; these algae are not.'], ['They cannot make food', 'Chloroplasts let them make food.'], ['They can photosynthesise, but they are not plants because plants are multicellular', 'Correct!']], ok: 3 }];
+  const DEMO_TEST = [{ q: 'Which organism is unicellular?', o: ['Elephant', 'Paramecium', 'Sunflower', 'Mushroom'], ok: 1 },
+    { q: 'Which part contains the instructions (DNA) passed from parents to offspring?', o: ['Cytoplasm', 'Vacuole', 'Nucleus', 'Cell wall'], ok: 2 },
+    { q: 'Which is a limitation of a 2D cell diagram?', o: ['Real cells are 3D', 'It has labels', 'It shows the nucleus', 'It is easy to learn from'], ok: 0 }];
+  const DIFF_L = { M: 'Standard', H: 'Challenging', VH: 'Stretch' };
+  const UNIT_NAMES = [[1, 'Introducing Science'], [2, 'Measurements'], [3, 'Cells'], [4, 'Classifying Living Things'], [5, 'Food Chains and Food Webs'], [6, 'Materials and Their Structure'], [7, 'Properties of Materials'], [8, 'Acids and Alkalis'], [9, 'Chemical Reactions'], [10, 'Forces'], [11, 'Energy'], [12, 'Electricity'], [13, 'Earth Processes'], [14, 'Earth and Beyond']];
+  const PQ_AT = 30; // seconds into the 3.3 video: the root hair cell has been explained
+  const demoInit = () => ({ step: 'watch', vt: 0, pqPick: -1, pqDone: false, vidDone: false, diff: 'all', open: 'p2', prac: {}, test: 'idle', ti: 0, tAns: [], tPick: -1, tLeft: 60 });
   function viewLanding() {
-    const m = $main();
-    document.getElementById('wrap').before(el('section', { class: 'hero' }, el('div', { class: 'hero-in' }, el('div', { class: 'txt' },
-      el('span', { class: 'eyebrow' }, 'CAMBRIDGE LOWER SECONDARY SCIENCE · STAGE 7'), el('h1', {}, 'Science that clicks – learn at your own pace.'),
-      el('p', {}, 'Short lesson videos that stop and ask you questions, 30 practice questions per topic with step-by-step hints, Unit Tests and a certificate. Earn ⚡ bolts as you learn and spend them in the shop.'),
-      el('div', { class: 'btnrow' }, el('button', { class: 'btn gold big shine', type: 'button', id: 'heroStart', onclick: startGuest }, 'Start learning now', el('span', { class: 'arr' }, '→')), el('a', { class: 'btn onblue', href: '#signup', id: 'heroSignup' }, 'Sign up free')),
-      el('small', { style: 'color:#DCE8FA' }, 'No sign-up needed to try topic 3.1.')), cellLens())));
-    const step = (n, t, d) => el('div', { class: 'card' }, el('span', { class: 'node done', style: 'width:44px;height:44px' }, String(n)), el('h3', {}, t), el('p', { class: 'muted', style: 'margin:0' }, d));
-    m.append(el('h2', { style: 'margin:0' }, 'How it works'), el('div', { class: 'tiles' }, step(1, 'Try it straight away', 'Open topic 3.1 as a guest – no account needed. When you like it, sign up free to save your progress.'),
-      step(2, 'Watch → practise → test', 'Every topic: a lesson video with pause questions, 30 practice questions (8 Core), then a Unit Test marked by the Atomic teaching team.'),
-      step(3, 'Earn bolts, keep your streak', 'Answers earn ⚡ bolts. Hit your daily goal to grow your streak, finish challenges and spend bolts on avatars and backgrounds.')));
-    const feat = (i, t, d) => el('div', { class: 'card' }, el('span', { class: 'ti', style: 'font-size:26px' }, i), el('b', { class: 'lex' }, t), el('p', { class: 'muted', style: 'margin:4px 0 0' }, d));
-    m.append(el('h2', { style: 'margin:8px 0 0' }, 'What is inside Stage 7'), el('div', { class: 'tiles' },
-      feat('▶', 'Lesson videos that ask', 'The video pauses at key moments; wrong answers get a specific hint, not just “try again”.'), feat('🧪', '12 kinds of question', 'Label diagrams, read instruments, plot graphs, run a virtual microscope, explain your reasoning.'),
-      feat('★', 'Unit Tests marked properly', 'Two equivalent papers per unit. Written answers are marked by Atomic teachers. Pass above 70%.'), feat('📧', 'Keep your family in the loop', 'Add a parent’s email if you like – we let them know when you finish a unit.')));
-    m.append(el('section', { class: 'card' }, el('h2', {}, 'Free to try'), el('p', {}, Core.BILLING_OFF ? 'During our test phase the whole Stage 7 course is free – no card needed.' : 'The first topic of every unit is free – no card needed.'),
-      el('div', { class: 'btnrow' }, el('button', { class: 'btn primary', type: 'button', onclick: startGuest }, 'Start learning now'), el('a', { class: 'btn', href: '#signup' }, 'Create a free account'))));
+    const m = $main(); document.getElementById('wrap').classList.add('landing');
+    const D = UI.demo = UI.demo || demoInit();
+    const level = (badge, t, d, tag, open, on) => el(open ? 'button' : 'div', { class: 'card lift lp-level' + (open ? '' : ' off'), type: open ? 'button' : null, onclick: on || null },
+      el('span', { class: 'pop lp-badge' + (open ? ' on' : '') }, badge), el('span', { class: 'lp-lt' }, el('b', {}, t), el('br'), el('small', {}, d)), el('span', { class: 'lp-tag' + (open ? ' open' : '') }, tag));
+    const scrollTry = () => document.getElementById('try').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('wrap').before(el('section', { class: 'lp-hero dots' }, el('div', { class: 'lp-hero-in' },
+      el('div', { class: 'lp-hero-txt' },
+        el('span', { class: 'lp-pill' }, el('span', { class: 'lp-ping' }, el('i'), el('i')), 'Atomic Science · Checkpoint to A Level'),
+        el('h1', {}, 'Try the whole course.', el('br'), el('span', {}, 'Right here, right now.')),
+        el('p', {}, 'No sign-up. Watch a lesson, answer questions, sit a mini test and see your progress — all on this page.'),
+        el('div', { class: 'btnrow' }, el('button', { class: 'btn primary big shine', type: 'button', id: 'heroStart', onclick: scrollTry }, 'Start the tour ', el('span', { class: 'arr' }, '↓')),
+          el('button', { class: 'btn big', type: 'button', id: 'heroGuest', onclick: startGuest }, 'Open topic 3.1'))),
+      el('div', { class: 'lp-levels' }, el('span', { class: 'lp-eyebrow' }, 'OUR LEVELS'),
+        level('7–9', 'Lower Secondary', 'Checkpoint · Stages 7, 8 and 9', 'Open now', true, startGuest),
+        level('IG', 'Cambridge IGCSE', 'Biology · Chemistry · Physics', 'Coming soon'),
+        level('A', 'AS & A Level', 'Biology · Chemistry · Physics', 'Coming soon')))));
+
+    // ---- the four-box demo ----
+    const panel = el('div', { class: 'lp-panel' }), nav = el('nav', { class: 'lp-steps', 'aria-label': 'Demo steps' }), badge = el('span', { class: 'lp-count' });
+    m.append(el('section', { id: 'try', class: 'lp-try' }, el('div', { class: 'lp-head' }, el('h2', {}, 'Learn it, practise it, prove it'), el('p', {}, 'A real lesson from Stage 7, Unit 3: Cells. Go through the four steps — it takes about two minutes.')),
+      el('div', { class: 'card lp-demo' }, el('div', { class: 'lp-bar' }, el('span', { class: 'lp-dots', 'aria-hidden': 'true' }, el('i'), el('i'), el('i')), el('span', {}, 'Stage 7 · Unit 3: Cells · 3.3 Cells with special jobs'), badge),
+        el('div', { class: 'lp-body' }, nav, panel))));
+    const set = p => { Object.assign(D, p); draw(); };
+    const optEl = (k, t, state, on) => el('button', { type: 'button', class: 'lp-opt ' + state, onclick: on }, el('span', { class: 'k' }, k), el('span', { class: 't' }, t));
+    let vid = null;
+    function draw() {
+      const watched = D.vidDone, practised = Object.keys(D.prac).length >= 2, tested = D.test === 'done';
+      const done = { watch: watched, practise: practised, test: tested, progress: tested && D.step === 'progress' };
+      badge.textContent = `Demo · ${Object.values(done).filter(Boolean).length} of 4 steps done`;
+      nav.innerHTML = '';
+      [['watch', 'Watch', 'A lesson that pauses to ask you'], ['practise', 'Practise', 'Questions with instant feedback'], ['test', 'Test', 'A timed mini Unit Test'], ['progress', 'Progress', 'See what you have mastered']].forEach(([k, t, d], i) => {
+        const cur = D.step === k; nav.append(el('button', { type: 'button', class: 'lp-step' + (cur ? ' cur' : ''), 'aria-current': cur ? 'step' : null, 'data-step': k, onclick: () => { if (vid && k !== 'watch') vid.pause(); set({ step: k }); } },
+          el('span', { class: 'lp-dot' + (done[k] ? ' done' : cur ? ' cur' : '') }, done[k] ? '✓' : String(i + 1)), el('span', {}, el('b', {}, t), el('br'), el('small', {}, d))));
+      });
+      if (D.step !== 'watch' || !vid) { panel.innerHTML = ''; vid = null; }
+      if (D.step === 'watch') drawWatch(); else if (D.step === 'practise') drawPractise(); else if (D.step === 'test') drawTest(); else drawProgress();
+    }
+    function drawWatch() {
+      if (!vid) {
+        vid = el('video', { src: 'media/u3_s3.mp4', poster: 'media/u3_s3_poster.jpg', playsinline: true, preload: 'metadata', 'aria-label': 'Lesson video: specialised plant cells', class: 'lp-video' }); activeVideo = vid;
+        const ov = el('div', { class: 'lp-ov', hidden: true }), playBig = el('button', { type: 'button', class: 'lp-play pulse', 'aria-label': 'Play lesson', onclick: () => vid.play() }, svgI(I.play, 32, '#1C2A3A', 2.6));
+        const pbar = el('i'), time = el('span', { class: 'lp-time' }, '0:00 / 1:28'), pp = el('button', { type: 'button', class: 'btn primary small lp-pp', 'aria-label': 'Play or pause' }, svgI(I.play, 16, '#fff', 2.6));
+        pp.onclick = () => { if (ov.hidden === false && !D.pqDone) return; vid.paused ? vid.play() : vid.pause(); };
+        const syncBtn = () => { pp.innerHTML = ''; pp.append(svgI(vid.paused ? I.play : I.pause, 16, '#fff', 2.6)); playBig.hidden = !vid.paused || !ov.hidden; };
+        vid.addEventListener('play', syncBtn); vid.addEventListener('pause', syncBtn);
+        vid.addEventListener('timeupdate', () => {
+          const t = vid.currentTime, dur = vid.duration || 88; D.vt = t; pbar.style.width = (t / dur * 100) + '%'; time.textContent = `${fmt(t)} / ${fmt(dur)}`;
+          if (!D.pqDone && t >= PQ_AT) { vid.pause(); showPQ(); }
+        });
+        vid.addEventListener('ended', () => { D.vidDone = true; ov.hidden = false; ov.innerHTML = ''; ov.append(el('div', { class: 'lp-done' }, el('span', { class: 'lp-tick' }, '✓'), el('b', {}, 'Lesson complete'), el('button', { type: 'button', class: 'btn gold', id: 'demoNext1', onclick: () => set({ step: 'practise' }) }, 'Next: practise ', el('span', { class: 'arr' }, '→')))); draw(); });
+        function showPQ() {
+          ov.hidden = false; ov.innerHTML = ''; syncBtn();
+          const ok = D.pqPick >= 0 && DEMO_PQ[D.pqPick][1];
+          const box = el('div', { class: 'lp-pq' }, el('span', { class: 'lp-eyebrow gold' }, 'PAUSE QUESTION'), el('b', {}, 'What does the long extension of a root hair cell increase?'),
+            ...DEMO_PQ.map((p, i) => optEl('ABC'[i], p[0], D.pqPick < 0 ? 'idle' : p[1] && D.pqPick === i ? 'ok' : D.pqPick === i ? 'bad' : 'idle', () => { if (D.pqPick < 0 || !ok) { D.pqPick = i; showPQ(); } })));
+          if (D.pqPick >= 0) box.append(el('div', { class: 'btnrow', style: 'margin:0' }, el('span', { class: 'lp-fb ' + (ok ? 'ok' : 'bad') }, ok ? 'Correct — a bigger surface area means faster absorption.' : 'Not quite — think about what the extension adds to the cell.'),
+            el('button', { type: 'button', class: 'btn primary small', id: 'pqGo', onclick: () => { if (ok) { D.pqDone = true; ov.hidden = true; vid.currentTime = PQ_AT + 0.3; vid.play(); } else { D.pqPick = -1; showPQ(); } } }, ok ? 'Keep watching →' : 'Try again')));
+          ov.append(box);
+        }
+        panel.append(el('div', { class: 'lp-watch' }, el('div', { class: 'lp-screen' }, vid, playBig, ov),
+          el('div', { class: 'lp-controls' }, pp, el('div', { class: 'lp-track' }, pbar, el('span', { class: 'lp-mark', title: 'Pause question', style: `left:${PQ_AT / 87.7 * 100}%` })), time),
+          el('p', { class: 'muted', style: 'margin:0' }, 'The video stops halfway to ask you a question — answer it to keep watching.')));
+        if (D.vidDone) vid.dispatchEvent(new Event('ended')); else if (D.vt) { vid.currentTime = D.vt; if (!D.pqDone && D.vt >= PQ_AT) showPQ(); }
+      }
+    }
+    function drawPractise() {
+      const box = el('div', { class: 'lp-prac' }); panel.append(box);
+      box.append(el('div', { class: 'btnrow between', style: 'margin:0' }, el('div', { class: 'lp-chips', role: 'group', 'aria-label': 'Difficulty' }, ...[['all', 'All'], ['M', 'Standard'], ['H', 'Challenging'], ['VH', 'Stretch']].map(([k, t]) => el('button', { type: 'button', class: 'lp-chip' + (D.diff === k ? ' on' : ''), 'aria-pressed': String(D.diff === k), onclick: () => set({ diff: k }) }, t))),
+        el('small', { class: 'muted' }, `${Object.keys(D.prac).length} of 4 answered`)));
+      DEMO_PRAC.filter(q => D.diff === 'all' || q.diff === D.diff).forEach(q => {
+        const a = D.prac[q.id], open = D.open === q.id, answered = a !== undefined;
+        const card = el('div', { class: 'card lp-q' }, el('button', { type: 'button', class: 'lp-qh', 'aria-expanded': String(open), onclick: () => set({ open: open ? '' : q.id }) },
+          el('span', { class: 'lp-qd' + (answered ? (a === q.ok ? ' ok' : ' bad') : '') }), el('span', { class: 'lp-qp' }, q.p), el('span', { class: 'lp-diff ' + q.diff }, DIFF_L[q.diff]), el('span', { class: 'lp-chev' + (open ? ' up' : '') }, '⌄')));
+        if (open) card.append(el('div', { class: 'lp-qb' }, ...q.o.map((o, i) => optEl('ABCD'[i], o[0], !answered ? 'idle' : i === q.ok ? 'ok' : i === a ? 'bad' : 'idle', () => { if (!answered) set({ prac: Object.assign({}, D.prac, { [q.id]: i }) }); })),
+          answered ? el('div', { class: 'lp-fbbox ' + (a === q.ok ? 'ok' : 'bad') }, q.o[a][1]) : null));
+        box.append(card);
+      });
+      box.append(el('button', { type: 'button', class: 'btn gold', id: 'demoNext2', style: 'align-self:flex-end', onclick: () => set({ step: 'test' }) }, 'Next: mini test ', el('span', { class: 'arr' }, '→')));
+    }
+    function drawTest() {
+      clearInterval(timer);
+      const box = el('div', { class: 'lp-test' }); panel.append(box);
+      const start = () => { set({ test: 'run', ti: 0, tAns: [], tPick: -1, tLeft: 60 }); };
+      if (D.test === 'idle') { box.append(el('div', { class: 'lp-center' }, el('span', { class: 'lp-clock floaty', 'aria-hidden': 'true' }, el('i')), el('h3', {}, 'Mini Unit Test'), el('p', { class: 'muted' }, '3 questions · 60 seconds · no hints. Score above 70% to “unlock” the next unit.'), el('button', { type: 'button', class: 'btn primary big shine', id: 'demoStartTest', onclick: start }, 'Start the test'))); return; }
+      if (D.test === 'run') {
+        const T = DEMO_TEST[D.ti]; const clock = el('span', { class: 'lp-timer' + (D.tLeft <= 10 ? ' low' : '') }, `⏱ ${fmt(D.tLeft)}`), tb = el('i', { style: `width:${D.tLeft / 60 * 100}%` });
+        box.append(el('div', { class: 'btnrow between', style: 'margin:0' }, el('b', { class: 'lex' }, `Question ${D.ti + 1} of 3`), clock), el('div', { class: 'lp-track t' }, tb), el('b', { class: 'lp-tq' }, T.q),
+          ...T.o.map((o, i) => optEl('ABCD'[i], o, D.tPick === i ? 'sel' : 'idle', () => set({ tPick: i }))),
+          el('button', { type: 'button', class: 'btn primary', id: 'demoTNext', disabled: D.tPick < 0, style: 'align-self:flex-end', onclick: () => { const ans = D.tAns.concat([D.tPick]); if (D.ti === 2) { clearInterval(timer); set({ test: 'done', tAns: ans }); } else set({ tAns: ans, ti: D.ti + 1, tPick: -1 }); } }, D.ti === 2 ? 'Submit →' : 'Next question →'));
+        timer = setInterval(() => { if (D.step !== 'test' || D.test !== 'run') return clearInterval(timer); D.tLeft--; if (D.tLeft <= 0) { clearInterval(timer); set({ test: 'done' }); return; } clock.textContent = `⏱ ${fmt(D.tLeft)}`; clock.classList.toggle('low', D.tLeft <= 10); tb.style.width = (D.tLeft / 60 * 100) + '%'; }, 1000);
+        return;
+      }
+      const score = D.tAns.filter((a, i) => a === DEMO_TEST[i].ok).length, pct = Math.round(score / 3 * 100), pass = pct > 70;
+      if (pass) confetti();
+      box.append(el('div', { class: 'lp-center' }, el('span', { class: 'lp-ring', style: `background:conic-gradient(${pass ? '#1E8E4E' : '#0149AF'} 0 ${pct}%, #DCE8FA 0)` }, el('b', { id: 'demoScore' }, pct + '%')),
+        el('h3', {}, pass ? 'Passed — next unit unlocked!' : 'Nearly there'), el('p', { class: 'muted' }, pass ? 'You scored above 70%. In the full course this opens the next unit straight away.' : 'Below 70% — in the full course we show you exactly which ideas to revise, then let you sit Paper B.'),
+        el('div', { class: 'btnrow', style: 'justify-content:center' }, el('button', { type: 'button', class: 'btn', onclick: start }, 'Try again'), el('button', { type: 'button', class: 'btn gold', id: 'demoNext3', onclick: () => set({ step: 'progress' }) }, 'See my progress →'))));
+    }
+    function drawProgress() {
+      const tested = D.test === 'done', pct = Math.round(D.tAns.filter((a, i) => a === DEMO_TEST[i].ok).length / 3 * 100);
+      const right = DEMO_PRAC.filter(q => D.prac[q.id] === q.ok).length, n = Object.keys(D.prac).length;
+      const b1 = (D.vidDone ? 40 : 10) + (D.prac.p2 === 2 ? 30 : 0) + (D.prac.p3 === 0 ? 30 : 0), b2 = (D.prac.p1 === 1 ? 50 : 0) + (D.tAns[0] === 1 ? 50 : 0), b3 = (D.tAns[1] === 2 ? 50 : 0) + (D.tAns[2] === 0 ? 50 : 0);
+      const col = v => v >= 80 ? '#1E8E4E' : v >= 50 ? '#0149AF' : '#F08A4B';
+      panel.append(el('div', { class: 'lp-progress' },
+        el('div', { class: 'lp-kpis' }, ...[['Lesson', D.vidDone ? 'Watched' : Math.round(D.vt / 87.7 * 100) + '%'], ['Practice', `${right} / ${n} correct`], ['Mini test', tested ? pct + '%' : 'Not taken']].map(([l, v]) => el('div', { class: 'card lp-kpi' }, el('small', {}, l), el('b', {}, v)))),
+        el('b', { class: 'lex' }, 'How secure is each idea?'),
+        ...[['Cells with special jobs', b1], ['Microorganisms', b2], ['Cell structure and models', b3]].map(([t, v]) => el('div', { class: 'lp-barrow' }, el('span', {}, t), el('div', { class: 'lp-track' }, el('i', { style: `width:${v}%;background:${col(v)}` })), el('b', {}, v + '%'))),
+        el('div', { class: 'lp-cta' }, el('span', {}, el('b', {}, 'That was one topic from Unit 3. Stage 7 has 14 units.'), el('br'), el('span', {}, 'Carry on with topic 3.1 now – no sign-up – or create a free account to save your progress.')),
+          el('div', { class: 'btnrow', style: 'margin:0' }, el('button', { type: 'button', class: 'btn gold', id: 'demoGuest', onclick: startGuest }, 'Start learning now →'), el('a', { class: 'btn onblue', href: '#signup' }, 'Sign up free'))),
+        el('button', { type: 'button', class: 'lp-link', onclick: () => { Object.assign(D, demoInit()); vid = null; panel.innerHTML = ''; draw(); } }, 'Restart the demo')));
+    }
+    draw();
+
+    // ---- all 14 units as small boxes ----
+    m.append(el('section', { class: 'lp-units' }, el('div', { class: 'btnrow between', style: 'margin:0 0 18px' }, el('h2', { style: 'margin:0' }, 'Everything in Stage 7'), el('button', { type: 'button', class: 'btn small', onclick: startGuest }, 'Open the course →')),
+      el('div', { class: 'lp-ugrid' }, ...UNIT_NAMES.map(([n, t]) => el(n === 3 ? 'button' : 'a', n === 3 ? { type: 'button', class: 'card lift lp-unit', onclick: startGuest } : { class: 'card lift lp-unit', href: '#signup' },
+        unitIcon(n), el('span', { class: 'lp-ut' }, el('small', {}, 'UNIT ' + n), el('br'), el('b', {}, t)), n === 3 ? el('span', { class: 'lp-free' }, 'Free') : null)))));
+    // ---- how it works ----
+    const step = (n, cls, t, d) => el('div', { class: 'card lift lp-how' }, el('span', { class: 'lp-num ' + cls }, String(n)), el('b', {}, t), el('p', { class: 'muted', style: 'margin:0' }, d));
+    m.append(el('section', { class: 'lp-hows' }, el('div', { style: 'text-align:center' }, el('small', { class: 'lp-eyebrow gold' }, 'HOW IT WORKS'), el('h2', { style: 'margin:6px 0 0' }, 'Three steps to start')),
+      el('div', { class: 'lp-hgrid' }, step(1, 'b', 'Try it straight away', 'Open topic 3.1 – no account needed. Watch, practise and earn ⚡ bolts on this device.'),
+        step(2, 'g', 'Sign up free in a minute', 'Your name and email, your age and school year, then your country and school. A parent’s email is optional.'),
+        step(3, 'gr', 'Learn, earn bolts, pass the test', 'Lessons, practice and a Unit Test for every topic. Keep your streak and spend bolts in the shop.')),
+      el('div', { style: 'text-align:center' }, el('a', { class: 'btn gold', href: '#signup' }, 'Create a free account'))));
     m.append(faq());
   }
   function faq() {

@@ -7,7 +7,7 @@ with sync_playwright() as p:
     b = p.chromium.launch(executable_path='/usr/bin/google-chrome'); pg = b.new_page(reduced_motion='reduce'); errs = []
     pg.on('pageerror', lambda e: errs.append(str(e)))
     pg.goto(BASE + '?reset=1'); pg.wait_for_selector('#heroStart')
-    ok('test phase the whole Stage 7 course is free' in pg.inner_text('body') and 'Free test' in pg.inner_text('header'), 'B1 Landing and menu say the course is free while testing')
+    ok('No sign-up' in pg.inner_text('body') and 'Free test' in pg.inner_text('header'), 'B1 Landing and menu say the course is free while testing')
     pg.evaluate("location.hash='pricing'"); pg.wait_for_timeout(400)
     ok(pg.query_selector('#betaNote') is not None and pg.query_selector('#buy-monthly') is None, 'B2 Plans page replaced by the free test page (no buy buttons)')
     pg.evaluate("location.hash='signup'"); pg.wait_for_timeout(300)
