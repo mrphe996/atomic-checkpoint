@@ -1021,3 +1021,30 @@ p.cloze { font-size: 18px; line-height: 2.4; }
 .gap { font: inherit; width: 11ch; padding: 4px 8px; margin: 0 4px; border: 0; border-bottom: 2px solid #0149AF; background: #FFF9EC; border-radius: 6px 6px 0 0; text-align: center; }
 .locked .shortin, .locked .gap { background: #F1F4F8; }
 @media print { .qctx { background: none; border: 1.5px solid #333; } }
+/* maths answers */
+.mathin { font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 17px; }
+.mathprev { display: block; min-height: 20px; margin: 6px 0 2px; color: #0149AF; font-size: 15px; }
+.mathkeys { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+.mathkeys .mk2 { min-width: 40px; padding: 6px 10px; border: 1px solid #C9D6EA; border-radius: 8px; background: #fff; font: 600 15px/1 Figtree, sans-serif; cursor: pointer; }
+.mathkeys .mk2:hover { background: #EEF4FF; }
+.shortrow .lhs { margin-right: 8px; font-size: 18px; }
+/* maths reading lessons */
+.lessonhead h1 { font-size: 30px; }
+.lgoals { margin: 10px 0 0; padding-left: 20px; color: #3A4A60; }
+.lessonbody { display: flex; flex-direction: column; gap: 14px; }
+.lblock h2 { font-size: 21px; margin: 0 0 8px; }
+.lblock .lp { font-size: 17px; line-height: 1.6; margin: 6px 0; }
+.lb-idea { border-left: 6px solid #0149AF; }
+.lb-method { border-left: 6px solid #7A4BD1; }
+.lb-example { border-left: 6px solid #F3BF69; background: #FFFCF4; }
+.lb-tip { border-left: 6px solid #1E8E4E; }
+.lb-mistake { border-left: 6px solid #E14E4E; background: #FFF7F7; }
+.lsteps { margin: 8px 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
+.lsteps li { font-size: 16px; line-height: 1.5; }
+.mwork { font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; background: #F1F5FB; border-radius: 6px; padding: 2px 8px; font-size: 16px; white-space: pre-wrap; }
+.lsteps .why { color: #50607A; }
+.lq, .lans { font-size: 17px; margin: 8px 0; }
+.lans { background: #EEF8F1; border-radius: 8px; padding: 8px 12px; }
+.lcheck { border: 2px dashed #C9D6EA; }
+.ic.mic { background: #F1EAFD; color: #5B33B0; font: 800 14px/1 Figtree, sans-serif; display: inline-grid; place-items: center; }
+.dthumb.lessonthumb{background:linear-gradient(135deg,#EAF1FC,#FFF4DC)}.dthumb.lessonthumb .lp-play{font-size:34px}

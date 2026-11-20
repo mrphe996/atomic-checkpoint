@@ -15,14 +15,14 @@ const G = require('../shared/grade-core.js');
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'content/src');
 // the figure library, loaded the way the browser loads it, so every fig:{kind} in the content is checked
-const FIGLIB = (() => { const win = {}; try { for (const f of ['web/figures.js', 'web/figures2.js']) { const p = path.join(ROOT, f); if (fs.existsSync(p)) new Function('window', fs.readFileSync(p, 'utf8'))(win); } } catch (e) { console.error('figure library:', e.message); } return win.AtomicFig; })();
+const FIGLIB = (() => { const win = {}; try { for (const f of ['web/figures.js', 'web/figures2.js', 'web/figures3.js']) { const p = path.join(ROOT, f); if (fs.existsSync(p)) new Function('window', fs.readFileSync(p, 'utf8'))(win); } } catch (e) { console.error('figure library:', e.message); } return win.AtomicFig; })();
 const ANCHORS = { // label anchors each figure provides (keep in sync with web/figures.js)
   microscope: ['eyepiece', 'objective', 'stage', 'clips', 'diaphragm', 'light', 'coarse', 'fine', 'arm', 'base'],
   plantcell: ['wall', 'membrane', 'cytoplasm', 'nucleus', 'vacuole', 'chloroplast', 'mito'],
   animalcell: ['membrane', 'cytoplasm', 'nucleus', 'mito'], roothair: ['extension', 'nucleus', 'vacuole', 'wall'],
   neurone: ['body', 'fibre', 'endings', 'nucleus'], ciliated: ['mucus', 'cilia', 'nucleus'],
   palisade: ['wall', 'nucleus', 'chloroplast', 'vacuole'], plant: ['flower', 'leaf', 'stem', 'root'], body: ['brain', 'lungs', 'heart', 'stomach'] };
-const TYPES = ['mcq', 'multi', 'num', 'scale', 'label', 'order', 'match', 'explain', 'grid', 'table', 'graph', 'sim', 'short', 'cloze'];
+const TYPES = ['mcq', 'multi', 'num', 'scale', 'label', 'order', 'match', 'explain', 'grid', 'table', 'graph', 'sim', 'short', 'cloze', 'expr'];
 
 export function validate(c) {
   const errs = [], warn = [];
@@ -50,6 +50,7 @@ export function validate(c) {
       case 'grid': q.rows.forEach(r => { if (!r.a || !r.a.length) errs.push(`${at}: grid row without answer`); }); break;
       case 'table': if (!q.rows.some(r => r.some(c => c && typeof c === 'object'))) errs.push(`${at}: table has no blank`); break;
       case 'short': if (!Array.isArray(q.accept) || !q.accept.length || !G.answerText(q)) errs.push(`${at}: short answer needs accepted answers (the first plain one is the model)`); break;
+      case 'expr': if (!q.expr || !G.exprFn(q.expr)) errs.push(`${at}: expr needs a valid model expression`); break;
       case 'cloze': { const n = (String(q.text || '').match(/\{\d+\}/g) || []).length; if (!n || !Array.isArray(q.blanks) || q.blanks.length !== n || q.blanks.some(b => !b.length)) errs.push(`${at}: cloze needs one accepted-answer list per {n} gap`); break; }
     }
     if (q.fig && typeof q.fig === 'object' && FIGLIB) { const f = FIGLIB.F[q.fig.kind]; if (!f) errs.push(`${at}: unknown figure kind ${q.fig.kind}`); else { try { if (!FIGLIB.get(q.fig.kind, q.fig).svg) errs.push(`${at}: figure ${q.fig.kind} drew nothing`); } catch (e) { errs.push(`${at}: figure ${q.fig.kind} failed: ${e.message}`); } } }
@@ -129,7 +130,7 @@ export function build(file, { check = false } = {}) {
     const papers = {}; for (const f of Object.keys(c.tests).filter(k => k.length === 1)) { papers[f] = c.tests[f].map(G.stripKeys); }
     pub.tests = { ...papers, pass: c.tests.pass };
     pub.build = { at: new Date().toISOString().slice(0, 10), unit: name };
-    const cm = path.join(ROOT, 'content/authoring/cmaps.json'); const stg = Number((name.match(/^stage(\d)/) || [0, 7])[1]); const un = stg === 7 ? String(Number(name.slice(-2))) : `${stg}-${Number(name.slice(-2))}`;
+    const cm = path.join(ROOT, 'content/authoring/cmaps.json'); const stg = Number((name.match(/^stage(\d+)/) || [0, 7])[1]); const un = stg === 7 ? String(Number(name.slice(-2))) : `${stg}-${Number(name.slice(-2))}`;
     if (fs.existsSync(cm)) { const maps = JSON.parse(fs.readFileSync(cm, 'utf8')); if (maps[un]) { const secIds = c.sections.map(x => x.id); maps[un].nodes.forEach(nd => { if (!secIds.includes(nd.s)) throw new Error(`${name}: concept map node ${nd.id} points to missing section ${nd.s}`); }); pub.cmap = maps[un]; } }
     if (!pub.cmap && c.mindmap) pub.cmap = autoMap(c);
     pub.est = estimate(c);
@@ -174,7 +175,11 @@ export function writeIndex() {
       ['Magnetism', 'Physics'], ['Renewable and Non-Renewable Energy Resources', 'Physics'], ['Weather and Climate', 'Earth and Space'], ['Planetary Systems', 'Earth and Space']],
     9: [['Photosynthesis and Transport in Plants', 'Biology'], ['Excretion', 'Biology'], ['Variation and Inheritance', 'Biology'], ['The Structure of the Atom and the Periodic Table', 'Chemistry'],
       ['Chemical Bonding and Structure of Materials', 'Chemistry'], ['Displacement Reactions', 'Chemistry'], ['Salts', 'Chemistry'], ['Rate of Reaction', 'Chemistry'], ['Density', 'Physics'],
-      ['Transfer of Thermal Energy', 'Physics'], ['Sound', 'Physics'], ['Electrical Circuits', 'Physics'], ['Earth and Climate Change', 'Earth and Space'], ['Astronomy', 'Earth and Space']] };
+      ['Transfer of Thermal Energy', 'Physics'], ['Sound', 'Physics'], ['Electrical Circuits', 'Physics'], ['Earth and Climate Change', 'Earth and Space'], ['Astronomy', 'Earth and Space']],
+    // 19 = Mathematics Stage 9
+    19: [['Number and Calculation', 'Number'], ['Expressions and Formulae', 'Algebra'], ['Decimals, Percentages and Rounding', 'Number'], ['Equations and Inequalities', 'Algebra'], ['Angles', 'Geometry'],
+      ['Statistical Investigations', 'Statistics'], ['Shapes and Measurements', 'Geometry'], ['Fractions', 'Number'], ['Sequences and Functions', 'Algebra'], ['Graphs', 'Algebra'],
+      ['Ratio and Proportion', 'Number'], ['Probability', 'Probability'], ['Position and Transformation', 'Geometry'], ['Volume, Surface Area and Symmetry', 'Geometry'], ['Interpreting and Discussing Results', 'Statistics']] };
   for (const [stage, list] of Object.entries(T)) {
     const units = list.map(([t, strand], i) => { const id = `stage${stage}-unit${String(i + 1).padStart(2, '0')}`; const f = path.join(ROOT, 'web/content', id + '.json');
       if (!fs.existsSync(f)) return { n: i + 1, id, t, strand, ready: false };

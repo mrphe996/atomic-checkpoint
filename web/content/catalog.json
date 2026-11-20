@@ -1,35 +1,196 @@
 {
-  "subjects": [
-    { "id": "science", "name": "Science", "icon": "🔬", "color": "#1F9D5C" },
-    { "id": "maths", "name": "Mathematics", "icon": "📐", "color": "#7A4BD1" }
-  ],
-  "levels": [
-    { "id": "lsec", "name": "Cambridge Lower Secondary", "short": "Lower Secondary", "ages": "ages 11–14", "note": "Stages 7, 8 and 9 · ends with the Cambridge Lower Secondary Checkpoint tests" },
-    { "id": "igcse", "name": "Cambridge IGCSE", "short": "IGCSE", "ages": "ages 14–16", "note": "Two-year courses with Cambridge IGCSE exams" },
-    { "id": "alevel", "name": "Cambridge International AS & A Level", "short": "AS & A Level", "ages": "ages 16–19", "note": "AS Level after one year, A Level after two" }
-  ],
-  "courses": [
-    { "id": "sci-s7", "subject": "science", "level": "lsec", "stage": 7, "code": "0893", "title": "Cambridge Stage 7 Science", "status": "open" },
-    { "id": "sci-s8", "subject": "science", "level": "lsec", "stage": 8, "code": "0893", "title": "Cambridge Stage 8 Science", "status": "enrol" },
-    { "id": "sci-s9", "subject": "science", "level": "lsec", "stage": 9, "code": "0893", "title": "Cambridge Stage 9 Science", "status": "enrol" },
-    { "id": "sci-igcse", "subject": "science", "level": "igcse", "code": "0610 · 0620 · 0625", "title": "Cambridge IGCSE Biology, Chemistry and Physics", "status": "soon",
-      "about": "Separate IGCSE sciences: Biology (0610), Chemistry (0620) and Physics (0625)." },
-    { "id": "sci-alevel", "subject": "science", "level": "alevel", "code": "9700 · 9701 · 9702", "title": "Cambridge AS & A Level Biology, Chemistry and Physics", "status": "soon",
-      "about": "AS & A Level Biology (9700), Chemistry (9701) and Physics (9702)." },
-    { "id": "math-s7", "subject": "maths", "level": "lsec", "stage": 7, "code": "0862", "title": "Cambridge Stage 7 Mathematics", "status": "soon",
-      "about": "The Cambridge Lower Secondary Mathematics curriculum for Stage 7.",
-      "strands": ["Number", "Algebra", "Geometry and measure", "Statistics and probability", "Thinking and working mathematically"],
-      "exams": [{ "code": "0862/01", "name": "Paper 1", "minutes": 60, "marks": 50, "note": "no calculator" }, { "code": "0862/02", "name": "Paper 2", "minutes": 60, "marks": 50, "note": "calculator allowed" }] },
-    { "id": "math-s8", "subject": "maths", "level": "lsec", "stage": 8, "code": "0862", "title": "Cambridge Stage 8 Mathematics", "status": "soon",
-      "strands": ["Number", "Algebra", "Geometry and measure", "Statistics and probability", "Thinking and working mathematically"] },
-    { "id": "math-s9", "subject": "maths", "level": "lsec", "stage": 9, "code": "0862", "title": "Cambridge Stage 9 Mathematics", "status": "soon",
-      "strands": ["Number", "Algebra", "Geometry and measure", "Statistics and probability", "Thinking and working mathematically"],
-      "exams": [{ "code": "0862/01", "name": "Paper 1", "minutes": 60, "marks": 50, "note": "no calculator" }, { "code": "0862/02", "name": "Paper 2", "minutes": 60, "marks": 50, "note": "calculator allowed" }] },
-    { "id": "math-0580", "subject": "maths", "level": "igcse", "code": "0580", "title": "Cambridge IGCSE Mathematics", "status": "soon",
-      "about": "Core and Extended routes." },
-    { "id": "math-0606", "subject": "maths", "level": "igcse", "code": "0606", "title": "Cambridge IGCSE Additional Mathematics", "status": "soon",
-      "about": "For strong mathematicians who want a head start on AS & A Level." },
-    { "id": "math-9709", "subject": "maths", "level": "alevel", "code": "9709", "title": "Cambridge AS & A Level Mathematics", "status": "soon",
-      "about": "Pure Mathematics, Mechanics, and Probability & Statistics." }
-  ]
+ "subjects": [
+  {
+   "id": "science",
+   "name": "Science",
+   "icon": "🔬",
+   "color": "#1F9D5C"
+  },
+  {
+   "id": "maths",
+   "name": "Mathematics",
+   "icon": "📐",
+   "color": "#7A4BD1"
+  }
+ ],
+ "levels": [
+  {
+   "id": "lsec",
+   "name": "Cambridge Lower Secondary",
+   "short": "Lower Secondary",
+   "ages": "ages 11–14",
+   "note": "Stages 7, 8 and 9 · ends with the Cambridge Lower Secondary Checkpoint tests"
+  },
+  {
+   "id": "igcse",
+   "name": "Cambridge IGCSE",
+   "short": "IGCSE",
+   "ages": "ages 14–16",
+   "note": "Two-year courses with Cambridge IGCSE exams"
+  },
+  {
+   "id": "alevel",
+   "name": "Cambridge International AS & A Level",
+   "short": "AS & A Level",
+   "ages": "ages 16–19",
+   "note": "AS Level after one year, A Level after two"
+  }
+ ],
+ "courses": [
+  {
+   "id": "sci-s7",
+   "subject": "science",
+   "level": "lsec",
+   "stage": 7,
+   "code": "0893",
+   "title": "Cambridge Stage 7 Science",
+   "status": "open"
+  },
+  {
+   "id": "sci-s8",
+   "subject": "science",
+   "level": "lsec",
+   "stage": 8,
+   "code": "0893",
+   "title": "Cambridge Stage 8 Science",
+   "status": "enrol"
+  },
+  {
+   "id": "sci-s9",
+   "subject": "science",
+   "level": "lsec",
+   "stage": 9,
+   "code": "0893",
+   "title": "Cambridge Stage 9 Science",
+   "status": "enrol"
+  },
+  {
+   "id": "sci-igcse",
+   "subject": "science",
+   "level": "igcse",
+   "code": "0610 · 0620 · 0625",
+   "title": "Cambridge IGCSE Biology, Chemistry and Physics",
+   "status": "soon",
+   "about": "Separate IGCSE sciences: Biology (0610), Chemistry (0620) and Physics (0625)."
+  },
+  {
+   "id": "sci-alevel",
+   "subject": "science",
+   "level": "alevel",
+   "code": "9700 · 9701 · 9702",
+   "title": "Cambridge AS & A Level Biology, Chemistry and Physics",
+   "status": "soon",
+   "about": "AS & A Level Biology (9700), Chemistry (9701) and Physics (9702)."
+  },
+  {
+   "id": "math-s7",
+   "subject": "maths",
+   "level": "lsec",
+   "stage": 7,
+   "code": "0862",
+   "title": "Cambridge Stage 7 Mathematics",
+   "status": "soon",
+   "about": "The Cambridge Lower Secondary Mathematics curriculum for Stage 7.",
+   "strands": [
+    "Number",
+    "Algebra",
+    "Geometry and measure",
+    "Statistics and probability",
+    "Thinking and working mathematically"
+   ],
+   "exams": [
+    {
+     "code": "0862/01",
+     "name": "Paper 1",
+     "minutes": 60,
+     "marks": 50,
+     "note": "no calculator"
+    },
+    {
+     "code": "0862/02",
+     "name": "Paper 2",
+     "minutes": 60,
+     "marks": 50,
+     "note": "calculator allowed"
+    }
+   ]
+  },
+  {
+   "id": "math-s8",
+   "subject": "maths",
+   "level": "lsec",
+   "stage": 8,
+   "code": "0862",
+   "title": "Cambridge Stage 8 Mathematics",
+   "status": "soon",
+   "strands": [
+    "Number",
+    "Algebra",
+    "Geometry and measure",
+    "Statistics and probability",
+    "Thinking and working mathematically"
+   ]
+  },
+  {
+   "id": "math-s9",
+   "subject": "maths",
+   "level": "lsec",
+   "stage": 19,
+   "code": "0862",
+   "title": "Cambridge Stage 9 Mathematics",
+   "status": "enrol",
+   "strands": [
+    "Number",
+    "Algebra",
+    "Geometry and measure",
+    "Statistics and probability",
+    "Thinking and working mathematically"
+   ],
+   "exams": [
+    {
+     "code": "0862/01",
+     "name": "Paper 1",
+     "minutes": 60,
+     "marks": 50,
+     "note": "no calculator"
+    },
+    {
+     "code": "0862/02",
+     "name": "Paper 2",
+     "minutes": 60,
+     "marks": 50,
+     "note": "calculator allowed"
+    }
+   ],
+   "badge": "9",
+   "about": "Cambridge Lower Secondary Mathematics, Stage 9: 15 units with reading lessons, worked examples, a large bank of auto-marked practice, Unit Tests, end-of-year exams and Checkpoint-format papers."
+  },
+  {
+   "id": "math-0580",
+   "subject": "maths",
+   "level": "igcse",
+   "code": "0580",
+   "title": "Cambridge IGCSE Mathematics",
+   "status": "soon",
+   "about": "Core and Extended routes."
+  },
+  {
+   "id": "math-0606",
+   "subject": "maths",
+   "level": "igcse",
+   "code": "0606",
+   "title": "Cambridge IGCSE Additional Mathematics",
+   "status": "soon",
+   "about": "For strong mathematicians who want a head start on AS & A Level."
+  },
+  {
+   "id": "math-9709",
+   "subject": "maths",
+   "level": "alevel",
+   "code": "9709",
+   "title": "Cambridge AS & A Level Mathematics",
+   "status": "soon",
+   "about": "Pure Mathematics, Mechanics, and Probability & Statistics."
+  }
+ ]
 }

@@ -8,10 +8,45 @@
   const SCOPE_COUNT = { 4: 12, 10: 5, 40: 1.25 };
   function rng(seedStr) { let h = 2166136261; for (const ch of seedStr) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; }
   function shuffle(arr, seed) { const r = rng(seed), a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
-  const TYPE_VI = { mcq: 'Diagnostic multiple choice', multi: 'Select all that apply', num: 'Calculation', scale: 'Instrument reading', label: 'Label the diagram', order: 'Put in order', match: 'Matching', explain: 'Explain (mark scheme)', grid: 'Classification table', table: 'Data table', graph: 'Plot & read a graph', sim: 'Virtual experiment', short: 'Short answer (typed)', cloze: 'Complete the sentences (typed)' };
+  const TYPE_VI = { mcq: 'Diagnostic multiple choice', multi: 'Select all that apply', num: 'Calculation', scale: 'Instrument reading', label: 'Label the diagram', order: 'Put in order', match: 'Matching', explain: 'Explain (mark scheme)', grid: 'Classification table', table: 'Data table', graph: 'Plot & read a graph', sim: 'Virtual experiment', short: 'Short answer (typed)', expr: 'Algebra (typed)', cloze: 'Complete the sentences (typed)' };
   const DIFF = { M: 'Medium', H: 'Hard', VH: 'Very hard' };
   const near = (a, b, tol) => Math.abs(a - b) <= Math.max(tol || 0, 1e-9 * Math.max(1, Math.abs(b)));
-  const parseNum = s => { if (s == null) return null; const t = String(s).replace(/[×x,\s]/gi, m => m === ',' ? '.' : '').trim(); if (t === '') return null; const v = Number(t); return isFinite(v) ? v : null; };
+  // numbers: plain, decimal comma, fractions (3/4, -1 2/3), standard form (3.2 × 10^5, 3.2e5, 3.2×10⁵), and "x = 4" answers
+  const SUP = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9', '⁻': '-' };
+  const parseNum = s => { if (s == null) return null;
+    let t = String(s).replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, m => '^' + m.split('').map(c => SUP[c]).join('')).replace(/[−–]/g, '-').trim().replace(/^[a-z]\s*=\s*/i, '');
+    let m = t.match(/^(-?\d+(?:[.,]\d+)?)\s*(?:[×x*]|\\times)\s*10\s*\^\s*\(?\s*(-?\d+)\s*\)?$/i); if (m) return Number(m[1].replace(',', '.')) * Math.pow(10, Number(m[2]));
+    m = t.match(/^(-?)(?:(\d+)\s+)?(\d+)\s*\/\s*(\d+)$/); if (m) { const v = (m[2] ? Number(m[2]) : 0) + Number(m[3]) / Number(m[4]); return Number(m[4]) ? (m[1] ? -v : v) : null; }
+    t = t.replace(/[×x,\s]/gi, c => c === ',' ? '.' : ''); if (t === '') return null; const v = Number(t); return isFinite(v) ? v : null; };
+  /* algebra: a small, safe expression evaluator used to mark typed expressions by value.
+     Supports numbers, single-letter variables, + − × ÷ * / ^ ² ³, brackets, implicit multiplication (2x, 3(x+1), (a+b)(a−b)) and √. */
+  function exprFn(src) {
+    let s = String(src == null ? '' : src).toLowerCase().replace(/[−–]/g, '-').replace(/[×·]/g, '*').replace(/÷/g, '/').replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+/g, m => '^(' + m.split('').map(c => SUP[c]).join('') + ')').replace(/\s+/g, '').replace(/\*\*/g, '^');
+    if (!s || /[^0-9a-z.+\-*/^()√]/.test(s)) return null;
+    const tk = []; for (let i = 0; i < s.length;) { const c = s[i];
+      if (/[0-9.]/.test(c)) { let j = i; while (j < s.length && /[0-9.]/.test(s[j])) j++; tk.push({ n: Number(s.slice(i, j)) }); i = j; }
+      else if (/[a-z]/.test(c)) { tk.push({ v: c }); i++; } else { tk.push({ o: c }); i++; } }
+    if (tk.some(t => t.n != null && !isFinite(t.n))) return null;
+    // implicit multiplication between value-ending and value-starting tokens
+    const T = []; tk.forEach((t, i) => { const p = T[T.length - 1]; const pEnd = p && (p.n != null || p.v || p.o === ')'); const tStart = t.n != null || t.v || t.o === '(' || t.o === '√'; if (pEnd && tStart) T.push({ o: '*' }); T.push(t); });
+    let k = 0; const peek = () => T[k], eat = o => (T[k] && T[k].o === o ? (k++, true) : false);
+    function E() { let f = Tm(); for (;;) { if (eat('+')) { const a = f, b = Tm(); f = x => a(x) + b(x); } else if (eat('-')) { const a = f, b = Tm(); f = x => a(x) - b(x); } else return f; } }
+    function Tm() { let f = U(); for (;;) { if (eat('*')) { const a = f, b = U(); f = x => a(x) * b(x); } else if (eat('/')) { const a = f, b = U(); f = x => a(x) / b(x); } else return f; } }
+    function U() { if (eat('-')) { const a = U(); return x => -a(x); } if (eat('+')) return U(); return P(); }
+    function P() { const b = A(); if (eat('^')) { const e = U(); return x => Math.pow(b(x), e(x)); } return b; }
+    function A() { const t = peek(); if (!t) throw 0; k++;
+      if (t.n != null) return () => t.n; if (t.v) return x => (t.v in x ? x[t.v] : NaN);
+      if (t.o === '(') { const f = E(); if (!eat(')')) throw 0; return f; }
+      if (t.o === '√') { const a = A(); return x => Math.sqrt(a(x)); } throw 0; }
+    try { const f = E(); if (k !== T.length) return null; return f; } catch (e) { return null; }
+  }
+  const PTS = [[1.37, -0.62, 2.11], [-2.3, 1.9, 0.47], [0.83, 3.1, -1.4], [2.6, -1.15, 1.72], [-0.71, 0.58, -2.9]];
+  function exprSame(a, b, vars) {
+    const fa = exprFn(a), fb = exprFn(b); if (!fa || !fb) return false; const vs = Array.from(new Set((vars || 'xyz').toLowerCase().split('')));
+    let tried = 0; for (const p of PTS) { const sc = {}; vs.forEach((v, i) => sc[v] = p[i % 3] + i * 0.31); const u = fa(sc), w = fb(sc); if (!isFinite(u) || !isFinite(w)) continue; tried++; if (Math.abs(u - w) > 1e-6 * Math.max(1, Math.abs(w))) return false; }
+    return tried >= 3;
+  }
+  const exprClean = (raw, lhs) => { let t = String(raw || '').trim(); if (lhs) t = t.replace(new RegExp('^\\s*' + lhs + '\\s*=\\s*', 'i'), ''); return t; };
   const LEN = { 'µm': 0.001, 'mm': 1, 'cm': 10 };
 
   /* typed answers: case, spaces, punctuation and a leading "the/a/an" are ignored; a small spelling slip is accepted
@@ -60,7 +95,7 @@
         const e = (q.errs || []).find(e => near(v, e.v, 1e-6) || near(vInQ, e.v, 1e-6));
         if (e) { out.fb.push(e.fb); out.divErr = q.type === 'scale'; }
         else if (q.type === 'scale') out.fb.push('Not quite. Step 1: find the two numbered marks nearest the liquid level. Step 2: count the small spaces between them. Step 3: how many mL is each space worth?');
-        else out.fb.push('Not quite. Write the formula first, substitute the numbers, then check the answer makes sense (should the image be bigger or smaller than the object?).');
+        else out.fb.push(q.hint || 'Not quite. Write the method first, substitute the numbers, then check the answer makes sense.');
         if (!unitOk && !(LEN[u] && LEN[q.unit])) out.fb.push(q.unitFb || 'Check the unit as well.');
         break;
       }
@@ -120,6 +155,16 @@
         out.ok = typedOk(txt, q.accept); out.frac = out.ok ? 1 : 0;
         if (!out.ok) out.fb.push(q.hint || 'Not quite. Check the key word from the topic and its spelling.'); break;
       }
+      case 'expr': {
+        const txt = exprClean(r, q.lhs); if (!txt) { out.answered = false; out.fb.push('Type your answer in the box.'); break; }
+        const f = exprFn(txt); if (!f) { out.fb.push('Check how you typed it: use x^2 for x², * or nothing for ×, / for ÷ and brackets ( ).'); break; }
+        const same = exprSame(txt, q.expr, q.vars); const compact = txt.toLowerCase().replace(/\s+/g, '');
+        const formOk = (q.must || []).every(re => new RegExp(re, 'i').test(compact)) && !(q.mustNot || []).some(re => new RegExp(re, 'i').test(compact));
+        out.ok = same && formOk; out.frac = out.ok ? 1 : 0;
+        if (same && !formOk) out.fb.push(q.formFb || 'Your answer has the right value but is not in the form asked for. Read the question again.');
+        else if (!same) out.fb.push(q.hint || 'Not quite. Check each step: signs, brackets and like terms.');
+        break;
+      }
       case 'cloze': {
         const a = Array.isArray(r) ? r : []; if (!a.some(x => String(x || '').trim())) { out.answered = false; out.fb.push('Type a word in each gap.'); break; }
         const hits = q.blanks.map((b, i) => typedOk(a[i], b)); const good = hits.filter(Boolean).length;
@@ -153,6 +198,7 @@
       case 'table': return q.rows.map(r => r.map(c => c && typeof c === 'object' ? `[${c.ans}]` : c).join(' | ')).join(' ; ');
       case 'graph': return 'Points: ' + (q.plot || q.pts).map(p => `(${p[0]}, ${p[1]})`).join(' ') + (q.follow ? ' — ' + q.follow.options.find(o => o.ok).t : '');
       case 'short': return plainOf(q.accept);
+      case 'expr': return (q.lhs ? q.lhs + ' = ' : '') + (q.show || q.expr);
       case 'cloze': { let i = 0; return String(q.text).replace(/\{\d+\}/g, () => '[' + plainOf(q.blanks[i++]) + ']'); }
       case 'sim': return '×4 ≈ 12 cells, ×10 ≈ 5 cells, ×40 ≈ 1 cell across the line → higher magnification: cells look bigger, fewer fit across the field of view.';
     }
@@ -179,7 +225,7 @@
     if (q.pts != null) s.pts = q.pts; if (q.teacher) s.teacher = true; if (q.fig) s.fig = q.fig; if (q.ctx) s.ctx = q.ctx; if (q.data) s.data = q.data;
     switch (q.type) {
       case 'mcq': case 'multi': s.options = q.options.map(o => ({ t: o.t })); break;
-      case 'num': case 'scale': s.unit = q.unit; s.units = q.units; break;
+      case 'num': case 'scale': s.unit = q.unit; s.units = q.units; if (q.bare) s.bare = true; break;
       case 'label': s.anchors = Object.keys(q.spots); s.labels = shuffle(Object.values(q.spots), 'k' + q.id); break;
       case 'order': { let it = shuffle(q.items, 'k' + q.id); if (it.join() === q.items.join()) it = it.slice().reverse(); s.items = it; break; }
       case 'match': s.lefts = q.pairs.map(p => p.l); s.rights = shuffle(q.pairs.map(p => p.r), 'k' + q.id); break;
@@ -189,9 +235,10 @@
       case 'graph': s.x = q.x; s.y = q.y; if (q.table_rows) s.table_rows = q.table_rows; if (q.follow) s.follow = { prompt: q.follow.prompt, options: q.follow.options.map(o => ({ t: o.t })) }; break;
       case 'sim': s.sim = q.sim; break;
       case 'short': if (q.width) s.width = q.width; break;
+      case 'expr': if (q.lhs) s.lhs = q.lhs; if (q.vars) s.vars = q.vars; break;
       case 'cloze': s.text = q.text; s.n = q.blanks.length; break;
     }
     return s;
   }
-  return { grade, answerText, scoreTest, stripKeys, isTick, shuffle, rng, parseNum, near, typedOk, normText, TYPE_VI, DIFF, SCOPE_COUNT };
+  return { grade, answerText, scoreTest, stripKeys, isTick, shuffle, rng, parseNum, near, typedOk, normText, exprFn, exprSame, TYPE_VI, DIFF, SCOPE_COUNT };
 });

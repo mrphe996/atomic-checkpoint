@@ -65,7 +65,7 @@ const fullState = () => { const st = { video: {}, items: {}, rem: {} }; content.
 const right = q => { switch (q.type) { case 'mcq': return q.options.findIndex(o => o.ok); case 'multi': return q.options.map((o, i) => (o.ok ? i : -1)).filter(i => i >= 0);
   case 'num': case 'scale': return { v: String(q.answer), u: q.unit }; case 'label': return { ...q.spots }; case 'order': return q.items.slice(); case 'match': return Object.fromEntries(q.pairs.map(p => [p.l, p.r]));
   case 'explain': return q.model; case 'grid': return q.rows.map(r => r.a.slice()); case 'table': { const o = {}; q.rows.forEach((row, ri) => row.forEach((c, ci) => { if (c && typeof c === 'object') (o[ri] = o[ri] || {})[ci] = String(c.ans); })); return o; }
-  case 'short': return G.answerText(q); case 'cloze': return q.blanks.map(b => b.find(a => !(a[0] === '/' && a.lastIndexOf('/') > 0)) || '');
+  case 'short': return G.answerText(q); case 'expr': return q.expr; case 'cloze': return q.blanks.map(b => b.find(a => !(a[0] === '/' && a.lastIndexOf('/') > 0)) || '');
   case 'graph': return { pts: (q.plot || q.pts).map(p => p.slice()), f: q.follow ? q.follow.options.findIndex(o => o.ok) : null }; } };
 
 test('submit-test: auth, ownership, subscription and unlock rules', async () => {

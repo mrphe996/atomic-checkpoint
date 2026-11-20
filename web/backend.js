@@ -87,7 +87,7 @@
       async submitTest({ learnerId, unit, form, answers, clientKey, meta }) { // same rules as api/submit-test.js
         const a = need(); const l = mine(learnerId);
         if ((CFG.billing || 'off') !== 'off' && !subActive(a)) throw err('subscription_required');
-        const stage = Number(unit.slice(5, 6)); if (stage !== (l.stage || 7) && !(((D.enrol || {})[learnerId]) || []).some(e => e.stage === stage)) throw err('not_enrolled');
+        const stage = Number(unit.match(/^stage(\d+)/)[1]); if (stage !== (l.stage || 7) && !(((D.enrol || {})[learnerId]) || []).some(e => e.stage === stage)) throw err('not_enrolled');
         const list = ((D.attempts[learnerId] = D.attempts[learnerId] || {})[unit] = D.attempts[learnerId][unit] || []);
         const keys = await (await fetch(`content/demo/${unit}.tests.json`)).json();
         const same = list.find(x => x.clientKey === clientKey);

@@ -78,7 +78,7 @@
         if (q.unit !== '×') {
           const sel = el('select', { 'aria-label': 'Unit' }, el('option', { value: '' }, '– unit –'), ...shuffle(q.units, seed + 'u').map(u => el('option', { value: u }, u)));
           sel.value = resp.u || ''; sel.onchange = () => { resp.u = sel.value; changed(); }; row.append(sel);
-        } else row.append(el('span', { class: 'unit' }, '× (no unit)'));
+        } else if (!q.bare) row.append(el('span', { class: 'unit' }, '× (no unit)'));
         W.append(row); break;
       }
       case 'label': {
@@ -128,6 +128,16 @@
         const inp = el('input', { type: 'text', class: 'shortin', 'aria-label': 'Your answer', autocomplete: 'off', spellcheck: 'false', placeholder: 'Type your answer', value: resp || '' });
         if (q.width) inp.style.maxWidth = q.width + 'ch';
         inp.oninput = () => { resp = inp.value; changed(); }; W.append(el('div', { class: 'shortrow' }, inp)); break;
+      }
+      case 'expr': {
+        const inp = el('input', { type: 'text', class: 'shortin mathin', 'aria-label': 'Your answer', autocomplete: 'off', spellcheck: 'false', placeholder: 'e.g. 3x^2 + 2x − 5', value: resp || '' });
+        const prev = el('span', { class: 'mathprev', 'aria-live': 'polite' });
+        const pretty = t => String(t || '').replace(/\^\(?(-?\d+)\)?/g, (m, d) => d.split('').map(c => '⁰¹²³⁴⁵⁶⁷⁸⁹'['0123456789'.indexOf(c)] || (c === '-' ? '⁻' : c)).join('')).replace(/\*/g, '×').replace(/sqrt/g, '√');
+        const show = () => { prev.textContent = inp.value.trim() ? 'You typed: ' + (q.lhs ? q.lhs + ' = ' : '') + pretty(inp.value) : ''; };
+        inp.oninput = () => { resp = inp.value; changed(); show(); }; show();
+        const keys = el('div', { class: 'mathkeys' }, ...['x', 'y', '^2', '(', ')', '/', '√', '−'].map(k => el('button', { type: 'button', class: 'mk2', onclick: () => { const ins = k === '−' ? '-' : k; const a = inp.selectionStart ?? inp.value.length; inp.value = inp.value.slice(0, a) + ins + inp.value.slice(inp.selectionEnd ?? a); inp.focus(); inp.setSelectionRange(a + ins.length, a + ins.length); resp = inp.value; changed(); show(); } }, k)));
+        W.append(el('div', { class: 'shortrow' }, q.lhs ? el('b', { class: 'lhs' }, q.lhs + ' =') : null, inp), prev, keys,
+          el('small', { class: 'muted' }, 'Type powers with ^ (x^2), multiply with * or by writing letters together (3xy), divide with /, and use brackets.')); break;
       }
       case 'cloze': {
         resp = Array.isArray(resp) ? resp : []; const p = el('p', { class: 'cloze' }); const n = q.blanks ? q.blanks.length : q.n;

@@ -2,7 +2,14 @@
    The learner's progress lives in the backend (Backend.saveProgress); marking happens on the server
    (Backend.submitTest) – this file only mirrors results for the screens. */
 (function () {
-  const STAGES = [7, 8, 9], STAGE_UNITS = 14;
+  const STAGES = [7, 8, 9, 19], STAGE_UNITS = 14;
+  // course keys: 7–9 = Science Stages 7–9; 19 = Mathematics Stage 9 (same machinery, its own units, tests and certificate)
+  const MATHS = g => g >= 10;
+  const stageNo = g => (MATHS(g) ? g - 10 : g);
+  const subjectOf = g => (MATHS(g) ? 'Mathematics' : 'Science');
+  const stageName = g => (MATHS(g) ? `Stage ${stageNo(g)} Mathematics` : `Stage ${g}`);
+  const stageLabel = (g = STAGE) => (MATHS(g) ? `Stage ${stageNo(g)} Mathematics` : `Stage ${g} Science`);
+  const unitCount = () => ((INDEX && INDEX.units && INDEX.units.length) || STAGE_UNITS);
   // the stage on screen (a learner can study every stage they are enrolled in)
   let STAGE = (() => { try { const g = Number(localStorage.getItem('atomic.stage')); return STAGES.includes(g) ? g : 7; } catch (e) { return 7; } })();
   const pad2 = n => String(n).padStart(2, '0');
@@ -80,7 +87,7 @@
     st.id = 'guest'; st.alias = 'Guest'; st.name = 'Guest'; st.test = st.test || { drafts: {}, attempts: [] }; st.test.attempts = [];
     S.profiles = { guest: st }; S.current = 'guest'; S.guest = true;
     try { localStorage.setItem(gkey(), JSON.stringify(strip(st))); } catch (e) { }
-    S.states = {}; try { for (const k of Object.keys(localStorage)) if (k.startsWith('atomic.guest.v1')) { const m = k.match(/\.u(\d+)$/), sg = k.match(/\.s(\d)\./); if ((sg ? +sg[1] : 7) !== STAGE) continue; S.states[unitId(m ? +m[1] : 3)] = JSON.parse(localStorage.getItem(k)); } } catch (e) { }
+    S.states = {}; try { for (const k of Object.keys(localStorage)) if (k.startsWith('atomic.guest.v1')) { const m = k.match(/\.u(\d+)$/), sg = k.match(/\.s(\d+)\./); if ((sg ? +sg[1] : 7) !== STAGE) continue; S.states[unitId(m ? +m[1] : 3)] = JSON.parse(localStorage.getItem(k)); } } catch (e) { }
     S.states[UNIT()] = strip(st); lastXp = xpNow();
     return st;
   }
@@ -172,7 +179,7 @@
     return { reason: `Finish section ${prev.id} first.`, ...firstMissingIn(st, prev) };
   }
   function firstMissingIn(st, s) {
-    if (!videoDone(st, s)) return { what: `Section ${s.id} video (${stopsLeft(st, s).length} pause question(s) left${vstate(st, s.id).completed ? '' : ', not watched to the end'})`, route: 'v-' + s.id.replace('.', '-') };
+    if (!videoDone(st, s)) return { what: s.lesson ? `Section ${s.id} lesson (${stopsLeft(st, s).length} check question(s) left${vstate(st, s.id).completed ? '' : ', not marked as finished'})` : `Section ${s.id} video (${stopsLeft(st, s).length} pause question(s) left${vstate(st, s.id).completed ? '' : ', not watched to the end'})`, route: 'v-' + s.id.replace('.', '-') };
     const q = reqLeft(st, s)[0]; if (!q) return null;
     const i = s.req.indexOf(q);
     return { what: `the “${QE.TYPE_VI[q.type]}” task (Core question ${i + 1}) in section ${s.id}`, route: 'ex-' + s.id.replace('.', '-'), idx: i, tab: 'req' };
@@ -180,7 +187,7 @@
   function missingForTest(st) {
     const out = []; if (unitOpen(UNIT())) return out;
     for (const s of secs()) {
-      if (!videoDone(st, s)) out.push({ what: `Section ${s.id} video – ${s.title}` + (stopsLeft(st, s).length ? ` (${stopsLeft(st, s).length} pause question(s) left)` : ' (not watched to the end)'), route: 'v-' + s.id.replace('.', '-') });
+      if (!videoDone(st, s)) out.push({ what: `Section ${s.id} ${s.lesson ? 'lesson' : 'video'} – ${s.title}` + (stopsLeft(st, s).length ? ` (${stopsLeft(st, s).length} ${s.lesson ? 'check' : 'pause'} question(s) left)` : (s.lesson ? ' (not marked as finished)' : ' (not watched to the end)')), route: 'v-' + s.id.replace('.', '-') });
       reqLeft(st, s).forEach(q => { const i = s.req.indexOf(q); out.push({ what: `Section ${s.id} · Core question ${i + 1}: ${QE.TYPE_VI[q.type]} – “${q.prompt.slice(0, 60)}${q.prompt.length > 60 ? '…' : ''}”`, route: 'ex-' + s.id.replace('.', '-'), idx: i, tab: 'req' }); });
     }
     return out;
@@ -254,8 +261,8 @@
     if (!list.length) return null;
     return { score: list.reduce((a, b) => a + b, 0) / list.length, units: list.length };
   }
-  const stageComplete = st => Object.keys(st.results || {}).filter(k => k.startsWith(`stage${STAGE}-unit`)).length >= STAGE_UNITS;
-  async function certificate(st) { if (S.guest) return null; if (st.cert) return st.cert; if (!stageComplete(st)) return null; await refreshFinal(); if (!finalPassed()) return null; st.cert = await Backend.issueCertificate(st.id, STAGE_UNITS, STAGE); return st.cert; }
+  const stageComplete = st => Object.keys(st.results || {}).filter(k => k.startsWith(`stage${STAGE}-unit`)).length >= unitCount();
+  async function certificate(st) { if (S.guest) return null; if (st.cert) return st.cert; if (!stageComplete(st)) return null; await refreshFinal(); if (!finalPassed()) return null; st.cert = await Backend.issueCertificate(st.id, unitCount(), STAGE); return st.cert; }
   function competitionRank(rows) {
     rows.sort((a, b) => b.score - a.score);
     let prev = null, rank = 0; rows.forEach((r, i) => { const k = Math.round(r.score * 100); if (k !== prev) { rank = i + 1; prev = k; } r.rank = rank; });
@@ -295,7 +302,7 @@
     for (const s of secs()) {
       const lock = secLock(st, s);
       if (lock) { if (lock.guest) return { label: `Sign up free to unlock topic ${s.id}`, route: 'signup' }; if (lock.paywall) return { label: 'Unlock the rest of Cambridge Stage 7', route: 'pricing' }; break; }
-      if (!videoDone(st, s)) return { label: `Watch the section ${s.id} video`, route: 'v-' + s.id.replace('.', '-') };
+      if (!videoDone(st, s)) return { label: s.lesson ? `Read the section ${s.id} lesson` : `Watch the section ${s.id} video`, route: 'v-' + s.id.replace('.', '-') };
       const q = reqLeft(st, s)[0]; if (q) return { label: `Core practice for section ${s.id}`, route: 'ex-' + s.id.replace('.', '-'), tab: 'req', idx: s.req.indexOf(q) };
     }
     const ts = testState(st);
@@ -334,7 +341,7 @@
   }
 
   window.Core = {
-    get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; }, get STAGE() { return STAGE; }, STAGES, switchStage,
+    get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; }, get STAGE() { return STAGE; }, STAGES, switchStage, MATHS, stageNo, subjectOf, stageLabel, stageName, unitCount, get IS_MATHS() { return MATHS(STAGE); },
     unitId, unitReady, switchUnit, loadIndex, peekUnit, cached, loadFinal, get FINAL() { return FINAL; },
     xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, startClock, refreshFinal, finalPassed, submitFinal, loadCp, refreshCp, submitCp, activity,
     boot, selectLearner, leaveLearner, refreshAccount, cur, persist, flush, canOpen,

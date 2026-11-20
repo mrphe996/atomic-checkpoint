@@ -63,6 +63,7 @@ function right(q: any): unknown {
     case 'grid': return q.rows.map((r: any) => r.a.slice());
     case 'table': { const o: Record<string, Record<string, string>> = {}; q.rows.forEach((row: any[], ri: number) => row.forEach((c: any, ci: number) => { if (c && typeof c === 'object') (o[ri] = o[ri] || {})[ci] = String(c.ans); })); return o; }
     case 'short': return G.answerText(q);
+    case 'expr': return q.expr;
     case 'cloze': return q.blanks.map((b: string[]) => b.find((a) => !(a[0] === '/' && a.lastIndexOf('/') > 0)) || '');
     case 'graph': return { pts: (q.plot || q.pts).map((p: number[]) => p.slice()), f: q.follow ? q.follow.options.findIndex((o: any) => o.ok) : null };
   }
