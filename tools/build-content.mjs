@@ -14,13 +14,15 @@ const require = createRequire(import.meta.url);
 const G = require('../shared/grade-core.js');
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'content/src');
+// the figure library, loaded the way the browser loads it, so every fig:{kind} in the content is checked
+const FIGLIB = (() => { const win = {}; try { for (const f of ['web/figures.js', 'web/figures2.js']) { const p = path.join(ROOT, f); if (fs.existsSync(p)) new Function('window', fs.readFileSync(p, 'utf8'))(win); } } catch (e) { console.error('figure library:', e.message); } return win.AtomicFig; })();
 const ANCHORS = { // label anchors each figure provides (keep in sync with web/figures.js)
   microscope: ['eyepiece', 'objective', 'stage', 'clips', 'diaphragm', 'light', 'coarse', 'fine', 'arm', 'base'],
   plantcell: ['wall', 'membrane', 'cytoplasm', 'nucleus', 'vacuole', 'chloroplast', 'mito'],
   animalcell: ['membrane', 'cytoplasm', 'nucleus', 'mito'], roothair: ['extension', 'nucleus', 'vacuole', 'wall'],
   neurone: ['body', 'fibre', 'endings', 'nucleus'], ciliated: ['mucus', 'cilia', 'nucleus'],
   palisade: ['wall', 'nucleus', 'chloroplast', 'vacuole'], plant: ['flower', 'leaf', 'stem', 'root'], body: ['brain', 'lungs', 'heart', 'stomach'] };
-const TYPES = ['mcq', 'multi', 'num', 'scale', 'label', 'order', 'match', 'explain', 'grid', 'table', 'graph', 'sim'];
+const TYPES = ['mcq', 'multi', 'num', 'scale', 'label', 'order', 'match', 'explain', 'grid', 'table', 'graph', 'sim', 'short', 'cloze'];
 
 export function validate(c) {
   const errs = [], warn = [];
@@ -47,7 +49,11 @@ export function validate(c) {
       case 'explain': if (!q.rubric || !q.model) errs.push(`${at}: explain needs a mark scheme and a model answer`); break;
       case 'grid': q.rows.forEach(r => { if (!r.a || !r.a.length) errs.push(`${at}: grid row without answer`); }); break;
       case 'table': if (!q.rows.some(r => r.some(c => c && typeof c === 'object'))) errs.push(`${at}: table has no blank`); break;
+      case 'short': if (!Array.isArray(q.accept) || !q.accept.length || !G.answerText(q)) errs.push(`${at}: short answer needs accepted answers (the first plain one is the model)`); break;
+      case 'cloze': { const n = (String(q.text || '').match(/\{\d+\}/g) || []).length; if (!n || !Array.isArray(q.blanks) || q.blanks.length !== n || q.blanks.some(b => !b.length)) errs.push(`${at}: cloze needs one accepted-answer list per {n} gap`); break; }
     }
+    if (q.fig && typeof q.fig === 'object' && FIGLIB) { const f = FIGLIB.F[q.fig.kind]; if (!f) errs.push(`${at}: unknown figure kind ${q.fig.kind}`); else { try { if (!FIGLIB.get(q.fig.kind, q.fig).svg) errs.push(`${at}: figure ${q.fig.kind} drew nothing`); } catch (e) { errs.push(`${at}: figure ${q.fig.kind} failed: ${e.message}`); } } }
+    if (q.data && !(Array.isArray(q.data.head) && Array.isArray(q.data.rows) && q.data.rows.every(r => r.length === q.data.head.length))) errs.push(`${at}: data table rows must match its headings`);
     if (q.twin) checkQ(q.twin, at + ' twin');
     if (q.follow) checkQ(q.follow, at + ' follow-up');
   };
@@ -66,7 +72,7 @@ export function validate(c) {
   for (const f of Object.keys(c.tests).filter(k => k.length === 1)) {
     const pts = c.tests[f].reduce((a, q) => a + q.pts, 0);
     if (pts !== 30) errs.push(`test ${f}: ${pts} marks (must be 30)`);
-    if (!c.tests[f].some(q => ['label', 'grid', 'table', 'graph', 'scale'].includes(q.type))) errs.push(`test ${f}: needs a diagram or data question`);
+    if (!c.tests[f].some(q => ['label', 'grid', 'table', 'graph', 'scale'].includes(q.type) || q.fig || q.data)) errs.push(`test ${f}: needs a diagram or data question`);
     c.tests[f].forEach(q => checkQ(q, `test ${f}`));
   }
   Object.entries(objs).forEach(([k, o]) => { if (!o.code) errs.push(`objective ${k}: curriculum code missing`); });

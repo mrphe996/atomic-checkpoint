@@ -1007,3 +1007,17 @@ body.exam-mode .top-in{flex:1}
 .cchead{display:flex;justify-content:space-between;align-items:center}
 .cclv{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font:800 18px Outfit,sans-serif;color:#fff;background:var(--sc)}
 .cccode{font:800 13px Outfit,sans-serif;color:var(--ink);background:var(--band);border:1px solid var(--line);border-radius:8px;padding:4px 10px}
+
+/* ---- multi-part questions: shared context, typed answers ---- */
+.qctx { background: #F5F8FD; border: 2px solid #C9D7EA; border-radius: 14px; padding: 14px 18px; margin: 4px 0 14px; }
+.qctx p { margin: 0 0 8px; line-height: 1.55; }
+.qctx .fig { margin: 8px auto; max-width: 560px; background: #fff; border-radius: 10px; }
+.qctx table.data { background: #fff; margin-top: 8px; }
+table.grid.data caption { caption-side: top; text-align: left; font-weight: 700; padding: 0 0 6px; color: #0B2545; }
+.shortrow { margin: 10px 0; }
+.shortin { width: 100%; max-width: 32ch; font: inherit; font-size: 18px; padding: 10px 14px; border: 2px solid #8FA7C6; border-radius: 10px; }
+.shortin:focus, .gap:focus { outline: 3px solid #F3BF69; border-color: #0149AF; }
+p.cloze { font-size: 18px; line-height: 2.4; }
+.gap { font: inherit; width: 11ch; padding: 4px 8px; margin: 0 4px; border: 0; border-bottom: 2px solid #0149AF; background: #FFF9EC; border-radius: 6px 6px 0 0; text-align: center; }
+.locked .shortin, .locked .gap { background: #F1F4F8; }
+@media print { .qctx { background: none; border: 1.5px solid #333; } }

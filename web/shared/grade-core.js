@@ -8,11 +8,29 @@
   const SCOPE_COUNT = { 4: 12, 10: 5, 40: 1.25 };
   function rng(seedStr) { let h = 2166136261; for (const ch of seedStr) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; }
   function shuffle(arr, seed) { const r = rng(seed), a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
-  const TYPE_VI = { mcq: 'Diagnostic multiple choice', multi: 'Select all that apply', num: 'Calculation', scale: 'Instrument reading', label: 'Label the diagram', order: 'Put in order', match: 'Matching', explain: 'Explain (mark scheme)', grid: 'Classification table', table: 'Data table', graph: 'Plot & read a graph', sim: 'Virtual experiment' };
+  const TYPE_VI = { mcq: 'Diagnostic multiple choice', multi: 'Select all that apply', num: 'Calculation', scale: 'Instrument reading', label: 'Label the diagram', order: 'Put in order', match: 'Matching', explain: 'Explain (mark scheme)', grid: 'Classification table', table: 'Data table', graph: 'Plot & read a graph', sim: 'Virtual experiment', short: 'Short answer (typed)', cloze: 'Complete the sentences (typed)' };
   const DIFF = { M: 'Medium', H: 'Hard', VH: 'Very hard' };
   const near = (a, b, tol) => Math.abs(a - b) <= Math.max(tol || 0, 1e-9 * Math.max(1, Math.abs(b)));
   const parseNum = s => { if (s == null) return null; const t = String(s).replace(/[×x,\s]/gi, m => m === ',' ? '.' : '').trim(); if (t === '') return null; const v = Number(t); return isFinite(v) ? v : null; };
   const LEN = { 'µm': 0.001, 'mm': 1, 'cm': 10 };
+
+  /* typed answers: case, spaces, punctuation and a leading "the/a/an" are ignored; a small spelling slip is accepted
+     (1 letter in words of 5+ letters, 2 in words of 9+). Accepted answers starting and ending with "/" are regular expressions. */
+  const normText = s => String(s == null ? '' : s).toLowerCase().replace(/[‘’`]/g, "'").replace(/[“”]/g, '"').replace(/₂/g, '2').replace(/₃/g, '3').replace(/₄/g, '4')
+    .replace(/[^a-z0-9+\-./'%° ]+/g, ' ').replace(/\s+/g, ' ').trim().replace(/^(the|a|an) /, '').replace(/[.]+$/, '');
+  function lev(a, b) { // edit distance; swapping two neighbouring letters counts as one slip
+    if (a === b) return 0; const m = a.length, n = b.length; if (!m || !n) return m || n; const d = Array.from({ length: m + 1 }, (_, i) => [i]);
+    for (let j = 1; j <= n; j++) d[0][j] = j;
+    for (let i = 1; i <= m; i++) for (let j = 1; j <= n; j++) { d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1); }
+    return d[m][n]; }
+  function typedOk(raw, accept) {
+    const t = normText(raw); if (!t) return false;
+    return (accept || []).some(a => { a = String(a);
+      if (a.length > 2 && a[0] === '/' && a.lastIndexOf('/') > 0) { const k = a.lastIndexOf('/'); try { return new RegExp(a.slice(1, k), a.slice(k + 1) || 'i').test(String(raw)); } catch (e) { return false; } }
+      const w = normText(a); if (t === w) return true; if (/\d/.test(w)) return false; const tol = w.length >= 9 ? 2 : w.length >= 5 ? 1 : 0; return tol > 0 && lev(t, w) <= tol; });
+  }
+  const plainOf = list => (list || []).find(a => !(String(a)[0] === '/' && String(a).lastIndexOf('/') > 0)) || '';
 
   /* ---------------- grading ---------------- */
   function grade(q, r) {
@@ -90,12 +108,23 @@
         if (!out.ok) out.fb.push(q.hint || 'Find the pattern between the columns in the complete rows, then apply it to the blank cells.'); break;
       }
       case 'graph': {
-        const want = new Set(q.pts.map(p => p.join(','))), got = new Set((r.pts || []).map(p => p.join(',')));
+        const want = new Set((q.plot || q.pts).map(p => p.join(','))), got = new Set((r.pts || []).map(p => p.join(',')));
         let good = 0, extra = 0; got.forEach(k => want.has(k) ? good++ : extra++);
         const plotFrac = Math.max(0, (good - extra) / want.size);
         let fOk = true; if (q.follow) { const o = q.follow.options[r.f]; fOk = !!(o && o.ok); if (o && !o.ok && o.fb) out.fb.push(o.fb); if (r.f == null) out.fb.push('Please answer the question about the trend shown by your graph.'); }
         out.frac = q.follow ? (plotFrac * 0.5 + (fOk ? 0.5 : 0)) : plotFrac; out.ok = plotFrac === 1 && fOk;
         if (plotFrac < 1) out.fb.push(`Correct points: ${good}/${want.size}${extra ? `, ${extra} extra point(s)` : ''}. For each row of the table: go along the x-axis to the value, then up to the y value.`); break;
+      }
+      case 'short': {
+        const txt = String(r || ''); if (!txt.trim()) { out.answered = false; out.fb.push('Type your answer in the box.'); break; }
+        out.ok = typedOk(txt, q.accept); out.frac = out.ok ? 1 : 0;
+        if (!out.ok) out.fb.push(q.hint || 'Not quite. Check the key word from the topic and its spelling.'); break;
+      }
+      case 'cloze': {
+        const a = Array.isArray(r) ? r : []; if (!a.some(x => String(x || '').trim())) { out.answered = false; out.fb.push('Type a word in each gap.'); break; }
+        const hits = q.blanks.map((b, i) => typedOk(a[i], b)); const good = hits.filter(Boolean).length;
+        out.hits = hits; out.frac = good / q.blanks.length; out.ok = good === q.blanks.length; out.detail = `${good}/${q.blanks.length} gaps correct`;
+        if (!out.ok) out.fb.push(q.hint || 'Re-read the whole sentence: which science word makes it true?'); break;
       }
       case 'sim': {
         const t = r.trials || []; const objs = new Set(t.map(x => x.obj));
@@ -122,7 +151,9 @@
       case 'explain': return q.model;
       case 'grid': return q.rows.map(r => `${r.l}: ${r.a.join(' / ')}`).join('; ');
       case 'table': return q.rows.map(r => r.map(c => c && typeof c === 'object' ? `[${c.ans}]` : c).join(' | ')).join(' ; ');
-      case 'graph': return 'Points: ' + q.pts.map(p => `(${p[0]}, ${p[1]})`).join(' ') + (q.follow ? ' — ' + q.follow.options.find(o => o.ok).t : '');
+      case 'graph': return 'Points: ' + (q.plot || q.pts).map(p => `(${p[0]}, ${p[1]})`).join(' ') + (q.follow ? ' — ' + q.follow.options.find(o => o.ok).t : '');
+      case 'short': return plainOf(q.accept);
+      case 'cloze': { let i = 0; return String(q.text).replace(/\{\d+\}/g, () => '[' + plainOf(q.blanks[i++]) + ']'); }
       case 'sim': return '×4 ≈ 12 cells, ×10 ≈ 5 cells, ×40 ≈ 1 cell across the line → higher magnification: cells look bigger, fewer fit across the field of view.';
     }
     return '';
@@ -145,7 +176,7 @@
   /* A copy of a question safe to show before submission: no keys, no feedback, no model answers. */
   function stripKeys(q) {
     const s = { id: q.id, type: q.type, prompt: q.prompt, diff: q.diff, obj: q.obj, skill: q.skill };
-    if (q.pts != null) s.pts = q.pts; if (q.teacher) s.teacher = true; if (q.fig) s.fig = q.fig;
+    if (q.pts != null) s.pts = q.pts; if (q.teacher) s.teacher = true; if (q.fig) s.fig = q.fig; if (q.ctx) s.ctx = q.ctx; if (q.data) s.data = q.data;
     switch (q.type) {
       case 'mcq': case 'multi': s.options = q.options.map(o => ({ t: o.t })); break;
       case 'num': case 'scale': s.unit = q.unit; s.units = q.units; break;
@@ -157,8 +188,10 @@
       case 'explain': break;
       case 'graph': s.x = q.x; s.y = q.y; if (q.table_rows) s.table_rows = q.table_rows; if (q.follow) s.follow = { prompt: q.follow.prompt, options: q.follow.options.map(o => ({ t: o.t })) }; break;
       case 'sim': s.sim = q.sim; break;
+      case 'short': if (q.width) s.width = q.width; break;
+      case 'cloze': s.text = q.text; s.n = q.blanks.length; break;
     }
     return s;
   }
-  return { grade, answerText, scoreTest, stripKeys, isTick, shuffle, rng, parseNum, near, TYPE_VI, DIFF, SCOPE_COUNT };
+  return { grade, answerText, scoreTest, stripKeys, isTick, shuffle, rng, parseNum, near, typedOk, normText, TYPE_VI, DIFF, SCOPE_COUNT };
 });

@@ -15,6 +15,7 @@
     "test:edge": "EDGE=1 node --test tests/api.test.mjs",
     "test:sql": "sh tests/sql/run.sh",
     "test:e2e": "python3 tests/e2e.py",
-    "dev": "node tools/write-config.mjs && node tools/dev-server.mjs"
+    "dev": "node tools/write-config.mjs && node tools/dev-server.mjs",
+    "test:keys": "node tools/check-keys.mjs"
   }
 }

@@ -17,125 +17,21 @@
   }
   function rng(seedStr) { let h = 2166136261; for (const ch of seedStr) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; }
   function shuffle(arr, seed) { const r = rng(seed), a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
-  const TYPE_VI = { mcq: 'Diagnostic multiple choice', multi: 'Select all that apply', num: 'Calculation', scale: 'Instrument reading', label: 'Label the diagram', order: 'Put in order', match: 'Matching', explain: 'Explain (mark scheme)', grid: 'Classification table', table: 'Data table', graph: 'Plot & read a graph', sim: 'Virtual experiment' };
+  const TYPE_VI = window.GradeCore.TYPE_VI;
   const DIFF = { M: 'Medium', H: 'Hard', VH: 'Very hard' };
   const near = (a, b, tol) => Math.abs(a - b) <= Math.max(tol || 0, 1e-9 * Math.max(1, Math.abs(b)));
   const parseNum = s => { if (s == null) return null; const t = String(s).replace(/[×x,\s]/gi, m => m === ',' ? '.' : '').trim(); if (t === '') return null; const v = Number(t); return isFinite(v) ? v : null; };
   const LEN = { 'µm': 0.001, 'mm': 1, 'cm': 10 };
 
-  /* ---------------- grading ---------------- */
-  function grade(q, r) {
-    const out = { ok: false, frac: 0, fb: [], answered: r != null };
-    if (r == null) { out.fb.push('You haven\'t answered yet.'); return out; }
-    switch (q.type) {
-      case 'mcq': {
-        const o = q.options[r]; out.ok = !!(o && o.ok); out.frac = out.ok ? 1 : 0; if (o && o.fb) out.fb.push(o.fb); break;
-      }
-      case 'multi': {
-        const sel = new Set(r), nOk = q.options.filter(o => o.ok).length; let good = 0, bad = 0;
-        q.options.forEach((o, i) => { if (sel.has(i)) { if (o.ok) good++; else { bad++; if (o.fb) out.fb.push('✗ “' + o.t + '” – ' + o.fb); } } });
-        out.ok = good === nOk && bad === 0; out.frac = Math.max(0, (good - bad) / nOk);
-        if (!out.ok && good < nOk) out.fb.push(`You have chosen ${good} of the ${nOk} correct statements. Re-read each one: is it true in EVERY case?`);
-        break;
-      }
-      case 'num': case 'scale': {
-        const v = parseNum(r.v), u = r.u || q.unit;
-        if (v == null) { out.fb.push('Please enter a number.'); out.answered = false; break; }
-        let vInQ = v, unitOk = u === q.unit;
-        if (!unitOk && LEN[u] && LEN[q.unit]) { vInQ = v * LEN[u] / LEN[q.unit]; }
-        if (near(vInQ, q.answer, q.tol)) {
-          if (unitOk || (LEN[u] && LEN[q.unit])) { out.ok = true; out.frac = 1; if (!unitOk) out.fb.push(`Correct (unit converted: ${v} ${u} = ${q.answer} ${q.unit}).`); }
-          else { out.frac = 0.5; out.unitErr = true; out.fb.push(q.unitFb || `The value is right but the unit is not. What unit is this quantity measured in?`); }
-          break;
-        }
-        const e = (q.errs || []).find(e => near(v, e.v, 1e-6) || near(vInQ, e.v, 1e-6));
-        if (e) { out.fb.push(e.fb); out.divErr = q.type === 'scale'; }
-        else if (q.type === 'scale') out.fb.push('Not quite. Step 1: find the two numbered marks nearest the liquid level. Step 2: count the small spaces between them. Step 3: how many mL is each space worth?');
-        else out.fb.push('Not quite. Write the formula first, substitute the numbers, then check the answer makes sense (should the image be bigger or smaller than the object?).');
-        if (!unitOk && !(LEN[u] && LEN[q.unit])) out.fb.push(q.unitFb || 'Check the unit as well.');
-        break;
-      }
-      case 'label': {
-        const keys = Object.keys(q.spots); let good = 0;
-        keys.forEach((k, i) => {
-          const want = q.spots[k], got = r[k];
-          if (got === want) { good++; return; }
-          const cf = q.confuse || {}; const key = Object.keys(cf).find(c => { const [a, b] = c.split('|'); return (a === want && b === got) || (a === got && b === want); });
-          out.fb.push(`Position ${i + 1}: ` + (got ? (key ? `you have mixed up “${got}” and “${want}”. ${cf[key]}` : `“${got}” is not in the right place. Where is this position on the diagram, and what job does that part do?`) : 'not labelled yet.'));
-        });
-        out.frac = good / keys.length; out.ok = good === keys.length; out.detail = `${good}/${keys.length} positions correct`; break;
-      }
-      case 'order': {
-        let good = 0; q.items.forEach((it, i) => { if (r[i] === it) good++; });
-        out.frac = good / q.items.length; out.ok = good === q.items.length;
-        if (!out.ok) out.fb.push(`${good}/${q.items.length} in the right place. Start with the SMALLEST item / the FIRST step, then ask: what is made from it next?`); break;
-      }
-      case 'match': {
-        let good = 0; q.pairs.forEach(p => { if (r[p.l] === p.r) good++; else if (r[p.l]) out.fb.push(`“${p.l}” is not matched correctly. What is its main job?`); });
-        out.frac = good / q.pairs.length; out.ok = good === q.pairs.length; out.detail = `${good}/${q.pairs.length} pairs correct`; break;
-      }
-      case 'explain': {
-        const txt = String(r || ''); const hits = q.rubric.map(p => p.kw.some(k => new RegExp(k, 'i').test(txt)));
-        const n = hits.filter(Boolean).length; out.hits = hits; out.frac = Math.min(1, n / q.need); out.ok = n >= q.need;
-        if (txt.trim().split(/\s+/).length < 6) { out.ok = false; out.frac = 0; out.fb.push('Your answer is too short – write full sentences using “because” or “so”.'); }
-        else if (!out.ok) out.fb.push(`You have ${n} of the ${q.need} points needed. Missing point: ` + q.rubric.filter((p, i) => !hits[i]).map(p => p.pt).slice(0, 1).join(' '));
-        break;
-      }
-      case 'grid': {
-        const tick = isTick(q); let good = 0, tot = 0;
-        q.rows.forEach((row, ri) => {
-          if (tick) row.a.forEach((a, ci) => { tot++; if ((r[ri] || [])[ci] === a) good++; });
-          else { tot++; if ((r[ri] || [])[0] === row.a[0]) good++; else if ((r[ri] || [])[0]) out.fb.push(`Row “${row.l}” is not right. Which feature decides the column it belongs in?`); }
-        });
-        out.frac = good / tot; out.ok = good === tot; out.detail = `${good}/${tot} cells correct`;
-        if (!out.ok && tick) out.fb.push(`${good}/${tot} cells correct. For each part, ask: does this cell need it, and what for?`); break;
-      }
-      case 'table': {
-        let good = 0, tot = 0;
-        q.rows.forEach((row, ri) => row.forEach((c, ci) => { if (c && typeof c === 'object') { tot++; const v = parseNum((r[ri] || {})[ci]); if (v != null && near(v, c.ans, c.tol || 1e-9)) good++; } }));
-        out.frac = good / tot; out.ok = good === tot; out.detail = `${good}/${tot} cells correct`;
-        if (!out.ok) out.fb.push(q.hint || 'Find the pattern between the columns in the complete rows, then apply it to the blank cells.'); break;
-      }
-      case 'graph': {
-        const want = new Set(q.pts.map(p => p.join(','))), got = new Set((r.pts || []).map(p => p.join(',')));
-        let good = 0, extra = 0; got.forEach(k => want.has(k) ? good++ : extra++);
-        const plotFrac = Math.max(0, (good - extra) / want.size);
-        let fOk = true; if (q.follow) { const o = q.follow.options[r.f]; fOk = !!(o && o.ok); if (o && !o.ok && o.fb) out.fb.push(o.fb); if (r.f == null) out.fb.push('Please answer the question about the trend shown by your graph.'); }
-        out.frac = q.follow ? (plotFrac * 0.5 + (fOk ? 0.5 : 0)) : plotFrac; out.ok = plotFrac === 1 && fOk;
-        if (plotFrac < 1) out.fb.push(`Correct points: ${good}/${want.size}${extra ? `, ${extra} extra point(s)` : ''}. For each row of the table: go along the x-axis to the value, then up to the y value.`); break;
-      }
-      case 'sim': {
-        const t = r.trials || []; const objs = new Set(t.map(x => x.obj));
-        const countsOk = t.length >= 2 && t.every(x => { const exp = Fig.F.SCOPE_COUNT[x.obj]; const v = parseNum(x.count); return v != null && Math.abs(v - exp) <= Math.max(1, exp * 0.2); });
-        const conclOk = r.concl === 'fewer';
-        out.ok = objs.size >= 2 && countsOk && conclOk && !!r.pred; out.frac = out.ok ? 1 : (objs.size >= 2 ? 0.3 : 0) + (countsOk ? 0.3 : 0) + (conclOk ? 0.4 : 0);
-        if (objs.size < 2) out.fb.push('You need at least 2 trials with 2 DIFFERENT objective lenses to compare.');
-        if (t.length >= 2 && !countsOk) out.fb.push('Count again: count the cells sitting on the red line, from the left edge to the right edge of the field of view.');
-        if (r.concl && !conclOk) out.fb.push('Compare your results table: when the magnification goes UP, does the number of cells on the red line go up or down?');
-        break;
-      }
-    }
-    return out;
-  }
-  const isTick = q => q.mode ? q.mode === 'tick' : q.rows.every(r => r.a && r.a.length === q.cols.length && r.a.every(a => a === '✓' || a === '✗'));
-  function answerText(q) {
-    switch (q.type) {
-      case 'mcq': return q.options.find(o => o.ok).t;
-      case 'multi': return q.options.filter(o => o.ok).map(o => o.t).join(' • ');
-      case 'num': case 'scale': return `${q.answer} ${q.unit}`;
-      case 'label': return Object.values(q.spots).map((v, i) => `${i + 1} = ${v}`).join('; ');
-      case 'order': return q.items.join(' → ');
-      case 'match': return q.pairs.map(p => `${p.l} → ${p.r}`).join('; ');
-      case 'explain': return q.model;
-      case 'grid': return q.rows.map(r => `${r.l}: ${r.a.join(' / ')}`).join('; ');
-      case 'table': return q.rows.map(r => r.map(c => c && typeof c === 'object' ? `[${c.ans}]` : c).join(' | ')).join(' ; ');
-      case 'graph': return 'Points: ' + q.pts.map(p => `(${p[0]}, ${p[1]})`).join(' ') + (q.follow ? ' — ' + q.follow.options.find(o => o.ok).t : '');
-      case 'sim': return '×4 ≈ 12 cells, ×10 ≈ 5 cells, ×40 ≈ 1 cell across the line → higher magnification: cells look bigger, fewer fit across the field of view.';
-    }
-    return '';
-  }
+  /* ---------------- grading: the one shared marker (shared/grade-core.js), same as the server ---------------- */
+  const GC = window.GradeCore; const grade = GC.grade, answerText = GC.answerText, isTick = GC.isTick;
 
   /* ---------------- renderers ---------------- */
+  function dataTable(d) {
+    const t = el('table', { class: 'grid data' }); if (d.caption) t.append(el('caption', {}, d.caption));
+    t.append(el('tr', {}, ...d.head.map(h => el('th', {}, h)))); d.rows.forEach(r => t.append(el('tr', {}, ...r.map(c => el('td', {}, String(c))))));
+    return el('div', { class: 'tablewrap' }, t);
+  }
   function figureBox(name, opts, extra) {
     const f = Fig.get(name, opts); const box = el('div', { class: 'fig' }); box.innerHTML = f.svg; if (extra) box.append(extra); return { box, f };
   }
@@ -144,7 +40,13 @@
     const changed = () => { ctx.onChange && ctx.onChange(resp); };
     const api = { get: () => resp, lock() { host.classList.add('locked'); host.querySelectorAll('input,select,textarea,button.opt,button.chip,button.mv,button.cell').forEach(x => x.disabled = true); } };
     const W = el('div', { class: 'qbody' }); host.append(W);
-    if (q.fig && typeof q.fig === 'object' && q.type !== 'scale') { W.append(figureBox(q.fig.kind, q.fig).box); }
+    // shared context of a multi-part question (investigation text, diagram, results table) – shown above the question
+    if (q.ctx || q.data) {
+      const cx = el('div', { class: 'qctx' }); if (q.ctx) String(q.ctx).split('\n').forEach(t => cx.append(el('p', {}, t)));
+      if (q.fig && typeof q.fig === 'object' && q.type !== 'scale') cx.append(figureBox(q.fig.kind, q.fig).box);
+      if (q.data) cx.append(dataTable(q.data));
+      const h = host.querySelector('.qp') || (host.parentNode && host.parentNode.querySelector(':scope > .qp')); if (h) h.before(cx); else W.append(cx);
+    } else if (q.fig && typeof q.fig === 'object' && q.type !== 'scale') { W.append(figureBox(q.fig.kind, q.fig).box); }
     switch (q.type) {
       case 'mcq': case 'multi': {
         const order = shuffle(q.options.map((_, i) => i), seed); const multi = q.type === 'multi';
@@ -221,6 +123,19 @@
         const tb = el('div', { class: 'match' });
         q.pairs.forEach(p => { const s = el('select', { 'aria-label': p.l }, el('option', { value: '' }, '— choose —'), ...rights.map(r => el('option', { value: r }, r))); s.value = resp[p.l] || ''; s.onchange = () => { resp[p.l] = s.value; changed(); }; tb.append(el('div', { class: 'mrow' }, el('b', {}, p.l), s)); });
         W.append(tb); break;
+      }
+      case 'short': {
+        const inp = el('input', { type: 'text', class: 'shortin', 'aria-label': 'Your answer', autocomplete: 'off', spellcheck: 'false', placeholder: 'Type your answer', value: resp || '' });
+        if (q.width) inp.style.maxWidth = q.width + 'ch';
+        inp.oninput = () => { resp = inp.value; changed(); }; W.append(el('div', { class: 'shortrow' }, inp)); break;
+      }
+      case 'cloze': {
+        resp = Array.isArray(resp) ? resp : []; const p = el('p', { class: 'cloze' }); const n = q.blanks ? q.blanks.length : q.n;
+        String(q.text).split(/(\{\d+\})/).forEach(part => { const m = part.match(/^\{(\d+)\}$/);
+          if (!m) { if (part) p.append(part); return; }
+          const i = +m[1]; const inp = el('input', { type: 'text', class: 'gap', 'aria-label': 'Gap ' + (i + 1), autocomplete: 'off', spellcheck: 'false', value: resp[i] || '' });
+          inp.oninput = () => { resp[i] = inp.value; for (let k = 0; k < n; k++) if (resp[k] == null) resp[k] = ''; changed(); }; p.append(inp); });
+        W.append(p); break;
       }
       case 'explain': {
         const ta = el('textarea', { rows: 5, 'aria-label': 'Your answer', placeholder: 'Write your answer in English (full sentences, use because / so).' }); ta.value = resp || '';
@@ -357,5 +272,5 @@
       el('p', {}, el('b', {}, 'Model answer: '), q.model));
   }
 
-  window.QE = { el, esc, grade, renderBody, practice, answerText, TYPE_VI, DIFF, shuffle, isTick, parseNum };
+  window.QE = { el, esc, grade, renderBody, practice, answerText, TYPE_VI, DIFF, shuffle, isTick, parseNum, dataTable };
 })();

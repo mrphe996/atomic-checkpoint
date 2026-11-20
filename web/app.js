@@ -574,8 +574,13 @@
     const box = el('div', { class: 'pq' }, el('p', {}, el('b', {}, n + '. '), q.prompt.replace(/^\* Advanced\.\s*/, '* ').replace(/ Choose a label, then tap.*$/, '').replace(/\(tap the grid;.*?\)/, ''), ' ', el('i', { class: 'pts' }, `[${q.obj}]`)));
     const figHtml = (name, o) => { const d = el('div', { class: 'pfig' }); d.innerHTML = AtomicFig.get(name, o).svg; return d; };
     const lines = k => el('div', { class: 'lines' }, ...Array.from({ length: k }, () => el('div', { class: 'ln' })));
+    if (q.ctx || q.data) { const cx = el('div', { class: 'qctx' }); if (q.ctx) String(q.ctx).split('\n').forEach(t => cx.append(el('p', {}, t)));
+      if (q.fig && q.fig.kind && q.type !== 'scale') cx.append(figHtml(q.fig.kind, q.fig)); if (q.data) cx.append(QE.dataTable(q.data)); box.prepend(cx); }
+    else if (q.fig && q.fig.kind && !['mcq', 'multi', 'scale', 'label'].includes(q.type)) box.append(figHtml(q.fig.kind, q.fig));
     switch (q.type) {
-      case 'mcq': case 'multi': if (q.fig && q.fig.kind) box.append(figHtml(q.fig.kind, q.fig)); box.append(el('ol', { class: 'abc' }, ...q.options.map(o => el('li', {}, '☐ ' + o.t)))); break;
+      case 'short': box.append(el('p', {}, 'Answer: ________________________________')); break;
+      case 'cloze': box.append(el('p', { class: 'cloze' }, String(q.text).replace(/\{\d+\}/g, ' ______________ '))); break;
+      case 'mcq': case 'multi': if (q.fig && q.fig.kind && !q.ctx && !q.data) box.append(figHtml(q.fig.kind, q.fig)); box.append(el('ol', { class: 'abc' }, ...q.options.map(o => el('li', {}, '☐ ' + o.t)))); break;
       case 'label': { const f = AtomicFig.get(q.fig); const d = el('div', { class: 'pfig' }); d.innerHTML = f.svg; const svg = d.querySelector('svg'); Object.keys(q.spots).forEach((k, i) => { const [x, y] = f.a[k]; svg.insertAdjacentHTML('beforeend', `<circle cx="${x}" cy="${y}" r="11" fill="#fff" stroke="#0B2545" stroke-width="2"/><text x="${x}" y="${y + 5}" text-anchor="middle" font-size="13" font-weight="700">${i + 1}</text>`); });
         box.append(d, el('p', {}, 'Labels: ' + QE.shuffle(Object.values(q.spots), 'p' + q.id).join(' · ')), el('div', { class: 'cols2' }, ...Object.keys(q.spots).map((k, i) => el('div', {}, `${i + 1}. ____________________`)))); break; }
       case 'scale': box.append(figHtml(q.fig.kind, q.fig), el('p', {}, 'Reading: __________  Unit: ______')); break;
@@ -1039,7 +1044,7 @@
     const running = !!draft.deadline;
     if (!UI.testOn) {
       m.append(bar(where), examIntro({ title: `Unit Test ${Core.UNO} · Paper ${form}${ts.retake ? ' (equivalent paper)' : ''}`, n: qs.length, max: 30, minutes: TestRules.UNIT_MINUTES, passTxt: '> 70%', resume: running,
-        extra: [`Pass to complete Unit ${Core.UNO} and earn +100 XP. Written answers are marked by an Atomic marker.`],
+        extra: [`Pass to complete Unit ${Core.UNO} and earn +100 XP. Every answer – chosen or typed – is marked automatically the moment you hand the paper in.`],
         start: async ev => { ev.currentTarget.disabled = true; try { const c = await Core.startClock(Core.UNIT, form); draft.deadline = c.deadline; Core.persist(); UI.testOn = true; render(); } catch (x) { ev.currentTarget.disabled = false; modal('Could not open the paper', errText(x), [{ t: 'OK', cls: 'primary' }]); } } }));
       return;
     }
@@ -1094,7 +1099,7 @@
     const sci = el('section', { class: 'card cpsubj' }, el('div', { class: 'cphead' }, el('span', { class: 'cpsubjtag sci' }, 'SCIENCE'), el('div', {}, el('h2', { style: 'margin:0' }, 'Science · syllabus 0893'), el('p', { class: 'muted', style: 'margin:0' }, `Paper 1 (0893/01 format) and Paper 2 (0893/02 format) · ${P.minutes} minutes · ${P.max} marks each`))));
     Object.entries(sets).forEach(([set, ks]) => {
       sci.append(el('div', { class: 'cpset' }, el('b', { class: 'lex' }, 'Set ' + set), ...ks.map(k => { const t = cpTitle(P, k); const a = (Core.S.cpAttempts || []).find(x => x.form === k); const d = fdLoad('cp' + k);
-        return el('div', { class: 'cprow' }, el('span', { class: 'cpcode' }, t.code), el('span', {}, el('b', {}, `Science · Paper ${t.paper}`), el('br'), el('small', { class: 'muted' }, `Atomic paper · Set ${set} · ${P.minutes} min · ${P.max} marks`)),
+        return el('div', { class: 'cprow' }, el('span', { class: 'cpcode' }, t.code), el('span', {}, el('b', {}, `Science · Paper ${t.paper}`), el('br'), el('small', { class: 'muted' }, `Atomic paper · Set ${set}${((P.meta || {})[k] || {}).level === 'harder' ? ' · harder, investigation-based' : ''} · ${P.minutes} min · ${P.max} marks`)),
           a ? el('span', { class: 'status ' + (a.status === 'pending' ? 'cur' : 'done') }, a.status === 'pending' ? '⏳ Awaiting marking' : `${+a.score.toFixed(1)}/${P.max} · ${a.pct.toFixed(0)}%`) : d && d.deadline ? el('span', { class: 'status cur' }, 'In progress') : el('span', { class: 'status todo' }, 'Not taken'),
           a ? el('a', { class: 'btn small', href: '#cpr-' + k }, 'Results') : el('a', { class: 'btn small primary', href: '#cpx-' + k, id: 'cpOpen-' + k }, d && d.deadline ? 'Continue' : 'Enter', el('span', { class: 'arr' }, ' →'))); })));
     });
@@ -1113,7 +1118,7 @@
     if (!UI.testOn || UI.examKey !== 'C' + k) {
       UI.testOn = false;
       m.append(examIntro({ title, n: qs.length, max: P.max, minutes: P.minutes, passTxt: 'Score', resume: !!draft.deadline,
-        extra: ['An Atomic practice paper in the format of the Cambridge Lower Secondary Checkpoint Science test. One attempt per paper.', 'Written answers are marked by an Atomic marker; your results show your marks for each part of science.'],
+        extra: ['An Atomic practice paper in the format of the Cambridge Lower Secondary Checkpoint Science test. One attempt per paper.', 'Every answer, chosen or typed, is marked automatically; your results show your marks for each part of science.'],
         start: async ev => { ev.currentTarget.disabled = true; try { const c = await Core.startClock(`stage${Core.STAGE}-cp`, k); draft.deadline = c.deadline; save(); UI.testOn = true; UI.examKey = 'C' + k; UI.testIdx = 0; render(); } catch (x) { ev.currentTarget.disabled = false; modal('Could not open the paper', errText(x), [{ t: 'OK', cls: 'primary' }]); } } }));
       return;
     }
@@ -1699,7 +1704,7 @@
     ['Accounts', 'One account per learner. Keep your password private. If you are under the age of digital consent where you live, ask a parent or guardian before you sign up.'],
     ['Plans, trials and refunds', 'Plans renew automatically until cancelled. A free trial converts to a paid plan unless cancelled before it ends. Our order process is conducted by our online reseller Paddle.com, the Merchant of Record for all orders; Paddle provides customer service enquiries and handles returns.'],
     ['Fair use', 'Course content is for your own personal learning. Do not copy, share or resell videos, questions, tests or worksheets.'],
-    ['Tests and certificates', 'Unit Tests are marked automatically and, for written answers, by Atomic markers. A certificate confirms completion of the Atomic Stage 7 course; it is not a Cambridge qualification.'],
+    ['Tests and certificates', 'Unit Tests and exams are marked automatically, including typed answers. A certificate confirms completion of the Atomic Stage 7 course; it is not a Cambridge qualification.'],
     ['Changes and contact', 'We will tell you about important changes by email. Questions: ' + (((window.ATOMIC_CONFIG || {}).supportEmail) || 'support@example.com') + '.']]);
   const viewCookies = () => legal('Cookies and local storage', [
     ['What we use', 'Only what the site needs to work: keeping you signed in, and keeping a guest’s progress on this device until they sign up. We do not use advertising or third-party tracking cookies, so we do not show a cookie banner.'],
