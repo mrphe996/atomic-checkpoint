@@ -154,30 +154,25 @@ test('weekly report: cron secret required; only opted-in parents; dry run withou
   assert.equal(s, 200); assert.equal(b.dryRun, true); assert.equal(b.preview.length, 1); assert.match(b.preview[0].text, /Neutron/);
 });
 
-test('signup (test phase): creates a confirmed account, validates input, reports duplicates', async () => {
-  const seen = []; const f = async (url, init) => { seen.push({ url, body: JSON.parse(init.body) }); const dup = JSON.parse(init.body).email === 'taken@school.org';
-    return new Response(JSON.stringify(dup ? { msg: 'A user with this email address has already been registered' } : { id: 'u1' }), { status: dup ? 422 : 200 }); };
-  assert.equal((await signup.handle({ method: 'POST', headers: {}, body: { email: 'bad', password: 'password123' } }, f))[0], 400);
-  assert.equal((await signup.handle({ method: 'POST', headers: {}, body: { email: 'mum@school.org', password: 'short' } }, f))[0], 400);
-  const [s] = await signup.handle({ method: 'POST', headers: {}, body: { email: 'Mum@School.org', password: 'password123', displayName: 'Mum', country: 'VN' } }, f);
-  assert.equal(s, 201); assert.match(seen[0].url, /auth\/v1\/admin\/users$/); assert.equal(seen[0].body.email_confirm, true); assert.equal(seen[0].body.email, 'mum@school.org'); assert.equal(seen[0].body.user_metadata.country, 'VN');
-  assert.equal((await signup.handle({ method: 'POST', headers: {}, body: { email: 'taken@school.org', password: 'password123' } }, f))[1].error, 'email_taken');
-  process.env.DIRECT_SIGNUP = 'off'; try { assert.equal((await signup.handle({ method: 'POST', headers: {}, body: {} }, f))[0], 404); } finally { delete process.env.DIRECT_SIGNUP; }
-});
-
-test('signup (test phase): student account, consent age by country, pending vs not required', async () => {
-  const { T, f: fake } = fakeSupabase(); let n = 0;
-  const f = async (url, init) => { if (String(url).endsWith('/auth/v1/admin/users')) return new Response(JSON.stringify({ id: 'stud-' + (++n) }), { status: 200 }); return fake(url, init); };
-  const y = new Date().getFullYear();
-  const [s1, b1] = await signup.handle({ method: 'POST', headers: {}, body: { role: 'student', email: 'kid@school.org', password: 'password123', nickname: 'Bean', birthYear: y - 12, country: 'VN' } }, f);
-  assert.equal(s1, 201); assert.equal(b1.consent, 'pending'); assert.match(b1.inviteCode, /^[A-Z2-9]{8}$/);
-  assert.equal(T.learners.find(l => l.user_id === 'stud-1').consent_status, 'pending');
-  const [, b2] = await signup.handle({ method: 'POST', headers: {}, body: { role: 'student', email: 'teen@school.org', password: 'password123', nickname: 'Max', birthYear: y - 15, country: 'GB' } }, f);
-  assert.equal(b2.consent, 'not_required', 'UK: 13+ can consent'); assert.equal(b2.inviteCode, null);
-  const [, b3] = await signup.handle({ method: 'POST', headers: {}, body: { role: 'student', email: 'teen2@school.org', password: 'password123', nickname: 'Max', birthYear: y - 15, country: 'MY' } }, f);
-  assert.equal(b3.consent, 'pending', 'Malaysia: parent needed under 18');
-  assert.equal((await signup.handle({ method: 'POST', headers: {}, body: { role: 'student', email: 'x@school.org', password: 'password123', nickname: 'A', birthYear: y - 12, country: 'VN' } }, f))[1].error, 'bad_nickname');
-  assert.equal((await signup.handle({ method: 'POST', headers: {}, body: { role: 'student', email: 'x@school.org', password: 'password123', nickname: 'Abc', country: 'VN' } }, f))[1].error, 'bad_birth_year');
+test('signup: a student creates a confirmed account with school, grade and an optional parent email', async () => {
+  const { T, f: fake } = fakeSupabase(); const seen = [];
+  const f = async (url, init) => { if (String(url).endsWith('/auth/v1/admin/users')) { const b = JSON.parse(init.body); seen.push(b); const dup = b.email === 'taken@school.org';
+    return new Response(JSON.stringify(dup ? { msg: 'A user with this email address has already been registered' } : { id: 'stud-' + seen.length }), { status: dup ? 422 : 200 }); } return fake(url, init); };
+  const y = new Date().getFullYear(); const ok = { name: 'Bao  Tran', email: 'Bao@School.org', password: 'password123', birthYear: y - 12, grade: 'Year 7', country: 'VN', schoolId: 5, parentEmail: 'Mum@Family.org' };
+  const call = (b) => signup.handle({ method: 'POST', headers: {}, body: b }, f);
+  assert.equal((await call({ ...ok, email: 'bad' }))[1].error, 'bad_email');
+  assert.equal((await call({ ...ok, password: 'short' }))[1].error, 'weak_password');
+  assert.equal((await call({ ...ok, name: 'A' }))[1].error, 'bad_name');
+  assert.equal((await call({ ...ok, birthYear: undefined }))[1].error, 'bad_birth_year');
+  assert.equal((await call({ ...ok, parentEmail: 'nope' }))[1].error, 'bad_parent_email');
+  const [s1] = await call(ok); assert.equal(s1, 201);
+  assert.equal(seen.at(-1).email_confirm, true); assert.equal(seen.at(-1).user_metadata.role, 'student'); assert.equal(seen.at(-1).email, 'bao@school.org');
+  const l = T.learners.find(x => x.user_id === 'stud-' + seen.length);
+  assert.deepEqual([l.nickname, l.certificate_name, l.school_id, l.grade, l.parent_email, l.consent_status], ['Bao', 'Bao Tran', 5, 'Year 7', 'mum@family.org', 'not_required']);
+  const [s2] = await call({ ...ok, email: 'solo@school.org', parentEmail: '', schoolId: null, schoolOther: 'Home school' }); assert.equal(s2, 201);
+  const l2 = T.learners.find(x => x.user_id === 'stud-' + seen.length); assert.equal(l2.parent_email, null); assert.equal(l2.school_other, 'Home school');
+  assert.equal((await call({ ...ok, email: 'taken@school.org' }))[1].error, 'email_taken');
+  process.env.DIRECT_SIGNUP = 'off'; try { assert.equal((await call(ok))[0], 404); } finally { delete process.env.DIRECT_SIGNUP; }
 });
 
 test('submit-test: a student can submit for themself only after parental consent', async () => {

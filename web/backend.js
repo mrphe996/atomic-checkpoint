@@ -29,23 +29,32 @@
       if (at.status === 'final' && at.passed) {
         D.results[lid] = D.results[lid] || {};
         if (!D.results[lid][unit]) D.results[lid][unit] = { pct: at.pct, at: new Date().toISOString(), stage: 7 };
-        note(a, lid, 'test_passed', `${l.nickname} passed Unit 3`, `Score ${at.pct.toFixed(1)}%`);
-      } else if (at.status === 'final') note(a, lid, 'test_marked', `${l.nickname}'s test has been marked`, `Score ${at.pct.toFixed(1)}%`);
+        const first = !D.results[lid][unit + ':notified']; D.results[lid][unit + ':notified'] = true;
+        note(a, lid, 'test_passed', 'You passed Unit 3: Cells!', `Score ${at.pct.toFixed(1)}%`);
+        if (first && l.parent_email) (D.outbox = D.outbox || []).push({ to_email: l.parent_email, kind: 'unit_complete', subject: `${l.nickname} has finished Unit 3: Cells on Atomic`, created_at: new Date().toISOString(), status: 'queued' });
+      } else if (at.status === 'final') note(a, lid, 'test_marked', 'Your Unit Test has been marked', `Score ${at.pct.toFixed(1)}%`);
     }
     return {
       mode: 'demo', label: 'Preview – data stays in this browser',
       async me() { const a = acct(); return a ? { user: { id: a.id, email: a.email }, profile: a.profile } : null; },
-      async signUp({ email, password, displayName, country, marketing }) {
-        email = String(email || '').trim().toLowerCase();
-        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) throw err('bad_email');
-        if (String(password || '').length < 8) throw err('weak_password');
+      async signUp(form) { // same checks as api/signup.js
+        const email = String(form.email || '').trim().toLowerCase(), name = String(form.name || '').trim().replace(/\s+/g, ' ');
+        const EM = /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/, y = new Date().getFullYear(), by = Number(form.birthYear);
+        if (!EM.test(email)) throw err('bad_email');
+        if (String(form.password || '').length < 8) throw err('weak_password');
+        if (name.length < 2) throw err('bad_name');
+        if (!(by >= 2005 && by <= y - 5)) throw err('bad_birth_year');
+        const pe = String(form.parentEmail || '').trim().toLowerCase(); if (pe && !EM.test(pe)) throw err('bad_parent_email'); if (pe && pe === email) throw err('parent_email_same');
         if (D.accounts[email]) throw err('email_taken');
-        const id = uuid();
-        D.accounts[email] = { id, email, pw: await sha(password), profile: { id, role: 'parent', display_name: displayName || '', country: country || 'GB', weekly_report: false, marketing_opt_in: !!marketing, product_analytics: false, created_at: new Date().toISOString() },
-          consents: [{ kind: 'terms', version: LEGAL, given: true, at: new Date().toISOString() }, { kind: 'privacy', version: LEGAL, given: true, at: new Date().toISOString() }].concat(marketing ? [{ kind: 'marketing', version: LEGAL, given: true, at: new Date().toISOString() }] : []),
-          learners: [], subscription: null, notifications: [], reports: [] };
+        const id = uuid(), now = new Date().toISOString();
+        D.accounts[email] = { id, email, pw: await sha(form.password), profile: { id, role: 'student', display_name: name, country: form.country || 'XX', weekly_report: false, marketing_opt_in: false, product_analytics: false, created_at: now },
+          consents: [{ kind: 'terms', version: LEGAL, given: true, at: now }, { kind: 'privacy', version: LEGAL, given: true, at: now }],
+          learners: [{ id: uuid(), user_id: id, parent_id: null, nickname: name.split(' ')[0].slice(0, 24), certificate_name: name, birth_year: by, grade: form.grade || null, country: form.country || 'XX',
+            school_id: form.schoolId || null, school_other: form.schoolId ? null : (form.schoolOther || null), parent_email: pe || null, consent_status: 'not_required', stage: 7, leaderboard_opt_in: false, created_at: now }],
+          subscription: null, notifications: [], reports: [] };
         D.session = email; save(); return this.me();
       },
+      async schools(country) { return (window.ATOMIC_SCHOOLS || []).filter(s => s.country === country); },
       async signIn({ email, password }) { email = String(email || '').trim().toLowerCase(); const a = D.accounts[email]; if (!a || a.pw !== await sha(password)) throw err('bad_credentials'); D.session = email; save(); return this.me(); },
       async signOut() { D.session = null; save(); },
       async resetPassword(email) { return { sent: true, demo: true, email }; },
@@ -60,7 +69,7 @@
         const l = { id: uuid(), parent_id: a.id, nickname, certificate_name: certificateName || null, birth_year: birthYear || null, stage: 7, leaderboard_opt_in: false, created_at: new Date().toISOString() };
         a.learners.push(l); a.consents.push({ kind: 'parental_consent', learner_id: l.id, version: LEGAL, given: true, at: new Date().toISOString() }); save(); return l;
       },
-      async updateLearner(id, patch) { const l = mine(id); for (const k of ['nickname', 'certificate_name', 'birth_year', 'leaderboard_opt_in']) if (k in patch) l[k] = patch[k];
+      async updateLearner(id, patch) { const l = mine(id); for (const k of ['nickname', 'certificate_name', 'birth_year', 'leaderboard_opt_in', 'parent_email', 'school_id', 'school_other', 'grade']) if (k in patch) l[k] = patch[k];
         if ('leaderboard_opt_in' in patch) need().consents.push({ kind: 'leaderboard', learner_id: id, version: LEGAL, given: !!patch.leaderboard_opt_in, at: new Date().toISOString() });
         save(); return l; },
       async removeLearner(id) { const a = need(); mine(id); a.learners = a.learners.filter(l => l.id !== id); delete D.progress[id]; delete D.attempts[id]; delete D.results[id]; delete D.certs[id]; D.events = D.events.filter(e => e.learner_id !== id); save(); },
@@ -114,7 +123,7 @@
         }
         return rows;
       },
-      async unitResults(lid) { mine(lid); return D.results[lid] || {}; },
+      async unitResults(lid) { mine(lid); return Object.fromEntries(Object.entries(D.results[lid] || {}).filter(([k]) => !k.includes(':'))); },
       async issueCertificate(lid, stageUnits) {
         const l = mine(lid); if (D.certs[lid]) return D.certs[lid];
         const have = Object.keys(D.results[lid] || {}).length; if (have < stageUnits) throw err('stage_incomplete', { have, need: stageUnits });
@@ -144,6 +153,7 @@
       /* tester tools (demo only) */
       demo: { setRole(r) { const a = need(); a.profile.role = r; save(); }, reset() { try { localStorage.removeItem(KEY); } catch (e) { } D = { accounts: {}, session: null, progress: {}, attempts: {}, results: {}, certs: {}, events: [] }; },
         simulateOtherUnits(lid, pct) { D.results[lid] = D.results[lid] || {}; for (let n = 1; n <= 14; n++) { const u = 'stage7-unit' + String(n).padStart(2, '0'); if (u !== 'stage7-unit03' && !D.results[lid][u]) D.results[lid][u] = { pct, at: new Date().toISOString(), stage: 7, simulated: true }; } save(); },
+        outbox() { return (D.outbox || []).slice(); },
         resetLearner(lid) { mine(lid); delete D.progress[lid]; delete D.attempts[lid]; delete D.results[lid]; delete D.certs[lid]; save(); },
         clearSimulated(lid) { for (const [u, r] of Object.entries(D.results[lid] || {})) if (r.simulated) delete D.results[lid][u]; save(); } }
     };
@@ -179,20 +189,13 @@
     return {
       mode: 'live', label: '',
       async me() { if (!S) return null; try { await token(); const p = await rest(`profiles?id=eq.${uid()}`); profileCache = p[0]; return { user: { id: uid(), email: S.user.email }, profile: p[0] }; } catch (e) { return null; } },
-      async signUp({ email, password, displayName, country, marketing }) {
-        if (CFG.directSignup) { // test phase: account created already confirmed by /api/signup, then a normal sign-in
-          const r = await fetch(CFG.signupUrl || `${CFG.apiBase || '/api'}/signup`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, password, displayName, country }) });
-          const j = await r.json().catch(() => ({})); if (!r.ok) throw err(j.error || 'signup_failed');
-          keep(sessionFrom(await auth('token?grant_type=password', { email, password })));
-        } else {
-          const j = await auth('signup', { email, password, data: { display_name: displayName, country } });
-          if (!j.access_token) return { needsConfirmation: true };
-          keep(sessionFrom(j));
-        }
-        await rest('consents', { method: 'POST', body: [{ parent_id: uid(), kind: 'terms', version: LEGAL }, { parent_id: uid(), kind: 'privacy', version: LEGAL }].concat(marketing ? [{ parent_id: uid(), kind: 'marketing', version: LEGAL }] : []) });
-        if (marketing) await rest(`profiles?id=eq.${uid()}`, { method: 'PATCH', body: { marketing_opt_in: true } });
+      async signUp(form) { // the sign-up function creates the confirmed login + the student's profile, then we sign in
+        const r = await fetch(CFG.signupUrl || `${CFG.apiBase || '/api'}/signup`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) });
+        const j = await r.json().catch(() => ({})); if (!r.ok) throw err(j.error || 'signup_failed');
+        keep(sessionFrom(await auth('token?grant_type=password', { email: form.email, password: form.password })));
         return this.me();
       },
+      async schools(country) { const r = await fetch(`${URL_}/rest/v1/schools?country=eq.${encodeURIComponent(country)}&select=id,name,kind,city&order=name.asc`, { headers: { apikey: ANON } }); return r.ok ? r.json() : []; },
       async signIn({ email, password }) { keep(sessionFrom(await auth('token?grant_type=password', { email, password }))); return this.me(); },
       async signOut() { try { await fetch(`${URL_}/auth/v1/logout`, { method: 'POST', headers: { apikey: ANON, Authorization: `Bearer ${S && S.access_token}` } }); } catch (e) { } keep(null); },
       async resetPassword(email) { await auth('recover', { email }); return { sent: true }; },
@@ -200,7 +203,7 @@
       async updateProfile(patch) { const r = await rest(`profiles?id=eq.${uid()}`, { method: 'PATCH', prefer: 'return=representation', body: patch });
         for (const [k, kind] of [['marketing_opt_in', 'marketing'], ['product_analytics', 'product_analytics']]) if (k in patch) await rest('consents', { method: 'POST', body: { parent_id: uid(), kind, version: LEGAL, given: !!patch[k] } });
         return r[0]; },
-      async learners() { return rest(`learners?parent_id=eq.${uid()}&order=created_at.asc`); },
+      async learners() { return rest(`learners?or=(user_id.eq.${uid()},parent_id.eq.${uid()})&order=created_at.asc`); },
       async addLearner({ nickname, birthYear, certificateName, consent }) { if (!consent) throw err('parental_consent');
         const l = (await rest('learners', { method: 'POST', prefer: 'return=representation', body: { parent_id: uid(), nickname, birth_year: birthYear || null, certificate_name: certificateName || null } }))[0];
         await rest('consents', { method: 'POST', body: { parent_id: uid(), learner_id: l.id, kind: 'parental_consent', version: LEGAL } }); return l; },

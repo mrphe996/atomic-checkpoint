@@ -6,8 +6,8 @@ with sync_playwright() as p:
     b = p.chromium.launch(executable_path=os.environ.get('CHROME', '/usr/bin/google-chrome'))
     pg = b.new_page(viewport={'width': 1200, 'height': 900}); errs = []; pg.on('pageerror', lambda e: errs.append(str(e)))
     pg.goto(BASE + '?reset=1'); pg.wait_for_timeout(600)
-    pg.evaluate("""(async()=>{ await Backend.signUp({email:'ws@example.com',password:'password123',displayName:'Worksheets',country:'GB'});
-      const l = await Backend.addLearner({nickname:'Worksheets',consent:true}); await Backend.checkout('monthly'); await Core.boot(Core.C); await Core.selectLearner(l.id); })()""")
+    pg.evaluate("""(async()=>{ await Backend.signUp({email:'ws@example.com',password:'password123',name:'Worksheets',birthYear:2014,grade:'Year 7 / Grade 6',country:'GB',schoolOther:'Atomic'});
+      await Core.boot(Core.C); })()"""); pg.wait_for_timeout(400)
     for s in ['3-1', '3-2', '3-3', '3-4']:
         pg.evaluate(f"location.hash='ws-{s}'"); pg.wait_for_timeout(800)
         pg.emulate_media(media='print'); n = pg.evaluate("document.querySelectorAll('.a4').length")

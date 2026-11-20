@@ -1,32 +1,37 @@
-// POST /api/signup { email, password, displayName, country }                        → parent account
-//      /api/signup { role:'student', email, password, nickname, birthYear, country, parentEmail? } → student account + learner profile
-// Test phase only (DIRECT_SIGNUP=on): creates an already-confirmed parent account, so no confirmation email is needed.
-// Turn off (DIRECT_SIGNUP=off) once a real email sender is set up; the app then uses Supabase's normal sign-up.
+// POST /api/signup  – a student creates their own account (test phase: no confirmation email needed)
+// { name, email, password, birthYear, grade, country, schoolId? | schoolOther?, parentEmail? }
+// Creates the login (already confirmed) and the student's learner profile. A parent's email is optional:
+// if given, the parent gets an email each time the student finishes a unit.
+// Turn off with DIRECT_SIGNUP=off once a real email sender is set up.
 import { send, readJson, env, db } from './_lib/supa.js';
 
 const COUNTRIES = ['GB', 'SG', 'MY', 'TH', 'VN', 'ID', 'PH', 'XX'];
-// Age below which a parent must consent, by country (UK GDPR/Children's code 13, SG PDPC 13, MY PDPA 18, TH PDPA 20, VN PDPL 16, ID PDP 18, PH DPA 18, otherwise 16)
-export const CONSENT_AGE = { GB: 13, SG: 13, MY: 18, TH: 20, VN: 16, ID: 18, PH: 18, XX: 16 };
-export const needsParent = (country, birthYear, now = new Date()) => (now.getFullYear() - birthYear - 1) < (CONSENT_AGE[country] || 16); // counts a child as the younger age if their birthday has not come yet
-const CODE_ABC = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
-const inviteCode = () => Array.from(crypto.getRandomValues(new Uint8Array(8)), b => CODE_ABC[b % CODE_ABC.length]).join('');
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
 export async function handle(req, f = fetch) {
   if (req.method !== 'POST') return [405, { error: 'method' }];
   if (env('DIRECT_SIGNUP', 'on') !== 'on') return [404, { error: 'not_found' }];
-  const body = (await readJson(req)) || {};
-  const { email, password, displayName, country } = body; const student = body.role === 'student';
-  const e = String(email || '').trim().toLowerCase();
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e) || e.length > 200) return [400, { error: 'bad_email' }];
+  const b = (await readJson(req)) || {};
+  const e = String(b.email || '').trim().toLowerCase();
+  if (!EMAIL.test(e) || e.length > 200) return [400, { error: 'bad_email' }];
+  const password = b.password;
   if (typeof password !== 'string' || password.length < 8 || password.length > 72) return [400, { error: 'weak_password' }];
-  const c = COUNTRIES.includes(country) ? country : 'XX';
-  const nick = String(body.nickname || '').trim(); const by = Number(body.birthYear); const thisYear = new Date().getFullYear();
-  if (student && (nick.length < 2 || nick.length > 24)) return [400, { error: 'bad_nickname' }];
-  if (student && !(by >= 2005 && by <= thisYear - 5)) return [400, { error: 'bad_birth_year' }];
-  const parentEmail = String(body.parentEmail || '').trim().toLowerCase().slice(0, 200) || null;
-  const name = student ? nick : String(displayName || '').trim().slice(0, 80);
+  const name = String(b.name || '').trim().replace(/\s+/g, ' ');
+  if (name.length < 2 || name.length > 80) return [400, { error: 'bad_name' }];
+  const thisYear = new Date().getFullYear(); const by = Number(b.birthYear);
+  if (!(by >= 2005 && by <= thisYear - 5)) return [400, { error: 'bad_birth_year' }];
+  const grade = String(b.grade || '').trim().slice(0, 40) || null;
+  const country = COUNTRIES.includes(b.country) ? b.country : 'XX';
+  const schoolId = Number.isInteger(Number(b.schoolId)) && Number(b.schoolId) > 0 ? Number(b.schoolId) : null;
+  const schoolOther = schoolId ? null : String(b.schoolOther || '').trim().slice(0, 120) || null;
+  const parentEmail = String(b.parentEmail || '').trim().toLowerCase();
+  if (parentEmail && (!EMAIL.test(parentEmail) || parentEmail.length > 200)) return [400, { error: 'bad_parent_email' }];
+  if (parentEmail && parentEmail === e) return [400, { error: 'parent_email_same' }];
+  const nickname = name.split(' ')[0].slice(0, 24).padEnd(2, '.');
+
   const key = env('SUPABASE_SERVICE_ROLE_KEY');
   const r = await f(`${env('SUPABASE_URL')}/auth/v1/admin/users`, { method: 'POST', headers: { apikey: key, Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: e, password, email_confirm: true, user_metadata: { display_name: name, country: c, role: student ? 'student' : 'parent' } }) });
+    body: JSON.stringify({ email: e, password, email_confirm: true, user_metadata: { display_name: name, country, role: 'student' } }) });
   const j = await r.json().catch(() => ({}));
   if (!r.ok) {
     const msg = String(j.msg || j.message || j.error_description || j.error || '');
@@ -34,12 +39,11 @@ export async function handle(req, f = fetch) {
     if (/password/i.test(msg)) return [400, { error: 'weak_password' }];
     return [502, { error: 'signup_failed' }];
   }
-  if (!student) return [201, { created: true, role: 'parent' }];
-  const pending = needsParent(c, by);
-  const row = { user_id: j.id, nickname: nick, birth_year: by, country: c, parent_email: parentEmail, consent_status: pending ? 'pending' : 'not_required', invite_code: pending ? inviteCode() : null };
-  try { await db('learners', { method: 'POST', body: row, prefer: 'return=minimal' }, f); }
-  catch (x) { row.invite_code = pending ? inviteCode() : null; await db('learners', { method: 'POST', body: row, prefer: 'return=minimal' }, f); } // invite code clash: try once more
-  return [201, { created: true, role: 'student', consent: row.consent_status, inviteCode: row.invite_code }];
+  await db('learners', { method: 'POST', prefer: 'return=minimal', body: {
+    user_id: j.id, nickname, certificate_name: name, birth_year: by, grade, country, school_id: schoolId, school_other: schoolOther,
+    parent_email: parentEmail || null, consent_status: 'not_required' } }, f);
+  await db('consents', { method: 'POST', prefer: 'return=minimal', body: [{ parent_id: j.id, kind: 'terms', version: 'signup' }, { parent_id: j.id, kind: 'privacy', version: 'signup' }] }, f);
+  return [201, { created: true }];
 }
 
 export default async function handler(req, res) {

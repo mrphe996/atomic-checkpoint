@@ -17,14 +17,38 @@
 
   /* ---------- session ---------- */
   async function boot(content) {
-    C = content; S.me = await Backend.me(); S.profiles = {}; S.current = null;
-    if (!S.me) return S;
+    C = content; S.me = await Backend.me(); S.profiles = {}; S.current = null; S.guest = false;
+    if (!S.me) { if (guestSaved()) startGuest(); return S; }   // a returning visitor carries on where they stopped
     S.learners = await Backend.learners();
     S.sub = await getSub().catch(() => ({ active: false, status: 'none' }));
+    const own = S.learners.find(l => l.user_id === S.me.user.id) || S.learners[0];
     let want = null; try { want = sessionStorage.getItem('atomic.learner'); } catch (e) { }
-    if (want && S.learners.some(l => l.id === want)) await selectLearner(want);
+    const pick = (want && S.learners.find(l => l.id === want)) || own;
+    if (pick) { await selectLearner(pick.id); await adoptGuest(); }
     return S;
   }
+
+  /* ---------- guest: try topic 3.1 without an account (progress kept in this browser only) ---------- */
+  const GKEY = 'atomic.guest.v1';
+  const guestSaved = () => { try { return !!localStorage.getItem(GKEY); } catch (e) { return false; } };
+  function startGuest() {
+    let saved = null; try { saved = JSON.parse(localStorage.getItem(GKEY)); } catch (e) { }
+    const st = Object.assign(fresh({ id: 'guest', nickname: 'Guest', created_at: new Date().toISOString() }), saved || {});
+    st.id = 'guest'; st.alias = 'Guest'; st.name = 'Guest'; st.test = st.test || { drafts: {}, attempts: [] }; st.test.attempts = [];
+    S.profiles = { guest: st }; S.current = 'guest'; S.guest = true; wallet(st); shop(st);
+    try { localStorage.setItem(GKEY, JSON.stringify(strip(st))); } catch (e) { }
+    return st;
+  }
+  // after sign-up / sign-in: bring the guest's work into the new account (only if the account has nothing yet)
+  async function adoptGuest() {
+    if (!guestSaved()) return false; const st = cur(); if (!st) return false;
+    let g = null; try { g = JSON.parse(localStorage.getItem(GKEY)); } catch (e) { }
+    const empty = !Object.keys(st.items || {}).length && !Object.values(st.video || {}).some(v => v && (v.completed || v.pos > 1 || Object.keys(v.stops || {}).length));
+    if (g && empty) { for (const k of ['video', 'items', 'stopsWrong', 'ws', 'days', 'wallet', 'shop', 'marks']) if (g[k]) st[k] = g[k]; dirty = true; flush(); }
+    try { localStorage.removeItem(GKEY); } catch (e) { }
+    return !!(g && empty);
+  }
+  const strip = st => { const c = {}; for (const k of Object.keys(st)) if (!META.includes(k)) c[k] = st[k]; c.test = { drafts: (st.test || {}).drafts || {} }; return c; };
   async function selectLearner(id) {
     const l = S.learners.find(x => x.id === id); if (!l) return null;
     const saved = await Backend.loadProgress(id, UNIT);
@@ -34,7 +58,7 @@
     st.test.attempts = await Backend.attempts(id, UNIT);
     st.results = await Backend.unitResults(id); st.rank = { u3: st.results[UNIT] ? st.results[UNIT].pct : null };
     st.cert = await Backend.certificate(id);
-    S.profiles = { [id]: st }; S.current = id;
+    S.profiles = { [id]: st }; S.current = id; wallet(st); shop(st);
     try { sessionStorage.setItem('atomic.learner', id); } catch (e) { }
     return st;
   }
@@ -45,19 +69,19 @@
   let saveTimer = null, dirty = false;
   function persist() {
     const st = cur(); if (!st) return;
-    st.ts = Date.now(); const d = new Date().toISOString().slice(0, 10); st.days = st.days || []; if (!st.days.includes(d)) st.days.push(d);
+    st.ts = Date.now(); const d = today(); st.days = st.days || []; if (!st.days.includes(d)) st.days.push(d);
+    tick(st);
     dirty = true; clearTimeout(saveTimer); saveTimer = setTimeout(flush, 800);
   }
   function flush() {
     const st = cur(); if (!st || !dirty) return; dirty = false;
-    const copy = {}; for (const k of Object.keys(st)) if (!META.includes(k)) copy[k] = st[k];
-    copy.test = { drafts: st.test.drafts }; // attempts live on the server
-    Backend.saveProgress(st.id, UNIT, copy).catch(() => { dirty = true; });
+    if (S.guest) { try { localStorage.setItem(GKEY, JSON.stringify(strip(st))); } catch (e) { } return; }
+    Backend.saveProgress(st.id, UNIT, strip(st)).catch(() => { dirty = true; }); // attempts live on the server
   }
   window.addEventListener('pagehide', flush);
 
   /* ---------- access ---------- */
-  const canOpen = secId => FREE_SECTIONS.includes(secId) || !!S.sub.active;
+  const canOpen = secId => FREE_SECTIONS.includes(secId) || (!S.guest && !!S.sub.active);
 
   /* ---------- progress rules ---------- */
   const secs = () => C.sections;
@@ -70,7 +94,8 @@
   const secDone = (st, s) => videoDone(st, s) && reqLeft(st, s).length === 0;
   const secIndex = sid => C.sections.findIndex(s => s.id === sid);
   function secLock(st, s) {
-    if (!canOpen(s.id)) return { reason: 'This topic is part of the full Stage 7 course.', what: 'a Stage 7 plan (7-day free trial)', route: 'pricing', paywall: true };
+    if (!canOpen(s.id)) return S.guest ? { reason: 'Guests can try topic 3.1. Create a free account to unlock every topic and save your progress.', what: 'a free account', route: 'signup', paywall: true, guest: true }
+      : { reason: 'This topic is part of the full Stage 7 course.', what: 'a Stage 7 plan (7-day free trial)', route: 'pricing', paywall: true };
     const i = secIndex(s.id); if (i <= 0) return null;
     const prev = C.sections[i - 1]; if (secDone(st, prev)) return null;
     return { reason: `Finish section ${prev.id} first.`, ...firstMissingIn(st, prev) };
@@ -99,6 +124,7 @@
   const remKey = (a, qid) => `rem${a.n}:${qid}`;
   const remLeft = (st, a) => (a.remed || []).filter(id => !((st.rem[remKey(a, id)] || {}).done));
   function testState(st) {
+    if (S.guest) return { state: 'guest' };
     if (!S.sub.active) return { state: 'paywall' };
     const miss = missingForTest(st); if (miss.length) return { state: 'locked', miss };
     const la = lastAttempt(st);
@@ -133,7 +159,7 @@
     return { score: list.reduce((a, b) => a + b, 0) / list.length, units: list.length };
   }
   const stageComplete = st => Object.keys(st.results || {}).length >= STAGE_UNITS;
-  async function certificate(st) { if (st.cert) return st.cert; if (!stageComplete(st)) return null; st.cert = await Backend.issueCertificate(st.id, STAGE_UNITS); return st.cert; }
+  async function certificate(st) { if (S.guest) return null; if (st.cert) return st.cert; if (!stageComplete(st)) return null; st.cert = await Backend.issueCertificate(st.id, STAGE_UNITS); return st.cert; }
   function competitionRank(rows) {
     rows.sort((a, b) => b.score - a.score);
     let prev = null, rank = 0; rows.forEach((r, i) => { const k = Math.round(r.score * 100); if (k !== prev) { rank = i + 1; prev = k; } r.rank = rank; });
@@ -151,22 +177,121 @@
     if (passed(st)) x += 100; x += (st.ws || []).length * 5;
     return x;
   }
+  /* ---------- bolts ⚡: earned only by doing the work, spent in the shop ----------
+     Earned bolts come from the same rules as before (a right answer first time is worth more than a
+     later one, so guessing does not pay). Each change is booked to the day it happened, which drives the
+     daily goal, the streak and the daily challenges. Bonuses (challenges, streak milestones) are stored
+     separately; spending is the price of the items the learner owns. */
+  const DAILY_GOAL = 20;
+  const pad = n => String(n).padStart(2, '0');
+  const dstr = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  const today = () => dstr(new Date());
+  const countFirstTry = st => Object.values(st.items || {}).filter(r => r && r.done && r.ok && (r.tries || 1) === 1).length;
+  const countVideos = st => C ? C.sections.filter(s => vstate(st, s.id).completed).length : 0;
+  function wallet(st) {
+    if (!st.wallet) {   // first time: what was already earned counts, and every earlier active day keeps the streak
+      st.wallet = { snap: { xp: xp(st), ft: countFirstTry(st), vid: countVideos(st) }, day: {}, bonus: 0, claims: {}, log: [] };
+      (st.days || []).forEach(d => { st.wallet.day[d] = { e: DAILY_GOAL, ft: 0, vid: 0, legacy: 1 }; });
+    }
+    return st.wallet;
+  }
+  const dayRec = (w, d) => (w.day[d] = w.day[d] || { e: 0, ft: 0, vid: 0 });
+  let onEarn = null;   // the screens subscribe to show "+10 ⚡"
+  function tick(st) {
+    const w = wallet(st), now = { xp: xp(st), ft: countFirstTry(st), vid: countVideos(st) }, r = dayRec(w, today());
+    const de = Math.max(0, now.xp - w.snap.xp);
+    r.e += de; r.ft += Math.max(0, now.ft - w.snap.ft); r.vid += Math.max(0, now.vid - w.snap.vid);
+    w.snap = now;
+    let bonus = 0;
+    const s = streak(st);
+    for (const [len, b] of STREAK_BONUS) if (s === len && !w.claims['streak' + len + '@' + today()]) { w.claims['streak' + len + '@' + today()] = 1; w.bonus += b; bonus += b; w.log.unshift({ d: today(), n: b, why: `${len}-day streak` }); }
+    w.log = w.log.slice(0, 30);
+    if ((de || bonus) && onEarn) onEarn(de + bonus, bonus ? 'streak' : 'work');
+    return de + bonus;
+  }
+  const STREAK_BONUS = [[3, 30], [7, 80], [14, 200], [30, 500]];
+  const spent = st => ((st.shop || {}).owned || []).reduce((t, id) => t + ((ITEMS.find(i => i.id === id) || {}).price || 0), 0);
+  const bolts = st => { const w = wallet(st); return xp(st) + w.bonus - spent(st); };
+  const earnedToday = st => (wallet(st).day[today()] || { e: 0 }).e;
   function streak(st) {
-    const days = new Set(st.days || []); let n = 0; const d = new Date();
-    if (!days.has(d.toISOString().slice(0, 10))) d.setDate(d.getDate() - 1);
-    while (days.has(d.toISOString().slice(0, 10))) { n++; d.setDate(d.getDate() - 1); }
+    const w = wallet(st); const met = d => (w.day[d] || { e: 0 }).e >= DAILY_GOAL;
+    const d = new Date(); let n = 0;
+    if (!met(dstr(d))) d.setDate(d.getDate() - 1);           // today does not break the streak until it is over
+    while (met(dstr(d))) { n++; d.setDate(d.getDate() - 1); }
     return n;
   }
+  function week(st) {   // last 7 days for the streak strip: [{d, label, met, today}]
+    const w = wallet(st), out = [], d = new Date(); d.setDate(d.getDate() - 6);
+    for (let i = 0; i < 7; i++) { const k = dstr(d); out.push({ d: k, label: 'SMTWTFS'[d.getDay()], met: (w.day[k] || { e: 0 }).e >= DAILY_GOAL, today: i === 6 }); d.setDate(d.getDate() + 1); }
+    return out;
+  }
+
+  /* daily challenges: three a day, each claimed once */
+  const CHALLENGES = [
+    { id: 'earn50', label: 'Earn 50 ⚡ today', goal: 50, reward: 30, val: r => r.e },
+    { id: 'first5', label: 'Get 5 questions right first time', goal: 5, reward: 20, val: r => r.ft },
+    { id: 'video1', label: 'Finish a lesson video', goal: 1, reward: 20, val: r => r.vid }
+  ];
+  function challenges(st) {
+    const w = wallet(st), r = w.day[today()] || { e: 0, ft: 0, vid: 0 };
+    return CHALLENGES.map(c => ({ id: c.id, label: c.label, goal: c.goal, reward: c.reward, value: Math.min(c.goal, c.val(r)), done: c.val(r) >= c.goal, claimed: !!w.claims[c.id + '@' + today()] }));
+  }
+  function claim(st, id) {
+    const c = challenges(st).find(x => x.id === id); if (!c || !c.done || c.claimed) return 0;
+    const w = wallet(st); w.claims[id + '@' + today()] = 1; w.bonus += c.reward; w.log.unshift({ d: today(), n: c.reward, why: c.label }); persist(); return c.reward;
+  }
+
+  /* shop: original Atomic items (emoji art), bought with bolts */
+  const ITEMS = [
+    { id: 'av-atom', kind: 'avatar', icon: '⚛️', name: 'Atom', price: 0 },
+    { id: 'av-fox', kind: 'avatar', icon: '🦊', name: 'Fox', price: 0 },
+    { id: 'av-panda', kind: 'avatar', icon: '🐼', name: 'Panda', price: 100 },
+    { id: 'av-owl', kind: 'avatar', icon: '🦉', name: 'Owl', price: 120 },
+    { id: 'av-tiger', kind: 'avatar', icon: '🐯', name: 'Tiger', price: 150 },
+    { id: 'av-octo', kind: 'avatar', icon: '🐙', name: 'Octopus', price: 200 },
+    { id: 'av-robot', kind: 'avatar', icon: '🤖', name: 'Robot', price: 250 },
+    { id: 'av-unicorn', kind: 'avatar', icon: '🦄', name: 'Unicorn', price: 300 },
+    { id: 'av-alien', kind: 'avatar', icon: '👽', name: 'Alien', price: 400 },
+    { id: 'ac-goggles', kind: 'accessory', icon: '🥽', name: 'Lab goggles', price: 80 },
+    { id: 'ac-shades', kind: 'accessory', icon: '🕶️', name: 'Sunglasses', price: 120 },
+    { id: 'ac-cap', kind: 'accessory', icon: '🎓', name: 'Graduation cap', price: 150 },
+    { id: 'ac-flask', kind: 'accessory', icon: '🧪', name: 'Test tube', price: 160 },
+    { id: 'ac-phones', kind: 'accessory', icon: '🎧', name: 'Headphones', price: 180 },
+    { id: 'ac-scope', kind: 'accessory', icon: '🔬', name: 'Microscope', price: 220 },
+    { id: 'ac-rocket', kind: 'accessory', icon: '🚀', name: 'Rocket', price: 350 },
+    { id: 'ac-crown', kind: 'accessory', icon: '👑', name: 'Crown', price: 500 },
+    { id: 'bg-sky', kind: 'background', icon: '🌤️', name: 'Clear sky', price: 0, css: 'linear-gradient(135deg,#DCEBFF,#F4F8FF)' },
+    { id: 'bg-leaf', kind: 'background', icon: '🌿', name: 'Leaf cell', price: 100, css: 'linear-gradient(135deg,#D9F5E3,#F1FBF4)' },
+    { id: 'bg-sunset', kind: 'background', icon: '🌅', name: 'Sunset', price: 150, css: 'linear-gradient(135deg,#FFE1C7,#FFF4E6)' },
+    { id: 'bg-ocean', kind: 'background', icon: '🌊', name: 'Deep ocean', price: 200, css: 'linear-gradient(135deg,#BFE6F2,#E3F6FB)' },
+    { id: 'bg-space', kind: 'background', icon: '🌌', name: 'Outer space', price: 300, css: 'linear-gradient(135deg,#2B2F6B,#5B4E9E)', dark: 1 },
+    { id: 'bg-lab', kind: 'background', icon: '⚗️', name: 'Science lab', price: 250, css: 'linear-gradient(135deg,#E8E2FF,#F6F3FF)' }
+  ];
+  const shop = st => { st.shop = st.shop || { owned: [], equip: { avatar: 'av-atom', accessory: null, background: 'bg-sky' } }; return st.shop; };
+  const owns = (st, id) => { const it = ITEMS.find(i => i.id === id); return !!it && (it.price === 0 || shop(st).owned.includes(id)); };
+  function buy(st, id) {
+    const it = ITEMS.find(i => i.id === id); if (!it) return { error: 'unknown' };
+    if (owns(st, id)) return { error: 'owned' };
+    if (bolts(st) < it.price) return { error: 'short', need: it.price - bolts(st) };
+    shop(st).owned.push(id); equip(st, id); return { ok: true };
+  }
+  function equip(st, id) {
+    const it = ITEMS.find(i => i.id === id); if (!it || !owns(st, id)) return false;
+    const e = shop(st).equip; e[it.kind] = e[it.kind] === id && it.kind === 'accessory' ? null : id; persist(); return true;
+  }
+  const look = st => { const e = shop(st).equip, g = id => ITEMS.find(i => i.id === id); return { avatar: g(e.avatar) || ITEMS[0], accessory: e.accessory ? g(e.accessory) : null, background: g(e.background) || g('bg-sky') }; };
+  const setOnEarn = fn => { onEarn = fn; };
 
   /* ---------- next activity ---------- */
   function nextActivity(st) {
     for (const s of secs()) {
       const lock = secLock(st, s);
-      if (lock) { if (lock.paywall) return { label: 'Unlock the rest of Stage 7', route: 'pricing' }; break; }
+      if (lock) { if (lock.guest) return { label: 'Sign up free to unlock topic 3.2', route: 'signup' }; if (lock.paywall) return { label: 'Unlock the rest of Stage 7', route: 'pricing' }; break; }
       if (!videoDone(st, s)) return { label: `Watch the section ${s.id} video`, route: 'v-' + s.id.replace('.', '-') };
       const q = reqLeft(st, s)[0]; if (q) return { label: `Core practice for section ${s.id}`, route: 'ex-' + s.id.replace('.', '-'), tab: 'req', idx: s.req.indexOf(q) };
     }
     const ts = testState(st);
+    if (ts.state === 'guest') return { label: 'Sign up free to take the Unit Test', route: 'signup' };
     if (ts.state === 'paywall') return { label: 'Unlock the Unit Test', route: 'pricing' };
     if (ts.state === 'ready') return { label: ts.retake ? `Retake the Unit Test (Paper ${ts.form})` : 'Take Unit Test 3', route: 'test' };
     if (ts.state === 'remediate') return { label: 'Do your review questions', route: 'remedial' };
@@ -205,6 +330,7 @@
     boot, selectLearner, leaveLearner, refreshAccount, cur, persist, flush, canOpen,
     sec, secs, vstate, stopDone, stopsLeft, videoDone, reqLeft, secDone, secLock, firstMissingIn, missingForTest,
     attempts, lastAttempt, passed, isPass, nextForm, remKey, remLeft, testState, submitTest, refreshAttempts, refreshResults,
-    unitStatus, rankScore, xp, streak, stageComplete, certificate, competitionRank, nextActivity, jpegPdf, saveFile
+    unitStatus, rankScore, xp, streak, stageComplete, startGuest, adoptGuest,
+    DAILY_GOAL, ITEMS, wallet, tick, bolts, earnedToday, week, challenges, claim, buy, equip, owns, look, shop, setOnEarn, today, certificate, competitionRank, nextActivity, jpegPdf, saveFile
   };
 })();

@@ -11,7 +11,7 @@ Self-study course for Cambridge Lower Secondary Science (Stage 7), sold to famil
 ```
 web/                  the site: app.js (screens), core.js (learning rules), backend.js (demo | live), content/ (public, keys stripped)
 shared/               marking + test rules used by the browser AND the server
-supabase/migrations/  schema, RLS, grants, students & parental consent          supabase/functions/  Edge Functions
+supabase/migrations/  schema, RLS, grants, student accounts, schools, email outbox supabase/functions/  Edge Functions
 api/                  the same server handlers as plain Node modules (tests, and a Vercel option)
 content/authoring/    Python sources of every question (test papers are in content/private/, not in git)
 tests/                api.test.mjs, sql/, e2e.py, e2e_beta.py               tools/  build + dev scripts
@@ -94,5 +94,12 @@ npm run test:sql     # schema + RLS on local Postgres  npm run test:e2e    # 61 
 
 * Unit Test: 30 marks, pass strictly above 70 %. Papers A/B alternate; review questions before a retake. Written answers are marked by staff.
 * Ranking score = mean of first-pass % across passed units, fixed by a database trigger. Leaderboard shows only opted-in learners.
-* Students may sign up themselves. Under their country's consent age (UK/SG 13, VN 16, MY/ID/PH 18, TH 20) the account stays
-  *pending* until a parent approves it through a link; until then nothing is stored on the server.
+* Accounts are **student only** (no parent area). Sign-up has 3 steps: name/email/password → year of birth + school year →
+  country → school (from the `schools` table, or typed) + optional parent email. Visitors can try topic 3.1 as a **guest**
+  (progress in localStorage, moved into the account at sign-up).
+* On a learner's first pass of a unit, `record_first_pass()` queues one row in `email_outbox` for the parent email (if given).
+  **Nothing is sent yet** – a mailer function + email provider (e.g. Resend with a verified domain) is still to do.
+* Bolts ⚡ (earned by work, right-first-time worth more), daily goal 20 ⚡, streak, 3 daily challenges and the shop are kept in
+  the learner's progress state (`web/core.js`). They are for motivation only and never affect ranking.
+* **Before selling:** add the parental-consent step each market requires for under-age learners (SG <13, VN <16, MY/ID/PH <18,
+  TH minors) and have the privacy notice reviewed; make the GitHub repo private.

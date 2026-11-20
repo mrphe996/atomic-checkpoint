@@ -43,17 +43,16 @@ def go(pg, r):
     pg.evaluate(f"(location.hash==='#{r}') ? AtomicApp.render() : (location.hash='{r}')"); pg.wait_for_timeout(500)
 def txt(pg): return pg.inner_text('body')
 VI = re.compile(r'[ăâđêôơưĂÂĐÊÔƠƯàáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩịòóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ]', re.I)
-def no_vi(pg): return not VI.search(txt(pg).replace('Lưu Quang Nghĩa', ''))
+def no_vi(pg): return not VI.search(txt(pg))
 
-def signup(pg, email, name='Mai Tran', country='SG'):
-    go(pg, 'signup'); pg.fill('#suName', name); pg.fill('#suEmail', email); pg.fill('#suPw', 'password123'); pg.select_option('#suCountry', country)
-    pg.check('#suAdult'); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_selector('#alNick')
-
-def add_child(pg, nick):
-    pg.fill('#alNick', nick); pg.check('#alConsent'); pg.click('#alBtn'); pg.wait_for_function("location.hash==='#v-3-1'"); pg.wait_for_timeout(300)
-
-def parent_gate(pg):
-    if pg.query_selector('#gatePw'): pg.fill('#gatePw', 'password123'); pg.click('#gateBtn'); pg.wait_for_timeout(500)
+def signup(pg, email, name='Mai Tran', country='SG', parent=None, school=True):
+    go(pg, 'signup'); pg.fill('#suName', name); pg.fill('#suEmail', email); pg.fill('#suPw', 'password123'); pg.click('#suNext1')
+    pg.wait_for_selector('#suYear'); pg.select_option('#suYear', index=4); pg.select_option('#suGrade', 'Year 7 / Grade 6'); pg.click('#suNext2')
+    pg.wait_for_selector('#suCountry'); pg.select_option('#suCountry', country); pg.wait_for_timeout(200)
+    if school and pg.query_selector('#suSchool optgroup'): pg.select_option('#suSchool', index=1)
+    else: pg.select_option('#suSchool', 'other'); pg.fill('#suSchoolOther', 'Home learner')
+    if parent: pg.fill('#suParent', parent)
+    pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home' && !!document.getElementById('resumeBtn')"); pg.wait_for_timeout(300)
 
 with sync_playwright() as p:
     b = p.chromium.launch(executable_path='/usr/bin/google-chrome')
@@ -62,37 +61,69 @@ with sync_playwright() as p:
     # ---------- 1. public pages ----------
     pg.goto(BASE); pg.wait_for_selector('#heroStart')
     t = txt(pg)
-    ok('Start free' in t and 'not affiliated with or endorsed by Cambridge' in t, '1a Landing page with disclaimer for logged-out visitors')
+    ok('Start learning now' in t and 'No sign-up needed' in t and 'not affiliated with or endorsed by Cambridge' in t, '1a Landing page: start without sign-up, with disclaimer')
     ok("Learner's Book" not in t and "LET'S MAP" not in t and not re.search(r'\bp\.\s?\d', t), '1b No textbook names or page numbers on the landing page')
+    ok('Compiled by' not in t and 'Written by the Atomic teaching team' in t, '1b2 Footer credits the Atomic teaching team only')
     pg.screenshot(path=f'{SHOTS}/01_landing.png')
     for r in ['pricing', 'help', 'privacy', 'terms', 'cookies', 'verify']:
         go(pg, r)
     go(pg, 'pricing'); t = txt(pg)
     ok('£9.99 / month' in t and 'VAT' in t and 'Paddle' in t, '1c Pricing shows plans, VAT/GST note and Paddle as reseller')
-    pg.screenshot(path=f'{SHOTS}/02_pricing.png', full_page=True)
     go(pg, 'privacy'); t = txt(pg)
-    ok('Draft for legal review' in t and "Children’s code" in t and 'Vietnam' in t and 'Malaysia' in t and 'Thailand' in t and 'Indonesia' in t and 'Philippines' in t, '1d Privacy notice draft covers UK Children’s code, Singapore and Vietnam')
-    go(pg, 'parent'); ok(h(pg) == '#signin', '1e Parent area redirects to sign-in when logged out')
-    go(pg, 'test'); ok(h(pg) == '#signin', '1f Learner screens redirect to sign-in when logged out')
+    ok('Draft for legal review' in t and "Children’s code" in t and 'parent or guardian email' in t, '1d Privacy notice covers the Children’s code and the optional parent email')
+    go(pg, 'parent'); ok(h(pg) == '#home', '1e Old parent-area link goes to the home page')
+    go(pg, 'test'); ok(h(pg) == '#signin', '1f Unit Test needs an account when logged out')
 
-    # ---------- 2. sign-up, consent ----------
-    go(pg, 'signup'); pg.fill('#suName', 'Mai'); pg.fill('#suEmail', 'mai@example.com'); pg.fill('#suPw', 'password123'); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_timeout(300)
-    ok('adult parent or guardian' in pg.inner_text('.err'), '2a Sign-up refused without the 18+ parent declaration')
-    signup(pg, 'mai@example.com')
-    ok(not pg.is_checked('#alConsent'), '2b Add-child form: parental consent not pre-ticked')
-    pg.fill('#alNick', 'Bean'); pg.click('#alBtn'); pg.wait_for_timeout(300)
-    ok('parental consent' in pg.inner_text('.err'), '2c Child cannot be added without parental consent')
-    add_child(pg, 'Bean')
-    ok(h(pg) == '#v-3-1', '2d New child lands on the first free lesson (3.1)')
+    # ---------- 1g. guest mode ----------
+    go(pg, 'home'); pg.click('#heroStart'); pg.wait_for_function("location.hash==='#v-3-1'"); pg.wait_for_timeout(400)
+    ok(pg.evaluate('Core.S.guest') and pg.query_selector('#signUpLink') is not None, '1g Guest starts topic 3.1 straight away with a Sign-up button in the header')
+    go(pg, 'ex-3-1'); ok(pg.query_selector('#guestWall') is None and 'part of the full' not in txt(pg), '1h Guest can practise 3.1')
+    pg.evaluate("(()=>{const st=Core.cur(); const q=Core.sec('3.1').req[0]; st.items[q.id]={done:true,ok:true,tries:1,score:1}; Core.persist(); Core.flush();})()"); pg.wait_for_timeout(300)
+    b0 = pg.evaluate('Core.bolts(Core.cur())'); ok(b0 >= 10, f'1i Guest earns bolts for a right answer ({b0} ⚡)')
+    ok(pg.evaluate("!!localStorage.getItem('atomic.guest.v1')"), '1j Guest progress is kept in this browser')
+    lk = pg.evaluate("Core.secLock(Core.cur(), Core.sec('3.2'))"); ok(lk and lk.get('guest'), '1k Topic 3.2 asks a guest to sign up')
+    go(pg, 'test'); ok(pg.query_selector('#guestWall') is not None, '1l Unit Test asks a guest to sign up')
+    go(pg, 'board'); ok(pg.query_selector('#guestWall') is not None, '1m Leaderboard asks a guest to sign up')
+    go(pg, 'home'); ok(pg.query_selector('#guestBanner') is not None and pg.query_selector('#challenges') is not None, '1n Guest dashboard shows the guest banner and daily challenges')
+    pg.screenshot(path=f'{SHOTS}/02_guest_home.png', full_page=True)
+
+    # ---------- 2. three-step student sign-up ----------
+    go(pg, 'signup'); pg.fill('#suName', 'Mai Tran'); pg.fill('#suEmail', 'bad'); pg.fill('#suPw', 'password123'); pg.click('#suNext1'); pg.wait_for_timeout(200)
+    ok('valid email' in pg.inner_text('.err'), '2a Step 1 checks the email')
+    pg.fill('#suEmail', 'mai@example.com'); pg.click('#suNext1'); pg.wait_for_selector('#suYear')
+    pg.click('#suNext2'); pg.wait_for_timeout(200); ok('year of birth' in pg.inner_text('.err'), '2b Step 2 needs year of birth and school year')
+    pg.select_option('#suYear', index=4); pg.select_option('#suGrade', 'Year 7 / Grade 6'); pg.click('#suNext2'); pg.wait_for_selector('#suCountry')
+    pg.select_option('#suCountry', 'VN'); pg.wait_for_timeout(300)
+    names = pg.eval_on_selector_all('#suSchool option', 'o=>o.map(x=>x.textContent)')
+    ok(any('International School' in n for n in names) and "My school isn’t listed" in names, f'2c Choosing a country lists its international and bilingual schools ({len(names) - 2} schools)')
+    pg.select_option('#suSchool', index=1); pg.fill('#suParent', 'mai@example.com'); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_timeout(200)
+    ok('different from your own' in pg.inner_text('.err'), '2d Parent email must differ from the student email')
+    pg.fill('#suParent', 'mum@example.com'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home' && !!document.getElementById('resumeBtn')"); pg.wait_for_timeout(400)
     learner = pg.evaluate('Core.cur().learner')
-    ok(learner['leaderboard_opt_in'] is False, '2e Leaderboard is OFF by default for a new child')
-    prof = pg.evaluate("Backend.me().then(m=>m.profile)")
-    ok(not prof['weekly_report'] and not prof['product_analytics'] and not prof['marketing_opt_in'], '2f Weekly email, analytics and marketing are OFF by default')
-    pg.screenshot(path=f'{SHOTS}/03_lesson.png')
+    ok(learner['parent_email'] == 'mum@example.com' and learner['school_id'] and learner['grade'] == 'Year 7 / Grade 6' and learner['country'] == 'VN', '2e Learner saved with school, school year, country and parent email')
+    ok(learner['leaderboard_opt_in'] is False and pg.evaluate("Backend.me().then(m=>m.profile.role)") == 'student', '2f Student account; leaderboard OFF by default')
+    ok(not pg.evaluate('Core.S.guest') and pg.evaluate('Core.bolts(Core.cur())') >= b0 and not pg.evaluate("localStorage.getItem('atomic.guest.v1')"), '2g Guest progress and bolts move into the new account')
+    ok(pg.query_selector('#addLearnerTile, a[href="#parent"], a[href="#learners"]') is None, '2h No parent screens anywhere')
+    pg.screenshot(path=f'{SHOTS}/03_dashboard.png', full_page=True)
+
+    # ---------- 2i. bolts, challenges, shop ----------
+    pg.evaluate("(()=>{const st=Core.cur(); Core.sec('3.1').req.slice(0,6).forEach(q=>st.items[q.id]={done:true,ok:true,tries:1,score:1}); Core.persist(); Core.flush();})()"); pg.wait_for_timeout(300)
+    go(pg, 'home'); c = pg.evaluate('Core.challenges(Core.cur())'); first5 = [x for x in c if x['id'] == 'first5'][0]
+    ok(first5['done'], '2i Daily challenge “5 right first time” completes')
+    before = pg.evaluate('Core.bolts(Core.cur())'); pg.click('[data-claim="first5"]'); pg.wait_for_timeout(400); after = pg.evaluate('Core.bolts(Core.cur())')
+    ok(after == before + 20, f'2j Claiming the challenge adds 20 ⚡ ({before} → {after})')
+    ok(pg.evaluate('Core.claim(Core.cur(),"first5")') == 0, '2k A challenge can be claimed only once a day')
+    ok(pg.evaluate('Core.earnedToday(Core.cur())') >= 20 and pg.evaluate('Core.streak(Core.cur())') == 1, '2l Reaching the daily goal starts a 1-day streak')
+    go(pg, 'shop'); ok(pg.query_selector('#shopGrid .item') is not None, '2m Shop lists avatars')
+    cheap = pg.evaluate("Core.ITEMS.filter(i=>i.kind==='avatar'&&i.price>0).sort((a,b)=>a.price-b.price)[0]")
+    pg.evaluate(f"(()=>{{const st=Core.cur(); st.wallet.bonus += Math.max(0, {cheap['price']} - Core.bolts(st)); Core.persist();}})()")
+    go(pg, 'shop'); pg.click(f'[data-buy="{cheap["id"]}"]'); pg.wait_for_timeout(200); pg.click('.modal .btn.primary'); pg.wait_for_timeout(400)
+    ok(pg.evaluate(f"Core.owns(Core.cur(),'{cheap['id']}') && Core.shop(Core.cur()).equip.avatar==='{cheap['id']}'"), f"2n Buying {cheap['name']} spends bolts and puts it on")
+    ok(pg.evaluate("Core.buy(Core.cur(),'av-alien').error") in ('short', 'owned'), '2o An item that costs more than you have cannot be bought')
+    pg.screenshot(path=f'{SHOTS}/04_shop.png', full_page=True)
 
     # ---------- 3. free plan and paywall ----------
     go(pg, 'home'); ok(pg.query_selector('#freeBanner') is not None, '3a Dashboard shows the free-plan banner')
-    pg.evaluate("T && 0"); pg.click('#simAll') if pg.query_selector('#simAll') else None
     go(pg, 'profile'); pg.click('#sim3-1'); pg.wait_for_timeout(800)
     ok(pg.evaluate("!!Core.secLock(Core.cur(), Core.sec('3.2')) && Core.secLock(Core.cur(), Core.sec('3.2')).paywall"), '3b Section 3.2 is behind the paywall after finishing 3.1 on the free plan')
     go(pg, 'ex-3-2'); ok('part of the full Stage 7 course' in txt(pg), '3c Practice 3.2 shows the paywall lock screen')
@@ -120,12 +151,11 @@ with sync_playwright() as p:
     if a['status'] == 'pending':
         ok('Awaiting marking' in txt(pg), '5e Result says the written answer awaits an Atomic marker')
         go(pg, 'staff'); pg.click('#becomeStaff'); pg.wait_for_timeout(800)
-        ok(pg.evaluate('Core.cur()') is None, '5f0 Opening the staff area leaves the child session')
         ok(pg.query_selector('.numin') is not None, '5f Staff marking queue lists the pending written answer')
         for el_ in pg.query_selector_all('.numin'): el_.fill('0')
         pg.click('section.card .btn.primary'); pg.wait_for_timeout(800)
         notes = pg.evaluate('Backend.notifications()')
-        ok(any('marked' in (n.get('title') or '').lower() or 'result' in (n.get('title') or '').lower() for n in notes), '5g Parent gets a notification when marking is done')
+        ok(any('marked' in (n.get('title') or '').lower() or 'result' in (n.get('title') or '').lower() for n in notes), '5g Student gets a notification when marking is done')
     pg.evaluate("Core.selectLearner(Core.S.learners[0].id)"); pg.wait_for_timeout(300)
     a = pg.evaluate('Core.lastAttempt(Core.cur())')
     ok(a['status'] == 'final' and not a['passed'], f"5h Attempt 1 final and not passed ({a['score']}/30)")
@@ -148,22 +178,22 @@ with sync_playwright() as p:
     ok(res and abs(res['pct'] - a['pct']) < 0.01, '6b Unit result stores the first-pass %')
     go(pg, 'test'); ok('You have passed' in txt(pg), '6c Test page shows passed; no further attempts')
 
-    # ---------- 7. leaderboard opt-in ----------
-    go(pg, 'board'); ok(pg.query_selector('#lbHidden') is not None and 'Bean (you)' in txt(pg), '7a Hidden learner sees own row and a “you are hidden” note')
-    pg.click('#whoBtn'); pg.wait_for_timeout(400); ok(h(pg) == '#learners', '7b Avatar returns to “Who’s learning?”')
-    go(pg, 'parent'); ok(pg.query_selector('#gatePw') is not None, '7c Parent area asks for the account password')
-    pg.fill('#gatePw', 'wrong-pass'); pg.click('#gateBtn'); pg.wait_for_timeout(300); ok('not right' in txt(pg), '7d Wrong password refused')
-    parent_gate(pg); ok('Bean' in txt(pg) and 'Curriculum code' in pg.content(), '7e Parent dashboard shows each child with objectives and curriculum codes')
-    pg.screenshot(path=f'{SHOTS}/04_parent.png', full_page=True)
-    lbid = pg.evaluate("Core.S.learners[0].id")
-    pg.click(f'#lb-{lbid}'); pg.wait_for_timeout(200); ok(pg.query_selector('.modal') is not None, '7f Switching the leaderboard on asks for confirmation')
+    # ---------- 6d. parent email on first pass ----------
+    ob = pg.evaluate('Backend.demo.outbox()')
+    ok(len(ob) == 1 and ob[0]['to_email'] == 'mum@example.com' and 'Unit 3' in ob[0]['subject'], '6d One “finished Unit 3” email is queued for the parent')
+
+    # ---------- 7. leaderboard opt-in (by the student) ----------
+    go(pg, 'board'); ok(pg.query_selector('#lbHidden') is not None and 'Mai (you)' in txt(pg), '7a Hidden learner sees own row and a “you are hidden” note')
+    pg.click('#whoBtn'); pg.wait_for_timeout(200); ok(pg.is_visible('#userMenu') and pg.query_selector('#userMenu #signOut') is not None, '7b Avatar opens the account menu')
+    go(pg, 'settings'); pg.wait_for_selector('#setBoard')
+    pg.click('#setBoard'); pg.wait_for_timeout(200); ok(pg.query_selector('.modal') is not None, '7c Switching the leaderboard on asks for confirmation')
     pg.click('.modal .btn.primary'); pg.wait_for_timeout(500)
-    ok(pg.evaluate("Backend.learners().then(l=>l[0].leaderboard_opt_in)"), '7g Leaderboard opt-in saved')
-    cons = pg.evaluate('Backend.consents()')
-    ok(any(c['kind'] == 'leaderboard' for c in cons) and any(c['kind'] == 'parental_consent' for c in cons), '7h Consent log records child data consent and leaderboard opt-in')
+    ok(pg.evaluate("Backend.learners().then(l=>l[0].leaderboard_opt_in)"), '7d Leaderboard opt-in saved')
+    pg.fill('#setParent', ''); pg.fill('#setNick', 'Maisy'); pg.click('#setSave'); pg.wait_for_timeout(500)
+    l0 = pg.evaluate("Backend.learners().then(l=>l[0])"); ok(l0['parent_email'] is None and l0['nickname'] == 'Maisy', '7e Student can remove the parent email and change nickname')
+    pg.screenshot(path=f'{SHOTS}/06_settings.png', full_page=True)
 
     # ---------- 8. certificate ----------
-    pg.click('.kid .btn.primary'); pg.wait_for_timeout(600)
     go(pg, 'cert'); ok('Certificate locked' in txt(pg), '8a Certificate locked until all 14 Stage 7 units are passed')
     go(pg, 'profile'); pg.click('#simOthers'); pg.wait_for_timeout(900)
     go(pg, 'cert'); pg.wait_for_selector('#certCode', timeout=5000); code = pg.inner_text('#certCode')
@@ -176,18 +206,15 @@ with sync_playwright() as p:
     go(pg, 'board'); ok('Shown' in txt(pg), '8f Leaderboard row now marked as shown')
 
     # ---------- 9. staff tools ----------
-    pg.click('#whoBtn'); pg.wait_for_timeout(300); go(pg, 'staff'); pg.wait_for_timeout(300)
+    go(pg, 'staff'); pg.wait_for_timeout(300)
     pg.click('button[role=tab]:has-text("Question reports")'); pg.wait_for_timeout(400); ok('diagram label looks wrong' in txt(pg), '9a Question report reaches the staff inbox')
     pg.click('button[role=tab]:has-text("Question statistics")'); pg.wait_for_timeout(400); ok('Right first time' in txt(pg), '9b Question statistics table renders')
 
-    # ---------- 10. settings, export, delete ----------
-    go(pg, 'settings'); parent_gate(pg); pg.wait_for_timeout(300)
-    ok(not pg.is_checked('#set-weekly_report') and not pg.is_checked('#set-product_analytics'), '10a Settings show optional items off')
-    pg.check('#set-weekly_report'); pg.wait_for_timeout(300); ok(pg.evaluate("Backend.me().then(m=>m.profile.weekly_report)"), '10b Weekly report can be switched on')
+    # ---------- 10. export, delete ----------
+    go(pg, 'settings'); pg.wait_for_selector('#exportBtn')
     with pg.expect_download() as dl: pg.click('#exportBtn')
     data = json.loads(open(dl.value.path()).read())
-    ok('learners' in data and 'attempts' in data and 'consents' in json.dumps(data), '10c Data export downloads JSON with learners, attempts and consents')
-    pg.screenshot(path=f'{SHOTS}/06_settings.png', full_page=True)
+    ok('learners' in data and 'attempts' in data, '10c Data export downloads JSON with learner and attempts')
     pg.click('#deleteBtn'); pg.fill('#delConfirm', 'delete'); pg.click('.modal .btn.primary'); pg.wait_for_timeout(300)
     ok(pg.query_selector('.modal') is not None and 'Type the confirmation' in txt(pg), '10d Delete needs the exact typed confirmation')
     pg.fill('#delConfirm', 'DELETE MY ACCOUNT'); pg.click('.modal .btn.primary'); pg.wait_for_timeout(800)
@@ -200,13 +227,15 @@ with sync_playwright() as p:
     ctx2, mp = newpage(b, mobile=True)
     mp.goto(BASE); mp.wait_for_selector('#heroStart'); mp.screenshot(path=f'{SHOTS}/07_mobile_landing.png', full_page=True)
     sw = mp.evaluate('document.documentElement.scrollWidth'); ok(sw <= 392, f'11b Mobile landing has no sideways scroll ({sw}px)')
-    signup(mp, 'kim@example.com', 'Kim Lee', 'GB'); add_child(mp, 'Pip')
+    signup(mp, 'kim@example.com', 'Kim Lee', 'XX', school=False)
     langs = []
-    for r in ['home', 'unit3', 'v-3-1', 'ex-3-1', 'bank', 'profile', 'board', 'map', 'pricing', 'help', 'privacy-kids', 'learners']:
+    for r in ['home', 'unit3', 'v-3-1', 'ex-3-1', 'bank', 'profile', 'board', 'map', 'shop', 'settings', 'pricing', 'help', 'privacy-kids']:
         go(mp, r); langs.append((r, no_vi(mp)))
-    ok(all(x for _, x in langs), '11c No Vietnamese text on learner and parent screens ' + str([r for r, x in langs if not x]))
-    go(mp, 'parent'); parent_gate(mp); mp.screenshot(path=f'{SHOTS}/08_mobile_parent.png', full_page=True)
-    sw = mp.evaluate('document.documentElement.scrollWidth'); ok(sw <= 392, f'11d Mobile parent area has no sideways scroll ({sw}px)')
+    ok(all(x for _, x in langs), '11c No Vietnamese text on any screen ' + str([r for r, x in langs if not x]))
+    for r in ['home', 'shop', 'signup']:
+        if r == 'signup': mp.evaluate("Backend.signOut()"); mp.evaluate("Core.boot(Core.C)"); mp.wait_for_timeout(300)
+        go(mp, r); mp.screenshot(path=f'{SHOTS}/08_mobile_{r}.png', full_page=True)
+        sw = mp.evaluate('document.documentElement.scrollWidth'); ok(sw <= 392, f'11d Mobile {r} has no sideways scroll ({sw}px)')
     b.close()
 
 fails = [l for l in LOG if l.startswith('FAIL')]

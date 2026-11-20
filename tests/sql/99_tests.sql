@@ -121,9 +121,37 @@ select 'PASS consent recorded: ' || (select count(*) = 1 from public.consents wh
 select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-0000000000d1', false)) _x;
 insert into public.progress (learner_id, unit, state) values ('10000000-0000-0000-0000-0000000000d1', 'stage7-unit03', '{"ok":1}');
 select 'PASS approved student saves progress: ' || (select count(*) = 1 from public.progress);
+-- (students may switch their own leaderboard setting since migration 0006)
+select 'PASS student cannot see other learners: ' || (select count(*) = 1 from public.learners);
+
+-- ---------- student-only model: school, parent email, email on unit completion ----------
+reset role;
+insert into auth.users (id, email, raw_user_meta_data) values ('00000000-0000-0000-0000-0000000000f1', 'solo@test', '{"display_name":"Solo Kid","role":"student","country":"SG"}');
+set role service_role;
+insert into public.learners (id, user_id, nickname, birth_year, country, consent_status, school_id, grade)
+values ('10000000-0000-0000-0000-0000000000f1', '00000000-0000-0000-0000-0000000000f1', 'Solo', 2014, 'SG', 'not_required', (select id from public.schools where name = 'Tanglin Trust School'), 'Year 7');
+reset role; set role anon;
+select 'PASS anyone can list schools: ' || (select count(*) > 40 from public.schools);
+reset role; set role authenticated; select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-0000000000f1', false)) _x;
+update public.learners set parent_email = 'mum@family.test', leaderboard_opt_in = true where id = '10000000-0000-0000-0000-0000000000f1';
+select 'PASS student sets parent email and leaderboard: ' || (select parent_email = 'mum@family.test' and leaderboard_opt_in from public.learners where id = '10000000-0000-0000-0000-0000000000f1');
 do $$ begin
-  begin update public.learners set leaderboard_opt_in = true where id = '10000000-0000-0000-0000-0000000000d1';
-    if found then raise exception 'FAIL: student changed leaderboard setting'; end if;
+  begin update public.learners set consent_status = 'approved' where id = '10000000-0000-0000-0000-0000000000f1'; raise exception 'FAIL: student changed a protected column';
+  exception when others then if sqlerrm like 'FAIL%' then raise; end if; end;
+  begin update public.learners set user_id = null where id = '10000000-0000-0000-0000-0000000000f1'; raise exception 'FAIL: student changed owner';
   exception when others then if sqlerrm like 'FAIL%' then raise; end if; end;
 end $$;
-select 'PASS student cannot see other learners: ' || (select count(*) = 1 from public.learners);
+insert into public.progress (learner_id, unit, state) values ('10000000-0000-0000-0000-0000000000f1', 'stage7-unit03', '{}');
+select 'PASS student without parent saves progress: ' || (select count(*) = 1 from public.progress where learner_id = '10000000-0000-0000-0000-0000000000f1');
+reset role; set role service_role;
+insert into public.attempts (learner_id, unit, n, form, client_key, answers, per, auto, score, pct, status, passed)
+values ('10000000-0000-0000-0000-0000000000f1','stage7-unit03',1,'A','solo1','{}','{}',25,25,83.33,'final',true);
+reset role;
+select 'PASS parent email queued once on unit pass: ' || (select count(*) = 1 from public.email_outbox where to_email = 'mum@family.test' and subject like 'Solo has finished Unit 3: Cells%');
+select 'PASS student notified: ' || (select count(*) = 1 from public.notifications where parent_id = '00000000-0000-0000-0000-0000000000f1');
+set role authenticated; select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-0000000000f1', false)) _x;
+do $$ begin
+  begin perform 1 from public.email_outbox; raise exception 'FAIL: client read the email outbox';
+  exception when others then if sqlerrm like 'FAIL%' then raise; end if; end;
+end $$;
+select 'PASS student sees own result: ' || (select count(*) = 1 from public.unit_results);
