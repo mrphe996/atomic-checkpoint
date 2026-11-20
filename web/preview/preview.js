@@ -22,7 +22,8 @@
       '<text x="0" y="12" font-family="Figtree,Arial" font-size="3.4" font-weight="700" fill="#0149AF" fill-opacity=".11">' + line + '</text>' +
       '<text x="52" y="34" font-family="Figtree,Arial" font-size="3.4" font-weight="700" fill="#0149AF" fill-opacity=".11">' + line + '</text></pattern></defs>' +
       '<rect width="210" height="297" fill="url(#wp' + info.k + ')"/>' +
-      (big ? '' : '<text x="105" y="160" text-anchor="middle" transform="rotate(-38 105 150)" font-family="Outfit,Arial" font-weight="800" font-size="15" fill="#0E1B3D" fill-opacity=".05" letter-spacing="2">ATOMIC EDUCATION</text>') +
+      // faint "ATOMIC EDUCATION" on every page, cover included
+      '<text x="105" y="160" text-anchor="middle" transform="rotate(-38 105 150)" font-family="Outfit,Arial" font-weight="800" font-size="15" fill="#0E1B3D" fill-opacity=".05" letter-spacing="2">ATOMIC EDUCATION</text>' +
       '</svg></div>';
   }
 

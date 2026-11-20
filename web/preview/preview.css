@@ -166,3 +166,4 @@ body.blurred .shield{display:grid}
   .a4{box-shadow:none;page-break-after:always;break-after:page}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+@media (max-width:600px){.crumbs .hdr-in{flex-wrap:wrap;padding:6px 12px}.hdr-in{padding:10px 14px}.lvl{display:none}}
