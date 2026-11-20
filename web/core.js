@@ -186,10 +186,18 @@
   }
 
   /* ---------- end-of-year exam ---------- */
+  // Checkpoint-format practice papers (Atomic papers in the format of Cambridge 0893/01 and 0893/02)
+  let CP = null;
+  async function loadCp() { if (!CP) { const r = await fetch(`content/stage${STAGE}-cp.json`); CP = r.ok ? await r.json() : null; } return CP; }
+  async function refreshCp() { const st = cur(); if (!st || S.guest) { S.cpAttempts = []; return []; } S.cpAttempts = await Backend.attempts(st.id, `stage${STAGE}-cp`); return S.cpAttempts; }
+  async function submitCp(form, answers, clientKey, meta) {
+    const st = cur(); const r = await Backend.submitTest({ learnerId: st.id, unit: `stage${STAGE}-cp`, form, answers, clientKey, meta });
+    await refreshCp(); st.solutions = Object.assign(st.solutions || {}, r.solutions); return r;
+  }
   async function refreshFinal() { const st = cur(); if (!st || S.guest) { S.finalAttempts = []; return []; } S.finalAttempts = await Backend.attempts(st.id, `stage${STAGE}-final`); return S.finalAttempts; }
   const finalPassed = () => (S.finalAttempts || []).some(a => a.status === 'final' && a.passed);
-  async function submitFinal(form, answers, clientKey) {
-    const st = cur(); const r = await Backend.submitTest({ learnerId: st.id, unit: `stage${STAGE}-final`, form, answers, clientKey });
+  async function submitFinal(form, answers, clientKey, meta) {
+    const st = cur(); const r = await Backend.submitTest({ learnerId: st.id, unit: `stage${STAGE}-final`, form, answers, clientKey, meta });
     await refreshFinal(); st.solutions = Object.assign(st.solutions || {}, r.solutions); return r;
   }
 
@@ -212,9 +220,9 @@
     if (remLeft(st, la).length) return { state: 'remediate', last: la, left: remLeft(st, la) };
     return { state: 'ready', form: nextForm(st), retake: true };
   }
-  async function submitTest(st, form, answers, clientKey) {
+  async function submitTest(st, form, answers, clientKey, meta, unitId) {
     flush(); dirty = true; await Backend.saveProgress(st.id, UNIT(), (() => { const c = {}; for (const k of Object.keys(st)) if (!META.includes(k)) c[k] = st[k]; c.test = { drafts: st.test.drafts }; return c; })());
-    const r = await Backend.submitTest({ learnerId: st.id, unit: UNIT(), form, answers, clientKey });
+    const r = await Backend.submitTest({ learnerId: st.id, unit: UNIT(), form, answers, clientKey, meta });
     const i = st.test.attempts.findIndex(a => a.id === r.attempt.id);
     if (i >= 0) st.test.attempts[i] = r.attempt; else st.test.attempts.push(r.attempt);
     st.solutions = Object.assign(st.solutions || {}, r.solutions);
@@ -316,7 +324,7 @@
   window.Core = {
     get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; },
     unitId, unitReady, switchUnit, loadIndex, peekUnit, cached, loadFinal, get FINAL() { return FINAL; },
-    xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, startClock, refreshFinal, finalPassed, submitFinal, activity,
+    xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, startClock, refreshFinal, finalPassed, submitFinal, loadCp, refreshCp, submitCp, activity,
     boot, selectLearner, leaveLearner, refreshAccount, cur, persist, flush, canOpen,
     sec, secs, vstate, stopDone, stopsLeft, videoDone, reqLeft, secDone, secLock, firstMissingIn, missingForTest,
     attempts, lastAttempt, passed, isPass, nextForm, remKey, remLeft, testState, submitTest, refreshAttempts, refreshResults,

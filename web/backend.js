@@ -81,10 +81,10 @@
       async enrol(lid, stage, amount) { mine(lid); D.enrol = D.enrol || {}; const l = (D.enrol[lid] = D.enrol[lid] || []); if (!l.some(e => e.stage === stage)) l.push({ stage, method: 'test', amount: amount || null, status: 'active', created_at: new Date().toISOString() });
         note(need(), lid, 'billing', `You are enrolled in Cambridge Stage ${stage}`, 'Test checkout – no money was taken.'); save(); return 'ok'; },
       async startTest({ learnerId, unit, form }) { mine(learnerId); D.starts = D.starts || {}; const k = `${learnerId}|${unit}|${form}`; D.starts[k] = D.starts[k] || new Date().toISOString(); save();
-        const minutes = /-final$/.test(unit) ? 60 : TestRules.UNIT_MINUTES; return { startedAt: D.starts[k], minutes, deadline: new Date(Date.parse(D.starts[k]) + minutes * 60000).toISOString(), now: new Date().toISOString() }; },
+        const minutes = /-final$/.test(unit) ? 60 : /-cp$/.test(unit) ? 45 : TestRules.UNIT_MINUTES; return { startedAt: D.starts[k], minutes, deadline: new Date(Date.parse(D.starts[k]) + minutes * 60000).toISOString(), now: new Date().toISOString() }; },
       async saveProgress(lid, unit, state) { mine(lid); (D.progress[lid] = D.progress[lid] || {})[unit] = JSON.parse(JSON.stringify(state)); save(); },
       async attempts(lid, unit) { mine(lid); return ((D.attempts[lid] || {})[unit] || []).slice(); },
-      async submitTest({ learnerId, unit, form, answers, clientKey }) { // same rules as api/submit-test.js
+      async submitTest({ learnerId, unit, form, answers, clientKey, meta }) { // same rules as api/submit-test.js
         const a = need(); const l = mine(learnerId);
         if ((CFG.billing || 'off') !== 'off' && !subActive(a)) throw err('subscription_required');
         const stage = Number(unit.slice(5, 6)); if (stage !== (l.stage || 7) && !(((D.enrol || {})[learnerId]) || []).some(e => e.stage === stage)) throw err('not_enrolled');
@@ -100,7 +100,7 @@
           const xp = TestRules.xpTotal(D.progress[learnerId] || {}, passes); if (TestRules.levelOf(xp) < keys.level) throw err('level_required', { level: keys.level, have: TestRules.levelOf(xp) });
           const paper = keys.papers[form];
           const at = TestRules.finalizeFinal(TestRules.mark(paper, answers, { n: list.length + 1, form, id: uuid(), clientKey }), paper, keys.max, keys.pass);
-          at.duration = duration; at.overtime = duration != null && duration > 60 * 60 + TestRules.GRACE_S; delete D.starts[sk];
+          at.duration = duration; at.overtime = duration != null && duration > (keys.minutes || 60) * 60 + TestRules.GRACE_S; at.leaves = (meta && meta.leaves) || 0; at.autoSubmitted = !!(meta && meta.auto); delete D.starts[sk];
           list.push(at); if (at.status === 'final' && at.passed) note(a, learnerId, 'test_passed', `You passed the end-of-year exam (paper ${form})!`, `Score ${at.pct.toFixed(1)}%`); save();
           return { attempt: at, solutions: TestRules.solutions(paper) };
         }
@@ -114,7 +114,7 @@
         if (form !== TestRules.nextForm(list.length)) throw err('wrong_paper');
         const paper = keys.papers[form];
         const at = TestRules.finalize(TestRules.mark(paper, answers, { n: list.length + 1, form, id: uuid(), clientKey }), paper, content, state);
-        at.duration = duration; at.overtime = duration != null && duration > TestRules.UNIT_MINUTES * 60 + TestRules.GRACE_S; delete D.starts[sk];
+        at.duration = duration; at.overtime = duration != null && duration > TestRules.UNIT_MINUTES * 60 + TestRules.GRACE_S; at.leaves = (meta && meta.leaves) || 0; at.autoSubmitted = !!(meta && meta.auto); delete D.starts[sk];
         list.push(at); if (at.status === 'final') recordFinal(learnerId, unit, at); save();
         return { attempt: at, solutions: TestRules.solutions(paper) };
       },
@@ -245,7 +245,7 @@
       async startTest(b) { return api('start-test', { method: 'POST', body: b }); },
       async saveProgress(lid, unit, state) { await rest('progress?on_conflict=learner_id,unit', { method: 'POST', prefer: 'resolution=merge-duplicates', body: { learner_id: lid, unit, state, updated_at: new Date().toISOString() } }); },
       async attempts(lid, unit) { const rows = await rest(`attempts?learner_id=eq.${lid}&unit=eq.${unit}&order=n.asc`);
-        return rows.map(r => ({ id: r.id, n: r.n, form: r.form, ts: Date.parse(r.created_at), answers: r.answers, per: r.per, auto: Number(r.auto), pending: Object.keys(r.per).filter(k => r.per[k].teacher), status: r.status, score: r.score == null ? null : Number(r.score), pct: r.pct == null ? null : Number(r.pct), passed: r.passed, byObj: r.by_obj, weak: r.weak || [], remed: r.remed || [], duration: r.duration_s, overtime: !!r.overtime })); },
+        return rows.map(r => ({ id: r.id, n: r.n, form: r.form, ts: Date.parse(r.created_at), answers: r.answers, per: r.per, auto: Number(r.auto), pending: Object.keys(r.per).filter(k => r.per[k].teacher), status: r.status, score: r.score == null ? null : Number(r.score), pct: r.pct == null ? null : Number(r.pct), passed: r.passed, byObj: r.by_obj, weak: r.weak || [], remed: r.remed || [], duration: r.duration_s, overtime: !!r.overtime, leaves: Number(r.leaves || 0), autoSubmitted: !!r.auto_submitted })); },
       async submitTest(b) { return api('submit-test', { method: 'POST', body: b }); },
       async markingQueue() { return (await api('marking')).queue; },
       async markAttempt(attemptId, grades) { return (await api('marking', { method: 'POST', body: { attemptId, grades } })).attempt; },

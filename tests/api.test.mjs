@@ -239,3 +239,22 @@ test('a stage the learner is not enrolled in is refused', async () => {
     assert.equal((await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A', answers: {}, clientKey: 'e2' }), f))[0], 201);
   } finally { process.env.BILLING = 'paddle'; }
 });
+
+test('Checkpoint-format papers: 45 minutes, no level gate, marked by strand, leaving the room is recorded', async () => {
+  const { T, f } = fakeSupabase(); process.env.BILLING = 'off';
+  const ck = JSON.parse(fs.readFileSync(new URL('../server/private/stage7-cp.tests.json', import.meta.url)));
+  try {
+    assert.equal(ck.minutes, 45); assert.equal(ck.max, 50); assert.ok(Object.keys(ck.papers).length >= 4);
+    const [s0, b0] = await start.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-cp', form: 'A1' }), f);
+    assert.equal(s0, 200); assert.equal(b0.minutes, 45);
+    const ans = Object.fromEntries(ck.papers.A1.map(q => [q.id, right(q)]));
+    let [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-cp', form: 'A1', answers: ans, clientKey: 'c1', meta: { leaves: 2, auto: false } }), f);
+    assert.equal(s, 201); assert.equal(b.attempt.score, 50);
+    assert.deepEqual(Object.keys(b.attempt.byObj).sort(), ['BIO', 'CHE', 'ESS', 'PHY', 'TWS']);
+    assert.equal(T.attempts[0].leaves, 2); assert.equal(T.attempts[0].auto_submitted, false);
+    [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-cp', form: 'A1', answers: ans, clientKey: 'c2' }), f);
+    assert.equal(b.error, 'paper_done');
+    [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-cp', form: 'B2', answers: {}, clientKey: 'c3', meta: { leaves: 3, auto: true } }), f);
+    assert.equal(s, 201); assert.equal(T.attempts[1].auto_submitted, true);
+  } finally { process.env.BILLING = 'paddle'; }
+});

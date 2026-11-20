@@ -16,11 +16,14 @@ grant all on public.test_starts to service_role;
 alter table public.attempts add column if not exists started_at timestamptz;
 alter table public.attempts add column if not exists duration_s int;
 alter table public.attempts add column if not exists overtime boolean not null default false;
+-- strict exam room: how many times the learner left, and whether the paper was handed in automatically
+alter table public.attempts add column if not exists leaves int not null default 0 check (leaves between 0 and 99);
+alter table public.attempts add column if not exists auto_submitted boolean not null default false;
 
 -- ---------- end-of-year exams are not units: keep them out of unit_results / the leaderboard ----------
 create or replace function public.record_first_pass() returns trigger
 language plpgsql security definer set search_path = public as $$
-declare v_l public.learners%rowtype; v_title text; v_n int; v_final boolean := new.unit like '%-final';
+declare v_l public.learners%rowtype; v_title text; v_n int; v_final boolean := new.unit like '%-final' or new.unit like '%-cp';
 begin
   select * into v_l from public.learners where id = new.learner_id;
   if new.status = 'final' and new.passed then
@@ -33,7 +36,8 @@ begin
     end if;
     insert into public.notifications (parent_id, learner_id, kind, title, body)
     values (coalesce(v_l.parent_id, v_l.user_id), v_l.id, 'test_passed',
-            case when v_final then 'You passed the end-of-year exam (paper ' || new.form || ')!'
+            case when new.unit like '%-cp' then 'Checkpoint practice paper ' || new.form || ' marked'
+                 when v_final then 'You passed the end-of-year exam (paper ' || new.form || ')!'
                  else 'You passed Unit ' || ltrim(right(new.unit, 2), '0') || coalesce(': ' || v_title, '') || '!' end,
             'Score ' || round(new.pct, 1) || '%');
     if not v_final and v_n > 0 and v_l.parent_email is not null then

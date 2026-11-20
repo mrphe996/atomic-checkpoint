@@ -7,7 +7,7 @@ export const G = globalThis.GradeCore;
 export const Rules = globalThis.TestRules;
 export const env = (k, d) => { const v = Deno.env.get(k); return v != null && v !== '' ? v : d; };
 export const billingOn = () => env('BILLING', env('PADDLE_API_KEY') ? 'paddle' : 'off') === 'paddle';
-const UNIT_RE = /^stage[7-9]-(unit\d{2}|final)$/;
+const UNIT_RE = /^stage[7-9]-(unit\d{2}|final|cp)$/;
 // answer keys are not in this shared (public) file: the deployed function passes them in with setUnits()
 let UNITS = {};
 export function setUnits(u) { UNITS = u; }
@@ -49,5 +49,5 @@ export async function role(userId, f) {
 export function rowToAttempt(r) {
   return { id: r.id, n: r.n, form: r.form, ts: Date.parse(r.created_at), answers: r.answers, per: r.per, auto: Number(r.auto), pending: Object.keys(r.per).filter(k => r.per[k].teacher),
     status: r.status, score: r.score == null ? null : Number(r.score), pct: r.pct == null ? null : Number(r.pct), passed: r.passed, byObj: r.by_obj, weak: r.weak || [], remed: r.remed || [],
-    duration: r.duration_s == null ? null : Number(r.duration_s), overtime: !!r.overtime };
+    duration: r.duration_s == null ? null : Number(r.duration_s), overtime: !!r.overtime, leaves: Number(r.leaves || 0), autoSubmitted: !!r.auto_submitted };
 }

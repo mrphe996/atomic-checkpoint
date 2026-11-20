@@ -1,4 +1,4 @@
-// POST /api/submit-test  { learnerId, unit, form, answers, clientKey }
+// POST /api/submit-test  { learnerId, unit, form, answers, clientKey, meta: { leaves, auto } }
 // Marks a Unit Test or an end-of-year exam on the server: answer keys never reach the browser before submission.
 // The exam room is timed from the moment the paper was opened (api/start-test.js).
 import { send, readJson, getUser, db, loadUnit, ownsLearner, Rules, rowToAttempt, billingOn } from './_lib/supa.js';
@@ -19,7 +19,8 @@ export async function handle(req, f = fetch) {
   if (req.method !== 'POST') return [405, { error: 'method' }];
   const user = await getUser(req, f); if (!user) return [401, { error: 'sign_in' }];
   const b = await readJson(req);
-  const { learnerId, unit, form, answers, clientKey } = b || {};
+  const { learnerId, unit, form, answers, clientKey, meta } = b || {};
+  const leaves = Math.max(0, Math.min(99, Math.floor(Number((meta || {}).leaves) || 0))), autoSub = !!(meta && meta.auto);
   if (!answers || typeof answers !== 'object' || !clientKey || String(clientKey).length > 64) return [400, { error: 'bad_request' }];
   const learner = await ownsLearner(user.id, learnerId, f); if (!learner) return [403, { error: 'not_your_learner' }];
   if (billingOn()) {
@@ -66,7 +67,7 @@ export async function handle(req, f = fetch) {
   const a = pack.final ? Rules.finalizeFinal(raw, paper, pack.max, pack.pass) : Rules.finalize(raw, paper, pack.content, state);
   const row = { learner_id: learnerId, unit, n: a.n, form, client_key: clientKey, answers: a.answers, per: a.per, auto: a.auto,
     score: a.score, pct: a.pct, status: a.status, passed: a.status === 'final' ? a.passed : null, by_obj: a.byObj || null, weak: a.weak || null, remed: a.remed || null,
-    finalised_at: a.status === 'final' ? new Date().toISOString() : null, started_at: startedAt, duration_s: duration, overtime: duration != null && duration > limit + Rules.GRACE_S };
+    finalised_at: a.status === 'final' ? new Date().toISOString() : null, started_at: startedAt, duration_s: duration, overtime: duration != null && duration > limit + Rules.GRACE_S, leaves, auto_submitted: autoSub };
   const saved = await db('attempts', { method: 'POST', body: row, prefer: 'return=representation' }, f);
   if (startedAt) await db(`test_starts?learner_id=eq.${learnerId}&unit=eq.${unit}&form=eq.${form}`, { method: 'DELETE' }, f);
   return [201, { attempt: rowToAttempt(saved[0]), solutions: Rules.solutions(paper) }];

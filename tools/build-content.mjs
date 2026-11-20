@@ -91,18 +91,18 @@ export function validateFinal(c) {
     fake.tests['Z'] = paper; const r = validate({ ...fake, tests: { Z: paper.map(q => ({ ...q })) } });
     r.errs.filter(e => !/must be 30/.test(e)).forEach(e => errs.push(`paper ${k}: ${e}`));
   }
-  if (Object.keys(c.papers).length < 10) errs.push('needs at least 10 papers');
+  const minPapers = c.kind === 'checkpoint' ? 2 : 10; if (Object.keys(c.papers).length < minPapers) errs.push(`needs at least ${minPapers} papers`);
   return { errs, warn };
 }
 function buildFinal(file, c, check) {
   const name = path.basename(file, '.json'); const { errs, warn } = validateFinal(c);
   if (!errs.length && !check) {
     const papers = Object.fromEntries(Object.entries(c.papers).map(([k, p]) => [k, p.map(G.stripKeys)]));
-    const pub = { final: true, unit: c.unit, objectives: c.objectives, minutes: c.minutes, max: c.max, pass: c.pass, level: c.level, papers, build: { at: new Date().toISOString().slice(0, 10), unit: name } };
+    const pub = { final: true, kind: c.kind || 'final', unit: c.unit, meta: c.meta || null, objectives: c.objectives, minutes: c.minutes, max: c.max, pass: c.pass, level: c.level, papers, build: { at: new Date().toISOString().slice(0, 10), unit: name } };
     fs.writeFileSync(path.join(ROOT, 'web/content', name + '.json'), JSON.stringify(pub));
-    fs.writeFileSync(path.join(ROOT, 'server/private', name + '.tests.json'), JSON.stringify({ unit: name, final: true, max: c.max, pass: c.pass, level: c.level, minutes: c.minutes, papers: c.papers }));
+    fs.writeFileSync(path.join(ROOT, 'server/private', name + '.tests.json'), JSON.stringify({ unit: name, final: true, kind: c.kind || 'final', max: c.max, pass: c.pass, level: c.level, minutes: c.minutes, papers: c.papers }));
     const demoDir = path.join(ROOT, 'web/content/demo');
-    if (process.env.ATOMIC_MODE !== 'live') { fs.mkdirSync(demoDir, { recursive: true }); fs.writeFileSync(path.join(demoDir, name + '.tests.json'), JSON.stringify({ unit: name, final: true, max: c.max, pass: c.pass, level: c.level, papers: c.papers })); }
+    if (process.env.ATOMIC_MODE !== 'live') { fs.mkdirSync(demoDir, { recursive: true }); fs.writeFileSync(path.join(demoDir, name + '.tests.json'), JSON.stringify({ unit: name, final: true, kind: c.kind || 'final', max: c.max, pass: c.pass, level: c.level, minutes: c.minutes, papers: c.papers })); }
   }
   return { name, errs, warn };
 }
@@ -162,7 +162,9 @@ export function writeIndex() {
       return { n: i + 1, id, t, strand, ready: true, est: c.est || null, sections: c.sections.map(x => ({ id: x.id, t: x.title })), qs: c.sections.reduce((a, x) => a + x.req.length + x.prac.length + x.adv.length, 0) }; });
     const fin = path.join(ROOT, 'web/content', `stage${stage}-final.json`);
     const final = fs.existsSync(fin) ? (({ minutes, max, pass, level, papers }) => ({ id: `stage${stage}-final`, minutes, max, pass, level, papers: Object.keys(papers).length }))(JSON.parse(fs.readFileSync(fin, 'utf8'))) : null;
+    const cpf = path.join(ROOT, 'web/content', `stage${stage}-cp.json`);
+    const cp = fs.existsSync(cpf) ? (({ minutes, max, meta, unit }) => ({ id: `stage${stage}-cp`, minutes, max, syllabus: unit.syllabus, papers: Object.keys(meta || {}) }))(JSON.parse(fs.readFileSync(cpf, 'utf8'))) : null;
     const est = units.reduce((a, u) => a + (u.est || 0), 0) + (final ? final.minutes * 2 : 0);
-    fs.writeFileSync(path.join(ROOT, 'web/content', `stage${stage}.json`), JSON.stringify({ stage: Number(stage), units, final, est }));
+    fs.writeFileSync(path.join(ROOT, 'web/content', `stage${stage}.json`), JSON.stringify({ stage: Number(stage), units, final, cp, est }));
   }
 }

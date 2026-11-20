@@ -117,7 +117,7 @@
     }
     return out;
   }
-  const isTick = q => q.rows.every(r => r.a.length === q.cols.length && r.a.every(a => a === '✓' || a === '✗'));
+  const isTick = q => q.mode ? q.mode === 'tick' : q.rows.every(r => r.a && r.a.length === q.cols.length && r.a.every(a => a === '✓' || a === '✗'));
   function answerText(q) {
     switch (q.type) {
       case 'mcq': return q.options.find(o => o.ok).t;
