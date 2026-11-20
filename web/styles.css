@@ -691,3 +691,4 @@ details.faq{border-top:1px solid var(--line2);padding:10px 0}details.faq summary
 .authwrap{min-height:calc(100vh - 260px);display:flex;align-items:flex-start;justify-content:center;padding:48px 16px}
 @media (max-width:820px){.dhero h1,.phero h1{font-size:34px}.dhero-in,.phero-in{padding:34px 18px 30px}.dcont-txt{padding:24px}.dtest,.dside{padding:22px!important}}
 .wrap.landing .content{max-width:min(1240px,100%);min-width:0;margin:0 auto}
+.lp-unit.off{opacity:.6;cursor:default}.lp-unit.cur{border-color:var(--blue);box-shadow:0 4px 0 var(--blue)}

@@ -83,7 +83,9 @@
       }
       case 'table': {
         let good = 0, tot = 0;
-        q.rows.forEach((row, ri) => row.forEach((c, ci) => { if (c && typeof c === 'object') { tot++; const v = parseNum((r[ri] || {})[ci]); if (v != null && near(v, c.ans, c.tol || 1e-9)) good++; } }));
+        q.rows.forEach((row, ri) => row.forEach((c, ci) => { if (c && typeof c === 'object') { tot++; const raw = (r[ri] || {})[ci];
+          if (typeof c.ans === 'string') { if (String(raw || '').trim().toLowerCase().replace(/\s+/g, ' ') === c.ans.trim().toLowerCase()) good++; }
+          else { const v = parseNum(raw); if (v != null && near(v, c.ans, c.tol || 1e-9)) good++; } } }));
         out.frac = good / tot; out.ok = good === tot; out.detail = `${good}/${tot} cells correct`;
         if (!out.ok) out.fb.push(q.hint || 'Find the pattern between the columns in the complete rows, then apply it to the blank cells.'); break;
       }

@@ -2,10 +2,13 @@
    The learner's progress lives in the backend (Backend.saveProgress); marking happens on the server
    (Backend.submitTest) – this file only mirrors results for the screens. */
 (function () {
-  const UNIT = 'stage7-unit03';
-  const STAGE_UNITS = 14;
-  const FREE_SECTIONS = ['3.1'];
-  let C = null;
+  const STAGE = 7, STAGE_UNITS = 14;
+  const pad2 = n => String(n).padStart(2, '0');
+  const unitId = n => `stage${STAGE}-unit${pad2(n)}`;
+  let UNO = 3;                       // the unit on screen
+  let C = null, INDEX = null;        // C = that unit's content; INDEX = list of the stage's units
+  const CACHE = {};
+  const FREE_SECTIONS = { includes: id => /\.1$/.test(id) };   // the first topic of every unit is free
   const BILLING_OFF = ((window.ATOMIC_CONFIG || {}).billing || 'off') === 'off';
   const BETA = { active: true, status: 'beta', plan: 'beta' };
   const getSub = () => (BILLING_OFF ? Promise.resolve(BETA) : Backend.subscription());
@@ -16,47 +19,72 @@
   const META = ['id', 'name', 'alias', 'results', 'cert', 'learner'];
 
   /* ---------- session ---------- */
-  async function boot(content) {
-    C = content; S.me = await Backend.me(); S.profiles = {}; S.current = null; S.guest = false;
+  async function loadIndex() {
+    if (INDEX) return INDEX;
+    const r = await fetch(`content/stage${STAGE}.json`); INDEX = r.ok ? await r.json() : { units: [] };
+    return INDEX;
+  }
+  async function loadUnit(n) {
+    if (!CACHE[n]) { const r = await fetch(`content/${unitId(n)}.json`); if (!r.ok) throw new Error('content'); CACHE[n] = await r.json(); }
+    UNO = n; C = CACHE[n]; try { sessionStorage.setItem('atomic.unit', String(n)); } catch (e) { }
+    return C;
+  }
+  const unitReady = n => !!((INDEX && INDEX.units.find(u => u.n === n)) || {}).ready;
+  // open another unit: every unit is open at any time (no need to finish the one before)
+  async function switchUnit(n) {
+    if (n === UNO && C) return C;
+    if (!unitReady(n)) throw new Error('not_ready');
+    const was = cur(); flush();
+    await loadUnit(n);
+    if (S.guest) { const days = was ? was.days : []; startGuest(); const st = cur(); st.days = Array.from(new Set([...(st.days || []), ...(days || [])])); }
+    else if (S.current) { const days = was ? was.days : []; await selectLearner(S.current); const st = cur(); st.days = Array.from(new Set([...(st.days || []), ...(days || [])])); }
+    return C;
+  }
+  async function boot() {
+    await loadIndex();
+    let want = null; try { want = Number(sessionStorage.getItem('atomic.unit')); } catch (e) { }
+    await loadUnit(want && unitReady(want) ? want : (INDEX.units.find(u => u.ready) || { n: 3 }).n);
+    S.me = await Backend.me(); S.profiles = {}; S.current = null; S.guest = false;
     if (!S.me) { if (guestSaved()) startGuest(); return S; }   // a returning visitor carries on where they stopped
     S.learners = await Backend.learners();
     S.sub = await getSub().catch(() => ({ active: false, status: 'none' }));
     const own = S.learners.find(l => l.user_id === S.me.user.id) || S.learners[0];
-    let want = null; try { want = sessionStorage.getItem('atomic.learner'); } catch (e) { }
-    const pick = (want && S.learners.find(l => l.id === want)) || own;
+    let wantL = null; try { wantL = sessionStorage.getItem('atomic.learner'); } catch (e) { }
+    const pick = (wantL && S.learners.find(l => l.id === wantL)) || own;
     if (pick) { await selectLearner(pick.id); await adoptGuest(); }
     return S;
   }
 
   /* ---------- guest: try topic 3.1 without an account (progress kept in this browser only) ---------- */
-  const GKEY = 'atomic.guest.v1';
-  const guestSaved = () => { try { return !!localStorage.getItem(GKEY); } catch (e) { return false; } };
+  const gkey = () => 'atomic.guest.v1' + (UNO === 3 ? '' : '.u' + UNO);
+  const guestSaved = () => { try { return Object.keys(localStorage).some(k => k.startsWith('atomic.guest.v1')); } catch (e) { return false; } };
   function startGuest() {
-    let saved = null; try { saved = JSON.parse(localStorage.getItem(GKEY)); } catch (e) { }
+    let saved = null; try { saved = JSON.parse(localStorage.getItem(gkey())); } catch (e) { }
     const st = Object.assign(fresh({ id: 'guest', nickname: 'Guest', created_at: new Date().toISOString() }), saved || {});
     st.id = 'guest'; st.alias = 'Guest'; st.name = 'Guest'; st.test = st.test || { drafts: {}, attempts: [] }; st.test.attempts = [];
     S.profiles = { guest: st }; S.current = 'guest'; S.guest = true;
-    try { localStorage.setItem(GKEY, JSON.stringify(strip(st))); } catch (e) { }
+    try { localStorage.setItem(gkey(), JSON.stringify(strip(st))); } catch (e) { }
     return st;
   }
   // after sign-up / sign-in: bring the guest's work into the new account (only if the account has nothing yet)
   async function adoptGuest() {
     if (!guestSaved()) return false; const st = cur(); if (!st) return false;
-    let g = null; try { g = JSON.parse(localStorage.getItem(GKEY)); } catch (e) { }
+    let g = null; try { g = JSON.parse(localStorage.getItem(gkey())); } catch (e) { }
     const empty = !Object.keys(st.items || {}).length && !Object.values(st.video || {}).some(v => v && (v.completed || v.pos > 1 || Object.keys(v.stops || {}).length));
     if (g && empty) { for (const k of ['video', 'items', 'stopsWrong', 'ws', 'days', 'marks']) if (g[k]) st[k] = g[k]; dirty = true; flush(); }
-    try { localStorage.removeItem(GKEY); } catch (e) { }
+    try { localStorage.removeItem(gkey()); } catch (e) { }
     return !!(g && empty);
   }
   const strip = st => { const c = {}; for (const k of Object.keys(st)) if (!META.includes(k)) c[k] = st[k]; c.test = { drafts: (st.test || {}).drafts || {} }; return c; };
   async function selectLearner(id) {
     const l = S.learners.find(x => x.id === id); if (!l) return null;
-    const saved = await Backend.loadProgress(id, UNIT);
+    const saved = await Backend.loadProgress(id, UNIT());
     const st = Object.assign(fresh(l), saved || {});
     st.id = l.id; st.name = l.certificate_name || l.nickname; st.alias = l.nickname; st.learner = l;
     st.test = st.test || { drafts: {}, attempts: [] };
-    st.test.attempts = await Backend.attempts(id, UNIT);
-    st.results = await Backend.unitResults(id); st.rank = { u3: st.results[UNIT] ? st.results[UNIT].pct : null };
+    st.test.attempts = await Backend.attempts(id, UNIT());
+    st.results = await Backend.unitResults(id);
+    if (Backend.allDays) { try { st.days = Array.from(new Set([...(st.days || []), ...(await Backend.allDays(id))])); } catch (e) { } }  // the streak counts every unit
     st.cert = await Backend.certificate(id);
     S.profiles = { [id]: st }; S.current = id;
     try { sessionStorage.setItem('atomic.learner', id); } catch (e) { }
@@ -74,8 +102,8 @@
   }
   function flush() {
     const st = cur(); if (!st || !dirty) return; dirty = false;
-    if (S.guest) { try { localStorage.setItem(GKEY, JSON.stringify(strip(st))); } catch (e) { } return; }
-    Backend.saveProgress(st.id, UNIT, strip(st)).catch(() => { dirty = true; }); // attempts live on the server
+    if (S.guest) { try { localStorage.setItem(gkey(), JSON.stringify(strip(st))); } catch (e) { } return; }
+    Backend.saveProgress(st.id, UNIT(), strip(st)).catch(() => { dirty = true; }); // attempts live on the server
   }
   window.addEventListener('pagehide', flush);
 
@@ -93,7 +121,7 @@
   const secDone = (st, s) => videoDone(st, s) && reqLeft(st, s).length === 0;
   const secIndex = sid => C.sections.findIndex(s => s.id === sid);
   function secLock(st, s) {
-    if (!canOpen(s.id)) return S.guest ? { reason: 'Guests can try topic 3.1. Create a free account to unlock every topic and save your progress.', what: 'a free account', route: 'signup', paywall: true, guest: true }
+    if (!canOpen(s.id)) return S.guest ? { reason: `Guests can try the first topic of every unit. Create a free account to unlock topic ${s.id} and save your progress.`, what: 'a free account', route: 'signup', paywall: true, guest: true }
       : { reason: 'This topic is part of the full Stage 7 course.', what: 'a Stage 7 plan (7-day free trial)', route: 'pricing', paywall: true };
     const i = secIndex(s.id); if (i <= 0) return null;
     const prev = C.sections[i - 1]; if (secDone(st, prev)) return null;
@@ -134,23 +162,21 @@
     return { state: 'ready', form: nextForm(st), retake: true };
   }
   async function submitTest(st, form, answers, clientKey) {
-    flush(); dirty = true; await Backend.saveProgress(st.id, UNIT, (() => { const c = {}; for (const k of Object.keys(st)) if (!META.includes(k)) c[k] = st[k]; c.test = { drafts: st.test.drafts }; return c; })());
-    const r = await Backend.submitTest({ learnerId: st.id, unit: UNIT, form, answers, clientKey });
+    flush(); dirty = true; await Backend.saveProgress(st.id, UNIT(), (() => { const c = {}; for (const k of Object.keys(st)) if (!META.includes(k)) c[k] = st[k]; c.test = { drafts: st.test.drafts }; return c; })());
+    const r = await Backend.submitTest({ learnerId: st.id, unit: UNIT(), form, answers, clientKey });
     const i = st.test.attempts.findIndex(a => a.id === r.attempt.id);
     if (i >= 0) st.test.attempts[i] = r.attempt; else st.test.attempts.push(r.attempt);
     st.solutions = Object.assign(st.solutions || {}, r.solutions);
     await refreshResults(st); return r;
   }
-  async function refreshAttempts(st) { st.test.attempts = await Backend.attempts(st.id, UNIT); await refreshResults(st); }
-  async function refreshResults(st) { st.results = await Backend.unitResults(st.id); st.rank = { u3: st.results[UNIT] ? st.results[UNIT].pct : null }; }
+  async function refreshAttempts(st) { st.test.attempts = await Backend.attempts(st.id, UNIT()); await refreshResults(st); }
+  async function refreshResults(st) { st.results = await Backend.unitResults(st.id); }
+  const UNIT = () => unitId(UNO);
 
   /* ---------- course / ranking / certificate ---------- */
   function unitStatus(st, n) {
-    if (n === 3) return passed(st) ? 'passed' : 'open';
-    const u = 'stage7-unit' + String(n).padStart(2, '0');
-    if (st.results && st.results[u]) return 'sim';
-    if (n === 4) return passed(st) ? 'unlocked' : 'locked';
-    return 'na';
+    if (st && st.results && st.results[unitId(n)]) return 'passed';
+    return unitReady(n) ? 'open' : 'soon';
   }
   function rankScore(st) {
     const list = Object.values(st.results || {}).map(r => r.pct);
@@ -197,18 +223,18 @@
   function nextActivity(st) {
     for (const s of secs()) {
       const lock = secLock(st, s);
-      if (lock) { if (lock.guest) return { label: 'Sign up free to unlock topic 3.2', route: 'signup' }; if (lock.paywall) return { label: 'Unlock the rest of Stage 7', route: 'pricing' }; break; }
+      if (lock) { if (lock.guest) return { label: `Sign up free to unlock topic ${s.id}`, route: 'signup' }; if (lock.paywall) return { label: 'Unlock the rest of Stage 7', route: 'pricing' }; break; }
       if (!videoDone(st, s)) return { label: `Watch the section ${s.id} video`, route: 'v-' + s.id.replace('.', '-') };
       const q = reqLeft(st, s)[0]; if (q) return { label: `Core practice for section ${s.id}`, route: 'ex-' + s.id.replace('.', '-'), tab: 'req', idx: s.req.indexOf(q) };
     }
     const ts = testState(st);
     if (ts.state === 'guest') return { label: 'Sign up free to take the Unit Test', route: 'signup' };
     if (ts.state === 'paywall') return { label: 'Unlock the Unit Test', route: 'pricing' };
-    if (ts.state === 'ready') return { label: ts.retake ? `Retake the Unit Test (Paper ${ts.form})` : 'Take Unit Test 3', route: 'test' };
+    if (ts.state === 'ready') return { label: ts.retake ? `Retake the Unit Test (Paper ${ts.form})` : `Take Unit Test ${UNO}`, route: 'test' };
     if (ts.state === 'remediate') return { label: 'Do your review questions', route: 'remedial' };
     if (ts.state === 'pending') return { label: 'See your results (awaiting marking)', route: 'result' };
     if (stageComplete(st)) return { label: 'Get your certificate', route: 'cert' };
-    return { label: 'See your Unit 3 results', route: 'result' };
+    return { label: `See your Unit ${UNO} results`, route: 'result' };
   }
 
   /* ---------- tiny PDF writer (one JPEG page) ---------- */
@@ -237,7 +263,8 @@
   }
 
   window.Core = {
-    UNIT, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; },
+    get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; },
+    unitId, unitReady, switchUnit, loadIndex,
     boot, selectLearner, leaveLearner, refreshAccount, cur, persist, flush, canOpen,
     sec, secs, vstate, stopDone, stopsLeft, videoDone, reqLeft, secDone, secLock, firstMissingIn, missingForTest,
     attempts, lastAttempt, passed, isPass, nextForm, remKey, remLeft, testState, submitTest, refreshAttempts, refreshResults,

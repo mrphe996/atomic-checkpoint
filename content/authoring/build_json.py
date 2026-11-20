@@ -83,7 +83,7 @@ def main(out):
                        "Food Chains and Food Webs", "Materials and Their Structure", "Properties of Materials",
                        "Acids and Alkalis", "Chemical Reactions", "Forces", "Energy", "Electricity",
                        "Earth Processes", "Earth and Beyond"])]},
-        "unit": {"n": 3, "title": "Cells", "strand": "Biology: structure and function", "framework": "Cambridge Lower Secondary Science (0893), Stage 7", "fullVideo": "S7_Unit03_Cells_lesson_Alice.mp4 (12:56)"},
+        "unit": {"n": 3, "title": "Cells", "strandShort": "Biology", "blurb": "The basic units of life — from using a microscope to how cells build tissues, organs and organ systems.", "strand": "Biology: structure and function", "framework": "Cambridge Lower Secondary Science (0893), Stage 7", "fullVideo": "S7_Unit03_Cells_lesson_Alice.mp4 (12:56)"},
         "objectives": OBJECTIVES, "sections": secs, "segments": SEGMENTS, "sources": SOURCES,
         "tests": {"A": TEST_A, "B": TEST_B, "pass": 0.7}, "mindmap": MINDMAP,
     }

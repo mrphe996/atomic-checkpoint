@@ -240,7 +240,7 @@
       }
       case 'table': {
         resp = resp || {}; const t = el('table', { class: 'grid' }); t.append(el('tr', {}, ...q.head.map(h => el('th', {}, h))));
-        q.rows.forEach((row, ri) => t.append(el('tr', {}, ...row.map((c, ci) => { if (c && typeof c === 'object') { const i = el('input', { type: 'text', inputmode: 'decimal', class: 'cellin', 'aria-label': `${q.head[ci]} row ${ri + 1}`, value: (resp[ri] || {})[ci] || '' }); i.oninput = () => { (resp[ri] = resp[ri] || {})[ci] = i.value; changed(); }; return el('td', {}, i); } return el('td', {}, c); }))));
+        q.rows.forEach((row, ri) => t.append(el('tr', {}, ...row.map((c, ci) => { if (c && typeof c === 'object') { const i = el('input', { type: 'text', inputmode: typeof c.ans === 'string' ? 'text' : 'decimal', class: 'cellin', 'aria-label': `${q.head[ci]} row ${ri + 1}`, value: (resp[ri] || {})[ci] || '' }); i.oninput = () => { (resp[ri] = resp[ri] || {})[ci] = i.value; changed(); }; return el('td', {}, i); } return el('td', {}, c); }))));
         W.append(el('div', { class: 'tablewrap' }, t)); break;
       }
       case 'graph': {

@@ -109,5 +109,17 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
     r.errs.forEach(e => console.log('  ERROR ' + e)); r.warn.slice(0, 20).forEach(w => console.log('  warn  ' + w));
     bad += r.errs.length;
   }
+  if (!check) writeIndex();
   process.exit(bad ? 1 : 0);
+}
+
+// web/content/stage7.json – the stage's units; "ready" when a unit's content has been built
+export function writeIndex() {
+  const T = { 7: [['Introducing Science', 'Enquiry'], ['Measurements', 'Enquiry'], ['Cells', 'Biology'], ['Classifying Living Things', 'Biology'], ['Food Chains and Food Webs', 'Biology'],
+    ['Materials and Their Structure', 'Chemistry'], ['Properties of Materials', 'Chemistry'], ['Acids and Alkalis', 'Chemistry'], ['Chemical Reactions', 'Chemistry'], ['Forces', 'Physics'],
+    ['Energy', 'Physics'], ['Electricity', 'Physics'], ['Earth Processes', 'Earth and Space'], ['Earth and Beyond', 'Earth and Space']] };
+  for (const [stage, list] of Object.entries(T)) {
+    const units = list.map(([t, strand], i) => { const id = `stage${stage}-unit${String(i + 1).padStart(2, '0')}`; return { n: i + 1, id, t, strand, ready: fs.existsSync(path.join(ROOT, 'web/content', id + '.json')) }; });
+    fs.writeFileSync(path.join(ROOT, 'web/content', `stage${stage}.json`), JSON.stringify({ stage: Number(stage), units }));
+  }
 }

@@ -30,8 +30,9 @@
         D.results[lid] = D.results[lid] || {};
         if (!D.results[lid][unit]) D.results[lid][unit] = { pct: at.pct, at: new Date().toISOString(), stage: 7 };
         const first = !D.results[lid][unit + ':notified']; D.results[lid][unit + ':notified'] = true;
-        note(a, lid, 'test_passed', 'You passed Unit 3: Cells!', `Score ${at.pct.toFixed(1)}%`);
-        if (first && l.parent_email) (D.outbox = D.outbox || []).push({ to_email: l.parent_email, kind: 'unit_complete', subject: `${l.nickname} has finished Unit 3: Cells on Atomic`, created_at: new Date().toISOString(), status: 'queued' });
+        const un = Number(unit.slice(-2)), ut = (((window.Core && Core.INDEX) || { units: [] }).units.find(u => u.n === un) || {}).t || ''; const uname = `Unit ${un}${ut ? ': ' + ut : ''}`;
+        note(a, lid, 'test_passed', `You passed ${uname}!`, `Score ${at.pct.toFixed(1)}%`);
+        if (first && l.parent_email) (D.outbox = D.outbox || []).push({ to_email: l.parent_email, kind: 'unit_complete', subject: `${l.nickname} has finished ${uname} on Atomic`, created_at: new Date().toISOString(), status: 'queued' });
       } else if (at.status === 'final') note(a, lid, 'test_marked', 'Your Unit Test has been marked', `Score ${at.pct.toFixed(1)}%`);
     }
     return {
@@ -74,6 +75,7 @@
         save(); return l; },
       async removeLearner(id) { const a = need(); mine(id); a.learners = a.learners.filter(l => l.id !== id); delete D.progress[id]; delete D.attempts[id]; delete D.results[id]; delete D.certs[id]; D.events = D.events.filter(e => e.learner_id !== id); save(); },
       async loadProgress(lid, unit) { mine(lid); return ((D.progress[lid] || {})[unit]) || null; },
+      async allDays(lid) { mine(lid); return [].concat(...Object.values(D.progress[lid] || {}).map(p => (p && p.days) || [])); },
       async saveProgress(lid, unit, state) { mine(lid); (D.progress[lid] = D.progress[lid] || {})[unit] = JSON.parse(JSON.stringify(state)); save(); },
       async attempts(lid, unit) { mine(lid); return ((D.attempts[lid] || {})[unit] || []).slice(); },
       async submitTest({ learnerId, unit, form, answers, clientKey }) { // same rules as api/submit-test.js
@@ -211,6 +213,7 @@
         if ('leaderboard_opt_in' in patch) await rest('consents', { method: 'POST', body: { parent_id: uid(), learner_id: id, kind: 'leaderboard', version: LEGAL, given: !!patch.leaderboard_opt_in } }); return r[0]; },
       async removeLearner(id) { await rest(`learners?id=eq.${id}`, { method: 'DELETE' }); },
       async loadProgress(lid, unit) { const r = await rest(`progress?learner_id=eq.${lid}&unit=eq.${unit}&select=state`); return r[0] ? r[0].state : null; },
+      async allDays(lid) { const r = await rest(`progress?learner_id=eq.${lid}&select=days:state->days`); return [].concat(...r.map(x => x.days || [])); },
       async saveProgress(lid, unit, state) { await rest('progress?on_conflict=learner_id,unit', { method: 'POST', prefer: 'resolution=merge-duplicates', body: { learner_id: lid, unit, state, updated_at: new Date().toISOString() } }); },
       async attempts(lid, unit) { const rows = await rest(`attempts?learner_id=eq.${lid}&unit=eq.${unit}&order=n.asc`);
         return rows.map(r => ({ id: r.id, n: r.n, form: r.form, ts: Date.parse(r.created_at), answers: r.answers, per: r.per, auto: Number(r.auto), pending: Object.keys(r.per).filter(k => r.per[k].teacher), status: r.status, score: r.score == null ? null : Number(r.score), pct: r.pct == null ? null : Number(r.pct), passed: r.passed, byObj: r.by_obj, weak: r.weak || [], remed: r.remed || [] })); },

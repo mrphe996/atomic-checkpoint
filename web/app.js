@@ -38,7 +38,7 @@
   function xpTick() { }
   function initialChip(size) { return el('span', { class: 'ini', style: `width:${size}px;height:${size}px;font-size:${Math.round(size * .42)}px` }, ((st && st.alias) || '?').slice(0, 1).toUpperCase()); }
   const isGuest = () => !!Core.S.guest;
-  function startGuest() { Core.startGuest(); st = Core.cur(); toast('Welcome! You are learning as a guest.'); go('v-3-1'); }
+  function startGuest(n) { n = typeof n === 'number' ? n : 3; if (!Core.S.me && !Core.cur()) toast('Welcome! You are learning as a guest.'); go(`v-${n}-1`); }
   function guestWall(title) {
     return el('section', { class: 'card lockcard', id: 'guestWall' }, el('h2', {}, '✨ ' + title), el('p', {}, 'Create a free account to unlock every topic, take the Unit Test and join the leaderboard. What you have done as a guest comes with you.'),
       el('div', { class: 'btnrow' }, el('a', { class: 'btn gold', href: '#signup' }, 'Sign up free'), el('a', { class: 'btn ghost', href: '#signin' }, 'I already have an account')));
@@ -57,7 +57,7 @@
   function shell(opts) {
     const r = location.hash.slice(1) || 'home'; const app = document.getElementById('app'); app.innerHTML = '';
     const me = Core.S.me;
-    const area = r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r === 'unit3' || r === 'map' ? 'course' : r === 'bank' || r === 'topic' || r === 'drill' ? 'bank' : r === 'test' || r === 'result' || r === 'remedial' ? 'test' : r === 'profile' || r === 'cert' ? 'profile' : r === 'board' ? 'board' : r === 'home' ? 'home' : r;
+    const area = r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || /^u-\d+$/.test(r) || r === 'map' ? 'course' : r === 'bank' || r === 'topic' || r === 'drill' ? 'bank' : r === 'test' || r === 'result' || r === 'remedial' ? 'test' : r === 'profile' || r === 'cert' ? 'profile' : r === 'board' ? 'board' : r === 'home' ? 'home' : r;
     const right = el('span', { class: 'topright' });
     let nav;
     if (st) {
@@ -72,7 +72,7 @@
         document.addEventListener('click', () => { menu.hidden = true; }, { once: true });
         right.append(s, bell(), el('span', { class: 'userwrap' }, av, menu));
       }
-      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('unit3', 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('test', 'Unit Test', area === 'test'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
+      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('test', 'Unit Test', area === 'test'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
     } else if (me) {
       right.append(bell(), el('button', { class: 'btn small', type: 'button', id: 'signOut', onclick: async () => { await Backend.signOut(); await Core.boot(C); go('home'); } }, 'Sign out'));
       nav = [navLink('home', 'Home', area === 'home'), navLink('help', 'Help', area === 'help')];
@@ -116,14 +116,14 @@
       el('div', { class: 'it', title: 'Coming soon' }, 'Cambridge IGCSE ', svgI(I.lock, 15, '#8B98AB', 2)), el('div', { class: 'it', title: 'Coming soon' }, 'AS & A Level ', svgI(I.lock, 15, '#8B98AB', 2))));
     wrap.append(el('div', { class: 'stagechips', role: 'group', 'aria-label': 'Stage' }, el('span', { class: 'chip on' }, 'Stage 7'), el('span', { class: 'chip dim', title: 'Opens after approval' }, 'Stage 8'), el('span', { class: 'chip dim', title: 'Opens after approval' }, 'Stage 9')));
     const units = el('div', { class: 'units' });
-    C.course.units.forEach(u => {
+    Core.INDEX.units.forEach(u => {
       const us = Core.unitStatus(st, u.n);
-      if (u.n !== 3) {
-        const why = u.n === 4 && us === 'locked' ? 'Locked: pass Unit Test 3 (above 70%)' : us === 'unlocked' ? 'Unlocked – content arrives once the Unit 3 pilot is approved' : us === 'sim' ? 'Simulated: passed (preview tool)' : 'Not in this preview';
-        units.append(el('div', { class: 'unit', title: why }, unitIcon(u.n), el('span', {}, `${u.n}. ${u.t}`), us === 'sim' ? el('span', { class: 'lk', style: 'color:#1E8E4E;font-weight:800' }, '✓') : us === 'unlocked' ? el('span', { class: 'lk' }, '🔓') : el('span', { class: 'lk' }, svgI(I.lock, 14, '#8B98AB', 2))));
+      if (u.n !== Core.UNO) {
+        if (us === 'soon') { units.append(el('div', { class: 'unit', title: 'Coming soon' }, unitIcon(u.n), el('span', {}, `${u.n}. ${u.t}`), el('span', { class: 'lk' }, svgI(I.lock, 14, '#8B98AB', 2)))); return; }
+        units.append(el('a', { class: 'unit', href: '#u-' + u.n, title: us === 'passed' ? 'Unit Test passed' : 'Open this unit' }, unitIcon(u.n), el('span', {}, `${u.n}. ${u.t}`), us === 'passed' ? el('span', { class: 'lk', style: 'color:#1E8E4E;font-weight:800' }, '✓') : null));
         return;
       }
-      units.append(el('a', { class: 'unit on', href: '#unit3', 'aria-current': route === 'unit3' ? 'page' : null }, unitIcon(3), el('span', {}, '3. Cells')));
+      units.append(el('a', { class: 'unit on', href: '#u-' + Core.UNO, 'aria-current': route === 'u-' + Core.UNO ? 'page' : null }, unitIcon(u.n), el('span', {}, `${u.n}. ${u.t}`)));
       const sn = el('div', { class: 'secnav' });
       C.sections.forEach(s => {
         const lock = Core.secLock(st, s), done = Core.secDone(st, s), vd = Core.videoDone(st, s), rl = Core.reqLeft(st, s).length;
@@ -133,7 +133,7 @@
         else sn.append(link('v-' + R(s.id), 'Watch', vd), link('ex-' + R(s.id), `Practise · ${8 - rl}/8 Core`, rl === 0), link('ws-' + R(s.id), 'Worksheet', st.ws.includes(s.id)));
       });
       const ts = Core.testState(st);
-      sn.append(el('a', { href: '#test', class: route === 'test' ? 'on' : '' }, el('span', { class: 'st' + (ts.state === 'passed' ? ' ok' : '') }, ts.state === 'passed' ? '✓' : '★'), ts.state === 'locked' ? 'Unit Test 3 (locked)' : 'Unit Test 3'));
+      sn.append(el('a', { href: '#test', class: route === 'test' ? 'on' : '' }, el('span', { class: 'st' + (ts.state === 'passed' ? ' ok' : '') }, ts.state === 'passed' ? '✓' : '★'), ts.state === 'locked' ? `Unit Test ${Core.UNO} (locked)` : `Unit Test ${Core.UNO}`));
       units.append(sn);
     });
     wrap.append(units, el('div', { class: 'card tocfoot' }, el('a', { href: '#map' }, '🧠 Concept map'), el('a', { href: '#result' }, '📊 Results & history'), el('a', { href: '#bank' }, '🗂 Question Bank')));
@@ -156,7 +156,7 @@
     if (vids) left.push(`${vids} video`); if (reqs) left.push(`${reqs} Core questions`); if (!Core.passed(st)) left.push('Unit Test');
     const nx = Core.nextActivity(st);
     return el('div', { class: 'where' }, el('div', {}, el('small', {}, 'You are here'), el('b', {}, where)),
-      el('div', {}, el('small', {}, 'Still to do in Unit 3'), el('b', {}, left.length ? left.join(' · ') : 'All done 🎉')),
+      el('div', {}, el('small', {}, `Still to do in Unit ${Core.UNO}`), el('b', {}, left.length ? left.join(' · ') : 'All done 🎉')),
       el('button', { class: 'btn gold small', type: 'button', id: 'nextBtn', onclick: () => goNext(nx) }, 'Next: ' + nx.label, el('span', { class: 'arr' }, ' →')));
   }
   function lockScreen(title, reason, items) {
@@ -195,21 +195,21 @@
     document.getElementById('wrap').before(el('section', { class: 'dhero dots' }, el('div', { class: 'dhero-in' },
       el('div', { class: 'dhero-txt' }, el('span', { class: 'eyebrow' }, isGuest() ? 'GUEST · TOPIC 3.1 IS OPEN' : dateTxt),
         el('h1', {}, isGuest() ? 'Welcome to Atomic ' : `${greet}, ${st.alias} `, el('span', { class: 'wobble', style: 'display:inline-block;color:var(--gold)' }, '✦')),
-        el('p', {}, started ? `You are on ${cur.id} ${cur.title} — next: ${nx.label.charAt(0).toLowerCase() + nx.label.slice(1)}.` : 'Start with Unit 3: Cells – topic 3.1. Watch the lesson, then practise.')),
+        el('p', {}, started ? `You are on ${cur.id} ${cur.title} — next: ${nx.label.charAt(0).toLowerCase() + nx.label.slice(1)}.` : `Start with Unit ${Core.UNO}: ${C.unit.title} – topic 3.1. Watch the lesson, then practise.`)),
       el('div', { class: 'dstats' },
         el('a', { class: 'card dstat', href: '#profile', id: 'streakCard' }, el('span', { class: 'bob', html: '<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 6 6 6 11a6 6 0 0 1-12 0c0-3 2-5 3-6 0 2 1 3 2 3 0-3-1-5 1-8z" fill="#F3BF69" stroke="#0149AF" stroke-width="1.5" stroke-linejoin="round"/></svg>' }),
           el('span', {}, el('b', {}, `${sk} day${sk === 1 ? '' : 's'}`), el('br'), el('small', {}, 'learning streak'))),
         el('div', { class: 'card dstat' }, el('span', { class: 'dring', style: `background:conic-gradient(var(--blue) 0 ${pct}%, #E3EBF5 0)` }, el('i', {}, pct + '%')),
-          el('span', {}, el('b', {}, `${doneQ} / ${allQ}`), el('br'), el('small', {}, 'Unit 3 questions done')))))));
+          el('span', {}, el('b', {}, `${doneQ} / ${allQ}`), el('br'), el('small', {}, `Unit ${Core.UNO} questions done`)))))));
     if (isGuest()) m.append(el('div', { class: 'banner info', id: 'guestBanner' }, el('b', {}, 'You are learning as a guest. '), 'Your progress is kept on this device only and topic 3.1 is open. Sign up free to save it and unlock every topic.', el('a', { class: 'btn small gold', href: '#signup' }, 'Sign up free')));
     else if (!Core.S.sub.active) m.append(el('div', { class: 'banner info', id: 'freeBanner' }, el('b', {}, 'Free plan: '), 'topic 3.1 is open. A Stage 7 plan unlocks all topics and the Unit Test.', el('a', { class: 'btn small gold', href: '#pricing' }, 'See plans')));
     if (Backend.mode === 'demo' && !isGuest()) m.append(el('div', { class: 'banner adv' }, el('b', {}, 'Trying the preview? '), 'Use the tester tools on the Progress page to unlock sections instantly.', el('a', { class: 'btn small', href: '#profile' }, 'Open tester tools')));
     const left = el('div', { class: 'dmain' }), aside = el('aside', { class: 'daside' });
     m.append(el('div', { class: 'dgrid' }, left, aside));
     // continue card
-    const thumb = el('div', { class: 'dthumb', style: `background-image:url(media/u3_s${C.sections.indexOf(cur) + 1}_poster.jpg)` }, el('span', { class: 'lp-play pulse', 'aria-hidden': 'true' }, svgI(I.play, 28, '#1C2A3A', 2.6)));
+    const thumb = el('div', { class: 'dthumb', style: `background-image:url(${cur.video.src.replace('.mp4', '_poster.jpg')})` }, el('span', { class: 'lp-play pulse', 'aria-hidden': 'true' }, svgI(I.play, 28, '#1C2A3A', 2.6)));
     left.append(el('section', { class: 'card lift dcont', 'aria-label': 'Continue learning', onclick: e => { if (e.target.closest('a,button')) return; resume(); } }, thumb,
-      el('div', { class: 'dcont-txt' }, el('span', { class: 'eyebrow' }, `${started ? 'CONTINUE' : 'START'} · UNIT 3 › ${cur.id}`), el('h2', {}, cur.title),
+      el('div', { class: 'dcont-txt' }, el('span', { class: 'eyebrow' }, `${started ? 'CONTINUE' : 'START'} · UNIT ${Core.UNO} › ${cur.id}`), el('h2', {}, cur.title),
         el('p', { class: 'muted', style: 'font-size:16px;margin:0' }, cur.objs.slice(0, 2).map(o => C.objectives[o].t).join(' ')),
         el('div', { class: 'dprog' }, el('div', { class: 'pbar' }, el('i', { style: `width:${cur.stops.length ? pausesDone / cur.stops.length * 100 : 0}%` })), el('small', {}, `${pausesDone} of ${cur.stops.length} pause questions`)),
         curLock ? el('p', { class: 'muted', style: 'margin:0' }, '🔒 ' + curLock.reason) : null,
@@ -217,14 +217,19 @@
           el('a', { class: 'btn', href: '#ex-' + R(cur.id) }, `Practise ${cur.id}`)))));
     // unit table
     const stCls = s => Core.secLock(st, s) ? ['todo', 'Locked'] : Core.secDone(st, s) ? ['done', 'Completed'] : (Core.videoDone(st, s) || Core.reqLeft(st, s).length < 8 || Object.keys(Core.vstate(st, s.id).stops).length) ? ['cur', 'In progress'] : ['todo', 'Not started'];
-    left.append(el('section', { class: 'card dtable' }, el('div', { class: 'dth' }, el('h2', {}, 'Unit 3 · Cells'), el('a', { href: '#unit3', class: 'ul' }, 'Open the course →')),
+    left.append(el('section', { class: 'card dtable' }, el('div', { class: 'dth' }, el('h2', {}, `Unit ${Core.UNO} · ${C.unit.title}`), el('a', { href: '#u-' + Core.UNO, class: 'ul' }, 'Open the course →')),
       el('div', { class: 'tablewrap' }, el('div', { class: 'drows' }, el('div', { class: 'drow h' }, ...['Topic', 'Lesson', 'Core', 'Practice', 'Extension', 'Status'].map(t => el('span', {}, t))),
         ...C.sections.map(s => { const v = Core.vstate(st, s.id), core = 8 - Core.reqLeft(st, s).length, [c, t] = stCls(s), np = Object.values(v.stops).filter(x => x.done).length;
-          return el('a', { class: 'drow', href: Core.secLock(st, s) ? '#unit3' : (Core.videoDone(st, s) ? '#ex-' : '#v-') + R(s.id) }, el('span', {}, el('b', { style: 'color:var(--blue)' }, s.id), ' ' + s.title),
+          return el('a', { class: 'drow', href: Core.secLock(st, s) ? '#u-' + Core.UNO : (Core.videoDone(st, s) ? '#ex-' : '#v-') + R(s.id) }, el('span', {}, el('b', { style: 'color:var(--blue)' }, s.id), ' ' + s.title),
             el('span', {}, Core.videoDone(st, s) ? 'Watched' : np ? `${np} of ${s.stops.length} pauses` : '—'),
             el('span', { class: 'dcore' }, el('span', { class: 'pbar' }, el('i', { style: `width:${core / 8 * 100}%` })), `${core}/8`),
             el('span', {}, `${s.prac.filter(q => (st.items[q.id] || {}).done).length}/18`), el('span', {}, `${s.adv.filter(q => (st.items[q.id] || {}).done).length}/4`),
             el('span', {}, el('span', { class: 'status ' + c }, t))); })))));
+    // every unit of the stage: open any of them at any time
+    left.append(el('section', { class: 'card dtable', id: 'unitPicker' }, el('div', { class: 'dth' }, el('h2', {}, 'Stage 7 units'), el('small', { class: 'muted' }, 'Open any unit – you do not have to finish one first')),
+      el('div', { class: 'lp-ugrid', style: 'padding:8px 32px 24px' }, ...Core.INDEX.units.map(u => { const us = Core.unitStatus(st, u.n);
+        return el(us === 'soon' ? 'div' : 'a', us === 'soon' ? { class: 'card lp-unit off', title: 'Coming soon' } : { class: 'card lift lp-unit' + (u.n === Core.UNO ? ' cur' : ''), href: '#u-' + u.n, 'data-unit': u.n },
+          unitIcon(u.n), el('span', { class: 'lp-ut' }, el('small', {}, 'UNIT ' + u.n), el('br'), el('b', {}, u.t)), us === 'passed' ? el('span', { class: 'lp-free', style: 'background:#1E8E4E' }, '✓') : u.n === Core.UNO ? el('span', { class: 'lp-free' }, 'Now') : us === 'soon' ? el('span', { class: 'lp-tag' }, 'Soon') : null); }))));
     // suggested next
     const wl = wrongList(), wsSec = st.ws.length ? null : cur;
     const sug = el('section', { class: 'card dsug' }, el('h2', {}, 'Suggested next'));
@@ -238,7 +243,7 @@
     // aside: unit test card
     const ts = Core.testState(st), totalReq = C.sections.reduce((a, s) => a + 8 - Core.reqLeft(st, s).length, 0);
     aside.append(el('section', { class: 'dtest' }, el('div', { class: 'blob drift', 'aria-hidden': 'true' }),
-      el('div', { class: 'dtest-h' }, el('span', { class: 'wobble', html: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F3BF69" stroke-width="2"><path d="M6 11h12v10H6z M8 11V8a4 4 0 0 1 8 0v3"/></svg>' }), el('b', {}, 'Unit Test 3')),
+      el('div', { class: 'dtest-h' }, el('span', { class: 'wobble', html: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F3BF69" stroke-width="2"><path d="M6 11h12v10H6z M8 11V8a4 4 0 0 1 8 0v3"/></svg>' }), el('b', {}, `Unit Test ${Core.UNO}`)),
       el('p', {}, ts.state === 'passed' ? 'Passed — well done! Your first-pass score counts towards the leaderboard.' : 'Unlocks when you finish every video and Core question in 3.1 to 3.4. Score above 70% to open Unit 4.'),
       el('div', { class: 'dsegs' }, ...C.sections.map(s => el('span', { class: Core.secDone(st, s) ? 'on' : (8 - Core.reqLeft(st, s).length) ? 'half' : '' }))),
       el('small', {}, `Core questions: ${totalReq} of 32`),
@@ -296,15 +301,15 @@
     });
     const totalReq = C.sections.reduce((a, s) => a + 8 - Core.reqLeft(st, s).length, 0);
     ol.append(el('li', { style: 'animation-delay:.4s' }, el('span', { class: 'node ' + (ts.state === 'passed' ? 'done' : ts.state === 'locked' ? 'lock' : 'cur') }, ts.state === 'passed' ? '✓' : '★'),
-      el('article', { class: 'card pcard test' }, el('div', { class: 'hd' }, el('div', {}, el('small', { class: 'eyebrow' }, 'FINAL STEP'), el('h3', {}, 'Unit Test 3')), el('span', { class: 'status todo' }, `${totalReq} of 32 Core done`)),
+      el('article', { class: 'card pcard test' }, el('div', { class: 'hd' }, el('div', {}, el('small', { class: 'eyebrow' }, 'FINAL STEP'), el('h3', {}, `Unit Test ${Core.UNO}`)), el('span', { class: 'status todo' }, `${totalReq} of 32 Core done`)),
         el('p', { style: 'margin:0;color:#3A4B63;font-size:15px' }, 'Unlocks when every video and Core question is done. Score above 70% to open Unit 4.'),
         ts.state === 'guest' ? el('a', { class: 'btn small gold', href: '#signup', style: 'align-self:flex-start' }, 'Sign up free to take the test', el('span', { class: 'arr' }, '→')) : ts.state === 'paywall' ? el('a', { class: 'btn small gold', href: '#pricing', style: 'align-self:flex-start' }, 'Unlock with a Stage 7 plan', el('span', { class: 'arr' }, '→')) : el('a', { class: 'btn small ' + (ts.state === 'locked' ? '' : 'primary shine'), href: ts.state === 'passed' ? '#result' : '#test', style: 'align-self:flex-start' }, ts.state === 'locked' ? 'See what\'s missing' : ts.state === 'passed' ? 'See results' : 'Take the Unit Test', el('span', { class: 'arr' }, '→')))));
     return ol;
   }
   function viewUnit() {
     const m = $main(); const nx = Core.nextActivity(st);
-    const heroS = el('section', { class: 'hero' }, el('div', { class: 'hero-in' }, el('nav', { class: 'crumb', 'aria-label': 'Breadcrumb' }, el('a', { href: '#home' }, 'Dashboard'), ' › Lower Secondary › Stage 7 › Unit 3'),
-      el('div', { class: 'txt' }, el('span', { class: 'eyebrow' }, 'UNIT 3 / 14 · BIOLOGY'), el('h1', {}, 'Cells'), el('p', {}, 'The basic units of life — from using a microscope to how cells build tissues, organs and organ systems.'),
+    const heroS = el('section', { class: 'hero' }, el('div', { class: 'hero-in' }, el('nav', { class: 'crumb', 'aria-label': 'Breadcrumb' }, el('a', { href: '#home' }, 'Dashboard'), ` › Lower Secondary › Stage 7 › Unit ${Core.UNO}`),
+      el('div', { class: 'txt' }, el('span', { class: 'eyebrow' }, `UNIT ${Core.UNO} / 14 · ${(C.unit.strandShort || '').toUpperCase()}`), el('h1', {}, C.unit.title), el('p', {}, C.unit.blurb || ''),
         el('div', { class: 'btnrow', style: 'gap:22px' }, el('div', { class: 'prog' }, el('span', { style: 'display:flex;justify-content:space-between;font-weight:600;font-size:14px' }, el('span', {}, 'Unit progress'), el('span', {}, unitPct() + '%')), el('div', { class: 'pbar' }, el('i', { style: `width:${unitPct()}%` }))),
           el('button', { class: 'btn gold shine', type: 'button', onclick: () => goNext(nx) }, svgI(I.play, 16, '#0149AF', 2.6), nx.label))), cellLens()));
     document.getElementById('wrap').before(heroS);
@@ -319,7 +324,7 @@
   function viewVideo(sid) {
     const s = Core.sec(sid), m = $main(); if (!s) return go('home');
     const lock = Core.secLock(st, s);
-    subbar('', el('a', { class: 'back', href: '#unit3' }, '← Unit 3: Cells'), el('span', { class: 'sep' }), el('span', { class: 'ttl' }, `Lesson ${s.id} · ${s.title}`));
+    subbar('', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}: ${C.unit.title}`), el('span', { class: 'sep' }), el('span', { class: 'ttl' }, `Lesson ${s.id} · ${s.title}`));
     if (lock) { m.append(bar(`Section ${s.id} · Video`), lockScreen(`Section ${s.id} is locked`, lock.reason, [lock])); return; }
     const xp0 = Core.xp(st); const gchip = el('span', { class: 'gchip', html: FLAME + ` ${Core.streak(st)}-day streak` });
     document.querySelector('#sub .subbar-in').append(gchip);
@@ -348,7 +353,7 @@
       el('div', { class: 'card', style: 'padding:18px 20px' }, el('b', { class: 'lex' }, 'This lesson\'s objectives'), el('ul', { style: 'margin:6px 0 0;padding-left:18px;font-size:15px' }, ...s.objs.map(o => el('li', {}, C.objectives[o].t)))),
       el('div', { class: 'btnrow' }, el('a', { class: 'btn small', href: '#map' }, '🧠 Mind map'), el('a', { class: 'btn small', href: '#ws-' + R(sid) }, '📄 Worksheet')),
       el('div', { class: 'goal' }, el('span', { class: 'gi' }, svgI(I.bulb, 16, '#1C2A3A', 2)), el('span', {}, el('b', {}, 'Daily goal: '), `this video lasts ${fmt(s.video.dur)} with ${s.stops.length} pause questions – finish it to keep your streak going.`)));
-    m.append(bar(`Unit 3 › ${s.id} › Video`), tocBtn(), el('div', { class: 'lesson' }, lessonMain, side));
+    m.append(bar(`Unit ${Core.UNO} › ${s.id} › Video`), tocBtn(), el('div', { class: 'lesson' }, lessonMain, side));
     const drawSide = () => {
       tabsBox.innerHTML = ''; [['chapters', 'Chapters'], ['transcript', 'Transcript'], ['notes', 'My notes']].forEach(([k, t]) => tabsBox.append(el('button', { type: 'button', role: 'tab', 'aria-selected': String(UI.side === k), class: UI.side === k ? 'on' : '', onclick: () => { UI.side = k; drawSide(); } }, t)));
       sideBody.innerHTML = ''; const t = v.currentTime || 0;
@@ -441,7 +446,7 @@
     const s = Core.sec(sid), m = $main(); if (!s) return go('home'); const route = 'ex-' + R(sid);
     const lock = Core.secLock(st, s);
     if (lock || !Core.videoDone(st, s)) {
-      subbar('blue', el('a', { class: 'back', href: '#unit3' }, '← Unit 3: Cells'), el('span', { class: 'ttl' }, `${s.id} ${s.title} · Practice`));
+      subbar('blue', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}: ${C.unit.title}`), el('span', { class: 'ttl' }, `${s.id} ${s.title} · Practice`));
       m.append(bar(`Section ${s.id} · Practice`), lock ? lockScreen(`Practice for section ${s.id} is locked`, lock.reason, [lock]) : lockScreen(`Practice for section ${s.id} is locked`, 'Watch the whole video and answer its pause questions before you start the practice.', [Core.firstMissingIn(st, s)])); return;
     }
     const tab = UI.tab[route] || 'req'; const list = s[tab]; let idx = Math.min(UI.idx[route + tab] || 0, list.length - 1);
@@ -449,7 +454,7 @@
     const q = list[idx]; const go2 = i => { UI.idx[route + tab] = i; render(); };
     const pips = el('div', { class: 'pips', 'aria-hidden': 'true' }, ...list.map((x, i) => { const r = st.items[x.id] || {}; return el('span', { class: i === idx ? 'cur' : r.done ? (r.ok ? (r.tries === 1 ? 'ok' : 'half') : 'bad') : r.tries ? 'bad' : '' }); }));
     const tabName = { req: 'Core', prac: 'Practise', adv: '* Advanced' }[tab];
-    subbar('blue', el('a', { class: 'back', href: '#unit3' }, '← Unit 3'), el('span', { style: 'font-size:15px;color:#DCE8FA' }, `${s.id} ${s.title} · ${tabName} · `, el('b', { style: 'color:#fff' }, `Question ${idx + 1} of ${list.length}`)), pips,
+    subbar('blue', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}`), el('span', { style: 'font-size:15px;color:#DCE8FA' }, `${s.id} ${s.title} · ${tabName} · `, el('b', { style: 'color:#fff' }, `Question ${idx + 1} of ${list.length}`)), pips,
       el('button', { class: 'btn small onblue', type: 'button', disabled: idx === 0, onclick: () => go2(idx - 1) }, '← Previous'),
       el('button', { class: 'btn small gold', type: 'button', id: 'nextQ', disabled: idx === list.length - 1, onclick: () => go2(idx + 1) }, 'Next', el('span', { class: 'arr' }, '→')));
     const tabs = el('div', { class: 'btnrow', role: 'tablist' }, ...[['req', `Core · ${8 - Core.reqLeft(st, s).length}/8`], ['prac', `Practice · ${s.prac.filter(x => (st.items[x.id] || {}).done).length}/${s.prac.length}`], ['adv', `* Advanced · ${s.adv.filter(x => (st.items[x.id] || {}).done).length}/${s.adv.length}`]]
@@ -482,7 +487,7 @@
     const aside = el('aside', { class: 'aside' }, solTabs, solBody,
       el('div', { class: 'card', style: 'padding:18px 20px' }, el('b', { class: 'lex' }, 'Learning objective'), el('p', { style: 'margin:4px 0 0;font-size:15px' }, `${q.obj}: ${C.objectives[q.obj].t}`)),
       el('div', { class: 'goal' }, el('span', { class: 'gi' }, svgI(I.bulb, 16, '#1C2A3A', 2)), el('span', {}, tab === 'req' ? 'Right first time: 1 mark · second try: ½ mark. Two wrong tries: you get guided reasoning and a similar question.' : tab === 'adv' ? '* Advanced – optional. Written by Atomic from the real source named on each question.' : 'Practice – optional for unlocking, but it makes you stronger before the Unit Test.')));
-    m.append(bar(`Unit 3 › ${s.id} › ${tabName} › question ${idx + 1}`), tocBtn(), doneBanner, tabs, chips, el('div', { class: 'exgrid' }, el('div', { class: 'q' }, card), aside));
+    m.append(bar(`Unit ${Core.UNO} › ${s.id} › ${tabName} › question ${idx + 1}`), tocBtn(), doneBanner, tabs, chips, el('div', { class: 'exgrid' }, el('div', { class: 'q' }, card), aside));
     showBanner(); drawSol();
     QE.practice(q, card, { rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; Core.persist(); showBanner(); refreshToc(); drawSol(); xpTick();
       const c = chips.children[idx]; if (c) c.className = 'qc on ' + (rec.ok ? 'ok' : 'half'); } });
@@ -524,13 +529,13 @@
   }
   function viewWorksheet(sid) {
     const s = Core.sec(sid), m = $main(); if (!s) return go('home');
-    const lock = Core.secLock(st, s); if (lock && lock.paywall) { m.append(bar(`Unit 3 › ${s.id} › A4 worksheet`), lockScreen(`Worksheet ${s.id} is locked`, lock.reason, [lock])); return; }
+    const lock = Core.secLock(st, s); if (lock && lock.paywall) { m.append(bar(`Unit ${Core.UNO} › ${s.id} › A4 worksheet`), lockScreen(`Worksheet ${s.id} is locked`, lock.reason, [lock])); return; }
     if (!st.ws.includes(sid)) { st.ws.push(sid); Core.persist(); }
     const msg = el('span', { class: 'muted' });
-    m.append(bar(`Unit 3 › ${s.id} › A4 worksheet`), el('div', { class: 'btnrow noprint' },
+    m.append(bar(`Unit ${Core.UNO} › ${s.id} › A4 worksheet`), el('div', { class: 'btnrow noprint' },
       el('button', { class: 'btn primary', type: 'button', id: 'dlws', onclick: async () => {
         msg.textContent = 'Preparing…';
-        try { const r = await fetch(`worksheets/Atomic_S7_U3_Worksheet_${R(sid)}.pdf`); if (!r.ok) throw 0; const b = await r.blob(); const res = await Core.saveFile(`Atomic_S7_U3_Worksheet_${R(sid)}.pdf`, b); msg.textContent = res === 'saved' ? 'Downloaded.' : res === 'declined' ? 'Download cancelled.' : 'Could not download.'; }
+        try { const r = await fetch(`worksheets/Atomic_S7_U${Core.UNO}_Worksheet_${R(sid)}.pdf`); if (!r.ok) throw 0; const b = await r.blob(); const res = await Core.saveFile(`Atomic_S7_U${Core.UNO}_Worksheet_${R(sid)}.pdf`, b); msg.textContent = res === 'saved' ? 'Downloaded.' : res === 'declined' ? 'Download cancelled.' : 'Could not download.'; }
         catch (e) { msg.textContent = 'PDF file not found.'; }
       } }, '⬇ Download PDF (A4)'),
       el('button', { class: 'btn', type: 'button', onclick: () => { try { window.print(); } catch (e) { msg.textContent = 'This viewer blocks printing – please use Download PDF.'; } } }, '🖨 Print'), msg), worksheetPages(s));
@@ -539,7 +544,7 @@
   /* ---------- unit test ---------- */
   function viewRemedial() {
     const m = $main(); const a = Core.lastAttempt(st); const ts = Core.testState(st);
-    m.append(bar('Unit 3 › Review questions'));
+    m.append(bar(`Unit ${Core.UNO} › Review questions`));
     if (!a || !a.remed) { m.append(el('section', { class: 'card' }, el('p', {}, 'No review questions have been set yet.'))); return; }
     st.last = { route: 'remedial' }; Core.persist();
     const left = Core.remLeft(st, a);
@@ -597,7 +602,7 @@
     const m = $main(); m.append(bar('Stage 7 certificate'));
     const cert = await Core.certificate(st);
     if (!cert) {
-      const items = []; if (!Core.passed(st)) items.push({ what: 'pass Unit Test 3 (above 70%)', route: Core.testState(st).state === 'locked' ? (Core.missingForTest(st)[0] || {}).route || 'test' : 'test' });
+      const items = []; if (!Core.passed(st)) items.push({ what: `pass Unit Test ${Core.UNO} (above 70%)`, route: Core.testState(st).state === 'locked' ? (Core.missingForTest(st)[0] || {}).route || 'test' : 'test' });
       const done = Object.keys(st.results || {}).length; if (done < Core.STAGE_UNITS) items.push({ what: `the other Stage 7 units (${done} of ${Core.STAGE_UNITS} passed so far)`, route: 'unit3' });
       m.append(lockScreen('Certificate locked', 'The certificate is issued when every Unit Test in Stage 7 has been passed.', items)); return;
     }
@@ -612,8 +617,8 @@
   /* ---------- question bank ---------- */
   function viewBank() {
     const m = $main(); UI.bank = UI.bank || { sec: 'all', diff: 'all', type: 'all', status: 'all', tier: 'all' }; const F = UI.bank;
-    pageHero('UNIT 3 · CELLS', 'Question Bank', 'Every Unit 3 question in one place — filter by topic, difficulty and type, and redo the ones you got wrong.');
-    m.append(el('div', {}, el('span', { class: 'eyebrow' }, 'UNIT 3 · CELLS'), el('h1', { style: 'margin:0;font-size:36px' }, 'Question Bank'),
+    pageHero(`UNIT ${Core.UNO} · ${C.unit.title.toUpperCase()}`, 'Question Bank', `Every Unit ${Core.UNO} question in one place — filter by topic, difficulty and type, and redo the ones you got wrong.`);
+    m.append(el('div', {}, el('span', { class: 'eyebrow' }, `UNIT ${Core.UNO} · ${C.unit.title.toUpperCase()}`), el('h1', { style: 'margin:0;font-size:36px' }, 'Question Bank'),
       el('p', { class: 'muted', style: 'margin:4px 0 0' }, `${allQs().length} practice questions (30 per section: 8 Core, 18 Practice, 4 Advanced) plus ${C.sections.reduce((a, s) => a + s.stops.length, 0)} pause questions. Practising here never changes your Core progress or test scores.`)));
     const chipRow = (label, key, opts) => el('div', { class: 'btnrow', role: 'group', 'aria-label': label }, el('b', { style: 'min-width:92px;font-size:14px' }, label), ...opts.map(([v, t]) => el('button', { type: 'button', class: 'chip' + (F[key] === v ? ' on' : ''), 'aria-pressed': String(F[key] === v), onclick: () => { F[key] = v; render(); } }, t)));
     m.append(el('section', { class: 'card' }, chipRow('Section', 'sec', [['all', 'All']].concat(C.sections.map(s => [s.id, s.id + ' ' + s.title.split(' ')[0]]))),
@@ -655,7 +660,7 @@
         btn('Complete all sections → Unit Test', () => { fill(C.sections.map(s => s.id)); }, 'simAll'),
         el('button', { class: 'btn small', type: 'button', id: 'simOthers', onclick: async () => { await Backend.demo.simulateOtherUnits(st.id, 82); await Core.refreshResults(st); msg.textContent = 'Done – the other 13 units are marked as passed at 82%.'; setTimeout(render, 500); } }, 'Pass the other 13 units (82%)'),
         el('button', { class: 'btn small', type: 'button', id: 'simStaff', onclick: () => { Backend.demo.setRole('admin'); msg.textContent = 'This account is now an administrator – open Staff from the account menu.'; } }, 'Make this account staff'),
-        el('button', { class: 'btn small ghost', type: 'button', id: 'resetUnit', onclick: () => modal('Reset Unit 3?', 'This clears all Unit 3 progress, tests, certificate and ranking score for this learner.', [{ t: 'Cancel', cls: 'ghost' }, { t: 'Reset', cls: 'primary', on: async () => { await Backend.demo.resetLearner(st.id); await Core.selectLearner(st.id); go('home'); } }]) }, 'Reset Unit 3 progress')), msg);
+        el('button', { class: 'btn small ghost', type: 'button', id: 'resetUnit', onclick: () => modal(`Reset Unit ${Core.UNO}?`, `This clears all Unit ${Core.UNO} progress, tests, certificate and ranking score for this learner.`, [{ t: 'Cancel', cls: 'ghost' }, { t: 'Reset', cls: 'primary', on: async () => { await Backend.demo.resetLearner(st.id); await Core.selectLearner(st.id); go('home'); } }]) }, `Reset Unit ${Core.UNO} progress`)), msg);
   }
 
   /* ---------- router ---------- */
@@ -666,20 +671,20 @@
     const m = $main(); const ts = Core.testState(st);
     const form = ts.form || (ts.last && ts.last.form) || 'A';
     const clock = el('span', { class: 'gchip', style: 'margin-left:auto', hidden: true });
-    subbar('', el('span', { class: 'ttl' }, `Unit Test 3 · Cells · Paper ${form}`), el('span', { class: 'exam-badge' }, 'EXAM MODE'), clock);
-    if (ts.state === 'guest') { m.append(bar('Unit 3 › Unit Test'), guestWall('Sign up free to take the Unit Test')); return; }
-    if (ts.state === 'paywall') { m.append(bar('Unit 3 › Unit Test'), lockScreen('Unit Test 3 needs a Stage 7 plan', 'Unit Tests, marking and the certificate are part of the full course.', [{ what: 'a Stage 7 plan (7-day free trial)', route: 'pricing' }])); return; }
-    if (ts.state === 'locked') { m.append(bar('Unit 3 › Unit Test'), lockScreen('Unit Test 3 is locked', 'The Unit Test opens only when you have watched every video and finished every Core question in all 4 sections.', ts.miss)); return; }
-    if (ts.state === 'pending') { m.append(bar('Unit 3 › Unit Test'), el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, `Attempt ${ts.last.n} (Paper ${ts.last.form}) has a written answer for an Atomic marker to mark. We will notify you when it is done. Automatic marks: ${ts.last.auto}/${30 - ts.last.pending.reduce((a, id) => a + ts.last.per[id].max, 0)}. Unit 4 opens only once the final mark is in.`), el('a', { class: 'btn primary small', href: '#result' }, 'Results & history'))); return; }
-    if (ts.state === 'remediate') { m.append(bar('Unit 3 › Unit Test'), lockScreen('You can\'t retake yet', 'Finish the review questions set for your weaker objectives before you take the equivalent paper.', [{ what: `${ts.left.length} review questions`, route: 'remedial' }])); return; }
-    if (ts.state === 'passed') { m.append(bar('Unit 3 › Unit Test'), el('section', { class: 'card done' }, el('h2', {}, '✓ You have passed Unit Test 3'), el('a', { class: 'btn primary small', href: '#result' }, 'See results'))); return; }
+    subbar('', el('span', { class: 'ttl' }, `Unit Test ${Core.UNO} · ${C.unit.title} · Paper ${form}`), el('span', { class: 'exam-badge' }, 'EXAM MODE'), clock);
+    if (ts.state === 'guest') { m.append(bar(`Unit ${Core.UNO} › Unit Test`), guestWall('Sign up free to take the Unit Test')); return; }
+    if (ts.state === 'paywall') { m.append(bar(`Unit ${Core.UNO} › Unit Test`), lockScreen(`Unit Test ${Core.UNO} needs a Stage 7 plan`, 'Unit Tests, marking and the certificate are part of the full course.', [{ what: 'a Stage 7 plan (7-day free trial)', route: 'pricing' }])); return; }
+    if (ts.state === 'locked') { m.append(bar(`Unit ${Core.UNO} › Unit Test`), lockScreen(`Unit Test ${Core.UNO} is locked`, 'The Unit Test opens only when you have watched every video and finished every Core question in all 4 sections.', ts.miss)); return; }
+    if (ts.state === 'pending') { m.append(bar(`Unit ${Core.UNO} › Unit Test`), el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, `Attempt ${ts.last.n} (Paper ${ts.last.form}) has a written answer for an Atomic marker to mark. We will notify you when it is done. Automatic marks: ${ts.last.auto}/${30 - ts.last.pending.reduce((a, id) => a + ts.last.per[id].max, 0)}. Unit 4 opens only once the final mark is in.`), el('a', { class: 'btn primary small', href: '#result' }, 'Results & history'))); return; }
+    if (ts.state === 'remediate') { m.append(bar(`Unit ${Core.UNO} › Unit Test`), lockScreen('You can\'t retake yet', 'Finish the review questions set for your weaker objectives before you take the equivalent paper.', [{ what: `${ts.left.length} review questions`, route: 'remedial' }])); return; }
+    if (ts.state === 'passed') { m.append(bar(`Unit ${Core.UNO} › Unit Test`), el('section', { class: 'card done' }, el('h2', {}, `✓ You have passed Unit Test ${Core.UNO}`), el('a', { class: 'btn primary small', href: '#result' }, 'See results'))); return; }
     const qs = C.tests[form];
     st.last = { route: 'test' };
     const draft = st.test.drafts[form] = st.test.drafts[form] || { answers: {}, ts: Date.now() };
     const hasDraft = Object.keys(draft.answers).length > 0;
     if (!UI.testOn) {
       m.append(el('section', { class: 'card', style: 'max-width:740px;margin:0 auto;padding:40px;border-radius:28px;display:flex;flex-direction:column;gap:16px' },
-        el('span', { class: 'eyebrow' }, 'BEFORE YOU START'), el('h1', { style: 'margin:0;font-size:36px' }, `Unit Test 3 · Paper ${form}${ts.retake ? ' (equivalent paper)' : ''}`),
+        el('span', { class: 'eyebrow' }, 'BEFORE YOU START'), el('h1', { style: 'margin:0;font-size:36px' }, `Unit Test ${Core.UNO} · Paper ${form}${ts.retake ? ' (equivalent paper)' : ''}`),
         el('div', { class: 'stats3' }, el('div', {}, el('b', {}, String(qs.length)), el('br'), el('small', { class: 'muted' }, 'questions')), el('div', {}, el('b', {}, '30'), el('br'), el('small', { class: 'muted' }, 'marks')), el('div', {}, el('b', {}, '> 70%'), el('br'), el('small', { class: 'muted' }, 'to pass (21/30 is not a pass)'))),
         el('ul', { style: 'margin:0;padding-left:20px;color:#3A4B63' }, el('li', {}, 'No hints or videos during the test.'), el('li', {}, 'You can flag a question and come back to it. Your answers are saved as a draft automatically.'), el('li', {}, 'Solutions appear after you submit. Most questions are marked straight away; written answers are marked by an Atomic marker.'), el('li', {}, 'Pass to unlock Unit 4 and earn ', el('b', { style: 'color:#0149AF' }, '+100 XP'), '.')),
         hasDraft ? el('div', { class: 'banner info', id: 'draftNote' }, 'Your draft has been restored – carry on from where you stopped.') : null,
@@ -722,14 +727,14 @@
   function attemptRow(a) { return el('tr', {}, el('td', {}, a.n), el('td', {}, a.form), el('td', {}, new Date(a.ts).toLocaleString('en-GB')), el('td', {}, a.status === 'final' ? `${+a.score.toFixed(2)}/30` : `${a.auto} + ?`), el('td', {}, a.status === 'final' ? a.pct.toFixed(1) + '%' : '—'), el('td', {}, a.status === 'pending' ? el('span', { class: 'status cur' }, '⏳ Awaiting marking') : a.passed ? el('span', { class: 'status done' }, '✓ Passed') : el('span', { class: 'tag d-VH' }, '✗ Not passed'))); }
   function ring(pct, ok) { const r = 46, c = 2 * Math.PI * r; const s = document.createElement('span'); s.className = 'ring'; s.innerHTML = `<svg viewBox="0 0 110 110" width="110" height="110"><circle cx="55" cy="55" r="${r}" fill="none" stroke="#DCE8FA" stroke-width="12"/><circle cx="55" cy="55" r="${r}" fill="none" stroke="${ok ? '#1E8E4E' : '#C93A3A'}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${c * pct / 100} ${c}" transform="rotate(-90 55 55)"/><text x="55" y="62" text-anchor="middle" font-family="Lexend" font-weight="800" font-size="22" fill="#1C2A3A">${Math.round(pct)}%</text></svg>`; return s; }
   function viewResult() {
-    const m = $main(); m.append(bar('Unit 3 › Results & history'));
+    const m = $main(); m.append(bar(`Unit ${Core.UNO} › Results & history`));
     const before = JSON.stringify(Core.attempts(st).map(a => a.status));
     Core.refreshAttempts(st).then(() => { if (JSON.stringify(Core.attempts(st).map(a => a.status)) !== before && location.hash === '#result') render(); }).catch(() => { });
     const at = Core.attempts(st);
     if (!at.length) { m.append(el('section', { class: 'card' }, el('h2', {}, 'No tests taken yet'), el('a', { class: 'btn primary small', href: '#test' }, 'Go to the Unit Test'))); return; }
     const a = at[at.length - 1];
     if (a.status === 'pending') m.append(el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, 'Your written answer is waiting for an Atomic marker. Pass/not passed and unlocking Unit 4 are decided only when the final mark is in – you will get a notification.')));
-    else if (a.passed) m.append(el('section', { class: 'card done' }, el('div', { class: 'resultbig' }, ring(a.pct, true), el('div', {}, el('span', { class: 'eyebrow' }, 'PASSED'), el('h2', { style: 'margin:0' }, `${+a.score.toFixed(2)}/30 (${a.pct.toFixed(1)}%)`), el('p', { style: 'margin:4px 0' }, 'Unit 4 is now unlocked. Your Unit 3 ranking score = % of your first pass: ' + st.rank.u3.toFixed(1) + '%.'))),
+    else if (a.passed) m.append(el('section', { class: 'card done' }, el('div', { class: 'resultbig' }, ring(a.pct, true), el('div', {}, el('span', { class: 'eyebrow' }, 'PASSED'), el('h2', { style: 'margin:0' }, `${+a.score.toFixed(2)}/30 (${a.pct.toFixed(1)}%)`), el('p', { style: 'margin:4px 0' }, `Unit 4 is now unlocked. Your Unit ${Core.UNO} ranking score = % of your first pass: ` + st.rank.u3.toFixed(1) + '%.'))),
       el('div', { class: 'btnrow' }, el('a', { class: 'btn primary small', href: '#board' }, '🏆 Leaderboard'), el('a', { class: 'btn small', href: '#cert' }, '🎓 Certificate'))));
     else {
       const left = Core.remLeft(st, a);
@@ -752,22 +757,22 @@
   function mindmapSvg(interactive) {
     const mm = C.mindmap; const Wd = 960, Ht = 560, cx = 480, cy = 280;
     const pos = mm.kids.map((k, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / mm.kids.length; return [cx + 340 * Math.cos(a), cy + 205 * Math.sin(a)]; });
-    let svg = `<svg viewBox="0 0 ${Wd} ${Ht}" xmlns="http://www.w3.org/2000/svg" ${interactive ? 'id="mmsvg"' : ''} role="img" aria-label="Cells concept map">`;
+    let svg = `<svg viewBox="0 0 ${Wd} ${Ht}" xmlns="http://www.w3.org/2000/svg" ${interactive ? 'id="mmsvg"' : ''} role="img" aria-label="${C.mindmap.t} concept map">`;
     pos.forEach(([x, y], i) => svg += `<path d="M${cx} ${cy} Q ${(cx + x) / 2} ${cy} ${x} ${y}" class="mml" style="animation-delay:${i * .12}s"/>`);
-    svg += `<g class="mmroot"><rect x="${cx - 85}" y="${cy - 34}" width="170" height="68" rx="34"/><text x="${cx}" y="${cy + 9}" text-anchor="middle">Cells</text></g>`;
+    svg += `<g class="mmroot"><rect x="${cx - 85}" y="${cy - 34}" width="170" height="68" rx="34"/><text x="${cx}" y="${cy + 9}" text-anchor="middle">${C.mindmap.t}</text></g>`;
     mm.kids.forEach((k, i) => { const [x, y] = pos[i]; svg += `<g class="mmn" data-i="${i}" ${interactive ? 'tabindex="0" role="button"' : ''} aria-label="${esc(k.t)}"><rect x="${x - 108}" y="${y - 32}" width="216" height="64" rx="16"/><text x="${x}" y="${y - 4}" text-anchor="middle">${esc(k.t.length > 26 ? k.t.slice(0, 24) + '…' : k.t)}</text><text x="${x}" y="${y + 16}" text-anchor="middle" class="sm">${k.sec} · ${k.obj}</text></g>`; });
     const box = el('div', { class: 'mmbox', html: svg + '</svg>' });
     if (!interactive) box.querySelectorAll('.mmn').forEach(g => g.addEventListener('click', () => { UI.mmPick = +g.dataset.i; go('map'); }));
     box._pos = pos; box._dims = [Wd, Ht]; return box;
   }
   function viewMap() {
-    const m = $main(); if (st) m.append(bar('Unit 3 › Concept map'));
+    const m = $main(); if (st) m.append(bar(`Unit ${Core.UNO} › Concept map`));
     const mm = C.mindmap; const box = mindmapSvg(true); const pos = box._pos; const [Wd, Ht] = box._dims;
     const detail = el('div', { class: 'card', 'aria-live': 'polite' }, el('p', { class: 'muted', style: 'margin:0' }, 'Tap a branch to zoom in, read it and jump to the video clip or practice.')); detail.className = 'card mmdetail';
     let vb = [0, 0, Wd, Ht];
     const setVB = () => box.querySelector('svg').setAttribute('viewBox', vb.map(v => Math.round(v)).join(' '));
     const zoom = f => { const c = [vb[0] + vb[2] / 2, vb[1] + vb[3] / 2]; vb[2] = Math.min(Wd, Math.max(240, vb[2] * f)); vb[3] = vb[2] * Ht / Wd; vb[0] = c[0] - vb[2] / 2; vb[1] = c[1] - vb[3] / 2; setVB(); };
-    m.append(el('div', {}, el('span', { class: 'eyebrow' }, 'UNIT 3 · CELLS'), el('h1', { style: 'margin:0;font-size:36px' }, 'Concept map'), el('p', { class: 'muted', style: 'margin:4px 0 0' }, 'How the big ideas of Unit 3 connect. Tap a branch to zoom in.')),
+    m.append(el('div', {}, el('span', { class: 'eyebrow' }, `UNIT ${Core.UNO} · ${C.unit.title.toUpperCase()}`), el('h1', { style: 'margin:0;font-size:36px' }, 'Concept map'), el('p', { class: 'muted', style: 'margin:4px 0 0' }, `How the big ideas of Unit ${Core.UNO} connect. Tap a branch to zoom in.`)),
       el('div', { class: 'btnrow' }, el('button', { class: 'chip', type: 'button', onclick: () => zoom(0.75) }, '＋ Zoom in'), el('button', { class: 'chip', type: 'button', onclick: () => zoom(1.33) }, '－ Zoom out'), el('button', { class: 'chip', type: 'button', onclick: () => { vb = [0, 0, Wd, Ht]; setVB(); box.querySelectorAll('.mmn').forEach(n => n.classList.remove('on')); } }, 'Show all')), box, detail);
     const pick = i => {
       const g = box.querySelector(`.mmn[data-i="${i}"]`); const k = mm.kids[i], [x, y] = pos[i]; vb = [x - 220, y - 138, 440, 275]; setVB();
@@ -795,7 +800,7 @@
       tile('🧩', 'Revise by topic', '9 objectives O1–O9', () => go('topic'), 'tileTopic'),
       tile('📄', 'Worksheets opened', st.ws.length ? st.ws.map(x => 'Section ' + x).join(', ') : 'none opened yet', () => go(st.ws.length ? 'ws-' + R(st.ws[st.ws.length - 1]) : 'ws-3-1'), 'tileWs')));
     if (st.ws.length) m.append(el('div', { class: 'btnrow' }, ...st.ws.map(x => el('a', { class: 'chip', href: '#ws-' + R(x) }, '📄 Worksheet ' + x))));
-    m.append(el('section', { class: 'card' }, el('h2', {}, 'Unit 3 progress'), ...C.sections.map(s => el('div', { style: 'margin:10px 0' }, el('div', { style: 'display:flex;justify-content:space-between;font-size:14px;font-weight:600' }, el('span', {}, `${s.id} ${s.title}`), el('span', { class: 'muted' }, `video ${Core.videoDone(st, s) ? '✓' : '…'} · Core ${8 - Core.reqLeft(st, s).length}/8 · practice ${s.prac.filter(q => (st.items[q.id] || {}).done).length}/18 · advanced ${s.adv.filter(q => (st.items[q.id] || {}).done).length}/4`)), el('div', { class: 'pbar' + (Core.secDone(st, s) ? ' ok' : '') }, el('i', { style: `width:${secPct(s)}%` })))),
+    m.append(el('section', { class: 'card' }, el('h2', {}, `Unit ${Core.UNO} progress`), ...C.sections.map(s => el('div', { style: 'margin:10px 0' }, el('div', { style: 'display:flex;justify-content:space-between;font-size:14px;font-weight:600' }, el('span', {}, `${s.id} ${s.title}`), el('span', { class: 'muted' }, `video ${Core.videoDone(st, s) ? '✓' : '…'} · Core ${8 - Core.reqLeft(st, s).length}/8 · practice ${s.prac.filter(q => (st.items[q.id] || {}).done).length}/18 · advanced ${s.adv.filter(q => (st.items[q.id] || {}).done).length}/4`)), el('div', { class: 'pbar' + (Core.secDone(st, s) ? ' ok' : '') }, el('i', { style: `width:${secPct(s)}%` })))),
       el('p', {}, `Unit Test: ${Core.attempts(st).length} attempt(s) · ${Core.passed(st) ? 'Passed' : 'not passed yet'} · Ranking score: ` + (rs ? rs.score.toFixed(2) + '% (' + rs.units + (rs.units === 1 ? ' unit)' : ' units)') : 'none yet')),
       el('div', { class: 'btnrow' }, el('a', { class: 'btn small', href: '#result' }, 'Results & history'), el('a', { class: 'btn small', href: '#cert' }, '🎓 Certificate'), el('a', { class: 'btn small', href: '#board' }, '🏆 Leaderboard'))));
     m.append(testerTools());
@@ -968,8 +973,8 @@
 
     // ---- all 14 units as small boxes ----
     m.append(el('section', { class: 'lp-units' }, el('div', { class: 'btnrow between', style: 'margin:0 0 18px' }, el('h2', { style: 'margin:0' }, 'Everything in Stage 7'), el('button', { type: 'button', class: 'btn small', onclick: startGuest }, 'Open the course →')),
-      el('div', { class: 'lp-ugrid' }, ...UNIT_NAMES.map(([n, t]) => el(n === 3 ? 'button' : 'a', n === 3 ? { type: 'button', class: 'card lift lp-unit', onclick: startGuest } : { class: 'card lift lp-unit', href: '#signup' },
-        unitIcon(n), el('span', { class: 'lp-ut' }, el('small', {}, 'UNIT ' + n), el('br'), el('b', {}, t)), n === 3 ? el('span', { class: 'lp-free' }, 'Free') : null)))));
+      el('div', { class: 'lp-ugrid' }, ...Core.INDEX.units.map(({ n, t, ready }) => el(ready ? 'button' : 'div', ready ? { type: 'button', class: 'card lift lp-unit', onclick: () => startGuest(n) } : { class: 'card lp-unit off', title: 'Coming soon' },
+        unitIcon(n), el('span', { class: 'lp-ut' }, el('small', {}, 'UNIT ' + n), el('br'), el('b', {}, t)), ready ? el('span', { class: 'lp-free' }, 'Try free') : el('span', { class: 'lp-tag' }, 'Soon'))))));
     // ---- how it works ----
     const step = (n, cls, t, d) => el('div', { class: 'card lift lp-how' }, el('span', { class: 'lp-num ' + cls }, String(n)), el('b', {}, t), el('p', { class: 'muted', style: 'margin:0' }, d));
     m.append(el('section', { class: 'lp-hows' }, el('div', { style: 'text-align:center' }, el('small', { class: 'lp-eyebrow gold' }, 'HOW IT WORKS'), el('h2', { style: 'margin:6px 0 0' }, 'Three steps to start')),
@@ -1120,7 +1125,7 @@
     const buy = p => el('button', { class: 'btn ' + (p === 'yearly' ? 'gold' : 'primary'), type: 'button', id: 'buy-' + p, disabled: active, onclick: async () => {
       if (!me) { go('signup'); return; }
       if (Backend.mode === 'demo') modal('Checkout (preview)', el('div', {}, el('p', {}, `In the live site this opens Paddle checkout for the ${p} plan with a 7-day free trial. Paddle shows the local price and adds the right VAT/GST.`), el('p', { class: 'muted' }, 'Nothing is charged in this preview.')),
-        [{ t: 'Cancel', cls: 'ghost' }, { t: 'Start free trial (preview)', cls: 'primary', on: async () => { await Backend.checkout(p); await Core.refreshAccount(); toast('Trial started – Stage 7 unlocked'); go('unit3'); } }]);
+        [{ t: 'Cancel', cls: 'ghost' }, { t: 'Start free trial (preview)', cls: 'primary', on: async () => { await Backend.checkout(p); await Core.refreshAccount(); toast('Trial started – Stage 7 unlocked'); go('u-' + Core.UNO); } }]);
       else await Backend.checkout(p);
     } }, active ? 'Your plan is active' : 'Start 7-day free trial');
     m.append(el('div', { style: 'text-align:center' }, el('span', { class: 'eyebrow' }, 'PLANS'), el('h1', { style: 'margin:4px 0' }, 'One plan, the whole of Stage 7'), el('p', { class: 'muted' }, 'Cancel any time.')),
@@ -1236,22 +1241,28 @@
   }
 
   /* ---------- router ---------- */
-  const TOC_ROUTES = r => r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || ['unit3', 'map', 'result', 'remedial', 'topic', 'drill', 'cert'].includes(r);
+  const TOC_ROUTES = r => r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || /^u-\d+$/.test(r) || ['map', 'result', 'remedial', 'topic', 'drill', 'cert'].includes(r);
   const PUBLIC = { home: () => viewHome(), signin: viewSignin, signup: viewSignup, forgot: viewForgot, pricing: viewPricing, help: viewHelp, privacy: viewPrivacy, 'privacy-kids': viewKidsPrivacy, terms: viewTerms, cookies: viewCookies, verify: viewVerify };
   const ACCOUNT = { staff: viewStaff, teacher: viewStaff };
-  const LEARNER = { home: viewHome, unit3: viewUnit, test: viewTest, result: viewResult, remedial: viewRemedial, map: viewMap, profile: viewProfile, topic: viewTopic, bank: viewBank, drill: viewDrill, board: viewBoard, cert: viewCert, settings: viewSettings };
+  const LEARNER = { home: viewHome, unit: viewUnit, test: viewTest, result: viewResult, remedial: viewRemedial, map: viewMap, profile: viewProfile, topic: viewTopic, bank: viewBank, drill: viewDrill, board: viewBoard, cert: viewCert, settings: viewSettings };
   const GUEST_WALL = { board: 'Sign up free to join the leaderboard', cert: 'Sign up free to earn a certificate', result: 'Sign up free to take the Unit Test', remedial: 'Sign up free to take the Unit Test', settings: 'Sign up free to get your own account' };
   let renderSeq = 0;
   async function render() {
     if (activeVideo) { try { activeVideo.pause(); } catch (e) { } activeVideo = null; }
     clearInterval(timer); const seq = ++renderSeq;
-    st = Core.cur(); let r = location.hash.slice(1) || 'home';
+    let r = location.hash.slice(1) || 'home';
+    if (r === 'unit3') { location.replace('#u-3'); return; }
+    // the unit is part of the address: u-4, v-4-1, ex-4-2, ws-4-3
+    const um = r.match(/^u-(\d+)$/) || r.match(/^(?:v|ex|ws)-(\d+)-\d+$/);
+    if (um && Number(um[1]) !== Core.UNO) { if (!Core.unitReady(Number(um[1]))) { location.replace('#home'); return; } try { await Core.switchUnit(Number(um[1])); } catch (e) { location.replace('#home'); return; } if (seq !== renderSeq) return; }
+    C = Core.C; st = Core.cur(); if (/^u-\d+$/.test(r)) r = 'unit';
     if (r !== 'test') UI.testOn = false;
     document.body.classList.remove('menu-open', 'toc-open');
     const me = Core.S.me;
     const needsLearner = !!LEARNER[r] && r !== 'home' || /^(v|ex|ws)-/.test(r);
+    const freeTopic = /^(v|ex|ws)-\d+-1$/.test(location.hash.slice(1)) || r === 'unit';
     if (['learners', 'add-learner', 'parent'].includes(r)) { location.replace('#home'); return; }   // old parent-area links
-    if (!me && !st && (ACCOUNT[r] || needsLearner)) { if (/^(v|ex|ws)-3-1$/.test(r) || r === 'unit3') { Core.startGuest(); st = Core.cur(); } else { location.replace('#signin'); return; } }  // a link into topic 3.1 starts a guest session
+    if (!me && !st && (ACCOUNT[r] || needsLearner)) { if (freeTopic) { Core.startGuest(); st = Core.cur(); } else { location.replace('#signin'); return; } }  // a link into topic 3.1 starts a guest session
     if (!me && ACCOUNT[r]) { location.replace('#signin'); return; }
     if (me && !st && needsLearner) { location.replace('#home'); return; }
     if (me && (r === 'signin' || r === 'signup')) { location.replace('#home'); return; }
@@ -1268,9 +1279,8 @@
   window.addEventListener('hashchange', render);
   async function boot() {
     try {
-      const res = await fetch('content/stage7-unit03.json'); if (!res.ok) throw new Error('content'); C = await res.json();
       if (Backend.demo && location.search.includes('reset')) Backend.demo.reset();
-      await Core.boot(C);
+      await Core.boot(); C = Core.C;
     } catch (e) { console.error(e); document.getElementById('app').innerHTML = '<p style="padding:24px;font-family:sans-serif">Sorry – the course could not load. Please check your connection and reload the page.</p>'; return; }
     render();
   }

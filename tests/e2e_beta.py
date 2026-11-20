@@ -14,7 +14,7 @@ with sync_playwright() as p:
     pg.fill('#suName', 'Zed Tester'); pg.fill('#suEmail', 't@example.com'); pg.fill('#suPw', 'password123'); pg.click('#suNext1'); pg.wait_for_selector('#suYear')
     pg.select_option('#suYear', index=3); pg.select_option('#suGrade', index=2); pg.click('#suNext2'); pg.wait_for_selector('#suCountry')
     pg.select_option('#suCountry', 'SG'); pg.wait_for_timeout(200); pg.select_option('#suSchool', index=1); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home'")
-    ok(pg.evaluate("Core.S.sub.status") == 'beta' and not pg.evaluate("Core.secLock(Core.cur(), Core.sec('3.2')) && Core.secLock(Core.cur(), Core.sec('3.2')).paywall"), 'B3 No paywall on any section')
+    ok(pg.evaluate("Core.S.sub.status") == 'beta' and not pg.evaluate("Core.secLock(Core.cur(), Core.C.sections[1]) && Core.secLock(Core.cur(), Core.C.sections[1]).paywall"), 'B3 No paywall on any section')
     pg.evaluate("location.hash='home'"); pg.wait_for_timeout(400); ok(pg.query_selector('#freeBanner') is None, 'B4 No “free plan” upsell banner')
     pg.evaluate("location.hash='profile'"); pg.wait_for_timeout(400); pg.click('#simAll'); pg.wait_for_timeout(900)
     pg.evaluate("location.hash='test'"); pg.wait_for_timeout(500); ok(pg.query_selector('#startTest') is not None, 'B5 Unit Test opens without a plan')
