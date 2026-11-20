@@ -1087,9 +1087,9 @@
   async function viewCheckpoint() {
     const m = $main(); const P = await Core.loadCp(); await Core.refreshCp().catch(() => { });
     pageHero('CAMBRIDGE LOWER SECONDARY CHECKPOINT', 'Checkpoint exam room', 'Practise the real exam: the same paper format, timing and marks as the Cambridge Lower Secondary Checkpoint tests, under exam conditions – full screen, a countdown clock and no leaving the room.');
-    if (!P) { m.append(el('section', { class: 'card' }, el('p', {}, 'The papers are being prepared.'))); return; }
+    if (!P) { m.append(el('section', { class: 'card' }, el('p', {}, 'Checkpoint papers are in the Stage 7 exam room (Stage 7 content) and the Stage 9 exam room (full Stages 7–9 papers). Switch stage in Your courses to open them.'))); return; }
     if (isGuest()) { m.append(guestWall('Sign up free to use the Checkpoint exam room')); return; }
-    m.append(el('div', { class: 'banner info' }, el('b', {}, 'About these papers: '), P.unit.note + ` They cover the Cambridge Stage ${Core.STAGE} content you are studying; papers covering Stages 8 and 9 are added as those stages open.`));
+    m.append(el('div', { class: 'banner info' }, el('b', {}, 'About these papers: '), P.unit.note + (Core.STAGE === 9 ? ' These papers cover Cambridge Stages 7, 8 and 9, like the real Checkpoint test taken at the end of Stage 9.' : ` They cover Cambridge Stage ${Core.STAGE} content. Full papers covering Stages 7–9 are in the Stage 9 exam room.`)));
     const sets = {}; Object.keys(P.papers).forEach(k => { const t = cpTitle(P, k); (sets[t.set] = sets[t.set] || []).push(k); });
     const sci = el('section', { class: 'card cpsubj' }, el('div', { class: 'cphead' }, el('span', { class: 'cpsubjtag sci' }, 'SCIENCE'), el('div', {}, el('h2', { style: 'margin:0' }, 'Science · syllabus 0893'), el('p', { class: 'muted', style: 'margin:0' }, `Paper 1 (0893/01 format) and Paper 2 (0893/02 format) · ${P.minutes} minutes · ${P.max} marks each`))));
     Object.entries(sets).forEach(([set, ks]) => {
