@@ -2,7 +2,9 @@
    The learner's progress lives in the backend (Backend.saveProgress); marking happens on the server
    (Backend.submitTest) – this file only mirrors results for the screens. */
 (function () {
-  const STAGE = 7, STAGE_UNITS = 14;
+  const STAGES = [7, 8, 9], STAGE_UNITS = 14;
+  // the stage on screen (a learner can study every stage they are enrolled in)
+  let STAGE = (() => { try { const g = Number(localStorage.getItem('atomic.stage')); return STAGES.includes(g) ? g : 7; } catch (e) { return 7; } })();
   const pad2 = n => String(n).padStart(2, '0');
   const unitId = n => `stage${STAGE}-unit${pad2(n)}`;
   let UNO = 3;                       // the unit on screen
@@ -21,7 +23,9 @@
   /* ---------- session ---------- */
   async function loadIndex() {
     if (INDEX) return INDEX;
-    const r = await fetch(`content/stage${STAGE}.json`); INDEX = r.ok ? await r.json() : { units: [] };
+    let r = await fetch(`content/stage${STAGE}.json`);
+    if (!r.ok && STAGE !== 7) { STAGE = 7; r = await fetch('content/stage7.json'); }
+    INDEX = r.ok ? await r.json() : { units: [] };
     return INDEX;
   }
   async function loadUnit(n) {
@@ -31,7 +35,7 @@
   }
   async function peekUnit(n) { if (!CACHE[n]) { const r = await fetch(`content/${unitId(n)}.json`); if (!r.ok) throw new Error('content'); CACHE[n] = await r.json(); } return CACHE[n]; }
   const cached = n => CACHE[n] || null;
-  let FINAL = null;
+  let FINAL = null, CP = null;
   async function loadFinal() { if (!FINAL) { const r = await fetch(`content/stage${STAGE}-final.json`); FINAL = r.ok ? await r.json() : null; } return FINAL; }
   const unitReady = n => !!((INDEX && INDEX.units.find(u => u.n === n)) || {}).ready;
   // open another unit: every unit is open at any time (no need to finish the one before)
@@ -42,6 +46,14 @@
     await loadUnit(n);
     if (S.guest) { const days = was ? was.days : []; startGuest(); const st = cur(); st.days = Array.from(new Set([...(st.days || []), ...(days || [])])); }
     else if (S.current) { const days = was ? was.days : []; await selectLearner(S.current); const st = cur(); st.days = Array.from(new Set([...(st.days || []), ...(days || [])])); }
+    return C;
+  }
+  async function switchStage(g) {
+    if (!STAGES.includes(g)) throw new Error('stage'); if (g === STAGE && INDEX && C) return C;
+    flush(); STAGE = g; INDEX = null; C = null; FINAL = null; CP = null; for (const k of Object.keys(CACHE)) delete CACHE[k];
+    try { localStorage.setItem('atomic.stage', String(g)); sessionStorage.removeItem('atomic.unit'); } catch (e) { }
+    await loadIndex(); await loadUnit((INDEX.units.find(u => u.ready) || { n: 1 }).n);
+    if (S.guest) startGuest(); else if (S.current) await selectLearner(S.current);
     return C;
   }
   async function boot() {
@@ -60,7 +72,7 @@
   }
 
   /* ---------- guest: try topic 3.1 without an account (progress kept in this browser only) ---------- */
-  const gkey = () => 'atomic.guest.v1' + (UNO === 3 ? '' : '.u' + UNO);
+  const gkey = () => 'atomic.guest.v1' + (STAGE === 7 ? '' : '.s' + STAGE) + (UNO === 3 && STAGE === 7 ? '' : '.u' + UNO);
   const guestSaved = () => { try { return Object.keys(localStorage).some(k => k.startsWith('atomic.guest.v1')); } catch (e) { return false; } };
   function startGuest() {
     let saved = null; try { saved = JSON.parse(localStorage.getItem(gkey())); } catch (e) { }
@@ -68,7 +80,7 @@
     st.id = 'guest'; st.alias = 'Guest'; st.name = 'Guest'; st.test = st.test || { drafts: {}, attempts: [] }; st.test.attempts = [];
     S.profiles = { guest: st }; S.current = 'guest'; S.guest = true;
     try { localStorage.setItem(gkey(), JSON.stringify(strip(st))); } catch (e) { }
-    S.states = {}; try { for (const k of Object.keys(localStorage)) if (k.startsWith('atomic.guest.v1')) { const m = k.match(/\.u(\d+)$/); S.states[unitId(m ? +m[1] : 3)] = JSON.parse(localStorage.getItem(k)); } } catch (e) { }
+    S.states = {}; try { for (const k of Object.keys(localStorage)) if (k.startsWith('atomic.guest.v1')) { const m = k.match(/\.u(\d+)$/), sg = k.match(/\.s(\d)\./); if ((sg ? +sg[1] : 7) !== STAGE) continue; S.states[unitId(m ? +m[1] : 3)] = JSON.parse(localStorage.getItem(k)); } } catch (e) { }
     S.states[UNIT()] = strip(st); lastXp = xpNow();
     return st;
   }
@@ -91,7 +103,7 @@
     st.test.attempts = await Backend.attempts(id, UNIT());
     st.results = await Backend.unitResults(id);
     if (Backend.allDays) { try { st.days = Array.from(new Set([...(st.days || []), ...(await Backend.allDays(id))])); } catch (e) { } }  // the streak counts every unit
-    st.cert = await Backend.certificate(id);
+    st.cert = await Backend.certificate(id, STAGE);
     try { S.states = (Backend.allStates ? await Backend.allStates(id) : {}) || {}; } catch (e) { S.states = {}; }
     try { S.enrolments = Backend.enrolments ? await Backend.enrolments(id) : []; } catch (e) { S.enrolments = []; }
     S.profiles = { [id]: st }; S.current = id; S.states[UNIT()] = strip(st); lastXp = xpNow();
@@ -123,7 +135,7 @@
   setInterval(() => { const st = cur(); if (!st || document.hidden) return; const playing = !!document.querySelector('video') && [...document.querySelectorAll('video')].some(v => !v.paused);
     if (playing || Date.now() - lastAct < 120000) { st.time = (st.time || 0) + 15; if ((st.time % 60) === 0) persist(); else S.states[UNIT()] = strip(st); } }, 15000);
   const unitSeconds = n => ((S.states[unitId(n)] || {}).time) || 0;
-  const totalSeconds = () => Object.values(S.states || {}).reduce((a, x) => a + ((x && x.time) || 0), 0);
+  const totalSeconds = () => Object.entries(S.states || {}).filter(([k]) => k.startsWith(`stage${STAGE}-`)).reduce((a, [, x]) => a + ((x && x.time) || 0), 0);
   const estMinutes = n => (((INDEX && INDEX.units.find(u => u.n === n)) || {}).est) || 0;
   function flush() {
     const st = cur(); if (!st || !dirty) return; dirty = false;
@@ -187,7 +199,6 @@
 
   /* ---------- end-of-year exam ---------- */
   // Checkpoint-format practice papers (Atomic papers in the format of Cambridge 0893/01 and 0893/02)
-  let CP = null;
   async function loadCp() { if (!CP) { const r = await fetch(`content/stage${STAGE}-cp.json`); CP = r.ok ? await r.json() : null; } return CP; }
   async function refreshCp() { const st = cur(); if (!st || S.guest) { S.cpAttempts = []; return []; } S.cpAttempts = await Backend.attempts(st.id, `stage${STAGE}-cp`); return S.cpAttempts; }
   async function submitCp(form, answers, clientKey, meta) {
@@ -242,8 +253,8 @@
     if (!list.length) return null;
     return { score: list.reduce((a, b) => a + b, 0) / list.length, units: list.length };
   }
-  const stageComplete = st => Object.keys(st.results || {}).filter(k => !/-final$/.test(k)).length >= STAGE_UNITS;
-  async function certificate(st) { if (S.guest) return null; if (st.cert) return st.cert; if (!stageComplete(st)) return null; await refreshFinal(); if (!finalPassed()) return null; st.cert = await Backend.issueCertificate(st.id, STAGE_UNITS); return st.cert; }
+  const stageComplete = st => Object.keys(st.results || {}).filter(k => k.startsWith(`stage${STAGE}-unit`)).length >= STAGE_UNITS;
+  async function certificate(st) { if (S.guest) return null; if (st.cert) return st.cert; if (!stageComplete(st)) return null; await refreshFinal(); if (!finalPassed()) return null; st.cert = await Backend.issueCertificate(st.id, STAGE_UNITS, STAGE); return st.cert; }
   function competitionRank(rows) {
     rows.sort((a, b) => b.score - a.score);
     let prev = null, rank = 0; rows.forEach((r, i) => { const k = Math.round(r.score * 100); if (k !== prev) { rank = i + 1; prev = k; } r.rank = rank; });
@@ -322,7 +333,7 @@
   }
 
   window.Core = {
-    get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; },
+    get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; }, get STAGE() { return STAGE; }, STAGES, switchStage,
     unitId, unitReady, switchUnit, loadIndex, peekUnit, cached, loadFinal, get FINAL() { return FINAL; },
     xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, startClock, refreshFinal, finalPassed, submitFinal, loadCp, refreshCp, submitCp, activity,
     boot, selectLearner, leaveLearner, refreshAccount, cur, persist, flush, canOpen,

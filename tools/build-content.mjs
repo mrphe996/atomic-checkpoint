@@ -81,6 +81,13 @@ export function estimate(c) {
   const sheets = c.sections.length * 10;
   return Math.round(video + pauses + practice + sheets + 45);
 }
+// concept map laid out automatically from the unit's mind map (root in the middle, topics around it)
+function autoMap(c) {
+  const P = [[0, 1], [4, 1], [1, 2], [3, 2], [0, 3], [4, 3], [2, 3], [2, 2], [1, 4], [3, 4]];
+  const kids = (c.mindmap.kids || []).slice(0, P.length);
+  const nodes = [{ id: 'root', t: c.mindmap.t, s: c.sections[0].id, c: 2, r: 0, k: 'root' }].concat(kids.map((k, i) => ({ id: k.id, t: k.t, s: k.sec || c.sections[0].id, c: P[i][0], r: P[i][1], k: 'key', d: String(k.d || '').split('•').map(x => x.trim()).filter(Boolean).slice(0, 4) })));
+  return { nodes, links: kids.map(k => ['root', k.id, '']) };
+}
 // end-of-year exams: papers only (no sections); same question rules, every paper worth c.max marks
 export function validateFinal(c) {
   const errs = [], warn = [], ids = new Set();
@@ -116,8 +123,9 @@ export function build(file, { check = false } = {}) {
     const papers = {}; for (const f of Object.keys(c.tests).filter(k => k.length === 1)) { papers[f] = c.tests[f].map(G.stripKeys); }
     pub.tests = { ...papers, pass: c.tests.pass };
     pub.build = { at: new Date().toISOString().slice(0, 10), unit: name };
-    const cm = path.join(ROOT, 'content/authoring/cmaps.json'); const un = String(Number(name.slice(-2)));
+    const cm = path.join(ROOT, 'content/authoring/cmaps.json'); const stg = Number((name.match(/^stage(\d)/) || [0, 7])[1]); const un = stg === 7 ? String(Number(name.slice(-2))) : `${stg}-${Number(name.slice(-2))}`;
     if (fs.existsSync(cm)) { const maps = JSON.parse(fs.readFileSync(cm, 'utf8')); if (maps[un]) { const secIds = c.sections.map(x => x.id); maps[un].nodes.forEach(nd => { if (!secIds.includes(nd.s)) throw new Error(`${name}: concept map node ${nd.id} points to missing section ${nd.s}`); }); pub.cmap = maps[un]; } }
+    if (!pub.cmap && c.mindmap) pub.cmap = autoMap(c);
     pub.est = estimate(c);
     fs.mkdirSync(path.join(ROOT, 'web/content'), { recursive: true });
     fs.mkdirSync(path.join(ROOT, 'server/private'), { recursive: true });
@@ -154,7 +162,13 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
 export function writeIndex() {
   const T = { 7: [['Introducing Science', 'Enquiry'], ['Measurements', 'Enquiry'], ['Cells', 'Biology'], ['Classifying Living Things', 'Biology'], ['Food Chains and Food Webs', 'Biology'],
     ['Materials and Their Structure', 'Chemistry'], ['Properties of Materials', 'Chemistry'], ['Acids and Alkalis', 'Chemistry'], ['Chemical Reactions', 'Chemistry'], ['Forces', 'Physics'],
-    ['Energy', 'Physics'], ['Electricity', 'Physics'], ['Earth Processes', 'Earth and Space'], ['Earth and Beyond', 'Earth and Space']] };
+    ['Energy', 'Physics'], ['Electricity', 'Physics'], ['Earth Processes', 'Earth and Space'], ['Earth and Beyond', 'Earth and Space']],
+    8: [['Diet and Growth', 'Biology'], ['Human Body Systems', 'Biology'], ['Ecosystems', 'Biology'], ['The Structure of an Atom', 'Chemistry'], ['Mixtures and Solubility', 'Chemistry'],
+      ['Chemical Reactivity', 'Chemistry'], ['Exothermic and Endothermic Changes', 'Chemistry'], ['Forces and Motion', 'Physics'], ['Pressure and Diffusion', 'Physics'], ['Light', 'Physics'],
+      ['Magnetism', 'Physics'], ['Renewable and Non-Renewable Energy Resources', 'Physics'], ['Weather and Climate', 'Earth and Space'], ['Planetary Systems', 'Earth and Space']],
+    9: [['Photosynthesis and Transport in Plants', 'Biology'], ['Excretion', 'Biology'], ['Variation and Inheritance', 'Biology'], ['The Structure of the Atom and the Periodic Table', 'Chemistry'],
+      ['Chemical Bonding and Structure of Materials', 'Chemistry'], ['Displacement Reactions', 'Chemistry'], ['Salts', 'Chemistry'], ['Rate of Reaction', 'Chemistry'], ['Density', 'Physics'],
+      ['Transfer of Thermal Energy', 'Physics'], ['Sound', 'Physics'], ['Electrical Circuits', 'Physics'], ['Earth and Climate Change', 'Earth and Space'], ['Astronomy', 'Earth and Space']] };
   for (const [stage, list] of Object.entries(T)) {
     const units = list.map(([t, strand], i) => { const id = `stage${stage}-unit${String(i + 1).padStart(2, '0')}`; const f = path.join(ROOT, 'web/content', id + '.json');
       if (!fs.existsSync(f)) return { n: i + 1, id, t, strand, ready: false };

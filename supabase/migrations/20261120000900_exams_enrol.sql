@@ -29,7 +29,7 @@ begin
   if new.status = 'final' and new.passed then
     if not v_final then
       insert into public.unit_results (learner_id, unit, stage, first_pass_pct, attempt_id)
-      values (new.learner_id, new.unit, coalesce(v_l.stage, 7), new.pct, new.id)
+      values (new.learner_id, new.unit, coalesce(substring(new.unit from 'stage(\d)')::int, v_l.stage, 7), new.pct, new.id)
       on conflict (learner_id, unit) do nothing;
       get diagnostics v_n = row_count;
       select title into v_title from public.stage_units where unit = new.unit;
@@ -45,7 +45,7 @@ begin
       values (v_l.id, v_l.parent_email, 'unit_complete',
         v_l.nickname || ' has finished Unit ' || ltrim(right(new.unit, 2), '0') || coalesce(': ' || v_title, '') || ' on Atomic',
         'Hello,' || E'\n\n' || v_l.nickname || ' has just finished Unit ' || ltrim(right(new.unit, 2), '0') || coalesce(' (' || v_title || ')', '')
-        || ' of Cambridge Lower Secondary Science Stage ' || coalesce(v_l.stage, 7) || ' on Atomic, passing the Unit Test with ' || round(new.pct, 1) || '%.'
+        || ' of Cambridge Lower Secondary Science Stage ' || coalesce(substring(new.unit from 'stage(\d)')::int, v_l.stage, 7) || ' on Atomic, passing the Unit Test with ' || round(new.pct, 1) || '%.'
         || E'\n\n' || 'You are receiving this because ' || v_l.nickname || ' added your email address when signing up. They can remove it at any time in their settings.'
         || E'\n\n' || 'The Atomic teaching team');
     end if;

@@ -148,10 +148,10 @@
       el('a', { class: 'it', href: '#courses', style: 'font-size:13.5px' }, 'IGCSE & AS / A Level →')));
     wrap.append(el('div', { class: 'card lvl stagelist', role: 'group', 'aria-label': 'Your courses' }, el('span', { class: 'h' }, 'YOUR COURSES'),
       ...[7, 8, 9].map(g => { const mine = g === Core.STAGE, en = mine || Core.enrolled(g);
-        return el('a', { class: 'it' + (mine ? ' on' : ''), href: '#stage-' + g, title: mine ? 'Your course' : en ? 'Enrolled' : 'Enrol to open' },
-          el('span', {}, el('b', { class: 'cam' }, 'Cambridge'), ' Stage ' + g), el('small', { class: 'sl' }, mine ? Math.round(Object.keys((st && st.results) || {}).filter(k => !k.includes('final')).length / 14 * 100) + '%' : en ? 'Enrolled' : 'Enrol →')); })));
+        return el('a', { class: 'it' + (mine ? ' on' : ''), href: '#stage-' + g, title: mine ? 'Open now' : en ? 'Enrolled – open this stage' : 'Enrol to open' },
+          el('span', {}, el('b', { class: 'cam' }, 'Cambridge'), ' Stage ' + g), el('small', { class: 'sl' }, en ? Math.round(Object.keys((st && st.results) || {}).filter(k => k.startsWith(`stage${g}-unit`)).length / 14 * 100) + '%' : 'Enrol →')); })));
     const tot = Core.totalSeconds();
-    wrap.append(el('div', { class: 'card tochrs' }, el('small', {}, 'CAMBRIDGE STAGE 7 COURSE'), el('b', {}, `≈ ${estH(Core.INDEX.est || 0)} of learning`), el('small', { class: 'muted' }, `You have studied ${hrs(tot)}`)));
+    wrap.append(el('div', { class: 'card tochrs' }, el('small', {}, `CAMBRIDGE STAGE ${Core.STAGE} COURSE`), el('b', {}, `≈ ${estH(Core.INDEX.est || 0)} of learning`), el('small', { class: 'muted' }, `You have studied ${hrs(tot)}`)));
     const units = el('div', { class: 'units' });
     Core.INDEX.units.forEach(u => {
       const us = Core.unitStatus(st, u.n), open = !!UI.tocOpen[u.n], here = u.n === Core.UNO;
@@ -235,10 +235,10 @@
           el('span', {}, el('b', {}, `${doneQ} / ${allQ}`), el('br'), el('small', {}, `Unit ${Core.UNO} questions done`))),
         el('a', { class: 'card dstat', href: '#profile', id: 'levelCard' }, el('span', { class: 'dring', style: `background:conic-gradient(var(--gold) 0 ${Core.levelInfo().pct}%, #E3EBF5 0)` }, el('i', {}, 'Lv' + Core.levelInfo().level)),
           el('span', {}, el('b', {}, `${Core.levelInfo().xp} XP`), el('br'), el('small', {}, `${TestRules.xpForLevel(Core.levelInfo().level + 1) - Core.levelInfo().xp} XP to level ${Core.levelInfo().level + 1}`))),
-        el('a', { class: 'card dstat', href: '#stage-7', id: 'hoursCard' }, el('span', { class: 'bob', style: 'font-size:30px' }, '⏱'),
+        el('a', { class: 'card dstat', href: `#stage-${Core.STAGE}`, id: 'hoursCard' }, el('span', { class: 'bob', style: 'font-size:30px' }, '⏱'),
           el('span', {}, el('b', {}, hrs(Core.totalSeconds())), el('br'), el('small', {}, `studied of ≈ ${estH(Core.INDEX.est || 0)} course`)))))));
     if (isGuest()) m.append(el('div', { class: 'banner info', id: 'guestBanner' }, el('b', {}, 'You are learning as a guest. '), 'Your progress is kept on this device only and topic 3.1 is open. Sign up free to save it and unlock every topic.', el('a', { class: 'btn small gold', href: '#signup' }, 'Sign up free')));
-    else if (!Core.S.sub.active) m.append(el('div', { class: 'banner info', id: 'freeBanner' }, el('b', {}, 'Free plan: '), 'topic 3.1 is open. A Cambridge Stage 7 plan unlocks all topics and the Unit Test.', el('a', { class: 'btn small gold', href: '#pricing' }, 'See plans')));
+    else if (!Core.S.sub.active) m.append(el('div', { class: 'banner info', id: 'freeBanner' }, el('b', {}, 'Free plan: '), `topic 3.1 is open. A Cambridge Stage ${Core.STAGE} plan unlocks all topics and the Unit Test.`, el('a', { class: 'btn small gold', href: '#pricing' }, 'See plans')));
     if (Backend.mode === 'demo' && !isGuest()) m.append(el('div', { class: 'banner adv' }, el('b', {}, 'Trying the preview? '), 'Use the tester tools on the Progress page to unlock sections instantly.', el('a', { class: 'btn small', href: '#profile' }, 'Open tester tools')));
     const left = el('div', { class: 'dmain' }), aside = el('aside', { class: 'daside' });
     m.append(el('div', { class: 'dgrid' }, left, aside));
@@ -262,7 +262,7 @@
             el('span', {}, `${s.prac.filter(q => (st.items[q.id] || {}).done).length}/18`), el('span', {}, `${s.adv.filter(q => (st.items[q.id] || {}).done).length}/4`),
             el('span', {}, el('span', { class: 'status ' + c }, t))); })))));
     // every unit of the stage: open any of them at any time
-    left.append(el('section', { class: 'card dtable', id: 'unitPicker' }, el('div', { class: 'dth' }, el('h2', {}, 'Cambridge Stage 7 units'), el('small', { class: 'muted' }, 'Open any unit – you do not have to finish one first')),
+    left.append(el('section', { class: 'card dtable', id: 'unitPicker' }, el('div', { class: 'dth' }, el('h2', {}, `Cambridge Stage ${Core.STAGE} units`), el('small', { class: 'muted' }, 'Open any unit – you do not have to finish one first')),
       el('div', { class: 'lp-ugrid', style: 'padding:8px 32px 24px' }, ...Core.INDEX.units.map(u => { const us = Core.unitStatus(st, u.n);
         return el(us === 'soon' ? 'div' : 'a', us === 'soon' ? { class: 'card lp-unit off', title: 'Coming soon' } : { class: 'card lift lp-unit' + (u.n === Core.UNO ? ' cur' : ''), href: '#u-' + u.n, 'data-unit': u.n },
           unitIcon(u.n), el('span', { class: 'lp-ut' }, el('small', {}, 'UNIT ' + u.n), el('br'), el('b', {}, u.t)), us === 'passed' ? el('span', { class: 'lp-free', style: 'background:#1E8E4E' }, '✓') : u.n === Core.UNO ? el('span', { class: 'lp-free' }, 'Now') : us === 'soon' ? el('span', { class: 'lp-tag' }, 'Soon') : null); }))));
@@ -306,7 +306,7 @@
   }
   const statTile = (ic, big, small) => el('div', { class: 'tile', style: 'cursor:default' }, el('span', { class: 'ti' }, ic), el('b', {}, big), el('small', {}, small));
   function levelCards() {
-    return el('div', { class: 'levelcards' }, el('div', { class: 'card lift' }, el('span', { class: 'lv' }, '7–9'), el('span', {}, el('b', { class: 'lex' }, 'Lower Secondary'), el('br'), el('small', { class: 'muted' }, 'Checkpoint · Cambridge Stage 7 open now'))),
+    return el('div', { class: 'levelcards' }, el('div', { class: 'card lift' }, el('span', { class: 'lv' }, '7–9'), el('span', {}, el('b', { class: 'lex' }, 'Lower Secondary'), el('br'), el('small', { class: 'muted' }, `Checkpoint · Cambridge Stage ${Core.STAGE} open now`))),
       el('div', { class: 'card off' }, el('span', { class: 'lv' }, 'IG'), el('span', {}, el('b', { class: 'lex' }, 'Cambridge IGCSE'), el('br'), el('small', { class: 'muted' }, 'Coming soon')), el('span', { class: 'lockicon' }, svgI(I.lock, 20, '#8B98AB', 2))),
       el('div', { class: 'card off' }, el('span', { class: 'lv' }, 'A'), el('span', {}, el('b', { class: 'lex' }, 'AS & A Level'), el('br'), el('small', { class: 'muted' }, 'Coming soon')), el('span', { class: 'lockicon' }, svgI(I.lock, 20, '#8B98AB', 2))));
   }
@@ -355,7 +355,7 @@
     const res = (st.results || {})[Core.UNIT], pct = res ? Math.round(res.first_pass_pct || res.pct || 0) : null;
     const fact = (b, t) => el('div', {}, el('b', {}, b), el('span', {}, t));
     const btn = ts.state === 'guest' ? el('a', { class: 'btn gold', href: '#signup' }, 'Sign up free to take the test')
-      : ts.state === 'paywall' ? el('a', { class: 'btn gold', href: '#pricing' }, 'Unlock with a Cambridge Stage 7 plan')
+      : ts.state === 'paywall' ? el('a', { class: 'btn gold', href: '#pricing' }, `Unlock with a Cambridge Stage ${Core.STAGE} plan`)
         : el('a', { class: 'btn gold', href: ts.state === 'passed' ? '#result' : '#test' }, ts.state === 'locked' ? 'See what\'s missing' : ts.state === 'passed' ? 'See results' : 'Enter the exam room');
     const passed = ts.state === 'passed';
     return el('section', { class: 'u4exam', id: 'unitTestCard' },
@@ -368,14 +368,14 @@
   }
   function viewUnit() {
     const m = $main(); const nx = Core.nextActivity(st);
-    const meta = Core.INDEX.units.find(u => u.n === Core.UNO) || {}; const art = window.UnitArt ? UnitArt(Core.UNO, meta.strand) : { svg: '', tag: '' };
+    const meta = Core.INDEX.units.find(u => u.n === Core.UNO) || {}; const art = window.UnitArt ? UnitArt(Core.STAGE === 7 ? Core.UNO : 0, meta.strand) : { svg: '', tag: '' };
     const nobj = Object.keys(C.objectives).length, sec = Object.keys(C.objectives).filter(objSecure).length, pct = unitPct();
     const studied = Core.unitSeconds(Core.UNO);
     const crumbs4 = el('nav', { class: 'u4crumbs', 'aria-label': 'Breadcrumb' }, el('a', { href: '#home' }, 'Dashboard'), el('span', {}, '›'), el('a', { href: '#level' }, 'Cambridge Lower Secondary'), el('span', {}, '›'),
-      el('a', { href: '#stage-7' }, el('b', { class: 'cam' }, 'Cambridge'), ' Stage 7'), el('span', {}, '›'), el('a', { href: '#u-' + Core.UNO, 'aria-current': 'page' }, el('b', {}, `Unit ${Core.UNO} · ${C.unit.title}`)));
+      el('a', { href: `#stage-${Core.STAGE}` }, el('b', { class: 'cam' }, 'Cambridge'), ` Stage ${Core.STAGE}`), el('span', {}, '›'), el('a', { href: '#u-' + Core.UNO, 'aria-current': 'page' }, el('b', {}, `Unit ${Core.UNO} · ${C.unit.title}`)));
     const heroS = el('section', { class: 'u4hero' }, el('div', { class: 'u4hero-in' },
       el('div', {}, crumbs4,
-        el('div', { class: 'u4kick' }, el('span', { class: 'stagetag' }, el('span', {}, 'Cambridge'), el('span', {}, 'Stage 7')), el('span', { class: 't' }, `Unit ${Core.UNO} of 14 · ${C.unit.strandShort || ''}`)),
+        el('div', { class: 'u4kick' }, el('span', { class: 'stagetag' }, el('span', {}, 'Cambridge'), el('span', {}, `Stage ${Core.STAGE}`)), el('span', { class: 't' }, `Unit ${Core.UNO} of 14 · ${C.unit.strandShort || ''}`)),
         el('h1', {}, C.unit.title), el('p', { class: 'lead' }, C.unit.blurb || ''),
         el('div', { class: 'u4facts', id: 'unitHours' }, el('div', {}, el('b', {}, `≈ ${estH(C.est || Core.estMinutes(Core.UNO))}`), el('span', {}, 'estimated time')),
           el('div', {}, el('b', {}, hrs(studied)), el('span', {}, Core.passed(st) ? 'completed in' : 'studied so far')),
@@ -386,7 +386,7 @@
       el('div', { class: 'u4art', 'aria-hidden': 'true' }, el('div', { class: 'lens2', html: `<svg viewBox="0 0 380 380">${art.svg}</svg>` }), el('span', { class: 'tag' }, art.tag),
         el('div', { class: 'float' }, el('i', {}, Core.passed(st) ? '🏆' : '▶'), el('div', {}, el('b', {}, Core.passed(st) ? 'Unit passed' : 'Next up'), nx.label)))));
     document.getElementById('wrap').before(heroS);
-    m.append(tocBtn(), el('div', { class: 'u4head' }, el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, `Cambridge Stage 7 · Unit ${Core.UNO}`), el('h2', {}, 'Your learning path')),
+    m.append(tocBtn(), el('div', { class: 'u4head' }, el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, `Cambridge Stage ${Core.STAGE} · Unit ${Core.UNO}`), el('h2', {}, 'Your learning path')),
       el('div', { class: 'u4steps' }, el('span', {}, '1 Watch'), el('span', {}, '2 Practise'), el('span', {}, '3 Worksheet'), el('span', {}, '4 Unit Test'))), learningPath(), examBlock());
     m.append(el('div', { class: 'u4two' },
       el('section', { class: 'card' }, el('h2', { style: 'margin:0;font-size:22px' }, 'What you will learn'), el('span', { class: 'muted' }, `${sec} of ${nobj} secure`),
@@ -593,12 +593,12 @@
   // print-only worksheet (Design v4 paper): personal watermark on every page, microprint frame, copy code — no PDF download
   function wsLearner() { return { name: st.name || st.alias || 'Learner', lid: 'L-' + String(st.id || 'guest').replace(/-/g, '').slice(0, 7).toUpperCase() }; }
   function worksheetPages(s, info, mount) {
-    const qs = s.req.concat(s.prac.slice(0, 6)); const doc = `S7-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
+    const qs = s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
     const mins = Math.max(15, Math.ceil(qs.length * 2.5 / 5) * 5);
     const out = el('div', { class: 'ws', id: 'wsPages' }); let pno = 0; const pages = [];
     const foot = last => el('div', { class: 'pfoot' }, el('div', {}, `© Atomic Education ${info.date.getFullYear()} · ${doc} · Copy #${info.serial} · ${info.code}`, el('br'), `Printed for ${info.name} (${info.lid}) on ${info.when}. Not for sharing or resale.`), el('b', {}, last ? 'End of worksheet' : '[Turn over'));
     const page = (...kids) => { pno++; const pg = el('div', { class: 'a4 paper4', html: Paper.frame() + Paper.watermark(info) }); pg.append(el('div', { class: 'pbody' }, ...kids)); pages.push(pg); return pg; };
-    const runHead = () => el('div', { class: 'prun' }, el('span', {}, el('b', {}, 'Cambridge'), ` Stage 7 Science · Unit ${Core.UNO} · ${s.id} ${s.title}`), el('b', {}, String(pno + 1)));
+    const runHead = () => el('div', { class: 'prun' }, el('span', {}, el('b', {}, 'Cambridge'), ` Stage ${Core.STAGE} Science · Unit ${Core.UNO} · ${s.id} ${s.title}`), el('b', {}, String(pno + 1)));
     const boxes = (txt, n) => el('span', { class: 'pboxes' }, ...Array.from({ length: n }, (_, i) => el('i', {}, txt[i] || '')));
     const d = info.date, dd = String(d.getDate()).padStart(2, '0') + String(d.getMonth() + 1).padStart(2, '0') + d.getFullYear();
     // cover
@@ -610,7 +610,7 @@
       el('table', { class: 'pgrid' }, el('tbody', {}, el('tr', {}, el('td', { class: 'k' }, 'LEARNER NAME'), el('td', { colspan: '3', class: 'pre' }, info.name)),
         el('tr', {}, el('td', { class: 'k' }, 'LEARNER ID'), el('td', {}, boxes(info.lid.replace(/-/g, ''), 8)), el('td', { class: 'k', style: 'width:22mm' }, 'DATE'), el('td', {}, boxes(dd, 8))))),
       el('div', { class: 'psubj' }, el('div', { class: 'ico', html: '<svg width="52" height="52" viewBox="0 0 56 56"><rect x="6" y="10" width="44" height="36" rx="10" fill="none" stroke="#0E1B3D" stroke-width="3"/><ellipse cx="28" cy="28" rx="13" ry="9" fill="#DCE8FA" stroke="#0149AF" stroke-width="2"/><circle cx="33" cy="27" r="4" fill="#0E1B3D"/></svg>' }),
-        el('div', {}, el('div', { class: 'camline' }, el('b', {}, 'CAMBRIDGE'), ' STAGE 7 · SCIENCE'), el('div', {}, `Unit ${Core.UNO} · ${C.unit.title}`, el('br'), `${s.id} ${s.title}`)),
+        el('div', {}, el('div', { class: 'camline' }, el('b', {}, 'CAMBRIDGE'), ` STAGE ${Core.STAGE} · SCIENCE`), el('div', {}, `Unit ${Core.UNO} · ${C.unit.title}`, el('br'), `${s.id} ${s.title}`)),
         el('div', { style: 'text-align:right' }, el('div', { class: 'code' }, doc), el('div', {}, `${mins} minutes`), el('small', {}, `${qs.length} questions`))),
       el('p', { style: 'margin:5mm 0 0' }, 'You must answer on this worksheet.'),
       el('div', { class: 'psec' }, 'INSTRUCTIONS'), el('ul', {}, el('li', {}, 'Answer ', el('b', {}, 'all'), ' questions. Questions 1–8 are Core; 9–14 are extra practice.'), el('li', {}, 'Use a black or dark blue pen. You may use an HB pencil for diagrams.'), el('li', {}, 'Write your answer to each question in the space provided. Show your working.'), el('li', {}, `When you finish, open topic ${s.id} on Atomic and check your answers with the worked solutions.`)),
@@ -629,10 +629,10 @@
     return out;
   }
   function wsAnswers(s, info, mount) {
-    const qs = s.req.concat(s.prac.slice(0, 6)); const doc = `S7-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
+    const qs = s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
     const out = el('div', { class: 'ws', id: 'wsAns' }); mount.append(out);
     const foot = last => el('div', { class: 'pfoot' }, el('div', {}, `© Atomic Education ${info.date.getFullYear()} · ${doc} · ANSWERS · ${info.code}`, el('br'), `Opened by ${info.name} (${info.lid}) on ${info.when}. For self-marking only.`), el('b', {}, last ? 'End of answers' : '[Turn over'));
-    const page = () => { const pg = el('div', { class: 'a4 paper4', html: Paper.frame() + Paper.watermark(info) }); const pb = el('div', { class: 'pbody' }, el('div', { class: 'prun' }, el('span', {}, el('b', {}, 'ANSWERS'), ` · Cambridge Stage 7 Science · Unit ${Core.UNO} · ${s.id} ${s.title}`), el('b', {}, 'Mark scheme'))); pg.append(pb); out.append(pg); return pb; };
+    const page = () => { const pg = el('div', { class: 'a4 paper4', html: Paper.frame() + Paper.watermark(info) }); const pb = el('div', { class: 'pbody' }, el('div', { class: 'prun' }, el('span', {}, el('b', {}, 'ANSWERS'), ` · Cambridge Stage ${Core.STAGE} Science · Unit ${Core.UNO} · ${s.id} ${s.title}`), el('b', {}, 'Mark scheme'))); pg.append(pb); out.append(pg); return pb; };
     let pb = page(); let ft = foot(false); pb.append(ft); let list = el('ol', { class: 'ans' }); pb.insertBefore(list, ft);
     qs.forEach((q, i) => {
       const li = el('li', { value: String(i + 1) }, QE.answerText(q), q.reason ? el('div', { class: 'muted' }, q.reason) : null); list.append(li);
@@ -644,7 +644,7 @@
     const s = Core.sec(sid), m = $main(); if (!s) return go('home');
     const lock = Core.secLock(st, s); if (lock && lock.paywall) { m.append(bar(`Unit ${Core.UNO} › ${s.id} › Worksheet`), lockScreen(`Worksheet ${s.id} is locked`, lock.reason, [lock])); return; }
     const msg = el('span', { class: 'muted' }); const holder = el('div'); const ansBox = el('div', { class: 'ansbox' });
-    const L = wsLearner(); const doc = `S7-U${Core.UNO}-W${s.id}`;
+    const L = wsLearner(); const doc = `S${Core.STAGE}-U${Core.UNO}-W${s.id}`;
     const draw = serial => { holder.innerHTML = ''; worksheetPages(s, Paper.copyInfo(doc, L, serial), holder); };
     const doPrint = () => {
       st.prints = (st.prints || 0) + 1; if (!st.ws.includes(sid)) st.ws.push(sid); Core.persist();
@@ -652,7 +652,7 @@
       setTimeout(() => { try { window.print(); } catch (e) { msg.textContent = 'This browser blocked printing.'; } }, 80);
     };
     m.append(bar(`Unit ${Core.UNO} › ${s.id} › Worksheet`),
-      el('section', { class: 'card noprint wsbar' }, el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, 'Worksheet · print only'), el('h2', { style: 'margin:2px 0 4px' }, el('span', { class: 'cam' }, 'Cambridge'), ` Stage 7 · ${s.id} ${s.title}`),
+      el('section', { class: 'card noprint wsbar' }, el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, 'Worksheet · print only'), el('h2', { style: 'margin:2px 0 4px' }, el('span', { class: 'cam' }, 'Cambridge'), ` Stage ${Core.STAGE} · ${s.id} ${s.title}`),
         el('p', { class: 'muted', style: 'margin:0' }, 'Worksheets are printed, not downloaded. Each printed copy carries your name, learner ID, the date and a copy number.')),
         el('div', { class: 'btnrow' }, el('button', { class: 'btn gold', type: 'button', id: 'printWs' }, '🖨 Print worksheet'), el('button', { class: 'btn', type: 'button', id: 'showAns' }, '🔑 Get the answers'), msg)),
       holder, ansBox);
@@ -731,12 +731,12 @@
       function done() {
         if (img.width) { const h = 120, w = img.width / img.height * h; g.drawImage(img, W / 2 - w / 2, 120, w, h); }
         center('CERTIFICATE OF ACHIEVEMENT', 320, '600 34px Outfit, Figtree, Arial', GOLD, 8);
-        center('Cambridge Stage 7 Science', 410, '700 76px Outfit, Figtree, Arial', NAVY);
+        center(`Cambridge Stage ${Core.STAGE} Science`, 410, '700 76px Outfit, Figtree, Arial', NAVY);
         center('Cambridge Lower Secondary Science (curriculum framework 0893)', 462, '28px Figtree, Arial', '#52627A');
         center('This is to certify that', 545, 'italic 32px Georgia, serif', '#3A4B63');
         center(c.name, 640, 'italic 700 96px Georgia, serif', BLUE);
         g.strokeStyle = GOLD; g.lineWidth = 2; g.beginPath(); g.moveTo(W / 2 - 420, 668); g.lineTo(W / 2 + 420, 668); g.stroke();
-        center('has completed the Atomic course for Cambridge Stage 7 Science:', 718, '30px Figtree, Arial', NAVY); center('all 14 units, every Unit Test and an end-of-year exam.', 756, '30px Figtree, Arial', NAVY);
+        center(`has completed the Atomic course for Cambridge Stage ${Core.STAGE} Science:`, 718, '30px Figtree, Arial', NAVY); center('all 14 units, every Unit Test and an end-of-year exam.', 756, '30px Figtree, Arial', NAVY);
         // achievements row
         const stats = [[c.units || '14 / 14', 'units passed'], [c.avg || '—', 'Unit Test average'], [c.final || '—', 'end-of-year exam'], [c.hours || '—', 'hours of study'], [c.level || '—', 'level reached']];
         const bw = 250, gap = 22, x0 = W / 2 - (stats.length * bw + (stats.length - 1) * gap) / 2;
@@ -745,7 +745,7 @@
         // seal
         const sx = 300, sy = 1010; g.fillStyle = GOLD2; g.beginPath(); for (let i = 0; i < 48; i++) { const r = i % 2 ? 92 : 104, a = i / 48 * Math.PI * 2; g.lineTo(sx + r * Math.cos(a), sy + r * Math.sin(a)); } g.closePath(); g.fill();
         g.fillStyle = GOLD; g.beginPath(); g.arc(sx, sy, 80, 0, 7); g.fill(); g.strokeStyle = '#FFF4D6'; g.lineWidth = 3; g.beginPath(); g.arc(sx, sy, 68, 0, 7); g.stroke();
-        g.fillStyle = '#FFFFFF'; g.textAlign = 'center'; g.font = '700 26px Outfit, Figtree, Arial'; g.fillText('ATOMIC', sx, sy - 8); g.font = '600 20px Figtree, Arial'; g.fillText('CAMBRIDGE STAGE 7', sx, sy + 22); g.font = '22px Figtree'; g.fillText('★ ★ ★', sx, sy + 50);
+        g.fillStyle = '#FFFFFF'; g.textAlign = 'center'; g.font = '700 26px Outfit, Figtree, Arial'; g.fillText('ATOMIC', sx, sy - 8); g.font = '600 20px Figtree, Arial'; g.fillText(`CAMBRIDGE STAGE ${Core.STAGE}`, sx, sy + 22); g.font = '22px Figtree'; g.fillText('★ ★ ★', sx, sy + 50);
         // signature + date + code
         g.strokeStyle = NAVY; g.lineWidth = 2; g.beginPath(); g.moveTo(W - 560, 1010); g.lineTo(W - 190, 1010); g.stroke();
         g.textAlign = 'center'; g.fillStyle = NAVY; g.font = 'italic 40px Georgia, serif'; g.fillText('The Atomic teaching team', W - 375, 995);
@@ -762,7 +762,7 @@
     return { units: `${Math.min(14, Object.keys(st.results || {}).length)} / 14`, avg: rs ? rs.score.toFixed(0) + '%' : '—', final: best ? best.toFixed(0) + '%' : '—', hours: (Core.totalSeconds() / 3600).toFixed(1), level: String(Core.levelInfo().level) };
   }
   async function viewCert() {
-    const m = $main(); m.append(bar('Cambridge Stage 7 certificate'));
+    const m = $main(); m.append(bar(`Cambridge Stage ${Core.STAGE} certificate`));
     await Core.refreshFinal().catch(() => { });
     let cert = null; try { cert = await Core.certificate(st); } catch (e) { cert = null; }
     const passedU = Object.keys(st.results || {}).length, fin = Core.finalPassed();
@@ -770,14 +770,14 @@
       const items = [];
       if (passedU < Core.STAGE_UNITS) items.push({ what: `pass every Unit Test (${passedU} of ${Core.STAGE_UNITS} so far)`, route: 'tests' });
       if (!fin) items.push({ what: `pass an end-of-year exam (needs level ${TestRules.FINAL_LEVEL}; you are level ${Core.levelInfo().level})`, route: 'final' });
-      m.append(lockScreen('Your Cambridge Stage 7 certificate', 'The certificate is awarded when you have passed all 14 Unit Tests and one end-of-year exam. Here is how it will look:', items));
-      const img = el('img', { class: 'certimg', alt: 'Preview of the Cambridge Stage 7 certificate' }); m.append(el('section', { class: 'card certwrap' }, img));
+      m.append(lockScreen(`Your Cambridge Stage ${Core.STAGE} certificate`, 'The certificate is awarded when you have passed all 14 Unit Tests and one end-of-year exam. Here is how it will look:', items));
+      const img = el('img', { class: 'certimg', alt: `Preview of the Cambridge Stage ${Core.STAGE} certificate` }); m.append(el('section', { class: 'card certwrap' }, img));
       drawCert({ name: st.name, code: 'AE-S7-XXXX-XXXXXXXX', date: '—', ...certStats() }, true).then(cv => { img.src = cv.toDataURL('image/png'); });
       return;
     }
     const c = { name: cert.name, code: cert.code, date: new Date(cert.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }), ...certStats() };
     const img = el('img', { class: 'certimg', alt: `Certificate for ${c.name}, code ${c.code}` }); const msg = el('span', { class: 'muted' });
-    m.append(el('section', { class: 'card certwrap' }, el('h2', {}, '🎓 Your Cambridge Stage 7 certificate'), el('p', {}, 'Certificate code: ', el('b', { id: 'certCode' }, c.code), ' · Awarded: ' + c.date),
+    m.append(el('section', { class: 'card certwrap' }, el('h2', {}, `🎓 Your Cambridge Stage ${Core.STAGE} certificate`), el('p', {}, 'Certificate code: ', el('b', { id: 'certCode' }, c.code), ' · Awarded: ' + c.date),
       el('p', { class: 'muted' }, 'Anyone can check this certificate at ', el('a', { href: '#verify' }, 'Verify a certificate'), ' using the code.'), img,
       el('div', { class: 'btnrow' }, el('button', { class: 'btn primary', type: 'button', id: 'dlCert', onclick: async () => { const cv = await drawCert(c); const j = cv.toDataURL('image/jpeg', 0.92); const bytes = Uint8Array.from(atob(j.split(',')[1]), x => x.charCodeAt(0)); const pdf = Core.jpegPdf(bytes, cv.width, cv.height, 842, 595); const r = await Core.saveFile(`Atomic_Certificate_${c.code}.pdf`, new Blob([pdf], { type: 'application/pdf' })); msg.textContent = r === 'saved' ? 'Downloaded.' : r === 'declined' ? 'Download cancelled.' : 'Could not download.'; } }, '⬇ Download PDF'), msg)));
     drawCert(c).then(cv => { img.src = cv.toDataURL('image/png'); });
@@ -791,7 +791,7 @@
   async function loadCatalog() { if (!CATALOG) { try { const r = await fetch('content/catalog.json'); CATALOG = r.ok ? await r.json() : null; } catch (e) { CATALOG = null; } } return CATALOG; }
   const subjTag = (S0) => el('span', { class: 'subjtag', style: `--sc:${S0.color}` }, S0.icon + ' ' + S0.name);
   function courseCard(c, S0) {
-    const isStage = c.subject === 'science' && c.stage; const mine = isStage && st && c.stage === Core.STAGE, en = isStage && st && Core.enrolled(c.stage);
+    const isStage = c.subject === 'science' && c.stage; const mine = isStage && st && c.stage === Core.learnerStage(), en = isStage && st && Core.enrolled(c.stage);
     const state = c.status === 'soon' ? 'soon' : mine ? 'mine' : en ? 'enrolled' : c.status === 'enrol' ? 'enrol' : 'open';
     const tag = { soon: 'COMING SOON', mine: 'YOUR COURSE', enrolled: 'ENROLLED', enrol: 'NOT ENROLLED', open: 'OPEN' }[state];
     const btn = state === 'soon' ? el('a', { class: 'btn small', href: '#course-' + c.id }, 'Details', el('span', { class: 'arr' }, ' →'))
@@ -822,26 +822,29 @@
     pageHero(`${S0.name.toUpperCase()} · ${L.short.toUpperCase()} · SYLLABUS ${c.code}`, c.title, c.about || `${L.name} ${S0.name}.`);
     m.append(el('nav', { class: 'crumb2' }, el('a', { href: '#courses-' + S0.id }, S0.name), ' › ', L.short, ' › ', c.title));
     const box = el('section', { class: 'card', style: 'display:flex;flex-direction:column;gap:14px' }, el('div', { class: 'cphead' }, subjTag(S0), el('span', { class: 'status todo' }, 'Coming soon')),
-      el('p', { style: 'margin:0' }, `This course is being written by the Atomic teaching team. It will work like Cambridge Stage 7 Science: short lesson videos with pause questions, practice for every topic, print-only worksheets, timed Unit Tests in the exam room and a certificate.`));
+      el('p', { style: 'margin:0' }, `This course is being written by the Atomic teaching team. It will work like Cambridge Stage ${Core.STAGE} Science: short lesson videos with pause questions, practice for every topic, print-only worksheets, timed Unit Tests in the exam room and a certificate.`));
     if (c.strands) box.append(el('div', {}, el('b', {}, 'Curriculum strands'), el('div', { class: 'chips' }, ...c.strands.map(x => el('span', { class: 'chip' }, x)))));
     if (c.exams) box.append(el('div', {}, el('b', {}, 'Checkpoint exam room (practice papers in this format)'), el('ul', { style: 'margin:6px 0 0' }, ...c.exams.map(e => el('li', {}, el('b', {}, `${S0.name} ${e.code}`), ` · ${e.name} · ${e.minutes} minutes · ${e.marks} marks · ${e.note}`)))));
     const msg = el('span', { class: 'muted' });
     box.append(el('div', { class: 'btnrow' }, st && !isGuest() ? el('button', { class: 'btn gold', type: 'button', id: 'notifyMe', onclick: () => { Backend.track('course_interest', { learner: st.id, course: c.id }); msg.textContent = '✓ Thank you – we will tell you when it opens.'; } }, '🔔 Tell me when it opens') : null, el('a', { class: 'btn', href: '#courses-' + S0.id }, 'All ' + S0.name + ' courses'), msg));
     m.append(box);
   }
-  function viewStage(g) {
+  async function viewStage(g) {
     const m = $main();
+    if (g !== Core.STAGE && Core.enrolled(g)) {   // an enrolled stage: open it (its units, tests and certificate)
+      try { const r = await fetch(`content/stage${g}.json`); if (r.ok && (await r.json()).units.some(u => u.ready)) { await Core.switchStage(g); C = Core.C; st = Core.cur(); return render(); } } catch (e) { }
+    }
     if (g !== Core.STAGE) {
       pageHero('LOWER SECONDARY', `Cambridge Stage ${g}`, Core.enrolled(g) ? `You are enrolled in Cambridge Stage ${g}.` : `Cambridge Stage ${g} is a separate course.`);
       m.append(crumbs(`Cambridge Stage ${g}`));
       if (!Core.enrolled(g)) { m.append(el('section', { class: 'card lockcard' }, el('h2', {}, `🔒 Enrol in Cambridge Stage ${g}`), el('p', {}, `Each stage is its own course. Enrol and pay for Cambridge Stage ${g} to open it on this account.`), el('a', { class: 'btn gold', href: '#checkout-' + g }, `Enrol · ${PRICE}`, el('span', { class: 'arr' }, ' →')))); return; }
-      m.append(el('section', { class: 'card done' }, el('h2', {}, `✓ Enrolled in Cambridge Stage ${g}`), el('p', {}, `The Cambridge Stage ${g} units open here as soon as they have been reviewed. You will get a notification.`), el('a', { class: 'btn small', href: '#stage-7' }, 'Back to Cambridge Stage 7')));
+      m.append(el('section', { class: 'card done' }, el('h2', {}, `✓ Enrolled in Cambridge Stage ${g}`), el('p', {}, `The Cambridge Stage ${g} units open here as soon as they have been reviewed. You will get a notification.`), el('a', { class: 'btn small', href: `#stage-${Core.STAGE}` }, `Back to Cambridge Stage ${Core.STAGE}`)));
       return;
     }
-    const tot = Core.totalSeconds(), passedN = Object.keys(st.results || {}).length;
-    pageHero('CAMBRIDGE LOWER SECONDARY SCIENCE', 'Cambridge Stage 7 Science', 'Open any unit at any time – you do not have to finish one before starting another.',
+    const tot = Core.totalSeconds(), passedN = Object.keys(st.results || {}).filter(k => k.startsWith(`stage${Core.STAGE}-unit`)).length;
+    pageHero('CAMBRIDGE LOWER SECONDARY SCIENCE', `Cambridge Stage ${Core.STAGE} Science`, 'Open any unit at any time – you do not have to finish one before starting another.',
       [statCard(el('span', { class: 'ti big' }, '⏱'), `≈ ${estH(Core.INDEX.est || 0)}`, 'whole course'), statCard(el('span', { class: 'ti big' }, '📚'), hrs(tot), 'you have studied'), statCard(ringIcon(Math.round(passedN / Core.STAGE_UNITS * 100)), `${passedN} / ${Core.STAGE_UNITS}`, 'units completed')]);
-    m.append(crumbs('Cambridge Stage 7'));
+    m.append(crumbs(`Cambridge Stage ${Core.STAGE}`));
     const rows = Core.INDEX.units.map(u => { const res = (st.results || {})[u.id], sec = Core.unitSeconds(u.n);
       return el('a', { class: 'lbrow srow2', href: '#u-' + u.n, 'data-unit': u.n }, el('span', {}, unitIcon(u.n)), el('span', {}, el('b', {}, `Unit ${u.n} · ${u.t}`), el('br'), el('small', { class: 'muted' }, `${u.strand} · ${(u.sections || []).length} topics · ${u.qs || 0} questions`)),
         el('span', {}, el('small', { class: 'muted' }, 'Estimated'), el('br'), el('b', {}, estH(u.est || 0))), el('span', {}, el('small', { class: 'muted' }, res ? 'Completed in' : 'Studied'), el('br'), el('b', {}, hrs(sec))),
@@ -868,7 +871,7 @@
   /* ---------- question bank ---------- */
   function viewBank() {
     const m = $main(); UI.bank = UI.bank || { sec: 'all', diff: 'all', type: 'all', status: 'all', tier: 'all' }; const F = UI.bank;
-    pageHero('CAMBRIDGE STAGE 7 · ALL 14 UNITS', 'Question Bank', `Every practice question of Cambridge Stage 7, unit by unit. Choose a unit, then filter by topic, difficulty and type. Every question you finish earns XP.`);
+    pageHero(`CAMBRIDGE STAGE ${Core.STAGE} · ALL 14 UNITS`, 'Question Bank', `Every practice question of Cambridge Stage ${Core.STAGE}, unit by unit. Choose a unit, then filter by topic, difficulty and type. Every question you finish earns XP.`);
     const doneIn = n => Object.values((Core.S.states[Core.unitId(n)] || {}).items || {}).filter(x => x && x.done).length;
     m.append(el('section', { class: 'card', id: 'bankUnits' }, el('b', { class: 'lex' }, 'Choose a unit'),
       el('div', { class: 'bankunits' }, ...Core.INDEX.units.filter(u => u.ready).map(u => { const d = Math.min(doneIn(u.n), u.qs || 0), pct = u.qs ? Math.round(d / u.qs * 100) : 0;
@@ -1025,7 +1028,7 @@
     const where = `Unit ${Core.UNO} › Unit Test`;
     const totalCore = C.sections.reduce((a, s) => a + s.req.length, 0);
     if (ts.state === 'guest') { m.append(bar(where), guestWall('Sign up free to take the Unit Test')); return; }
-    if (ts.state === 'paywall') { m.append(bar(where), lockScreen(`Unit Test ${Core.UNO} needs a Cambridge Stage 7 plan`, 'Unit Tests, marking and the certificate are part of the full course.', [{ what: 'a Cambridge Stage 7 plan (7-day free trial)', route: 'pricing' }])); return; }
+    if (ts.state === 'paywall') { m.append(bar(where), lockScreen(`Unit Test ${Core.UNO} needs a Cambridge Stage ${Core.STAGE} plan`, 'Unit Tests, marking and the certificate are part of the full course.', [{ what: `a Cambridge Stage ${Core.STAGE} plan (7-day free trial)`, route: 'pricing' }])); return; }
     if (ts.state === 'locked') { m.append(bar(where), lockScreen(`Unit Test ${Core.UNO} is locked`, `The Unit Test opens when you have watched every video and finished all ${totalCore} Core questions in this unit.`, ts.miss)); return; }
     if (ts.state === 'pending') { m.append(bar(where), el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, `Attempt ${ts.last.n} (Paper ${ts.last.form}) has a written answer for an Atomic marker to mark. We will notify you when it is done.`), el('a', { class: 'btn primary small', href: '#result' }, 'Results & history'))); return; }
     if (ts.state === 'remediate') { m.append(bar(where), lockScreen('You can\'t retake yet', 'Finish the review questions set for your weaker objectives before you take the equivalent paper.', [{ what: `${ts.left.length} review questions`, route: 'remedial' }])); return; }
@@ -1048,7 +1051,7 @@
   async function viewTests() {
     const m = $main(); await Core.refreshFinal().catch(() => { });
     const li = Core.levelInfo(), F = await Core.loadFinal();
-    pageHero('CAMBRIDGE STAGE 7 · EXAM ROOM', 'Tests & exams', `Every Unit Test is timed (${TestRules.UNIT_MINUTES} minutes, 30 marks, pass above 70%). Open any unit's test whenever you are ready.`,
+    pageHero(`CAMBRIDGE STAGE ${Core.STAGE} · EXAM ROOM`, 'Tests & exams', `Every Unit Test is timed (${TestRules.UNIT_MINUTES} minutes, 30 marks, pass above 70%). Open any unit's test whenever you are ready.`,
       [statCard(el('span', { class: 'ti big' }, '📝'), `${Object.keys(st.results || {}).length} / ${Core.STAGE_UNITS}`, 'Unit Tests passed'), statCard(el('span', { class: 'ti big' }, '⭐'), `Level ${li.level}`, `${li.xp} XP`)]);
     const rows = Core.INDEX.units.map(u => {
       const res = (st.results || {})[u.id]; const state = Core.S.states[u.id] || {}; const core = u.sections ? u.sections.length * 8 : 32;
@@ -1065,7 +1068,7 @@
   }
   function finalCard(F, li) {
     const ok = li.level >= F.level, done = (Core.S.finalAttempts || []).filter(a => a.status === 'final'), best = done.reduce((a, x) => Math.max(a, x.pct), 0);
-    return el('section', { class: 'card finalcard', id: 'finalCard' }, el('span', { class: 'eyebrow' }, 'END OF CAMBRIDGE STAGE 7'), el('h2', { style: 'margin:2px 0' }, '🏁 End-of-year exams'),
+    return el('section', { class: 'card finalcard', id: 'finalCard' }, el('span', { class: 'eyebrow' }, `END OF CAMBRIDGE STAGE ${Core.STAGE}`), el('h2', { style: 'margin:2px 0' }, '🏁 End-of-year exams'),
       el('p', {}, `${Object.keys(F.papers).length} papers, each ${F.minutes} minutes and ${F.max} marks, covering all 14 units. Pass above ${Math.round(F.pass * 100)}%. Opens at level ${F.level}.`),
       el('div', { class: 'lvgate' }, el('b', {}, ok ? `✓ You are level ${li.level} – the exams are open.` : `You are level ${li.level}. Reach level ${F.level} (${TestRules.xpForLevel(F.level) - li.xp} more XP).`), el('div', { class: 'pbar' }, el('i', { style: `width:${Math.min(100, li.xp / TestRules.xpForLevel(F.level) * 100)}%` }))),
       done.length ? el('p', { class: 'muted' }, `${done.length} paper(s) taken · best ${best.toFixed(1)}%${Core.finalPassed() ? ' · passed ✓' : ''}`) : null,
@@ -1086,7 +1089,7 @@
     pageHero('CAMBRIDGE LOWER SECONDARY CHECKPOINT', 'Checkpoint exam room', 'Practise the real exam: the same paper format, timing and marks as the Cambridge Lower Secondary Checkpoint tests, under exam conditions – full screen, a countdown clock and no leaving the room.');
     if (!P) { m.append(el('section', { class: 'card' }, el('p', {}, 'The papers are being prepared.'))); return; }
     if (isGuest()) { m.append(guestWall('Sign up free to use the Checkpoint exam room')); return; }
-    m.append(el('div', { class: 'banner info' }, el('b', {}, 'About these papers: '), P.unit.note + ' They cover the Cambridge Stage 7 content you are studying; papers covering Stages 8 and 9 are added as those stages open.'));
+    m.append(el('div', { class: 'banner info' }, el('b', {}, 'About these papers: '), P.unit.note + ` They cover the Cambridge Stage ${Core.STAGE} content you are studying; papers covering Stages 8 and 9 are added as those stages open.`));
     const sets = {}; Object.keys(P.papers).forEach(k => { const t = cpTitle(P, k); (sets[t.set] = sets[t.set] || []).push(k); });
     const sci = el('section', { class: 'card cpsubj' }, el('div', { class: 'cphead' }, el('span', { class: 'cpsubjtag sci' }, 'SCIENCE'), el('div', {}, el('h2', { style: 'margin:0' }, 'Science · syllabus 0893'), el('p', { class: 'muted', style: 'margin:0' }, `Paper 1 (0893/01 format) and Paper 2 (0893/02 format) · ${P.minutes} minutes · ${P.max} marks each`))));
     Object.entries(sets).forEach(([set, ks]) => {
@@ -1136,7 +1139,7 @@
   const fdSave = (f, d) => { try { localStorage.setItem(fdKey(f), JSON.stringify(d)); } catch (e) { } };
   async function viewFinal() {
     const m = $main(); const F = await Core.loadFinal(); await Core.refreshFinal().catch(() => { }); const li = Core.levelInfo();
-    pageHero('CAMBRIDGE STAGE 7 · END OF YEAR', 'End-of-year exams', `${Object.keys(F.papers).length} papers covering every unit · ${F.minutes} minutes · ${F.max} marks · pass above ${Math.round(F.pass * 100)}%. Passing one paper (with all 14 Unit Tests) earns your Cambridge Stage 7 certificate.`,
+    pageHero(`CAMBRIDGE STAGE ${Core.STAGE} · END OF YEAR`, 'End-of-year exams', `${Object.keys(F.papers).length} papers covering every unit · ${F.minutes} minutes · ${F.max} marks · pass above ${Math.round(F.pass * 100)}%. Passing one paper (with all 14 Unit Tests) earns your Cambridge Stage ${Core.STAGE} certificate.`,
       [statCard(el('span', { class: 'ti big' }, '⭐'), `Level ${li.level}`, li.level >= F.level ? 'exams open' : `level ${F.level} needed`)]);
     if (isGuest()) { m.append(guestWall('Sign up free to take the end-of-year exams')); return; }
     if (li.level < F.level) m.append(el('section', { class: 'card lockcard', id: 'levelGate' }, el('h2', {}, `🔒 Reach level ${F.level} first`), el('p', {}, `You are level ${li.level} with ${li.xp} XP. You need ${TestRules.xpForLevel(F.level)} XP – ${TestRules.xpForLevel(F.level) - li.xp} more. Every question you finish earns XP (up to 12 XP each, more for pause questions and videos).`),
@@ -1173,7 +1176,7 @@
     m.append(el('section', { class: 'card ' + (a.passed ? 'done' : 'bad') }, el('div', { class: 'resultbig' }, ring(a.pct, a.passed), el('div', {}, el('span', { class: 'eyebrow' }, a.passed ? 'PASSED' : `NOT PASSED · YOU NEED ABOVE ${Math.round(F.pass * 100)}%`), el('h2', { style: 'margin:0' }, `${+a.score.toFixed(2)}/${F.max} (${a.pct.toFixed(1)}%)`),
       el('p', { style: 'margin:4px 0' }, a.duration != null ? `Time taken: ${Math.floor(a.duration / 60)} min ${a.duration % 60} s${a.overtime ? ' (after the time limit)' : ''}` : ''),
       leavesNote(a),
-      el('p', { style: 'margin:4px 0' }, a.passed ? (Core.stageComplete(st) ? 'You have passed every Unit Test too – collect your certificate!' : 'Pass every Unit Test as well to earn your Cambridge Stage 7 certificate.') : 'Revise the units below and try another paper.'))),
+      el('p', { style: 'margin:4px 0' }, a.passed ? (Core.stageComplete(st) ? 'You have passed every Unit Test too – collect your certificate!' : `Pass every Unit Test as well to earn your Cambridge Stage ${Core.STAGE} certificate.`) : 'Revise the units below and try another paper.'))),
       el('div', { class: 'btnrow' }, el('a', { class: 'btn primary small', href: a.passed && Core.stageComplete(st) ? '#cert' : '#final' }, a.passed && Core.stageComplete(st) ? '🎓 Certificate' : 'All papers'))));
     const byU = Object.entries(a.byObj || {}).sort((x, y) => Number(x[0].slice(1)) - Number(y[0].slice(1)));
     m.append(el('section', { class: 'card' }, el('h2', {}, 'Marks by unit'), el('div', { class: 'weak' }, ...byU.map(([u, b]) => { const n = Number(u.slice(1)); const pct = b.max ? b.got / b.max * 100 : 0;
@@ -1762,12 +1765,12 @@
       else if (/^courses(-\w+)?$/.test(r)) await viewCourses(r.split('-')[1]);
       else if (/^course-[a-z0-9-]+$/.test(r)) await viewCourse(r.slice(7));
       else if (cpm && st) { if (cpm[1] === 'cpx') await viewCpExam(cpm[2]); else await viewCpResult(cpm[2]); }
-      else if (pm && st) { if (isGuest() && pm[1] !== 'stage') m.append(guestWall('Sign up free to continue')); else if (pm[1] === 'stage') viewStage(+pm[2]); else if (pm[1] === 'checkout') viewCheckout(+pm[2]); else if (pm[1] === 'fx') await viewFinalExam(pm[2]); else await viewFinalResult(pm[2]); }
+      else if (pm && st) { if (isGuest() && pm[1] !== 'stage') m.append(guestWall('Sign up free to continue')); else if (pm[1] === 'stage') await viewStage(+pm[2]); else if (pm[1] === 'checkout') viewCheckout(+pm[2]); else if (pm[1] === 'fx') await viewFinalExam(pm[2]); else await viewFinalResult(pm[2]); }
       else if (st && isGuest() && GUEST_WALL[r]) m.append(guestWall(GUEST_WALL[r]));
       else if (st && LEARNER[r]) await LEARNER[r](); else if (ACCOUNT[r]) await ACCOUNT[r](); else if (PUBLIC[r]) await PUBLIC[r](); else viewHome();
     } catch (e) { console.error(e); if (seq === renderSeq) m.append(el('div', { class: 'banner adv', role: 'alert' }, 'Something went wrong loading this page. ', el('button', { class: 'btn small', type: 'button', onclick: () => render() }, 'Try again'))); }
     if (seq !== renderSeq) return;
-    if (r === 'staff') document.title = 'Atomic – Staff'; else document.title = 'Atomic – Cambridge Stage 7 Science';
+    if (r === 'staff') document.title = 'Atomic – Staff'; else document.title = `Atomic – Cambridge Stage ${Core.STAGE} Science`;
     m.focus({ preventScroll: true }); window.scrollTo(0, 0);
   }
   window.addEventListener('hashchange', render);

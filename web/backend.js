@@ -148,15 +148,15 @@
         return rows;
       },
       async unitResults(lid) { mine(lid); return Object.fromEntries(Object.entries(D.results[lid] || {}).filter(([k]) => !k.includes(':'))); },
-      async issueCertificate(lid, stageUnits) {
-        const l = mine(lid); if (D.certs[lid]) return D.certs[lid];
-        const have = Object.keys(D.results[lid] || {}).filter(k => !k.includes(':')).length; if (have < stageUnits) throw err('stage_incomplete', { have, need: stageUnits });
-        if (!(((D.attempts[lid] || {})['stage7-final']) || []).some(x => x.status === 'final' && x.passed)) throw err('final_required');
+      async issueCertificate(lid, stageUnits, stage = 7) {
+        const l = mine(lid); const key = stage === 7 ? lid : `${lid}:s${stage}`; if (D.certs[key]) return D.certs[key];
+        const have = Object.keys(D.results[lid] || {}).filter(k => !k.includes(':') && k.startsWith(`stage${stage}-unit`)).length; if (have < stageUnits) throw err('stage_incomplete', { have, need: stageUnits });
+        if (!(((D.attempts[lid] || {})[`stage${stage}-final`]) || []).some(x => x.status === 'final' && x.passed)) throw err('final_required');
         const hex = [...crypto.getRandomValues(new Uint8Array(4))].map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase();
-        D.certs[lid] = { code: `AE-S7-${new Date().getFullYear()}-${hex}`, name: l.certificate_name || l.nickname, date: new Date().toISOString().slice(0, 10) }; save(); return D.certs[lid];
+        D.certs[key] = { code: `AE-S${stage}-${new Date().getFullYear()}-${hex}`, name: l.certificate_name || l.nickname, date: new Date().toISOString().slice(0, 10), stage }; save(); return D.certs[key];
       },
-      async certificate(lid) { mine(lid); return D.certs[lid] || null; },
-      async verifyCertificate(code) { const c = Object.values(D.certs).find(x => x.code === String(code || '').trim().toUpperCase()); return c ? { name_on_certificate: c.name, stage: 7, issued_at: c.date } : null; },
+      async certificate(lid, stage = 7) { mine(lid); return D.certs[stage === 7 ? lid : `${lid}:s${stage}`] || null; },
+      async verifyCertificate(code) { const c = Object.values(D.certs).find(x => x.code === String(code || '').trim().toUpperCase()); return c ? { name_on_certificate: c.name, stage: c.stage || 7, issued_at: c.date } : null; },
       async subscription() { const a = need(); return { active: subActive(a), ...(a.subscription || { status: 'none' }) }; },
       async checkout(plan) { const a = need(); const end = new Date(Date.now() + 7 * 864e5).toISOString(); a.subscription = { plan: 'stage7_' + plan, status: 'trialing', current_period_end: end, provider: 'demo' }; note(a, null, 'billing', 'Your 7-day free trial has started', 'Cambridge Stage 7 is unlocked for every child on your account.'); save(); return a.subscription; },
       async cancelSubscription() { const a = need(); if (a.subscription) a.subscription.status = 'canceled'; save(); },
@@ -251,8 +251,8 @@
       async markAttempt(attemptId, grades) { return (await api('marking', { method: 'POST', body: { attemptId, grades } })).attempt; },
       async leaderboard(stage = 7) { return rpc('leaderboard', { p_stage: stage }); },
       async unitResults(lid) { const r = await rest(`unit_results?learner_id=eq.${lid}`); return Object.fromEntries(r.map(x => [x.unit, { pct: Number(x.first_pass_pct), at: x.first_pass_at, stage: x.stage }])); },
-      async issueCertificate(lid) { const code = await rpc('issue_certificate', { p_learner: lid, p_stage: 7 }); return this.certificate(lid).then(c => c || { code }); },
-      async certificate(lid) { const r = await rest(`certificates?learner_id=eq.${lid}&stage=eq.7`); return r[0] ? { code: r[0].code, name: r[0].name_on_certificate, date: r[0].issued_at.slice(0, 10) } : null; },
+      async issueCertificate(lid, units, stage = 7) { const code = await rpc('issue_certificate', { p_learner: lid, p_stage: stage }); return this.certificate(lid, stage).then(c => c || { code }); },
+      async certificate(lid, stage = 7) { const r = await rest(`certificates?learner_id=eq.${lid}&stage=eq.${stage}`); return r[0] ? { code: r[0].code, name: r[0].name_on_certificate, date: r[0].issued_at.slice(0, 10) } : null; },
       async verifyCertificate(code) { const r = await fetch(`${URL_}/rest/v1/rpc/verify_certificate`, { method: 'POST', headers: { apikey: ANON, 'Content-Type': 'application/json' }, body: JSON.stringify({ p_code: code }) }); const j = await r.json(); return j && j[0] ? j[0] : null; },
       async subscription() { const r = await rest(`subscriptions?parent_id=eq.${uid()}&order=updated_at.desc&limit=1`); const s = r[0];
         const active = !!(s && ['trialing', 'active', 'past_due'].includes(s.status) && (!s.current_period_end || Date.parse(s.current_period_end) > Date.now())); return { active, ...(s || { status: 'none' }) }; },
