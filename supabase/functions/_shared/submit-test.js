@@ -15,6 +15,11 @@ export async function learnerXp(learnerId, f) {
   return Rules.xpTotal(Object.fromEntries((rows || []).filter(r => !Rules.isFinal(r.unit)).map(r => [r.unit, r.state])), (passes || []).length);
 }
 
+// accounts flagged as testers (public.testers, staff-only) skip the learning-order, level and review locks
+export async function isTester(learnerId, f) {
+  try { const r = await db(`testers?learner_id=eq.${learnerId}&select=learner_id`, {}, f); return Array.isArray(r) && r.length > 0; } catch (e) { return false; }
+}
+
 export async function handle(req, f = fetch) {
   if (req.method !== 'POST') return [405, { error: 'method' }];
   const user = await getUser(req, f); if (!user) return [401, { error: 'sign_in' }];
@@ -37,20 +42,21 @@ export async function handle(req, f = fetch) {
   const last = prev[prev.length - 1];
   if (last && last.status === 'pending') return [409, { error: 'awaiting_marking' }];
   let state = {};
+  const tester = await isTester(learnerId, f);
   if (pack.final) {
     if (!pack.papers[form]) return [409, { error: 'wrong_paper' }];
     if (prev.some(r => r.form === form)) return [409, { error: 'paper_done' }];
     const xp = await learnerXp(learnerId, f);
-    if (Rules.levelOf(xp) < pack.level) return [409, { error: 'level_required', level: pack.level, have: Rules.levelOf(xp) }];
+    if (!tester && Rules.levelOf(xp) < pack.level) return [409, { error: 'level_required', level: pack.level, have: Rules.levelOf(xp) }];
   } else {
     const prog = await db(`progress?learner_id=eq.${learnerId}&unit=eq.${unit}&select=state`, {}, f);
     state = (prog[0] && prog[0].state) || {};
     const missing = Rules.missingForTest(pack.content, state, unit);
-    if (missing.length) return [409, { error: 'locked', missing }];
+    if (missing.length && !tester) return [409, { error: 'locked', missing }];
     if (prev.some(r => r.status === 'final' && r.passed)) return [409, { error: 'already_passed' }];
     if (last && last.status === 'final' && !last.passed) {
       const left = (last.remed || []).filter(id => !(((state.rem || {})[`rem${last.n}:${id}`]) || {}).done);
-      if (left.length) return [409, { error: 'review_first', left }];
+      if (left.length && !tester) return [409, { error: 'review_first', left }];
     }
     const expected = Rules.nextForm(prev.length);
     if (form !== expected) return [409, { error: 'wrong_paper', expected }];

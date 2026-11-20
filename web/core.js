@@ -106,6 +106,7 @@
     st.cert = await Backend.certificate(id, STAGE);
     try { S.states = (Backend.allStates ? await Backend.allStates(id) : {}) || {}; } catch (e) { S.states = {}; }
     try { S.enrolments = Backend.enrolments ? await Backend.enrolments(id) : []; } catch (e) { S.enrolments = []; }
+    try { S.tester = Backend.isTester ? await Backend.isTester(id) : false; } catch (e) { S.tester = false; }
     S.profiles = { [id]: st }; S.current = id; S.states[UNIT()] = strip(st); lastXp = xpNow();
     try { sessionStorage.setItem('atomic.learner', id); } catch (e) { }
     return st;
@@ -162,7 +163,7 @@
       : { reason: 'This topic is part of the full Cambridge Stage 7 course.', what: 'a Cambridge Stage 7 plan (7-day free trial)', route: 'pricing', paywall: true };
     return seqLock(C, st, s, UNIT());
   }
-  const unitOpen = unit => TestRules.OPEN_UNITS.includes(unit);
+  const unitOpen = unit => !!S.tester || TestRules.OPEN_UNITS.includes(unit);
   // the sequential rule for any unit's content/state (used by the sidebar for units not on screen)
   function seqLock(content, st, s, unit) {
     if (unitOpen(unit)) return null;

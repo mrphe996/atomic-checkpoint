@@ -1067,7 +1067,7 @@
     const P = await Core.loadCp(); if (P) { await Core.refreshCp().catch(() => { }); m.append(checkpointCard(P)); }
   }
   function finalCard(F, li) {
-    const ok = li.level >= F.level, done = (Core.S.finalAttempts || []).filter(a => a.status === 'final'), best = done.reduce((a, x) => Math.max(a, x.pct), 0);
+    const ok = (Core.S.tester || li.level >= F.level), done = (Core.S.finalAttempts || []).filter(a => a.status === 'final'), best = done.reduce((a, x) => Math.max(a, x.pct), 0);
     return el('section', { class: 'card finalcard', id: 'finalCard' }, el('span', { class: 'eyebrow' }, `END OF CAMBRIDGE STAGE ${Core.STAGE}`), el('h2', { style: 'margin:2px 0' }, '🏁 End-of-year exams'),
       el('p', {}, `${Object.keys(F.papers).length} papers, each ${F.minutes} minutes and ${F.max} marks, covering all 14 units. Pass above ${Math.round(F.pass * 100)}%. Opens at level ${F.level}.`),
       el('div', { class: 'lvgate' }, el('b', {}, ok ? `✓ You are level ${li.level} – the exams are open.` : `You are level ${li.level}. Reach level ${F.level} (${TestRules.xpForLevel(F.level) - li.xp} more XP).`), el('div', { class: 'pbar' }, el('i', { style: `width:${Math.min(100, li.xp / TestRules.xpForLevel(F.level) * 100)}%` }))),
@@ -1140,15 +1140,15 @@
   async function viewFinal() {
     const m = $main(); const F = await Core.loadFinal(); await Core.refreshFinal().catch(() => { }); const li = Core.levelInfo();
     pageHero(`CAMBRIDGE STAGE ${Core.STAGE} · END OF YEAR`, 'End-of-year exams', `${Object.keys(F.papers).length} papers covering every unit · ${F.minutes} minutes · ${F.max} marks · pass above ${Math.round(F.pass * 100)}%. Passing one paper (with all 14 Unit Tests) earns your Cambridge Stage ${Core.STAGE} certificate.`,
-      [statCard(el('span', { class: 'ti big' }, '⭐'), `Level ${li.level}`, li.level >= F.level ? 'exams open' : `level ${F.level} needed`)]);
+      [statCard(el('span', { class: 'ti big' }, '⭐'), `Level ${li.level}`, (Core.S.tester || li.level >= F.level) ? 'exams open' : `level ${F.level} needed`)]);
     if (isGuest()) { m.append(guestWall('Sign up free to take the end-of-year exams')); return; }
-    if (li.level < F.level) m.append(el('section', { class: 'card lockcard', id: 'levelGate' }, el('h2', {}, `🔒 Reach level ${F.level} first`), el('p', {}, `You are level ${li.level} with ${li.xp} XP. You need ${TestRules.xpForLevel(F.level)} XP – ${TestRules.xpForLevel(F.level) - li.xp} more. Every question you finish earns XP (up to 12 XP each, more for pause questions and videos).`),
+    if ((!Core.S.tester && li.level < F.level)) m.append(el('section', { class: 'card lockcard', id: 'levelGate' }, el('h2', {}, `🔒 Reach level ${F.level} first`), el('p', {}, `You are level ${li.level} with ${li.xp} XP. You need ${TestRules.xpForLevel(F.level)} XP – ${TestRules.xpForLevel(F.level) - li.xp} more. Every question you finish earns XP (up to 12 XP each, more for pause questions and videos).`),
       el('div', { class: 'pbar' }, el('i', { style: `width:${Math.min(100, li.xp / TestRules.xpForLevel(F.level) * 100)}%` })), el('a', { class: 'btn primary small', href: '#bank' }, 'Practise in the Question Bank', el('span', { class: 'arr' }, ' →'))));
     const grid = el('div', { class: 'papergrid' });
     Object.keys(F.papers).forEach(k => { const a = (Core.S.finalAttempts || []).find(x => x.form === k); const d = fdLoad(k);
       grid.append(el('div', { class: 'card lift paper' + (a ? (a.passed ? ' ok' : ' bad') : '') }, el('span', { class: 'eyebrow' }, 'PAPER ' + k), el('b', { class: 'lex' }, `${F.max} marks · ${F.minutes} min`),
         a ? el('span', {}, a.status === 'pending' ? '⏳ Awaiting marking' : `${+a.score.toFixed(1)}/${F.max} · ${a.pct.toFixed(1)}% ${a.passed ? '✓' : ''}`) : d && d.deadline ? el('span', { class: 'status cur' }, 'In progress') : el('span', { class: 'muted' }, 'Not taken'),
-        a ? el('a', { class: 'btn small', href: '#fres-' + k }, 'Results') : el('a', { class: 'btn small ' + (li.level >= F.level ? 'primary' : ''), href: '#fx-' + k, 'aria-disabled': li.level >= F.level ? null : 'true' }, d && d.deadline ? 'Continue' : 'Open'))); });
+        a ? el('a', { class: 'btn small', href: '#fres-' + k }, 'Results') : el('a', { class: 'btn small ' + ((Core.S.tester || li.level >= F.level) ? 'primary' : ''), href: '#fx-' + k, 'aria-disabled': (Core.S.tester || li.level >= F.level) ? null : 'true' }, d && d.deadline ? 'Continue' : 'Open'))); });
     m.append(grid);
   }
   async function viewFinalExam(k) {
@@ -1156,7 +1156,7 @@
     if (!F || !F.papers[k]) return go('final');
     if (isGuest()) { m.append(guestWall('Sign up free to take the end-of-year exams')); return; }
     if ((Core.S.finalAttempts || []).some(a => a.form === k)) return go('fres-' + k);
-    if (li.level < F.level) { m.append(lockScreen(`Paper ${k} opens at level ${F.level}`, `You are level ${li.level}. Keep practising to earn XP.`, [{ what: `${TestRules.xpForLevel(F.level) - li.xp} more XP`, route: 'bank' }])); return; }
+    if ((!Core.S.tester && li.level < F.level)) { m.append(lockScreen(`Paper ${k} opens at level ${F.level}`, `You are level ${li.level}. Keep practising to earn XP.`, [{ what: `${TestRules.xpForLevel(F.level) - li.xp} more XP`, route: 'bank' }])); return; }
     const draft = fdLoad(k) || { answers: {}, ts: Date.now() }; const save = () => fdSave(k, draft); const qs = F.papers[k];
     if (!UI.testOn || UI.examKey !== 'F' + k) {
       UI.testOn = false;
