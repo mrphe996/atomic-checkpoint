@@ -1,5 +1,5 @@
 // Test-phase sign-up (DIRECT_SIGNUP=on, the default). Generated with tools/build-edge.mjs from api/signup.js.
-import { handle } from 'https://cdn.jsdelivr.net/gh/mrphe996/atomic-checkpoint@60d2d55e6e73fe8de215f0860e04a37cfd20a76c/supabase/functions/_shared/signup.js';
+import { handle } from 'https://cdn.jsdelivr.net/gh/mrphe996/atomic-checkpoint@fac6b63827a9061ee02c820367672237df0c0f0b/supabase/functions/_shared/signup.js';
 const H = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'authorization, content-type, apikey, x-client-info', 'Access-Control-Allow-Methods': 'POST, OPTIONS' };
 Deno.serve(async (req: Request) => {
   if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: H });
