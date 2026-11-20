@@ -35,7 +35,7 @@
     let saved = null; try { saved = JSON.parse(localStorage.getItem(GKEY)); } catch (e) { }
     const st = Object.assign(fresh({ id: 'guest', nickname: 'Guest', created_at: new Date().toISOString() }), saved || {});
     st.id = 'guest'; st.alias = 'Guest'; st.name = 'Guest'; st.test = st.test || { drafts: {}, attempts: [] }; st.test.attempts = [];
-    S.profiles = { guest: st }; S.current = 'guest'; S.guest = true; wallet(st); shop(st);
+    S.profiles = { guest: st }; S.current = 'guest'; S.guest = true;
     try { localStorage.setItem(GKEY, JSON.stringify(strip(st))); } catch (e) { }
     return st;
   }
@@ -44,7 +44,7 @@
     if (!guestSaved()) return false; const st = cur(); if (!st) return false;
     let g = null; try { g = JSON.parse(localStorage.getItem(GKEY)); } catch (e) { }
     const empty = !Object.keys(st.items || {}).length && !Object.values(st.video || {}).some(v => v && (v.completed || v.pos > 1 || Object.keys(v.stops || {}).length));
-    if (g && empty) { for (const k of ['video', 'items', 'stopsWrong', 'ws', 'days', 'wallet', 'shop', 'marks']) if (g[k]) st[k] = g[k]; dirty = true; flush(); }
+    if (g && empty) { for (const k of ['video', 'items', 'stopsWrong', 'ws', 'days', 'marks']) if (g[k]) st[k] = g[k]; dirty = true; flush(); }
     try { localStorage.removeItem(GKEY); } catch (e) { }
     return !!(g && empty);
   }
@@ -58,7 +58,7 @@
     st.test.attempts = await Backend.attempts(id, UNIT);
     st.results = await Backend.unitResults(id); st.rank = { u3: st.results[UNIT] ? st.results[UNIT].pct : null };
     st.cert = await Backend.certificate(id);
-    S.profiles = { [id]: st }; S.current = id; wallet(st); shop(st);
+    S.profiles = { [id]: st }; S.current = id;
     try { sessionStorage.setItem('atomic.learner', id); } catch (e) { }
     return st;
   }
@@ -70,7 +70,6 @@
   function persist() {
     const st = cur(); if (!st) return;
     st.ts = Date.now(); const d = today(); st.days = st.days || []; if (!st.days.includes(d)) st.days.push(d);
-    tick(st);
     dirty = true; clearTimeout(saveTimer); saveTimer = setTimeout(flush, 800);
   }
   function flush() {
@@ -177,110 +176,22 @@
     if (passed(st)) x += 100; x += (st.ws || []).length * 5;
     return x;
   }
-  /* ---------- bolts ⚡: earned only by doing the work, spent in the shop ----------
-     Earned bolts come from the same rules as before (a right answer first time is worth more than a
-     later one, so guessing does not pay). Each change is booked to the day it happened, which drives the
-     daily goal, the streak and the daily challenges. Bonuses (challenges, streak milestones) are stored
-     separately; spending is the price of the items the learner owns. */
-  const DAILY_GOAL = 20;
+  /* ---------- streak: consecutive days with any learning activity ---------- */
   const pad = n => String(n).padStart(2, '0');
   const dstr = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
   const today = () => dstr(new Date());
-  const countFirstTry = st => Object.values(st.items || {}).filter(r => r && r.done && r.ok && (r.tries || 1) === 1).length;
-  const countVideos = st => C ? C.sections.filter(s => vstate(st, s.id).completed).length : 0;
-  function wallet(st) {
-    if (!st.wallet) {   // first time: what was already earned counts, and every earlier active day keeps the streak
-      st.wallet = { snap: { xp: xp(st), ft: countFirstTry(st), vid: countVideos(st) }, day: {}, bonus: 0, claims: {}, log: [] };
-      (st.days || []).forEach(d => { st.wallet.day[d] = { e: DAILY_GOAL, ft: 0, vid: 0, legacy: 1 }; });
-    }
-    return st.wallet;
-  }
-  const dayRec = (w, d) => (w.day[d] = w.day[d] || { e: 0, ft: 0, vid: 0 });
-  let onEarn = null;   // the screens subscribe to show "+10 ⚡"
-  function tick(st) {
-    const w = wallet(st), now = { xp: xp(st), ft: countFirstTry(st), vid: countVideos(st) }, r = dayRec(w, today());
-    const de = Math.max(0, now.xp - w.snap.xp);
-    r.e += de; r.ft += Math.max(0, now.ft - w.snap.ft); r.vid += Math.max(0, now.vid - w.snap.vid);
-    w.snap = now;
-    let bonus = 0;
-    const s = streak(st);
-    for (const [len, b] of STREAK_BONUS) if (s === len && !w.claims['streak' + len + '@' + today()]) { w.claims['streak' + len + '@' + today()] = 1; w.bonus += b; bonus += b; w.log.unshift({ d: today(), n: b, why: `${len}-day streak` }); }
-    w.log = w.log.slice(0, 30);
-    if ((de || bonus) && onEarn) onEarn(de + bonus, bonus ? 'streak' : 'work');
-    return de + bonus;
-  }
-  const STREAK_BONUS = [[3, 30], [7, 80], [14, 200], [30, 500]];
-  const spent = st => ((st.shop || {}).owned || []).reduce((t, id) => t + ((ITEMS.find(i => i.id === id) || {}).price || 0), 0);
-  const bolts = st => { const w = wallet(st); return xp(st) + w.bonus - spent(st); };
-  const earnedToday = st => (wallet(st).day[today()] || { e: 0 }).e;
   function streak(st) {
-    const w = wallet(st); const met = d => (w.day[d] || { e: 0 }).e >= DAILY_GOAL;
-    const d = new Date(); let n = 0;
-    if (!met(dstr(d))) d.setDate(d.getDate() - 1);           // today does not break the streak until it is over
-    while (met(dstr(d))) { n++; d.setDate(d.getDate() - 1); }
+    const days = new Set(st.days || []); let n = 0; const d = new Date();
+    if (!days.has(dstr(d))) d.setDate(d.getDate() - 1);   // today does not break the streak until it is over
+    while (days.has(dstr(d))) { n++; d.setDate(d.getDate() - 1); }
     return n;
   }
-  function week(st) {   // last 7 days for the streak strip: [{d, label, met, today}]
-    const w = wallet(st), out = [], d = new Date(); d.setDate(d.getDate() - 6);
-    for (let i = 0; i < 7; i++) { const k = dstr(d); out.push({ d: k, label: 'SMTWTFS'[d.getDay()], met: (w.day[k] || { e: 0 }).e >= DAILY_GOAL, today: i === 6 }); d.setDate(d.getDate() + 1); }
+  function week(st) {   // Monday→Sunday of this week: [{d, label, met, today}]
+    const days = new Set(st.days || []), out = [], d = new Date(); const t = dstr(d); d.setDate(d.getDate() - ((d.getDay() + 6) % 7));
+    for (let i = 0; i < 7; i++) { const k = dstr(d); out.push({ d: k, label: 'MTWTFSS'[i], met: days.has(k), today: k === t }); d.setDate(d.getDate() + 1); }
     return out;
   }
 
-  /* daily challenges: three a day, each claimed once */
-  const CHALLENGES = [
-    { id: 'earn50', label: 'Earn 50 ⚡ today', goal: 50, reward: 30, val: r => r.e },
-    { id: 'first5', label: 'Get 5 questions right first time', goal: 5, reward: 20, val: r => r.ft },
-    { id: 'video1', label: 'Finish a lesson video', goal: 1, reward: 20, val: r => r.vid }
-  ];
-  function challenges(st) {
-    const w = wallet(st), r = w.day[today()] || { e: 0, ft: 0, vid: 0 };
-    return CHALLENGES.map(c => ({ id: c.id, label: c.label, goal: c.goal, reward: c.reward, value: Math.min(c.goal, c.val(r)), done: c.val(r) >= c.goal, claimed: !!w.claims[c.id + '@' + today()] }));
-  }
-  function claim(st, id) {
-    const c = challenges(st).find(x => x.id === id); if (!c || !c.done || c.claimed) return 0;
-    const w = wallet(st); w.claims[id + '@' + today()] = 1; w.bonus += c.reward; w.log.unshift({ d: today(), n: c.reward, why: c.label }); persist(); return c.reward;
-  }
-
-  /* shop: original Atomic items (emoji art), bought with bolts */
-  const ITEMS = [
-    { id: 'av-atom', kind: 'avatar', icon: '⚛️', name: 'Atom', price: 0 },
-    { id: 'av-fox', kind: 'avatar', icon: '🦊', name: 'Fox', price: 0 },
-    { id: 'av-panda', kind: 'avatar', icon: '🐼', name: 'Panda', price: 100 },
-    { id: 'av-owl', kind: 'avatar', icon: '🦉', name: 'Owl', price: 120 },
-    { id: 'av-tiger', kind: 'avatar', icon: '🐯', name: 'Tiger', price: 150 },
-    { id: 'av-octo', kind: 'avatar', icon: '🐙', name: 'Octopus', price: 200 },
-    { id: 'av-robot', kind: 'avatar', icon: '🤖', name: 'Robot', price: 250 },
-    { id: 'av-unicorn', kind: 'avatar', icon: '🦄', name: 'Unicorn', price: 300 },
-    { id: 'av-alien', kind: 'avatar', icon: '👽', name: 'Alien', price: 400 },
-    { id: 'ac-goggles', kind: 'accessory', icon: '🥽', name: 'Lab goggles', price: 80 },
-    { id: 'ac-shades', kind: 'accessory', icon: '🕶️', name: 'Sunglasses', price: 120 },
-    { id: 'ac-cap', kind: 'accessory', icon: '🎓', name: 'Graduation cap', price: 150 },
-    { id: 'ac-flask', kind: 'accessory', icon: '🧪', name: 'Test tube', price: 160 },
-    { id: 'ac-phones', kind: 'accessory', icon: '🎧', name: 'Headphones', price: 180 },
-    { id: 'ac-scope', kind: 'accessory', icon: '🔬', name: 'Microscope', price: 220 },
-    { id: 'ac-rocket', kind: 'accessory', icon: '🚀', name: 'Rocket', price: 350 },
-    { id: 'ac-crown', kind: 'accessory', icon: '👑', name: 'Crown', price: 500 },
-    { id: 'bg-sky', kind: 'background', icon: '🌤️', name: 'Clear sky', price: 0, css: 'linear-gradient(135deg,#DCEBFF,#F4F8FF)' },
-    { id: 'bg-leaf', kind: 'background', icon: '🌿', name: 'Leaf cell', price: 100, css: 'linear-gradient(135deg,#D9F5E3,#F1FBF4)' },
-    { id: 'bg-sunset', kind: 'background', icon: '🌅', name: 'Sunset', price: 150, css: 'linear-gradient(135deg,#FFE1C7,#FFF4E6)' },
-    { id: 'bg-ocean', kind: 'background', icon: '🌊', name: 'Deep ocean', price: 200, css: 'linear-gradient(135deg,#BFE6F2,#E3F6FB)' },
-    { id: 'bg-space', kind: 'background', icon: '🌌', name: 'Outer space', price: 300, css: 'linear-gradient(135deg,#2B2F6B,#5B4E9E)', dark: 1 },
-    { id: 'bg-lab', kind: 'background', icon: '⚗️', name: 'Science lab', price: 250, css: 'linear-gradient(135deg,#E8E2FF,#F6F3FF)' }
-  ];
-  const shop = st => { st.shop = st.shop || { owned: [], equip: { avatar: 'av-atom', accessory: null, background: 'bg-sky' } }; return st.shop; };
-  const owns = (st, id) => { const it = ITEMS.find(i => i.id === id); return !!it && (it.price === 0 || shop(st).owned.includes(id)); };
-  function buy(st, id) {
-    const it = ITEMS.find(i => i.id === id); if (!it) return { error: 'unknown' };
-    if (owns(st, id)) return { error: 'owned' };
-    if (bolts(st) < it.price) return { error: 'short', need: it.price - bolts(st) };
-    shop(st).owned.push(id); equip(st, id); return { ok: true };
-  }
-  function equip(st, id) {
-    const it = ITEMS.find(i => i.id === id); if (!it || !owns(st, id)) return false;
-    const e = shop(st).equip; e[it.kind] = e[it.kind] === id && it.kind === 'accessory' ? null : id; persist(); return true;
-  }
-  const look = st => { const e = shop(st).equip, g = id => ITEMS.find(i => i.id === id); return { avatar: g(e.avatar) || ITEMS[0], accessory: e.accessory ? g(e.accessory) : null, background: g(e.background) || g('bg-sky') }; };
-  const setOnEarn = fn => { onEarn = fn; };
 
   /* ---------- next activity ---------- */
   function nextActivity(st) {
@@ -331,6 +242,6 @@
     sec, secs, vstate, stopDone, stopsLeft, videoDone, reqLeft, secDone, secLock, firstMissingIn, missingForTest,
     attempts, lastAttempt, passed, isPass, nextForm, remKey, remLeft, testState, submitTest, refreshAttempts, refreshResults,
     unitStatus, rankScore, xp, streak, stageComplete, startGuest, adoptGuest,
-    DAILY_GOAL, ITEMS, wallet, tick, bolts, earnedToday, week, challenges, claim, buy, equip, owns, look, shop, setOnEarn, today, certificate, competitionRank, nextActivity, jpegPdf, saveFile
+    week, today, certificate, competitionRank, nextActivity, jpegPdf, saveFile
   };
 })();

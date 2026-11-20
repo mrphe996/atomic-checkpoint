@@ -1,4 +1,4 @@
-/* Atomic Education — Science Stage 7. Views and routing (v3: student accounts, guest mode, bolts and shop, server marking).
+/* Atomic Education — Science Stage 7. Views and routing (v3: student accounts, guest mode, server marking).
    Visual language: Atomic Cambridge Science Design System v3. */
 (function () {
   const { el, esc } = QE;
@@ -35,19 +35,12 @@
   }
   let lastXp = null; // kept for older callers
   function toast(t) { const n = document.querySelectorAll('.toast').length; const x = el('div', { class: 'toast', role: 'status', style: `top:${84 + n * 58}px` }, t); document.body.append(x); setTimeout(() => x.remove(), 2700); }
-  const BOLT = '<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="#F3BF69" stroke="#B7791F" stroke-width="1.4" stroke-linejoin="round"/></svg>';
-  function xpTick() { if (!st) return; const p = document.getElementById('xpPill'); if (p) p.lastChild.textContent = Core.bolts(st).toLocaleString('en-GB'); const g = document.getElementById('goalBar'); if (g) g.style.width = Math.min(100, Core.earnedToday(st) / Core.DAILY_GOAL * 100) + '%'; }
-  Core.setOnEarn((n, why) => { toast(why === 'streak' ? `🔥 Streak bonus! +${n} ⚡` : `+${n} ⚡`); setTimeout(xpTick, 0); });
-  // the learner's look: avatar + accessory on their background
-  function avatarEl(size, extra) {
-    const lk = Core.look(st); const a = el('span', { class: 'mascot' + (extra ? ' ' + extra : ''), style: `width:${size}px;height:${size}px;font-size:${Math.round(size * .55)}px;background:${lk.background.css}`, 'aria-hidden': 'true' }, lk.avatar.icon);
-    if (lk.accessory) a.append(el('span', { class: 'acc', style: `font-size:${Math.round(size * .32)}px` }, lk.accessory.icon));
-    return a;
-  }
+  function xpTick() { }
+  function initialChip(size) { return el('span', { class: 'ini', style: `width:${size}px;height:${size}px;font-size:${Math.round(size * .42)}px` }, ((st && st.alias) || '?').slice(0, 1).toUpperCase()); }
   const isGuest = () => !!Core.S.guest;
   function startGuest() { Core.startGuest(); st = Core.cur(); toast('Welcome! You are learning as a guest.'); go('v-3-1'); }
   function guestWall(title) {
-    return el('section', { class: 'card lockcard', id: 'guestWall' }, el('h2', {}, '✨ ' + title), el('p', {}, 'Create a free account to unlock every topic, take the Unit Test, join the leaderboard and keep your ⚡ bolts. What you have done as a guest comes with you.'),
+    return el('section', { class: 'card lockcard', id: 'guestWall' }, el('h2', {}, '✨ ' + title), el('p', {}, 'Create a free account to unlock every topic, take the Unit Test and join the leaderboard. What you have done as a guest comes with you.'),
       el('div', { class: 'btnrow' }, el('a', { class: 'btn gold', href: '#signup' }, 'Sign up free'), el('a', { class: 'btn ghost', href: '#signin' }, 'I already have an account')));
   }
   function burst(host) {
@@ -69,18 +62,17 @@
     let nav;
     if (st) {
       const sk = Core.streak(st);
-      const s = el('a', { class: 'pill streak', href: '#home', title: `${sk}-day streak`, 'aria-label': `${sk}-day streak` }); s.innerHTML = FLAME; s.append(String(sk));
-      const x = el('a', { class: 'pill xp bolts', id: 'xpPill', href: '#shop', title: 'Bolts – spend them in the shop', 'aria-label': 'Bolts' }); x.innerHTML = BOLT; x.append(Core.bolts(st).toLocaleString('en-GB'));
-      if (isGuest()) right.append(s, x, el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
+      const s = el('a', { class: 'pill streak', href: isGuest() ? '#home' : '#profile', title: `${sk}-day streak`, 'aria-label': `${sk}-day streak` }); s.innerHTML = FLAME; s.append(String(sk));
+      if (isGuest()) right.append(s, el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
       else {
-        const menu = el('div', { class: 'usermenu', hidden: true, id: 'userMenu' }, el('b', {}, st.name), el('a', { href: '#profile' }, '📈 My progress'), el('a', { href: '#shop' }, '🛍️ Shop'), el('a', { href: '#settings', id: 'settingsLink' }, '⚙️ Settings'),
-          ['marker', 'admin'].includes(me.profile.role) ? el('a', { href: '#staff' }, '🧑‍🏫 Staff') : null,
-          el('button', { type: 'button', id: 'signOut', onclick: async () => { Core.flush(); await Backend.signOut(); await Core.boot(C); st = null; go('home'); } }, '↩ Sign out'));
-        const av = el('button', { class: 'avatarbtn', type: 'button', id: 'whoBtn', 'aria-label': 'Account menu', 'aria-haspopup': 'true', onclick: ev => { ev.stopPropagation(); menu.hidden = !menu.hidden; } }, avatarEl(38));
+        const menu = el('div', { class: 'usermenu', hidden: true, id: 'userMenu' }, el('b', {}, st.name), el('a', { href: '#profile' }, 'My progress'), el('a', { href: '#settings', id: 'settingsLink' }, 'Settings'),
+          ['marker', 'admin'].includes(me.profile.role) ? el('a', { href: '#staff' }, 'Staff') : null,
+          el('button', { type: 'button', id: 'signOut', onclick: async () => { Core.flush(); await Backend.signOut(); await Core.boot(C); st = null; go('home'); } }, 'Sign out'));
+        const av = el('button', { class: 'namechip', type: 'button', id: 'whoBtn', 'aria-label': 'Account menu', 'aria-haspopup': 'true', onclick: ev => { ev.stopPropagation(); menu.hidden = !menu.hidden; } }, initialChip(34), el('span', {}, st.alias));
         document.addEventListener('click', () => { menu.hidden = true; }, { once: true });
-        right.append(s, x, bell(), el('span', { class: 'userwrap' }, av, menu));
+        right.append(s, bell(), el('span', { class: 'userwrap' }, av, menu));
       }
-      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('unit3', 'Courses', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('test', 'Unit Test', area === 'test'), navLink('shop', 'Shop', area === 'shop'), navLink('board', 'Leaderboard', area === 'board')];
+      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('unit3', 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('test', 'Unit Test', area === 'test'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
     } else if (me) {
       right.append(bell(), el('button', { class: 'btn small', type: 'button', id: 'signOut', onclick: async () => { await Backend.signOut(); await Core.boot(C); go('home'); } }, 'Sign out'));
       nav = [navLink('home', 'Home', area === 'home'), navLink('help', 'Help', area === 'help')];
@@ -150,6 +142,14 @@
   function refreshToc() { const t = document.querySelector('.toc'); if (t && st && t.childElementCount) { t.innerHTML = ''; t.append(toc()); } }
   function goNext(nx) { go(nx.route, nx.tab ? { tab: { ...UI.tab, [nx.route]: nx.tab }, idx: { ...UI.idx, [nx.route + nx.tab]: nx.idx } } : null); }
   /* where am I / what remains / next button (shown on every learning screen) */
+  // dotted page header shared by every student page (the "Home 01" look)
+  function pageHero(eyebrow, title, sub, side) {
+    const w = document.getElementById('wrap'); w.classList.add('landing');
+    w.before(el('section', { class: 'phero dots' }, el('div', { class: 'phero-in' }, el('div', { class: 'phero-txt' }, el('span', { class: 'eyebrow' }, eyebrow), el('h1', {}, title), sub ? el('p', {}, sub) : null), side ? el('div', { class: 'phero-side' }, ...[].concat(side)) : null)));
+  }
+  const statCard = (icon, big, small, href) => el(href ? 'a' : 'div', { class: 'card dstat', href: href || null }, icon, el('span', {}, el('b', {}, big), el('br'), el('small', {}, small)));
+  const ringIcon = pct => el('span', { class: 'dring', style: `background:conic-gradient(var(--blue) 0 ${pct}%, #E3EBF5 0)` }, el('i', {}, pct + '%'));
+  const flameIcon = () => el('span', { class: 'bob', html: '<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 6 6 6 11a6 6 0 0 1-12 0c0-3 2-5 3-6 0 2 1 3 2 3 0-3-1-5 1-8z" fill="#F3BF69" stroke="#0149AF" stroke-width="1.5" stroke-linejoin="round"/></svg>' });
   function bar(where) {
     const left = []; let vids = 0, reqs = 0;
     C.sections.forEach(s => { if (!Core.videoDone(st, s)) vids++; reqs += Core.reqLeft(st, s).length; });
@@ -172,6 +172,7 @@
   function viewHome() {
     const m = $main();
     if (!st) { if (Core.S.me) { m.append(narrow(el('h1', {}, 'Welcome'), el('p', {}, 'This account has no learner profile.'), ['marker', 'admin'].includes(Core.S.me.profile.role) ? el('a', { class: 'btn primary', href: '#staff' }, 'Open Staff') : el('a', { class: 'btn', href: '#help' }, 'Contact us'))); return; } viewLanding(); return; }
+    document.getElementById('wrap').classList.add('landing');
     const started = Object.keys(st.video).length || Object.keys(st.items).length;
     const nx = Core.nextActivity(st);
     const resume = () => {
@@ -183,55 +184,84 @@
       }
       goNext(target);
     };
-    const today = Core.earnedToday(st), goal = Core.DAILY_GOAL, sk = Core.streak(st);
-    const weekStrip = el('div', { class: 'week', 'aria-label': 'This week' }, ...Core.week(st).map(d => el('span', { class: 'wd' + (d.met ? ' met' : '') + (d.today ? ' today' : ''), title: d.d }, el('i', {}, d.met ? '⚡' : ''), el('small', {}, d.label))));
-    const heroS = el('section', { class: 'hero small dash' }, el('div', { class: 'hero-in' }, el('div', { class: 'txt' }, el('span', { class: 'eyebrow' }, isGuest() ? 'GUEST · TRY TOPIC 3.1' : 'DASHBOARD'),
-      el('h1', {}, isGuest() ? 'Welcome to Atomic! 👋' : `Hello, ${st.alias}! 👋`), el('p', {}, started ? 'You\'ll pick up exactly where you left off.' : 'Start with Unit 3: Cells – section 3.1. Answer questions to earn ⚡ bolts.'),
-      el('div', { class: 'btnrow' }, el('button', { class: 'btn gold big shine', type: 'button', id: 'resumeBtn', onclick: started ? resume : () => go('v-3-1') }, svgI(I.play, 18, '#0149AF', 2.6), started ? 'Continue learning' : 'Start learning'),
-        el('span', { style: 'color:#DCE8FA' }, 'Next: ', el('b', { style: 'color:#fff' }, nx.label)))),
-      el('div', { class: 'goalcard' }, avatarEl(96, 'bob'),
-        el('div', { class: 'goaltxt' }, el('b', {}, today >= goal ? '🎉 Daily goal reached!' : `Daily goal: ${Math.min(today, goal)} / ${goal} ⚡`), el('div', { class: 'pbar gold' }, el('i', { id: 'goalBar', style: `width:${Math.min(100, today / goal * 100)}%` })),
-          el('small', {}, sk ? `🔥 ${sk}-day streak – earn ${goal} ⚡ every day to keep it` : `Earn ${goal} ⚡ today to start a streak`), weekStrip))));
-    document.getElementById('wrap').before(heroS);
-    const ts = Core.testState(st);
-    if (isGuest()) m.append(el('div', { class: 'banner info', id: 'guestBanner' }, el('b', {}, 'You are learning as a guest. '), 'Your progress is kept on this device only and topic 3.1 is open. Sign up free to save it, unlock every topic and keep your bolts.', el('a', { class: 'btn small gold', href: '#signup' }, 'Sign up free')));
+    // the topic in progress: first section not finished (or the last one)
+    const cur = C.sections.find(s => !Core.secDone(st, s) && !Core.secLock(st, s)) || C.sections.find(s => !Core.secDone(st, s)) || C.sections[C.sections.length - 1];
+    const vs = Core.vstate(st, cur.id), pausesDone = cur.stops.filter(t => (vs.stops[t.id] || {}).done).length, curLock = Core.secLock(st, cur);
+    const allQ = C.sections.reduce((a, s) => a + s.req.length + s.prac.length + s.adv.length, 0), doneQ = C.sections.reduce((a, s) => a + s.req.concat(s.prac, s.adv).filter(q => (st.items[q.id] || {}).done).length, 0);
+    const pct = allQ ? Math.round(doneQ / allQ * 100) : 0, sk = Core.streak(st), hr = new Date().getHours();
+    const greet = hr < 12 ? 'Good morning' : hr < 18 ? 'Good afternoon' : 'Good evening';
+    const dateTxt = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' }).toUpperCase();
+    // ---- dotted hero (Design 02) ----
+    document.getElementById('wrap').before(el('section', { class: 'dhero dots' }, el('div', { class: 'dhero-in' },
+      el('div', { class: 'dhero-txt' }, el('span', { class: 'eyebrow' }, isGuest() ? 'GUEST · TOPIC 3.1 IS OPEN' : dateTxt),
+        el('h1', {}, isGuest() ? 'Welcome to Atomic ' : `${greet}, ${st.alias} `, el('span', { class: 'wobble', style: 'display:inline-block;color:var(--gold)' }, '✦')),
+        el('p', {}, started ? `You are on ${cur.id} ${cur.title} — next: ${nx.label.charAt(0).toLowerCase() + nx.label.slice(1)}.` : 'Start with Unit 3: Cells – topic 3.1. Watch the lesson, then practise.')),
+      el('div', { class: 'dstats' },
+        el('a', { class: 'card dstat', href: '#profile', id: 'streakCard' }, el('span', { class: 'bob', html: '<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 6 6 6 11a6 6 0 0 1-12 0c0-3 2-5 3-6 0 2 1 3 2 3 0-3-1-5 1-8z" fill="#F3BF69" stroke="#0149AF" stroke-width="1.5" stroke-linejoin="round"/></svg>' }),
+          el('span', {}, el('b', {}, `${sk} day${sk === 1 ? '' : 's'}`), el('br'), el('small', {}, 'learning streak'))),
+        el('div', { class: 'card dstat' }, el('span', { class: 'dring', style: `background:conic-gradient(var(--blue) 0 ${pct}%, #E3EBF5 0)` }, el('i', {}, pct + '%')),
+          el('span', {}, el('b', {}, `${doneQ} / ${allQ}`), el('br'), el('small', {}, 'Unit 3 questions done')))))));
+    if (isGuest()) m.append(el('div', { class: 'banner info', id: 'guestBanner' }, el('b', {}, 'You are learning as a guest. '), 'Your progress is kept on this device only and topic 3.1 is open. Sign up free to save it and unlock every topic.', el('a', { class: 'btn small gold', href: '#signup' }, 'Sign up free')));
     else if (!Core.S.sub.active) m.append(el('div', { class: 'banner info', id: 'freeBanner' }, el('b', {}, 'Free plan: '), 'topic 3.1 is open. A Stage 7 plan unlocks all topics and the Unit Test.', el('a', { class: 'btn small gold', href: '#pricing' }, 'See plans')));
-    if (Backend.mode === 'demo' && !isGuest()) m.append(el('div', { class: 'banner adv' }, el('b', {}, 'Trying the preview? '), 'Use the tester tools on the Progress page to unlock sections instantly and test the Unit Test, certificate and leaderboard.', el('a', { class: 'btn small', href: '#profile' }, 'Open tester tools')));
-    // daily challenges + shop teaser, side by side
-    const ch = Core.challenges(st);
-    const chCard = el('section', { class: 'card challenges', id: 'challenges' }, el('div', { class: 'btnrow between', style: 'margin:0' }, el('h2', { style: 'margin:0' }, '🎯 Daily challenges'), el('small', { class: 'muted' }, 'New ones every day')),
-      ...ch.map(c => el('div', { class: 'chal' + (c.claimed ? ' claimed' : c.done ? ' ready' : '') }, el('div', { class: 'ct' }, el('b', {}, c.label), el('div', { class: 'pbar' }, el('i', { style: `width:${c.value / c.goal * 100}%` })), el('small', { class: 'muted' }, `${c.value} / ${c.goal}`)),
-        c.claimed ? el('span', { class: 'status done' }, '✓ Claimed') : el('button', { class: 'btn small ' + (c.done ? 'gold shine' : ''), type: 'button', disabled: !c.done, 'data-claim': c.id, onclick: () => { const n = Core.claim(st, c.id); if (n) { toast(`Challenge complete! +${n} ⚡`); confetti(); render(); } } }, `+${c.reward} ⚡`))));
-    const cheapest = Core.ITEMS.filter(i => i.price > 0 && !Core.owns(st, i.id)).sort((a, b) => a.price - b.price)[0];
-    const shopCard = el('section', { class: 'card shopteaser' }, el('h2', { style: 'margin:0' }, '🛍️ Shop'), el('div', { class: 'bal' }, el('span', { html: BOLT.replace(/16/g, '28') }), el('b', {}, Core.bolts(st).toLocaleString('en-GB')), el('small', { class: 'muted' }, 'bolts to spend')),
-      cheapest ? el('p', { class: 'muted', style: 'margin:0' }, `Next up: ${cheapest.icon} ${cheapest.name} for ${cheapest.price} ⚡`) : el('p', { class: 'muted' }, 'You own everything – amazing!'),
-      el('a', { class: 'btn primary small', href: '#shop', id: 'openShop' }, 'Open the shop', el('span', { class: 'arr' }, '→')));
-    m.append(el('div', { class: 'dashgrid' }, chCard, shopCard));
-    m.append(el('div', { class: 'tiles' },
-      statTile('🔥', `${sk} day${sk === 1 ? '' : 's'}`, 'Learning streak'),
-      statTile('⚡', `${Core.bolts(st).toLocaleString('en-GB')}`, 'Bolts to spend'),
-      statTile('🎯', `${C.sections.reduce((a, s) => a + 8 - Core.reqLeft(st, s).length, 0)}/32`, 'Core questions done'),
-      statTile('★', isGuest() ? 'Sign up' : ts.state === 'passed' ? 'Passed' : ts.state === 'locked' ? 'Locked' : ts.state === 'pending' ? 'Awaiting marking' : 'Ready', 'Unit Test 3')));
-    m.append(el('h2', { style: 'margin:8px 0 0' }, 'What\'s next today?'), learningPath());
-  }
-
-  /* ---------- shop ---------- */
-  function viewShop() {
-    const m = $main(); const tab = UI.shopTab || 'avatar';
-    const tabs = [['avatar', 'Avatars'], ['accessory', 'Accessories'], ['background', 'Backgrounds']];
-    m.append(el('section', { class: 'card shophead' }, avatarEl(120, 'bob'), el('div', {}, el('span', { class: 'eyebrow' }, 'SHOP'), el('h1', { style: 'margin:0' }, 'Spend your bolts'),
-      el('p', { class: 'muted', style: 'margin:4px 0 0' }, 'Earn ⚡ by watching lessons and answering questions – right first time earns the most. Daily challenges and streaks give bonus bolts.'),
-      el('div', { class: 'bal' }, el('span', { html: BOLT.replace(/16/g, '28') }), el('b', { id: 'shopBal' }, Core.bolts(st).toLocaleString('en-GB')), el('small', { class: 'muted' }, 'bolts')))));
-    m.append(el('div', { class: 'tabs', role: 'tablist' }, ...tabs.map(([k, t]) => el('button', { class: 'tab' + (k === tab ? ' on' : ''), type: 'button', role: 'tab', 'aria-selected': k === tab ? 'true' : 'false', onclick: () => { UI.shopTab = k; render(); } }, t))));
-    const eq = Core.shop(st).equip;
-    m.append(el('div', { class: 'shopgrid', id: 'shopGrid' }, ...Core.ITEMS.filter(i => i.kind === tab).map(it => {
-      const owned = Core.owns(st, it.id), on = eq[it.kind] === it.id, short = Core.bolts(st) < it.price;
-      const btn = on ? el('button', { class: 'btn small', type: 'button', disabled: it.kind !== 'accessory', onclick: () => { Core.equip(st, it.id); render(); } }, it.kind === 'accessory' ? 'Take off' : '✓ Using')
-        : owned ? el('button', { class: 'btn small primary', type: 'button', onclick: () => { Core.equip(st, it.id); render(); } }, 'Use')
-          : el('button', { class: 'btn small ' + (short ? '' : 'gold'), type: 'button', disabled: short, 'data-buy': it.id, onclick: () => modal(`Buy ${it.name}?`, `${it.icon} ${it.name} costs ${it.price} ⚡. You have ${Core.bolts(st)} ⚡.`, [{ t: 'Not now', cls: 'ghost' }, { t: `Buy for ${it.price} ⚡`, cls: 'primary', on: () => { const r = Core.buy(st, it.id); if (r.ok) { toast(`${it.icon} ${it.name} is yours!`); confetti(); render(); } } }]) }, short ? `🔒 ${it.price} ⚡` : `${it.price} ⚡`);
-      return el('div', { class: 'card item' + (on ? ' on' : '') }, el('span', { class: 'ii', style: it.css ? `background:${it.css}` : '' }, it.icon), el('b', {}, it.name), el('small', { class: 'muted' }, it.price ? (owned ? 'Owned' : `${it.price} bolts`) : 'Free'), btn);
-    })));
-    if (isGuest()) m.append(el('p', { class: 'muted' }, 'Guest purchases are kept on this device. Sign up free and they move into your account.'));
+    if (Backend.mode === 'demo' && !isGuest()) m.append(el('div', { class: 'banner adv' }, el('b', {}, 'Trying the preview? '), 'Use the tester tools on the Progress page to unlock sections instantly.', el('a', { class: 'btn small', href: '#profile' }, 'Open tester tools')));
+    const left = el('div', { class: 'dmain' }), aside = el('aside', { class: 'daside' });
+    m.append(el('div', { class: 'dgrid' }, left, aside));
+    // continue card
+    const thumb = el('div', { class: 'dthumb', style: `background-image:url(media/u3_s${C.sections.indexOf(cur) + 1}_poster.jpg)` }, el('span', { class: 'lp-play pulse', 'aria-hidden': 'true' }, svgI(I.play, 28, '#1C2A3A', 2.6)));
+    left.append(el('section', { class: 'card lift dcont', 'aria-label': 'Continue learning', onclick: e => { if (e.target.closest('a,button')) return; resume(); } }, thumb,
+      el('div', { class: 'dcont-txt' }, el('span', { class: 'eyebrow' }, `${started ? 'CONTINUE' : 'START'} · UNIT 3 › ${cur.id}`), el('h2', {}, cur.title),
+        el('p', { class: 'muted', style: 'font-size:16px;margin:0' }, cur.objs.slice(0, 2).map(o => C.objectives[o].t).join(' ')),
+        el('div', { class: 'dprog' }, el('div', { class: 'pbar' }, el('i', { style: `width:${cur.stops.length ? pausesDone / cur.stops.length * 100 : 0}%` })), el('small', {}, `${pausesDone} of ${cur.stops.length} pause questions`)),
+        curLock ? el('p', { class: 'muted', style: 'margin:0' }, '🔒 ' + curLock.reason) : null,
+        el('div', { class: 'btnrow' }, el('button', { class: 'btn primary shine', type: 'button', id: 'resumeBtn', onclick: started ? resume : () => go('v-3-1') }, svgI(I.play, 16, '#fff', 2.6), started ? (vs.pos > 1 && !Core.videoDone(st, cur) ? `Resume at ${fmt(vs.pos)}` : 'Continue learning') : 'Start learning'),
+          el('a', { class: 'btn', href: '#ex-' + R(cur.id) }, `Practise ${cur.id}`)))));
+    // unit table
+    const stCls = s => Core.secLock(st, s) ? ['todo', 'Locked'] : Core.secDone(st, s) ? ['done', 'Completed'] : (Core.videoDone(st, s) || Core.reqLeft(st, s).length < 8 || Object.keys(Core.vstate(st, s.id).stops).length) ? ['cur', 'In progress'] : ['todo', 'Not started'];
+    left.append(el('section', { class: 'card dtable' }, el('div', { class: 'dth' }, el('h2', {}, 'Unit 3 · Cells'), el('a', { href: '#unit3', class: 'ul' }, 'Open the course →')),
+      el('div', { class: 'tablewrap' }, el('div', { class: 'drows' }, el('div', { class: 'drow h' }, ...['Topic', 'Lesson', 'Core', 'Practice', 'Extension', 'Status'].map(t => el('span', {}, t))),
+        ...C.sections.map(s => { const v = Core.vstate(st, s.id), core = 8 - Core.reqLeft(st, s).length, [c, t] = stCls(s), np = Object.values(v.stops).filter(x => x.done).length;
+          return el('a', { class: 'drow', href: Core.secLock(st, s) ? '#unit3' : (Core.videoDone(st, s) ? '#ex-' : '#v-') + R(s.id) }, el('span', {}, el('b', { style: 'color:var(--blue)' }, s.id), ' ' + s.title),
+            el('span', {}, Core.videoDone(st, s) ? 'Watched' : np ? `${np} of ${s.stops.length} pauses` : '—'),
+            el('span', { class: 'dcore' }, el('span', { class: 'pbar' }, el('i', { style: `width:${core / 8 * 100}%` })), `${core}/8`),
+            el('span', {}, `${s.prac.filter(q => (st.items[q.id] || {}).done).length}/18`), el('span', {}, `${s.adv.filter(q => (st.items[q.id] || {}).done).length}/4`),
+            el('span', {}, el('span', { class: 'status ' + c }, t))); })))));
+    // suggested next
+    const wl = wrongList(), wsSec = st.ws.length ? null : cur;
+    const sug = el('section', { class: 'card dsug' }, el('h2', {}, 'Suggested next'));
+    const sRow = (cls, icon, t, d, btn) => el('div', { class: 'srow' }, el('span', { class: 'sic ' + cls, html: icon }), el('span', { class: 'st' }, el('b', {}, t), el('br'), el('small', { class: 'muted' }, d)), btn);
+    sug.append(sRow('o wobble', '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9A4A00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 13h6 M9 17h6"/></svg>',
+      `Worksheet ${cur.id} · ${cur.title}`, 'Printable A4 worksheet with Core and practice questions', el('a', { class: 'btn small', href: '#ws-' + R(cur.id) }, 'Open')));
+    sug.append(sRow('b pulse', '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0149AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z M12 7v5l3 2"/></svg>',
+      wl.length ? 'Redo the questions you found tricky' : 'Revise by learning objective', wl.length ? `${wl.length} question${wl.length === 1 ? '' : 's'} you got wrong before` : 'Pick an objective and practise it',
+      el('button', { class: 'btn primary small', type: 'button', id: 'tileWrong', onclick: () => wl.length ? startDrill('Redo wrong answers', wl, 'wrong') : go('topic') }, 'Start', el('span', { class: 'arr' }, ' →'))));
+    left.append(sug);
+    // aside: unit test card
+    const ts = Core.testState(st), totalReq = C.sections.reduce((a, s) => a + 8 - Core.reqLeft(st, s).length, 0);
+    aside.append(el('section', { class: 'dtest' }, el('div', { class: 'blob drift', 'aria-hidden': 'true' }),
+      el('div', { class: 'dtest-h' }, el('span', { class: 'wobble', html: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F3BF69" stroke-width="2"><path d="M6 11h12v10H6z M8 11V8a4 4 0 0 1 8 0v3"/></svg>' }), el('b', {}, 'Unit Test 3')),
+      el('p', {}, ts.state === 'passed' ? 'Passed — well done! Your first-pass score counts towards the leaderboard.' : 'Unlocks when you finish every video and Core question in 3.1 to 3.4. Score above 70% to open Unit 4.'),
+      el('div', { class: 'dsegs' }, ...C.sections.map(s => el('span', { class: Core.secDone(st, s) ? 'on' : (8 - Core.reqLeft(st, s).length) ? 'half' : '' }))),
+      el('small', {}, `Core questions: ${totalReq} of 32`),
+      el('a', { class: 'btn gold', href: isGuest() ? '#signup' : ts.state === 'passed' ? '#result' : '#test', id: 'dashTest' }, isGuest() ? 'Sign up to take the test' : ts.state === 'passed' ? 'See my result' : ts.state === 'ready' ? 'Start the test' : 'Preview the test', el('span', { class: 'arr' }, ' →'))));
+    // aside: leaderboard
+    const lb = el('section', { class: 'card dside' }, el('div', { class: 'dth' }, el('b', { class: 'lex' }, 'Leaderboard'), el('span', { class: 'bob', html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#935A00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8 M12 17v4 M7 4h10v5a5 5 0 0 1-10 0z M7 6H4a3 3 0 0 0 3 4 M17 6h3a3 3 0 0 1-3 4"/></svg>' })));
+    const lbBody = el('div', { class: 'dlb' }, el('p', { class: 'muted', style: 'margin:0' }, 'Loading…')); lb.append(lbBody, el('a', { class: 'ul', href: '#board' }, 'Full leaderboard →'));
+    aside.append(lb);
+    if (!isGuest()) Backend.leaderboard(7).then(rows => { rows = (rows || []).filter(r => r.score != null).map(r => ({ alias: r.nickname, score: Number(r.score), me: !!r.is_mine })); Core.competitionRank(rows); lbBody.innerHTML = '';
+      if (!rows.length) lbBody.append(el('p', { class: 'muted', style: 'margin:0' }, 'No ranked learners yet – pass a Unit Test to appear here.'));
+      rows.slice(0, 4).forEach((r, i) => lbBody.append(el('div', { class: 'lbmini' + (r.me ? ' me' : '') }, el('b', { class: 'rk' }, String(r.rank)), el('span', { class: 'a', style: `background:${['#0149AF', '#F08A4B', '#3FA34D', '#0B2545'][i % 4]}` }, r.alias.slice(0, 1).toUpperCase()), el('span', { class: 'n' }, r.me ? 'You' : r.alias), el('b', { class: 'sc' }, r.score.toFixed(1) + '%')))); }).catch(() => { lbBody.innerHTML = ''; });
+    else { lbBody.innerHTML = ''; lbBody.append(el('p', { class: 'muted', style: 'margin:0' }, 'Sign up free to join the leaderboard.')); }
+    // aside: this week
+    aside.append(el('section', { class: 'card dside' }, el('b', { class: 'lex' }, 'This week'), el('div', { class: 'dweek', id: 'weekStrip' }, ...Core.week(st).map((d, i) => el('div', { class: 'rise', style: `animation-delay:${i * .06}s` }, el('span', { class: 'wd' + (d.met ? ' met' : '') + (d.today ? ' today' : '') }, d.met ? '✓' : ''), el('small', {}, d.label)))),
+      el('small', { class: 'muted' }, sk ? `${sk}-day streak – learn something every day to keep it going.` : 'Learn something today to start a streak.')));
+    // aside: worth revising
+    const objs = Object.entries(C.objectives).map(([k, o]) => { const qs = C.sections.flatMap(s => s.req.concat(s.prac, s.adv)).filter(q => q.obj === k); const tried = qs.filter(q => (st.items[q.id] || {}).done); const first = tried.filter(q => st.items[q.id].ok && (st.items[q.id].tries || 1) === 1).length;
+      return { k, t: o.t, n: tried.length, pct: tried.length ? Math.round(first / tried.length * 100) : null }; }).filter(o => o.n >= 2 && o.pct < 80).sort((a, b) => a.pct - b.pct).slice(0, 3);
+    aside.append(el('section', { class: 'card dside' }, el('b', { class: 'lex' }, 'Worth revising'),
+      ...(objs.length ? objs.map(o => el('div', { class: 'wrev' }, el('span', { class: 'wt' }, el('span', {}, o.t), el('b', {}, o.pct + '%')), el('div', { class: 'pbar warn' }, el('i', { style: `width:${o.pct}%` })))) : [el('p', { class: 'muted', style: 'margin:0' }, 'Answer a few more questions and we will show the ideas worth revising here.')]),
+      el('a', { class: 'ul', href: '#profile' }, 'See full report →')));
+    aside.append(el('section', { class: 'dknow' }, el('span', { class: 'pulse', html: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#013A8C" stroke-width="2" stroke-linecap="round"><path d="M9 18h6 M10 21h4 M12 3a6 6 0 0 0-4 10.5c1 1 1 2 1 3h6c0-1 0-2 1-3A6 6 0 0 0 12 3z"/></svg>' }),
+      el('span', {}, el('b', {}, 'Did you know? '), 'Some nerve cells are only about 0.1 mm wide but can be up to 1 metre long.')));
   }
   const statTile = (ic, big, small) => el('div', { class: 'tile', style: 'cursor:default' }, el('span', { class: 'ti' }, ic), el('b', {}, big), el('small', {}, small));
   function levelCards() {
@@ -291,7 +321,7 @@
     const lock = Core.secLock(st, s);
     subbar('', el('a', { class: 'back', href: '#unit3' }, '← Unit 3: Cells'), el('span', { class: 'sep' }), el('span', { class: 'ttl' }, `Lesson ${s.id} · ${s.title}`));
     if (lock) { m.append(bar(`Section ${s.id} · Video`), lockScreen(`Section ${s.id} is locked`, lock.reason, [lock])); return; }
-    const xp0 = Core.xp(st); const gchip = el('span', { class: 'gchip', html: FLAME + ` ${Core.streak(st)} · +<b id="lessonXp">0</b> ⚡ this lesson` });
+    const xp0 = Core.xp(st); const gchip = el('span', { class: 'gchip', html: FLAME + ` ${Core.streak(st)}-day streak` });
     document.querySelector('#sub .subbar-in').append(gchip);
     const bumpXp = () => { const e = document.getElementById('lessonXp'); if (e) e.textContent = Core.xp(st) - xp0; xpTick(); };
     st.last = { route: 'v-' + R(sid) }; Core.persist();
@@ -582,7 +612,7 @@
   /* ---------- question bank ---------- */
   function viewBank() {
     const m = $main(); UI.bank = UI.bank || { sec: 'all', diff: 'all', type: 'all', status: 'all', tier: 'all' }; const F = UI.bank;
-    m.append(bar('Question Bank'));
+    pageHero('UNIT 3 · CELLS', 'Question Bank', 'Every Unit 3 question in one place — filter by topic, difficulty and type, and redo the ones you got wrong.');
     m.append(el('div', {}, el('span', { class: 'eyebrow' }, 'UNIT 3 · CELLS'), el('h1', { style: 'margin:0;font-size:36px' }, 'Question Bank'),
       el('p', { class: 'muted', style: 'margin:4px 0 0' }, `${allQs().length} practice questions (30 per section: 8 Core, 18 Practice, 4 Advanced) plus ${C.sections.reduce((a, s) => a + s.stops.length, 0)} pause questions. Practising here never changes your Core progress or test scores.`)));
     const chipRow = (label, key, opts) => el('div', { class: 'btnrow', role: 'group', 'aria-label': label }, el('b', { style: 'min-width:92px;font-size:14px' }, label), ...opts.map(([v, t]) => el('button', { type: 'button', class: 'chip' + (F[key] === v ? ' on' : ''), 'aria-pressed': String(F[key] === v), onclick: () => { F[key] = v; render(); } }, t)));
@@ -699,7 +729,7 @@
     if (!at.length) { m.append(el('section', { class: 'card' }, el('h2', {}, 'No tests taken yet'), el('a', { class: 'btn primary small', href: '#test' }, 'Go to the Unit Test'))); return; }
     const a = at[at.length - 1];
     if (a.status === 'pending') m.append(el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, 'Your written answer is waiting for an Atomic marker. Pass/not passed and unlocking Unit 4 are decided only when the final mark is in – you will get a notification.')));
-    else if (a.passed) m.append(el('section', { class: 'card done' }, el('div', { class: 'resultbig' }, ring(a.pct, true), el('div', {}, el('span', { class: 'eyebrow' }, 'PASSED · +100 ⚡'), el('h2', { style: 'margin:0' }, `${+a.score.toFixed(2)}/30 (${a.pct.toFixed(1)}%)`), el('p', { style: 'margin:4px 0' }, 'Unit 4 is now unlocked. Your Unit 3 ranking score = % of your first pass: ' + st.rank.u3.toFixed(1) + '%.'))),
+    else if (a.passed) m.append(el('section', { class: 'card done' }, el('div', { class: 'resultbig' }, ring(a.pct, true), el('div', {}, el('span', { class: 'eyebrow' }, 'PASSED'), el('h2', { style: 'margin:0' }, `${+a.score.toFixed(2)}/30 (${a.pct.toFixed(1)}%)`), el('p', { style: 'margin:4px 0' }, 'Unit 4 is now unlocked. Your Unit 3 ranking score = % of your first pass: ' + st.rank.u3.toFixed(1) + '%.'))),
       el('div', { class: 'btnrow' }, el('a', { class: 'btn primary small', href: '#board' }, '🏆 Leaderboard'), el('a', { class: 'btn small', href: '#cert' }, '🎓 Certificate'))));
     else {
       const left = Core.remLeft(st, a);
@@ -755,10 +785,9 @@
   function viewProfile() {
     const m = $main(); const wl = wrongList(); const nx = Core.nextActivity(st);
     const rs = Core.rankScore(st);
-    m.append(bar('Your progress'), el('section', { class: 'card feature', style: 'display:flex;gap:20px;align-items:center;flex-wrap:wrap' },
-      avatarEl(72),
-      el('div', { style: 'flex:1;min-width:200px' }, el('h2', { style: 'margin:0;color:#fff' }, st.alias), el('span', { style: 'color:#DCE8FA' }, isGuest() ? 'Guest – progress kept on this device only' : `Nickname “${st.alias}” · progress saved to your account`)),
-      el('div', { style: 'display:flex;gap:10px;flex-wrap:wrap' }, el('span', { class: 'pill streak', html: FLAME + ' ' + Core.streak(st) + ' days' }), el('a', { class: 'pill xp', href: '#shop', html: BOLT + ' ' + Core.bolts(st).toLocaleString('en-GB') + ' bolts' }))));
+    const coreDone = C.sections.reduce((a, s) => a + 8 - Core.reqLeft(st, s).length, 0), sk = Core.streak(st);
+    pageHero(isGuest() ? 'GUEST · THIS DEVICE ONLY' : 'PROGRESS', isGuest() ? 'Your progress' : `${st.alias}'s progress`, isGuest() ? 'Sign up free to keep your progress on any device.' : 'Everything you have done in Unit 3, what is next, and what is worth revising.',
+      [statCard(flameIcon(), `${sk} day${sk === 1 ? '' : 's'}`, 'learning streak'), statCard(ringIcon(Math.round(coreDone / 32 * 100)), `${coreDone} / 32`, 'Core questions done')]);
     const tile = (icon, t, sub, on, id) => el('button', { class: 'tile lift', type: 'button', onclick: on, id }, el('span', { class: 'ti' }, icon), el('b', {}, t), el('small', {}, sub));
     m.append(el('div', { class: 'tiles' },
       tile('▶', 'Continue learning', nx.label, () => { location.hash = 'home'; setTimeout(() => document.getElementById('resumeBtn') && document.getElementById('resumeBtn').click(), 0); }, 'tileResume'),
@@ -770,11 +799,7 @@
       el('p', {}, `Unit Test: ${Core.attempts(st).length} attempt(s) · ${Core.passed(st) ? 'Passed' : 'not passed yet'} · Ranking score: ` + (rs ? rs.score.toFixed(2) + '% (' + rs.units + (rs.units === 1 ? ' unit)' : ' units)') : 'none yet')),
       el('div', { class: 'btnrow' }, el('a', { class: 'btn small', href: '#result' }, 'Results & history'), el('a', { class: 'btn small', href: '#cert' }, '🎓 Certificate'), el('a', { class: 'btn small', href: '#board' }, '🏆 Leaderboard'))));
     m.append(testerTools());
-    if (!isGuest()) {
-      const w = Core.wallet(st);
-      m.append(el('section', { class: 'card' }, el('h3', {}, '⚡ Recent bonuses'), w.log.length ? el('ul', {}, ...w.log.slice(0, 8).map(x => el('li', {}, `${x.d} · +${x.n} ⚡ · ${x.why}`))) : el('p', { class: 'muted' }, 'Complete daily challenges and keep your streak going to earn bonus bolts.'),
-        el('p', { class: 'muted', style: 'margin:8px 0 0' }, el('a', { href: '#privacy-kids' }, 'How Atomic looks after your data'), ' – the short version for learners.')));
-    }
+    m.append(el('p', { class: 'muted' }, el('a', { href: '#privacy-kids' }, 'How Atomic looks after your data'), ' – the short version for learners.'));
   }
 
   /* ---------- leaderboard ---------- */
@@ -788,7 +813,7 @@
     if (Backend.mode === 'demo') SAMPLE.forEach(r => rows.push({ ...r, src: 'sample data' }));
     Core.competitionRank(rows);
     hin.append(el('span', { class: 'eyebrow', style: 'color:#F3BF69' }, 'SCIENCE STAGE 7'), el('h1', {}, '🏆 Leaderboard'),
-      el('div', { class: 'formula' }, el('b', { style: 'color:#fff' }, 'Ranking score = (Σ first-pass % of each unit) ÷ number of units'), ' — every unit counts equally. Your first-pass % is fixed the moment you first pass a unit; revising or retaking later never changes it. Equal scores share a rank. Bolts are just for fun and are not used for ranking.'));
+      el('div', { class: 'formula' }, el('b', { style: 'color:#fff' }, 'Ranking score = (Σ first-pass % of each unit) ÷ number of units'), ' — every unit counts equally. Your first-pass % is fixed the moment you first pass a unit; revising or retaking later never changes it. Equal scores share a rank.'));
     const top = rows.slice(0, 3); const order = [top[1], top[0], top[2]];
     hin.append(el('div', { class: 'podium' }, ...order.map((r, k) => r ? el('div', { class: 'p' }, k === 1 ? el('span', { style: 'font-size:30px;animation:floaty 2.2s ease-in-out infinite' }, '👑') : null, el('span', { class: 'av', style: r.me ? 'background:#F3BF69;color:#1C2A3A' : '' }, r.alias.replace('Sample · ', '').slice(0, 1).toUpperCase()), el('b', { class: 'lex' }, r.alias + (r.me ? ' (you)' : '')), el('small', { style: 'color:#C9D6EA' }, r.score.toFixed(2) + '%'),
       el('div', { class: 'blk', style: `height:${[130, 170, 100][k]}px;background:${['#2F6FD6', '#0149AF', '#5B8FDB'][k]}` }, el('b', {}, String(r.rank)))) : el('div', { class: 'p' }))));
@@ -948,16 +973,15 @@
     // ---- how it works ----
     const step = (n, cls, t, d) => el('div', { class: 'card lift lp-how' }, el('span', { class: 'lp-num ' + cls }, String(n)), el('b', {}, t), el('p', { class: 'muted', style: 'margin:0' }, d));
     m.append(el('section', { class: 'lp-hows' }, el('div', { style: 'text-align:center' }, el('small', { class: 'lp-eyebrow gold' }, 'HOW IT WORKS'), el('h2', { style: 'margin:6px 0 0' }, 'Three steps to start')),
-      el('div', { class: 'lp-hgrid' }, step(1, 'b', 'Try it straight away', 'Open topic 3.1 – no account needed. Watch, practise and earn ⚡ bolts on this device.'),
+      el('div', { class: 'lp-hgrid' }, step(1, 'b', 'Try it straight away', 'Open topic 3.1 – no account needed. Watch and practise; your progress is kept on this device.'),
         step(2, 'g', 'Sign up free in a minute', 'Your name and email, your age and school year, then your country and school. A parent’s email is optional.'),
-        step(3, 'gr', 'Learn, earn bolts, pass the test', 'Lessons, practice and a Unit Test for every topic. Keep your streak and spend bolts in the shop.')),
+        step(3, 'gr', 'Learn, keep your streak, pass the test', 'Lessons, practice and a Unit Test for every topic. Learn a little every day to grow your streak.')),
       el('div', { style: 'text-align:center' }, el('a', { class: 'btn gold', href: '#signup' }, 'Create a free account'))));
     m.append(faq());
   }
   function faq() {
     const qa = [['Who is Atomic for?', 'Learners aged about 11–12 following Cambridge Lower Secondary Science Stage 7, at an international or bilingual school or studying at home.'],
-      ['Do I need an account?', 'Not to try it: topic 3.1 is open to guests. Create a free account to save your progress, unlock every topic, take the Unit Test and keep your bolts.'],
-      ['What are bolts ⚡?', 'Points you earn by doing the work – watching lessons and answering questions (right first time earns the most). Spend them in the shop on avatars, accessories and backgrounds. They are just for fun and do not affect your ranking.'],
+      ['Do I need an account?', 'Not to try it: topic 3.1 is open to guests. Create a free account to save your progress, unlock every topic and take the Unit Test.'],
       ['Will my parents know how I am doing?', 'If you add a parent’s email when you sign up (it is optional), we send them a short email when you finish a unit. You can add or remove it any time in Settings.'],
       ['Am I on a public leaderboard?', 'Not unless you switch it on in Settings. Everyone is hidden by default, and only your nickname is ever shown.'],
       ['How are Unit Tests marked?', 'Multiple-choice, diagram and data questions are marked automatically. Written answers are marked by the Atomic teaching team; you get a notification when it is done.'],
@@ -978,7 +1002,7 @@
   }
   function viewSignup() {
     const m = $main(); const e = errBox(); const F = UI.su = UI.su || { step: 1 };
-    const card = el('section', { class: 'card narrow signup' }); m.append(card);
+    const card = el('section', { class: 'card narrow signup' }); m.append(el('div', { class: 'authwrap dots' }, card)); document.getElementById('wrap').classList.add('authpage');
     const dots = () => el('div', { class: 'steps', 'aria-label': `Step ${F.step} of 3` }, ...[1, 2, 3].map(i => el('span', { class: i < F.step ? 'done' : i === F.step ? 'on' : '' }, String(i))));
     const next = () => { e.textContent = ''; F.step++; draw(); }, back = () => { e.textContent = ''; F.step--; draw(); };
     function draw() {
@@ -1041,8 +1065,8 @@
     const b = el('button', { class: 'btn primary', type: 'button', id: 'siBtn', onclick: async () => { e.textContent = ''; b.disabled = true;
       try { await Backend.signIn({ email: email.value, password: pw.value }); await Core.boot(C); st = Core.cur(); go('home'); } catch (x) { e.textContent = errText(x); b.disabled = false; } } }, 'Log in');
     pw.addEventListener('keydown', ev => { if (ev.key === 'Enter') b.click(); });
-    m.append(narrow(el('h1', {}, 'Log in'), el('div', { class: 'form' }, field('Email', email), field('Password', pw), e, b),
-      el('p', { class: 'muted' }, el('a', { href: '#forgot' }, 'Forgotten your password?'), ' · New here? ', el('a', { href: '#signup' }, 'Sign up free'))));
+    document.getElementById('wrap').classList.add('authpage'); m.append(el('div', { class: 'authwrap dots' }, narrow(el('span', { class: 'eyebrow' }, 'WELCOME BACK'), el('h1', {}, 'Log in'), el('div', { class: 'form' }, field('Email', email), field('Password', pw), e, b),
+      el('p', { class: 'muted' }, el('a', { href: '#forgot' }, 'Forgotten your password?'), ' · New here? ', el('a', { href: '#signup' }, 'Sign up free')))));
   }
   function viewForgot() {
     const m = $main(); const e = errBox(); const email = el('input', { type: 'email', id: 'fpEmail' });
@@ -1070,7 +1094,8 @@
     } }, 'Save changes');
     const lb = el('input', { type: 'checkbox', id: 'setBoard' }); lb.checked = !!l.leaderboard_opt_in;
     lb.onchange = () => { if (lb.checked) modal('Show me on the leaderboard?', 'Your nickname and ranking score will be visible to other Atomic learners. Nothing else is shown. You can switch this off at any time.', [{ t: 'Keep me hidden', cls: 'ghost', on: () => { lb.checked = false; } }, { t: 'Show my nickname', cls: 'primary', on: async () => { await Backend.updateLearner(l.id, { leaderboard_opt_in: true }); await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); } }]); else Backend.updateLearner(l.id, { leaderboard_opt_in: false }).then(async () => { await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); }); };
-    m.append(el('div', {}, el('span', { class: 'eyebrow' }, 'ACCOUNT'), el('h1', { style: 'margin:4px 0 0' }, 'Settings'), el('p', { class: 'muted', style: 'margin:0' }, Core.S.me.user.email)),
+    pageHero('ACCOUNT', 'Settings', `Signed in as ${Core.S.me.user.email}`, statCard(initialChip(44), st.alias, l.grade || 'Stage 7 learner'));
+    m.append(
       el('section', { class: 'card' }, el('h2', {}, 'Profile'), el('div', { class: 'form' }, field('Nickname', nick, 'Shown in the app and, if you switch it on, on the leaderboard.'), field('Full name for the certificate', full), field('School year', gr), field('Country', country), field('School', school), field('School name', other))),
       el('section', { class: 'card' }, el('h2', {}, '📧 Parent or guardian'), el('div', { class: 'form' }, field('Parent or guardian’s email (optional)', parent, 'We send them one short email when you finish a unit. Leave empty to send nothing.'))),
       el('div', { class: 'btnrow' }, save, msg), e,
@@ -1083,7 +1108,7 @@
   }
   function deleteAccountFlow() {
     const inp = el('input', { type: 'text', id: 'delConfirm', placeholder: 'DELETE MY ACCOUNT' }); const e = errBox();
-    modal('Delete your account?', el('div', { class: 'form' }, el('p', {}, 'This deletes your account, all progress, tests, bolts, shop items and certificates. This cannot be undone.'), field('Type DELETE MY ACCOUNT to confirm', inp), e),
+    modal('Delete your account?', el('div', { class: 'form' }, el('p', {}, 'This deletes your account, all progress, tests and certificates. This cannot be undone.'), field('Type DELETE MY ACCOUNT to confirm', inp), e),
       [{ t: 'Cancel', cls: 'ghost' }, { t: 'Delete everything', cls: 'primary', on: async () => { try { await Backend.deleteAccount(inp.value.trim()); await Core.boot(C); st = null; go('home'); } catch (x) { e.textContent = errText(x); return true; } } }]);
   }
 
@@ -1099,7 +1124,7 @@
       else await Backend.checkout(p);
     } }, active ? 'Your plan is active' : 'Start 7-day free trial');
     m.append(el('div', { style: 'text-align:center' }, el('span', { class: 'eyebrow' }, 'PLANS'), el('h1', { style: 'margin:4px 0' }, 'One plan, the whole of Stage 7'), el('p', { class: 'muted' }, 'Cancel any time.')),
-      el('div', { class: 'plans' }, plan('free', 'Free', '£0', ['First topic of every unit', 'Lesson videos with pause questions', '30 practice questions for that topic', 'Daily challenges, bolts and the shop'], me ? el('a', { class: 'btn', href: '#home' }, 'Keep learning free') : el('a', { class: 'btn', href: '#signup' }, 'Start free')),
+      el('div', { class: 'plans' }, plan('free', 'Free', '£0', ['First topic of every unit', 'Lesson videos with pause questions', '30 practice questions for that topic', 'Learning streak and progress report'], me ? el('a', { class: 'btn', href: '#home' }, 'Keep learning free') : el('a', { class: 'btn', href: '#signup' }, 'Start free')),
         plan('monthly', 'Stage 7 – monthly', L.monthly, ['All 4 topics of every unit', 'Unit Tests marked by Atomic', 'A4 worksheets and concept maps', 'Stage 7 certificate'], buy('monthly')),
         plan('yearly', 'Stage 7 – yearly', L.yearly, ['Everything in monthly', 'About 2 months free', 'Price fixed for the year'], buy('yearly'), true)),
       el('p', { class: 'muted', style: 'text-align:center' }, 'Prices shown in GBP for guidance. At checkout Paddle, our reseller, shows the price in your currency including VAT/GST where it applies (UK VAT, Singapore GST, Malaysia SST, Thailand VAT, Vietnam, Indonesia and Philippines taxes).'), faq());
@@ -1153,7 +1178,7 @@
     ['What we collect and why', ['Guests: nothing is sent to us. A guest’s progress is kept only in their own browser until they create an account.',
       'Account: name, email, password (stored hashed by our authentication provider), year of birth, school year, country and school – to run the account, check the course suits you and apply the right law.',
       'Optional parent or guardian email: used only to send one short email when the learner finishes a unit. It can be changed or removed at any time in Settings.',
-      'Learning records: answers, progress, bolts, shop items, test results – to give feedback, mark tests, show progress and issue certificates.',
+      'Learning records: answers, progress, test results – to give feedback, mark tests, show progress and issue certificates.',
       'Payments (later, not during the test phase): handled by Paddle as Merchant of Record; we receive only the subscription status, not card details.']],
     ['High privacy by default', 'We follow the UK Age Appropriate Design Code (Children’s code): we collect the minimum, there is no advertising and no profiling for advertising, no geolocation and no public profile. Learners are hidden from the leaderboard unless they switch it on, and then only the nickname is shown.'],
     ['Where data is stored', 'Our database and authentication run on Supabase; the website runs on Vercel; emails will be sent by an email provider such as Resend. Data may be processed outside your country; we use contractual safeguards for international transfers.'],
@@ -1178,7 +1203,6 @@
     ['Accounts', 'One account per learner. Keep your password private. If you are under the age of digital consent where you live, ask a parent or guardian before you sign up.'],
     ['Plans, trials and refunds', 'Plans renew automatically until cancelled. A free trial converts to a paid plan unless cancelled before it ends. Our order process is conducted by our online reseller Paddle.com, the Merchant of Record for all orders; Paddle provides customer service enquiries and handles returns.'],
     ['Fair use', 'Course content is for your own personal learning. Do not copy, share or resell videos, questions, tests or worksheets.'],
-    ['Bolts and the shop', 'Bolts are earned by learning and can only be spent on items inside Atomic. They have no money value, cannot be bought, sold or exchanged, and are not used for ranking.'],
     ['Tests and certificates', 'Unit Tests are marked automatically and, for written answers, by Atomic markers. A certificate confirms completion of the Atomic Stage 7 course; it is not a Cambridge qualification.'],
     ['Changes and contact', 'We will tell you about important changes by email. Questions: ' + (((window.ATOMIC_CONFIG || {}).supportEmail) || 'support@example.com') + '.']]);
   const viewCookies = () => legal('Cookies and local storage', [
@@ -1215,7 +1239,7 @@
   const TOC_ROUTES = r => r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || ['unit3', 'map', 'result', 'remedial', 'topic', 'drill', 'cert'].includes(r);
   const PUBLIC = { home: () => viewHome(), signin: viewSignin, signup: viewSignup, forgot: viewForgot, pricing: viewPricing, help: viewHelp, privacy: viewPrivacy, 'privacy-kids': viewKidsPrivacy, terms: viewTerms, cookies: viewCookies, verify: viewVerify };
   const ACCOUNT = { staff: viewStaff, teacher: viewStaff };
-  const LEARNER = { home: viewHome, unit3: viewUnit, test: viewTest, result: viewResult, remedial: viewRemedial, map: viewMap, profile: viewProfile, topic: viewTopic, bank: viewBank, drill: viewDrill, board: viewBoard, cert: viewCert, shop: viewShop, settings: viewSettings };
+  const LEARNER = { home: viewHome, unit3: viewUnit, test: viewTest, result: viewResult, remedial: viewRemedial, map: viewMap, profile: viewProfile, topic: viewTopic, bank: viewBank, drill: viewDrill, board: viewBoard, cert: viewCert, settings: viewSettings };
   const GUEST_WALL = { board: 'Sign up free to join the leaderboard', cert: 'Sign up free to earn a certificate', result: 'Sign up free to take the Unit Test', remedial: 'Sign up free to take the Unit Test', settings: 'Sign up free to get your own account' };
   let renderSeq = 0;
   async function render() {

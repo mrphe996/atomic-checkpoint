@@ -99,7 +99,6 @@ npm run test:sql     # schema + RLS on local Postgres  npm run test:e2e    # 61 
   (progress in localStorage, moved into the account at sign-up).
 * On a learner's first pass of a unit, `record_first_pass()` queues one row in `email_outbox` for the parent email (if given).
   **Nothing is sent yet** – a mailer function + email provider (e.g. Resend with a verified domain) is still to do.
-* Bolts ⚡ (earned by work, right-first-time worth more), daily goal 20 ⚡, streak, 3 daily challenges and the shop are kept in
-  the learner's progress state (`web/core.js`). They are for motivation only and never affect ranking.
+* Motivation is kept simple: a learning streak (consecutive days with any activity). No points shop.
 * **Before selling:** add the parental-consent step each market requires for under-age learners (SG <13, VN <16, MY/ID/PH <18,
   TH minors) and have the privacy notice reviewed; make the GitHub repo private.

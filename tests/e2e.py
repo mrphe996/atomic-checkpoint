@@ -84,12 +84,12 @@ with sync_playwright() as p:
     ok(pg.evaluate('Core.S.guest') and pg.query_selector('#signUpLink') is not None, '1g Guest starts topic 3.1 straight away with a Sign-up button in the header')
     go(pg, 'ex-3-1'); ok(pg.query_selector('#guestWall') is None and 'part of the full' not in txt(pg), '1h Guest can practise 3.1')
     pg.evaluate("(()=>{const st=Core.cur(); const q=Core.sec('3.1').req[0]; st.items[q.id]={done:true,ok:true,tries:1,score:1}; Core.persist(); Core.flush();})()"); pg.wait_for_timeout(300)
-    b0 = pg.evaluate('Core.bolts(Core.cur())'); ok(b0 >= 10, f'1i Guest earns bolts for a right answer ({b0} ⚡)')
+    ok(pg.evaluate('Core.streak(Core.cur())') == 1, '1i Guest activity starts a 1-day streak')
     ok(pg.evaluate("!!localStorage.getItem('atomic.guest.v1')"), '1j Guest progress is kept in this browser')
     lk = pg.evaluate("Core.secLock(Core.cur(), Core.sec('3.2'))"); ok(lk and lk.get('guest'), '1k Topic 3.2 asks a guest to sign up')
     go(pg, 'test'); ok(pg.query_selector('#guestWall') is not None, '1l Unit Test asks a guest to sign up')
     go(pg, 'board'); ok(pg.query_selector('#guestWall') is not None, '1m Leaderboard asks a guest to sign up')
-    go(pg, 'home'); ok(pg.query_selector('#guestBanner') is not None and pg.query_selector('#challenges') is not None, '1n Guest dashboard shows the guest banner and daily challenges')
+    go(pg, 'home'); ok(pg.query_selector('#guestBanner') is not None and pg.query_selector('.dcont') is not None and pg.query_selector('#weekStrip') is not None, '1n Guest dashboard shows the guest banner, continue card and this-week streak')
     pg.screenshot(path=f'{SHOTS}/02_guest_home.png', full_page=True)
 
     # ---------- 2. three-step student sign-up ----------
@@ -107,25 +107,16 @@ with sync_playwright() as p:
     learner = pg.evaluate('Core.cur().learner')
     ok(learner['parent_email'] == 'mum@example.com' and learner['school_id'] and learner['grade'] == 'Year 7 / Grade 6' and learner['country'] == 'VN', '2e Learner saved with school, school year, country and parent email')
     ok(learner['leaderboard_opt_in'] is False and pg.evaluate("Backend.me().then(m=>m.profile.role)") == 'student', '2f Student account; leaderboard OFF by default')
-    ok(not pg.evaluate('Core.S.guest') and pg.evaluate('Core.bolts(Core.cur())') >= b0 and not pg.evaluate("localStorage.getItem('atomic.guest.v1')"), '2g Guest progress and bolts move into the new account')
+    ok(not pg.evaluate('Core.S.guest') and len(pg.evaluate('Object.keys(Core.cur().items)')) >= 1 and not pg.evaluate("localStorage.getItem('atomic.guest.v1')"), '2g Guest progress moves into the new account')
     ok(pg.query_selector('#addLearnerTile, a[href="#parent"], a[href="#learners"]') is None, '2h No parent screens anywhere')
     pg.screenshot(path=f'{SHOTS}/03_dashboard.png', full_page=True)
 
-    # ---------- 2i. bolts, challenges, shop ----------
-    pg.evaluate("(()=>{const st=Core.cur(); Core.sec('3.1').req.slice(0,6).forEach(q=>st.items[q.id]={done:true,ok:true,tries:1,score:1}); Core.persist(); Core.flush();})()"); pg.wait_for_timeout(300)
-    go(pg, 'home'); c = pg.evaluate('Core.challenges(Core.cur())'); first5 = [x for x in c if x['id'] == 'first5'][0]
-    ok(first5['done'], '2i Daily challenge “5 right first time” completes')
-    before = pg.evaluate('Core.bolts(Core.cur())'); pg.click('[data-claim="first5"]'); pg.wait_for_timeout(400); after = pg.evaluate('Core.bolts(Core.cur())')
-    ok(after == before + 20, f'2j Claiming the challenge adds 20 ⚡ ({before} → {after})')
-    ok(pg.evaluate('Core.claim(Core.cur(),"first5")') == 0, '2k A challenge can be claimed only once a day')
-    ok(pg.evaluate('Core.earnedToday(Core.cur())') >= 20 and pg.evaluate('Core.streak(Core.cur())') == 1, '2l Reaching the daily goal starts a 1-day streak')
-    go(pg, 'shop'); ok(pg.query_selector('#shopGrid .item') is not None, '2m Shop lists avatars')
-    cheap = pg.evaluate("Core.ITEMS.filter(i=>i.kind==='avatar'&&i.price>0).sort((a,b)=>a.price-b.price)[0]")
-    pg.evaluate(f"(()=>{{const st=Core.cur(); st.wallet.bonus += Math.max(0, {cheap['price']} - Core.bolts(st)); Core.persist();}})()")
-    go(pg, 'shop'); pg.click(f'[data-buy="{cheap["id"]}"]'); pg.wait_for_timeout(200); pg.click('.modal .btn.primary'); pg.wait_for_timeout(400)
-    ok(pg.evaluate(f"Core.owns(Core.cur(),'{cheap['id']}') && Core.shop(Core.cur()).equip.avatar==='{cheap['id']}'"), f"2n Buying {cheap['name']} spends bolts and puts it on")
-    ok(pg.evaluate("Core.buy(Core.cur(),'av-alien').error") in ('short', 'owned'), '2o An item that costs more than you have cannot be bought')
-    pg.screenshot(path=f'{SHOTS}/04_shop.png', full_page=True)
+    # ---------- 2i. dashboard (Design 02) ----------
+    go(pg, 'home'); t = txt(pg)
+    ok(pg.query_selector('.dhero') and len(pg.query_selector_all('.drow')) == 5 and pg.query_selector('.dtest') and pg.query_selector('#weekStrip'), '2i Dashboard: dotted hero, unit table, Unit Test card and this-week streak')
+    ok(pg.query_selector('#xpPill') is None and 'bolts' not in t.lower() and 'shop' not in t.lower(), '2j No bolts, shop or XP anywhere on the dashboard')
+    ok(pg.evaluate('Core.streak(Core.cur())') >= 1 and pg.query_selector('.pill.streak') is not None, '2k Streak pill in the header')
+    pg.screenshot(path=f'{SHOTS}/04_dashboard.png', full_page=True)
 
     # ---------- 3. free plan and paywall ----------
     go(pg, 'home'); ok(pg.query_selector('#freeBanner') is not None, '3a Dashboard shows the free-plan banner')
@@ -234,10 +225,10 @@ with sync_playwright() as p:
     sw = mp.evaluate('document.documentElement.scrollWidth'); ok(sw <= 392, f'11b Mobile landing has no sideways scroll ({sw}px)')
     signup(mp, 'kim@example.com', 'Kim Lee', 'XX', school=False)
     langs = []
-    for r in ['home', 'unit3', 'v-3-1', 'ex-3-1', 'bank', 'profile', 'board', 'map', 'shop', 'settings', 'pricing', 'help', 'privacy-kids']:
+    for r in ['home', 'unit3', 'v-3-1', 'ex-3-1', 'bank', 'profile', 'board', 'map', 'settings', 'pricing', 'help', 'privacy-kids']:
         go(mp, r); langs.append((r, no_vi(mp)))
     ok(all(x for _, x in langs), '11c No Vietnamese text on any screen ' + str([r for r, x in langs if not x]))
-    for r in ['home', 'shop', 'signup']:
+    for r in ['home', 'profile', 'signup']:
         if r == 'signup': mp.evaluate("Backend.signOut()"); mp.evaluate("Core.boot(Core.C)"); mp.wait_for_timeout(300)
         go(mp, r); mp.screenshot(path=f'{SHOTS}/08_mobile_{r}.png', full_page=True)
         sw = mp.evaluate('document.documentElement.scrollWidth'); ok(sw <= 392, f'11d Mobile {r} has no sideways scroll ({sw}px)')
