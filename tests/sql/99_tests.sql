@@ -62,6 +62,16 @@ reset role; set role service_role;
 insert into public.unit_results (learner_id, unit, stage, first_pass_pct, attempt_id)
 select '10000000-0000-0000-0000-000000000001', unit, 7, 80, '20000000-0000-0000-0000-000000000002' from public.stage_units where unit <> 'stage7-unit03';
 reset role; set role authenticated; select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-00000000000a', false)) _x;
+do $$ begin
+  begin perform public.issue_certificate('10000000-0000-0000-0000-000000000001'); raise exception 'FAIL: certificate issued without an end-of-year exam';
+  exception when others then if sqlerrm like 'FAIL%' then raise; end if; end;
+end $$;
+select 'PASS no certificate without the end-of-year exam';
+reset role; set role service_role;
+insert into public.attempts (learner_id, unit, n, form, client_key, answers, per, auto, score, pct, status, passed)
+values ('10000000-0000-0000-0000-000000000001', 'stage7-final', 1, '01', 'fin1', '{}', '{}', 40, 40, 80, 'final', true);
+select 'PASS final exam kept out of unit results: ' || (select count(*) = 0 from public.unit_results where unit = 'stage7-final');
+reset role; set role authenticated; select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-00000000000a', false)) _x;
 select 'PASS certificate code stable: ' || (select public.issue_certificate('10000000-0000-0000-0000-000000000001') = public.issue_certificate('10000000-0000-0000-0000-000000000001'));
 select 'PASS one certificate row: ' || (select count(*) = 1 from public.certificates);
 select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-00000000000b', false)) _x;
@@ -72,6 +82,22 @@ end $$;
 reset role; select code as cert_code from public.certificates \gset
 set role anon;
 select 'PASS public verification works: ' || (select count(*) = 1 from public.verify_certificate(:'cert_code'));
+-- enrolment: simulated checkout only where mock_payments = on
+set role authenticated; select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-00000000000a', false)) _x;
+do $$ begin
+  begin perform public.enrol_stage('10000000-0000-0000-0000-000000000001', 8); raise exception 'FAIL: enrolled while payments are closed';
+  exception when others then if sqlerrm like 'FAIL%' then raise; end if; end;
+end $$;
+reset role; insert into private.app_secrets (name, value) values ('mock_payments', 'on') on conflict (name) do update set value = 'on';
+set role authenticated; select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-00000000000a', false)) _x;
+select 'PASS test checkout enrols: ' || (select public.enrol_stage('10000000-0000-0000-0000-000000000001', 8) = 'ok' and exists (select 1 from public.enrolments where stage = 8));
+select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-00000000000b', false)) _x;
+select 'PASS another parent cannot see the enrolment: ' || (select count(*) = 0 from public.enrolments);
+do $$ begin
+  begin perform public.enrol_stage('10000000-0000-0000-0000-000000000001', 9); raise exception 'FAIL: B enrolled A child';
+  exception when others then if sqlerrm like 'FAIL%' then raise; end if; end;
+end $$;
+reset role;
 -- events: optional analytics refused while opt-out
 reset role; set role authenticated; select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-00000000000a', false)) _x;
 insert into public.events (learner_id, parent_id, name, props, essential) values ('10000000-0000-0000-0000-000000000001', auth.uid(), 'answer', '{"q":"s31r1","ok":true,"try":1,"unit":"stage7-unit03"}', true);

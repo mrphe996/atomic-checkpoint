@@ -12,6 +12,7 @@ if (EDGE) { globalThis.self = globalThis; globalThis.Deno = { env: { get: (k) =>
 const base = EDGE ? '../supabase/functions/_shared/' : '../api/';
 if (EDGE) { const { setUnits } = await import('../supabase/functions/_shared/supa.js'); setUnits((await import('../supabase/functions/api/units.js')).UNITS); }
 const submit = await import(base + 'submit-test.js');
+const start = await import(base + 'start-test.js');
 const marking = await import(base + 'marking.js');
 const paddle = await import('../api/paddle-webhook.js');
 const account = await import(base + 'account.js');
@@ -26,7 +27,7 @@ const PARENT = '00000000-0000-0000-0000-00000000000a', OTHER = '00000000-0000-00
 const KID = '10000000-0000-0000-0000-000000000001';
 function fakeSupabase() {
   const T = { profiles: [{ id: PARENT, role: 'parent', weekly_report: true, display_name: 'Ana' }, { id: OTHER, role: 'parent' }, { id: MARKER, role: 'marker' }],
-    learners: [{ id: KID, parent_id: PARENT, nickname: 'Neutron', stage: 7 }], progress: [], attempts: [], subscriptions: [], consents: [], reports: [], notifications: [], unit_results: [], certificates: [], events: [], deleted: [] };
+    learners: [{ id: KID, parent_id: PARENT, nickname: 'Neutron', stage: 7 }], progress: [], attempts: [], subscriptions: [], consents: [], reports: [], notifications: [], unit_results: [], certificates: [], events: [], deleted: [], test_starts: [], enrolments: [] };
   const tokens = { tA: PARENT, tB: OTHER, tM: MARKER };
   const split = s => { const out = []; let d = 0, cur = ''; for (const ch of s) { if (ch === '(') d++; if (ch === ')') d--; if (ch === ',' && d === 0) { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out; };
   const cond = (row, c) => { const g = /^(and|or)\((.*)\)$/.exec(c); if (g) return g[1] === 'and' ? split(g[2]).every(x => cond(row, x)) : split(g[2]).some(x => cond(row, x));
@@ -50,8 +51,10 @@ function fakeSupabase() {
     if (m === 'GET') { let r = rows.filter(x => match(x, u.searchParams)); if (u.searchParams.get('order') === 'n.asc') r = r.sort((a, b) => a.n - b.n); return json(200, r); }
     if (m === 'POST') { const b = JSON.parse(opt.body); const row = { id: crypto.randomUUID(), created_at: new Date().toISOString(), ...b };
       if (t === 'attempts' && rows.some(r => r.learner_id === b.learner_id && r.client_key === b.client_key)) return json(409, {});
+      if (t === 'test_starts') { const ex = rows.find(r => r.learner_id === b.learner_id && r.unit === b.unit && r.form === b.form); if (ex) return json(201, []); row.started_at = row.created_at; }
       if (t === 'subscriptions') { const i = rows.findIndex(r => r.provider_subscription_id === b.provider_subscription_id); if (i >= 0) { rows[i] = { ...rows[i], ...b }; return json(201, [rows[i]]); } }
       rows.push(row); return json(201, [row]); }
+    if (m === 'DELETE') { const keep = rows.filter(x => !match(x, u.searchParams)); T[t] = keep; return json(200, null); }
     if (m === 'PATCH') { const r = rows.filter(x => match(x, u.searchParams)); r.forEach(x => Object.assign(x, JSON.parse(opt.body))); return json(200, r); }
     return json(405, {});
   };
@@ -65,7 +68,7 @@ const right = q => { switch (q.type) { case 'mcq': return q.options.findIndex(o 
 
 test('submit-test: auth, ownership, subscription and unlock rules', async () => {
   const { T, f } = fakeSupabase();
-  const body = { learnerId: KID, unit: 'stage7-unit03', form: 'A', answers: {}, clientKey: 'k1' };
+  const body = { learnerId: KID, unit: 'stage7-unit04', form: 'A', answers: {}, clientKey: 'k1' };
   assert.equal((await submit.handle(req('POST', null, body), f))[0], 401);
   assert.equal((await submit.handle(req('POST', 'tB', body), f))[0], 403, 'another parent cannot submit for this child');
   assert.equal((await submit.handle(req('POST', 'tA', body), f))[0], 402, 'no subscription → payment required');
@@ -77,7 +80,7 @@ test('submit-test: auth, ownership, subscription and unlock rules', async () => 
 test('submit-test: test phase (BILLING=off) needs no subscription', async () => {
   const { f } = fakeSupabase(); process.env.BILLING = 'off';
   try {
-    const [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A', answers: {}, clientKey: 'k9' }), f);
+    const [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit04', form: 'A', answers: {}, clientKey: 'k9' }), f);
     assert.equal(s, 409); assert.equal(b.error, 'locked', 'goes straight to the learning rules, no 402');
   } finally { process.env.BILLING = 'paddle'; }
 });
@@ -179,9 +182,60 @@ test('submit-test: a student can submit for themself only after parental consent
   const { T, f } = fakeSupabase(); const STU = '00000000-0000-0000-0000-0000000000d1', LID = '10000000-0000-0000-0000-0000000000d1';
   T.profiles.push({ id: STU, role: 'student' }); T.learners.push({ id: LID, user_id: STU, parent_id: null, nickname: 'Kid', consent_status: 'pending' });
   const tok = 'tS'; const f2 = async (url, init = {}) => { if (String(url).endsWith('/auth/v1/user') && (init.headers.Authorization || '').endsWith(tok)) return { ok: true, status: 200, json: async () => ({ id: STU }) }; return f(url, init); };
-  const body = { learnerId: LID, unit: 'stage7-unit03', form: 'A', answers: {}, clientKey: 'ks' };
+  const body = { learnerId: LID, unit: 'stage7-unit04', form: 'A', answers: {}, clientKey: 'ks' };
   assert.equal((await submit.handle(req('POST', tok, body), f2))[0], 403, 'pending consent → not allowed');
   T.learners.find(l => l.id === LID).consent_status = 'approved'; process.env.BILLING = 'off';
   const [s, b] = await submit.handle(req('POST', tok, body), f2); process.env.BILLING = 'paddle'; assert.equal(s, 409); assert.equal(b.error, 'locked', 'approved → normal unlock rules');
   assert.equal((await submit.handle(req('POST', 'tB', body), f2))[0], 403, 'an unrelated parent still cannot');
+});
+
+test('Unit 3 is open in the test phase: no unlock rules for its Unit Test', async () => {
+  const { f } = fakeSupabase(); process.env.BILLING = 'off';
+  try {
+    const ans = Object.fromEntries(keys.A.map(q => [q.id, right(q)]));
+    const [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A', answers: ans, clientKey: 'o1' }), f);
+    assert.equal(s, 201); assert.equal(b.attempt.auto, 28);
+  } finally { process.env.BILLING = 'paddle'; }
+});
+
+test('exam room: the server times the paper from when it was opened', async () => {
+  const { T, f } = fakeSupabase(); process.env.BILLING = 'off';
+  try {
+    const [s, b] = await start.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A' }), f);
+    assert.equal(s, 200); assert.equal(b.minutes, 45); assert.ok(Date.parse(b.deadline) - Date.parse(b.startedAt) === 45 * 60000);
+    const [, b2] = await start.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A' }), f);
+    assert.equal(b2.startedAt, b.startedAt, 'reopening keeps the same clock');
+    T.test_starts[0].started_at = new Date(Date.now() - 50 * 60000).toISOString();   // opened 50 minutes ago
+    const [s3, b3] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A', answers: {}, clientKey: 't1' }), f);
+    assert.equal(s3, 201); assert.ok(b3.attempt.duration >= 2999); assert.equal(b3.attempt.overtime, true);
+    assert.equal(T.test_starts.length, 0, 'clock cleared after submitting');
+  } finally { process.env.BILLING = 'paddle'; }
+});
+
+test('end-of-year exam: needs Level 10, one attempt per paper, marked out of 50', async () => {
+  const { T, f } = fakeSupabase(); process.env.BILLING = 'off';
+  const fk = JSON.parse(fs.readFileSync(new URL('../server/private/stage7-final.tests.json', import.meta.url))).papers;
+  try {
+    const ans = Object.fromEntries(fk['03'].map(q => [q.id, right(q)]));
+    let [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-final', form: '03', answers: ans, clientKey: 'f1' }), f);
+    assert.equal(s, 409); assert.equal(b.error, 'level_required'); assert.equal(b.level, 10);
+    const items = {}; for (let i = 0; i < 400; i++) items['q' + i] = { done: true, ok: true, score: 1, tries: 1 };   // 400 × 12 XP = Level 10
+    T.progress.push({ learner_id: KID, unit: 'stage7-unit02', state: { items } });
+    [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-final', form: '03', answers: ans, clientKey: 'f2' }), f);
+    assert.equal(s, 201); assert.equal(b.attempt.status, 'final'); assert.equal(b.attempt.score, 50); assert.equal(b.attempt.passed, true);
+    assert.equal(Object.keys(b.attempt.byObj).length, 14, 'scored by unit');
+    [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-final', form: '03', answers: ans, clientKey: 'f3' }), f);
+    assert.equal(b.error, 'paper_done');
+  } finally { process.env.BILLING = 'paddle'; }
+});
+
+test('a stage the learner is not enrolled in is refused', async () => {
+  const { T, f } = fakeSupabase(); process.env.BILLING = 'off';
+  try {
+    T.learners[0].stage = 8;
+    const [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A', answers: {}, clientKey: 'e1' }), f);
+    assert.equal(s, 402); assert.equal(b.error, 'not_enrolled');
+    T.enrolments.push({ learner_id: KID, stage: 7, status: 'active' });
+    assert.equal((await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A', answers: {}, clientKey: 'e2' }), f))[0], 201);
+  } finally { process.env.BILLING = 'paddle'; }
 });

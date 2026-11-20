@@ -76,17 +76,37 @@
       async removeLearner(id) { const a = need(); mine(id); a.learners = a.learners.filter(l => l.id !== id); delete D.progress[id]; delete D.attempts[id]; delete D.results[id]; delete D.certs[id]; D.events = D.events.filter(e => e.learner_id !== id); save(); },
       async loadProgress(lid, unit) { mine(lid); return ((D.progress[lid] || {})[unit]) || null; },
       async allDays(lid) { mine(lid); return [].concat(...Object.values(D.progress[lid] || {}).map(p => (p && p.days) || [])); },
+      async allStates(lid) { mine(lid); return JSON.parse(JSON.stringify(D.progress[lid] || {})); },
+      async enrolments(lid) { mine(lid); return ((D.enrol || {})[lid] || []).slice(); },
+      async enrol(lid, stage, amount) { mine(lid); D.enrol = D.enrol || {}; const l = (D.enrol[lid] = D.enrol[lid] || []); if (!l.some(e => e.stage === stage)) l.push({ stage, method: 'test', amount: amount || null, status: 'active', created_at: new Date().toISOString() });
+        note(need(), lid, 'billing', `You are enrolled in Stage ${stage}`, 'Test checkout – no money was taken.'); save(); return 'ok'; },
+      async startTest({ learnerId, unit, form }) { mine(learnerId); D.starts = D.starts || {}; const k = `${learnerId}|${unit}|${form}`; D.starts[k] = D.starts[k] || new Date().toISOString(); save();
+        const minutes = /-final$/.test(unit) ? 60 : TestRules.UNIT_MINUTES; return { startedAt: D.starts[k], minutes, deadline: new Date(Date.parse(D.starts[k]) + minutes * 60000).toISOString(), now: new Date().toISOString() }; },
       async saveProgress(lid, unit, state) { mine(lid); (D.progress[lid] = D.progress[lid] || {})[unit] = JSON.parse(JSON.stringify(state)); save(); },
       async attempts(lid, unit) { mine(lid); return ((D.attempts[lid] || {})[unit] || []).slice(); },
       async submitTest({ learnerId, unit, form, answers, clientKey }) { // same rules as api/submit-test.js
-        const a = need(); mine(learnerId);
+        const a = need(); const l = mine(learnerId);
         if ((CFG.billing || 'off') !== 'off' && !subActive(a)) throw err('subscription_required');
+        const stage = Number(unit.slice(5, 6)); if (stage !== (l.stage || 7) && !(((D.enrol || {})[learnerId]) || []).some(e => e.stage === stage)) throw err('not_enrolled');
         const list = ((D.attempts[learnerId] = D.attempts[learnerId] || {})[unit] = D.attempts[learnerId][unit] || []);
-        const keys = await (await fetch(`content/demo/${unit}.tests.json`)).json(); const content = await loadPublic(unit);
+        const keys = await (await fetch(`content/demo/${unit}.tests.json`)).json();
         const same = list.find(x => x.clientKey === clientKey);
         if (same) return { attempt: same, solutions: TestRules.solutions(keys.papers[same.form]), duplicate: true };
+        D.starts = D.starts || {}; const sk = `${learnerId}|${unit}|${form}`; const started = D.starts[sk] || null; const duration = started ? Math.round((Date.now() - Date.parse(started)) / 1000) : null;
+        if (keys.final) {
+          const lastF = list[list.length - 1]; if (lastF && lastF.status === 'pending') throw err('awaiting_marking');
+          if (!keys.papers[form]) throw err('wrong_paper'); if (list.some(x => x.form === form)) throw err('paper_done');
+          const passes = Object.keys(D.results[learnerId] || {}).filter(k => !k.includes(':')).length;
+          const xp = TestRules.xpTotal(D.progress[learnerId] || {}, passes); if (TestRules.levelOf(xp) < keys.level) throw err('level_required', { level: keys.level, have: TestRules.levelOf(xp) });
+          const paper = keys.papers[form];
+          const at = TestRules.finalizeFinal(TestRules.mark(paper, answers, { n: list.length + 1, form, id: uuid(), clientKey }), paper, keys.max, keys.pass);
+          at.duration = duration; at.overtime = duration != null && duration > 60 * 60 + TestRules.GRACE_S; delete D.starts[sk];
+          list.push(at); if (at.status === 'final' && at.passed) note(a, learnerId, 'test_passed', `You passed the end-of-year exam (paper ${form})!`, `Score ${at.pct.toFixed(1)}%`); save();
+          return { attempt: at, solutions: TestRules.solutions(paper) };
+        }
+        const content = await loadPublic(unit);
         const state = ((D.progress[learnerId] || {})[unit]) || {};
-        const missing = TestRules.missingForTest(content, state); if (missing.length) throw err('locked', { missing });
+        const missing = TestRules.missingForTest(content, state, unit); if (missing.length) throw err('locked', { missing });
         const last = list[list.length - 1];
         if (list.some(x => x.status === 'final' && x.passed)) throw err('already_passed');
         if (last && last.status === 'pending') throw err('awaiting_marking');
@@ -94,6 +114,7 @@
         if (form !== TestRules.nextForm(list.length)) throw err('wrong_paper');
         const paper = keys.papers[form];
         const at = TestRules.finalize(TestRules.mark(paper, answers, { n: list.length + 1, form, id: uuid(), clientKey }), paper, content, state);
+        at.duration = duration; at.overtime = duration != null && duration > TestRules.UNIT_MINUTES * 60 + TestRules.GRACE_S; delete D.starts[sk];
         list.push(at); if (at.status === 'final') recordFinal(learnerId, unit, at); save();
         return { attempt: at, solutions: TestRules.solutions(paper) };
       },
@@ -112,6 +133,7 @@
         for (const [lid, units] of Object.entries(D.attempts)) for (const [unit, list] of Object.entries(units)) { const at = list.find(x => x.id === attemptId); if (!at) continue;
           at.pending.forEach(id => { at.per[id].pts = Math.max(0, Math.min(at.per[id].max, Math.round(Number(grades[id]) * 2) / 2)); });
           const keys = await (await fetch(`content/demo/${unit}.tests.json`)).json();
+          if (keys.final) { TestRules.finalizeFinal(at, keys.papers[at.form], keys.max, keys.pass); save(); return at; }
           TestRules.finalize(at, keys.papers[at.form], await loadPublic(unit), ((D.progress[lid] || {})[unit]) || {}); recordFinal(lid, unit, at); save(); return at; }
         throw err('not_found');
       },
@@ -128,7 +150,8 @@
       async unitResults(lid) { mine(lid); return Object.fromEntries(Object.entries(D.results[lid] || {}).filter(([k]) => !k.includes(':'))); },
       async issueCertificate(lid, stageUnits) {
         const l = mine(lid); if (D.certs[lid]) return D.certs[lid];
-        const have = Object.keys(D.results[lid] || {}).length; if (have < stageUnits) throw err('stage_incomplete', { have, need: stageUnits });
+        const have = Object.keys(D.results[lid] || {}).filter(k => !k.includes(':')).length; if (have < stageUnits) throw err('stage_incomplete', { have, need: stageUnits });
+        if (!(((D.attempts[lid] || {})['stage7-final']) || []).some(x => x.status === 'final' && x.passed)) throw err('final_required');
         const hex = [...crypto.getRandomValues(new Uint8Array(4))].map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase();
         D.certs[lid] = { code: `AE-S7-${new Date().getFullYear()}-${hex}`, name: l.certificate_name || l.nickname, date: new Date().toISOString().slice(0, 10) }; save(); return D.certs[lid];
       },
@@ -156,6 +179,8 @@
       demo: { setRole(r) { const a = need(); a.profile.role = r; save(); }, reset() { try { localStorage.removeItem(KEY); } catch (e) { } D = { accounts: {}, session: null, progress: {}, attempts: {}, results: {}, certs: {}, events: [] }; },
         simulateOtherUnits(lid, pct) { D.results[lid] = D.results[lid] || {}; for (let n = 1; n <= 14; n++) { const u = 'stage7-unit' + String(n).padStart(2, '0'); if (u !== 'stage7-unit03' && !D.results[lid][u]) D.results[lid][u] = { pct, at: new Date().toISOString(), stage: 7, simulated: true }; } save(); },
         outbox() { return (D.outbox || []).slice(); },
+        simulateFinal(lid, pct) { const l = ((D.attempts[lid] = D.attempts[lid] || {})['stage7-final'] = D.attempts[lid]['stage7-final'] || []); if (!l.some(x => x.passed)) l.push({ id: uuid(), n: l.length + 1, form: '10', ts: Date.now(), status: 'final', passed: true, score: pct / 2, pct, per: {}, auto: pct / 2, pending: [], byObj: {}, simulated: true }); save(); },
+        simulateXp(lid, n) { const p = ((D.progress[lid] = D.progress[lid] || {})['stage7-unit02'] = D.progress[lid]['stage7-unit02'] || {}); p.items = p.items || {}; for (let i = 0; i < n; i++) p.items['sim' + i] = { done: true, ok: true, score: 1, tries: 1, sim: true }; save(); },
         resetLearner(lid) { mine(lid); delete D.progress[lid]; delete D.attempts[lid]; delete D.results[lid]; delete D.certs[lid]; save(); },
         clearSimulated(lid) { for (const [u, r] of Object.entries(D.results[lid] || {})) if (r.simulated) delete D.results[lid][u]; save(); } }
     };
@@ -214,9 +239,13 @@
       async removeLearner(id) { await rest(`learners?id=eq.${id}`, { method: 'DELETE' }); },
       async loadProgress(lid, unit) { const r = await rest(`progress?learner_id=eq.${lid}&unit=eq.${unit}&select=state`); return r[0] ? r[0].state : null; },
       async allDays(lid) { const r = await rest(`progress?learner_id=eq.${lid}&select=days:state->days`); return [].concat(...r.map(x => x.days || [])); },
+      async allStates(lid) { const r = await rest(`progress?learner_id=eq.${lid}&select=unit,state`); return Object.fromEntries(r.filter(x => !/-final$/.test(x.unit)).map(x => [x.unit, x.state])); },
+      async enrolments(lid) { return rest(`enrolments?learner_id=eq.${lid}&select=stage,method,status,created_at`); },
+      async enrol(lid, stage, amount) { try { return await rpc('enrol_stage', { p_learner: lid, p_stage: stage, p_amount: amount || null }); } catch (e) { throw err(/not open/.test(e.detail || '') ? 'payments_closed' : 'enrol_failed', { detail: e.detail }); } },
+      async startTest(b) { return api('start-test', { method: 'POST', body: b }); },
       async saveProgress(lid, unit, state) { await rest('progress?on_conflict=learner_id,unit', { method: 'POST', prefer: 'resolution=merge-duplicates', body: { learner_id: lid, unit, state, updated_at: new Date().toISOString() } }); },
       async attempts(lid, unit) { const rows = await rest(`attempts?learner_id=eq.${lid}&unit=eq.${unit}&order=n.asc`);
-        return rows.map(r => ({ id: r.id, n: r.n, form: r.form, ts: Date.parse(r.created_at), answers: r.answers, per: r.per, auto: Number(r.auto), pending: Object.keys(r.per).filter(k => r.per[k].teacher), status: r.status, score: r.score == null ? null : Number(r.score), pct: r.pct == null ? null : Number(r.pct), passed: r.passed, byObj: r.by_obj, weak: r.weak || [], remed: r.remed || [] })); },
+        return rows.map(r => ({ id: r.id, n: r.n, form: r.form, ts: Date.parse(r.created_at), answers: r.answers, per: r.per, auto: Number(r.auto), pending: Object.keys(r.per).filter(k => r.per[k].teacher), status: r.status, score: r.score == null ? null : Number(r.score), pct: r.pct == null ? null : Number(r.pct), passed: r.passed, byObj: r.by_obj, weak: r.weak || [], remed: r.remed || [], duration: r.duration_s, overtime: !!r.overtime })); },
       async submitTest(b) { return api('submit-test', { method: 'POST', body: b }); },
       async markingQueue() { return (await api('marking')).queue; },
       async markAttempt(attemptId, grades) { return (await api('marking', { method: 'POST', body: { attemptId, grades } })).attempt; },

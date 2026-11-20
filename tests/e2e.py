@@ -190,8 +190,10 @@ with sync_playwright() as p:
     pg.screenshot(path=f'{SHOTS}/06_settings.png', full_page=True)
 
     # ---------- 8. certificate ----------
-    go(pg, 'cert'); ok('Certificate locked' in txt(pg), '8a Certificate locked until all 14 Stage 7 units are passed')
+    go(pg, 'cert'); ok('Your Stage 7 certificate' in txt(pg) and pg.query_selector('#certCode') is None, '8a Certificate locked until all 14 units and an end-of-year exam are passed')
     go(pg, 'profile'); pg.click('#simOthers'); pg.wait_for_timeout(900)
+    go(pg, 'cert'); ok(pg.query_selector('#certCode') is None and 'end-of-year exam' in txt(pg), '8a2 Still locked with all units passed but no end-of-year exam')
+    go(pg, 'profile'); pg.click('#simFinal'); pg.wait_for_timeout(900)
     go(pg, 'cert'); pg.wait_for_selector('#certCode', timeout=5000); code = pg.inner_text('#certCode')
     ok(code.startswith('AE-S7-'), f'8b Certificate issued with code {code}')
     pg.screenshot(path=f'{SHOTS}/05_cert.png')

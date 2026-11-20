@@ -73,8 +73,42 @@ export function validate(c) {
   return { errs, warn };
 }
 
+// estimated study time (minutes): videos + pause questions, 30 questions per section, a worksheet, the Unit Test
+export function estimate(c) {
+  const video = c.sections.reduce((a, x) => a + (x.video.dur || 0), 0) / 60;
+  const pauses = c.sections.reduce((a, x) => a + x.stops.length, 0) * 1;
+  const practice = c.sections.reduce((a, x) => a + (x.req.length + x.prac.length + x.adv.length) * 1.5, 0);
+  const sheets = c.sections.length * 10;
+  return Math.round(video + pauses + practice + sheets + 45);
+}
+// end-of-year exams: papers only (no sections); same question rules, every paper worth c.max marks
+export function validateFinal(c) {
+  const errs = [], warn = [], ids = new Set();
+  const fake = { objectives: c.objectives, sections: [], tests: {} };
+  for (const [k, paper] of Object.entries(c.papers)) {
+    const pts = paper.reduce((a, q) => a + q.pts, 0); if (pts !== c.max) errs.push(`paper ${k}: ${pts} marks (must be ${c.max})`);
+    paper.forEach(q => { if (ids.has(q.id)) errs.push(`paper ${k} ${q.id}: duplicate id`); ids.add(q.id); });
+    fake.tests['Z'] = paper; const r = validate({ ...fake, tests: { Z: paper.map(q => ({ ...q })) } });
+    r.errs.filter(e => !/must be 30/.test(e)).forEach(e => errs.push(`paper ${k}: ${e}`));
+  }
+  if (Object.keys(c.papers).length < 10) errs.push('needs at least 10 papers');
+  return { errs, warn };
+}
+function buildFinal(file, c, check) {
+  const name = path.basename(file, '.json'); const { errs, warn } = validateFinal(c);
+  if (!errs.length && !check) {
+    const papers = Object.fromEntries(Object.entries(c.papers).map(([k, p]) => [k, p.map(G.stripKeys)]));
+    const pub = { final: true, unit: c.unit, objectives: c.objectives, minutes: c.minutes, max: c.max, pass: c.pass, level: c.level, papers, build: { at: new Date().toISOString().slice(0, 10), unit: name } };
+    fs.writeFileSync(path.join(ROOT, 'web/content', name + '.json'), JSON.stringify(pub));
+    fs.writeFileSync(path.join(ROOT, 'server/private', name + '.tests.json'), JSON.stringify({ unit: name, final: true, max: c.max, pass: c.pass, level: c.level, minutes: c.minutes, papers: c.papers }));
+    const demoDir = path.join(ROOT, 'web/content/demo');
+    if (process.env.ATOMIC_MODE !== 'live') { fs.mkdirSync(demoDir, { recursive: true }); fs.writeFileSync(path.join(demoDir, name + '.tests.json'), JSON.stringify({ unit: name, final: true, max: c.max, pass: c.pass, level: c.level, papers: c.papers })); }
+  }
+  return { name, errs, warn };
+}
 export function build(file, { check = false } = {}) {
   const c = JSON.parse(fs.readFileSync(file, 'utf8'));
+  if (c.final) return buildFinal(file, c, check);
   const { errs, warn } = validate(c);
   const name = path.basename(file, '.json');
   if (!errs.length && !check) {
@@ -82,6 +116,9 @@ export function build(file, { check = false } = {}) {
     const papers = {}; for (const f of Object.keys(c.tests).filter(k => k.length === 1)) { papers[f] = c.tests[f].map(G.stripKeys); }
     pub.tests = { ...papers, pass: c.tests.pass };
     pub.build = { at: new Date().toISOString().slice(0, 10), unit: name };
+    const cm = path.join(ROOT, 'content/authoring/cmaps.json'); const un = String(Number(name.slice(-2)));
+    if (fs.existsSync(cm)) { const maps = JSON.parse(fs.readFileSync(cm, 'utf8')); if (maps[un]) { const secIds = c.sections.map(x => x.id); maps[un].nodes.forEach(nd => { if (!secIds.includes(nd.s)) throw new Error(`${name}: concept map node ${nd.id} points to missing section ${nd.s}`); }); pub.cmap = maps[un]; } }
+    pub.est = estimate(c);
     fs.mkdirSync(path.join(ROOT, 'web/content'), { recursive: true });
     fs.mkdirSync(path.join(ROOT, 'server/private'), { recursive: true });
     fs.writeFileSync(path.join(ROOT, 'web/content', name + '.json'), JSON.stringify(pub));
@@ -119,7 +156,13 @@ export function writeIndex() {
     ['Materials and Their Structure', 'Chemistry'], ['Properties of Materials', 'Chemistry'], ['Acids and Alkalis', 'Chemistry'], ['Chemical Reactions', 'Chemistry'], ['Forces', 'Physics'],
     ['Energy', 'Physics'], ['Electricity', 'Physics'], ['Earth Processes', 'Earth and Space'], ['Earth and Beyond', 'Earth and Space']] };
   for (const [stage, list] of Object.entries(T)) {
-    const units = list.map(([t, strand], i) => { const id = `stage${stage}-unit${String(i + 1).padStart(2, '0')}`; return { n: i + 1, id, t, strand, ready: fs.existsSync(path.join(ROOT, 'web/content', id + '.json')) }; });
-    fs.writeFileSync(path.join(ROOT, 'web/content', `stage${stage}.json`), JSON.stringify({ stage: Number(stage), units }));
+    const units = list.map(([t, strand], i) => { const id = `stage${stage}-unit${String(i + 1).padStart(2, '0')}`; const f = path.join(ROOT, 'web/content', id + '.json');
+      if (!fs.existsSync(f)) return { n: i + 1, id, t, strand, ready: false };
+      const c = JSON.parse(fs.readFileSync(f, 'utf8'));
+      return { n: i + 1, id, t, strand, ready: true, est: c.est || null, sections: c.sections.map(x => ({ id: x.id, t: x.title })), qs: c.sections.reduce((a, x) => a + x.req.length + x.prac.length + x.adv.length, 0) }; });
+    const fin = path.join(ROOT, 'web/content', `stage${stage}-final.json`);
+    const final = fs.existsSync(fin) ? (({ minutes, max, pass, level, papers }) => ({ id: `stage${stage}-final`, minutes, max, pass, level, papers: Object.keys(papers).length }))(JSON.parse(fs.readFileSync(fin, 'utf8'))) : null;
+    const est = units.reduce((a, u) => a + (u.est || 0), 0) + (final ? final.minutes * 2 : 0);
+    fs.writeFileSync(path.join(ROOT, 'web/content', `stage${stage}.json`), JSON.stringify({ stage: Number(stage), units, final, est }));
   }
 }

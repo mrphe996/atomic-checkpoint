@@ -22,14 +22,14 @@ export async function handle(req, f = fetch) {
   const { attemptId, grades } = await readJson(req);
   const rows = await db(`attempts?id=eq.${encodeURIComponent(attemptId)}&status=eq.pending`, {}, f);
   if (!rows.length) return [404, { error: 'not_pending' }];
-  const row = rows[0]; const { content, papers } = loadUnit(row.unit); const paper = papers[row.form];
+  const row = rows[0]; const pack = loadUnit(row.unit); const { content, papers } = pack; const paper = papers[row.form];
   const a = rowToAttempt(row);
   for (const id of a.pending) {
     const v = Number((grades || {})[id]); if (!isFinite(v)) return [400, { error: 'missing_mark', id }];
     a.per[id].pts = Math.max(0, Math.min(a.per[id].max, Math.round(v * 2) / 2));
   }
   const prog = await db(`progress?learner_id=eq.${row.learner_id}&unit=eq.${row.unit}&select=state`, {}, f);
-  Rules.finalize(a, paper, content, (prog[0] && prog[0].state) || {});
+  if (pack.final) Rules.finalizeFinal(a, paper, pack.max, pack.pass); else Rules.finalize(a, paper, content, (prog[0] && prog[0].state) || {});
   const saved = await db(`attempts?id=eq.${row.id}`, { method: 'PATCH', prefer: 'return=representation', body: {
     per: a.per, score: a.score, pct: a.pct, status: 'final', passed: a.passed, by_obj: a.byObj, weak: a.weak, remed: a.remed, marked_by: user.id, finalised_at: new Date().toISOString() } }, f);
   return [200, { attempt: rowToAttempt(saved[0]) }];

@@ -1,13 +1,14 @@
-// One Edge Function, three routes: /api/submit-test, /api/marking, /api/account  (+ /api/health self-check)
+// One Edge Function: /api/submit-test, /api/start-test, /api/marking, /api/account  (+ /api/health self-check)
 // Shared code is imported from the commit-pinned public repo; answer keys come from ./units.js locally, or are unsealed at cold start (sealed.js) when built with EDGE_SEALED=1.
 import { handle as submitTest } from '__LIB__/submit-test.js';
 import { handle as marking } from '__LIB__/marking.js';
+import { handle as startTest } from '__LIB__/start-test.js';
 import { handle as account } from '__LIB__/account.js';
 import { G, setUnits } from '__LIB__/supa.js';
 import { UNITS } from '__UNITS__';
 setUnits(UNITS);
 
-const ROUTES: Record<string, (req: unknown) => Promise<[number, unknown, Record<string, string>?]>> = { 'submit-test': submitTest, marking, account };
+const ROUTES: Record<string, (req: unknown) => Promise<[number, unknown, Record<string, string>?]>> = { 'submit-test': submitTest, 'start-test': startTest, marking, account };
 const ORIGINS = (Deno.env.get('ALLOWED_ORIGINS') || '*').split(',').map((s) => s.trim());
 
 function cors(origin: string | null) {

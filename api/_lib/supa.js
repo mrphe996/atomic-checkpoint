@@ -11,7 +11,7 @@ export const env = (k, d) => (process.env[k] != null && process.env[k] !== '' ? 
 // 'off' = test phase: every family gets the full course free. Turns on only when BILLING=paddle (or Paddle is configured).
 export const billingOn = () => env('BILLING', env('PADDLE_API_KEY') ? 'paddle' : 'off') === 'paddle';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
-const UNIT_RE = /^stage[7-9]-unit\d{2}$/;
+const UNIT_RE = /^stage[7-9]-(unit\d{2}|final)$/;
 
 export function send(res, status, body, headers = {}) {
   res.statusCode = status;
@@ -57,6 +57,7 @@ export function loadUnit(unit) {
   if (!UNIT_RE.test(unit)) throw Object.assign(new Error('unknown unit'), { status: 400 });
   const pub = JSON.parse(fs.readFileSync(path.join(ROOT, 'web/content', unit + '.json'), 'utf8'));
   const priv = JSON.parse(fs.readFileSync(path.join(ROOT, 'server/private', unit + '.tests.json'), 'utf8'));
+  if (priv.final) return { final: true, max: priv.max, pass: priv.pass, level: priv.level, minutes: priv.minutes, content: null, papers: priv.papers };
   return { content: pub, papers: priv.papers };
 }
 
@@ -77,5 +78,6 @@ export function safeEqual(a, b) { const x = Buffer.from(String(a)), y = Buffer.f
 /** Map a DB attempt row to the shape the web app uses. */
 export function rowToAttempt(r) {
   return { id: r.id, n: r.n, form: r.form, ts: Date.parse(r.created_at), answers: r.answers, per: r.per, auto: Number(r.auto), pending: Object.keys(r.per).filter(k => r.per[k].teacher),
-    status: r.status, score: r.score == null ? null : Number(r.score), pct: r.pct == null ? null : Number(r.pct), passed: r.passed, byObj: r.by_obj, weak: r.weak || [], remed: r.remed || [] };
+    status: r.status, score: r.score == null ? null : Number(r.score), pct: r.pct == null ? null : Number(r.pct), passed: r.passed, byObj: r.by_obj, weak: r.weak || [], remed: r.remed || [],
+    duration: r.duration_s == null ? null : Number(r.duration_s), overtime: !!r.overtime };
 }
