@@ -1,0 +1,8 @@
+# Vercel only serves the static site in web/ and runs tools/write-config.mjs.
+# Marking, sign-up and data rights run as Supabase Edge Functions (supabase/functions).
+/api/
+/server/
+/content/
+/supabase/
+/edge/
+/tests/
