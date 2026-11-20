@@ -19,4 +19,12 @@ for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.tests.json'))) {
     const want = paper.filter(q => !q.teacher).reduce((a, q) => a + q.pts, 0);
     if (Math.abs(r.auto - want) > 1e-6) { bad++; const miss = paper.filter(q => r.per[q.id] && r.per[q.id].pts < q.pts).map(q => `${q.id} ${r.per[q.id].pts}/${q.pts}`); console.log(`✗ ${f.replace('.tests.json', '')} ${k}: ${r.auto}/${want}  ${miss.join(', ')}`); } }
 }
-console.log(`${n} papers checked, ${bad} with model answers below full marks`); process.exit(bad ? 1 : 0);
+console.log(`${n} papers checked, ${bad} with model answers below full marks`);
+// practice questions in every unit: each must be marked correct when given its own model answer
+const src = path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'content/src'); let pb = 0, pn = 0;
+if (fs.existsSync(src)) for (const f of fs.readdirSync(src).filter(f => /unit\d+\.json$/.test(f))) {
+  const d = JSON.parse(fs.readFileSync(path.join(src, f), 'utf8'));
+  for (const s of d.sections) for (const q of [...s.req, ...s.prac, ...s.adv]) { if (q.type === 'sim') continue; pn++;
+    const r = G.grade(q, right(q)); if (!r.ok) { pb++; console.log(`✗ ${f.replace('.json', '')} ${q.id} (${q.type}) ${r.detail || ''}`); } } }
+console.log(`${pn} practice questions checked, ${pb} not marked correct with their model answer`);
+process.exit(bad || pb ? 1 : 0);

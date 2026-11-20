@@ -205,6 +205,7 @@ with sync_playwright() as p:
 
     # ---------- 9. staff tools ----------
     go(pg, 'staff'); pg.wait_for_timeout(300)
+    if pg.query_selector('#becomeStaff'): pg.click('#becomeStaff'); pg.wait_for_timeout(800)
     pg.click('button[role=tab]:has-text("Question reports")'); pg.wait_for_timeout(400); ok('diagram label looks wrong' in txt(pg), '9a Question report reaches the staff inbox')
     pg.click('button[role=tab]:has-text("Question statistics")'); pg.wait_for_timeout(400); ok('Right first time' in txt(pg), '9b Question statistics table renders')
 

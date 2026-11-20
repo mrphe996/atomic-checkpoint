@@ -399,4 +399,71 @@
     s += T(395, 90, o.letters ? 'X' : 'asteroid belt', { size: 12, bold: !!o.letters });
     return { svg: W(s), a: {} };
   };
+
+  /* ---------------- part 3: general diagrams for Stages 7–8 ---------------- */
+  // boxes joined by arrows (food chains and webs, cycles, systems); nodes: [{t, x, y, c}], edges: [[from, to, label]]
+  F.flow = (o) => {
+    const id = 'f' + (++uid), N = o.nodes || [], E = o.edges || [], bw = o.w || 96, bh = 34;
+    let s = arrowDef(id, C.ink);
+    E.forEach(([a, b, lb]) => { const A = N[a], Bn = N[b]; if (!A || !Bn) return; const dx = Bn.x - A.x, dy = Bn.y - A.y, d = Math.hypot(dx, dy) || 1;
+      const kx = Math.abs(dx) * bh > Math.abs(dy) * bw ? (bw / 2) / Math.abs(dx) * d : (bh / 2) / Math.abs(dy || 1) * d; const k = Math.min(kx, d / 2 - 4) + 4;
+      s += L(A.x + dx / d * k, A.y + dy / d * k, Bn.x - dx / d * k, Bn.y - dy / d * k, { w: 2, m: id }) + (lb ? T((A.x + Bn.x) / 2 + 6, (A.y + Bn.y) / 2 - 6, lb, { size: 11, fill: C.blue, anchor: 'start' }) : ''); });
+    N.forEach((n) => { s += `<rect x="${n.x - bw / 2}" y="${n.y - bh / 2}" width="${bw}" height="${bh}" rx="8" fill="${n.c || '#EAF3FF'}" stroke="${C.ink}" stroke-width="1.6"/>` + T(n.x, n.y + 4.5, n.t, { size: 12, bold: true }); });
+    return { svg: W(s), a: {} };
+  };
+  // particle diagrams in boxes; boxes: [{state: solid|liquid|gas|mixture, label}]
+  F.particles = (o) => {
+    const bx = o.boxes || [{ state: 'solid' }, { state: 'liquid' }, { state: 'gas' }], n = bx.length, gap = 460 / n, bw = Math.min(130, gap - 20);
+    let s = ''; bx.forEach((b, i) => { const x = 10 + gap * i + (gap - bw) / 2, y = 50, h = 200; s += `<rect x="${x}" y="${y}" width="${bw}" height="${h}" fill="#fff" stroke="${C.ink}" stroke-width="2"/>`;
+      const P = (cx, cy, c) => `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="8" fill="${c || C.blue}" stroke="${C.ink}" stroke-width="1"/>`;
+      const st = b.state || 'solid', r = (k) => ((Math.sin(k * 12.9898 + i * 7.1) * 43758.5453) % 1 + 1) % 1;
+      if (st === 'solid') for (let a = 0; a < 5; a++) for (let c = 0; c < 6; c++) s += P(x + 18 + a * ((bw - 36) / 4), y + h - 18 - c * 17);
+      else if (st === 'liquid') { for (let k = 0; k < 22; k++) s += P(x + 14 + r(k) * (bw - 28), y + h - 14 - (k % 6) * 15 - r(k + 50) * 6); }
+      else if (st === 'gas') { for (let k = 0; k < 7; k++) s += P(x + 16 + r(k) * (bw - 32), y + 16 + r(k + 9) * (h - 32)); }
+      else { for (let k = 0; k < 14; k++) s += P(x + 16 + r(k) * (bw - 32), y + 16 + r(k + 9) * (h - 32), k % 2 ? C.red : C.blue); }
+      s += T(x + bw / 2, y + h + 26, b.label || String.fromCharCode(65 + i), { bold: true, size: 14 }); });
+    return { svg: W(s), a: {} };
+  };
+  // bar magnets with field lines or a second magnet; o.pair: 'attract' | 'repel' | undefined; o.compass: true
+  F.barmagnet = (o) => {
+    const mag = (x, y, l, r) => `<rect x="${x}" y="${y}" width="70" height="34" fill="${l === 'N' ? '#E14E4E' : '#2F80ED'}"/><rect x="${x + 70}" y="${y}" width="70" height="34" fill="${r === 'N' ? '#E14E4E' : '#2F80ED'}"/>` + T(x + 35, y + 23, l, { fill: '#fff', bold: true, size: 18 }) + T(x + 105, y + 23, r, { fill: '#fff', bold: true, size: 18 });
+    let s = '';
+    if (o.pair) { const rep = o.pair === 'repel'; s += mag(30, 143, 'S', 'N') + mag(310, 143, rep ? 'N' : 'S', rep ? 'S' : 'N');
+      if (o.lines !== false) for (let k = -2; k <= 2; k++) s += rep ? `<path d="M170 ${160 + k * 6} q60 ${k * 30} 0 ${k * 60 + (k ? 0 : 1)}" fill="none" stroke="${C.grey}" stroke-width="1.5"/>`.replace(/q60 (-?\d+) 0 (-?\d+)/, `q50 ${k * 22} 50 ${k * 40}`) + `<path d="M310 ${160 + k * 6} q-50 ${k * 22} -50 ${k * 40}" fill="none" stroke="${C.grey}" stroke-width="1.5"/>` : L(170, 160 + k * 6, 310, 160 + k * 6, { w: 1.5, c: C.grey });
+    } else { s += mag(170, 143, o.left || 'N', o.left === 'S' ? 'N' : 'S');
+      for (let k = 1; k <= 4; k++) { const h = 22 + k * 26; s += `<path d="M178 ${143} C${150 - k * 20} ${143 - h} ${330 + k * 20} ${143 - h} ${302} 143" fill="none" stroke="${C.grey}" stroke-width="1.5"/><path d="M178 177 C${150 - k * 20} ${177 + h} ${330 + k * 20} ${177 + h} 302 177" fill="none" stroke="${C.grey}" stroke-width="1.5"/>`; }
+      s += L(100, 160, 170, 160, { w: 1.5, c: C.grey }) + L(310, 160, 380, 160, { w: 1.5, c: C.grey });
+      if (o.compass) [[90, 110, 'A'], [240, 70, 'B'], [400, 200, 'C']].forEach(([x, y, l]) => { s += `<circle cx="${x}" cy="${y}" r="16" fill="#fff" stroke="${C.ink}" stroke-width="2"/>` + letter(x + 26, y - 18, l); }); }
+    return { svg: W(s), a: {} };
+  };
+  // bell-jar model of the lungs; o.sheet: 'down' (breathing in) | 'up' (breathing out); o.letters
+  F.lungmodel = (o) => {
+    const down = (o.sheet || 'down') === 'down', r = down ? 34 : 20;
+    let s = `<path d="M140 280 V100 Q140 40 240 40 Q340 40 340 100 V280" fill="#F4F9FF" stroke="${C.glass}" stroke-width="3"/><rect x="232" y="14" width="16" height="70" fill="#fff" stroke="${C.glass}" stroke-width="2"/>`
+      + `<path d="M240 84 v30 M240 114 l-40 30 M240 114 l40 30" stroke="${C.glass}" stroke-width="5" fill="none"/>`
+      + `<ellipse cx="196" cy="${150 + r}" rx="${r}" ry="${r + 6}" fill="#F7B2B7" stroke="#B5525A" stroke-width="2"/><ellipse cx="284" cy="${150 + r}" rx="${r}" ry="${r + 6}" fill="#F7B2B7" stroke="#B5525A" stroke-width="2"/>`
+      + `<path d="M140 280 Q240 ${down ? 330 : 250} 340 280" fill="none" stroke="${C.ink}" stroke-width="5"/>` + L(240, down ? 304 : 266, 240, down ? 318 : 280, { w: 3 });
+    s += o.letters ? L(248, 40, 284, 30, { w: 1.2 }) + letter(296, 30, 'A') + L(312, 176, 378, 150, { w: 1.2 }) + letter(390, 150, 'B') + L(340, 232, 378, 232, { w: 1.2 }) + letter(390, 232, 'C') + L(300, 296, 340, 304, { w: 1.2 }) + letter(352, 304, 'D')
+      : lab(248, 50, 'glass tube (trachea)', 330, 24) + lab(284, 150, 'balloon (lung)', 380, 130) + lab(330, 200, 'bell jar (ribcage)', 368, 210) + lab(300, 290, 'rubber sheet (diaphragm)', 300, 314);
+    return { svg: W(s), a: {} };
+  };
+  // spring hanging from a clamp beside a ruler, with a load
+  F.spring = (o) => {
+    const rd = o.reading != null ? o.reading : 6 + (o.ext != null ? o.ext : 4), len = rd * 10, top = 50; let coil = '';
+    for (let k = 0; k <= 12; k++) coil += (k ? 'L' : 'M') + (240 + (k % 2 ? 14 : -14) * (k && k < 12 ? 1 : 0)) + ' ' + (top + k * len / 12);
+    let s = `<rect x="120" y="30" width="200" height="12" fill="${C.grey}"/><rect x="120" y="30" width="12" height="270" fill="${C.grey}"/>` + bench(300) + `<path d="${coil}" fill="none" stroke="${C.ink}" stroke-width="2.5"/>`
+      + `<rect x="222" y="${top + len}" width="36" height="${16 + (o.load || 2) * 3}" rx="3" fill="${C.blue}"/>` + T(240, top + len + 13 + (o.load || 2) * 1.5, o.loadLabel || `${o.load || 2} N`, { size: 12, fill: '#fff', bold: true });
+    s += `<rect x="300" y="40" width="26" height="250" fill="#F6E3A1" stroke="${C.ink}"/>`; for (let i = 0; i <= 24; i++) s += L(300, 50 + i * 10, 300 + (i % 5 === 0 ? 12 : 6), 50 + i * 10, { w: 1 }) + (i % 5 === 0 ? T(340, 54 + i * 10, i, { size: 11, anchor: 'start' }) : '');
+    s += L(258, top + len, 300, top + len, { w: 1.2, dash: '4 3', c: C.red }) + T(372, 30, 'cm', { size: 11 });
+    return { svg: W(s), a: {} };
+  };
+  // conical flasks with balloons over the neck (gas made by yeast or a reaction); items: [{label, balloon (0..1), note}]
+  F.balloons = (o) => {
+    const it = o.items || [], n = it.length || 1, gap = 460 / n; let s = bench(290);
+    it.forEach((t, i) => { const cx = 10 + gap * i + gap / 2, r = 8 + (t.balloon || 0) * 34;
+      s += `<path d="M${cx - 10} 170 v30 L${cx - 44} 286 h88 L${cx + 10} 200 v-30" fill="none" stroke="${C.glass}" stroke-width="3"/><path d="M${cx - 36} 262 L${cx - 44} 286 h88 L${cx + 36} 262z" fill="${t.colour || '#F2E1C2'}"/>`;
+      s += `<ellipse cx="${cx}" cy="${168 - r}" rx="${r * 0.85}" ry="${r}" fill="${['#E14E4E', '#F2C94C', '#27AE60', '#9B51E0', '#2F80ED'][i % 5]}" opacity=".85"/><rect x="${cx - 11}" y="160" width="22" height="12" fill="${C.ink}" opacity=".5"/>`;
+      s += T(cx, 308, t.label || String.fromCharCode(65 + i), { bold: true, size: 13 }) + (t.note ? T(cx, 30, t.note, { size: 11, fill: C.blue }) : ''); });
+    return { svg: W(s), a: {} };
+  };
 })();

@@ -190,7 +190,7 @@ u.sec("12.5", "O5")
 u.tb("r", "Complete the resistance (R = V ÷ I).", ["Voltage (V)", "Current (A)", "Resistance (Ω)"], [["12", "2", B(6)], ["230", "0.5", B(460)], ["6", "0.3", B(20)]])
 u.gr("r", "Voltage and current for a resistor. Plot the points.", {"label": "Voltage (V)", "min": 0, "max": 10, "step": 2}, {"label": "Current (A)", "min": 0, "max": 0.5, "step": 0.1}, [[0, 0], [2, 0.1], [4, 0.2], [6, 0.3], [8, 0.4]])
 u.mc("r", "From the graph, the resistor's resistance is…", "20 Ω", ["0.05 Ω", "2 Ω", "200 Ω"], skill="Data")
-u.ex("r", "State Ohm's law in words and explain what happens to the current if resistance increases with the same voltage.", [("more voltage – more current", ["more voltage|voltage increases"]), ("R = V ÷ I", ["v ?÷ ?i|v/i|voltage divided"]), ("more resistance – less current", ["less current|current decreases|smaller current"])],
+u.ex("r", "State Ohm's law in words and explain what happens to the current if resistance increases with the same voltage.", [("more voltage – more current", ["more voltage|voltage increases|increases with voltage|with (the )?voltage"]), ("R = V ÷ I", ["v ?÷ ?i|v/i|voltage divided|voltage ÷ current|voltage / current"]), ("more resistance – less current", ["less current|current decreases|smaller current|current.{0,15}(smaller|decreas|less|lower)"])],
      "Ohm's law: current increases with voltage and resistance = voltage ÷ current. With the same voltage, increasing the resistance makes the current smaller.")
 u.mc("r", "Resistance is measured in…", "ohms", ["amperes", "volts", "joules"])
 u.mc("r", "Resistance is how much a component…", "opposes the current", ["stores charge", "pushes charge", "produces voltage"])

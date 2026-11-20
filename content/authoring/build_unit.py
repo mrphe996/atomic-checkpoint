@@ -31,6 +31,8 @@ def build(n, g=7):
             rv = round(max(0.0, prev[-3][0] if len(prev) >= 3 else 0.0), 1)
             stops.append({"id": st['id'], "t": t, "review": [rv, t], "note": st.get('note') or f"Paused after: “{hit[0][2][:90]}”", "q": st['q']})
         req, prac, advq = U.POOLS[s['id']]
+        if g == 9:  # experiment practice with a diagram or results table (units/s9labs.py)
+            import s9labs; prac = prac + [dict(x) for x in s9labs.LABS.get(s['id'], [])]
         for x in advq: x['adv'] = True
         chapters = [[0.0, ps['scenes'][0][1]]] + [[c[0], c[1]] for c in ps['scenes'][1:]]
         secs.append({"id": s['id'], "title": s['title'], "objs": s['objs'],

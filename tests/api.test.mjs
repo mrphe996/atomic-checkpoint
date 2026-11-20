@@ -64,7 +64,9 @@ const req = (method, token, body, headers = {}) => ({ method, headers: { authori
 const fullState = () => { const st = { video: {}, items: {}, rem: {} }; content.sections.forEach(s => { st.video[s.id] = { completed: true, stops: Object.fromEntries(s.stops.map(x => [x.id, { done: true }])) }; s.req.forEach(q => st.items[q.id] = { done: true, ok: true }); }); return st; };
 const right = q => { switch (q.type) { case 'mcq': return q.options.findIndex(o => o.ok); case 'multi': return q.options.map((o, i) => (o.ok ? i : -1)).filter(i => i >= 0);
   case 'num': case 'scale': return { v: String(q.answer), u: q.unit }; case 'label': return { ...q.spots }; case 'order': return q.items.slice(); case 'match': return Object.fromEntries(q.pairs.map(p => [p.l, p.r]));
-  case 'explain': return q.model; case 'grid': return q.rows.map(r => r.a.slice()); case 'table': { const o = {}; q.rows.forEach((row, ri) => row.forEach((c, ci) => { if (c && typeof c === 'object') (o[ri] = o[ri] || {})[ci] = String(c.ans); })); return o; } } };
+  case 'explain': return q.model; case 'grid': return q.rows.map(r => r.a.slice()); case 'table': { const o = {}; q.rows.forEach((row, ri) => row.forEach((c, ci) => { if (c && typeof c === 'object') (o[ri] = o[ri] || {})[ci] = String(c.ans); })); return o; }
+  case 'short': return G.answerText(q); case 'cloze': return q.blanks.map(b => b.find(a => !(a[0] === '/' && a.lastIndexOf('/') > 0)) || '');
+  case 'graph': return { pts: (q.plot || q.pts).map(p => p.slice()), f: q.follow ? q.follow.options.findIndex(o => o.ok) : null }; } };
 
 test('submit-test: auth, ownership, subscription and unlock rules', async () => {
   const { T, f } = fakeSupabase();
@@ -89,30 +91,29 @@ test('submit-test: server marks 15/30, keeps both attempts, idempotent, first pa
   const { T, f } = fakeSupabase();
   T.subscriptions.push({ parent_id: PARENT, status: 'active', provider_subscription_id: 'sub_1' });
   T.progress.push({ learner_id: KID, unit: 'stage7-unit03', state: fullState() });
-  const ansA = {}; keys.A.forEach(q => { if (['tA03', 'tA06', 'tA07', 'tA09'].includes(q.id)) ansA[q.id] = right(q); else if (q.type === 'mcq') ansA[q.id] = q.options.findIndex(o => !o.ok); });
-  ansA.tA13 = 'I am not sure about this one at all really.';
+  // answer parts worth exactly 15 marks correctly; get every multiple-choice part wrong and leave the rest blank
+  const ansA = {}; let got = 0;
+  keys.A.forEach(q => { if (got + q.pts <= 15 && q.type !== 'mcq') { ansA[q.id] = right(q); got += q.pts; } else if (q.type === 'mcq') ansA[q.id] = q.options.findIndex(o => !o.ok); });
+  keys.A.forEach(q => { if (got < 15 && q.type === 'mcq' && got + q.pts <= 15) { ansA[q.id] = right(q); got += q.pts; } });
+  assert.equal(got, 15);
+  const firstRight = keys.A.find(q => ansA[q.id] !== undefined && q.type !== 'mcq').id;
   let [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A', answers: ansA, clientKey: 'k1' }), f);
-  assert.equal(s, 201); assert.equal(b.attempt.status, 'pending'); assert.equal(b.attempt.auto, 15);
-  assert.ok(b.solutions.tA03.answer.length > 3, 'solutions returned after submission');
+  assert.equal(s, 201); assert.equal(b.attempt.status, 'final', 'every part is marked automatically'); assert.equal(b.attempt.auto, 15);
+  assert.equal(b.attempt.score, 15); assert.equal(b.attempt.passed, false); assert.ok(b.attempt.remed.length > 0);
+  assert.ok(String(b.solutions[firstRight].answer).length > 0, 'solutions returned after submission');
   const [s2, b2] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A', answers: ansA, clientKey: 'k1' }), f);
   assert.equal(s2, 200); assert.equal(b2.duplicate, true); assert.equal(T.attempts.length, 1, 'double submit creates no second attempt');
-  assert.equal((await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'B', answers: {}, clientKey: 'k2' }), f))[1].error, 'awaiting_marking');
-  // parent cannot mark; marker marks 0 → 15/30 fail
+  // parents cannot open the marking queue, and there is nothing left to mark by hand
   assert.equal((await marking.handle(req('GET', 'tA'), f))[0], 403);
-  const [, q] = await marking.handle(req('GET', 'tM'), f);
-  assert.equal(q.queue.length, 1); assert.equal(q.queue[0].items[0].id, 'tA13'); assert.ok(q.queue[0].items[0].rubric.length >= 2);
-  const [, m] = await marking.handle(req('POST', 'tM', { attemptId: T.attempts[0].id, grades: { tA13: 0 } }), f);
-  assert.equal(m.attempt.score, 15); assert.equal(m.attempt.passed, false); assert.ok(m.attempt.remed.length > 0);
+  const [, q] = await marking.handle(req('GET', 'tM'), f); assert.equal(q.queue.length, 0);
   // retake blocked until review questions done, then Paper B is required
   [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'B', answers: {}, clientKey: 'k3' }), f);
   assert.equal(b.error, 'review_first');
-  const st = T.progress[0].state; m.attempt.remed.forEach(id => st.rem[`rem1:${id}`] = { done: true });
+  const st = T.progress[0].state; T.attempts[0].remed.forEach(id => st.rem[`rem1:${id}`] = { done: true });
   assert.equal((await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A', answers: {}, clientKey: 'k4' }), f))[1].error, 'wrong_paper');
   const ansB = Object.fromEntries(keys.B.map(qq => [qq.id, right(qq)]));
   [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'B', answers: ansB, clientKey: 'k5' }), f);
-  assert.equal(s, 201); assert.equal(b.attempt.auto, 28);
-  const [, m2] = await marking.handle(req('POST', 'tM', { attemptId: T.attempts[1].id, grades: { tB13: 2 } }), f);
-  assert.equal(m2.attempt.score, 30); assert.equal(m2.attempt.passed, true);
+  assert.equal(s, 201); assert.equal(b.attempt.auto, 30); assert.equal(b.attempt.score, 30); assert.equal(b.attempt.passed, true);
   assert.equal(T.attempts.length, 2, 'history keeps both attempts');
   assert.equal((await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A', answers: {}, clientKey: 'k6' }), f))[1].error, 'already_passed');
 });
@@ -125,7 +126,7 @@ test('pass rule is strictly above 70 % of the raw score', () => {
 test('public content never contains test answer keys', () => {
   const s = JSON.stringify(content.tests);
   for (const k of ['"ok"', '"answer"', '"model"', '"rubric"', '"spots"', '"ans"', '"fb"']) assert.ok(!s.includes(k), k + ' leaked');
-  assert.equal(G.stripKeys(keys.A[0]).options[0].ok, undefined);
+  assert.equal(G.stripKeys(keys.A.find(q => q.type === 'mcq')).options[0].ok, undefined);
 });
 
 test('paddle webhook: signature checked, subscription mirrored', async () => {
@@ -194,7 +195,7 @@ test('Unit 3 is open in the test phase: no unlock rules for its Unit Test', asyn
   try {
     const ans = Object.fromEntries(keys.A.map(q => [q.id, right(q)]));
     const [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A', answers: ans, clientKey: 'o1' }), f);
-    assert.equal(s, 201); assert.equal(b.attempt.auto, 28);
+    assert.equal(s, 201); assert.equal(b.attempt.auto, 30);
   } finally { process.env.BILLING = 'paddle'; }
 });
 
