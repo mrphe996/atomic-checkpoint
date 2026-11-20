@@ -23,7 +23,7 @@ tests/                api.test.mjs, sql/, e2e.py, e2e_beta.py               tool
 | --- | --- | --- |
 | Git branch | `staging` | `main` |
 | Website | Vercel *Preview* deployment of `staging` | Vercel *Production* deployment of `main` |
-| Supabase project | `mrphe996's Project` (`condufamthngjudcdtgs`) | `atomic-production` |
+| Supabase project | `mrphe996's Project` – ref `condufamthngjudcdtgs` (Seoul) | `atomic-production` – ref `camrubtiydncxqyjmkja` (Singapore) |
 | `ATOMIC_ENV` | `test` – orange “TEST environment” bar, data may be reset | `production` |
 | Payments | `BILLING=off` (everything free) | `off` during the pilot → `paddle` at launch |
 | Sign-up | `DIRECT_SIGNUP=on` (no email needed) | `on` until a mail sender is set up, then `off` |
@@ -37,10 +37,10 @@ Database changes: apply the new file in `supabase/migrations` to **Test first**,
 | --- | --- | --- |
 | `ATOMIC_MODE` | `live` | `live` |
 | `ATOMIC_ENV` | `test` | `production` |
-| `SUPABASE_URL` | `https://<test-ref>.supabase.co` | `https://<prod-ref>.supabase.co` |
+| `SUPABASE_URL` | `https://condufamthngjudcdtgs.supabase.co` | `https://camrubtiydncxqyjmkja.supabase.co` |
 | `SUPABASE_ANON_KEY` | test publishable key | production publishable key |
-| `API_BASE` | `https://<test-ref>.supabase.co/functions/v1/api` | `https://<prod-ref>.supabase.co/functions/v1/api` |
-| `SIGNUP_URL` | `https://<test-ref>.supabase.co/functions/v1/signup` | `https://<prod-ref>.supabase.co/functions/v1/signup` |
+| `API_BASE` | `https://condufamthngjudcdtgs.supabase.co/functions/v1/api` | `https://camrubtiydncxqyjmkja.supabase.co/functions/v1/api` |
+| `SIGNUP_URL` | `https://condufamthngjudcdtgs.supabase.co/functions/v1/signup` | `https://camrubtiydncxqyjmkja.supabase.co/functions/v1/signup` |
 | `DIRECT_SIGNUP` / `BILLING` | `on` / `off` | `on` / `off` |
 
 The Supabase service key is only used inside the Edge Functions, where Supabase provides it automatically.
@@ -59,6 +59,8 @@ npm run build:edge       # supabase/functions/{_shared,api,signup}
 supabase functions deploy api --no-verify-jwt --project-ref <ref>
 supabase functions deploy signup --no-verify-jwt --project-ref <ref>
 ```
+(Or `EDGE_LIB=https://cdn.jsdelivr.net/gh/mrphe996/atomic-checkpoint@<commit>/supabase/functions/_shared npm run build:edge`
+and upload only `api/index.ts`, `api/units.js`, `api/data/*` – this is how the current functions were deployed, from commit `6cf5ba3`.)
 After each deploy, `GET /functions/v1/api/health` returns the answer-key checksum and a self-marking check.
 
 ## Tests

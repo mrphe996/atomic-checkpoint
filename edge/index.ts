@@ -1,6 +1,5 @@
 // One Edge Function, three routes: /api/submit-test, /api/marking, /api/account  (+ /api/health self-check)
-// Test-phase sign-up lives in its own function: supabase/functions/signup
-// __LIB__ is replaced by tools/build-edge.mjs: '../_shared' locally, a commit-pinned GitHub raw URL when deploying.
+// Shared code is imported from the commit-pinned public repo; answer keys come from ./units.js (deployed only, never in git).
 import { handle as submitTest } from '__LIB__/submit-test.js';
 import { handle as marking } from '__LIB__/marking.js';
 import { handle as account } from '__LIB__/account.js';
