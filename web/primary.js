@@ -86,9 +86,9 @@
   /* ---------------- word bank ---------------- */
   A.wordBank = function (s) {
     if (!s.vocab || !s.vocab.length) return null;
-    return el('section', { class: 'card wordbank', id: 'wordBank' }, el('div', { class: 'wbhead' }, el('b', { class: 'lex' }, `📚 Words for ${s.id}`), el('span', { class: 'muted' }, 'Tap a card to hear the word. Then listen and say each word in the Core questions to unlock the next lesson.')),
-      el('div', { class: 'wbgrid' }, ...s.vocab.map(v => el('button', { type: 'button', class: 'wcard', onclick: () => play(v.audio, 0.9) },
-        el('span', { class: 'we', 'aria-hidden': 'true' }, v.emoji || '🔤'), el('b', {}, v.w), el('small', {}, v.def), el('span', { class: 'wp', 'aria-hidden': 'true' }, '🔊')))));
+    return el('section', { class: 'card wordbank', id: 'wordBank' }, el('div', { class: 'wbhead' }, el('b', { class: 'lex' }, `📚 Words for ${s.id}`), el('span', { class: 'muted' }, 'Tap a card to hear the word. Tap ☆ Save to keep a word in My word book.')),
+      el('div', { class: 'wbgrid' }, ...s.vocab.map(v => el('div', { class: 'wcard' }, el('button', { type: 'button', class: 'wplay', onclick: () => play(v.audio, 0.9) },
+        el('span', { class: 'we', 'aria-hidden': 'true' }, v.emoji || '🔤'), el('b', {}, v.w), el('small', {}, v.def), el('span', { class: 'wp', 'aria-hidden': 'true' }, '🔊')), window.Words ? window.Words.star(v, s.id) : null))));
   };
 
   /* ---------------- experiment room ---------------- */

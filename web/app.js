@@ -86,6 +86,7 @@
         right.append(s, lv, bell(), el('span', { class: 'userwrap' }, av, menu));
       }
       nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
+      if (Core.IS_PRIMARY) { nav.splice(2, 0, navLink('words', '📒 My words', area === 'words')); nav[3].textContent = 'Questions'; nav[4].textContent = 'Tests'; }
     } else if (me) {
       right.append(bell(), el('button', { class: 'btn small', type: 'button', id: 'signOut', onclick: async () => { await Backend.signOut(); await Core.boot(C); go('home'); } }, 'Sign out'));
       nav = [navLink('home', 'Home', area === 'home'), navLink('help', 'Help', area === 'help')];
@@ -174,7 +175,7 @@
       }
       units.append(box);
     });
-    wrap.append(units, el('div', { class: 'card tocfoot' }, el('a', { href: '#tests' }, '📝 Tests & exams'), el('a', { href: '#final' }, '🏁 End-of-year exams'), el('a', { href: '#checkpoint' }, '🏛 Checkpoint exam room'), el('a', { href: '#bank' }, '🗂 Question Bank'), el('a', { href: '#cert' }, '🎓 Certificate')));
+    wrap.append(units, el('div', { class: 'card tocfoot' }, el('a', { href: '#tests' }, '📝 Tests & exams'), el('a', { href: '#final' }, '🏁 End-of-year exams'), el('a', { href: '#checkpoint' }, '🏛 Checkpoint exam room'), el('a', { href: '#bank' }, '🗂 Question Bank'), el('a', { href: '#words' }, '📒 My word book'), el('a', { href: '#cert' }, '🎓 Certificate')));
     return wrap;
   }
   function refreshToc() { const t = document.querySelector('.toc'); if (t && st && t.childElementCount) { t.innerHTML = ''; t.append(toc()); } }
@@ -453,6 +454,8 @@
     const v = el('video', { playsinline: true, preload: 'auto', poster: s.video.poster || null, 'aria-label': `Lesson ${s.id} video` }); activeVideo = v;
     v.addEventListener('play', () => { if (!v._started) { v._started = true; Backend.track('video_start', { learner: st.id, unit: Core.UNIT, sec: sid }); } });
     const player = el('div', { class: 'player' }, v);
+    // the pause question is answered on the video itself (also in full screen), so young learners never have to leave the picture
+    const qlayer = el('div', { class: 'qlayer', hidden: true, role: 'dialog', 'aria-modal': 'false', 'aria-label': 'Pause question' });
     const big = el('button', { class: 'bigplay', type: 'button', 'aria-label': 'Play lesson' }, svgI(I.play, 34, '#1C2A3A', 0)); big.querySelector('path').setAttribute('fill', '#1C2A3A'); player.append(big);
     const panel = el('div', { class: 'stoppanel', 'aria-live': 'polite' });
     const ppBtn = el('button', { class: 'btn primary small pp', type: 'button', 'aria-label': 'Play' }, svgI(I.play, 16, '#fff', 0)); ppBtn.querySelector('path').setAttribute('fill', '#fff');
@@ -464,7 +467,16 @@
     const ctrl = el('div', { class: 'card ctrl' }, ppBtn, track, time, spd, cc, fs);
     const capP = el('p', { class: 'cap', hidden: !UI.cc }); const capT = el('span'); capP.append(el('b', {}, 'Narrator: '), capT);
     let openStop = null, lastSave = 0, segEnd = null;
-    const lessonMain = el('section', { class: 'main' }, player, ctrl, panel, capP);
+    player.append(qlayer);
+    const wrap = el('div', { class: 'pwrap' }, player, ctrl);
+    const lessonMain = el('section', { class: 'main' }, wrap, panel, capP);
+    // on a normal page the player grows so the whole question fits without scrolling inside the video
+    let qro = null; const fitQ = () => { const b = qlayer.firstChild; player.style.minHeight = ''; if (!b || isFs()) return; const need = b.scrollHeight + 36; if (need > player.clientHeight) player.style.minHeight = need + 'px'; };
+    const closeQ = () => { qlayer.innerHTML = ''; qlayer.hidden = true; player.classList.remove('qopen'); player.style.minHeight = ''; if (qro) { qro.disconnect(); qro = null; } };
+    const watchQ = () => { if (qro) qro.disconnect(); if (window.ResizeObserver && qlayer.firstChild) { qro = new ResizeObserver(() => fitQ()); qro.observe(qlayer.firstChild); } fitQ(); };
+    const isFs = () => !!(document.fullscreenElement || document.webkitFullscreenElement) || wrap.classList.contains('fakefs');
+    const fsIcon = () => { fs.innerHTML = ''; fs.append(isFs() ? el('span', { style: 'font-weight:800;font-size:15px' }, '✕ Exit full screen') : svgI(I.full, 16)); fs.setAttribute('aria-label', isFs() ? 'Exit full screen' : 'Full screen'); };
+    const readAloud = q => { try { const ss = window.speechSynthesis; if (!ss) return; ss.cancel(); const txt = [q.prompt].concat((q.options || []).map((o, i) => String.fromCharCode(65 + i) + '. ' + o.t)).join('. ').replace(/<[^>]+>/g, ' '); const u = new SpeechSynthesisUtterance(txt); u.lang = 'en-GB'; u.rate = 0.85; const vv = ss.getVoices().find(x => /en-GB/i.test(x.lang)); if (vv) u.voice = vv; ss.speak(u); } catch (e) { } };
     // side panel: chapters / transcript / notes
     const tabsBox = el('div', { class: 'tabs', role: 'tablist', 'aria-label': 'Lesson panel' });
     const sideBody = el('div', { class: 'card', style: 'padding:14px' });
@@ -474,7 +486,7 @@
       el('div', { class: 'goal' }, el('span', { class: 'gi' }, svgI(I.bulb, 16, '#1C2A3A', 2)), el('span', {}, el('b', {}, 'Daily goal: '), `this video lasts ${fmt(s.video.dur)} with ${s.stops.length} pause questions – finish it to keep your streak going.`)));
     m.append(bar(`Unit ${Core.UNO} › ${s.id} › Video`), tocBtn(), el('div', { class: 'lesson' }, lessonMain, side));
     const drawSide = () => {
-      tabsBox.innerHTML = ''; [['chapters', 'Chapters'], ['transcript', 'Transcript'], ['notes', 'My notes']].forEach(([k, t]) => tabsBox.append(el('button', { type: 'button', role: 'tab', 'aria-selected': String(UI.side === k), class: UI.side === k ? 'on' : '', onclick: () => { UI.side = k; drawSide(); } }, t)));
+      tabsBox.innerHTML = ''; [['chapters', 'Chapters'], ['transcript', 'Transcript'], ['words', '⭐ Words'], ['notes', 'My notes']].forEach(([k, t]) => tabsBox.append(el('button', { type: 'button', role: 'tab', 'aria-selected': String(UI.side === k), class: UI.side === k ? 'on' : '', onclick: () => { UI.side = k; drawSide(); } }, t)));
       sideBody.innerHTML = ''; const t = v.currentTime || 0;
       if (UI.side === 'chapters') {
         const items = s.chapters.map(c => ({ t: c[0], label: c[1], kind: 'ch' })).concat(s.stops.map((x, i) => ({ t: x.t, label: x.kind === 'say' ? `🎤 Say “${x.q.word}”` : `Pause question ${i + 1}`, kind: 'stop', x }))).sort((a, b) => a.t - b.t);
@@ -483,6 +495,11 @@
             el('span', { class: 'dt' }, done ? '✓' : c.kind === 'stop' ? '?' : String(s.chapters.findIndex(h => h[0] === c.t) + 1)), el('span', { style: 'flex:1' }, el('b', { style: 'font-size:15px' }, c.label), el('br'), el('small', { class: 'muted' }, fmt(c.t))))); });
       } else if (UI.side === 'transcript') {
         const box = el('div', { class: 'trans' }); s.captions.forEach((c, i) => { const nt = (s.captions[i + 1] || [s.video.dur])[0]; box.append(el('p', { class: t >= c[0] && t < nt ? 'cur' : '', onclick: () => { v.currentTime = c[0]; } }, el('code', {}, fmt(c[0])), ' ' + c[1])); }); sideBody.append(box);
+      } else if (UI.side === 'words') {
+        sideBody.append(el('p', { class: 'muted', style: 'margin:0 0 8px;font-size:14px' }, 'Tap ☆ to keep a word in My word book, so you can practise it later.'));
+        const lw = el('div', { class: 'wside' }); (s.vocab || []).forEach(vv => lw.append(el('div', { class: 'wsrow' }, el('button', { type: 'button', class: 'wsplay', 'aria-label': 'Listen: ' + vv.w, onclick: () => Words.say(vv) }, el('span', { class: 'we' }, vv.emoji || '🔤'), el('b', {}, vv.w)), Words.star(vv, sid))));
+        Words.list().filter(x => x.custom && x.sec === sid).forEach(x => lw.append(el('div', { class: 'wsrow' }, el('span', { class: 'wsplay' }, el('span', { class: 'we' }, x.emoji || '📝'), el('b', {}, x.w)), el('span', { class: 'muted' }, 'my word'))));
+        sideBody.append(lw, Words.addForm(sid, () => drawSide()), el('a', { class: 'btn small', href: '#words', style: 'margin-top:8px' }, `📒 Open My word book (${Words.count()})`));
       } else {
         st.notes = st.notes || {}; const ta = el('textarea', { rows: 8, 'aria-label': 'My notes', placeholder: 'e.g. Root hair cell – long extension → bigger surface area → absorbs water faster.' }); ta.value = st.notes[sid] || '';
         const ok = el('span', { class: 'muted' }); ta.oninput = () => { st.notes[sid] = ta.value; Core.persist(); ok.textContent = 'Saved'; };
@@ -492,28 +509,30 @@
     const drawMarks = () => { track.querySelectorAll('.mk').forEach(x => x.remove()); s.stops.forEach((x, i) => { const d = Core.stopDone(st, sid, x); track.append(el('button', { class: 'mk' + (x.kind === 'say' ? ' say' : '') + (d ? ' done' : ''), type: 'button', style: `left:${x.t / s.video.dur * 100}%`, title: `${x.kind === 'say' ? 'Say the word' : 'Pause question'} ${i + 1} · ${fmt(x.t)}`, 'aria-label': `${x.kind === 'say' ? 'Say the word' : 'Pause question'} ${i + 1} at ${fmt(x.t)}${d ? ' (answered)' : ''}`, onclick: e => { e.stopPropagation(); if (d || review()) { v.pause(); v.currentTime = x.t; showStop(x, true); } } }, String(i + 1))); }); };
     const next = () => s.stops.find(x => !Core.stopDone(st, sid, x));
     const syncUi = () => { const t = v.currentTime || 0; fill.style.width = (t / s.video.dur * 100) + '%'; time.textContent = `${fmt(t)} / ${fmt(s.video.dur)}`; track.setAttribute('aria-valuenow', Math.round(t));
-      const playing = !v.paused; ppBtn.innerHTML = ''; const ic = svgI(playing ? I.pause : I.play, 16, '#fff', 0); ic.querySelector('path').setAttribute('fill', '#fff'); ppBtn.append(ic); ppBtn.setAttribute('aria-label', playing ? 'Pause' : 'Play');
+      const playing = !v.paused; ppBtn.innerHTML = ''; const ic = svgI(playing ? I.pause : I.play, 22, '#fff', 0); ic.querySelector('path').setAttribute('fill', '#fff'); ppBtn.append(ic); ppBtn.setAttribute('aria-label', playing ? 'Pause' : 'Play');
       big.hidden = playing || !!openStop; player.classList.toggle('paused-q', !!openStop);
       const c = s.captions.filter(x => x[0] <= t + 0.05).pop(); capT.textContent = c ? c[1] : ''; };
     function showStop(x, again) {
       openStop = again ? null : x; panel.innerHTML = ''; const i = s.stops.indexOf(x);
       if (!again) { vs.pos = x.t; Core.persist(); }
       const rec = (vs.stops[x.id] = vs.stops[x.id] || { tries: 0 });
-      const box = el('section', { class: 'card stop' }, el('div', { class: 'stopbar' }, el('span', { class: 'eyebrow' }, x.kind === 'say' ? `🎤 SAY THE NEW WORD · ${i + 1} OF ${s.stops.length} · ${fmt(x.t)}` : `⏸ PAUSE QUESTION ${i + 1} OF ${s.stops.length} · ${fmt(x.t)}`),
-        el('button', { class: 'btn small ghost', type: 'button', onclick: () => { segEnd = null; v.currentTime = x.review[0]; v.play().catch(() => { }); } }, `↺ Rewatch ${fmt(x.review[0])}–${fmt(x.review[1])}`)));
-      const qh = el('div'); box.append(qh); panel.append(box);
+      const box = el('section', { class: 'card stop' + (Core.IS_PRIMARY ? ' kid' : '') }, el('div', { class: 'stopbar' }, el('span', { class: 'eyebrow' }, `${Core.IS_PRIMARY ? '🤔' : '⏸'} QUESTION ${i + 1} OF ${s.stops.length}`),
+        el('span', { class: 'sbtns' }, ('speechSynthesis' in window) ? el('button', { class: 'btn small ghost readme', type: 'button', onclick: () => readAloud(x.q) }, '🔊 Read to me') : null,
+          el('button', { class: 'btn small ghost', type: 'button', onclick: () => { closeQ(); segEnd = null; v.currentTime = x.review[0]; v.play().catch(() => { }); } }, '↺ Watch again'))));
+      const qh = el('div'); box.append(qh); qlayer.innerHTML = ''; qlayer.append(box); qlayer.hidden = false; player.classList.add('qopen'); setTimeout(watchQ, 0);
       if (again && rec.done) {
         QE.practice(x.q, qh, { rec: {}, seed: st.id, save: () => { }, onDone: () => { } });
-        box.append(el('button', { class: 'btn small', type: 'button', onclick: () => { panel.innerHTML = ''; v.play().catch(() => { }); } }, 'Close & keep watching ▶'));
+        box.append(el('button', { class: 'btn primary big', type: 'button', onclick: () => { closeQ(); v.play().catch(() => { }); } }, 'Close & keep watching ▶'));
         return;
       }
       QE.practice(x.q, qh, { rec, seed: st.id, save: () => { Core.persist(); }, onCheck: onCheck(box, x.q, rec),
         onDone: () => {
           rec.done = true; if (rec.everWrong) st.stopsWrong[x.q.id] = true; Core.persist(); openStop = null; drawMarks(); drawSide(); bumpXp(); syncUi();
-          box.append(el('button', { class: 'btn primary shine', type: 'button', id: 'continueVideo', onclick: () => { panel.innerHTML = ''; v.currentTime = x.t; v.play().catch(() => { }); } }, 'Keep watching', el('span', { class: 'arr' }, '→')));
+          const cont = el('button', { class: 'btn primary big shine', type: 'button', id: 'continueVideo', onclick: () => { closeQ(); try { window.speechSynthesis && speechSynthesis.cancel(); } catch (e) { } v.currentTime = x.t; v.play().catch(() => { }); } }, '▶ Keep watching');
+          box.append(el('div', { class: 'controw' }, cont)); setTimeout(() => { try { cont.focus({ preventScroll: true }); box.scrollTop = box.scrollHeight; } catch (e) { } }, 60);
         } });
       v.pause(); syncUi(); drawSide();
-      setTimeout(() => panel.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 50);
+      if (!isFs()) setTimeout(() => wrap.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 50);
     }
     function complete() {
       if (next()) return; if (!vs.completed) { vs.completed = true; Core.persist(); bumpXp(); Backend.track('video_complete', { learner: st.id, unit: Core.UNIT, sec: sid }); }
@@ -521,14 +540,26 @@
         el('p', { style: 'margin:0 0 10px' }, `Next: 30 practice questions (8 Core) for section ${s.id}. You can now skip freely through the video to revise.`),
         el('div', { class: 'btnrow' }, el('button', { class: 'btn gold big shine', type: 'button', onclick: () => go('ex-' + R(sid)) }, `Practise ${s.id}`, el('span', { class: 'arr' }, '→')), s.lab ? el('a', { class: 'btn big', href: '#lab-' + R(sid) }, '🧪 Experiment room') : null)));
       refreshToc(); drawSide();
+      if (isFs()) { qlayer.innerHTML = ''; qlayer.hidden = false; player.classList.add('qopen');
+        qlayer.append(el('section', { class: 'card stop done kid' }, el('h3', { style: 'font-size:28px;margin:0 0 8px' }, '🎉 Well done! Lesson complete'),
+          el('div', { class: 'btnrow' }, el('button', { class: 'btn gold big shine', type: 'button', onclick: () => { fs.click(); closeQ(); go('ex-' + R(sid)); } }, `Practise ${s.id} →`),
+            el('button', { class: 'btn big', type: 'button', onclick: () => { fs.click(); closeQ(); } }, 'Exit full screen')))); }
     }
-    const togglePlay = () => { if (openStop) { panel.querySelector('.stop') && panel.querySelector('.stop').classList.add('pulse'); return; } if (v.paused) v.play().catch(() => { }); else v.pause(); };
+    const nudge = () => { const b = qlayer.querySelector('.stop'); if (b) { b.classList.remove('pulse'); void b.offsetWidth; b.classList.add('pulse'); } };
+    const togglePlay = () => { if (openStop) { nudge(); return; } if (v.paused) v.play().catch(() => { }); else v.pause(); };
     ppBtn.onclick = togglePlay; big.onclick = togglePlay;
     track.addEventListener('click', e => { const r = track.getBoundingClientRect(); segEnd = null; v.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * s.video.dur; });
     track.addEventListener('keydown', e => { if (e.key === 'ArrowRight') v.currentTime = Math.min(s.video.dur, v.currentTime + 5); if (e.key === 'ArrowLeft') v.currentTime = Math.max(0, v.currentTime - 5); if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); togglePlay(); } });
     spd.onclick = () => { UI.speed = UI.speed === 1 ? 1.25 : UI.speed === 1.25 ? 1.5 : UI.speed === 1.5 ? 2 : 1; v.playbackRate = UI.speed; spd.textContent = UI.speed + '×'; };
     cc.onclick = () => { UI.cc = !UI.cc; capP.hidden = !UI.cc; cc.classList.toggle('on', UI.cc); cc.setAttribute('aria-pressed', String(UI.cc)); };
-    fs.onclick = () => { try { (player.requestFullscreen || player.webkitRequestFullscreen).call(player); } catch (e) { } };
+    // full screen covers the video, its controls and the question layer; where the browser cannot (iPhone), the page fakes it
+    fs.onclick = () => {
+      if (isFs()) { if (wrap.classList.contains('fakefs')) { wrap.classList.remove('fakefs'); document.body.classList.remove('nofscroll'); } else (document.exitFullscreen || document.webkitExitFullscreen).call(document); fsIcon(); return; }
+      const req = wrap.requestFullscreen || wrap.webkitRequestFullscreen;
+      if (req) { try { const r = req.call(wrap); if (r && r.catch) r.catch(() => { wrap.classList.add('fakefs'); document.body.classList.add('nofscroll'); fsIcon(); }); } catch (e) { wrap.classList.add('fakefs'); document.body.classList.add('nofscroll'); } }
+      else { wrap.classList.add('fakefs'); document.body.classList.add('nofscroll'); }
+      fsIcon(); };
+    ['fullscreenchange', 'webkitfullscreenchange'].forEach(ev => document.addEventListener(ev, () => { if (document.body.contains(wrap)) { fsIcon(); fitQ(); } }));
     v.addEventListener('loadedmetadata', () => {
       v.playbackRate = UI.speed; let t0 = vs.pos || 0;
       if (UI.seek && UI.seek.sec === sid) { t0 = UI.seek.from; segEnd = UI.seek.to; UI.seek = null; panel.append(el('div', { class: 'banner info' }, `▶ Review clip ${fmt(t0)}–${fmt(segEnd)} – press play to watch.`)); }
@@ -543,7 +574,7 @@
       if (!review()) { const nx = next(); if (nx && t >= nx.t - 0.04 && openStop !== nx) { v.pause(); v.currentTime = nx.t; showStop(nx); } }
       if (segEnd != null && t >= segEnd) { v.pause(); segEnd = null; }
       if (Date.now() - lastSave > 2000) { vs.pos = t; lastSave = Date.now(); Core.persist(); }
-      if (Date.now() - lastSide > 1500 && UI.side !== 'notes') { lastSide = Date.now(); drawSide(); }
+      if (Date.now() - lastSide > 1500 && UI.side !== 'notes' && UI.side !== 'words') { lastSide = Date.now(); drawSide(); }
       if (!next() && t >= s.video.dur - 0.6 && !vs.completed) complete();
       syncUi();
     });
@@ -551,7 +582,7 @@
       if (review()) return; const nx = next();
       if (nx && v.currentTime > nx.t + 0.05) { v.currentTime = nx.t; if (openStop !== nx) showStop(nx); }
     });
-    v.addEventListener('play', () => { if (openStop) { v.pause(); panel.querySelector('.stop') && panel.querySelector('.stop').classList.add('pulse'); } syncUi(); });
+    v.addEventListener('play', () => { if (openStop) { v.pause(); nudge(); } else if (!qlayer.hidden) closeQ(); syncUi(); });
     v.addEventListener('pause', () => { vs.pos = v.currentTime; Core.persist(); syncUi(); });
     v.addEventListener('ended', () => complete());
     v.addEventListener('click', togglePlay);
@@ -1445,6 +1476,47 @@
     box.querySelectorAll('.cmn').forEach(g => g.addEventListener('click', () => { UI.mmPick = g.dataset.id; go('map'); }));
     return box;
   }
+  /* ---------- My word book ---------- */
+  function viewWords() {
+    const m = $main(); const all = () => Words.list();
+    const tricky = [];   // lesson words the learner found hard in the Core listening and speaking checks
+    (C.sections || []).forEach(s => (s.req || []).forEach(q => { const r = st.items[q.id]; const v = q.word && (s.vocab || []).find(x => x.w === q.word); if (v && r && r.done && (!r.ok || r.assisted || r.tries > 1) && !Words.has(v.w) && !tricky.some(t => t.v.w === v.w)) tricky.push({ v, sec: s.id }); }));
+    const filt = UI.wf || 'all';
+    const head = el('section', { class: 'card whero' }, el('div', {}, el('h1', {}, '📒 My word book'),
+      el('p', { class: 'lead' }, 'Keep the words you want to remember. Listen to them, write a note, and play the word game. Tap “I know it” when a word is easy for you.')),
+      el('div', { class: 'wstats' }, el('div', {}, el('b', {}, String(all().length)), el('span', {}, 'words saved')), el('div', {}, el('b', {}, String(all().filter(x => !x.known).length)), el('span', {}, 'still learning')), el('div', {}, el('b', {}, String(all().filter(x => x.known).length)), el('span', {}, 'I know it ✓'))));
+    m.append(bar('My word book'), head);
+    const gameHost = el('div');
+    const playBtn = el('button', { type: 'button', class: 'btn gold big shine', disabled: all().length < 1 ? true : null, onclick: () => {
+      const learning = all().filter(x => !x.known); const words = learning.length ? learning : all();
+      const pool = all().concat((C.sections || []).flatMap(s => s.vocab || []).map(v => Object.assign({}, v))).filter((x, i, a) => a.findIndex(y => y.w.toLowerCase() === x.w.toLowerCase()) === i);
+      list.hidden = true; tools.hidden = true; gameHost.hidden = false; Words.game(gameHost, words, pool, () => { gameHost.hidden = true; list.hidden = false; tools.hidden = false; draw(); }); } }, '🎮 Practise my words');
+    const tabs = el('div', { class: 'tabs', role: 'tablist' }, ...[['all', 'All'], ['learn', 'Still learning'], ['known', 'I know it ✓']].map(([k, t]) => el('button', { type: 'button', role: 'tab', 'aria-selected': String(filt === k), class: filt === k ? 'on' : '', onclick: () => { UI.wf = k; render(); } }, t)));
+    const tools = el('div', { class: 'wtools' }, playBtn, tabs);
+    const list = el('div', { class: 'wlist' });
+    m.append(tools, gameHost, list);
+    if (tricky.length) m.append(el('section', { class: 'card wtricky' }, el('b', { class: 'lex' }, `💡 Words you found tricky in Unit ${Core.UNO}`), el('p', { class: 'muted', style: 'margin:4px 0 10px' }, 'Save them so you can practise them again.'),
+      el('div', { class: 'wbgrid' }, ...tricky.map(t => el('div', { class: 'wcard' }, el('button', { type: 'button', class: 'wplay', onclick: () => Words.say(t.v) }, el('span', { class: 'we' }, t.v.emoji || '🔤'), el('b', {}, t.v.w), el('small', {}, t.v.def)), Words.star(t.v, t.sec, () => setTimeout(render, 400)))))));
+    m.append(Words.addForm(null, () => render()));
+    if (C.sections && C.sections.some(s => (s.vocab || []).length)) m.append(el('section', { class: 'card' }, el('b', { class: 'lex' }, `📚 All the words of Unit ${Core.UNO}`), el('p', { class: 'muted', style: 'margin:4px 0 10px' }, 'Tap ☆ to save a word.'),
+      ...C.sections.filter(s => (s.vocab || []).length).map(s => el('div', { class: 'wunit' }, el('h4', {}, `${s.id} ${s.title}`), el('div', { class: 'wbgrid' }, ...s.vocab.map(v => el('div', { class: 'wcard' }, el('button', { type: 'button', class: 'wplay', onclick: () => Words.say(v) }, el('span', { class: 'we' }, v.emoji || '🔤'), el('b', {}, v.w), el('small', {}, v.def)), Words.star(v, s.id, () => draw()))))))));
+    function draw() {
+      list.innerHTML = ''; const ws = all().filter(x => filt === 'all' || (filt === 'learn' ? !x.known : x.known));
+      if (!ws.length) { list.append(el('div', { class: 'card wempty' }, el('div', { class: 'big' }, '⭐'), el('p', {}, all().length ? 'No words here yet.' : 'Your word book is empty. Tap ☆ Save on a word in a lesson, or add your own word below.'))); return; }
+      let lastU = null;
+      ws.forEach(x => {
+        if (x.unit !== lastU) { lastU = x.unit; list.append(el('h3', { class: 'wuh' }, x.unit ? `Unit ${x.unit}` : 'My own words')); }
+        const note = el('textarea', { rows: 2, maxlength: 300, placeholder: '✏️ My note…', 'aria-label': 'My note for ' + x.w }); note.value = x.note || ''; let tm = null; note.oninput = () => { clearTimeout(tm); tm = setTimeout(() => Words.update(x.w, { note: note.value }), 400); };
+        list.append(el('div', { class: 'card wentry' + (x.known ? ' known' : '') },
+          el('button', { type: 'button', class: 'wbig', 'aria-label': 'Listen: ' + x.w, onclick: () => Words.say(x) }, el('span', { class: 'we' }, x.emoji || '🔤'), el('span', { class: 'wp' }, '🔊')),
+          el('div', { class: 'wtext' }, el('b', {}, x.w), x.def ? el('p', {}, x.def) : null, x.sec ? el('small', { class: 'muted' }, 'Lesson ' + x.sec) : null, note),
+          el('div', { class: 'wacts' }, el('button', { type: 'button', class: 'btn small' + (x.known ? ' ok' : ''), 'aria-pressed': String(!!x.known), onclick: () => { Words.update(x.w, { known: !x.known }); render(); } }, x.known ? '✓ I know it' : 'I know it'),
+            el('button', { type: 'button', class: 'btn small ghost', 'aria-label': 'Remove ' + x.w, onclick: () => { Words.remove(x.w); render(); } }, '🗑'))));
+      });
+    }
+    draw();
+  }
+
   function viewMap() {
     const m = $main(); if (st) m.append(bar(`Unit ${Core.UNO} › Concept map`));
     m.append(el('div', {}, el('span', { class: 'eyebrow' }, `UNIT ${Core.UNO} · ${C.unit.title.toUpperCase()}`), el('h1', { style: 'margin:0;font-size:36px' }, 'Concept map'), el('p', { class: 'muted', style: 'margin:4px 0 0' }, `How the big ideas of Unit ${Core.UNO} connect. Tap any box to ${C.sections[0] && C.sections[0].lesson ? 'read' : 'watch'} that part of the lesson and answer its questions.`)));
@@ -1931,11 +2003,11 @@
   }
 
   /* ---------- router ---------- */
-  const TOC_ROUTES = r => r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || ['map', 'result', 'remedial', 'topic', 'drill', 'cert', 'unit'].includes(r);
+  const TOC_ROUTES = r => r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || ['map', 'result', 'remedial', 'topic', 'drill', 'cert', 'unit', 'words'].includes(r);
   const PUBLIC = { home: () => viewHome(), signin: viewSignin, signup: viewSignup, forgot: viewForgot, pricing: viewPricing, help: viewHelp, privacy: viewPrivacy, 'privacy-kids': viewKidsPrivacy, terms: viewTerms, cookies: viewCookies, verify: viewVerify };
   const viewAdmin = window.AtomicAdmin ? window.AtomicAdmin({ modal, toast, errText: e => errText(e), $main, render: () => render() }) : null;
   const ACCOUNT = { staff: viewStaff, teacher: viewStaff, admin: () => viewAdmin && viewAdmin() };
-  const LEARNER = { home: viewHome, unit: viewUnit, test: viewTest, tests: viewTests, final: viewFinal, checkpoint: viewCheckpoint, level: viewLevel, result: viewResult, remedial: viewRemedial, map: viewMap, profile: viewProfile, topic: viewTopic, bank: viewBank, drill: viewDrill, board: viewBoard, cert: viewCert, settings: viewSettings };
+  const LEARNER = { words: viewWords, home: viewHome, unit: viewUnit, test: viewTest, tests: viewTests, final: viewFinal, checkpoint: viewCheckpoint, level: viewLevel, result: viewResult, remedial: viewRemedial, map: viewMap, profile: viewProfile, topic: viewTopic, bank: viewBank, drill: viewDrill, board: viewBoard, cert: viewCert, settings: viewSettings };
   const GUEST_WALL = { board: 'Sign up free to join the leaderboard', cert: 'Sign up free to earn a certificate', result: 'Sign up free to take the Unit Test', remedial: 'Sign up free to take the Unit Test', settings: 'Sign up free to get your own account' };
   let renderSeq = 0;
   async function render() {
@@ -1981,6 +2053,18 @@
     m.focus({ preventScroll: true }); window.scrollTo(0, 0);
   }
   window.addEventListener('hashchange', render);
+  if (window.Words) {
+    const wk = () => 'words-stage' + Core.STAGE;
+    Words.init({ stage: () => Core.STAGE,
+      book: () => { const S = Core.S; if (!S.states) S.states = {}; const k = wk();
+        if (!S.states[k] && S.guest) { try { S.states[k] = JSON.parse(localStorage.getItem('atomic.words.v1.' + k) || 'null'); } catch (e) { } }
+        S.states[k] = S.states[k] || {}; S.states[k].words = S.states[k].words || {}; return S.states[k].words; },
+      save: () => { const s0 = Core.cur(); if (!s0) return; const k = wk(), state = { words: (Core.S.states[k] || {}).words || {} };
+        if (Core.S.guest) { try { localStorage.setItem('atomic.words.v1.' + k, JSON.stringify(state)); } catch (e) { } return; }
+        Backend.saveProgress(s0.id, k, state).catch(() => { }); } });
+    window.addEventListener('pagehide', () => Words.flush());
+    window.toastWord = t => toast(t);
+  }
   async function boot() {
     try {
       if (Backend.demo && location.search.includes('reset')) Backend.demo.reset();

@@ -51,9 +51,14 @@
       case 'mcq': case 'multi': {
         const order = shuffle(q.options.map((_, i) => i), seed); const multi = q.type === 'multi';
         if (multi) resp = resp || [];
-        const list = el('div', { class: 'opts', role: multi ? 'group' : 'radiogroup' });
+        // picture questions (Primary): a big picture above, and picture cards to tap when every option has one
+        if (q.pic) W.append(el('div', { class: 'qpic', 'aria-hidden': 'true' }, q.pic));
+        const pics = q.options.every(o => o.e);
+        const list = el('div', { class: 'opts' + (pics ? ' pics n' + q.options.length : ''), role: multi ? 'group' : 'radiogroup' });
         order.forEach((oi, k) => {
-          const b = el('button', { class: 'opt', type: 'button', 'aria-pressed': 'false', 'data-oi': oi },
+          const b = pics ? el('button', { class: 'opt pcard', type: 'button', 'aria-pressed': 'false', 'data-oi': oi, 'aria-label': q.options[oi].t },
+            el('span', { class: 'pe', 'aria-hidden': 'true' }, q.options[oi].e), el('span', { class: 'pt' }, q.options[oi].t))
+            : el('button', { class: 'opt', type: 'button', 'aria-pressed': 'false', 'data-oi': oi },
             el('span', { class: 'key' }, String.fromCharCode(65 + k)), el('span', {}, q.options[oi].t));
           const sync = () => { const on = multi ? resp.includes(oi) : resp === oi; b.classList.toggle('sel', on); b.setAttribute('aria-pressed', on); };
           b.onclick = () => { if (multi) { resp = resp.includes(oi) ? resp.filter(x => x !== oi) : resp.concat(oi); } else resp = oi; list.querySelectorAll('.opt').forEach(x => x._sync()); changed(); };
