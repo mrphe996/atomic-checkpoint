@@ -178,5 +178,28 @@ with sync_playwright() as p:
         if pg.query_selector('.lpick, .learnerpick'): pg.click('.lpick button >> nth=0')
     pg.evaluate("location.hash='words'"); pg.wait_for_timeout(1500)
     ok(w0 in pg.inner_text('#main') and 'buzz' in pg.inner_text('#main'), 'P50 Saved words are still there after logging in again')
+    # ---- Primary Science Stages 4 and 3: for the youngest learners (no typing anywhere) ----
+    TYPING = "['short','cloze','explain','num','expr','scale','table','graph','say']"
+    for g, n_topics, pn in ((4, 28, 51), (3, 25, 55)):
+        pg.evaluate("location.hash='home'"); pg.wait_for_timeout(700)
+        ok(pg.query_selector(f'#stageSwitch .sw[data-stage="{g}"]') is not None, f'P{pn} The course switcher offers Primary Science Stage {g}')
+        pg.evaluate(f"location.hash='checkout-{g}'"); pg.wait_for_timeout(600); pg.click('#payBtn'); pg.wait_for_function(f"Core.STAGE==={g}", timeout=10000); pg.wait_for_timeout(800)
+        tot = 0; bad = []; typing = 0; pics = []
+        for u in range(1, 7):
+            pg.evaluate(f"location.hash='u-{u}'"); pg.wait_for_timeout(700)
+            rows = pg.evaluate("Core.C.sections.map(s => ({id: s.id, req: s.req.length, lab: !!s.lab, vocab: (s.vocab||[]).length, stops: s.stops.length, prac: s.prac.length, src: s.video.src, "
+                               "pic: [...s.req, ...s.prac].filter(q => (q.options||[]).length && q.options.every(o => o.e)).length}))")
+            typing += pg.evaluate(f"Core.C.sections.reduce((n, s) => n + [...s.req, ...s.prac, ...s.adv, ...s.stops.map(x => x.q)].filter(q => {TYPING}.includes(q.type)).length, 0)")
+            tot += len(rows); bad += [x['id'] for x in rows if not (x['req'] == 8 and x['lab'] and x['vocab'] >= 5 and x['stops'] >= 2 and x['prac'] >= 18 and f'/s{g}/' in x['src'])]
+            pics += [x['pic'] for x in rows]
+        young = pg.evaluate("document.body.classList.contains('young')")
+        ok(tot == n_topics and not bad and typing == 0 and min(pics) >= 15 and young, f'P{pn+1} All {n_topics} Stage {g} topics: video, 8 picture Core checks, lab, word bank, 18+ practice, no typing anywhere, 15+ picture questions each (problems: {bad}, typing {typing}, fewest pictures {min(pics) if pics else 0})')
+        st = pg.evaluate("fetch(Core.C.sections[0].video.src, {method:'HEAD'}).then(r => r.status)")
+        wa = pg.evaluate("Promise.all(Core.C.sections[0].vocab.slice(0, 2).map(v => fetch(v.audio, {method:'HEAD'}).then(r => r.status)))")
+        ok(st == 200 and wa == [200, 200], f'P{pn+2} Stage {g} videos and word audio are served')
+        pg.evaluate("location.hash='u-1'"); pg.wait_for_timeout(700)
+        pg.evaluate("(()=>{const st=Core.cur(); Core.C.sections.forEach(s=>{const vs=Core.vstate(st,s.id); vs.completed=true; s.stops.forEach(x=>vs.stops[x.id]={done:true,tries:1});}); Core.persist();})()")
+        pg.evaluate("location.hash='ex-1-1'"); pg.wait_for_timeout(1500)
+        ok(pg.query_selector('.opts.pics .pcard') is not None or pg.query_selector('.qcard .pcard') is not None, f'P{pn+3} Stage {g} questions show big picture answer cards')
     ok(not errs, 'P22 No page errors ' + '; '.join(errs[:3])); b.close()
 f = [l for l in LOG if l.startswith('FAIL')]; print(f'{len(LOG)-len(f)}/{len(LOG)} passed'); sys.exit(1 if f else 0)

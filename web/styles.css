@@ -1387,3 +1387,13 @@ body.nofscroll{overflow:hidden}
 @media (max-width:720px){.waddform .wrow{grid-template-columns:1fr}.wentry{flex-wrap:wrap}.wbig{width:64px;height:64px}.wbig .we{font-size:34px}.wacts{flex-direction:row}}
 
 .wcard .wplay{flex:1}
+
+.labchoose .btn{min-width:120px;font-size:20px}
+.labchips{display:flex;flex-wrap:wrap;gap:6px}.labchips .chip{min-height:44px;font-size:16px}.labchips .chip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+/* youngest learners (Stages 3–4): no technical labels, bigger text and buttons */
+body.young .qhead{display:none}
+body.young .qcard .qp{font-size:22px;font-weight:700;line-height:1.35}
+body.young .opt{min-height:64px;font-size:19px}
+body.young .opt.pcard{min-height:160px}
+body.young .qcard .btn.primary{min-height:52px;font-size:18px}

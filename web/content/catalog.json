@@ -19,7 +19,7 @@
    "name": "Cambridge Primary",
    "short": "Primary",
    "ages": "ages 5–11",
-   "note": "Stages 1 to 6 · Atomic has Stage 5 and Stage 6 Science: animated lessons, listening and speaking, experiments"
+   "note": "Stages 1 to 6 · Atomic has Science Stages 4, 5 and 6: animated lessons, picture questions, listening, experiments"
   },
   {
    "id": "lsec",
@@ -45,6 +45,28 @@
  ],
  "courses": [
   {
+   "id": "sci-s3",
+   "subject": "science",
+   "level": "primary",
+   "stage": 3,
+   "badge": 3,
+   "code": "0097",
+   "title": "Cambridge Stage 3 Science",
+   "status": "open",
+   "about": "Made for 7–8 year olds: extra-slow, cheerful animated lessons full of pictures and everyday questions, questions answered right on the video, picture answers to tap (no typing), easy tap-only labs and a home experiment in every topic. 6 units: plants, mixing materials, light and shadows, staying alive, forces and magnets, the Earth and the Moon."
+  },
+  {
+   "id": "sci-s4",
+   "subject": "science",
+   "level": "primary",
+   "stage": 4,
+   "badge": 4,
+   "code": "0097",
+   "title": "Cambridge Stage 4 Science",
+   "status": "open",
+   "about": "Made for 8–9 year olds: slow, cheerful animated lessons with lots of pictures and everyday questions, questions answered right on the video, picture answers to tap (no typing), easy tap-only labs and a home experiment in every topic. 6 units: skeletons and health, energy, materials, Earth and habitats, light, electricity."
+  },
+  {
    "id": "sci-s5",
    "subject": "science",
    "level": "primary",
@@ -53,7 +75,7 @@
    "code": "0097",
    "title": "Cambridge Stage 5 Science",
    "status": "open",
-   "about": "Fun animated lessons full of examples, a slower narrator and large subtitles, say-the-word stops in every video, listen-and-say word checks, a virtual lab and a home experiment in every topic. 6 units: flowering plants, sound, states of matter, digestion, forces and magnets, seasons and adaptations."
+   "about": "Fun animated lessons full of examples, a slower narrator and large subtitles, questions answered right on the video, listen-and-say word checks, a virtual lab and a home experiment in every topic. 6 units: flowering plants, sound, states of matter, digestion, forces and magnets, seasons and adaptations."
   },
   {
    "id": "sci-s6",

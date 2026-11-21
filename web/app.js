@@ -21,8 +21,8 @@
     return { 1: { o: 'M10 3h4 M11 3v8 M13 3v8 M9 11h6 M12 11v3 M5 21h14 M8 21a7 7 0 0 1 11-9', a: dot(16, 16.5, 2.2), c: '#F3BF69', bg: '#FFF4D6' }, 2: { o: 'M3 16 16 3l5 5L8 21z M7 12l2 2 M10 9l2 2 M13 6l2 2', a: 'M16 3l5 5-3 3-5-5z', c: '#F3BF69', bg: '#FFF4D6' }, 3: { o: 'M6 4h12a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z M11 9h6v6h-6z', a: dot(7.5, 9, 2.2) + ' M11 9h6v6h-6z', c: '#8E6CC9', bg: '#E8F7EA' }, 4: { o: 'M12 19v-6 M12 13 6 8 M12 13l6-5', a: dot(6, 6, 2.2) + dot(18, 6, 2.2) + dot(12, 20, 2.2), c: '#3FA34D', bg: '#E8F7EA' }, 5: { o: 'M4 20c0-9 7-16 16-16 0 9-7 16-16 16z M4 20l9-9', a: 'M4 20c0-9 7-16 16-16 0 9-7 16-16 16z', c: '#BFE6C3', bg: '#E8F7EA' }, 6: { o: 'M3 3h18v18H3z', a: grid, c: '#2F6FD6', bg: '#E6EEFA' }, 7: { o: 'M12 3l8 4.5v9L12 21l-8-4.5v-9z M12 12l8-4.5 M12 12v9 M12 12 4 7.5', a: 'M12 3l8 4.5-8 4.5-8-4.5z', c: '#F3BF69', bg: '#FFF4D6' }, 8: { o: 'M6 3h12 M8 3v6l-4 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-4-9V3', a: 'M5.6 14.5h12.8l1.5 3.5a1.4 1.4 0 0 1-1.3 2H5.4a1.4 1.4 0 0 1-1.3-2z', c: '#F7A8A8', bg: '#FDECEC' }, 9: { o: 'M9 3h6 M10 3v5L5 19a1.5 1.5 0 0 0 1.4 2h11.2a1.5 1.5 0 0 0 1.4-2L14 8V3', a: dot(11, 16, 1.8) + dot(14.5, 13.5, 1.3) + dot(13.5, 18, 1.1), c: '#F08A4B', bg: '#FFF1E0' }, 10: { o: 'M3 13h8v7H3z M13 16.5h8 M18 13.5l3 3-3 3', a: 'M3 13h8v7H3z', c: '#9CC0F0', bg: '#E6EEFA' }, 11: { o: 'M12 2v3 M12 19v3 M2 12h3 M19 12h3 M5 5l2 2 M17 17l2 2 M5 19l2-2 M17 7l2-2 ' + dot(12, 12, 4.5), a: dot(12, 12, 4.5), c: '#F3BF69', bg: '#FFF4D6' }, 12: { o: 'M13 2 4 14h7l-1 8 9-12h-7z', a: 'M13 2 4 14h7l-1 8 9-12h-7z', c: '#F3BF69', bg: '#FFF4D6' }, 13: { o: 'M2 20h20 M4 20l6-10h4l6 10 M10 7 9 4 M12 7V3 M14 7l1-3', a: 'M9 13.5h6L13.6 11h-3.2z', c: '#F08A4B', bg: '#FFF1E0' }, 14: { o: dot(12, 12, 5) + ' M3 15c1.5 2.5 16.5-2 18-6 M3 15c-1-2 2-4 4.5-5 M21 9c1 2-1.5 3.5-4 4.5', a: dot(12, 12, 5), c: '#CFE6FF', bg: '#E6EEFA' } };
   })();
   const MATH_IC = ['', '√', 'x²', '%', '=', '∠', '📊', '◯', '½', 'Σ', '↗', '∶', '🎲', '⇄', '▣', '📈'];
-  const P6_IC = { 1: '🫀', 2: '⚗️', 3: '🪨', 4: '🌿', 5: '⚡', 6: '🔭' }, P5_IC = { 1: '🌸', 2: '🔊', 3: '💧', 4: '🍎', 5: '🧲', 6: '🌍' };
-  const unitIcon = n => { if (Core.IS_PRIMARY) return el('span', { class: 'ic mic', 'aria-hidden': 'true' }, (Core.STAGE === 5 ? P5_IC : P6_IC)[n] || String(n)); if (Core.IS_MATHS || !IC[n]) return el('span', { class: 'ic mic', 'aria-hidden': 'true' }, MATH_IC[n] || String(n)); const i = IC[n]; const sp = el('span', { class: 'ic', style: `background:${i.bg}`, 'aria-hidden': 'true' }); sp.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24"><path d="${i.a}" fill="${i.c}"/><path d="${i.o}" fill="none" stroke="#013A8C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>`; return sp; };
+  const P6_IC = { 1: '🫀', 2: '⚗️', 3: '🪨', 4: '🌿', 5: '⚡', 6: '🔭' }, P5_IC = { 1: '🌸', 2: '🔊', 3: '💧', 4: '🍎', 5: '🧲', 6: '🌍' }, P4_IC = { 1: '🦴', 2: '⚡', 3: '🧊', 4: '🌋', 5: '🔦', 6: '🔌' }, P3_IC = { 1: '🌱', 2: '🥣', 3: '👤', 4: '🐸', 5: '🧲', 6: '🌙' };
+  const unitIcon = n => { if (Core.IS_PRIMARY) return el('span', { class: 'ic mic', 'aria-hidden': 'true' }, ({ 3: P3_IC, 4: P4_IC, 5: P5_IC }[Core.STAGE] || P6_IC)[n] || String(n)); if (Core.IS_MATHS || !IC[n]) return el('span', { class: 'ic mic', 'aria-hidden': 'true' }, MATH_IC[n] || String(n)); const i = IC[n]; const sp = el('span', { class: 'ic', style: `background:${i.bg}`, 'aria-hidden': 'true' }); sp.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24"><path d="${i.a}" fill="${i.c}"/><path d="${i.o}" fill="none" stroke="#013A8C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>`; return sp; };
   const STRAND = { 1: 'Enquiry', 2: 'Enquiry', 3: 'Biology', 4: 'Biology', 5: 'Biology', 6: 'Chemistry', 7: 'Chemistry', 8: 'Chemistry', 9: 'Chemistry', 10: 'Physics', 11: 'Physics', 12: 'Physics', 13: 'Earth and Space', 14: 'Earth and Space' };
 
   /* ---------- small UI helpers ---------- */
@@ -152,7 +152,7 @@
       el('a', { class: 'it' + (Core.IS_MATHS ? ' on' : ''), href: '#courses-maths', id: 'tocMaths' }, el('span', {}, '📐 Mathematics'), el('small', { class: 'sl' }, 'Stage 9')),
       el('a', { class: 'it', href: '#courses', style: 'font-size:13.5px' }, 'IGCSE & AS / A Level →')));
     wrap.append(el('div', { class: 'card lvl stagelist', role: 'group', 'aria-label': 'Your courses' }, el('span', { class: 'h' }, 'YOUR COURSES'),
-      ...[5, 6, 7, 8, 9, 19].map(g => { const mine = g === Core.STAGE, lk = !mine && Core.stageLocked(g), en = mine || Core.enrolled(g);
+      ...Core.STAGES.map(g => { const mine = g === Core.STAGE, lk = !mine && Core.stageLocked(g), en = mine || Core.enrolled(g);
         const name = el('span', {}, el('b', { class: 'cam' }, 'Cambridge'), ' ' + (g >= 10 ? '📐 Maths Stage ' + (g - 10) : 'Stage ' + g));
         if (lk) return el('span', { class: 'it lockedit', title: 'Coming soon', 'aria-disabled': 'true' }, name, el('small', { class: 'lkd' }, '🔒 Soon'));
         return el('a', { class: 'it' + (mine ? ' on' : ''), href: '#stage-' + g, title: mine ? 'Open now' : en ? 'Enrolled – open this course' : 'Enrol to open', onclick: mine || !en ? null : ev => { ev.preventDefault(); pickStage(g, ev.currentTarget); } },
@@ -203,7 +203,7 @@
     if (/^stage-\d+$/.test(r)) go('stage-' + g); else if (TOC_ROUTES(r) && r !== 'map') go('u-' + Core.UNO); else render();
   }
   function stageSwitcher() {
-    const groups = [['Primary Science', '🌱', [5, 6]], ['Lower Secondary Science', '🔬', [7, 8, 9]], ['Mathematics', '📐', [19]]];
+    const groups = [['Primary Science', '🌱', Core.STAGES.filter(g => g <= 6)], ['Lower Secondary Science', '🔬', [7, 8, 9]], ['Mathematics', '📐', [19]]];
     const btn = g => {
       const mine = g === Core.STAGE, lk = !mine && Core.stageLocked(g), en = mine || Core.enrolled(g), p = en ? stagePct(g) : 0, math = g >= 10;
       const b = el('button', { type: 'button', class: 'sw' + (mine ? ' on' : '') + (lk ? ' locked' : en ? '' : ' enrol') + (math ? ' math' : ''), 'data-stage': g, 'aria-pressed': String(mine), 'aria-disabled': lk ? 'true' : null,
@@ -2021,6 +2021,7 @@
     const um = r.match(/^u-(\d+)$/) || r.match(/^(?:v|ex|ws|lab)-(\d+)-\d+$/);
     if (um && Number(um[1]) !== Core.UNO) { if (!Core.unitReady(Number(um[1]))) { location.replace('#home'); return; } try { await Core.switchUnit(Number(um[1])); } catch (e) { location.replace('#home'); return; } if (seq !== renderSeq) return; }
     C = Core.C; st = Core.cur(); if (/^u-\d+$/.test(r)) r = 'unit';
+    document.body.classList.toggle('young', !!(C && C.unit && C.unit.young));   // Stages 3–4: bigger, simpler question cards
     if (r !== 'test' && !/^(fx|cpx)-/.test(r)) UI.testOn = false;
     document.body.classList.remove('menu-open', 'toc-open');
     const me = Core.S.me;

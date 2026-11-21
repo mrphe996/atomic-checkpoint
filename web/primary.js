@@ -212,6 +212,13 @@
       let f = 0; tmr = setInterval(() => { f = Math.min(1, f + 0.04); fill.style.height = (c.val / max * H * f) + 'px'; if (f >= 1) { clearInterval(tmr); ask(c); } }, 40);
     }
     function ask(c) {
+      if (L.choose) {   // young learners: tap the reading instead of typing it
+        const msg = el('p', { class: 'muted' }); const vals = [c.val, c.val + step, Math.max(0, c.val - step), c.val + 2 * step].filter((v, i, a) => a.indexOf(v) === i && v <= max + 1e-9).slice(0, 3).sort((a, b) => a - b);
+        const row = el('div', { class: 'btnrow labchoose' }, ...vals.map(v => el('button', { type: 'button', class: 'btn big', onclick: () => {
+          if (Math.abs(v - c.val) > tol + 1e-9) { msg.className = 'fb bad'; msg.textContent = `Not quite. Look at the top of the coloured bar. Which line is it next to?`; return; }
+          state.rows[c.k] = c.val; save(); out.innerHTML = ''; out.append(el('div', { class: 'banner ok' }, `✓ Well done! ${c.t}: ${c.val} ${L.unit}.`)); draw(); } }, `${+v.toFixed(2)} ${v === 1 && /s$/.test(L.unit) ? L.unit.slice(0, -1) : L.unit}`)));
+        out.append(el('div', { class: 'card', style: 'padding:14px 18px' }, el('p', {}, el('b', {}, 'Look at the scale. '), `Tap the ${L.measure.toLowerCase()}.`), row, msg)); return;
+      }
       const inp = el('input', { type: 'text', inputmode: 'decimal', class: 'numin s', 'aria-label': `${L.measure} for ${c.t}` }); const msg = el('p', { class: 'muted' });
       const ok = el('button', { type: 'button', class: 'btn primary small' }, 'Record');
       ok.onclick = () => { const v = Number(String(inp.value).replace(',', '.')); if (!inp.value || !isFinite(v)) { inp.focus(); return; }
@@ -274,13 +281,16 @@
       const R = Hm.record; const msg = el('p', { class: 'muted' });
       const t = el('table', { class: 'grid data labtable' }, el('tr', {}, ...R.head.map(h => el('th', {}, h))));
       R.rows.forEach((row, i) => { const tr = el('tr', {}, el('td', {}, row[0])); row.slice(1).forEach((cell, j) => { const key = i + '_' + j;
+        if (cell.choices) {   // tap a choice (for children who cannot type yet)
+          const cs = el('div', { class: 'labchips', role: 'radiogroup', 'aria-label': `${row[0]} – ${R.head[j + 1]}` }, ...cell.choices.map(ch => { const b = el('button', { type: 'button', class: 'chip' + (LS.h.vals[key] === ch ? ' on' : ''), 'aria-pressed': String(LS.h.vals[key] === ch), onclick: () => { LS.h.vals[key] = ch; ctx.persist(); cs.querySelectorAll('.chip').forEach(x => { const on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-pressed', String(on)); }); check(); } }, ch); return b; }));
+          tr.append(el('td', {}, cs)); return; }
         const inp = el('input', { type: 'text', inputmode: 'decimal', class: 'numin s', value: LS.h.vals[key] || '', 'aria-label': `${row[0]} – ${R.head[j + 1]}` });
         inp.addEventListener('change', () => { LS.h.vals[key] = inp.value.trim(); ctx.persist(); check(); }); tr.append(el('td', {}, inp)); }); t.append(tr); });
       card.append(el('b', {}, 'Record your results'), el('div', { class: 'tablewrap' }, t), msg);
       const qs = el('div');
       function check() {
-        const bad = []; R.rows.forEach((row, i) => row.slice(1).forEach((cell, j) => { const v = Number(String(LS.h.vals[i + '_' + j] || '').replace(',', '.')); if (!isFinite(v) || LS.h.vals[i + '_' + j] === undefined || LS.h.vals[i + '_' + j] === '' || v < cell.min || v > cell.max) bad.push(`${row[0]} (${R.head[j + 1]})`); }));
-        if (bad.length) { msg.className = 'muted'; msg.textContent = `Fill in every box with your own measurement. Check: ${bad.slice(0, 3).join(', ')}${bad.length > 3 ? '…' : ''}. ${R.hint || ''}`; return; }
+        const bad = []; R.rows.forEach((row, i) => row.slice(1).forEach((cell, j) => { if (cell.choices) { if (!cell.choices.includes(LS.h.vals[i + '_' + j])) bad.push(`${row[0]} (${R.head[j + 1]})`); return; } const v = Number(String(LS.h.vals[i + '_' + j] || '').replace(',', '.')); if (!isFinite(v) || LS.h.vals[i + '_' + j] === undefined || LS.h.vals[i + '_' + j] === '' || v < cell.min || v > cell.max) bad.push(`${row[0]} (${R.head[j + 1]})`); }));
+        if (bad.length) { msg.className = 'muted'; msg.textContent = `Fill in every row with your own result. Check: ${bad.slice(0, 3).join(', ')}${bad.length > 3 ? '…' : ''}. ${R.hint || ''}`; return; }
         msg.className = 'fb ok'; msg.textContent = '✓ Results recorded. Now answer the questions about your experiment.';
         if (!qs.childNodes.length) qs.append(qBlock(Hm.qs || [], () => { if (!LS.h.done) { LS.h.done = true; ctx.persist(); ctx.toast && ctx.toast('Home experiment complete!'); } }));
       }
