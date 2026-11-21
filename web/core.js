@@ -33,17 +33,21 @@
     let r = await fetch(`content/stage${STAGE}.json`);
     if (!r.ok && STAGE !== 7) { STAGE = 7; r = await fetch('content/stage7.json'); }
     INDEX = r.ok ? await r.json() : { units: [] };
+    try { const hid = (await Backend.unitSettings()).filter(x => x.hidden).map(x => x.unit); INDEX.units.forEach(u => { if (hid.includes(`stage${STAGE}-unit${String(u.n).padStart(2, '0')}`)) { u.ready = false; u.hiddenByAdmin = true; } }); INDEX.hiddenExtra = hid; } catch (e) { }
     return INDEX;
   }
   async function loadUnit(n) {
-    if (!CACHE[n]) { const r = await fetch(`content/${unitId(n)}.json`); if (!r.ok) throw new Error('content'); CACHE[n] = await r.json(); }
+    if (!CACHE[n]) { const r = await fetch(`content/${unitId(n)}.json`); if (!r.ok) throw new Error('content'); CACHE[n] = await withOv(unitId(n), await r.json()); }
     UNO = n; C = CACHE[n]; try { sessionStorage.setItem('atomic.unit', String(n)); } catch (e) { }
     return C;
   }
-  async function peekUnit(n) { if (!CACHE[n]) { const r = await fetch(`content/${unitId(n)}.json`); if (!r.ok) throw new Error('content'); CACHE[n] = await r.json(); } return CACHE[n]; }
+  async function peekUnit(n) { if (!CACHE[n]) { const r = await fetch(`content/${unitId(n)}.json`); if (!r.ok) throw new Error('content'); CACHE[n] = await withOv(unitId(n), await r.json()); } return CACHE[n]; }
+  // admin changes (edited or withdrawn questions) are applied to the built content as it loads
+  async function withOv(unit, pack) { try { const rows = await Backend.contentOverrides(unit); if (!rows || !rows.length) return pack; const ov = {}; rows.forEach(r => { ov[r.question_id] = { hidden: r.hidden, patch: r.patch }; }); return GradeCore.applyOverrides(pack, ov); } catch (e) { return pack; } }
+  async function dropCache() { for (const k of Object.keys(CACHE)) delete CACHE[k]; FINAL = null; CP = null; if (UNO) { try { await loadUnit(UNO); } catch (e) { } } }
   const cached = n => CACHE[n] || null;
   let FINAL = null, CP = null;
-  async function loadFinal() { if (!FINAL) { const r = await fetch(`content/stage${STAGE}-final.json`); FINAL = r.ok ? await r.json() : null; } return FINAL; }
+  async function loadFinal() { if (!FINAL) { const r = await fetch(`content/stage${STAGE}-final.json`); FINAL = r.ok ? await withOv(`stage${STAGE}-final`, await r.json()) : null; } return FINAL; }
   const unitReady = n => !!((INDEX && INDEX.units.find(u => u.n === n)) || {}).ready;
   // open another unit: every unit is open at any time (no need to finish the one before)
   async function switchUnit(n) {
@@ -207,7 +211,7 @@
 
   /* ---------- end-of-year exam ---------- */
   // Checkpoint-format practice papers (Atomic papers in the format of Cambridge 0893/01 and 0893/02)
-  async function loadCp() { if (!CP) { const r = await fetch(`content/stage${STAGE}-cp.json`); CP = r.ok ? await r.json() : null; } return CP; }
+  async function loadCp() { if (!CP) { const r = await fetch(`content/stage${STAGE}-cp.json`); CP = r.ok ? await withOv(`stage${STAGE}-cp`, await r.json()) : null; } return CP; }
   async function refreshCp() { const st = cur(); if (!st || S.guest) { S.cpAttempts = []; return []; } S.cpAttempts = await Backend.attempts(st.id, `stage${STAGE}-cp`); return S.cpAttempts; }
   async function submitCp(form, answers, clientKey, meta) {
     const st = cur(); const r = await Backend.submitTest({ learnerId: st.id, unit: `stage${STAGE}-cp`, form, answers, clientKey, meta });
@@ -343,7 +347,7 @@
   window.Core = {
     get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; }, get STAGE() { return STAGE; }, STAGES, switchStage, MATHS, stageNo, subjectOf, stageLabel, stageName, unitCount, get IS_MATHS() { return MATHS(STAGE); },
     unitId, unitReady, switchUnit, loadIndex, peekUnit, cached, loadFinal, get FINAL() { return FINAL; },
-    xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, startClock, refreshFinal, finalPassed, submitFinal, loadCp, refreshCp, submitCp, activity,
+    xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, startClock, refreshFinal, finalPassed, submitFinal, loadCp, refreshCp, dropCache, withOv, submitCp, activity,
     boot, selectLearner, leaveLearner, refreshAccount, cur, persist, flush, canOpen,
     sec, secs, vstate, stopDone, stopsLeft, videoDone, reqLeft, secDone, secLock, firstMissingIn, missingForTest,
     attempts, lastAttempt, passed, isPass, nextForm, remKey, remLeft, testState, submitTest, refreshAttempts, refreshResults,

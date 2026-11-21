@@ -221,6 +221,7 @@
     let auto = 0; const per = {}; const pending = [];
     for (const q of items) {
       const r = answers[q.id];
+      if (q.voided) { per[q.id] = { pts: q.pts, max: q.pts, voided: true }; auto += q.pts; continue; }   // withdrawn by an admin: full marks for everyone
       if (q.teacher) { pending.push(q.id); const g = r != null ? grade(q, r) : null; per[q.id] = { pts: null, max: q.pts, teacher: true, suggest: g ? Math.round(q.pts * g.frac * 2) / 2 : 0 }; continue; }
       const g = grade(q, r == null ? null : r);
       let frac = g.frac; if ((q.type === 'num' || q.type === 'scale') && !g.ok) frac = g.unitErr ? 0.5 : 0;
@@ -250,5 +251,23 @@
     }
     return s;
   }
-  return { grade, answerText, scoreTest, stripKeys, isTick, shuffle, rng, parseNum, near, typedOk, normText, exprFn, exprSame, TYPE_VI, DIFF, SCOPE_COUNT };
+  /* Apply admin changes to a unit / exam pack. ov: { questionId: { hidden, patch } }.
+     Practice lists drop hidden questions; test papers drop them too, or (server, voidHidden) keep them as voided = full marks. */
+  function applyOverrides(pack, ov, opts) {
+    if (!pack || !ov || !Object.keys(ov).length) return pack;
+    const voidHidden = !!(opts && opts.voidHidden);
+    const fix = q => { const o = ov[q.id]; return o && o.patch ? Object.assign({}, q, o.patch, { id: q.id }) : q; };
+    const list = (arr, isTest) => (arr || []).filter(q => !(ov[q.id] && ov[q.id].hidden) || (isTest && voidHidden)).map(q => { const x = fix(q); if (isTest && ov[q.id] && ov[q.id].hidden) return Object.assign({}, x, { voided: true }); return x; });
+    const out = Object.assign({}, pack);
+    const secs = pack.sections || (pack.content && pack.content.sections);
+    if (secs) {
+      const ns = secs.map(s => Object.assign({}, s, { req: list(s.req), prac: list(s.prac), adv: s.adv ? list(s.adv) : s.adv,
+        stops: (s.stops || []).filter(x => !(x.q && ov[x.q.id] && ov[x.q.id].hidden)).map(x => (x.q ? Object.assign({}, x, { q: fix(x.q) }) : x)) }));
+      if (pack.sections) out.sections = ns; else out.content = Object.assign({}, pack.content, { sections: ns });
+    }
+    if (pack.tests) out.tests = Object.fromEntries(Object.entries(pack.tests).map(([k, v]) => [k, Array.isArray(v) ? list(v, true) : v]));
+    if (pack.papers) out.papers = Object.fromEntries(Object.entries(pack.papers).map(([k, v]) => [k, Array.isArray(v) ? list(v, true) : v]));
+    return out;
+  }
+  return { applyOverrides, numShow, grade, answerText, scoreTest, stripKeys, isTick, shuffle, rng, parseNum, near, typedOk, normText, exprFn, exprSame, TYPE_VI, DIFF, SCOPE_COUNT };
 });

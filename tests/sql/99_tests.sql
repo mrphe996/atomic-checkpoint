@@ -181,3 +181,45 @@ do $$ begin
   exception when others then if sqlerrm like 'FAIL%' then raise; end if; end;
 end $$;
 select 'PASS student sees own result: ' || (select count(*) = 1 from public.unit_results);
+
+-- ---------- admin console ----------
+reset role;
+insert into auth.users (id, email, raw_user_meta_data) values ('00000000-0000-0000-0000-0000000000ad', 'admin@test', '{"display_name":"Admin"}');
+update public.profiles set role = 'admin' where id = '00000000-0000-0000-0000-0000000000ad';
+insert into public.question_overrides (question_id, unit, is_test, public_patch, key_patch) values
+ ('tq1', 'stage7-unit03', true, '{"prompt":"New prompt"}', '{"prompt":"New prompt","answer":42}'),
+ ('pq1', 'stage7-unit03', false, '{"prompt":"P"}', '{"prompt":"P","answer":7}');
+-- a learner (student f1) cannot call admin functions nor read keys
+set role authenticated; select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-0000000000f1', false)) _x;
+do $$ begin
+  begin perform public.admin_overview(); raise exception 'FAIL: student ran admin_overview';
+  exception when others then if sqlerrm like 'FAIL%' then raise; end if; end;
+  begin perform public.admin_set_role('00000000-0000-0000-0000-0000000000f1', 'admin'); raise exception 'FAIL: student made themself admin';
+  exception when others then if sqlerrm like 'FAIL%' then raise; end if; end;
+end $$;
+select 'PASS student cannot read override keys: ' || (select count(*) = 0 from public.question_overrides);
+select 'PASS learners get no test answers via content_overrides: ' || (select patch ->> 'answer' is null from public.content_overrides('stage7-unit03') where question_id = 'tq1');
+select 'PASS practice overrides keep their answer: ' || (select (patch ->> 'answer')::int = 7 from public.content_overrides('stage7-unit03') where question_id = 'pq1');
+-- the admin
+select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-0000000000ad', false)) _x;
+select 'PASS admin overview counts accounts: ' || (select (public.admin_overview() ->> 'accounts')::int >= 5);
+select 'PASS admin finds users by email: ' || (select count(*) = 1 from public.admin_users('admin@', 50, 0)) || ' / ' || (select count(*) >= 1 from public.admin_users('', 50, 0));
+select public.admin_set_tester('10000000-0000-0000-0000-0000000000f1', true);
+select public.admin_set_enrolment('10000000-0000-0000-0000-0000000000f1', 19, true);
+select 'PASS admin user detail shows tester + maths enrolment: ' || (select (x -> 'learners' -> 0 ->> 'tester')::boolean and jsonb_array_length(x -> 'learners' -> 0 -> 'enrolments') = 1 from (select public.admin_user('00000000-0000-0000-0000-0000000000f1') x) y);
+select public.admin_set_disabled('00000000-0000-0000-0000-0000000000f1', true);
+reset role; select 'PASS disabling bans the login: ' || (select banned_until = 'infinity' from auth.users where id = '00000000-0000-0000-0000-0000000000f1'); set role authenticated;
+do $$ begin
+  begin perform public.admin_set_role('00000000-0000-0000-0000-0000000000ad', 'parent'); raise exception 'FAIL: admin removed own admin role';
+  exception when others then if sqlerrm like 'FAIL%' then raise; end if; end;
+end $$;
+select public.admin_save_question('m9u01s1r01', 'stage19-unit01', false, true, null, null);
+select public.admin_set_unit('stage19-unit15', true, 'checking');
+select public.admin_announce('Maintenance tonight', 'The site will be slow for 10 minutes.', 'all', 'warn');
+select 'PASS admin actions are audited: ' || (select count(*) >= 5 from public.admin_audit_log(100));
+do $$ begin
+  begin perform public.admin_save_question('tq2', 'stage7-unit03', true, false, '{"answer":1}', '{"answer":1}'); raise exception 'FAIL: test answer allowed in public patch';
+  exception when others then if sqlerrm like 'FAIL%' then raise; end if; end;
+end $$;
+reset role;
+select 'PASS maths results use stage 19: ' || (select count(*) = 0 from public.unit_results where unit like 'stage19-%' and stage <> 19);

@@ -24,6 +24,7 @@
     const mine = lid => { const a = need(); const l = a.learners.find(x => x.id === lid); if (!l) throw err('not_your_learner'); return l; };
     const note = (a, learner, kind, title, body) => a.notifications.unshift({ id: uuid(), kind, title, body: body || '', learner_id: learner, created_at: new Date().toISOString(), read_at: null });
     const subActive = a => !!(a.subscription && ['trialing', 'active', 'past_due'].includes(a.subscription.status) && (!a.subscription.current_period_end || Date.parse(a.subscription.current_period_end) > Date.now()));
+    const keyedDemo = (unit, k) => { const ov = {}; Object.entries(((D.admin || {}).overrides) || {}).forEach(([id, o]) => { if (o.unit === unit) ov[id] = { hidden: o.hidden, patch: o.key_patch }; }); return Object.keys(ov).length ? GradeCore.applyOverrides(k, ov, { voidHidden: true }) : k; };
     function recordFinal(lid, unit, at) {
       const a = ownerOf(lid); const l = a.learners.find(x => x.id === lid);
       if (at.status === 'final' && at.passed) {
@@ -56,7 +57,7 @@
         D.session = email; save(); return this.me();
       },
       async schools(country) { return (window.ATOMIC_SCHOOLS || []).filter(s => s.country === country); },
-      async signIn({ email, password }) { email = String(email || '').trim().toLowerCase(); const a = D.accounts[email]; if (!a || a.pw !== await sha(password)) throw err('bad_credentials'); D.session = email; save(); return this.me(); },
+      async signIn({ email, password }) { email = String(email || '').trim().toLowerCase(); const a = D.accounts[email]; if (!a || a.pw !== await sha(password)) throw err('bad_credentials'); if (a.profile.disabled) throw err('account_disabled'); D.session = email; save(); return this.me(); },
       async signOut() { D.session = null; save(); },
       async resetPassword(email) { return { sent: true, demo: true, email }; },
       async verifyPassword(password) { const a = need(); return a.pw === await sha(password); },
@@ -77,6 +78,7 @@
       async loadProgress(lid, unit) { mine(lid); return ((D.progress[lid] || {})[unit]) || null; },
       async allDays(lid) { mine(lid); return [].concat(...Object.values(D.progress[lid] || {}).map(p => (p && p.days) || [])); },
       async allStates(lid) { mine(lid); return JSON.parse(JSON.stringify(D.progress[lid] || {})); },
+      async isTester(lid) { return !!((((D.admin || {}).testers) || {})[lid]); },
       async enrolments(lid) { mine(lid); return ((D.enrol || {})[lid] || []).slice(); },
       async enrol(lid, stage, amount) { mine(lid); D.enrol = D.enrol || {}; const l = (D.enrol[lid] = D.enrol[lid] || []); if (!l.some(e => e.stage === stage)) l.push({ stage, method: 'test', amount: amount || null, status: 'active', created_at: new Date().toISOString() });
         note(need(), lid, 'billing', `You are enrolled in Cambridge Stage ${stage}`, 'Test checkout – no money was taken.'); save(); return 'ok'; },
@@ -89,7 +91,7 @@
         if ((CFG.billing || 'off') !== 'off' && !subActive(a)) throw err('subscription_required');
         const stage = Number(unit.match(/^stage(\d+)/)[1]); if (stage !== (l.stage || 7) && !(((D.enrol || {})[learnerId]) || []).some(e => e.stage === stage)) throw err('not_enrolled');
         const list = ((D.attempts[learnerId] = D.attempts[learnerId] || {})[unit] = D.attempts[learnerId][unit] || []);
-        const keys = await (await fetch(`content/demo/${unit}.tests.json`)).json();
+        const keys = keyedDemo(unit, await (await fetch(`content/demo/${unit}.tests.json`)).json());
         const same = list.find(x => x.clientKey === clientKey);
         if (same) return { attempt: same, solutions: TestRules.solutions(keys.papers[same.form]), duplicate: true };
         D.starts = D.starts || {}; const sk = `${learnerId}|${unit}|${form}`; const started = D.starts[sk] || null; const duration = started ? Math.round((Date.now() - Date.parse(started)) / 1000) : null;
@@ -175,6 +177,76 @@
         const m = {}; D.events.filter(e => e.name === 'answer' && e.props.unit === unit).forEach(e => { const x = (m[e.props.q] = m[e.props.q] || { attempts: 0, first: 0 }); x.attempts++; if (e.props.ok && e.props.try === 1) x.first++; });
         return Object.entries(m).map(([q, x]) => ({ question_id: q, attempts: x.attempts, first_try_correct: Math.round(x.first / x.attempts * 1000) / 10 })).sort((p, q) => p.first_try_correct - q.first_try_correct); },
       async videoStats(unit) { const m = {}; D.events.filter(e => e.name === 'video_complete' && e.props.unit === unit).forEach(e => { m[e.props.sec] = (m[e.props.sec] || 0) + 1; }); const starts = {}; D.events.filter(e => e.name === 'video_start' && e.props.unit === unit).forEach(e => { starts[e.props.sec] = (starts[e.props.sec] || 0) + 1; }); return Object.keys(starts).sort().map(s => ({ sec: s, started: starts[s], completed: m[s] || 0 })); },
+
+      /* content changes made in the admin console (shared by every account in this browser) */
+      async contentOverrides(unit) { const A = D.admin || {}; return Object.entries(A.overrides || {}).filter(([, o]) => o.unit === unit).map(([id, o]) => ({ question_id: id, hidden: o.hidden, patch: o.is_test ? o.public_patch : (o.key_patch || o.public_patch) })); },
+      async unitSettings() { return Object.entries((D.admin || {}).units || {}).map(([unit, u]) => ({ unit, ...u })); },
+      async announcements() { return ((D.admin || {}).ann || []).filter(x => x.active); },
+      admin: (() => {
+        const A = () => (D.admin = D.admin || { overrides: {}, units: {}, ann: [], audit: [], settings: { mock_payments: 'on' } });
+        const guard = () => { const a = need(); if (a.profile.role !== 'admin') throw err('admin_only'); return a; };
+        const log = (action, target, detail) => { A().audit.unshift({ id: A().audit.length + 1, at: new Date().toISOString(), actor_email: need().email, action, target, detail: detail || {} }); if (A().audit.length > 1000) A().audit.length = 1000; };
+        const allLearners = () => Object.values(D.accounts).flatMap(acc => acc.learners.map(l => ({ acc, l })));
+        const allAttempts = () => Object.entries(D.attempts).flatMap(([lid, units]) => Object.entries(units).flatMap(([unit, list]) => list.map(at => ({ lid, unit, at }))));
+        const keysFor = async unit => { const k = await (await fetch(`content/demo/${unit}.tests.json`)).json(); const ov = {}; Object.entries(A().overrides).forEach(([id, o]) => { if (o.unit === unit) ov[id] = { hidden: o.hidden, patch: o.key_patch }; }); return { raw: k, keyed: GradeCore.applyOverrides(k, ov, { voidHidden: true }) }; };
+        return {
+          keysFor,
+          async overview() { guard(); const accs = Object.values(D.accounts); const by = {}; accs.forEach(a => { by[a.profile.role] = (by[a.profile.role] || 0) + 1; });
+            const days = [...Array(14)].map((_, i) => { const d = new Date(Date.now() - (13 - i) * 864e5).toISOString().slice(0, 10); return { day: d, n: accs.filter(a => (a.profile.created_at || '').slice(0, 10) === d).length }; });
+            const atts = allAttempts(); const units = {}; atts.filter(x => x.at.status === 'final').forEach(({ unit, at }) => { const u = (units[unit] = units[unit] || { unit, attempts: 0, passed: 0, sum: 0 }); u.attempts++; if (at.passed) u.passed++; u.sum += at.pct || 0; });
+            const enr = {}; Object.values(D.enrol || {}).flat().forEach(e => { enr[e.stage] = (enr[e.stage] || 0) + 1; });
+            const week = Date.now() - 7 * 864e5;
+            return { accounts: accs.length, by_role: by, disabled: accs.filter(a => a.profile.disabled).length, learners: allLearners().length, testers: Object.keys(A().testers || {}).length,
+              active_7d: Object.keys(D.progress).length, active_30d: Object.keys(D.progress).length, signups_14d: days, attempts_7d: atts.filter(x => x.at.ts > week).length, attempts_total: atts.length,
+              pending_marking: atts.filter(x => x.at.status === 'pending').length, open_reports: accs.flatMap(a => a.reports).filter(r => r.status === 'open').length, enrolments: enr, certificates: Object.keys(D.certs).length,
+              units: Object.values(units).map(u => ({ unit: u.unit, attempts: u.attempts, passed: u.passed, avg_pct: Math.round(u.sum / u.attempts * 10) / 10 })).sort((x, y) => x.unit.localeCompare(y.unit)),
+              overrides: Object.keys(A().overrides).length, hidden_units: Object.values(A().units).filter(u => u.hidden).length };
+          },
+          async users(q = '', limit = 50, offset = 0) { guard(); q = String(q || '').toLowerCase();
+            const rows = Object.values(D.accounts).filter(a => !q || a.email.includes(q) || (a.profile.display_name || '').toLowerCase().includes(q) || a.profile.role === q || a.learners.some(l => l.nickname.toLowerCase().includes(q)))
+              .sort((x, y) => (y.profile.created_at || '').localeCompare(x.profile.created_at || ''));
+            return rows.slice(offset, offset + limit).map(a => ({ id: a.id, email: a.email, role: a.profile.role, display_name: a.profile.display_name, country: a.profile.country, disabled: !!a.profile.disabled, created_at: a.profile.created_at, last_sign_in_at: null, learners: a.learners.length, total: rows.length })); },
+          async user(id) { guard(); const a = Object.values(D.accounts).find(x => x.id === id); if (!a) throw err('not_found');
+            return { profile: { ...a.profile, email: a.email }, subscription: a.subscription, learners: a.learners.map(l => ({ learner: l, tester: !!(A().testers || {})[l.id], enrolments: ((D.enrol || {})[l.id] || []).slice(),
+              results: Object.entries(D.results[l.id] || {}).filter(([k]) => !k.includes(':')).map(([unit, r]) => ({ unit, pct: r.pct, at: r.at })),
+              attempts: Object.entries(D.attempts[l.id] || {}).flatMap(([unit, list]) => list.map(at => ({ id: at.id, unit, n: at.n, form: at.form, status: at.status, score: at.score, pct: at.pct, passed: at.passed, created_at: new Date(at.ts).toISOString(), leaves: at.leaves || 0, overtime: !!at.overtime }))).reverse(),
+              progress: Object.entries(D.progress[l.id] || {}).map(([unit, st]) => ({ unit, updated_at: null, items: Object.keys((st && st.items) || {}).length })),
+              certificates: Object.entries(D.certs).filter(([k]) => k.startsWith(l.id)).map(([, c]) => c) })) }; },
+          async setRole(id, role) { const me = guard(); if (id === me.id && role !== 'admin') throw err('own_admin'); Object.values(D.accounts).find(x => x.id === id).profile.role = role; log('set_role', id, { role }); save(); },
+          async setDisabled(id, on) { const me = guard(); if (id === me.id) throw err('own_account'); Object.values(D.accounts).find(x => x.id === id).profile.disabled = !!on; log(on ? 'disable_account' : 'enable_account', id); save(); },
+          async setTester(lid, on) { guard(); const t = (A().testers = A().testers || {}); if (on) t[lid] = true; else delete t[lid]; log(on ? 'tester_on' : 'tester_off', lid); save(); },
+          async setEnrolment(lid, stage, on) { guard(); D.enrol = D.enrol || {}; const l = (D.enrol[lid] = D.enrol[lid] || []); if (on) { if (!l.some(e => e.stage === stage)) l.push({ stage, method: 'admin', status: 'active', created_at: new Date().toISOString() }); } else D.enrol[lid] = l.filter(e => e.stage !== stage); log(on ? 'enrol' : 'unenrol', lid, { stage }); save(); },
+          async resetProgress(lid, unit) { guard(); if (D.progress[lid]) delete D.progress[lid][unit]; log('reset_progress', lid, { unit }); save(); },
+          async attempts(unit = '', status = '') { guard(); return allAttempts().filter(x => (!unit || x.unit === unit || x.unit.startsWith(unit + '-')) && (!status || x.at.status === status)).map(({ lid, unit, at }) => { const o = allLearners().find(y => y.l.id === lid) || {};
+            return { id: at.id, learner_id: lid, nickname: o.l ? o.l.nickname : '?', email: o.acc ? o.acc.email : '', unit, n: at.n, form: at.form, status: at.status, score: at.score, pct: at.pct, passed: at.passed, created_at: new Date(at.ts).toISOString(), leaves: at.leaves || 0, overtime: !!at.overtime, duration_s: at.duration }; }).sort((x, y) => y.created_at.localeCompare(x.created_at)); },
+          async voidAttempt(id) { guard(); for (const [lid, units] of Object.entries(D.attempts)) for (const [unit, list] of Object.entries(units)) { const i = list.findIndex(x => x.id === id); if (i < 0) continue; const at = list[i]; list.splice(i, 1);
+            if (at.passed && D.results[lid] && D.results[lid][unit]) delete D.results[lid][unit]; log('void_attempt', id, { unit, form: at.form, score: at.score }); save(); return; } throw err('not_found'); },
+          async regrade(id) { guard(); for (const [lid, units] of Object.entries(D.attempts)) for (const [unit, list] of Object.entries(units)) { const at = list.find(x => x.id === id); if (!at) continue;
+            const { keyed } = await keysFor(unit); const paper = keyed.papers[at.form]; const from = at.score; const was = at.passed;
+            const fresh = TestRules.mark(paper, at.answers || {}, { n: at.n, form: at.form, id: at.id, clientKey: at.clientKey });
+            for (const q of fresh.pending) if (at.per[q] && at.per[q].pts != null) fresh.per[q].pts = at.per[q].pts;
+            if (keyed.final) TestRules.finalizeFinal(fresh, paper, keyed.max, keyed.pass); else TestRules.finalize(fresh, paper, await loadPublic(unit), ((D.progress[lid] || {})[unit]) || {});
+            Object.assign(at, { per: fresh.per, auto: fresh.auto, score: fresh.score, pct: fresh.pct, passed: fresh.passed, status: fresh.status, byObj: fresh.byObj, weak: fresh.weak, remed: fresh.remed });
+            if (was && !at.passed && D.results[lid]) delete D.results[lid][unit];
+            if (!was && at.passed) { D.results[lid] = D.results[lid] || {}; if (!D.results[lid][unit] && !keyed.final) D.results[lid][unit] = { pct: at.pct, at: new Date().toISOString(), stage: Number(unit.match(/^stage(\d+)/)[1]) }; }
+            const r = { id, changed: from !== at.score || was !== at.passed, from, to: at.score, passed: at.passed }; log('regrade', id, r); save(); return { result: r, attempt: at }; } throw err('not_found'); },
+          async regradeUnit(unit) { guard(); const ids = allAttempts().filter(x => x.unit === unit && x.at.status === 'final').map(x => x.at.id); const out = []; for (const id of ids) out.push((await this.regrade(id)).result);
+            const changed = out.filter(x => x.changed); log('regrade_unit', unit, { attempts: out.length, changed: changed.length }); save(); return { attempts: out.length, changed: changed.length, results: changed }; },
+          async setUnit(unit, hidden, note) { guard(); A().units[unit] = { hidden: !!hidden, note: note || null, updated_at: new Date().toISOString() }; log(hidden ? 'hide_unit' : 'show_unit', unit, { note }); save(); },
+          async overrides(unit) { guard(); return Object.entries(A().overrides).filter(([, o]) => o.unit === unit).map(([question_id, o]) => ({ question_id, ...o })); },
+          async papers(unit) { guard(); const { raw } = await keysFor(unit); const ov = {}; Object.entries(A().overrides).forEach(([id, o]) => { if (o.unit === unit) ov[id] = { hidden: o.hidden, patch: o.key_patch }; }); return { unit, final: !!raw.final, papers: raw.papers, overrides: ov }; },
+          async saveQuestion(qid, unit, isTest, hidden, pub, key) { guard(); if (isTest && pub && ['answer', 'model', 'rubric', 'accept', 'expr'].some(k => k in pub)) throw err('answers_in_public');
+            A().overrides[qid] = { unit, is_test: !!isTest, hidden: !!hidden, public_patch: pub || null, key_patch: key || null, updated_at: new Date().toISOString() }; log('edit_question', qid, { unit, hidden: !!hidden, edited: !!key }); save(); },
+          async resetQuestion(qid) { guard(); delete A().overrides[qid]; log('reset_question', qid); save(); },
+          async announce(title, body, audience, level) { guard(); const x = { id: Date.now(), title, body: body || '', audience: audience || 'all', level: level || 'info', active: true, created_at: new Date().toISOString() }; A().ann.unshift(x); log('announce', String(x.id), { title, audience }); save(); return x.id; },
+          async setAnnouncement(id, active) { guard(); const x = A().ann.find(y => y.id === id); if (x) x.active = !!active; log(active ? 'announcement_on' : 'announcement_off', String(id)); save(); },
+          async allAnnouncements() { guard(); return A().ann.slice(); },
+          async settings() { guard(); return { ...A().settings }; },
+          async setSetting(name, value) { guard(); if (name !== 'mock_payments' || !['on', 'off'].includes(value)) throw err('setting'); A().settings[name] = value; log('setting', name, { value }); save(); },
+          async audit() { guard(); return A().audit.slice(); },
+          async setReport(id, status) { guard(); for (const x of Object.values(D.accounts)) { const r = x.reports.find(y => y.id === id); if (r) r.status = status; } log('report_status', String(id), { status }); save(); }
+        };
+      })(),
       /* tester tools (demo only) */
       demo: { setRole(r) { const a = need(); a.profile.role = r; save(); }, reset() { try { localStorage.removeItem(KEY); } catch (e) { } D = { accounts: {}, session: null, progress: {}, attempts: {}, results: {}, certs: {}, events: [] }; },
         simulateOtherUnits(lid, pct) { D.results[lid] = D.results[lid] || {}; for (let n = 1; n <= 14; n++) { const u = 'stage7-unit' + String(n).padStart(2, '0'); if (u !== 'stage7-unit03' && !D.results[lid][u]) D.results[lid][u] = { pct, at: new Date().toISOString(), stage: 7, simulated: true }; } save(); },
@@ -276,6 +348,35 @@
         rest('events', { method: 'POST', body: { learner_id: props && props.learner || null, parent_id: uid(), name, props, essential } }).catch(() => { }); },
       async itemStats(unit) { return rpc('item_stats', { p_unit: unit }); },
       async videoStats() { return []; },
+      async contentOverrides(unit) { const r = await fetch(`${URL_}/rest/v1/rpc/content_overrides`, { method: 'POST', headers: { apikey: ANON, 'Content-Type': 'application/json', ...(S ? { Authorization: `Bearer ${S.access_token}` } : {}) }, body: JSON.stringify({ p_unit: unit }) }); return r.ok ? r.json() : []; },
+      async unitSettings() { const r = await fetch(`${URL_}/rest/v1/unit_settings?select=unit,hidden,note`, { headers: { apikey: ANON } }); return r.ok ? r.json() : []; },
+      async announcements() { const r = await fetch(`${URL_}/rest/v1/announcements?active=eq.true&order=created_at.desc&limit=5`, { headers: { apikey: ANON } }); return r.ok ? r.json() : []; },
+      admin: {
+        overview: () => rpc('admin_overview'),
+        users: (q = '', limit = 50, offset = 0) => rpc('admin_users', { p_q: q, p_limit: limit, p_offset: offset }),
+        user: id => rpc('admin_user', { p_id: id }),
+        setRole: (id, role) => rpc('admin_set_role', { p_user: id, p_role: role }),
+        setDisabled: (id, on) => rpc('admin_set_disabled', { p_user: id, p_on: !!on }),
+        setTester: (lid, on) => rpc('admin_set_tester', { p_learner: lid, p_on: !!on }),
+        setEnrolment: (lid, stage, on) => rpc('admin_set_enrolment', { p_learner: lid, p_stage: stage, p_on: !!on }),
+        resetProgress: (lid, unit) => rpc('admin_reset_progress', { p_learner: lid, p_unit: unit }),
+        attempts: (unit = '', status = '') => rpc('admin_attempts', { p_unit: unit, p_status: status, p_limit: 300 }),
+        voidAttempt: id => rpc('admin_void_attempt', { p_attempt: id }),
+        regrade: id => api('admin', { method: 'POST', body: { action: 'regrade', attemptId: id } }),
+        regradeUnit: unit => api('admin', { method: 'POST', body: { action: 'regrade_unit', unit } }),
+        setUnit: (unit, hidden, note) => rpc('admin_set_unit', { p_unit: unit, p_hidden: !!hidden, p_note: note || null }),
+        overrides: unit => rpc('admin_overrides', { p_unit: unit }),
+        papers: unit => api('admin?unit=' + encodeURIComponent(unit)),
+        async saveQuestion(qid, unit, isTest, hidden, pub, key) { await rpc('admin_save_question', { p_qid: qid, p_unit: unit, p_is_test: !!isTest, p_hidden: !!hidden, p_public: pub || null, p_key: key || null }); try { await api('admin', { method: 'POST', body: { action: 'refresh', unit } }); } catch (e) { } },
+        async resetQuestion(qid, unit) { await rpc('admin_reset_question', { p_qid: qid }); try { await api('admin', { method: 'POST', body: { action: 'refresh', unit } }); } catch (e) { } },
+        announce: (title, body, audience, level) => rpc('admin_announce', { p_title: title, p_body: body || '', p_audience: audience || 'all', p_level: level || 'info' }),
+        setAnnouncement: (id, active) => rpc('admin_set_announcement', { p_id: id, p_active: !!active }),
+        allAnnouncements: () => rest('announcements?order=created_at.desc&limit=50'),
+        settings: () => rpc('admin_settings'),
+        setSetting: (name, value) => rpc('admin_set_setting', { p_name: name, p_value: value }),
+        audit: () => rpc('admin_audit_log', { p_limit: 300 }),
+        setReport: (id, status) => rpc('admin_set_report', { p_id: id, p_status: status })
+      },
       demo: null
     };
   }

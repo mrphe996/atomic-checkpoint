@@ -78,6 +78,7 @@
       else {
         const menu = el('div', { class: 'usermenu', hidden: true, id: 'userMenu' }, el('b', {}, st.name), el('a', { href: '#profile' }, 'My progress'), el('a', { href: '#settings', id: 'settingsLink' }, 'Settings'),
           ['marker', 'admin'].includes(me.profile.role) ? el('a', { href: '#staff' }, 'Staff') : null,
+          me.profile.role === 'admin' ? el('a', { href: '#admin', id: 'adminLink' }, 'Admin console') : null,
           el('button', { type: 'button', id: 'signOut', onclick: async () => { Core.flush(); await Backend.signOut(); await Core.boot(C); st = null; go('home'); } }, 'Sign out'));
         const av = el('button', { class: 'namechip', type: 'button', id: 'whoBtn', 'aria-label': 'Account menu', 'aria-haspopup': 'true', onclick: ev => { ev.stopPropagation(); menu.hidden = !menu.hidden; } }, initialChip(34), el('span', {}, st.alias));
         document.addEventListener('click', () => { menu.hidden = true; }, { once: true });
@@ -88,6 +89,7 @@
       right.append(bell(), el('button', { class: 'btn small', type: 'button', id: 'signOut', onclick: async () => { await Backend.signOut(); await Core.boot(C); go('home'); } }, 'Sign out'));
       nav = [navLink('home', 'Home', area === 'home'), navLink('help', 'Help', area === 'help')];
       if (['marker', 'admin'].includes(me.profile.role)) nav.push(navLink('staff', 'Staff', area === 'staff'));
+      if (me.profile.role === 'admin') nav.push(navLink('admin', 'Admin', area === 'admin'));
     } else {
       right.append(el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
       nav = [navLink('home', 'Home', area === 'home'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
@@ -206,6 +208,8 @@
     const m = $main();
     if (!st) { if (Core.S.me) { m.append(narrow(el('h1', {}, 'Welcome'), el('p', {}, 'This account has no learner profile.'), ['marker', 'admin'].includes(Core.S.me.profile.role) ? el('a', { class: 'btn primary', href: '#staff' }, 'Open Staff') : el('a', { class: 'btn', href: '#help' }, 'Contact us'))); return; } viewLanding(); return; }
     document.getElementById('wrap').classList.add('landing');
+    Backend.announcements().then(list => { const mm = $main(); if (!mm) return; (list || []).filter(x => x.audience === 'all' || Number(x.audience) === Core.STAGE).slice(0, 3).reverse()
+      .forEach(x => mm.prepend(el('div', { class: 'banner ' + (x.level === 'warn' ? 'adv' : 'info') + ' announce', role: 'status' }, el('b', {}, x.title + (x.body ? ' ' : '')), x.body || ''))); }).catch(() => { });
     const started = Object.keys(st.video).length || Object.keys(st.items).length;
     const nx = Core.nextActivity(st);
     const resume = () => {
@@ -1382,7 +1386,7 @@
      ACCOUNT, PLANS, HELP, LEGAL  (P0 / P1 screens)
      ===================================================================== */
   const ERR = { bad_email: 'Please enter a valid email address.', weak_password: 'Use at least 8 characters for your password.', email_taken: 'An account with this email already exists – sign in instead.',
-    bad_credentials: 'That email and password do not match.', sign_in: 'Please sign in again.', parental_consent: 'Please tick the parental consent box.', bad_nickname: 'Use a nickname of 2–24 characters.',
+    bad_credentials: 'That email and password do not match.', account_disabled: 'This account has been switched off by Atomic. Please contact us via Help & contact.', user_banned: 'This account has been switched off by Atomic. Please contact us via Help & contact.', admin_only: 'Only administrators can do this.', own_admin: 'You cannot remove your own administrator role.', own_account: 'You cannot switch off your own account.', sign_in: 'Please sign in again.', parental_consent: 'Please tick the parental consent box.', bad_nickname: 'Use a nickname of 2–24 characters.',
     subscription_required: 'This needs a Cambridge Stage 7 plan.', locked: 'Finish every lesson or video and every Core question first.', awaiting_marking: 'Your last test is still being marked.', review_first: 'Finish your review questions first.',
     already_passed: 'You have already passed this test.', wrong_paper: 'Please reload the page and try again.', confirm: 'Type the confirmation exactly as shown.', staff_only: 'Staff only.', message: 'Please write a short message.' };
   const errText = e => ERR[e && e.code] || (e && e.detail) || 'Something went wrong. Please try again.';
@@ -1791,7 +1795,8 @@
   /* ---------- router ---------- */
   const TOC_ROUTES = r => r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || /^u-\d+$/.test(r) || ['map', 'result', 'remedial', 'topic', 'drill', 'cert', 'unit'].includes(r);
   const PUBLIC = { home: () => viewHome(), signin: viewSignin, signup: viewSignup, forgot: viewForgot, pricing: viewPricing, help: viewHelp, privacy: viewPrivacy, 'privacy-kids': viewKidsPrivacy, terms: viewTerms, cookies: viewCookies, verify: viewVerify };
-  const ACCOUNT = { staff: viewStaff, teacher: viewStaff };
+  const viewAdmin = window.AtomicAdmin ? window.AtomicAdmin({ modal, toast, errText: e => errText(e), $main, render: () => render() }) : null;
+  const ACCOUNT = { staff: viewStaff, teacher: viewStaff, admin: () => viewAdmin && viewAdmin() };
   const LEARNER = { home: viewHome, unit: viewUnit, test: viewTest, tests: viewTests, final: viewFinal, checkpoint: viewCheckpoint, level: viewLevel, result: viewResult, remedial: viewRemedial, map: viewMap, profile: viewProfile, topic: viewTopic, bank: viewBank, drill: viewDrill, board: viewBoard, cert: viewCert, settings: viewSettings };
   const GUEST_WALL = { board: 'Sign up free to join the leaderboard', cert: 'Sign up free to earn a certificate', result: 'Sign up free to take the Unit Test', remedial: 'Sign up free to take the Unit Test', settings: 'Sign up free to get your own account' };
   let renderSeq = 0;
@@ -1808,6 +1813,7 @@
     if (r !== 'test' && !/^(fx|cpx)-/.test(r)) UI.testOn = false;
     document.body.classList.remove('menu-open', 'toc-open');
     const me = Core.S.me;
+    if (me && me.profile && me.profile.disabled) { try { Core.flush && Core.flush(); } catch (e) { } await Backend.signOut(); await Core.boot(C); st = null; location.replace('#signin'); setTimeout(() => toast(ERR.account_disabled), 300); return; }
     const needsLearner = !!LEARNER[r] && r !== 'home' || /^(v|ex|ws)-/.test(r) || /^(stage|checkout|fx|fres)-\d+$/.test(r) || /^(cpx|cpr)-[A-Z]{1,2}\d$/.test(r);
     const freeTopic = /^(v|ex|ws)-\d+-1$/.test(location.hash.slice(1)) || r === 'unit';
     if (['learners', 'add-learner', 'parent'].includes(r)) { location.replace('#home'); return; }   // old parent-area links
@@ -1827,7 +1833,7 @@
       else if (st && LEARNER[r]) await LEARNER[r](); else if (ACCOUNT[r]) await ACCOUNT[r](); else if (PUBLIC[r]) await PUBLIC[r](); else viewHome();
     } catch (e) { console.error(e); if (seq === renderSeq) m.append(el('div', { class: 'banner adv', role: 'alert' }, 'Something went wrong loading this page. ', el('button', { class: 'btn small', type: 'button', onclick: () => render() }, 'Try again'))); }
     if (seq !== renderSeq) return;
-    if (r === 'staff') document.title = 'Atomic – Staff'; else document.title = `Atomic – Cambridge ${Core.stageLabel()}`;
+    if (r === 'admin') document.title = 'Atomic – Admin'; else if (r === 'staff') document.title = 'Atomic – Staff'; else document.title = `Atomic – Cambridge ${Core.stageLabel()}`;
     m.focus({ preventScroll: true }); window.scrollTo(0, 0);
   }
   window.addEventListener('hashchange', render);

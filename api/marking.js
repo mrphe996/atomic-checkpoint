@@ -1,28 +1,28 @@
 // Atomic markers (role marker/admin) mark written test answers.
 // GET  /api/marking               → queue of pending attempts with the mark scheme and an automatic suggestion
 // POST /api/marking { attemptId, grades: { itemId: marks } } → final mark; the database trigger records the first pass
-import { send, readJson, getUser, db, loadUnit, role, Rules, rowToAttempt } from './_lib/supa.js';
+import { send, readJson, getUser, db, loadUnit, loadPack, role, Rules, rowToAttempt } from './_lib/supa.js';
 
 export async function handle(req, f = fetch) {
   const user = await getUser(req, f); if (!user) return [401, { error: 'sign_in' }];
   const r = await role(user.id, f); if (r !== 'marker' && r !== 'admin') return [403, { error: 'staff_only' }];
   if (req.method === 'GET') {
     const rows = await db('attempts?status=eq.pending&order=created_at.asc&limit=50&select=id,unit,n,form,answers,per,created_at,learner_id', {}, f);
-    const queue = rows.map(row => {
-      const { papers } = loadUnit(row.unit);
+    const queue = await Promise.all(rows.map(async row => {
+      const { papers } = await loadPack(row.unit, f);
       const items = Object.keys(row.per).filter(k => row.per[k].teacher).map(id => {
         const q = papers[row.form].find(x => x.id === id);
         return { id, prompt: q.prompt, max: q.pts, answer: row.answers[id] || '', rubric: q.rubric.map(p => p.pt), model: q.model, suggest: row.per[id].suggest };
       });
       return { attemptId: row.id, unit: row.unit, n: row.n, form: row.form, submitted: row.created_at, learner: 'Learner ' + row.learner_id.slice(0, 4), items };
-    });
+    }));
     return [200, { queue }];
   }
   if (req.method !== 'POST') return [405, { error: 'method' }];
   const { attemptId, grades } = await readJson(req);
   const rows = await db(`attempts?id=eq.${encodeURIComponent(attemptId)}&status=eq.pending`, {}, f);
   if (!rows.length) return [404, { error: 'not_pending' }];
-  const row = rows[0]; const pack = loadUnit(row.unit); const { content, papers } = pack; const paper = papers[row.form];
+  const row = rows[0]; const pack = await loadPack(row.unit, f); const { content, papers } = pack; const paper = papers[row.form];
   const a = rowToAttempt(row);
   for (const id of a.pending) {
     const v = Number((grades || {})[id]); if (!isFinite(v)) return [400, { error: 'missing_mark', id }];

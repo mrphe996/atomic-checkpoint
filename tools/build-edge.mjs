@@ -18,7 +18,7 @@ for (const d of ['_shared', 'api', 'signup']) fs.rmSync(path.join(F, d), { recur
 const handler = (s, lib) => s.replace("from './_lib/supa.js'", `from './${lib}'`).replace(/\nexport default async function handler[\s\S]*$/, '\n');
 wr('_shared/grade-core.js', rd('shared/grade-core.js')); wr('_shared/test-rules.js', rd('shared/test-rules.js'));
 wr('_shared/supa.js', rd('edge/supa.js')); wr('_shared/mini.js', rd('edge/mini.js'));
-for (const f of ['submit-test.js', 'start-test.js', 'marking.js', 'account.js']) wr('_shared/' + f, handler(rd('api/' + f), 'supa.js'));
+for (const f of ['submit-test.js', 'start-test.js', 'marking.js', 'account.js', 'admin.js']) wr('_shared/' + f, handler(rd('api/' + f), 'supa.js'));
 wr('_shared/signup.js', handler(rd('api/signup.js'), 'mini.js'));
 
 // EDGE_SEALED=1 (with EDGE_LIB): keys are not uploaded; api/sealed.js fetches supabase/sealed/units.enc from the same

@@ -259,3 +259,25 @@ test('Checkpoint-format papers: 45 minutes, no level gate, marked by strand, lea
     assert.equal(s, 201); assert.equal(T.attempts[1].auto_submitted, true);
   } finally { process.env.BILLING = 'paddle'; }
 });
+
+test('admin: only admins; key overrides and withdrawn questions change the marking', async () => {
+  const admin = await import(base + 'admin.js');
+  const { T, f } = fakeSupabase(); T.question_overrides = []; T.admin_audit = [];
+  assert.equal((await admin.handle({ method: 'GET', headers: { authorization: 'Bearer tA' }, query: { unit: 'stage7-unit03' } }, f))[0], 403, 'a parent is not an admin');
+  assert.equal((await admin.handle({ method: 'GET', headers: { authorization: 'Bearer tM' }, query: { unit: 'stage7-unit03' } }, f))[0], 403, 'a marker is not an admin');
+  T.profiles.find(p => p.id === MARKER).role = 'admin';
+  const [s, b] = await admin.handle({ method: 'GET', headers: { authorization: 'Bearer tM' }, query: { unit: 'stage7-unit03' } }, f);
+  assert.equal(s, 200); assert.ok(b.papers.A.length > 5, 'admins see the keyed papers');
+  // a finished attempt that answered everything right, then the admin withdraws one question and changes another's key
+  const paper = keys.A; const answers = Object.fromEntries(paper.map(q => [q.id, right(q)]));
+  const auto = paper.filter(q => !q.teacher);
+  const pick = auto.find(q => q.type === 'mcq');
+  T.attempts.push({ id: 'att1', learner_id: KID, unit: 'stage7-unit03', n: 1, form: 'A', client_key: 'x', answers, per: {}, auto: 30, score: 30, pct: 100, status: 'final', passed: true, created_at: new Date().toISOString() });
+  T.question_overrides.push({ question_id: pick.id, unit: 'stage7-unit03', hidden: false, key_patch: { ...pick, options: pick.options.map(o => ({ ...o, ok: !o.ok })) } });
+  const [s2, r2] = await admin.handle({ method: 'POST', headers: { authorization: 'Bearer tM' }, body: { action: 'regrade', attemptId: 'att1' } }, f);
+  assert.equal(s2, 200); assert.ok(r2.result.changed && r2.result.to < 30, 'the changed key costs the learner those marks');
+  T.question_overrides[0].hidden = true;
+  const [, r3] = await admin.handle({ method: 'POST', headers: { authorization: 'Bearer tM' }, body: { action: 'regrade_unit', unit: 'stage7-unit03' } }, f);
+  assert.equal(r3.attempts, 1); assert.equal(T.attempts[0].score, 30, 'a withdrawn question gives everyone full marks');
+  assert.ok(T.admin_audit.length >= 2, 'admin actions are logged');
+});

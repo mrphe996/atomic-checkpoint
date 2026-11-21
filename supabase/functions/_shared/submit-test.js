@@ -1,7 +1,7 @@
 // POST /api/submit-test  { learnerId, unit, form, answers, clientKey, meta: { leaves, auto } }
 // Marks a Unit Test or an end-of-year exam on the server: answer keys never reach the browser before submission.
 // The exam room is timed from the moment the paper was opened (api/start-test.js).
-import { send, readJson, getUser, db, loadUnit, ownsLearner, Rules, rowToAttempt, billingOn } from './supa.js';
+import { send, readJson, getUser, db, loadUnit, loadPack, ownsLearner, Rules, rowToAttempt, billingOn } from './supa.js';
 
 const stageOf = unit => Number((String(unit).match(/^stage(\d+)/) || [0, 0])[1]);
 export async function hasStage(learner, unit, f) {
@@ -32,7 +32,7 @@ export async function handle(req, f = fetch) {
     const sub = await db('rpc/has_subscription', { method: 'POST', body: { p_parent: user.id } }, f);
     if (sub !== true) return [402, { error: 'subscription_required' }];
   }
-  let pack; try { pack = loadUnit(unit); } catch (e) { return [400, { error: 'unknown_unit' }]; }
+  let pack; try { pack = await loadPack(unit, f); } catch (e) { return [400, { error: 'unknown_unit' }]; }
   if (!(await hasStage(learner, unit, f))) return [402, { error: 'not_enrolled' }];
 
   const prev = await db(`attempts?learner_id=eq.${learnerId}&unit=eq.${unit}&order=n.asc`, {}, f);
