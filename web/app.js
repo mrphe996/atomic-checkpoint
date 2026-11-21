@@ -150,9 +150,11 @@
       el('a', { class: 'it' + (Core.IS_MATHS ? ' on' : ''), href: '#courses-maths', id: 'tocMaths' }, el('span', {}, '📐 Mathematics'), el('small', { class: 'sl' }, 'Stage 9')),
       el('a', { class: 'it', href: '#courses', style: 'font-size:13.5px' }, 'IGCSE & AS / A Level →')));
     wrap.append(el('div', { class: 'card lvl stagelist', role: 'group', 'aria-label': 'Your courses' }, el('span', { class: 'h' }, 'YOUR COURSES'),
-      ...[7, 8, 9, 19].map(g => { const mine = g === Core.STAGE, en = mine || Core.enrolled(g), n = g >= 10 ? 15 : 14;
-        return el('a', { class: 'it' + (mine ? ' on' : ''), href: '#stage-' + g, title: mine ? 'Open now' : en ? 'Enrolled – open this course' : 'Enrol to open' },
-          el('span', {}, el('b', { class: 'cam' }, 'Cambridge'), ' ' + (g >= 10 ? '📐 Maths Stage ' + (g - 10) : 'Stage ' + g)), el('small', { class: 'sl' }, en ? Math.round(Object.keys((st && st.results) || {}).filter(k => k.startsWith(`stage${g}-unit`)).length / n * 100) + '%' : 'Enrol →')); })));
+      ...[7, 8, 9, 19].map(g => { const mine = g === Core.STAGE, lk = !mine && Core.stageLocked(g), en = mine || Core.enrolled(g);
+        const name = el('span', {}, el('b', { class: 'cam' }, 'Cambridge'), ' ' + (g >= 10 ? '📐 Maths Stage ' + (g - 10) : 'Stage ' + g));
+        if (lk) return el('span', { class: 'it lockedit', title: 'Coming soon', 'aria-disabled': 'true' }, name, el('small', { class: 'lkd' }, '🔒 Soon'));
+        return el('a', { class: 'it' + (mine ? ' on' : ''), href: '#stage-' + g, title: mine ? 'Open now' : en ? 'Enrolled – open this course' : 'Enrol to open', onclick: mine || !en ? null : ev => { ev.preventDefault(); pickStage(g, ev.currentTarget); } },
+          name, el('small', { class: 'sl' }, en ? stagePct(g) + '%' : 'Enrol →')); })));
     const tot = Core.totalSeconds();
     wrap.append(el('div', { class: 'card tochrs' }, el('small', {}, `CAMBRIDGE ${Core.stageName(Core.STAGE).toUpperCase()} COURSE`), el('b', {}, `≈ ${estH(Core.INDEX.est || 0)} of learning`), el('small', { class: 'muted' }, `You have studied ${hrs(tot)}`)));
     const units = el('div', { class: 'units' });
@@ -167,7 +169,7 @@
         const content = here ? C : Core.cached(u.n);
         box.append(el('div', { class: 'unitmeta' }, el('a', { href: '#u-' + u.n }, 'Unit overview'), el('small', { class: 'muted' }, `≈ ${estH(u.est || 0)} · you ${hrs(Core.unitSeconds(u.n))}`)));
         if (content) box.append(unitSecNav(u.n, content, Core.S.states[Core.unitId(u.n)], route));
-        else { box.append(el('p', { class: 'muted', style: 'margin:4px 8px;font-size:13px' }, 'Loading…')); Core.peekUnit(u.n).then(refreshToc).catch(() => { }); }
+        else { box.append(el('span', { class: 'inl-spin', style: 'margin:4px 10px' }, 'Loading topics…')); Core.peekUnit(u.n).then(refreshToc).catch(() => { }); }
       }
       units.append(box);
     });
@@ -178,6 +180,40 @@
   function goNext(nx) { go(nx.route, nx.tab ? { tab: { ...UI.tab, [nx.route]: nx.tab }, idx: { ...UI.idx, [nx.route + nx.tab]: nx.idx } } : null); }
   /* where am I / what remains / next button (shown on every learning screen) */
   // dotted page header shared by every student page (the "Home 01" look)
+  /* ---------- course switcher: Science Stages 7–9 and Mathematics Stage 9 ---------- */
+  const stagePct = g => Math.round(Object.keys((st && st.results) || {}).filter(k => k.startsWith(`stage${g}-unit`)).length / (g >= 10 ? 15 : 14) * 100);
+  const stageShort = g => (g >= 10 ? `Stage ${g - 10}` : `Stage ${g}`);
+  function stageSoon(g) {
+    const m = $main();
+    pageHero(g >= 10 ? 'CAMBRIDGE LOWER SECONDARY MATHEMATICS' : 'LOWER SECONDARY', `Cambridge ${Core.stageLabel(g)}`, 'This course is being reviewed by the Atomic teaching team and is not open yet.');
+    m.append(crumbs(`Cambridge ${Core.stageName(g)}`), el('section', { class: 'card lockcard', id: 'stageSoon' }, el('h2', {}, `🔒 Cambridge ${Core.stageLabel(g)} – coming soon`),
+      el('p', {}, 'Lessons, practice, Unit Tests and Checkpoint papers for this course open here once the review is finished. Your Science courses stay open as usual.'),
+      el('div', { class: 'btnrow' }, el('a', { class: 'btn primary small', href: `#stage-${Core.STAGE}` }, `Back to Cambridge ${Core.stageLabel()}`, el('span', { class: 'arr' }, ' →')))));
+  }
+  async function pickStage(g, btn) {
+    const r = location.hash.slice(1);
+    if (g === Core.STAGE) { if (!/^stage-\d+$/.test(r)) go('stage-' + g); return; }
+    if (Core.stageLocked(g)) { if (btn) { btn.classList.remove('shake'); void btn.offsetWidth; btn.classList.add('shake'); } toast(`Cambridge ${Core.stageLabel(g)} is coming soon.`); return; }
+    if (!Core.enrolled(g)) { go('stage-' + g); return; }
+    if (btn) btn.classList.add('busy');
+    try { await Loading.overlay(`Opening Cambridge ${Core.stageLabel(g)}`, Core.switchStage(g)); C = Core.C; st = Core.cur(); toast(`Now studying Cambridge ${Core.stageLabel(g)}`); }
+    catch (e) { if (btn) btn.classList.remove('busy'); toast(errText(e)); return; }
+    if (/^stage-\d+$/.test(r)) go('stage-' + g); else if (TOC_ROUTES(r) && r !== 'map') go('u-' + Core.UNO); else render();
+  }
+  function stageSwitcher() {
+    const groups = [['Science', '🔬', [7, 8, 9]], ['Mathematics', '📐', [19]]];
+    const btn = g => {
+      const mine = g === Core.STAGE, lk = !mine && Core.stageLocked(g), en = mine || Core.enrolled(g), p = en ? stagePct(g) : 0, math = g >= 10;
+      const b = el('button', { type: 'button', class: 'sw' + (mine ? ' on' : '') + (lk ? ' locked' : en ? '' : ' enrol') + (math ? ' math' : ''), 'data-stage': g, 'aria-pressed': String(mine), 'aria-disabled': lk ? 'true' : null,
+        title: lk ? 'Coming soon' : mine ? 'You are studying this course' : en ? 'Switch to this course' : 'Enrol to open',
+        onclick: () => pickStage(g, b) },
+        el('span', { class: 'swn' }, String(math ? g - 10 : g)), el('span', { class: 'swt' }, el('b', {}, stageShort(g)), el('small', {}, lk ? (math ? 'Mathematics' : 'Science') : mine ? 'Studying now' : en ? `${p}% complete` : 'Not enrolled')),
+        lk ? el('span', { class: 'swtag' }, '🔒 Soon') : en ? el('span', { class: 'swp', style: `--p:${p}`, 'data-p': p + '%', 'aria-hidden': 'true' }) : el('span', { class: 'swtag' }, 'Enrol'));
+      return b;
+    };
+    const parts = []; groups.forEach(([name, icon, gs], i) => { if (i) parts.push(el('span', { class: 'sep', 'aria-hidden': 'true' })); parts.push(el('div', { class: 'sg' }, el('small', {}, `${icon} ${name}`), el('div', { class: 'sgrow' }, ...gs.map(btn)))); });
+    return el('nav', { class: 'stsw', id: 'stageSwitch', 'aria-label': 'Switch course' }, ...parts);
+  }
   function pageHero(eyebrow, title, sub, side) {
     const w = document.getElementById('wrap'); w.classList.add('landing');
     w.before(el('section', { class: 'phero dots' }, el('div', { class: 'phero-in' }, el('div', { class: 'phero-txt' }, el('span', { class: 'eyebrow' }, eyebrow), el('h1', {}, title), sub ? el('p', {}, sub) : null), side ? el('div', { class: 'phero-side' }, ...[].concat(side)) : null)));
@@ -291,7 +327,7 @@
       el('a', { class: 'btn gold', href: isGuest() ? '#signup' : ts.state === 'passed' ? '#result' : '#tests', id: 'dashTest' }, isGuest() ? 'Sign up to take the test' : ts.state === 'passed' ? 'See my result' : ts.state === 'ready' ? 'Start the test' : 'Preview the test', el('span', { class: 'arr' }, ' →'))));
     // aside: leaderboard
     const lb = el('section', { class: 'card dside' }, el('div', { class: 'dth' }, el('b', { class: 'lex' }, 'Leaderboard'), el('span', { class: 'bob', html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#935A00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8 M12 17v4 M7 4h10v5a5 5 0 0 1-10 0z M7 6H4a3 3 0 0 0 3 4 M17 6h3a3 3 0 0 1-3 4"/></svg>' })));
-    const lbBody = el('div', { class: 'dlb' }, el('p', { class: 'muted', style: 'margin:0' }, 'Loading…')); lb.append(lbBody, el('a', { class: 'ul', href: '#board' }, 'Full leaderboard →'));
+    const lbBody = el('div', { class: 'dlb' }, Loading.skeleton('lines')); lb.append(lbBody, el('a', { class: 'ul', href: '#board' }, 'Full leaderboard →'));
     aside.append(lb);
     if (!isGuest()) Backend.leaderboard(Core.STAGE).then(rows => { rows = (rows || []).filter(r => r.score != null).map(r => ({ alias: r.nickname, score: Number(r.score), me: !!r.is_mine })); Core.competitionRank(rows); lbBody.innerHTML = '';
       if (!rows.length) lbBody.append(el('p', { class: 'muted', style: 'margin:0' }, 'No ranked learners yet – pass a Unit Test to appear here.'));
@@ -848,10 +884,10 @@
   async function loadCatalog() { if (!CATALOG) { try { const r = await fetch('content/catalog.json'); CATALOG = r.ok ? await r.json() : null; } catch (e) { CATALOG = null; } } return CATALOG; }
   const subjTag = (S0) => el('span', { class: 'subjtag', style: `--sc:${S0.color}` }, S0.icon + ' ' + S0.name);
   function courseCard(c, S0) {
-    const isStage = !!c.stage && c.status !== 'soon'; const mine = isStage && st && c.stage === Core.learnerStage(), en = isStage && st && Core.enrolled(c.stage);
-    const state = c.status === 'soon' ? 'soon' : mine ? 'mine' : en ? 'enrolled' : c.status === 'enrol' ? 'enrol' : 'open';
+    const isStage = !!c.stage && c.status !== 'soon' && !Core.stageLocked(c.stage); const mine = isStage && st && c.stage === Core.learnerStage(), en = isStage && st && Core.enrolled(c.stage);
+    const state = c.status === 'soon' || (c.stage && Core.stageLocked(c.stage)) ? 'soon' : mine ? 'mine' : en ? 'enrolled' : c.status === 'enrol' ? 'enrol' : 'open';
     const tag = { soon: 'COMING SOON', mine: 'YOUR COURSE', enrolled: 'ENROLLED', enrol: 'NOT ENROLLED', open: 'OPEN' }[state];
-    const btn = state === 'soon' ? el('a', { class: 'btn small', href: '#course-' + c.id }, 'Details', el('span', { class: 'arr' }, ' →'))
+    const btn = state === 'soon' ? el('a', { class: 'btn small', href: c.stage ? '#stage-' + c.stage : '#course-' + c.id }, 'Details', el('span', { class: 'arr' }, ' →'))
       : state === 'mine' || state === 'enrolled' || state === 'open' ? el('a', { class: 'btn small primary', href: '#stage-' + c.stage }, 'Open', el('span', { class: 'arr' }, ' →'))
         : el('a', { class: 'btn small gold', href: '#checkout-' + c.stage }, `Enrol · ${PRICE}`, el('span', { class: 'arr' }, ' →'));
     return el('section', { class: 'card ccard ' + state + (mine ? ' cur' : ''), id: isStage ? 'stageCard' + c.stage : 'course-' + c.id, style: `--sc:${S0.color}` },
@@ -864,7 +900,7 @@
     subject = subject || 'science'; const S0 = K.subjects.find(x => x.id === subject) || K.subjects[0];
     pageHero('ATOMIC COURSES', 'Subjects and levels', 'Choose a subject, then a level – from Cambridge Lower Secondary (Checkpoint) to IGCSE and AS & A Level. Each stage or course is enrolled separately.');
     m.append(el('nav', { class: 'subjtabs', role: 'tablist', 'aria-label': 'Subjects' }, ...K.subjects.map(x => el('a', { role: 'tab', class: 'subjtab' + (x.id === S0.id ? ' on' : ''), 'aria-selected': String(x.id === S0.id), href: '#courses-' + x.id, style: `--sc:${x.color}` }, x.icon + ' ' + x.name,
-      el('small', {}, K.courses.some(c => c.subject === x.id && c.status !== 'soon') ? 'open now' : 'coming soon')))));
+      el('small', {}, K.courses.some(c => c.subject === x.id && c.status !== 'soon' && !(c.stage && Core.stageLocked(c.stage))) ? 'open now' : 'coming soon')))));
     K.levels.forEach(L => {
       const list = K.courses.filter(c => c.subject === S0.id && c.level === L.id); if (!list.length) return;
       m.append(el('section', { class: 'lvlgroup' }, el('div', { class: 'lvlhead' }, el('h2', { style: 'margin:0' }, L.name), el('span', { class: 'muted' }, `${L.ages} · ${L.note}`)),
@@ -888,8 +924,9 @@
   }
   async function viewStage(g) {
     const m = $main();
+    if (g !== Core.STAGE && Core.stageLocked(g)) { stageSoon(g); return; }
     if (g !== Core.STAGE && Core.enrolled(g)) {   // an enrolled stage: open it (its units, tests and certificate)
-      try { const r = await fetch(`content/stage${g}.json`); if (r.ok && (await r.json()).units.some(u => u.ready)) { await Core.switchStage(g); C = Core.C; st = Core.cur(); return render(); } } catch (e) { }
+      try { const r = await fetch(`content/stage${g}.json`); if (r.ok && (await r.json()).units.some(u => u.ready)) { await Loading.overlay(`Opening Cambridge ${Core.stageLabel(g)}`, Core.switchStage(g)); C = Core.C; st = Core.cur(); return render(); } } catch (e) { }
     }
     if (g !== Core.STAGE) {
       pageHero('LOWER SECONDARY', `Cambridge ${Core.stageName(g)}`, Core.enrolled(g) ? `You are enrolled in Cambridge ${Core.stageName(g)}.` : `Cambridge ${Core.stageName(g)} is a separate course.`);
@@ -912,6 +949,7 @@
   }
   function viewCheckout(g) {
     const m = $main();
+    if (Core.stageLocked(g)) return go('stage-' + g);
     if (g === Core.STAGE || Core.enrolled(g)) return go('stage-' + g);
     pageHero('ENROL', `Cambridge ${Core.stageName(g)} course`, 'Each stage is a separate course with its own Unit Tests, end-of-year exams and certificate.');
     m.append(crumbs(el('a', { href: '#stage-' + g }, `Cambridge ${Core.stageName(g)}`), 'Checkout'));
@@ -921,50 +959,129 @@
       el('div', { class: 'ordrow' }, el('span', {}, `Cambridge Lower Secondary ${Core.subjectOf(g)} · Cambridge ${Core.stageName(g)} (Atomic course)`), el('b', {}, PRICE)),
       el('div', { class: 'ordrow' }, el('span', {}, 'Learner'), el('b', {}, st.name)),
       el('div', { class: 'banner info' }, el('b', {}, 'Test checkout. '), 'This is the test server: pressing Pay enrols you straight away and no money is taken. The real payment page (Paddle) replaces this before launch.'),
-      msg, el('button', { class: 'btn gold big', type: 'button', id: 'payBtn', onclick: async ev => { ev.currentTarget.disabled = true; msg.textContent = '';
-        try { await Core.enrol(g, PRICE); confetti(); toast(`You are enrolled in Cambridge ${Core.stageName(g)}.`); go('stage-' + g); } catch (x) { ev.currentTarget.disabled = false; msg.textContent = x.code === 'payments_closed' ? 'Enrolment is not open yet on this server.' : errText(x); } } }, `Pay ${PRICE} (test)`)));
+      msg, el('button', { class: 'btn gold big', type: 'button', id: 'payBtn', onclick: async ev => { const pb = ev.currentTarget; pb.disabled = true; pb.classList.add('busy'); msg.textContent = '';
+        try { await Core.enrol(g, PRICE); pb.classList.remove('busy'); confetti(); toast(`You are enrolled in Cambridge ${Core.stageName(g)}.`); go('stage-' + g); } catch (x) { pb.disabled = false; pb.classList.remove('busy'); msg.textContent = x.code === 'payments_closed' ? 'Enrolment is not open yet on this server.' : errText(x); } } }, `Pay ${PRICE} (test)`)));
   }
 
   /* ---------- question bank ---------- */
   function viewBank() {
-    const m = $main(); UI.bank = UI.bank || { sec: 'all', diff: 'all', type: 'all', status: 'all', tier: 'all' }; const F = UI.bank;
-    pageHero(`CAMBRIDGE ${Core.stageName(Core.STAGE).toUpperCase()} · ALL ${Core.unitCount()} UNITS`, 'Question Bank', `Every practice question of Cambridge ${Core.stageName(Core.STAGE)}, unit by unit. Choose a unit, then filter by topic, difficulty and type. Every question you finish earns XP.`);
+    const m = $main();
+    const DEF = { sec: 'all', tier: 'all', diff: 'all', type: 'all', status: 'all', obj: 'all' };
+    UI.bank = Object.assign({}, DEF, { q: '', sort: 'id', n: 40, sel: {} }, UI.bank || {}); const F = UI.bank;
+    if (F.unit !== Core.UNIT) { F.sel = {}; F.n = 40; F.unit = Core.UNIT; if (F.sec !== 'all' && !C.sections.some(s => s.id === F.sec)) F.sec = 'all'; }
+    pageHero(`CAMBRIDGE ${Core.stageName(Core.STAGE).toUpperCase()} · ALL ${Core.unitCount()} UNITS`, 'Question Bank', `Every practice question of Cambridge ${Core.stageName(Core.STAGE)}, unit by unit. Choose a unit, then narrow the list with the filters. Tick questions to practise exactly the ones you want.`);
     const doneIn = n => Object.values((Core.S.states[Core.unitId(n)] || {}).items || {}).filter(x => x && x.done).length;
-    m.append(el('section', { class: 'card', id: 'bankUnits' }, el('b', { class: 'lex' }, 'Choose a unit'),
-      el('div', { class: 'bankunits' }, ...Core.INDEX.units.filter(u => u.ready).map(u => { const d = Math.min(doneIn(u.n), u.qs || 0), pct = u.qs ? Math.round(d / u.qs * 100) : 0;
-        return el('button', { type: 'button', class: 'bunit' + (u.n === Core.UNO ? ' on' : ''), 'aria-pressed': String(u.n === Core.UNO), 'data-unit': u.n, onclick: () => { F.sec = 'all'; Core.switchUnit(u.n).then(() => render()); } },
-          unitIcon(u.n), el('span', {}, el('b', {}, `Unit ${u.n}`), el('br'), el('small', {}, u.t)), el('span', { class: 'bpct' }, el('span', { class: 'pbar' }, el('i', { style: `width:${pct}%` })), el('small', {}, `${d}/${u.qs}`))); }))));
+    const strip = el('div', { class: 'bankunits' });
+    const nudge = d => strip.scrollBy({ left: d * Math.max(220, strip.clientWidth * 0.8), behavior: 'smooth' });
+    m.append(el('section', { class: 'card bkpick', id: 'bankUnits' }, el('div', { class: 'bkhead' }, el('b', { class: 'lex' }, 'Choose a unit'), el('span', { class: 'muted' }, `${Core.INDEX.units.filter(u => u.ready).length} units`), el('span', { class: 'grow' }),
+      el('button', { type: 'button', class: 'bkarrow', 'aria-label': 'Earlier units', onclick: () => nudge(-1) }, '‹'), el('button', { type: 'button', class: 'bkarrow', 'aria-label': 'Later units', onclick: () => nudge(1) }, '›')), strip));
+    strip.append(...Core.INDEX.units.filter(u => u.ready).map(u => { const d = Math.min(doneIn(u.n), u.qs || 0), pct = u.qs ? Math.round(d / u.qs * 100) : 0;
+        const b = el('button', { type: 'button', class: 'bunit' + (u.n === Core.UNO ? ' on' : ''), 'aria-pressed': String(u.n === Core.UNO), 'data-unit': u.n, onclick: () => { if (u.n === Core.UNO) return; F.sec = 'all'; F.obj = 'all'; b.classList.add('busy'); Loading.busy(b, Core.switchUnit(u.n)).then(() => render()); } },
+          unitIcon(u.n), el('span', {}, el('b', {}, `Unit ${u.n}`), el('br'), el('small', {}, u.t)), el('span', { class: 'bpct' }, el('span', { class: 'pbar' }, el('i', { style: `width:${pct}%` })), el('small', {}, `${d}/${u.qs}`)));
+        return b; }));
+    requestAnimationFrame(() => { const on = strip.querySelector('.bunit.on'); if (on) strip.scrollLeft = Math.max(0, on.offsetLeft - strip.offsetLeft - 12); });
+    const s0 = C.sections[0];
     m.append(el('div', {}, el('span', { class: 'eyebrow' }, `UNIT ${Core.UNO} · ${C.unit.title.toUpperCase()}`), el('h2', { style: 'margin:0;font-size:30px' }, `Unit ${Core.UNO} questions`),
-      el('p', { class: 'muted', style: 'margin:4px 0 0' }, `${allQs().length} practice questions (${C.sections[0] ? C.sections[0].req.length + C.sections[0].prac.length + C.sections[0].adv.length : 30} per section: ${C.sections[0] ? C.sections[0].req.length : 8} Core, ${C.sections[0] ? C.sections[0].prac.length : 18} Practice, ${C.sections[0] ? C.sections[0].adv.length : 4} Advanced) plus ${C.sections.reduce((a, s) => a + s.stops.length, 0)} ${C.sections[0] && C.sections[0].lesson ? 'check' : 'pause'} questions. Practising here never changes your Core progress or test scores.`)));
-    const chipRow = (label, key, opts) => el('div', { class: 'btnrow', role: 'group', 'aria-label': label }, el('b', { style: 'min-width:92px;font-size:14px' }, label), ...opts.map(([v, t]) => el('button', { type: 'button', class: 'chip' + (F[key] === v ? ' on' : ''), 'aria-pressed': String(F[key] === v), onclick: () => { F[key] = v; render(); } }, t)));
-    m.append(el('section', { class: 'card' }, chipRow('Section', 'sec', [['all', 'All']].concat(C.sections.map(s => [s.id, s.id + ' ' + s.title.split(' ')[0]]))),
-      chipRow('Set', 'tier', [['all', 'All'], ['req', 'Core'], ['prac', 'Practice'], ['adv', '* Advanced']]),
-      chipRow('Difficulty', 'diff', [['all', 'All'], ['M', 'Medium'], ['H', 'Hard'], ['VH', 'Very hard']]),
-      chipRow('Type', 'type', [['all', 'All'], ['fig', 'Diagrams & data'], ['calc', 'Calculations'], ['explain', 'Written'], ['mcq', 'Multiple choice']]),
-      chipRow('Status', 'status', [['all', 'All'], ['todo', 'Not done'], ['wrong', 'Got wrong'], ['mark', '★ Bookmarked']]),
-      el('div', { class: 'btnrow', role: 'search' }, el('b', { style: 'min-width:92px;font-size:14px' }, 'Search'), (() => { const i = el('input', { type: 'search', id: 'bankSearch', placeholder: 'Words in the question, or its id', value: F.q || '', 'aria-label': 'Search the questions', style: 'flex:1;min-width:220px' });
-        const run = () => { if ((F.q || '') === i.value.trim()) return; F.q = i.value.trim(); render(); setTimeout(() => { const j = document.getElementById('bankSearch'); if (j) { j.focus(); j.setSelectionRange(j.value.length, j.value.length); } }, 0); };
-        i.addEventListener('keydown', e => { if (e.key === 'Enter') run(); }); i.addEventListener('search', run); i.addEventListener('blur', run); return i; })())));
-    const tierOf = q => C.sections.find(s => s.req.includes(q)) ? 'req' : q.adv ? 'adv' : 'prac';
-    const secOf = q => C.sections.find(s => s.req.concat(s.prac, s.adv).includes(q)).id;
-    const typeOk = q => F.type === 'all' || (F.type === 'fig' ? ['label', 'scale', 'graph', 'table', 'grid', 'sim'].includes(q.type) || !!q.fig : F.type === 'calc' ? ['num', 'scale', 'table', 'expr'].includes(q.type) : F.type === 'explain' ? q.type === 'explain' : ['mcq', 'multi'].includes(q.type));
+      el('p', { class: 'muted', style: 'margin:4px 0 0' }, `${allQs().length} practice questions (${s0 ? s0.req.length + s0.prac.length + s0.adv.length : 30} per section: ${s0 ? s0.req.length : 8} Core, ${s0 ? s0.prac.length : 18} Practice, ${s0 ? s0.adv.length : 4} Advanced) plus ${C.sections.reduce((a, s) => a + s.stops.length, 0)} ${s0 && s0.lesson ? 'check' : 'pause'} questions. Practising here never changes your Core progress or test scores.`)));
+
+    // ---- what each filter means ----
     st.marks = st.marks || {};
-    const list = allQs().filter(q => (F.sec === 'all' || secOf(q) === F.sec) && (F.diff === 'all' || q.diff === F.diff) && (F.tier === 'all' || tierOf(q) === F.tier) && typeOk(q)
-      && (F.status === 'all' || (F.status === 'todo' ? !(st.items[q.id] || {}).done : F.status === 'wrong' ? (st.items[q.id] || {}).everWrong : !!st.marks[q.id]))
-      && (!F.q || (q.id + ' ' + q.prompt + ' ' + (q.ctx || '') + ' ' + ((q.options || []).map(o => o.t).join(' '))).toLowerCase().includes(F.q.toLowerCase())));
-    m.append(el('div', { class: 'btnrow between' }, el('b', { class: 'lex', id: 'bankCount' }, `${list.length} question${list.length === 1 ? '' : 's'}`),
-      el('button', { class: 'btn primary small shine', type: 'button', disabled: !list.length, id: 'bankPractise', onclick: () => startDrill(`Question Bank · ${list.length > 15 ? 'first 15 of ' + list.length : list.length} questions`, list.slice(0, 15), 'bank') }, `Practise ${Math.min(15, list.length)}`, el('span', { class: 'arr' }, '→')),
+    const ALL = allQs();
+    const SEC = {}, TIER = {}; C.sections.forEach(s => { s.req.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'req'; }); s.prac.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = q.adv ? 'adv' : 'prac'; }); s.adv.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'adv'; }); });
+    const isFig = q => ['label', 'scale', 'graph', 'table', 'grid', 'sim'].includes(q.type) || !!q.fig;
+    const TYPE = { fig: isFig, calc: q => ['num', 'scale', 'table', 'expr'].includes(q.type), explain: q => q.type === 'explain', mcq: q => ['mcq', 'multi'].includes(q.type), other: q => !['mcq', 'multi', 'num', 'scale', 'table', 'expr', 'explain'].includes(q.type) && !isFig(q) };
+    const STATUS = { todo: q => !(st.items[q.id] || {}).done, done: q => !!(st.items[q.id] || {}).done, wrong: q => !!(st.items[q.id] || {}).everWrong, first: q => { const r = st.items[q.id] || {}; return !!(r.done && r.ok && r.tries === 1); }, mark: q => !!st.marks[q.id] };
+    const objs = Array.from(new Set(ALL.map(q => q.obj).filter(Boolean))).sort((x, y) => x.localeCompare(y, 'en', { numeric: true }));
+    const DIMS = [
+      { k: 'sec', label: 'Section', opts: [['all', 'All sections']].concat(C.sections.map(s => [s.id, `${s.id} ${s.title}`])), test: (q, v) => SEC[q.id] === v },
+      { k: 'tier', label: 'Set', opts: [['all', 'All sets'], ['req', 'Core'], ['prac', 'Practice'], ['adv', '* Advanced']], test: (q, v) => TIER[q.id] === v },
+      { k: 'diff', label: 'Difficulty', opts: [['all', 'Any difficulty'], ['M', 'Medium'], ['H', 'Hard'], ['VH', 'Very hard']], test: (q, v) => q.diff === v },
+      { k: 'type', label: 'Question type', opts: [['all', 'Any type'], ['mcq', 'Multiple choice'], ['calc', 'Calculations'], ['fig', 'Diagrams & data'], ['explain', 'Written'], ['other', 'Other (match, order…)']], test: (q, v) => TYPE[v](q) },
+      { k: 'status', label: 'My progress', opts: [['all', 'Everything'], ['todo', 'Not done yet'], ['done', 'Done'], ['wrong', 'Got wrong before'], ['first', 'Right first try'], ['mark', '★ Bookmarked']], test: (q, v) => STATUS[v](q) },
+      { k: 'obj', label: 'Learning objective', opts: [['all', 'All objectives']].concat(objs.map(o => [o, o])), test: (q, v) => q.obj === v }];
+    const text = q => (q.id + ' ' + q.prompt + ' ' + (q.ctx || '') + ' ' + ((q.options || []).map(o => o.t).join(' '))).toLowerCase();
+    const TXT = {}; ALL.forEach(q => { TXT[q.id] = text(q); });
+    const okExcept = (q, skip) => DIMS.every(d => d.k === skip || F[d.k] === 'all' || d.test(q, F[d.k])) && (!F.q || TXT[q.id].includes(F.q.toLowerCase()));
+    const DORD = { M: 1, H: 2, VH: 3 };
+    const SORT = { id: null, easy: (a, b) => (DORD[a.diff] || 0) - (DORD[b.diff] || 0), hard: (a, b) => (DORD[b.diff] || 0) - (DORD[a.diff] || 0), todo: (a, b) => (STATUS.done(a) ? 1 : 0) - (STATUS.done(b) ? 1 : 0), wrong: (a, b) => (STATUS.wrong(b) ? 1 : 0) - (STATUS.wrong(a) ? 1 : 0) };
+
+    // ---- the filter panel ----
+    const selects = {};
+    const grid = el('div', { class: 'qbgrid' }, ...DIMS.map(d => { const id = 'bf-' + d.k;
+      const sel = el('select', { id, onchange: () => { F[d.k] = sel.value; F.n = 40; update(); } }); selects[d.k] = sel;
+      return el('div', { class: 'qbsel', 'data-k': d.k }, el('label', { for: id }, d.label), sel); }));
+    const sIn = el('input', { type: 'search', id: 'bankSearch', placeholder: 'Search words in the question, or its id', value: F.q || '', 'aria-label': 'Search the questions', autocomplete: 'off' });
+    const sX = el('button', { type: 'button', class: 'qbx', 'aria-label': 'Clear the search', hidden: !F.q, onclick: () => { sIn.value = ''; F.q = ''; sX.hidden = true; update(); sIn.focus(); } }, '×');
+    let sT = null; const runSearch = () => { clearTimeout(sT); const v = sIn.value.trim(); sX.hidden = !v; if (v === (F.q || '')) return; F.q = v; F.n = 40; update(); };
+    sIn.addEventListener('input', () => { clearTimeout(sT); sT = setTimeout(runSearch, 180); }); sIn.addEventListener('keydown', e => { if (e.key === 'Enter') runSearch(); }); sIn.addEventListener('search', runSearch);
+    const search = el('div', { class: 'qbsearch', role: 'search' }, el('span', { html: '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="#5B6478" stroke-width="2.2"/><path d="M16.5 16.5 21 21" stroke="#5B6478" stroke-width="2.2" stroke-linecap="round"/></svg>' }), sIn, sX);
+    const active = el('div', { class: 'qbactive', 'aria-live': 'polite' });
+    const panel = el('section', { class: 'card qbf' + (UI.bankFold ? ' closed' : ''), id: 'bankFilters', 'aria-label': 'Filters' },
+      el('div', { class: 'qbf-top' }, el('b', { class: 'lex', style: 'font-size:18px' }, 'Filters'), search,
+        el('button', { type: 'button', class: 'btn small ghost qbfold', 'aria-expanded': String(!UI.bankFold), onclick: e => { UI.bankFold = !UI.bankFold; panel.classList.toggle('closed', UI.bankFold); e.currentTarget.setAttribute('aria-expanded', String(!UI.bankFold)); e.currentTarget.textContent = UI.bankFold ? 'Show filters' : 'Hide filters'; } }, UI.bankFold ? 'Show filters' : 'Hide filters')),
+      grid, active);
+    m.append(panel);
+
+    // ---- results bar: count, sort, selection, practise ----
+    const count = el('span', { class: 'qbcount', id: 'bankCount' });
+    const sortSel = el('select', { id: 'bankSort', 'aria-label': 'Sort the questions', onchange: () => { F.sort = sortSel.value; update(); } },
+      ...[['id', 'Course order'], ['easy', 'Easiest first'], ['hard', 'Hardest first'], ['todo', 'Not done first'], ['wrong', 'Got wrong first']].map(([v, t]) => el('option', { value: v, selected: F.sort === v }, t)));
+    const allBox = el('input', { type: 'checkbox', id: 'bankAll', 'aria-label': 'Tick every question in the list' });
+    const pickBtn = el('button', { class: 'btn small navy', type: 'button', id: 'bankPick' });
+    const pracBtn = el('button', { class: 'btn primary small shine', type: 'button', id: 'bankPractise' });
+    const selIds = () => Object.keys(F.sel).filter(k => F.sel[k]);
+    m.append(el('div', { class: 'qbbar' }, count, el('span', { class: 'grow' }),
+      el('div', { class: 'qbsel' }, el('label', { for: 'bankSort', style: 'margin:0' }, 'Sort'), sortSel), pickBtn, pracBtn,
       el('a', { class: 'btn small', href: '#topic' }, 'Revise by topic')));
-    const tbl = el('div', { class: 'card lbtable' }, el('div', { class: 'lbrow h', style: 'grid-template-columns:90px 2.6fr 1fr 1fr 110px' }, el('span', {}, 'ID'), el('span', {}, 'QUESTION'), el('span', {}, 'SET'), el('span', {}, 'STATUS'), el('span', {}, '')));
-    list.forEach(q => { const r = st.items[q.id] || {}; const t = tierOf(q);
-      const mk = el('button', { type: 'button', class: 'chip' + (st.marks[q.id] ? ' on' : ''), 'aria-pressed': String(!!st.marks[q.id]), 'aria-label': 'Bookmark ' + q.id, style: 'min-height:38px;padding:0 10px', onclick: e => { e.stopPropagation(); st.marks[q.id] = !st.marks[q.id]; Core.persist(); mk.classList.toggle('on'); } }, '★');
-      tbl.append(el('div', { class: 'lbrow', style: 'grid-template-columns:90px 2.6fr 1fr 1fr 110px' }, el('code', { style: 'font-size:13px;color:#52627A' }, q.id),
-        el('span', { style: 'min-width:0' }, el('span', { style: 'display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis' }, q.prompt.replace(/^\* Advanced\.\s*/, '')), el('small', { class: 'muted' }, `${secOf(q)} · ${QE.TYPE_VI[q.type]} · ${QE.DIFF[q.diff]} · ${q.obj}`)),
-        el('span', {}, el('span', { class: 'tag ' + (t === 'adv' ? 'adv' : t === 'req' ? 'd-M' : '') }, t === 'req' ? 'Core' : t === 'adv' ? '* Advanced' : 'Practice')),
-        el('span', {}, r.done ? el('span', { class: 'status done' }, r.ok ? (r.tries === 1 ? 'Right 1st try' : 'Correct') : 'Completed') : r.tries ? el('span', { class: 'tag d-VH' }, 'In progress') : el('span', { class: 'status todo' }, 'Not done')),
-        el('span', { style: 'display:flex;gap:6px' }, mk, el('button', { type: 'button', class: 'btn small', style: 'min-height:38px;padding:0 12px', onclick: () => startDrill(`Question ${q.id}`, [q], 'bank') }, 'Open')))); });
-    if (!list.length) tbl.append(el('p', { class: 'muted', style: 'padding:16px 24px' }, 'No questions match these filters.'));
+    const tbl = el('div', { class: 'card lbtable qbt', id: 'bankTable' });
     m.append(tbl);
+
+    const dots = d => el('span', { class: 'dd ' + d, title: QE.DIFF[d] || d, 'aria-label': QE.DIFF[d] || d }, ...[1, 2, 3].map(i => el('i', { class: i <= (DORD[d] || 1) ? 'f' : '' })));
+    let list = [];
+    function row(q) {
+      const r = st.items[q.id] || {}, t = TIER[q.id];
+      const cb = el('input', { type: 'checkbox', 'aria-label': 'Choose ' + q.id, checked: !!F.sel[q.id] });
+      const line = el('div', { class: 'lbrow' + (F.sel[q.id] ? ' picked' : ''), 'data-q': q.id });
+      cb.addEventListener('change', () => { F.sel[q.id] = cb.checked; line.classList.toggle('picked', cb.checked); bar(); });
+      const mk = el('button', { type: 'button', class: 'chip' + (st.marks[q.id] ? ' on' : ''), 'aria-pressed': String(!!st.marks[q.id]), 'aria-label': 'Bookmark ' + q.id, style: 'min-height:36px;padding:0 10px', onclick: e => { e.stopPropagation(); st.marks[q.id] = !st.marks[q.id]; Core.persist(); mk.classList.toggle('on'); mk.setAttribute('aria-pressed', String(!!st.marks[q.id])); } }, '★');
+      line.append(el('span', {}, cb), el('code', { class: 'c-id', style: 'font-size:13px;color:#52627A' }, q.id),
+        el('span', { style: 'min-width:0' }, el('span', { style: 'display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis' }, q.prompt.replace(/^\* Advanced\.\s*/, '')), el('small', { class: 'muted' }, `${SEC[q.id]} · ${QE.TYPE_VI[q.type]} · `, dots(q.diff), ` ${QE.DIFF[q.diff] || ''} · ${q.obj || ''}`)),
+        el('span', { class: 'c-set' }, el('span', { class: 'tag ' + (t === 'adv' ? 'adv' : t === 'req' ? 'd-M' : '') }, t === 'req' ? 'Core' : t === 'adv' ? '* Advanced' : 'Practice')),
+        el('span', { class: 'c-st' }, r.done ? el('span', { class: 'status done' }, r.ok ? (r.tries === 1 ? 'Right 1st try' : 'Correct') : 'Completed') : r.tries ? el('span', { class: 'tag d-VH' }, 'In progress') : el('span', { class: 'status todo' }, 'Not done')),
+        el('span', { style: 'display:flex;gap:6px;justify-content:flex-end' }, mk, el('button', { type: 'button', class: 'btn small', style: 'min-height:36px;padding:0 12px', onclick: () => startDrill(`Question ${q.id}`, [q], 'bank') }, 'Open')));
+      return line;
+    }
+    function bar() {
+      const shown = list.slice(0, F.n), picked = selIds();
+      count.textContent = ''; count.append(`${list.length} question${list.length === 1 ? '' : 's'}`, el('small', {}, list.length === ALL.length ? 'all of this unit' : `of ${ALL.length}`));
+      pickBtn.textContent = picked.length ? `Practise ticked (${picked.length})` : 'Tick questions to choose'; pickBtn.disabled = !picked.length;
+      pickBtn.onclick = () => { const qs = ALL.filter(q => F.sel[q.id]).slice(0, 30); startDrill(`Question Bank · ${qs.length} chosen question${qs.length === 1 ? '' : 's'}`, qs, 'bank'); };
+      pracBtn.textContent = ''; pracBtn.append(`Practise ${Math.min(15, list.length)}`, el('span', { class: 'arr' }, '→')); pracBtn.disabled = !list.length;
+      pracBtn.onclick = () => startDrill(`Question Bank · ${list.length > 15 ? 'first 15 of ' + list.length : list.length} questions`, list.slice(0, 15), 'bank');
+      allBox.checked = shown.length > 0 && shown.every(q => F.sel[q.id]); allBox.indeterminate = !allBox.checked && shown.some(q => F.sel[q.id]);
+    }
+    allBox.addEventListener('change', () => { list.slice(0, F.n).forEach(q => { F.sel[q.id] = allBox.checked; }); tbl.querySelectorAll('.lbrow[data-q]').forEach(x => { x.classList.toggle('picked', allBox.checked); const c = x.querySelector('input'); if (c) c.checked = allBox.checked; }); bar(); });
+    function update() {
+      // each option shows how many questions it would leave, given the other filters
+      DIMS.forEach(d => { const sel = selects[d.k], base = ALL.filter(q => okExcept(q, d.k)); sel.textContent = '';
+        d.opts.forEach(([v, t]) => { const n = v === 'all' ? base.length : base.filter(q => d.test(q, v)).length; sel.append(el('option', { value: v, selected: F[d.k] === v, disabled: !n && F[d.k] !== v && v !== 'all' }, `${t} (${n})`)); });
+        sel.value = F[d.k]; sel.closest('.qbsel').classList.toggle('set', F[d.k] !== 'all'); });
+      active.textContent = '';
+      const on = DIMS.filter(d => F[d.k] !== 'all');
+      on.forEach(d => { const o = d.opts.find(x => x[0] === F[d.k]); active.append(el('span', { class: 'qbpill' }, `${d.label}: ${o ? o[1] : F[d.k]}`, el('button', { type: 'button', 'aria-label': `Remove the ${d.label} filter`, onclick: () => { F[d.k] = 'all'; F.n = 40; update(); } }, '×'))); });
+      if (F.q) active.append(el('span', { class: 'qbpill' }, `Search: “${F.q}”`, el('button', { type: 'button', 'aria-label': 'Clear the search', onclick: () => { F.q = ''; sIn.value = ''; sX.hidden = true; update(); } }, '×')));
+      if (on.length || F.q) active.append(el('button', { type: 'button', class: 'qbclear', id: 'bankClear', onclick: () => { Object.assign(F, DEF, { q: '', n: 40 }); sIn.value = ''; sX.hidden = true; update(); } }, 'Clear all'));
+      else active.append(el('span', { class: 'qbhint' }, 'Tip: each choice shows how many questions it leaves. Combine filters to find exactly what you need.'));
+      list = ALL.filter(q => okExcept(q, null)); if (SORT[F.sort]) list = list.slice().sort(SORT[F.sort]);
+      tbl.textContent = '';
+      tbl.append(el('div', { class: 'lbrow h' }, el('span', {}, allBox), el('span', { class: 'c-id' }, 'ID'), el('span', {}, 'QUESTION'), el('span', { class: 'c-set' }, 'SET'), el('span', { class: 'c-st' }, 'STATUS'), el('span', {}, '')));
+      list.slice(0, F.n).forEach(q => tbl.append(row(q)));
+      if (!list.length) tbl.append(el('div', { class: 'qbempty' }, el('b', { class: 'lex', style: 'font-size:18px' }, 'No questions match these filters'), el('span', { class: 'muted' }, 'Remove a filter or clear them all to see more.'),
+        el('button', { type: 'button', class: 'btn small', onclick: () => { Object.assign(F, DEF, { q: '', n: 40 }); sIn.value = ''; sX.hidden = true; update(); } }, 'Clear all filters')));
+      if (list.length > F.n) tbl.append(el('div', { class: 'qbmore' }, el('button', { type: 'button', class: 'btn small', id: 'bankMore', onclick: () => { F.n += 40; update(); } }, `Show ${Math.min(40, list.length - F.n)} more (${list.length - F.n} left)`)));
+      bar();
+    }
+    update();
   }
 
   /* ---------- tester tools (preview only) ---------- */
@@ -1162,7 +1279,7 @@
           a ? el('a', { class: 'btn small', href: '#cpr-' + k }, 'Results') : el('a', { class: 'btn small primary', href: '#cpx-' + k, id: 'cpOpen-' + k }, d && d.deadline ? 'Continue' : 'Enter', el('span', { class: 'arr' }, ' →'))); })));
     });
     const other = el('section', { class: 'card cpsubj soon' }, head(!isM),
-      el('div', { class: 'cpset' }, el('a', { class: 'btn small', href: isM ? '#stage-9' : '#stage-19' }, isM ? 'Open the Science Stage 9 course for these papers →' : 'Open the Mathematics Stage 9 course for these papers →')));
+      el('div', { class: 'cpset' }, !isM && Core.stageLocked(19) ? el('span', { class: 'status todo' }, '🔒 Mathematics Stage 9 – coming soon') : el('a', { class: 'btn small', href: isM ? '#stage-9' : '#stage-19' }, isM ? 'Open the Science Stage 9 course for these papers →' : 'Open the Mathematics Stage 9 course for these papers →')));
     m.append(mine, other);
   }
   async function viewCpExam(k) {
@@ -1389,7 +1506,7 @@
   /* =====================================================================
      ACCOUNT, PLANS, HELP, LEGAL  (P0 / P1 screens)
      ===================================================================== */
-  const ERR = { bad_email: 'Please enter a valid email address.', weak_password: 'Use at least 8 characters for your password.', email_taken: 'An account with this email already exists – sign in instead.',
+  const ERR = { locked: 'This course is not open yet.', bad_email: 'Please enter a valid email address.', weak_password: 'Use at least 8 characters for your password.', email_taken: 'An account with this email already exists – sign in instead.',
     bad_credentials: 'That email and password do not match.', account_disabled: 'This account has been switched off by Atomic. Please contact us via Help & contact.', user_banned: 'This account has been switched off by Atomic. Please contact us via Help & contact.', admin_only: 'Only administrators can do this.', own_admin: 'You cannot remove your own administrator role.', own_account: 'You cannot switch off your own account.', sign_in: 'Please sign in again.', parental_consent: 'Please tick the parental consent box.', bad_nickname: 'Use a nickname of 2–24 characters.',
     subscription_required: 'This needs an Atomic course plan.', locked: 'Finish every lesson or video and every Core question first.', awaiting_marking: 'Your last test is still being marked.', review_first: 'Finish your review questions first.',
     already_passed: 'You have already passed this test.', wrong_paper: 'Please reload the page and try again.', confirm: 'Type the confirmation exactly as shown.', staff_only: 'Staff only.', message: 'Please write a short message.' };
@@ -1603,7 +1720,7 @@
           if (pe && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(pe)) { e.textContent = 'That parent email does not look right – check it or leave it empty.'; return; }
           if (pe && pe.toLowerCase() === F.email.toLowerCase()) { e.textContent = 'The parent email must be different from your own.'; return; }
           if (!terms.checked) { e.textContent = 'Please agree to the Terms and the Privacy notice.'; return; }
-          b.disabled = true;
+          b.disabled = true; b.classList.add('busy'); setTimeout(() => b.classList.remove('busy'), 15000);
           try {
             await Backend.signUp({ name: F.name, email: F.email, password: F.password, birthYear: F.birthYear, grade: F.grade, country: country.value, schoolId: sid, schoolOther: sid ? null : other.value.trim(), parentEmail: pe || null });
             const hadGuest = isGuest(); UI.su = null; await Core.boot(C); st = Core.cur();
@@ -1623,8 +1740,8 @@
   function viewSignin() {
     const m = $main(); const e = errBox();
     const email = el('input', { type: 'email', id: 'siEmail', autocomplete: 'email' }), pw = el('input', { type: 'password', id: 'siPw', autocomplete: 'current-password' });
-    const b = el('button', { class: 'btn primary', type: 'button', id: 'siBtn', onclick: async () => { e.textContent = ''; b.disabled = true;
-      try { await Backend.signIn({ email: email.value, password: pw.value }); await Core.boot(C); st = Core.cur(); go('home'); } catch (x) { e.textContent = errText(x); b.disabled = false; } } }, 'Log in');
+    const b = el('button', { class: 'btn primary', type: 'button', id: 'siBtn', onclick: async () => { e.textContent = ''; b.disabled = true; b.classList.add('busy');
+      try { await Backend.signIn({ email: email.value, password: pw.value }); await Core.boot(C); st = Core.cur(); go('home'); } catch (x) { e.textContent = errText(x); b.disabled = false; b.classList.remove('busy'); } } }, 'Log in');
     pw.addEventListener('keydown', ev => { if (ev.key === 'Enter') b.click(); });
     document.getElementById('wrap').classList.add('authpage'); m.append(el('div', { class: 'authwrap dots' }, narrow(el('span', { class: 'eyebrow' }, 'WELCOME BACK'), el('h1', {}, 'Log in'), el('div', { class: 'form' }, field('Email', email), field('Password', pw), e, b),
       el('p', { class: 'muted' }, el('a', { href: '#forgot' }, 'Forgotten your password?'), ' · New here? ', el('a', { href: '#signup' }, 'Sign up free')))));
@@ -1826,6 +1943,9 @@
     if (me && !st && needsLearner) { location.replace('#home'); return; }
     if (me && (r === 'signin' || r === 'signup')) { location.replace('#home'); return; }
     shell({ toc: TOC_ROUTES(r) }); const m = $main();
+    // a placeholder in the shape of the page if it takes a moment (removed as soon as real content arrives)
+    let skel = null; const skT = setTimeout(() => { if (seq !== renderSeq || m.children.length) return; skel = Loading.skeleton(/^stage-|^(bank|board|tests|checkpoint|final|profile)$/.test(r) ? 'rows' : 'cards'); m.append(skel); }, 140);
+    const mo = new MutationObserver(recs => { if (skel && recs.some(x => [...x.addedNodes].some(n => n !== skel))) { skel.remove(); skel = null; mo.disconnect(); } }); mo.observe(m, { childList: true });
     try {
       const pm = r.match(/^(stage|checkout|fx|fres)-(\d+)$/); const cpm = r.match(/^(cpx|cpr)-([A-Z]{1,2}\d)$/);
       if (r.startsWith('v-')) viewVideo(secFromRoute(r)); else if (r.startsWith('ex-')) viewExercises(secFromRoute(r)); else if (r.startsWith('ws-')) viewWorksheet(secFromRoute(r));
@@ -1836,7 +1956,9 @@
       else if (st && isGuest() && GUEST_WALL[r]) m.append(guestWall(GUEST_WALL[r]));
       else if (st && LEARNER[r]) await LEARNER[r](); else if (ACCOUNT[r]) await ACCOUNT[r](); else if (PUBLIC[r]) await PUBLIC[r](); else viewHome();
     } catch (e) { console.error(e); if (seq === renderSeq) m.append(el('div', { class: 'banner adv', role: 'alert' }, 'Something went wrong loading this page. ', el('button', { class: 'btn small', type: 'button', onclick: () => render() }, 'Try again'))); }
+    clearTimeout(skT); mo.disconnect(); if (skel) { skel.remove(); skel = null; }
     if (seq !== renderSeq) return;
+    if (st && !isGuest() && (/^stage-\d+$/.test(r) || ['home', 'bank', 'tests', 'checkpoint', 'final', 'profile', 'board'].includes(r)) && !document.getElementById('stageSwitch') && !m.querySelector('.lockcard#stageSoon')) m.prepend(stageSwitcher());
     if (r === 'admin') document.title = 'Atomic – Admin'; else if (r === 'staff') document.title = 'Atomic – Staff'; else document.title = `Atomic – Cambridge ${Core.stageLabel()}`;
     m.focus({ preventScroll: true }); window.scrollTo(0, 0);
   }
@@ -1845,8 +1967,8 @@
     try {
       if (Backend.demo && location.search.includes('reset')) Backend.demo.reset();
       await Core.boot(); C = Core.C;
-    } catch (e) { console.error(e); document.getElementById('app').innerHTML = '<p style="padding:24px;font-family:sans-serif">Sorry – the course could not load. Please check your connection and reload the page.</p>'; return; }
-    render();
+    } catch (e) { console.error(e); Loading.hideSplash(); document.getElementById('app').innerHTML = '<p style="padding:24px;font-family:sans-serif">Sorry – the course could not load. Please check your connection and reload the page.</p>'; return; }
+    render().finally(() => Loading.hideSplash());
   }
   window.AtomicApp = { render, go, get st() { return st; }, UI, get C() { return C; } };
   boot();

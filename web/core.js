@@ -11,6 +11,10 @@
   const stageLabel = (g = STAGE) => (MATHS(g) ? `Stage ${stageNo(g)} Mathematics` : `Stage ${g} Science`);
   const unitCount = () => ((INDEX && INDEX.units && INDEX.units.length) || STAGE_UNITS);
   // the stage on screen (a learner can study every stage they are enrolled in)
+  // stages switched off for learners (config lockedStages, e.g. Maths Stage 9 while it is reviewed); admins still open them
+  const LOCKED = new Set((((window.ATOMIC_CONFIG || {}).lockedStages) || []).map(Number));
+  const isAdminMe = me => !!(me && me.profile && me.profile.role === 'admin');
+  const stageLocked = g => LOCKED.has(g) && !isAdminMe(S && S.me);
   let STAGE = (() => { try { const g = Number(localStorage.getItem('atomic.stage')); return STAGES.includes(g) ? g : 7; } catch (e) { return 7; } })();
   const pad2 = n => String(n).padStart(2, '0');
   const unitId = n => `stage${STAGE}-unit${pad2(n)}`;
@@ -30,20 +34,31 @@
   /* ---------- session ---------- */
   async function loadIndex() {
     if (INDEX) return INDEX;
+    const setP = Backend.unitSettings().catch(() => []);
     let r = await fetch(`content/stage${STAGE}.json`);
     if (!r.ok && STAGE !== 7) { STAGE = 7; r = await fetch('content/stage7.json'); }
     INDEX = r.ok ? await r.json() : { units: [] };
-    try { const hid = (await Backend.unitSettings()).filter(x => x.hidden).map(x => x.unit); INDEX.units.forEach(u => { if (hid.includes(`stage${STAGE}-unit${String(u.n).padStart(2, '0')}`)) { u.ready = false; u.hiddenByAdmin = true; } }); INDEX.hiddenExtra = hid; } catch (e) { }
+    try { const hid = (await setP).filter(x => x.hidden).map(x => x.unit); INDEX.units.forEach(u => { if (hid.includes(`stage${STAGE}-unit${String(u.n).padStart(2, '0')}`)) { u.ready = false; u.hiddenByAdmin = true; } }); INDEX.hiddenExtra = hid; } catch (e) { }
     return INDEX;
   }
+  // one request per unit even when the sidebar and the page ask for it at the same time; the content and its admin changes load side by side
+  const PENDING = {};
+  function fetchUnit(n) {
+    if (CACHE[n]) return Promise.resolve(CACHE[n]);
+    const id = unitId(n), key = id;
+    if (!PENDING[key]) PENDING[key] = Promise.all([fetch(`content/${id}.json`).then(r => { if (!r.ok) throw new Error('content'); return r.json(); }), Backend.contentOverrides(id).catch(() => null)])
+      .then(([pack, rows]) => { const out = applyRows(pack, rows); if (unitId(n) === id) CACHE[n] = out; return out; }).finally(() => { delete PENDING[key]; });
+    return PENDING[key];
+  }
   async function loadUnit(n) {
-    if (!CACHE[n]) { const r = await fetch(`content/${unitId(n)}.json`); if (!r.ok) throw new Error('content'); CACHE[n] = await withOv(unitId(n), await r.json()); }
+    await fetchUnit(n);
     UNO = n; C = CACHE[n]; try { sessionStorage.setItem('atomic.unit', String(n)); } catch (e) { }
     return C;
   }
-  async function peekUnit(n) { if (!CACHE[n]) { const r = await fetch(`content/${unitId(n)}.json`); if (!r.ok) throw new Error('content'); CACHE[n] = await withOv(unitId(n), await r.json()); } return CACHE[n]; }
+  async function peekUnit(n) { return fetchUnit(n); }
   // admin changes (edited or withdrawn questions) are applied to the built content as it loads
-  async function withOv(unit, pack) { try { const rows = await Backend.contentOverrides(unit); if (!rows || !rows.length) return pack; const ov = {}; rows.forEach(r => { ov[r.question_id] = { hidden: r.hidden, patch: r.patch }; }); return GradeCore.applyOverrides(pack, ov); } catch (e) { return pack; } }
+  function applyRows(pack, rows) { try { if (!rows || !rows.length) return pack; const ov = {}; rows.forEach(r => { ov[r.question_id] = { hidden: r.hidden, patch: r.patch }; }); return GradeCore.applyOverrides(pack, ov); } catch (e) { return pack; } }
+  async function withOv(unit, pack) { try { return applyRows(pack, await Backend.contentOverrides(unit)); } catch (e) { return pack; } }
   async function dropCache() { for (const k of Object.keys(CACHE)) delete CACHE[k]; FINAL = null; CP = null; if (UNO) { try { await loadUnit(UNO); } catch (e) { } } }
   const cached = n => CACHE[n] || null;
   let FINAL = null, CP = null;
@@ -60,7 +75,7 @@
     return C;
   }
   async function switchStage(g) {
-    if (!STAGES.includes(g)) throw new Error('stage'); if (g === STAGE && INDEX && C) return C;
+    if (!STAGES.includes(g)) throw new Error('stage'); if (stageLocked(g)) throw new Error('locked'); if (g === STAGE && INDEX && C) return C;
     flush(); STAGE = g; INDEX = null; C = null; FINAL = null; CP = null; for (const k of Object.keys(CACHE)) delete CACHE[k];
     try { localStorage.setItem('atomic.stage', String(g)); sessionStorage.removeItem('atomic.unit'); } catch (e) { }
     await loadIndex(); await loadUnit((INDEX.units.find(u => u.ready) || { n: 1 }).n);
@@ -68,10 +83,12 @@
     return C;
   }
   async function boot() {
+    const meP = Backend.me(); meP.catch(() => { });   // the account and the course content load side by side
+    if (LOCKED.has(STAGE)) { const me0 = await meP.catch(() => null); if (!isAdminMe(me0)) { STAGE = 7; INDEX = null; C = null; for (const k of Object.keys(CACHE)) delete CACHE[k]; try { localStorage.setItem('atomic.stage', '7'); sessionStorage.removeItem('atomic.unit'); } catch (e) { } } }
     await loadIndex();
     let want = null; try { want = Number(sessionStorage.getItem('atomic.unit')); } catch (e) { }
     await loadUnit(want && unitReady(want) ? want : (INDEX.units.find(u => u.ready) || { n: 3 }).n);
-    S.me = await Backend.me(); S.profiles = {}; S.current = null; S.guest = false;
+    S.me = await meP; S.profiles = {}; S.current = null; S.guest = false;
     if (!S.me) { if (guestSaved()) startGuest(); return S; }   // a returning visitor carries on where they stopped
     S.learners = await Backend.learners();
     S.sub = await getSub().catch(() => ({ active: false, status: 'none' }));
@@ -199,7 +216,7 @@
 
   /* ---------- stages: the learner's own stage is included; other stages need an enrolment ---------- */
   const learnerStage = () => { const st = cur(); return (st && st.learner && st.learner.stage) || 7; };
-  const enrolled = stage => S.guest ? stage === 7 : (stage === learnerStage() || (S.enrolments || []).some(e => e.stage === stage && e.status !== 'canceled'));
+  const enrolled = stage => stageLocked(stage) ? false : S.guest ? stage === 7 : (stage === learnerStage() || (S.enrolments || []).some(e => e.stage === stage && e.status !== 'canceled'));
   async function enrol(stage, amount) { const st = cur(); await Backend.enrol(st.id, stage, amount); S.enrolments = await Backend.enrolments(st.id); return true; }
 
   /* ---------- exam room clock (the server keeps the official start time) ---------- */
@@ -345,7 +362,7 @@
   }
 
   window.Core = {
-    get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; }, get STAGE() { return STAGE; }, STAGES, switchStage, MATHS, stageNo, subjectOf, stageLabel, stageName, unitCount, get IS_MATHS() { return MATHS(STAGE); },
+    get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; }, get STAGE() { return STAGE; }, STAGES, switchStage, stageLocked, LOCKED, MATHS, stageNo, subjectOf, stageLabel, stageName, unitCount, get IS_MATHS() { return MATHS(STAGE); },
     unitId, unitReady, switchUnit, loadIndex, peekUnit, cached, loadFinal, get FINAL() { return FINAL; },
     xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, startClock, refreshFinal, finalPassed, submitFinal, loadCp, refreshCp, dropCache, withOv, submitCp, activity,
     boot, selectLearner, leaveLearner, refreshAccount, cur, persist, flush, canOpen,

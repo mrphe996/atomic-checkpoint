@@ -42,6 +42,7 @@ Database changes: apply the new file in `supabase/migrations` to **Test first**,
 | `API_BASE` | `https://condufamthngjudcdtgs.supabase.co/functions/v1/api` | `https://camrubtiydncxqyjmkja.supabase.co/functions/v1/api` |
 | `SIGNUP_URL` | `https://condufamthngjudcdtgs.supabase.co/functions/v1/signup` | `https://camrubtiydncxqyjmkja.supabase.co/functions/v1/signup` |
 | `DIRECT_SIGNUP` / `BILLING` | `on` / `off` | `on` / `off` |
+| `LOCKED_STAGES` | not set = `19` (Mathematics Stage 9 locked for learners; admins can still open it) · `none` opens every stage | same |
 
 The Supabase service key is only used inside the Edge Functions, where Supabase provides it automatically.
 
