@@ -29,7 +29,7 @@
       const a = ownerOf(lid); const l = a.learners.find(x => x.id === lid);
       if (at.status === 'final' && at.passed) {
         D.results[lid] = D.results[lid] || {};
-        if (!D.results[lid][unit]) D.results[lid][unit] = { pct: at.pct, at: new Date().toISOString(), stage: 7 };
+        if (!D.results[lid][unit]) D.results[lid][unit] = { pct: at.pct, at: new Date().toISOString(), stage: Number((unit.match(/^stage(\d+)/) || [0, 7])[1]) };
         const first = !D.results[lid][unit + ':notified']; D.results[lid][unit + ':notified'] = true;
         const un = Number(unit.slice(-2)), ut = (((window.Core && Core.INDEX) || { units: [] }).units.find(u => u.n === un) || {}).t || ''; const uname = `Unit ${un}${ut ? ': ' + ut : ''}`;
         note(a, lid, 'test_passed', `You passed ${uname}!`, `Score ${at.pct.toFixed(1)}%`);
@@ -155,7 +155,7 @@
         const have = Object.keys(D.results[lid] || {}).filter(k => !k.includes(':') && k.startsWith(`stage${stage}-unit`)).length; if (have < stageUnits) throw err('stage_incomplete', { have, need: stageUnits });
         if (!(((D.attempts[lid] || {})[`stage${stage}-final`]) || []).some(x => x.status === 'final' && x.passed)) throw err('final_required');
         const hex = [...crypto.getRandomValues(new Uint8Array(4))].map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase();
-        D.certs[key] = { code: `AE-S${stage}-${new Date().getFullYear()}-${hex}`, name: l.certificate_name || l.nickname, date: new Date().toISOString().slice(0, 10), stage }; save(); return D.certs[key];
+        D.certs[key] = { code: `AE-${stage >= 10 ? 'M' + (stage - 10) : 'S' + stage}-${new Date().getFullYear()}-${hex}`, name: l.certificate_name || l.nickname, date: new Date().toISOString().slice(0, 10), stage }; save(); return D.certs[key];
       },
       async certificate(lid, stage = 7) { mine(lid); return D.certs[stage === 7 ? lid : `${lid}:s${stage}`] || null; },
       async verifyCertificate(code) { const c = Object.values(D.certs).find(x => x.code === String(code || '').trim().toUpperCase()); return c ? { name_on_certificate: c.name, stage: c.stage || 7, issued_at: c.date } : null; },
@@ -249,10 +249,10 @@
       })(),
       /* tester tools (demo only) */
       demo: { setRole(r) { const a = need(); a.profile.role = r; save(); }, reset() { try { localStorage.removeItem(KEY); } catch (e) { } D = { accounts: {}, session: null, progress: {}, attempts: {}, results: {}, certs: {}, events: [] }; },
-        simulateOtherUnits(lid, pct) { D.results[lid] = D.results[lid] || {}; for (let n = 1; n <= 14; n++) { const u = 'stage7-unit' + String(n).padStart(2, '0'); if (u !== 'stage7-unit03' && !D.results[lid][u]) D.results[lid][u] = { pct, at: new Date().toISOString(), stage: 7, simulated: true }; } save(); },
+        simulateOtherUnits(lid, pct) { const g = (window.Core && Core.STAGE) || 7, cur = window.Core && Core.UNIT, n0 = (window.Core && Core.unitCount()) || 14; D.results[lid] = D.results[lid] || {}; for (let n = 1; n <= n0; n++) { const u = `stage${g}-unit` + String(n).padStart(2, '0'); if (u !== cur && !D.results[lid][u]) D.results[lid][u] = { pct, at: new Date().toISOString(), stage: g, simulated: true }; } save(); },
         outbox() { return (D.outbox || []).slice(); },
-        simulateFinal(lid, pct) { const l = ((D.attempts[lid] = D.attempts[lid] || {})['stage7-final'] = D.attempts[lid]['stage7-final'] || []); if (!l.some(x => x.passed)) l.push({ id: uuid(), n: l.length + 1, form: '10', ts: Date.now(), status: 'final', passed: true, score: pct / 2, pct, per: {}, auto: pct / 2, pending: [], byObj: {}, simulated: true }); save(); },
-        simulateXp(lid, n) { const p = ((D.progress[lid] = D.progress[lid] || {})['stage7-unit02'] = D.progress[lid]['stage7-unit02'] || {}); p.items = p.items || {}; for (let i = 0; i < n; i++) p.items['sim' + i] = { done: true, ok: true, score: 1, tries: 1, sim: true }; save(); },
+        simulateFinal(lid, pct) { const fu = `stage${(window.Core && Core.STAGE) || 7}-final`; const l = ((D.attempts[lid] = D.attempts[lid] || {})[fu] = D.attempts[lid][fu] || []); if (!l.some(x => x.passed)) l.push({ id: uuid(), n: l.length + 1, form: '10', ts: Date.now(), status: 'final', passed: true, score: pct / 2, pct, per: {}, auto: pct / 2, pending: [], byObj: {}, simulated: true }); save(); },
+        simulateXp(lid, n) { const xu = `stage${(window.Core && Core.STAGE) || 7}-unit02`; const p = ((D.progress[lid] = D.progress[lid] || {})[xu] = D.progress[lid][xu] || {}); p.items = p.items || {}; for (let i = 0; i < n; i++) p.items['sim' + i] = { done: true, ok: true, score: 1, tries: 1, sim: true }; save(); },
         resetLearner(lid) { mine(lid); delete D.progress[lid]; delete D.attempts[lid]; delete D.results[lid]; delete D.certs[lid]; save(); },
         clearSimulated(lid) { for (const [u, r] of Object.entries(D.results[lid] || {})) if (r.simulated) delete D.results[lid][u]; save(); } }
     };

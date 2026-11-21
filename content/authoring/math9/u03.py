@@ -25,10 +25,10 @@ def t1(r):
     return N(f"Work out {fmt(m)} {op}.", round(v, 10), o="O1", reason=f"{op} moves the digits {abs(e)} place(s) {'left' if e>0 else 'right'}: {fmt(round(v,10))}.")
 def t2(r):
     m = round(r.uniform(1, 999), r.randint(0, 2)); k = pick(r, [("× 0.1", 0.1), ("× 0.01", 0.01), ("÷ 0.1", 10), ("÷ 0.01", 100), ("× 0.001", 0.001)])
-    return N(f"Work out {fmt(m)} {k[0]}.", round(m * k[1], 10), o="O1")
+    return N(f"Work out {fmt(m)} {k[0]}.", round(m * k[1], 10), reason=f"{k[0]} is the same as {'× ' + fmt(k[1]) if k[1] >= 1 else '÷ ' + fmt(round(1 / k[1]))}: {fmt(round(m * k[1], 10))}.", o="O1")
 def t3(r):
     m = round(r.uniform(0.01, 50), 2); e = r.randint(-3, 4); v = round(m * 10 ** e, 10)
-    return N(f"{fmt(m)} × 10ⁿ = {fmt(v)}. Find n.", e, o="O1", d="H")
+    return N(f"{fmt(m)} × 10ⁿ = {fmt(v)}. Find n.", e, reason=f"The digits move {abs(e)} place(s) {'left' if e > 0 else 'right'}" + (f", so n = {e}." if e else ", so n = 0."), o="O1", d="H")
 def t4(r):
     rows = [("× 10⁻²", "÷ 100"), ("÷ 10⁻¹", "× 10"), ("× 0.001", "÷ 1000"), ("÷ 0.01", "× 100")]
     return MT("Match each operation with an equivalent one.", r.sample(rows, 4), o="O1")
@@ -37,19 +37,19 @@ def t5(r):
     return N(f"Work out {fmt(a)} × 10{sup(b)} × 10{sup(c)}.", round(a * 10 ** (b + c), 10), o="O1", d="H", reason=f"× 10{sup(b+c)} overall.")
 def t6(r):
     m = round(r.uniform(0.5, 50), 2)
-    return TB(f"Complete the table for the number {fmt(m)}.", ["× 10²", "× 10⁻¹", "÷ 10⁻²", "÷ 10³"], [[B(round(m * 100, 10)), B(round(m / 10, 10)), B(round(m * 100, 10)), B(round(m / 1000, 10))]], o="O1", d="H")
+    return TB(f"Complete the table for the number {fmt(m)}.", ["× 10²", "× 10⁻¹", "÷ 10⁻²", "÷ 10³"], [[B(round(m * 100, 10)), B(round(m / 10, 10)), B(round(m * 100, 10)), B(round(m / 1000, 10))]], reason=f"× 10² and ÷ 10⁻² both multiply by 100; × 10⁻¹ divides by 10; ÷ 10³ divides by 1000.", o="O1", d="H")
 def t7(r):
     a = round(r.uniform(1, 9), 1); n = r.randint(2, 5)
     return MC(f"Which is the largest?", f"{fmt(a)} ÷ 10{sup(-n)}", [(f"{fmt(a)} × 10{sup(-n)}", ""), (f"{fmt(a)} ÷ 10{sup(n)}", ""), (f"{fmt(a)} × 0.1", "")], o="O1", d="H", reason=f"÷ 10{sup(-n)} = × 10{sup(n)}.")
 def t8(r):
     km = round(r.uniform(0.2, 9), 2)
-    return N(f"1 mm = 10⁻³ m. Convert {fmt(km)} m to millimetres.", round(km * 1000, 8), "mm", units=["mm", "m", "cm"], o="O1")
+    return N(f"1 mm = 10⁻³ m. Convert {fmt(km)} m to millimetres.", round(km * 1000, 8), "mm", units=["mm", "m", "cm"], reason=f"1 m = 1000 mm: {fmt(km)} × 1000 = {fmt(round(km * 1000, 8))} mm.", o="O1")
 s.core(t1(s.rng), t2(s.rng), t3(s.rng), t4(s.rng), t6(s.rng), t7(s.rng),
        EX("Explain why multiplying by 10⁻² gives the same answer as dividing by 100.", [("10⁻² = 1/100 = 0.01", ["1/100|0\\.01|one hundredth"]), ("multiplying by 1/100 is dividing by 100", ["divid|same as"])], "10⁻² = 1/10² = 1/100. Multiplying by 1/100 is the same as dividing by 100.", o="O1", d="H"),
-       TB("Complete the place value table.", ["Number", "× 0.1", "÷ 0.1"], [["36", B(3.6), B(360)], ["0.8", B(0.08), B(8)]], o="O1"))
+       TB("Complete the place value table.", ["Number", "× 0.1", "÷ 0.1"], [["36", B(3.6), B(360)], ["0.8", B(0.08), B(8)]], reason="× 0.1 is ÷ 10; ÷ 0.1 is × 10.", o="O1"))
 s.gen("p", 44, t1, t2, t3, t4, t5, t6, t7, t8)
 s.gen("a", 8, lambda r: (lambda a, b: N(f"Work out ({fmt(a)} × 10{sup(b)}) ÷ (0.01 × 10{sup(b-1)}).", round(a * 1000, 8), o="O1", d="VH", reason=f"Denominator = 10{sup(b-3)}; {fmt(a)} × 10{sup(b)} ÷ 10{sup(b-3)} = {fmt(a)} × 10³."))(round(r.uniform(1, 9), 2), r.randint(2, 6)),
-      lambda r: (lambda n: N(f"How many times bigger is 10⁻² than 10{sup(-n)}?", 10 ** (n - 2), o="O1", d="VH"))(r.randint(4, 7)))
+      lambda r: (lambda n: N(f"How many times bigger is 10⁻² than 10{sup(-n)}?", 10 ** (n - 2), reason=f"10⁻² ÷ 10{sup(-n)} = 10{sup(n - 2)} = {10 ** (n - 2)}.", o="O1", d="VH"))(r.randint(4, 7)))
 
 # ================================================================== 3.2
 s = U.section("3.2", "Multiplying and dividing decimals", ["O2"])
@@ -72,37 +72,37 @@ def m3(r):
     return MC(f"Which is the best estimate for {fmt(a)} × {fmt(b)}?", fmt(round(a) * round(b)), [(fmt(round(a) * round(b) * 10), ""), (fmt(round(a) * round(b) / 10), ""), (fmt(round(a) + round(b)), "")], o="O2", d="M")
 def m4(r):
     p, kg = d(r, 1.2, 9.8, 2), d(r, 0.25, 4.5, 2)
-    return N(f"Apples cost ${fmt(p, 2)} per kg. Find the cost of {fmt(kg)} kg, correct to the nearest cent.", round(p * kg, 2), "$", units=["$", "kg"], o="O2", tol=0.005)
+    return N(f"Apples cost ${fmt(p, 2)} per kg. Find the cost of {fmt(kg)} kg, correct to the nearest cent.", round(p * kg, 2), "$", units=["$", "kg"], reason=f"{fmt(p, 2)} × {fmt(kg)} = {fmt(round(p * kg, 4))} ≈ ${round(p * kg, 2):.2f}.", o="O2", tol=0.005)
 def m5(r):
     L = d(r, 2, 9, 1); piece = pick(r, [0.15, 0.25, 0.3, 0.4, 0.45]); n = int(L // piece)
     return N(f"A ribbon is {fmt(L)} m long. How many whole pieces of length {fmt(piece)} m can be cut from it?", n, "pieces", units=["pieces", "m"], o="O2", d="H", reason=f"{fmt(L)} ÷ {fmt(piece)} = {L/piece:.2f} → {n} whole pieces.")
 def m6(r):
     a, b = r.randint(12, 99), r.randint(12, 99); c = a * b
-    return TB(f"{a} × {b} = {c}. Use this fact to complete the table.", [f"{a/10} × {b}", f"{a/10} × {b/10}", f"{c/100} ÷ {b/10}", f"{a} × {b/1000}"], [[B(round(c / 10, 6)), B(round(c / 100, 6)), B(round(a / 10, 6)), B(round(c / 1000, 6))]], o="O2", d="H")
+    return TB(f"{a} × {b} = {c}. Use this fact to complete the table.", [f"{a/10} × {b}", f"{a/10} × {b/10}", f"{c/100} ÷ {b/10}", f"{a} × {b/1000}"], [[B(round(c / 10, 6)), B(round(c / 100, 6)), B(round(a / 10, 6)), B(round(c / 1000, 6))]], reason=f"Count the decimal places: each ÷ 10 on a factor moves the answer one place.", o="O2", d="H")
 def m7(r):
     a = d(r, 10, 99, 1)
     return GD("Will the answer be bigger or smaller than the starting number?", "Bigger or smaller?", [(f"{fmt(a)} × 0.7", "Smaller"), (f"{fmt(a)} ÷ 0.7", "Bigger"), (f"{fmt(a)} × 1.3", "Bigger"), (f"{fmt(a)} ÷ 1.3", "Smaller")], o="O2", d="M")
 def m8(r):
     w, l = d(r, 1.2, 9.5, 1), d(r, 1.5, 12, 2)
-    return N(f"A rectangle measures {fmt(w)} m by {fmt(l)} m. Find its area.", round(w * l, 6), "m²", units=["m²", "m"], o="O2", fig={"kind": "shape", "pts": [[0, 0], [8, 0], [8, 4], [0, 4]], "s": [f"{fmt(l)} m", f"{fmt(w)} m", "", ""]})
+    return N(f"A rectangle measures {fmt(w)} m by {fmt(l)} m. Find its area.", round(w * l, 6), "m²", units=["m²", "m"], reason=f"{fmt(w)} × {fmt(l)} = {fmt(round(w * l, 6))} m².", o="O2", fig={"kind": "shape", "pts": [[0, 0], [8, 0], [8, 4], [0, 4]], "s": [f"{fmt(l)} m", f"{fmt(w)} m", "", ""]})
 s.core(m1(s.rng), m2(s.rng), m4(s.rng), m6(s.rng), m7(s.rng), m5(s.rng), m8(s.rng),
        EX("Ravi says 3.2 × 0.5 = 16. Use estimation to explain why he must be wrong.", [("× 0.5 is half / makes it smaller", ["half|smaller|less than 3"]), ("answer is about 1.6", ["1\\.6|about 1|around 1|less than"])], "Multiplying by 0.5 halves the number, so the answer must be about 1.6, not 16. In fact 3.2 × 0.5 = 1.6.", o="O2", d="H"))
 s.gen("p", 44, m1, m2, m3, m4, m5, m6, m7, m8)
-s.gen("a", 8, lambda r: (lambda a, b, c: N(f"Work out ({fmt(a)} × {fmt(b)}) ÷ {fmt(c)}.", round(a * b / c, 6), o="O2", d="VH", tol=1e-6))(d(r, 0.2, 9, 1), pick(r, [0.4, 1.2, 2.5]), pick(r, [0.2, 0.05, 0.4])),
-      lambda r: (lambda v: N(f"Petrol costs $1.38 per litre. Sam has ${fmt(v)}. How many whole litres can he buy?", int(v // 1.38), "litres", units=["litres", "$"], o="O2", d="VH"))(r.randint(20, 90)))
+s.gen("a", 8, lambda r: (lambda a, b, c: N(f"Work out ({fmt(a)} × {fmt(b)}) ÷ {fmt(c)}.", round(a * b / c, 6), reason=f"{fmt(a)} × {fmt(b)} = {fmt(round(a * b, 6))}; ÷ {fmt(c)} = {fmt(round(a * b / c, 6))}.", o="O2", d="VH", tol=1e-6))(d(r, 0.2, 9, 1), pick(r, [0.4, 1.2, 2.5]), pick(r, [0.2, 0.05, 0.4])),
+      lambda r: (lambda v: N(f"Petrol costs $1.38 per litre. Sam has ${fmt(v)}. How many whole litres can he buy?", int(v // 1.38), "litres", units=["litres", "$"], reason=f"{fmt(v)} ÷ 1.38 = {round(v / 1.38, 2)}, so {int(v // 1.38)} whole litres.", o="O2", d="VH"))(r.randint(20, 90)))
 
 # ================================================================== 3.3
 s = U.section("3.3", "Understanding compound percentages", ["O3"])
 s.idea("Multipliers", ["An increase of r% means multiplying by **1 + r/100**. A decrease of r% means multiplying by **1 − r/100**. So +15% is × 1.15 and −8% is × 0.92.",
        "For changes one after another, **multiply the multipliers**. A 10% increase then a 10% decrease is × 1.1 × 0.9 = × 0.99 – a 1% decrease overall, NOT 'no change'."])
 s.example("Compound interest", "$2000 is invested at 4% compound interest per year. Find the value after 3 years.", [("multiplier 1.04", ""), ("2000 × 1.04³", ""), ("= 2249.73", "")], "$2249.73")
-s.check(N("Write the multiplier for a 7% decrease.", 0.93, o="O3"))
+s.check(N("Write the multiplier for a 7% decrease.", 0.93, reason="100% − 7% = 93% = 0.93.", o="O3"))
 s.example("Overall change", "A price rises by 20% then falls by 25%. What is the overall percentage change?", [("1.2 × 0.75 = 0.9", ""), ("0.9 means 90% of the original", ""), ("10% decrease", "")], "a 10% decrease")
 s.mistake("Percentages do not simply add", ["+20% then −20% is not 0%: 1.2 × 0.8 = 0.96, a 4% decrease."])
 s.check(MC("A price is increased by 50% and then decreased by 50%. Overall it has…", "decreased by 25%", [("stayed the same", "1.5 × 0.5 = 0.75."), ("decreased by 50%", ""), ("increased by 25%", "")], o="O3", d="H"))
 def c1(r):
     p = r.randint(1, 35); up = r.random() < 0.5
-    return N(f"Write the multiplier for a {p}% {'increase' if up else 'decrease'}.", round(1 + p / 100 if up else 1 - p / 100, 4), o="O3")
+    return N(f"Write the multiplier for a {p}% {'increase' if up else 'decrease'}.", round(1 + p / 100 if up else 1 - p / 100, 4), reason=f"100% {'+' if up else '−'} {p}% = {100 + p if up else 100 - p}% = {fmt(round(1 + p / 100 if up else 1 - p / 100, 4))}.", o="O3")
 def c2(r):
     P, rate, n = r.randint(5, 80) * 100, pick(r, [2, 2.5, 3, 4, 5, 6]), r.randint(2, 6)
     return N(f"${fmt(P)} is invested at {fmt(rate)}% compound interest per year. Find its value after {n} years, to the nearest cent.", round(P * (1 + rate / 100) ** n, 2), "$", units=["$", "%"], o="O3", d="H", tol=0.01, reason=f"{fmt(P)} × {1+rate/100}{sup(n)} = {P*(1+rate/100)**n:.2f}.")
@@ -112,11 +112,11 @@ def c3(r):
     return N(f"A value is {'increased' if up1 else 'decreased'} by {a}% then {'increased' if up2 else 'decreased'} by {b}%. Find the overall percentage change (use a minus sign for a decrease).", ch, "%", units=["%"], o="O3", d="H", tol=0.01, reason=f"Multiplier {m:.4f} → {ch}%.")
 def c4(r):
     V, rate, n = r.randint(8, 40) * 1000, r.randint(8, 25), r.randint(2, 5)
-    return N(f"A car worth ${fmt(V)} loses {rate}% of its value each year. Find its value after {n} years, to the nearest dollar.", round(V * (1 - rate / 100) ** n), "$", units=["$", "%"], o="O3", d="H", tol=1)
+    return N(f"A car worth ${fmt(V)} loses {rate}% of its value each year. Find its value after {n} years, to the nearest dollar.", round(V * (1 - rate / 100) ** n), "$", units=["$", "%"], reason=f"{fmt(V)} × {fmt(1 - rate / 100)}{sup(n)} ≈ ${round(V * (1 - rate / 100) ** n):,}.", o="O3", d="H", tol=1)
 def c5(r):
     P, rate = r.randint(2, 20) * 100, pick(r, [3, 4, 5, 6])
     rows = [[str(y), B(round(P * (1 + rate / 100) ** y, 2), 0.01)] for y in (1, 2, 3)]
-    return TB(f"${fmt(P)} earns {rate}% compound interest each year. Complete the table (to the nearest cent).", ["Year", "Value ($)"], rows, o="O3", d="H")
+    return TB(f"${fmt(P)} earns {rate}% compound interest each year. Complete the table (to the nearest cent).", ["Year", "Value ($)"], rows, reason=f"Each year multiply by {fmt(1 + rate / 100)}.", o="O3", d="H")
 def c6(r):
     a = r.randint(5, 30)
     return EX(f"Explain why increasing a price by {a}% and then decreasing it by {a}% does not give the original price.", [("the decrease is of a larger amount / new price", ["larger|bigger|new price|different amount|higher price"]), (f"multiplier product less than 1", ["0\\.9|less than 1|smaller|lower"])],
@@ -130,14 +130,14 @@ def c8(r):
 s.core(c1(s.rng), c2(s.rng), c3(s.rng), c5(s.rng), c6(s.rng), c7(s.rng), c4(s.rng),
        GD("Compare simple and compound interest on $1000 at 10% for 2 years.", "Value after 2 years", [("Simple interest", "$1200"), ("Compound interest", "$1210")], extra=["$1100", "$1020"], o="O3", d="H"))
 s.gen("p", 44, c1, c2, c3, c4, c5, c7, c8)
-s.gen("a", 8, c8, lambda r: (lambda rate: N(f"Money is invested at {rate}% compound interest per year. After how many whole years does it first double?", next(n for n in range(1, 200) if (1 + rate / 100) ** n >= 2), "years", units=["years", "%"], o="O3", d="VH"))(pick(r, [3, 4, 5, 6, 8, 10, 12])))
+s.gen("a", 8, c8, lambda r: (lambda rate: N(f"Money is invested at {rate}% compound interest per year. After how many whole years does it first double?", next(n for n in range(1, 200) if (1 + rate / 100) ** n >= 2), "years", units=["years", "%"], reason=f"Find the first n with {fmt(1 + rate / 100)}ⁿ ≥ 2 by trying values.", o="O3", d="VH"))(pick(r, [3, 4, 5, 6, 8, 10, 12])))
 
 # ================================================================== 3.4
 s = U.section("3.4", "Understanding upper and lower bounds", ["O4"])
 s.idea("Bounds", ["A rounded number could have been any value in a range. If a length is 8 cm **to the nearest cm**, the real length is at least 7.5 cm (the **lower bound**) and less than 8.5 cm (the **upper bound**).",
        "The bounds are **half a unit** below and above. We write 7.5 ≤ l < 8.5."])
 s.example("Nearest 10", "A crowd is 3400 to the nearest 100. Write the lower and upper bounds.", [("half of 100 = 50", ""), ("3400 − 50 = 3350, 3400 + 50 = 3450", "")], "3350 ≤ n < 3450")
-s.check(N("A mass is 2.6 kg correct to 1 decimal place. Write the lower bound.", 2.55, "kg", units=["kg", "g"], o="O4"))
+s.check(N("A mass is 2.6 kg correct to 1 decimal place. Write the lower bound.", 2.55, "kg", units=["kg", "g"], reason="Half of 0.1 is 0.05: 2.6 − 0.05 = 2.55 kg.", o="O4"))
 s.example("Decimal places", "x = 0.37 to 2 decimal places. Write the error interval.", [("half of 0.01 = 0.005", ""), ("0.365 ≤ x < 0.375", "")], "0.365 ≤ x < 0.375")
 s.mistake("The upper bound", ["For 8 cm to the nearest cm the upper bound is 8.5 cm, not 8.4 cm or 8.49 cm – values up to (but not including) 8.5 round to 8."])
 s.check(MC("A length is 120 cm to the nearest 10 cm. Which is the error interval?", "115 ≤ l < 125", [("119.5 ≤ l < 120.5", "That is for the nearest cm."), ("110 ≤ l < 130", "Half of 10 is 5."), ("115 ≤ l ≤ 124", "")], o="O4", d="H"))
@@ -147,16 +147,16 @@ def b1(r):
     return N(f"A number is {fmt(round(v, dp))} {nm}. Write its lower bound.", lo, o="O4", reason=f"Half of {fmt(u)} is {fmt(u/2)}; {fmt(round(v,dp))} − {fmt(u/2)} = {fmt(lo)}.")
 def b2(r):
     nm, u, dp = pick(r, UNITS); v = round(r.uniform(2, 900) / u) * u; hi = round(v + u / 2, dp + 1)
-    return N(f"A number is {fmt(round(v, dp))} {nm}. Write its upper bound.", hi, o="O4")
+    return N(f"A number is {fmt(round(v, dp))} {nm}. Write its upper bound.", hi, reason=f"Half of {fmt(u)} is {fmt(u / 2)}; {fmt(round(v, dp))} + {fmt(u / 2)} = {fmt(hi)}.", o="O4")
 def b3(r):
     nm, u, dp = pick(r, UNITS[:3]); v = round(r.uniform(20, 900) / u) * u
-    return TB(f"A length is {fmt(v)} m {nm}. Complete the error interval.", ["Lower bound", "", "Upper bound"], [[B(v - u / 2), "≤ l <", B(v + u / 2)]], o="O4", d="M")
+    return TB(f"A length is {fmt(v)} m {nm}. Complete the error interval.", ["Lower bound", "", "Upper bound"], [[B(v - u / 2), "≤ l <", B(v + u / 2)]], reason=f"Subtract and add half of {fmt(u)}: {fmt(v - u / 2)} ≤ l < {fmt(v + u / 2)}.", o="O4", d="M")
 def b4(r):
     a = r.randint(4, 20)
-    return N(f"The side of a square is {a} cm to the nearest cm. Find the upper bound of its perimeter.", 4 * (a + 0.5), "cm", units=["cm", "cm²"], o="O4", d="H")
+    return N(f"The side of a square is {a} cm to the nearest cm. Find the upper bound of its perimeter.", 4 * (a + 0.5), "cm", units=["cm", "cm²"], reason=f"Upper bound of the side {a} + 0.5 = {a + 0.5}; × 4 = {fmt(4 * (a + 0.5))} cm.", o="O4", d="H")
 def b5(r):
     a, b = r.randint(5, 30), r.randint(5, 30)
-    return N(f"A rectangle is {a} cm by {b} cm, both to the nearest cm. Find the lower bound of its area.", (a - 0.5) * (b - 0.5), "cm²", units=["cm²", "cm"], o="O4", d="H", fig={"kind": "shape", "pts": [[0, 0], [8, 0], [8, 4], [0, 4]], "s": [f"{a} cm", f"{b} cm", "", ""]})
+    return N(f"A rectangle is {a} cm by {b} cm, both to the nearest cm. Find the lower bound of its area.", (a - 0.5) * (b - 0.5), "cm²", units=["cm²", "cm"], reason=f"Lower bounds {a - 0.5} × {b - 0.5} = {fmt((a - 0.5) * (b - 0.5))} cm².", o="O4", d="H", fig={"kind": "shape", "pts": [[0, 0], [8, 0], [8, 4], [0, 4]], "s": [f"{a} cm", f"{b} cm", "", ""]})
 def b6(r):
     v = round(r.uniform(3, 9), 1)
     return MS(f"x = {fmt(v)} to 1 decimal place. Select ALL the values x could be.", [fmt(round(v - 0.05, 2)), fmt(round(v + 0.04, 2))], [fmt(round(v + 0.05, 2)), fmt(round(v - 0.06, 2))], o="O4", d="H")
@@ -168,7 +168,7 @@ s.core(b1(s.rng), b2(s.rng), b3(s.rng), b4(s.rng), b5(s.rng), b6(s.rng),
        b7(s.rng))
 s.gen("p", 44, b1, b2, b3, b4, b5, b6, b7)
 s.gen("a", 8, lambda r: (lambda dd, t: N(f"A car travels {dd} km (nearest km) in {t} hours (nearest hour). Find the upper bound of its average speed, to 1 decimal place.", round((dd + 0.5) / (t - 0.5), 1), "km/h", units=["km/h", "km"], tol=0.05, o="O4", d="VH", reason="Greatest speed = greatest distance ÷ least time."))(r.randint(100, 400), r.randint(2, 6)),
-      lambda r: (lambda a: N(f"The area of a square is {a} cm² to the nearest cm². Find the lower bound of its side, to 2 decimal places.", round(math.sqrt(a - 0.5), 2), "cm", units=["cm", "cm²"], tol=0.006, o="O4", d="VH"))(r.randint(20, 150)))
+      lambda r: (lambda a: N(f"The area of a square is {a} cm² to the nearest cm². Find the lower bound of its side, to 2 decimal places.", round(math.sqrt(a - 0.5), 2), "cm", units=["cm", "cm²"], tol=0.006, reason=f"Lower bound of the area is {a - 0.5}; side = √{a - 0.5} ≈ {round(math.sqrt(a - 0.5), 2)} cm.", o="O4", d="VH"))(r.randint(20, 150)))
 
 U.mindmap(("Powers of 10", "× 10⁻ⁿ is ÷ 10ⁿ • × 0.1 = ÷ 10", "O1", "3.1"), ("Decimal calculations", "Estimate first • count decimal places", "O2", "3.2"),
           ("Compound percentages", "Multiply multipliers • 1.1 × 0.9 = 0.99", "O3", "3.3"), ("Bounds", "Half a unit either side • lower ≤ x < upper", "O4", "3.4"))

@@ -27,19 +27,19 @@ s.idea("Frequency polygons", ["For grouped data, plot each frequency at the **mi
        "Two polygons on the same axes make it easy to **compare** distributions."],
        fig={"kind": "linegraph", "x": {"min": 0, "max": 50, "step": 10, "label": "Time (minutes)"}, "y": {"min": 0, "max": 16, "step": 4, "label": "Frequency"}, "series": [{"pts": [[5, 3], [15, 9], [25, 14], [35, 8], [45, 2]]}]})
 s.example("Midpoints", "Which x-value is used for the class 20 ≤ t < 30?", [("(20 + 30) ÷ 2 = 25", "")], "25")
-s.check(N("In the lesson graph, how many people took 10 to 20 minutes?", 9, "people", units=["people"], o="O1"))
+s.check(N("In the lesson graph, how many people took 10 to 20 minutes?", 9, "people", units=["people"], reason="Read the point plotted at the midpoint 15: frequency 9.", o="O1"))
 s.mistake("Not at the class boundary", ["Plot at the MIDPOINT of each class, not at the start or the end."])
-s.check(N("In the lesson graph, how many people were surveyed altogether?", 36, "people", units=["people"], o="O1"))
+s.check(N("In the lesson graph, how many people were surveyed altogether?", 36, "people", units=["people"], reason="Add the frequencies: 3 + 9 + 14 + 8 + 2 = 36.", o="O1"))
 def f1(r):
     lo, w = pick(r, [(0, 10), (10, 5), (20, 10), (100, 20), (0, 4)]); cl = classes(r, lo, w, 5); i = r.randrange(5)
-    return N(f"A frequency polygon is drawn for classes of width {w} starting at {lo}. At what x-value is the frequency for the class {cl[i][0]} ≤ x < {cl[i][1]} plotted?", (cl[i][0] + cl[i][1]) / 2, o="O1")
+    return N(f"A frequency polygon is drawn for classes of width {w} starting at {lo}. At what x-value is the frequency for the class {cl[i][0]} ≤ x < {cl[i][1]} plotted?", (cl[i][0] + cl[i][1]) / 2, reason=f"Plot at the midpoint: ({cl[i][0]} + {cl[i][1]}) ÷ 2 = {fmt((cl[i][0] + cl[i][1]) / 2)}.", o="O1")
 def f2(r):
     cl = classes(r, 0, 10, 5); f = [r.randint(1, 15) for _ in cl]
     return GR("Plot the frequency polygon for this data (plot at the midpoints).", {"label": "Mass (kg)", "min": 0, "max": 50, "step": 5}, {"label": "Frequency", "min": 0, "max": 16, "step": 2}, [[(a + b) / 2, n] for (a, b), n in zip(cl, f)], o="O1", data=gtab(cl, f, "kg"))
 def f3(r):
     f = [r.randint(1, 15) for _ in range(5)]; pts = [[5 + 10 * i, f[i]] for i in range(5)]; q = r.randrange(2)
     fig = {"kind": "linegraph", "x": {"min": 0, "max": 50, "step": 10, "label": "Score"}, "y": {"min": 0, "max": 16, "step": 2, "label": "Frequency"}, "series": [{"pts": pts}]}
-    if q: return N("How many results are shown in the frequency polygon altogether?", sum(f), o="O1", fig=fig)
+    if q: return N("How many results are shown in the frequency polygon altogether?", sum(f), reason=f"Add the frequencies: {' + '.join(map(str, f))} = {sum(f)}.", o="O1", fig=fig)
     m = max(f)
     if f.count(m) > 1: return None
     i = f.index(m)
@@ -59,7 +59,7 @@ s.core(f1(s.rng), f2(s.rng), f3(s.rng) or f3(s.rng) or f3(s.rng), f4(s.rng), f1(
        MC("Why are the points on a frequency polygon joined with straight lines?", "to show the overall shape of the distribution", [("because the data is exact", ""), ("to show the mean", ""), ("because every value lies on the line", "Values between midpoints are not known.")], o="O1"),
        EX("Explain why frequency polygons are useful for comparing two sets of grouped data.", [("both can be drawn on the same axes", ["same axes|same graph|same grid|together|overlap"]), ("easy to compare shape / which is higher", ["compare|shape|higher|spread|shift"])], "Two polygons can be drawn on the same axes without hiding each other, so you can easily compare their shapes and see which has higher values.", o="O1"))
 s.gen("p", 44, f1, f2, f3, f4)
-s.gen("a", 8, f4, lambda r: (lambda f: N("Estimate the mean from the frequency polygon (1 d.p.).", round(sum((5 + 10 * i) * f[i] for i in range(5)) / sum(f), 1), tol=0.06, o="O1", d="VH",
+s.gen("a", 8, f4, lambda r: (lambda f: N("Estimate the mean from the frequency polygon (1 d.p.).", round(sum((5 + 10 * i) * f[i] for i in range(5)) / sum(f), 1), tol=0.06, reason=f"Σ(midpoint × frequency) ÷ Σfrequency = {sum((5 + 10 * i) * f[i] for i in range(5))} ÷ {sum(f)} = {round(sum((5 + 10 * i) * f[i] for i in range(5)) / sum(f), 1)}.", o="O1", d="VH",
        fig={"kind": "linegraph", "x": {"min": 0, "max": 50, "step": 10, "label": "Score"}, "y": {"min": 0, "max": 16, "step": 2, "label": "Frequency"}, "series": [{"pts": [[5 + 10 * i, f[i]] for i in range(5)]}]}))([r.randint(1, 15) for _ in range(5)]))
 
 # ================================================================== 15.2
@@ -69,7 +69,7 @@ s.idea("Correlation", ["A **scatter graph** plots pairs of values. **Positive co
        fig={"kind": "linegraph", "x": {"min": 0, "max": 10, "step": 2, "label": "Hours of revision"}, "y": {"min": 0, "max": 100, "step": 20, "label": "Test mark"}, "series": [{"pts": [[1, 30], [2, 38], [3, 45], [4, 52], [5, 50], [6, 63], [7, 70], [8, 72], [9, 85]], "line": False}, {"pts": [[0, 24], [10, 89]], "dots": False, "dash": True}]})
 s.check(MC("What type of correlation does the lesson graph show?", "positive", [("negative", ""), ("none", "")], o="O2"))
 s.mistake("Correlation is not cause", ["Ice-cream sales and sunburn are positively correlated, but ice cream does not cause sunburn – hot weather causes both."])
-s.check(N("Use the line of best fit in the lesson graph to estimate the mark for 5 hours of revision (to the nearest 5).", 55, "marks", units=["marks"], tol=4, o="O2"))
+s.check(N("Use the line of best fit in the lesson graph to estimate the mark for 5 hours of revision (to the nearest 5).", 55, "marks", units=["marks"], tol=4, reason="Go up from 5 hours to the line, then across: about 55 marks.", o="O2"))
 def sc1(r):
     t = r.randrange(3); pts = []
     for x in range(1, 10):
@@ -84,13 +84,13 @@ def sc2(r):
     return GD("What correlation would you expect?", "Correlation", r.sample(rows, 4), o="O2", extra=["Positive", "Negative", "No correlation"])
 def sc3(r):
     m, c = r.choice([4, 5, 6, 7, 8]), r.randint(5, 30); x = r.randint(2, 8)
-    return N(f"The line of best fit through a scatter graph has equation y = {m}x + {c}. Estimate y when x = {x}.", m * x + c, o="O2", d="H")
+    return N(f"The line of best fit through a scatter graph has equation y = {m}x + {c}. Estimate y when x = {x}.", m * x + c, reason=f"y = {m} × {x} + {c} = {m * x + c}.", o="O2", d="H")
 def sc4(r):
     x = r.randint(25, 60)
     return MC(f"A line of best fit was drawn for children aged 2 to 12, plotting age against height. Why is it not sensible to use it to estimate the height of someone aged {x}?", "it is far outside the range of the data", [("the line is not straight", ""), ("there is negative correlation", ""), ("adults have no height", "")], o="O2", d="H")
 def sc5(r):
     pts = [[x, 20 + 7 * x + r.randint(-6, 6)] for x in range(1, 10)]; out = r.randint(2, 8); pts[out - 1][1] = 20 + 7 * out + pick(r, [-40, 40])
-    return TB("One point does not fit the trend (an outlier). Give its coordinates.", ["x", "y"], [[B(pts[out - 1][0]), B(pts[out - 1][1])]], o="O2", d="H",
+    return TB("One point does not fit the trend (an outlier). Give its coordinates.", ["x", "y"], [[B(pts[out - 1][0]), B(pts[out - 1][1])]], reason=f"The y-values rise by about 7 each time; at x = {pts[out - 1][0]} the value {pts[out - 1][1]} is far from the trend.", o="O2", d="H",
               data={"head": ["x"] + [str(p[0]) for p in pts], "rows": [["y"] + [str(p[1]) for p in pts]]})
 def sc6(r):
     pts = [[x, 90 - 8 * x + r.randint(-5, 5)] for x in range(1, 9)]
@@ -99,7 +99,7 @@ def sc6(r):
 s.core(sc1(s.rng), sc2(s.rng), sc3(s.rng), sc4(s.rng), sc5(s.rng), sc1(s.rng), sc6(s.rng),
        EX("A scatter graph shows strong positive correlation between ice-cream sales and drownings. Explain why this does not mean ice cream causes drowning.", [("correlation does not show cause", ["correlation|does not mean|not cause|doesn't cause"]), ("another factor, e.g. hot weather, causes both", ["weather|hot|summer|sun|third|other factor|both"])], "Correlation does not prove cause. Hot weather makes more people buy ice cream and more people swim, so both increase together.", o="O2"))
 s.gen("p", 44, sc1, sc2, sc3, sc4, sc5, sc6)
-s.gen("a", 8, sc5, sc3, lambda r: (lambda a, b: N(f"A line of best fit passes through ({a}, {10*a+5}) and ({b}, {10*b+5}). Use it to estimate x when y = {10*(a+b)//2*1 + 5}.", (a + b) / 2, o="O2", d="VH", tol=0.01))(r.randint(1, 4), r.randint(6, 10)))
+s.gen("a", 8, sc5, sc3, lambda r: (lambda a, b: N(f"A line of best fit passes through ({a}, {10*a+5}) and ({b}, {10*b+5}). Use it to estimate x when y = {10*(a+b)//2*1 + 5}.", (a + b) / 2, reason=f"The line is y = 10x + 5, so x = ({5 * (a + b) + 5} − 5) ÷ 10 = {fmt((a + b) / 2)}.", o="O2", d="VH", tol=0.01))(r.randint(1, 4), r.randint(6, 10)))
 
 # ================================================================== 15.3
 s = U.section("15.3", "Back-to-back stem-and-leaf diagrams", ["O3"])
@@ -107,9 +107,9 @@ s.idea("Back-to-back", ["Two sets of data share the **same stems**. Leaves for o
        "Compare using an **average** (median) and a **measure of spread** (range)."],
        fig={"kind": "stemleaf", "stems": [1, 2, 3, 4], "left": [[5, 8], [2, 4, 7], [1, 6, 9], [3]], "right": [[9], [5, 6], [0, 2, 4, 8], [1, 5]], "titles": ["Boys", "Girls"], "key": "Key: 5 | 2 | 6 means 25 for boys and 26 for girls"})
 s.example("Reading the left side", "In the lesson diagram, what are the boys' values in the 20s?", [("leaves 2, 4, 7, reading outwards from the stem", "")], "22, 24, 27")
-s.check(N("What is the range of the girls' values in the lesson diagram?", 26, o="O3"))
+s.check(N("What is the range of the girls' values in the lesson diagram?", 26, reason="Largest 45 − smallest 19 = 26.", o="O3"))
 s.mistake("Read the key", ["On the left side, 5 | 2 means 25, not 52."])
-s.check(N("What is the median of the girls' values in the lesson diagram?", 32, o="O3", d="H"))
+s.check(N("What is the median of the girls' values in the lesson diagram?", 32, reason="9 values: 19, 25, 26, 30, 32, 34, 38, 41, 45. The 5th is 32.", o="O3", d="H"))
 def sl_data(r, n):
     vals = sorted(r.sample(range(10, 60), n)); return vals
 def sl_fig(L, R, titles):
@@ -120,7 +120,7 @@ def sl1(r):
     L, R = sl_data(r, pick(r, [7, 9, 11])), sl_data(r, pick(r, [7, 9, 11])); side, which = r.randrange(2), r.randrange(2)
     T = pick(r, [("Team A", "Team B"), ("Year 8", "Year 9"), ("Morning", "Afternoon")])
     v = (L, R)[side]
-    return N(f"Find the {'median' if which else 'range'} for {T[side]}.", med(v) if which else max(v) - min(v), o="O3", d="H" if side == 0 else "M", fig=sl_fig(L, R, T))
+    return N(f"Find the {'median' if which else 'range'} for {T[side]}.", med(v) if which else max(v) - min(v), reason=f"{T[side]} in order: {', '.join(map(str, sorted(v)))}. " + (f"Median = {fmt(med(v))}." if which else f"Range = {max(v)} − {min(v)} = {max(v) - min(v)}."), o="O3", d="H" if side == 0 else "M", fig=sl_fig(L, R, T))
 def sl2(r):
     L, R = sl_data(r, 9), sl_data(r, 9); T = ("Class P", "Class Q")
     mL, mR = med(L), med(R)
@@ -135,7 +135,7 @@ def sl3(r):
     return MC("Which shop's values are more consistent?", c, [(T[1] if c == T[0] else T[0], f"Ranges: X = {rL}, Y = {rR}. Smaller range = more consistent."), ("Both the same", "")], o="O3", d="H", fig=sl_fig(L, R, T))
 def sl4(r):
     L, R = sl_data(r, 9), sl_data(r, 9); T = ("Left", "Right")
-    return TB("Complete the table for the two sets of data.", ["Median (left)", "Range (left)", "Median (right)", "Range (right)"], [[B(med(L)), B(max(L) - min(L)), B(med(R)), B(max(R) - min(R))]], o="O3", d="H", fig=sl_fig(L, R, T))
+    return TB("Complete the table for the two sets of data.", ["Median (left)", "Range (left)", "Median (right)", "Range (right)"], [[B(med(L)), B(max(L) - min(L)), B(med(R)), B(max(R) - min(R))]], reason=f"Left: median {fmt(med(L))}, range {max(L)} − {min(L)} = {max(L) - min(L)}. Right: median {fmt(med(R))}, range {max(R)} − {min(R)} = {max(R) - min(R)}.", o="O3", d="H", fig=sl_fig(L, R, T))
 s.core(sl1(s.rng), sl2(s.rng) or sl2(s.rng) or sl2(s.rng), sl3(s.rng) or sl3(s.rng) or sl3(s.rng), sl4(s.rng), sl1(s.rng), sl1(s.rng),
        MC("Why are the left-hand leaves written in reverse order?", "so values increase moving away from the stem on both sides", [("to make the diagram look symmetrical", ""), ("because the left-hand data is smaller", ""), ("there is no reason", "")], o="O3"),
        EX("Explain how to compare two sets of data using a back-to-back stem-and-leaf diagram.", [("compare the medians (averages)", ["median|average|mean"]), ("compare the ranges (spread / consistency)", ["range|spread|consisten"])], "Find the median of each set to compare the averages, and the range of each set to compare the spread (consistency).", o="O3"))
@@ -150,10 +150,10 @@ s.idea("Estimating the mean", ["For grouped data you do not know exact values, s
 s.example("Estimated mean", "Estimate the mean of the data in the table.", [("Σ(midpoint × f) = 330", ""), ("Σf = 20", ""), ("330 ÷ 20 = 16.5", "")], "16.5 minutes")
 s.check(MC("Which class contains the median of the table data?", "10 ≤ t < 20", [("0 ≤ t < 10", ""), ("20 ≤ t < 30", "")], o="O4"))
 s.mistake("An estimate", ["It is only an ESTIMATE of the mean because the exact values in each class are unknown."])
-s.check(N("Estimate the mean of: 0 ≤ x < 4 (frequency 3), 4 ≤ x < 8 (frequency 5).", 4.5, o="O4", d="H"))
+s.check(N("Estimate the mean of: 0 ≤ x < 4 (frequency 3), 4 ≤ x < 8 (frequency 5).", 4.5, reason="(2 × 3 + 6 × 5) ÷ 8 = 36 ÷ 8 = 4.5.", o="O4", d="H"))
 def gd1(r):
     lo, w = pick(r, [(0, 10), (10, 10), (0, 5), (100, 20), (20, 4)]); cl = classes(r, lo, w, pick(r, [4, 5])); f = [r.randint(1, 15) for _ in cl]
-    return N("Estimate the mean (1 d.p.).", round(est_mean(cl, f), 1), tol=0.06, o="O4", d="H", data=gtab(cl, f))
+    return N("Estimate the mean (1 d.p.).", round(est_mean(cl, f), 1), tol=0.06, reason=f"Σ(midpoint × f) = {fmt(sum((a + b) / 2 * n for (a, b), n in zip(cl, f)))}; Σf = {sum(f)}; mean ≈ {round(est_mean(cl, f), 1)}.", o="O4", d="H", data=gtab(cl, f))
 def gd2(r):
     cl = classes(r, 0, 10, 5); f = [r.randint(1, 15) for _ in cl]; m = max(f)
     if f.count(m) > 1: return None
@@ -166,7 +166,7 @@ def gd3(r):
     return MC("Which class contains the median?", ans, [(f"{a} ≤ x < {b}", "") for (a, b) in cl if f"{a} ≤ x < {b}" != ans][:3], o="O4", d="H", data=gtab(cl, f))
 def gd4(r):
     cl = classes(r, 0, 20, 4); f = [r.randint(2, 12) for _ in cl]
-    return TB("Complete the midpoint × frequency column.", [f"{a}–{b}" for a, b in cl], [[B((a + b) / 2 * n) for (a, b), n in zip(cl, f)]], o="O4", data=gtab(cl, f))
+    return TB("Complete the midpoint × frequency column.", [f"{a}–{b}" for a, b in cl], [[B((a + b) / 2 * n) for (a, b), n in zip(cl, f)]], reason=f"Multiply each midpoint by its frequency, e.g. {fmt((cl[0][0] + cl[0][1]) / 2)} × {f[0]} = {fmt((cl[0][0] + cl[0][1]) / 2 * f[0])}.", o="O4", data=gtab(cl, f))
 def gd5(r):
     cl = classes(r, 0, 10, 4); f = [r.randint(2, 12) for _ in cl]
     return N("What is the largest possible range of this data?", cl[-1][1] - cl[0][0], o="O4", d="H", data=gtab(cl, f), reason="Largest possible value minus smallest possible value.")
@@ -183,17 +183,17 @@ s.idea("Choosing a chart", ["**Bar chart**: categories. **Pie chart**: parts of 
 s.check(MC("Which chart best shows how a town's population changed from 2000 to 2025?", "a line graph", [("a pie chart", "Pie charts show parts of a whole."), ("a scatter graph", ""), ("a stem-and-leaf diagram", "")], o="O5"))
 s.idea("Pie charts", ["Each item is **360° ÷ total**. Angle = frequency × (360 ÷ total)."])
 s.mistake("Compare totals", ["A bigger sector in one pie chart does not mean a bigger number if the two pie charts have different totals."])
-s.check(N("A pie chart shows 60 students. How many degrees represent one student?", 6, "°", units=["°"], o="O5"))
+s.check(N("A pie chart shows 60 students. How many degrees represent one student?", 6, "°", units=["°"], reason="360 ÷ 60 = 6°.", o="O5"))
 def rp1(r):
     rows = [("Favourite colours of a class", "Bar chart"), ("Temperature each hour of a day", "Line graph"), ("How a family's spending is split", "Pie chart"),
             ("Height against mass for 30 students", "Scatter graph"), ("Comparing test marks of two classes", "Back-to-back stem-and-leaf")]
     return GD("Choose the best representation for each.", "Chart", r.sample(rows, 4), o="O5", extra=["Bar chart", "Line graph", "Pie chart", "Scatter graph", "Back-to-back stem-and-leaf"])
 def rp2(r):
     tot = pick(r, [24, 30, 36, 40, 45, 60, 72, 90, 120]); f = r.randint(2, tot // 3)
-    return N(f"{f} out of {tot} people chose swimming. Find the angle for swimming in a pie chart.", f * 360 / tot, "°", units=["°"], o="O5", tol=0.06)
+    return N(f"{f} out of {tot} people chose swimming. Find the angle for swimming in a pie chart.", f * 360 / tot, "°", units=["°"], reason=f"{f} ÷ {tot} × 360 = {fmt(f * 360 / tot)}°.", o="O5", tol=0.06)
 def rp3(r):
     tot = pick(r, [40, 60, 80, 120, 180, 240]); ang = pick(r, [30, 45, 60, 72, 90, 120, 135])
-    return N(f"A pie chart shows {tot} people. The sector for 'bus' is {ang}°. How many people chose bus?", round(tot * ang / 360, 2), "people", units=["people"], o="O5", tol=0.01)
+    return N(f"A pie chart shows {tot} people. The sector for 'bus' is {ang}°. How many people chose bus?", round(tot * ang / 360, 2), "people", units=["people"], reason=f"{ang} ÷ 360 × {tot} = {fmt(round(tot * ang / 360, 2))}.", o="O5", tol=0.01)
 def rp4(r):
     a, b = r.randint(41, 49), r.randint(50, 58)
     return MC(f"A bar chart has a vertical axis starting at 40. Bar A shows {a} and bar B shows {b}, and B looks {round((b-40)/(a-40))} times as tall as A. What is wrong?", "the axis does not start at 0, so differences look bigger", [("nothing is wrong", ""), ("the bars should touch", ""), ("the bars should be different colours", "")], o="O5", d="H") if round((b - 40) / (a - 40)) > 1 else None
@@ -203,12 +203,12 @@ def rp5(r):
 def rp6(r):
     v = [r.randint(5, 40) for _ in range(4)]; d0 = r.randint(0, 1); lab = ["Mon", "Tue", "Wed", "Thu", "Fri"][d0:d0 + 4]
     i = r.randrange(4)
-    return N(f"Read the bar chart. How many more were sold on {lab[i]} than on the day with the fewest sales?", v[i] - min(v), o="O5", fig={"kind": "barchart", "labels": lab, "values": v, "ymax": 40, "step": 5, "ylabel": "Number sold"})
+    return N(f"Read the bar chart. How many more were sold on {lab[i]} than on the day with the fewest sales?", v[i] - min(v), reason=f"{lab[i]}: {v[i]}; fewest: {min(v)}; difference {v[i] - min(v)}.", o="O5", fig={"kind": "barchart", "labels": lab, "values": v, "ymax": 40, "step": 5, "ylabel": "Number sold"})
 s.core(rp1(s.rng), rp2(s.rng), rp3(s.rng), rp4(s.rng) or rp4(s.rng) or rp4(s.rng), rp5(s.rng), rp6(s.rng),
        MS("Which features can make a graph misleading?", ["a vertical axis that does not start at 0", "uneven scales on an axis", "3D effects that distort sizes"], ["a title", "labelled axes"], o="O5", d="H"),
        EX("Explain why a pie chart is not a good choice to show a town's population each year from 2000 to 2025.", [("pie charts show parts of a whole", ["part|whole|proportion|share|fraction"]), ("a line graph shows change over time", ["line graph|over time|change|trend"])], "A pie chart shows how a whole is split into parts. To show change over time, a line graph is better.", o="O5"))
 s.gen("p", 44, rp1, rp2, rp3, rp4, rp5, rp6)
-s.gen("a", 8, rp5, rp4, lambda r: (lambda t, a: N(f"In a pie chart of {t} people, the 'cycle' sector is {a}° and 'car' is 3 times as many people. Find the angle for car.", 3 * a, "°", units=["°"], o="O5", d="VH") if 3 * a < 360 else None)(pick(r, [60, 90, 120]), pick(r, [24, 30, 36, 40, 45, 60, 72, 80, 90, 100])))
+s.gen("a", 8, rp5, rp4, lambda r: (lambda t, a: N(f"In a pie chart of {t} people, the 'cycle' sector is {a}° and 'car' is 3 times as many people. Find the angle for car.", 3 * a, "°", units=["°"], reason=f"3 times as many people means 3 times the angle: 3 × {a} = {3 * a}°.", o="O5", d="VH") if 3 * a < 360 else None)(pick(r, [60, 90, 120]), pick(r, [24, 30, 36, 40, 45, 60, 72, 80, 90, 100])))
 
 U.mindmap(("Frequency polygons", "Plot at midpoints • compare on one set of axes", "O1", "15.1"), ("Scatter graphs", "Correlation • line of best fit • not cause", "O2", "15.2"),
           ("Back-to-back stem-and-leaf", "Median and range • read the key", "O3", "15.3"), ("Grouped data", "Estimated mean • modal class • median class", "O4", "15.4"),

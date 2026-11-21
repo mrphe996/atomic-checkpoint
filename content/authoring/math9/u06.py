@@ -16,7 +16,7 @@ s.method("Sampling methods", ["**Random**: every member has the same chance (e.g
          "**Systematic**: choose every kᵗʰ member from a list, e.g. every 10ᵗʰ name, starting at a random point.",
          "**Proportional (stratified)**: split the population into groups and sample each group in proportion to its size."])
 s.example("Proportional sample", "A school has 360 Stage 7, 300 Stage 8 and 240 Stage 9 students. A sample of 60 is taken in proportion. How many Stage 9 students?", [("total 900", ""), ("240 ÷ 900 × 60 = 16", "")], "16 Stage 9 students")
-s.check(N("A list has 800 names. A systematic sample of 40 is taken. Every how many names is one chosen?", 20, o="O1"))
+s.check(N("A list has 800 names. A systematic sample of 40 is taken. Every how many names is one chosen?", 20, reason="800 ÷ 40 = 20, so every 20th name.", o="O1"))
 s.idea("Types of data", ["**Primary** data you collect yourself; **secondary** data was collected by someone else. **Discrete** data can be counted (number of pets); **continuous** data is measured (height, time)."])
 s.mistake("Sample size", ["A sample of 5 people cannot represent a school of 1000 – the results could change a lot by chance. A common guide is at least 10% for small populations, and never fewer than about 30."])
 s.check(MC("Which is the best sample to estimate the average height of 1200 students?", "60 students chosen at random from the whole school", [("the 60 students in the basketball club", "They may be taller than average."), ("5 students chosen at random", "Too small to be reliable."), ("the first 60 students to arrive", "")], o="O2", d="H"))
@@ -27,7 +27,7 @@ def g1(r):
              data={"head": ["Group", grp[0], grp[1], grp[2]], "rows": [["Students", str(sizes[0]), str(sizes[1]), str(sizes[2])]]}, reason=f"{sizes[k]} ÷ {tot} × {n} = {sizes[k]/tot*n:.2f} ≈ {ans}.")
 def g2(r):
     N_, n = pick(r, [(600, 30), (900, 45), (1200, 60), (500, 25), (2000, 50), (750, 30)])
-    return N(f"A systematic sample of {n} is taken from a list of {N_}. How often is a name chosen (every …th)?", N_ // n, o="O1")
+    return N(f"A systematic sample of {n} is taken from a list of {N_}. How often is a name chosen (every …th)?", N_ // n, reason=f"{N_} ÷ {n} = {N_ // n}.", o="O1")
 def g3(r):
     rows = [("Number of siblings", "Discrete"), ("Time to run 100 m", "Continuous"), ("Mass of a bag", "Continuous"), ("Number of goals", "Discrete"), ("Shoe size", "Discrete"), ("Temperature", "Continuous")]
     return GD("Is each type of data discrete or continuous?", "Type of data", r.sample(rows, 4), o="O1")
@@ -36,7 +36,7 @@ def g4(r):
     return GD("Name each sampling method.", "Method", r.sample(rows, 3), o="O1")
 def g5(r):
     pop = r.randint(4, 30) * 100; pc = pick(r, [5, 10, 20])
-    return N(f"A town has {fmt(pop)} households. A researcher wants a {pc}% sample. How many households is that?", pop * pc // 100, "households", units=["households"], o="O2")
+    return N(f"A town has {fmt(pop)} households. A researcher wants a {pc}% sample. How many households is that?", pop * pc // 100, "households", units=["households"], reason=f"{pc}% of {fmt(pop)} = {fmt(pop * pc // 100)}.", o="O2")
 def g6(r):
     rows = [("Asking your friends about school lunches", "Primary"), ("Using census results from a government website", "Secondary"), ("Measuring plant heights in an experiment", "Primary"), ("Reading rainfall figures in a newspaper", "Secondary")]
     return GD("Primary or secondary data?", "Type", r.sample(rows, 4), o="O1")
@@ -47,7 +47,7 @@ def g8(r):
     return OD("Put the stages of a statistical investigation in order.", ["Decide the question and a hypothesis", "Plan how to collect data and choose a sample", "Collect the data", "Process and represent the data", "Interpret the results and write a conclusion"], o="O1", skill="Data")
 def g9(r):
     m, f = r.randint(20, 80) * 10, r.randint(20, 80) * 10; n = pick(r, [50, 40, 30])
-    return TB(f"A club has {m} male and {f} female members. Complete the proportional sample of {n}.", ["Male", "Female"], [[B(round(m / (m + f) * n), 0.5), B(round(f / (m + f) * n), 0.5)]], o="O1", d="H")
+    return TB(f"A club has {m} male and {f} female members. Complete the proportional sample of {n}.", ["Male", "Female"], [[B(round(m / (m + f) * n), 0.5), B(round(f / (m + f) * n), 0.5)]], reason=f"Male: {m} ÷ {m + f} × {n} ≈ {round(m / (m + f) * n)}; female: {f} ÷ {m + f} × {n} ≈ {round(f / (m + f) * n)}.", o="O1", d="H")
 s.core(g1(s.rng), g2(s.rng), g3(s.rng), g4(s.rng), g9(s.rng), g8(s.rng), g7(s.rng),
        EX("Suggest two advantages of using a sample rather than the whole population.", [("quicker / less time", ["quick|time|faster"]), ("cheaper / less cost / easier", ["cheap|cost|money|easier|less work"])], "Taking a sample is quicker than asking everyone, and it is cheaper and easier to organise.", o="O2"))
 s.gen("p", 44, g1, g2, g3, g4, g5, g6, g7, g9)
@@ -79,7 +79,7 @@ def b5(r):
     return GD("Describe each set of response boxes.", "Problem", rows, o="O3", d="H")
 def b6(r):
     n, k = r.randint(200, 900), r.randint(10, 40)
-    return N(f"A survey is posted to {n} homes and {k}% are returned. How many replies are there? (Low replies can cause bias.)", round(n * k / 100), "replies", units=["replies"], o="O3", tol=0.5)
+    return N(f"A survey is posted to {n} homes and {k}% are returned. How many replies are there? (Low replies can cause bias.)", round(n * k / 100), "replies", units=["replies"], reason=f"{k}% of {n} = {round(n * k / 100)}.", o="O3", tol=0.5)
 def b7(r):
     return TK("Which of these can cause bias?", ["Can cause bias", "Does not"], [("A very small sample", ["✓", "✗"]), ("A leading question", ["✓", "✗"]), ("Choosing people at random", ["✗", "✓"]), ("Only asking people who volunteer", ["✓", "✗"])], o="O3")
 
@@ -94,7 +94,7 @@ def b8(r):
     return MC(f"A survey asks about {t}. Which sample is least likely to be biased?", good, [(bad, "These people are not typical of the whole population."), ("the researcher's family", ""), ("the first 10 people who reply online", "")], o="O3")
 def b9(r):
     t, bad, good = pick(r, CTX); n = r.randint(20, 60); y = r.randint(5, n - 5)
-    return N(f"A survey about {t} asked {n} {bad}; {y} gave the answer 'yes'. What percentage is that, to 1 d.p.? (This sample may be biased.)", round(y / n * 100, 1), "%", units=["%"], tol=0.05, o="O3")
+    return N(f"A survey about {t} asked {n} {bad}; {y} gave the answer 'yes'. What percentage is that, to 1 d.p.? (This sample may be biased.)", round(y / n * 100, 1), "%", units=["%"], tol=0.05, reason=f"{y} ÷ {n} × 100 = {round(y / n * 100, 1)}%.", o="O3")
 def b10(r):
     a, b = r.randint(20, 80), r.randint(20, 80)
     if abs(a - b) < 15: return None
@@ -103,7 +103,7 @@ def b10(r):
 s.core(b1(s.rng), b2(s.rng), b3(s.rng), b4(s.rng), b5(s.rng), b7(s.rng), b6(s.rng),
        EX("Rewrite the question 'You eat lots of healthy food, don't you?' so that it is not leading, and give suitable response boxes.", [("neutral question about how often / how many portions", ["how many|how often|portions|times"]), ("non-overlapping boxes covering all answers", ["0|or more|none|1–2|1-2|boxes"])], "How many portions of fruit and vegetables do you eat on a typical day? Boxes: 0, 1–2, 3–4, 5 or more.", o="O3", d="H"))
 s.gen("p", 44, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10)
-s.gen("a", 8, b2, b10, lambda r: (lambda y, t: N(f"In a survey of {t} people chosen at a youth club, {y} said the town needs a skate park. Explain the bias; then, as a percentage, how many said yes? (1 d.p.)", round(y / t * 100, 1), "%", units=["%"], tol=0.05, o="O3", d="VH"))(r.randint(20, 60), r.randint(61, 90)))
+s.gen("a", 8, b2, b10, lambda r: (lambda y, t: N(f"In a survey of {t} people chosen at a youth club, {y} said the town needs a skate park. Explain the bias; then, as a percentage, how many said yes? (1 d.p.)", round(y / t * 100, 1), "%", units=["%"], tol=0.05, reason=f"Young people at a youth club are more likely to want a skate park. {y} ÷ {t} × 100 = {round(y / t * 100, 1)}%.", o="O3", d="VH"))(r.randint(20, 60), r.randint(61, 90)))
 
 U.mindmap(("Population and sample", "A sample must represent the population", "O1", "6.1"), ("Sampling methods", "Random • systematic • proportional", "O1", "6.1"),
           ("Sample size", "Larger samples are more reliable", "O2", "6.1"), ("Bias", "Unrepresentative samples • leading questions • overlapping boxes", "O3", "6.2"))

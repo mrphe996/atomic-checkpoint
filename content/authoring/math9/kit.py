@@ -192,6 +192,9 @@ def pretty(t):
     t = _re.sub(r"(^|[\s(=,:;\[{])-(?=[\d.]|[a-z]\b|[a-z][²³(]|\()", lambda m: m.group(1) + "−", t)  # ASCII minus → −
     t = _re.sub(r"(?<![\w.,/)²³])1(?=[a-zA-Z](?![a-zA-Z]))(?!x10)", "", t)   # 1x → x, −1x → −x
     t = _re.sub(r"([×÷]\s?)−(\d+(?:\.\d+)?|[a-z]\b)", r"\1(−\2)", t)   # 3 × −4 → 3 × (−4)
+    t = _re.sub(r"([+−]) \((\d+(?:\.\d+)?)\)", r"\1 \2", t)                      # x + (1) → x + 1
+    t = _re.sub(r"\+ \(−(\d+(?:\.\d+)?)\)", r"− \1", t)                         # x + (−7) → x − 7
+    t = _re.sub(r"− \(−(\d+(?:\.\d+)?)\)", r"+ \1", t)                           # x − (−7) → x + 7
     t = _re.sub(r"\d+\.\d{7,}(?![\d…])", lambda m: fmt(round(float(m.group(0)), 3)), t)  # float noise 1.1400000000000001 → 1.14
     return t
 def prettify(o, key=None):

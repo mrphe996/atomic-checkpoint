@@ -293,7 +293,7 @@
     const lb = el('section', { class: 'card dside' }, el('div', { class: 'dth' }, el('b', { class: 'lex' }, 'Leaderboard'), el('span', { class: 'bob', html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#935A00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8 M12 17v4 M7 4h10v5a5 5 0 0 1-10 0z M7 6H4a3 3 0 0 0 3 4 M17 6h3a3 3 0 0 1-3 4"/></svg>' })));
     const lbBody = el('div', { class: 'dlb' }, el('p', { class: 'muted', style: 'margin:0' }, 'Loading…')); lb.append(lbBody, el('a', { class: 'ul', href: '#board' }, 'Full leaderboard →'));
     aside.append(lb);
-    if (!isGuest()) Backend.leaderboard(7).then(rows => { rows = (rows || []).filter(r => r.score != null).map(r => ({ alias: r.nickname, score: Number(r.score), me: !!r.is_mine })); Core.competitionRank(rows); lbBody.innerHTML = '';
+    if (!isGuest()) Backend.leaderboard(Core.STAGE).then(rows => { rows = (rows || []).filter(r => r.score != null).map(r => ({ alias: r.nickname, score: Number(r.score), me: !!r.is_mine })); Core.competitionRank(rows); lbBody.innerHTML = '';
       if (!rows.length) lbBody.append(el('p', { class: 'muted', style: 'margin:0' }, 'No ranked learners yet – pass a Unit Test to appear here.'));
       rows.slice(0, 4).forEach((r, i) => lbBody.append(el('div', { class: 'lbmini' + (r.me ? ' me' : '') }, el('b', { class: 'rk' }, String(r.rank)), el('span', { class: 'a', style: `background:${['#0149AF', '#F08A4B', '#3FA34D', '#0B2545'][i % 4]}` }, r.alias.slice(0, 1).toUpperCase()), el('span', { class: 'n' }, r.me ? 'You' : r.alias), el('b', { class: 'sc' }, r.score.toFixed(1) + '%')))); }).catch(() => { lbBody.innerHTML = ''; });
     else { lbBody.innerHTML = ''; lbBody.append(el('p', { class: 'muted', style: 'margin:0' }, 'Sign up free to join the leaderboard.')); }
@@ -789,7 +789,7 @@
         if (img.width) { const h = 120, w = img.width / img.height * h; g.drawImage(img, W / 2 - w / 2, 120, w, h); }
         center('CERTIFICATE OF ACHIEVEMENT', 320, '600 34px Outfit, Figtree, Arial', GOLD, 8);
         center(`Cambridge ${Core.stageLabel()}`, 410, '700 76px Outfit, Figtree, Arial', NAVY);
-        center('Cambridge Lower Secondary Science (curriculum framework 0893)', 462, '28px Figtree, Arial', '#52627A');
+        center(Core.IS_MATHS ? 'Cambridge Lower Secondary Mathematics (curriculum framework 0862)' : 'Cambridge Lower Secondary Science (curriculum framework 0893)', 462, '28px Figtree, Arial', '#52627A');
         center('This is to certify that', 545, 'italic 32px Georgia, serif', '#3A4B63');
         center(c.name, 640, 'italic 700 96px Georgia, serif', BLUE);
         g.strokeStyle = GOLD; g.lineWidth = 2; g.beginPath(); g.moveTo(W / 2 - 420, 668); g.lineTo(W / 2 + 420, 668); g.stroke();
@@ -809,7 +809,7 @@
         g.font = '24px Figtree, Arial'; g.fillStyle = '#52627A'; g.fillText('Atomic Education', W - 375, 1045);
         g.textAlign = 'center'; g.fillStyle = NAVY; g.font = '600 24px Figtree, Arial'; g.fillText(`Awarded ${c.date}`, W / 2 - 60, 985); g.fillText(`Code ${c.code}`, W / 2 - 60, 1022);
         g.font = '20px Figtree, Arial'; g.fillStyle = '#6B7A90'; g.fillText('Check it at Atomic → “Verify a certificate”.', W / 2 - 60, 1060);
-        g.fillText('Atomic courses follow the Cambridge Lower Secondary Science framework. This is an Atomic certificate, not a Cambridge qualification.', W / 2, 1120);
+        g.fillText(`Atomic courses follow the Cambridge Lower Secondary ${Core.IS_MATHS ? 'Mathematics' : 'Science'} framework. This is an Atomic certificate, not a Cambridge qualification.`, W / 2, 1120);
         if (preview) { g.save(); g.translate(W / 2, H / 2); g.rotate(-0.35); g.font = '800 190px Outfit, Figtree, Arial'; g.fillStyle = 'rgba(201,58,58,0.13)'; g.textAlign = 'center'; g.fillText('PREVIEW', 0, 60); g.restore(); }
         res(cv);
       } });
@@ -822,14 +822,14 @@
     const m = $main(); m.append(bar(`Cambridge ${Core.stageName(Core.STAGE)} certificate`));
     await Core.refreshFinal().catch(() => { });
     let cert = null; try { cert = await Core.certificate(st); } catch (e) { cert = null; }
-    const passedU = Object.keys(st.results || {}).length, fin = Core.finalPassed();
+    const passedU = Object.keys(st.results || {}).filter(k => k.startsWith(`stage${Core.STAGE}-unit`)).length, fin = Core.finalPassed();
     if (!cert) {
       const items = [];
       if (passedU < Core.unitCount()) items.push({ what: `pass every Unit Test (${passedU} of ${Core.unitCount()} so far)`, route: 'tests' });
       if (!fin) items.push({ what: `pass an end-of-year exam (needs level ${TestRules.FINAL_LEVEL}; you are level ${Core.levelInfo().level})`, route: 'final' });
       m.append(lockScreen(`Your Cambridge ${Core.stageName(Core.STAGE)} certificate`, `The certificate is awarded when you have passed all ${Core.unitCount()} Unit Tests and one end-of-year exam. Here is how it will look:`, items));
       const img = el('img', { class: 'certimg', alt: `Preview of the Cambridge ${Core.stageName(Core.STAGE)} certificate` }); m.append(el('section', { class: 'card certwrap' }, img));
-      drawCert({ name: st.name, code: 'AE-S7-XXXX-XXXXXXXX', date: '—', ...certStats() }, true).then(cv => { img.src = cv.toDataURL('image/png'); });
+      drawCert({ name: st.name, code: `AE-${Core.IS_MATHS ? 'M9' : 'S' + Core.STAGE}-XXXX-XXXXXXXX`, date: '—', ...certStats() }, true).then(cv => { img.src = cv.toDataURL('image/png'); });
       return;
     }
     const c = { name: cert.name, code: cert.code, date: new Date(cert.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }), ...certStats() };
@@ -918,7 +918,7 @@
     if (isGuest()) { m.append(guestWall('Create a free account first')); return; }
     const msg = errBox();
     m.append(el('section', { class: 'card narrow', id: 'checkout' }, el('h2', {}, 'Order summary'),
-      el('div', { class: 'ordrow' }, el('span', {}, `Cambridge Lower Secondary Science · Cambridge ${Core.stageName(g)} (Atomic course)`), el('b', {}, PRICE)),
+      el('div', { class: 'ordrow' }, el('span', {}, `Cambridge Lower Secondary ${Core.subjectOf(g)} · Cambridge ${Core.stageName(g)} (Atomic course)`), el('b', {}, PRICE)),
       el('div', { class: 'ordrow' }, el('span', {}, 'Learner'), el('b', {}, st.name)),
       el('div', { class: 'banner info' }, el('b', {}, 'Test checkout. '), 'This is the test server: pressing Pay enrols you straight away and no money is taken. The real payment page (Paddle) replaces this before launch.'),
       msg, el('button', { class: 'btn gold big', type: 'button', id: 'payBtn', onclick: async ev => { ev.currentTarget.disabled = true; msg.textContent = '';
@@ -941,13 +941,17 @@
       chipRow('Set', 'tier', [['all', 'All'], ['req', 'Core'], ['prac', 'Practice'], ['adv', '* Advanced']]),
       chipRow('Difficulty', 'diff', [['all', 'All'], ['M', 'Medium'], ['H', 'Hard'], ['VH', 'Very hard']]),
       chipRow('Type', 'type', [['all', 'All'], ['fig', 'Diagrams & data'], ['calc', 'Calculations'], ['explain', 'Written'], ['mcq', 'Multiple choice']]),
-      chipRow('Status', 'status', [['all', 'All'], ['todo', 'Not done'], ['wrong', 'Got wrong'], ['mark', '★ Bookmarked']])));
+      chipRow('Status', 'status', [['all', 'All'], ['todo', 'Not done'], ['wrong', 'Got wrong'], ['mark', '★ Bookmarked']]),
+      el('div', { class: 'btnrow', role: 'search' }, el('b', { style: 'min-width:92px;font-size:14px' }, 'Search'), (() => { const i = el('input', { type: 'search', id: 'bankSearch', placeholder: 'Words in the question, or its id', value: F.q || '', 'aria-label': 'Search the questions', style: 'flex:1;min-width:220px' });
+        const run = () => { if ((F.q || '') === i.value.trim()) return; F.q = i.value.trim(); render(); setTimeout(() => { const j = document.getElementById('bankSearch'); if (j) { j.focus(); j.setSelectionRange(j.value.length, j.value.length); } }, 0); };
+        i.addEventListener('keydown', e => { if (e.key === 'Enter') run(); }); i.addEventListener('search', run); i.addEventListener('blur', run); return i; })())));
     const tierOf = q => C.sections.find(s => s.req.includes(q)) ? 'req' : q.adv ? 'adv' : 'prac';
     const secOf = q => C.sections.find(s => s.req.concat(s.prac, s.adv).includes(q)).id;
-    const typeOk = q => F.type === 'all' || (F.type === 'fig' ? ['label', 'scale', 'graph', 'table', 'grid', 'sim'].includes(q.type) || !!q.fig : F.type === 'calc' ? ['num', 'scale', 'table'].includes(q.type) : F.type === 'explain' ? q.type === 'explain' : ['mcq', 'multi'].includes(q.type));
+    const typeOk = q => F.type === 'all' || (F.type === 'fig' ? ['label', 'scale', 'graph', 'table', 'grid', 'sim'].includes(q.type) || !!q.fig : F.type === 'calc' ? ['num', 'scale', 'table', 'expr'].includes(q.type) : F.type === 'explain' ? q.type === 'explain' : ['mcq', 'multi'].includes(q.type));
     st.marks = st.marks || {};
     const list = allQs().filter(q => (F.sec === 'all' || secOf(q) === F.sec) && (F.diff === 'all' || q.diff === F.diff) && (F.tier === 'all' || tierOf(q) === F.tier) && typeOk(q)
-      && (F.status === 'all' || (F.status === 'todo' ? !(st.items[q.id] || {}).done : F.status === 'wrong' ? (st.items[q.id] || {}).everWrong : !!st.marks[q.id])));
+      && (F.status === 'all' || (F.status === 'todo' ? !(st.items[q.id] || {}).done : F.status === 'wrong' ? (st.items[q.id] || {}).everWrong : !!st.marks[q.id]))
+      && (!F.q || (q.id + ' ' + q.prompt + ' ' + (q.ctx || '') + ' ' + ((q.options || []).map(o => o.t).join(' '))).toLowerCase().includes(F.q.toLowerCase())));
     m.append(el('div', { class: 'btnrow between' }, el('b', { class: 'lex', id: 'bankCount' }, `${list.length} question${list.length === 1 ? '' : 's'}`),
       el('button', { class: 'btn primary small shine', type: 'button', disabled: !list.length, id: 'bankPractise', onclick: () => startDrill(`Question Bank · ${list.length > 15 ? 'first 15 of ' + list.length : list.length} questions`, list.slice(0, 15), 'bank') }, `Practise ${Math.min(15, list.length)}`, el('span', { class: 'arr' }, '→')),
       el('a', { class: 'btn small', href: '#topic' }, 'Revise by topic')));
@@ -1365,11 +1369,11 @@
     const m = $main();
     const hero = el('section', { class: 'lbhero' }); const hin = el('div', { class: 'in' }); hero.append(hin); document.getElementById('wrap').before(hero);
     const holder = el('div'); m.append(holder);
-    const live = await Backend.leaderboard(7).catch(() => []);
+    const live = await Backend.leaderboard(Core.STAGE).catch(() => []);
     const rows = live.filter(r => r.score != null).map(r => ({ alias: r.nickname, score: Number(r.score), units: r.units, me: !!r.is_mine && st && r.nickname === st.alias, src: r.opted_in ? 'Shown' : 'Only you can see this' }));
     if (Backend.mode === 'demo') SAMPLE.forEach(r => rows.push({ ...r, src: 'sample data' }));
     Core.competitionRank(rows);
-    hin.append(el('span', { class: 'eyebrow', style: 'color:#F3BF69' }, 'SCIENCE CAMBRIDGE STAGE 7'), el('h1', {}, '🏆 Leaderboard'),
+    hin.append(el('span', { class: 'eyebrow', style: 'color:#F3BF69' }, `CAMBRIDGE ${Core.stageLabel().toUpperCase()}`), el('h1', {}, '🏆 Leaderboard'),
       el('div', { class: 'formula' }, el('b', { style: 'color:#fff' }, 'Ranking score = (Σ first-pass % of each unit) ÷ number of units'), ' — every unit counts equally. Your first-pass % is fixed the moment you first pass a unit; revising or retaking later never changes it. Equal scores share a rank.'));
     const top = rows.slice(0, 3); const order = [top[1], top[0], top[2]];
     hin.append(el('div', { class: 'podium' }, ...order.map((r, k) => r ? el('div', { class: 'p' }, k === 1 ? el('span', { style: 'font-size:30px;animation:floaty 2.2s ease-in-out infinite' }, '👑') : null, el('span', { class: 'av', style: r.me ? 'background:#F3BF69;color:#1C2A3A' : '' }, r.alias.replace('Sample · ', '').slice(0, 1).toUpperCase()), el('b', { class: 'lex' }, r.alias + (r.me ? ' (you)' : '')), el('small', { style: 'color:#C9D6EA' }, r.score.toFixed(2) + '%'),
@@ -1387,7 +1391,7 @@
      ===================================================================== */
   const ERR = { bad_email: 'Please enter a valid email address.', weak_password: 'Use at least 8 characters for your password.', email_taken: 'An account with this email already exists – sign in instead.',
     bad_credentials: 'That email and password do not match.', account_disabled: 'This account has been switched off by Atomic. Please contact us via Help & contact.', user_banned: 'This account has been switched off by Atomic. Please contact us via Help & contact.', admin_only: 'Only administrators can do this.', own_admin: 'You cannot remove your own administrator role.', own_account: 'You cannot switch off your own account.', sign_in: 'Please sign in again.', parental_consent: 'Please tick the parental consent box.', bad_nickname: 'Use a nickname of 2–24 characters.',
-    subscription_required: 'This needs a Cambridge Stage 7 plan.', locked: 'Finish every lesson or video and every Core question first.', awaiting_marking: 'Your last test is still being marked.', review_first: 'Finish your review questions first.',
+    subscription_required: 'This needs an Atomic course plan.', locked: 'Finish every lesson or video and every Core question first.', awaiting_marking: 'Your last test is still being marked.', review_first: 'Finish your review questions first.',
     already_passed: 'You have already passed this test.', wrong_paper: 'Please reload the page and try again.', confirm: 'Type the confirmation exactly as shown.', staff_only: 'Staff only.', message: 'Please write a short message.' };
   const errText = e => ERR[e && e.code] || (e && e.detail) || 'Something went wrong. Please try again.';
   const COUNTRIES = [['GB', 'United Kingdom'], ['SG', 'Singapore'], ['MY', 'Malaysia'], ['TH', 'Thailand'], ['VN', 'Vietnam'], ['ID', 'Indonesia'], ['PH', 'Philippines'], ['XX', 'Another country']];
@@ -1417,7 +1421,7 @@
     const scrollTry = () => document.getElementById('try').scrollIntoView({ behavior: 'smooth', block: 'start' });
     document.getElementById('wrap').before(el('section', { class: 'lp-hero dots' }, el('div', { class: 'lp-hero-in' },
       el('div', { class: 'lp-hero-txt' },
-        el('span', { class: 'lp-pill' }, el('span', { class: 'lp-ping' }, el('i'), el('i')), 'Atomic Science · Checkpoint to A Level'),
+        el('span', { class: 'lp-pill' }, el('span', { class: 'lp-ping' }, el('i'), el('i')), 'Atomic · Science and Mathematics · Lower Secondary'),
         el('h1', {}, 'Try the whole course.', el('br'), el('span', {}, 'Right here, right now.')),
         el('p', {}, 'No sign-up. Watch a lesson, answer questions, sit a mini test and see your progress — all on this page.'),
         el('div', { class: 'btnrow' }, el('button', { class: 'btn primary big shine', type: 'button', id: 'heroStart', onclick: scrollTry }, 'Start the tour ', el('span', { class: 'arr' }, '↓')),
@@ -1537,7 +1541,7 @@
     m.append(faq());
   }
   function faq() {
-    const qa = [['Who is Atomic for?', 'Learners aged about 11–12 following Cambridge Lower Secondary Science Stage 7, at an international or bilingual school or studying at home.'],
+    const qa = [['Who is Atomic for?', 'Learners aged about 11–14 following Cambridge Lower Secondary Science (Stages 7, 8 and 9) or Mathematics (Stage 9), at an international or bilingual school or studying at home.'],
       ['Do I need an account?', 'Not to try it: topic 3.1 is open to guests. Create a free account to save your progress, unlock every topic and take the Unit Test.'],
       ['Will my parents know how I am doing?', 'If you add a parent’s email when you sign up (it is optional), we send them a short email when you finish a unit. You can add or remove it any time in Settings.'],
       ['Am I on a public leaderboard?', 'Not unless you switch it on in Settings. Everyone is hidden by default, and only your nickname is ever shown.'],
@@ -1651,7 +1655,7 @@
     } }, 'Save changes');
     const lb = el('input', { type: 'checkbox', id: 'setBoard' }); lb.checked = !!l.leaderboard_opt_in;
     lb.onchange = () => { if (lb.checked) modal('Show me on the leaderboard?', 'Your nickname and ranking score will be visible to other Atomic learners. Nothing else is shown. You can switch this off at any time.', [{ t: 'Keep me hidden', cls: 'ghost', on: () => { lb.checked = false; } }, { t: 'Show my nickname', cls: 'primary', on: async () => { await Backend.updateLearner(l.id, { leaderboard_opt_in: true }); await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); } }]); else Backend.updateLearner(l.id, { leaderboard_opt_in: false }).then(async () => { await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); }); };
-    pageHero('ACCOUNT', 'Settings', `Signed in as ${Core.S.me.user.email}`, statCard(initialChip(44), st.alias, l.grade || 'Cambridge Stage 7 learner'));
+    pageHero('ACCOUNT', 'Settings', `Signed in as ${Core.S.me.user.email}`, statCard(initialChip(44), st.alias, l.grade || `Cambridge ${Core.stageLabel()} learner`));
     m.append(
       el('section', { class: 'card' }, el('h2', {}, 'Profile'), el('div', { class: 'form' }, field('Nickname', nick, 'Shown in the app and, if you switch it on, on the leaderboard.'), field('Full name for the certificate', full), field('School year', gr), field('Country', country), field('School', school), field('School name', other))),
       el('section', { class: 'card' }, el('h2', {}, '📧 Parent or guardian'), el('div', { class: 'form' }, field('Parent or guardian’s email (optional)', parent, 'We send them one short email when you finish a unit. Leave empty to send nothing.'))),
@@ -1680,10 +1684,10 @@
         [{ t: 'Cancel', cls: 'ghost' }, { t: 'Start free trial (preview)', cls: 'primary', on: async () => { await Backend.checkout(p); await Core.refreshAccount(); toast('Trial started – Cambridge Stage 7 unlocked'); go('u-' + Core.UNO); } }]);
       else await Backend.checkout(p);
     } }, active ? 'Your plan is active' : 'Start 7-day free trial');
-    m.append(el('div', { style: 'text-align:center' }, el('span', { class: 'eyebrow' }, 'PLANS'), el('h1', { style: 'margin:4px 0' }, 'One plan, the whole of Cambridge Stage 7'), el('p', { class: 'muted' }, 'Cancel any time.')),
+    m.append(el('div', { style: 'text-align:center' }, el('span', { class: 'eyebrow' }, 'PLANS'), el('h1', { style: 'margin:4px 0' }, `One plan, the whole of Cambridge ${Core.stageLabel()}`), el('p', { class: 'muted' }, 'Cancel any time.')),
       el('div', { class: 'plans' }, plan('free', 'Free', '£0', ['First topic of every unit', 'Lesson videos with pause questions', '30 practice questions for that topic', 'Learning streak and progress report'], me ? el('a', { class: 'btn', href: '#home' }, 'Keep learning free') : el('a', { class: 'btn', href: '#signup' }, 'Start free')),
-        plan('monthly', 'Cambridge Stage 7 – monthly', L.monthly, ['All 4 topics of every unit', 'Unit Tests marked by Atomic', 'A4 worksheets and concept maps', 'Cambridge Stage 7 certificate'], buy('monthly')),
-        plan('yearly', 'Cambridge Stage 7 – yearly', L.yearly, ['Everything in monthly', 'About 2 months free', 'Price fixed for the year'], buy('yearly'), true)),
+        plan('monthly', `Cambridge ${Core.stageLabel()} – monthly`, L.monthly, ['Every topic of every unit', 'Unit Tests marked by Atomic', 'A4 worksheets and concept maps', 'Cambridge Stage 7 certificate'], buy('monthly')),
+        plan('yearly', `Cambridge ${Core.stageLabel()} – yearly`, L.yearly, ['Everything in monthly', 'About 2 months free', 'Price fixed for the year'], buy('yearly'), true)),
       el('p', { class: 'muted', style: 'text-align:center' }, 'Prices shown in GBP for guidance. At checkout Paddle, our reseller, shows the price in your currency including VAT/GST where it applies (UK VAT, Singapore GST, Malaysia SST, Thailand VAT, Vietnam, Indonesia and Philippines taxes).'), faq());
   }
 
@@ -1755,12 +1759,12 @@
       el('p', { class: 'muted' }, 'This is a short summary of our ', el('a', { href: '#privacy' }, 'Privacy notice'), '.')));
   }
   const viewTerms = () => legal('Terms of use', [
-    ['The service', 'Atomic provides online science courses for Cambridge Lower Secondary Science Stage 7 learners. Courses are written by Atomic and aligned to the Cambridge Lower Secondary Science curriculum framework (0893). Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.'],
-    ['Who the course is for', 'The Cambridge Stage 7 course is designed for learners aged about 11 to 13. Anyone can try topic 3.1 as a guest. Learners create their own free account to save progress.'],
+    ['The service', 'Atomic provides online courses for Cambridge Lower Secondary learners: Science Stages 7, 8 and 9 and Mathematics Stage 9. Courses are written by Atomic and aligned to the Cambridge Lower Secondary Science (0893) and Mathematics (0862) curriculum frameworks. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.'],
+    ['Who the course is for', 'The courses are designed for learners aged about 11 to 14. Anyone can try topic 3.1 of Science Stage 7 as a guest. Learners create their own free account to save progress; each course is a separate enrolment.'],
     ['Accounts', 'One account per learner. Keep your password private. If you are under the age of digital consent where you live, ask a parent or guardian before you sign up.'],
     ['Plans, trials and refunds', 'Plans renew automatically until cancelled. A free trial converts to a paid plan unless cancelled before it ends. Our order process is conducted by our online reseller Paddle.com, the Merchant of Record for all orders; Paddle provides customer service enquiries and handles returns.'],
     ['Fair use', 'Course content is for your own personal learning. Do not copy, share or resell videos, questions, tests or worksheets.'],
-    ['Tests and certificates', 'Unit Tests and exams are marked automatically, including typed answers. A certificate confirms completion of the Atomic Stage 7 course; it is not a Cambridge qualification.'],
+    ['Tests and certificates', 'Unit Tests and exams are marked automatically, including typed answers. A certificate confirms completion of an Atomic course; it is not a Cambridge qualification.'],
     ['Changes and contact', 'We will tell you about important changes by email. Questions: ' + (((window.ATOMIC_CONFIG || {}).supportEmail) || 'support@example.com') + '.']]);
   const viewCookies = () => legal('Cookies and local storage', [
     ['What we use', 'Only what the site needs to work: keeping you signed in, and keeping a guest’s progress on this device until they sign up. We do not use advertising or third-party tracking cookies, so we do not show a cookie banner.'],

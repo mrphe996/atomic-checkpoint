@@ -171,7 +171,7 @@
   const secIndex = sid => C.sections.findIndex(s => s.id === sid);
   function secLock(st, s) {
     if (!canOpen(s.id)) return S.guest ? { reason: `Guests can try the first topic of every unit. Create a free account to unlock topic ${s.id} and save your progress.`, what: 'a free account', route: 'signup', paywall: true, guest: true }
-      : { reason: 'This topic is part of the full Cambridge Stage 7 course.', what: 'a Cambridge Stage 7 plan (7-day free trial)', route: 'pricing', paywall: true };
+      : { reason: `This topic is part of the full Cambridge ${stageName(STAGE)} course.`, what: `a Cambridge ${stageName(STAGE)} plan (7-day free trial)`, route: 'pricing', paywall: true };
     return seqLock(C, st, s, UNIT());
   }
   const unitOpen = unit => !!S.tester || TestRules.OPEN_UNITS.includes(unit);
@@ -211,7 +211,7 @@
 
   /* ---------- end-of-year exam ---------- */
   // Checkpoint-format practice papers (Atomic papers in the format of Cambridge 0893/01 and 0893/02)
-  async function loadCp() { if (!CP) { const r = await fetch(`content/stage${STAGE}-cp.json`); CP = r.ok ? await withOv(`stage${STAGE}-cp`, await r.json()) : null; } return CP; }
+  async function loadCp() { if (INDEX && !INDEX.cp) return null; if (!CP) { const r = await fetch(`content/stage${STAGE}-cp.json`); CP = r.ok ? await withOv(`stage${STAGE}-cp`, await r.json()) : null; } return CP; }
   async function refreshCp() { const st = cur(); if (!st || S.guest) { S.cpAttempts = []; return []; } S.cpAttempts = await Backend.attempts(st.id, `stage${STAGE}-cp`); return S.cpAttempts; }
   async function submitCp(form, answers, clientKey, meta) {
     const st = cur(); const r = await Backend.submitTest({ learnerId: st.id, unit: `stage${STAGE}-cp`, form, answers, clientKey, meta });
@@ -261,7 +261,7 @@
     return unitReady(n) ? 'open' : 'soon';
   }
   function rankScore(st) {
-    const list = Object.values(st.results || {}).map(r => r.pct);
+    const list = Object.entries(st.results || {}).filter(([k]) => k.startsWith(`stage${STAGE}-unit`)).map(([, r]) => r.pct);
     if (!list.length) return null;
     return { score: list.reduce((a, b) => a + b, 0) / list.length, units: list.length };
   }

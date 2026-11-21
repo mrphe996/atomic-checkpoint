@@ -56,7 +56,7 @@ def t_find(r):
 s.core(t_sub1(s.rng), t_sub2(s.rng), t_table(s.rng), t_sub4(s.rng), t_sub3(s.rng), t_compare(s.rng),
        EX("Ana says that when x = −4, 3x² = −48. Explain her mistake and give the correct value.", [("square first / power before multiplying", ["square|power|first|before"]), ("(−4)² = 16 is positive", ["16|positive"]), ("3 × 16 = 48", ["\\b48\\b"])],
           "She multiplied before squaring or forgot that (−4)² is positive. (−4)² = 16, so 3x² = 3 × 16 = 48.", o="O1", d="H"),
-       TB("Complete the table for P = 2l + 2w.", ["l", "w", "P"], [["4.5", "3", B(15)], ["7", "2.5", B(19)], ["1/2", "3/4", B(2.5)]], o="O1"))
+       TB("Complete the table for P = 2l + 2w.", ["l", "w", "P"], [["4.5", "3", B(15)], ["7", "2.5", B(19)], ["1/2", "3/4", B(2.5)]], reason="P = 2 × 4.5 + 2 × 3 = 15; 2 × 7 + 2 × 2.5 = 19; 2 × 1/2 + 2 × 3/4 = 2.5.", o="O1"))
 s.gen("p", 44, t_sub1, t_sub2, t_sub3, t_sub4, t_sub5, t_table, t_sqrt, t_compare, t_find)
 s.gen("a", 8,
       lambda r: (lambda x: N(f"Find the value of (2x − 1)²(x + 3) when x = {fmt(x)}.", (2 * x - 1) ** 2 * (x + 3), o="O1", d="VH", reason=f"(2 × {fmt(x)} − 1)² = {(2*x-1)**2}; × ({fmt(x)} + 3) = {fmt((2*x-1)**2*(x+3))}."))(nz(r, -5, 5)),
@@ -137,7 +137,7 @@ def t_missing(r):
     return N(f"{a}x{sup(m)} × □ = {a*3}x{sup(m+n)}. The box is 3xᵏ. Find k.", n, o="O3", d="M", reason=f"{m} + k = {m+n} → k = {n}.")
 def t_area(r):
     a, b = r.randint(2, 6), r.randint(2, 6)
-    return X(f"A rectangle measures {a}x² by {b}x³. Write its area in its simplest form.", f"{a*b}x^5", o="O3", show=f"{a*b}x⁵", mustNot=["\\*"], fig={"kind": "shape", "pts": [[0, 0], [8, 0], [8, 4], [0, 4]], "s": [f"{a}x²", f"{b}x³", "", ""]})
+    return X(f"A rectangle measures {a}x² by {b}x³. Write its area in its simplest form.", f"{a*b}x^5", reason=f"Multiply the numbers and add the powers: {a} × {b} = {a * b}, x² × x³ = x⁵.", o="O3", show=f"{a*b}x⁵", mustNot=["\\*"], fig={"kind": "shape", "pts": [[0, 0], [8, 0], [8, 4], [0, 4]], "s": [f"{a}x²", f"{b}x³", "", ""]})
 def t_like(r):
     rows = [("3x² + 4x²", "7x²"), ("3x² × 4x²", "12x⁴"), ("12x⁴ ÷ 4x²", "3x²"), ("(3x²)²", "9x⁴")]
     return MT("Match each expression with its simplified form.", r.sample(rows, 4), o="O3", d="H")
@@ -176,7 +176,7 @@ def t_e2(r):
     return X(f"Expand and simplify {br(a,b)}{br(c,d)}.", f"{A}x^2+({Bc})x+({C})", o="O4", d="H", mustNot=["\\("], show=poly((A, 'x²'), (Bc, 'x'), (C, '')), reason=f"{a*c}x² + {a*d}x + {b*c}x + {b*d} = {poly((A,'x²'),(Bc,'x'),(C,''))}.")
 def t_sq(r):
     a, b = r.randint(1, 4), nz(r, -9, 9)
-    return X(f"Expand and simplify {br(a,b)}².", f"{a*a}x^2+({2*a*b})x+({b*b})", o="O4", d="H", mustNot=["\\("], show=poly((a * a, 'x²'), (2 * a * b, 'x'), (b * b, '')))
+    return X(f"Expand and simplify {br(a,b)}².", f"{a*a}x^2+({2*a*b})x+({b*b})", reason=f"({br(a, b)})({br(a, b)}): square the first term, double the product, square the last.", o="O4", d="H", mustNot=["\\("], show=poly((a * a, 'x²'), (2 * a * b, 'x'), (b * b, '')))
 def t_dop(r):
     a = r.randint(1, 12)
     return X(f"Expand and simplify (x + {a})(x − {a}).", f"x^2-{a*a}", o="O4", mustNot=["\\("], show=f"x² − {a*a}", reason=f"The middle terms cancel: {a}x − {a}x = 0.")
@@ -188,7 +188,7 @@ def t_coef(r):
     return N(f"When (x + {a})(x + {b}) is expanded, what is the coefficient of x?".replace("+ -", "− "), a + b, o="O4", d="M", reason=f"{a} + {b} = {a+b}.")
 def t_area(r):
     a, b = r.randint(1, 9), r.randint(1, 9)
-    return X(f"A rectangle has sides x + {a} and x + {b}. Write its area, expanded and simplified.", f"x^2+{a+b}x+{a*b}", o="O4", mustNot=["\\("], show=f"x² + {a+b}x + {a*b}", fig={"kind": "shape", "pts": [[0, 0], [9, 0], [9, 5], [0, 5]], "s": [f"x + {a}", f"x + {b}", "", ""]})
+    return X(f"A rectangle has sides x + {a} and x + {b}. Write its area, expanded and simplified.", f"x^2+{a+b}x+{a*b}", reason=f"(x + {a})(x + {b}) = x² + {b}x + {a}x + {a * b}.", o="O4", mustNot=["\\("], show=f"x² + {a+b}x + {a*b}", fig={"kind": "shape", "pts": [[0, 0], [9, 0], [9, 5], [0, 5]], "s": [f"x + {a}", f"x + {b}", "", ""]})
 def t_find(r):
     a, b = r.randint(1, 9), r.randint(1, 9)
     return N(f"(x + {a})(x + k) = x² + {a+b}x + {a*b}. Find k.", b, o="O4", d="H", reason=f"{a} + k = {a+b}, so k = {b} (check {a} × {b} = {a*b}).")
@@ -201,8 +201,8 @@ s.core(t_e1(s.rng), t_e2(s.rng), t_sq(s.rng), t_dop(s.rng), t_grid(s.rng), t_are
 s.gen("p", 44, t_e1, t_e2, t_sq, t_dop, t_grid, t_coef, t_area, t_find, t_err)
 s.gen("a", 8,
       lambda r: (lambda a, b: X(f"Expand and simplify (x + {a})(x + {b}) − (x + {a+b})².", f"-{a+b}x-{(a+b)**2-a*b}", o="O4", d="VH", show=f"−{a+b}x − {(a+b)**2 - a*b}", reason=f"x² + {a+b}x + {a*b} − (x² + {2*(a+b)}x + {(a+b)**2}) = −{a+b}x − {(a+b)**2-a*b}."))(r.randint(1, 5), r.randint(1, 5)),
-      lambda r: (lambda a: N(f"Use (100 + {a})(100 − {a}) = 100² − {a}² to work out {100+a} × {100-a} without a calculator.", 10000 - a * a, o="O4", d="VH"))(r.randint(2, 9)),
-      lambda r: (lambda a, b: X(f"Expand and simplify (x + {a})(x² + {b}).", f"x^3+{a}x^2+{b}x+{a*b}", o="O4", d="VH", show=f"x³ + {a}x² + {b}x + {a*b}"))(r.randint(1, 6), r.randint(1, 6)))
+      lambda r: (lambda a: N(f"Use (100 + {a})(100 − {a}) = 100² − {a}² to work out {100+a} × {100-a} without a calculator.", 10000 - a * a, reason=f"100² − {a}² = 10 000 − {a * a} = {10000 - a * a}.", o="O4", d="VH"))(r.randint(2, 9)),
+      lambda r: (lambda a, b: X(f"Expand and simplify (x + {a})(x² + {b}).", f"x^3+{a}x^2+{b}x+{a*b}", reason=f"x × x² + x × {b} + {a} × x² + {a} × {b}.", o="O4", d="VH", show=f"x³ + {a}x² + {b}x + {a*b}"))(r.randint(1, 6), r.randint(1, 6)))
 
 # ================================================================== 2.5 Algebraic fractions
 s = U.section("2.5", "Simplifying algebraic fractions", ["O5"])
@@ -240,7 +240,7 @@ def t_tf(r):
     return GD("Is each statement true or false (x and y not 0)?", "True or false?", r.sample(rows, 4), o="O5", d="H")
 
 s.core(t_add(s.rng) or t_add(s.rng), t_sub(s.rng) or t_sub(s.rng), t_mul(s.rng), t_div(s.rng), t_tf(s.rng),
-       TB("Complete the table for x = 6.", ["Expression", "x/2 + x/3", "x/2 − x/3", "x/2 × x/3", "x/2 ÷ x/3"], [["Value", B(5), B(1), B(6), B(1.5)]], o="O5"),
+       TB("Complete the table for x = 6.", ["Expression", "x/2 + x/3", "x/2 − x/3", "x/2 × x/3", "x/2 ÷ x/3"], [["Value", B(5), B(1), B(6), B(1.5)]], reason="x/2 = 3 and x/3 = 2: 3 + 2 = 5, 3 − 2 = 1, 3 × 2 = 6, 3 ÷ 2 = 1.5.", o="O5"),
        EX("Explain why (x + 9)/3 is not equal to x + 3.", [("only 9 is divided / x is not divided by 3", ["x is not|only|both|whole|every term"]), ("it equals x/3 + 3", ["x/3"])], "Every term of the numerator must be divided by 3: (x + 9)/3 = x/3 + 3, not x + 3.", o="O5", d="H"),
        t_cancel(s.rng))
 s.gen("p", 44, t_add, t_sub, t_mul, t_div, t_cancel, t_val, t_tf)
@@ -264,10 +264,10 @@ def t_s1(r):
     return X(f"Make x the subject of y = {a}x + {b}.", f"(y-{b})/{a}", vars="xy", lhs="x", o="O6", show=f"(y − {b})/{a}", reason=f"y − {b} = {a}x → x = (y − {b})/{a}.")
 def t_s2(r):
     a = r.randint(2, 9)
-    return X(f"Make t the subject of s = {a}t − u.", f"(s+u)/{a}", vars="stu", lhs="t", o="O6", d="H", show=f"(s + u)/{a}")
+    return X(f"Make t the subject of s = {a}t − u.", f"(s+u)/{a}", vars="stu", lhs="t", reason=f"Add u: s + u = {a}t; divide by {a}.", o="O6", d="H", show=f"(s + u)/{a}")
 def t_s3(r):
     k = r.randint(2, 6)
-    return X(f"Make b the subject of P = {k}(a + b).", f"P/{k}-a", vars="Pab", lhs="b", o="O6", d="H", show=f"P/{k} − a")
+    return X(f"Make b the subject of P = {k}(a + b).", f"P/{k}-a", vars="Pab", lhs="b", reason=f"Divide by {k}: P/{k} = a + b; subtract a.", o="O6", d="H", show=f"P/{k} − a")
 def t_s4(r):
     return X("Make h the subject of V = (1/3)Ah.", "3V/A", vars="VAh", lhs="h", o="O6", d="H", show="3V/A")
 def t_use(r):
@@ -275,18 +275,18 @@ def t_use(r):
     return N(f"The volume of a cuboid is V = lwh. Find h when V = {l*w*h} cm³, l = {l} cm and w = {w} cm.", h, "cm", units=["cm", "cm²", "cm³"], o="O6", reason=f"h = V ÷ (lw) = {l*w*h} ÷ {l*w} = {h} cm.")
 def t_derive(r):
     f, p = r.randint(5, 30), r.randint(2, 9)
-    return X(f"A gym charges a joining fee of ${f} and ${p} per visit. Write a formula for the total cost C dollars for n visits.", f"{p}n+{f}", vars="nC", lhs="C", o="O6", show=f"{p}n + {f}")
+    return X(f"A gym charges a joining fee of ${f} and ${p} per visit. Write a formula for the total cost C dollars for n visits.", f"{p}n+{f}", vars="nC", lhs="C", reason=f"{p} for each of n visits plus the {f} fee: C = {p}n + {f}.", o="O6", show=f"{p}n + {f}")
 def t_rev(r):
     f, p, n = r.randint(5, 30), r.randint(2, 9), r.randint(3, 20)
     return N(f"A gym charges ${f} to join and ${p} per visit. Lin paid ${f + p*n} in total. How many visits did she make?", n, "visits", units=["visits", "$"], o="O6", reason=f"({f+p*n} − {f}) ÷ {p} = {n}.")
 def t_sq(r):
     A = pick(r, [50, 78.5, 120, 200, 314]); rr = (A / 3.14159265) ** 0.5
-    return N(f"A circle has area {fmt(A)} cm². Use r = √(A/π) to find the radius, correct to 1 decimal place.", round(rr, 1), "cm", units=["cm", "cm²"], o="O6", d="H", tol=0.05)
+    return N(f"A circle has area {fmt(A)} cm². Use r = √(A/π) to find the radius, correct to 1 decimal place.", round(rr, 1), "cm", units=["cm", "cm²"], reason=f"√({fmt(A)} ÷ π) ≈ {round(rr, 1)} cm.", o="O6", d="H", tol=0.05)
 def t_order(r):
     return OD("Put the steps in order to make x the subject of y = (3x − 2)/5.", ["Multiply both sides by 5: 5y = 3x − 2", "Add 2: 5y + 2 = 3x", "Divide by 3: x = (5y + 2)/3"], o="O6", d="M", skill="Data")
 
 s.core(t_s1(s.rng), t_s2(s.rng), t_use(s.rng), t_derive(s.rng), t_rev(s.rng), t_order(s.rng),
-       TB("Use F = 1.8C + 32 to complete the table.", ["C (°C)", "0", "25", B(-10), B(100)], [["F (°F)", B(32), B(77), "14", "212"]], o="O6", d="H", hint="To find C from F, work backwards: subtract 32, then divide by 1.8."),
+       TB("Use F = 1.8C + 32 to complete the table.", ["C (°C)", "0", "25", B(-10), B(100)], [["F (°F)", B(32), B(77), "14", "212"]], reason="F = 1.8 × 0 + 32 = 32; 1.8 × 25 + 32 = 77; C = (14 − 32) ÷ 1.8 = −10; (212 − 32) ÷ 1.8 = 100.", o="O6", d="H", hint="To find C from F, work backwards: subtract 32, then divide by 1.8."),
        EX("Kim makes x the subject of y = 4x − 7 and writes x = y/4 + 7. Explain her mistake and give the correct formula.", [("undo in reverse order / add 7 first", ["add 7 first|first add|reverse|order|before dividing"]), ("x = (y + 7)/4", ["\\(y ?\\+ ?7\\) ?/ ?4|y/4 ?\\+ ?7/4|y ?\\+ ?7 all over 4"])],
           "She did the steps in the wrong order. Add 7 first: y + 7 = 4x, then divide by 4: x = (y + 7)/4.", o="O6", d="H"))
 s.gen("p", 44, t_s1, t_s2, t_s3, t_s4, t_use, t_derive, t_rev, t_sq, t_order)
