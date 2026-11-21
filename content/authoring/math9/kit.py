@@ -182,6 +182,27 @@ def GR(prompt, x, y, pts, d="H", o="O1", reason="", skill="Data", **kw):
     return Q.base("graph", prompt, d, o, skill, x=x, y=y, plot=pts, follow=None, reason=reason, **kw)
 
 
+# ------------------------------------------------------------------ display clean-up (applied to every string a learner sees)
+import re as _re
+_SKIP = {"id", "type", "diff", "obj", "skill", "expr", "chk", "must", "mustNot", "accept", "rubric", "blanks", "vars", "lhs", "kind", "unit", "units", "answer", "solid", "part"}
+def pretty(t):
+    if not isinstance(t, str) or not t: return t
+    t = _re.sub(r"\s*\+\s*[-−]\s*(?=[\dA-Za-z(√])", " − ", t)            # a + -b → a − b
+    t = _re.sub(r"(?<=[\w)²³])\s*[-−]\s*[-−]\s*(?=[\dA-Za-z(])", " + ", t)  # a - -b → a + b
+    t = _re.sub(r"(^|[\s(=,:;\[{])-(?=[\d.]|[a-z]\b|[a-z][²³(]|\()", lambda m: m.group(1) + "−", t)  # ASCII minus → −
+    t = _re.sub(r"(?<![\w.,/)²³])1(?=[a-zA-Z](?![a-zA-Z]))(?!x10)", "", t)   # 1x → x, −1x → −x
+    t = _re.sub(r"([×÷]\s?)−(\d+(?:\.\d+)?|[a-z]\b)", r"\1(−\2)", t)   # 3 × −4 → 3 × (−4)
+    t = _re.sub(r"\d+\.\d{7,}(?![\d…])", lambda m: fmt(round(float(m.group(0)), 3)), t)  # float noise 1.1400000000000001 → 1.14
+    return t
+def prettify(o, key=None):
+    if key in _SKIP: return o
+    if isinstance(o, str): return pretty(o)
+    if isinstance(o, list): return [prettify(v) for v in o]
+    if isinstance(o, tuple): return tuple(prettify(v) for v in o)
+    if isinstance(o, dict): return {k: prettify(v, k) for k, v in o.items()}
+    return o
+
+
 def finish(q, qid):
     q = dict(q); q["id"] = qid
     if "_mc" in q:
@@ -194,7 +215,7 @@ def finish(q, qid):
         if q["skill"] not in ("Data", "Figure"): q["skill"] = "Figure" if q.get("fig") else "Data"
     for k in [k for k, v in q.items() if v in ("", None)]:
         if k not in ("answer",): q.pop(k)
-    return q
+    return prettify(q)
 
 
 # ------------------------------------------------------------------ sections and units
@@ -208,7 +229,7 @@ class Section:
     # ---- lesson blocks: text uses **bold**; steps = [(working, why)]
     def _blk(self, k, t, p, **kw):
         b = {"k": k, "t": t, "p": [p] if isinstance(p, str) else list(p or [])}
-        b.update({x: y for x, y in kw.items() if y is not None}); self.lesson.append(b); return self
+        b.update({x: y for x, y in kw.items() if y is not None}); self.lesson.append(prettify(b)); return self
     def idea(self, t, p, fig=None, table=None): return self._blk("idea", t, p, fig=fig, table=table)
     def method(self, t, p, steps=None, fig=None): return self._blk("method", t, p, steps=steps, fig=fig)
     def example(self, t, q, steps, a, p=None, fig=None, table=None): return self._blk("example", t, p, q=q, steps=steps, a=a, fig=fig, table=table)

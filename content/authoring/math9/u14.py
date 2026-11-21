@@ -25,7 +25,7 @@ def v1(r):
 def v2(r):
     rr, h = r.randint(2, 12), r.randint(3, 20)
     w = r.random() < 0.5
-    return N(f"A cylinder has {'radius' if w else 'diameter'} {rr if w else 2*rr} cm and height {h} cm. Find its volume to 1 d.p.", r1(pi * rr * rr * h), "cm³", units=["cm³"], tol=0.06, o="O1", d="M" if w else "H", fig={"kind": "solid", "solid": "cylinder", "r": f"{rr} cm" if w else "", "h": f"{h} cm"})
+    return N(f"A cylinder has {'radius' if w else 'diameter'} {rr if w else 2*rr} cm and height {h} cm. Find its volume to 1 d.p.", r1(pi * rr * rr * h), "cm³", units=["cm³"], tol=0.06, o="O1", d="M" if w else "H", fig={"kind": "solid", "solid": "cylinder", "r": f"{rr} cm" if w else "", "d": "" if w else f"{2*rr} cm", "h": f"{h} cm"})
 def v3(r):
     A, V = r.randint(8, 60), None; l = r.randint(4, 20); V = A * l
     return N(f"A prism has volume {V} cm³ and cross-sectional area {A} cm². Find its length.", l, "cm", units=["cm"], o="O1")
@@ -63,7 +63,7 @@ def a1(r):
     return N(f"A square-based pyramid has base edge {a} cm. Each triangular face has height {l} cm. Find the total surface area.", a * a + 2 * a * l, "cm²", units=["cm²"], o="O2", fig={"kind": "solid", "solid": "pyramid", "a": f"{a} cm", "l": f"{l} cm"})
 def a2(r):
     a, b, c = pick(r, [(3, 4, 5), (6, 8, 10), (5, 12, 13), (9, 12, 15), (8, 15, 17)]); L = r.randint(5, 20)
-    return N(f"A triangular prism has a right-angled triangle cross-section with sides {a} cm, {b} cm and {c} cm. Its length is {L} cm. Find its total surface area.", a * b + (a + b + c) * L, "cm²", units=["cm²"], o="O2", d="H", fig={"kind": "solid", "solid": "triprism", "a": f"{a} cm", "b": f"{b} cm", "c": f"{L} cm"})
+    return N(f"A triangular prism has a right-angled triangle cross-section with sides {a} cm, {b} cm and {c} cm. Its length is {L} cm. Find its total surface area.", a * b + (a + b + c) * L, "cm²", units=["cm²"], o="O2", d="H", fig={"kind": "solid", "solid": "triprism", "right": True, "a": f"{b} cm", "b": f"{a} cm", "c": f"{L} cm"})
 def a3(r):
     rr, h = r.randint(2, 10), r.randint(3, 20)
     return N(f"Find the total surface area of a cylinder with radius {rr} cm and height {h} cm (1 d.p.).", r1(2 * pi * rr * rr + 2 * pi * rr * h), "cm²", units=["cm²"], tol=0.06, o="O2", d="H", fig={"kind": "solid", "solid": "cylinder", "r": f"{rr} cm", "h": f"{h} cm"})

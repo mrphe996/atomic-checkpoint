@@ -594,7 +594,7 @@
         el('button', { class: 'btn primary small', type: 'button', onclick: () => go(nxt ? 'v-' + R(nxt.id) : 'test') }, nxt ? `Go to section ${nxt.id}` : 'Take the Unit Test', el('span', { class: 'arr' }, '→'))));
     };
     // aside: solution / video tabs + objective
-    const solBody = el('div', { class: 'card', style: 'padding:22px' }); let solTab = 'sol';
+    const solBody = el('div', { class: 'card solx', style: 'padding:22px' }); let solTab = 'sol';
     const solTabs = el('div', { class: 'tabs', role: 'tablist' });
     const rec = st.items[q.id] = st.items[q.id] || { tries: 0 };
     const sg = C.segments[q.obj]; const segS = Core.sec(sg[0]);

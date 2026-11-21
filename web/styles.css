@@ -1048,3 +1048,10 @@ p.cloze { font-size: 18px; line-height: 2.4; }
 .lcheck { border: 2px dashed #C9D6EA; }
 .ic.mic { background: #F1EAFD; color: #5B33B0; font: 800 14px/1 Figtree, sans-serif; display: inline-grid; place-items: center; }
 .dthumb.lessonthumb{background:linear-gradient(135deg,#EAF1FC,#FFF4DC)}.dthumb.lessonthumb .lp-play{font-size:34px}
+/* maths typesetting (mathtype.js) */
+.mf{display:inline-flex;flex-direction:column;align-items:stretch;vertical-align:middle;text-align:center;font-size:.86em;line-height:1.12;margin:0 .12em;font-variant-numeric:lining-nums}
+.mf>.n{border-bottom:1.6px solid currentColor;padding:0 .2em .05em}
+.mf>.d{padding:.05em .2em 0}
+.rd{position:relative;display:inline-block}
+.rd::after{content:'';position:absolute;left:50%;top:-.08em;width:.22em;height:.22em;margin-left:-.11em;border-radius:50%;background:currentColor}
+code.mwork{font-family:inherit;font-size:1em;font-weight:600;background:#F1F5FB;border-radius:6px;padding:2px 8px;letter-spacing:.01em}

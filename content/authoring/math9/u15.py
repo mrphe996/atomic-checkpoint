@@ -45,11 +45,16 @@ def f3(r):
     i = f.index(m)
     return MC("Which is the modal class?", f"{10*i} ≤ x < {10*i+10}", [(f"{10*j} ≤ x < {10*j+10}", "") for j in range(5) if j != i][:3], o="O1", fig=fig)
 def f4(r):
-    a = [r.randint(1, 12) for _ in range(5)]; b = sorted(a, reverse=r.random() < 0.5)
-    pa = [[5 + 10 * i, a[i]] for i in range(5)]
-    sh = r.randint(1, 3); pb = [[5 + 10 * i, a[i - sh] if i >= sh else 1] for i in range(5)]
-    return MC("The two frequency polygons show test scores for classes A and B. Which statement is best supported?", "Class B generally scored higher", [("Class A generally scored higher", "B's polygon is shifted to the right (higher scores)."), ("The classes did equally well", ""), ("Class B had fewer students", "")], o="O1", d="H",
-              fig={"kind": "linegraph", "x": {"min": 0, "max": 50, "step": 10, "label": "Score"}, "y": {"min": 0, "max": 14, "step": 2, "label": "Frequency"}, "series": [{"pts": pa, "label": "A"}, {"pts": pb, "label": "B", "dash": True}]})
+    base = [2, 6, 12, 6, 2, 1, 1]
+    sa = r.randint(0, 1); sb = sa + r.randint(1, 2)
+    fa = [max(1, base[(i - sa) % 7] + r.randint(-1, 1)) if 0 <= i - sa < 5 else 1 for i in range(5)]
+    fb = [max(1, base[(i - sb) % 7] + r.randint(-1, 1)) if 0 <= i - sb < 5 else 1 for i in range(5)]
+    hiB = r.random() < 0.5
+    A_, B_ = (fa, fb) if hiB else (fb, fa)
+    ans = "Class B generally scored higher" if hiB else "Class A generally scored higher"
+    other = "Class A generally scored higher" if hiB else "Class B generally scored higher"
+    return MC("The two frequency polygons show test scores for classes A and B. Which statement is best supported?", ans, [(other, "Look at which polygon is further to the right (higher scores)."), ("The classes did equally well", ""), ("The two classes had very different numbers of students", "")], o="O1", d="H",
+              fig={"kind": "linegraph", "x": {"min": 0, "max": 50, "step": 10, "label": "Score"}, "y": {"min": 0, "max": 14, "step": 2, "label": "Frequency"}, "series": [{"pts": [[5 + 10 * i, A_[i]] for i in range(5)], "label": "A"}, {"pts": [[5 + 10 * i, B_[i]] for i in range(5)], "label": "B", "dash": True}]})
 s.core(f1(s.rng), f2(s.rng), f3(s.rng) or f3(s.rng) or f3(s.rng), f4(s.rng), f1(s.rng), f2(s.rng),
        MC("Why are the points on a frequency polygon joined with straight lines?", "to show the overall shape of the distribution", [("because the data is exact", ""), ("to show the mean", ""), ("because every value lies on the line", "Values between midpoints are not known.")], o="O1"),
        EX("Explain why frequency polygons are useful for comparing two sets of grouped data.", [("both can be drawn on the same axes", ["same axes|same graph|same grid|together|overlap"]), ("easy to compare shape / which is higher", ["compare|shape|higher|spread|shift"])], "Two polygons can be drawn on the same axes without hiding each other, so you can easily compare their shapes and see which has higher values.", o="O1"))
@@ -74,9 +79,9 @@ def sc1(r):
     return MC("Describe the correlation shown.", ans, [(a, "") for a in ["positive", "negative", "no correlation"] if a != ans], o="O2",
               fig={"kind": "linegraph", "x": {"min": 0, "max": 10, "step": 2, "label": "x"}, "y": {"min": 0, "max": 100, "step": 20, "label": "y"}, "series": [{"pts": pts, "line": False}]})
 def sc2(r):
-    rows = [("Age of a car and its value", "Negative"), ("Height and arm span", "Positive"), ("Shoe size and test score", "None"), ("Temperature and hot drinks sold", "Negative"),
-            ("Hours of sunshine and ice creams sold", "Positive"), ("House number and age of owner", "None"), ("Distance travelled and fuel left", "Negative")]
-    return GD("What correlation would you expect?", "Correlation", r.sample(rows, 4), o="O2", extra=["Positive", "Negative", "None"])
+    rows = [("Age of a car and its value", "Negative"), ("Height and arm span", "Positive"), ("Shoe size and test score", "No correlation"), ("Temperature and hot drinks sold", "Negative"),
+            ("Hours of sunshine and ice creams sold", "Positive"), ("House number and age of owner", "No correlation"), ("Distance travelled and fuel left", "Negative")]
+    return GD("What correlation would you expect?", "Correlation", r.sample(rows, 4), o="O2", extra=["Positive", "Negative", "No correlation"])
 def sc3(r):
     m, c = r.choice([4, 5, 6, 7, 8]), r.randint(5, 30); x = r.randint(2, 8)
     return N(f"The line of best fit through a scatter graph has equation y = {m}x + {c}. Estimate y when x = {x}.", m * x + c, o="O2", d="H")
@@ -196,7 +201,7 @@ def rp5(r):
     n1, n2 = pick(r, [(40, 120), (60, 200), (50, 150), (30, 90)]); a1, a2 = pick(r, [(90, 45), (120, 60), (72, 36), (180, 90)])
     return MC(f"School P (total {n1} students) and School Q (total {n2} students) each have a pie chart. P's 'walk' sector is {a1}° and Q's is {a2}°. Which school has MORE students who walk?", "School Q" if n2 * a2 > n1 * a1 else "School P", [("School P" if n2 * a2 > n1 * a1 else "School Q", f"P: {n1} × {a1}/360 = {fmt(n1*a1/360)}; Q: {n2} × {a2}/360 = {fmt(n2*a2/360)}."), ("You cannot tell", "")], o="O5", d="H")
 def rp6(r):
-    v = [r.randint(5, 40) for _ in range(4)]; lab = r.sample(["Mon", "Tue", "Wed", "Thu", "Fri"], 4)
+    v = [r.randint(5, 40) for _ in range(4)]; d0 = r.randint(0, 1); lab = ["Mon", "Tue", "Wed", "Thu", "Fri"][d0:d0 + 4]
     i = r.randrange(4)
     return N(f"Read the bar chart. How many more were sold on {lab[i]} than on the day with the fewest sales?", v[i] - min(v), o="O5", fig={"kind": "barchart", "labels": lab, "values": v, "ymax": 40, "step": 5, "ylabel": "Number sold"})
 s.core(rp1(s.rng), rp2(s.rng), rp3(s.rng), rp4(s.rng) or rp4(s.rng) or rp4(s.rng), rp5(s.rng), rp6(s.rng),

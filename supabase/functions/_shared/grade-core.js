@@ -185,17 +185,27 @@
     return out;
   }
   const isTick = q => q.mode ? q.mode === 'tick' : q.rows.every(r => r.a && r.a.length === q.cols.length && r.a.every(a => a === '✓' || a === '✗'));
+  /* a model number for display: 0.7222… → 13/18, 0.30000000000000004 → 0.3, -4 → −4 */
+  function numShow(v) {
+    if (typeof v !== 'number' || !isFinite(v)) return String(v);
+    const neg = v < 0 ? '−' : '', a = Math.abs(v);
+    if (Number.isInteger(a)) return neg + a;
+    const dec = (String(a).split('.')[1] || '').length;
+    if (dec <= 4) return neg + String(a);
+    for (let d = 2; d <= 1000; d++) { const n = Math.round(a * d); if (Math.abs(n / d - a) < 1e-9) return neg + n + '/' + d; }
+    return neg + String(+a.toFixed(4));
+  }
   function answerText(q) {
     switch (q.type) {
       case 'mcq': return q.options.find(o => o.ok).t;
       case 'multi': return q.options.filter(o => o.ok).map(o => o.t).join(' • ');
-      case 'num': case 'scale': return `${q.answer} ${q.unit}`;
+      case 'num': case 'scale': return numShow(q.answer) + (q.bare || q.unit === '×' ? '' : ' ' + q.unit);
       case 'label': return Object.values(q.spots).map((v, i) => `${i + 1} = ${v}`).join('; ');
       case 'order': return q.items.join(' → ');
       case 'match': return q.pairs.map(p => `${p.l} → ${p.r}`).join('; ');
       case 'explain': return q.model;
       case 'grid': return q.rows.map(r => `${r.l}: ${r.a.join(' / ')}`).join('; ');
-      case 'table': return q.rows.map(r => r.map(c => c && typeof c === 'object' ? `[${c.ans}]` : c).join(' | ')).join(' ; ');
+      case 'table': return q.rows.map(r => r.map(c => c && typeof c === 'object' ? `[${numShow(c.ans)}]` : c).join(' | ')).join(' ; ');
       case 'graph': return 'Points: ' + (q.plot || q.pts).map(p => `(${p[0]}, ${p[1]})`).join(' ') + (q.follow ? ' — ' + q.follow.options.find(o => o.ok).t : '');
       case 'short': return plainOf(q.accept);
       case 'expr': return (q.lhs ? q.lhs + ' = ' : '') + (q.show || q.expr);

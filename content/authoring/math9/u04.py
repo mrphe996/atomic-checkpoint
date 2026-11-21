@@ -137,7 +137,7 @@ def i3(r):
     return MC("Which inequality is shown on the number line?", f"x {sgn} {v}", [(o, "Check the circle (open or filled) and the direction.") for o in opts if o != f"x {sgn} {v}"], o="O3", fig=fig)
 def i4(r):
     a = r.randint(2, 6); k = r.randint(-8, 8); b = r.randint(-10, 10)
-    return MC(f"Solve {b} − {a}x < {b - a*k}.", f"x > {k}", [(f"x < {k}", "Subtracting gives −{a}x < …; dividing by a negative reverses the sign."), (f"x > {-k}", ""), (f"x < {-k}", "")], o="O3", d="H")
+    return MC(f"Solve {b} − {a}x < {b - a*k}.", f"x > {k}", [(f"x < {k}", f"Subtracting gives −{a}x < …; dividing by a negative reverses the sign."), (f"x > {-k}", ""), (f"x < {-k}", "")], o="O3", d="H")
 def i5(r):
     lo, hi = r.randint(-5, 1), r.randint(2, 7)
     return TB(f"Write the smallest and largest integers that satisfy {lo} ≤ n < {hi}.", ["Smallest", "Largest"], [[B(lo), B(hi - 1)]], o="O3")
