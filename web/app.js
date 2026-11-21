@@ -477,7 +477,7 @@
       tabsBox.innerHTML = ''; [['chapters', 'Chapters'], ['transcript', 'Transcript'], ['notes', 'My notes']].forEach(([k, t]) => tabsBox.append(el('button', { type: 'button', role: 'tab', 'aria-selected': String(UI.side === k), class: UI.side === k ? 'on' : '', onclick: () => { UI.side = k; drawSide(); } }, t)));
       sideBody.innerHTML = ''; const t = v.currentTime || 0;
       if (UI.side === 'chapters') {
-        const items = s.chapters.map(c => ({ t: c[0], label: c[1], kind: 'ch' })).concat(s.stops.map((x, i) => ({ t: x.t, label: `Pause question ${i + 1}`, kind: 'stop', x }))).sort((a, b) => a.t - b.t);
+        const items = s.chapters.map(c => ({ t: c[0], label: c[1], kind: 'ch' })).concat(s.stops.map((x, i) => ({ t: x.t, label: x.kind === 'say' ? `🎤 Say “${x.q.word}”` : `Pause question ${i + 1}`, kind: 'stop', x }))).sort((a, b) => a.t - b.t);
         items.forEach((c, i) => { const nextT = (items[i + 1] || { t: s.video.dur }).t; const done = c.kind === 'stop' ? Core.stopDone(st, sid, c.x) : t >= nextT - 0.2 || review(); const cur = !done && t >= c.t - 0.2;
           sideBody.append(el('button', { type: 'button', class: 'chap' + (done ? ' done' : '') + (cur ? ' cur' : '') + (c.kind === 'stop' ? ' stopq' : ''), onclick: () => { segEnd = null; v.currentTime = c.t + (c.kind === 'stop' ? 0 : 0.01); } },
             el('span', { class: 'dt' }, done ? '✓' : c.kind === 'stop' ? '?' : String(s.chapters.findIndex(h => h[0] === c.t) + 1)), el('span', { style: 'flex:1' }, el('b', { style: 'font-size:15px' }, c.label), el('br'), el('small', { class: 'muted' }, fmt(c.t))))); });
@@ -489,7 +489,7 @@
         sideBody.append(el('label', { style: 'display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:14px' }, `My notes for ${s.id}`, ta), ok);
       }
     };
-    const drawMarks = () => { track.querySelectorAll('.mk').forEach(x => x.remove()); s.stops.forEach((x, i) => { const d = Core.stopDone(st, sid, x); track.append(el('button', { class: 'mk' + (d ? ' done' : ''), type: 'button', style: `left:${x.t / s.video.dur * 100}%`, title: `Pause question ${i + 1} · ${fmt(x.t)}`, 'aria-label': `Pause question ${i + 1} at ${fmt(x.t)}${d ? ' (answered)' : ''}`, onclick: e => { e.stopPropagation(); if (d || review()) { v.pause(); v.currentTime = x.t; showStop(x, true); } } }, String(i + 1))); }); };
+    const drawMarks = () => { track.querySelectorAll('.mk').forEach(x => x.remove()); s.stops.forEach((x, i) => { const d = Core.stopDone(st, sid, x); track.append(el('button', { class: 'mk' + (x.kind === 'say' ? ' say' : '') + (d ? ' done' : ''), type: 'button', style: `left:${x.t / s.video.dur * 100}%`, title: `${x.kind === 'say' ? 'Say the word' : 'Pause question'} ${i + 1} · ${fmt(x.t)}`, 'aria-label': `${x.kind === 'say' ? 'Say the word' : 'Pause question'} ${i + 1} at ${fmt(x.t)}${d ? ' (answered)' : ''}`, onclick: e => { e.stopPropagation(); if (d || review()) { v.pause(); v.currentTime = x.t; showStop(x, true); } } }, String(i + 1))); }); };
     const next = () => s.stops.find(x => !Core.stopDone(st, sid, x));
     const syncUi = () => { const t = v.currentTime || 0; fill.style.width = (t / s.video.dur * 100) + '%'; time.textContent = `${fmt(t)} / ${fmt(s.video.dur)}`; track.setAttribute('aria-valuenow', Math.round(t));
       const playing = !v.paused; ppBtn.innerHTML = ''; const ic = svgI(playing ? I.pause : I.play, 16, '#fff', 0); ic.querySelector('path').setAttribute('fill', '#fff'); ppBtn.append(ic); ppBtn.setAttribute('aria-label', playing ? 'Pause' : 'Play');
@@ -499,7 +499,7 @@
       openStop = again ? null : x; panel.innerHTML = ''; const i = s.stops.indexOf(x);
       if (!again) { vs.pos = x.t; Core.persist(); }
       const rec = (vs.stops[x.id] = vs.stops[x.id] || { tries: 0 });
-      const box = el('section', { class: 'card stop' }, el('div', { class: 'stopbar' }, el('span', { class: 'eyebrow' }, `⏸ PAUSE QUESTION ${i + 1} OF ${s.stops.length} · ${fmt(x.t)}`),
+      const box = el('section', { class: 'card stop' }, el('div', { class: 'stopbar' }, el('span', { class: 'eyebrow' }, x.kind === 'say' ? `🎤 SAY THE NEW WORD · ${i + 1} OF ${s.stops.length} · ${fmt(x.t)}` : `⏸ PAUSE QUESTION ${i + 1} OF ${s.stops.length} · ${fmt(x.t)}`),
         el('button', { class: 'btn small ghost', type: 'button', onclick: () => { segEnd = null; v.currentTime = x.review[0]; v.play().catch(() => { }); } }, `↺ Rewatch ${fmt(x.review[0])}–${fmt(x.review[1])}`)));
       const qh = el('div'); box.append(qh); panel.append(box);
       if (again && rec.done) {
@@ -703,7 +703,7 @@
   // print-only worksheet (Design v4 paper): personal watermark on every page, microprint frame, copy code — no PDF download
   function wsLearner() { return { name: st.name || st.alias || 'Learner', lid: 'L-' + String(st.id || 'guest').replace(/-/g, '').slice(0, 7).toUpperCase() }; }
   function worksheetPages(s, info, mount) {
-    const qs = s.vocab ? s.prac.slice(0, 14) : s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
+    const qs = s.vocab ? s.prac.filter(q => q.type !== 'say' && !q.audio).slice(0, 14) : s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
     const mins = Math.max(15, Math.ceil(qs.length * 2.5 / 5) * 5);
     const out = el('div', { class: 'ws', id: 'wsPages' }); let pno = 0; const pages = [];
     const foot = last => el('div', { class: 'pfoot' }, el('div', {}, `© Atomic Education ${info.date.getFullYear()} · ${doc} · Copy #${info.serial} · ${info.code}`, el('br'), `Printed for ${info.name} (${info.lid}) on ${info.when}. Not for sharing or resale.`), el('b', {}, last ? 'End of worksheet' : '[Turn over'));
@@ -739,7 +739,7 @@
     return out;
   }
   function wsAnswers(s, info, mount) {
-    const qs = s.vocab ? s.prac.slice(0, 14) : s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
+    const qs = s.vocab ? s.prac.filter(q => q.type !== 'say' && !q.audio).slice(0, 14) : s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
     const out = el('div', { class: 'ws', id: 'wsAns' }); mount.append(out);
     const foot = last => el('div', { class: 'pfoot' }, el('div', {}, `© Atomic Education ${info.date.getFullYear()} · ${doc} · ANSWERS · ${info.code}`, el('br'), `Opened by ${info.name} (${info.lid}) on ${info.when}. For self-marking only.`), el('b', {}, last ? 'End of answers' : '[Turn over'));
     const page = () => { const pg = el('div', { class: 'a4 paper4', html: Paper.frame() + Paper.watermark(info) }); const pb = el('div', { class: 'pbody' }, el('div', { class: 'prun' }, el('span', {}, el('b', {}, 'ANSWERS'), ` · Cambridge ${Core.stageLabel()} · Unit ${Core.UNO} · ${s.id} ${s.title}`), el('b', {}, 'Mark scheme'))); pg.append(pb); out.append(pg); return pb; };

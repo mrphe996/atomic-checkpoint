@@ -169,13 +169,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .player{position:relative;border-radius:24px;overflow:hidden;background:var(--navy);box-shadow:0 6px 0 #BFD3F0,0 24px 50px rgba(1,73,175,.2)}
 .player video{display:block;width:100%;aspect-ratio:16/9;background:#000}
 .bigplay{position:absolute;left:50%;top:50%;margin:-46px 0 0 -46px;width:92px;height:92px;border-radius:50%;border:0;background:var(--gold);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 0 var(--goldd),0 18px 40px rgba(11,37,69,.4);animation:pulse 2.6s ease-in-out infinite}
-.player.paused-q::after{content:"⏸ Câu hỏi bên dưới";position:absolute;left:16px;top:16px;background:var(--gold);color:var(--ink);font-family:Outfit,sans-serif;font-weight:800;font-size:14px;padding:6px 12px;border-radius:10px;box-shadow:0 3px 0 var(--goldd)}
+.player.paused-q::after{content:"⏸ Question below";position:absolute;left:16px;top:16px;background:var(--gold);color:var(--ink);font-family:Outfit,sans-serif;font-weight:800;font-size:14px;padding:6px 12px;border-radius:10px;box-shadow:0 3px 0 var(--goldd)}
 .ctrl{display:flex;gap:12px;align-items:center;padding:12px 16px;border-radius:18px}
 .ctrl .pp{width:44px;padding:0}
 .track{flex:1;position:relative;height:10px;border-radius:99px;background:var(--blue1);cursor:pointer}
 .track .fill{position:absolute;left:0;top:0;bottom:0;background:var(--blue);border-radius:99px}
 .track .mk{position:absolute;top:-6px;width:22px;height:22px;margin-left:-11px;border-radius:50%;background:#fff;border:3px solid var(--gold);padding:0;cursor:pointer;font-size:0}
 .track .mk.done{background:var(--ok);border-color:#fff;box-shadow:0 0 0 2px var(--ok)}
+.track .mk.say{border-color:#2F6FD6;border-radius:6px}
 .ctrl .time{font-size:14px;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 .ctrl .chip{min-height:40px;padding:0 12px}
 .cap{margin:0;padding:14px 18px;background:#fff;border:1px solid var(--line);border-radius:16px;font-size:17px;box-shadow:0 3px 0 var(--line)}
