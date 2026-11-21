@@ -184,7 +184,8 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
 
 // web/content/stage7.json – the stage's units; "ready" when a unit's content has been built
 export function writeIndex() {
-  const T = { 6: [['The Human Body', 'Biology'], ['Materials: Properties and Changes', 'Chemistry'], ['Rocks, the Rock Cycle and Soil', 'Earth and Space'], ['Food Chains and Food Webs', 'Biology'], ['Forces and Electricity', 'Physics'], ['Light and the Solar System', 'Physics']],
+  const T = { 5: [['Life Cycles of Flowering Plants', 'Biology'], ['Sound', 'Physics'], ['States and Properties of Matter', 'Chemistry'], ['The Digestive System', 'Biology'], ['Forces and Magnetism', 'Physics'], ['Seasons and Adaptations', 'Earth and Space']],
+    6: [['The Human Body', 'Biology'], ['Materials: Properties and Changes', 'Chemistry'], ['Rocks, the Rock Cycle and Soil', 'Earth and Space'], ['Food Chains and Food Webs', 'Biology'], ['Forces and Electricity', 'Physics'], ['Light and the Solar System', 'Physics']],
     7: [['Introducing Science', 'Enquiry'], ['Measurements', 'Enquiry'], ['Cells', 'Biology'], ['Classifying Living Things', 'Biology'], ['Food Chains and Food Webs', 'Biology'],
     ['Materials and Their Structure', 'Chemistry'], ['Properties of Materials', 'Chemistry'], ['Acids and Alkalis', 'Chemistry'], ['Chemical Reactions', 'Chemistry'], ['Forces', 'Physics'],
     ['Energy', 'Physics'], ['Electricity', 'Physics'], ['Earth Processes', 'Earth and Space'], ['Earth and Beyond', 'Earth and Space']],

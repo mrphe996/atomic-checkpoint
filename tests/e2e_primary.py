@@ -1,4 +1,4 @@
-"""Primary Science Stage 6: animated lessons, listening and read-aloud word checks, the word bank and the experiment room.
+"""Primary Science Stages 5 and 6: animated lessons, listening and read-aloud word checks, the word bank and the experiment room.
 Run with the default config: `node tools/write-config.mjs`."""
 import os, sys
 from playwright.sync_api import sync_playwright
@@ -106,5 +106,29 @@ with sync_playwright() as p:
     ok(n >= 28 and all(k in kinds for k in ['say', 'match', 'cloze', 'order', 'short', 'grid', 'mcq']), f'P31 Practice is larger and varied: {n} questions, types {sorted(kinds)}')
     # worksheet prints practice questions (not the speaking checks)
     pg.evaluate("location.hash='ws-1-1'"); pg.wait_for_timeout(900)
+    # ---- Primary Science Stage 5 ----
+    pg.evaluate("location.hash='home'"); pg.wait_for_timeout(700)
+    ok(pg.query_selector('#stageSwitch .sw[data-stage="5"]') is not None, 'P32 The course switcher offers Primary Science Stage 5')
+    pg.evaluate("location.hash='checkout-5'"); pg.wait_for_timeout(600); pg.click('#payBtn'); pg.wait_for_function("Core.STAGE===5", timeout=10000); pg.wait_for_timeout(800)
+    ok(pg.evaluate("Core.IS_PRIMARY && Core.unitCount()===6 && Core.INDEX.units.every(u => u.ready)"), 'P33 Stage 5 has 6 units, all open')
+    tot = 0; bad = []
+    for u in range(1, 7):
+        pg.evaluate(f"location.hash='u-{u}'"); pg.wait_for_timeout(700)
+        s5 = pg.evaluate("Core.C.sections.map(s => ({id: s.id, req: s.req.length, say: s.req.filter(q => q.type==='say').length, lab: !!s.lab, vocab: (s.vocab||[]).length, stops: s.stops.length, says: s.stops.filter(x => x.kind==='say').length, prac: s.prac.length, src: s.video.src}))")
+        tot += len(s5); bad += [x['id'] for x in s5 if not (x['req'] == 8 and x['say'] == 4 and x['lab'] and x['vocab'] >= 5 and x['stops'] - x['says'] >= 2 and x['says'] >= 2 and x['prac'] >= 24 and '/s5/' in x['src'])]
+    ok(tot == 24 and not bad, f'P34 All 24 Stage 5 topics have a video with question and speaking stops, 8 Core checks, a lab, a word bank and 24+ practice questions (problems: {bad})')
+    st = pg.evaluate("fetch(Core.C.sections[0].video.src, {method:'HEAD'}).then(r => r.status)")
+    wa = pg.evaluate("Promise.all(['media/s5/w/pollination.mp3','media/s5/w/d-camouflage.mp3','media/s5/w/e-upthrust.mp3'].map(u => fetch(u, {method:'HEAD'}).then(r => r.status)))")
+    ok(st == 200 and wa == [200, 200, 200], 'P35 Stage 5 videos and word audio are served')
+    pg.evaluate("location.hash='u-5'"); pg.wait_for_timeout(700)
+    pg.evaluate("(()=>{const st=Core.cur(); Core.C.sections.forEach(s=>{const vs=Core.vstate(st,s.id); vs.completed=true; s.stops.forEach(x=>vs.stops[x.id]={done:true,tries:1}); s.req.forEach(q=>st.items[q.id]={done:true,ok:true,tries:1});}); Core.persist();})()")
+    tl = pg.evaluate("(Core.C.sections.find(s => s.lab && s.lab.v && s.lab.v.kind==='test') || {}).id")
+    if tl:
+        pg.evaluate(f"location.hash='lab-{tl.replace('.', '-')}'"); pg.wait_for_timeout(1200)
+        vals = pg.evaluate(f"Core.C.sections.find(s => s.id==='{tl}').lab.v.conds.map(c => c.val)")
+        for k, v in enumerate(vals):
+            pg.click(f'.labcard .btnrow .chip >> nth={k}'); pg.wait_for_timeout(1400)
+            pg.fill('.labcard .numrow input', str(v)); pg.click('.labcard .numrow .btn'); pg.wait_for_timeout(250)
+    ok(tl and len(pg.query_selector_all('.labtable tr')) == len(vals) + 1 and len(pg.query_selector_all('.labqs .qcard')) >= 1, f'P36 Stage 5 scale lab ({tl}) can be run and its questions open')
     ok(not errs, 'P22 No page errors ' + '; '.join(errs[:3])); b.close()
 f = [l for l in LOG if l.startswith('FAIL')]; print(f'{len(LOG)-len(f)}/{len(LOG)} passed'); sys.exit(1 if f else 0)

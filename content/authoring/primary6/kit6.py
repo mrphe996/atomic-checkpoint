@@ -9,7 +9,12 @@ import kit as K
 K.pretty = lambda t: t            # science text is left exactly as written
 from kit import MC, MS, S, CZ, TB, B, GD, TK, EX, OD, MT, GR, Q, finish, Paper
 
+STAGE = 6
 MEDIA = 'media/s6'
+def set_stage(n):
+    """Use this kit for another Primary stage (e.g. 5): media folder, ids and course labels follow."""
+    global STAGE, MEDIA
+    STAGE = n; MEDIA = f'media/s{n}'
 slug = lambda w: w.lower().replace(' ', '-')
 wa = lambda w, kind='': f"{MEDIA}/w/{kind}{slug(w)}.mp3"
 
@@ -115,7 +120,9 @@ class Section:
         caps = meta['captions']; used = [x['t'] for x in stops]; byw = {r[0]: r for r in self.rows}
         for k, w in enumerate(self.sayw):
             for i, (t0, txt) in enumerate(caps):
-                if t0 < 6 or not re.search(r'\b' + re.escape(w.lower()) + r's?\b', txt.lower()): continue
+                pat = r'\b' + re.escape(w.lower()) + r's?\b'
+                if w.endswith('ing') and ' ' not in w: pat = r'\b' + re.escape(w.lower()[:-3]) + r'(?:s|es|ing)?\b'
+                if t0 < 6 or not re.search(pat, txt.lower()): continue
                 t = round((caps[i + 1][0] if i + 1 < len(caps) else meta['dur'] - 2.5) - 0.15, 2)
                 if any(abs(t - u) < 4 for u in used): continue
                 used.append(t); r = byw[w]
@@ -133,7 +140,7 @@ class Section:
 class Unit:
     def __init__(self, n, title, strand, blurb, objectives):
         self.n, self.title, self.strand, self.blurb, self.objectives = n, title, strand, blurb, objectives
-        self.pre = f"p6u{n:02d}"; self.sections = []; self.mind = []
+        self.pre = f"p{STAGE}u{n:02d}"; self.sections = []; self.mind = []
     def section(self, sid, title, objs):
         s = Section(self, sid, title, objs); self.sections.append(s); return s
     def mindmap(self, *kids):
@@ -144,9 +151,9 @@ class Unit:
         segs = {}
         for s in secs:
             for o in s['objs']: segs.setdefault(o, [s['id'], 0.0, s['video']['dur'], s['title']])
-        return {'course': {'id': 's6', 'title': 'Atomic – Cambridge Primary Science — Stage 6', 'units': [{'n': i + 1, 't': t} for i, t in enumerate(titles)]},
-                'unit': {'n': self.n, 'stage': 6, 'title': self.title, 'strandShort': self.strand.split(':')[0], 'blurb': self.blurb, 'strand': self.strand,
-                         'framework': 'Cambridge Primary Science (0097), Stage 6', 'primary': True},
+        return {'course': {'id': f's{STAGE}', 'title': f'Atomic – Cambridge Primary Science — Stage {STAGE}', 'units': [{'n': i + 1, 't': t} for i, t in enumerate(titles)]},
+                'unit': {'n': self.n, 'stage': STAGE, 'title': self.title, 'strandShort': self.strand.split(':')[0], 'blurb': self.blurb, 'strand': self.strand,
+                         'framework': f'Cambridge Primary Science (0097), Stage {STAGE}', 'primary': True},
                 'objectives': self.objectives, 'sections': secs, 'segments': segs, 'sources': [],
                 'tests': {'A': tests[0], 'B': tests[1], 'pass': 0.7},
                 'mindmap': {'id': 'root', 't': self.title, 'sec': None, 'kids': self.mind}}

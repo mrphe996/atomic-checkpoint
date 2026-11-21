@@ -90,8 +90,12 @@ do $$ begin
 end $$;
 reset role; insert into private.app_secrets (name, value) values ('mock_payments', 'on') on conflict (name) do update set value = 'on';
 set role authenticated; select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-00000000000a', false)) _x;
-select 'PASS test checkout enrols: ' || (select public.enrol_stage('10000000-0000-0000-0000-000000000001', 8) = 'ok' and exists (select 1 from public.enrolments where stage = 8));
-select 'PASS Primary Stage 6 can be enrolled: ' || (select public.enrol_stage('10000000-0000-0000-0000-000000000001', 6) = 'ok' and exists (select 1 from public.enrolments where stage = 6) and (select count(*) from public.stage_units where stage = 6) = 6);
+select 'PASS test checkout call: ' || (public.enrol_stage('10000000-0000-0000-0000-000000000001', 8) = 'ok');
+select 'PASS test checkout enrols: ' || exists (select 1 from public.enrolments where stage = 8);
+select 'PASS Primary Stage 6 enrol call: ' || (public.enrol_stage('10000000-0000-0000-0000-000000000001', 6) = 'ok');
+select 'PASS Primary Stage 6 is enrolled with 6 units: ' || (exists (select 1 from public.enrolments where stage = 6) and (select count(*) from public.stage_units where stage = 6) = 6);
+select 'PASS Primary Stage 5 enrol call: ' || (public.enrol_stage('10000000-0000-0000-0000-000000000001', 5) = 'ok');
+select 'PASS Primary Stage 5 is enrolled with 6 units: ' || (exists (select 1 from public.enrolments where stage = 5) and (select count(*) from public.stage_units where stage = 5) = 6);
 select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-00000000000b', false)) _x;
 select 'PASS another parent cannot see the enrolment: ' || (select count(*) = 0 from public.enrolments);
 do $$ begin
@@ -109,7 +113,8 @@ end $$;
 select 'PASS parent cannot read events table: ' || (select count(*) = 0 from public.events);
 select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-00000000000c', false)) _x;
 select 'PASS marker sees item stats: ' || (select count(*) = 1 from public.item_stats('stage7-unit03'));
-select 'PASS marker can read attempts: ' || (select count(*) = 3 from public.attempts);
+-- the marker reads every learner's attempts: the 3 inserted above for this learner plus 1 more
+select 'PASS marker can read attempts: ' || (select count(*) = 4 from public.attempts);
 -- account deletion cascades
 reset role;
 delete from auth.users where id = '00000000-0000-0000-0000-00000000000a';

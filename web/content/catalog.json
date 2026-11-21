@@ -19,7 +19,7 @@
    "name": "Cambridge Primary",
    "short": "Primary",
    "ages": "ages 5–11",
-   "note": "Stages 1 to 6 · Atomic starts with Stage 6 Science: animated lessons, listening and speaking, experiments"
+   "note": "Stages 1 to 6 · Atomic has Stage 5 and Stage 6 Science: animated lessons, listening and speaking, experiments"
   },
   {
    "id": "lsec",
@@ -44,6 +44,17 @@
   }
  ],
  "courses": [
+  {
+   "id": "sci-s5",
+   "subject": "science",
+   "level": "primary",
+   "stage": 5,
+   "badge": 5,
+   "code": "0097",
+   "title": "Cambridge Stage 5 Science",
+   "status": "open",
+   "about": "Fun animated lessons full of examples, a slower narrator and large subtitles, say-the-word stops in every video, listen-and-say word checks, a virtual lab and a home experiment in every topic. 6 units: flowering plants, sound, states of matter, digestion, forces and magnets, seasons and adaptations."
+  },
   {
    "id": "sci-s6",
    "subject": "science",
