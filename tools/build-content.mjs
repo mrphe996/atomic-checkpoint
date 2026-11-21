@@ -22,7 +22,7 @@ const ANCHORS = { // label anchors each figure provides (keep in sync with web/f
   animalcell: ['membrane', 'cytoplasm', 'nucleus', 'mito'], roothair: ['extension', 'nucleus', 'vacuole', 'wall'],
   neurone: ['body', 'fibre', 'endings', 'nucleus'], ciliated: ['mucus', 'cilia', 'nucleus'],
   palisade: ['wall', 'nucleus', 'chloroplast', 'vacuole'], plant: ['flower', 'leaf', 'stem', 'root'], body: ['brain', 'lungs', 'heart', 'stomach'] };
-const TYPES = ['mcq', 'multi', 'num', 'scale', 'label', 'order', 'match', 'explain', 'grid', 'table', 'graph', 'sim', 'short', 'cloze', 'expr'];
+const TYPES = ['mcq', 'multi', 'num', 'scale', 'label', 'order', 'match', 'explain', 'grid', 'table', 'graph', 'sim', 'short', 'cloze', 'expr', 'say'];
 
 export function validate(c) {
   const errs = [], warn = [];
@@ -50,6 +50,7 @@ export function validate(c) {
       case 'grid': q.rows.forEach(r => { if (!r.a || !r.a.length) errs.push(`${at}: grid row without answer`); }); break;
       case 'table': if (!q.rows.some(r => r.some(c => c && typeof c === 'object'))) errs.push(`${at}: table has no blank`); break;
       case 'short': if (!Array.isArray(q.accept) || !q.accept.length || !G.answerText(q)) errs.push(`${at}: short answer needs accepted answers (the first plain one is the model)`); break;
+      case 'say': if (!q.word || !q.audio) errs.push(`${at}: say needs the word and its audio`); break;
       case 'expr': if (!q.expr || !G.exprFn(q.expr)) errs.push(`${at}: expr needs a valid model expression`); break;
       case 'cloze': { const n = (String(q.text || '').match(/\{\d+\}/g) || []).length; if (!n || !Array.isArray(q.blanks) || q.blanks.length !== n || q.blanks.some(b => !b.length)) errs.push(`${at}: cloze needs one accepted-answer list per {n} gap`); break; }
     }
@@ -63,9 +64,25 @@ export function validate(c) {
     if (n < 30) errs.push(`section ${s.id}: ${n} questions (minimum 30)`);
     if (s.req.length !== 8) errs.push(`section ${s.id}: needs 8 Core questions (has ${s.req.length})`);
     const fig = s.req.filter(q => ['label', 'scale', 'grid', 'table', 'graph', 'sim'].includes(q.type) || q.skill === 'Data' || q.skill === 'Figure').length;
-    if (fig < 2) errs.push(`section ${s.id}: Core needs 2+ diagram/data questions (has ${fig})`);
-    if (!s.req.some(q => q.type === 'explain')) errs.push(`section ${s.id}: Core needs a written-reasoning question`);
-    s.req.forEach(q => { if (!q.twin && q.type !== 'sim') warn.push(`section ${s.id} ${q.id}: Core question without a similar (twin) question`); });
+    if (c.unit && c.unit.primary) {
+      // Primary: Core is the word check that unlocks the next lesson – listening and saying the key words
+      if (s.req.filter(q => q.audio && q.type !== 'say').length < 3) errs.push(`section ${s.id}: Primary Core needs 3+ listening questions`);
+      if (s.req.filter(q => q.type === 'say').length < 3) errs.push(`section ${s.id}: Primary Core needs 3+ say-the-word questions`);
+      const more = s.prac.concat(s.adv); const fig2 = more.filter(q => ['label', 'scale', 'grid', 'table', 'graph', 'sim'].includes(q.type) || q.skill === 'Data' || q.skill === 'Figure').length;
+      if (fig2 < 2) errs.push(`section ${s.id}: Practice needs 2+ diagram/data questions (has ${fig2})`);
+      if (!more.some(q => q.type === 'explain')) errs.push(`section ${s.id}: Practice needs a written-reasoning question`);
+      if (!s.vocab || s.vocab.length < 4) errs.push(`section ${s.id}: Primary section needs a word bank (4+ words)`);
+      if (!s.lab || !s.lab.v || !s.lab.h) errs.push(`section ${s.id}: Primary section needs an experiment room (virtual lab and home experiment)`);
+      else [...(s.lab.v.qs || []), ...(s.lab.h.qs || [])].forEach(q => checkQ(q, `section ${s.id} lab`));
+      if (s.lab && s.lab.v) { const V = s.lab.v;
+        if (!['pulse', 'lungs', 'growth', 'germs', 'test', 'sort'].includes(V.kind)) errs.push(`section ${s.id}: unknown virtual lab kind ${V.kind}`);
+        if (V.kind === 'test') (V.conds || []).forEach(c => { if (!(c.val >= 0 && c.val <= V.max)) errs.push(`section ${s.id} lab: ${c.t} value ${c.val} is off the scale (0–${V.max})`); if (Math.abs(c.val / V.step * 2 - Math.round(c.val / V.step * 2)) > 1e-9) errs.push(`section ${s.id} lab: ${c.t} value ${c.val} is not readable on a ${V.step} scale`); });
+        if (V.kind === 'sort') (V.items || []).forEach(it => { if (!(it.g >= 0 && it.g < V.groups.length)) errs.push(`section ${s.id} lab: ${it.t} has no group`); }); }
+    } else {
+      if (fig < 2) errs.push(`section ${s.id}: Core needs 2+ diagram/data questions (has ${fig})`);
+      if (!s.req.some(q => q.type === 'explain')) errs.push(`section ${s.id}: Core needs a written-reasoning question`);
+      s.req.forEach(q => { if (!q.twin && q.type !== 'sim') warn.push(`section ${s.id} ${q.id}: Core question without a similar (twin) question`); });
+    }
     s.adv.forEach(q => { if (!/^\* Advanced\./.test(q.prompt)) errs.push(`section ${s.id} ${q.id}: advanced prompt must start "* Advanced."`); });
     [...s.req, ...s.prac, ...s.adv].forEach(q => checkQ(q, `section ${s.id}`));
     (s.stops || []).forEach(st => { checkQ(st.q, `section ${s.id} stop`); if (!(st.t > 0 && st.t < s.video.dur)) errs.push(`section ${s.id} stop ${st.id}: time outside the clip`); });
@@ -167,7 +184,8 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
 
 // web/content/stage7.json – the stage's units; "ready" when a unit's content has been built
 export function writeIndex() {
-  const T = { 7: [['Introducing Science', 'Enquiry'], ['Measurements', 'Enquiry'], ['Cells', 'Biology'], ['Classifying Living Things', 'Biology'], ['Food Chains and Food Webs', 'Biology'],
+  const T = { 6: [['The Human Body', 'Biology'], ['Materials: Properties and Changes', 'Chemistry'], ['Rocks, the Rock Cycle and Soil', 'Earth and Space'], ['Food Chains and Food Webs', 'Biology'], ['Forces and Electricity', 'Physics'], ['Light and the Solar System', 'Physics']],
+    7: [['Introducing Science', 'Enquiry'], ['Measurements', 'Enquiry'], ['Cells', 'Biology'], ['Classifying Living Things', 'Biology'], ['Food Chains and Food Webs', 'Biology'],
     ['Materials and Their Structure', 'Chemistry'], ['Properties of Materials', 'Chemistry'], ['Acids and Alkalis', 'Chemistry'], ['Chemical Reactions', 'Chemistry'], ['Forces', 'Physics'],
     ['Energy', 'Physics'], ['Electricity', 'Physics'], ['Earth Processes', 'Earth and Space'], ['Earth and Beyond', 'Earth and Space']],
     8: [['Diet and Growth', 'Biology'], ['Human Body Systems', 'Biology'], ['Ecosystems', 'Biology'], ['The Structure of an Atom', 'Chemistry'], ['Mixtures and Solubility', 'Chemistry'],

@@ -8,7 +8,7 @@
   const SCOPE_COUNT = { 4: 12, 10: 5, 40: 1.25 };
   function rng(seedStr) { let h = 2166136261; for (const ch of seedStr) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; }
   function shuffle(arr, seed) { const r = rng(seed), a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
-  const TYPE_VI = { mcq: 'Diagnostic multiple choice', multi: 'Select all that apply', num: 'Calculation', scale: 'Instrument reading', label: 'Label the diagram', order: 'Put in order', match: 'Matching', explain: 'Explain (mark scheme)', grid: 'Classification table', table: 'Data table', graph: 'Plot & read a graph', sim: 'Virtual experiment', short: 'Short answer (typed)', expr: 'Algebra (typed)', cloze: 'Complete the sentences (typed)' };
+  const TYPE_VI = { mcq: 'Diagnostic multiple choice', multi: 'Select all that apply', num: 'Calculation', scale: 'Instrument reading', label: 'Label the diagram', order: 'Put in order', match: 'Matching', explain: 'Explain (mark scheme)', grid: 'Classification table', table: 'Data table', graph: 'Plot & read a graph', sim: 'Virtual experiment', short: 'Short answer (typed)', expr: 'Algebra (typed)', cloze: 'Complete the sentences (typed)', say: 'Say the word' };
   const DIFF = { M: 'Medium', H: 'Hard', VH: 'Very hard' };
   const near = (a, b, tol) => Math.abs(a - b) <= Math.max(tol || 0, 1e-9 * Math.max(1, Math.abs(b)));
   // numbers: plain, decimal comma, fractions (3/4, -1 2/3), standard form (3.2 × 10^5, 3.2e5, 3.2×10⁵), and "x = 4" answers
@@ -150,6 +150,7 @@
         out.frac = q.follow ? (plotFrac * 0.5 + (fOk ? 0.5 : 0)) : plotFrac; out.ok = plotFrac === 1 && fOk;
         if (plotFrac < 1) out.fb.push(`Correct points: ${good}/${want.size}${extra ? `, ${extra} extra point(s)` : ''}. For each row of the table: go along the x-axis to the value, then up to the y value.`); break;
       }
+      case 'say': { out.ok = !!(r && r.ok); out.frac = out.ok ? 1 : 0; out.answered = !!(r && r.tries); break; }
       case 'short': {
         const txt = String(r || ''); if (!txt.trim()) { out.answered = false; out.fb.push('Type your answer in the box.'); break; }
         out.ok = typedOk(txt, q.accept); out.frac = out.ok ? 1 : 0;
@@ -208,6 +209,7 @@
       case 'table': return q.rows.map(r => r.map(c => c && typeof c === 'object' ? `[${numShow(c.ans)}]` : c).join(' | ')).join(' ; ');
       case 'graph': return 'Points: ' + (q.plot || q.pts).map(p => `(${p[0]}, ${p[1]})`).join(' ') + (q.follow ? ' — ' + q.follow.options.find(o => o.ok).t : '');
       case 'short': return plainOf(q.accept);
+      case 'say': return q.word;
       case 'expr': return (q.lhs ? q.lhs + ' = ' : '') + (q.show || q.expr);
       case 'cloze': { let i = 0; return String(q.text).replace(/\{\d+\}/g, () => '[' + plainOf(q.blanks[i++]) + ']'); }
       case 'sim': return '×4 ≈ 12 cells, ×10 ≈ 5 cells, ×40 ≈ 1 cell across the line → higher magnification: cells look bigger, fewer fit across the field of view.';

@@ -20,7 +20,7 @@ with sync_playwright() as p:
     ok(pg.evaluate("typeof Loading.overlay === 'function' && typeof Loading.skeleton === 'function'"), 'U3 Loading helpers are in place')
     signup(pg)
     sw = pg.query_selector('#stageSwitch')
-    ok(sw is not None and len(pg.query_selector_all('#stageSwitch .sw')) == 4 and pg.query_selector('#stageSwitch .sw.on[data-stage="7"]') is not None, 'U4 Dashboard shows the course switcher with Stage 7 current')
+    ok(sw is not None and len(pg.query_selector_all('#stageSwitch .sw')) == 5 and pg.query_selector('#stageSwitch .sw.on[data-stage="7"]') is not None, 'U4 Dashboard shows the course switcher with Stage 7 current')
     ok(pg.query_selector('#stageSwitch .sw.locked[data-stage="19"]') is not None, 'U5 Mathematics Stage 9 shows as locked in the switcher')
     pg.click('#stageSwitch .sw[data-stage="19"]', force=True); pg.wait_for_timeout(500)
     ok(pg.evaluate("Core.STAGE") == 7, 'U6 Clicking the locked course does not switch')

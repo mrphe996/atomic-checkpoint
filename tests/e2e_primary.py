@@ -1,0 +1,96 @@
+"""Primary Science Stage 6: animated lessons, listening and read-aloud word checks, the word bank and the experiment room.
+Run with the default config: `node tools/write-config.mjs`."""
+import os, sys
+from playwright.sync_api import sync_playwright
+BASE = os.environ.get('BASE', 'http://localhost:8765/'); LOG = []
+def ok(c, m): LOG.append(('PASS' if c else 'FAIL') + '  ' + m); print(LOG[-1])
+# a stand-in for the browser's speech recognition: it "hears" whatever window.__heard holds
+FAKE_SR = """window.__heard = 'heart'; window.webkitSpeechRecognition = class { start() { setTimeout(() => { const alt = [{ transcript: window.__heard }]; alt.length = 1; this.onresult && this.onresult({ results: [alt] }); this.onend && this.onend(); }, 30); } stop() {} }; window.SpeechRecognition = window.webkitSpeechRecognition;"""
+with sync_playwright() as p:
+    b = p.chromium.launch(executable_path='/usr/bin/google-chrome'); pg = b.new_page(reduced_motion='reduce', viewport={'width': 1300, 'height': 900}); errs = []
+    pg.on('pageerror', lambda e: errs.append(str(e)))
+    pg.add_init_script(FAKE_SR)
+    pg.goto(BASE + '?reset=1'); pg.wait_for_selector('#heroStart')
+    pg.evaluate("location.hash='signup'"); pg.wait_for_timeout(300)
+    pg.fill('#suName', 'Pia Primary'); pg.fill('#suEmail', 'pia@example.com'); pg.fill('#suPw', 'password123'); pg.click('#suNext1'); pg.wait_for_selector('#suYear')
+    pg.select_option('#suYear', index=3); pg.select_option('#suGrade', index=2); pg.click('#suNext2'); pg.wait_for_selector('#suCountry')
+    pg.select_option('#suCountry', 'SG'); pg.wait_for_timeout(200); pg.select_option('#suSchool', index=1); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home'")
+    ok(pg.query_selector('#stageSwitch .sw[data-stage="6"]') is not None, 'P1 The course switcher offers Primary Science Stage 6')
+    pg.evaluate("location.hash='checkout-6'"); pg.wait_for_timeout(600); pg.click('#payBtn'); pg.wait_for_function("Core.STAGE===6", timeout=10000); pg.wait_for_timeout(600)
+    ok(pg.evaluate("Core.IS_PRIMARY && Core.unitCount()===6 && Core.INDEX.units.every(u => u.ready)"), 'P2 Stage 6 has 6 units, all open')
+    s = pg.evaluate("Core.C.sections.map(s => ({id: s.id, req: s.req.length, say: s.req.filter(q => q.type==='say').length, aud: s.req.filter(q => q.audio && q.type!=='say').length, lab: !!s.lab, vocab: (s.vocab||[]).length, stops: s.stops.length, src: s.video.src}))")
+    ok(len(s) == 4 and all(x['req'] == 8 and x['say'] == 4 and x['aud'] == 4 and x['lab'] and x['vocab'] >= 7 and x['stops'] >= 2 for x in s), 'P3 Every topic: video with pause questions, 4 listening + 4 say-the-word Core, word bank and experiment room')
+    st = pg.evaluate("fetch(Core.C.sections[0].video.src, {method:'HEAD'}).then(r => r.status)"); ok(st == 200, 'P4 The animated lesson video is served')
+    pg.evaluate("location.hash='u-1'"); pg.wait_for_timeout(800)
+    ok('Listen' in pg.inner_text('#topic-1-1') and 'Experiment' in pg.inner_text('#topic-1-1'), 'P5 The unit page shows Watch, Listen & say and Experiment for each topic')
+    pg.evaluate("location.hash='ex-1-1'"); pg.wait_for_timeout(600)
+    ok(pg.query_selector('#wordBank') is None and 'locked' in pg.inner_text('#main').lower(), 'P6 Practice is locked until the video is watched')
+    pg.evaluate("(()=>{const st=Core.cur(); const s=Core.C.sections[0]; const vs=Core.vstate(st,s.id); vs.completed=true; s.stops.forEach(x=>vs.stops[x.id]={done:true,tries:1}); Core.persist();})()")
+    pg.evaluate("location.hash='ex-1-1'"); pg.wait_for_timeout(600); pg.evaluate("location.hash='home'"); pg.wait_for_timeout(300); pg.evaluate("location.hash='ex-1-1'"); pg.wait_for_timeout(800)
+    ok(pg.query_selector('#wordBank') is not None and len(pg.query_selector_all('#wordBank .wcard')) == 9, 'P7 The word bank shows the 9 words of 1.1 with sound')
+    ok(pg.query_selector('.audiobar .listen') is not None, 'P8 Listening questions have Listen and Slowly buttons')
+    ok(pg.evaluate("Core.secLock(Core.cur(), Core.C.sections[1]) !== null"), 'P9 Lesson 1.2 is locked before the word checks are done')
+    # answer the 4 listening questions
+    for i in range(4):
+        q = pg.evaluate(f"Core.C.sections[0].req[{i}]")
+        if q['type'] == 'mcq':
+            right = [o['t'] for o in q['options'] if o['ok']][0]; pg.click(f'.qcard .opt span:text-is("{right}")')
+        else: pg.fill('.qcard input[type=text]', q['accept'][0])
+        pg.click('.qcard .btn.primary'); pg.wait_for_timeout(300); pg.click('#nextQ'); pg.wait_for_timeout(500)
+    ok(pg.evaluate("[0,1,2,3].every(i => (Core.cur().items[Core.C.sections[0].req[i].id]||{}).ok)"), 'P10 The four listening questions can be answered and are marked')
+    # say-the-word: right word first time
+    w = pg.evaluate("Core.C.sections[0].req[4].word"); pg.evaluate(f"window.__heard = 'my {w}'")
+    ok(pg.query_selector('.micbtn') is not None and pg.inner_text('.sayword') == w, f'P11 Say-the-word shows the word “{w}” and a microphone button')
+    pg.click('.micbtn'); pg.wait_for_timeout(400)
+    ok(pg.evaluate("(Core.cur().items[Core.C.sections[0].req[4].id]||{}).ok === true") and 'Perfect' in pg.inner_text('.qcard .fb'), 'P12 Saying the word correctly passes it')
+    # wrong three times: the teacher reads it slowly, then the learner may carry on
+    pg.click('#nextQ'); pg.wait_for_timeout(500); pg.evaluate("window.__heard = 'banana'")
+    for _ in range(3): pg.click('.micbtn'); pg.wait_for_timeout(400)
+    r = pg.evaluate("Core.cur().items[Core.C.sections[0].req[5].id]")
+    ok(r['done'] and not r['ok'] and r.get('assisted') and r['tries'] == 3 and 'Listen' in pg.inner_text('.qcard .fb'), 'P13 After 3 tries the word is read slowly and the learner can carry on (marked as helped)')
+    # no speech recognition: listen and type instead
+    pg.evaluate("delete window.webkitSpeechRecognition; delete window.SpeechRecognition"); pg.click('#nextQ'); pg.wait_for_timeout(500)
+    w7 = pg.evaluate("Core.C.sections[0].req[6].word")
+    ok(pg.query_selector('.micbtn') is None and pg.query_selector('.qcard input[type=text]') is not None, 'P14 Without speech recognition, the learner listens and types the word')
+    pg.fill('.qcard input[type=text]', w7); pg.click('.qcard .numrow .btn'); pg.wait_for_timeout(300)
+    ok(pg.evaluate("(Core.cur().items[Core.C.sections[0].req[6].id]||{}).ok === true"), 'P15 Typing the word correctly passes it')
+    pg.click('#nextQ'); pg.wait_for_timeout(500); w8 = pg.evaluate("Core.C.sections[0].req[7].word"); pg.fill('.qcard input[type=text]', w8); pg.click('.qcard .numrow .btn'); pg.wait_for_timeout(400)
+    ok(pg.evaluate("Core.secLock(Core.cur(), Core.C.sections[1]) === null"), 'P16 Finishing the word checks unlocks lesson 1.2')
+    ok(pg.evaluate("Primary.heardOk('fertilisation', ['fertilization']) && Primary.heardOk('breathing rate', ['my breathing rate']) && !Primary.heardOk('heart', ['hat'])"), 'P17 Speech matching accepts US spelling and extra words, rejects a different word')
+    # experiment room
+    pg.evaluate("location.hash='lab-1-2'"); pg.wait_for_timeout(800)
+    ok(pg.query_selector('.labrange') is not None, 'P18 The 1.2 virtual lab has a working lung model')
+    pg.eval_on_selector('.labrange', "e => { e.value = 100; e.dispatchEvent(new Event('input')); e.value = 0; e.dispatchEvent(new Event('input')); }"); pg.wait_for_timeout(400)
+    ok(len(pg.query_selector_all('.labqs .qcard')) == 3, 'P19 Using the model opens the lab questions')
+    pg.evaluate("location.hash='lab-1-4'"); pg.wait_for_timeout(800)
+    pg.evaluate("(()=>{const st=Core.cur(); Core.C.sections.forEach(s=>{const vs=Core.vstate(st,s.id); vs.completed=true; s.stops.forEach(x=>vs.stops[x.id]={done:true,tries:1}); s.req.forEach(q=>st.items[q.id]={done:true,ok:true,tries:1});}); Core.persist();})()")
+    pg.evaluate("location.hash='home'"); pg.wait_for_timeout(300); pg.evaluate("location.hash='lab-1-4'"); pg.wait_for_timeout(800)
+    for k in range(3):
+        pg.click(f'.labcard .btnrow .chip >> nth={k}'); pg.wait_for_timeout(1700)
+        n = pg.inner_text('.labcard .labcount'); pg.fill('.labcard .numrow input', n); pg.click('.labcard .numrow .btn'); pg.wait_for_timeout(300)
+    ok(len(pg.query_selector_all('.labtable tr')) == 4 and len(pg.query_selector_all('.labqs .qcard')) == 3, 'P20 Glitter lab: three ways of washing are recorded and the questions open')
+    pg.click('.labroom [role=tab] >> nth=1'); pg.wait_for_timeout(500)
+    ins = pg.query_selector_all('.labtable input'); [i.fill('40') or i.dispatch_event('change') for i in ins]; pg.wait_for_timeout(300)
+    ok('Results recorded' in pg.inner_text('.labroom') and len(pg.query_selector_all('.labqs .qcard')) == 1, 'P21 Home experiment: results are recorded and its question opens')
+    # the reading-a-scale lab (3.1 crystal sizes): run each test, read the scale and record it
+    pg.evaluate("location.hash='lab-3-1'"); pg.wait_for_timeout(1200)
+    vals = pg.evaluate("Core.C.sections.find(s => s.id==='3.1').lab.v.conds.map(c => c.val)")
+    for k, v in enumerate(vals):
+        pg.click(f'.labcard .btnrow .chip >> nth={k}'); pg.wait_for_timeout(1400)
+        if k == 0: pg.fill('.labcard .numrow input', str(v + 30)); pg.click('.labcard .numrow .btn'); pg.wait_for_timeout(200); ok('Not quite' in pg.inner_text('.labcard'), 'P23 Scale lab: a wrong reading is caught')
+        pg.fill('.labcard .numrow input', str(v)); pg.click('.labcard .numrow .btn'); pg.wait_for_timeout(250)
+    ok(len(pg.query_selector_all('.labtable tr')) == 4 and len(pg.query_selector_all('.labbars .lb')) == 3 and len(pg.query_selector_all('.labqs .qcard')) == 2, 'P24 Scale lab: readings fill the table and bar chart, and the questions open')
+    # the sorting lab (4.1 who is who in the food web)
+    pg.evaluate("location.hash='lab-4-1'"); pg.wait_for_timeout(1200)
+    items = pg.evaluate("Core.C.sections.find(s => s.id==='4.1').lab.v.items.map(i => [i.t, i.g])")
+    t0, g0 = items[0]; wrong = (g0 + 1) % 3
+    pg.click(f'.sortcard:has-text("{t0}")'); pg.click(f'.sortbin >> nth={wrong}'); pg.wait_for_timeout(150)
+    ok('Not “' in pg.inner_text('.labcard'), 'P25 Sorting lab: a card put in the wrong group is explained')
+    for t, g in items:
+        pg.click(f'.sortpool .sortcard:has-text("{t}")'); pg.click(f'.sortbin >> nth={g}'); pg.wait_for_timeout(80)
+    ok('All sorted correctly' in pg.inner_text('.labcard') and len(pg.query_selector_all('.labqs .qcard')) == 2, 'P26 Sorting lab: when every card is sorted the questions open')
+    ok(pg.evaluate("Core.INDEX.units.length===6") and pg.evaluate("fetch('media/s6/w/igneous-rock.mp3', {method:'HEAD'}).then(r => r.status)") == 200, 'P27 Unit 3 word audio is served')
+    # worksheet prints practice questions (not the speaking checks)
+    pg.evaluate("location.hash='ws-1-1'"); pg.wait_for_timeout(900)
+    ok(not errs, 'P22 No page errors ' + '; '.join(errs[:3])); b.close()
+f = [l for l in LOG if l.startswith('FAIL')]; print(f'{len(LOG)-len(f)}/{len(LOG)} passed'); sys.exit(1 if f else 0)

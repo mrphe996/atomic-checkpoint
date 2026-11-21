@@ -227,10 +227,12 @@
     // o: {rec, save(rec), seed, onDone(rec), mode:'stop'|'ex'}
     const rec = o.rec || {}; rec.tries = rec.tries || 0;
     host.innerHTML = '';
+    if (q.type === 'say' && window.Primary) return window.Primary.say(q, host, o, rec);
     const head = el('div', { class: 'qhead' }, o.nested ? null : el('code', {}, q.id),
-      el('span', { class: 'tag t-' + q.type }, TYPE_VI[q.type] || q.type), el('span', { class: 'tag d-' + q.diff }, DIFF[q.diff] || q.diff), el('span', { class: 'tag' }, q.obj),
+      el('span', { class: 'tag t-' + q.type }, q.tag || TYPE_VI[q.type] || q.type), el('span', { class: 'tag d-' + q.diff }, DIFF[q.diff] || q.diff), el('span', { class: 'tag' }, q.obj),
       q.adv ? el('span', { class: 'tag adv' }, '* Advanced') : null);
     host.append(head, el('p', { class: 'qp' }, q.prompt.replace(/^\* Advanced\.\s*/, '')));
+    if (q.audio && window.Primary) host.append(window.Primary.audioBar(q.audio, q.slow));
     if (q.src) host.append(el('p', { class: 'src' }, 'Source: ', el('a', { href: q.src.url, target: '_blank', rel: 'noopener' }, q.src.name)));
     const body = el('div'); host.append(body);
     const api = renderBody(q, body, { seed: o.seed, resp: rec.resp, onChange: r => { rec.resp = r; } });

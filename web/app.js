@@ -21,7 +21,8 @@
     return { 1: { o: 'M10 3h4 M11 3v8 M13 3v8 M9 11h6 M12 11v3 M5 21h14 M8 21a7 7 0 0 1 11-9', a: dot(16, 16.5, 2.2), c: '#F3BF69', bg: '#FFF4D6' }, 2: { o: 'M3 16 16 3l5 5L8 21z M7 12l2 2 M10 9l2 2 M13 6l2 2', a: 'M16 3l5 5-3 3-5-5z', c: '#F3BF69', bg: '#FFF4D6' }, 3: { o: 'M6 4h12a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z M11 9h6v6h-6z', a: dot(7.5, 9, 2.2) + ' M11 9h6v6h-6z', c: '#8E6CC9', bg: '#E8F7EA' }, 4: { o: 'M12 19v-6 M12 13 6 8 M12 13l6-5', a: dot(6, 6, 2.2) + dot(18, 6, 2.2) + dot(12, 20, 2.2), c: '#3FA34D', bg: '#E8F7EA' }, 5: { o: 'M4 20c0-9 7-16 16-16 0 9-7 16-16 16z M4 20l9-9', a: 'M4 20c0-9 7-16 16-16 0 9-7 16-16 16z', c: '#BFE6C3', bg: '#E8F7EA' }, 6: { o: 'M3 3h18v18H3z', a: grid, c: '#2F6FD6', bg: '#E6EEFA' }, 7: { o: 'M12 3l8 4.5v9L12 21l-8-4.5v-9z M12 12l8-4.5 M12 12v9 M12 12 4 7.5', a: 'M12 3l8 4.5-8 4.5-8-4.5z', c: '#F3BF69', bg: '#FFF4D6' }, 8: { o: 'M6 3h12 M8 3v6l-4 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-4-9V3', a: 'M5.6 14.5h12.8l1.5 3.5a1.4 1.4 0 0 1-1.3 2H5.4a1.4 1.4 0 0 1-1.3-2z', c: '#F7A8A8', bg: '#FDECEC' }, 9: { o: 'M9 3h6 M10 3v5L5 19a1.5 1.5 0 0 0 1.4 2h11.2a1.5 1.5 0 0 0 1.4-2L14 8V3', a: dot(11, 16, 1.8) + dot(14.5, 13.5, 1.3) + dot(13.5, 18, 1.1), c: '#F08A4B', bg: '#FFF1E0' }, 10: { o: 'M3 13h8v7H3z M13 16.5h8 M18 13.5l3 3-3 3', a: 'M3 13h8v7H3z', c: '#9CC0F0', bg: '#E6EEFA' }, 11: { o: 'M12 2v3 M12 19v3 M2 12h3 M19 12h3 M5 5l2 2 M17 17l2 2 M5 19l2-2 M17 7l2-2 ' + dot(12, 12, 4.5), a: dot(12, 12, 4.5), c: '#F3BF69', bg: '#FFF4D6' }, 12: { o: 'M13 2 4 14h7l-1 8 9-12h-7z', a: 'M13 2 4 14h7l-1 8 9-12h-7z', c: '#F3BF69', bg: '#FFF4D6' }, 13: { o: 'M2 20h20 M4 20l6-10h4l6 10 M10 7 9 4 M12 7V3 M14 7l1-3', a: 'M9 13.5h6L13.6 11h-3.2z', c: '#F08A4B', bg: '#FFF1E0' }, 14: { o: dot(12, 12, 5) + ' M3 15c1.5 2.5 16.5-2 18-6 M3 15c-1-2 2-4 4.5-5 M21 9c1 2-1.5 3.5-4 4.5', a: dot(12, 12, 5), c: '#CFE6FF', bg: '#E6EEFA' } };
   })();
   const MATH_IC = ['', '√', 'x²', '%', '=', '∠', '📊', '◯', '½', 'Σ', '↗', '∶', '🎲', '⇄', '▣', '📈'];
-  const unitIcon = n => { if (Core.IS_MATHS || !IC[n]) return el('span', { class: 'ic mic', 'aria-hidden': 'true' }, MATH_IC[n] || String(n)); const i = IC[n]; const sp = el('span', { class: 'ic', style: `background:${i.bg}`, 'aria-hidden': 'true' }); sp.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24"><path d="${i.a}" fill="${i.c}"/><path d="${i.o}" fill="none" stroke="#013A8C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>`; return sp; };
+  const P6_IC = { 1: '🫀', 2: '⚗️', 3: '🪨', 4: '🌿', 5: '⚡', 6: '🔭' };
+  const unitIcon = n => { if (Core.IS_PRIMARY) return el('span', { class: 'ic mic', 'aria-hidden': 'true' }, P6_IC[n] || String(n)); if (Core.IS_MATHS || !IC[n]) return el('span', { class: 'ic mic', 'aria-hidden': 'true' }, MATH_IC[n] || String(n)); const i = IC[n]; const sp = el('span', { class: 'ic', style: `background:${i.bg}`, 'aria-hidden': 'true' }); sp.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24"><path d="${i.a}" fill="${i.c}"/><path d="${i.o}" fill="none" stroke="#013A8C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>`; return sp; };
   const STRAND = { 1: 'Enquiry', 2: 'Enquiry', 3: 'Biology', 4: 'Biology', 5: 'Biology', 6: 'Chemistry', 7: 'Chemistry', 8: 'Chemistry', 9: 'Chemistry', 10: 'Physics', 11: 'Physics', 12: 'Physics', 13: 'Earth and Space', 14: 'Earth and Space' };
 
   /* ---------- small UI helpers ---------- */
@@ -65,7 +66,7 @@
   function shell(opts) {
     const r = location.hash.slice(1) || 'home'; const app = document.getElementById('app'); app.innerHTML = '';
     const me = Core.S.me;
-    const area = r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || /^u-\d+$/.test(r) || /^stage-\d+$/.test(r) || /^checkout-\d+$/.test(r) || r === 'map' || r === 'level' ? 'course' : r === 'bank' || r === 'topic' || r === 'drill' ? 'bank' : r === 'test' || r === 'tests' || r === 'result' || r === 'remedial' || r === 'final' || /^f(x|res)-\d+$/.test(r) ? 'test' : r === 'profile' || r === 'cert' ? 'profile' : r === 'board' ? 'board' : r === 'home' ? 'home' : r;
+    const area = r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || /^stage-\d+$/.test(r) || /^checkout-\d+$/.test(r) || r === 'map' || r === 'level' ? 'course' : r === 'bank' || r === 'topic' || r === 'drill' ? 'bank' : r === 'test' || r === 'tests' || r === 'result' || r === 'remedial' || r === 'final' || /^f(x|res)-\d+$/.test(r) ? 'test' : r === 'profile' || r === 'cert' ? 'profile' : r === 'board' ? 'board' : r === 'home' ? 'home' : r;
     const right = el('span', { class: 'topright' });
     let nav;
     if (st) {
@@ -108,7 +109,7 @@
     const foot = el('footer', { class: 'foot' }, el('div', { class: 'in' }, el('img', { src: 'atomic_logo.png', alt: 'Atomic — Quality Learning, Brighter Future.' }),
       el('nav', { class: 'footnav', 'aria-label': 'Legal and help' }, el('a', { href: '#privacy' }, 'Privacy'), el('a', { href: '#terms' }, 'Terms'), el('a', { href: '#cookies' }, 'Cookies'), el('a', { href: '#help' }, 'Help & contact'), el('a', { href: '#verify' }, 'Verify a certificate')),
       el('span', { class: 'tag2' }, el('b', {}, 'ATOMIC EDUCATION'), ' ✦ Quality Learning, Brighter Future. · Written by the Atomic teaching team'),
-      el('p', { class: 'muted disclaimer' }, 'Atomic courses are written by Atomic Education and aligned to Cambridge curriculum frameworks (Lower Secondary Science 0893, Mathematics 0862). Checkpoint-format papers are written by Atomic – they are not Cambridge papers. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.')));
+      el('p', { class: 'muted disclaimer' }, 'Atomic courses are written by Atomic Education and aligned to Cambridge curriculum frameworks (Primary Science 0097, Lower Secondary Science 0893, Mathematics 0862). Checkpoint-format papers are written by Atomic – they are not Cambridge papers. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.')));
     app.append(...[demoBar, header, sub, wrap, foot].filter(Boolean));
     lastXp = null;
   }
@@ -135,7 +136,7 @@
       const link = (r, label, ok) => el('a', { href: '#' + r, class: route === r ? 'on' : '' }, el('span', { class: 'st' + (ok ? ' ok' : '') }, ok ? '✓' : ''), label);
       if (lock && lock.paywall) sn.append(el('div', { class: 'why' }, lock.reason));
       else if (lock) sn.append(el('div', { class: 'why' }, lock.reason), link('ws-' + R(s.id), 'Worksheet', (ss.ws || []).includes(s.id)));
-      else sn.append(link('v-' + R(s.id), s.lesson ? 'Read' : 'Watch', vd), link('ex-' + R(s.id), `Practise · ${s.req.length - rl}/${s.req.length} Core`, rl === 0), link('ws-' + R(s.id), 'Worksheet', (ss.ws || []).includes(s.id)));
+      else sn.append(link('v-' + R(s.id), s.lesson ? 'Read' : 'Watch', vd), link('ex-' + R(s.id), `Practise · ${s.req.length - rl}/${s.req.length} Core`, rl === 0), s.lab ? link('lab-' + R(s.id), '🧪 Experiment', !!((ss.labs || {})[s.id] || {}).v && !!(((ss.labs || {})[s.id] || {}).v || {}).done) : null, link('ws-' + R(s.id), 'Worksheet', (ss.ws || []).includes(s.id)));
     });
     const passed = !!(st.results || {})[Core.unitId(n)];
     sn.append(el('a', { href: here ? '#test' : '#u-' + n, class: route === 'test' && here ? 'on' : '', onclick: here ? null : e => { e.preventDefault(); Core.switchUnit(n).then(() => go('test')); } }, el('span', { class: 'st' + (passed ? ' ok' : '') }, passed ? '✓' : '★'), `Unit Test ${n} · 45 min`));
@@ -146,11 +147,11 @@
     const route = location.hash.slice(1); const wrap = el('div', { style: 'display:flex;flex-direction:column;gap:12px' });
     UI.tocOpen = UI.tocOpen || {}; if (UI.tocUnit !== Core.UNO) { UI.tocOpen[Core.UNO] = true; UI.tocUnit = Core.UNO; }
     wrap.append(el('div', { class: 'card lvl subjlist' }, el('span', { class: 'h' }, 'SUBJECTS'),
-      el('a', { class: 'it' + (Core.IS_MATHS ? '' : ' on'), href: '#courses-science' }, el('span', {}, '🔬 Science'), el('small', { class: 'sl' }, 'Lower Secondary')),
+      el('a', { class: 'it' + (Core.IS_MATHS ? '' : ' on'), href: '#courses-science' }, el('span', {}, '🔬 Science'), el('small', { class: 'sl' }, 'Stages 6–9')),
       el('a', { class: 'it' + (Core.IS_MATHS ? ' on' : ''), href: '#courses-maths', id: 'tocMaths' }, el('span', {}, '📐 Mathematics'), el('small', { class: 'sl' }, 'Stage 9')),
       el('a', { class: 'it', href: '#courses', style: 'font-size:13.5px' }, 'IGCSE & AS / A Level →')));
     wrap.append(el('div', { class: 'card lvl stagelist', role: 'group', 'aria-label': 'Your courses' }, el('span', { class: 'h' }, 'YOUR COURSES'),
-      ...[7, 8, 9, 19].map(g => { const mine = g === Core.STAGE, lk = !mine && Core.stageLocked(g), en = mine || Core.enrolled(g);
+      ...[6, 7, 8, 9, 19].map(g => { const mine = g === Core.STAGE, lk = !mine && Core.stageLocked(g), en = mine || Core.enrolled(g);
         const name = el('span', {}, el('b', { class: 'cam' }, 'Cambridge'), ' ' + (g >= 10 ? '📐 Maths Stage ' + (g - 10) : 'Stage ' + g));
         if (lk) return el('span', { class: 'it lockedit', title: 'Coming soon', 'aria-disabled': 'true' }, name, el('small', { class: 'lkd' }, '🔒 Soon'));
         return el('a', { class: 'it' + (mine ? ' on' : ''), href: '#stage-' + g, title: mine ? 'Open now' : en ? 'Enrolled – open this course' : 'Enrol to open', onclick: mine || !en ? null : ev => { ev.preventDefault(); pickStage(g, ev.currentTarget); } },
@@ -181,7 +182,7 @@
   /* where am I / what remains / next button (shown on every learning screen) */
   // dotted page header shared by every student page (the "Home 01" look)
   /* ---------- course switcher: Science Stages 7–9 and Mathematics Stage 9 ---------- */
-  const stagePct = g => Math.round(Object.keys((st && st.results) || {}).filter(k => k.startsWith(`stage${g}-unit`)).length / (g >= 10 ? 15 : 14) * 100);
+  const stagePct = g => Math.round(Object.keys((st && st.results) || {}).filter(k => k.startsWith(`stage${g}-unit`)).length / (g >= 10 ? 15 : g <= 6 ? 6 : 14) * 100);
   const stageShort = g => (g >= 10 ? `Stage ${g - 10}` : `Stage ${g}`);
   function stageSoon(g) {
     const m = $main();
@@ -201,13 +202,13 @@
     if (/^stage-\d+$/.test(r)) go('stage-' + g); else if (TOC_ROUTES(r) && r !== 'map') go('u-' + Core.UNO); else render();
   }
   function stageSwitcher() {
-    const groups = [['Science', '🔬', [7, 8, 9]], ['Mathematics', '📐', [19]]];
+    const groups = [['Primary Science', '🌱', [6]], ['Lower Secondary Science', '🔬', [7, 8, 9]], ['Mathematics', '📐', [19]]];
     const btn = g => {
       const mine = g === Core.STAGE, lk = !mine && Core.stageLocked(g), en = mine || Core.enrolled(g), p = en ? stagePct(g) : 0, math = g >= 10;
       const b = el('button', { type: 'button', class: 'sw' + (mine ? ' on' : '') + (lk ? ' locked' : en ? '' : ' enrol') + (math ? ' math' : ''), 'data-stage': g, 'aria-pressed': String(mine), 'aria-disabled': lk ? 'true' : null,
         title: lk ? 'Coming soon' : mine ? 'You are studying this course' : en ? 'Switch to this course' : 'Enrol to open',
         onclick: () => pickStage(g, b) },
-        el('span', { class: 'swn' }, String(math ? g - 10 : g)), el('span', { class: 'swt' }, el('b', {}, stageShort(g)), el('small', {}, lk ? (math ? 'Mathematics' : 'Science') : mine ? 'Studying now' : en ? `${p}% complete` : 'Not enrolled')),
+        el('span', { class: 'swn' }, String(math ? g - 10 : g)), el('span', { class: 'swt' }, el('b', {}, stageShort(g)), el('small', {}, lk ? (math ? 'Mathematics' : 'Science') : g <= 6 && !mine && !en ? 'New · Primary' : mine ? 'Studying now' : en ? `${p}% complete` : 'Not enrolled')),
         lk ? el('span', { class: 'swtag' }, '🔒 Soon') : en ? el('span', { class: 'swp', style: `--p:${p}`, 'data-p': p + '%', 'aria-hidden': 'true' }) : el('span', { class: 'swtag' }, 'Enrol'));
       return b;
     };
@@ -377,8 +378,9 @@
       const vlen = s.lesson ? `about ${Math.max(5, Math.round(s.video.dur / 60))} min · ${s.stops.length} check questions` : `${fmt(s.video.dur)} · ${s.stops.length} pause questions`;
       const tiles = el('div', { class: 'u4tiles' },
         tile(vd ? 'ok' : ansStops ? 'go' : '', s.lesson ? '📖' : '▶', s.lesson ? 'Read the lesson' : 'Watch', vd ? vlen + ' ✓' : ansStops ? `${ansStops} of ${s.stops.length} pauses · ${fmt(vs.pos || 0)}` : vlen, '#v-' + R(s.id), !!lock),
-        tile(reqDone === 8 ? 'ok' : reqDone || pracDone ? 'go' : '', reqDone === 8 ? '✓' : '✎', 'Practise', `${pracDone}/30 · ${reqDone}/8 Core`, '#ex-' + R(s.id), !!lock || !vd, reqDone && reqDone < 8 ? el('span', { class: 'u4mini' }, el('i', { style: `width:${reqDone / 8 * 100}%` })) : null),
-        tile(st.ws.includes(s.id) ? 'ok' : '', '🖨', 'Worksheet', st.ws.includes(s.id) ? 'Printed' : 'Print only', '#ws-' + R(s.id), !!lock));
+        tile(reqDone === 8 ? 'ok' : reqDone || pracDone ? 'go' : '', reqDone === 8 ? '✓' : s.vocab ? '🎤' : '✎', s.vocab ? 'Listen, say & practise' : 'Practise', `${pracDone}/30 · ${reqDone}/8 Core`, '#ex-' + R(s.id), !!lock || !vd, reqDone && reqDone < 8 ? el('span', { class: 'u4mini' }, el('i', { style: `width:${reqDone / 8 * 100}%` })) : null),
+        s.lab ? (() => { const L = (st.labs || {})[s.id] || {}; const vdn = !!(L.v || {}).done, hdn = !!(L.h || {}).done; return tile(vdn && hdn ? 'ok' : vdn || hdn ? 'go' : '', '🧪', 'Experiment', vdn && hdn ? 'Lab + home ✓' : vdn ? 'Lab ✓ · try it at home' : 'Virtual lab + at home', '#lab-' + R(s.id), !!lock); })()
+          : tile(st.ws.includes(s.id) ? 'ok' : '', '🖨', 'Worksheet', st.ws.includes(s.id) ? 'Printed' : 'Print only', '#ws-' + R(s.id), !!lock));
       const pill = { lock: ['lock', '🔒 Locked'], done: ['ok', 'Completed'], go: ['go', 'In progress'], new: ['no', 'Not started'] }[state];
       const btn = lock ? (lock.paywall ? el('a', { class: 'btn small gold', href: '#' + lock.route }, lock.guest ? 'Sign up free' : 'See plans') : null)
         : done ? el('a', { class: 'btn small ghost', href: '#v-' + R(s.id) }, `Review ${s.id}`)
@@ -412,7 +414,7 @@
     const meta = Core.INDEX.units.find(u => u.n === Core.UNO) || {}; const art = window.UnitArt ? UnitArt(Core.STAGE === 7 ? Core.UNO : 0, meta.strand) : { svg: '', tag: '' };
     const nobj = Object.keys(C.objectives).length, sec = Object.keys(C.objectives).filter(objSecure).length, pct = unitPct();
     const studied = Core.unitSeconds(Core.UNO);
-    const crumbs4 = el('nav', { class: 'u4crumbs', 'aria-label': 'Breadcrumb' }, el('a', { href: '#home' }, 'Dashboard'), el('span', {}, '›'), el('a', { href: '#level' }, 'Cambridge Lower Secondary'), el('span', {}, '›'),
+    const crumbs4 = el('nav', { class: 'u4crumbs', 'aria-label': 'Breadcrumb' }, el('a', { href: '#home' }, 'Dashboard'), el('span', {}, '›'), el('a', { href: '#level' }, 'Cambridge ' + Core.levelName(Core.STAGE)), el('span', {}, '›'),
       el('a', { href: `#stage-${Core.STAGE}` }, el('b', { class: 'cam' }, 'Cambridge'), ` ${Core.stageName(Core.STAGE)}`), el('span', {}, '›'), el('a', { href: '#u-' + Core.UNO, 'aria-current': 'page' }, el('b', {}, `Unit ${Core.UNO} · ${C.unit.title}`)));
     const heroS = el('section', { class: 'u4hero' }, el('div', { class: 'u4hero-in' },
       el('div', {}, crumbs4,
@@ -428,7 +430,7 @@
         el('div', { class: 'float' }, el('i', {}, Core.passed(st) ? '🏆' : '▶'), el('div', {}, el('b', {}, Core.passed(st) ? 'Unit passed' : 'Next up'), nx.label)))));
     document.getElementById('wrap').before(heroS);
     m.append(tocBtn(), el('div', { class: 'u4head' }, el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, `Cambridge ${Core.stageName(Core.STAGE)} · Unit ${Core.UNO}`), el('h2', {}, 'Your learning path')),
-      el('div', { class: 'u4steps' }, el('span', {}, '1 Watch'), el('span', {}, '2 Practise'), el('span', {}, '3 Worksheet'), el('span', {}, '4 Unit Test'))), learningPath(), examBlock());
+      el('div', { class: 'u4steps' }, ...(Core.IS_PRIMARY ? ['1 Watch', '2 Listen & say', '3 Experiment', '4 Unit Test'] : ['1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test']).map(t => el('span', {}, t)))), learningPath(), examBlock());
     m.append(el('div', { class: 'u4two' },
       el('section', { class: 'card' }, el('h2', { style: 'margin:0;font-size:22px' }, 'What you will learn'), el('span', { class: 'muted' }, `${sec} of ${nobj} secure`),
         el('ul', { class: 'u4objs objs' }, ...Object.entries(C.objectives).map(([k, o]) => el('li', { class: objSecure(k) ? 'ok' : '' }, o.t)))),
@@ -448,7 +450,7 @@
     const bumpXp = () => { const e = document.getElementById('lessonXp'); if (e) e.textContent = Core.xp(st) - xp0; xpTick(); };
     st.last = { route: 'v-' + R(sid) }; Core.persist();
     const vs = Core.vstate(st, sid); const review = () => Core.videoDone(st, s);
-    const v = el('video', { playsinline: true, preload: 'auto', 'aria-label': `Lesson ${s.id} video` }); activeVideo = v;
+    const v = el('video', { playsinline: true, preload: 'auto', poster: s.video.poster || null, 'aria-label': `Lesson ${s.id} video` }); activeVideo = v;
     v.addEventListener('play', () => { if (!v._started) { v._started = true; Backend.track('video_start', { learner: st.id, unit: Core.UNIT, sec: sid }); } });
     const player = el('div', { class: 'player' }, v);
     const big = el('button', { class: 'bigplay', type: 'button', 'aria-label': 'Play lesson' }, svgI(I.play, 34, '#1C2A3A', 0)); big.querySelector('path').setAttribute('fill', '#1C2A3A'); player.append(big);
@@ -517,7 +519,7 @@
       if (next()) return; if (!vs.completed) { vs.completed = true; Core.persist(); bumpXp(); Backend.track('video_complete', { learner: st.id, unit: Core.UNIT, sec: sid }); }
       panel.innerHTML = ''; panel.append(el('section', { class: 'card done' }, el('h3', {}, `✓ Lesson ${s.id} complete`),
         el('p', { style: 'margin:0 0 10px' }, `Next: 30 practice questions (8 Core) for section ${s.id}. You can now skip freely through the video to revise.`),
-        el('button', { class: 'btn gold big shine', type: 'button', onclick: () => go('ex-' + R(sid)) }, `Practise ${s.id}`, el('span', { class: 'arr' }, '→'))));
+        el('div', { class: 'btnrow' }, el('button', { class: 'btn gold big shine', type: 'button', onclick: () => go('ex-' + R(sid)) }, `Practise ${s.id}`, el('span', { class: 'arr' }, '→')), s.lab ? el('a', { class: 'btn big', href: '#lab-' + R(sid) }, '🧪 Experiment room') : null)));
       refreshToc(); drawSide();
     }
     const togglePlay = () => { if (openStop) { panel.querySelector('.stop') && panel.querySelector('.stop').classList.add('pulse'); return; } if (v.paused) v.play().catch(() => { }); else v.pause(); };
@@ -604,6 +606,20 @@
   }
 
   /* ---------- exercises (question card + solution panel) ---------- */
+  /* ---------- experiment room (Primary): a virtual lab and an experiment to try at home ---------- */
+  let labStop = null;
+  function viewLab(sid) {
+    const s = Core.sec(sid), m = $main(); if (!s || !s.lab) return go('u-' + Core.UNO);
+    if (labStop) { try { labStop(); } catch (e) { } labStop = null; }
+    const lock = Core.secLock(st, s);
+    subbar('blue', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}: ${C.unit.title}`), el('span', { class: 'ttl' }, `${s.id} ${s.title} · Experiment room`));
+    if (lock) { m.append(bar(`Section ${s.id} · Experiments`), lockScreen(`The experiments for ${s.id} are locked`, lock.reason, [lock])); return; }
+    st.last = { route: 'lab-' + R(sid) }; Core.persist();
+    UI.labTab = UI.labTab || {};
+    m.append(bar(`Unit ${Core.UNO} › ${s.id} › Experiment room`), tocBtn(), el('section', { class: 'card lessonhead' }, el('p', { class: 'eyebrow', style: 'margin:0' }, `${Core.stageLabel()} · Unit ${Core.UNO} · ${s.id}`), el('h1', { style: 'margin:4px 0 6px' }, `🧪 ${s.lab.title}`),
+      el('p', { class: 'muted', style: 'margin:0' }, 'Work like a scientist: predict, change one thing, measure, record and conclude. Do the virtual lab here, then try the real experiment at home with an adult.')),
+      Primary.labRoom(s, st, { tab: UI.labTab[sid] || 'v', setTab: k => { UI.labTab[sid] = k; render(); }, persist: () => { Core.persist(); xpTick(); refreshToc(); }, toast, onLeave: f => { labStop = f; } }));
+  }
   function viewExercises(sid) {
     const s = Core.sec(sid), m = $main(); if (!s) return go('home'); const route = 'ex-' + R(sid);
     const lock = Core.secLock(st, s);
@@ -650,7 +666,8 @@
     const aside = el('aside', { class: 'aside' }, solTabs, solBody,
       el('div', { class: 'card', style: 'padding:18px 20px' }, el('b', { class: 'lex' }, 'Learning objective'), el('p', { style: 'margin:4px 0 0;font-size:15px' }, `${q.obj}: ${C.objectives[q.obj].t}`)),
       el('div', { class: 'goal' }, el('span', { class: 'gi' }, svgI(I.bulb, 16, '#1C2A3A', 2)), el('span', {}, tab === 'req' ? 'Right first time: 1 mark · second try: ½ mark. Two wrong tries: you get guided reasoning and a similar question.' : tab === 'adv' ? '* Advanced – optional. Written by Atomic from the real source named on each question.' : 'Practice – optional for unlocking, but it makes you stronger before the Unit Test.')));
-    m.append(bar(`Unit ${Core.UNO} › ${s.id} › ${tabName} › question ${idx + 1}`), tocBtn(), doneBanner, tabs, chips, el('div', { class: 'exgrid' }, el('div', { class: 'q' }, card), aside));
+    m.append(bar(`Unit ${Core.UNO} › ${s.id} › ${tabName} › question ${idx + 1}`), tocBtn(), doneBanner, tab === 'req' && window.Primary ? Primary.wordBank(s) : null, tabs, chips, el('div', { class: 'exgrid' }, el('div', { class: 'q' }, card), aside));
+    if (s.lab) tabs.append(el('a', { class: 'chip', href: '#lab-' + R(sid), id: 'labLink' }, '🧪 Experiment'));
     showBanner(); drawSol();
     QE.practice(q, card, { rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; Core.persist(); showBanner(); refreshToc(); drawSol(); xpTick();
       const c = chips.children[idx]; if (c) c.className = 'qc on ' + (rec.ok ? 'ok' : 'half'); } });
@@ -686,7 +703,7 @@
   // print-only worksheet (Design v4 paper): personal watermark on every page, microprint frame, copy code — no PDF download
   function wsLearner() { return { name: st.name || st.alias || 'Learner', lid: 'L-' + String(st.id || 'guest').replace(/-/g, '').slice(0, 7).toUpperCase() }; }
   function worksheetPages(s, info, mount) {
-    const qs = s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
+    const qs = s.vocab ? s.prac.slice(0, 14) : s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
     const mins = Math.max(15, Math.ceil(qs.length * 2.5 / 5) * 5);
     const out = el('div', { class: 'ws', id: 'wsPages' }); let pno = 0; const pages = [];
     const foot = last => el('div', { class: 'pfoot' }, el('div', {}, `© Atomic Education ${info.date.getFullYear()} · ${doc} · Copy #${info.serial} · ${info.code}`, el('br'), `Printed for ${info.name} (${info.lid}) on ${info.when}. Not for sharing or resale.`), el('b', {}, last ? 'End of worksheet' : '[Turn over'));
@@ -722,7 +739,7 @@
     return out;
   }
   function wsAnswers(s, info, mount) {
-    const qs = s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
+    const qs = s.vocab ? s.prac.slice(0, 14) : s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
     const out = el('div', { class: 'ws', id: 'wsAns' }); mount.append(out);
     const foot = last => el('div', { class: 'pfoot' }, el('div', {}, `© Atomic Education ${info.date.getFullYear()} · ${doc} · ANSWERS · ${info.code}`, el('br'), `Opened by ${info.name} (${info.lid}) on ${info.when}. For self-marking only.`), el('b', {}, last ? 'End of answers' : '[Turn over'));
     const page = () => { const pg = el('div', { class: 'a4 paper4', html: Paper.frame() + Paper.watermark(info) }); const pb = el('div', { class: 'pbody' }, el('div', { class: 'prun' }, el('span', {}, el('b', {}, 'ANSWERS'), ` · Cambridge ${Core.stageLabel()} · Unit ${Core.UNO} · ${s.id} ${s.title}`), el('b', {}, 'Mark scheme'))); pg.append(pb); out.append(pg); return pb; };
@@ -825,7 +842,7 @@
         if (img.width) { const h = 120, w = img.width / img.height * h; g.drawImage(img, W / 2 - w / 2, 120, w, h); }
         center('CERTIFICATE OF ACHIEVEMENT', 320, '600 34px Outfit, Figtree, Arial', GOLD, 8);
         center(`Cambridge ${Core.stageLabel()}`, 410, '700 76px Outfit, Figtree, Arial', NAVY);
-        center(Core.IS_MATHS ? 'Cambridge Lower Secondary Mathematics (curriculum framework 0862)' : 'Cambridge Lower Secondary Science (curriculum framework 0893)', 462, '28px Figtree, Arial', '#52627A');
+        center(Core.IS_MATHS ? 'Cambridge Lower Secondary Mathematics (curriculum framework 0862)' : Core.IS_PRIMARY ? 'Cambridge Primary Science (curriculum framework 0097)' : 'Cambridge Lower Secondary Science (curriculum framework 0893)', 462, '28px Figtree, Arial', '#52627A');
         center('This is to certify that', 545, 'italic 32px Georgia, serif', '#3A4B63');
         center(c.name, 640, 'italic 700 96px Georgia, serif', BLUE);
         g.strokeStyle = GOLD; g.lineWidth = 2; g.beginPath(); g.moveTo(W / 2 - 420, 668); g.lineTo(W / 2 + 420, 668); g.stroke();
@@ -845,7 +862,7 @@
         g.font = '24px Figtree, Arial'; g.fillStyle = '#52627A'; g.fillText('Atomic Education', W - 375, 1045);
         g.textAlign = 'center'; g.fillStyle = NAVY; g.font = '600 24px Figtree, Arial'; g.fillText(`Awarded ${c.date}`, W / 2 - 60, 985); g.fillText(`Code ${c.code}`, W / 2 - 60, 1022);
         g.font = '20px Figtree, Arial'; g.fillStyle = '#6B7A90'; g.fillText('Check it at Atomic → “Verify a certificate”.', W / 2 - 60, 1060);
-        g.fillText(`Atomic courses follow the Cambridge Lower Secondary ${Core.IS_MATHS ? 'Mathematics' : 'Science'} framework. This is an Atomic certificate, not a Cambridge qualification.`, W / 2, 1120);
+        g.fillText(`Atomic courses follow the Cambridge ${Core.levelName(Core.STAGE)} ${Core.IS_MATHS ? 'Mathematics' : 'Science'} framework. This is an Atomic certificate, not a Cambridge qualification.`, W / 2, 1120);
         if (preview) { g.save(); g.translate(W / 2, H / 2); g.rotate(-0.35); g.font = '800 190px Outfit, Figtree, Arial'; g.fillStyle = 'rgba(201,58,58,0.13)'; g.textAlign = 'center'; g.fillText('PREVIEW', 0, 60); g.restore(); }
         res(cv);
       } });
@@ -878,7 +895,7 @@
 
   /* ---------- Lower Secondary → Stage → Unit (every level of the breadcrumb is a page) ---------- */
   const PRICE = (window.ATOMIC_CONFIG || {}).stagePrice || 'US$49';
-  const crumbs = (...tail) => el('nav', { class: 'crumb', 'aria-label': 'Breadcrumb' }, el('a', { href: '#home' }, 'Dashboard'), ' › ', el('a', { href: '#level' }, 'Lower Secondary'), ...tail.flatMap(t => [' › ', t]));
+  const crumbs = (...tail) => el('nav', { class: 'crumb', 'aria-label': 'Breadcrumb' }, el('a', { href: '#home' }, 'Dashboard'), ' › ', el('a', { href: '#level' }, Core.levelName(Core.STAGE)), ...tail.flatMap(t => [' › ', t]));
   // ---- course catalogue: subjects × levels (Science and Mathematics, Lower Secondary → IGCSE → AS & A Level) ----
   let CATALOG = null;
   async function loadCatalog() { if (!CATALOG) { try { const r = await fetch('content/catalog.json'); CATALOG = r.ok ? await r.json() : null; } catch (e) { CATALOG = null; } } return CATALOG; }
@@ -929,14 +946,14 @@
       try { const r = await fetch(`content/stage${g}.json`); if (r.ok && (await r.json()).units.some(u => u.ready)) { await Loading.overlay(`Opening Cambridge ${Core.stageLabel(g)}`, Core.switchStage(g)); C = Core.C; st = Core.cur(); return render(); } } catch (e) { }
     }
     if (g !== Core.STAGE) {
-      pageHero('LOWER SECONDARY', `Cambridge ${Core.stageName(g)}`, Core.enrolled(g) ? `You are enrolled in Cambridge ${Core.stageName(g)}.` : `Cambridge ${Core.stageName(g)} is a separate course.`);
+      pageHero(Core.levelName(g).toUpperCase(), `Cambridge ${Core.stageName(g)}`, Core.enrolled(g) ? `You are enrolled in Cambridge ${Core.stageName(g)}.` : `Cambridge ${Core.stageName(g)} is a separate course.`);
       m.append(crumbs(`Cambridge ${Core.stageName(g)}`));
       if (!Core.enrolled(g)) { m.append(el('section', { class: 'card lockcard' }, el('h2', {}, `🔒 Enrol in Cambridge ${Core.stageName(g)}`), el('p', {}, `Each stage is its own course. Enrol and pay for Cambridge ${Core.stageName(g)} to open it on this account.`), el('a', { class: 'btn gold', href: '#checkout-' + g }, `Enrol · ${PRICE}`, el('span', { class: 'arr' }, ' →')))); return; }
       m.append(el('section', { class: 'card done' }, el('h2', {}, `✓ Enrolled in Cambridge ${Core.stageName(g)}`), el('p', {}, `The Cambridge ${Core.stageName(g)} units open here as soon as they have been reviewed. You will get a notification.`), el('a', { class: 'btn small', href: `#stage-${Core.STAGE}` }, `Back to Cambridge ${Core.stageName(Core.STAGE)}`)));
       return;
     }
     const tot = Core.totalSeconds(), passedN = Object.keys(st.results || {}).filter(k => k.startsWith(`stage${Core.STAGE}-unit`)).length;
-    pageHero(Core.IS_MATHS ? 'CAMBRIDGE LOWER SECONDARY MATHEMATICS' : 'CAMBRIDGE LOWER SECONDARY SCIENCE', `Cambridge ${Core.stageLabel()}`, 'Open any unit at any time – you do not have to finish one before starting another.',
+    pageHero(Core.IS_MATHS ? 'CAMBRIDGE LOWER SECONDARY MATHEMATICS' : Core.IS_PRIMARY ? 'CAMBRIDGE PRIMARY SCIENCE' : 'CAMBRIDGE LOWER SECONDARY SCIENCE', `Cambridge ${Core.stageLabel()}`, 'Open any unit at any time – you do not have to finish one before starting another.',
       [statCard(el('span', { class: 'ti big' }, '⏱'), `≈ ${estH(Core.INDEX.est || 0)}`, 'whole course'), statCard(el('span', { class: 'ti big' }, '📚'), hrs(tot), 'you have studied'), statCard(ringIcon(Math.round(passedN / Core.unitCount() * 100)), `${passedN} / ${Core.unitCount()}`, 'units completed')]);
     m.append(crumbs(`Cambridge ${Core.stageName(Core.STAGE)}`));
     const rows = Core.INDEX.units.map(u => { const res = (st.results || {})[u.id], sec = Core.unitSeconds(u.n);
@@ -956,7 +973,7 @@
     if (isGuest()) { m.append(guestWall('Create a free account first')); return; }
     const msg = errBox();
     m.append(el('section', { class: 'card narrow', id: 'checkout' }, el('h2', {}, 'Order summary'),
-      el('div', { class: 'ordrow' }, el('span', {}, `Cambridge Lower Secondary ${Core.subjectOf(g)} · Cambridge ${Core.stageName(g)} (Atomic course)`), el('b', {}, PRICE)),
+      el('div', { class: 'ordrow' }, el('span', {}, `Cambridge ${Core.levelName(g)} ${Core.subjectOf(g)} · Cambridge ${Core.stageName(g)} (Atomic course)`), el('b', {}, PRICE)),
       el('div', { class: 'ordrow' }, el('span', {}, 'Learner'), el('b', {}, st.name)),
       el('div', { class: 'banner info' }, el('b', {}, 'Test checkout. '), 'This is the test server: pressing Pay enrols you straight away and no money is taken. The real payment page (Paddle) replaces this before launch.'),
       msg, el('button', { class: 'btn gold big', type: 'button', id: 'payBtn', onclick: async ev => { const pb = ev.currentTarget; pb.disabled = true; pb.classList.add('busy'); msg.textContent = '';
@@ -1914,7 +1931,7 @@
   }
 
   /* ---------- router ---------- */
-  const TOC_ROUTES = r => r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || /^u-\d+$/.test(r) || ['map', 'result', 'remedial', 'topic', 'drill', 'cert', 'unit'].includes(r);
+  const TOC_ROUTES = r => r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || ['map', 'result', 'remedial', 'topic', 'drill', 'cert', 'unit'].includes(r);
   const PUBLIC = { home: () => viewHome(), signin: viewSignin, signup: viewSignup, forgot: viewForgot, pricing: viewPricing, help: viewHelp, privacy: viewPrivacy, 'privacy-kids': viewKidsPrivacy, terms: viewTerms, cookies: viewCookies, verify: viewVerify };
   const viewAdmin = window.AtomicAdmin ? window.AtomicAdmin({ modal, toast, errText: e => errText(e), $main, render: () => render() }) : null;
   const ACCOUNT = { staff: viewStaff, teacher: viewStaff, admin: () => viewAdmin && viewAdmin() };
@@ -1922,21 +1939,22 @@
   const GUEST_WALL = { board: 'Sign up free to join the leaderboard', cert: 'Sign up free to earn a certificate', result: 'Sign up free to take the Unit Test', remedial: 'Sign up free to take the Unit Test', settings: 'Sign up free to get your own account' };
   let renderSeq = 0;
   async function render() {
+    if (labStop) { try { labStop(); } catch (e) { } labStop = null; }
     if (activeVideo) { try { activeVideo.pause(); } catch (e) { } activeVideo = null; }
     clearInterval(timer); const seq = ++renderSeq;
     let r = location.hash.slice(1) || 'home';
     if (Guard.on && r !== Guard.route) { location.replace('#' + Guard.route); leave('navigate'); return; }   // Back / links are closed during an exam
     if (r === 'unit3') { location.replace('#u-3'); return; }
     // the unit is part of the address: u-4, v-4-1, ex-4-2, ws-4-3
-    const um = r.match(/^u-(\d+)$/) || r.match(/^(?:v|ex|ws)-(\d+)-\d+$/);
+    const um = r.match(/^u-(\d+)$/) || r.match(/^(?:v|ex|ws|lab)-(\d+)-\d+$/);
     if (um && Number(um[1]) !== Core.UNO) { if (!Core.unitReady(Number(um[1]))) { location.replace('#home'); return; } try { await Core.switchUnit(Number(um[1])); } catch (e) { location.replace('#home'); return; } if (seq !== renderSeq) return; }
     C = Core.C; st = Core.cur(); if (/^u-\d+$/.test(r)) r = 'unit';
     if (r !== 'test' && !/^(fx|cpx)-/.test(r)) UI.testOn = false;
     document.body.classList.remove('menu-open', 'toc-open');
     const me = Core.S.me;
     if (me && me.profile && me.profile.disabled) { try { Core.flush && Core.flush(); } catch (e) { } await Backend.signOut(); await Core.boot(C); st = null; location.replace('#signin'); setTimeout(() => toast(ERR.account_disabled), 300); return; }
-    const needsLearner = !!LEARNER[r] && r !== 'home' || /^(v|ex|ws)-/.test(r) || /^(stage|checkout|fx|fres)-\d+$/.test(r) || /^(cpx|cpr)-[A-Z]{1,2}\d$/.test(r);
-    const freeTopic = /^(v|ex|ws)-\d+-1$/.test(location.hash.slice(1)) || r === 'unit';
+    const needsLearner = !!LEARNER[r] && r !== 'home' || /^(v|ex|ws|lab)-/.test(r) || /^(stage|checkout|fx|fres)-\d+$/.test(r) || /^(cpx|cpr)-[A-Z]{1,2}\d$/.test(r);
+    const freeTopic = /^(v|ex|ws|lab)-\d+-1$/.test(location.hash.slice(1)) || r === 'unit';
     if (['learners', 'add-learner', 'parent'].includes(r)) { location.replace('#home'); return; }   // old parent-area links
     if (!me && !st && (ACCOUNT[r] || needsLearner)) { if (freeTopic) { Core.startGuest(); st = Core.cur(); } else { location.replace('#signin'); return; } }  // a link into topic 3.1 starts a guest session
     if (!me && ACCOUNT[r]) { location.replace('#signin'); return; }
@@ -1948,7 +1966,7 @@
     const mo = new MutationObserver(recs => { if (skel && recs.some(x => [...x.addedNodes].some(n => n !== skel))) { skel.remove(); skel = null; mo.disconnect(); } }); mo.observe(m, { childList: true });
     try {
       const pm = r.match(/^(stage|checkout|fx|fres)-(\d+)$/); const cpm = r.match(/^(cpx|cpr)-([A-Z]{1,2}\d)$/);
-      if (r.startsWith('v-')) viewVideo(secFromRoute(r)); else if (r.startsWith('ex-')) viewExercises(secFromRoute(r)); else if (r.startsWith('ws-')) viewWorksheet(secFromRoute(r));
+      if (r.startsWith('v-')) viewVideo(secFromRoute(r)); else if (r.startsWith('ex-')) viewExercises(secFromRoute(r)); else if (r.startsWith('ws-')) viewWorksheet(secFromRoute(r)); else if (r.startsWith('lab-')) viewLab(secFromRoute(r));
       else if (/^courses(-\w+)?$/.test(r)) await viewCourses(r.split('-')[1]);
       else if (/^course-[a-z0-9-]+$/.test(r)) await viewCourse(r.slice(7));
       else if (cpm && st) { if (cpm[1] === 'cpx') await viewCpExam(cpm[2]); else await viewCpResult(cpm[2]); }

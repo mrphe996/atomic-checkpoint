@@ -91,6 +91,7 @@ end $$;
 reset role; insert into private.app_secrets (name, value) values ('mock_payments', 'on') on conflict (name) do update set value = 'on';
 set role authenticated; select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-00000000000a', false)) _x;
 select 'PASS test checkout enrols: ' || (select public.enrol_stage('10000000-0000-0000-0000-000000000001', 8) = 'ok' and exists (select 1 from public.enrolments where stage = 8));
+select 'PASS Primary Stage 6 can be enrolled: ' || (select public.enrol_stage('10000000-0000-0000-0000-000000000001', 6) = 'ok' and exists (select 1 from public.enrolments where stage = 6) and (select count(*) from public.stage_units where stage = 6) = 6);
 select 1 from (select set_config('request.jwt.claim.sub', '00000000-0000-0000-0000-00000000000b', false)) _x;
 select 'PASS another parent cannot see the enrolment: ' || (select count(*) = 0 from public.enrolments);
 do $$ begin

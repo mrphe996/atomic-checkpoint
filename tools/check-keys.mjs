@@ -10,7 +10,8 @@ const right = q => { switch (q.type) {
   case 'match': return Object.fromEntries(q.pairs.map(p => [p.l, p.r])); case 'explain': return q.model; case 'grid': return q.rows.map(r => r.a.slice());
   case 'table': { const o = {}; q.rows.forEach((row, ri) => row.forEach((c, ci) => { if (c && typeof c === 'object') (o[ri] = o[ri] || {})[ci] = String(c.ans); })); return o; }
   case 'short': return G.answerText(q); case 'expr': return q.expr; case 'cloze': return q.blanks.map(b => b.find(a => !(a[0] === '/' && a.lastIndexOf('/') > 0)) || '');
-  case 'graph': return { pts: (q.plot || q.pts).map(p => p.slice()), f: q.follow ? q.follow.options.findIndex(o => o.ok) : null }; } return null; };
+  case 'graph': return { pts: (q.plot || q.pts).map(p => p.slice()), f: q.follow ? q.follow.options.findIndex(o => o.ok) : null };
+  case 'say': return { ok: true, tries: 1 }; } return null; };
 let bad = 0, n = 0;
 for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.tests.json'))) {
   const pack = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));

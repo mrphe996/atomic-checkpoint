@@ -15,6 +15,13 @@
  ],
  "levels": [
   {
+   "id": "primary",
+   "name": "Cambridge Primary",
+   "short": "Primary",
+   "ages": "ages 5–11",
+   "note": "Stages 1 to 6 · Atomic starts with Stage 6 Science: animated lessons, listening and speaking, experiments"
+  },
+  {
    "id": "lsec",
    "name": "Cambridge Lower Secondary",
    "short": "Lower Secondary",
@@ -37,6 +44,17 @@
   }
  ],
  "courses": [
+  {
+   "id": "sci-s6",
+   "subject": "science",
+   "level": "primary",
+   "stage": 6,
+   "badge": 6,
+   "code": "0097",
+   "title": "Cambridge Stage 6 Science",
+   "status": "open",
+   "about": "Animated lessons with a slower narrator and large subtitles, listen-and-say word checks, a virtual lab and a home experiment in every topic. All 6 units: the human body, materials, rocks and soil, food chains, forces and electricity, light and the Solar System."
+  },
   {
    "id": "sci-s7",
    "subject": "science",

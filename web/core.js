@@ -2,9 +2,12 @@
    The learner's progress lives in the backend (Backend.saveProgress); marking happens on the server
    (Backend.submitTest) – this file only mirrors results for the screens. */
 (function () {
-  const STAGES = [7, 8, 9, 19], STAGE_UNITS = 14;
+  const STAGES = [6, 7, 8, 9, 19], STAGE_UNITS = 14;
   // course keys: 7–9 = Science Stages 7–9; 19 = Mathematics Stage 9 (same machinery, its own units, tests and certificate)
   const MATHS = g => g >= 10;
+  // 6 = Cambridge Primary Science Stage 6 (animated lessons, listening and speaking checks, experiment rooms)
+  const PRIMARY = g => g <= 6;
+  const levelName = g => (PRIMARY(g) ? 'Primary' : 'Lower Secondary');
   const stageNo = g => (MATHS(g) ? g - 10 : g);
   const subjectOf = g => (MATHS(g) ? 'Mathematics' : 'Science');
   const stageName = g => (MATHS(g) ? `Stage ${stageNo(g)} Mathematics` : `Stage ${g}`);
@@ -362,7 +365,7 @@
   }
 
   window.Core = {
-    get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; }, get STAGE() { return STAGE; }, STAGES, switchStage, stageLocked, LOCKED, MATHS, stageNo, subjectOf, stageLabel, stageName, unitCount, get IS_MATHS() { return MATHS(STAGE); },
+    get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; }, get STAGE() { return STAGE; }, STAGES, switchStage, stageLocked, LOCKED, PRIMARY, levelName, get IS_PRIMARY() { return PRIMARY(STAGE); }, MATHS, stageNo, subjectOf, stageLabel, stageName, unitCount, get IS_MATHS() { return MATHS(STAGE); },
     unitId, unitReady, switchUnit, loadIndex, peekUnit, cached, loadFinal, get FINAL() { return FINAL; },
     xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, startClock, refreshFinal, finalPassed, submitFinal, loadCp, refreshCp, dropCache, withOv, submitCp, activity,
     boot, selectLearner, leaveLearner, refreshAccount, cur, persist, flush, canOpen,
