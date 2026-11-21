@@ -118,7 +118,8 @@ class Section:
             stops.append({'id': f"v{self.sid.replace('.', '')}{chr(97 + len(stops))}", 't': t, 'review': [rev, t], 'note': 'Paused on the “Pause and think” card.', 'q': s['q'], 'twin': s['twin']})
         assert len(stops) == len(self.stops), (self.sid, len(meta['stops']), len(self.stops))
         caps = meta['captions']; used = [x['t'] for x in stops]; byw = {r[0]: r for r in self.rows}
-        for k, w in enumerate(self.sayw):
+        # in-video speaking stops were removed at the owner's request (speaking stays in Core and practice)
+        for k, w in enumerate(self.sayw if VIDEO_SAY else []):
             for i, (t0, txt) in enumerate(caps):
                 pat = r'\b' + re.escape(w.lower()) + r's?\b'
                 if w.endswith('ing') and ' ' not in w: pat = r'\b' + re.escape(w.lower()[:-3]) + r'(?:s|es|ing)?\b'
@@ -135,6 +136,9 @@ class Section:
                 'video': {'src': f"{MEDIA}/u{self.u.n}_s{self.n}.mp4", 'poster': f"{MEDIA}/u{self.u.n}_s{self.n}_poster.jpg", 'offset': 0, 'dur': meta['dur'], 'range': ''},
                 'stops': stops, 'captions': meta['captions'], 'chapters': meta['chapters'],
                 'req': self.pools['r'], 'prac': self.pools['p'], 'adv': self.pools['a'], 'vocab': self.vocab, 'lab': self.lab}
+
+
+VIDEO_SAY = False
 
 
 class Unit:

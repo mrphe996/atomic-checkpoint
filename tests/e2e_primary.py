@@ -90,17 +90,11 @@ with sync_playwright() as p:
         pg.click(f'.sortpool .sortcard:has-text("{t}")'); pg.click(f'.sortbin >> nth={g}'); pg.wait_for_timeout(80)
     ok('All sorted correctly' in pg.inner_text('.labcard') and len(pg.query_selector_all('.labqs .qcard')) == 2, 'P26 Sorting lab: when every card is sorted the questions open')
     ok(pg.evaluate("Core.INDEX.units.length===6") and pg.evaluate("fetch('media/s6/w/igneous-rock.mp3', {method:'HEAD'}).then(r => r.status)") == 200, 'P27 Unit 3 word audio is served')
-    # speaking inside the video: the lesson stops when a new word is first spoken and asks the learner to say it
-    pg.evaluate("location.hash='u-2'"); pg.wait_for_timeout(900); pg.evaluate("location.hash='v-2-1'"); pg.wait_for_timeout(1500)
-    sx = pg.evaluate("Core.C.sections.find(s => s.id==='2.1').stops.filter(x => x.kind==='say').map(x => [x.t, x.q.word])")
-    pg.wait_for_function("document.querySelector('video') && document.querySelector('video').readyState >= 1", timeout=15000)
-    pg.evaluate(f"(() => {{ const v = document.querySelector('video'); v.muted = true; v.currentTime = {sx[0][0]}; }})()"); pg.wait_for_timeout(500); pg.evaluate("document.querySelector('video').dispatchEvent(new Event('timeupdate'))"); pg.wait_for_timeout(600)
-    ok(len(sx) >= 3 and 'SAY THE NEW WORD' in pg.inner_text('.card.stop') and pg.query_selector('.card.stop .saycard') is not None, 'P28 The video stops at each new word and asks the learner to say it (%d speaking stops in 2.1)' % len(sx))
-    if pg.query_selector('.card.stop .micbtn'): pg.evaluate(f"window.__heard = {sx[0][1]!r}"); pg.click('.card.stop .micbtn')
-    else: pg.fill('.card.stop input[type=text]', sx[0][1]); pg.click('.card.stop .btn.primary')
-    pg.wait_for_timeout(600)
-    ok(pg.query_selector('#continueVideo') is not None and ('Perfect' in pg.inner_text('.card.stop') or 'Well done' in pg.inner_text('.card.stop') or '✓' in pg.inner_text('.card.stop')), 'P29 Saying the word correctly lets the video continue')
-    ok(len(pg.query_selector_all('.track .mk.say')) == len(sx), 'P30 Speaking stops are marked on the video timeline')
+    # no speaking inside the video (removed at the owner's request): videos only stop for pause questions
+    ns = pg.evaluate("Core.C.sections.reduce((n, s) => n + s.stops.filter(x => x.kind==='say').length, 0)")
+    pg.evaluate("location.hash='u-2'"); pg.wait_for_timeout(900)
+    ns += pg.evaluate("Core.C.sections.reduce((n, s) => n + s.stops.filter(x => x.kind==='say').length, 0)")
+    ok(ns == 0, 'P28 The lesson videos have no speaking stops, only pause questions')
     kinds = pg.evaluate("[...new Set(Core.C.sections.find(s => s.id==='2.1').prac.map(q => q.type))]")
     n = pg.evaluate("Core.C.sections.find(s => s.id==='2.1').prac.length")
     ok(n >= 28 and all(k in kinds for k in ['say', 'match', 'cloze', 'order', 'short', 'grid', 'mcq']), f'P31 Practice is larger and varied: {n} questions, types {sorted(kinds)}')
@@ -115,8 +109,8 @@ with sync_playwright() as p:
     for u in range(1, 7):
         pg.evaluate(f"location.hash='u-{u}'"); pg.wait_for_timeout(700)
         s5 = pg.evaluate("Core.C.sections.map(s => ({id: s.id, req: s.req.length, say: s.req.filter(q => q.type==='say').length, lab: !!s.lab, vocab: (s.vocab||[]).length, stops: s.stops.length, says: s.stops.filter(x => x.kind==='say').length, prac: s.prac.length, src: s.video.src}))")
-        tot += len(s5); bad += [x['id'] for x in s5 if not (x['req'] == 8 and x['say'] == 4 and x['lab'] and x['vocab'] >= 5 and x['stops'] - x['says'] >= 2 and x['says'] >= 2 and x['prac'] >= 24 and '/s5/' in x['src'])]
-    ok(tot == 24 and not bad, f'P34 All 24 Stage 5 topics have a video with question and speaking stops, 8 Core checks, a lab, a word bank and 24+ practice questions (problems: {bad})')
+        tot += len(s5); bad += [x['id'] for x in s5 if not (x['req'] == 8 and x['say'] == 4 and x['lab'] and x['vocab'] >= 5 and x['stops'] >= 2 and x['says'] == 0 and x['prac'] >= 24 and '/s5/' in x['src'])]
+    ok(tot == 24 and not bad, f'P34 All 24 Stage 5 topics have a video with pause questions (no speaking stops), 8 Core checks, a lab, a word bank and 24+ practice questions (problems: {bad})')
     st = pg.evaluate("fetch(Core.C.sections[0].video.src, {method:'HEAD'}).then(r => r.status)")
     wa = pg.evaluate("Promise.all(['media/s5/w/pollination.mp3','media/s5/w/d-camouflage.mp3','media/s5/w/e-upthrust.mp3'].map(u => fetch(u, {method:'HEAD'}).then(r => r.status)))")
     ok(st == 200 and wa == [200, 200, 200], 'P35 Stage 5 videos and word audio are served')
