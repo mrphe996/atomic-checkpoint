@@ -35,6 +35,28 @@
     bg.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
     return close;
   }
+  /* XP guide: where the learner is, how XP is earned and what levels are for */
+  function xpGuide() {
+    const li = Core.levelInfo(), left = li.to - li.xp, FL = TestRules.FINAL_LEVEL;
+    const row = (xp, what, note) => el('div', { class: 'xpg-row' }, el('b', {}, xp), el('span', {}, what, note ? el('small', {}, note) : null));
+    const ladder = [li.level + 1, li.level + 2, li.level + 3].filter(L => L <= Math.max(FL, li.level + 1)).map(L => el('span', { class: 'xpg-step' + (L === FL ? ' goal' : '') }, el('b', {}, 'Level ' + L), el('small', {}, TestRules.xpForLevel(L).toLocaleString('en-GB') + ' XP')));
+    modal('How XP and levels work', el('div', { class: 'xpg', id: 'xpGuide' },
+      el('div', { class: 'xpg-now' }, el('span', { class: 'lvx-badge big', 'aria-hidden': 'true' }, el('i', {}, String(li.level))),
+        el('span', { class: 'xpg-nowtxt' }, el('b', {}, `Level ${li.level} · ${li.xp.toLocaleString('en-GB')} XP`),
+          el('span', { class: 'lvbar wide' }, el('i', { style: `width:${li.pct}%` })),
+          el('small', {}, `${li.pct}% of the way to level ${li.level + 1} · ${left.toLocaleString('en-GB')} XP to go`))),
+      el('h4', {}, 'How to earn XP'),
+      row('+20', 'Watch a lesson video to the end'),
+      row('+10', 'Answer a pause question right first time', '+5 if you need another try'),
+      row('+12', 'Get a practice question right first time', '+7 on the second try, +2 for finishing it after that'),
+      row('+5', 'Print a worksheet'),
+      row('+100', 'Pass a Unit Test'),
+      el('p', { class: 'muted', style: 'margin:6px 0 0' }, 'Each question earns XP once. Question Bank practice counts too, unless you have already done that question.'),
+      el('h4', {}, 'What levels are for'),
+      el('p', { style: 'margin:0' }, li.level >= FL ? `You have reached level ${FL}: the end-of-year exams are open to you.` : `Reach level ${FL} to open the end-of-year exams. Each level needs a little more XP than the one before.`),
+      el('div', { class: 'xpg-ladder' }, ...ladder)),
+      [{ t: 'See my progress', on: () => { go('profile'); } }, { t: 'Got it', cls: 'primary' }]);
+  }
   let lastXp = null; // kept for older callers
   function toast(t) { const n = document.querySelectorAll('.toast').length; const x = el('div', { class: 'toast', role: 'status', style: `top:${84 + n * 58}px` }, t); document.body.append(x); setTimeout(() => x.remove(), 2700); }
   function xpTick() { }
@@ -42,7 +64,7 @@
   window.addEventListener('atomic:xp', e => {
     const d = e.detail; xpAcc += d.gain; clearTimeout(xpT);
     xpT = setTimeout(() => { if (xpAcc > 0) { const t = el('div', { class: 'xptoast', role: 'status' }, `+${xpAcc} XP`); document.body.append(t); setTimeout(() => t.remove(), 1600); } xpAcc = 0;
-      const p = document.getElementById('levelPill'); if (p) { const li = Core.levelInfo(); p.querySelector('b').textContent = 'Lv ' + li.level; p.querySelector('.lvbar i').style.width = li.pct + '%'; } }, 500);
+      const p = document.getElementById('levelPill'); if (p) { const li = Core.levelInfo(); p.querySelector('b').textContent = 'Level ' + li.level; p.querySelector('.lvx-badge i').textContent = li.level; p.querySelector('.lvx-pct').textContent = li.pct + '%'; p.querySelector('.lvbar i').style.width = li.pct + '%'; } }, 500);
     if (d.levelUp) setTimeout(() => { confetti(); const t = el('div', { class: 'lvtoast', role: 'status' }, el('b', {}, `⭐ Level ${d.level}!`), el('span', {}, d.level >= TestRules.FINAL_LEVEL ? 'The end-of-year exams are open to you.' : `End-of-year exams open at level ${TestRules.FINAL_LEVEL}.`)); document.body.append(t); setTimeout(() => t.remove(), 4200); }, 600);
   });
   function initialChip(size) { return el('span', { class: 'ini', style: `width:${size}px;height:${size}px;font-size:${Math.round(size * .42)}px` }, ((st && st.alias) || '?').slice(0, 1).toUpperCase()); }
@@ -73,8 +95,10 @@
       const sk = Core.streak(st);
       const s = el('a', { class: 'pill streak', href: isGuest() ? '#home' : '#profile', title: `${sk}-day streak`, 'aria-label': `${sk}-day streak` }); s.innerHTML = FLAME; s.append(String(sk));
       const li = Core.levelInfo();
-      const lv = el('a', { class: 'pill lvl', href: '#profile', id: 'levelPill', title: `Level ${li.level} · ${li.xp} XP (${TestRules.xpForLevel(li.level + 1) - li.xp} XP to level ${li.level + 1})`, 'aria-label': `Level ${li.level}, ${li.xp} XP` },
-        el('b', {}, 'Lv ' + li.level), el('span', { class: 'lvbar' }, el('i', { style: `width:${li.pct}%` })));
+      const lv = el('button', { class: 'lvx', type: 'button', id: 'levelPill', title: 'How XP and levels work', 'aria-label': `Level ${li.level}, ${li.pct}% of the way to level ${li.level + 1}. How XP works`, onclick: xpGuide },
+        el('span', { class: 'lvx-badge', 'aria-hidden': 'true' }, el('i', {}, String(li.level))),
+        el('span', { class: 'lvx-mid' }, el('b', {}, 'Level ' + li.level), el('span', { class: 'lvbar' }, el('i', { style: `width:${li.pct}%` }))),
+        el('span', { class: 'lvx-pct' }, li.pct + '%'));
       if (isGuest()) right.append(s, lv, el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
       else {
         const menu = el('div', { class: 'usermenu', hidden: true, id: 'userMenu' }, el('b', {}, st.name), el('a', { href: '#profile' }, 'My progress'), el('a', { href: '#settings', id: 'settingsLink' }, 'Settings'),
@@ -296,7 +320,7 @@
         el('div', { class: 'card dstat' }, el('span', { class: 'dring', style: `background:conic-gradient(var(--blue) 0 ${pct}%, #E3EBF5 0)` }, el('i', {}, pct + '%')),
           el('span', {}, el('b', {}, `${doneQ} / ${allQ}`), el('br'), el('small', {}, `Unit ${Core.UNO} questions done`))),
         el('a', { class: 'card dstat', href: '#profile', id: 'levelCard' }, el('span', { class: 'dring', style: `background:conic-gradient(var(--gold) 0 ${Core.levelInfo().pct}%, #E3EBF5 0)` }, el('i', {}, 'Lv' + Core.levelInfo().level)),
-          el('span', {}, el('b', {}, `${Core.levelInfo().xp} XP`), el('br'), el('small', {}, `${TestRules.xpForLevel(Core.levelInfo().level + 1) - Core.levelInfo().xp} XP to level ${Core.levelInfo().level + 1}`))),
+          el('span', {}, el('b', {}, `${Core.levelInfo().xp} XP`), el('br'), el('small', {}, `${Core.levelInfo().pct}% · ${TestRules.xpForLevel(Core.levelInfo().level + 1) - Core.levelInfo().xp} XP to level ${Core.levelInfo().level + 1}`))),
         el('a', { class: 'card dstat', href: `#stage-${Core.STAGE}`, id: 'hoursCard' }, el('span', { class: 'bob', style: 'font-size:30px' }, '⏱'),
           el('span', {}, el('b', {}, hrs(Core.totalSeconds())), el('br'), el('small', {}, `studied of ≈ ${estH(Core.INDEX.est || 0)} course`)))))));
     if (isGuest()) m.append(el('div', { class: 'banner info', id: 'guestBanner' }, el('b', {}, 'You are learning as a guest. '), 'Your progress is kept on this device only and topic 3.1 is open. Sign up free to save it and unlock every topic.', el('a', { class: 'btn small gold', href: '#signup' }, 'Sign up free')));

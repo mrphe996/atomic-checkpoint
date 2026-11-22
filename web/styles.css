@@ -1495,3 +1495,29 @@ textarea.para{min-height:180px;line-height:1.55}
 .pcount{margin:6px 2px 8px;font-size:.9rem}
 .pcount.ok{color:#1E7D4F;font-weight:600}
 .pframe{background:#F4F8FC;border-left:4px solid var(--gold);padding:10px 14px;border-radius:10px;margin-top:8px}
+
+/* ---------- level badge (header) + XP guide ---------- */
+.lvx{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:4px 10px 4px 5px;flex:none;border-radius:99px;border:1.5px solid var(--blue3);background:#fff;color:var(--ink);cursor:pointer;font:inherit;transition:box-shadow .15s,transform .15s}
+.lvx:hover{transform:translateY(-1px);box-shadow:0 6px 14px rgba(11,37,69,.14)}
+.lvx-badge{width:34px;height:34px;flex:none;display:grid;place-items:center;background:var(--gold);clip-path:polygon(50% 0,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%)}
+.lvx-badge i{font-style:normal;font-family:Outfit,sans-serif;font-weight:800;font-size:15px;color:var(--ink)}
+.lvx-badge.big{width:64px;height:64px}.lvx-badge.big i{font-size:26px}
+.lvx-mid{display:flex;flex-direction:column;gap:4px;align-items:flex-start;line-height:1}
+.lvx-mid b{font-family:Outfit,sans-serif;font-weight:700;font-size:13px;white-space:nowrap}
+.lvx .lvbar,.xpg .lvbar{display:block;width:52px;height:8px;border-radius:99px;background:#E3EBF5;overflow:hidden}
+.lvx .lvbar i,.xpg .lvbar i{display:block;height:100%;border-radius:99px;background:var(--ok);transition:width .5s}
+.lvx-pct{font-family:Outfit,sans-serif;font-weight:800;font-size:13px;text-align:right}
+.xpg{display:flex;flex-direction:column;gap:8px;max-width:520px}
+.xpg h4{margin:12px 0 2px;font-size:15px;letter-spacing:.02em}
+.xpg-now{display:flex;gap:16px;align-items:center;padding:14px 16px;border-radius:14px;background:var(--cream)}
+.xpg-nowtxt{display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}.xpg-nowtxt b{font-size:18px}
+.xpg .lvbar.wide{width:100%;height:12px;background:#fff}
+.xpg-row{display:flex;gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line2)}
+.xpg-row>b{flex:none;width:56px;font-family:Outfit,sans-serif;font-weight:800;color:var(--okt)}
+.xpg-row small{display:block;color:var(--muted)}
+.xpg-ladder{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.xpg-step{display:flex;flex-direction:column;gap:2px;padding:8px 14px;border-radius:12px;background:var(--blue05);border:1px solid var(--line)}
+.xpg-step.goal{background:var(--cream);border-color:var(--gold)}
+.xpg-step small{color:var(--muted)}
+@media (max-width:1380px){.lvx-mid b{display:none}.lvx-mid{justify-content:center}}
+@media (max-width:640px){.lvx-mid{display:none}.lvx{padding:4px 10px 4px 5px;gap:6px}}
