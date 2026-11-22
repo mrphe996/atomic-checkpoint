@@ -5,13 +5,15 @@
   const Fig = window.AtomicFig;
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const TH = window.AtomicTheme && window.AtomicTheme.name === 'oak' ? window.AtomicTheme.mapText : null;   // inline colours follow the theme
+  const THS = TH ? window.AtomicTheme.style : null;                                                          // …and light / dark mode
   function el(tag, attrs, ...kids) {
     const e = document.createElement(tag);
     for (const k in (attrs || {})) {
       const v = attrs[k];
       if (v == null || v === false) continue;
       if (k === 'class') e.className = v; else if (k === 'html') e.innerHTML = TH ? TH(v) : v;
-      else if (TH && (k === 'style' || k === 'fill' || k === 'stroke')) e.setAttribute(k, TH(v));
+      else if (TH && k === 'style') e.setAttribute(k, THS(v));
+      else if (TH && (k === 'fill' || k === 'stroke')) e.setAttribute(k, TH(v));
       else if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v === true ? '' : v);
     }
     for (const c of kids.flat()) if (c != null && c !== false) e.append(c.nodeType ? c : document.createTextNode(c));

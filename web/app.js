@@ -35,6 +35,14 @@
     bg.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
     return close;
   }
+  /* light / dark switch (new design only): the choice is remembered on this device */
+  function modeBtn() {
+    const T = window.AtomicTheme; if (!T || T.name !== 'oak') return '';
+    const b = el('button', { class: 'modebtn', type: 'button', id: 'modeBtn' });
+    const draw = () => { const d = T.mode === 'dark'; b.textContent = d ? '☀️' : '🌙'; b.title = d ? 'Switch to light mode' : 'Switch to dark mode'; b.setAttribute('aria-label', b.title); b.setAttribute('aria-pressed', String(d)); };
+    b.onclick = () => { T.setMode(T.mode === 'dark' ? 'light' : 'dark'); draw(); };
+    draw(); return b;
+  }
   /* XP guide: where the learner is, how XP is earned and what levels are for */
   function xpGuide() {
     const li = Core.levelInfo(), left = li.to - li.xp, FL = TestRules.FINAL_LEVEL;
@@ -99,6 +107,7 @@
         el('span', { class: 'lvx-badge', 'aria-hidden': 'true' }, el('i', {}, String(li.level))),
         el('span', { class: 'lvx-mid' }, el('b', {}, 'Level ' + li.level), el('span', { class: 'lvbar' }, el('i', { style: `width:${li.pct}%` }))),
         el('span', { class: 'lvx-pct' }, li.pct + '%'));
+      right.append(modeBtn());
       if (isGuest()) right.append(s, lv, el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
       else {
         const menu = el('div', { class: 'usermenu', hidden: true, id: 'userMenu' }, el('b', {}, st.name), el('a', { href: '#profile' }, 'My progress'), el('a', { href: '#settings', id: 'settingsLink' }, 'Settings'),
@@ -112,12 +121,12 @@
       nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
       if (Core.IS_PRIMARY) { nav.splice(2, 0, navLink('words', '📒 My words', area === 'words')); nav[3].textContent = 'Questions'; nav[4].textContent = 'Tests'; }
     } else if (me) {
-      right.append(bell(), el('button', { class: 'btn small', type: 'button', id: 'signOut', onclick: async () => { await Backend.signOut(); await Core.boot(C); go('home'); } }, 'Sign out'));
+      right.append(modeBtn(), bell(), el('button', { class: 'btn small', type: 'button', id: 'signOut', onclick: async () => { await Backend.signOut(); await Core.boot(C); go('home'); } }, 'Sign out'));
       nav = [navLink('home', 'Home', area === 'home'), navLink('help', 'Help', area === 'help')];
       if (['marker', 'admin'].includes(me.profile.role)) nav.push(navLink('staff', 'Staff', area === 'staff'));
       if (me.profile.role === 'admin') nav.push(navLink('admin', 'Admin', area === 'admin'));
     } else {
-      right.append(el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
+      right.append(modeBtn(), el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
       nav = [navLink('home', 'Home', area === 'home'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
     }
     const header = el('header', { class: 'top' }, el('div', { class: 'top-in' },

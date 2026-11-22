@@ -50,15 +50,52 @@
   const mapText = t => typeof t !== 'string' ? t : radius(t.replace(/#[0-9a-fA-F]{6}\b/g, m => cache[m] || (cache[m] = oak(m)))
     .replace(/rgba\(\s*1\s*,\s*73\s*,\s*175\s*,/g, 'rgba(92,92,92,').replace(/rgba\(\s*11\s*,\s*37\s*,\s*69\s*,/g, 'rgba(92,92,92,'));
 
-  let name = 'classic';
+  /* ---- light / dark: every colour in a declaration becomes var(--<role>-<hex>, <light value>); html.dark defines the dark value.
+     Roles: t = text (color, fill, stroke) · b = background · l = lines (border, outline, box-shadow). ---- */
+  const ROLE = p => (/^(color|fill|stroke|caret-color|text-decoration-color|-webkit-text-fill-color)$/.test(p) ? 't' : /^background/.test(p) ? 'b' : /^(border|outline|box-shadow|column-rule)/.test(p) ? 'l' : null);
+  // light mode, softened so long study sessions are easier on the eyes (no pure white, calmer mint)
+  const LIGHT = { b: { '#FFFFFF': '#FBFAF6', '#F4F4F1': '#E9E7E0', '#F9F9F9': '#F3F1EB', '#F2F2F2': '#ECEAE3', '#BEF2BD': '#CBE8C8', '#E8F9E8': '#E3F1E0', '#FFF7CC': '#F8EFC4', '#FFE555': '#F5DA4C' },
+    l: { '#E4E4E4': '#D9D7CF', '#CACACA': '#C2C0B8', '#D6D6D2': '#CFCDC5' }, t: {} };
+  const DARK = { b: { '#FFFFFF': '#1F2329', '#F4F4F1': '#14171B', '#F9F9F9': '#252A31', '#F2F2F2': '#2B3038', '#E4E4E4': '#323840', '#CACACA': '#3B424B', '#222222': '#39404A', '#000000': '#4A525E', '#575757': '#4A525E', '#808080': '#5B6470',
+      '#BEF2BD': '#1F3B2A', '#E8F9E8': '#1B3024', '#FFF7CC': '#3A3417', '#FFE555': '#544A16', '#0149AF': '#2F6FD6', '#013A8C': '#3B7BE2', '#FDECEC': '#3D2026', '#FFF8F8': '#332025' },
+    t: { '#222222': '#ECEBE7', '#000000': '#FFFFFF', '#575757': '#B7BBC2', '#808080': '#8F959E', '#0149AF': '#8DB6FF', '#013A8C': '#B1CDFF', '#287C34': '#7FD88D', '#DD0035': '#FF8094' },
+    l: { '#222222': '#8A919B', '#000000': '#A3AAB4', '#575757': '#6B737E', '#CACACA': '#3F4650', '#E4E4E4': '#333A43', '#D6D6D2': '#333A43', '#0149AF': '#5E97F5', '#BDBDB8': '#4A525E' } };
+  function darkOf(role, hex) {
+    if (DARK[role][hex]) return DARK[role][hex];
+    const [h, s, l] = toHsl(hex);
+    if (role === 't') { if (hex === '#FFFFFF') return hex; if (s < 0.15) return l < 0.6 ? fromHsl(0, 0, Math.min(0.93, 1 - l * 0.6)) : hex; return l < 0.5 ? fromHsl(h, Math.min(s, 0.75), 0.72) : hex; }
+    if (role === 'b') { if (s < 0.15) return l > 0.5 ? fromHsl(215, 0.12, 0.13 + (1 - l) * 0.45) : fromHsl(215, 0.12, 0.26 + l * 0.2); return l > 0.6 ? fromHsl(h, Math.min(s, 0.42), 0.2) : hex; }
+    if (s < 0.15) return l > 0.5 ? fromHsl(215, 0.1, 0.28) : fromHsl(215, 0.08, 0.6);
+    return l > 0.6 ? fromHsl(h, 0.3, 0.32) : hex;
+  }
+  const defs = {}; let onDef = null;
+  function roleHex(role, hex) {
+    hex = hex.toUpperCase(); const light = LIGHT[role][hex] || hex, d = darkOf(role, hex);
+    if (d === light) return light;
+    const n = '--' + role + '-' + hex.slice(1); if (!defs[n]) { defs[n] = d; if (onDef) onDef(n, d); }
+    return 'var(' + n + ',' + light + ')';
+  }
+  /* "prop:value;prop:value" (a style attribute or a whole stylesheet) → the same text with themed colours */
+  const declText = t => typeof t !== 'string' ? t : t.replace(/(^|[;{]\s*)([a-zA-Z-]+)\s*:\s*([^;{}]*)/g, (m, pre, prop, val) => {
+    const r = ROLE(prop.toLowerCase()); if (!r || val.indexOf('#') < 0) return m;
+    return pre + prop + ':' + val.replace(/#[0-9a-fA-F]{6}\b/g, h => roleHex(r, h)); });
+
+  let name = 'classic', mode = 'light';
   if (typeof document !== 'undefined') {
-    let q = null, saved = null; try { q = new URLSearchParams(location.search).get('theme'); saved = localStorage.getItem('atomic.theme'); } catch (e) { }
+    let q = null, saved = null; try { q = new URLSearchParams(location.search).get('theme'); saved = localStorage.getItem('atomic.theme'); mode = localStorage.getItem('atomic.mode') === 'dark' ? 'dark' : 'light'; } catch (e) { }
     if (q === 'oak' || q === 'classic') { try { localStorage.setItem('atomic.theme', q); } catch (e) { } saved = q; }
     const cfg = (self.ATOMIC_CONFIG || {}).theme;
     name = saved || cfg || 'oak';
-    if (name !== 'oak') name = 'classic';
-    document.documentElement.classList.add('theme-' + name);
+    if (name !== 'oak') { name = 'classic'; mode = 'light'; }
+    const H = document.documentElement; H.classList.add('theme-' + name); if (mode === 'dark') H.classList.add('dark');
     document.write('<link rel="stylesheet" href="' + (name === 'oak' ? 'styles-oak.css' : 'styles.css') + '">');
+    // colours first met in inline styles get their dark value here
+    let tag = null; onDef = (n, d) => { if (!tag) { tag = document.createElement('style'); tag.id = 'atomic-dark-vars'; document.head.appendChild(tag); } tag.appendChild(document.createTextNode('html.dark{' + n + ':' + d + '}')); };
   }
-  return { name, oak, mapText, style: t => (name === 'oak' ? mapText(t) : t) };
+  function setMode(m) {
+    mode = m === 'dark' && name === 'oak' ? 'dark' : 'light'; try { localStorage.setItem('atomic.mode', mode); } catch (e) { }
+    if (typeof document !== 'undefined') document.documentElement.classList.toggle('dark', mode === 'dark');
+    return mode;
+  }
+  return { name, oak, mapText, declText, defs, setMode, get mode() { return mode; }, style: t => (name === 'oak' ? declText(mapText(t)) : t) };
 });
