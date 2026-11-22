@@ -1397,3 +1397,47 @@ body.young .qcard .qp{font-size:22px;font-weight:700;line-height:1.35}
 body.young .opt{min-height:64px;font-size:19px}
 body.young .opt.pcard{min-height:160px}
 body.young .qcard .btn.primary{min-height:52px;font-size:18px}
+
+/* ---------- Primary focus room: practice and experiments full screen, one question at a time ---------- */
+body.focus-mode{overflow:hidden}
+body.focus-mode .toc,body.focus-mode .tocbtn,body.focus-mode .mainnav,body.focus-mode .menu-btn,body.focus-mode footer.foot{display:none!important}
+.froom{position:fixed;inset:0;z-index:900;background:linear-gradient(180deg,#EAF2FD 0%,#F7FAFE 40%);overflow-y:auto;display:flex;flex-direction:column;align-items:center;padding:0 14px 18px}
+.froom>*{width:100%;max-width:880px}
+.fhead{display:flex;align-items:center;gap:12px;padding:14px 4px 8px}
+.fico{font-size:34px;line-height:1}
+.ftitle{display:flex;flex-direction:column;flex:1;min-width:0}
+.ftitle b{font:800 20px Outfit,Figtree,sans-serif;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ftitle small{color:var(--muted);font-size:14px}
+.fwbtn{flex:none}
+.fgrown{position:relative;overflow:hidden;flex:none;border:1px dashed #B7C3D6;background:#fff;color:#8590A3;border-radius:10px;padding:6px 10px;font-size:12px;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:none}
+.fgrown .fill{position:absolute;inset:0;width:0;background:#FDECEC;transition:none}
+.fgrown.hold .fill{width:100%;transition:width 3s linear}
+.fgrown span:last-child{position:relative}
+.fprog{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:4px 4px 10px}
+.fsteps{display:flex;gap:6px;flex:1;min-width:160px}
+.fsteps span{flex:1;height:12px;border-radius:8px;background:#D7E2F2}
+.fsteps span.ok{background:var(--ok)}.fsteps span.half{background:var(--gold)}
+.fsteps span.cur{outline:3px solid var(--blue);outline-offset:1px}
+.fcount{font:800 16px Outfit,Figtree,sans-serif;color:var(--navy)}
+.fleft{font-size:14px;color:var(--muted)}
+.fbody{flex:1;display:flex;flex-direction:column;justify-content:center;padding:4px 0}
+.fcard{margin:0}
+.ffoot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 4px 4px;position:sticky;bottom:0;background:linear-gradient(180deg,rgba(247,250,254,0),#F7FAFE 35%)}
+.ffoot .btn.big{min-width:160px}
+.ffoot .btn[disabled]{opacity:.45;box-shadow:none}
+.fwords{display:none}.fwords.open{display:block}
+.fwords .wordbank{margin:0 0 10px}
+.fdone{text-align:center;padding:30px 24px}
+.fdone .fbig{font-size:64px;line-height:1}
+.fdone h2{margin:8px 0 4px;font-size:30px}
+.fdone p{font-size:18px}
+.fchoices{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:14px}
+.froom .labroom{display:flex;flex-direction:column;gap:12px}
+@media (max-width:640px){.ftitle b{font-size:17px}.fgrown span:last-child{font-size:11px}.ffoot .btn.big{min-width:0;flex:1;padding:0 14px}}
+body.focus-mode .toast{z-index:950;top:auto!important;bottom:96px;left:50%;right:auto;transform:translateX(-50%);font-size:18px}
+
+.fhead{flex-wrap:wrap}
+.fwbtn.glow{animation:fglow 1.4s ease-in-out infinite}
+@keyframes fglow{0%,100%{box-shadow:0 0 0 0 rgba(243,191,105,.0)}50%{box-shadow:0 0 0 6px rgba(243,191,105,.55)}}
+.fbody{padding-bottom:90px}
+@media (max-width:640px){.ftitle{flex:1 1 calc(100% - 50px)}.fhead .fwbtn{margin-left:46px}.fbody{padding-bottom:100px}}

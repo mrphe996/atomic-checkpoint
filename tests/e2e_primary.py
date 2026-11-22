@@ -4,6 +4,9 @@ import os, sys
 from playwright.sync_api import sync_playwright
 BASE = os.environ.get('BASE', 'http://localhost:8765/'); LOG = []
 def ok(c, m): LOG.append(('PASS' if c else 'FAIL') + '  ' + m); print(LOG[-1])
+def grown_up_exit(pg):   # the practice / experiment room only opens to a 3-second hold
+    if not pg.query_selector('.froom .fgrown'): return
+    b = pg.query_selector('.froom .fgrown').bounding_box(); pg.mouse.move(b['x'] + 10, b['y'] + 8); pg.mouse.down(); pg.wait_for_timeout(3300); pg.mouse.up(); pg.wait_for_timeout(700)
 # a stand-in for the browser's speech recognition: it "hears" whatever window.__heard holds
 FAKE_SR = """window.__heard = 'heart'; window.webkitSpeechRecognition = class { start() { setTimeout(() => { const alt = [{ transcript: window.__heard }]; alt.length = 1; this.onresult && this.onresult({ results: [alt] }); this.onend && this.onend(); }, 30); } stop() {} }; window.SpeechRecognition = window.webkitSpeechRecognition;"""
 with sync_playwright() as p:
@@ -29,6 +32,8 @@ with sync_playwright() as p:
     pg.evaluate("location.hash='ex-1-1'"); pg.wait_for_timeout(600); pg.evaluate("location.hash='home'"); pg.wait_for_timeout(300); pg.evaluate("location.hash='ex-1-1'"); pg.wait_for_timeout(800)
     ok(pg.query_selector('#wordBank') is not None and len(pg.query_selector_all('#wordBank .wcard')) == 9, 'P7 The word bank shows the 9 words of 1.1 with sound')
     ok(pg.query_selector('.audiobar .listen') is not None, 'P8 Listening questions have Listen and Slowly buttons')
+    ok(pg.query_selector('.froom .fcard') is not None and pg.query_selector('.froom .fsteps') is not None and len(pg.query_selector_all('.froom .chip[role=tab]')) == 0, 'P64 Practice opens in the full-screen room: one question, a progress bar, no tabs')
+    ok(pg.evaluate("document.getElementById('nextQ').disabled"), 'P65 “Next” waits until the question is answered')
     ok(pg.evaluate("Core.secLock(Core.cur(), Core.C.sections[1]) !== null"), 'P9 Lesson 1.2 is locked before the word checks are done')
     # answer the 4 listening questions
     for i in range(4):
@@ -55,13 +60,22 @@ with sync_playwright() as p:
     pg.fill('.qcard input[type=text]', w7); pg.click('.qcard .numrow .btn'); pg.wait_for_timeout(300)
     ok(pg.evaluate("(Core.cur().items[Core.C.sections[0].req[6].id]||{}).ok === true"), 'P15 Typing the word correctly passes it')
     pg.click('#nextQ'); pg.wait_for_timeout(500); w8 = pg.evaluate("Core.C.sections[0].req[7].word"); pg.fill('.qcard input[type=text]', w8); pg.click('.qcard .numrow .btn'); pg.wait_for_timeout(400)
+    pg.click('#nextQ'); pg.wait_for_timeout(600)
     ok(pg.evaluate("Core.secLock(Core.cur(), Core.C.sections[1]) === null"), 'P16 Finishing the word checks unlocks lesson 1.2')
+    ok(pg.query_selector('.froom .fdone') is not None and pg.query_selector('#leaveRoom') is not None and pg.query_selector('#moreQ') is not None, 'P63 The round ends with a finish screen: practise more, experiment or finish')
     ok(pg.evaluate("Primary.heardOk('fertilisation', ['fertilization']) && Primary.heardOk('breathing rate', ['my breathing rate']) && !Primary.heardOk('heart', ['hat'])"), 'P17 Speech matching accepts US spelling and extra words, rejects a different word')
     # experiment room
     pg.evaluate("location.hash='lab-1-2'"); pg.wait_for_timeout(800)
     ok(pg.query_selector('.labrange') is not None, 'P18 The 1.2 virtual lab has a working lung model')
     pg.eval_on_selector('.labrange', "e => { e.value = 100; e.dispatchEvent(new Event('input')); e.value = 0; e.dispatchEvent(new Event('input')); }"); pg.wait_for_timeout(400)
     ok(len(pg.query_selector_all('.labqs .qcard')) == 3, 'P19 Using the model opens the lab questions')
+    ok(pg.query_selector('.froom') is not None and pg.evaluate("document.body.classList.contains('focus-mode')"), 'P59 The experiment room opens full screen')
+    pg.evaluate("location.hash='home'"); pg.wait_for_timeout(900)
+    ok(pg.evaluate("location.hash") == '#lab-1-2' and pg.query_selector('.froom') is not None, 'P60 Leaving an unfinished experiment is blocked (back in the room)')
+    pg.mouse.move(5, 5); b0 = pg.query_selector('.froom .fgrown').bounding_box(); pg.mouse.move(b0['x'] + 10, b0['y'] + 8); pg.mouse.down(); pg.wait_for_timeout(800); pg.mouse.up(); pg.wait_for_timeout(300)
+    ok(pg.query_selector('.froom') is not None, 'P61 A short tap on the grown-up exit does nothing')
+    grown_up_exit(pg)
+    ok(pg.query_selector('.froom') is None and pg.evaluate("location.hash") == '#u-1', 'P62 Holding the grown-up exit for 3 seconds leaves the room')
     pg.evaluate("location.hash='lab-1-4'"); pg.wait_for_timeout(800)
     pg.evaluate("(()=>{const st=Core.cur(); Core.C.sections.forEach(s=>{const vs=Core.vstate(st,s.id); vs.completed=true; s.stops.forEach(x=>vs.stops[x.id]={done:true,tries:1}); s.req.forEach(q=>st.items[q.id]={done:true,ok:true,tries:1});}); Core.persist();})()")
     pg.evaluate("location.hash='home'"); pg.wait_for_timeout(300); pg.evaluate("location.hash='lab-1-4'"); pg.wait_for_timeout(800)
@@ -73,6 +87,7 @@ with sync_playwright() as p:
     ins = pg.query_selector_all('.labtable input'); [i.fill('40') or i.dispatch_event('change') for i in ins]; pg.wait_for_timeout(300)
     ok('Results recorded' in pg.inner_text('.labroom') and len(pg.query_selector_all('.labqs .qcard')) == 1, 'P21 Home experiment: results are recorded and its question opens')
     # the reading-a-scale lab (3.1 crystal sizes): run each test, read the scale and record it
+    grown_up_exit(pg)
     pg.evaluate("location.hash='lab-3-1'"); pg.wait_for_timeout(1200)
     vals = pg.evaluate("Core.C.sections.find(s => s.id==='3.1').lab.v.conds.map(c => c.val)")
     for k, v in enumerate(vals):
@@ -81,6 +96,7 @@ with sync_playwright() as p:
         pg.fill('.labcard .numrow input', str(v)); pg.click('.labcard .numrow .btn'); pg.wait_for_timeout(250)
     ok(len(pg.query_selector_all('.labtable tr')) == 4 and len(pg.query_selector_all('.labbars .lb')) == 3 and len(pg.query_selector_all('.labqs .qcard')) == 2, 'P24 Scale lab: readings fill the table and bar chart, and the questions open')
     # the sorting lab (4.1 who is who in the food web)
+    grown_up_exit(pg)
     pg.evaluate("location.hash='lab-4-1'"); pg.wait_for_timeout(1200)
     items = pg.evaluate("Core.C.sections.find(s => s.id==='4.1').lab.v.items.map(i => [i.t, i.g])")
     t0, g0 = items[0]; wrong = (g0 + 1) % 3
@@ -89,6 +105,7 @@ with sync_playwright() as p:
     for t, g in items:
         pg.click(f'.sortpool .sortcard:has-text("{t}")'); pg.click(f'.sortbin >> nth={g}'); pg.wait_for_timeout(80)
     ok('All sorted correctly' in pg.inner_text('.labcard') and len(pg.query_selector_all('.labqs .qcard')) == 2, 'P26 Sorting lab: when every card is sorted the questions open')
+    grown_up_exit(pg)
     ok(pg.evaluate("Core.INDEX.units.length===6") and pg.evaluate("fetch('media/s6/w/igneous-rock.mp3', {method:'HEAD'}).then(r => r.status)") == 200, 'P27 Unit 3 word audio is served')
     # no speaking inside the video (removed at the owner's request): videos only stop for pause questions
     ns = pg.evaluate("Core.C.sections.reduce((n, s) => n + s.stops.filter(x => x.kind==='say').length, 0)")
@@ -124,6 +141,7 @@ with sync_playwright() as p:
             pg.click(f'.labcard .btnrow .chip >> nth={k}'); pg.wait_for_timeout(1400)
             pg.fill('.labcard .numrow input', str(v)); pg.click('.labcard .numrow .btn'); pg.wait_for_timeout(250)
     ok(tl and len(pg.query_selector_all('.labtable tr')) == len(vals) + 1 and len(pg.query_selector_all('.labqs .qcard')) >= 1, f'P36 Stage 5 scale lab ({tl}) can be run and its questions open')
+    grown_up_exit(pg)
     # ---- answering on the video itself, also in full screen ----
     pg.evaluate("location.hash='u-1'"); pg.wait_for_timeout(800)
     pg.evaluate("(()=>{const st=Core.cur(); Core.C.sections.forEach(s=>{const vs=Core.vstate(st,s.id); s.req.forEach(q=>st.items[q.id]={done:true,ok:true,tries:1}); if (s.id==='1.2') { vs.completed=false; vs.pos=0; vs.stops={}; } else { vs.completed=true; s.stops.forEach(x=>vs.stops[x.id]={done:true,tries:1}); }}); Core.persist();})()")
@@ -153,8 +171,10 @@ with sync_playwright() as p:
     # ---- My word book ----
     pg.evaluate("location.hash='ex-1-1'"); pg.wait_for_timeout(1200)
     w0 = pg.evaluate("Core.C.sections[0].vocab[0].w")
+    if not pg.is_visible('#wordBank'): pg.click('#wordsBtn'); pg.wait_for_timeout(300)
     pg.click('#wordBank .wcard >> nth=0 >> .wsave'); pg.wait_for_timeout(300)
     ok(pg.evaluate("Words.has(Core.C.sections[0].vocab[0].w)") and '⭐ Saved' in pg.inner_text('#wordBank .wcard >> nth=0'), 'P43 Tapping ☆ Save on a word card keeps it in My word book')
+    grown_up_exit(pg)
     ok(pg.query_selector('nav a[href="#words"]') is not None, 'P44 Primary learners have “📒 My words” in the menu')
     pg.evaluate("location.hash='u-2'"); pg.wait_for_timeout(900); pg.evaluate("location.hash='words'"); pg.wait_for_timeout(900)
     ok(w0 in pg.inner_text('.wlist'), 'P45 My word book shows saved words from every unit (saved in Unit 1, opened from Unit 2)')
@@ -201,5 +221,6 @@ with sync_playwright() as p:
         pg.evaluate("(()=>{const st=Core.cur(); Core.C.sections.forEach(s=>{const vs=Core.vstate(st,s.id); vs.completed=true; s.stops.forEach(x=>vs.stops[x.id]={done:true,tries:1});}); Core.persist();})()")
         pg.evaluate("location.hash='ex-1-1'"); pg.wait_for_timeout(1500)
         ok(pg.query_selector('.opts.pics .pcard') is not None or pg.query_selector('.qcard .pcard') is not None, f'P{pn+3} Stage {g} questions show big picture answer cards')
+        grown_up_exit(pg)
     ok(not errs, 'P22 No page errors ' + '; '.join(errs[:3])); b.close()
 f = [l for l in LOG if l.startswith('FAIL')]; print(f'{len(LOG)-len(f)}/{len(LOG)} passed'); sys.exit(1 if f else 0)
