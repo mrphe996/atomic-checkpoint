@@ -7,7 +7,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "node tools/write-config.mjs",
+    "build": "node tools/write-config.mjs && node tools/build-theme.mjs",
     "build:content": "cd content/authoring && python3 build_json.py && cd ../.. && node tools/build-content.mjs",
     "build:edge": "node tools/build-edge.mjs",
     "check:content": "node tools/build-content.mjs --check",

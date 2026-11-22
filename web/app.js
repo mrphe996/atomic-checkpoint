@@ -137,7 +137,7 @@
       const link = (r, label, ok) => el('a', { href: '#' + r, class: route === r ? 'on' : '' }, el('span', { class: 'st' + (ok ? ' ok' : '') }, ok ? '✓' : ''), label);
       if (lock && lock.paywall) sn.append(el('div', { class: 'why' }, lock.reason));
       else if (lock) sn.append(el('div', { class: 'why' }, lock.reason), link('ws-' + R(s.id), 'Worksheet', (ss.ws || []).includes(s.id)));
-      else sn.append(link('v-' + R(s.id), s.lesson ? 'Read' : 'Watch', vd), link('ex-' + R(s.id), `Practise · ${s.req.length - rl}/${s.req.length} Core`, rl === 0), s.lab ? link('lab-' + R(s.id), '🧪 Experiment', !!((ss.labs || {})[s.id] || {}).v && !!(((ss.labs || {})[s.id] || {}).v || {}).done) : null, link('ws-' + R(s.id), 'Worksheet', (ss.ws || []).includes(s.id)));
+      else sn.append(...[link('v-' + R(s.id), s.lesson ? 'Read' : 'Watch', vd), link('ex-' + R(s.id), `Practise · ${s.req.length - rl}/${s.req.length} Core`, rl === 0), s.lab ? link('lab-' + R(s.id), '🧪 Experiment', !!((ss.labs || {})[s.id] || {}).v && !!(((ss.labs || {})[s.id] || {}).v || {}).done) : null, link('ws-' + R(s.id), 'Worksheet', (ss.ws || []).includes(s.id))].filter(Boolean));
     });
     const passed = !!(st.results || {})[Core.unitId(n)];
     sn.append(el('a', { href: here ? '#test' : '#u-' + n, class: route === 'test' && here ? 'on' : '', onclick: here ? null : e => { e.preventDefault(); Core.switchUnit(n).then(() => go('test')); } }, el('span', { class: 'st' + (passed ? ' ok' : '') }, passed ? '✓' : '★'), `Unit Test ${n} · 45 min`));
@@ -827,7 +827,7 @@
     const aside = el('aside', { class: 'aside' }, solTabs, solBody,
       el('div', { class: 'card', style: 'padding:18px 20px' }, el('b', { class: 'lex' }, 'Learning objective'), el('p', { style: 'margin:4px 0 0;font-size:15px' }, `${q.obj}: ${C.objectives[q.obj].t}`)),
       el('div', { class: 'goal' }, el('span', { class: 'gi' }, svgI(I.bulb, 16, '#1C2A3A', 2)), el('span', {}, tab === 'req' ? 'Right first time: 1 mark · second try: ½ mark. Two wrong tries: you get guided reasoning and a similar question.' : tab === 'adv' ? '* Advanced – optional. Written by Atomic from the real source named on each question.' : tab === 'ext' ? 'Extreme – optional and very hard: new situations, several steps and written paragraphs. Each one you finish earns a badge.' : 'Practice – optional for unlocking, but it makes you stronger before the Unit Test.')));
-    m.append(bar(`Unit ${Core.UNO} › ${s.id} › ${tabName} › question ${idx + 1}`), tocBtn(), doneBanner, tab === 'req' && window.Primary ? Primary.wordBank(s) : null, tabs, chips, el('div', { class: 'exgrid' }, el('div', { class: 'q' }, card), aside));
+    m.append(...[bar(`Unit ${Core.UNO} › ${s.id} › ${tabName} › question ${idx + 1}`), tocBtn(), doneBanner, tab === 'req' && window.Primary ? Primary.wordBank(s) : null, tabs, chips, el('div', { class: 'exgrid' }, el('div', { class: 'q' }, card), aside)].filter(Boolean));
     if (s.lab) tabs.append(el('a', { class: 'chip', href: '#lab-' + R(sid), id: 'labLink' }, '🧪 Experiment'));
     showBanner(); drawSol();
     QE.practice(q, card, { rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; Core.persist(); showBanner(); refreshToc(); drawSol(); xpTick();
