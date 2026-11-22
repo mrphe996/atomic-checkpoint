@@ -144,38 +144,57 @@
     sn.append(el('a', { href: here ? '#map' : '#u-' + n, onclick: here ? null : e => { e.preventDefault(); Core.switchUnit(n).then(() => go('map')); } }, el('span', { class: 'st' }, '◎'), 'Concept map'));
     return sn;
   }
+  // sidebar: a search box, the current course, and only the unit being studied (other units are picked from "Change unit")
+  function tocSearch() {
+    const box = el('div', { class: 'card tsearch' });
+    const inp = el('input', { type: 'search', id: 'tocSearch', placeholder: '🔍 Search lessons, units, words…', autocomplete: 'off', 'aria-label': 'Search this course' });
+    const out = el('div', { class: 'tsres', role: 'listbox' });
+    const norm = t => String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    const items = () => {
+      const L = [];
+      Core.INDEX.units.forEach(u => { if (Core.unitStatus(st, u.n) === 'soon') return;
+        L.push({ k: 'unit', t: `${u.n}. ${u.t}`, sub: 'Unit', n: u.n, to: 'u-' + u.n });
+        (u.sections || []).forEach(x => L.push({ k: 'lesson', t: `${x.id} ${x.t}`, sub: `Unit ${u.n} · ${u.t}`, n: u.n, to: 'v-' + R(x.id) })); });
+      if (C) C.sections.forEach(x => (x.vocab || []).forEach(v => L.push({ k: 'word', t: `${v.emoji || '🔤'} ${v.w}`, sub: `Word · ${x.id} ${x.title}`, n: Core.UNO, to: 'v-' + R(x.id) })));
+      return L;
+    };
+    const open = it => { inp.value = ''; out.innerHTML = ''; document.body.classList.remove('toc-open');
+      if (it.n === Core.UNO) go(it.to); else Core.switchUnit(it.n).then(() => go(it.to)).catch(() => toast('Could not open that unit.')); };
+    inp.addEventListener('input', () => {
+      out.innerHTML = ''; const q = norm(inp.value.trim()); if (q.length < 2) return;
+      const hits = items().filter(it => norm(it.t + ' ' + it.sub).includes(q)).slice(0, 8);
+      if (!hits.length) { out.append(el('p', { class: 'muted tsnone' }, 'Nothing found. Try another word.')); return; }
+      hits.forEach(it => out.append(el('button', { type: 'button', class: 'tsit', role: 'option', onclick: () => open(it) }, el('span', { class: 'tsk' }, { unit: '📘', lesson: '▶', word: '🔤' }[it.k]), el('span', {}, el('b', {}, it.t), el('small', {}, it.sub)))));
+    });
+    inp.addEventListener('keydown', e => { if (e.key === 'Enter') { const b = out.querySelector('.tsit'); if (b) b.click(); } if (e.key === 'Escape') { inp.value = ''; out.innerHTML = ''; } });
+    box.append(inp, out); return box;
+  }
   function toc() {
     const route = location.hash.slice(1); const wrap = el('div', { style: 'display:flex;flex-direction:column;gap:12px' });
-    UI.tocOpen = UI.tocOpen || {}; if (UI.tocUnit !== Core.UNO) { UI.tocOpen[Core.UNO] = true; UI.tocUnit = Core.UNO; }
-    wrap.append(el('div', { class: 'card lvl subjlist' }, el('span', { class: 'h' }, 'SUBJECTS'),
-      el('a', { class: 'it' + (Core.IS_MATHS ? '' : ' on'), href: '#courses-science' }, el('span', {}, '🔬 Science'), el('small', { class: 'sl' }, 'Stages 6–9')),
-      el('a', { class: 'it' + (Core.IS_MATHS ? ' on' : ''), href: '#courses-maths', id: 'tocMaths' }, el('span', {}, '📐 Mathematics'), el('small', { class: 'sl' }, 'Stage 9')),
-      el('a', { class: 'it', href: '#courses', style: 'font-size:13.5px' }, 'IGCSE & AS / A Level →')));
-    wrap.append(el('div', { class: 'card lvl stagelist', role: 'group', 'aria-label': 'Your courses' }, el('span', { class: 'h' }, 'YOUR COURSES'),
-      ...Core.STAGES.map(g => { const mine = g === Core.STAGE, lk = !mine && Core.stageLocked(g), en = mine || Core.enrolled(g);
-        const name = el('span', {}, el('b', { class: 'cam' }, 'Cambridge'), ' ' + (g >= 10 ? '📐 Maths Stage ' + (g - 10) : 'Stage ' + g));
-        if (lk) return el('span', { class: 'it lockedit', title: 'Coming soon', 'aria-disabled': 'true' }, name, el('small', { class: 'lkd' }, '🔒 Soon'));
-        return el('a', { class: 'it' + (mine ? ' on' : ''), href: '#stage-' + g, title: mine ? 'Open now' : en ? 'Enrolled – open this course' : 'Enrol to open', onclick: mine || !en ? null : ev => { ev.preventDefault(); pickStage(g, ev.currentTarget); } },
-          name, el('small', { class: 'sl' }, en ? stagePct(g) + '%' : 'Enrol →')); })));
-    const tot = Core.totalSeconds();
-    wrap.append(el('div', { class: 'card tochrs' }, el('small', {}, `CAMBRIDGE ${Core.stageName(Core.STAGE).toUpperCase()} COURSE`), el('b', {}, `≈ ${estH(Core.INDEX.est || 0)} of learning`), el('small', { class: 'muted' }, `You have studied ${hrs(tot)}`)));
-    const units = el('div', { class: 'units' });
-    Core.INDEX.units.forEach(u => {
-      const us = Core.unitStatus(st, u.n), open = !!UI.tocOpen[u.n], here = u.n === Core.UNO;
-      if (us === 'soon') { units.append(el('div', { class: 'unit', title: 'Coming soon' }, unitIcon(u.n), el('span', {}, `${u.n}. ${u.t}`), el('span', { class: 'lk' }, svgI(I.lock, 14, '#8B98AB', 2)))); return; }
-      const box = el('div', { class: 'unitbox' + (open ? ' open' : '') });
-      const head = el('button', { type: 'button', class: 'unit' + (here ? ' on' : ''), 'aria-expanded': String(open), onclick: () => { UI.tocOpen[u.n] = !open; refreshToc(); } },
-        unitIcon(u.n), el('span', {}, `${u.n}. ${u.t}`), us === 'passed' ? el('span', { class: 'lk', style: 'color:#1E8E4E;font-weight:800' }, '✓') : null, el('span', { class: 'chev', 'aria-hidden': 'true' }, open ? '▾' : '▸'));
-      box.append(head);
-      if (open) {
-        const content = here ? C : Core.cached(u.n);
-        box.append(el('div', { class: 'unitmeta' }, el('a', { href: '#u-' + u.n }, 'Unit overview'), el('small', { class: 'muted' }, `≈ ${estH(u.est || 0)} · you ${hrs(Core.unitSeconds(u.n))}`)));
-        if (content) box.append(unitSecNav(u.n, content, Core.S.states[Core.unitId(u.n)], route));
-        else { box.append(el('span', { class: 'inl-spin', style: 'margin:4px 10px' }, 'Loading topics…')); Core.peekUnit(u.n).then(refreshToc).catch(() => { }); }
-      }
-      units.append(box);
-    });
-    wrap.append(units, el('div', { class: 'card tocfoot' }, el('a', { href: '#tests' }, '📝 Tests & exams'), el('a', { href: '#final' }, '🏁 End-of-year exams'), el('a', { href: '#checkpoint' }, '🏛 Checkpoint exam room'), el('a', { href: '#bank' }, '🗂 Question Bank'), el('a', { href: '#words' }, '📒 My word book'), el('a', { href: '#cert' }, '🎓 Certificate')));
+    wrap.append(tocSearch());
+    // the current course, with a small menu to change it
+    const g0 = Core.STAGE; const cmenu = el('div', { class: 'tmenu', hidden: true });
+    Core.STAGES.forEach(g => { if (g === g0) return; const lk = Core.stageLocked(g), en = Core.enrolled(g);
+      const name = el('span', {}, el('b', { class: 'cam' }, 'Cambridge'), ' ' + (g >= 10 ? '📐 Maths Stage ' + (g - 10) : 'Stage ' + g));
+      cmenu.append(lk ? el('span', { class: 'it lockedit', 'aria-disabled': 'true' }, name, el('small', { class: 'lkd' }, '🔒 Soon'))
+        : el('a', { class: 'it', href: '#stage-' + g, onclick: en ? ev => { ev.preventDefault(); pickStage(g, ev.currentTarget); } : null }, name, el('small', { class: 'sl' }, en ? stagePct(g) + '%' : 'Enrol →'))); });
+    cmenu.append(el('a', { class: 'it', href: '#courses', style: 'font-size:13.5px' }, 'All courses · IGCSE & A Level →'));
+    const cbtn = el('button', { type: 'button', class: 'tcourse', id: 'tocCourse', 'aria-expanded': 'false', onclick: () => { cmenu.hidden = !cmenu.hidden; cbtn.setAttribute('aria-expanded', String(!cmenu.hidden)); } },
+      el('span', {}, el('small', {}, 'YOUR COURSE'), el('b', {}, el('span', { class: 'cam' }, 'Cambridge'), ' ' + Core.stageLabel())), el('span', { class: 'tpct' }, stagePct(g0) + '%'), el('span', { class: 'chev', 'aria-hidden': 'true' }, '▾'));
+    wrap.append(el('div', { class: 'card lvl tcoursebox' }, cbtn, cmenu));
+    // the unit being studied
+    const u = Core.INDEX.units.find(x => x.n === Core.UNO) || Core.INDEX.units[0];
+    const umenu = el('div', { class: 'tmenu tunits', hidden: true }, el('span', { class: 'h' }, 'CHOOSE A UNIT'),
+      ...Core.INDEX.units.map(x => { const us = Core.unitStatus(st, x.n);
+        if (us === 'soon') return el('span', { class: 'it lockedit' }, unitIcon(x.n), el('span', {}, `${x.n}. ${x.t}`), el('small', { class: 'lkd' }, '🔒'));
+        return el('button', { type: 'button', class: 'it' + (x.n === Core.UNO ? ' on' : ''), onclick: () => { umenu.hidden = true; if (x.n === Core.UNO) return; Core.switchUnit(x.n).then(() => go('u-' + x.n)).catch(() => toast('Could not open that unit.')); } },
+          unitIcon(x.n), el('span', {}, `${x.n}. ${x.t}`), us === 'passed' ? el('small', { style: 'color:#1E8E4E;font-weight:800' }, '✓') : null); }));
+    const ubox = el('div', { class: 'card tunit' },
+      el('div', { class: 'tuhead' }, unitIcon(u.n), el('div', {}, el('small', {}, `UNIT ${u.n} OF ${Core.INDEX.units.length}`), el('b', {}, u.t)),
+        el('button', { type: 'button', class: 'btn small', id: 'changeUnit', onclick: () => { umenu.hidden = !umenu.hidden; } }, 'Change unit ▾')),
+      umenu, el('div', { class: 'unitmeta' }, el('a', { href: '#u-' + u.n }, 'Unit overview'), el('small', { class: 'muted' }, `≈ ${estH(u.est || 0)} · you ${hrs(Core.unitSeconds(u.n))}`)));
+    if (C) ubox.append(unitSecNav(u.n, C, Core.S.states[Core.unitId(u.n)], route));
+    wrap.append(ubox, el('div', { class: 'card tocfoot' }, el('a', { href: '#tests' }, '📝 Tests & exams'), el('a', { href: '#final' }, '🏁 End-of-year exams'), el('a', { href: '#checkpoint' }, '🏛 Checkpoint exam room'), el('a', { href: '#bank' }, '🗂 Question Bank'), el('a', { href: '#words' }, '📒 My word book'), el('a', { href: '#cert' }, '🎓 Certificate')));
     return wrap;
   }
   function refreshToc() { const t = document.querySelector('.toc'); if (t && st && t.childElementCount) { t.innerHTML = ''; t.append(toc()); } }
@@ -379,7 +398,7 @@
       const vlen = s.lesson ? `about ${Math.max(5, Math.round(s.video.dur / 60))} min · ${s.stops.length} check questions` : `${fmt(s.video.dur)} · ${s.stops.length} pause questions`;
       const tiles = el('div', { class: 'u4tiles' },
         tile(vd ? 'ok' : ansStops ? 'go' : '', s.lesson ? '📖' : '▶', s.lesson ? 'Read the lesson' : 'Watch', vd ? vlen + ' ✓' : ansStops ? `${ansStops} of ${s.stops.length} pauses · ${fmt(vs.pos || 0)}` : vlen, '#v-' + R(s.id), !!lock),
-        tile(reqDone === 8 ? 'ok' : reqDone || pracDone ? 'go' : '', reqDone === 8 ? '✓' : s.vocab ? '🎤' : '✎', s.vocab ? 'Listen, say & practise' : 'Practise', `${pracDone}/30 · ${reqDone}/8 Core`, '#ex-' + R(s.id), !!lock || !vd, reqDone && reqDone < 8 ? el('span', { class: 'u4mini' }, el('i', { style: `width:${reqDone / 8 * 100}%` })) : null),
+        tile(reqDone === 8 ? 'ok' : reqDone || pracDone ? 'go' : '', reqDone === 8 ? '✓' : s.vocab ? (C.unit.young ? '🎧' : '🎤') : '✎', s.vocab ? (C.unit.young ? 'Listen & practise' : 'Listen, say & practise') : 'Practise', `${pracDone}/${s.prac.length} · ${reqDone}/8 Core`, '#ex-' + R(s.id), !!lock || !vd, reqDone && reqDone < 8 ? el('span', { class: 'u4mini' }, el('i', { style: `width:${reqDone / 8 * 100}%` })) : null),
         s.lab ? (() => { const L = (st.labs || {})[s.id] || {}; const vdn = !!(L.v || {}).done, hdn = !!(L.h || {}).done; return tile(vdn && hdn ? 'ok' : vdn || hdn ? 'go' : '', '🧪', 'Experiment', vdn && hdn ? 'Lab + home ✓' : vdn ? 'Lab ✓ · try it at home' : 'Virtual lab + at home', '#lab-' + R(s.id), !!lock); })()
           : tile(st.ws.includes(s.id) ? 'ok' : '', '🖨', 'Worksheet', st.ws.includes(s.id) ? 'Printed' : 'Print only', '#ws-' + R(s.id), !!lock));
       const pill = { lock: ['lock', '🔒 Locked'], done: ['ok', 'Completed'], go: ['go', 'In progress'], new: ['no', 'Not started'] }[state];
@@ -431,7 +450,7 @@
         el('div', { class: 'float' }, el('i', {}, Core.passed(st) ? '🏆' : '▶'), el('div', {}, el('b', {}, Core.passed(st) ? 'Unit passed' : 'Next up'), nx.label)))));
     document.getElementById('wrap').before(heroS);
     m.append(tocBtn(), el('div', { class: 'u4head' }, el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, `Cambridge ${Core.stageName(Core.STAGE)} · Unit ${Core.UNO}`), el('h2', {}, 'Your learning path')),
-      el('div', { class: 'u4steps' }, ...(Core.IS_PRIMARY ? ['1 Watch', '2 Listen & say', '3 Experiment', '4 Unit Test'] : ['1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test']).map(t => el('span', {}, t)))), learningPath(), examBlock());
+      el('div', { class: 'u4steps' }, ...(Core.IS_PRIMARY ? ['1 Watch', C.unit.young ? '2 Listen & practise' : '2 Listen & say', '3 Experiment', '4 Unit Test'] : ['1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test']).map(t => el('span', {}, t)))), learningPath(), examBlock());
     m.append(el('div', { class: 'u4two' },
       el('section', { class: 'card' }, el('h2', { style: 'margin:0;font-size:22px' }, 'What you will learn'), el('span', { class: 'muted' }, `${sec} of ${nobj} secure`),
         el('ul', { class: 'u4objs objs' }, ...Object.entries(C.objectives).map(([k, o]) => el('li', { class: objSecure(k) ? 'ok' : '' }, o.t)))),
@@ -534,12 +553,26 @@
       v.pause(); syncUi(); drawSide();
       if (!isFs()) setTimeout(() => wrap.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 50);
     }
-    function complete() {
+    function complete(opened) {   // opened: the page was opened on a finished video (no countdown then)
       if (next()) return; if (!vs.completed) { vs.completed = true; Core.persist(); bumpXp(); Backend.track('video_complete', { learner: st.id, unit: Core.UNIT, sec: sid }); }
       panel.innerHTML = ''; panel.append(el('section', { class: 'card done' }, el('h3', {}, `✓ Lesson ${s.id} complete`),
         el('p', { style: 'margin:0 0 10px' }, `Next: 30 practice questions (8 Core) for section ${s.id}. You can now skip freely through the video to revise.`),
         el('div', { class: 'btnrow' }, el('button', { class: 'btn gold big shine', type: 'button', onclick: () => go('ex-' + R(sid)) }, `Practise ${s.id}`, el('span', { class: 'arr' }, '→')), s.lab ? el('a', { class: 'btn big', href: '#lab-' + R(sid) }, '🧪 Experiment room') : null)));
       refreshToc(); drawSide();
+      // straight on to the practice: a short countdown, then the practice opens by itself (while the Core questions still need doing)
+      if (!opened && Core.reqLeft(st, s).length && !s.lesson) {
+        const route = location.hash; let n = 5; const lbl = el('b', {}, String(n));
+        const cd = el('div', { class: 'banner info autogo', id: 'autoPractice' }, '▶ Practice starts in ', lbl, ' …', el('button', { type: 'button', class: 'btn small', onclick: () => { clearInterval(t); cd.remove(); } }, 'Stay here'));
+        panel.querySelector('.card.done').append(cd);
+        const t = setInterval(() => { if (location.hash !== route) { clearInterval(t); return; } n--; lbl.textContent = String(n); qlayer.querySelectorAll('.autogo b').forEach(x => x.textContent = String(n));
+          if (n <= 0) { clearInterval(t); if (isFs()) fs.click(); closeQ(); go('ex-' + R(sid)); } }, 1000);
+        if (isFs()) { qlayer.innerHTML = ''; qlayer.hidden = false; player.classList.add('qopen');
+          qlayer.append(el('section', { class: 'card stop done kid' }, el('h3', { style: 'font-size:28px;margin:0 0 8px' }, '🎉 Well done! Lesson complete'),
+            el('p', { class: 'autogo', style: 'font-size:20px' }, 'Practice starts in ', el('b', {}, String(n)), ' …'),
+            el('div', { class: 'btnrow' }, el('button', { class: 'btn gold big shine', type: 'button', onclick: () => { clearInterval(t); fs.click(); closeQ(); go('ex-' + R(sid)); } }, `Practise now →`),
+              el('button', { class: 'btn big', type: 'button', onclick: () => { clearInterval(t); cd.remove(); fs.click(); closeQ(); } }, 'Stay here')))); }
+        return;
+      }
       if (isFs()) { qlayer.innerHTML = ''; qlayer.hidden = false; player.classList.add('qopen');
         qlayer.append(el('section', { class: 'card stop done kid' }, el('h3', { style: 'font-size:28px;margin:0 0 8px' }, '🎉 Well done! Lesson complete'),
           el('div', { class: 'btnrow' }, el('button', { class: 'btn gold big shine', type: 'button', onclick: () => { fs.click(); closeQ(); go('ex-' + R(sid)); } }, `Practise ${s.id} →`),
@@ -565,7 +598,7 @@
       if (UI.seek && UI.seek.sec === sid) { t0 = UI.seek.from; segEnd = UI.seek.to; UI.seek = null; panel.append(el('div', { class: 'banner info' }, `▶ Review clip ${fmt(t0)}–${fmt(segEnd)} – press play to watch.`)); }
       const nx = next();
       if (!review() && nx && t0 >= nx.t - 0.3) { v.currentTime = nx.t; showStop(nx); } else v.currentTime = Math.min(t0, s.video.dur - 0.5);
-      if (vs.completed && !nx) complete();
+      if (vs.completed && !nx) complete(true);
       syncUi();
     });
     let lastSide = 0;
@@ -665,58 +698,61 @@
       el('div', { class: 'fchoices' }, ...btns.map(b => el('button', { type: 'button', class: 'btn big ' + (b.cls || ''), id: b.id || null, onclick: b.on }, b.t)))));
   }
   function viewFocusPractice(s) {
-    const route = 'ex-' + R(s.id); UI.fr = UI.fr || {}; const key = `${Core.STAGE}:${Core.UNO}:${route}`;
+    // full-screen practice room: choose Easy (Core), Medium (Practice) or Hard (Challenge) and any question, like a worksheet task.
+    // The room closes only when the Core questions are done (then "Exit task" opens).
+    const route = 'ex-' + R(s.id); UI.fl = UI.fl || {}; const key = `${Core.STAGE}:${Core.UNO}:${route}`;
+    const LV = [['req', 'Easy', '🟢', 'Core'], ['prac', 'Medium', '🟡', 'Practice'], ['adv', 'Hard', '🔴', 'Challenge']].filter(([k]) => s[k] && s[k].length);
     const notDone = q => !(st.items[q.id] || {}).done;
-    const newRound = () => {
-      if (Core.reqLeft(st, s).length) return { kind: 'req', ids: s.req.map(q => q.id) };
-      const p = s.prac.filter(notDone).slice(0, ROUND); if (p.length) return { kind: 'prac', ids: p.map(q => q.id) };
-      const a = s.adv.filter(notDone).slice(0, ROUND); if (a.length) return { kind: 'adv', ids: a.map(q => q.id) };
-      return { kind: 'review', ids: s.prac.slice(0, ROUND).map(q => q.id) };
-    };
-    const all = [...s.req, ...s.prac, ...s.adv];
-    let Rd = UI.fr[key]; if (!Rd || !Rd.ids.every(id => all.some(q => q.id === id)) || Rd.ids.every(id => (st.items[id] || {}).done) && Rd.closed) Rd = UI.fr[key] = { ...newRound(), i: null };
-    const qs = Rd.ids.map(id => all.find(q => q.id === id)).filter(Boolean);
-    if (Rd.i == null) Rd.i = Math.max(0, qs.findIndex(notDone));
-    const left = () => qs.filter(notDone).length;
-    focusOn(route, Rd.kind === 'review' ? () => 0 : left, 'practice');
-    st.last = { route, tab: Rd.kind === 'req' ? 'req' : 'prac', idx: 0 }; Core.persist();
-    const kindName = { req: 'Core questions', prac: 'Practice', adv: '⭐ Challenge', review: 'Review' }[Rd.kind];
-    const F = focusFrame('🎯', `${s.id} ${s.title}`, `Practice room · ${kindName}`);
+    let P = UI.fl[key]; if (!P) { const k0 = Core.reqLeft(st, s).length ? 'req' : (s.prac.some(notDone) ? 'prac' : 'req'); P = UI.fl[key] = { tab: k0, i: Math.max(0, s[k0].findIndex(notDone)) }; }
+    const coreLeft = () => Core.reqLeft(st, s).length;
+    focusOn(route, coreLeft, 'practice');
+    const F = focusFrame('🎯', `${s.id} ${s.title}`, 'Practice room · pick a level and any question');
+    const leaveBtn = el('button', { type: 'button', class: 'btn small fexit', id: 'leaveRoom', onclick: () => { if (coreLeft()) { focusNudge(); return; } focusOff(); UI.fl[key] = null; go('u-' + Core.UNO); } }, 'Exit task');
     if (s.vocab && s.vocab.length && window.Primary) {   // the lesson's words, in a drawer inside the room
-      const wb = Primary.wordBank(s); const fresh = Rd.kind === 'req' && !qs.some(q => (st.items[q.id] || {}).tries);
+      const wb = Primary.wordBank(s); const fresh = !s.req.some(q => (st.items[q.id] || {}).tries);
       const drawer = el('div', { class: 'fwords' }, wb);
       const wbtn = el('button', { type: 'button', class: 'btn small fwbtn' + (fresh ? ' glow' : ''), id: 'wordsBtn', 'aria-expanded': 'false', onclick: () => { const o = drawer.classList.toggle('open'); wbtn.classList.remove('glow'); wbtn.setAttribute('aria-expanded', String(o)); wbtn.textContent = o ? '✕ Close words' : '📒 Words'; } }, '📒 Words');
-      F.head.append(wbtn);
-      F.head.after(drawer);
+      F.head.append(wbtn); F.head.after(drawer);
     }
-    F.head.append(grownUpExit('u-' + Core.UNO));
-    const drawProg = () => { F.prog.innerHTML = '';
-      F.prog.append(el('div', { class: 'fsteps', 'aria-hidden': 'true' }, ...qs.map((q, i) => { const r = st.items[q.id] || {}; return el('span', { class: (i === Rd.i ? 'cur ' : '') + (r.done ? (r.ok ? 'ok' : 'half') : '') }); })),
-        el('b', { class: 'fcount' }, `Question ${Rd.i + 1} of ${qs.length}`), el('span', { class: 'fleft' }, left() ? `${left()} to go` : '✓ All done')); };
-    const finishRound = () => {
-      Rd.closed = true;
-      const right = qs.filter(q => (st.items[q.id] || {}).ok && (st.items[q.id] || {}).tries === 1).length;
-      const i = C.sections.indexOf(s), nxt = C.sections[i + 1]; const more = s.prac.some(notDone) || s.adv.some(notDone);
-      const exit = to => () => { focusOff(); UI.fr[key] = null; go(to); };
-      const btns = [];
-      if (more) btns.push({ t: Rd.kind === 'req' ? 'Practise more ▶' : `${ROUND} more questions ▶`, cls: 'gold', id: 'moreQ', on: () => { UI.fr[key] = null; render(); } });
+    F.head.append(leaveBtn, grownUpExit('u-' + Core.UNO));
+    const levels = el('div', { class: 'flevels', role: 'tablist' }); const strip = el('div', { class: 'fstrip' });
+    F.prog.append(levels, strip);
+    const list = () => s[P.tab];
+    const drawTop = () => {
+      levels.innerHTML = ''; strip.innerHTML = '';
+      LV.forEach(([k, name, dot, what]) => { const qs = s[k], d = qs.filter(q => !notDone(q)).length;
+        levels.append(el('button', { type: 'button', role: 'tab', class: 'flv lv-' + k + (P.tab === k ? ' on' : ''), 'aria-selected': String(P.tab === k), id: 'lv-' + k, onclick: () => { P.tab = k; P.i = Math.max(0, qs.findIndex(notDone)); show(); } },
+          el('span', { class: 'fdot', 'aria-hidden': 'true' }, dot), el('b', {}, name), el('small', {}, `${what} · ${d}/${qs.length}`), k === 'req' && d < qs.length ? el('i', { class: 'fneed' }, 'needed') : null)); });
+      const qs = list(); const d = qs.filter(q => !notDone(q)).length;
+      strip.append(el('div', { class: 'fpct' }, el('span', { style: `width:${Math.round(d / qs.length * 100)}%` })), el('small', { class: 'fpctn' }, `${Math.round(d / qs.length * 100)}%`),
+        el('div', { class: 'fqs' }, ...qs.map((q, i) => { const r = st.items[q.id] || {};
+          return el('button', { type: 'button', class: 'fq' + (i === P.i ? ' cur' : '') + (r.done ? (r.ok ? ' ok' : ' half') : r.tries ? ' bad' : ''), 'aria-label': `Question ${i + 1}${r.done ? ', done' : ''}`, onclick: () => { P.i = i; show(); } }, 'Q' + (i + 1)); })));
+      leaveBtn.classList.toggle('locked', coreLeft() > 0); leaveBtn.title = coreLeft() ? `Finish the ${coreLeft()} Easy (Core) questions first` : 'Leave the practice room';
+    };
+    const levelDone = () => {
+      const qs = list(); const k = P.tab; const right = qs.filter(q => (st.items[q.id] || {}).ok && (st.items[q.id] || {}).tries === 1).length;
+      const i = C.sections.indexOf(s), nxt = C.sections[i + 1]; const exit = to => () => { focusOff(); UI.fl[key] = null; go(to); };
+      const btns = []; LV.forEach(([k2, name]) => { if (k2 !== k && s[k2].some(notDone)) btns.push({ t: `Try ${name} ▶`, cls: k2 === 'prac' ? 'gold' : '', id: 'go-' + k2, on: () => { P.tab = k2; P.i = Math.max(0, s[k2].findIndex(notDone)); show(); } }); });
       if (s.lab) btns.push({ t: '🧪 Experiment room', id: 'toLab', on: exit('lab-' + R(s.id)) });
       if (nxt && Core.secDone(st, s)) btns.push({ t: `Next lesson ${nxt.id} →`, cls: 'primary', on: exit('v-' + R(nxt.id)) });
-      btns.push({ t: 'Finish', id: 'leaveRoom', on: exit('u-' + Core.UNO) });
-      focusDone(F, Rd.kind === 'req' ? 'Core questions finished!' : 'Round finished!', `⭐ ${right} of ${qs.length} right first time. ${Rd.kind === 'req' && nxt ? `Lesson ${nxt.id} is now open.` : ''}`, btns);
-      drawProg(); xpTick(); refreshToc();
+      if (!coreLeft()) btns.push({ t: 'Exit task', id: 'finishRoom', on: exit('u-' + Core.UNO) });
+      const name = (LV.find(x => x[0] === k) || [])[1];
+      focusDone(F, `${name} questions finished!`, `⭐ ${right} of ${qs.length} right first time. ${k === 'req' && nxt ? `Lesson ${nxt.id} is now open.` : ''}`, btns);
+      drawTop(); xpTick(); refreshToc();
     };
-    const show = () => {
-      drawProg(); F.body.innerHTML = ''; F.foot.innerHTML = '';
-      const q = qs[Rd.i]; const rec = st.items[q.id] = st.items[q.id] || { tries: 0 };
+    function show() {
+      st.last = { route, tab: P.tab, idx: P.i }; Core.persist();
+      drawTop(); F.body.innerHTML = ''; F.foot.innerHTML = '';
+      const qs = list(); P.i = Math.min(Math.max(0, P.i), qs.length - 1); const q = qs[P.i]; const rec = st.items[q.id] = st.items[q.id] || { tries: 0 };
       const card = el('section', { class: 'card qcard fcard' }); F.body.append(card);
-      const prev = el('button', { type: 'button', class: 'btn big ghost', disabled: Rd.i === 0, onclick: () => { Rd.i--; show(); } }, '◀ Back');
-      const next = el('button', { type: 'button', class: 'btn big gold shine', id: 'nextQ', disabled: !rec.done }, Rd.i === qs.length - 1 ? 'Finish ✓' : 'Next ▶');
-      next.onclick = () => { if (!rec.done) return; const j = qs.findIndex((x, k) => k > Rd.i && notDone(x)); if (!left()) { finishRound(); return; } Rd.i = j >= 0 ? j : qs.findIndex(notDone); show(); F.room.scrollTop = 0; };
+      const prev = el('button', { type: 'button', class: 'btn big ghost', disabled: P.i === 0, onclick: () => { P.i--; show(); } }, '◀ Back');
+      const last = P.i === qs.length - 1;
+      const next = el('button', { type: 'button', class: 'btn big gold shine', id: 'nextQ', disabled: !rec.done }, last ? 'Finish ✓' : 'Next ▶');
+      next.onclick = () => { if (!rec.done) return; if (!qs.some(notDone)) { levelDone(); return; } const j = qs.findIndex((x, k) => k > P.i && notDone(x)); P.i = j >= 0 ? j : qs.findIndex(notDone); show(); F.room.scrollTop = 0; };
       F.foot.append(prev, next);
-      QE.practice(q, card, { rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; Core.persist(); next.disabled = false; drawProg(); xpTick(); refreshToc(); setTimeout(() => next.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 150); } });
-    };
-    if (!left() && Rd.closed) finishRound(); else show();
+      QE.practice(q, card, { rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; Core.persist(); next.disabled = false; drawTop(); xpTick(); refreshToc(); setTimeout(() => next.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 150); } });
+    }
+    show();
   }
   function viewLab(sid) {
     const s = Core.sec(sid), m = $main(); if (!s || !s.lab) return go('u-' + Core.UNO);
