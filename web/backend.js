@@ -320,6 +320,7 @@
       async attempts(lid, unit) { const rows = await rest(`attempts?learner_id=eq.${lid}&unit=eq.${unit}&order=n.asc`);
         return rows.map(r => ({ id: r.id, n: r.n, form: r.form, ts: Date.parse(r.created_at), answers: r.answers, per: r.per, auto: Number(r.auto), pending: Object.keys(r.per).filter(k => r.per[k].teacher), status: r.status, score: r.score == null ? null : Number(r.score), pct: r.pct == null ? null : Number(r.pct), passed: r.passed, byObj: r.by_obj, weak: r.weak || [], remed: r.remed || [], duration: r.duration_s, overtime: !!r.overtime, leaves: Number(r.leaves || 0), autoSubmitted: !!r.auto_submitted })); },
       async submitTest(b) { return api('submit-test', { method: 'POST', body: b }); },
+      async aiMark(b) { return api('ai-mark', { method: 'POST', body: b }); },
       async markingQueue() { return (await api('marking')).queue; },
       async markAttempt(attemptId, grades) { return (await api('marking', { method: 'POST', body: { attemptId, grades } })).attempt; },
       async leaderboard(stage = 7) { return rpc('leaderboard', { p_stage: stage }); },

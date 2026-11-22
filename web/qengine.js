@@ -156,6 +156,19 @@
         const ta = el('textarea', { rows: 5, 'aria-label': 'Your answer', placeholder: 'Write your answer in English (full sentences, use because / so).' }); ta.value = resp || '';
         ta.oninput = () => { resp = ta.value; changed(); }; W.append(ta); break;
       }
+      case 'para': {
+        const [sMin, sMax] = q.sentences || [1], wMin = q.minWords || 0;
+        const ta = el('textarea', { rows: 8, class: 'para', 'aria-label': 'Your answer', placeholder: `Write a paragraph in English: ${sMin}${sMax && sMax !== sMin ? '–' + sMax : ''} full sentences${wMin ? `, at least ${wMin} words` : ''}.` });
+        ta.value = typeof resp === 'string' ? resp : '';
+        const cnt = el('p', { class: 'pcount muted', 'aria-live': 'polite' });
+        const upd = () => { const st = GC.paraStats(ta.value); const ok = st.sentences >= sMin && st.words >= wMin; cnt.className = 'pcount ' + (ok ? 'ok' : 'muted');
+          cnt.textContent = `${st.words} word${st.words === 1 ? '' : 's'}${wMin ? ' / ' + wMin : ''} · ${st.sentences} sentence${st.sentences === 1 ? '' : 's'} / ${sMin}${sMax && sMax !== sMin ? '–' + sMax : ''}`; };
+        ta.oninput = () => { resp = ta.value; upd(); changed(); };
+        W.append(ta, cnt); upd();
+        if (q.frame) { const fr = el('p', { class: 'pframe', hidden: true }, el('b', {}, 'Writing frame: '), q.frame);
+          W.append(el('button', { class: 'btn small ghost', type: 'button', onclick: e => { fr.hidden = !fr.hidden; e.target.textContent = fr.hidden ? 'Show a writing frame' : 'Hide the writing frame'; } }, 'Show a writing frame'), fr); }
+        break;
+      }
       case 'grid': {
         const tick = isTick(q); resp = resp || q.rows.map(() => tick ? q.cols.map(() => '') : ['']);
         const t = el('table', { class: 'grid' }); t.append(el('tr', {}, el('th', {}, ''), ...(tick ? q.cols : ['Choose']).map(c => el('th', {}, c))));
@@ -249,7 +262,7 @@
       fb.className = 'fb ok'; fb.innerHTML = '';
       add(el('b', {}, rec.tries === 1 ? '✓ Spot on!' : '✓ Correct (attempt ' + rec.tries + ').'), g.fb.length && q.type === 'mcq' ? el('p', {}, g.fb[0]) : null,
         q.reason ? el('p', { class: 'reason' }, '💡 ', q.reason) : null,
-        q.type === 'explain' ? rubricView(q, g) : null);
+        (q.type === 'explain' || q.type === 'para') ? rubricView(q, g) : null);
       api.markOpts && api.markOpts(); api.markSpots && api.markSpots();
     }
     if (rec.done) { const g = grade(q, rec.resp); if (rec.ok) showSolved(g); else showReveal(g, true); api.lock(); checkBtn.remove(); return; }
@@ -257,7 +270,7 @@
       fb.className = 'fb guide'; fb.innerHTML = '';
       if (!quiet && g && g.fb && g.fb.length) add(el('div', { class: 'fb bad' }, ...g.fb.slice(0, 3).map(t => el('p', {}, t))));
       add(el('b', {}, 'Let\'s reason it through step by step'), el('p', { class: 'reason' }, q.reason || q.hint || 'Re-read the question, underline the key words and rule out the wrong answers.'),
-        el('p', {}, el('b', {}, 'Answer: '), answerText(q)), q.type === 'explain' ? rubricView(q, g) : null);
+        el('p', {}, el('b', {}, 'Answer: '), answerText(q)), (q.type === 'explain' || q.type === 'para') ? rubricView(q, g) : null);
       api.markOpts && api.markOpts(); api.markSpots && api.markSpots();
       if (quiet) return;
       if (q.twin) {
@@ -268,8 +281,14 @@
         add(el('button', { class: 'btn', type: 'button', onclick: () => { rec.done = true; o.save(rec); o.onDone && o.onDone(rec); } }, 'I understand – continue'));
       }
     }
-    checkBtn.onclick = () => {
-      const g = grade(q, api.get());
+    checkBtn.onclick = async () => {
+      let g = grade(q, api.get());
+      // paragraph answers: the server marks them against the mark scheme with AI (live site); keywords otherwise
+      if (q.type === 'para' && g.answered !== false && !g.short && QE.aiMark) {
+        checkBtn.disabled = true; const t0 = checkBtn.textContent; checkBtn.textContent = 'Marking…';
+        try { const r = await QE.aiMark(q, api.get()); if (r && Array.isArray(r.hits)) g = Object.assign({}, g, r, { answered: true }); } catch (e) { /* keyword mark stands */ }
+        checkBtn.disabled = false; checkBtn.textContent = t0;
+      }
       if (!g.answered) { fb.className = 'fb warn'; fb.textContent = g.fb[0] || 'Please answer first.'; return; }
       rec.tries++; rec.resp = api.get();
       o.onCheck && o.onCheck(g, rec);
@@ -289,5 +308,5 @@
       el('p', {}, el('b', {}, 'Model answer: '), q.model));
   }
 
-  window.QE = { el, esc, grade, renderBody, practice, answerText, TYPE_VI, DIFF, shuffle, isTick, parseNum, dataTable };
+  window.QE = { aiMark: null, el, esc, grade, renderBody, practice, answerText, TYPE_VI, DIFF, shuffle, isTick, parseNum, dataTable };
 })();

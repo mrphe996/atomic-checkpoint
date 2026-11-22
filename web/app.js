@@ -701,7 +701,7 @@
     // full-screen practice room: choose Easy (Core), Medium (Practice) or Hard (Challenge) and any question, like a worksheet task.
     // The room closes only when the Core questions are done (then "Exit task" opens).
     const route = 'ex-' + R(s.id); UI.fl = UI.fl || {}; const key = `${Core.STAGE}:${Core.UNO}:${route}`;
-    const LV = [['req', 'Easy', '🟢', 'Core'], ['prac', 'Medium', '🟡', 'Practice'], ['adv', 'Hard', '🔴', 'Challenge']].filter(([k]) => s[k] && s[k].length);
+    const LV = [['req', 'Easy', '🟢', 'Core'], ['prac', 'Medium', '🟡', 'Practice'], ['adv', 'Hard', '🔴', 'Challenge'], ['ext', 'Extreme', '⚫', 'Extreme']].filter(([k]) => s[k] && s[k].length);
     const notDone = q => !(st.items[q.id] || {}).done;
     let P = UI.fl[key]; if (!P) { const k0 = Core.reqLeft(st, s).length ? 'req' : (s.prac.some(notDone) ? 'prac' : 'req'); P = UI.fl[key] = { tab: k0, i: Math.max(0, s[k0].findIndex(notDone)) }; }
     const coreLeft = () => Core.reqLeft(st, s).length;
@@ -788,15 +788,15 @@
       m.append(bar(`Section ${s.id} · Practice`), lock ? lockScreen(`Practice for section ${s.id} is locked`, lock.reason, [lock]) : lockScreen(`Practice for section ${s.id} is locked`, s.lesson ? 'Read the lesson and answer its check questions before you start the practice.' : 'Watch the whole video and answer its pause questions before you start the practice.', [Core.firstMissingIn(st, s)])); return;
     }
     if (Core.IS_PRIMARY) return viewFocusPractice(s);   // young learners practise inside the full-screen room
-    const tab = UI.tab[route] || 'req'; const list = s[tab]; let idx = Math.min(UI.idx[route + tab] || 0, list.length - 1);
+    let tab = UI.tab[route] || 'req'; if (!(s[tab] || []).length) tab = 'req'; const list = s[tab]; let idx = Math.min(UI.idx[route + tab] || 0, list.length - 1);
     st.last = { route, tab, idx }; Core.persist();
     const q = list[idx]; const go2 = i => { UI.idx[route + tab] = i; render(); };
     const pips = el('div', { class: 'pips', 'aria-hidden': 'true' }, ...list.map((x, i) => { const r = st.items[x.id] || {}; return el('span', { class: i === idx ? 'cur' : r.done ? (r.ok ? (r.tries === 1 ? 'ok' : 'half') : 'bad') : r.tries ? 'bad' : '' }); }));
-    const tabName = { req: 'Core', prac: 'Practise', adv: '* Advanced' }[tab];
+    const tabName = { req: 'Core', prac: 'Practise', adv: '* Advanced', ext: 'Extreme' }[tab];
     subbar('blue', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}`), el('span', { style: 'font-size:15px;color:#DCE8FA' }, `${s.id} ${s.title} · ${tabName} · `, el('b', { style: 'color:#fff' }, `Question ${idx + 1} of ${list.length}`)), pips,
       el('button', { class: 'btn small onblue', type: 'button', disabled: idx === 0, onclick: () => go2(idx - 1) }, '← Previous'),
       el('button', { class: 'btn small gold', type: 'button', id: 'nextQ', disabled: idx === list.length - 1, onclick: () => go2(idx + 1) }, 'Next', el('span', { class: 'arr' }, '→')));
-    const tabs = el('div', { class: 'btnrow', role: 'tablist' }, ...[['req', `Core · ${8 - Core.reqLeft(st, s).length}/8`], ['prac', `Practice · ${s.prac.filter(x => (st.items[x.id] || {}).done).length}/${s.prac.length}`], ['adv', `* Advanced · ${s.adv.filter(x => (st.items[x.id] || {}).done).length}/${s.adv.length}`]]
+    const tabs = el('div', { class: 'btnrow', role: 'tablist' }, ...[['req', `Core · ${8 - Core.reqLeft(st, s).length}/8`], ['prac', `Practice · ${s.prac.filter(x => (st.items[x.id] || {}).done).length}/${s.prac.length}`], ['adv', `* Advanced · ${s.adv.filter(x => (st.items[x.id] || {}).done).length}/${s.adv.length}`]].concat((s.ext || []).length ? [['ext', `⚫ Extreme · ${s.ext.filter(x => (st.items[x.id] || {}).done).length}/${s.ext.length}`]] : [])
       .map(([k, t]) => el('button', { class: 'chip' + (k === tab ? ' on' : ''), role: 'tab', type: 'button', 'aria-selected': String(k === tab), onclick: () => { UI.tab[route] = k; render(); } }, t)));
     st.marks = st.marks || {};
     const mk = el('button', { type: 'button', class: 'chip' + (st.marks[q.id] ? ' on' : ''), 'aria-pressed': String(!!st.marks[q.id]), style: 'margin-left:auto', onclick: () => { st.marks[q.id] = !st.marks[q.id]; Core.persist(); mk.classList.toggle('on'); mk.setAttribute('aria-pressed', String(!!st.marks[q.id])); } }, '★ Bookmark');
@@ -826,7 +826,7 @@
     };
     const aside = el('aside', { class: 'aside' }, solTabs, solBody,
       el('div', { class: 'card', style: 'padding:18px 20px' }, el('b', { class: 'lex' }, 'Learning objective'), el('p', { style: 'margin:4px 0 0;font-size:15px' }, `${q.obj}: ${C.objectives[q.obj].t}`)),
-      el('div', { class: 'goal' }, el('span', { class: 'gi' }, svgI(I.bulb, 16, '#1C2A3A', 2)), el('span', {}, tab === 'req' ? 'Right first time: 1 mark · second try: ½ mark. Two wrong tries: you get guided reasoning and a similar question.' : tab === 'adv' ? '* Advanced – optional. Written by Atomic from the real source named on each question.' : 'Practice – optional for unlocking, but it makes you stronger before the Unit Test.')));
+      el('div', { class: 'goal' }, el('span', { class: 'gi' }, svgI(I.bulb, 16, '#1C2A3A', 2)), el('span', {}, tab === 'req' ? 'Right first time: 1 mark · second try: ½ mark. Two wrong tries: you get guided reasoning and a similar question.' : tab === 'adv' ? '* Advanced – optional. Written by Atomic from the real source named on each question.' : tab === 'ext' ? 'Extreme – optional and very hard: new situations, several steps and written paragraphs. Each one you finish earns a badge.' : 'Practice – optional for unlocking, but it makes you stronger before the Unit Test.')));
     m.append(bar(`Unit ${Core.UNO} › ${s.id} › ${tabName} › question ${idx + 1}`), tocBtn(), doneBanner, tab === 'req' && window.Primary ? Primary.wordBank(s) : null, tabs, chips, el('div', { class: 'exgrid' }, el('div', { class: 'q' }, card), aside));
     if (s.lab) tabs.append(el('a', { class: 'chip', href: '#lab-' + R(sid), id: 'labLink' }, '🧪 Experiment'));
     showBanner(); drawSol();
@@ -854,6 +854,7 @@
       case 'order': box.append(el('p', {}, 'Number the boxes 1–' + q.items.length + ':'), el('ul', { class: 'abc' }, ...QE.shuffle(q.items, 'p' + q.id).map(t => el('li', {}, '☐ ' + t)))); break;
       case 'match': { const rs = QE.shuffle(q.pairs.map(p => p.r), 'p' + q.id); box.append(el('table', { class: 'grid' }, ...q.pairs.map((p, i) => el('tr', {}, el('td', {}, p.l + '  •'), el('td', {}, '•  ' + String.fromCharCode(65 + i) + '. ' + rs[i]))))); break; }
       case 'explain': box.append(lines(5)); break;
+      case 'para': box.append(...(q.frame ? [el('p', { class: 'muted' }, 'Writing frame: ' + q.frame)] : []), lines(Math.max(8, (q.sentences || [4])[0] * 2))); break;
       case 'grid': box.append(el('table', { class: 'grid' }, el('tr', {}, el('th', {}, ''), ...(QE.isTick(q) ? q.cols : ['Answer (' + q.cols.join(' / ') + ')']).map(c => el('th', {}, c))), ...q.rows.map(r => el('tr', {}, el('th', {}, r.l), ...(QE.isTick(q) ? q.cols : ['']).map(() => el('td', {}, '')))))); break;
       case 'table': box.append(el('table', { class: 'grid' }, el('tr', {}, ...q.head.map(h => el('th', {}, h))), ...q.rows.map(r => el('tr', {}, ...r.map(c => el('td', {}, c && typeof c === 'object' ? '' : c)))))); break;
       case 'graph': { if (q.table_rows) box.append(el('table', { class: 'grid' }, el('tr', {}, el('th', {}, q.x.label), el('th', {}, q.y.label)), ...q.table_rows.map(r => el('tr', {}, el('td', {}, r[0]), el('td', {}, r[1]))))); const d = el('div', { class: 'pgraph' }); box.append(d); if (q.follow) box.append(el('p', {}, q.follow.prompt), lines(2)); break; }
@@ -957,8 +958,8 @@
       QE.practice(q, card, { rec, onCheck: onCheck(card, q, rec), seed: st.id + 'r' + a.n, save: () => Core.persist(), onDone: () => { rec.done = true; Core.persist(); if (!Core.remLeft(st, a).length) render(); } });
     });
   }
-  function findQ(id) { for (const s of C.sections) for (const q of s.req.concat(s.prac, s.adv, s.stops.map(x => x.q))) if (q.id === id) return q; return null; }
-  const allQs = () => C.sections.flatMap(s => s.req.concat(s.prac, s.adv));
+  function findQ(id) { for (const s of C.sections) for (const q of s.req.concat(s.prac, s.adv, s.ext || [], s.stops.map(x => x.q))) if (q.id === id) return q; return null; }
+  const allQs = () => C.sections.flatMap(s => s.req.concat(s.prac, s.adv, s.ext || []));
 
   /* ---------- drills: wrong answers / by topic ---------- */
   function startDrill(title, qs, ns) { UI.drill = { title, ids: qs.map(q => q.id), ns }; go('drill'); }
@@ -1165,14 +1166,14 @@
     // ---- what each filter means ----
     st.marks = st.marks || {};
     const ALL = allQs();
-    const SEC = {}, TIER = {}; C.sections.forEach(s => { s.req.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'req'; }); s.prac.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = q.adv ? 'adv' : 'prac'; }); s.adv.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'adv'; }); });
+    const SEC = {}, TIER = {}; C.sections.forEach(s => { s.req.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'req'; }); s.prac.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = q.adv ? 'adv' : 'prac'; }); s.adv.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'adv'; }); (s.ext || []).forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'ext'; }); });
     const isFig = q => ['label', 'scale', 'graph', 'table', 'grid', 'sim'].includes(q.type) || !!q.fig;
-    const TYPE = { fig: isFig, calc: q => ['num', 'scale', 'table', 'expr'].includes(q.type), explain: q => q.type === 'explain', mcq: q => ['mcq', 'multi'].includes(q.type), other: q => !['mcq', 'multi', 'num', 'scale', 'table', 'expr', 'explain'].includes(q.type) && !isFig(q) };
+    const TYPE = { fig: isFig, calc: q => ['num', 'scale', 'table', 'expr'].includes(q.type), explain: q => q.type === 'explain' || q.type === 'para', mcq: q => ['mcq', 'multi'].includes(q.type), other: q => !['mcq', 'multi', 'num', 'scale', 'table', 'expr', 'explain', 'para'].includes(q.type) && !isFig(q) };
     const STATUS = { todo: q => !(st.items[q.id] || {}).done, done: q => !!(st.items[q.id] || {}).done, wrong: q => !!(st.items[q.id] || {}).everWrong, first: q => { const r = st.items[q.id] || {}; return !!(r.done && r.ok && r.tries === 1); }, mark: q => !!st.marks[q.id] };
     const objs = Array.from(new Set(ALL.map(q => q.obj).filter(Boolean))).sort((x, y) => x.localeCompare(y, 'en', { numeric: true }));
     const DIMS = [
       { k: 'sec', label: 'Section', opts: [['all', 'All sections']].concat(C.sections.map(s => [s.id, `${s.id} ${s.title}`])), test: (q, v) => SEC[q.id] === v },
-      { k: 'tier', label: 'Set', opts: [['all', 'All sets'], ['req', 'Core'], ['prac', 'Practice'], ['adv', '* Advanced']], test: (q, v) => TIER[q.id] === v },
+      { k: 'tier', label: 'Set', opts: [['all', 'All sets'], ['req', 'Core'], ['prac', 'Practice'], ['adv', '* Advanced'], ['ext', 'Extreme']], test: (q, v) => TIER[q.id] === v },
       { k: 'diff', label: 'Difficulty', opts: [['all', 'Any difficulty'], ['M', 'Medium'], ['H', 'Hard'], ['VH', 'Very hard']], test: (q, v) => q.diff === v },
       { k: 'type', label: 'Question type', opts: [['all', 'Any type'], ['mcq', 'Multiple choice'], ['calc', 'Calculations'], ['fig', 'Diagrams & data'], ['explain', 'Written'], ['other', 'Other (match, order…)']], test: (q, v) => TYPE[v](q) },
       { k: 'status', label: 'My progress', opts: [['all', 'Everything'], ['todo', 'Not done yet'], ['done', 'Done'], ['wrong', 'Got wrong before'], ['first', 'Right first try'], ['mark', '★ Bookmarked']], test: (q, v) => STATUS[v](q) },
@@ -1224,7 +1225,7 @@
       const mk = el('button', { type: 'button', class: 'chip' + (st.marks[q.id] ? ' on' : ''), 'aria-pressed': String(!!st.marks[q.id]), 'aria-label': 'Bookmark ' + q.id, style: 'min-height:36px;padding:0 10px', onclick: e => { e.stopPropagation(); st.marks[q.id] = !st.marks[q.id]; Core.persist(); mk.classList.toggle('on'); mk.setAttribute('aria-pressed', String(!!st.marks[q.id])); } }, '★');
       line.append(el('span', {}, cb), el('code', { class: 'c-id', style: 'font-size:13px;color:#52627A' }, q.id),
         el('span', { style: 'min-width:0' }, el('span', { style: 'display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis' }, q.prompt.replace(/^\* Advanced\.\s*/, '')), el('small', { class: 'muted' }, `${SEC[q.id]} · ${QE.TYPE_VI[q.type]} · `, dots(q.diff), ` ${QE.DIFF[q.diff] || ''} · ${q.obj || ''}`)),
-        el('span', { class: 'c-set' }, el('span', { class: 'tag ' + (t === 'adv' ? 'adv' : t === 'req' ? 'd-M' : '') }, t === 'req' ? 'Core' : t === 'adv' ? '* Advanced' : 'Practice')),
+        el('span', { class: 'c-set' }, el('span', { class: 'tag ' + (t === 'adv' ? 'adv' : t === 'req' ? 'd-M' : '') }, t === 'req' ? 'Core' : t === 'adv' ? '* Advanced' : t === 'ext' ? 'Extreme' : 'Practice')),
         el('span', { class: 'c-st' }, r.done ? el('span', { class: 'status done' }, r.ok ? (r.tries === 1 ? 'Right 1st try' : 'Correct') : 'Completed') : r.tries ? el('span', { class: 'tag d-VH' }, 'In progress') : el('span', { class: 'status todo' }, 'Not done')),
         el('span', { style: 'display:flex;gap:6px;justify-content:flex-end' }, mk, el('button', { type: 'button', class: 'btn small', style: 'min-height:36px;padding:0 12px', onclick: () => startDrill(`Question ${q.id}`, [q], 'bank') }, 'Open')));
       return line;
@@ -1337,7 +1338,7 @@
     clearInterval(timer); timer = setInterval(tick, 1000); tick();
     const saved = el('span', { class: 'muted', 'aria-live': 'polite' });
     const card = el('section', { class: 'card qcard', style: 'flex:999 1 600px;min-width:0' },
-      el('div', { class: 'btnrow between', style: 'margin:0' }, el('span', { class: 'lex', style: 'font-weight:700;color:#556377' }, `Question ${i + 1} of ${qs.length} · ${q.pts} mark${q.pts > 1 ? 's' : ''}${q.teacher ? ' · marked by an Atomic marker' : ''}`),
+      el('div', { class: 'btnrow between', style: 'margin:0' }, el('span', { class: 'lex', style: 'font-weight:700;color:#556377' }, `Question ${i + 1} of ${qs.length} · ${q.pts} mark${q.pts > 1 ? 's' : ''}${q.teacher ? (q.type === 'para' ? ' · written paragraph: checked against the mark scheme, a teacher marks it if needed' : ' · marked by an Atomic marker') : ''}`),
         el('button', { class: 'chip' + (UI.flags[q.id] ? ' on' : ''), type: 'button', 'aria-pressed': String(!!UI.flags[q.id]), onclick: () => { UI.flags[q.id] = !UI.flags[q.id]; render(); } }, svgI(I.flag, 14), UI.flags[q.id] ? 'Flagged' : 'Flag')),
       el('h2', { class: 'qp', style: 'font-size:24px' }, q.prompt));
     QE.renderBody(q, card, { seed: X.seed, resp: draft.answers[q.id], onChange: r => { draft.answers[q.id] = r; draft.ts = Date.now(); X.save(); saved.textContent = 'Draft saved ' + new Date().toLocaleTimeString(); drawNav(); } });
@@ -2118,7 +2119,7 @@
       q.forEach(a => { const inputs = {};
         const box = el('section', { class: 'card' }, el('h3', {}, `${a.learner} · Paper ${a.form} · attempt ${a.n}`), el('small', { class: 'muted' }, 'Submitted ' + new Date(a.submitted).toLocaleString('en-GB')));
         a.items.forEach(it => { const inp = el('input', { type: 'number', min: 0, max: it.max, step: 0.5, class: 'numin s', value: it.suggest }); inputs[it.id] = inp;
-          box.append(el('div', { class: 'sol' }, el('p', {}, el('b', {}, it.prompt)), el('blockquote', {}, it.answer || '(left blank)'), el('ul', {}, ...it.rubric.map(r => el('li', {}, r))), el('p', { class: 'muted' }, 'Model: ' + it.model), el('label', {}, `Mark (0–${it.max}; suggested from key words): `, inp))); });
+          box.append(el('div', { class: 'sol' }, el('p', {}, el('b', {}, it.prompt)), el('blockquote', {}, it.answer || '(left blank)'), el('ul', {}, ...it.rubric.map(r => el('li', {}, r))), el('p', { class: 'muted' }, 'Model: ' + it.model), it.ai ? el('p', { class: 'muted' }, `AI check (${Math.round((it.ai.confidence || 0) * 100)}% sure): points ${it.ai.points.map((x, i) => (x ? '✓' : '✗') + (i + 1)).join(' ')}${it.ai.feedback ? ' — ' + it.ai.feedback : ''}`) : '', el('label', {}, `Mark (0–${it.max}; suggested${it.ai ? ' by the AI check' : ' from key words'}): `, inp))); });
         box.append(el('button', { class: 'btn primary small', type: 'button', onclick: async () => { const g = {}; for (const k in inputs) g[k] = Number(inputs[k].value); await Backend.markAttempt(a.attemptId, g); toast('Mark saved'); render(); } }, 'Save final mark'));
         m.append(box); });
     } else if (tab === 'reports') {
@@ -2198,6 +2199,8 @@
     window.toastWord = t => toast(t);
   }
   async function boot() {
+    // paragraph answers in practice are marked on the server (AI against the mark scheme) once signed in
+    if (Backend.aiMark && window.QE) QE.aiMark = (q, text) => Backend.aiMark({ unit: Core.UNIT, qid: q.id, text: String(text || '') });
     try {
       if (Backend.demo && location.search.includes('reset')) Backend.demo.reset();
       await Core.boot(); C = Core.C;

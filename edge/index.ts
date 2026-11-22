@@ -5,11 +5,12 @@ import { handle as marking } from '__LIB__/marking.js';
 import { handle as startTest } from '__LIB__/start-test.js';
 import { handle as account } from '__LIB__/account.js';
 import { handle as admin } from '__LIB__/admin.js';
+import { handle as aiMark } from '__LIB__/ai-mark.js';
 import { G, setUnits } from '__LIB__/supa.js';
 import { UNITS } from '__UNITS__';
 setUnits(UNITS);
 
-const ROUTES: Record<string, (req: unknown) => Promise<[number, unknown, Record<string, string>?]>> = { 'submit-test': submitTest, 'start-test': startTest, marking, account, admin };
+const ROUTES: Record<string, (req: unknown) => Promise<[number, unknown, Record<string, string>?]>> = { 'submit-test': submitTest, 'start-test': startTest, marking, account, admin, 'ai-mark': aiMark };
 const ORIGINS = (Deno.env.get('ALLOWED_ORIGINS') || '*').split(',').map((s) => s.trim());
 
 function cors(origin: string | null) {
@@ -47,7 +48,7 @@ async function health() {
     const answers: Record<string, unknown> = {};
     for (const q of paper) answers[q.id] = right(q);
     const r = G.scoreTest(paper, answers);
-    papers[u + ':' + f] = { auto: r.auto, pending: r.pending.length, expectedAuto: paper.filter((q) => !q.teacher).reduce((s, q) => s + q.pts, 0) };
+    papers[u + ':' + f] = { auto: r.auto, pending: r.pending.length, expectedAuto: paper.filter((q) => !q.teacher && q.type !== 'para').reduce((s, q) => s + q.pts, 0) };
   }
   return { ok: true, sha256: sha, papers };
 }
@@ -60,7 +61,7 @@ function right(q: any): unknown {
     case 'label': return { ...q.spots };
     case 'order': return q.items.slice();
     case 'match': return Object.fromEntries(q.pairs.map((p: any) => [p.l, p.r]));
-    case 'explain': return q.model;
+    case 'explain': case 'para': return q.model;
     case 'grid': return q.rows.map((r: any) => r.a.slice());
     case 'table': { const o: Record<string, Record<string, string>> = {}; q.rows.forEach((row: any[], ri: number) => row.forEach((c: any, ci: number) => { if (c && typeof c === 'object') (o[ri] = o[ri] || {})[ci] = String(c.ans); })); return o; }
     case 'short': return G.answerText(q);

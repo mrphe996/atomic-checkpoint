@@ -22,7 +22,8 @@ const ANCHORS = { // label anchors each figure provides (keep in sync with web/f
   animalcell: ['membrane', 'cytoplasm', 'nucleus', 'mito'], roothair: ['extension', 'nucleus', 'vacuole', 'wall'],
   neurone: ['body', 'fibre', 'endings', 'nucleus'], ciliated: ['mucus', 'cilia', 'nucleus'],
   palisade: ['wall', 'nucleus', 'chloroplast', 'vacuole'], plant: ['flower', 'leaf', 'stem', 'root'], body: ['brain', 'lungs', 'heart', 'stomach'] };
-const TYPES = ['mcq', 'multi', 'num', 'scale', 'label', 'order', 'match', 'explain', 'grid', 'table', 'graph', 'sim', 'short', 'cloze', 'expr', 'say'];
+const TYPES = ['mcq', 'multi', 'num', 'scale', 'label', 'order', 'match', 'explain', 'grid', 'table', 'graph', 'sim', 'short', 'cloze', 'expr', 'say', 'para'];
+const WRITTEN = q => q.type === 'explain' || q.type === 'para';
 
 export function validate(c) {
   const errs = [], warn = [];
@@ -47,6 +48,17 @@ export function validate(c) {
       case 'order': if (!q.items || q.items.length < 3) errs.push(`${at}: order needs 3+ items`); break;
       case 'match': if (!q.pairs || q.pairs.length < 2) errs.push(`${at}: match needs 2+ pairs`); break;
       case 'explain': if (!q.rubric || !q.model) errs.push(`${at}: explain needs a mark scheme and a model answer`); break;
+      case 'para': {
+        if (!Array.isArray(q.rubric) || q.rubric.length < 2 || q.rubric.length > 8 || q.rubric.some(p => !p.pt || !Array.isArray(p.kw) || !p.kw.length)) errs.push(`${at}: para needs 2–8 mark-scheme points, each with a description and fallback key words`);
+        if (!q.model) errs.push(`${at}: para needs a model answer`);
+        if (!(q.need >= 1 && q.need <= (q.rubric || []).length)) errs.push(`${at}: para needs "need" (points for full marks)`);
+        if (!Array.isArray(q.sentences) || !(q.sentences[0] >= 1)) errs.push(`${at}: para needs a sentence range [min, max]`);
+        if (q.tier === 'ext' && !q.source) errs.push(`${at}: Extreme questions need a source ("Atomic original" or "Adapted from: …")`);
+        if (!Array.isArray(q.partial) || q.partial.length < 2) warn.push(`${at}: para should carry 2+ part-mark examples`);
+        (q.partial || []).forEach((x, i) => { const st = G.paraStats(x.text); if (st.sentences < q.sentences[0] || st.words < (q.minWords || 0)) errs.push(`${at}: part-mark example ${i + 1} is shorter than the length rule`); if (!(x.score >= 0 && x.score < q.rubric.length) || !x.why) errs.push(`${at}: part-mark example ${i + 1} needs a score below full marks and a reason`); });
+        if (q.model) { const st = G.paraStats(q.model); if (st.sentences < q.sentences[0] || st.words < (q.minWords || 0)) errs.push(`${at}: the model answer is shorter than the length rule (${st.sentences} sentences, ${st.words} words)`); }
+        break;
+      }
       case 'grid': q.rows.forEach(r => { if (!r.a || !r.a.length) errs.push(`${at}: grid row without answer`); }); break;
       case 'table': if (!q.rows.some(r => r.some(c => c && typeof c === 'object'))) errs.push(`${at}: table has no blank`); break;
       case 'short': if (!Array.isArray(q.accept) || !q.accept.length || !G.answerText(q)) errs.push(`${at}: short answer needs accepted answers (the first plain one is the model)`); break;
@@ -60,6 +72,7 @@ export function validate(c) {
     if (q.follow) checkQ(q.follow, at + ' follow-up');
   };
   for (const s of c.sections) {
+    const ext = s.ext || [];
     const n = s.req.length + s.prac.length + s.adv.length;
     if (n < 30) errs.push(`section ${s.id}: ${n} questions (minimum 30)`);
     if (s.req.length !== 8) errs.push(`section ${s.id}: needs 8 Core questions (has ${s.req.length})`);
@@ -71,8 +84,8 @@ export function validate(c) {
       if (fig2 < 2) errs.push(`section ${s.id}: Practice needs 2+ diagram/data questions (has ${fig2})`);
       if (c.unit.young) {
         // Stages 3–4 (ages 7–9): they cannot type yet, so every answer is tapped; most questions have picture answers
-        const TYPING = ['short', 'cloze', 'explain', 'num', 'expr', 'scale', 'table', 'graph', 'say'];
-        const all = [...s.req, ...s.prac, ...s.adv, ...(s.stops || []).flatMap(x => [x.q, x.twin]), ...((s.lab && s.lab.v && s.lab.v.qs) || []), ...((s.lab && s.lab.h && s.lab.h.qs) || [])];
+        const TYPING = ['short', 'cloze', 'explain', 'para', 'num', 'expr', 'scale', 'table', 'graph', 'say'];
+        const all = [...s.req, ...s.prac, ...s.adv, ...ext, ...(s.stops || []).flatMap(x => [x.q, x.twin]), ...((s.lab && s.lab.v && s.lab.v.qs) || []), ...((s.lab && s.lab.h && s.lab.h.qs) || [])];
         all.filter(q => q && TYPING.includes(q.type)).forEach(q => errs.push(`section ${s.id} ${q.id}: young learners cannot type – ${q.type} questions are not allowed`));
         const pics = all.filter(q => q && q.options && q.options.every(o => o.e)).length;
         if (pics < 15) errs.push(`section ${s.id}: young learners need 15+ picture-answer questions (has ${pics})`);
@@ -81,7 +94,7 @@ export function validate(c) {
         if (s.lab && s.lab.h && s.lab.h.record && s.lab.h.record.rows.some(r => r.slice(1).some(c => !c.choices))) errs.push(`section ${s.id}: the home experiment results must be tapped, not typed`);
       } else {
         if (s.req.filter(q => q.type === 'say').length < 3) errs.push(`section ${s.id}: Primary Core needs 3+ say-the-word questions`);
-        if (!more.some(q => q.type === 'explain')) errs.push(`section ${s.id}: Practice needs a written-reasoning question`);
+        if (!more.some(WRITTEN)) errs.push(`section ${s.id}: Practice needs a written-reasoning question`);
       }
       if (!s.vocab || s.vocab.length < 4) errs.push(`section ${s.id}: Primary section needs a word bank (4+ words)`);
       if (!s.lab || !s.lab.v || !s.lab.h) errs.push(`section ${s.id}: Primary section needs an experiment room (virtual lab and home experiment)`);
@@ -92,19 +105,22 @@ export function validate(c) {
         if (V.kind === 'sort') (V.items || []).forEach(it => { if (!(it.g >= 0 && it.g < V.groups.length)) errs.push(`section ${s.id} lab: ${it.t} has no group`); }); }
     } else {
       if (fig < 2) errs.push(`section ${s.id}: Core needs 2+ diagram/data questions (has ${fig})`);
-      if (!s.req.some(q => q.type === 'explain')) errs.push(`section ${s.id}: Core needs a written-reasoning question`);
+      if (!s.req.some(WRITTEN)) errs.push(`section ${s.id}: Core needs a written-reasoning question`);
       s.req.forEach(q => { if (!q.twin && q.type !== 'sim') warn.push(`section ${s.id} ${q.id}: Core question without a similar (twin) question`); });
     }
     s.adv.forEach(q => { if (!/^\* Advanced\./.test(q.prompt)) errs.push(`section ${s.id} ${q.id}: advanced prompt must start "* Advanced."`); });
     [...s.req, ...s.prac, ...s.adv].forEach(q => checkQ(q, `section ${s.id}`));
+    ext.forEach(q => { checkQ({ ...q, tier: 'ext' }, `section ${s.id} extreme`); if (q.diff !== 'VH') errs.push(`section ${s.id} ${q.id}: Extreme questions are Very hard (VH)`); });
+    if (ext.length && c.unit && !c.unit.young && c.unit.stage >= 5 && !ext.some(q => q.type === 'para')) errs.push(`section ${s.id}: Extreme needs a paragraph question from Stage 5`);
     (s.stops || []).forEach(st => { checkQ(st.q, `section ${s.id} stop`); if (!(st.t > 0 && st.t < s.video.dur)) errs.push(`section ${s.id} stop ${st.id}: time outside the clip`); });
   }
   for (const f of Object.keys(c.tests).filter(k => k.length === 1)) {
     const pts = c.tests[f].reduce((a, q) => a + q.pts, 0);
-    if (c.unit && c.unit.young) c.tests[f].filter(q => ['short', 'cloze', 'explain', 'num', 'expr', 'scale', 'table', 'graph'].includes(q.type)).forEach(q => errs.push(`test ${f} ${q.id}: young learners cannot type – ${q.type} is not allowed`));
+    if (c.unit && c.unit.young) c.tests[f].filter(q => ['short', 'cloze', 'explain', 'para', 'num', 'expr', 'scale', 'table', 'graph'].includes(q.type)).forEach(q => errs.push(`test ${f} ${q.id}: young learners cannot type – ${q.type} is not allowed`));
     if (pts !== 30) errs.push(`test ${f}: ${pts} marks (must be 30)`);
     if (!c.tests[f].some(q => ['label', 'grid', 'table', 'graph', 'scale'].includes(q.type) || q.fig || q.data)) errs.push(`test ${f}: needs a diagram or data question`);
     c.tests[f].forEach(q => checkQ(q, `test ${f}`));
+    c.tests[f].filter(q => q.type === 'para' && !q.teacher).forEach(q => errs.push(`test ${f} ${q.id}: paragraph questions in a test must be teacher:true (the AI marks them first; unsure marks go to a teacher)`));
   }
   Object.entries(objs).forEach(([k, o]) => { if (!o.code) errs.push(`objective ${k}: curriculum code missing`); });
   return { errs, warn };
@@ -218,7 +234,7 @@ export function writeIndex() {
     const units = list.map(([t, strand], i) => { const id = `stage${stage}-unit${String(i + 1).padStart(2, '0')}`; const f = path.join(ROOT, 'web/content', id + '.json');
       if (!fs.existsSync(f)) return { n: i + 1, id, t, strand, ready: false };
       const c = JSON.parse(fs.readFileSync(f, 'utf8'));
-      return { n: i + 1, id, t, strand, ready: true, est: c.est || null, sections: c.sections.map(x => ({ id: x.id, t: x.title })), qs: c.sections.reduce((a, x) => a + x.req.length + x.prac.length + x.adv.length, 0) }; });
+      return { n: i + 1, id, t, strand, ready: true, est: c.est || null, sections: c.sections.map(x => ({ id: x.id, t: x.title })), qs: c.sections.reduce((a, x) => a + x.req.length + x.prac.length + x.adv.length + (x.ext || []).length, 0) }; });
     const fin = path.join(ROOT, 'web/content', `stage${stage}-final.json`);
     const final = fs.existsSync(fin) ? (({ minutes, max, pass, level, papers }) => ({ id: `stage${stage}-final`, minutes, max, pass, level, papers: Object.keys(papers).length }))(JSON.parse(fs.readFileSync(fin, 'utf8'))) : null;
     const cpf = path.join(ROOT, 'web/content', `stage${stage}-cp.json`);

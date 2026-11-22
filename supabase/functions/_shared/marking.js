@@ -12,7 +12,8 @@ export async function handle(req, f = fetch) {
       const { papers } = await loadPack(row.unit, f);
       const items = Object.keys(row.per).filter(k => row.per[k].teacher).map(id => {
         const q = papers[row.form].find(x => x.id === id);
-        return { id, prompt: q.prompt, max: q.pts, answer: row.answers[id] || '', rubric: q.rubric.map(p => p.pt), model: q.model, suggest: row.per[id].suggest };
+        const a = row.answers[id]; const ai = a && typeof a === 'object' && a.ai ? { points: a.ai, confidence: a.conf, feedback: a.fb } : null;
+        return { id, prompt: q.prompt, max: q.pts, answer: (a && typeof a === 'object' ? a.text : a) || '', rubric: q.rubric.map(p => p.pt), model: q.model, suggest: row.per[id].suggest, ai };
       });
       return { attemptId: row.id, unit: row.unit, n: row.n, form: row.form, submitted: row.created_at, learner: 'Learner ' + row.learner_id.slice(0, 4), items };
     }));

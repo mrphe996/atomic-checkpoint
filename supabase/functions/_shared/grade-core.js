@@ -8,7 +8,7 @@
   const SCOPE_COUNT = { 4: 12, 10: 5, 40: 1.25 };
   function rng(seedStr) { let h = 2166136261; for (const ch of seedStr) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; }
   function shuffle(arr, seed) { const r = rng(seed), a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
-  const TYPE_VI = { mcq: 'Diagnostic multiple choice', multi: 'Select all that apply', num: 'Calculation', scale: 'Instrument reading', label: 'Label the diagram', order: 'Put in order', match: 'Matching', explain: 'Explain (mark scheme)', grid: 'Classification table', table: 'Data table', graph: 'Plot & read a graph', sim: 'Virtual experiment', short: 'Short answer (typed)', expr: 'Algebra (typed)', cloze: 'Complete the sentences (typed)', say: 'Say the word' };
+  const TYPE_VI = { mcq: 'Diagnostic multiple choice', multi: 'Select all that apply', num: 'Calculation', scale: 'Instrument reading', label: 'Label the diagram', order: 'Put in order', match: 'Matching', explain: 'Explain (mark scheme)', grid: 'Classification table', table: 'Data table', graph: 'Plot & read a graph', sim: 'Virtual experiment', short: 'Short answer (typed)', expr: 'Algebra (typed)', cloze: 'Complete the sentences (typed)', say: 'Say the word', para: 'Paragraph answer' };
   const DIFF = { M: 'Medium', H: 'Hard', VH: 'Very hard' };
   const near = (a, b, tol) => Math.abs(a - b) <= Math.max(tol || 0, 1e-9 * Math.max(1, Math.abs(b)));
   // numbers: plain, decimal comma, fractions (3/4, -1 2/3), standard form (3.2 × 10^5, 3.2e5, 3.2×10⁵), and "x = 4" answers
@@ -125,6 +125,23 @@
         else if (!out.ok) out.fb.push(`You have ${n} of the ${q.need} points needed. Missing point: ` + q.rubric.filter((p, i) => !hits[i]).map(p => p.pt).slice(0, 1).join(' '));
         break;
       }
+      case 'para': {
+        // paragraph answer: length rules first, then the mark scheme (keyword fallback; the server can mark with AI)
+        const txt = String((r && typeof r === 'object' ? r.text : r) || ''); const st = paraStats(txt); out.stats = st;
+        if (!txt.trim()) { out.answered = false; out.fb.push('Write your answer in the box.'); break; }
+        const [sMin] = q.sentences || [1], wMin = q.minWords || 0;
+        // too short: practice asks for more before marking (answered = false); a test still credits what is there
+        if (st.words < wMin || st.sentences < sMin) { out.short = true; out.answered = false;
+          out.fb.push(`Your answer needs at least ${sMin} sentence${sMin > 1 ? 's' : ''}${wMin ? ` and ${wMin} words` : ''}. You have ${st.sentences} and ${st.words}.`); }
+        const hits = q.rubric.map(p => (p.kw || []).some(k => new RegExp(k, 'i').test(txt)));
+        const ai = r && typeof r === 'object' && Array.isArray(r.ai) && r.ai.length === q.rubric.length ? r.ai.map(Boolean) : null;
+        const use = ai || hits; const n = use.filter(Boolean).length; const need = q.need || q.rubric.length;
+        out.hits = use; out.via = ai ? 'ai' : 'keywords'; out.frac = Math.min(1, n / need); out.ok = n >= need;
+        out.detail = `${n}/${q.rubric.length} marking points`;
+        if (out.short) out.ok = false;
+        else if (!out.ok) out.fb.push(`You have ${n} of the ${need} points needed. Missing: ` + q.rubric.filter((p, i) => !use[i]).map(p => p.pt).slice(0, 2).join('; ') + '.');
+        break;
+      }
       case 'grid': {
         const tick = isTick(q); let good = 0, tot = 0;
         q.rows.forEach((row, ri) => {
@@ -185,6 +202,12 @@
     }
     return out;
   }
+  /* words and sentences in a typed paragraph (a sentence = 3+ words ending in . ! ? or the end of the text) */
+  function paraStats(txt) {
+    const t = String(txt || '').trim(); const words = t ? t.split(/\s+/).filter(w => /[a-z0-9]/i.test(w)).length : 0;
+    const sentences = t ? t.split(/[.!?]+(?:\s+|$)/).filter(x => x.trim().split(/\s+/).filter(w => /[a-z0-9]/i.test(w)).length >= 3).length : 0;
+    return { words, sentences };
+  }
   const isTick = q => q.mode ? q.mode === 'tick' : q.rows.every(r => r.a && r.a.length === q.cols.length && r.a.every(a => a === '✓' || a === '✗'));
   /* a model number for display: 0.7222… → 13/18, 0.30000000000000004 → 0.3, -4 → −4 */
   function numShow(v) {
@@ -204,7 +227,7 @@
       case 'label': return Object.values(q.spots).map((v, i) => `${i + 1} = ${v}`).join('; ');
       case 'order': return q.items.join(' → ');
       case 'match': return q.pairs.map(p => `${p.l} → ${p.r}`).join('; ');
-      case 'explain': return q.model;
+      case 'explain': case 'para': return q.model;
       case 'grid': return q.rows.map(r => `${r.l}: ${r.a.join(' / ')}`).join('; ');
       case 'table': return q.rows.map(r => r.map(c => c && typeof c === 'object' ? `[${numShow(c.ans)}]` : c).join(' | ')).join(' ; ');
       case 'graph': return 'Points: ' + (q.plot || q.pts).map(p => `(${p[0]}, ${p[1]})`).join(' ') + (q.follow ? ' — ' + q.follow.options.find(o => o.ok).t : '');
@@ -245,6 +268,7 @@
       case 'grid': s.cols = q.cols; s.mode = isTick(q) ? 'tick' : 'classify'; s.rows = q.rows.map(r => ({ l: r.l })); break;
       case 'table': s.head = q.head; s.rows = q.rows.map(r => r.map(c => c && typeof c === 'object' ? { blank: true } : c)); break;
       case 'explain': break;
+      case 'para': if (q.sentences) s.sentences = q.sentences; if (q.minWords) s.minWords = q.minWords; if (q.frame) s.frame = q.frame; break;
       case 'graph': s.x = q.x; s.y = q.y; if (q.table_rows) s.table_rows = q.table_rows; if (q.follow) s.follow = { prompt: q.follow.prompt, options: q.follow.options.map(o => ({ t: o.t })) }; break;
       case 'sim': s.sim = q.sim; break;
       case 'short': if (q.width) s.width = q.width; break;
@@ -271,5 +295,5 @@
     if (pack.papers) out.papers = Object.fromEntries(Object.entries(pack.papers).map(([k, v]) => [k, Array.isArray(v) ? list(v, true) : v]));
     return out;
   }
-  return { applyOverrides, numShow, grade, answerText, scoreTest, stripKeys, isTick, shuffle, rng, parseNum, near, typedOk, normText, exprFn, exprSame, TYPE_VI, DIFF, SCOPE_COUNT };
+  return { applyOverrides, paraStats, numShow, grade, answerText, scoreTest, stripKeys, isTick, shuffle, rng, parseNum, near, typedOk, normText, exprFn, exprSame, TYPE_VI, DIFF, SCOPE_COUNT };
 });

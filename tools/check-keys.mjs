@@ -7,7 +7,7 @@ const dir = path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'se
 const right = q => { switch (q.type) {
   case 'mcq': return q.options.findIndex(o => o.ok); case 'multi': return q.options.map((o, i) => o.ok ? i : -1).filter(i => i >= 0);
   case 'num': case 'scale': return { v: String(q.answer), u: q.unit }; case 'label': return { ...q.spots }; case 'order': return q.items.slice();
-  case 'match': return Object.fromEntries(q.pairs.map(p => [p.l, p.r])); case 'explain': return q.model; case 'grid': return q.rows.map(r => r.a.slice());
+  case 'match': return Object.fromEntries(q.pairs.map(p => [p.l, p.r])); case 'explain': case 'para': return q.model; case 'grid': return q.rows.map(r => r.a.slice());
   case 'table': { const o = {}; q.rows.forEach((row, ri) => row.forEach((c, ci) => { if (c && typeof c === 'object') (o[ri] = o[ri] || {})[ci] = String(c.ans); })); return o; }
   case 'short': return G.answerText(q); case 'expr': return q.expr; case 'cloze': return q.blanks.map(b => b.find(a => !(a[0] === '/' && a.lastIndexOf('/') > 0)) || '');
   case 'graph': return { pts: (q.plot || q.pts).map(p => p.slice()), f: q.follow ? q.follow.options.findIndex(o => o.ok) : null };
@@ -26,7 +26,7 @@ console.log(`${n} papers checked, ${bad} with model answers below full marks`);
 const src = path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'content/src'); let pb = 0, pn = 0;
 if (fs.existsSync(src)) for (const f of fs.readdirSync(src).filter(f => /unit\d+\.json$/.test(f))) {
   const d = JSON.parse(fs.readFileSync(path.join(src, f), 'utf8'));
-  for (const s of d.sections) for (const q of [...s.req, ...s.prac, ...s.adv]) { if (q.type === 'sim') continue; pn++;
+  for (const s of d.sections) for (const q of [...s.req, ...s.prac, ...s.adv, ...(s.ext || [])]) { if (q.type === 'sim') continue; pn++;
     if (q.type === 'expr' && q.chk && !G.exprSame(q.expr, q.chk, q.vars)) { pb++; console.log(`✗ ${f.replace('.json', '')} ${q.id} (expr) model answer ${q.expr} is not equal to ${q.chk}`); continue; }
     const r = G.grade(q, right(q)); if (!r.ok) { pb++; console.log(`✗ ${f.replace('.json', '')} ${q.id} (${q.type}) ${r.detail || ''}`); } } }
 console.log(`${pn} practice questions checked, ${pb} not marked correct with their model answer`);

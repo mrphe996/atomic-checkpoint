@@ -2,6 +2,7 @@
 // Marks a Unit Test or an end-of-year exam on the server: answer keys never reach the browser before submission.
 // The exam room is timed from the moment the paper was opened (api/start-test.js).
 import { send, readJson, getUser, db, loadUnit, loadPack, ownsLearner, Rules, rowToAttempt, billingOn } from './supa.js';
+import { aiGrade, confident } from './ai-mark.js';
 
 const stageOf = unit => Number((String(unit).match(/^stage(\d+)/) || [0, 0])[1]);
 export async function hasStage(learner, unit, f) {
@@ -69,7 +70,17 @@ export async function handle(req, f = fetch) {
   const duration = startedAt ? Math.round((Date.now() - Date.parse(startedAt)) / 1000) : null;
 
   const paper = pack.papers[form];
-  const raw = Rules.mark(paper, answers, { n: prev.length + 1, form });
+  // paragraph questions: marked by AI against the mark scheme; a confident mark is final, otherwise a teacher marks it with the AI suggestion
+  const ans = { ...answers }; let marked = paper;
+  const paras = paper.filter(q => q.type === 'para' && !q.voided && typeof answers[q.id] === 'string' && answers[q.id].trim());
+  if (paras.length) {
+    const res = await Promise.all(paras.map(q => aiGrade(q, String(answers[q.id]).slice(0, 3000), f)));
+    const sure = new Set();
+    paras.forEach((q, i) => { const g = res[i]; if (g.ai) { ans[q.id] = { text: String(answers[q.id]), ai: g.ai, conf: g.confidence, fb: g.fb || '' }; if (confident(g)) sure.add(q.id); } });
+    marked = paper.map(q => (sure.has(q.id) ? { ...q, teacher: false } : q));
+  }
+  const raw = Rules.mark(marked, ans, { n: prev.length + 1, form });
+  for (const q of marked) if (q.type === 'para' && ans[q.id] && ans[q.id].ai && raw.per[q.id]) raw.per[q.id].ai = !q.teacher ? 'final' : 'suggest';
   const a = pack.final ? Rules.finalizeFinal(raw, paper, pack.max, pack.pass) : Rules.finalize(raw, paper, pack.content, state);
   const row = { learner_id: learnerId, unit, n: a.n, form, client_key: clientKey, answers: a.answers, per: a.per, auto: a.auto,
     score: a.score, pct: a.pct, status: a.status, passed: a.status === 'final' ? a.passed : null, by_obj: a.byObj || null, weak: a.weak || null, remed: a.remed || null,

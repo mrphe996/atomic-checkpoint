@@ -1490,3 +1490,8 @@ body.focus-mode .toast{z-index:950;top:auto!important;bottom:96px;left:50%;right
 .fprog{flex-direction:column;align-items:stretch}
 .autogo b{font-size:1.2em}
 .fq.cur.ok{background:var(--ok);border-color:var(--ok);color:#fff}.fq.cur.half{background:var(--goldd);border-color:var(--goldd);color:#fff}
+/* paragraph answers */
+textarea.para{min-height:180px;line-height:1.55}
+.pcount{margin:6px 2px 8px;font-size:.9rem}
+.pcount.ok{color:#1E7D4F;font-weight:600}
+.pframe{background:#F4F8FC;border-left:4px solid var(--gold);padding:10px 14px;border-radius:10px;margin-top:8px}
