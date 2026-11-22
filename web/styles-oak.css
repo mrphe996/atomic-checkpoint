@@ -818,7 +818,7 @@ h1,h2,h3,h4{color:var(--t-222222,#222222);letter-spacing:-.01em}
 .btn.navy{background:var(--b-222222,#222222);border-color:var(--l-222222,#222222);box-shadow:none}
 .btn.ghost{background:var(--b-FFFFFF,#FBFAF6);border:2px solid var(--l-CACACA,#C2C0B8);box-shadow:none}
 .btn.onblue{box-shadow:none}
-.btn.small{min-height:42px;padding:0 20px;border-radius:99px}
+.btn.small{min-height:44px;padding:0 20px;border-radius:99px}
 .btn.big{min-height:58px;padding:0 36px;border-radius:99px}
 .chip{border:1.5px solid var(--l-CACACA,#C2C0B8)}
 .chip.on{background:var(--b-222222,#222222);border-color:var(--l-222222,#222222);box-shadow:none}
@@ -1221,7 +1221,7 @@ code.mwork{font-family:inherit;font-size:1em;font-weight:600;background:var(--b-
 .bkpick .bunit small{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
 .bkhead{display:flex;align-items:center;gap:10px}
 .bkhead .grow{flex:1}
-.bkarrow{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--l-CACACA,#C2C0B8);background:var(--b-FFFFFF,#FBFAF6);cursor:pointer;font-size:18px;color:var(--t-222222,#222222);display:grid;place-items:center;transition:background .2s,border-color .2s}
+.bkarrow{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--l-CACACA,#C2C0B8);background:var(--b-FFFFFF,#FBFAF6);cursor:pointer;font-size:18px;color:var(--t-222222,#222222);display:grid;place-items:center;transition:background .2s,border-color .2s}
 .bkarrow:hover{background:var(--b-F4F4F1,#E9E7E0);border-color:var(--l-CACACA,#C2C0B8)}
 @media (max-width:760px){.qbgrid{grid-template-columns:1fr 1fr;gap:10px}.qbsel select{font-size:13.5px;min-height:44px}}
 
@@ -1522,6 +1522,9 @@ textarea.para{min-height:180px;line-height:1.55}
 .xpg-step small{color:var(--t-575757,#575757)}
 @media (max-width:1380px){.lvx-mid b{display:none}.lvx-mid{justify-content:center}}
 @media (max-width:640px){.lvx-mid{display:none}.lvx{padding:4px 10px 4px 5px;gap:6px}}
+/* phone header: keep everything inside the screen width */
+@media (max-width:640px){.lvx-pct{display:none}.lvx{padding:4px;gap:0;min-width:44px;justify-content:center}.topright{gap:4px;min-width:0}.topbar .logo img,.top .logo img{max-height:30px;max-width:84px}.topright .pill{padding:0 8px}.topright .btn.small{padding:0 10px}}
+@media (max-width:480px){.topright .pill.streak{display:none}}
 
 /* ---------- Design system B (generated: edit tools/build-theme.mjs) ---------- */
 :root{--band:#F4F4F1;--sh:0 1px 2px rgba(34,34,34,.10),0 10px 24px rgba(34,34,34,.12);--bd:1px solid #D6D6D2}
@@ -1588,6 +1591,7 @@ input[type=checkbox],input[type=radio]{accent-color:#222222}
 .tabs button.on{color:var(--t-222222,#222222);border-bottom-color:var(--l-222222,#222222);background:none}
 .lbrow:hover{background:var(--b-FFF7CC,#F8EFC4)}
 .froom .flv.on{background:var(--b-222222,#222222);color:#FFFFFF;border-color:var(--l-222222,#222222)}
+.froom .flv.on b,.froom .flv.on small{color:#FFFFFF}
 .lvx{border:1px solid var(--l-222222,#222222);background:var(--b-FFFFFF,#FBFAF6)}
 .lvx-badge{background:var(--b-FFE555,#F5DA4C)}
 .lvx .lvbar,.xpg .lvbar{background:var(--b-FFFFFF,#FBFAF6);box-shadow:inset 0 0 0 1.5px var(--l-222222,#222222);border-radius:4px}
@@ -1611,10 +1615,14 @@ html.dark .fig *{color:#222}
 html.dark img.thumb,html.dark video{filter:brightness(.92)}
 html.dark .card,html.dark .modal{box-shadow:0 1px 2px rgba(0,0,0,.5),0 10px 24px rgba(0,0,0,.35)}
 html.dark ::placeholder{color:#8F959E}
+html.dark .drow b{color:#9CC2FF!important}
+html.dark .qbbar{background:rgba(31,35,41,.95)}
 .brand img{mix-blend-mode:multiply}
 html.dark .brand img{mix-blend-mode:normal}
 .mainnav a{padding:10px 9px}
 .topright{gap:8px}
 @media (max-width:1420px){.lvx .lvx-mid{display:none}}
+@media (max-width:640px){.topright{gap:4px}}
+@media (max-width:480px){.topright .pill.streak{display:none}}
 .modebtn{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid #222;background:#FBFAF6;cursor:pointer;display:grid;place-items:center;font-size:19px;line-height:1;padding:0}
 html.dark .modebtn{background:#2B3038;border-color:#8A919B}

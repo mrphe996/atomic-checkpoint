@@ -78,6 +78,7 @@ input[type=checkbox],input[type=radio]{accent-color:#222}
 .tabs button.on{color:#222;border-bottom-color:#222;background:none}
 .lbrow:hover{background:#FFF7CC}
 .froom .flv.on{background:#222;color:#fff;border-color:#222}
+.froom .flv.on b,.froom .flv.on small{color:#fff}
 .lvx{border:1px solid #222;background:#fff}
 .lvx-badge{background:#FFE555}
 .lvx .lvbar,.xpg .lvbar{background:#fff;box-shadow:inset 0 0 0 1.5px #222;border-radius:4px}
@@ -108,11 +109,15 @@ html.dark .fig *{color:#222}
 html.dark img.thumb,html.dark video{filter:brightness(.92)}
 html.dark .card,html.dark .modal{box-shadow:0 1px 2px rgba(0,0,0,.5),0 10px 24px rgba(0,0,0,.35)}
 html.dark ::placeholder{color:#8F959E}
+html.dark .drow b{color:#9CC2FF!important}
+html.dark .qbbar{background:rgba(31,35,41,.95)}
 .brand img{mix-blend-mode:multiply}
 html.dark .brand img{mix-blend-mode:normal}
 .mainnav a{padding:10px 9px}
 .topright{gap:8px}
 @media (max-width:1420px){.lvx .lvx-mid{display:none}}
+@media (max-width:640px){.topright{gap:4px}}
+@media (max-width:480px){.topright .pill.streak{display:none}}
 .modebtn{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid #222;background:#FBFAF6;cursor:pointer;display:grid;place-items:center;font-size:19px;line-height:1;padding:0}
 html.dark .modebtn{background:#2B3038;border-color:#8A919B}
 `;
