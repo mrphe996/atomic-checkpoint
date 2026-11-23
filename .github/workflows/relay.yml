@@ -1,0 +1,22 @@
+name: tts-relay
+on:
+  push:
+    branches: [tts-relay]
+permissions:
+  contents: read
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir out
+          while read -r name url; do
+            [ -n "$name" ] && curl -sSfL --retry 3 -o "out/$name" "$url"
+          done < urls.txt
+          ls -la out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tts
+          path: out
+          retention-days: 1
