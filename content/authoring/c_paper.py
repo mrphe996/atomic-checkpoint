@@ -137,6 +137,14 @@ class UnitTest(Paper):
         self.items.append(P(q, pts))
         return q
 
+    def para(self, q):
+        """A ready-made 6-mark paragraph question (AI-marked against its mark scheme) as its own numbered question in the current section."""
+        assert self.cur, "call sec() first"
+        q = dict(q); q["id"] = f"{self._id()}p"; q["sec"] = self.cur
+        q["prompt"] = __import__("re").sub(r"^\([ab]\) ", "", q["prompt"])
+        q.setdefault("pts", 6); self.items.append(q)
+        return q
+
     def done(self, total=30, min_q=25):
         import os
         s = sum(x["pts"] for x in self.items); n = len(self.items)
