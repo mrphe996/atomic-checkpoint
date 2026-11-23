@@ -1,0 +1,47 @@
+1
+00:00:00,000 --> 00:00:01,673
+Welcome to Atomic Education.
+
+2
+00:00:02,733 --> 00:00:09,964
+This lesson was written by the Atomic teaching team to help you learn Cambridge Lower Secondary Science with confidence.
+
+3
+00:00:09,964 --> 00:00:10,681
+Let's begin!
+
+4
+00:00:11,741 --> 00:00:15,506
+Welcome to Unit 5: Chemical Bonding and Structure of Materials.
+
+5
+00:00:16,566 --> 00:00:22,183
+Diamond and coal are both made of carbon, yet one sparkles and the other is dull and crumbly.
+
+6
+00:00:22,183 --> 00:00:27,084
+The secret is chemical bonding: how atoms are joined changes how materials behave.
+
+7
+00:00:28,144 --> 00:00:33,343
+Electrons orbit the nucleus in shells, or energy levels. The outer shell matters most.
+
+8
+00:00:33,343 --> 00:00:39,438
+Group 18 atoms, like neon, have a full outer shell of 8 electrons: a stable electronic configuration.
+
+9
+00:00:39,438 --> 00:00:41,172
+That's why they hardly react.
+
+10
+00:00:42,231 --> 00:00:48,387
+Other atoms, like sodium with one outer electron or chlorine with seven, are not stable, so they react.
+
+11
+00:00:49,446 --> 00:00:52,793
+To reach a full outer shell, atoms form chemical bonds.
+
+12
+00:00:52,793 --> 00:00:58,829
+They can share outer electrons, making covalent bonds, or lose or gain electrons, making ionic bonds.
