@@ -52,7 +52,7 @@
     let pic = '📝';
     const wi = el('input', { type: 'text', maxlength: 40, placeholder: 'A word, e.g. pollen', 'aria-label': 'Word', autocomplete: 'off' });
     const ni = el('input', { type: 'text', maxlength: 300, placeholder: 'My note (what it means, how to remember it)', 'aria-label': 'My note', autocomplete: 'off' });
-    const pics = el('div', { class: 'wpics', role: 'radiogroup', 'aria-label': 'Choose a picture' }, ...PICS.map(p => { const b = el('button', { type: 'button', class: 'wpic' + (p === pic ? ' on' : ''), 'aria-label': 'Picture ' + p, onclick: () => { pic = p; pics.querySelectorAll('.wpic').forEach(x => x.classList.toggle('on', x === b)); } }, p); return b; }));
+    const pics = el('div', { class: 'wpics', role: 'radiogroup', 'aria-label': 'Choose a picture' }, ...PICS.map(p => { const b = el('button', { type: 'button', class: 'wpic emo' + (p === pic ? ' on' : ''), 'aria-label': 'Picture ' + p, onclick: () => { pic = p; pics.querySelectorAll('.wpic').forEach(x => x.classList.toggle('on', x === b)); } }, p); return b; }));
     const msg = el('span', { class: 'muted', role: 'status' });
     const add = el('button', { type: 'button', class: 'btn primary', onclick: () => { if (!W.addOwn(wi.value, ni.value, pic, sec)) { msg.textContent = 'Write a word first.'; wi.focus(); return; } QE.setTxt(msg, `⭐ “${wi.value.trim()}” added`); wi.value = ''; ni.value = ''; onAdd && onAdd(); } }, '+ Add to My word book');
     return el('div', { class: 'card waddform' }, el('b', { class: 'lex' }, '✏️ Add my own word'), el('div', { class: 'wrow' }, wi, ni), pics, el('div', { class: 'btnrow' }, add, msg));

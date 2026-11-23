@@ -103,6 +103,8 @@ const dark = `
 /* ---------- dark mode: values for the themed colours (generated) ---------- */
 html.dark{color-scheme:dark;${Object.entries(T.defs).map(([n, d]) => n + ':' + d).join(';')}}
 html.dark body{background:#14171B;color:#ECEBE7}
+/* printed pages (worksheets, certificates) stay white paper in dark mode: their colours fall back to the light values */
+html.dark .a4{color-scheme:light;${Object.keys(T.defs).map(n => n + ':initial').join(';')}}
 html.dark .brand img{background:#FBFAF6;border-radius:6px;padding:2px 6px}
 html.dark .fig,html.dark .pfig,html.dark .scope,html.dark .cmap svg,html.dark .ws{background:#F3F1EB;border-radius:6px;color:#222}
 html.dark .fig *{color:#222}

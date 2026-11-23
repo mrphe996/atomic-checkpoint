@@ -35,6 +35,17 @@
     b.onclick = () => { T.setMode(T.mode === 'dark' ? 'light' : 'dark'); draw(); };
     draw(); return b;
   }
+  // the same switch as a row in the phone menu (the header has no room for it there)
+  function navMode() {
+    const T = window.AtomicTheme; if (!T || T.name !== 'oak') return null;
+    const b = el('button', { class: 'navmode', type: 'button' });
+    const draw = () => { const d = T.mode === 'dark'; b.replaceChildren(AtomicIcons.ic(d ? 'sun' : 'moon'), d ? 'Light mode' : 'Dark mode'); };
+    b.onclick = () => { T.setMode(T.mode === 'dark' ? 'light' : 'dark'); draw(); };
+    draw(); return b;
+  }
+  // A4 worksheets and certificates shrink to fit a phone screen (printing still uses the real size)
+  const fitA4 = () => document.documentElement.style.setProperty('--a4z', String(Math.min(1, (document.documentElement.clientWidth - 24) / 794).toFixed(3)));
+  fitA4(); addEventListener('resize', fitA4);
   /* XP guide: where the learner is, how XP is earned and what levels are for */
   function xpGuide() {
     const li = Core.levelInfo(), left = li.to - li.xp, FL = TestRules.FINAL_LEVEL;
@@ -58,7 +69,7 @@
       [{ t: 'See my progress', on: () => { go('profile'); } }, { t: 'Got it', cls: 'primary' }]);
   }
   let lastXp = null; // kept for older callers
-  function toast(t) { const n = document.querySelectorAll('.toast').length; const x = el('div', { class: 'toast', role: 'status', style: `top:${84 + n * 58}px` }, t); document.body.append(x); setTimeout(() => x.remove(), 2700); }
+  function toast(t) { const n = document.querySelectorAll('.toast').length; const x = el('div', { class: 'toast', role: 'status', style: `--n:${n}` }, t); document.body.append(x); setTimeout(() => x.remove(), 2700); }
   function xpTick() { }
   let xpAcc = 0, xpT = null;
   window.addEventListener('atomic:xp', e => {
@@ -121,7 +132,9 @@
       right.append(modeBtn(), el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
       nav = [navLink('home', 'Home', area === 'home'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
     }
-    const header = el('header', { class: 'top' }, el('div', { class: 'top-in' },
+    if (!st && !me || st && isGuest()) nav.push(el('a', { class: 'navlogin', href: '#signin' }, 'Log in'));
+    nav.push(navMode());
+    const header = el('header', { class: 'top' + (st && isGuest() || !st && !me ? ' guest' : '') }, el('div', { class: 'top-in' },
       el('button', { class: 'menu-btn', type: 'button', 'aria-label': 'Menu', onclick: () => document.body.classList.toggle('menu-open') }, '☰'),
       el('a', { href: '#home', class: 'brand' }, el('img', { src: 'atomic_logo.png', alt: 'Atomic — home' })),
       el('nav', { class: 'mainnav', 'aria-label': 'Main' }, ...nav), right));
@@ -1247,12 +1260,12 @@
       const cb = el('input', { type: 'checkbox', 'aria-label': 'Choose ' + q.id, checked: !!F.sel[q.id] });
       const line = el('div', { class: 'lbrow' + (F.sel[q.id] ? ' picked' : ''), 'data-q': q.id });
       cb.addEventListener('change', () => { F.sel[q.id] = cb.checked; line.classList.toggle('picked', cb.checked); bar(); });
-      const mk = el('button', { type: 'button', class: 'chip' + (st.marks[q.id] ? ' on' : ''), 'aria-pressed': String(!!st.marks[q.id]), 'aria-label': 'Bookmark ' + q.id, style: 'min-height:36px;padding:0 10px', onclick: e => { e.stopPropagation(); st.marks[q.id] = !st.marks[q.id]; Core.persist(); mk.classList.toggle('on'); mk.setAttribute('aria-pressed', String(!!st.marks[q.id])); } }, '★');
+      const mk = el('button', { type: 'button', class: 'chip' + (st.marks[q.id] ? ' on' : ''), 'aria-pressed': String(!!st.marks[q.id]), 'aria-label': 'Bookmark ' + q.id, style: 'min-height:44px;min-width:44px;padding:0 10px', onclick: e => { e.stopPropagation(); st.marks[q.id] = !st.marks[q.id]; Core.persist(); mk.classList.toggle('on'); mk.setAttribute('aria-pressed', String(!!st.marks[q.id])); } },AtomicIcons.ic('star'));
       line.append(el('span', {}, cb), el('code', { class: 'c-id', style: 'font-size:13px;color:#52627A' }, q.id),
-        el('span', { style: 'min-width:0' }, el('span', { style: 'display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis' }, q.prompt.replace(/^\* Advanced\.\s*/, '')), el('small', { class: 'muted' }, `${SEC[q.id]} · ${QE.TYPE_VI[q.type]} · `, dots(q.diff), ` ${QE.DIFF[q.diff] || ''} · ${q.obj || ''}`)),
+        el('span', { style: 'min-width:0' }, el('span', { class: 'qbq' }, q.prompt.replace(/^\* Advanced\.\s*/, '')), el('small', { class: 'muted' }, `${SEC[q.id]} · ${QE.TYPE_VI[q.type]} · `, dots(q.diff), ` ${QE.DIFF[q.diff] || ''} · ${q.obj || ''}`)),
         el('span', { class: 'c-set' }, el('span', { class: 'tag ' + (t === 'adv' ? 'adv' : t === 'req' ? 'd-M' : '') }, t === 'req' ? 'Core' : t === 'adv' ? '* Advanced' : t === 'ext' ? 'Extreme' : 'Practice')),
         el('span', { class: 'c-st' }, r.done ? el('span', { class: 'status done' }, r.ok ? (r.tries === 1 ? 'Right 1st try' : 'Correct') : 'Completed') : r.tries ? el('span', { class: 'tag d-VH' }, 'In progress') : el('span', { class: 'status todo' }, 'Not done')),
-        el('span', { style: 'display:flex;gap:6px;justify-content:flex-end' }, mk, el('button', { type: 'button', class: 'btn small', style: 'min-height:36px;padding:0 12px', onclick: () => startDrill(`Question ${q.id}`, [q], 'bank') }, 'Open')));
+        el('span', { class: 'qbacts' }, mk, el('button', { type: 'button', class: 'btn small', style: 'padding:0 14px', onclick: () => startDrill(`Question ${q.id}`, [q], 'bank') }, 'Open')));
       return line;
     }
     function bar() {
@@ -1718,7 +1731,7 @@
       tile('🧩', 'Revise by topic', '9 objectives O1–O9', () => go('topic'), 'tileTopic'),
       tile('📄', 'Worksheets opened', st.ws.length ? st.ws.map(x => 'Section ' + x).join(', ') : 'none opened yet', () => go(st.ws.length ? 'ws-' + R(st.ws[st.ws.length - 1]) : 'ws-3-1'), 'tileWs')));
     if (st.ws.length) m.append(el('div', { class: 'btnrow' }, ...st.ws.map(x => el('a', { class: 'chip', href: '#ws-' + R(x) }, '📄 Worksheet ' + x))));
-    m.append(el('section', { class: 'card' }, el('h2', {}, `Unit ${Core.UNO} progress`), ...C.sections.map(s => el('div', { style: 'margin:10px 0' }, el('div', { style: 'display:flex;justify-content:space-between;font-size:14px;font-weight:600' }, el('span', {}, `${s.id} ${s.title}`), el('span', { class: 'muted' }, `${s.lesson ? 'lesson' : 'video'} ${Core.videoDone(st, s) ? '✓' : '…'} · Core ${8 - Core.reqLeft(st, s).length}/8 · practice ${s.prac.filter(q => (st.items[q.id] || {}).done).length}/${s.prac.length} · advanced ${s.adv.filter(q => (st.items[q.id] || {}).done).length}/${s.adv.length}`)), el('div', { class: 'pbar' + (Core.secDone(st, s) ? ' ok' : '') }, el('i', { style: `width:${secPct(s)}%` })))),
+    m.append(el('section', { class: 'card' }, el('h2', {}, `Unit ${Core.UNO} progress`), ...C.sections.map(s => el('div', { style: 'margin:10px 0' }, el('div', { class: 'prow', style: 'display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px;font-size:14px;font-weight:600' }, el('span', {}, `${s.id} ${s.title}`), el('span', { class: 'muted' }, `${s.lesson ? 'lesson' : 'video'} ${Core.videoDone(st, s) ? '✓' : '…'} · Core ${8 - Core.reqLeft(st, s).length}/8 · practice ${s.prac.filter(q => (st.items[q.id] || {}).done).length}/${s.prac.length} · advanced ${s.adv.filter(q => (st.items[q.id] || {}).done).length}/${s.adv.length}`)), el('div', { class: 'pbar' + (Core.secDone(st, s) ? ' ok' : '') }, el('i', { style: `width:${secPct(s)}%` })))),
       el('p', {}, `Unit Test: ${Core.attempts(st).length} attempt(s) · ${Core.passed(st) ? 'Passed' : 'not passed yet'} · Ranking score: ` + (rs ? rs.score.toFixed(2) + '% (' + rs.units + (rs.units === 1 ? ' unit)' : ' units)') : 'none yet')),
       el('div', { class: 'btnrow' }, el('a', { class: 'btn small', href: '#result' }, 'Results & history'), el('a', { class: 'btn small', href: '#cert' }, '🎓 Certificate'), el('a', { class: 'btn small', href: '#board' }, '🏆 Leaderboard'))));
     m.append(testerTools());
