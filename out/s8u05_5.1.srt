@@ -1,0 +1,135 @@
+1
+00:00:00,000 --> 00:00:01,702
+Welcome to Atomic Education.
+
+2
+00:00:02,763 --> 00:00:10,120
+This lesson was written by the Atomic teaching team to help you learn Cambridge Lower Secondary Science with confidence.
+
+3
+00:00:10,120 --> 00:00:10,850
+Let's begin!
+
+4
+00:00:11,911 --> 00:00:14,525
+Welcome to Unit 5: Mixtures and Solubility.
+
+5
+00:00:15,586 --> 00:00:18,869
+Orange juice, oatmeal and smoothies are all mixtures.
+
+6
+00:00:18,869 --> 00:00:23,368
+Stir sugar into tea, and it dissolves, until the tea can't hold any more.
+
+7
+00:00:23,368 --> 00:00:29,509
+In this unit, we'll explore pure substances, mixtures, how to separate them, and how things dissolve.
+
+8
+00:00:30,570 --> 00:00:35,920
+Everything around us is matter, and it can be sorted into pure substances and mixtures.
+
+9
+00:00:35,920 --> 00:00:38,960
+Pure substances are either elements or compounds.
+
+10
+00:00:38,960 --> 00:00:45,344
+An element, like gold or neon, can't be broken down by chemical reactions. There are 118 known elements.
+
+11
+00:00:45,344 --> 00:00:51,242
+A compound forms when elements join chemically in a fixed ratio, like water, H2O, or salt, NaCl.
+
+12
+00:00:51,242 --> 00:00:57,140
+Its properties are different from its elements, and it can only be separated by chemical methods.
+
+13
+00:00:58,201 --> 00:01:03,186
+A mixture contains substances that are not chemically joined, in any proportions,
+
+14
+00:01:03,186 --> 00:01:08,962
+so they can be separated by physical methods. Mixtures are either homogeneous or heterogeneous.
+
+15
+00:01:10,023 --> 00:01:15,313
+In a heterogeneous mixture, 'hetero' means different: the parts are not evenly spread,
+
+16
+00:01:15,313 --> 00:01:20,177
+and you can see them. Soil, sand and water, and oil and water are heterogeneous.
+
+17
+00:01:21,238 --> 00:01:26,831
+In a homogeneous mixture, 'homo' means the same: the parts are evenly spread, in one state,
+
+18
+00:01:26,831 --> 00:01:31,270
+and you can't tell them apart. Salt water, air and steel are homogeneous.
+
+19
+00:01:32,331 --> 00:01:38,046
+A solution is a homogeneous mixture. The substance that dissolves, like sugar, is the solute.
+
+20
+00:01:38,046 --> 00:01:42,119
+The substance that does the dissolving, like water, is the solvent.
+
+21
+00:01:43,180 --> 00:01:48,227
+A pure substance contains only one type of atom or molecule. Mixtures aren't pure,
+
+22
+00:01:48,227 --> 00:01:54,246
+but we can describe the purity of one part: how much of it there is compared to the whole mixture.
+
+23
+00:01:54,246 --> 00:01:59,171
+Bottled water often contains added minerals, so it isn't 100 percent pure water,
+
+24
+00:01:59,171 --> 00:02:00,934
+but it's still safe to drink.
+
+25
+00:02:01,995 --> 00:02:06,494
+We calculate percentage purity like this: the mass of the pure substance,
+
+26
+00:02:06,494 --> 00:02:09,717
+divided by the total mass of the mixture, times 100.
+
+27
+00:02:09,717 --> 00:02:13,851
+A bronze coin has a mass of 75 grams, and 62 grams of it is copper.
+
+28
+00:02:13,851 --> 00:02:17,377
+62 divided by 75, times 100, is about 82.7 percent copper.
+
+29
+00:02:18,438 --> 00:02:23,181
+Purity matters: medicines need exactly the right amount of active ingredient,
+
+30
+00:02:23,181 --> 00:02:27,376
+and dental implants use very pure metals to avoid allergic reactions.
+
+31
+00:02:28,437 --> 00:02:34,578
+Jewellers describe the purity of gold in carats. Here is the percentage of gold in four common types.
+
+32
+00:02:35,638 --> 00:02:38,618
+24 carat gold is almost pure: 99.9 percent gold.
+
+33
+00:02:38,618 --> 00:02:44,029
+18 carat gold is only 75 percent gold; the rest is other metals such as copper or silver.
+
+34
+00:02:45,090 --> 00:02:51,109
+Pause and decide: a ring of 18 carat gold has a mass of 8 grams. What mass of gold does it contain?

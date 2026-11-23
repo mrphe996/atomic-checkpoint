@@ -1,0 +1,115 @@
+1
+00:00:00,000 --> 00:00:03,641
+Atoms are far too small to see without special microscopes,
+
+2
+00:00:03,641 --> 00:00:07,706
+so scientists built models: simplified pictures of how atoms work.
+
+3
+00:00:07,706 --> 00:00:14,198
+In 1803, John Dalton imagined atoms as tiny, solid balls, a different one for each element. In 1904, J. J.
+
+4
+00:00:14,198 --> 00:00:16,564
+Thomson, who had discovered electrons,
+
+5
+00:00:16,564 --> 00:00:21,540
+suggested the 'plum pudding' model: negative electrons stuck in a positive 'soup'.
+
+6
+00:00:22,600 --> 00:00:29,093
+In 1911, Ernest Rutherford showed that an atom has a tiny, dense nucleus, with electrons moving around it,
+
+7
+00:00:29,093 --> 00:00:34,857
+like planets around the Sun. In 1913, Niels Bohr improved this: electrons move in fixed shells.
+
+8
+00:00:35,918 --> 00:00:42,289
+In 1926, Erwin Schrödinger used complex mathematics to describe electrons as a cloud around the nucleus.
+
+9
+00:00:42,289 --> 00:00:47,446
+And in 1932, James Chadwick discovered the neutron, explaining the mass of the atom.
+
+10
+00:00:47,446 --> 00:00:50,419
+Each scientist built on the work of those before.
+
+11
+00:00:51,480 --> 00:00:56,455
+Rutherford fired positively charged alpha particles at a very thin sheet of gold.
+
+12
+00:00:56,455 --> 00:01:01,188
+In the plum pudding model, positive charge is spread thinly through the atom.
+
+13
+00:01:01,188 --> 00:01:05,374
+Predict: what should happen to the alpha particles? Pause and decide.
+
+14
+00:01:06,435 --> 00:01:11,653
+Watch. The particles hit the gold foil, and a screen all around records where they go.
+
+15
+00:01:12,714 --> 00:01:15,020
+Most particles pass straight through.
+
+16
+00:01:15,020 --> 00:01:19,449
+A few are deflected at large angles, and a very few bounce straight back.
+
+17
+00:01:20,510 --> 00:01:26,698
+Explain what you saw. Most particles passed straight through, so the atom must be mostly empty space.
+
+18
+00:01:26,698 --> 00:01:32,705
+The few that bounced back must have hit something tiny, dense and positively charged: the nucleus.
+
+19
+00:01:32,705 --> 00:01:38,591
+The plum pudding model could not explain this, so Rutherford replaced it with the nuclear model.
+
+20
+00:01:38,591 --> 00:01:40,957
+Pause and explain it in your own words.
+
+21
+00:01:42,018 --> 00:01:47,661
+Now it is your turn to shine! Pause the video after each question and try to answer it first.
+
+22
+00:01:48,721 --> 00:01:54,000
+Question 1: Name the three particles in an atom and their charges. Pause the video now.
+
+23
+00:01:55,061 --> 00:01:59,126
+Answer: Proton: positive · neutron: no charge · electron: negative.
+
+24
+00:02:00,187 --> 00:02:06,618
+Question 2: Oxygen's atomic number is 8. How many electrons does an oxygen atom have? Pause the video now.
+
+25
+00:02:07,679 --> 00:02:11,077
+Answer: 8: two in the first shell and six in the second.
+
+26
+00:02:12,138 --> 00:02:16,506
+Question 3: Which force holds electrons in an atom? Pause the video now.
+
+27
+00:02:17,567 --> 00:02:21,086
+Answer: The electrostatic force, opposite charges attract.
+
+28
+00:02:22,147 --> 00:02:26,515
+Question 4: What did the gold foil experiment show? Pause the video now.
+
+29
+00:02:27,576 --> 00:02:32,066
+Answer: Atoms are mostly empty space with a tiny, dense, positive nucleus.
