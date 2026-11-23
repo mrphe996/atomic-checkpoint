@@ -1,0 +1,123 @@
+1
+00:00:00,000 --> 00:00:06,436
+Electrodes connected to a bulb are dipped into solid salt crystals, a salt solution, and a sugar solution.
+
+2
+00:00:06,436 --> 00:00:09,805
+Predict: in which will the bulb light? Pause and decide.
+
+3
+00:00:10,865 --> 00:00:14,173
+Watch. The circuit is completed in each beaker in turn.
+
+4
+00:00:15,234 --> 00:00:20,106
+Only the salt solution lights the bulb. Solid salt and the sugar solution do not.
+
+5
+00:00:21,166 --> 00:00:24,114
+Explain what you saw. Salt is an ionic compound.
+
+6
+00:00:24,114 --> 00:00:27,903
+In the solid, its ions are fixed in a lattice and cannot move.
+
+7
+00:00:27,903 --> 00:00:33,317
+Dissolved in water, the ions are free to move and carry charge, so the solution conducts.
+
+8
+00:00:33,317 --> 00:00:38,490
+Sugar is made of covalent molecules with no charge, so its solution does not conduct.
+
+9
+00:00:38,490 --> 00:00:40,836
+Pause and explain it in your own words.
+
+10
+00:00:41,896 --> 00:00:47,551
+Substances made of small, separate molecules, like bromine, oxygen, carbon dioxide and water,
+
+11
+00:00:47,551 --> 00:00:53,987
+have a simple molecular structure. They have low melting and boiling points and don't conduct electricity.
+
+12
+00:00:53,987 --> 00:00:56,453
+Bromine boils at just 59 degrees Celsius.
+
+13
+00:00:57,513 --> 00:01:01,484
+In giant covalent structures, atoms form a huge network of bonds.
+
+14
+00:01:01,484 --> 00:01:05,694
+In diamond, each carbon bonds to four others, so it's extremely hard.
+
+15
+00:01:05,694 --> 00:01:11,168
+In graphite, each bonds to three, in sliding layers, so it's soft and conducts electricity.
+
+16
+00:01:12,228 --> 00:01:18,304
+Ionic compounds like sodium chloride form a giant ionic lattice held by strong electrostatic forces,
+
+17
+00:01:18,304 --> 00:01:20,349
+so they have high melting points.
+
+18
+00:01:20,349 --> 00:01:25,582
+They conduct electricity only when melted or dissolved, because then the ions can move.
+
+19
+00:01:26,642 --> 00:01:31,094
+Here are the melting points of four solids, from published chemistry data.
+
+20
+00:01:32,154 --> 00:01:36,244
+Sulfur, made of small molecules, melts at only 115 degrees Celsius.
+
+21
+00:01:36,244 --> 00:01:42,560
+Sodium chloride melts at 801, silicon dioxide, found in sand, at about 1713, and magnesium oxide at 2852.
+
+22
+00:01:43,621 --> 00:01:49,335
+Pause and decide: why does sulfur melt at such a low temperature compared with the other three?
+
+23
+00:01:50,395 --> 00:01:55,989
+Now it is your turn to shine! Pause the video after each question and try to answer it first.
+
+24
+00:01:57,050 --> 00:02:00,418
+Question 1: Why is neon unreactive? Pause the video now.
+
+25
+00:02:01,478 --> 00:02:04,305
+Answer: It has a full outer shell of electrons.
+
+26
+00:02:05,366 --> 00:02:08,794
+Question 2: What is a covalent bond? Pause the video now.
+
+27
+00:02:09,855 --> 00:02:13,404
+Answer: A shared pair of electrons between non-metal atoms.
+
+28
+00:02:14,464 --> 00:02:18,253
+Question 3: What is a negative ion called? Pause the video now.
+
+29
+00:02:19,313 --> 00:02:20,336
+Answer: An anion.
+
+30
+00:02:21,396 --> 00:02:25,667
+Question 4: Why is graphite soft but diamond hard? Pause the video now.
+
+31
+00:02:26,727 --> 00:02:31,359
+Answer: Graphite's layers slide; diamond's atoms each have four strong bonds.
