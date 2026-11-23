@@ -1,0 +1,171 @@
+1
+00:00:00,000 --> 00:00:01,678
+Welcome to Atomic Education.
+
+2
+00:00:02,737 --> 00:00:09,987
+This lesson was written by the Atomic teaching team to help you learn Cambridge Lower Secondary Science with confidence.
+
+3
+00:00:09,987 --> 00:00:10,706
+Let's begin!
+
+4
+00:00:11,766 --> 00:00:15,780
+Welcome to Stage 9, Unit 1: Photosynthesis and Transport in Plants.
+
+5
+00:00:16,840 --> 00:00:19,835
+Deforestation is destroying forests full of life.
+
+6
+00:00:19,835 --> 00:00:25,407
+Plants are producers: they make their own food by photosynthesis, which uses carbon dioxide.
+
+7
+00:00:25,407 --> 00:00:29,900
+So how does cutting down trees affect us, besides reducing our food supply?
+
+8
+00:00:30,960 --> 00:00:33,716
+Plants make their own food by photosynthesis.
+
+9
+00:00:33,716 --> 00:00:39,767
+They use energy from light to turn carbon dioxide from the air and water from the soil into glucose,
+
+10
+00:00:39,767 --> 00:00:40,966
+a sugar, and oxygen.
+
+11
+00:00:42,025 --> 00:00:46,159
+We can summarise it with a word equation: carbon dioxide plus water,
+
+12
+00:00:46,159 --> 00:00:50,233
+in the presence of light and chlorophyll, makes glucose plus oxygen.
+
+13
+00:00:51,293 --> 00:00:55,248
+'Photo' means from light, and 'synthesis' means putting together.
+
+14
+00:00:55,248 --> 00:00:59,681
+The glucose lets plants form new cells and tissues, which we call biomass.
+
+15
+00:01:00,741 --> 00:01:03,377
+Two pieces of pondweed are placed in water.
+
+16
+00:01:03,377 --> 00:01:09,847
+One lamp is 10 centimetres away from the first beaker; another lamp is 50 centimetres away from the second.
+
+17
+00:01:09,847 --> 00:01:14,401
+Predict: which pondweed will give off more bubbles of gas? Pause and decide.
+
+18
+00:01:15,461 --> 00:01:18,936
+Watch. Bubbles start to rise from both pieces of pondweed.
+
+19
+00:01:19,995 --> 00:01:26,466
+The pondweed close to the lamp gives off about 40 bubbles a minute; the one far away gives off only about 6.
+
+20
+00:01:27,526 --> 00:01:31,720
+Explain what you saw. The bubbles are oxygen, made by photosynthesis.
+
+21
+00:01:31,720 --> 00:01:38,130
+The closer lamp gives the pondweed more light energy, so it photosynthesises faster and makes more oxygen.
+
+22
+00:01:38,130 --> 00:01:43,343
+Light is needed for photosynthesis, and more light means a faster rate, up to a limit.
+
+23
+00:01:43,343 --> 00:01:45,679
+Pause and explain it in your own words.
+
+24
+00:01:46,739 --> 00:01:53,210
+A student counts the bubbles given off by pondweed in one minute, with the lamp at five different distances.
+
+25
+00:01:54,269 --> 00:02:00,680
+At 10 centimetres there are 40 bubbles a minute. At 20 centimetres there are 26, and at 30 centimetres, 15.
+
+26
+00:02:01,740 --> 00:02:07,432
+The further away the lamp, the fewer the bubbles, but the line is a curve, not a straight line.
+
+27
+00:02:08,491 --> 00:02:11,607
+Pause and decide: what is the independent variable,
+
+28
+00:02:11,607 --> 00:02:15,381
+and why should the student keep the water temperature the same?
+
+29
+00:02:16,441 --> 00:02:22,313
+Plants are well adapted for photosynthesis. Leaves have a large surface area to capture sunlight,
+
+30
+00:02:22,313 --> 00:02:25,608
+and they're thin, so gases diffuse in and out quickly.
+
+31
+00:02:25,608 --> 00:02:30,760
+Tiny openings called stomata, mostly on the underside of leaves, let gases in and out.
+
+32
+00:02:31,820 --> 00:02:38,051
+Photosynthesis happens in chloroplasts, which contain the green pigment chlorophyll that absorbs light.
+
+33
+00:02:38,051 --> 00:02:41,765
+Root hairs give roots a huge surface area for absorbing water.
+
+34
+00:02:42,825 --> 00:02:47,319
+Some oxygen is used for respiration; the rest escapes through the stomata.
+
+35
+00:02:47,319 --> 00:02:53,729
+Glucose gives the plant energy, and extra glucose is stored as starch, in leaves, roots, stems and fruits.
+
+36
+00:02:53,729 --> 00:02:56,905
+So the energy in every food chain comes from the Sun!
+
+37
+00:02:57,965 --> 00:03:01,799
+If a leaf has photosynthesised, it contains starch. To test it,
+
+38
+00:03:01,799 --> 00:03:06,831
+boil the leaf in water to stop all reactions, then in ethanol, heated in hot water,
+
+39
+00:03:06,831 --> 00:03:12,703
+to remove the green chlorophyll. Careful: ethanol is flammable! Then soften the leaf in hot water.
+
+40
+00:03:13,763 --> 00:03:20,113
+Add a few drops of iodine solution. Iodine is normally brown, but turns blue-black when starch is present.
+
+41
+00:03:21,173 --> 00:03:25,008
+Keep a plant in the dark for 48 hours so it uses up its starch.
+
+42
+00:03:25,008 --> 00:03:29,381
+Cover half a leaf with black paper and put the plant in bright sunlight.
+
+43
+00:03:29,381 --> 00:03:34,294
+Only the uncovered half turns blue-black, showing that photosynthesis needs light.
