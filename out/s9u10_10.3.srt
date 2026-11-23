@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:04,964
+Heat dissipation is thermal energy spreading from a hotter region to a cooler one.
+
+2
+00:00:04,964 --> 00:00:08,851
+A freshly baked pie cools as its heat flows into the cooler air.
+
+3
+00:00:08,851 --> 00:00:11,961
+An ice pack on an injury absorbs heat from the skin.
+
+4
+00:00:13,020 --> 00:00:19,599
+An open system exchanges both energy and matter with its surroundings; a closed system exchanges only energy.
+
+5
+00:00:19,599 --> 00:00:25,340
+Insulation, as in a vacuum flask, slows the flow of heat, keeping drinks hot or cold for longer.
+
+6
+00:00:26,400 --> 00:00:28,134
+Nature uses dissipation too.
+
+7
+00:00:28,134 --> 00:00:33,456
+An African elephant's huge, thin ears give a large surface area, so blood cools quickly.
+
+8
+00:00:33,456 --> 00:00:38,061
+And phones and laptops are designed to dissipate heat so they don't overheat.
+
+9
+00:00:39,121 --> 00:00:43,786
+A cup of freshly made tea is left on a table in a room at 22 degrees Celsius.
+
+10
+00:00:43,786 --> 00:00:46,537
+Its temperature is measured every few minutes.
+
+11
+00:00:47,596 --> 00:00:54,055
+In the first five minutes the tea cools by 16 degrees. Between 30 and 40 minutes it cools by only 5 degrees.
+
+12
+00:00:55,115 --> 00:00:59,241
+The curve gets less steep as the tea gets closer to room temperature.
+
+13
+00:01:00,301 --> 00:01:04,427
+Pause and decide: why does the tea cool more slowly as time goes on,
+
+14
+00:01:04,427 --> 00:01:06,999
+and what temperature will it finally reach?
