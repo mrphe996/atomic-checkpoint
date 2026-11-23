@@ -16,9 +16,21 @@
       else if (TH && (k === 'fill' || k === 'stroke')) e.setAttribute(k, TH(v));
       else if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v === true ? '' : v);
     }
-    for (const c of kids.flat()) if (c != null && c !== false) e.append(c.nodeType ? c : document.createTextNode(c));
+    const AI = window.AtomicIcons, cls = (attrs && attrs.class) || '';
+    const iconsOk = AI && !NOICON_TAG.test(tag) && !NOICON_CLS.test(cls);
+    const filled = iconsOk && (/(^|\s)(on|active|current|cur)(\s|$)/.test(cls) || attrs && ['aria-current', 'aria-selected', 'aria-pressed'].some(k => attrs[k] && attrs[k] !== 'false'));
+    for (const c of kids.flat()) if (c != null && c !== false) {
+      if (c.nodeType) e.append(c);
+      else if (iconsOk && AI.has(String(c))) e.append(...AI.swap(String(c), filled));
+      else e.append(document.createTextNode(c));
+    }
     return e;
   }
+  // picture emoji (question pictures, word cards) stay pictures; form controls cannot hold icons
+  const NOICON_TAG = /^(option|optgroup|textarea|title|style|script|select)$/i;
+  const NOICON_CLS = /(^|\s)(pe|we|qpic|sayemo|pt|ot|emo|noicon)(\s|$)/;
+  // textContent with interface glyphs turned into icons
+  function setTxt(node, s) { const AI = window.AtomicIcons; if (AI && AI.has(String(s))) node.replaceChildren(...AI.swap(String(s))); else node.textContent = s; }
   function rng(seedStr) { let h = 2166136261; for (const ch of seedStr) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; }
   function shuffle(arr, seed) { const r = rng(seed), a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
   const TYPE_VI = window.GradeCore.TYPE_VI;
@@ -63,7 +75,7 @@
           const b = pics ? el('button', { class: 'opt pcard', type: 'button', 'aria-pressed': 'false', 'data-oi': oi, 'aria-label': q.options[oi].t },
             el('span', { class: 'pe', 'aria-hidden': 'true' }, q.options[oi].e), el('span', { class: 'pt' }, q.options[oi].t))
             : el('button', { class: 'opt', type: 'button', 'aria-pressed': 'false', 'data-oi': oi },
-            el('span', { class: 'key' }, String.fromCharCode(65 + k)), el('span', {}, q.options[oi].t));
+            el('span', { class: 'key' }, String.fromCharCode(65 + k)), el('span', { class: 'ot' }, q.options[oi].t));
           const sync = () => { const on = multi ? resp.includes(oi) : resp === oi; b.classList.toggle('sel', on); b.setAttribute('aria-pressed', on); };
           b.onclick = () => { if (multi) { resp = resp.includes(oi) ? resp.filter(x => x !== oi) : resp.concat(oi); } else resp = oi; list.querySelectorAll('.opt').forEach(x => x._sync()); changed(); };
           b._sync = sync; sync(); list.append(b);
@@ -78,7 +90,7 @@
           const zoomBtn = el('button', { class: 'btn small', type: 'button' }, '🔍 Zoom in on the scale');
           const { box, f } = figureBox(q.fig.kind, q.fig);
           const zoom = el('div', { class: 'zoom', hidden: true }); zoom.innerHTML = f.svg.replace('viewBox="0 0 480 320"', `viewBox="${f.zoom}"`);
-          zoomBtn.onclick = () => { zoom.hidden = !zoom.hidden; zoomBtn.textContent = zoom.hidden ? '🔍 Zoom in on the scale' : 'Zoom out'; };
+          zoomBtn.onclick = () => { zoom.hidden = !zoom.hidden; setTxt(zoomBtn, zoom.hidden ? '🔍 Zoom in on the scale' : 'Zoom out'); };
           W.append(el('div', { class: 'scalewrap' }, box, el('div', {}, zoomBtn, zoom)));
         }
         const inp = el('input', { type: 'text', inputmode: 'decimal', class: 'numin', 'aria-label': 'Value', value: resp.v, placeholder: 'value' });
@@ -221,7 +233,7 @@
       }
       case 'sim': {
         resp = resp || { pred: null, trials: [], concl: null }; let cur = 10;
-        const view = el('div', { class: 'scope' }); const setView = () => { view.innerHTML = Fig.F.scopeView(cur); objBtns.forEach(b => b.classList.toggle('sel', +b.dataset.o === cur)); mag.textContent = `Eyepiece ×10 · Objective ×${cur} → Total magnification ×${10 * cur}`; };
+        const view = el('div', { class: 'scope' }); const setView = () => { view.innerHTML = Fig.F.scopeView(cur); objBtns.forEach(b => b.classList.toggle('sel', +b.dataset.o === cur)); setTxt(mag, `Eyepiece ×10 · Objective ×${cur} → Total magnification ×${10 * cur}`); };
         const steps = el('ol', { class: 'simsteps' });
         const predOpts = [['more', 'More cells across the field of view'], ['fewer', 'Fewer cells across the field of view'], ['same', 'The same number of cells']];
         const pred = el('div', { class: 'opts' }, ...predOpts.map(([v, t]) => { const b = el('button', { class: 'opt' + (resp.pred === v ? ' sel' : ''), type: 'button' }, t); b.onclick = () => { resp.pred = v; pred.querySelectorAll('.opt').forEach(x => x.classList.remove('sel')); b.classList.add('sel'); changed(); }; return b; }));
@@ -312,5 +324,5 @@
       el('p', {}, el('b', {}, 'Model answer: '), q.model));
   }
 
-  window.QE = { aiMark: null, el, esc, grade, renderBody, practice, answerText, TYPE_VI, DIFF, shuffle, isTick, parseNum, dataTable };
+  window.QE = { aiMark: null, el, setTxt, esc, grade, renderBody, practice, answerText, TYPE_VI, DIFF, shuffle, isTick, parseNum, dataTable };
 })();

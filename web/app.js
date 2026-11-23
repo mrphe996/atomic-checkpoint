@@ -10,19 +10,11 @@
   const fmt = t => { t = Math.max(0, Math.round(t)); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`; };
   const fullT = (s, t) => fmt(s.video.offset + t);
   const go = (r, opts) => { if (opts) Object.assign(UI, opts); if (location.hash.slice(1) === r) render(); else location.hash = r; };
-  const svgI = (d, size = 16, stroke = 'currentColor', w = 2.2) => { const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('width', size); s.setAttribute('height', size); s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('aria-hidden', 'true'); s.innerHTML = `<path d="${d}" fill="none" stroke="${stroke}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`; return s; };
-  const I = { play: 'M8 5v14l11-7z', pause: 'M7 5h4v14H7z M13 5h4v14h-4z', check: 'M5 12l5 5 9-10', sheet: 'M6 3h8l4 4v14H6z M9 13h6 M9 17h6', lock: 'M6 11h12v10H6z M8 11V8a4 4 0 0 1 8 0v3', flag: 'M5 21V4 M5 4h11l-2 4 2 4H5', bulb: 'M9 18h6 M10 21h4 M12 3a6 6 0 0 0-4 10.5c1 1 1 2 1 3h6c0-1 0-2 1-3A6 6 0 0 0 12 3z', full: 'M4 9V4h5 M20 9V4h-5 M4 15v5h5 M20 15v5h-5' };
-  const FLAME = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 7 6 7 12a7 7 0 0 1-14 0c0-3 2-5 3-6 0 2 1 3 2 3 0-3-1-6 2-9z" fill="#F08A4B" stroke="#C2410C" stroke-width="1.2" stroke-linejoin="round"/></svg>';
-  const STAR = '<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z" fill="#F3BF69" stroke="#C48A2C" stroke-width="1.2" stroke-linejoin="round"/></svg>';
-  /* topic icons from the Atomic design system (dark-blue outline + science-colour fill) */
-  const IC = (function () {
-    const dot = (x, y, r) => `M${x - r} ${y}a${r} ${r} 0 1 0 ${2 * r} 0a${r} ${r} 0 1 0 ${-2 * r} 0z`;
-    let grid = ''; [7, 12, 17].forEach(y => [7, 12, 17].forEach(x => { grid += dot(x, y, 1.7) + ' '; }));
-    return { 1: { o: 'M10 3h4 M11 3v8 M13 3v8 M9 11h6 M12 11v3 M5 21h14 M8 21a7 7 0 0 1 11-9', a: dot(16, 16.5, 2.2), c: '#F3BF69', bg: '#FFF4D6' }, 2: { o: 'M3 16 16 3l5 5L8 21z M7 12l2 2 M10 9l2 2 M13 6l2 2', a: 'M16 3l5 5-3 3-5-5z', c: '#F3BF69', bg: '#FFF4D6' }, 3: { o: 'M6 4h12a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z M11 9h6v6h-6z', a: dot(7.5, 9, 2.2) + ' M11 9h6v6h-6z', c: '#8E6CC9', bg: '#E8F7EA' }, 4: { o: 'M12 19v-6 M12 13 6 8 M12 13l6-5', a: dot(6, 6, 2.2) + dot(18, 6, 2.2) + dot(12, 20, 2.2), c: '#3FA34D', bg: '#E8F7EA' }, 5: { o: 'M4 20c0-9 7-16 16-16 0 9-7 16-16 16z M4 20l9-9', a: 'M4 20c0-9 7-16 16-16 0 9-7 16-16 16z', c: '#BFE6C3', bg: '#E8F7EA' }, 6: { o: 'M3 3h18v18H3z', a: grid, c: '#2F6FD6', bg: '#E6EEFA' }, 7: { o: 'M12 3l8 4.5v9L12 21l-8-4.5v-9z M12 12l8-4.5 M12 12v9 M12 12 4 7.5', a: 'M12 3l8 4.5-8 4.5-8-4.5z', c: '#F3BF69', bg: '#FFF4D6' }, 8: { o: 'M6 3h12 M8 3v6l-4 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-4-9V3', a: 'M5.6 14.5h12.8l1.5 3.5a1.4 1.4 0 0 1-1.3 2H5.4a1.4 1.4 0 0 1-1.3-2z', c: '#F7A8A8', bg: '#FDECEC' }, 9: { o: 'M9 3h6 M10 3v5L5 19a1.5 1.5 0 0 0 1.4 2h11.2a1.5 1.5 0 0 0 1.4-2L14 8V3', a: dot(11, 16, 1.8) + dot(14.5, 13.5, 1.3) + dot(13.5, 18, 1.1), c: '#F08A4B', bg: '#FFF1E0' }, 10: { o: 'M3 13h8v7H3z M13 16.5h8 M18 13.5l3 3-3 3', a: 'M3 13h8v7H3z', c: '#9CC0F0', bg: '#E6EEFA' }, 11: { o: 'M12 2v3 M12 19v3 M2 12h3 M19 12h3 M5 5l2 2 M17 17l2 2 M5 19l2-2 M17 7l2-2 ' + dot(12, 12, 4.5), a: dot(12, 12, 4.5), c: '#F3BF69', bg: '#FFF4D6' }, 12: { o: 'M13 2 4 14h7l-1 8 9-12h-7z', a: 'M13 2 4 14h7l-1 8 9-12h-7z', c: '#F3BF69', bg: '#FFF4D6' }, 13: { o: 'M2 20h20 M4 20l6-10h4l6 10 M10 7 9 4 M12 7V3 M14 7l1-3', a: 'M9 13.5h6L13.6 11h-3.2z', c: '#F08A4B', bg: '#FFF1E0' }, 14: { o: dot(12, 12, 5) + ' M3 15c1.5 2.5 16.5-2 18-6 M3 15c-1-2 2-4 4.5-5 M21 9c1 2-1.5 3.5-4 4.5', a: dot(12, 12, 5), c: '#CFE6FF', bg: '#E6EEFA' } };
-  })();
-  const MATH_IC = ['', '√', 'x²', '%', '=', '∠', '📊', '◯', '½', 'Σ', '↗', '∶', '🎲', '⇄', '▣', '📈'];
-  const P6_IC = { 1: '🫀', 2: '⚗️', 3: '🪨', 4: '🌿', 5: '⚡', 6: '🔭' }, P5_IC = { 1: '🌸', 2: '🔊', 3: '💧', 4: '🍎', 5: '🧲', 6: '🌍' }, P4_IC = { 1: '🦴', 2: '⚡', 3: '🧊', 4: '🌋', 5: '🔦', 6: '🔌' }, P3_IC = { 1: '🌱', 2: '🥣', 3: '👤', 4: '🐸', 5: '🧲', 6: '🌙' };
-  const unitIcon = n => { if (Core.IS_PRIMARY) return el('span', { class: 'ic mic', 'aria-hidden': 'true' }, ({ 3: P3_IC, 4: P4_IC, 5: P5_IC }[Core.STAGE] || P6_IC)[n] || String(n)); if (Core.IS_MATHS || !IC[n]) return el('span', { class: 'ic mic', 'aria-hidden': 'true' }, MATH_IC[n] || String(n)); const i = IC[n]; const sp = el('span', { class: 'ic', style: `background:${i.bg}`, 'aria-hidden': 'true' }); sp.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24"><path d="${i.a}" fill="${i.c}"/><path d="${i.o}" fill="none" stroke="#013A8C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>`; return sp; };
+  const svgI = (name, size = 16, color) => AtomicIcons.ic(name, { size, filled: /^player-/.test(name), color: color && color !== 'currentColor' && color !== '#1C2A3A' ? color : null });
+  const I = { play: 'player-play', pause: 'player-pause', check: 'check', sheet: 'file-text', lock: 'lock', flag: 'flag', bulb: 'bulb', full: 'maximize' };
+  const FLAME = AtomicIcons.html('flame', { filled: true, size: 18, color: '#E8590C' });
+  const STAR = AtomicIcons.html('star', { filled: true, size: 16, color: '#E0A800' });
+  const unitIcon = n => { const name = AtomicIcons.unit(Core.STAGE, n); if (!name) return el('span', { class: 'ic mic', 'aria-hidden': 'true' }, String(n)); const sp = el('span', { class: 'ic tic c' + (n % 5), 'aria-hidden': 'true' }); sp.append(AtomicIcons.ic(name)); return sp; };
   const STRAND = { 1: 'Enquiry', 2: 'Enquiry', 3: 'Biology', 4: 'Biology', 5: 'Biology', 6: 'Chemistry', 7: 'Chemistry', 8: 'Chemistry', 9: 'Chemistry', 10: 'Physics', 11: 'Physics', 12: 'Physics', 13: 'Earth and Space', 14: 'Earth and Space' };
 
   /* ---------- small UI helpers ---------- */
@@ -39,7 +31,7 @@
   function modeBtn() {
     const T = window.AtomicTheme; if (!T || T.name !== 'oak') return '';
     const b = el('button', { class: 'modebtn', type: 'button', id: 'modeBtn' });
-    const draw = () => { const d = T.mode === 'dark'; b.textContent = d ? '☀️' : '🌙'; b.title = d ? 'Switch to light mode' : 'Switch to dark mode'; b.setAttribute('aria-label', b.title); b.setAttribute('aria-pressed', String(d)); };
+    const draw = () => { const d = T.mode === 'dark'; QE.setTxt(b, d ? '☀️' : '🌙'); b.title = d ? 'Switch to light mode' : 'Switch to dark mode'; b.setAttribute('aria-label', b.title); b.setAttribute('aria-pressed', String(d)); };
     b.onclick = () => { T.setMode(T.mode === 'dark' ? 'light' : 'dark'); draw(); };
     draw(); return b;
   }
@@ -180,7 +172,7 @@
   // sidebar: a search box, the current course, and only the unit being studied (other units are picked from "Change unit")
   function tocSearch() {
     const box = el('div', { class: 'card tsearch' });
-    const inp = el('input', { type: 'search', id: 'tocSearch', placeholder: '🔍 Search lessons, units, words…', autocomplete: 'off', 'aria-label': 'Search this course' });
+    const inp = el('input', { type: 'search', id: 'tocSearch', placeholder: 'Search lessons, units, words…', autocomplete: 'off', 'aria-label': 'Search this course' });
     const out = el('div', { class: 'tsres', role: 'listbox' });
     const norm = t => String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
     const items = () => {
@@ -274,7 +266,7 @@
   }
   const statCard = (icon, big, small, href) => el(href ? 'a' : 'div', { class: 'card dstat', href: href || null }, icon, el('span', {}, el('b', {}, big), el('br'), el('small', {}, small)));
   const ringIcon = pct => el('span', { class: 'dring', style: `background:conic-gradient(var(--blue) 0 ${pct}%, #E3EBF5 0)` }, el('i', {}, pct + '%'));
-  const flameIcon = () => el('span', { class: 'bob', html: '<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 6 6 6 11a6 6 0 0 1-12 0c0-3 2-5 3-6 0 2 1 3 2 3 0-3-1-5 1-8z" fill="#F3BF69" stroke="#0149AF" stroke-width="1.5" stroke-linejoin="round"/></svg>' });
+  const flameIcon = () => el('span', { class: 'bob', html: AtomicIcons.html('flame', { filled: true, size: 34, color: '#E8590C' }) });
   function bar(where) {
     const left = []; let vids = 0, reqs = 0;
     C.sections.forEach(s => { if (!Core.videoDone(st, s)) vids++; reqs += Core.reqLeft(st, s).length; });
@@ -324,7 +316,7 @@
         el('h1', {}, isGuest() ? 'Welcome to Atomic ' : `${greet}, ${st.alias} `, el('span', { class: 'wobble', style: 'display:inline-block;color:var(--gold)' }, '✦')),
         el('p', {}, started ? `You are on ${cur.id} ${cur.title} — next: ${nx.label.charAt(0).toLowerCase() + nx.label.slice(1)}.` : `Start with Unit ${Core.UNO}: ${C.unit.title} – topic ${C.sections[0] ? C.sections[0].id : '3.1'}. ${C.sections[0] && C.sections[0].lesson ? 'Read the lesson' : 'Watch the lesson'}, then practise.`)),
       el('div', { class: 'dstats' },
-        el('a', { class: 'card dstat', href: '#profile', id: 'streakCard' }, el('span', { class: 'bob', html: '<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4 6 6 6 11a6 6 0 0 1-12 0c0-3 2-5 3-6 0 2 1 3 2 3 0-3-1-5 1-8z" fill="#F3BF69" stroke="#0149AF" stroke-width="1.5" stroke-linejoin="round"/></svg>' }),
+        el('a', { class: 'card dstat', href: '#profile', id: 'streakCard' }, el('span', { class: 'bob', html: AtomicIcons.html('flame', { filled: true, size: 34, color: '#E8590C' }) }),
           el('span', {}, el('b', {}, `${sk} day${sk === 1 ? '' : 's'}`), el('br'), el('small', {}, 'learning streak'))),
         el('div', { class: 'card dstat' }, el('span', { class: 'dring', style: `background:conic-gradient(var(--blue) 0 ${pct}%, #E3EBF5 0)` }, el('i', {}, pct + '%')),
           el('span', {}, el('b', {}, `${doneQ} / ${allQ}`), el('br'), el('small', {}, `Unit ${Core.UNO} questions done`))),
@@ -365,22 +357,22 @@
     const wl = wrongList(), wsSec = st.ws.length ? null : cur;
     const sug = el('section', { class: 'card dsug' }, el('h2', {}, 'Suggested next'));
     const sRow = (cls, icon, t, d, btn) => el('div', { class: 'srow' }, el('span', { class: 'sic ' + cls, html: icon }), el('span', { class: 'st' }, el('b', {}, t), el('br'), el('small', { class: 'muted' }, d)), btn);
-    sug.append(sRow('o wobble', '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9A4A00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 13h6 M9 17h6"/></svg>',
+    sug.append(sRow('o wobble', AtomicIcons.html('file-text', { size: 26, color: '#9A4A00' }),
       `Worksheet ${cur.id} · ${cur.title}`, 'Printable A4 worksheet with Core and practice questions', el('a', { class: 'btn small', href: '#ws-' + R(cur.id) }, 'Open')));
-    sug.append(sRow('b pulse', '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0149AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z M12 7v5l3 2"/></svg>',
+    sug.append(sRow('b pulse', AtomicIcons.html('clock', { size: 26, color: '#0149AF' }),
       wl.length ? 'Redo the questions you found tricky' : 'Revise by learning objective', wl.length ? `${wl.length} question${wl.length === 1 ? '' : 's'} you got wrong before` : 'Pick an objective and practise it',
       el('button', { class: 'btn primary small', type: 'button', id: 'tileWrong', onclick: () => wl.length ? startDrill('Redo wrong answers', wl, 'wrong') : go('topic') }, 'Start', el('span', { class: 'arr' }, ' →'))));
     left.append(sug);
     // aside: unit test card
     const ts = Core.testState(st), totalReq = C.sections.reduce((a, s) => a + 8 - Core.reqLeft(st, s).length, 0);
     aside.append(el('section', { class: 'dtest' }, el('div', { class: 'blob drift', 'aria-hidden': 'true' }),
-      el('div', { class: 'dtest-h' }, el('span', { class: 'wobble', html: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F3BF69" stroke-width="2"><path d="M6 11h12v10H6z M8 11V8a4 4 0 0 1 8 0v3"/></svg>' }), el('b', {}, `Unit Test ${Core.UNO}`)),
+      el('div', { class: 'dtest-h' }, el('span', { class: 'wobble', html: AtomicIcons.html('lock', { size: 26, color: '#E0A800' }) }), el('b', {}, `Unit Test ${Core.UNO}`)),
       el('p', {}, ts.state === 'passed' ? 'Passed — well done! Your first-pass score counts towards the leaderboard.' : Core.unitOpen(Core.UNIT) ? `Open now · ${TestRules.UNIT_MINUTES} minutes in the exam room · pass above 70%.` : `Unlocks when you finish every ${C.sections[0] && C.sections[0].lesson ? 'lesson' : 'video'} and Core question in this unit · ${TestRules.UNIT_MINUTES} minutes · pass above 70%.`),
       el('div', { class: 'dsegs' }, ...C.sections.map(s => el('span', { class: Core.secDone(st, s) ? 'on' : (8 - Core.reqLeft(st, s).length) ? 'half' : '' }))),
       el('small', {}, `Core questions: ${totalReq} of ${C.sections.length * 8}`),
       el('a', { class: 'btn gold', href: isGuest() ? '#signup' : ts.state === 'passed' ? '#result' : '#tests', id: 'dashTest' }, isGuest() ? 'Sign up to take the test' : ts.state === 'passed' ? 'See my result' : ts.state === 'ready' ? 'Start the test' : 'Preview the test', el('span', { class: 'arr' }, ' →'))));
     // aside: leaderboard
-    const lb = el('section', { class: 'card dside' }, el('div', { class: 'dth' }, el('b', { class: 'lex' }, 'Leaderboard'), el('span', { class: 'bob', html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#935A00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8 M12 17v4 M7 4h10v5a5 5 0 0 1-10 0z M7 6H4a3 3 0 0 0 3 4 M17 6h3a3 3 0 0 1-3 4"/></svg>' })));
+    const lb = el('section', { class: 'card dside' }, el('div', { class: 'dth' }, el('b', { class: 'lex' }, 'Leaderboard'), el('span', { class: 'bob', html: AtomicIcons.html('trophy', { size: 24, color: '#935A00' }) })));
     const lbBody = el('div', { class: 'dlb' }, Loading.skeleton('lines')); lb.append(lbBody, el('a', { class: 'ul', href: '#board' }, 'Full leaderboard →'));
     aside.append(lb);
     if (!isGuest()) Backend.leaderboard(Core.STAGE).then(rows => { rows = (rows || []).filter(r => r.score != null).map(r => ({ alias: r.nickname, score: Number(r.score), me: !!r.is_mine })); Core.competitionRank(rows); lbBody.innerHTML = '';
@@ -396,7 +388,7 @@
     aside.append(el('section', { class: 'card dside' }, el('b', { class: 'lex' }, 'Worth revising'),
       ...(objs.length ? objs.map(o => el('div', { class: 'wrev' }, el('span', { class: 'wt' }, el('span', {}, o.t), el('b', {}, o.pct + '%')), el('div', { class: 'pbar warn' }, el('i', { style: `width:${o.pct}%` })))) : [el('p', { class: 'muted', style: 'margin:0' }, 'Answer a few more questions and we will show the ideas worth revising here.')]),
       el('a', { class: 'ul', href: '#profile' }, 'See full report →')));
-    aside.append(el('section', { class: 'dknow' }, el('span', { class: 'pulse', html: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#013A8C" stroke-width="2" stroke-linecap="round"><path d="M9 18h6 M10 21h4 M12 3a6 6 0 0 0-4 10.5c1 1 1 2 1 3h6c0-1 0-2 1-3A6 6 0 0 0 12 3z"/></svg>' }),
+    aside.append(el('section', { class: 'dknow' }, el('span', { class: 'pulse', html: AtomicIcons.html('bulb', { size: 18 }) }),
       el('span', {}, el('b', {}, 'Did you know? '), Core.IS_MATHS ? '√2 cannot be written as a fraction – its decimal digits never end and never repeat.' : 'Some nerve cells are only about 0.1 mm wide but can be up to 1 metre long.')));
   }
   const statTile = (ic, big, small) => el('div', { class: 'tile', style: 'cursor:default' }, el('span', { class: 'ti' }, ic), el('b', {}, big), el('small', {}, small));
@@ -427,7 +419,7 @@
       const ansStops = s.stops.filter(x => Core.stopDone(st, s.id, x)).length;
       const started = vd || ansStops || reqDone || pracDone;
       const state = lock ? 'lock' : done ? 'done' : started ? 'go' : 'new';
-      const tile = (cls, ic, name, sub, href, locked, extra) => el('a', { class: 'u4tile ' + cls, href: locked ? null : href, 'aria-disabled': locked ? 'true' : null, style: locked ? 'opacity:.55;pointer-events:none' : null }, el('i', {}, ic), el('span', {}, el('b', {}, name), el('small', {}, sub), extra || null));
+      const tile = (cls, ic, name, sub, href, locked, extra) => el('a', { class: 'u4tile ' + cls, href: locked ? null : href, 'aria-disabled': locked ? 'true' : null, style: locked ? 'opacity:.55;pointer-events:none' : null }, el('i', {}, ...AtomicIcons.swap(ic, / go\b/.test(' ' + cls))), el('span', {}, el('b', {}, name), el('small', {}, sub), extra || null));
       const vlen = s.lesson ? `about ${Math.max(5, Math.round(s.video.dur / 60))} min · ${s.stops.length} check questions` : `${fmt(s.video.dur)} · ${s.stops.length} pause questions`;
       const tiles = el('div', { class: 'u4tiles' },
         tile(vd ? 'ok' : ansStops ? 'go' : '', s.lesson ? '📖' : '▶', s.lesson ? 'Read the lesson' : 'Watch', vd ? vlen + ' ✓' : ansStops ? `${ansStops} of ${s.stops.length} pauses · ${fmt(vs.pos || 0)}` : vlen, '#v-' + R(s.id), !!lock),
@@ -744,7 +736,7 @@
     if (s.vocab && s.vocab.length && window.Primary) {   // the lesson's words, in a drawer inside the room
       const wb = Primary.wordBank(s); const fresh = !s.req.some(q => (st.items[q.id] || {}).tries);
       const drawer = el('div', { class: 'fwords' }, wb);
-      const wbtn = el('button', { type: 'button', class: 'btn small fwbtn' + (fresh ? ' glow' : ''), id: 'wordsBtn', 'aria-expanded': 'false', onclick: () => { const o = drawer.classList.toggle('open'); wbtn.classList.remove('glow'); wbtn.setAttribute('aria-expanded', String(o)); wbtn.textContent = o ? '✕ Close words' : '📒 Words'; } }, '📒 Words');
+      const wbtn = el('button', { type: 'button', class: 'btn small fwbtn' + (fresh ? ' glow' : ''), id: 'wordsBtn', 'aria-expanded': 'false', onclick: () => { const o = drawer.classList.toggle('open'); wbtn.classList.remove('glow'); wbtn.setAttribute('aria-expanded', String(o)); QE.setTxt(wbtn, o ? '✕ Close words' : '📒 Words'); } }, '📒 Words');
       F.head.append(wbtn); F.head.after(drawer);
     }
     F.head.append(leaveBtn, grownUpExit('u-' + Core.UNO));
@@ -1131,7 +1123,7 @@
     if (c.strands) box.append(el('div', {}, el('b', {}, 'Curriculum strands'), el('div', { class: 'chips' }, ...c.strands.map(x => el('span', { class: 'chip' }, x)))));
     if (c.exams) box.append(el('div', {}, el('b', {}, 'Checkpoint exam room (practice papers in this format)'), el('ul', { style: 'margin:6px 0 0' }, ...c.exams.map(e => el('li', {}, el('b', {}, `${S0.name} ${e.code}`), ` · ${e.name} · ${e.minutes} minutes · ${e.marks} marks · ${e.note}`)))));
     const msg = el('span', { class: 'muted' });
-    box.append(el('div', { class: 'btnrow' }, st && !isGuest() ? el('button', { class: 'btn gold', type: 'button', id: 'notifyMe', onclick: () => { Backend.track('course_interest', { learner: st.id, course: c.id }); msg.textContent = '✓ Thank you – we will tell you when it opens.'; } }, '🔔 Tell me when it opens') : null, el('a', { class: 'btn', href: '#courses-' + S0.id }, 'All ' + S0.name + ' courses'), msg));
+    box.append(el('div', { class: 'btnrow' }, st && !isGuest() ? el('button', { class: 'btn gold', type: 'button', id: 'notifyMe', onclick: () => { Backend.track('course_interest', { learner: st.id, course: c.id }); QE.setTxt(msg, '✓ Thank you – we will tell you when it opens.'); } }, '🔔 Tell me when it opens') : null, el('a', { class: 'btn', href: '#courses-' + S0.id }, 'All ' + S0.name + ' courses'), msg));
     m.append(box);
   }
   async function viewStage(g) {
@@ -1226,7 +1218,7 @@
     const sX = el('button', { type: 'button', class: 'qbx', 'aria-label': 'Clear the search', hidden: !F.q, onclick: () => { sIn.value = ''; F.q = ''; sX.hidden = true; update(); sIn.focus(); } }, '×');
     let sT = null; const runSearch = () => { clearTimeout(sT); const v = sIn.value.trim(); sX.hidden = !v; if (v === (F.q || '')) return; F.q = v; F.n = 40; update(); };
     sIn.addEventListener('input', () => { clearTimeout(sT); sT = setTimeout(runSearch, 180); }); sIn.addEventListener('keydown', e => { if (e.key === 'Enter') runSearch(); }); sIn.addEventListener('search', runSearch);
-    const search = el('div', { class: 'qbsearch', role: 'search' }, el('span', { html: '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="#5B6478" stroke-width="2.2"/><path d="M16.5 16.5 21 21" stroke="#5B6478" stroke-width="2.2" stroke-linecap="round"/></svg>' }), sIn, sX);
+    const search = el('div', { class: 'qbsearch', role: 'search' }, el('span', { html: AtomicIcons.html('search', { size: 18, color: '#575757' }) }), sIn, sX);
     const active = el('div', { class: 'qbactive', 'aria-live': 'polite' });
     const panel = el('section', { class: 'card qbf' + (UI.bankFold ? ' closed' : ''), id: 'bankFilters', 'aria-label': 'Filters' },
       el('div', { class: 'qbf-top' }, el('b', { class: 'lex', style: 'font-size:18px' }, 'Filters'), search,
@@ -1670,7 +1662,7 @@
       let lastU = null;
       ws.forEach(x => {
         if (x.unit !== lastU) { lastU = x.unit; list.append(el('h3', { class: 'wuh' }, x.unit ? `Unit ${x.unit}` : 'My own words')); }
-        const note = el('textarea', { rows: 2, maxlength: 300, placeholder: '✏️ My note…', 'aria-label': 'My note for ' + x.w }); note.value = x.note || ''; let tm = null; note.oninput = () => { clearTimeout(tm); tm = setTimeout(() => Words.update(x.w, { note: note.value }), 400); };
+        const note = el('textarea', { rows: 2, maxlength: 300, placeholder: 'My note…', 'aria-label': 'My note for ' + x.w }); note.value = x.note || ''; let tm = null; note.oninput = () => { clearTimeout(tm); tm = setTimeout(() => Words.update(x.w, { note: note.value }), 400); };
         list.append(el('div', { class: 'card wentry' + (x.known ? ' known' : '') },
           el('button', { type: 'button', class: 'wbig', 'aria-label': 'Listen: ' + x.w, onclick: () => Words.say(x) }, el('span', { class: 'we' }, x.emoji || '🔤'), el('span', { class: 'wp' }, '🔊')),
           el('div', { class: 'wtext' }, el('b', {}, x.w), x.def ? el('p', {}, x.def) : null, x.sec ? el('small', { class: 'muted' }, 'Lesson ' + x.sec) : null, note),
@@ -2021,7 +2013,7 @@
       if (nick.value.trim().length < 2) { e.textContent = ERR.bad_nickname; return; }
       const sid = /^\d+$/.test(school.value) ? Number(school.value) : null;
       try { await Backend.updateLearner(l.id, { nickname: nick.value.trim(), certificate_name: full.value.trim() || null, grade: gr.value || null, school_id: sid, school_other: sid ? null : (other.value.trim() || null), parent_email: pe || null });
-        await Core.refreshAccount(); const nl = Core.S.learners.find(x => x.id === l.id); if (nl) { st.learner = nl; st.alias = nl.nickname; st.name = nl.certificate_name || nl.nickname; } msg.textContent = 'Saved ✓'; } catch (x) { e.textContent = errText(x); }
+        await Core.refreshAccount(); const nl = Core.S.learners.find(x => x.id === l.id); if (nl) { st.learner = nl; st.alias = nl.nickname; st.name = nl.certificate_name || nl.nickname; } QE.setTxt(msg, 'Saved ✓'); } catch (x) { e.textContent = errText(x); }
     } }, 'Save changes');
     const lb = el('input', { type: 'checkbox', id: 'setBoard' }); lb.checked = !!l.leaderboard_opt_in;
     lb.onchange = () => { if (lb.checked) modal('Show me on the leaderboard?', 'Your nickname and ranking score will be visible to other Atomic learners. Nothing else is shown. You can switch this off at any time.', [{ t: 'Keep me hidden', cls: 'ghost', on: () => { lb.checked = false; } }, { t: 'Show my nickname', cls: 'primary', on: async () => { await Backend.updateLearner(l.id, { leaderboard_opt_in: true }); await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); } }]); else Backend.updateLearner(l.id, { leaderboard_opt_in: false }).then(async () => { await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); }); };

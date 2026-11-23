@@ -1468,7 +1468,8 @@ body.focus-mode .toast{z-index:950;top:auto!important;bottom:96px;left:50%;right
 .tunits .it:hover{background:#EAF1FC}.tunits .it.on{background:var(--blue1)}
 .tunit{padding:12px;border-radius:18px}
 .tuhead{display:flex;align-items:center;gap:10px}
-.tuhead>div{flex:1;display:flex;flex-direction:column;min-width:0}
+.tuhead{flex-wrap:wrap}
+.tuhead>div{flex:1;display:flex;flex-direction:column;min-width:130px}
 .tuhead small{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--muted)}
 .tuhead b{font:800 16px Outfit,Figtree,sans-serif;color:var(--navy);line-height:1.25}
 .tunit .unitmeta{margin:8px 2px 4px}
@@ -1524,3 +1525,12 @@ textarea.para{min-height:180px;line-height:1.55}
 /* phone header: keep everything inside the screen width */
 @media (max-width:640px){.lvx-pct{display:none}.lvx{padding:4px;gap:0;min-width:44px;justify-content:center}.topright{gap:4px;min-width:0}.topbar .logo img,.top .logo img{max-height:30px;max-width:84px}.topright .pill{padding:0 8px}.topright .btn.small{padding:0 10px}}
 @media (max-width:480px){.topright .pill.streak{display:none}}
+/* Tabler interface icons (web/icons.js) */
+svg.ti-i{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em;display:inline-block}
+svg.ti-i[width]{vertical-align:middle}
+.btn svg.ti-i,.pill svg.ti-i{width:1.2em;height:1.2em}
+:where(.ic.tic){width:36px;height:36px;border-radius:8px}
+.ic.tic{display:inline-grid;place-items:center;color:#222;flex:none}
+.ic.tic svg.ti-i{width:60%;height:60%;vertical-align:0}
+.ic.tic.c0{background:#E8F9E8}.ic.tic.c1{background:#FFF7CC}.ic.tic.c2{background:#ECEEFF}.ic.tic.c3{background:#FFEAF5}.ic.tic.c4{background:#E3F5FA}
+html.dark .ic.tic{color:#222}

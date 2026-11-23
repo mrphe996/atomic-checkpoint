@@ -63,7 +63,7 @@
       typed.append(el('div', { class: 'banner info' }, el('b', {}, why + ' '), 'Listen to the word, then type it.'), el('div', { class: 'numrow' }, inp, chk));
     }
     drawTries();
-    if (rec.done) { mic.disabled = true; fb.className = rec.ok ? 'fb ok' : 'fb guide'; fb.textContent = rec.ok ? '✓ You said this word.' : 'You listened to this word with the teacher. Try saying it again any time.'; return rec; }
+    if (rec.done) { mic.disabled = true; fb.className = rec.ok ? 'fb ok' : 'fb guide'; QE.setTxt(fb, rec.ok ? '✓ You said this word.' : 'You listened to this word with the teacher. Try saying it again any time.'); return rec; }
     const S = SR();
     if (!S) { typeMode('This browser cannot listen to speech (try Chrome, Edge or Safari).'); return rec; }
     let r = null, busy = false;
@@ -131,7 +131,7 @@
       out.innerHTML = ''; const inp = el('input', { type: 'text', inputmode: 'numeric', class: 'numin s', 'aria-label': 'Beats per minute' }); const msg = el('p', { class: 'muted' });
       const ok = el('button', { type: 'button', class: 'btn primary small' }, 'Record');
       ok.onclick = () => { const v = Number(inp.value); if (!v) { inp.focus(); return; } if (Math.abs(v - n * 4) > 1) { msg.className = 'fb bad'; msg.textContent = `Not quite: you counted ${n} beats in 15 seconds. A minute is 4 × 15 seconds, so multiply ${n} by 4.`; return; }
-        state.rows[a.k] = { n, bpm: v }; save(); out.innerHTML = ''; out.append(el('div', { class: 'banner ok' }, `✓ Recorded: ${a.t} – ${v} beats per minute.`)); pick.querySelectorAll('.chip').forEach((c, i) => { if (state.rows[acts[i].k]) { c.classList.add('on'); c.textContent = '✓ ' + acts[i].t; } }); drawTable(); };
+        state.rows[a.k] = { n, bpm: v }; save(); out.innerHTML = ''; out.append(el('div', { class: 'banner ok' }, `✓ Recorded: ${a.t} – ${v} beats per minute.`)); pick.querySelectorAll('.chip').forEach((c, i) => { if (state.rows[acts[i].k]) { c.classList.add('on'); QE.setTxt(c, '✓ ' + acts[i].t); } }); drawTable(); };
       out.append(el('div', { class: 'card', style: 'padding:14px 18px' }, el('p', {}, fair ? `You counted ${n} beats in 15 seconds – good counting!` : `You counted ${n} beats in 15 seconds. (The heart really beat about ${want} times. Counting carefully matters – you can try again.)`),
         el('p', {}, el('b', {}, 'How many beats in one minute? '), 'Multiply by 4.'), el('div', { class: 'numrow' }, inp, el('span', {}, 'beats per minute'), ok), msg));
     }
@@ -148,7 +148,7 @@
     const range = el('input', { type: 'range', min: 0, max: 100, value: 0, 'aria-label': 'Pull the rubber sheet down', class: 'labrange' });
     const seen = state.seen || { down: false, up: false };
     const set = () => { const f = range.value / 100; sheet.setAttribute('d', `M60 230 Q150 ${230 + 80 * f} 240 230`); bal.setAttribute('rx', (26 + 30 * f).toFixed(1)); bal.setAttribute('ry', (30 + 30 * f).toFixed(1));
-      air.textContent = f > 0.6 ? '↓ air in' : f < 0.2 && seen.down ? '↑ air out' : ''; if (f > 0.8) seen.down = true; if (seen.down && f < 0.1) seen.up = true; state.seen = seen; save(); if (seen.down && seen.up) done(); };
+      QE.setTxt(air, f > 0.6 ? '↓ air in' : f < 0.2 && seen.down ? '↑ air out' : ''); if (f > 0.8) seen.down = true; if (seen.down && f < 0.1) seen.up = true; state.seen = seen; save(); if (seen.down && seen.up) done(); };
     range.addEventListener('input', set);
     box.append(el('p', {}, L.intro), el('div', { class: 'labrow' }, el('div', { class: 'labvis' }, svg), el('div', { class: 'labstage' }, el('p', {}, el('b', {}, 'Pull the rubber sheet: '), 'drag the slider down to pull, then back up to let go.'), range, el('p', { class: 'muted' }, 'The bottle is the chest, the balloon is a lung, the straw is the windpipe and the rubber sheet is the diaphragm.'))));
     set();
@@ -164,7 +164,7 @@
     const rows = el('div', { class: 'labinputs' }); const msg = el('p', { class: 'muted' });
     people.forEach((p, i) => { const inp = el('input', { type: 'text', inputmode: 'numeric', class: 'numin s', value: state.read[i] || '', 'aria-label': `Height of ${p.n} in cm` });
       inp.addEventListener('change', () => { state.read[i] = inp.value; save(); check(); }); rows.append(el('label', {}, p.n + ': ', inp, ' cm')); });
-    function check() { const ok = people.every((p, i) => Math.abs(Number(state.read[i]) - p.h) <= 5); msg.className = ok ? 'fb ok' : 'muted'; msg.textContent = ok ? '✓ Good reading! Now answer the questions.' : 'Read each height from the ruler (to the nearest 5 cm).'; if (ok) done(); }
+    function check() { const ok = people.every((p, i) => Math.abs(Number(state.read[i]) - p.h) <= 5); msg.className = ok ? 'fb ok' : 'muted'; QE.setTxt(msg, ok ? '✓ Good reading! Now answer the questions.' : 'Read each height from the ruler (to the nearest 5 cm).'); if (ok) done(); }
     box.append(el('p', {}, L.intro), wrap, rows, msg); check();
   };
 
@@ -198,12 +198,12 @@
     const btns = el('div', { class: 'btnrow' }); const out = el('div'); const tbl = el('div');
     const draw = () => { tbl.innerHTML = '';
       const t = el('table', { class: 'grid data labtable' }, el('tr', {}, el('th', {}, L.change), el('th', {}, `${L.measure} (${L.unit})`)));
-      C.forEach(c => t.append(el('tr', {}, el('td', {}, (c.emoji ? c.emoji + ' ' : '') + c.t), el('td', {}, state.rows[c.k] != null ? String(state.rows[c.k]) : '–'))));
+      C.forEach(c => t.append(el('tr', {}, el('td', { class: 'emo' }, (c.emoji ? c.emoji + ' ' : '') + c.t), el('td', {}, state.rows[c.k] != null ? String(state.rows[c.k]) : '–'))));
       tbl.append(el('div', { class: 'tablewrap' }, t));
       if (C.every(c => state.rows[c.k] != null)) { const mx = Math.max(...C.map(c => Number(state.rows[c.k]))) || 1;
         tbl.append(el('div', { class: 'labbars', 'aria-label': 'Bar chart of your results' }, ...C.map(c => el('div', { class: 'lb' }, el('i', { style: `height:${Math.round(Number(state.rows[c.k]) / mx * 140)}px` }), el('b', {}, String(state.rows[c.k])), el('small', {}, c.t)))));
         done(); }
-      btns.querySelectorAll('.chip').forEach((b, i) => { const on = state.rows[C[i].k] != null; b.classList.toggle('on', on); b.textContent = (on ? '✓ ' : '') + C[i].t; });
+      btns.querySelectorAll('.chip').forEach((b, i) => { const on = state.rows[C[i].k] != null; b.classList.toggle('on', on); QE.setTxt(b, (on ? '✓ ' : '') + C[i].t); });
     };
     C.forEach(c => btns.append(el('button', { type: 'button', class: 'chip', onclick: () => run(c) }, c.t)));
     let tmr = null;
@@ -235,14 +235,14 @@
   LABS.sort = function (box, L, state, save, done) {
     state.put = state.put || {}; const G = L.groups, I = L.items; let sel = null;
     const pool = el('div', { class: 'sortpool' }); const bins = el('div', { class: 'sortbins' }); const msg = el('p', { class: 'muted' });
-    const card = (it, i) => el('button', { type: 'button', class: 'sortcard' + (sel === i ? ' on' : ''), 'aria-pressed': String(sel === i), onclick: () => { sel = sel === i ? null : i; draw(); } }, el('span', { 'aria-hidden': 'true' }, it.emoji || ''), ' ', it.t);
+    const card = (it, i) => el('button', { type: 'button', class: 'sortcard' + (sel === i ? ' on' : ''), 'aria-pressed': String(sel === i), onclick: () => { sel = sel === i ? null : i; draw(); } }, el('span', { class: 'emo', 'aria-hidden': 'true' }, it.emoji || ''), ' ', it.t);
     function draw() {
       pool.innerHTML = ''; bins.innerHTML = '';
       I.forEach((it, i) => { if (state.put[i] == null) pool.append(card(it, i)); });
       G.forEach((g, gi) => { const b = el('div', { class: 'sortbin' + (sel != null ? ' ready' : ''), role: 'button', tabindex: 0, 'aria-label': 'Put in ' + g, onclick: () => drop(gi), onkeydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); drop(gi); } } }, el('b', {}, g));
-        I.forEach((it, i) => { if (state.put[i] === gi) b.append(el('span', { class: 'sortcard placed' }, el('span', { 'aria-hidden': 'true' }, it.emoji || ''), ' ', it.t)); }); bins.append(b); });
+        I.forEach((it, i) => { if (state.put[i] === gi) b.append(el('span', { class: 'sortcard placed' }, el('span', { class: 'emo', 'aria-hidden': 'true' }, it.emoji || ''), ' ', it.t)); }); bins.append(b); });
       const n = Object.keys(state.put).length;
-      if (n === I.length) { msg.className = 'fb ok'; msg.textContent = '✓ All sorted correctly!'; done(); }
+      if (n === I.length) { msg.className = 'fb ok'; QE.setTxt(msg, '✓ All sorted correctly!'); done(); }
       else if (!msg.classList.contains('bad')) { msg.className = 'muted'; msg.textContent = sel == null ? `Tap a card, then tap its group. ${I.length - n} left.` : 'Now tap the group it belongs in.'; }
     }
     function drop(gi) {
@@ -291,7 +291,7 @@
       function check() {
         const bad = []; R.rows.forEach((row, i) => row.slice(1).forEach((cell, j) => { if (cell.choices) { if (!cell.choices.includes(LS.h.vals[i + '_' + j])) bad.push(`${row[0]} (${R.head[j + 1]})`); return; } const v = Number(String(LS.h.vals[i + '_' + j] || '').replace(',', '.')); if (!isFinite(v) || LS.h.vals[i + '_' + j] === undefined || LS.h.vals[i + '_' + j] === '' || v < cell.min || v > cell.max) bad.push(`${row[0]} (${R.head[j + 1]})`); }));
         if (bad.length) { msg.className = 'muted'; msg.textContent = `Fill in every row with your own result. Check: ${bad.slice(0, 3).join(', ')}${bad.length > 3 ? '…' : ''}. ${R.hint || ''}`; return; }
-        msg.className = 'fb ok'; msg.textContent = '✓ Results recorded. Now answer the questions about your experiment.';
+        msg.className = 'fb ok'; QE.setTxt(msg, '✓ Results recorded. Now answer the questions about your experiment.');
         if (!qs.childNodes.length) qs.append(qBlock(Hm.qs || [], () => { if (!LS.h.done) { LS.h.done = true; ctx.persist(); ctx.toast && ctx.toast('Home experiment complete!'); } }));
       }
       root.append(card, qs); check();

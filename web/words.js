@@ -41,7 +41,7 @@
   // the star on a word card: tap to save the word in My word book
   W.star = (v, sec, onChange) => {
     const b = el('button', { type: 'button', class: 'wsave', 'aria-pressed': 'false' });
-    const sync = () => { const on = W.has(v.w); b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); b.setAttribute('aria-label', (on ? 'Remove “' : 'Save “') + v.w + (on ? '” from My word book' : '” to My word book')); b.textContent = on ? '⭐ Saved' : '☆ Save'; };
+    const sync = () => { const on = W.has(v.w); b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); b.setAttribute('aria-label', (on ? 'Remove “' : 'Save “') + v.w + (on ? '” from My word book' : '” to My word book')); QE.setTxt(b, on ? '⭐ Saved' : '☆ Save'); };
     b.onclick = e => { e.stopPropagation(); const on = W.toggle(v, sec); sync(); if (window.toastWord) window.toastWord(on ? `⭐ “${v.w}” is in My word book` : `“${v.w}” removed`); onChange && onChange(on); };
     sync(); return b;
   };
@@ -54,7 +54,7 @@
     const ni = el('input', { type: 'text', maxlength: 300, placeholder: 'My note (what it means, how to remember it)', 'aria-label': 'My note', autocomplete: 'off' });
     const pics = el('div', { class: 'wpics', role: 'radiogroup', 'aria-label': 'Choose a picture' }, ...PICS.map(p => { const b = el('button', { type: 'button', class: 'wpic' + (p === pic ? ' on' : ''), 'aria-label': 'Picture ' + p, onclick: () => { pic = p; pics.querySelectorAll('.wpic').forEach(x => x.classList.toggle('on', x === b)); } }, p); return b; }));
     const msg = el('span', { class: 'muted', role: 'status' });
-    const add = el('button', { type: 'button', class: 'btn primary', onclick: () => { if (!W.addOwn(wi.value, ni.value, pic, sec)) { msg.textContent = 'Write a word first.'; wi.focus(); return; } msg.textContent = `⭐ “${wi.value.trim()}” added`; wi.value = ''; ni.value = ''; onAdd && onAdd(); } }, '+ Add to My word book');
+    const add = el('button', { type: 'button', class: 'btn primary', onclick: () => { if (!W.addOwn(wi.value, ni.value, pic, sec)) { msg.textContent = 'Write a word first.'; wi.focus(); return; } QE.setTxt(msg, `⭐ “${wi.value.trim()}” added`); wi.value = ''; ni.value = ''; onAdd && onAdd(); } }, '+ Add to My word book');
     return el('div', { class: 'card waddform' }, el('b', { class: 'lex' }, '✏️ Add my own word'), el('div', { class: 'wrow' }, wi, ni), pics, el('div', { class: 'btnrow' }, add, msg));
   };
 
@@ -77,7 +77,7 @@
         if (host.querySelector('.pcard.right')) return;
         const good = o.w === w.w; if (good) score++; const card = cards[opts.indexOf(o)];
         card.classList.add(good ? 'right' : 'wrong'); if (!good) cards[opts.indexOf(w)].classList.add('right');
-        fb.textContent = good ? '✓ Yes! That\'s “' + w.w + '”.' : '✗ Not quite. It was “' + w.w + '”.'; fb.className = 'wfb ' + (good ? 'ok' : 'no');
+        QE.setTxt(fb, good ? '✓ Yes! That\'s “' + w.w + '”.' : '✗ Not quite. It was “' + w.w + '”.'); fb.className = 'wfb ' + (good ? 'ok' : 'no');
         if (good && !w.custom) W.update(w.w, { right: (w.right || 0) + 1, known: (w.right || 0) + 1 >= 3 ? true : w.known });
         setTimeout(() => { i++; next(); }, 1500);
       } }, el('span', { class: 'pe' }, o.emoji || '🔤'), el('span', { class: 'pt' }, o.w)));

@@ -197,7 +197,7 @@ with sync_playwright() as p:
     w0 = pg.evaluate("Core.C.sections[0].vocab[0].w")
     if not pg.is_visible('#wordBank'): pg.click('#wordsBtn'); pg.wait_for_timeout(300)
     pg.click('#wordBank .wcard >> nth=0 >> .wsave'); pg.wait_for_timeout(300)
-    ok(pg.evaluate("Words.has(Core.C.sections[0].vocab[0].w)") and '⭐ Saved' in pg.inner_text('#wordBank .wcard >> nth=0'), 'P43 Tapping ☆ Save on a word card keeps it in My word book')
+    ok(pg.evaluate("Words.has(Core.C.sections[0].vocab[0].w)") and 'Saved' in pg.inner_text('#wordBank .wcard >> nth=0 >> .wsave') and pg.is_visible('#wordBank .wcard >> nth=0 >> .wsave svg.ti-f'), 'P43 Tapping ☆ Save on a word card keeps it in My word book')
     grown_up_exit(pg)
     ok(pg.query_selector('nav a[href="#words"]') is not None, 'P44 Primary learners have “📒 My words” in the menu')
     pg.evaluate("location.hash='u-2'"); pg.wait_for_timeout(900); pg.evaluate("location.hash='words'"); pg.wait_for_timeout(900)
