@@ -1,0 +1,47 @@
+1
+00:00:00,000 --> 00:00:04,735
+The collision theory explains how the Moon formed. About 4.5 billion years ago,
+
+2
+00:00:04,735 --> 00:00:10,596
+soon after the Solar System formed, a Mars-sized planet called Theia smashed into the young Earth,
+
+3
+00:00:10,596 --> 00:00:12,608
+blasting rock and dust into space.
+
+4
+00:00:13,667 --> 00:00:18,876
+Over time, the debris clumped together into a satellite that cooled to become our Moon.
+
+5
+00:00:18,876 --> 00:00:24,322
+The evidence: Apollo Moon rocks are very similar to Earth rocks, the Moon has an iron core,
+
+6
+00:00:24,322 --> 00:00:27,874
+it's less dense than Earth, and its surface was once molten.
+
+7
+00:00:28,933 --> 00:00:32,484
+NASA's Moon Fact Sheet lists the mean density of each body.
+
+8
+00:00:32,484 --> 00:00:36,510
+Density tells us how much mass is packed into each cubic centimetre.
+
+9
+00:00:37,569 --> 00:00:40,943
+Earth's mean density is 5.51 grams per cubic centimetre.
+
+10
+00:00:40,943 --> 00:00:44,080
+The Moon's is only 3.34, about six tenths of Earth's.
+
+11
+00:00:45,139 --> 00:00:47,921
+Pause and decide: Earth has a large iron core.
+
+12
+00:00:47,921 --> 00:00:53,959
+What does the Moon's lower density suggest about its core, and how does this fit the collision theory?
