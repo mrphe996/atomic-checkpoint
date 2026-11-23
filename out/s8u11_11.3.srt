@@ -1,0 +1,115 @@
+1
+00:00:00,000 --> 00:00:01,837
+Electromagnets are everywhere.
+
+2
+00:00:01,837 --> 00:00:08,474
+A loudspeaker has a coil behind its cone: changing current makes a changing magnetic field that moves the cone,
+
+3
+00:00:08,474 --> 00:00:14,814
+making sound. Electric bells, motors in blenders and fans, and computer hard drives all use electromagnets.
+
+4
+00:00:15,873 --> 00:00:21,740
+In industry, giant electromagnets on cranes lift scrap iron and steel, then switch off to drop it.
+
+5
+00:00:21,740 --> 00:00:25,888
+Recycling plants use them to pull magnetic metals out of mixed waste.
+
+6
+00:00:25,888 --> 00:00:30,391
+Power station generators use spinning electromagnets to produce electricity.
+
+7
+00:00:31,450 --> 00:00:36,487
+In hospitals, MRI scanners use a huge magnet to line up hydrogen atoms in your body.
+
+8
+00:00:36,487 --> 00:00:40,991
+Radio waves knock them out of line; as they flip back, they release energy,
+
+9
+00:00:40,991 --> 00:00:44,605
+which the scanner uses to build detailed pictures inside you.
+
+10
+00:00:45,665 --> 00:00:50,227
+Electromagnets are hidden inside many everyday things. Here are four of them.
+
+11
+00:00:51,287 --> 00:00:55,731
+In an electric doorbell, pressing the button switches on an electromagnet.
+
+12
+00:00:55,731 --> 00:00:59,227
+It pulls a metal striker onto the bell, and the bell rings.
+
+13
+00:01:00,286 --> 00:01:03,545
+Some security doors are held shut by an electromagnet.
+
+14
+00:01:03,545 --> 00:01:07,812
+When a card is accepted, the current is switched off and the door opens.
+
+15
+00:01:08,871 --> 00:01:14,204
+In speakers and headphones, a changing current in a coil makes a changing magnetic field,
+
+16
+00:01:14,204 --> 00:01:16,278
+which moves a cone and makes sound.
+
+17
+00:01:17,337 --> 00:01:21,959
+At recycling centres, an electromagnet lifts steel cans out of mixed rubbish,
+
+18
+00:01:21,959 --> 00:01:23,974
+leaving the aluminium cans behind.
+
+19
+00:01:25,033 --> 00:01:31,374
+All of these work because an electromagnet can be switched on and off, and its strength can be controlled.
+
+20
+00:01:31,374 --> 00:01:34,573
+Pause and think of one more device that might use one.
+
+21
+00:01:35,633 --> 00:01:41,144
+Now it is your turn to shine! Pause the video after each question and try to answer it first.
+
+22
+00:01:42,203 --> 00:01:47,417
+Question 1: What happens when two North poles are brought together? Pause the video now.
+
+23
+00:01:48,477 --> 00:01:49,602
+Answer: They repel.
+
+24
+00:01:50,662 --> 00:01:54,395
+Question 2: Name three magnetic materials. Pause the video now.
+
+25
+00:01:55,454 --> 00:01:58,121
+Answer: Iron, nickel and cobalt (also steel).
+
+26
+00:01:59,180 --> 00:02:03,980
+Question 3: Give two ways to make an electromagnet stronger. Pause the video now.
+
+27
+00:02:05,039 --> 00:02:08,002
+Answer: More turns, more current, or an iron core.
+
+28
+00:02:09,061 --> 00:02:15,224
+Question 4: Why are electromagnets used in scrapyards instead of permanent magnets? Pause the video now.
+
+29
+00:02:16,283 --> 00:02:19,305
+Answer: They can be switched off to drop the metal.
