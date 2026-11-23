@@ -12,7 +12,7 @@ A revision module defines (all optional except where used):
   REPLACE   {question id: question}  corrected versions of existing Core/Practice/Challenge questions (same id)
 The video data (src, captions, chapters, stops with times) comes from revise/KEY_video.json (finalize_v2.py).
 Applying twice gives the same result."""
-import json, os, importlib, sys
+import importlib, json, os, importlib, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, '..')); sys.path.insert(0, os.path.join(HERE, '..', '..', 'private'))
 
@@ -64,6 +64,11 @@ def apply_key(key, quiet=False):
     have = {x['id'] for x in d.get('sources', [])}
     d['sources'] = d.get('sources', []) + [x for x in getattr(R, 'SOURCES', []) if x['id'] not in have]
     T = getattr(R, 'TESTS', None)
+    try:   # 2026 Unit Test format (25+ questions in sections A-D) replaces the earlier papers when written
+        st_, u_ = int(key[1]), int(key[3:5])
+        V3 = importlib.import_module(f"tests_stage{st_}_unit{u_:02d}_v3"); T = (V3.TEST_A, V3.TEST_B)
+    except ModuleNotFoundError:
+        pass
     if T:
         A, B_ = T
         for t in (A, B_): assert sum(x['pts'] for x in t) == 30, (key, sum(x['pts'] for x in t))

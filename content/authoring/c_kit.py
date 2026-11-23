@@ -24,6 +24,7 @@ def ms(id, diff, obj, prompt, rights, wrongs, hint="", reason="", skill="Knowled
     return multi(id, prompt, opts, diff, obj, skill, hint=hint or f"{len(rights)} statements are correct.", reason=reason, **kw)
 
 def nm(id, diff, obj, prompt, answer, unit, units=None, tol=0.0, errs=None, hint="", reason="", skill="Application", **kw):
+    if unit in ("", "×"): unit, units = "×", []; kw.setdefault("bare", True)   # a plain number: no unit box
     return num(id, prompt, answer, unit, diff, obj, skill, tol=tol, units=units or [unit], errs=[{"v": v, "fb": f} for v, f in (errs or [])], hint=hint, reason=reason, **kw)
 
 def od(id, diff, obj, prompt, items, hint="", reason="", skill="Knowledge", **kw):

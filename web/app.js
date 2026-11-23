@@ -488,7 +488,12 @@
         el('div', { class: 'float' }, el('i', {}, Core.passed(st) ? '🏆' : '▶'), el('div', {}, el('b', {}, Core.passed(st) ? 'Unit passed' : 'Next up'), nx.label)))));
     document.getElementById('wrap').before(heroS);
     m.append(tocBtn(), el('div', { class: 'u4head' }, el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, `Cambridge ${Core.stageName(Core.STAGE)} · Unit ${Core.UNO}`), el('h2', {}, 'Your learning path')),
-      el('div', { class: 'u4steps' }, ...(Core.IS_PRIMARY ? ['1 Watch', C.unit.young ? '2 Listen & practise' : '2 Listen & say', '3 Experiment', '4 Unit Test'] : ['1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test']).map(t => el('span', {}, t)))), learningPath(), examBlock());
+      el('div', { class: 'u4steps' }, ...(Core.IS_PRIMARY ? ['1 Watch', C.unit.young ? '2 Listen & practise' : '2 Listen & say', '3 Experiment', '4 Unit Test'] : [C.unit.read ? '0 Read first' : null, '1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test'].filter(Boolean)).map(t => el('span', {}, t)))),
+      C.unit.read ? el('section', { class: 'card readfirst', id: 'readFirst' }, el('div', { class: 'rfico', 'aria-hidden': 'true' }, '📘'),
+        el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, 'Read before you watch'), el('h3', { style: 'margin:2px 0 4px' }, `Unit ${Core.UNO} pre-reading pack (PDF)`),
+          el('p', { class: 'muted', style: 'margin:0' }, 'The key ideas of each video, the key words and “Think first” questions. Read a section before you watch its video.')),
+        el('a', { class: 'btn primary small', id: 'readPdf', href: C.unit.read, target: '_blank', rel: 'noopener', download: '', onclick: () => Backend.track('read_pdf', { learner: st.id, unit: Core.UNIT }) }, '⬇ Download PDF')) : null,
+      learningPath(), examBlock());
     m.append(el('div', { class: 'u4two' },
       el('section', { class: 'card' }, el('h2', { style: 'margin:0;font-size:22px' }, 'What you will learn'), el('span', { class: 'muted' }, `${sec} of ${nobj} secure`),
         el('ul', { class: 'u4objs objs' }, ...Object.entries(C.objectives).map(([k, o]) => el('li', { class: objSecure(k) ? 'ok' : '' }, o.t)))),
@@ -762,7 +767,8 @@
       const wbtn = el('button', { type: 'button', class: 'btn small fwbtn' + (fresh ? ' glow' : ''), id: 'wordsBtn', 'aria-expanded': 'false', onclick: () => { const o = drawer.classList.toggle('open'); wbtn.classList.remove('glow'); wbtn.setAttribute('aria-expanded', String(o)); QE.setTxt(wbtn, o ? '✕ Close words' : '📒 Words'); } }, '📒 Words');
       F.head.append(wbtn); F.head.after(drawer);
     }
-    F.head.append(leaveBtn);
+    const repBtn = el('button', { type: 'button', class: 'btn small ghost fexit', id: 'reportQ', title: 'Report a problem with this question', 'aria-label': 'Report a problem with this question' }, '⚑');
+    F.head.append(repBtn, leaveBtn);
     const levels = el('div', { class: 'flevels', role: 'tablist' }); const strip = el('div', { class: 'fstrip' });
     F.prog.append(levels, strip);
     const list = () => s[P.tab];
@@ -797,7 +803,7 @@
       const last = P.i === qs.length - 1;
       const next = el('button', { type: 'button', class: 'btn big gold shine', id: 'nextQ', disabled: !rec.done }, last ? 'Finish ✓' : 'Next ▶');
       next.onclick = () => { if (!rec.done) return; if (!qs.some(notDone)) { levelDone(); return; } const j = qs.findIndex((x, k) => k > P.i && notDone(x)); P.i = j >= 0 ? j : qs.findIndex(notDone); show(); F.room.scrollTop = 0; };
-      F.foot.append(prev, next);
+      F.foot.append(prev, next); repBtn.onclick = () => reportQuestion(q);
       QE.practice(q, card, { rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; Core.persist(); next.disabled = false; drawTop(); xpTick(); refreshToc(); setTimeout(() => next.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 150); } });
     }
     show();
@@ -835,7 +841,7 @@
       subbar('blue', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}: ${C.unit.title}`), el('span', { class: 'ttl' }, `${s.id} ${s.title} · Practice`));
       m.append(bar(`Section ${s.id} · Practice`), lock ? lockScreen(`Practice for section ${s.id} is locked`, lock.reason, [lock]) : lockScreen(`Practice for section ${s.id} is locked`, s.lesson ? 'Read the lesson and answer its check questions before you start the practice.' : 'Watch the whole video and answer its pause questions before you start the practice.', [Core.firstMissingIn(st, s)])); return;
     }
-    if (Core.IS_PRIMARY) return viewFocusPractice(s);   // young learners practise inside the full-screen room
+    if (Core.IS_PRIMARY || !Core.IS_MATHS) return viewFocusPractice(s);   // Science learners (Stages 3–9) practise inside the full-screen room
     let tab = UI.tab[route] || 'req'; if (!(s[tab] || []).length) tab = 'req'; const list = s[tab]; let idx = Math.min(UI.idx[route + tab] || 0, list.length - 1);
     st.last = { route, tab, idx }; Core.persist();
     const q = list[idx]; const go2 = i => { UI.idx[route + tab] = i; render(); };
@@ -1392,11 +1398,12 @@
       el('div', { class: 'btnrow between', style: 'margin:0' }, el('span', { class: 'lex', style: 'font-weight:700;color:#556377' }, `Question ${i + 1} of ${qs.length} · ${q.pts} mark${q.pts > 1 ? 's' : ''}${q.teacher ? (q.type === 'para' ? ' · written paragraph: checked against the mark scheme, a teacher marks it if needed' : ' · marked by an Atomic marker') : ''}`),
         el('button', { class: 'chip' + (UI.flags[q.id] ? ' on' : ''), type: 'button', 'aria-pressed': String(!!UI.flags[q.id]), onclick: () => { UI.flags[q.id] = !UI.flags[q.id]; render(); } }, svgI(I.flag, 14), UI.flags[q.id] ? 'Flagged' : 'Flag')),
       el('h2', { class: 'qp', style: 'font-size:24px' }, q.prompt));
+    if (q.sec) card.insertBefore(el('div', { class: 'examsec', id: 'examSec' }, el('b', {}, `Section ${q.sec.split(' · ')[0]}`), ' · ' + (q.sec.split(' · ')[1] || '')), card.firstChild);
     QE.renderBody(q, card, { seed: X.seed, resp: draft.answers[q.id], onChange: r => { draft.answers[q.id] = r; draft.ts = Date.now(); X.save(); saved.textContent = 'Draft saved ' + new Date().toLocaleTimeString(); drawNav(); } });
     card.append(el('div', { class: 'btnrow between', style: 'padding-top:16px;border-top:1px solid #E6EEF8' }, el('button', { class: 'btn small', type: 'button', disabled: i === 0, onclick: () => { UI.testIdx = i - 1; render(); } }, '← Previous'), saved,
       i < qs.length - 1 ? el('button', { class: 'btn primary', type: 'button', id: 'testNext', onclick: () => { UI.testIdx = i + 1; render(); } }, 'Next question', el('span', { class: 'arr' }, '→')) : el('button', { class: 'btn navy', type: 'button', onclick: () => finish(false) }, 'Finish')));
     const nav = el('div', { class: 'navgrid' });
-    const drawNav = () => { nav.innerHTML = ''; qs.forEach((x, k) => nav.append(el('button', { type: 'button', class: (UI.flags[x.id] ? 'flag' : answered(x) ? 'ans' : '') + (k === i ? ' on' : ''), 'aria-label': `Question ${k + 1}${answered(x) ? ', answered' : ''}${UI.flags[x.id] ? ', flagged' : ''}`, onclick: () => { UI.testIdx = k; render(); } }, String(k + 1)))); };
+    const drawNav = () => { nav.innerHTML = ''; qs.forEach((x, k) => (x.sec && (k === 0 || qs[k - 1].sec !== x.sec) ? nav.append(el('span', { class: 'navsec' }, 'Section ' + x.sec.split(' · ')[0])) : null, nav.append(el('button', { type: 'button', class: (UI.flags[x.id] ? 'flag' : answered(x) ? 'ans' : '') + (k === i ? ' on' : ''), 'aria-label': `Question ${k + 1}${answered(x) ? ', answered' : ''}${UI.flags[x.id] ? ', flagged' : ''}`, onclick: () => { UI.testIdx = k; render(); } }, String(k + 1))))); };
     drawNav();
     async function send(reason) {
       if (UI.submitting) return true; UI.submitting = true; reason = typeof reason === 'string' ? reason : 'student';
@@ -1417,6 +1424,11 @@
         el('p', { class: 'muted', style: 'margin:0;font-size:13px' }, `When the clock reaches 0:00 your paper is submitted automatically. ${X.max} marks in total.`),
         el('button', { class: 'btn navy small', type: 'button', id: 'submitTest', onclick: () => finish(false) }, 'Finish and submit'))));
   }
+  function paperSecs(qs) {   // sections of a paper: [{name, from, to, marks}] (question numbers are 1-based)
+    const out = []; (qs || []).forEach((q, k) => { if (!q.sec) return; const l = out[out.length - 1];
+      if (l && l.name === 'Section ' + q.sec) { l.to = k + 1; l.marks += q.pts || 0; } else out.push({ name: 'Section ' + q.sec, from: k + 1, to: k + 1, marks: q.pts || 0 }); });
+    return out;
+  }
   function examIntro(t) {   // the "before you start" card
     return el('section', { class: 'card', style: 'max-width:760px;margin:0 auto;padding:40px;border-radius:28px;display:flex;flex-direction:column;gap:16px' },
       el('span', { class: 'eyebrow' }, 'EXAM ROOM · BEFORE YOU START'), el('h1', { style: 'margin:0;font-size:34px' }, t.title),
@@ -1425,6 +1437,7 @@
       el('ul', { style: 'margin:0;padding-left:20px;color:#3A4B63' }, el('li', {}, `The clock starts when you press Start and keeps running if you leave the page or close the browser. At 0:00 your answers are submitted automatically.`),
         el('li', {}, 'No hints or videos during the paper. You can flag a question and come back to it; answers are saved as you go.'),
         el('li', {}, el('b', {}, 'Exam conditions: '), `the paper opens full screen and the rest of the site is closed. Leaving the exam room (another tab or app, leaving full screen, Back or reload) is recorded. After ${EXAM_MAX_LEAVES - 1} warnings, the ${EXAM_MAX_LEAVES === 3 ? 'third' : EXAM_MAX_LEAVES + 'th'} time you leave hands your paper in automatically.`), ...(t.extra || []).map(x => el('li', {}, x))),
+      t.secs && t.secs.length ? el('table', { class: 'examsecs', id: 'examSecs' }, el('tr', {}, el('th', {}, 'Section'), el('th', {}, 'Questions'), el('th', {}, 'Marks')), ...t.secs.map(x => el('tr', {}, el('td', {}, x.name), el('td', {}, x.from === x.to ? String(x.from) : `${x.from}–${x.to}`), el('td', {}, String(x.marks))))) : null,
       t.resume ? el('div', { class: 'banner info', id: 'draftNote' }, 'This paper is already running – carry on where you stopped. The clock has not stopped.') : null,
       el('button', { class: 'btn primary big shine', type: 'button', id: 'startTest', style: 'align-self:flex-start', onclick: ev => { fsOn(); t.start(ev); } }, t.resume ? 'Back to the exam room' : 'Start – the clock begins', el('span', { class: 'arr' }, '→')));
   }
@@ -1446,7 +1459,7 @@
     const draft = st.test.drafts[form] = st.test.drafts[form] || { answers: {}, ts: Date.now() };
     const running = !!draft.deadline;
     if (!UI.testOn) {
-      m.append(bar(where), examIntro({ title: `Unit Test ${Core.UNO} · Paper ${form}${ts.retake ? ' (equivalent paper)' : ''}`, n: qs.length, max: 30, minutes: TestRules.UNIT_MINUTES, passTxt: '> 70%', resume: running,
+      m.append(bar(where), examIntro({ title: `Unit Test ${Core.UNO} · Paper ${form}${ts.retake ? ' (equivalent paper)' : ''}`, n: qs.length, max: 30, secs: paperSecs(qs), minutes: TestRules.UNIT_MINUTES, passTxt: '> 70%', resume: running,
         extra: [`Pass to complete Unit ${Core.UNO} and earn +100 XP. Every answer – chosen or typed – is marked automatically the moment you hand the paper in.`],
         start: async ev => { ev.currentTarget.disabled = true; try { const c = await Core.startClock(Core.UNIT, form); draft.deadline = c.deadline; Core.persist(); UI.testOn = true; render(); } catch (x) { ev.currentTarget.disabled = false; modal('Could not open the paper', errText(x), [{ t: 'OK', cls: 'primary' }]); } } }));
       return;

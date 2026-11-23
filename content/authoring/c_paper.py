@@ -99,3 +99,52 @@ class Paper:
         if os.environ.get("ATOMIC_COUNT"): print(f"{self.pre}: {s}/{total} marks, {len(self.items)} parts, {self.qn} questions")
         else: assert s == total, (self.pre, s, total)
         return self.items
+
+
+class UnitTest(Paper):
+    """Unit Test, 2026 format: at least 25 numbered questions in four labelled sections, 30 marks in total.
+    Every item is its own numbered question (no (a)/(b) parts). Call p.sec("A") to start a section and
+    p.q(ctx, fig, data) just before an item that needs a context, diagram or table.
+        A  Recall              short knowledge questions (1 mark each)
+        B  Data and graphs     read, calculate from and interpret tables, graphs and diagrams
+        C  Investigations      plan, carry out and evaluate experiments
+        D  Explain and apply   reasoning in new situations
+    """
+    SECS = {"A": "Recall", "B": "Data and graphs", "C": "Investigations", "D": "Explain and apply"}
+
+    def __init__(self, prefix):
+        super().__init__(prefix); self.cur = None; self._ctx_next = None
+
+    def sec(self, k):
+        self.cur = f"{k} · {self.SECS[k]}"; return self
+
+    def q(self, ctx=None, fig=None, data=None, n=1):
+        """context, diagram or table for the next n questions (they share it)"""
+        self._ctx_next = {"ctx": ctx, "fig": fig, "data": data}; self._ctx_left = n; return self
+
+    def _id(self):
+        self.qn += 1; self.part = 1
+        return f"{self.pre}q{self.qn:02d}"
+
+    def _add(self, q, pts):
+        assert self.cur, "call sec() first"
+        q["sec"] = self.cur
+        c = self._ctx_next or {}
+        self._ctx_left = getattr(self, "_ctx_left", 0) - 1
+        if self._ctx_left <= 0: self._ctx_next = None
+        for k in ("ctx", "fig", "data"):
+            if c.get(k): q[k] = c[k]
+        self.items.append(P(q, pts))
+        return q
+
+    def done(self, total=30, min_q=25):
+        import os
+        s = sum(x["pts"] for x in self.items); n = len(self.items)
+        secs = [x["sec"][0] for x in self.items]
+        if os.environ.get("ATOMIC_COUNT"):
+            print(f"{self.pre}: {s}/{total} marks, {n} questions, sections " + " ".join(f"{k}:{secs.count(k)}q/{sum(x['pts'] for x in self.items if x['sec'][0]==k)}m" for k in "ABCD"))
+        else:
+            assert s == total, (self.pre, "marks", s, total)
+            assert n >= min_q, (self.pre, "questions", n, min_q)
+            assert secs == sorted(secs) and set(secs) == set("ABCD"), (self.pre, "sections in order A-D", secs)
+        return self.items

@@ -1592,3 +1592,10 @@ select{max-width:100%}
 body.focus-mode .modal-bg{z-index:1000}
 .leaveask p{margin:0 0 8px}.leaveask p.big{font:700 18px Lexend,Figtree,sans-serif}
 .fexit{white-space:nowrap}
+
+/* Unit Test sections */
+.examsec{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#0149AF;margin:0 0 8px}.examsec b{font-weight:800}
+.navgrid .navsec{grid-column:1/-1;font-size:12px;font-weight:700;color:#556377;margin-top:6px}
+.examsecs{border-collapse:collapse;max-width:420px}.examsecs th,.examsecs td{border:1px solid #DCE6F5;padding:6px 12px;text-align:left}.examsecs th{background:#F2F6FC}
+
+.readfirst{display:flex;align-items:center;gap:16px;margin:12px 0}.readfirst .rfico{font-size:34px}.readfirst>div:nth-child(2){flex:1}@media(max-width:600px){.readfirst{flex-wrap:wrap}}

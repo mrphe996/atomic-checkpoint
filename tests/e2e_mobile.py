@@ -53,6 +53,7 @@ with sync_playwright() as p:
         def run(tag, routes):
             for r in routes:
                 pg.evaluate(f"location.hash='{r}'"); pg.wait_for_timeout(700)
+                if pg.query_selector('#leaveAnyway'): pg.click('#leaveAnyway'); pg.wait_for_timeout(500); pg.evaluate(f"location.hash='{r}'"); pg.wait_for_timeout(700)
                 bad = pg.evaluate(CHECK); ok(not bad, f'M {w}px {"dark" if dark else "light"} {tag} #{r} fits the phone' + (': ' + '; '.join(bad) if bad else ''))
         run('guest', GUEST)
         ok(pg.is_visible('#signUpLink') and pg.evaluate("document.querySelector('#signUpLink').getBoundingClientRect().right <= document.documentElement.clientWidth"), f'M {w}px Guest header shows Log in and Sign up in full')
@@ -62,7 +63,9 @@ with sync_playwright() as p:
         signup(pg); unlock(pg)
         if dark: pg.evaluate("AtomicTheme.setMode('dark')")
         run('learner', LEARN)
-        pg.evaluate("location.hash='checkout-3'"); pg.wait_for_timeout(700); pg.click('#payBtn'); pg.wait_for_function("Core.STAGE===3", timeout=8000); pg.wait_for_timeout(700); unlock(pg)
+        pg.evaluate("location.hash='checkout-3'"); pg.wait_for_timeout(700)
+        if pg.query_selector('#leaveAnyway'): pg.click('#leaveAnyway'); pg.wait_for_timeout(700)   # the practice room asks before letting a learner leave
+        pg.click('#payBtn'); pg.wait_for_function("Core.STAGE===3", timeout=8000); pg.wait_for_timeout(700); unlock(pg)
         run('stage 3', PRIM)
         ctx.close()
     ok(not errs, 'M9 No page errors' + (': ' + errs[0][:120] if errs else ''))

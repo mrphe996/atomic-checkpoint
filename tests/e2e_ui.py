@@ -62,9 +62,13 @@ with sync_playwright() as p:
     # mobile: the switcher scrolls and the filters can be folded
     pg.set_viewport_size({'width': 390, 'height': 800}); pg.evaluate("location.hash='bank'"); pg.wait_for_timeout(800)
     fold = pg.query_selector('.qbfold'); ok(fold is not None and fold.is_visible(), 'U21 On a phone the filters can be hidden')
-    # Stage 7 practice is a normal page: learners can leave any time, with a reminder if Core questions are left
+    # Stage 7 practice opens in the full-screen practice room: leaving with Core questions left asks first, then lets the learner go
     pg.evaluate("(()=>{const st=Core.cur(); const s=Core.C.sections[0]; const vs=Core.vstate(st,s.id); vs.completed=true; s.stops.forEach(x=>vs.stops[x.id]={done:true,tries:1}); Core.persist();})()")
-    pg.evaluate("location.hash='ex-1-1'"); pg.wait_for_timeout(900); pg.evaluate("location.hash='home'"); pg.wait_for_timeout(500)
-    ok(pg.evaluate("location.hash") == '#home' and any('Remember to finish 1.1' in t.inner_text() for t in pg.query_selector_all('.toast')), 'U23 Leaving unfinished practice is allowed and shows a reminder')
+    pg.evaluate("location.hash='ex-1-1'"); pg.wait_for_timeout(900)
+    room = pg.query_selector('.froom') is not None and pg.query_selector('#lv-req') is not None and pg.query_selector('#reportQ') is not None
+    pg.evaluate("location.hash='home'"); pg.wait_for_timeout(500)
+    asked = pg.query_selector('#leaveAnyway') is not None and 'Not finished yet' in pg.inner_text('.modal')
+    pg.click('#leaveAnyway'); pg.wait_for_timeout(500)
+    ok(room and asked and pg.evaluate("location.hash") == '#home', 'U23 Stage 7 practice opens in the practice room; leaving with Core left asks first, then is allowed')
     ok(not errs, 'U22 No page errors ' + '; '.join(errs[:3])); b.close()
 f = [l for l in LOG if l.startswith('FAIL')]; print(f'{len(LOG)-len(f)}/{len(LOG)} passed'); sys.exit(1 if f else 0)

@@ -45,7 +45,7 @@ export function validate(c) {
       case 'mcq': if (q.options.filter(o => o.ok).length !== 1) errs.push(`${at}: mcq needs exactly one correct option`);
         q.options.filter(o => !o.ok && !o.fb).forEach(() => warn.push(`${at}: wrong option without misconception feedback`)); break;
       case 'multi': if (!q.options.some(o => o.ok)) errs.push(`${at}: multi needs at least one correct option`); break;
-      case 'num': case 'scale': if (!q.units.includes(q.unit)) errs.push(`${at}: unit not in unit list`); if (typeof q.answer !== 'number') errs.push(`${at}: numeric answer missing`); break;
+      case 'num': case 'scale': if (!q.bare && !q.units.includes(q.unit)) errs.push(`${at}: unit not in unit list`); if (typeof q.answer !== 'number') errs.push(`${at}: numeric answer missing`); break;
       case 'label': { const a = ANCHORS[q.fig] || []; Object.keys(q.spots).forEach(k => { if (!a.includes(k)) errs.push(`${at}: figure ${q.fig} has no anchor "${k}"`); }); break; }
       case 'order': if (!q.items || q.items.length < 3) errs.push(`${at}: order needs 3+ items`); break;
       case 'match': if (!q.pairs || q.pairs.length < 2) errs.push(`${at}: match needs 2+ pairs`); break;

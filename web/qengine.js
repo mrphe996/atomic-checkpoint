@@ -132,7 +132,7 @@
         redraw(); break;
       }
       case 'order': {
-        if (!resp) { let s = shuffle(q.items, seed); if (s.join() === q.items.join()) s = s.slice().reverse(); resp = s; }
+        if (!resp) { const fit = a => a.filter((x, k) => x === q.items[k]).length; let s = shuffle(q.items, seed); for (let t = 1; t < 40 && fit(s) > Math.floor(q.items.length / 3); t++) s = shuffle(q.items, seed + '#' + t); if (fit(s) > Math.floor(q.items.length / 3)) s = q.items.slice(1).concat(q.items[0]); resp = s; }   // start well away from the right order
         const ol = el('ol', { class: 'order' });
         const draw = () => { ol.innerHTML = ''; resp.forEach((it, i) => ol.append(el('li', {}, el('span', {}, it),
           el('span', { class: 'mvs' }, el('button', { class: 'mv', type: 'button', 'aria-label': 'Up', disabled: i === 0, onclick: () => { [resp[i - 1], resp[i]] = [resp[i], resp[i - 1]]; draw(); changed(); } }, '▲'),

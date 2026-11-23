@@ -16,8 +16,8 @@ with sync_playwright() as p:
     pg.evaluate("Core.switchUnit(7)"); pg.wait_for_function("Core.UNO===7 && Core.C && Core.C.sections[0].ext", timeout=8000)
     go(pg, 'profile'); pg.click('#simAll'); pg.wait_for_timeout(900)
     go(pg, 'ex-7-1'); pg.wait_for_selector('.qcard')
-    tab = pg.query_selector('[role=tablist] .chip:has-text("Extreme")')
-    ok(tab is not None, 'X1 Stage 8 Unit 7 practice has an Extreme tab')
+    tab = pg.query_selector('#lv-ext')
+    ok(tab is not None, 'X1 Stage 8 Unit 7 practice room has an Extreme level')
     tab.click(); pg.wait_for_timeout(500)
     ok(pg.query_selector('textarea.para') is not None and pg.query_selector('.pcount') is not None, 'X2 The first Extreme question is a paragraph with a word and sentence counter')
     pg.fill('textarea.para', 'It gets hotter.'); pg.wait_for_timeout(150)
@@ -31,10 +31,12 @@ with sync_playwright() as p:
     pg.fill('textarea.para', model); pg.wait_for_timeout(150); pg.click('.qcard .btn.primary'); pg.wait_for_timeout(500)
     ok(pg.query_selector('.fb.ok') is not None and pg.query_selector('.rubric li.hit') is not None, 'X7 A full answer is marked correct against the mark scheme (keywords in preview mode)')
     # Hard tab carries paragraph questions too
-    pg.click('[role=tablist] .chip:has-text("Advanced")'); pg.wait_for_timeout(400)
+    pg.click('#lv-adv'); pg.wait_for_timeout(400)
     ok(pg.evaluate("Core.C.sections[0].adv.filter(q=>q.type==='para').length") >= 2, 'X8 Hard (* Advanced) has paragraph questions with data')
     # Question Bank: Extreme set filter
-    go(pg, 'bank'); pg.wait_for_timeout(600); pg.select_option('#bf-tier', 'ext'); pg.wait_for_timeout(250)
+    go(pg, 'bank'); pg.wait_for_timeout(600)
+    if pg.query_selector('#leaveAnyway'): pg.click('#leaveAnyway'); pg.wait_for_timeout(500); go(pg, 'bank')
+    pg.select_option('#bf-tier', 'ext'); pg.wait_for_timeout(250)
     ok(int(pg.inner_text('#bankCount').split()[0]) == 8, 'X9 The Question Bank filters the 8 Extreme questions')
     # Unit Test: the 6-mark paragraph question is written in a large box
     go(pg, 'test'); pg.wait_for_selector('#startTest'); pg.click('#startTest'); pg.wait_for_timeout(500)
