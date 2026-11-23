@@ -10,3 +10,4 @@ s8u03_3.2.mp3 https://voicezuno.com/v1/files/8bd4a8823313c0d7/audio?exp=17954406
 s8u03_3.2.srt https://voicezuno.com/v1/files/8bd4a8823313c0d7/srt?exp=1795440602&sig=6cfbd99b213e5393cb75f891c082e73d
 s8u04_4.1.mp3 https://voicezuno.com/v1/files/a7877e1ca9a07411/audio?exp=1795440902&sig=f337ccf221b2c9ea89f408edf1acb6b9
 s8u04_4.1.srt https://voicezuno.com/v1/files/a7877e1ca9a07411/srt?exp=1795440902&sig=5f029ea9733e8554a2cafd5badee4694
+
