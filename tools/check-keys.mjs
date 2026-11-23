@@ -26,7 +26,7 @@ console.log(`${n} papers checked, ${bad} with model answers below full marks`);
 const src = path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'content/src'); let pb = 0, pn = 0;
 if (fs.existsSync(src)) for (const f of fs.readdirSync(src).filter(f => /unit\d+\.json$/.test(f))) {
   const d = JSON.parse(fs.readFileSync(path.join(src, f), 'utf8'));
-  for (const s of d.sections) for (const q of [...s.req, ...s.prac, ...s.adv, ...(s.ext || [])]) { if (q.type === 'sim') continue; pn++;
+  for (const s of d.sections) for (const q of [...s.req, ...s.prac, ...s.adv, ...(s.ext || []), ...(s.retired || [])]) { if (q.type === 'sim') continue; pn++;
     if (q.type === 'expr' && q.chk && !G.exprSame(q.expr, q.chk, q.vars)) { pb++; console.log(`✗ ${f.replace('.json', '')} ${q.id} (expr) model answer ${q.expr} is not equal to ${q.chk}`); continue; }
     const r = G.grade(q, right(q)); if (!r.ok) { pb++; console.log(`✗ ${f.replace('.json', '')} ${q.id} (${q.type}) ${r.detail || ''}`); } } }
 console.log(`${pn} practice questions checked, ${pb} not marked correct with their model answer`);

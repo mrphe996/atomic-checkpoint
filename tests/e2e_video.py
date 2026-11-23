@@ -5,7 +5,7 @@ Run with the default config: `node tools/write-config.mjs`, then `python3 tests/
 import os, json, subprocess
 from playwright.sync_api import sync_playwright
 BASE = os.environ.get('BASE', 'http://localhost:8765/'); WEB = os.path.join(os.path.dirname(__file__), '..', 'web')
-UNITS = [(7, 3)]; LOG = []
+UNITS = [tuple(int(v) for v in u.split(":")) for u in os.environ.get("UNITS", "7:3").split(",")]; LOG = []
 def ok(c, m): LOG.append(('PASS' if c else 'FAIL') + '  ' + m); print(LOG[-1])
 def silences(path):
     r = subprocess.run(['ffmpeg', '-i', path, '-vn', '-af', 'silencedetect=n=-38dB:d=0.3', '-f', 'null', '-'], capture_output=True, text=True).stderr
@@ -63,6 +63,13 @@ with sync_playwright() as p:
             clock = pg.inner_text('.time') if pg.query_selector('.time') else ''
             a, _, tot = clock.partition(' / ')
             ok(done and a.strip() == tot.strip(), f"{tag} plays to the end, the lesson is marked watched and the clock reads {clock!r}")
+    # review room after a failed test: a question retired in the revision still opens; one that no longer exists never blocks the retake
+    pg.evaluate("Core.switchUnit(3)"); pg.wait_for_function("Core.UNO===3", timeout=8000)
+    ids = pg.evaluate("(()=>{const s=Core.C.sections[0]; return [s.retired[0].id, 'gone-xyz', s.prac[0].id];})()")
+    pg.evaluate("""(ids)=>{const st=Core.cur(); st.test.attempts.push({n:1,form:'A',status:'final',passed:false,score:10,pct:33,weak:['O1'],remed:ids,ts:Date.now()}); Core.persist();}""", ids)
+    pg.evaluate("location.hash='home'"); pg.wait_for_timeout(200); pg.evaluate("location.hash='remedial'"); pg.wait_for_timeout(900)
+    cards = pg.query_selector_all('.qcard'); head = pg.evaluate("[...document.querySelectorAll('h2')].map(h=>h.innerText).join(' | ')")
+    ok(len(cards) == 2 and '1/3 done' in head, f"Review room shows the retired and the current question and counts the missing one as done ({len(cards)} cards, {head!r})")
     ok(not errs, 'No page errors' + (': ' + errs[0] if errs else ''))
     b.close()
 fails = [l for l in LOG if l.startswith('FAIL')]

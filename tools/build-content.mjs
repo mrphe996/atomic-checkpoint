@@ -111,7 +111,7 @@ export function validate(c) {
       s.req.forEach(q => { if (!q.twin && q.type !== 'sim') warn.push(`section ${s.id} ${q.id}: Core question without a similar (twin) question`); });
     }
     s.adv.forEach(q => { if (!/^\* Advanced\./.test(q.prompt)) errs.push(`section ${s.id} ${q.id}: advanced prompt must start "* Advanced."`); });
-    [...s.req, ...s.prac, ...s.adv].forEach(q => checkQ(q, `section ${s.id}`));
+    [...s.req, ...s.prac, ...s.adv, ...(s.retired || [])].forEach(q => checkQ(q, `section ${s.id}`));
     ext.forEach(q => { checkQ({ ...q, tier: 'ext' }, `section ${s.id} extreme`); if (q.diff !== 'VH') errs.push(`section ${s.id} ${q.id}: Extreme questions are Very hard (VH)`); });
     if (ext.length && c.unit && !c.unit.young && c.unit.stage >= 5 && !ext.some(q => q.type === 'para')) errs.push(`section ${s.id}: Extreme needs a paragraph question from Stage 5`);
     (s.stops || []).forEach(st => { checkQ(st.q, `section ${s.id} stop`); if (!(st.t > 0 && st.t < s.video.dur)) errs.push(`section ${s.id} stop ${st.id}: time outside the clip`); });

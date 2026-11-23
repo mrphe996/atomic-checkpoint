@@ -48,6 +48,8 @@ def build(n, g=7):
             "tests": {"A": T.TEST_A, "B": T.TEST_B, "pass": 0.7}, "mindmap": U.MINDMAP}
     out = os.path.join(HERE, '..', 'src', f'stage{g}-unit{n:02d}.json')
     json.dump(data, open(out, 'w', encoding='utf-8'), ensure_ascii=False)
+    if os.path.exists(os.path.join(HERE, 'revise', f's{g}u{n:02d}.py')):   # the 2026 revision (videos, Practice, Unit Tests)
+        from revise.kit import apply_key; apply_key(f's{g}u{n:02d}', quiet=True)
     print(n, [(s['id'], len(s['req']), len(s['prac']), len(s['adv']), len(s['stops'])) for s in secs])
 
 if __name__ == '__main__':

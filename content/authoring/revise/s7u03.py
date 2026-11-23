@@ -216,11 +216,19 @@ sys.path.insert(0, os.path.join(HERE, '..', '..', 'private'))
 from tests_stage7_unit03_v2 import TEST_A, TEST_B
 
 
+ORIG = os.path.join(HERE, 's7u03_orig.json')   # the unit before this revision
+
+
 def apply(path=SRC, video_json=os.path.join(HERE, 's7u03_video.json')):
     d = json.load(open(path, encoding='utf-8'))
     vid = json.load(open(video_json)) if os.path.exists(video_json) else None
+    orig = json.load(open(ORIG, encoding='utf-8')) if os.path.exists(ORIG) else None
     for s in d['sections']:
         k = s['id']
+        # dropped questions stay as 'retired': hidden from practice, kept so review lists made earlier still open
+        old = {q['id']: q for q in s['prac'] + s.get('retired', [])}
+        if orig: old.update({q['id']: q for q in next(x for x in orig['sections'] if x['id'] == k)['prac'] if q['id'] not in old})
+        s['retired'] = [old[i] for i in DROP[k] if i in old]
         s['prac'] = [q for q in s['prac'] if q['id'] not in DROP[k]]
         ids = {q['id'] for q in NEW_PRAC[k]}; s['prac'] = [q for q in s['prac'] if q['id'] not in ids] + NEW_PRAC[k]
         ids = {q['id'] for q in NEW_ADV[k]}; s['adv'] = [q for q in s['adv'] if q['id'] not in ids] + NEW_ADV[k]

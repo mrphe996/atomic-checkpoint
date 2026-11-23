@@ -343,7 +343,7 @@
     const left = el('div', { class: 'dmain' }), aside = el('aside', { class: 'daside' });
     m.append(el('div', { class: 'dgrid' }, left, aside));
     // continue card
-    const thumb = cur.lesson ? el('div', { class: 'dthumb lessonthumb', 'aria-hidden': 'true' }, el('span', { class: 'lp-play pulse' }, '📖')) : el('div', { class: 'dthumb', style: `background-image:url(${cur.video.src.replace('.mp4', '_poster.jpg')})` }, el('span', { class: 'lp-play pulse', 'aria-hidden': 'true' }, svgI(I.play, 28, '#1C2A3A', 2.6)));
+    const thumb = cur.lesson ? el('div', { class: 'dthumb lessonthumb', 'aria-hidden': 'true' }, el('span', { class: 'lp-play pulse' }, '📖')) : el('div', { class: 'dthumb', style: `background-image:url(${(cur.video.poster || cur.video.src.replace('.mp4', '_poster.jpg'))})` }, el('span', { class: 'lp-play pulse', 'aria-hidden': 'true' }, svgI(I.play, 28, '#1C2A3A', 2.6)));
     left.append(el('section', { class: 'card lift dcont', 'aria-label': 'Continue learning', onclick: e => { if (e.target.closest('a,button')) return; resume(); } }, thumb,
       el('div', { class: 'dcont-txt' }, el('span', { class: 'eyebrow' }, `${started ? 'CONTINUE' : 'START'} · UNIT ${Core.UNO} › ${cur.id}`), el('h2', {}, cur.title),
         el('p', { class: 'muted', style: 'font-size:16px;margin:0' }, cur.objs.slice(0, 2).map(o => C.objectives[o].t).join(' ')),
@@ -993,20 +993,23 @@
 
   /* ---------- unit test ---------- */
   function viewRemedial() {
-    const m = $main(); const a = Core.lastAttempt(st); const ts = Core.testState(st);
+    const m = $main(); const a = Core.lastAttempt(st);
     m.append(bar(`Unit ${Core.UNO} › Review questions`));
     if (!a || !a.remed) { m.append(el('section', { class: 'card' }, el('p', {}, 'No review questions have been set yet.'))); return; }
-    st.last = { route: 'remedial' }; Core.persist();
+    a.remed.forEach(id => { if (!findQ(id)) { const k = Core.remKey(a, id); st.rem[k] = Object.assign(st.rem[k] || { tries: 0 }, { done: true, gone: true }); } });   // a question no longer in the course never blocks the retake
+    st.last = { route: 'remedial' }; Core.persist(); const ts = Core.testState(st);
     const left = Core.remLeft(st, a);
     m.append(el('section', { class: 'card' }, el('h2', {}, `Review after attempt ${a.n}: ${a.remed.length - left.length}/${a.remed.length} done`), el('p', {}, 'Chosen from your weaker objectives: ' + a.weak.join(', ') + '. Finish them all to unlock the equivalent paper.'),
       ts.state === 'ready' ? el('a', { class: 'btn primary', href: '#test', id: 'goRetake' }, `Take the equivalent paper (Paper ${ts.form}) →`) : null));
     a.remed.forEach((id, i) => {
-      const q = findQ(id); const card = el('section', { class: 'card qcard' }, el('p', { class: 'muted' }, `Review ${i + 1} of ${a.remed.length} · ${q.obj}`)); m.append(card);
-      const k = Core.remKey(a, id); const rec = st.rem[k] = st.rem[k] || { tries: 0 };
+      const q = findQ(id); const k = Core.remKey(a, id); const rec = st.rem[k] = st.rem[k] || { tries: 0 };
+      if (!q) return;
+      const card = el('section', { class: 'card qcard' }, el('p', { class: 'muted' }, `Review ${i + 1} of ${a.remed.length} · ${q.obj}`)); m.append(card);
       QE.practice(q, card, { rec, onCheck: onCheck(card, q, rec), seed: st.id + 'r' + a.n, save: () => Core.persist(), onDone: () => { rec.done = true; Core.persist(); if (!Core.remLeft(st, a).length) render(); } });
     });
   }
-  function findQ(id) { for (const s of C.sections) for (const q of s.req.concat(s.prac, s.adv, s.ext || [], s.stops.map(x => x.q))) if (q.id === id) return q; return null; }
+  // retired = questions replaced in a content revision, kept only so review lists made before the revision still open
+  function findQ(id) { for (const s of C.sections) for (const q of s.req.concat(s.prac, s.adv, s.ext || [], s.stops.map(x => x.q), s.retired || [])) if (q.id === id) return q; return null; }
   const allQs = () => C.sections.flatMap(s => s.req.concat(s.prac, s.adv, s.ext || []));
 
   /* ---------- drills: wrong answers / by topic ---------- */
@@ -1015,7 +1018,7 @@
     const m = $main(); const d = UI.drill; if (!d) return go('profile');
     m.append(bar('Progress › ' + d.title), el('h2', {}, d.title), el('p', { class: 'muted' }, 'Extra practice – it doesn\'t change scores you already have. Getting a question right first time removes it from your “wrong answers” list.'));
     if (!d.ids.length) { m.append(el('p', {}, 'No questions here.')); return; }
-    d.ids.forEach((id, i) => { const q = findQ(id); const card = el('section', { class: 'card qcard' }, el('p', { class: 'muted' }, `${i + 1}/${d.ids.length}`)); m.append(card);
+    d.ids.forEach((id, i) => { const q = findQ(id); if (!q) return; const card = el('section', { class: 'card qcard' }, el('p', { class: 'muted' }, `${i + 1}/${d.ids.length}`)); m.append(card);
       const k = d.ns + ':' + id; st.drill = st.drill || {}; const rec = st.drill[k] = st.drill[k] || { tries: 0 };
       QE.practice(q, card, { rec, onCheck: onCheck(card, q, rec), seed: st.id + d.ns, save: () => Core.persist(), onDone: () => { if (rec.ok && rec.tries === 1) { (st.mastered = st.mastered || {})[id] = true; } Core.persist(); } }); });
   }
@@ -1714,7 +1717,7 @@
       if (lock && lock.paywall) { detail.append(el('p', { class: 'muted' }, '🔒 ' + lock.reason), el('a', { class: 'btn small gold', href: '#' + lock.route }, lock.guest ? 'Sign up free' : 'See plans')); return; }
       if (s.lesson) { const idea = (s.lesson || []).find(b => b.k === 'idea'); detail.append(...(idea ? [el('div', { class: 'lblock lb-idea', style: 'margin:8px 0' }, el('b', {}, idea.t), ...idea.p.slice(0, 2).map(t => el('p', { style: 'margin:4px 0' }, ...String(t).split(/(\*\*[^*]+\*\*)/).map(part => /^\*\*.*\*\*$/.test(part) ? el('b', {}, part.slice(2, -2)) : part))))] : []),
         el('div', { class: 'btnrow' }, el('a', { class: 'btn primary small', href: '#v-' + R(s.id) }, `📖 Lesson ${s.id} with check questions`), el('a', { class: 'btn small', href: '#ex-' + R(s.id) }, `All questions for ${s.id}`))); }
-      else { const vid = el('video', { class: 'cmvideo', controls: true, preload: 'metadata', playsinline: true, src: s.video.src, poster: s.video.src.replace('.mp4', '_poster.jpg') });
+      else { const vid = el('video', { class: 'cmvideo', controls: true, preload: 'metadata', playsinline: true, src: s.video.src, poster: s.video.poster || s.video.src.replace('.mp4', '_poster.jpg') });
       detail.append(el('div', { class: 'cmvid' }, vid), el('div', { class: 'btnrow' }, el('a', { class: 'btn primary small', href: '#v-' + R(s.id) }, svgI(I.play, 14, '#fff', 2.6), `Full lesson ${s.id} with pause questions`), el('a', { class: 'btn small', href: '#ex-' + R(s.id) }, `All questions for ${s.id}`))); }
       if (!st) return;
       if (lock) { detail.append(el('p', { class: 'muted' }, '🔒 Questions for this topic open after: ' + lock.reason)); return; }

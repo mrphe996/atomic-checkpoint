@@ -1,0 +1,1490 @@
+{
+"1.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.66,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.73,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.75,
+"Let's begin!"
+],
+[
+12.13,
+"Welcome to Unit 1: Introducing Science."
+],
+[
+15.3,
+"Science is all around you, every single day."
+],
+[
+18.85,
+"In this lesson we will find out what science is, how scientists work,"
+],
+[
+23.77,
+"how to stay safe in the laboratory, and how science changes our world."
+],
+[
+28.68,
+"We use electricity every day."
+],
+[
+31.09,
+"Being able to produce it is all thanks to science."
+],
+[
+34.87,
+"We also use thousands of materials."
+],
+[
+37.78,
+"Some are natural, like wood and cotton,"
+],
+[
+40.19,
+"but many are synthetic materials developed by scientists."
+],
+[
+44.37,
+"Every kind of mechanical transport we use, from cars to planes,"
+],
+[
+49.04,
+"was developed using science."
+],
+[
+51.46,
+"But our demand for electricity, materials and transport has damaged the Earth."
+],
+[
+57.02,
+"Global warming, the rise in Earth's average temperature, is causing climate change."
+],
+[
+62.83,
+"So here is a big question: can science help to reduce these problems?"
+],
+[
+67.78,
+"Keep thinking about it as we go."
+],
+[
+70.4,
+"So what is science?"
+],
+[
+72.24,
+"Science is the study of how things work."
+],
+[
+75.49,
+"How does pushing a switch make a lamp glow?"
+],
+[
+79.73,
+"How does a heavy cargo ship float instead of sinking?"
+],
+[
+84.59,
+"Why does bread dough rise?"
+],
+[
+87.98,
+"How does a chick hatch from an egg?"
+],
+[
+91.65,
+"And why does it get dark at night?"
+],
+[
+94.46,
+"All of these phenomena, things we observe happening, can be explained by science."
+],
+[
+100.08,
+"Science has two main parts: what we have already found out,"
+],
+[
+104.42,
+"and the processes we use to find out more."
+],
+[
+107.66,
+"Science is a very big subject,"
+],
+[
+110.14,
+"so it is divided into different areas of study."
+],
+[
+113.75,
+"Physics is the study of energy, motion and forces."
+],
+[
+118.33,
+"Chemistry is the study of matter,"
+],
+[
+121.14,
+"what things are made of and how they change."
+],
+[
+124.58,
+"Biology is the study of living things."
+],
+[
+128.41,
+"Astronomy is the study of space, including planets, moons and stars."
+],
+[
+134.13,
+"And meteorology is the study of the weather."
+],
+[
+137.63,
+"Each area asks different questions, but they all think scientifically."
+],
+[
+142.69,
+"Scientists work all around us."
+],
+[
+145.13,
+"Let's meet four of them,"
+],
+[
+146.61,
+"and think about which area of science each one uses."
+],
+[
+150.47,
+"A forecaster tracks a typhoon with satellite pictures and computer models,"
+],
+[
+155.89,
+"then warns people to stay safe."
+],
+[
+157.86,
+"This is meteorology."
+],
+[
+159.79,
+"An engineer measures how much electricity a solar panel makes in bright and dull light."
+],
+[
+165.97,
+"Energy and electricity belong to physics."
+],
+[
+169.19,
+"A medical researcher tests a new vaccine,"
+],
+[
+172.47,
+"first on cells and then in careful trials with volunteers."
+],
+[
+176.07,
+"Living things belong to biology."
+],
+[
+178.73,
+"A chemist designs a plastic bottle that breaks down after use."
+],
+[
+183.29,
+"How materials are made and change is chemistry."
+],
+[
+186.86,
+"Real problems often need several areas of science working together."
+],
+[
+191.76,
+"Pause and decide: which area would study why the Moon looks different each night?"
+],
+[
+197.48,
+"Science has been happening all around the world for thousands of years."
+],
+[
+203.24,
+"Hypatia of Alexandria invented a way to measure the density of liquids,"
+],
+[
+208.51,
+"including blood and urine."
+],
+[
+210.83,
+"Ibn Sina set up the idea of collecting"
+],
+[
+214.0,
+"evidence to check whether medical treatments really work."
+],
+[
+218.31,
+"Marie Curie worked on radioactivity, which led to X-rays and cancer treatments."
+],
+[
+224.71,
+"Rosalind Franklin used X-rays to help reveal the structure of DNA."
+],
+[
+230.39,
+"Har Gobind Khorana helped to work out how the body uses DNA."
+],
+[
+235.58,
+"And Feng Zhang helped develop ways to treat illness by changing a person's DNA."
+],
+[
+241.5,
+"Some scientists work alone and some work together,"
+],
+[
+245.33,
+"but each discovery becomes a starting point for the next."
+],
+[
+248.86,
+"That is how our knowledge grows."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.13,
+"Introducing Science"
+],
+[
+28.68,
+"Why does science matter?"
+],
+[
+70.4,
+"Science explains how things work"
+],
+[
+107.66,
+"Areas of study in science"
+],
+[
+142.69,
+"Real life: scientists at work today"
+],
+[
+197.48,
+"Scientists build on each other's work"
+]
+],
+"stops": [
+{
+"id": "u1v1a",
+"t": 99.73,
+"review": [
+70.4,
+100.08
+]
+},
+{
+"id": "u1v1b",
+"t": 142.34,
+"review": [
+107.66,
+142.69
+]
+},
+{
+"id": "u1n11",
+"t": 197.13,
+"review": [
+142.69,
+197.48
+]
+},
+{
+"id": "u1v1c",
+"t": 250.98,
+"review": [
+197.48,
+251.33
+]
+}
+],
+"dur": 252.267,
+"src": "media/u1_s1.ef5941cb.mp4",
+"poster": "media/u1_s1_poster.ef5941cb.jpg"
+},
+"1.2": {
+"captions": [
+[
+0.0,
+"To practise science well, we need the right attitudes."
+],
+[
+3.31,
+"Curiosity makes us want to find out how things work."
+],
+[
+6.49,
+"Perseverance means we keep going when things get difficult."
+],
+[
+10.75,
+"Open-mindedness means listening to other people's ideas,"
+],
+[
+15.05,
+"and being co-operative means working well in a team."
+],
+[
+19.0,
+"Flexibility lets us change our plans when there is a better way."
+],
+[
+23.61,
+"Being objective and fair means accepting a result even if we don't like it."
+],
+[
+28.83,
+"Healthy scepticism means asking questions instead of believing everything we hear."
+],
+[
+34.79,
+"And integrity means always being truthful about our results."
+],
+[
+39.28,
+"Scientists work in a special way called scientific enquiry."
+],
+[
+43.56,
+"Let's follow an example about frozen ice pops."
+],
+[
+47.1,
+"It starts with an observation:"
+],
+[
+49.75,
+"ice pops take longer to freeze than plain ice cubes."
+],
+[
+53.72,
+"This leads to a question:"
+],
+[
+56.03,
+"why do ice pops take longer to freeze than water?"
+],
+[
+59.8,
+"A hypothesis is an idea that might explain it:"
+],
+[
+63.38,
+"the speed of freezing depends on how much sugar is dissolved."
+],
+[
+67.81,
+"From the hypothesis we make a prediction:"
+],
+[
+71.17,
+"solutions with more sugar will take longer to freeze."
+],
+[
+75.24,
+"Then we test it with an investigation: five identical bags,"
+],
+[
+79.61,
+"the same volume of liquid, different amounts of sugar,"
+],
+[
+82.95,
+"all in the same freezer."
+],
+[
+85.09,
+"The bags with more sugar took longer to freeze."
+],
+[
+88.75,
+"The evidence supports the hypothesis, so we reach a conclusion."
+],
+[
+93.36,
+"If the results had not been as expected,"
+],
+[
+96.59,
+"the hypothesis would need to change."
+],
+[
+98.84,
+"Science is a cycle!"
+],
+[
+100.69,
+"A good hypothesis must be testable."
+],
+[
+103.48,
+"That means an experiment can support it or show it is wrong."
+],
+[
+107.89,
+"Plants grow faster under blue light than red light: this is testable."
+],
+[
+112.87,
+"We can grow plants under each colour and measure their heights."
+],
+[
+117.41,
+"Plants are happier under blue light: this is not testable,"
+],
+[
+121.72,
+"because there is no way to measure a plant's happiness."
+],
+[
+125.78,
+"Testable hypotheses often link two variables."
+],
+[
+129.39,
+"A variable is anything that can change."
+],
+[
+132.56,
+"The independent variable is the one we change on purpose,"
+],
+[
+136.57,
+"for example how long we heat some water."
+],
+[
+139.53,
+"The dependent variable is the one that changes as a result,"
+],
+[
+143.96,
+"for example the temperature of the water."
+],
+[
+147.2,
+"That's why hypotheses often use the words depends on:"
+],
+[
+151.21,
+"the temperature of the water depends on how long it is heated."
+],
+[
+155.71,
+"Scientists often use models to explain their ideas."
+],
+[
+159.61,
+"Models make difficult ideas easier to understand."
+],
+[
+163.44,
+"The particle model pictures matter as tiny particles."
+],
+[
+167.4,
+"In a solid they vibrate in place,"
+],
+[
+169.41,
+"in a liquid they slide past each other,"
+],
+[
+171.79,
+"and in a gas they move freely."
+],
+[
+174.27,
+"Models can be ideas we imagine, physical models we can touch,"
+],
+[
+178.75,
+"or computer models. Computer models of the atmosphere are used to forecast the weather."
+],
+[
+184.73,
+"But remember: every model has limitations."
+],
+[
+188.18,
+"No model represents the real world completely."
+],
+[
+191.82,
+"To test a hypothesis, we make a prediction,"
+],
+[
+195.01,
+"often using the words if and then."
+],
+[
+197.06,
+"If we heat the water for longer, then it will get hotter."
+],
+[
+201.16,
+"We must make sure only the independent variable can affect the result."
+],
+[
+206.17,
+"All the other variables, called control variables, are kept the same:"
+],
+[
+210.38,
+"the volume of water, the beaker, the burner."
+],
+[
+213.72,
+"When only the independent variable changes, we call it a fair test."
+],
+[
+219.3,
+"Not every investigation is a fair test."
+],
+[
+222.42,
+"Some questions, like how an animal burrows into the ground,"
+],
+[
+226.01,
+"are answered by careful observation."
+],
+[
+228.87,
+"Here is a real question from winter roads:"
+],
+[
+232.02,
+"does salt make ice melt faster?"
+],
+[
+233.9,
+"Predict: which beaker will have more water after ten minutes,"
+],
+[
+237.6,
+"A with plain ice or B with salted ice?"
+],
+[
+239.91,
+"Pause and decide."
+],
+[
+241.59,
+"Watch. One spoon of salt is sprinkled on the ice in beaker B."
+],
+[
+246.08,
+"Beaker A gets nothing."
+],
+[
+248.11,
+"After ten minutes, beaker B holds mostly water,"
+],
+[
+251.76,
+"while beaker A is still mostly ice."
+],
+[
+254.6,
+"To make it a fair test, we kept the number of ice cubes,"
+],
+[
+258.65,
+"the beakers, the room and the time the same."
+],
+[
+261.25,
+"Only the salt changed."
+],
+[
+263.21,
+"Explain what you saw."
+],
+[
+265.21,
+"The independent variable was the salt."
+],
+[
+267.5,
+"The dependent variable was how much ice melted."
+],
+[
+270.33,
+"Salt dissolves in the thin layer of water"
+],
+[
+272.8,
+"on the ice and lowers its freezing point,"
+],
+[
+275.27,
+"so the ice melts faster."
+],
+[
+276.72,
+"That is why salt is spread on icy roads."
+],
+[
+279.13,
+"Pause and explain it in your own words."
+],
+[
+282.13,
+"Scientists use instruments to observe and measure: a thermometer for temperature,"
+],
+[
+287.78,
+"a microscope or hand lens for tiny objects,"
+],
+[
+290.47,
+"a telescope for faraway objects and a stopwatch for time."
+],
+[
+294.68,
+"A measurement is accurate when it is very close to the true value."
+],
+[
+299.46,
+"Scientists repeat measurements, and when the results are all close together they are precise."
+],
+[
+305.81,
+"Results can be precise but not accurate: they agree with each other,"
+],
+[
+310.74,
+"but they are all far from the true value."
+],
+[
+313.93,
+"Accurate and precise results let us make conclusions we can be sure of."
+],
+[
+319.08,
+"Precise, repeatable results are also called reliable."
+],
+[
+323.04,
+"After collecting data, scientists analyse it by putting results"
+],
+[
+327.65,
+"into a form that is easy to understand."
+],
+[
+330.13,
+"Huan is training for a 100 metre race and records his time for six races."
+],
+[
+334.77,
+"A table lists the results clearly."
+],
+[
+337.59,
+"A bar chart lets us compare the races at a glance."
+],
+[
+342.09,
+"A line graph shows the pattern, or trend, over time."
+],
+[
+346.81,
+"The pattern is clear: his time fell from 21 seconds to 15 seconds."
+],
+[
+352.16,
+"Huan is getting faster!"
+],
+[
+354.43,
+"The conclusion is the final result of an investigation."
+],
+[
+358.37,
+"Huan's hypothesis was that race time depends on the amount of training."
+],
+[
+363.33,
+"What did we observe?"
+],
+[
+365.53,
+"His time improved from 21 seconds to 15 seconds."
+],
+[
+369.73,
+"So the conclusion is: training leads to faster race times."
+],
+[
+374.83,
+"A good conclusion must answer the scientific question, be based on the results,"
+],
+[
+380.51,
+"and support or disprove the hypothesis."
+],
+[
+383.6,
+"Now you can plan your own investigations."
+],
+[
+386.89,
+"Follow these five steps."
+],
+[
+389.12,
+"First, ask a question and make a hypothesis."
+],
+[
+393.43,
+"Second, identify the variables: which one will you change,"
+],
+[
+397.8,
+"and which ones will you keep the same?"
+],
+[
+400.84,
+"Third, decide what you will observe or measure,"
+],
+[
+404.54,
+"and how you will record it."
+],
+[
+406.9,
+"Fourth, choose the materials and equipment you need."
+],
+[
+411.74,
+"Finally, decide how you will analyse your data to see if your hypothesis is correct."
+]
+],
+"chapters": [
+[
+0.0,
+"Attitudes that help us think like scientists"
+],
+[
+39.28,
+"The process of scientific enquiry"
+],
+[
+100.69,
+"Making a testable hypothesis"
+],
+[
+155.71,
+"Models help us explain ideas"
+],
+[
+191.82,
+"Collecting data with a fair test"
+],
+[
+228.87,
+"Predict, watch, explain: does salt make ice melt faster?"
+],
+[
+282.13,
+"Measuring: accurate and precise"
+],
+[
+323.04,
+"Presenting data: Huan's 100 m races"
+],
+[
+354.43,
+"Making a conclusion"
+],
+[
+383.6,
+"Planning your own investigation"
+]
+],
+"stops": [
+{
+"id": "u1v2a",
+"t": 100.34,
+"review": [
+39.28,
+100.69
+]
+},
+{
+"id": "u1v2b",
+"t": 155.36,
+"review": [
+100.69,
+155.71
+]
+},
+{
+"id": "u1v2c",
+"t": 218.95,
+"review": [
+191.82,
+219.3
+]
+},
+{
+"id": "u1n12p",
+"t": 241.24,
+"review": [
+228.87,
+241.59
+]
+},
+{
+"id": "u1n12e",
+"t": 281.78,
+"review": [
+228.87,
+282.13
+]
+},
+{
+"id": "u1v2d",
+"t": 322.69,
+"review": [
+282.13,
+323.04
+]
+}
+],
+"dur": 420.2,
+"src": "media/u1_s2.72e6275b.mp4",
+"poster": "media/u1_s2_poster.72e6275b.jpg"
+},
+"1.3": {
+"captions": [
+[
+0.0,
+"Experiments are a great way to learn,"
+],
+[
+2.25,
+"but they can be dangerous if we are careless."
+],
+[
+4.99,
+"No eating, drinking or playing in the lab."
+],
+[
+7.55,
+"Wear safety goggles when using hazardous chemicals or heating."
+],
+[
+11.32,
+"And always read the instructions first."
+],
+[
+14.35,
+"Keep your work area clean and tidy,"
+],
+[
+17.25,
+"check the label before using any substance, and when heating a test tube,"
+],
+[
+21.74,
+"point the open end away from everyone."
+],
+[
+24.73,
+"Never taste anything unless your teacher allows it, report any damage,"
+],
+[
+29.76,
+"spills or accidents, and wash your hands thoroughly after lab work."
+],
+[
+34.54,
+"Look carefully at four students in a laboratory."
+],
+[
+38.13,
+"Each one is taking a risk."
+],
+[
+39.75,
+"Can you spot what each should do instead?"
+],
+[
+42.96,
+"Mai is lighting a Bunsen burner with her long hair loose."
+],
+[
+47.24,
+"Hair can catch fire, so she must tie it back."
+],
+[
+50.7,
+"Kim is drinking juice at the bench."
+],
+[
+53.63,
+"Chemicals could get into the drink,"
+],
+[
+55.81,
+"so food and drink stay outside the lab."
+],
+[
+58.9,
+"Bao is heating a test tube that points at his friend."
+],
+[
+62.92,
+"Hot liquid can spit out,"
+],
+[
+64.41,
+"so the open end must point away from everyone."
+],
+[
+67.94,
+"Lan finds a bottle with no label."
+],
+[
+70.75,
+"She must not use it, and should tell the teacher."
+],
+[
+74.48,
+"Which of these risks do you think is the most dangerous, and why?"
+],
+[
+79.24,
+"Pause and decide before the video goes on."
+],
+[
+82.51,
+"Dangerous substances carry hazard symbols."
+],
+[
+85.73,
+"Always check the symbol before you use a substance."
+],
+[
+89.57,
+"Acutely toxic substances are poisonous from a single contact,"
+],
+[
+94.05,
+"so never breathe them in or swallow them."
+],
+[
+96.56,
+"A moderate hazard causes harm if touched or breathed in."
+],
+[
+100.67,
+"Flammable substances catch fire easily, so keep them away from flames."
+],
+[
+105.67,
+"Corrosive substances, like strong acids and alkalis, destroy skin and other materials."
+],
+[
+111.58,
+"Substances hazardous to the environment must never be poured down the drain."
+],
+[
+116.96,
+"A health hazard can cause serious long-term damage, so avoid handling it."
+],
+[
+122.08,
+"In the lab we use scientific equipment called apparatus."
+],
+[
+126.14,
+"A test tube holds or heats small amounts of a substance."
+],
+[
+130.26,
+"A measuring cylinder measures the volume of a liquid accurately."
+],
+[
+135.7,
+"Beakers and conical flasks hold chemicals or collect liquids."
+],
+[
+140.94,
+"A Bunsen burner is used to heat substances."
+],
+[
+145.13,
+"Choose apparatus that is accurate enough for the job."
+],
+[
+149.12,
+"To measure 20 cubic centimetres of water,"
+],
+[
+151.63,
+"a 50 cubic centimetre measuring cylinder is much"
+],
+[
+154.57,
+"more accurate than a 500 cubic centimetre beaker."
+]
+],
+"chapters": [
+[
+0.0,
+"Safety rules in the laboratory"
+],
+[
+34.54,
+"Real life: spot the risk in the lab"
+],
+[
+82.51,
+"Hazard symbols"
+],
+[
+122.08,
+"Common laboratory apparatus"
+]
+],
+"stops": [
+{
+"id": "u1v3a",
+"t": 34.19,
+"review": [
+0.0,
+34.54
+]
+},
+{
+"id": "u1n13",
+"t": 82.16,
+"review": [
+34.54,
+82.51
+]
+},
+{
+"id": "u1v3b",
+"t": 121.73,
+"review": [
+82.51,
+122.08
+]
+},
+{
+"id": "u1v3c",
+"t": 157.71,
+"review": [
+122.08,
+158.06
+]
+}
+],
+"dur": 158.133,
+"src": "media/u1_s3.2d188356.mp4",
+"poster": "media/u1_s3_poster.2d188356.jpg"
+},
+"1.4": {
+"captions": [
+[
+0.0,
+"Isaac Newton made huge advances in maths, light and gravity."
+],
+[
+3.63,
+"He said he could see further by standing on the shoulders of giants."
+],
+[
+7.74,
+"He meant he built his ideas on the work of earlier scientists."
+],
+[
+12.14,
+"When scientists finish an investigation, they write reports to share their results."
+],
+[
+18.88,
+"Reports are peer reviewed: other scientists check the method and the conclusions,"
+],
+[
+24.63,
+"so that others can use the results with confidence."
+],
+[
+28.47,
+"An important skill is to evaluate:"
+],
+[
+31.32,
+"list the positive points and the negative points,"
+],
+[
+34.36,
+"then make a judgement based on the evidence."
+],
+[
+37.77,
+"Science develops new knowledge."
+],
+[
+40.38,
+"Technology applies that knowledge to solve problems and make life easier."
+],
+[
+45.76,
+"Food technology helps farmers grow more, healthier crops."
+],
+[
+50.11,
+"Information and communications technology, or ICT, lets us communicate quickly."
+],
+[
+55.78,
+"Weather technology improves forecasts,"
+],
+[
+58.92,
+"and medical technology improves how illnesses are diagnosed and treated."
+],
+[
+63.48,
+"Technology also helps science: computers let scientists work with huge amounts of data."
+],
+[
+69.67,
+"Here is technology in action: driverless vehicles."
+],
+[
+73.61,
+"Cameras and sensors track other cars, read traffic lights and watch for pedestrians."
+],
+[
+79.0,
+"Dubai plans for a quarter of its transport to be driverless by 2030."
+],
+[
+83.37,
+"Would you ride in one?"
+],
+[
+85.45,
+"Science and technology bring many benefits, but they can also have negative effects."
+],
+[
+91.24,
+"Plastic is very useful, yet overusing it has polluted our planet."
+],
+[
+95.91,
+"Sometimes people misuse or abuse technology,"
+],
+[
+99.34,
+"for example taking medicines for the wrong reasons, scamming people online, or cyber-bullying."
+],
+[
+105.1,
+"If you are ever cyber-bullied, tell a teacher,"
+],
+[
+107.91,
+"a parent or another trusted adult."
+],
+[
+110.64,
+"Antibiotics cure infections that used to be deadly."
+],
+[
+114.58,
+"But if they are overused, bacteria can become resistant,"
+],
+[
+118.1,
+"and the antibiotics stop working."
+],
+[
+120.83,
+"There is also a lot of biased information online."
+],
+[
+124.53,
+"Bias means telling only one side of the story."
+],
+[
+127.32,
+"Always ask who wrote it, whether they want to persuade you,"
+],
+[
+130.9,
+"and whether other sources agree."
+],
+[
+133.51,
+"Modern life depends on electricity."
+],
+[
+136.29,
+"Burning fossil fuels like coal releases smoke and adds carbon dioxide to the air,"
+],
+[
+141.33,
+"which traps heat and causes global warming."
+],
+[
+144.67,
+"Farmers use fertilisers and pesticides to grow more crops,"
+],
+[
+149.1,
+"but too much of these chemicals can pollute the environment."
+],
+[
+153.57,
+"Plastic waste pollutes land and water,"
+],
+[
+156.67,
+"and it harms living things in the oceans."
+],
+[
+159.89,
+"But science also helps solve these problems."
+],
+[
+163.36,
+"Solar panels and wind turbines generate electricity from the Sun and the wind,"
+],
+[
+168.22,
+"so we burn less fossil fuel."
+],
+[
+170.63,
+"Scientists have measured carbon dioxide in the air on a mountain in Hawaii since 1958."
+],
+[
+177.1,
+"Here are the yearly averages."
+],
+[
+179.75,
+"In 1960 there were about 317 parts per million."
+],
+[
+184.94,
+"By 2020 there were about 414."
+],
+[
+188.33,
+"The line goes up every decade, and it gets steeper."
+],
+[
+192.17,
+"The amount is rising faster and faster."
+],
+[
+195.21,
+"This rise comes mostly from burning fossil fuels."
+],
+[
+199.26,
+"Predict: what might the value be in 2030?"
+],
+[
+202.04,
+"Pause and use the graph."
+],
+[
+204.34,
+"Science and technology can solve many problems, but not all of them."
+],
+[
+209.13,
+"Scientists have found treatments for many diseases,"
+],
+[
+212.26,
+"yet there is still no drug that completely prevents or cures cancer."
+],
+[
+217.11,
+"Science cannot stop natural disasters like floods, but it can reduce the damage,"
+],
+[
+222.89,
+"with early warnings, flood barriers and stronger buildings."
+],
+[
+227.28,
+"So, back to our big question."
+],
+[
+229.78,
+"Can science help to reduce the problems created by electricity, transport and materials?"
+],
+[
+235.16,
+"Think about what you have learned, and decide what you believe."
+],
+[
+239.67,
+"Now it is your turn to shine!"
+],
+[
+242.03,
+"Pause the video after each question and try to answer it first."
+],
+[
+246.51,
+"Question 1: What is the difference between the independent and the dependent variable?"
+],
+[
+252.42,
+"Pause the video now."
+],
+[
+254.28,
+"Answer: The independent variable is changed by us;"
+],
+[
+258.21,
+"the dependent variable changes as a result."
+],
+[
+261.61,
+"Question 2: Is “plants are happier under blue light” a testable hypothesis?"
+],
+[
+267.16,
+"Why? Pause the video now."
+],
+[
+269.43,
+"Answer: No – a plant's happiness cannot be measured."
+],
+[
+274.05,
+"Question 3: What does a flame hazard symbol mean?"
+],
+[
+278.03,
+"Pause the video now."
+],
+[
+280.01,
+"Answer: Flammable – it catches fire easily, so keep it away from flames."
+],
+[
+285.83,
+"Question 4: What is peer review?"
+],
+[
+288.74,
+"Pause the video now."
+],
+[
+290.74,
+"Answer: Other scientists check an investigation's method and conclusions."
+]
+],
+"chapters": [
+[
+0.0,
+"How does science develop?"
+],
+[
+37.77,
+"Science and technology"
+],
+[
+85.45,
+"Using science wisely"
+],
+[
+133.51,
+"Science and the environment"
+],
+[
+170.63,
+"Real data: carbon dioxide in the air since 1960"
+],
+[
+204.34,
+"What can science not do?"
+],
+[
+239.67,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "u1v4a",
+"t": 37.42,
+"review": [
+0.0,
+37.77
+]
+},
+{
+"id": "u1v4b",
+"t": 85.1,
+"review": [
+37.77,
+85.45
+]
+},
+{
+"id": "u1v4c",
+"t": 133.16,
+"review": [
+85.45,
+133.51
+]
+},
+{
+"id": "u1n14",
+"t": 203.99,
+"review": [
+170.63,
+204.34
+]
+}
+],
+"dur": 296.5,
+"src": "media/u1_s4.f7918a38.mp4",
+"poster": "media/u1_s4_poster.f7918a38.jpg"
+}
+}
