@@ -1,0 +1,147 @@
+1
+00:00:00,000 --> 00:00:01,635
+Welcome to Atomic Education.
+
+2
+00:00:02,694 --> 00:00:09,761
+This lesson was written by the Atomic teaching team to help you learn Cambridge Lower Secondary Science with confidence.
+
+3
+00:00:09,761 --> 00:00:10,462
+Let's begin!
+
+4
+00:00:11,521 --> 00:00:13,740
+Welcome to Unit 2: Human Body Systems.
+
+5
+00:00:14,799 --> 00:00:21,282
+When you lift a weight, take a deep breath or feel your heart beating, your body systems are working together.
+
+6
+00:00:21,282 --> 00:00:26,890
+In this unit, we'll explore the bones and muscles that move us, the lungs that bring in oxygen,
+
+7
+00:00:26,890 --> 00:00:29,284
+and the blood that carries it everywhere.
+
+8
+00:00:30,343 --> 00:00:35,775
+Our musculoskeletal system is made of bones, joints and muscles. The bones form the skeleton.
+
+9
+00:00:36,833 --> 00:00:42,265
+The skeleton gives the body support and shape, allows it to move, and protects vital organs.
+
+10
+00:00:42,265 --> 00:00:46,412
+The skull protects the brain, and the ribs protect the heart and lungs.
+
+11
+00:00:47,471 --> 00:00:53,195
+A newborn baby's bones and muscles are soft and weak, but they grow harder and stronger with age.
+
+12
+00:00:53,195 --> 00:00:57,576
+Human bone is almost five times as strong as a steel bar of the same mass!
+
+13
+00:00:57,576 --> 00:01:00,321
+In old age, bones and muscles may weaken again.
+
+14
+00:01:01,379 --> 00:01:06,403
+Bones can't bend. A joint is a place where two or more bones meet, allowing movement.
+
+15
+00:01:06,403 --> 00:01:11,893
+Some joints, like those in the skull and the pelvis, don't move at all. They are fixed joints.
+
+16
+00:01:12,952 --> 00:01:18,909
+Moveable joints include ball-and-socket joints. A ball-shaped bone end fits into a cup-shaped socket,
+
+17
+00:01:18,909 --> 00:01:22,648
+so the bone can move in many directions, even in a full circle.
+
+18
+00:01:22,648 --> 00:01:25,510
+Your shoulder and hip are ball-and-socket joints.
+
+19
+00:01:26,568 --> 00:01:30,540
+A hinge joint allows movement back and forth in one direction only,
+
+20
+00:01:30,540 --> 00:01:35,738
+like a door hinge: the door just opens and closes. That comparison is called an analogy.
+
+21
+00:01:35,738 --> 00:01:38,834
+Your elbow, knee, fingers and toes have hinge joints.
+
+22
+00:01:39,892 --> 00:01:44,273
+This model arm has two card bones joined by a paper fastener at the elbow,
+
+23
+00:01:44,273 --> 00:01:46,493
+and a strip of elastic as the biceps.
+
+24
+00:01:46,493 --> 00:01:51,808
+Predict: will the arm bend if we push the elastic, or only if we pull it? Pause and decide.
+
+25
+00:01:52,866 --> 00:01:57,773
+Watch. First we push the elastic towards the elbow. It just bends and nothing moves.
+
+26
+00:01:58,831 --> 00:02:03,562
+Then we pull the elastic, shortening it. The lower arm lifts and the elbow bends.
+
+27
+00:02:04,621 --> 00:02:10,462
+Explain what you saw. Like the elastic, a muscle can only pull, by contracting and getting shorter.
+
+28
+00:02:10,462 --> 00:02:15,660
+It cannot push. So muscles work in antagonistic pairs: the biceps pulls to bend the arm,
+
+29
+00:02:15,660 --> 00:02:20,625
+and the triceps pulls to straighten it again. Pause and explain it in your own words.
+
+30
+00:02:21,683 --> 00:02:27,583
+We have more than 600 muscles. Skeletal muscles are attached to bones by tough cords called tendons.
+
+31
+00:02:27,583 --> 00:02:31,964
+When a muscle contracts, it gets shorter and fatter and pulls on the bone.
+
+32
+00:02:31,964 --> 00:02:37,454
+When it relaxes, it returns to its original shape. Muscles can pull, but they can never push!
+
+33
+00:02:37,454 --> 00:02:41,952
+So they work in pairs that pull in opposite directions: antagonistic muscles.
+
+34
+00:02:43,010 --> 00:02:46,631
+In your arm, the biceps and triceps are an antagonistic pair.
+
+35
+00:02:46,631 --> 00:02:52,064
+To bend your arm, the biceps contracts and pulls the lower arm up, while the triceps relaxes.
+
+36
+00:02:53,122 --> 00:02:59,080
+To straighten your arm, the triceps contracts and pulls the lower arm down, while the biceps relaxes.
+
+37
+00:02:59,080 --> 00:03:03,110
+Your thigh muscles work the same way to bend and straighten your leg.

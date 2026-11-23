@@ -1,0 +1,203 @@
+1
+00:00:00,000 --> 00:00:01,654
+Welcome to Atomic Education.
+
+2
+00:00:02,713 --> 00:00:09,860
+This lesson was written by the Atomic teaching team to help you learn Cambridge Lower Secondary Science with confidence.
+
+3
+00:00:09,860 --> 00:00:10,569
+Let's begin!
+
+4
+00:00:11,628 --> 00:00:13,401
+Welcome to Unit 3: Ecosystems.
+
+5
+00:00:14,460 --> 00:00:20,662
+Bees carry pollen from flower to flower. Without pollinators, many plants couldn't make seeds and fruit,
+
+6
+00:00:20,662 --> 00:00:24,383
+and whole ecosystems, including our food supply, would suffer.
+
+7
+00:00:24,383 --> 00:00:29,168
+Let's explore how living things depend on each other, and how humans affect them.
+
+8
+00:00:30,227 --> 00:00:35,898
+A population is a group of organisms of one species living in an area, like a herd of elephants.
+
+9
+00:00:36,957 --> 00:00:43,455
+A community is all the populations of different species living in the same area: elephants, giraffes, zebras,
+
+10
+00:00:43,455 --> 00:00:45,049
+trees and grasses together.
+
+11
+00:00:46,108 --> 00:00:51,602
+An ecosystem is the community plus all its interactions with non-living factors, like light,
+
+12
+00:00:51,602 --> 00:00:56,091
+water and temperature. Organisms depend on each other for food and shelter.
+
+13
+00:00:56,091 --> 00:01:00,935
+An ecosystem can be as big as a mountain range, or as small as a sealed glass jar!
+
+14
+00:01:01,994 --> 00:01:07,133
+There are many types of ecosystem. Forests get lots of rain and have very varied life.
+
+15
+00:01:07,133 --> 00:01:13,336
+Grasslands are open, sunny and windy. Deserts get little rain and lots of sun, with only a few producers.
+
+16
+00:01:14,395 --> 00:01:19,120
+Freshwater ecosystems include ponds, rivers and lakes and the land around them.
+
+17
+00:01:19,120 --> 00:01:24,318
+Saltwater ecosystems, the oceans, cover most of Earth's surface and include coral reefs.
+
+18
+00:01:25,377 --> 00:01:28,036
+Within an ecosystem there are many habitats.
+
+19
+00:01:28,036 --> 00:01:32,170
+A habitat is the place where a particular organism lives and thrives.
+
+20
+00:01:32,170 --> 00:01:37,782
+A deer's habitat is the forest, but a tiny beetle's habitat might be the bark of a single tree.
+
+21
+00:01:38,841 --> 00:01:42,504
+Twelve woodlice are placed in the middle of a choice chamber.
+
+22
+00:01:42,504 --> 00:01:46,048
+One side is dry and light; the other side is damp and dark.
+
+23
+00:01:46,048 --> 00:01:50,773
+Predict: where will most of the woodlice be after ten minutes? Pause and decide.
+
+24
+00:01:51,832 --> 00:01:55,436
+Watch. The woodlice crawl around the chamber for ten minutes.
+
+25
+00:01:56,495 --> 00:02:01,516
+Ten woodlice are now on the damp, dark side, and only two are on the dry, light side.
+
+26
+00:02:02,575 --> 00:02:07,182
+Explain what you saw. Woodlice lose water easily through their body covering,
+
+27
+00:02:07,182 --> 00:02:11,022
+so they survive best in damp places, like under logs and stones.
+
+28
+00:02:11,022 --> 00:02:17,519
+Moving away from light also helps them hide from predators. This behaviour is an adaptation to their habitat.
+
+29
+00:02:17,519 --> 00:02:19,823
+Pause and explain it in your own words.
+
+30
+00:02:20,882 --> 00:02:28,266
+A class places square frames called quadrats at random in three parts of the school field and counts the daisies in each one.
+
+31
+00:02:29,325 --> 00:02:35,586
+In full sun there are about 14 daisies per quadrat. In part shade there are 8, and under the trees only 2.
+
+32
+00:02:36,646 --> 00:02:41,489
+Pause and decide: which non-living factor most likely affects where daisies grow,
+
+33
+00:02:41,489 --> 00:02:44,384
+and why do we use many quadrats placed at random?
+
+34
+00:02:45,443 --> 00:02:50,582
+Each organism has features that help it survive in its habitat. These are adaptations.
+
+35
+00:02:50,582 --> 00:02:55,012
+A forest monkey has physical adaptations: long, strong limbs for climbing,
+
+36
+00:02:55,012 --> 00:03:00,801
+a tail for balance and gripping branches, feet that grip like hands, and teeth that grind leaves,
+
+37
+00:03:00,801 --> 00:03:05,763
+seeds and fruit. It also has a behavioural adaptation: living high in the treetops,
+
+38
+00:03:05,763 --> 00:03:08,953
+where there's food and protection from most predators.
+
+39
+00:03:10,012 --> 00:03:16,332
+A dolphin is adapted to the ocean. It has a streamlined body, a blowhole on top of its head for breathing,
+
+40
+00:03:16,332 --> 00:03:21,353
+fins and flippers to steer, a strong tail, and a thick layer of blubber to keep warm.
+
+41
+00:03:22,412 --> 00:03:28,851
+Dolphins also have behavioural adaptations: they live in groups called pods and communicate with each other.
+
+42
+00:03:28,851 --> 00:03:30,564
+Plants have adaptations too.
+
+43
+00:03:30,564 --> 00:03:36,175
+The resurrection plant curls up into a ball to survive drought, then opens again when it rains!
+
+44
+00:03:37,235 --> 00:03:40,720
+Human activities and climate change threaten biodiversity.
+
+45
+00:03:40,720 --> 00:03:44,914
+Scientists estimate that two out of five plant species are endangered,
+
+46
+00:03:44,914 --> 00:03:49,226
+and losing them could threaten many other organisms and our food supply.
+
+47
+00:03:49,226 --> 00:03:54,365
+So botanists and geneticists store seeds in more than 1500 seed banks around the world.
+
+48
+00:03:55,424 --> 00:04:00,268
+Seeds are kept in the dark, with low humidity, at about minus 20 degrees Celsius,
+
+49
+00:04:00,268 --> 00:04:01,981
+so they won't start to grow.
+
+50
+00:04:01,981 --> 00:04:07,061
+Vaults like the Svalbard Global Seed Vault are protected from floods and earthquakes,
+
+51
+00:04:07,061 --> 00:04:12,377
+and every container is clearly labelled with the plant variety and where it was collected.

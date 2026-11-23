@@ -1,0 +1,231 @@
+1
+00:00:00,000 --> 00:00:05,956
+Human activities are destroying natural habitats. Forests are cut down for farms, logging and homes.
+
+2
+00:00:05,956 --> 00:00:10,674
+This is deforestation, and it's destroying the habitats of thousands of species.
+
+3
+00:00:11,733 --> 00:00:18,220
+Taking away one species affects a whole ecosystem. Bats eat the fruit of banyan trees and spread their seeds.
+
+4
+00:00:18,220 --> 00:00:23,705
+Without banyan trees, bat numbers would fall, and so would the owls and hawks that eat bats.
+
+5
+00:00:23,705 --> 00:00:27,951
+Forests are also carbon sinks, absorbing more carbon than they release,
+
+6
+00:00:27,951 --> 00:00:30,310
+so deforestation adds to climate change.
+
+7
+00:00:31,369 --> 00:00:35,674
+Roads, cities and farms can also break large habitats into small pieces.
+
+8
+00:00:35,674 --> 00:00:40,864
+This habitat fragmentation makes it harder for animals to find food, water and shelter,
+
+9
+00:00:40,864 --> 00:00:42,338
+and reduces biodiversity.
+
+10
+00:00:43,397 --> 00:00:49,707
+Overexploitation means removing too many animals from the wild, for example by overfishing or overhunting.
+
+11
+00:00:49,707 --> 00:00:56,077
+When fish are caught faster than they can reproduce, populations fall, and other organisms lose their food.
+
+12
+00:00:56,077 --> 00:01:00,146
+Some modern fishing methods scoop up everything from the ocean floor.
+
+13
+00:01:01,205 --> 00:01:04,920
+Sometimes humans bring a non-native species into an ecosystem.
+
+14
+00:01:04,920 --> 00:01:10,051
+The Nile perch was put into Lake Victoria in East Africa as food, but it's a predator,
+
+15
+00:01:10,051 --> 00:01:15,005
+and it wiped out many native fish species, harming birds and mammals that ate them.
+
+16
+00:01:15,005 --> 00:01:18,956
+A non-native species that causes this much harm is called invasive.
+
+17
+00:01:20,015 --> 00:01:25,618
+Some species arrive by accident, with cargo and travellers. Asian hornets prey on native bees,
+
+18
+00:01:25,618 --> 00:01:31,043
+which are vital pollinators, and rats on ships have driven many native birds to extinction.
+
+19
+00:01:31,043 --> 00:01:36,528
+On the positive side, re-introducing lost species, like wolves in Yellowstone National Park,
+
+20
+00:01:36,528 --> 00:01:38,179
+can help ecosystems recover.
+
+21
+00:01:39,238 --> 00:01:45,725
+Pollution harms ecosystems. Land pollution comes from litter, plastics and chemicals that seep into the soil.
+
+22
+00:01:45,725 --> 00:01:49,794
+Rotting rubbish in landfills even releases methane, a greenhouse gas.
+
+23
+00:01:50,853 --> 00:01:54,569
+Air pollution comes from factory smoke, car exhausts and dust.
+
+24
+00:01:54,569 --> 00:02:00,761
+Sulfur dioxide and nitrogen oxides dissolve in clouds and make acid rain, which harms plants and animals.
+
+25
+00:02:01,820 --> 00:02:07,364
+Water pollution comes from fertilisers, pesticides, factory chemicals, untreated waste water,
+
+26
+00:02:07,364 --> 00:02:08,720
+oil spills and litter.
+
+27
+00:02:08,720 --> 00:02:14,558
+Fertilisers make algae grow out of control, an algal bloom, blocking sunlight so water plants die.
+
+28
+00:02:14,558 --> 00:02:18,215
+Oil sticks to feathers and fur, turtles swallow plastic bags,
+
+29
+00:02:18,215 --> 00:02:21,281
+and tiny microplastics have entered our food chains.
+
+30
+00:02:22,340 --> 00:02:27,825
+Two jars contain the same pond water. A few drops of garden fertiliser are added to one jar.
+
+31
+00:02:27,825 --> 00:02:32,838
+Both are left in sunlight for two weeks. Predict: what will happen? Pause and decide.
+
+32
+00:02:33,897 --> 00:02:37,494
+Watch. Both jars stand in the same sunny place for two weeks.
+
+33
+00:02:38,553 --> 00:02:44,215
+The jar with fertiliser has turned bright green with algae. The other jar is still almost clear.
+
+34
+00:02:45,274 --> 00:02:50,287
+Explain what you saw. Fertiliser contains nutrients that help plants and algae grow.
+
+35
+00:02:50,287 --> 00:02:56,361
+When fertiliser washes off farmland into rivers and lakes, algae grow very fast and cover the surface.
+
+36
+00:02:56,361 --> 00:03:02,140
+They block light, and when they die, bacteria that decompose them use up the oxygen in the water,
+
+37
+00:03:02,140 --> 00:03:05,207
+so fish die. Pause and explain it in your own words.
+
+38
+00:03:06,266 --> 00:03:11,633
+This chart shows typical amounts of mercury in organisms along a polluted lake food chain,
+
+39
+00:03:11,633 --> 00:03:12,871
+in parts per million.
+
+40
+00:03:13,930 --> 00:03:16,112
+Plankton contain only a tiny amount.
+
+41
+00:03:16,112 --> 00:03:21,656
+Small fish have more, large fish more again, and the fish-eating bird at the top has the most.
+
+42
+00:03:22,715 --> 00:03:27,904
+Pause and decide: why does the top predator have so much more mercury than the plankton?
+
+43
+00:03:28,963 --> 00:03:34,920
+Some toxic substances, like mercury from mining and manufacturing, can't be broken down or excreted.
+
+44
+00:03:34,920 --> 00:03:40,345
+When they get into water, tiny plankton absorb small amounts, and it stays in their bodies.
+
+45
+00:03:40,345 --> 00:03:42,999
+This slow build-up is called bioaccumulation.
+
+46
+00:03:44,058 --> 00:03:47,773
+Small fish eat lots of plankton, so they take in more mercury.
+
+47
+00:03:47,773 --> 00:03:51,076
+Larger fish eat many small fish, so they get even more.
+
+48
+00:03:51,076 --> 00:03:54,379
+The amount gets higher and higher along the food chain.
+
+49
+00:03:54,379 --> 00:03:59,627
+This is biomagnification, and people who eat contaminated fish can get mercury poisoning.
+
+50
+00:04:00,686 --> 00:04:06,171
+Now it is your turn to shine! Pause the video after each question and try to answer it first.
+
+51
+00:04:07,230 --> 00:04:12,714
+Question 1: What is the difference between a population and a community? Pause the video now.
+
+52
+00:04:13,773 --> 00:04:18,668
+Answer: A population is one species; a community is all the populations in an area.
+
+53
+00:04:19,727 --> 00:04:24,150
+Question 2: Give one physical adaptation of a dolphin. Pause the video now.
+
+54
+00:04:25,209 --> 00:04:29,219
+Answer: for example streamlined body, blowhole, blubber or flippers.
+
+55
+00:04:30,278 --> 00:04:33,876
+Question 3: What is an invasive species? Pause the video now.
+
+56
+00:04:34,935 --> 00:04:38,886
+Answer: A non-native species that causes harm to its new ecosystem.
+
+57
+00:04:39,945 --> 00:04:45,371
+Question 4: Why do top predators have the most mercury in their bodies? Pause the video now.
+
+58
+00:04:46,430 --> 00:04:50,263
+Answer: Biomagnification, mercury builds up along the food chain.

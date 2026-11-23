@@ -1,0 +1,231 @@
+1
+00:00:00,000 --> 00:00:01,679
+Welcome to Atomic Education.
+
+2
+00:00:02,739 --> 00:00:09,993
+This lesson was written by the Atomic teaching team to help you learn Cambridge Lower Secondary Science with confidence.
+
+3
+00:00:09,993 --> 00:00:10,712
+Let's begin!
+
+4
+00:00:11,772 --> 00:00:14,410
+Welcome to Unit 4: The Structure of an Atom.
+
+5
+00:00:15,470 --> 00:00:18,408
+Everything in the Universe is made of particles.
+
+6
+00:00:18,408 --> 00:00:22,185
+Atoms are the smallest particles of an element that can exist.
+
+7
+00:00:22,185 --> 00:00:27,101
+The ancient Greeks called them 'atomos', meaning uncuttable. But were they right?
+
+8
+00:00:27,101 --> 00:00:28,720
+Let's look inside the atom.
+
+9
+00:00:29,780 --> 00:00:32,358
+Think of atoms as plastic building blocks.
+
+10
+00:00:32,358 --> 00:00:36,974
+Each element is made of identical atoms of one type, like one kind of block.
+
+11
+00:00:36,974 --> 00:00:41,650
+A hydrogen atom is like a one-stud block, and helium is like a two-stud block.
+
+12
+00:00:42,710 --> 00:00:46,367
+Atoms of different elements have different sizes and masses.
+
+13
+00:00:46,367 --> 00:00:50,804
+And just as a few types of block can build houses, cars and whole cities,
+
+14
+00:00:50,804 --> 00:00:54,701
+a small number of types of atom build everything in the Universe.
+
+15
+00:00:55,761 --> 00:00:59,957
+If we could open up a helium atom, we'd find it's mostly empty space,
+
+16
+00:00:59,957 --> 00:01:02,415
+with just three types of particle inside.
+
+17
+00:01:03,475 --> 00:01:09,291
+At the centre is a tiny nucleus, containing protons, which have a positive charge, and neutrons,
+
+18
+00:01:09,291 --> 00:01:13,008
+which have no charge. Protons and neutrons have the same mass.
+
+19
+00:01:14,068 --> 00:01:17,665
+Orbiting the nucleus are electrons, with a negative charge.
+
+20
+00:01:17,665 --> 00:01:20,902
+They're tiny: about 1836 times lighter than a proton!
+
+21
+00:01:20,902 --> 00:01:26,838
+An atom has equal numbers of protons and electrons, so the charges balance and the atom is neutral.
+
+22
+00:01:27,898 --> 00:01:34,133
+A balloon is rubbed on dry hair, then held near a thin stream of water from a tap, without touching it.
+
+23
+00:01:34,133 --> 00:01:37,130
+Predict: what will the water do? Pause and decide.
+
+24
+00:01:38,190 --> 00:01:43,646
+Watch. Rubbing moves electrons from the hair onto the balloon, giving it a negative charge.
+
+25
+00:01:44,706 --> 00:01:48,723
+When the balloon comes close, the stream of water bends towards it.
+
+26
+00:01:49,783 --> 00:01:54,819
+Explain what you saw. The balloon has extra electrons, so it is negatively charged.
+
+27
+00:01:54,819 --> 00:02:00,334
+The positive parts of the water are attracted towards it, because opposite charges attract.
+
+28
+00:02:00,334 --> 00:02:05,910
+This is the same force that holds negative electrons around the positive nucleus in an atom.
+
+29
+00:02:05,910 --> 00:02:08,248
+Pause and explain it in your own words.
+
+30
+00:02:09,308 --> 00:02:13,385
+Just like magnets, like charges repel and opposite charges attract.
+
+31
+00:02:13,385 --> 00:02:18,181
+In an atom, the positive protons in the nucleus pull on the negative electrons.
+
+32
+00:02:18,181 --> 00:02:24,536
+This pull is the electrostatic force. It acts like an invisible rope, stopping the electrons flying away.
+
+33
+00:02:24,536 --> 00:02:29,093
+Another force, the nuclear force, holds the protons together in the nucleus.
+
+34
+00:02:30,152 --> 00:02:35,728
+Try it! Rub a balloon on your hair, and some electrons move from your hair onto the balloon,
+
+35
+00:02:35,728 --> 00:02:41,903
+giving it a negative charge. Hold it near an empty can lying on its side, and the can rolls towards it!
+
+36
+00:02:42,963 --> 00:02:48,539
+The atomic number is the number of protons in the nucleus. It is different for every element.
+
+37
+00:02:49,599 --> 00:02:54,275
+Hydrogen has 1 proton, helium 2, carbon 6, nitrogen 7, oxygen 8 and sodium 11.
+
+38
+00:02:55,335 --> 00:02:58,692
+Pause and decide: a neutral sodium atom has 11 protons.
+
+39
+00:02:58,692 --> 00:03:02,829
+How many electrons does it have, and how are they arranged in shells?
+
+40
+00:03:03,889 --> 00:03:09,105
+Atoms of different elements have different numbers of protons, neutrons and electrons.
+
+41
+00:03:09,105 --> 00:03:14,321
+Hydrogen has 1 proton and 1 electron. Helium has 2 protons, 2 neutrons and 2 electrons.
+
+42
+00:03:15,381 --> 00:03:20,597
+Carbon has 6 of each, nitrogen 7, and oxygen 8. Electrons move in paths called shells.
+
+43
+00:03:20,597 --> 00:03:24,733
+The first shell holds up to 2 electrons, and the next holds up to 8.
+
+44
+00:03:24,733 --> 00:03:28,930
+So carbon has 2 electrons in its inner shell and 4 in its outer shell.
+
+45
+00:03:29,990 --> 00:03:32,628
+The number of protons is the atomic number.
+
+46
+00:03:32,628 --> 00:03:37,604
+It decides which element an atom is, and it also tells us the number of electrons.
+
+47
+00:03:37,604 --> 00:03:42,880
+Each element also has its own symbol: carbon is C, but chlorine is Cl, and helium is He.
+
+48
+00:03:43,940 --> 00:03:50,415
+Atoms are most stable when their outer shell is full: 2 electrons in the first shell, or 8 in later shells.
+
+49
+00:03:50,415 --> 00:03:55,331
+A hydrogen atom has just 1 electron, so two hydrogen atoms share their electrons,
+
+50
+00:03:55,331 --> 00:04:00,007
+and both get a full shell. Together they form a stable hydrogen molecule, H2.
+
+51
+00:04:00,007 --> 00:04:03,724
+Two nitrogen atoms share electrons in the same way to make N2.
+
+52
+00:04:04,784 --> 00:04:07,602
+Carbon has 4 outer electrons and needs 4 more,
+
+53
+00:04:07,602 --> 00:04:11,379
+so it bonds easily with other carbon atoms and other elements.
+
+54
+00:04:11,379 --> 00:04:14,856
+That's why carbon is the building block of living things.
+
+55
+00:04:14,856 --> 00:04:20,312
+Carbon atoms can have different numbers of neutrons: carbon-12 has 6, but carbon-14 has 8.
+
+56
+00:04:20,312 --> 00:04:26,427
+These are called isotopes, and carbon-14 helps scientists find the age of things that were once alive.
+
+57
+00:04:27,487 --> 00:04:30,904
+Sodium has 11 electrons, with just 1 in its outer shell.
+
+58
+00:04:30,904 --> 00:04:36,300
+That electron is held weakly, so sodium loses it easily, which makes sodium very reactive.
