@@ -1,0 +1,591 @@
+{
+"8.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.5,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.58,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.61,
+"Let's begin!"
+],
+[
+12.01,
+"Welcome to Unit 8: Rate of Reaction."
+],
+[
+15.66,
+"Fireworks explode in a dazzling flash,"
+],
+[
+18.73,
+"while rust takes years to form on an old bike."
+],
+[
+21.56,
+"Both are chemical reactions, but at very different speeds."
+],
+[
+25.13,
+"What controls how fast a reaction happens?"
+],
+[
+28.37,
+"In a physical change, like melting ice or dissolving sugar,"
+],
+[
+32.58,
+"no new substance forms and the change can be reversed."
+],
+[
+35.89,
+"In a chemical change, like burning, rusting or frying an egg,"
+],
+[
+39.62,
+"atoms rearrange to make new substances."
+],
+[
+42.67,
+"In a reaction, atoms are rearranged, never created or destroyed:"
+],
+[
+47.34,
+"four hydrogen and two oxygen atoms before, and the same after."
+],
+[
+51.14,
+"So mass is conserved."
+],
+[
+52.43,
+"Burnt wood only seems lighter because gases escape."
+],
+[
+56.22,
+"Energy is conserved too: it's transferred, not created or destroyed."
+],
+[
+61.12,
+"Burning charcoal transfers chemical energy to heat and light,"
+],
+[
+64.86,
+"and photosynthesis stores the Sun's energy in glucose."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.01,
+"Rate of Reaction"
+],
+[
+28.37,
+"Mass and energy are conserved"
+]
+],
+"stops": [
+{
+"id": "s9u08s1v01",
+"t": 28.02,
+"review": [
+12.01,
+28.37
+]
+},
+{
+"id": "s9u08s1v02",
+"t": 42.32,
+"review": [
+28.37,
+42.67
+]
+},
+{
+"id": "s9u08s1v03",
+"t": 55.87,
+"review": [
+28.37,
+56.22
+]
+}
+],
+"dur": 68.633,
+"src": "media/s9/u8_s1.f81f4708.mp4",
+"poster": "media/s9/u8_s1_poster.f81f4708.jpg"
+},
+"8.2": {
+"captions": [
+[
+0.0,
+"The rate of reaction is how fast or slowly a reaction happens."
+],
+[
+3.88,
+"Fireworks and airbags react in a split second;"
+],
+[
+6.75,
+"an airbag inflates in 30 milliseconds!"
+],
+[
+9.13,
+"Rusting and food decaying are slow."
+],
+[
+11.32,
+"Some medicines must act fast, others slowly."
+],
+[
+14.74,
+"To measure the rate,"
+],
+[
+16.73,
+"collect the gas made in a gas syringe at regular times,"
+],
+[
+20.2,
+"or measure the mass lost as gas escapes."
+],
+[
+22.73,
+"On the graph, the steepest part is the fastest; when it's flat,"
+],
+[
+26.7,
+"the reaction has stopped."
+],
+[
+28.93,
+"Marble chips react with dilute hydrochloric acid,"
+],
+[
+32.64,
+"and the carbon dioxide is collected in a gas syringe."
+],
+[
+36.0,
+"The volume is read every 30 seconds."
+],
+[
+38.94,
+"In the first 30 seconds, 24 cubic centimetres of gas are collected."
+],
+[
+43.94,
+"In the next 30 seconds, only 16 more."
+],
+[
+46.97,
+"The curve gets less and less steep,"
+],
+[
+49.94,
+"and after 150 seconds it is flat at 58 cubic centimetres."
+],
+[
+54.26,
+"Pause and decide: what was the average rate in the first 30 seconds,"
+],
+[
+59.33,
+"and why does the curve level off?"
+],
+[
+62.09,
+"Reactions happen when particles collide."
+],
+[
+65.2,
+"But only effective collisions make products:"
+],
+[
+67.97,
+"the particles must meet the right way round, like puzzle pieces,"
+],
+[
+71.99,
+"and with enough energy to break bonds."
+],
+[
+74.37,
+"This minimum energy is the activation energy."
+],
+[
+77.86,
+"Mix vinegar and baking soda and it fizzes fast at first,"
+],
+[
+82.11,
+"because there are many particles colliding."
+],
+[
+84.81,
+"As they're used up, there are fewer collisions, so the reaction slows,"
+],
+[
+89.2,
+"and stops when a reactant runs out."
+]
+],
+"chapters": [
+[
+0.0,
+"Measuring the rate of reaction"
+],
+[
+28.93,
+"Class data: carbon dioxide collected in a gas syringe"
+],
+[
+62.09,
+"Collision theory"
+]
+],
+"stops": [
+{
+"id": "s9u08s2v01",
+"t": 14.39,
+"review": [
+0.0,
+14.74
+]
+},
+{
+"id": "s9u08s2v02",
+"t": 28.58,
+"review": [
+0.0,
+28.93
+]
+},
+{
+"id": "s9u08n21",
+"t": 61.74,
+"review": [
+28.93,
+62.09
+]
+},
+{
+"id": "s9u08s2v03",
+"t": 77.51,
+"review": [
+62.09,
+77.86
+]
+}
+],
+"dur": 91.867,
+"src": "media/s9/u8_s2.92f9cd75.mp4",
+"poster": "media/s9/u8_s2_poster.92f9cd75.jpg"
+},
+"8.3": {
+"captions": [
+[
+0.0,
+"Two identical fizzy vitamin tablets are dropped into glasses of water at 20 degrees Celsius."
+],
+[
+5.67,
+"One is whole; the other has been crushed into powder."
+],
+[
+8.94,
+"Predict: which will stop fizzing first?"
+],
+[
+11.34,
+"Pause and decide."
+],
+[
+13.06,
+"Watch. The crushed tablet fizzes much more strongly than the whole one."
+],
+[
+18.95,
+"The crushed tablet stops fizzing after 24 seconds."
+],
+[
+22.86,
+"The whole tablet takes 62 seconds."
+],
+[
+25.68,
+"Explain what you saw."
+],
+[
+27.72,
+"Crushing the tablet gives it a much larger surface area,"
+],
+[
+31.18,
+"so many more particles are exposed to the water."
+],
+[
+34.15,
+"There are more collisions every second, so the reaction is faster."
+],
+[
+38.22,
+"Both tablets make the same amount of gas in the end,"
+],
+[
+41.44,
+"because they have the same mass."
+],
+[
+43.42,
+"Pause and explain it in your own words."
+],
+[
+46.48,
+"Raise the temperature, and particles gain kinetic energy and move faster."
+],
+[
+51.58,
+"They collide more often and harder, so there are more effective collisions."
+],
+[
+56.2,
+"An effervescent tablet fizzes much faster in hot water than in cold."
+],
+[
+61.05,
+"Increase the concentration, and there are more reactant particles in the same volume,"
+],
+[
+67.04,
+"like a crowded room where people bump into each other more."
+],
+[
+70.69,
+"More collisions means a faster reaction."
+],
+[
+73.83,
+"Increase the surface area by breaking a lump into small pieces,"
+],
+[
+78.46,
+"and more particles are exposed to collide."
+],
+[
+81.06,
+"Powdered calcium carbonate reacts faster than marble chips,"
+],
+[
+84.72,
+"though both make the same total amount of gas."
+],
+[
+88.22,
+"Line A is steeper at the start and levels off sooner,"
+],
+[
+92.11,
+"so its reaction is faster, as with hot water or powder."
+],
+[
+95.52,
+"Both lines end at the same height,"
+],
+[
+97.63,
+"because the same reactants give the same amount of product."
+],
+[
+101.95,
+"When you plot results,"
+],
+[
+104.05,
+"look for any anomalous result that doesn't fit the pattern."
+],
+[
+107.73,
+"It might be a measuring error, so repeat that measurement to check."
+],
+[
+112.57,
+"The class repeats the experiment with whole tablets,"
+],
+[
+116.46,
+"changing only the temperature of the water."
+],
+[
+119.84,
+"At 10 degrees Celsius the fizzing lasts 95 seconds."
+],
+[
+123.78,
+"At 20 degrees it lasts 62, at 40 degrees 32,"
+],
+[
+126.55,
+"and at 60 degrees only 18."
+],
+[
+128.85,
+"Pause and decide: what is the pattern,"
+],
+[
+132.02,
+"and how does collision theory explain it?"
+],
+[
+135.3,
+"Now it is your turn to shine!"
+],
+[
+137.74,
+"Pause the video after each question and try to answer it first."
+],
+[
+142.38,
+"Question 1: Why is mass conserved in a chemical reaction?"
+],
+[
+146.76,
+"Pause the video now."
+],
+[
+148.7,
+"Answer: Atoms are only rearranged, not created or destroyed."
+],
+[
+153.95,
+"Question 2: What is activation energy?"
+],
+[
+157.16,
+"Pause the video now."
+],
+[
+159.12,
+"Answer: The minimum energy needed for a reaction to start."
+],
+[
+164.25,
+"Question 3: Give three factors that increase the rate of reaction."
+],
+[
+169.17,
+"Pause the video now."
+],
+[
+171.1,
+"Answer: Higher temperature, higher concentration, larger surface area."
+],
+[
+176.95,
+"Question 4: Why does a reaction slow down over time?"
+],
+[
+181.02,
+"Pause the video now."
+],
+[
+182.96,
+"Answer: Reactants are used up, so there are fewer collisions."
+]
+],
+"chapters": [
+[
+0.0,
+"Predict, watch, explain: a whole tablet or a crushed tablet?"
+],
+[
+46.48,
+"What speeds up a reaction?"
+],
+[
+88.22,
+"Reading rate graphs"
+],
+[
+112.57,
+"Class data: tablet fizzing time at different temperatures"
+],
+[
+135.3,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s9u08n31p",
+"t": 12.71,
+"review": [
+0.0,
+13.06
+]
+},
+{
+"id": "s9u08n31e",
+"t": 46.13,
+"review": [
+0.0,
+46.48
+]
+},
+{
+"id": "s9u08s3v01",
+"t": 60.7,
+"review": [
+46.48,
+61.05
+]
+},
+{
+"id": "s9u08s3v02",
+"t": 73.48,
+"review": [
+46.48,
+73.83
+]
+},
+{
+"id": "s9u08s3v03",
+"t": 87.87,
+"review": [
+46.48,
+88.22
+]
+},
+{
+"id": "s9u08s3v04",
+"t": 112.22,
+"review": [
+88.22,
+112.57
+]
+},
+{
+"id": "s9u08n32",
+"t": 134.95,
+"review": [
+112.57,
+135.3
+]
+}
+],
+"dur": 188.033,
+"src": "media/s9/u8_s3.bbcd6f86.mp4",
+"poster": "media/s9/u8_s3_poster.bbcd6f86.jpg"
+}
+}

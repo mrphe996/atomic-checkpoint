@@ -1,0 +1,750 @@
+{
+"6.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.5,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.57,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.6,
+"Let's begin!"
+],
+[
+11.99,
+"Welcome to Unit 6: Chemical Reactivity."
+],
+[
+15.81,
+"Car exhausts release harmful gases like carbon monoxide."
+],
+[
+19.95,
+"Catalytic converters use rare, expensive metals to turn them into less harmful ones."
+],
+[
+25.07,
+"Why do some metals react so easily, while others hardly react at all?"
+],
+[
+29.28,
+"Let's find out."
+],
+[
+30.84,
+"Strips of magnesium, copper and gold are each held in a hot flame."
+],
+[
+35.49,
+"Predict: which metal will react most strongly with the oxygen in the air,"
+],
+[
+39.97,
+"and which will not react at all?"
+],
+[
+41.93,
+"Pause and decide."
+],
+[
+43.63,
+"Watch. Each metal is held in the flame for the same time."
+],
+[
+48.64,
+"The magnesium burns with a dazzling white flame."
+],
+[
+52.37,
+"The copper turns black on the surface."
+],
+[
+54.74,
+"The gold does not change."
+],
+[
+56.96,
+"Explain what you saw."
+],
+[
+58.97,
+"Magnesium is very reactive: it burns, forming white magnesium oxide."
+],
+[
+63.1,
+"Copper is less reactive: only its surface reacts, forming black copper oxide."
+],
+[
+67.78,
+"Gold is unreactive and does not react with oxygen, even when heated."
+],
+[
+71.92,
+"Metal plus oxygen gives metal oxide."
+],
+[
+74.11,
+"Pause and explain it in your own words."
+],
+[
+77.13,
+"Most metals react with oxygen to form a metal oxide:"
+],
+[
+80.9,
+"metal plus oxygen gives metal oxide."
+],
+[
+83.1,
+"But how fast they react depends on their reactivity."
+],
+[
+86.27,
+"Potassium and sodium react so violently with oxygen that they're stored in oil,"
+],
+[
+91.09,
+"to keep air away from them."
+],
+[
+93.4,
+"Calcium and magnesium are less reactive, but still react well."
+],
+[
+97.94,
+"Magnesium burns in oxygen with a dazzling white flame, forming magnesium oxide."
+],
+[
+103.42,
+"Iron and zinc react slowly with oxygen."
+],
+[
+106.57,
+"That's why rust forms over time."
+],
+[
+108.54,
+"Copper is even less reactive: it only reacts when heated,"
+],
+[
+112.06,
+"slowly forming black copper oxide."
+],
+[
+114.81,
+"Silver and gold don't react with oxygen, even when heated."
+],
+[
+119.12,
+"They keep their shine for a very long time,"
+],
+[
+121.76,
+"which makes them perfect for jewellery and coins."
+],
+[
+125.43,
+"Iron isn't found pure in nature."
+],
+[
+127.98,
+"It's in rocks called ores, like haematite, which contains iron oxide."
+],
+[
+132.18,
+"In a blast furnace, the ore reacts with carbon monoxide to produce iron,"
+],
+[
+136.56,
+"but this releases a lot of carbon dioxide, a greenhouse gas."
+],
+[
+140.89,
+"Another method is electrolysis:"
+],
+[
+143.5,
+"passing an electric current through molten iron oxide splits it into iron and oxygen."
+],
+[
+148.64,
+"It's more expensive and uses lots of electricity,"
+],
+[
+151.6,
+"so it's only more sustainable when that electricity comes from renewable sources."
+],
+[
+156.5,
+"Very reactive metals like sodium and potassium can only be extracted by electrolysis."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+11.99,
+"Chemical Reactivity"
+],
+[
+30.84,
+"Predict, watch, explain: heating three metals"
+],
+[
+77.13,
+"How do metals react with oxygen?"
+],
+[
+125.43,
+"Extracting iron"
+]
+],
+"stops": [
+{
+"id": "s8u06n11p",
+"t": 43.28,
+"review": [
+30.84,
+43.63
+]
+},
+{
+"id": "s8u06n11e",
+"t": 76.78,
+"review": [
+30.84,
+77.13
+]
+},
+{
+"id": "s8u06s1v01",
+"t": 93.05,
+"review": [
+77.13,
+93.4
+]
+},
+{
+"id": "s8u06s1v02",
+"t": 125.08,
+"review": [
+77.13,
+125.43
+]
+},
+{
+"id": "s8u06s1v03",
+"t": 161.79,
+"review": [
+125.43,
+162.14
+]
+}
+],
+"dur": 162.067,
+"src": "media/s8/u6_s1.1d2b424f.mp4",
+"poster": "media/s8/u6_s1_poster.1d2b424f.jpg"
+},
+"6.2": {
+"captions": [
+[
+0.0,
+"Many metals react with water to form a metal hydroxide and hydrogen gas."
+],
+[
+4.39,
+"Potassium reacts even more violently than sodium:"
+],
+[
+7.37,
+"it whizzes around on the water's surface,"
+],
+[
+9.87,
+"and the heat can make the hydrogen burn."
+],
+[
+12.96,
+"Calcium is less reactive."
+],
+[
+15.22,
+"It reacts steadily with water,"
+],
+[
+17.06,
+"forming hydrogen bubbles and a milky white precipitate of calcium hydroxide."
+],
+[
+21.71,
+"Test the solutions with Universal Indicator, and you'll find they're alkaline."
+],
+[
+27.16,
+"Magnesium reacts only slowly with cold water."
+],
+[
+30.66,
+"Heated, it reacts with hot water or steam,"
+],
+[
+33.25,
+"but forms magnesium oxide instead of the hydroxide, an unexpected result,"
+],
+[
+37.75,
+"called an anomaly."
+],
+[
+39.51,
+"Zinc and iron only react with hot water, and copper,"
+],
+[
+43.49,
+"silver and gold don't react with water at all."
+],
+[
+47.01,
+"A small piece of calcium is dropped into cold water,"
+],
+[
+50.82,
+"and the hydrogen it gives off is collected and measured every minute."
+],
+[
+55.74,
+"The volume rises quickly at first,"
+],
+[
+58.59,
+"then levels off at about 80 cubic centimetres when the calcium is used up."
+],
+[
+63.85,
+"When the same mass of magnesium ribbon is used instead,"
+],
+[
+67.97,
+"only a few bubbles form: less than 1 cubic centimetre in five minutes."
+],
+[
+72.95,
+"Pause and decide: which metal is more reactive with water,"
+],
+[
+77.29,
+"and what evidence from the data supports your answer?"
+]
+],
+"chapters": [
+[
+0.0,
+"How do metals react with water?"
+],
+[
+47.01,
+"Data: hydrogen made by metals in cold water"
+]
+],
+"stops": [
+{
+"id": "s8u06s2v01",
+"t": 12.61,
+"review": [
+0.0,
+12.96
+]
+},
+{
+"id": "s8u06s2v02",
+"t": 39.16,
+"review": [
+0.0,
+39.51
+]
+},
+{
+"id": "s8u06n12",
+"t": 80.71,
+"review": [
+47.01,
+81.06
+]
+}
+],
+"dur": 81.1,
+"src": "media/s8/u6_s2.37cec740.mp4",
+"poster": "media/s8/u6_s2_poster.37cec740.jpg"
+},
+"6.3": {
+"captions": [
+[
+0.0,
+"Metals react with dilute acids to make a metal salt and hydrogen gas."
+],
+[
+4.2,
+"The salt depends on the acid: hydrochloric acid makes chlorides,"
+],
+[
+8.09,
+"sulfuric acid makes sulfates, and nitric acid makes nitrates."
+],
+[
+11.8,
+"Sodium and potassium react far too violently with acids to try in the lab!"
+],
+[
+16.97,
+"Magnesium fizzes vigorously in dilute hydrochloric acid, making magnesium chloride and hydrogen."
+],
+[
+23.57,
+"Zinc reacts more slowly, and copper doesn't react at all."
+],
+[
+27.05,
+"Even fizzy drinks are acidic, so aluminium cans need a plastic lining inside."
+],
+[
+32.41,
+"Gold and silver don't react with dilute acids, water or oxygen."
+],
+[
+37.01,
+"A substance that doesn't react with other substances is called inert."
+],
+[
+41.23,
+"Sometimes reactions make a mixture of products, and only one is wanted."
+],
+[
+45.58,
+"The rest are impurities, which must be removed,"
+],
+[
+48.46,
+"for example from medicines and food."
+],
+[
+51.31,
+"The same mass of four metal powders is added, in turn,"
+],
+[
+55.28,
+"to the same volume of dilute hydrochloric acid."
+],
+[
+58.2,
+"The temperature rise is measured."
+],
+[
+60.91,
+"Magnesium makes the acid 18 degrees warmer, zinc 6,"
+],
+[
+64.84,
+"iron 3 and copper does not change the temperature at all."
+],
+[
+69.06,
+"Pause and decide: why can the temperature rise be"
+],
+[
+72.88,
+"used to put the metals in order of reactivity?"
+]
+],
+"chapters": [
+[
+0.0,
+"How do metals react with dilute acids?"
+],
+[
+51.31,
+"Data: temperature rise when metals react with acid"
+]
+],
+"stops": [
+{
+"id": "s8u06s3v01",
+"t": 16.62,
+"review": [
+0.0,
+16.97
+]
+},
+{
+"id": "s8u06s3v02",
+"t": 32.06,
+"review": [
+0.0,
+32.41
+]
+},
+{
+"id": "s8u06s3v03",
+"t": 50.96,
+"review": [
+0.0,
+51.31
+]
+},
+{
+"id": "s8u06n13",
+"t": 75.9,
+"review": [
+51.31,
+76.25
+]
+}
+],
+"dur": 76.233,
+"src": "media/s8/u6_s3.88f9995c.mp4",
+"poster": "media/s8/u6_s3_poster.88f9995c.jpg"
+},
+"6.4": {
+"captions": [
+[
+0.0,
+"Do you see a pattern?"
+],
+[
+1.26,
+"A metal that reacts strongly with oxygen also reacts strongly with water and dilute acids."
+],
+[
+6.67,
+"So we can list metals from most reactive to least reactive: potassium, sodium,"
+],
+[
+11.35,
+"calcium, magnesium, zinc..."
+],
+[
+13.63,
+"...then iron, copper, silver and gold."
+],
+[
+16.71,
+"This list is the reactivity series,"
+],
+[
+18.86,
+"and it helps us predict how a metal will react."
+],
+[
+22.41,
+"We use it every day."
+],
+[
+24.36,
+"Steel is galvanised with a coating of zinc,"
+],
+[
+26.99,
+"which forms a protective oxide layer that keeps air and water away from the iron."
+],
+[
+32.59,
+"Catalytic converters use platinum, palladium and rhodium as catalysts:"
+],
+[
+37.54,
+"substances that speed up a reaction without being changed themselves."
+],
+[
+41.69,
+"They turn harmful exhaust gases into less harmful ones,"
+],
+[
+44.99,
+"but these metals are rare, costly and mined in only a few places."
+],
+[
+49.55,
+"A strip of zinc is put into blue copper sulfate solution."
+],
+[
+53.61,
+"A strip of copper is put into colourless zinc sulfate solution."
+],
+[
+57.44,
+"Predict: in which beaker will a reaction happen?"
+],
+[
+60.36,
+"Pause and decide."
+],
+[
+62.06,
+"Watch. Both beakers are left for twenty minutes."
+],
+[
+66.51,
+"In the first beaker,"
+],
+[
+68.48,
+"the blue colour fades and brown copper coats the zinc."
+],
+[
+71.82,
+"Nothing happens in the second beaker."
+],
+[
+74.75,
+"Explain what you saw."
+],
+[
+76.76,
+"Zinc is more reactive than copper,"
+],
+[
+78.82,
+"so it pushes copper out of its compound:"
+],
+[
+81.25,
+"zinc plus copper sulfate gives zinc sulfate plus copper."
+],
+[
+84.64,
+"This is a displacement reaction."
+],
+[
+86.58,
+"Copper is less reactive than zinc, so it cannot displace zinc."
+],
+[
+90.33,
+"Pause and explain it in your own words."
+],
+[
+93.34,
+"Now it is your turn to shine!"
+],
+[
+95.73,
+"Pause the video after each question and try to answer it first."
+],
+[
+100.3,
+"Question 1: Write the word equation for magnesium burning in oxygen."
+],
+[
+105.26,
+"Pause the video now."
+],
+[
+107.16,
+"Answer: magnesium + oxygen → magnesium oxide."
+],
+[
+112.02,
+"Question 2: Why are sodium and potassium stored in oil?"
+],
+[
+116.2,
+"Pause the video now."
+],
+[
+118.1,
+"Answer: They react very quickly with oxygen in the air."
+],
+[
+122.97,
+"Question 3: What salt forms when zinc reacts with dilute hydrochloric acid?"
+],
+[
+128.33,
+"Pause the video now."
+],
+[
+130.23,
+"Answer: Zinc chloride (plus hydrogen gas)."
+],
+[
+134.34,
+"Question 4: Which is more reactive: copper or magnesium?"
+],
+[
+138.59,
+"Pause the video now."
+],
+[
+140.5,
+"Answer: Magnesium – it is higher in the reactivity series."
+]
+],
+"chapters": [
+[
+0.0,
+"The reactivity series"
+],
+[
+49.55,
+"Predict, watch, explain: displacement"
+],
+[
+93.34,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s8u06s4v01",
+"t": 22.06,
+"review": [
+0.0,
+22.41
+]
+},
+{
+"id": "s8u06s4v02",
+"t": 32.24,
+"review": [
+0.0,
+32.59
+]
+},
+{
+"id": "s8u06s4v03",
+"t": 49.2,
+"review": [
+0.0,
+49.55
+]
+},
+{
+"id": "s8u06n14p",
+"t": 61.71,
+"review": [
+49.55,
+62.06
+]
+},
+{
+"id": "s8u06n14e",
+"t": 92.99,
+"review": [
+49.55,
+93.34
+]
+}
+],
+"dur": 145.333,
+"src": "media/s8/u6_s4.9c0b5d2b.mp4",
+"poster": "media/s8/u6_s4_poster.9c0b5d2b.jpg"
+}
+}

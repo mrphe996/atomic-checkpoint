@@ -1,0 +1,571 @@
+{
+"9.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.54,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.73,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.88,
+"Let's begin!"
+],
+[
+12.3,
+"Welcome to Unit 9: Density."
+],
+[
+15.47,
+"An iceberg is a floating mass of freshwater ice, sometimes 100 metres long,"
+],
+[
+20.94,
+"and most of it hides below the surface."
+],
+[
+23.4,
+"As the planet warms, more icebergs break off the polar ice shelves."
+],
+[
+27.64,
+"Why do they float?"
+],
+[
+29.45,
+"To find density, we need volume and mass."
+],
+[
+32.68,
+"For a regular solid like a cuboid,"
+],
+[
+34.86,
+"volume equals length times width times height."
+],
+[
+38.47,
+"For an irregular object, use Archimedes' displacement method."
+],
+[
+43.06,
+"Read the water level, add the object, and read it again."
+],
+[
+46.59,
+"If the water rises from 50 to 60 cubic centimetres,"
+],
+[
+49.81,
+"the key's volume is 10 cubic centimetres."
+],
+[
+53.06,
+"Measure mass with a balance."
+],
+[
+55.59,
+"For a liquid, weigh the empty container, then the container with liquid,"
+],
+[
+60.23,
+"and subtract."
+],
+[
+61.73,
+"A box of stones is much heavier than the same box of feathers."
+],
+[
+66.26,
+"Stone has a higher density: more mass is packed into the same volume."
+],
+[
+71.31,
+"Density is mass per unit volume: density equals mass divided by volume,"
+],
+[
+76.5,
+"measured in grams per cubic centimetre or kilograms per cubic metre."
+],
+[
+80.76,
+"A metal cube of 1 cubic centimetre with a mass of"
+],
+[
+83.84,
+"11.3 grams has a density of 11.3 grams per cubic centimetre."
+],
+[
+88.27,
+"Measurements must be accurate, close to the true value, and precise,"
+],
+[
+93.27,
+"consistent when repeated. Industries use density to identify substances and check that products are pure."
+],
+[
+100.52,
+"A class measures the volume and mass of four aluminium blocks of different sizes."
+],
+[
+106.98,
+"The block with a volume of 10 cubic centimetres has a mass of 27 grams."
+],
+[
+112.22,
+"The 20 cubic centimetre block has a mass of 54 grams."
+],
+[
+116.25,
+"The points lie on a straight line through the origin:"
+],
+[
+120.41,
+"doubling the volume doubles the mass."
+],
+[
+123.47,
+"Pause and decide: what is the density of aluminium,"
+],
+[
+127.46,
+"and would a 50 cubic centimetre block have the same density?"
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.3,
+"Density"
+],
+[
+29.45,
+"Measuring volume and mass"
+],
+[
+61.73,
+"What is density?"
+],
+[
+100.52,
+"Class data: mass and volume of aluminium blocks"
+]
+],
+"stops": [
+{
+"id": "s9u09s1v01",
+"t": 29.1,
+"review": [
+12.3,
+29.45
+]
+},
+{
+"id": "s9u09s1v02",
+"t": 52.71,
+"review": [
+29.45,
+53.06
+]
+},
+{
+"id": "s9u09s1v03",
+"t": 70.96,
+"review": [
+61.73,
+71.31
+]
+},
+{
+"id": "s9u09s1v04",
+"t": 87.92,
+"review": [
+61.73,
+88.27
+]
+},
+{
+"id": "s9u09n11",
+"t": 131.41,
+"review": [
+100.52,
+131.76
+]
+}
+],
+"dur": 131.767,
+"src": "media/s9/u9_s1.d7ce25e2.mp4",
+"poster": "media/s9/u9_s1_poster.d7ce25e2.jpg"
+},
+"9.2": {
+"captions": [
+[
+0.0,
+"Solids are usually the densest, because their particles are packed tightly."
+],
+[
+4.7,
+"Liquid particles can move, so liquids are usually less dense."
+],
+[
+8.52,
+"Gas particles are far apart, so gases have the lowest density."
+],
+[
+13.08,
+"Structure matters too. Pumice and granite rocks can be the same size,"
+],
+[
+18.19,
+"but pumice is full of air holes,"
+],
+[
+20.22,
+"making it ten times less dense than granite."
+],
+[
+23.02,
+"Metals are generally denser than non-metals."
+],
+[
+26.49,
+"Temperature changes density. Heated air expands and becomes less dense,"
+],
+[
+31.73,
+"so hot air rises and cold air sinks."
+],
+[
+34.01,
+"That's how hot-air balloons fly and how sea breezes form."
+],
+[
+38.28,
+"Here are typical densities of six materials at room temperature,"
+],
+[
+43.01,
+"in grams per cubic centimetre."
+],
+[
+45.6,
+"Cork is only 0.24, ice 0.92 and water exactly 1."
+],
+[
+49.45,
+"Aluminium is 2.7, iron 7.9, and lead 11.3."
+],
+[
+52.82,
+"Pause and decide: which of these materials would float in water,"
+],
+[
+57.71,
+"and which would sink?"
+]
+],
+"chapters": [
+[
+0.0,
+"Solids, liquids and gases"
+],
+[
+38.28,
+"Data: densities of some common materials"
+]
+],
+"stops": [
+{
+"id": "s9u09s2v01",
+"t": 12.73,
+"review": [
+0.0,
+13.08
+]
+},
+{
+"id": "s9u09s2v02",
+"t": 26.14,
+"review": [
+0.0,
+26.49
+]
+},
+{
+"id": "s9u09s2v03",
+"t": 37.93,
+"review": [
+0.0,
+38.28
+]
+},
+{
+"id": "s9u09n21",
+"t": 59.2,
+"review": [
+38.28,
+59.55
+]
+}
+],
+"dur": 59.533,
+"src": "media/s9/u9_s2.ca9e1abd.mp4",
+"poster": "media/s9/u9_s2_poster.ca9e1abd.jpg"
+},
+"9.3": {
+"captions": [
+[
+0.0,
+"Two fresh eggs are gently lowered into two beakers."
+],
+[
+3.12,
+"One holds tap water;"
+],
+[
+4.35,
+"the other holds water with lots of salt dissolved in it."
+],
+[
+7.78,
+"Predict: what will each egg do?"
+],
+[
+9.68,
+"Pause and decide."
+],
+[
+11.38,
+"Watch. In tap water, the egg sinks straight to the bottom."
+],
+[
+16.45,
+"In the very salty water, the egg rises and floats near the surface."
+],
+[
+22.06,
+"Explain what you saw."
+],
+[
+24.07,
+"A fresh egg has a density of a"
+],
+[
+25.9,
+"little more than 1 gram per cubic centimetre,"
+],
+[
+28.65,
+"so it is denser than tap water and sinks."
+],
+[
+31.15,
+"Dissolving lots of salt makes the water denser than the egg,"
+],
+[
+34.81,
+"so the egg floats."
+],
+[
+35.91,
+"An object floats if it is less dense than the liquid around it."
+],
+[
+39.75,
+"Pause and explain it in your own words."
+],
+[
+42.78,
+"A stone sinks in a pond, but wood floats."
+],
+[
+45.87,
+"An upward force from the water acts against the object's weight."
+],
+[
+49.77,
+"The rule is simple: if an object is less dense than the fluid,"
+],
+[
+53.54,
+"it floats; if it's denser, it sinks."
+],
+[
+55.73,
+"Water has a density of 1 gram per cubic centimetre."
+],
+[
+59.49,
+"Pour honey, water and oil into a jar, and they layer by density:"
+],
+[
+64.13,
+"the densest at the bottom."
+],
+[
+65.71,
+"A glass marble sinks to the bottom, ice floats on water,"
+],
+[
+69.13,
+"and cork floats on top of everything."
+],
+[
+71.39,
+"Helium balloons rise in air for the same reason."
+],
+[
+74.98,
+"Why does ice float?"
+],
+[
+76.87,
+"When water freezes, its molecules form an open crystal structure that takes up more space,"
+],
+[
+82.36,
+"so ice is less dense than water."
+],
+[
+84.31,
+"That's why icebergs float!"
+],
+[
+85.9,
+"And it's easier to float in the sea, because salty water is denser."
+],
+[
+90.64,
+"Now it is your turn to shine!"
+],
+[
+93.05,
+"Pause the video after each question and try to answer it first."
+],
+[
+97.63,
+"Question 1: What is the formula for density?"
+],
+[
+101.17,
+"Pause the video now."
+],
+[
+103.11,
+"Answer: Density equals mass divided by volume."
+],
+[
+107.47,
+"Question 2: An object has a mass of 180"
+],
+[
+110.63,
+"grams and a volume of 240 cubic centimetres."
+],
+[
+113.37,
+"Will it float in water?"
+],
+[
+114.81,
+"Pause the video now."
+],
+[
+116.72,
+"Answer: Yes: its density is 0.75 grams per cubic centimetre, less than water."
+],
+[
+122.9,
+"Question 3: Why does hot air rise?"
+],
+[
+125.84,
+"Pause the video now."
+],
+[
+127.79,
+"Answer: It expands and becomes less dense than cold air."
+],
+[
+132.75,
+"Question 4: Why does ice float on water?"
+],
+[
+136.05,
+"Pause the video now."
+],
+[
+137.99,
+"Answer: Ice is less dense than water."
+]
+],
+"chapters": [
+[
+0.0,
+"Predict, watch, explain: an egg in fresh and salty water"
+],
+[
+42.78,
+"Why do objects float or sink?"
+],
+[
+90.64,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s9u09n31p",
+"t": 11.03,
+"review": [
+0.0,
+11.38
+]
+},
+{
+"id": "s9u09n31e",
+"t": 42.43,
+"review": [
+0.0,
+42.78
+]
+},
+{
+"id": "s9u09s3v01",
+"t": 59.14,
+"review": [
+42.78,
+59.49
+]
+},
+{
+"id": "s9u09s3v02",
+"t": 74.63,
+"review": [
+42.78,
+74.98
+]
+},
+{
+"id": "s9u09s3v03",
+"t": 90.29,
+"review": [
+42.78,
+90.64
+]
+}
+],
+"dur": 141.667,
+"src": "media/s9/u9_s3.a14e3b42.mp4",
+"poster": "media/s9/u9_s3_poster.a14e3b42.jpg"
+}
+}

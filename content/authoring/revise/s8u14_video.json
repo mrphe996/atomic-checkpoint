@@ -1,0 +1,607 @@
+{
+"14.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.47,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.53,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.53,
+"Let's begin!"
+],
+[
+11.92,
+"Welcome to Unit 14: Planetary Systems."
+],
+[
+15.66,
+"The Universe is everything: all of space, time, matter and energy."
+],
+[
+20.41,
+"Looking at the night sky, you see cosmic history,"
+],
+[
+23.39,
+"because starlight takes years to reach us."
+],
+[
+25.94,
+"But light pollution is hiding the stars."
+],
+[
+29.04,
+"On a truly dark night, you can see the Milky Way,"
+],
+[
+32.61,
+"our home galaxy. It's a spiral galaxy, like a giant spinning pinwheel,"
+],
+[
+36.86,
+"containing hundreds of billions of stars."
+],
+[
+39.35,
+"Our Sun is on one of its spiral arms,"
+],
+[
+41.59,
+"about 27 thousand light years from the centre."
+],
+[
+45.05,
+"The Milky Way is one of trillions of galaxies."
+],
+[
+48.56,
+"It belongs to a Local Group of about 54 galaxies held together by gravity."
+],
+[
+53.04,
+"Our closest major neighbour, Andromeda, is heading our way,"
+],
+[
+56.61,
+"but it will take about four billion years to arrive!"
+],
+[
+60.42,
+"Galaxies come in different shapes."
+],
+[
+63.09,
+"Spiral galaxies like ours have arms."
+],
+[
+65.28,
+"Elliptical galaxies are oval, like rugby balls."
+],
+[
+68.14,
+"Lenticular galaxies are lens-shaped with a bulge in the middle."
+],
+[
+71.98,
+"Irregular galaxies have no defined shape."
+],
+[
+75.14,
+"A galaxy contains stars, planetary systems, gas and clouds of stellar dust:"
+],
+[
+80.4,
+"tiny specks of ice, carbon, silicon, oxygen and metals."
+],
+[
+83.72,
+"Unlike house dust, it isn't skin and hair!"
+],
+[
+86.26,
+"It blocks our view, but it's the building block of new planetary systems."
+],
+[
+91.33,
+"The Universe is also expanding."
+],
+[
+93.97,
+"Imagine galaxies as dots on a balloon being blown up:"
+],
+[
+97.24,
+"they all move further and further apart."
+],
+[
+100.36,
+"Six dots are drawn on a balloon to stand for galaxies."
+],
+[
+104.27,
+"Then the balloon is blown up."
+],
+[
+106.05,
+"Predict: what will happen to the distances between the dots?"
+],
+[
+109.73,
+"Pause and decide."
+],
+[
+111.45,
+"Watch. As the balloon is blown up, the dots start to move apart."
+],
+[
+116.86,
+"When the balloon is fully blown up,"
+],
+[
+119.78,
+"every dot is further from every other dot,"
+],
+[
+122.39,
+"and no dot is at the centre."
+],
+[
+124.8,
+"Explain what you saw."
+],
+[
+126.8,
+"The dots move apart because the rubber between them stretches."
+],
+[
+130.56,
+"In the same way, space itself is stretching,"
+],
+[
+133.23,
+"so distant galaxies are moving away from us and from each other."
+],
+[
+137.11,
+"This is evidence that the Universe is expanding."
+],
+[
+140.02,
+"Pause and explain it in your own words."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+11.92,
+"Planetary Systems"
+],
+[
+29.04,
+"The Milky Way"
+],
+[
+60.42,
+"Shapes of galaxies and what's inside"
+],
+[
+100.36,
+"Predict, watch, explain: a balloon model of the Universe"
+]
+],
+"stops": [
+{
+"id": "s8u14s1v01",
+"t": 28.69,
+"review": [
+11.92,
+29.04
+]
+},
+{
+"id": "s8u14s1v02",
+"t": 44.7,
+"review": [
+29.04,
+45.05
+]
+},
+{
+"id": "s8u14s1v03",
+"t": 74.79,
+"review": [
+60.42,
+75.14
+]
+},
+{
+"id": "s8u14n11p",
+"t": 111.1,
+"review": [
+100.36,
+111.45
+]
+},
+{
+"id": "s8u14n11e",
+"t": 142.51,
+"review": [
+100.36,
+142.86
+]
+}
+],
+"dur": 142.8,
+"src": "media/s8/u14_s1.64503b15.mp4",
+"poster": "media/s8/u14_s1_poster.64503b15.jpg"
+},
+"14.2": {
+"captions": [
+[
+0.0,
+"A planetary system is one star and all the"
+],
+[
+2.55,
+"objects held in orbit around it by gravity:"
+],
+[
+5.17,
+"planets, moons, comets, asteroids and tiny bits of ice and rock."
+],
+[
+9.06,
+"Ours is the Solar System, with the Sun at its centre."
+],
+[
+12.94,
+"Eight planets orbit the Sun in elliptical paths."
+],
+[
+16.61,
+"Mercury, Venus, Earth and Mars are rocky planets; Jupiter, Saturn,"
+],
+[
+20.66,
+"Uranus and Neptune are gas planets."
+],
+[
+22.81,
+"All except Mercury and Venus have moons."
+],
+[
+25.91,
+"Planets and moons are non-luminous: we see them because they reflect sunlight."
+],
+[
+31.37,
+"That's why stars twinkle but planets shine with a steady light."
+],
+[
+35.2,
+"Astronomers have found over four thousand other stars with planets, called exoplanets."
+],
+[
+41.07,
+"NASA's planetary fact sheet gives the time each"
+],
+[
+44.6,
+"planet takes to travel once around the Sun,"
+],
+[
+47.28,
+"measured in Earth years."
+],
+[
+49.44,
+"Mercury takes less than a quarter of a year, Earth takes one year,"
+],
+[
+54.25,
+"and Mars almost two."
+],
+[
+55.49,
+"But Jupiter takes about 12 years and Saturn nearly 30."
+],
+[
+59.46,
+"Pause and decide: what is the pattern between a planet's distance from"
+],
+[
+64.51,
+"the Sun and the time it takes to complete one orbit?"
+],
+[
+68.38,
+"About 4.6 billion years ago, the Solar System formed from a nebula:"
+],
+[
+73.07,
+"a giant cloud of gas and stellar dust."
+],
+[
+75.39,
+"Gravity pulled it inwards and it began to spin,"
+],
+[
+78.26,
+"forming a hot protostar at the centre, which became the Sun."
+],
+[
+82.59,
+"Around it, dust and rock stuck together into protoplanets, which grew into planets."
+],
+[
+88.37,
+"Rocks left over became asteroids."
+],
+[
+90.38,
+"Most orbit between Mars and Jupiter, in the asteroid belt,"
+],
+[
+93.91,
+"where Jupiter's strong gravity stopped them forming a planet."
+],
+[
+98.3,
+"Dwarf planets are bigger than asteroids but smaller than planets,"
+],
+[
+103.0,
+"and gravity has rounded their shape."
+],
+[
+105.2,
+"Pluto was reclassified as a dwarf planet in 2006."
+],
+[
+108.2,
+"Beyond Neptune lies the Kuiper Belt, full of icy objects."
+],
+[
+112.35,
+"Comets are made of ice, dust and rock and follow very long,"
+],
+[
+116.69,
+"thin orbits. Near the Sun, the ice turns to gas,"
+],
+[
+119.62,
+"releasing dust that the Sun's radiation pushes into a tail."
+],
+[
+123.22,
+"So a comet's tail always points away from the Sun."
+]
+],
+"chapters": [
+[
+0.0,
+"Our planetary system"
+],
+[
+41.07,
+"Real data: how long does each planet take to orbit the Sun?"
+],
+[
+68.38,
+"How the Solar System formed"
+]
+],
+"stops": [
+{
+"id": "s8u14s2v01",
+"t": 12.59,
+"review": [
+0.0,
+12.94
+]
+},
+{
+"id": "s8u14n21",
+"t": 68.03,
+"review": [
+41.07,
+68.38
+]
+},
+{
+"id": "s8u14s2v02",
+"t": 82.24,
+"review": [
+68.38,
+82.59
+]
+},
+{
+"id": "s8u14s2v03",
+"t": 112.0,
+"review": [
+68.38,
+112.35
+]
+},
+{
+"id": "s8u14s2v04",
+"t": 126.39,
+"review": [
+68.38,
+126.74
+]
+}
+],
+"dur": 126.8,
+"src": "media/s8/u14_s2.73e3a389.mp4",
+"poster": "media/s8/u14_s2_poster.73e3a389.jpg"
+},
+"14.3": {
+"captions": [
+[
+0.0,
+"Earth has a solid inner core and a"
+],
+[
+2.04,
+"liquid outer core of molten iron and nickel."
+],
+[
+4.69,
+"This molten metal is always moving,"
+],
+[
+6.79,
+"creating electric currents that produce a magnetic field."
+],
+[
+10.22,
+"So Earth's core acts like a giant magnet,"
+],
+[
+12.69,
+"with a field reaching far into space."
+],
+[
+15.58,
+"The magnetic North pole isn't at the geographic pole,"
+],
+[
+19.5,
+"and it wanders by tens of kilometres a year."
+],
+[
+22.16,
+"The field deflects the solar wind,"
+],
+[
+24.21,
+"charged particles from the Sun that could strip away our atmosphere and harm life."
+],
+[
+29.8,
+"The solar wind also creates beautiful auroras, the northern and southern lights,"
+],
+[
+35.33,
+"when its particles collide with atoms in the atmosphere and give out light."
+],
+[
+39.84,
+"And spacecraft can use solar sails, pushed by the solar wind,"
+],
+[
+43.5,
+"to travel through space."
+],
+[
+45.6,
+"Now it is your turn to shine!"
+],
+[
+47.99,
+"Pause the video after each question and try to answer it first."
+],
+[
+52.54,
+"Question 1: What is the Milky Way?"
+],
+[
+55.45,
+"Pause the video now."
+],
+[
+57.4,
+"Answer: A spiral galaxy of billions of stars, including the Sun."
+],
+[
+62.79,
+"Question 2: Name the four shapes of galaxies."
+],
+[
+66.36,
+"Pause the video now."
+],
+[
+68.27,
+"Answer: Spiral, elliptical, lenticular and irregular."
+],
+[
+73.02,
+"Question 3: Why does a comet's tail point away from the Sun?"
+],
+[
+77.48,
+"Pause the video now."
+],
+[
+79.39,
+"Answer: The Sun's radiation pushes the dust away."
+],
+[
+83.89,
+"Question 4: What causes Earth's magnetic field?"
+],
+[
+87.58,
+"Pause the video now."
+],
+[
+89.5,
+"Answer: Moving molten iron and nickel in the outer core."
+]
+],
+"chapters": [
+[
+0.0,
+"Earth's magnetic shield"
+],
+[
+45.6,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s8u14s3v01",
+"t": 15.23,
+"review": [
+0.0,
+15.58
+]
+},
+{
+"id": "s8u14s3v02",
+"t": 29.45,
+"review": [
+0.0,
+29.8
+]
+},
+{
+"id": "s8u14s3v03",
+"t": 45.25,
+"review": [
+0.0,
+45.6
+]
+}
+],
+"dur": 94.233,
+"src": "media/s8/u14_s3.6b3c66f8.mp4",
+"poster": "media/s8/u14_s3_poster.6b3c66f8.jpg"
+}
+}

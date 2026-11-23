@@ -1,0 +1,961 @@
+{
+"10.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.5,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.57,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.59,
+"Let's begin!"
+],
+[
+11.99,
+"Welcome to Unit 10: Light."
+],
+[
+15.04,
+"We see things because of the light they give out or reflect."
+],
+[
+19.44,
+"Why do soap bubbles shimmer with colours?"
+],
+[
+21.95,
+"Modern lamps use reflection and refraction to waste less energy."
+],
+[
+25.86,
+"Let's explore how light behaves."
+],
+[
+28.47,
+"Light is a small part of a huge family of waves,"
+],
+[
+31.98,
+"the electromagnetic spectrum, which also includes radio waves, microwaves and X-rays."
+],
+[
+37.13,
+"The colour of light depends on its frequency: red is lowest,"
+],
+[
+40.76,
+"violet is highest. Mix all the colours together, and you get white light."
+],
+[
+45.84,
+"Objects that give out light are luminous."
+],
+[
+49.07,
+"The Sun is our main light source, powered by nuclear reactions."
+],
+[
+52.9,
+"Lamps and LEDs turn electricity into light, fireflies glow by bioluminescence, and lightning,"
+],
+[
+58.56,
+"flames and lasers are luminous too."
+],
+[
+61.34,
+"Most objects are non-luminous: they don't make their own light."
+],
+[
+65.92,
+"We see them only when they reflect light from a source into our eyes."
+],
+[
+70.14,
+"That's why you can't read in the dark!"
+],
+[
+73.13,
+"Light comes in beams, made of many narrow rays."
+],
+[
+76.59,
+"In a parallel beam, like a laser, the rays stay side by side."
+],
+[
+80.3,
+"In a diverging beam, like a torch, they spread out."
+],
+[
+83.4,
+"In a converging beam, like light through a magnifying glass,"
+],
+[
+87.05,
+"they meet at a point called the focus,"
+],
+[
+89.36,
+"which can be hot enough to start a fire!"
+],
+[
+92.45,
+"Light travels in straight lines."
+],
+[
+95.14,
+"Look at a candle through three cards with holes in a row,"
+],
+[
+98.62,
+"and you can see it."
+],
+[
+99.78,
+"Move one card out of line, and the candle disappears."
+],
+[
+103.01,
+"Shadows form for the same reason: a solid object blocks light's straight path."
+],
+[
+108.43,
+"Light is incredibly fast: almost 300 million metres per second in a vacuum."
+],
+[
+113.76,
+"Light from the Moon reaches us in 1.28 seconds,"
+],
+[
+116.64,
+"and from the Sun in about 8 minutes."
+],
+[
+119.5,
+"That's why we see lightning before we hear thunder."
+],
+[
+123.38,
+"Distances to stars are measured in light years:"
+],
+[
+126.27,
+"a light year is about 9.5 trillion kilometres."
+],
+[
+129.77,
+"Materials affect light differently."
+],
+[
+132.5,
+"Transparent materials, like clear glass, let almost all light through,"
+],
+[
+136.76,
+"so we can see clearly."
+],
+[
+138.1,
+"Translucent materials, like frosted glass and sunglasses, let some light through,"
+],
+[
+143.02,
+"but we can't see clearly."
+],
+[
+144.54,
+"Opaque materials, like wood and metal, let no light through."
+],
+[
+148.85,
+"When light hits a material, it can be absorbed, turning into heat; reflected,"
+],
+[
+154.32,
+"bouncing off; or transmitted, passing through."
+],
+[
+157.81,
+"Dark colours absorb light well, which is why solar panels are dark."
+],
+[
+162.65,
+"And unlike sound, light can travel through the vacuum of space."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+11.99,
+"Light"
+],
+[
+28.47,
+"Light and its sources"
+],
+[
+73.13,
+"Light travels in straight lines"
+],
+[
+129.77,
+"Transparent, translucent and opaque"
+]
+],
+"stops": [
+{
+"id": "s8u10s1v01",
+"t": 45.49,
+"review": [
+28.47,
+45.84
+]
+},
+{
+"id": "s8u10s1v02",
+"t": 72.78,
+"review": [
+28.47,
+73.13
+]
+},
+{
+"id": "s8u10s1v03",
+"t": 92.1,
+"review": [
+73.13,
+92.45
+]
+},
+{
+"id": "s8u10s1v04",
+"t": 148.5,
+"review": [
+129.77,
+148.85
+]
+}
+],
+"dur": 167.033,
+"src": "media/s8/u10_s1.daf7163f.mp4",
+"poster": "media/s8/u10_s1_poster.daf7163f.jpg"
+},
+"10.2": {
+"captions": [
+[
+0.0,
+"When light bounces off a surface, it's reflected,"
+],
+[
+2.98,
+"a bit like a ball bouncing off a wall."
+],
+[
+5.3,
+"The ray hitting the mirror is the incident ray,"
+],
+[
+8.16,
+"and the ray bouncing off is the reflected ray."
+],
+[
+10.96,
+"The normal is an imaginary line at right angles to the mirror."
+],
+[
+15.41,
+"The law of reflection says the angle of incidence equals the angle of reflection,"
+],
+[
+21.1,
+"both measured from the normal."
+],
+[
+22.93,
+"The incident ray, the reflected ray and the normal all lie in the same plane."
+],
+[
+28.31,
+"So if a ray hits a mirror at 35 degrees to the normal,"
+],
+[
+32.44,
+"it's reflected at 35 degrees."
+],
+[
+34.92,
+"Smooth, shiny surfaces like mirrors give specular reflection:"
+],
+[
+39.4,
+"all rays bounce the same way, making a sharp image."
+],
+[
+42.53,
+"Rough surfaces like paper scatter the rays in different directions:"
+],
+[
+46.63,
+"this is diffuse reflection."
+],
+[
+48.95,
+"When you look in a flat, or plane, mirror,"
+],
+[
+52.13,
+"light from you reflects off the mirror into your eyes."
+],
+[
+55.44,
+"Your brain traces the rays back in straight lines,"
+],
+[
+58.51,
+"so the image seems to be behind the mirror,"
+],
+[
+61.15,
+"even though no light comes from there."
+],
+[
+64.14,
+"So the image is virtual: it can't be caught on a screen."
+],
+[
+68.31,
+"It's upright, the same size as the object,"
+],
+[
+70.88,
+"and the same distance behind the mirror as the object is in front."
+],
+[
+74.92,
+"And it's laterally inverted: raise your right hand,"
+],
+[
+78.04,
+"and your image raises its left!"
+],
+[
+80.6,
+"A student shines a ray box at a plane mirror"
+],
+[
+83.94,
+"and measures both angles from the normal with a protractor."
+],
+[
+88.28,
+"At 10 degrees the reflected ray is also at 10 degrees."
+],
+[
+92.35,
+"At 20 degrees she measures 21, and at 30 degrees she measures 29."
+],
+[
+97.03,
+"The points lie very close to a straight line through the origin,"
+],
+[
+101.76,
+"where the two angles are equal."
+],
+[
+104.36,
+"Pause and decide: do her results support the law of reflection,"
+],
+[
+109.01,
+"and why are some readings one degree out?"
+]
+],
+"chapters": [
+[
+0.0,
+"The law of reflection"
+],
+[
+48.95,
+"Images in a plane mirror"
+],
+[
+80.6,
+"Real data: testing the law of reflection"
+]
+],
+"stops": [
+{
+"id": "s8u10s2v01",
+"t": 15.06,
+"review": [
+0.0,
+15.41
+]
+},
+{
+"id": "s8u10s2v02",
+"t": 34.57,
+"review": [
+0.0,
+34.92
+]
+},
+{
+"id": "s8u10s2v03",
+"t": 80.25,
+"review": [
+48.95,
+80.6
+]
+},
+{
+"id": "s8u10n21",
+"t": 111.7,
+"review": [
+80.6,
+112.05
+]
+}
+],
+"dur": 112.0,
+"src": "media/s8/u10_s2.3d71fa57.mp4",
+"poster": "media/s8/u10_s2_poster.3d71fa57.jpg"
+},
+"10.3": {
+"captions": [
+[
+0.0,
+"When light passes from one material into another, it bends."
+],
+[
+3.51,
+"This is called refraction."
+],
+[
+5.06,
+"A ray entering a glass block bends once on the way in,"
+],
+[
+8.27,
+"and again on the way out."
+],
+[
+10.42,
+"Refraction happens because light travels at different speeds in different materials."
+],
+[
+16.14,
+"It's fastest in air, slower in water and slowest in glass."
+],
+[
+19.58,
+"We say glass has a higher optical density."
+],
+[
+22.74,
+"When light slows down, it bends towards the normal."
+],
+[
+26.59,
+"When it speeds up, it bends away."
+],
+[
+29.26,
+"Think of a go-kart driving at an angle onto grass:"
+],
+[
+32.97,
+"the wheel that hits the grass first slows down, and the kart turns."
+],
+[
+36.96,
+"If light hits the boundary straight on, along the normal,"
+],
+[
+40.35,
+"it doesn't bend at all."
+],
+[
+42.38,
+"A coin lies at the bottom of an empty cup."
+],
+[
+45.49,
+"You move your head back until the rim just hides the coin."
+],
+[
+48.95,
+"Predict: what will you see if water is poured gently into the cup?"
+],
+[
+52.89,
+"Pause and decide."
+],
+[
+54.57,
+"Watch. Your head stays still, and nothing changes while the cup is empty."
+],
+[
+60.41,
+"As the water is poured in, the coin comes back into view,"
+],
+[
+64.63,
+"although you have not moved."
+],
+[
+67.0,
+"Explain what you saw."
+],
+[
+68.99,
+"Light from the coin travels up through the water."
+],
+[
+71.89,
+"At the surface it passes from water into air,"
+],
+[
+74.56,
+"speeds up and bends away from the normal,"
+],
+[
+76.99,
+"over the rim and into your eye."
+],
+[
+78.83,
+"Your brain traces the ray back in a straight line,"
+],
+[
+81.79,
+"so the coin seems higher than it really is."
+],
+[
+84.34,
+"This is refraction. Pause and explain it in your own words."
+],
+[
+88.5,
+"Refraction can fool us."
+],
+[
+90.47,
+"Light from underwater speeds up as it leaves the water,"
+],
+[
+93.75,
+"bending away from the normal."
+],
+[
+95.49,
+"So a pencil in water looks bent or broken,"
+],
+[
+97.99,
+"and a fish looks closer to the surface than it really is,"
+],
+[
+101.39,
+"which makes it hard to catch!"
+],
+[
+103.78,
+"Refraction is also useful."
+],
+[
+106.08,
+"A camera lens is curved glass or plastic that bends light from"
+],
+[
+109.8,
+"each point of a scene so the rays meet on the sensor,"
+],
+[
+112.98,
+"forming a sharp image."
+],
+[
+114.96,
+"And stars twinkle because their light is refracted again and again by the changing air."
+]
+],
+"chapters": [
+[
+0.0,
+"Refraction: light bends"
+],
+[
+42.38,
+"Predict, watch, explain: the reappearing coin"
+],
+[
+88.5,
+"Refraction tricks our eyes"
+]
+],
+"stops": [
+{
+"id": "s8u10s3v01",
+"t": 10.07,
+"review": [
+0.0,
+10.42
+]
+},
+{
+"id": "s8u10s3v02",
+"t": 28.91,
+"review": [
+0.0,
+29.26
+]
+},
+{
+"id": "s8u10n31p",
+"t": 54.22,
+"review": [
+42.38,
+54.57
+]
+},
+{
+"id": "s8u10n31e",
+"t": 88.15,
+"review": [
+42.38,
+88.5
+]
+},
+{
+"id": "s8u10s3v03",
+"t": 103.43,
+"review": [
+88.5,
+103.78
+]
+}
+],
+"dur": 121.367,
+"src": "media/s8/u10_s3.ce68fd8b.mp4",
+"poster": "media/s8/u10_s3_poster.ce68fd8b.jpg"
+},
+"10.4": {
+"captions": [
+[
+0.0,
+"White light is a mixture of all colours."
+],
+[
+2.41,
+"When it enters a glass prism, it slows down and bends."
+],
+[
+5.65,
+"But each colour travels at a slightly different speed,"
+],
+[
+8.9,
+"so each bends by a different amount: violet and blue bend most,"
+],
+[
+12.69,
+"red least. The colours spread out into a spectrum."
+],
+[
+15.7,
+"This is called dispersion."
+],
+[
+17.93,
+"Rainbows form the same way."
+],
+[
+20.3,
+"Sunlight is refracted as it enters a raindrop,"
+],
+[
+23.1,
+"reflected off the back of the drop, and refracted again as it leaves,"
+],
+[
+27.29,
+"splitting white light into a spectrum of colours."
+]
+],
+"chapters": [
+[
+0.0,
+"Prisms and rainbows"
+]
+],
+"stops": [
+{
+"id": "s8u10s4v01",
+"t": 17.58,
+"review": [
+0.0,
+17.93
+]
+},
+{
+"id": "s8u10s4v02",
+"t": 30.41,
+"review": [
+0.0,
+30.76
+]
+}
+],
+"dur": 30.767,
+"src": "media/s8/u10_s4.5585fe90.mp4",
+"poster": "media/s8/u10_s4_poster.5585fe90.jpg"
+},
+"10.5": {
+"captions": [
+[
+0.0,
+"A white card, a red apple and a green leaf are lit with white light."
+],
+[
+4.13,
+"Then the room is darkened and only a red lamp is switched on."
+],
+[
+7.83,
+"Predict: what colour will each object appear?"
+],
+[
+10.56,
+"Pause and decide."
+],
+[
+12.26,
+"Watch. The white light is switched off and the red lamp is switched on."
+],
+[
+18.09,
+"The white card and the red apple both look red."
+],
+[
+21.76,
+"The green leaf looks completely dark."
+],
+[
+24.75,
+"Explain what you saw."
+],
+[
+26.76,
+"The only light arriving is red."
+],
+[
+28.66,
+"The white card reflects all colours, so it reflects the red."
+],
+[
+32.32,
+"The red apple reflects red too."
+],
+[
+34.22,
+"The green leaf reflects only green and absorbs red,"
+],
+[
+37.33,
+"so no light comes from it to your eye."
+],
+[
+39.65,
+"Pause and explain it in your own words."
+],
+[
+42.69,
+"A non-luminous object's colour depends on the light it reflects."
+],
+[
+47.18,
+"A red apple reflects red light and absorbs all the other colours."
+],
+[
+51.13,
+"White objects reflect all colours, and black objects absorb them all."
+],
+[
+55.98,
+"Colour also depends on the light shining on it."
+],
+[
+59.59,
+"Put a blue object under red light: it absorbs the red,"
+],
+[
+62.89,
+"and there's no blue light for it to reflect, so it looks black!"
+],
+[
+67.4,
+"The three primary colours of light are red, green and blue."
+],
+[
+71.73,
+"Adding them together is additive colour mixing: red and green make yellow,"
+],
+[
+76.24,
+"and all three make white."
+],
+[
+77.77,
+"Every screen is made of tiny pixels that mix red,"
+],
+[
+80.76,
+"green and blue light."
+],
+[
+82.7,
+"Filters do the opposite: they absorb, or subtract, colours."
+],
+[
+87.03,
+"In subtractive colour mixing, the primary colours are cyan, magenta and yellow,"
+],
+[
+91.85,
+"used in printing and photography."
+],
+[
+94.52,
+"Now it is your turn to shine!"
+],
+[
+96.93,
+"Pause the video after each question and try to answer it first."
+],
+[
+101.5,
+"Question 1: Is the Moon luminous or non-luminous?"
+],
+[
+105.35,
+"Pause the video now."
+],
+[
+107.28,
+"Answer: Non-luminous – it reflects sunlight."
+],
+[
+111.47,
+"Question 2: A ray hits a mirror at 50° to the normal."
+],
+[
+115.51,
+"What is the angle of reflection?"
+],
+[
+117.51,
+"Pause the video now."
+],
+[
+119.42,
+"Answer: 50°."
+],
+[
+122.16,
+"Question 3: Why does a pencil look bent in water?"
+],
+[
+126.0,
+"Pause the video now."
+],
+[
+127.93,
+"Answer: Light refracts as it passes from water to air."
+],
+[
+132.77,
+"Question 4: What colour do red and green light make when mixed?"
+],
+[
+137.45,
+"Pause the video now."
+],
+[
+139.36,
+"Answer: Yellow."
+]
+],
+"chapters": [
+[
+0.0,
+"Predict, watch, explain: colours under red light"
+],
+[
+42.69,
+"Why objects have colours"
+],
+[
+94.52,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s8u10n51p",
+"t": 11.91,
+"review": [
+0.0,
+12.26
+]
+},
+{
+"id": "s8u10n51e",
+"t": 42.34,
+"review": [
+0.0,
+42.69
+]
+},
+{
+"id": "s8u10s5v01",
+"t": 55.63,
+"review": [
+42.69,
+55.98
+]
+},
+{
+"id": "s8u10s5v02",
+"t": 67.05,
+"review": [
+42.69,
+67.4
+]
+},
+{
+"id": "s8u10s5v03",
+"t": 94.17,
+"review": [
+42.69,
+94.52
+]
+}
+],
+"dur": 142.033,
+"src": "media/s8/u10_s5.fc14814b.mp4",
+"poster": "media/s8/u10_s5_poster.fc14814b.jpg"
+}
+}

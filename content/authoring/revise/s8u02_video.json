@@ -1,0 +1,943 @@
+{
+"2.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.47,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.52,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.5,
+"Let's begin!"
+],
+[
+11.89,
+"Welcome to Unit 2: Human Body Systems."
+],
+[
+15.64,
+"When you lift a weight,"
+],
+[
+17.76,
+"take a deep breath or feel your heart beating,"
+],
+[
+20.54,
+"your body systems are working together."
+],
+[
+22.9,
+"In this unit, we'll explore the bones and muscles that move us,"
+],
+[
+26.7,
+"the lungs that bring in oxygen, and the blood that carries it everywhere."
+],
+[
+31.78,
+"Our musculoskeletal system is made of bones, joints and muscles."
+],
+[
+36.34,
+"The bones form the skeleton."
+],
+[
+38.74,
+"The skeleton gives the body support and shape, allows it to move,"
+],
+[
+43.42,
+"and protects vital organs."
+],
+[
+45.0,
+"The skull protects the brain, and the ribs protect the heart and lungs."
+],
+[
+49.96,
+"A newborn baby's bones and muscles are soft and weak,"
+],
+[
+53.91,
+"but they grow harder and stronger with age."
+],
+[
+56.52,
+"Human bone is almost five times as strong"
+],
+[
+59.01,
+"as a steel bar of the same mass!"
+],
+[
+60.95,
+"In old age, bones and muscles may weaken again."
+],
+[
+64.47,
+"Bones can't bend. A joint is a place"
+],
+[
+67.27,
+"where two or more bones meet, allowing movement."
+],
+[
+70.21,
+"Some joints, like those in the skull and the pelvis,"
+],
+[
+73.4,
+"don't move at all."
+],
+[
+74.5,
+"They are fixed joints."
+],
+[
+76.49,
+"Moveable joints include ball-and-socket joints."
+],
+[
+80.07,
+"A ball-shaped bone end fits into a cup-shaped socket,"
+],
+[
+83.28,
+"so the bone can move in many directions, even in a full circle."
+],
+[
+87.09,
+"Your shoulder and hip are ball-and-socket joints."
+],
+[
+90.71,
+"A hinge joint allows movement back and forth in one direction only,"
+],
+[
+95.5,
+"like a door hinge: the door just opens and closes."
+],
+[
+98.53,
+"That comparison is called an analogy."
+],
+[
+100.77,
+"Your elbow, knee, fingers and toes have hinge joints."
+],
+[
+104.62,
+"This model arm has two card bones joined by a paper fastener at the elbow,"
+],
+[
+109.73,
+"and a strip of elastic as the biceps."
+],
+[
+111.98,
+"Predict: will the arm bend if we push the elastic,"
+],
+[
+115.02,
+"or only if we pull it?"
+],
+[
+116.36,
+"Pause and decide."
+],
+[
+118.06,
+"Watch. First we push the elastic towards the elbow."
+],
+[
+121.97,
+"It just bends and nothing moves."
+],
+[
+124.63,
+"Then we pull the elastic, shortening it."
+],
+[
+127.86,
+"The lower arm lifts and the elbow bends."
+],
+[
+131.0,
+"Explain what you saw."
+],
+[
+133.01,
+"Like the elastic, a muscle can only pull, by contracting and getting shorter."
+],
+[
+137.67,
+"It cannot push. So muscles work in antagonistic"
+],
+[
+140.51,
+"pairs: the biceps pulls to bend the arm,"
+],
+[
+142.93,
+"and the triceps pulls to straighten it again."
+],
+[
+145.65,
+"Pause and explain it in your own words."
+],
+[
+148.66,
+"We have more than 600 muscles."
+],
+[
+151.07,
+"Skeletal muscles are attached to bones by tough cords called tendons."
+],
+[
+155.22,
+"When a muscle contracts,"
+],
+[
+156.66,
+"it gets shorter and fatter and pulls on the bone."
+],
+[
+159.61,
+"When it relaxes, it returns to its original shape."
+],
+[
+162.62,
+"Muscles can pull, but they can never push!"
+],
+[
+165.15,
+"So they work in pairs that pull in opposite directions: antagonistic muscles."
+],
+[
+170.45,
+"In your arm, the biceps and triceps are an antagonistic pair."
+],
+[
+174.89,
+"To bend your arm, the biceps contracts and pulls the lower arm up,"
+],
+[
+178.91,
+"while the triceps relaxes."
+],
+[
+181.17,
+"To straighten your arm, the triceps contracts and pulls the lower arm down,"
+],
+[
+186.45,
+"while the biceps relaxes."
+],
+[
+187.96,
+"Your thigh muscles work the same way to bend and straighten your leg."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+11.89,
+"Human Body Systems"
+],
+[
+31.78,
+"The skeleton"
+],
+[
+64.47,
+"Joints"
+],
+[
+104.62,
+"Predict, watch, explain: can a muscle push?"
+],
+[
+148.66,
+"Antagonistic muscles"
+]
+],
+"stops": [
+{
+"id": "s8u02s1v01",
+"t": 76.14,
+"review": [
+64.47,
+76.49
+]
+},
+{
+"id": "s8u02s1v02",
+"t": 104.27,
+"review": [
+64.47,
+104.62
+]
+},
+{
+"id": "s8u02n11p",
+"t": 117.71,
+"review": [
+104.62,
+118.06
+]
+},
+{
+"id": "s8u02n11e",
+"t": 148.31,
+"review": [
+104.62,
+148.66
+]
+},
+{
+"id": "s8u02s1v03",
+"t": 180.82,
+"review": [
+148.66,
+181.17
+]
+}
+],
+"dur": 192.533,
+"src": "media/s8/u2_s1.1dc2805d.mp4",
+"poster": "media/s8/u2_s1_poster.1dc2805d.jpg"
+},
+"2.2": {
+"captions": [
+[
+0.0,
+"We get oxygen from the air we breathe, using the respiratory system."
+],
+[
+4.2,
+"Air enters through the nose or mouth."
+],
+[
+7.15,
+"It travels down the trachea, which divides into two bronchi,"
+],
+[
+11.6,
+"one for each lung."
+],
+[
+12.72,
+"Inside the lungs, each bronchus branches into smaller tubes called bronchioles."
+],
+[
+18.25,
+"Each bronchiole ends in tiny air sacs called alveoli."
+],
+[
+22.24,
+"Below the lungs is a dome-shaped sheet of muscle called the diaphragm."
+],
+[
+26.54,
+"Breathing is the physical process of moving air into and out of the lungs."
+],
+[
+31.73,
+"Breathing in, or inhaling: the intercostal muscles between the ribs contract,"
+],
+[
+37.05,
+"pulling the ribs up and out."
+],
+[
+38.77,
+"The diaphragm contracts and moves down."
+],
+[
+41.16,
+"The chest gets bigger, the lungs expand, and the air pressure inside drops."
+],
+[
+45.76,
+"Air from outside, at higher pressure, rushes in."
+],
+[
+49.37,
+"Breathing out, or exhaling:"
+],
+[
+51.77,
+"the intercostal muscles relax and the ribs move down and in."
+],
+[
+55.49,
+"The diaphragm relaxes and domes upwards."
+],
+[
+57.96,
+"The chest gets smaller, the pressure in the lungs rises,"
+],
+[
+61.43,
+"and air is pushed out."
+],
+[
+63.45,
+"Room air is pumped through one tube of clear limewater."
+],
+[
+67.45,
+"A student gently breathes out through a straw into a second tube."
+],
+[
+71.47,
+"Predict: which limewater will turn milky first?"
+],
+[
+74.38,
+"Pause and decide."
+],
+[
+76.1,
+"Watch. Bubbles pass through both tubes for one minute."
+],
+[
+80.96,
+"The limewater with breathed-out air turns milky quickly."
+],
+[
+85.22,
+"The other is only slightly cloudy."
+],
+[
+88.03,
+"Explain what you saw."
+],
+[
+90.06,
+"Limewater turns milky with carbon dioxide."
+],
+[
+92.65,
+"Breathed-out air contains about 4 percent carbon dioxide,"
+],
+[
+96.17,
+"a hundred times more than room air,"
+],
+[
+98.33,
+"because our cells make carbon dioxide in respiration."
+],
+[
+101.6,
+"Pause and explain it in your own words."
+],
+[
+104.67,
+"These are typical percentages of oxygen and carbon dioxide in the"
+],
+[
+109.32,
+"air we breathe in and the air we breathe out."
+],
+[
+112.78,
+"The air we breathe out has less oxygen, 16 percent instead of 21,"
+],
+[
+117.55,
+"and much more carbon dioxide: about 4 percent instead of 0.04."
+],
+[
+122.06,
+"Pause and decide: where did the missing oxygen go,"
+],
+[
+125.92,
+"and where did the extra carbon dioxide come from?"
+],
+[
+129.66,
+"The air we breathe out is different from the air we breathe in."
+],
+[
+134.14,
+"It contains less oxygen, 16 percent instead of 21,"
+],
+[
+137.22,
+"and about a hundred times more carbon dioxide, 4 percent."
+],
+[
+140.73,
+"It also has more water vapour:"
+],
+[
+142.58,
+"breathe on a mirror and it mists up!"
+],
+[
+145.45,
+"Gas exchange happens in the alveoli,"
+],
+[
+148.4,
+"which are surrounded by tiny blood vessels called capillaries."
+],
+[
+152.22,
+"Oxygen moves from the air in the alveoli into the blood,"
+],
+[
+155.67,
+"and carbon dioxide moves from the blood into the alveoli,"
+],
+[
+159.18,
+"to be breathed out."
+],
+[
+161.02,
+"The gases move by diffusion:"
+],
+[
+163.48,
+"from an area of high concentration to an area of low concentration."
+],
+[
+167.62,
+"The walls of the alveoli and capillaries are only one cell thick,"
+],
+[
+171.63,
+"so gases pass through quickly."
+],
+[
+174.16,
+"Breathing and respiration are different!"
+],
+[
+177.22,
+"Breathing moves air in and out."
+],
+[
+179.12,
+"Respiration is a chemical process in our cells that releases energy from food."
+],
+[
+183.91,
+"When it uses oxygen, it's called aerobic respiration:"
+],
+[
+187.17,
+"glucose plus oxygen gives carbon dioxide plus water."
+],
+[
+191.03,
+"Starch from our food is digested into a sugar called glucose."
+],
+[
+195.48,
+"In the mitochondria of plant and animal cells,"
+],
+[
+198.29,
+"a series of reactions releases its energy in a controlled, steady way,"
+],
+[
+202.56,
+"powering life processes all the time, even while we sleep."
+],
+[
+206.1,
+"Germinating seeds respire too: the carbon dioxide they give off turns limewater milky."
+]
+],
+"chapters": [
+[
+0.0,
+"The respiratory system"
+],
+[
+31.73,
+"Breathing in and out"
+],
+[
+63.45,
+"Predict, watch, explain: what is in the air we breathe out?"
+],
+[
+104.67,
+"Real data: air in and air out"
+],
+[
+129.66,
+"Gas exchange in the alveoli"
+],
+[
+174.16,
+"Aerobic respiration"
+]
+],
+"stops": [
+{
+"id": "s8u02s2v01",
+"t": 17.9,
+"review": [
+0.0,
+18.25
+]
+},
+{
+"id": "s8u02s2v02",
+"t": 49.02,
+"review": [
+31.73,
+49.37
+]
+},
+{
+"id": "s8u02n12p",
+"t": 75.75,
+"review": [
+63.45,
+76.1
+]
+},
+{
+"id": "s8u02n12e",
+"t": 104.32,
+"review": [
+63.45,
+104.67
+]
+},
+{
+"id": "s8u02n13",
+"t": 129.31,
+"review": [
+104.67,
+129.66
+]
+},
+{
+"id": "s8u02s2v03",
+"t": 173.81,
+"review": [
+129.66,
+174.16
+]
+},
+{
+"id": "s8u02s2v04",
+"t": 211.48,
+"review": [
+174.16,
+211.83
+]
+}
+],
+"dur": 211.933,
+"src": "media/s8/u2_s2.e55df7ef.mp4",
+"poster": "media/s8/u2_s2_poster.e55df7ef.jpg"
+},
+"2.3": {
+"captions": [
+[
+0.0,
+"Think of the circulatory system as a transport system,"
+],
+[
+3.28,
+"like roads and railways carrying goods around a country."
+],
+[
+6.68,
+"It has three parts: the heart, the blood vessels and the blood."
+],
+[
+10.51,
+"The heart is a double pump:"
+],
+[
+12.15,
+"the right side pumps deoxygenated blood to the lungs,"
+],
+[
+15.37,
+"and the left side pumps oxygenated blood to the rest of the body."
+],
+[
+19.99,
+"Arteries carry oxygenated blood away from the heart."
+],
+[
+23.92,
+"Veins carry deoxygenated blood back to the heart."
+],
+[
+26.92,
+"Tiny capillaries connect them,"
+],
+[
+28.76,
+"delivering oxygen and nutrients to cells and taking away waste like carbon dioxide."
+],
+[
+34.5,
+"When blood is spun in a centrifuge, it separates into layers."
+],
+[
+38.89,
+"Here are the approximate percentages of each part."
+],
+[
+42.66,
+"More than half of blood is plasma, a yellow liquid."
+],
+[
+46.54,
+"Almost all the rest is red blood cells."
+],
+[
+48.95,
+"White blood cells and platelets make up only about 1 percent."
+],
+[
+53.38,
+"Pause and decide: which part of the blood transports glucose and carbon dioxide,"
+],
+[
+59.08,
+"and which part carries oxygen?"
+],
+[
+61.6,
+"An adult has about five litres of blood."
+],
+[
+64.65,
+"Spin it fast in a centrifuge, and it separates into layers:"
+],
+[
+68.26,
+"about 55 percent is pale yellow plasma, 41 percent is red blood cells,"
+],
+[
+72.55,
+"and a thin layer of white blood cells and platelets."
+],
+[
+76.41,
+"Red blood cells carry oxygen."
+],
+[
+78.92,
+"Their red pigment, haemoglobin,"
+],
+[
+80.81,
+"joins with oxygen in the lungs and releases it where oxygen is low."
+],
+[
+84.92,
+"They have no nucleus, leaving more room for haemoglobin,"
+],
+[
+88.35,
+"and their biconcave disc shape gives them a large"
+],
+[
+91.35,
+"surface area to take in and release oxygen quickly."
+],
+[
+95.14,
+"White blood cells defend the body."
+],
+[
+97.97,
+"Some wrap around pathogens and destroy them, which is called phagocytosis."
+],
+[
+102.53,
+"Others make antibodies that disable microorganisms."
+],
+[
+106.34,
+"Platelets are bits of cells that help blood clot and form scabs over cuts,"
+],
+[
+111.58,
+"keeping pathogens out. And plasma transports blood cells, plus dissolved glucose, nutrients and carbon dioxide."
+],
+[
+119.02,
+"Donating blood saves lives."
+],
+[
+121.29,
+"We have different blood types, based partly on the antibodies in our blood."
+],
+[
+125.92,
+"The main blood groups are A, B, AB and O,"
+],
+[
+128.45,
+"each either positive or negative."
+],
+[
+131.14,
+"People with O negative blood are universal donors:"
+],
+[
+134.96,
+"their blood can be given safely to anyone,"
+],
+[
+137.54,
+"so it's in high demand for emergencies."
+],
+[
+139.94,
+"People with AB positive blood are universal recipients:"
+],
+[
+143.33,
+"they can receive any blood type."
+],
+[
+145.97,
+"Now it is your turn to shine!"
+],
+[
+148.39,
+"Pause the video after each question and try to answer it first."
+],
+[
+153.0,
+"Question 1: What type of joint is the elbow,"
+],
+[
+156.51,
+"and what movement does it allow?"
+],
+[
+158.53,
+"Pause the video now."
+],
+[
+160.45,
+"Answer: A hinge joint – back and forth in one direction."
+],
+[
+165.36,
+"Question 2: Why do muscles work in antagonistic pairs?"
+],
+[
+169.52,
+"Pause the video now."
+],
+[
+171.47,
+"Answer: Muscles can only pull, not push."
+],
+[
+175.49,
+"Question 3: Write the word equation for aerobic respiration."
+],
+[
+180.02,
+"Pause the video now."
+],
+[
+181.94,
+"Answer: glucose + oxygen → carbon dioxide + water."
+],
+[
+187.33,
+"Question 4: What is the function of red blood cells?"
+],
+[
+191.37,
+"Pause the video now."
+],
+[
+193.31,
+"Answer: To carry oxygen around the body."
+]
+],
+"chapters": [
+[
+0.0,
+"The heart and blood vessels"
+],
+[
+34.5,
+"Real data: what is blood made of?"
+],
+[
+61.6,
+"What is blood made of?"
+],
+[
+119.02,
+"Blood groups and donation"
+],
+[
+145.97,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s8u02s3v01",
+"t": 34.15,
+"review": [
+0.0,
+34.5
+]
+},
+{
+"id": "s8u02n14",
+"t": 61.25,
+"review": [
+34.5,
+61.6
+]
+},
+{
+"id": "s8u02s3v02",
+"t": 94.79,
+"review": [
+61.6,
+95.14
+]
+},
+{
+"id": "s8u02s3v03",
+"t": 145.62,
+"review": [
+119.02,
+145.97
+]
+}
+],
+"dur": 197.167,
+"src": "media/s8/u2_s3.610f9ec8.mp4",
+"poster": "media/s8/u2_s3_poster.610f9ec8.jpg"
+}
+}

@@ -1,0 +1,511 @@
+{
+"11.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.5,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.59,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.64,
+"Let's begin!"
+],
+[
+12.04,
+"Welcome to Unit 11: Sound."
+],
+[
+15.11,
+"Close your eyes and listen."
+],
+[
+17.51,
+"A car engine, a bird singing, people talking: some sounds are loud,"
+],
+[
+21.65,
+"some soft, some high, some low."
+],
+[
+23.56,
+"Where do sounds come from, and how do they reach your ears?"
+],
+[
+27.87,
+"All sounds come from vibrating, or oscillating, objects."
+],
+[
+31.92,
+"A plucked guitar string, a drum membrane, the reed of a saxophone,"
+],
+[
+35.99,
+"your vocal cords and a speaker cone all vibrate."
+],
+[
+39.6,
+"A speaker cone moving forward squeezes air particles together: a compression."
+],
+[
+45.07,
+"Moving back, it spreads them apart: a rarefaction."
+],
+[
+48.14,
+"These travel outwards as a sound wave,"
+],
+[
+50.47,
+"passing energy from particle to particle to your ear."
+],
+[
+54.38,
+"Sound needs a medium to travel through."
+],
+[
+57.51,
+"The closer the particles, the faster sound travels: fastest in solids, then liquids,"
+],
+[
+62.67,
+"then gases. In a vacuum there are no particles, so sound can't travel at all."
+],
+[
+67.4,
+"Space is silent!"
+],
+[
+69.03,
+"An electric bell rings inside a sealed glass jar."
+],
+[
+72.68,
+"A pump slowly removes the air from the jar."
+],
+[
+75.35,
+"Predict: what will happen to the sound we hear?"
+],
+[
+78.28,
+"Pause and decide."
+],
+[
+80.0,
+"Watch. As the air is pumped out, the ringing gets quieter and quieter."
+],
+[
+85.82,
+"With almost all the air removed, we can hardly hear anything,"
+],
+[
+90.34,
+"although we can still see the hammer hitting the bell."
+],
+[
+94.35,
+"Explain what you saw."
+],
+[
+96.38,
+"The bell still vibrates,"
+],
+[
+97.86,
+"but sound needs particles to carry the vibrations"
+],
+[
+100.88,
+"to the glass and then to our ears."
+],
+[
+102.98,
+"As the air is removed,"
+],
+[
+104.34,
+"there are fewer particles to pass on the vibrations, so the sound fades."
+],
+[
+108.78,
+"In a vacuum, sound cannot travel at all."
+],
+[
+111.24,
+"Pause and explain it in your own words."
+],
+[
+114.31,
+"The speed of sound depends on the material it travels through."
+],
+[
+118.82,
+"These are typical values."
+],
+[
+121.05,
+"In air at 20 degrees Celsius,"
+],
+[
+123.6,
+"sound travels at about 343 metres per second."
+],
+[
+126.41,
+"In water it is about 1480, and in steel nearly 6000."
+],
+[
+130.31,
+"Pause and decide: why is sound fastest in steel and slowest in air?"
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.04,
+"Sound"
+],
+[
+27.87,
+"How is sound produced?"
+],
+[
+69.03,
+"Predict, watch, explain: a bell in a jar"
+],
+[
+114.31,
+"Data: the speed of sound in different materials"
+]
+],
+"stops": [
+{
+"id": "s9u11s1v01",
+"t": 27.52,
+"review": [
+12.04,
+27.87
+]
+},
+{
+"id": "s9u11s1v02",
+"t": 39.25,
+"review": [
+27.87,
+39.6
+]
+},
+{
+"id": "s9u11s1v03",
+"t": 54.03,
+"review": [
+27.87,
+54.38
+]
+},
+{
+"id": "s9u11s1v04",
+"t": 68.68,
+"review": [
+27.87,
+69.03
+]
+},
+{
+"id": "s9u11n11p",
+"t": 79.65,
+"review": [
+69.03,
+80.0
+]
+},
+{
+"id": "s9u11n11e",
+"t": 113.96,
+"review": [
+69.03,
+114.31
+]
+},
+{
+"id": "s9u11n12",
+"t": 135.42,
+"review": [
+114.31,
+135.77
+]
+}
+],
+"dur": 135.8,
+"src": "media/s9/u11_s1.0f7501a7.mp4",
+"poster": "media/s9/u11_s1_poster.0f7501a7.jpg"
+},
+"11.2": {
+"captions": [
+[
+0.0,
+"An oscilloscope displays sound as a waveform."
+],
+[
+2.84,
+"The highest point is the crest, the lowest the trough."
+],
+[
+6.24,
+"The amplitude is the height from the equilibrium line to a crest,"
+],
+[
+10.34,
+"and the wavelength is the length of one cycle."
+],
+[
+13.9,
+"To draw a waveform graph, label the axes and choose even scales."
+],
+[
+18.68,
+"Mark the amplitude above and below the equilibrium line, mark one cycle's time,"
+],
+[
+23.67,
+"then draw a smooth curve through the crests and troughs."
+],
+[
+27.88,
+"The bigger the amplitude, the more energy a sound carries,"
+],
+[
+32.17,
+"and the louder it sounds."
+],
+[
+33.77,
+"Loudness is measured on the decibel scale,"
+],
+[
+36.44,
+"from rustling leaves to a jet taking off."
+],
+[
+39.05,
+"Too much noise can cause stress and hearing loss."
+],
+[
+42.83,
+"Frequency is the number of waves per second, measured in hertz."
+],
+[
+47.55,
+"Higher frequency means higher pitch: a violin sounds high, a bass guitar low."
+],
+[
+52.43,
+"Humans hear from about 20 to 20 thousand hertz."
+],
+[
+56.07,
+"US health agencies publish typical sound levels for everyday noises, measured in decibels."
+],
+[
+63.1,
+"A whisper is about 30 decibels and normal conversation about 60."
+],
+[
+67.89,
+"A lawnmower reaches about 90, a loud concert about 105,"
+],
+[
+71.38,
+"an emergency siren about 120, and a jet taking off about 140."
+],
+[
+75.9,
+"Pause and decide: which of these could damage your"
+],
+[
+79.88,
+"hearing if you listened for a long time?"
+]
+],
+"chapters": [
+[
+0.0,
+"Parts of a waveform"
+],
+[
+27.88,
+"Loudness and pitch"
+],
+[
+56.07,
+"Data: how loud are everyday sounds?"
+]
+],
+"stops": [
+{
+"id": "s9u11s2v01",
+"t": 13.55,
+"review": [
+0.0,
+13.9
+]
+},
+{
+"id": "s9u11s2v02",
+"t": 42.48,
+"review": [
+27.88,
+42.83
+]
+},
+{
+"id": "s9u11s2v03",
+"t": 55.72,
+"review": [
+27.88,
+56.07
+]
+},
+{
+"id": "s9u11n21",
+"t": 82.6,
+"review": [
+56.07,
+82.95
+]
+}
+],
+"dur": 82.967,
+"src": "media/s9/u11_s2.116ff81e.mp4",
+"poster": "media/s9/u11_s2_poster.116ff81e.jpg"
+},
+"11.4": {
+"captions": [
+[
+0.0,
+"When sound waves meet, they interfere."
+],
+[
+2.33,
+"If they're in phase, crests line up with crests,"
+],
+[
+5.28,
+"and their amplitudes add together, making a louder sound."
+],
+[
+8.78,
+"This is constructive interference, used in some hearing aids."
+],
+[
+13.2,
+"If they're out of phase, crests meet troughs and cancel out: destructive interference."
+],
+[
+19.24,
+"Noise-cancelling headphones record outside noise, reverse it,"
+],
+[
+23.0,
+"and play it back to cancel the noise."
+],
+[
+25.96,
+"Now it is your turn to shine!"
+],
+[
+28.39,
+"Pause the video after each question and try to answer it first."
+],
+[
+33.04,
+"Question 1: How is sound produced?"
+],
+[
+36.0,
+"Pause the video now."
+],
+[
+37.97,
+"Answer: By vibrating objects."
+],
+[
+41.34,
+"Question 2: Why can't sound travel through space?"
+],
+[
+45.23,
+"Pause the video now."
+],
+[
+47.17,
+"Answer: There are no particles to carry it: it's a vacuum."
+],
+[
+52.27,
+"Question 3: What property of a wave decides how loud it is?"
+],
+[
+56.76,
+"Pause the video now."
+],
+[
+58.69,
+"Answer: Its amplitude."
+],
+[
+61.65,
+"Question 4: How do noise-cancelling headphones work?"
+],
+[
+65.72,
+"Pause the video now."
+],
+[
+67.67,
+"Answer: Destructive interference: out-of-phase sound cancels noise."
+]
+],
+"chapters": [
+[
+0.0,
+"Sound wave interference"
+],
+[
+25.96,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s9u11s4v01",
+"t": 12.85,
+"review": [
+0.0,
+13.2
+]
+},
+{
+"id": "s9u11s4v02",
+"t": 25.61,
+"review": [
+0.0,
+25.96
+]
+}
+],
+"dur": 73.1,
+"src": "media/s9/u11_s3.cdc6dffd.mp4",
+"poster": "media/s9/u11_s3_poster.cdc6dffd.jpg"
+}
+}

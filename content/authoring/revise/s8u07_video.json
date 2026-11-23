@@ -1,0 +1,592 @@
+{
+"7.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.5,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.59,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.64,
+"Let's begin!"
+],
+[
+12.06,
+"Welcome to Unit 7: Exothermic and Endothermic Changes."
+],
+[
+16.79,
+"Nearly three billion people don't have clean fuel for cooking."
+],
+[
+21.32,
+"Biogas digesters use bacteria to turn crop waste and animal manure into biogas,"
+],
+[
+26.16,
+"a cleaner fuel. Some changes release energy, and some take it in."
+],
+[
+30.14,
+"Let's find out which is which."
+],
+[
+32.64,
+"When wood burns, it reacts with oxygen and releases its stored chemical energy as heat,"
+],
+[
+38.55,
+"warming the air around it."
+],
+[
+40.14,
+"'Exo' means out, and 'thermic' means heat."
+],
+[
+42.71,
+"An exothermic reaction releases energy to the surroundings, so the temperature goes up."
+],
+[
+48.02,
+"The products end up with less energy than the reactants."
+],
+[
+52.11,
+"We can often notice the energy: a sparkler gives off heat and light."
+],
+[
+57.02,
+"And when plaster of Paris is mixed with water,"
+],
+[
+59.85,
+"it reacts to form gypsum."
+],
+[
+61.39,
+"A setting plaster cast feels warm, because the reaction releases heat."
+],
+[
+66.35,
+"Water in a beaker is at 20 degrees Celsius."
+],
+[
+69.61,
+"A spoonful of solid calcium chloride is stirred in."
+],
+[
+72.77,
+"Predict: will the temperature go up, go down or stay the same?"
+],
+[
+76.61,
+"Pause and decide."
+],
+[
+78.33,
+"Watch. The calcium chloride dissolves as it is stirred."
+],
+[
+83.24,
+"The thermometer rises to 38 degrees Celsius."
+],
+[
+86.8,
+"The beaker feels warm."
+],
+[
+88.87,
+"Explain what you saw."
+],
+[
+90.89,
+"Dissolving calcium chloride releases heat to the surroundings,"
+],
+[
+94.71,
+"so the temperature of the water goes up."
+],
+[
+97.17,
+"A change that releases heat is exothermic."
+],
+[
+99.75,
+"This is how some self-heating packs and hand warmers work."
+],
+[
+103.32,
+"Pause and explain it in your own words."
+],
+[
+106.38,
+"There are many exothermic reactions."
+],
+[
+109.21,
+"Combustion is burning fuel in oxygen."
+],
+[
+111.5,
+"Neutralisation is an acid reacting with an alkali to make a salt and water."
+],
+[
+116.82,
+"Hydration is a substance reacting with water, like cement setting."
+],
+[
+121.63,
+"Reactive metals reacting with water, like sodium, are exothermic too."
+],
+[
+126.55,
+"Rusting releases heat slowly."
+],
+[
+129.07,
+"And aerobic respiration in your cells releases energy from glucose."
+],
+[
+133.2,
+"Remember, a reaction doesn't always make one pure product:"
+],
+[
+136.78,
+"often it makes a mixture of substances."
+],
+[
+139.83,
+"An exothermic process is any change that releases heat, including physical changes."
+],
+[
+145.51,
+"When water freezes, its particles lose energy,"
+],
+[
+148.32,
+"slow down and lock into fixed positions, releasing heat."
+],
+[
+151.75,
+"No new substance is formed, and the change can be reversed."
+],
+[
+156.03,
+"Dissolving some substances, like calcium chloride or solid sodium hydroxide, releases heat too,"
+],
+[
+162.62,
+"so the solution feels warm."
+],
+[
+164.28,
+"Instant heat packs for sports injuries work this way."
+],
+[
+168.19,
+"Crystallisation, when crystals form from a supersaturated solution, is also exothermic."
+],
+[
+174.29,
+"Press a reusable hand warmer, and it crystallises,"
+],
+[
+177.36,
+"heating up to about 54 degrees Celsius."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.06,
+"Exothermic and Endothermic Changes"
+],
+[
+32.64,
+"Exothermic reactions"
+],
+[
+66.35,
+"Predict, watch, explain: dissolving calcium chloride"
+],
+[
+106.38,
+"Types of exothermic reactions"
+],
+[
+139.83,
+"Exothermic processes"
+]
+],
+"stops": [
+{
+"id": "s8u07s1v01",
+"t": 51.76,
+"review": [
+32.64,
+52.11
+]
+},
+{
+"id": "s8u07n11p",
+"t": 77.98,
+"review": [
+66.35,
+78.33
+]
+},
+{
+"id": "s8u07n11e",
+"t": 106.03,
+"review": [
+66.35,
+106.38
+]
+},
+{
+"id": "s8u07s1v02",
+"t": 116.47,
+"review": [
+106.38,
+116.82
+]
+},
+{
+"id": "s8u07s1v03",
+"t": 179.88,
+"review": [
+139.83,
+180.23
+]
+}
+],
+"dur": 180.267,
+"src": "media/s8/u7_s1.db7f245e.mp4",
+"poster": "media/s8/u7_s1_poster.db7f245e.jpg"
+},
+"7.2": {
+"captions": [
+[
+0.0,
+"Citric acid and baking soda, the ingredients of sherbet,"
+],
+[
+3.48,
+"are added to water at 20 degrees Celsius."
+],
+[
+6.03,
+"Predict: what will happen to the temperature?"
+],
+[
+8.83,
+"Pause and decide."
+],
+[
+10.54,
+"Watch. The mixture fizzes as carbon dioxide gas is made."
+],
+[
+15.54,
+"The thermometer falls to 14 degrees Celsius."
+],
+[
+19.12,
+"The beaker feels cold."
+],
+[
+21.22,
+"Explain what you saw."
+],
+[
+23.25,
+"This reaction takes in heat from its surroundings,"
+],
+[
+26.35,
+"including the water and your hand, so the temperature falls."
+],
+[
+30.07,
+"A change that takes in heat is endothermic."
+],
+[
+32.74,
+"That is why sherbet feels cool and tingly on your tongue."
+],
+[
+36.27,
+"Pause and explain it in your own words."
+],
+[
+39.35,
+"Some reactions take in heat."
+],
+[
+41.68,
+"'Endo' means in, so an endothermic reaction absorbs energy, usually heat,"
+],
+[
+46.19,
+"from its surroundings. The temperature falls, and the mixture feels cold."
+],
+[
+50.71,
+"The products end up with more energy than the reactants."
+],
+[
+54.83,
+"Sherbet powder contains citric acid and baking soda."
+],
+[
+58.81,
+"Add water, and they react, fizzing and feeling cold: an endothermic reaction!"
+],
+[
+63.6,
+"You might feel it on your tongue."
+],
+[
+66.32,
+"Baking bread is endothermic too: the dough absorbs heat from the oven,"
+],
+[
+71.41,
+"and reactions change its sugars and proteins, giving bread its colour,"
+],
+[
+75.77,
+"texture and flavour."
+],
+[
+77.68,
+"Thermal decomposition is endothermic: heat green copper carbonate,"
+],
+[
+82.36,
+"and it breaks down into black copper oxide and carbon dioxide."
+],
+[
+86.19,
+"Photosynthesis is endothermic too:"
+],
+[
+88.29,
+"plants take in light energy and store it as chemical energy in glucose."
+],
+[
+93.33,
+"Physical changes can be endothermic."
+],
+[
+96.31,
+"When ice melts, its particles take in heat,"
+],
+[
+99.0,
+"vibrate faster and break free to flow."
+],
+[
+101.37,
+"When a liquid evaporates,"
+],
+[
+102.93,
+"its particles gain enough energy to escape as a gas."
+],
+[
+106.86,
+"Dissolving some salts, like ammonium chloride, takes in heat,"
+],
+[
+111.38,
+"so cold packs for injuries feel icy."
+],
+[
+113.62,
+"Hand sanitiser feels cold as it evaporates,"
+],
+[
+116.3,
+"and the Sun's heat evaporates seawater in salt ponds."
+],
+[
+120.26,
+"A class measured the final temperature for four changes."
+],
+[
+124.4,
+"Every one started at 20 degrees Celsius."
+],
+[
+127.58,
+"Dissolving calcium chloride ended at 38 degrees,"
+],
+[
+131.3,
+"and neutralising an acid with an alkali at 27."
+],
+[
+134.16,
+"But the drink with melting ice fell to 8 degrees,"
+],
+[
+137.21,
+"and dissolving ammonium chloride fell to 12."
+],
+[
+140.63,
+"Pause and decide: which of these four changes are exothermic,"
+],
+[
+145.24,
+"and which are endothermic?"
+],
+[
+147.55,
+"Now it is your turn to shine!"
+],
+[
+149.99,
+"Pause the video after each question and try to answer it first."
+],
+[
+154.63,
+"Question 1: A reaction makes a test tube feel warm."
+],
+[
+158.61,
+"Is it exothermic or endothermic?"
+],
+[
+160.65,
+"Pause the video now."
+],
+[
+162.57,
+"Answer: Exothermic – it releases heat."
+],
+[
+166.44,
+"Question 2: Is freezing exothermic or endothermic?"
+],
+[
+170.4,
+"Pause the video now."
+],
+[
+172.36,
+"Answer: Exothermic – heat is released as water turns to ice."
+],
+[
+177.56,
+"Question 3: Give one example of an endothermic reaction."
+],
+[
+181.88,
+"Pause the video now."
+],
+[
+183.83,
+"Answer: e.g. photosynthesis, thermal decomposition, citric acid + baking soda."
+],
+[
+190.76,
+"Question 4: Why does hand sanitiser make your hands feel cold?"
+],
+[
+195.45,
+"Pause the video now."
+],
+[
+197.4,
+"Answer: It evaporates, taking in heat from your skin."
+]
+],
+"chapters": [
+[
+0.0,
+"Predict, watch, explain: the sherbet reaction"
+],
+[
+39.35,
+"Endothermic reactions"
+],
+[
+77.68,
+"Endothermic reactions and processes"
+],
+[
+120.26,
+"Data: final temperature for four changes"
+],
+[
+147.55,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s8u07n12p",
+"t": 10.19,
+"review": [
+0.0,
+10.54
+]
+},
+{
+"id": "s8u07n12e",
+"t": 39.0,
+"review": [
+0.0,
+39.35
+]
+},
+{
+"id": "s8u07s2v01",
+"t": 54.48,
+"review": [
+39.35,
+54.83
+]
+},
+{
+"id": "s8u07s2v02",
+"t": 92.98,
+"review": [
+77.68,
+93.33
+]
+},
+{
+"id": "s8u07s2v03",
+"t": 119.91,
+"review": [
+77.68,
+120.26
+]
+},
+{
+"id": "s8u07n13",
+"t": 147.2,
+"review": [
+120.26,
+147.55
+]
+}
+],
+"dur": 202.1,
+"src": "media/s8/u7_s2.1acceea0.mp4",
+"poster": "media/s8/u7_s2_poster.1acceea0.jpg"
+}
+}

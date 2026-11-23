@@ -1,0 +1,943 @@
+{
+"1.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.5,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.56,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.58,
+"Let's begin!"
+],
+[
+11.99,
+"Welcome to Stage 8, Unit 1: Diet and Growth."
+],
+[
+16.09,
+"The nutrients in our food are like building blocks."
+],
+[
+19.94,
+"They build strong bones and muscles, fuel our brains for learning,"
+],
+[
+23.97,
+"and keep our bodies working."
+],
+[
+25.68,
+"What nutrients do we need, and which habits help us stay healthy?"
+],
+[
+29.65,
+"Let's find out."
+],
+[
+31.23,
+"Our bodies need nutrients for energy, as building materials,"
+],
+[
+35.5,
+"and to control body processes."
+],
+[
+37.34,
+"We get them from food."
+],
+[
+38.68,
+"Carbohydrates give us energy, proteins are needed for growth and repair,"
+],
+[
+43.08,
+"and fats and oils store energy."
+],
+[
+45.63,
+"Vitamins help the body work correctly,"
+],
+[
+48.73,
+"and minerals help the body grow and work properly."
+],
+[
+52.53,
+"We also need water and fibre."
+],
+[
+55.03,
+"They aren't nutrients, but they're essential."
+],
+[
+57.78,
+"Water is a major part of blood and is needed for the body's chemical reactions."
+],
+[
+62.61,
+"Fibre keeps the digestive system healthy."
+],
+[
+65.77,
+"A drop of orange-brown iodine solution is put on bread, sugar,"
+],
+[
+70.17,
+"potato and cheese. Iodine turns blue-black if starch is present."
+],
+[
+74.08,
+"Predict: which foods will turn blue-black?"
+],
+[
+76.66,
+"Pause and decide."
+],
+[
+78.34,
+"Watch. One drop of iodine solution goes onto each food."
+],
+[
+83.23,
+"The bread and the potato turn blue-black."
+],
+[
+86.53,
+"The sugar and the cheese stay orange-brown."
+],
+[
+89.89,
+"Explain what you saw."
+],
+[
+91.9,
+"Bread and potato are starchy foods:"
+],
+[
+94.04,
+"starch is a complex carbohydrate that plants store."
+],
+[
+97.16,
+"Sugar is a carbohydrate too, but it is not starch,"
+],
+[
+100.21,
+"so iodine stays orange."
+],
+[
+101.62,
+"Cheese is mostly protein and fat, so it has no starch."
+],
+[
+104.92,
+"Pause and explain it in your own words."
+],
+[
+107.97,
+"Carbohydrates are like fuel for a car: they give us energy for walking,"
+],
+[
+112.89,
+"running and even thinking."
+],
+[
+114.47,
+"Starch is a complex carbohydrate and our main source of energy."
+],
+[
+118.31,
+"It's found in bread, rice, pasta, oats, potatoes and corn."
+],
+[
+122.49,
+"Sugars, found in sweets, sugary drinks, honey and syrup,"
+],
+[
+126.63,
+"are absorbed into the blood quickly, giving fast energy."
+],
+[
+130.04,
+"But refined sugars contain no other nutrients,"
+],
+[
+132.84,
+"and extra carbohydrates are turned into fat and stored in the body."
+],
+[
+137.55,
+"Fibre is also a carbohydrate, found in fruit, vegetables, whole grains,"
+],
+[
+142.58,
+"nuts and seeds. We can't digest it, so it's not a nutrient."
+],
+[
+146.15,
+"But it helps us feel full, adds bulk to undigested food,"
+],
+[
+149.54,
+"moves waste through the gut, prevents constipation and slows down sugar absorption."
+],
+[
+155.21,
+"Proteins help the body repair damaged cells and make new ones."
+],
+[
+159.57,
+"They're also needed to make enzymes and hormones."
+],
+[
+162.54,
+"Proteins come from meat, fish, eggs, cheese, nuts and milk."
+],
+[
+166.12,
+"Vegetarians and vegans can get them from plants such as peas and beans."
+],
+[
+171.1,
+"Fats and oils help us absorb some vitamins, build parts of cells,"
+],
+[
+175.8,
+"protect our organs and keep us warm."
+],
+[
+178.0,
+"Plant fats, like nuts and olive oil, are healthier than animal fats."
+],
+[
+182.82,
+"Fats and oils have more than double the energy value of carbohydrates,"
+],
+[
+187.78,
+"so most of our stored energy is fat."
+],
+[
+189.96,
+"That's how a hibernating bear survives winter!"
+],
+[
+192.75,
+"The liver also stores a little carbohydrate, called glycogen."
+],
+[
+196.44,
+"Only when carbohydrates and fats run out does the body use protein,"
+],
+[
+200.49,
+"breaking down muscle. So we need a balance of all nutrients."
+],
+[
+204.77,
+"We need only small amounts of vitamins, but each has its own job."
+],
+[
+209.31,
+"Vitamin A, from carrots, spinach and pumpkin,"
+],
+[
+212.05,
+"keeps eyes and skin healthy and helps fight infection."
+],
+[
+215.32,
+"Without enough, you may struggle to see in dim light and get ill more often."
+],
+[
+220.59,
+"Vitamin C, from oranges, strawberries and papayas, keeps gums healthy,"
+],
+[
+225.61,
+"helps cuts heal and helps us absorb iron."
+],
+[
+228.12,
+"A lack causes bleeding gums and slow healing."
+],
+[
+231.54,
+"Vitamin D helps us absorb calcium for strong bones and teeth."
+],
+[
+235.99,
+"Our skin makes it in sunlight, and we get it from eggs,"
+],
+[
+239.33,
+"mushrooms and sardines. A lack causes weak bones."
+],
+[
+242.31,
+"But be careful: too much of some vitamins can be harmful too."
+],
+[
+246.68,
+"We need minerals in small amounts too."
+],
+[
+249.58,
+"Calcium, from milk, yoghurt, cheese and green vegetables,"
+],
+[
+253.04,
+"builds strong bones and teeth and helps muscles and nerves work."
+],
+[
+256.92,
+"Iron, from meat, liver, eggs and leafy greens, is needed to make haemoglobin,"
+],
+[
+261.59,
+"which carries oxygen in red blood cells."
+],
+[
+264.01,
+"Too little iron makes us tired and weak."
+],
+[
+267.1,
+"Our cells are mostly water,"
+],
+[
+269.48,
+"and every chemical reaction in the body needs it."
+],
+[
+272.47,
+"We lose water when we sweat, urinate and breathe out,"
+],
+[
+275.71,
+"so we should drink about 1.5 to 2 litres,"
+],
+[
+278.21,
+"roughly six to eight glasses, every day,"
+],
+[
+280.66,
+"and more on hot days or when exercising."
+],
+[
+283.77,
+"Food labels use these standard values for the energy in one gram of each nutrient."
+],
+[
+290.11,
+"Carbohydrate and protein both give about 17 kilojoules per gram."
+],
+[
+294.81,
+"Fat gives 37: more than double."
+],
+[
+296.73,
+"Fibre gives only about 8."
+],
+[
+298.95,
+"Pause and decide: which gives more energy,"
+],
+[
+302.29,
+"10 grams of fat or 10 grams of carbohydrate, and how much more?"
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+11.99,
+"Diet and Growth"
+],
+[
+31.23,
+"The five types of nutrients"
+],
+[
+65.77,
+"Predict, watch, explain: which foods contain starch?"
+],
+[
+107.97,
+"Carbohydrates: fuel for the body"
+],
+[
+155.21,
+"Proteins, fats and oils"
+],
+[
+204.77,
+"Vitamins A, C and D"
+],
+[
+246.68,
+"Minerals and water"
+],
+[
+283.77,
+"Real data: energy in one gram of each nutrient"
+]
+],
+"stops": [
+{
+"id": "s8u01s1v01",
+"t": 45.28,
+"review": [
+31.23,
+45.63
+]
+},
+{
+"id": "s8u01n11p",
+"t": 77.99,
+"review": [
+65.77,
+78.34
+]
+},
+{
+"id": "s8u01n11e",
+"t": 107.62,
+"review": [
+65.77,
+107.97
+]
+},
+{
+"id": "s8u01s1v02",
+"t": 154.86,
+"review": [
+107.97,
+155.21
+]
+},
+{
+"id": "s8u01s1v03",
+"t": 266.75,
+"review": [
+246.68,
+267.1
+]
+},
+{
+"id": "s8u01n12",
+"t": 306.32,
+"review": [
+283.77,
+306.67
+]
+}
+],
+"dur": 306.633,
+"src": "media/s8/u1_s1.ee1bbb41.mp4",
+"poster": "media/s8/u1_s1_poster.ee1bbb41.jpg"
+},
+"1.2": {
+"captions": [
+[
+0.0,
+"The energy in food is measured in kilojoules or kilocalories,"
+],
+[
+3.63,
+"and it's shown on food labels."
+],
+[
+5.42,
+"To keep a healthy body mass,"
+],
+[
+7.09,
+"we need to balance the energy we take in from food"
+],
+[
+10.07,
+"with the energy we use in activity and body processes."
+],
+[
+13.28,
+"Take in more than you use, and the extra is stored as fat."
+],
+[
+17.4,
+"But not everyone needs the same amount."
+],
+[
+20.46,
+"Energy needs depend on age, sex, how active you are, and individual differences."
+],
+[
+25.23,
+"Growing children need plenty of calcium and protein for bones and muscles,"
+],
+[
+29.65,
+"while older adults may need more vitamin D and fibre."
+],
+[
+33.47,
+"A balanced diet contains a variety of foods,"
+],
+[
+36.72,
+"giving us all the nutrients we need."
+],
+[
+38.89,
+"Healthy eating plates show that half of our plate should be fruit and vegetables."
+],
+[
+44.44,
+"A quarter should be starchy foods, especially wholegrain ones,"
+],
+[
+48.88,
+"which also give us fibre, and a quarter should be protein."
+],
+[
+52.35,
+"Choose healthier oils, drink water rather than sugary drinks, and stay active."
+],
+[
+57.67,
+"Malnutrition means not getting the right amounts of nutrients,"
+],
+[
+62.1,
+"either too little or too much."
+],
+[
+63.89,
+"A severe lack of protein causes a disease called kwashiorkor."
+],
+[
+67.53,
+"Taking in much more energy than we use, over a long time,"
+],
+[
+70.92,
+"can lead to obesity, which raises the risk of heart disease,"
+],
+[
+74.5,
+"high blood pressure and a type of diabetes."
+],
+[
+77.06,
+"Eating too little leaves the body weak and tired."
+],
+[
+80.63,
+"A balanced lunch gives a mix of nutrients."
+],
+[
+83.83,
+"Here is one lunch box, item by item."
+],
+[
+86.73,
+"A wholegrain sandwich gives starch for energy,"
+],
+[
+90.31,
+"and fibre to keep the gut healthy."
+],
+[
+93.08,
+"The egg filling gives protein,"
+],
+[
+95.66,
+"which the body uses for growth and to repair cells."
+],
+[
+99.47,
+"Carrot sticks give vitamin A, and an orange gives vitamin C,"
+],
+[
+103.91,
+"plus minerals and fibre."
+],
+[
+106.04,
+"A bottle of water instead of a sugary drink keeps you hydrated without extra sugar."
+],
+[
+112.51,
+"Pause and decide: a friend's lunch is crisps, chocolate and a fizzy drink."
+],
+[
+117.76,
+"Which nutrients are missing?"
+]
+],
+"chapters": [
+[
+0.0,
+"Balancing energy in and energy out"
+],
+[
+33.47,
+"What is a balanced diet?"
+],
+[
+80.63,
+"Real life: packing a balanced lunch box"
+]
+],
+"stops": [
+{
+"id": "s8u01s2v01",
+"t": 17.05,
+"review": [
+0.0,
+17.4
+]
+},
+{
+"id": "s8u01s2v02",
+"t": 57.32,
+"review": [
+33.47,
+57.67
+]
+},
+{
+"id": "s8u01n13",
+"t": 119.59,
+"review": [
+80.63,
+119.94
+]
+}
+],
+"dur": 119.967,
+"src": "media/s8/u1_s2.d8ba476b.mp4",
+"poster": "media/s8/u1_s2_poster.d8ba476b.jpg"
+},
+"1.3": {
+"captions": [
+[
+0.0,
+"Staying healthy isn't just about food."
+],
+[
+2.35,
+"Our lifestyle matters too."
+],
+[
+3.96,
+"Getting about 8 hours of good-quality sleep helps you"
+],
+[
+7.23,
+"feel rested and helps your brain work better."
+],
+[
+10.68,
+"Regular exercise makes the heart, lungs, muscles and bones stronger."
+],
+[
+15.58,
+"It reduces stress, lifts your mood,"
+],
+[
+17.72,
+"helps you sleep and stops you getting ill so easily."
+],
+[
+20.91,
+"Running and jumping strengthen the heart, and lifting weights builds muscle strength."
+],
+[
+26.12,
+"Always warm up, start slowly and cool down afterwards."
+],
+[
+30.11,
+"Stretching and yoga make joints and muscles flexible."
+],
+[
+34.13,
+"Together with a balanced diet,"
+],
+[
+35.99,
+"exercise helps the body keep a healthy balance of muscle, bone and fat."
+],
+[
+41.07,
+"A student starts exercising for 30 minutes, five times a week,"
+],
+[
+45.54,
+"and measures her resting heart rate every two weeks."
+],
+[
+49.44,
+"At the start her resting heart rate is 78 beats per minute."
+],
+[
+53.89,
+"After eight weeks it has fallen to 69."
+],
+[
+56.94,
+"Regular exercise makes the heart muscle stronger,"
+],
+[
+60.78,
+"so it pumps more blood with each beat."
+],
+[
+63.85,
+"Pause and decide: why does a stronger heart need fewer beats per minute at rest?"
+],
+[
+70.27,
+"Some habits harm our growth and health."
+],
+[
+73.28,
+"Eating lots of foods high in sugar,"
+],
+[
+75.45,
+"salt and certain fats can cause tiredness, poor concentration, weight gain,"
+],
+[
+80.09,
+"diabetes and heart disease."
+],
+[
+81.76,
+"A lack of protein,"
+],
+[
+82.87,
+"calcium and vitamin D can stunt growth and weaken bones."
+],
+[
+86.99,
+"Alcohol can harm the brain and lead to addiction."
+],
+[
+90.79,
+"If a pregnant woman drinks alcohol,"
+],
+[
+92.97,
+"it can damage her baby's brain and slow its growth."
+],
+[
+96.82,
+"Smoking and vaping are very harmful."
+],
+[
+99.77,
+"Tobacco smoke contains nicotine,"
+],
+[
+101.73,
+"which is addictive and raises heart rate and blood pressure; carbon monoxide,"
+],
+[
+106.46,
+"which stops the blood carrying oxygen; and tar,"
+],
+[
+109.35,
+"which coats the lungs and increases the risk of lung cancer."
+],
+[
+113.03,
+"Smoke harms people nearby too, and can slow children's growth."
+],
+[
+117.5,
+"Can our diet be more sustainable?"
+],
+[
+120.15,
+"Cattle release carbon dioxide and methane, which are greenhouse gases."
+],
+[
+124.49,
+"As demand for meat grows,"
+],
+[
+126.04,
+"more land is needed for grazing and animal feed,"
+],
+[
+129.01,
+"which can lead to deforestation."
+],
+[
+131.66,
+"Food scientists now make plant-based burgers that look and taste like meat,"
+],
+[
+136.99,
+"using rice flour, beans, vegetables and beet juice for colour."
+],
+[
+140.79,
+"Pea protein contains all the essential building blocks of proteins,"
+],
+[
+144.9,
+"and one company adds soy leghaemoglobin,"
+],
+[
+147.35,
+"which is similar to the iron compounds in meat."
+],
+[
+150.9,
+"Eating more plant-based food can help the environment,"
+],
+[
+155.0,
+"as long as our diet still gives us all the nutrients we need."
+],
+[
+159.46,
+"Now it is your turn to shine!"
+],
+[
+161.89,
+"Pause the video after each question and try to answer it first."
+],
+[
+166.51,
+"Question 1: Which nutrient is needed for growth and repair of cells?"
+],
+[
+171.55,
+"Pause the video now."
+],
+[
+173.46,
+"Answer: Proteins."
+],
+[
+176.19,
+"Question 2: Why do we need vitamin D?"
+],
+[
+179.34,
+"Pause the video now."
+],
+[
+181.3,
+"Answer: To absorb calcium for strong bones and teeth."
+],
+[
+186.11,
+"Question 3: Is fibre a nutrient?"
+],
+[
+188.92,
+"Why do we need it?"
+],
+[
+190.09,
+"Pause the video now."
+],
+[
+192.05,
+"Answer: No – it isn't digested, but it keeps the digestive system healthy."
+],
+[
+198.06,
+"Question 4: Name one harmful substance in tobacco smoke and its effect."
+],
+[
+203.28,
+"Pause the video now."
+],
+[
+205.21,
+"Answer: e.g. tar coats the lungs; carbon monoxide reduces oxygen in the blood."
+]
+],
+"chapters": [
+[
+0.0,
+"Healthy habits"
+],
+[
+41.07,
+"Data: resting heart rate during an exercise programme"
+],
+[
+70.27,
+"Unhealthy habits"
+],
+[
+117.5,
+"Plant-based burgers"
+],
+[
+159.46,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s8u01s3v01",
+"t": 29.76,
+"review": [
+0.0,
+30.11
+]
+},
+{
+"id": "s8u01n14",
+"t": 69.92,
+"review": [
+41.07,
+70.27
+]
+},
+{
+"id": "s8u01s3v02",
+"t": 117.15,
+"review": [
+70.27,
+117.5
+]
+},
+{
+"id": "s8u01s3v03",
+"t": 131.31,
+"review": [
+117.5,
+131.66
+]
+}
+],
+"dur": 211.633,
+"src": "media/s8/u1_s3.4e47b1b6.mp4",
+"poster": "media/s8/u1_s3_poster.4e47b1b6.jpg"
+}
+}

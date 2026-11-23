@@ -1,0 +1,515 @@
+{
+"14.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.54,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.75,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.92,
+"Let's begin!"
+],
+[
+12.35,
+"Welcome to our final unit, Unit 14: Astronomy."
+],
+[
+16.69,
+"How did the Moon form?"
+],
+[
+18.83,
+"How are stars born?"
+],
+[
+20.04,
+"And what really happened when a huge asteroid struck Earth 66 million years ago?"
+],
+[
+25.14,
+"Scientists even dream of mining asteroids for materials one day."
+],
+[
+29.86,
+"Asteroids are rocky objects orbiting the Sun,"
+],
+[
+33.32,
+"from about 2 metres to nearly 1000 kilometres across."
+],
+[
+36.68,
+"Most are in the asteroid belt between Mars and Jupiter,"
+],
+[
+40.17,
+"but gravity can pull some onto planets and moons."
+],
+[
+43.95,
+"66 million years ago, a huge asteroid struck the Gulf of Mexico,"
+],
+[
+48.74,
+"leaving a crater 200 kilometres wide."
+],
+[
+51.08,
+"Dust blocked sunlight, so plants couldn't photosynthesise and temperatures dropped."
+],
+[
+56.99,
+"Most dinosaurs became extinct in this mass extinction,"
+],
+[
+61.15,
+"though small dinosaurs survived and evolved into today's birds."
+],
+[
+65.14,
+"In 2021, scientists who had drilled into the crater found asteroid dust inside it,"
+],
+[
+70.33,
+"confirming the idea."
+],
+[
+72.25,
+"A tray is filled with flour and dusted with cocoa powder."
+],
+[
+76.47,
+"The same marble is dropped from 20 centimetres, and then from 80 centimetres."
+],
+[
+81.36,
+"Predict: which drop will make the bigger crater?"
+],
+[
+84.41,
+"Pause and decide."
+],
+[
+86.14,
+"Watch. From 20 centimetres, the marble makes a small, shallow crater."
+],
+[
+92.03,
+"From 80 centimetres it hits much faster: the crater is wider,"
+],
+[
+96.67,
+"and white flour is thrown out in long rays over the cocoa."
+],
+[
+101.05,
+"Explain what you saw."
+],
+[
+103.1,
+"A marble dropped from higher hits faster, so it carries more kinetic energy."
+],
+[
+107.9,
+"More energy pushes more flour aside,"
+],
+[
+110.17,
+"making a wider crater and throwing material further."
+],
+[
+113.45,
+"A real asteroid travels at many kilometres per second,"
+],
+[
+116.85,
+"so it carries a huge amount of energy:"
+],
+[
+119.25,
+"enough to make the Chicxulub crater, about 200 kilometres wide,"
+],
+[
+123.22,
+"and to throw dust high into the atmosphere."
+],
+[
+125.93,
+"Pause and explain it in your own words."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.35,
+"Astronomy"
+],
+[
+29.86,
+"Asteroids and the end of the dinosaurs"
+],
+[
+72.25,
+"Predict, watch, explain: making craters"
+]
+],
+"stops": [
+{
+"id": "s9u14s1v01",
+"t": 29.51,
+"review": [
+12.35,
+29.86
+]
+},
+{
+"id": "s9u14s1v02",
+"t": 43.6,
+"review": [
+29.86,
+43.95
+]
+},
+{
+"id": "s9u14s1v03",
+"t": 56.64,
+"review": [
+29.86,
+56.99
+]
+},
+{
+"id": "s9u14n11p",
+"t": 85.79,
+"review": [
+72.25,
+86.14
+]
+},
+{
+"id": "s9u14n11e",
+"t": 128.53,
+"review": [
+72.25,
+128.88
+]
+}
+],
+"dur": 128.9,
+"src": "media/s9/u14_s1.c8a992f9.mp4",
+"poster": "media/s9/u14_s1_poster.c8a992f9.jpg"
+},
+"14.2": {
+"captions": [
+[
+0.0,
+"The collision theory explains how the Moon formed."
+],
+[
+3.04,
+"About 4.5 billion years ago, soon after the Solar System formed,"
+],
+[
+6.94,
+"a Mars-sized planet called Theia smashed into the young Earth,"
+],
+[
+10.72,
+"blasting rock and dust into space."
+],
+[
+13.44,
+"Over time, the debris clumped together into a satellite that cooled to become our Moon."
+],
+[
+19.48,
+"The evidence: Apollo Moon rocks are very similar to Earth rocks,"
+],
+[
+23.39,
+"the Moon has an iron core, it's less dense than Earth,"
+],
+[
+26.68,
+"and its surface was once molten."
+],
+[
+29.29,
+"NASA's Moon Fact Sheet lists the mean density of each body."
+],
+[
+33.53,
+"Density tells us how much mass is packed into each cubic centimetre."
+],
+[
+38.39,
+"Earth's mean density is 5.51 grams per cubic centimetre."
+],
+[
+42.6,
+"The Moon's is only 3.34, about six tenths of Earth's."
+],
+[
+46.56,
+"Pause and decide: Earth has a large iron core."
+],
+[
+50.14,
+"What does the Moon's lower density suggest about its core,"
+],
+[
+53.72,
+"and how does this fit the collision theory?"
+]
+],
+"chapters": [
+[
+0.0,
+"How did the Moon form?"
+],
+[
+29.29,
+"Real data: how dense are Earth and the Moon?"
+]
+],
+"stops": [
+{
+"id": "s9u14s2v01",
+"t": 13.09,
+"review": [
+0.0,
+13.44
+]
+},
+{
+"id": "s9u14s2v02",
+"t": 28.94,
+"review": [
+0.0,
+29.29
+]
+},
+{
+"id": "s9u14n21",
+"t": 56.5,
+"review": [
+29.29,
+56.85
+]
+}
+],
+"dur": 56.8,
+"src": "media/s9/u14_s2.fcc7cfd6.mp4",
+"poster": "media/s9/u14_s2_poster.fcc7cfd6.jpg"
+},
+"14.3": {
+"captions": [
+[
+0.0,
+"A nebula is a giant cloud of dust and gas, mostly hydrogen."
+],
+[
+3.56,
+"Some, like the Orion Nebula, are stellar nurseries where stars are born; others,"
+],
+[
+8.4,
+"like the Crab Nebula, are the remains of exploded stars."
+],
+[
+12.43,
+"In a stellar nursery,"
+],
+[
+14.46,
+"dust and gas form a clump whose gravity pulls in more matter."
+],
+[
+18.19,
+"It collapses and heats up,"
+],
+[
+19.78,
+"until particles in the core react and a new star begins to shine."
+],
+[
+23.77,
+"Stars can live for billions of years!"
+],
+[
+26.68,
+"Nebulae are not just pictures in a book."
+],
+[
+29.78,
+"Here are four real examples that astronomers study."
+],
+[
+33.61,
+"On a dark night you can see the Orion Nebula without a telescope,"
+],
+[
+38.34,
+"as a fuzzy patch in the sword of Orion."
+],
+[
+40.74,
+"Inside it, new stars are forming right now."
+],
+[
+44.04,
+"The Pillars of Creation are huge columns of dust and gas in the Eagle Nebula."
+],
+[
+49.48,
+"Space telescopes have photographed young stars forming inside them."
+],
+[
+54.23,
+"The Crab Nebula is different."
+],
+[
+56.76,
+"It is the remains of a star that exploded,"
+],
+[
+59.35,
+"and the explosion was recorded by astronomers in the year 1054."
+],
+[
+63.89,
+"Our own Sun formed in the same way,"
+],
+[
+66.8,
+"from a collapsing cloud of gas and dust, about 4.6 billion years ago."
+],
+[
+71.73,
+"So some nebulae are where stars are born,"
+],
+[
+74.98,
+"and some are what is left when stars die."
+],
+[
+77.5,
+"Pause and decide: what force makes a clump of"
+],
+[
+80.27,
+"gas in a nebula collapse to form a star?"
+],
+[
+83.38,
+"Now it is your turn to shine!"
+],
+[
+85.79,
+"Pause the video after each question and try to answer it first."
+],
+[
+90.37,
+"Question 1: Where are most asteroids found?"
+],
+[
+93.85,
+"Pause the video now."
+],
+[
+95.78,
+"Answer: In the asteroid belt between Mars and Jupiter."
+],
+[
+100.62,
+"Question 2: Why did an asteroid impact cause mass extinction?"
+],
+[
+105.18,
+"Pause the video now."
+],
+[
+107.09,
+"Answer: Dust blocked sunlight, so plants died and Earth cooled."
+],
+[
+112.45,
+"Question 3: What is the collision theory?"
+],
+[
+115.82,
+"Pause the video now."
+],
+[
+117.75,
+"Answer: The Moon formed when a planet called Theia hit the young Earth."
+],
+[
+123.59,
+"Question 4: What is a nebula?"
+],
+[
+126.23,
+"Pause the video now."
+],
+[
+128.19,
+"Answer: A giant cloud of dust and gas where stars can form."
+]
+],
+"chapters": [
+[
+0.0,
+"Nebulae: where stars are born"
+],
+[
+26.68,
+"Real life: nebulae in our sky"
+],
+[
+83.38,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s9u14s3v01",
+"t": 12.08,
+"review": [
+0.0,
+12.43
+]
+},
+{
+"id": "s9u14s3v02",
+"t": 26.33,
+"review": [
+0.0,
+26.68
+]
+},
+{
+"id": "s9u14n31",
+"t": 83.03,
+"review": [
+26.68,
+83.38
+]
+}
+],
+"dur": 133.167,
+"src": "media/s9/u14_s3.4c09b733.mp4",
+"poster": "media/s9/u14_s3_poster.4c09b733.jpg"
+}
+}

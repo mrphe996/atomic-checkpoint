@@ -1,0 +1,504 @@
+{
+"7.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.5,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.59,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.64,
+"Let's begin!"
+],
+[
+12.04,
+"Welcome to Unit 7: Salts."
+],
+[
+15.04,
+"Salt flavours our food, keeps our bodies working,"
+],
+[
+18.78,
+"preserves food and even melts ice on winter roads."
+],
+[
+21.84,
+"It's made by mining, pumping water into underground salt beds, or evaporating seawater."
+],
+[
+27.18,
+"But table salt is just one of many salts!"
+],
+[
+30.36,
+"Table salt, sodium chloride, is just one salt."
+],
+[
+33.8,
+"Ammonium nitrate is used in fertilisers,"
+],
+[
+36.28,
+"calcium sulfate in plaster casts for broken bones,"
+],
+[
+39.37,
+"and sodium hydrogen carbonate is baking soda."
+],
+[
+42.82,
+"A salt is an ionic compound."
+],
+[
+45.28,
+"Sodium chloride is made of positive sodium ions and negative chloride ions."
+],
+[
+49.9,
+"Every acid contains hydrogen ions,"
+],
+[
+52.0,
+"and a salt forms when those hydrogen ions"
+],
+[
+54.52,
+"are replaced by metal ions or ammonium ions."
+],
+[
+57.9,
+"A common way to make a salt is to react an acid with a base:"
+],
+[
+62.26,
+"acid plus base gives salt plus water."
+],
+[
+65.25,
+"Common acids are hydrochloric, sulfuric and nitric acid."
+],
+[
+69.41,
+"Bases are metal oxides and metal hydroxides."
+],
+[
+72.1,
+"Bases that dissolve in water are called alkalis, like sodium hydroxide; others,"
+],
+[
+76.94,
+"like copper oxide, are insoluble but still react with acids."
+],
+[
+81.27,
+"Hydrochloric acid plus potassium hydroxide gives potassium chloride and water."
+],
+[
+86.77,
+"The metal comes from the base, the rest from the acid:"
+],
+[
+90.07,
+"hydrochloric acid makes chlorides, sulfuric makes sulfates, nitric makes nitrates."
+],
+[
+95.75,
+"Hydrochloric acid is neutralised exactly with sodium hydroxide solution: the indicator shows green,"
+],
+[
+102.43,
+"pH 7. The solution is then heated gently in an evaporating dish."
+],
+[
+106.36,
+"Predict: what will be left in the dish?"
+],
+[
+108.75,
+"Pause and decide."
+],
+[
+110.47,
+"Watch. As the solution is heated, the water evaporates."
+],
+[
+115.38,
+"Small white crystals are left in the dish."
+],
+[
+118.77,
+"They are sodium chloride: table salt."
+],
+[
+121.77,
+"Explain what you saw."
+],
+[
+123.8,
+"The acid and the alkali reacted to make a salt and water:"
+],
+[
+127.29,
+"hydrochloric acid plus sodium hydroxide gives sodium chloride plus water."
+],
+[
+131.77,
+"The water evaporated, leaving the salt as crystals."
+],
+[
+134.9,
+"The sodium came from the alkali,"
+],
+[
+136.86,
+"and the chloride came from the hydrochloric acid."
+],
+[
+139.86,
+"Pause and explain it in your own words."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.04,
+"Salts"
+],
+[
+30.36,
+"Salts around us"
+],
+[
+57.9,
+"Acid + base → salt + water"
+],
+[
+95.75,
+"Predict, watch, explain: what is left after neutralisation?"
+]
+],
+"stops": [
+{
+"id": "s9u07s1v01",
+"t": 30.01,
+"review": [
+12.04,
+30.36
+]
+},
+{
+"id": "s9u07s1v02",
+"t": 42.47,
+"review": [
+30.36,
+42.82
+]
+},
+{
+"id": "s9u07s1v03",
+"t": 64.9,
+"review": [
+57.9,
+65.25
+]
+},
+{
+"id": "s9u07s1v04",
+"t": 95.4,
+"review": [
+57.9,
+95.75
+]
+},
+{
+"id": "s9u07n11p",
+"t": 110.12,
+"review": [
+95.75,
+110.47
+]
+},
+{
+"id": "s9u07n11e",
+"t": 142.39,
+"review": [
+95.75,
+142.74
+]
+}
+],
+"dur": 142.733,
+"src": "media/s9/u7_s1.52bc4e44.mp4",
+"poster": "media/s9/u7_s1_poster.52bc4e44.jpg"
+},
+"7.2": {
+"captions": [
+[
+0.0,
+"Magnesium ribbon is added to dilute hydrochloric acid in one tube,"
+],
+[
+4.03,
+"and marble chips, calcium carbonate, to the acid in another."
+],
+[
+7.69,
+"Both fizz. Predict: is the same gas made in both tubes?"
+],
+[
+11.05,
+"Pause and decide."
+],
+[
+12.74,
+"Watch. A lit splint held at the mouth of"
+],
+[
+16.0,
+"the magnesium tube goes out with a squeaky pop."
+],
+[
+19.62,
+"The gas from the marble chips is bubbled through limewater, which turns milky."
+],
+[
+25.9,
+"Explain what you saw."
+],
+[
+27.92,
+"The gases are different."
+],
+[
+29.39,
+"Acid plus metal gives a salt plus hydrogen,"
+],
+[
+32.03,
+"which burns with a squeaky pop."
+],
+[
+33.93,
+"Acid plus a metal carbonate gives a salt, water and carbon dioxide,"
+],
+[
+38.05,
+"which turns limewater milky."
+],
+[
+39.77,
+"Both tubes make a salt: magnesium chloride and calcium chloride."
+],
+[
+43.69,
+"Pause and explain it in your own words."
+],
+[
+46.74,
+"Salts can also be made from metal carbonates."
+],
+[
+50.09,
+"Drop a seashell, made of calcium carbonate, into vinegar and it fizzes."
+],
+[
+54.43,
+"Acid plus metal carbonate gives salt, carbon dioxide and water."
+],
+[
+58.28,
+"Sulfuric acid and copper carbonate make copper sulfate."
+],
+[
+62.3,
+"Acid plus metal gives salt plus hydrogen:"
+],
+[
+65.55,
+"hydrochloric acid and zinc make zinc chloride."
+],
+[
+68.37,
+"We use magnesium, iron or zinc, because copper, silver and gold don't react,"
+],
+[
+73.04,
+"and sodium and potassium are too violent."
+],
+[
+76.21,
+"To prepare copper sulfate, warm dilute sulfuric acid gently,"
+],
+[
+80.49,
+"then add copper carbonate a little at a time, stirring,"
+],
+[
+83.86,
+"until some is left over and no longer reacts."
+],
+[
+86.63,
+"Adding excess makes sure all the acid is used up."
+],
+[
+90.29,
+"Filter the mixture to remove the unreacted copper carbonate."
+],
+[
+94.73,
+"Collect the blue filtrate,"
+],
+[
+96.33,
+"then heat it gently in an evaporating dish to remove most of the water,"
+],
+[
+100.7,
+"making a saturated solution."
+],
+[
+103.07,
+"Leave the saturated solution to cool, and blue copper sulfate crystals form."
+],
+[
+108.47,
+"Filter them and dry them on filter paper."
+],
+[
+110.98,
+"The same method makes zinc chloride from zinc and hydrochloric acid."
+],
+[
+115.81,
+"Now it is your turn to shine!"
+],
+[
+118.23,
+"Pause the video after each question and try to answer it first."
+],
+[
+122.84,
+"Question 1: Complete: acid + base gives..."
+],
+[
+126.46,
+"Pause the video now."
+],
+[
+128.4,
+"Answer: Salt and water."
+],
+[
+131.41,
+"Question 2: Which gas is given off when an acid reacts with a metal carbonate?"
+],
+[
+137.02,
+"Pause the video now."
+],
+[
+138.94,
+"Answer: Carbon dioxide."
+],
+[
+141.95,
+"Question 3: Name the salt made from sulfuric acid and magnesium."
+],
+[
+146.72,
+"Pause the video now."
+],
+[
+148.63,
+"Answer: Magnesium sulfate."
+],
+[
+151.82,
+"Question 4: Why is excess metal carbonate added when making a salt?"
+],
+[
+156.77,
+"Pause the video now."
+],
+[
+158.69,
+"Answer: To make sure all the acid reacts."
+]
+],
+"chapters": [
+[
+0.0,
+"Predict, watch, explain: which gas is made?"
+],
+[
+46.74,
+"Salts from carbonates and metals"
+],
+[
+76.21,
+"Making copper sulfate crystals"
+],
+[
+115.81,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s9u07n21p",
+"t": 12.39,
+"review": [
+0.0,
+12.74
+]
+},
+{
+"id": "s9u07n21e",
+"t": 46.39,
+"review": [
+0.0,
+46.74
+]
+},
+{
+"id": "s9u07s2v01",
+"t": 61.95,
+"review": [
+46.74,
+62.3
+]
+},
+{
+"id": "s9u07s2v02",
+"t": 75.86,
+"review": [
+46.74,
+76.21
+]
+},
+{
+"id": "s9u07s2v03",
+"t": 102.72,
+"review": [
+76.21,
+103.07
+]
+}
+],
+"dur": 162.567,
+"src": "media/s9/u7_s2.cb6c2fd3.mp4",
+"poster": "media/s9/u7_s2_poster.cb6c2fd3.jpg"
+}
+}

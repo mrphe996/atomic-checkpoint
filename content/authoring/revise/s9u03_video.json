@@ -1,0 +1,917 @@
+{
+"3.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.57,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.77,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.96,
+"Let's begin!"
+],
+[
+12.4,
+"Welcome to Unit 3: Variation and Inheritance."
+],
+[
+16.67,
+"Malaria, spread by mosquitoes, kills more than half a million people a year."
+],
+[
+22.2,
+"Insecticide-treated bed nets protect sleepers, but they have become less effective over time."
+],
+[
+28.08,
+"Why? By the end of this unit, you'll know."
+],
+[
+31.39,
+"Inside the nucleus of every cell are chromosomes,"
+],
+[
+35.1,
+"carrying the genetic information that controls the cell."
+],
+[
+38.65,
+"Each species has a set number: humans have 23 pairs, 46 in all,"
+],
+[
+42.65,
+"including one pair of sex chromosomes."
+],
+[
+45.07,
+"Camels have 74, and fruit flies just 8!"
+],
+[
+48.19,
+"Each chromosome carries hundreds or thousands of genes."
+],
+[
+52.43,
+"A gene is a section of DNA that controls a characteristic, or trait,"
+],
+[
+56.76,
+"such as eye colour."
+],
+[
+57.97,
+"Genes can have different forms: one form may give a cat long fur,"
+],
+[
+62.11,
+"another short fur."
+],
+[
+63.9,
+"Chromosomes are made of DNA and proteins."
+],
+[
+67.25,
+"A DNA molecule has two strands twisted like a ladder: a double helix."
+],
+[
+71.65,
+"When cells divide, the chromosomes are copied,"
+],
+[
+74.58,
+"so each new cell gets a complete set."
+],
+[
+77.6,
+"Scientists found DNA long before they understood it."
+],
+[
+81.49,
+"In 1869, Friedrich Miescher found a substance he called nuclein."
+],
+[
+85.54,
+"Albrecht Kossel named DNA and RNA, and Phoebus Levene discovered DNA's building blocks."
+],
+[
+91.71,
+"In 1944, Avery, MacLeod and McCarty showed that DNA, not protein,"
+],
+[
+96.57,
+"carries hereditary information. Then in 1953, James Watson"
+],
+[
+100.26,
+"and Francis Crick discovered the double helix structure."
+],
+[
+104.47,
+"Their model relied on Rosalind Franklin's X-ray images:"
+],
+[
+108.69,
+"science develops as people build on each other's work."
+],
+[
+112.11,
+"In 2003, the Human Genome Project mapped all human genes,"
+],
+[
+115.72,
+"helping to find genes behind disorders like cystic fibrosis."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.4,
+"Variation and Inheritance"
+],
+[
+31.39,
+"Chromosomes, genes and DNA"
+],
+[
+77.6,
+"Discovering DNA"
+]
+],
+"stops": [
+{
+"id": "s9u03s1v01",
+"t": 47.84,
+"review": [
+31.39,
+48.19
+]
+},
+{
+"id": "s9u03s1v02",
+"t": 63.55,
+"review": [
+31.39,
+63.9
+]
+},
+{
+"id": "s9u03s1v03",
+"t": 104.12,
+"review": [
+77.6,
+104.47
+]
+}
+],
+"dur": 120.067,
+"src": "media/s9/u3_s1.cbe90880.mp4",
+"poster": "media/s9/u3_s1_poster.cbe90880.jpg"
+},
+"3.2": {
+"captions": [
+[
+0.0,
+"Every egg carries an X chromosome."
+],
+[
+2.1,
+"A sperm carries either an X or a Y."
+],
+[
+4.27,
+"We model this by tossing a coin 100 times:"
+],
+[
+6.87,
+"heads for an X sperm, tails for a Y sperm."
+],
+[
+9.47,
+"Predict: how many of the 100 'babies' will be girls?"
+],
+[
+12.69,
+"Pause and decide."
+],
+[
+14.4,
+"Watch. After 20 tosses, there are 11 girls and 9 boys."
+],
+[
+19.29,
+"After 100 tosses, there are 48 girls and 52 boys:"
+],
+[
+23.16,
+"very close to half each."
+],
+[
+25.37,
+"Explain what you saw."
+],
+[
+27.4,
+"Half of all sperm carry an X and half carry a Y,"
+],
+[
+30.38,
+"so each baby has an equal chance of being XX, a girl,"
+],
+[
+33.67,
+"or XY, a boy."
+],
+[
+34.48,
+"Small samples can be uneven,"
+],
+[
+36.21,
+"but with many tosses the result gets close to half and half."
+],
+[
+39.93,
+"The father's sperm decides the sex."
+],
+[
+42.11,
+"Pause and explain it in your own words."
+],
+[
+45.18,
+"Inheritance is the passing of traits from parents to offspring."
+],
+[
+49.68,
+"Sperm and egg cells have only 23 chromosomes each."
+],
+[
+52.77,
+"At fertilisation their nuclei fuse,"
+],
+[
+54.94,
+"making a zygote with all 46 and a unique combination of DNA."
+],
+[
+59.32,
+"One pair of chromosomes decides sex: females are XX and males are XY."
+],
+[
+64.34,
+"Every egg carries an X,"
+],
+[
+65.77,
+"but a sperm can carry an X or a Y."
+],
+[
+67.89,
+"So the father's sperm decides: X makes a girl, Y makes a boy,"
+],
+[
+71.68,
+"about fifty-fifty."
+],
+[
+73.47,
+"The zygote divides into a ball of cells,"
+],
+[
+76.68,
+"which implants in the uterus wall."
+],
+[
+78.78,
+"It's called an embryo until about nine weeks, then a fetus."
+],
+[
+82.44,
+"If one zygote splits in two, we get identical twins;"
+],
+[
+85.66,
+"two separate eggs give non-identical twins."
+],
+[
+88.99,
+"The fetus grows in the uterus for about 40 weeks."
+],
+[
+92.63,
+"The placenta passes oxygen,"
+],
+[
+94.3,
+"nutrients and antibodies from the mother and takes away wastes."
+],
+[
+98.21,
+"The umbilical cord connects them,"
+],
+[
+100.26,
+"and the amnion and its fluid cushion the fetus."
+],
+[
+103.84,
+"Harmful substances also cross the placenta, especially in the first weeks,"
+],
+[
+109.12,
+"when organs form. A balanced diet with folic acid, iron and calcium is vital."
+],
+[
+113.85,
+"Smoking, alcohol and drugs can cause birth defects, low birth weight or miscarriage."
+]
+],
+"chapters": [
+[
+0.0,
+"Predict, watch, explain: a coin model of boy or girl"
+],
+[
+45.18,
+"Fertilisation and inheritance"
+],
+[
+88.99,
+"How does the fetus develop?"
+]
+],
+"stops": [
+{
+"id": "s9u03n21p",
+"t": 14.05,
+"review": [
+0.0,
+14.4
+]
+},
+{
+"id": "s9u03n21e",
+"t": 44.83,
+"review": [
+0.0,
+45.18
+]
+},
+{
+"id": "s9u03s2v01",
+"t": 58.97,
+"review": [
+45.18,
+59.32
+]
+},
+{
+"id": "s9u03s2v02",
+"t": 73.12,
+"review": [
+45.18,
+73.47
+]
+},
+{
+"id": "s9u03s2v03",
+"t": 103.49,
+"review": [
+88.99,
+103.84
+]
+}
+],
+"dur": 119.533,
+"src": "media/s9/u3_s2.e38aa2c9.mp4",
+"poster": "media/s9/u3_s2_poster.e38aa2c9.jpg"
+},
+"3.3": {
+"captions": [
+[
+0.0,
+"Look around your class: unless there are identical twins, everyone looks different."
+],
+[
+5.11,
+"Variation is the differences between members of the same species, like height,"
+],
+[
+9.91,
+"eye colour, earlobes or blood group."
+],
+[
+12.13,
+"Some variation, like blood group, can't even be seen."
+],
+[
+16.06,
+"Individuals of a species share almost the same DNA,"
+],
+[
+19.97,
+"but small differences in DNA cause variation."
+],
+[
+22.78,
+"Each gamete carries a different half set of DNA,"
+],
+[
+25.78,
+"so every fertilised egg gets a new combination."
+],
+[
+28.71,
+"That's inherited variation."
+],
+[
+31.05,
+"Not all variation is genetic."
+],
+[
+33.59,
+"Climate, nutrition and soil also matter:"
+],
+[
+36.09,
+"hydrangeas are blue in acidic soil and pink in alkaline soil,"
+],
+[
+39.9,
+"exercise builds muscles, and sunshine darkens skin."
+],
+[
+43.09,
+"That's environmental variation."
+],
+[
+45.67,
+"A class of thirty students measured their heights"
+],
+[
+49.38,
+"and grouped them into ranges of five centimetres."
+],
+[
+53.14,
+"Most students are in the middle groups, between 150 and 159 centimetres."
+],
+[
+58.41,
+"Only a few are very short or very tall."
+],
+[
+61.53,
+"Pause and decide: is height an example of continuous or discontinuous variation,"
+],
+[
+67.26,
+"and is it caused by genes, the environment, or both?"
+]
+],
+"chapters": [
+[
+0.0,
+"What is variation?"
+],
+[
+45.67,
+"Class data: the heights of 30 students"
+]
+],
+"stops": [
+{
+"id": "s9u03s3v01",
+"t": 15.71,
+"review": [
+0.0,
+16.06
+]
+},
+{
+"id": "s9u03s3v02",
+"t": 30.7,
+"review": [
+0.0,
+31.05
+]
+},
+{
+"id": "s9u03s3v03",
+"t": 45.32,
+"review": [
+0.0,
+45.67
+]
+},
+{
+"id": "s9u03n31",
+"t": 70.65,
+"review": [
+45.67,
+71.0
+]
+}
+],
+"dur": 70.967,
+"src": "media/s9/u3_s3.39f816a6.mp4",
+"poster": "media/s9/u3_s3_poster.39f816a6.jpg"
+},
+"3.4": {
+"captions": [
+[
+0.0,
+"Ten red and ten green paper worms are scattered on grass."
+],
+[
+3.48,
+"Students act as hungry birds and pick up as"
+],
+[
+6.11,
+"many worms as they can in one minute."
+],
+[
+8.37,
+"Predict: which colour will survive better?"
+],
+[
+10.94,
+"Pause and decide."
+],
+[
+12.62,
+"Watch. After 30 seconds, most of the red worms have been found,"
+],
+[
+17.31,
+"but only one green worm."
+],
+[
+19.48,
+"After one minute, just one red worm is left,"
+],
+[
+22.98,
+"but eight green worms have survived."
+],
+[
+25.9,
+"Explain what you saw."
+],
+[
+27.91,
+"The green worms are camouflaged against the grass,"
+],
+[
+30.96,
+"so the 'birds' find them less easily."
+],
+[
+33.21,
+"In a real population, the better-camouflaged individuals survive,"
+],
+[
+37.18,
+"breed and pass on their genes,"
+],
+[
+39.0,
+"so over many generations more of the population has that variation."
+],
+[
+43.09,
+"Pause and explain it in your own words."
+],
+[
+46.12,
+"A population of mice has light grey and dark grey fur."
+],
+[
+50.02,
+"Owls hunt at night and spot the light mice more easily."
+],
+[
+53.38,
+"Dark mice survive, breed and pass on their dark fur."
+],
+[
+56.56,
+"Over generations, almost all the mice are dark."
+],
+[
+59.43,
+"This is natural selection."
+],
+[
+61.67,
+"Darwin based this theory on Galápagos finches, whose beaks suited different foods."
+],
+[
+67.41,
+"Individuals vary, and more are born than can survive."
+],
+[
+70.63,
+"Those with favourable variations survive and pass them on."
+],
+[
+74.17,
+"Over time, new species can form."
+],
+[
+76.78,
+"Natural selection can be fast in species that reproduce quickly."
+],
+[
+81.28,
+"In a population of bacteria,"
+],
+[
+82.98,
+"one may carry a variation that resists an antibiotic."
+],
+[
+86.21,
+"The antibiotic kills the rest, and the resistant ones multiply into 'super bugs'."
+],
+[
+91.81,
+"Insecticides work the same way."
+],
+[
+94.44,
+"A few mosquitoes have genes to resist them; they survive and breed,"
+],
+[
+98.53,
+"so over generations the insecticide on bed nets stops working."
+],
+[
+102.32,
+"That answers our malaria question!"
+],
+[
+104.4,
+"New insecticides must be developed."
+]
+],
+"chapters": [
+[
+0.0,
+"Predict, watch, explain: hunting for camouflaged worms"
+],
+[
+46.12,
+"Natural selection"
+],
+[
+76.78,
+"Natural selection in action"
+]
+],
+"stops": [
+{
+"id": "s9u03n41p",
+"t": 12.27,
+"review": [
+0.0,
+12.62
+]
+},
+{
+"id": "s9u03n41e",
+"t": 45.77,
+"review": [
+0.0,
+46.12
+]
+},
+{
+"id": "s9u03s4v01",
+"t": 61.32,
+"review": [
+46.12,
+61.67
+]
+},
+{
+"id": "s9u03s4v02",
+"t": 76.43,
+"review": [
+46.12,
+76.78
+]
+},
+{
+"id": "s9u03s4v03",
+"t": 91.46,
+"review": [
+76.78,
+91.81
+]
+}
+],
+"dur": 107.033,
+"src": "media/s9/u3_s4.de2ebc9f.mp4",
+"poster": "media/s9/u3_s4_poster.de2ebc9f.jpg"
+},
+"3.5": {
+"captions": [
+[
+0.0,
+"A population is a group of one species living in the same habitat."
+],
+[
+4.11,
+"It needs food, water and shelter."
+],
+[
+6.16,
+"The largest population a habitat can support is its carrying capacity."
+],
+[
+10.51,
+"If a species dies out completely, it becomes extinct."
+],
+[
+14.47,
+"Environmental changes affect population size."
+],
+[
+18.01,
+"Diseases, like rinderpest in African buffalo, kill many animals."
+],
+[
+22.0,
+"Natural disasters, such as the asteroid that wiped out the dinosaurs,"
+],
+[
+26.3,
+"and weather hazards like droughts, fires and floods can all cause huge drops."
+],
+[
+31.77,
+"Human activities do the most damage: deforestation and coral bleaching destroy habitats,"
+],
+[
+38.0,
+"overhunting and overfishing remove animals faster than they can reproduce,"
+],
+[
+42.62,
+"and pollution poisons land, water and air."
+],
+[
+45.89,
+"Twenty rabbits are released on a small island with plenty of grass and no predators."
+],
+[
+51.8,
+"Their numbers are counted each year."
+],
+[
+54.75,
+"At first the population grows slowly, then very quickly,"
+],
+[
+59.06,
+"because there is plenty of food and space."
+],
+[
+62.39,
+"After about five years,"
+],
+[
+64.62,
+"the numbers level off at around 460 to 470 rabbits."
+],
+[
+68.6,
+"Pause and decide: why does the population stop growing,"
+],
+[
+72.85,
+"and what is this maximum number called?"
+],
+[
+76.0,
+"Now it is your turn to shine!"
+],
+[
+78.46,
+"Pause the video after each question and try to answer it first."
+],
+[
+83.15,
+"Question 1: How many chromosomes are in a human egg cell?"
+],
+[
+87.58,
+"Pause the video now."
+],
+[
+89.53,
+"Answer: 23."
+],
+[
+92.26,
+"Question 2: Which parent decides the sex of a baby, and why?"
+],
+[
+96.87,
+"Pause the video now."
+],
+[
+98.83,
+"Answer: The father: his sperm carries an X or a Y."
+],
+[
+103.52,
+"Question 3: Give one example of environmental variation."
+],
+[
+107.88,
+"Pause the video now."
+],
+[
+109.85,
+"Answer: Hydrangea colour, muscle size or crop height."
+],
+[
+114.71,
+"Question 4: Why did insecticide nets become less effective?"
+],
+[
+119.25,
+"Pause the video now."
+],
+[
+121.2,
+"Answer: Resistant mosquitoes survived and bred."
+]
+],
+"chapters": [
+[
+0.0,
+"Populations and environmental change"
+],
+[
+45.89,
+"Data: rabbits released on a small island"
+],
+[
+76.0,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s9u03s5v01",
+"t": 14.12,
+"review": [
+0.0,
+14.47
+]
+},
+{
+"id": "s9u03s5v02",
+"t": 31.42,
+"review": [
+0.0,
+31.77
+]
+},
+{
+"id": "s9u03s5v03",
+"t": 45.54,
+"review": [
+0.0,
+45.89
+]
+},
+{
+"id": "s9u03n51",
+"t": 75.65,
+"review": [
+45.89,
+76.0
+]
+}
+],
+"dur": 125.467,
+"src": "media/s9/u3_s5.f3596fde.mp4",
+"poster": "media/s9/u3_s5_poster.f3596fde.jpg"
+}
+}

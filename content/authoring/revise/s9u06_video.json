@@ -1,0 +1,500 @@
+{
+"6.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.5,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.59,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.65,
+"Let's begin!"
+],
+[
+12.06,
+"Welcome to Unit 6: Displacement Reactions."
+],
+[
+16.07,
+"Heavy metals like lead, cadmium and mercury are toxic even in tiny amounts."
+],
+[
+21.42,
+"To clean polluted water,"
+],
+[
+22.89,
+"we can add a more reactive metal that pushes the toxic metal out of solution."
+],
+[
+27.63,
+"That's a displacement reaction!"
+],
+[
+30.19,
+"In a chemical reaction,"
+],
+[
+32.2,
+"the atoms of the reactants rearrange and bond in"
+],
+[
+35.16,
+"new ways to form products with different properties."
+],
+[
+38.35,
+"Here, two hydrogen molecules react with one oxygen molecule to form two water molecules."
+],
+[
+44.43,
+"A word equation summarises this using names: hydrogen plus oxygen gives water."
+],
+[
+49.96,
+"Reactants go on the left, products on the right,"
+],
+[
+52.92,
+"and the arrow shows the direction of the reaction."
+],
+[
+56.66,
+"A symbol equation uses chemical symbols and formulae: two H two,"
+],
+[
+61.33,
+"plus O two, gives two H two O."
+],
+[
+63.17,
+"Chemists all over the world understand it,"
+],
+[
+65.76,
+"and the formula of water shows two hydrogen atoms for every oxygen atom."
+],
+[
+70.85,
+"A coil of magnesium ribbon is put in a crucible with a lid and weighed:"
+],
+[
+75.81,
+"25.24 grams. It is heated strongly,"
+],
+[
+77.96,
+"lifting the lid slightly now and then to let air in."
+],
+[
+81.16,
+"Predict: after the reaction, will the mass be higher, lower or the same?"
+],
+[
+85.58,
+"Pause and decide."
+],
+[
+87.29,
+"Watch. The magnesium glows brilliant white inside the crucible."
+],
+[
+92.68,
+"A white powder is left."
+],
+[
+94.88,
+"The crucible and its contents now weigh 25.40 grams."
+],
+[
+98.84,
+"Explain what you saw."
+],
+[
+100.86,
+"Magnesium has reacted with oxygen from the air to form magnesium oxide:"
+],
+[
+105.22,
+"two Mg plus O two gives two MgO."
+],
+[
+107.19,
+"The oxygen atoms have joined the magnesium,"
+],
+[
+109.83,
+"so the solid product is heavier than the magnesium we started with."
+],
+[
+113.95,
+"No atoms are made or destroyed."
+],
+[
+115.85,
+"Pause and explain it in your own words."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.06,
+"Displacement Reactions"
+],
+[
+30.19,
+"Word and symbol equations"
+],
+[
+70.85,
+"Predict, watch, explain: burning magnesium in a crucible"
+]
+],
+"stops": [
+{
+"id": "s9u06s1v01",
+"t": 29.84,
+"review": [
+12.06,
+30.19
+]
+},
+{
+"id": "s9u06s1v02",
+"t": 44.08,
+"review": [
+30.19,
+44.43
+]
+},
+{
+"id": "s9u06s1v03",
+"t": 56.31,
+"review": [
+30.19,
+56.66
+]
+},
+{
+"id": "s9u06n11p",
+"t": 86.94,
+"review": [
+70.85,
+87.29
+]
+},
+{
+"id": "s9u06n11e",
+"t": 118.38,
+"review": [
+70.85,
+118.73
+]
+}
+],
+"dur": 118.767,
+"src": "media/s9/u6_s1.f9335812.mp4",
+"poster": "media/s9/u6_s1_poster.f9335812.jpg"
+},
+"6.2": {
+"captions": [
+[
+0.0,
+"The reactivity series lists elements from most to least reactive."
+],
+[
+3.92,
+"Potassium reacts violently even with cold water, iron reacts slowly,"
+],
+[
+8.01,
+"and gold is so unreactive it won't even react with acids."
+],
+[
+11.45,
+"That's why gold and silver jewellery stays shiny."
+],
+[
+15.05,
+"A metal's reactivity depends on how easily it loses its outer electrons."
+],
+[
+20.14,
+"Potassium is more reactive than sodium because it has more shells,"
+],
+[
+24.14,
+"so its outer electron is further from the nucleus and easier to lose."
+],
+[
+28.98,
+"In a displacement reaction, a more reactive element displaces, or pushes out,"
+],
+[
+34.29,
+"a less reactive element from its compound."
+],
+[
+36.86,
+"If A is more reactive than B,"
+],
+[
+38.64,
+"then A plus BC gives AC plus B."
+],
+[
+41.2,
+"Drop copper into silver nitrate solution."
+],
+[
+44.41,
+"Copper is more reactive than silver, so it displaces it:"
+],
+[
+47.79,
+"the solution turns blue as copper nitrate forms, and silver crystals appear."
+],
+[
+52.39,
+"Put silver into copper nitrate, and nothing happens, because silver is less reactive."
+],
+[
+58.18,
+"Hang a clean iron nail in blue copper sulfate solution."
+],
+[
+62.26,
+"A brown coating of copper forms on the nail,"
+],
+[
+64.95,
+"and the solution turns green as iron sulfate forms."
+],
+[
+68.06,
+"Iron is above copper in the reactivity series."
+],
+[
+71.51,
+"Displacement reactions are useful."
+],
+[
+74.17,
+"In thermite welding, aluminium powder reacts with iron oxide."
+],
+[
+77.88,
+"Aluminium is more reactive, so it takes the oxygen,"
+],
+[
+80.97,
+"producing aluminium oxide and molten iron, which welds railway rails together."
+],
+[
+86.37,
+"We can predict reactions with the reactivity series."
+],
+[
+90.31,
+"Zinc in calcium chloride?"
+],
+[
+91.85,
+"No reaction: calcium is more reactive."
+],
+[
+94.2,
+"Magnesium in copper sulfate?"
+],
+[
+95.92,
+"Yes: magnesium is higher."
+],
+[
+98.12,
+"Displacement reactions are used in industry and to clean up the environment."
+],
+[
+103.43,
+"Here are four examples."
+],
+[
+105.51,
+"In thermite welding, aluminium displaces iron from iron oxide."
+],
+[
+110.05,
+"The reaction is so hot that the iron is"
+],
+[
+112.44,
+"molten and fills the gap between two rails."
+],
+[
+115.75,
+"Waste solutions from mines contain copper compounds."
+],
+[
+119.67,
+"Adding scrap iron displaces the copper, so it can be collected and reused."
+],
+[
+124.86,
+"Factory waste water can contain toxic metals."
+],
+[
+128.35,
+"A more reactive metal displaces them so they can be filtered out of the water."
+],
+[
+133.8,
+"Jewellers know that gold and silver are near the bottom of the reactivity series,"
+],
+[
+139.5,
+"so they are not attacked by most solutions."
+],
+[
+142.79,
+"In each case, a more reactive metal displaces a less reactive one."
+],
+[
+147.56,
+"Pause and predict: will copper displace iron from iron sulfate?"
+],
+[
+152.09,
+"Now it is your turn to shine!"
+],
+[
+154.49,
+"Pause the video after each question and try to answer it first."
+],
+[
+159.07,
+"Question 1: What are the substances at the start of a reaction called?"
+],
+[
+164.17,
+"Pause the video now."
+],
+[
+166.07,
+"Answer: Reactants."
+],
+[
+168.8,
+"Question 2: What is a displacement reaction?"
+],
+[
+172.34,
+"Pause the video now."
+],
+[
+174.26,
+"Answer: A more reactive element pushes a less reactive one out of its compound."
+],
+[
+180.57,
+"Question 3: Will silver react with copper nitrate solution?"
+],
+[
+184.99,
+"Why? Pause the video now."
+],
+[
+187.2,
+"Answer: No, silver is less reactive than copper."
+],
+[
+191.68,
+"Question 4: Why does an iron nail turn brown in copper sulfate?"
+],
+[
+196.35,
+"Pause the video now."
+],
+[
+198.27,
+"Answer: Iron displaces copper, which coats the nail."
+]
+],
+"chapters": [
+[
+0.0,
+"The reactivity series"
+],
+[
+28.98,
+"What is a displacement reaction?"
+],
+[
+71.51,
+"Displacement reactions at work"
+],
+[
+98.12,
+"Real life: displacement reactions at work"
+],
+[
+152.09,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s9u06s2v01",
+"t": 14.7,
+"review": [
+0.0,
+15.05
+]
+},
+{
+"id": "s9u06s2v02",
+"t": 28.63,
+"review": [
+0.0,
+28.98
+]
+},
+{
+"id": "s9u06s2v03",
+"t": 57.83,
+"review": [
+28.98,
+58.18
+]
+},
+{
+"id": "s9u06s2v04",
+"t": 71.16,
+"review": [
+28.98,
+71.51
+]
+},
+{
+"id": "s9u06n21",
+"t": 151.74,
+"review": [
+98.12,
+152.09
+]
+}
+],
+"dur": 202.733,
+"src": "media/s9/u6_s2.6f70e3fe.mp4",
+"poster": "media/s9/u6_s2_poster.6f70e3fe.jpg"
+}
+}

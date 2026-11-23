@@ -1,0 +1,691 @@
+{
+"11.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.47,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.54,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.54,
+"Let's begin!"
+],
+[
+11.94,
+"Welcome to Unit 11: Magnetism."
+],
+[
+15.23,
+"Maglev trains have no wheels:"
+],
+[
+17.72,
+"powerful magnets lift them above the track and push them forward."
+],
+[
+21.66,
+"They use less energy than electric trains and emit far less carbon than diesel ones."
+],
+[
+26.75,
+"How else can magnets help us live more sustainably?"
+],
+[
+30.51,
+"Every magnet has a North pole and a South pole."
+],
+[
+34.0,
+"Bring two magnets together: unlike poles attract, and like poles repel."
+],
+[
+39.0,
+"Materials attracted to magnets are magnetic materials: iron, nickel, cobalt and steel."
+],
+[
+44.95,
+"Wood, plastic, glass, and even metals like copper and aluminium are non-magnetic."
+],
+[
+50.51,
+"Permanent magnets keep their magnetism, although heating,"
+],
+[
+54.72,
+"hammering or dropping them can destroy it."
+],
+[
+57.28,
+"Temporary magnets, made of soft iron,"
+],
+[
+59.53,
+"are magnetic only while in a magnetic field."
+],
+[
+62.21,
+"And electromagnets can be switched on and off."
+],
+[
+65.67,
+"A strong magnet is lowered over five objects: an iron nail,"
+],
+[
+69.88,
+"a steel paper clip, a copper coin,"
+],
+[
+71.96,
+"an aluminium can and a plastic spoon."
+],
+[
+74.23,
+"Predict: which objects will jump up to the magnet?"
+],
+[
+77.29,
+"Pause and decide."
+],
+[
+78.99,
+"Watch. The magnet moves slowly down towards the objects."
+],
+[
+83.92,
+"Only the iron nail and the steel paper clip jump up."
+],
+[
+87.84,
+"The copper coin, the aluminium can and the plastic spoon stay on the table."
+],
+[
+93.08,
+"Explain what you saw."
+],
+[
+95.09,
+"Only magnetic materials are attracted: iron, steel, nickel and cobalt."
+],
+[
+99.34,
+"Copper and aluminium are metals, but they are not magnetic,"
+],
+[
+102.92,
+"and plastic is not a metal at all."
+],
+[
+104.99,
+"So 'all metals are magnetic' is a common mistake."
+],
+[
+107.96,
+"Pause and explain it in your own words."
+],
+[
+111.0,
+"Around every magnet is an invisible region where its force acts:"
+],
+[
+115.47,
+"the magnetic field. Sprinkle iron filings around a bar magnet,"
+],
+[
+119.21,
+"and they line up along the field lines."
+],
+[
+121.57,
+"The lines go from the North pole to the South pole,"
+],
+[
+124.65,
+"and they're closest together at the poles, where the field is strongest."
+],
+[
+129.65,
+"The field gets weaker further from the magnet."
+],
+[
+133.18,
+"Move a magnet towards a paper clip,"
+],
+[
+135.31,
+"and at a certain distance the force becomes strong enough to pull the clip across."
+],
+[
+140.31,
+"Magnetic force acts at a distance!"
+],
+[
+143.03,
+"When two magnets come close, their fields interact."
+],
+[
+146.71,
+"Opposite poles: the field lines join up, and the magnets pull together."
+],
+[
+151.01,
+"Like poles: the field lines push apart, and the magnets repel."
+],
+[
+154.76,
+"Between them is a neutral point, where the forces cancel out."
+],
+[
+159.11,
+"Earth has a magnetic field too, shaped like a bar magnet's,"
+],
+[
+163.42,
+"although there's no real magnet inside!"
+],
+[
+165.79,
+"Moving molten metal in the outer core creates electric currents that produce the field."
+],
+[
+171.74,
+"Earth's field makes compass needles point north, helps birds navigate,"
+],
+[
+176.73,
+"and protects us from fast charged particles from the Sun."
+],
+[
+180.2,
+"Its magnetic poles aren't quite at the geographic poles,"
+],
+[
+183.6,
+"so maps show the difference."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+11.94,
+"Magnetism"
+],
+[
+30.51,
+"Magnets and magnetic materials"
+],
+[
+65.67,
+"Predict, watch, explain: what does a magnet attract?"
+],
+[
+111.0,
+"Magnetic fields"
+],
+[
+143.03,
+"Fields interact – and Earth is a magnet"
+]
+],
+"stops": [
+{
+"id": "s8u11s1v01",
+"t": 38.65,
+"review": [
+30.51,
+39.0
+]
+},
+{
+"id": "s8u11s1v02",
+"t": 50.16,
+"review": [
+30.51,
+50.51
+]
+},
+{
+"id": "s8u11n11p",
+"t": 78.64,
+"review": [
+65.67,
+78.99
+]
+},
+{
+"id": "s8u11n11e",
+"t": 110.65,
+"review": [
+65.67,
+111.0
+]
+},
+{
+"id": "s8u11s1v03",
+"t": 129.3,
+"review": [
+111.0,
+129.65
+]
+},
+{
+"id": "s8u11s1v04",
+"t": 185.42,
+"review": [
+143.03,
+185.77
+]
+}
+],
+"dur": 185.7,
+"src": "media/s8/u11_s1.01eba362.mp4",
+"poster": "media/s8/u11_s1_poster.01eba362.jpg"
+},
+"11.2": {
+"captions": [
+[
+0.0,
+"The Danish scientist Hans Christian Ørsted noticed that a compass"
+],
+[
+4.0,
+"needle moved whenever he switched on an electric current."
+],
+[
+7.51,
+"Electricity and magnetism interact!"
+],
+[
+9.67,
+"Any wire carrying a current has a magnetic field around it."
+],
+[
+13.97,
+"Wind insulated wire into a coil around an iron nail,"
+],
+[
+17.93,
+"and connect it to a cell and a switch."
+],
+[
+20.28,
+"Close the switch: current flows, the coil becomes a magnet,"
+],
+[
+23.94,
+"the iron core is magnetised, and it picks up steel paper clips."
+],
+[
+27.85,
+"This is an electromagnet."
+],
+[
+30.06,
+"Open the switch: the current stops, the magnetism disappears, and the clips drop."
+],
+[
+35.81,
+"That's what makes electromagnets so useful: we can switch them on and off."
+],
+[
+40.39,
+"But don't leave the current on too long,"
+],
+[
+42.87,
+"as the wire can get hot."
+],
+[
+45.03,
+"How can we make an electromagnet stronger?"
+],
+[
+48.28,
+"First, add more turns to the coil."
+],
+[
+50.42,
+"Each turn adds to the overall magnetic field."
+],
+[
+53.91,
+"Second, increase the current flowing through the coil,"
+],
+[
+58.03,
+"for example by adding more cells."
+],
+[
+60.1,
+"The bigger the current, the stronger the field."
+],
+[
+63.71,
+"Third, use an iron or steel core, which concentrates the magnetic field lines."
+],
+[
+69.27,
+"To test a factor fairly, change only one at a time: for example,"
+],
+[
+73.22,
+"count the paper clips picked up with 10, 20 and 30 turns,"
+],
+[
+76.74,
+"keeping the current and core the same."
+],
+[
+79.76,
+"A class makes an electromagnet with an iron nail,"
+],
+[
+83.42,
+"using the same cell each time."
+],
+[
+85.29,
+"They count how many paper clips it picks up with different numbers of turns."
+],
+[
+90.68,
+"With 10 turns it picks up 3 clips."
+],
+[
+93.58,
+"With 20 turns it picks up 6, and with 30 turns, 9."
+],
+[
+97.43,
+"The points rise in an almost straight line: more turns, more paper clips."
+],
+[
+103.47,
+"Pause and decide: what is the independent variable,"
+],
+[
+107.43,
+"and how many clips would you expect with 60 turns?"
+]
+],
+"chapters": [
+[
+0.0,
+"Electromagnets"
+],
+[
+45.03,
+"Making an electromagnet stronger"
+],
+[
+79.76,
+"Real data: turns on the coil and paper clips picked up"
+]
+],
+"stops": [
+{
+"id": "s8u11s2v01",
+"t": 13.62,
+"review": [
+0.0,
+13.97
+]
+},
+{
+"id": "s8u11s2v02",
+"t": 44.68,
+"review": [
+0.0,
+45.03
+]
+},
+{
+"id": "s8u11s2v03",
+"t": 79.41,
+"review": [
+45.03,
+79.76
+]
+},
+{
+"id": "s8u11n21",
+"t": 110.7,
+"review": [
+79.76,
+111.05
+]
+}
+],
+"dur": 111.1,
+"src": "media/s8/u11_s2.30ef8c90.mp4",
+"poster": "media/s8/u11_s2_poster.30ef8c90.jpg"
+},
+"11.3": {
+"captions": [
+[
+0.0,
+"Electromagnets are everywhere. A loudspeaker has a coil behind its cone:"
+],
+[
+4.37,
+"changing current makes a changing magnetic field that moves the cone, making sound."
+],
+[
+9.41,
+"Electric bells, motors in blenders and fans,"
+],
+[
+12.08,
+"and computer hard drives all use electromagnets."
+],
+[
+15.65,
+"In industry, giant electromagnets on cranes lift scrap iron and steel,"
+],
+[
+20.65,
+"then switch off to drop it."
+],
+[
+22.3,
+"Recycling plants use them to pull magnetic metals out of mixed waste."
+],
+[
+26.52,
+"Power station generators use spinning electromagnets to produce electricity."
+],
+[
+31.81,
+"In hospitals, MRI scanners use a huge magnet"
+],
+[
+35.25,
+"to line up hydrogen atoms in your body."
+],
+[
+37.63,
+"Radio waves knock them out of line; as they flip back,"
+],
+[
+40.94,
+"they release energy, which the scanner uses to build detailed pictures inside you."
+],
+[
+46.61,
+"Electromagnets are hidden inside many everyday things."
+],
+[
+50.64,
+"Here are four of them."
+],
+[
+52.68,
+"In an electric doorbell, pressing the button switches on an electromagnet."
+],
+[
+57.98,
+"It pulls a metal striker onto the bell, and the bell rings."
+],
+[
+62.27,
+"Some security doors are held shut by an electromagnet."
+],
+[
+66.37,
+"When a card is accepted,"
+],
+[
+67.87,
+"the current is switched off and the door opens."
+],
+[
+71.45,
+"In speakers and headphones,"
+],
+[
+73.87,
+"a changing current in a coil makes a changing magnetic field,"
+],
+[
+77.68,
+"which moves a cone and makes sound."
+],
+[
+80.51,
+"At recycling centres, an electromagnet lifts steel cans out of mixed rubbish,"
+],
+[
+86.03,
+"leaving the aluminium cans behind."
+],
+[
+88.81,
+"All of these work because an electromagnet can be switched on and off,"
+],
+[
+93.85,
+"and its strength can be controlled."
+],
+[
+96.01,
+"Pause and think of one more device that might use one."
+],
+[
+100.01,
+"Now it is your turn to shine!"
+],
+[
+102.43,
+"Pause the video after each question and try to answer it first."
+],
+[
+107.04,
+"Question 1: What happens when two North poles are brought together?"
+],
+[
+111.99,
+"Pause the video now."
+],
+[
+113.91,
+"Answer: They repel."
+],
+[
+116.69,
+"Question 2: Name three magnetic materials."
+],
+[
+120.12,
+"Pause the video now."
+],
+[
+122.08,
+"Answer: Iron, nickel and cobalt (also steel)."
+],
+[
+126.39,
+"Question 3: Give two ways to make an electromagnet stronger."
+],
+[
+130.92,
+"Pause the video now."
+],
+[
+132.83,
+"Answer: More turns, more current, or an iron core."
+],
+[
+137.45,
+"Question 4: Why are electromagnets used in scrapyards instead of permanent magnets?"
+],
+[
+143.37,
+"Pause the video now."
+],
+[
+145.27,
+"Answer: They can be switched off to drop the metal."
+]
+],
+"chapters": [
+[
+0.0,
+"Electromagnets at work"
+],
+[
+46.61,
+"Real life: electromagnets around us"
+],
+[
+100.01,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s8u11s3v01",
+"t": 15.3,
+"review": [
+0.0,
+15.65
+]
+},
+{
+"id": "s8u11s3v02",
+"t": 31.46,
+"review": [
+0.0,
+31.81
+]
+},
+{
+"id": "s8u11s3v03",
+"t": 46.26,
+"review": [
+0.0,
+46.61
+]
+},
+{
+"id": "s8u11n31",
+"t": 99.66,
+"review": [
+46.61,
+100.01
+]
+}
+],
+"dur": 149.733,
+"src": "media/s8/u11_s3.3c2060f5.mp4",
+"poster": "media/s8/u11_s3_poster.3c2060f5.jpg"
+}
+}

@@ -1,0 +1,747 @@
+{
+"5.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.54,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.72,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.86,
+"Let's begin!"
+],
+[
+12.28,
+"Welcome to Unit 5: Mixtures and Solubility."
+],
+[
+16.41,
+"Orange juice, oatmeal and smoothies are all mixtures."
+],
+[
+20.48,
+"Stir sugar into tea, and it dissolves,"
+],
+[
+22.88,
+"until the tea can't hold any more."
+],
+[
+25.02,
+"In this unit, we'll explore pure substances, mixtures, how to separate them,"
+],
+[
+29.81,
+"and how things dissolve."
+],
+[
+31.97,
+"Everything around us is matter,"
+],
+[
+34.51,
+"and it can be sorted into pure substances and mixtures."
+],
+[
+37.95,
+"Pure substances are either elements or compounds."
+],
+[
+41.01,
+"An element, like gold or neon, can't be broken down by chemical reactions."
+],
+[
+45.64,
+"There are 118 known elements."
+],
+[
+47.45,
+"A compound forms when elements join chemically in a fixed ratio, like water,"
+],
+[
+52.21,
+"H2O, or salt, NaCl."
+],
+[
+53.4,
+"Its properties are different from its elements,"
+],
+[
+56.34,
+"and it can only be separated by chemical methods."
+],
+[
+60.05,
+"A mixture contains substances that are not chemically joined, in any proportions,"
+],
+[
+65.88,
+"so they can be separated by physical methods."
+],
+[
+68.72,
+"Mixtures are either homogeneous or heterogeneous."
+],
+[
+72.47,
+"In a heterogeneous mixture, 'hetero' means different: the parts are not evenly spread,"
+],
+[
+78.5,
+"and you can see them."
+],
+[
+79.82,
+"Soil, sand and water, and oil and water are heterogeneous."
+],
+[
+84.14,
+"In a homogeneous mixture, 'homo' means the same: the parts are evenly spread,"
+],
+[
+89.73,
+"in one state, and you can't tell them apart."
+],
+[
+92.51,
+"Salt water, air and steel are homogeneous."
+],
+[
+95.81,
+"A solution is a homogeneous mixture."
+],
+[
+98.83,
+"The substance that dissolves, like sugar, is the solute."
+],
+[
+102.36,
+"The substance that does the dissolving, like water, is the solvent."
+],
+[
+107.25,
+"A pure substance contains only one type of atom or molecule."
+],
+[
+111.6,
+"Mixtures aren't pure, but we can describe the purity of one part:"
+],
+[
+115.67,
+"how much of it there is compared to the whole mixture."
+],
+[
+119.05,
+"Bottled water often contains added minerals, so it isn't 100 percent pure water,"
+],
+[
+124.05,
+"but it's still safe to drink."
+],
+[
+126.52,
+"We calculate percentage purity like this: the mass of the pure substance,"
+],
+[
+131.85,
+"divided by the total mass of the mixture, times 100."
+],
+[
+135.11,
+"A bronze coin has a mass of 75 grams,"
+],
+[
+137.44,
+"and 62 grams of it is copper."
+],
+[
+139.26,
+"62 divided by 75, times 100, is about 82.7 percent copper."
+],
+[
+143.55,
+"Purity matters: medicines need exactly the right amount of active ingredient,"
+],
+[
+149.14,
+"and dental implants use very pure metals to avoid allergic reactions."
+],
+[
+154.15,
+"Jewellers describe the purity of gold in carats."
+],
+[
+157.82,
+"Here is the percentage of gold in four common types."
+],
+[
+161.81,
+"24 carat gold is almost pure: 99.9 percent gold."
+],
+[
+165.59,
+"18 carat gold is only 75 percent gold;"
+],
+[
+168.01,
+"the rest is other metals such as copper or silver."
+],
+[
+171.85,
+"Pause and decide: a ring of 18 carat gold has a mass of 8 grams."
+],
+[
+176.68,
+"What mass of gold does it contain?"
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.28,
+"Mixtures and Solubility"
+],
+[
+31.97,
+"How matter is organised"
+],
+[
+72.47,
+"Heterogeneous and homogeneous mixtures"
+],
+[
+107.25,
+"Purity"
+],
+[
+154.15,
+"Real data: how pure is gold jewellery?"
+]
+],
+"stops": [
+{
+"id": "s8u05s1v01",
+"t": 59.7,
+"review": [
+31.97,
+60.05
+]
+},
+{
+"id": "s8u05s1v02",
+"t": 95.46,
+"review": [
+72.47,
+95.81
+]
+},
+{
+"id": "s8u05s1v03",
+"t": 143.2,
+"review": [
+107.25,
+143.55
+]
+},
+{
+"id": "s8u05n11",
+"t": 179.0,
+"review": [
+154.15,
+179.35
+]
+}
+],
+"dur": 179.333,
+"src": "media/s8/u5_s1.77f5733a.mp4",
+"poster": "media/s8/u5_s1_poster.77f5733a.jpg"
+},
+"5.2": {
+"captions": [
+[
+0.0,
+"Because mixtures aren't chemically joined, we can separate them physically."
+],
+[
+4.49,
+"Handpicking removes large pieces by hand or with forceps."
+],
+[
+7.9,
+"Sieving separates large particles from small ones: the small ones fall through."
+],
+[
+13.3,
+"Filtration separates an insoluble solid from a liquid."
+],
+[
+17.31,
+"The liquid passes through filter paper and is collected as the filtrate,"
+],
+[
+21.68,
+"while the solid stays behind as the residue."
+],
+[
+25.0,
+"Evaporation separates a dissolved solute from a solution."
+],
+[
+29.21,
+"Heat it, the solvent evaporates, and the solute is left behind,"
+],
+[
+33.06,
+"like salt from salt water."
+],
+[
+35.31,
+"Distillation collects the solvent."
+],
+[
+38.09,
+"The mixture is heated; the substance with the lowest boiling point evaporates first,"
+],
+[
+43.17,
+"then cools and condenses back into a liquid, called the distillate."
+],
+[
+47.21,
+"This can turn salt water into pure water."
+],
+[
+50.34,
+"A dot of black felt-tip ink is put on a"
+],
+[
+53.32,
+"pencil line near the bottom of a strip of paper."
+],
+[
+56.25,
+"The bottom edge stands in water."
+],
+[
+58.21,
+"Predict: will the ink stay as one black"
+],
+[
+60.59,
+"spot as the water soaks up the paper?"
+],
+[
+62.85,
+"Pause and decide."
+],
+[
+64.55,
+"Watch. The water soaks slowly up the paper, past the ink spot."
+],
+[
+69.82,
+"The black ink separates into three coloured spots at different heights:"
+],
+[
+74.91,
+"yellow at the top, then red, then blue."
+],
+[
+77.97,
+"Explain what you saw."
+],
+[
+79.97,
+"Black ink is a mixture of dyes."
+],
+[
+81.86,
+"Each dye dissolves in the water,"
+],
+[
+83.8,
+"but travels up the paper at a different speed, so the dyes separate."
+],
+[
+87.93,
+"The yellow dye moved furthest."
+],
+[
+89.75,
+"This method is paper chromatography."
+],
+[
+91.93,
+"A pure substance would give only one spot."
+],
+[
+94.48,
+"Pause and explain it in your own words."
+],
+[
+97.52,
+"Chromatography separates substances that dissolve in the same solvent,"
+],
+[
+102.37,
+"like the dyes in ink."
+],
+[
+103.64,
+"Draw a pencil line near the bottom of special paper,"
+],
+[
+106.8,
+"add a dot of ink,"
+],
+[
+107.83,
+"and dip the end in a solvent such as water or alcohol,"
+],
+[
+111.11,
+"keeping the line above the solvent."
+],
+[
+113.89,
+"As the solvent soaks up the paper, it carries the dyes with it."
+],
+[
+118.43,
+"Each dye travels at a different speed, so they separate into spots."
+],
+[
+122.47,
+"The result is called a chromatogram."
+],
+[
+124.65,
+"This brown ink contains three dyes: blue, red and yellow."
+],
+[
+128.76,
+"A pure substance gives just one spot, like this red ink."
+],
+[
+132.89,
+"Chromatography is used to check the nutritional value of food, measure blood glucose,"
+],
+[
+138.05,
+"and test water for pollution."
+]
+],
+"chapters": [
+[
+0.0,
+"Separating mixtures"
+],
+[
+50.34,
+"Predict, watch, explain: what is in black ink?"
+],
+[
+97.52,
+"Paper chromatography"
+]
+],
+"stops": [
+{
+"id": "s8u05s2v01",
+"t": 24.65,
+"review": [
+0.0,
+25.0
+]
+},
+{
+"id": "s8u05s2v02",
+"t": 49.99,
+"review": [
+0.0,
+50.34
+]
+},
+{
+"id": "s8u05n12p",
+"t": 64.2,
+"review": [
+50.34,
+64.55
+]
+},
+{
+"id": "s8u05n12e",
+"t": 97.17,
+"review": [
+50.34,
+97.52
+]
+},
+{
+"id": "s8u05s2v03",
+"t": 128.41,
+"review": [
+97.52,
+128.76
+]
+}
+],
+"dur": 140.2,
+"src": "media/s8/u5_s2.bfe8554b.mp4",
+"poster": "media/s8/u5_s2_poster.bfe8554b.jpg"
+},
+"5.3": {
+"captions": [
+[
+0.0,
+"Solutions are everywhere: lemonade, rubbing alcohol and the saline used in hospitals."
+],
+[
+5.34,
+"Concentration tells us how much solute is dissolved in a given amount of solvent."
+],
+[
+10.43,
+"More solute particles in the same volume means a higher concentration."
+],
+[
+14.83,
+"Add more sugar to lemonade, and it gets sweeter!"
+],
+[
+18.5,
+"To calculate concentration, divide the mass of the solute by the volume of the solution."
+],
+[
+24.82,
+"5 grams of sugar in 100 cubic centimetres gives 0.05 grams per cubic centimetre."
+],
+[
+30.57,
+"Keep adding sugar to water, and eventually no more will dissolve."
+],
+[
+35.32,
+"The solution is saturated."
+],
+[
+36.98,
+"Before that point, it's unsaturated."
+],
+[
+39.28,
+"A supersaturated solution holds more than it normally can, so it's unstable,"
+],
+[
+44.13,
+"and crystals form."
+],
+[
+45.93,
+"Solubility is how much solute can dissolve in a solvent."
+],
+[
+50.21,
+"For most solids, it increases with temperature."
+],
+[
+53.2,
+"At 10 degrees Celsius, one sugar cube might saturate the water,"
+],
+[
+57.2,
+"but at 40 degrees, three cubes can dissolve."
+],
+[
+59.99,
+"That's why it's easier to dissolve sugar in hot tea."
+],
+[
+63.94,
+"Here's a graph of solubility against temperature."
+],
+[
+67.79,
+"Different substances have different solubilities,"
+],
+[
+70.92,
+"but they all rise as the water gets hotter."
+],
+[
+73.66,
+"When testing this, keep everything the same except the temperature,"
+],
+[
+77.93,
+"to make it a fair test."
+],
+[
+80.06,
+"This graph shows the maximum mass of potassium nitrate,"
+],
+[
+84.19,
+"a salt used in fertilisers,"
+],
+[
+85.92,
+"that dissolves in 100 grams of water at different temperatures."
+],
+[
+90.62,
+"At 20 degrees Celsius, only 32 grams dissolve."
+],
+[
+94.37,
+"At 60 degrees, 110 grams dissolve."
+],
+[
+97.25,
+"The curve gets steeper:"
+],
+[
+99.49,
+"solubility rises faster and faster as the water gets hotter."
+],
+[
+104.08,
+"Pause and decide: a saturated solution in 100 grams of"
+],
+[
+108.31,
+"water at 60 degrees is cooled to 20 degrees."
+],
+[
+111.15,
+"What mass of crystals forms?"
+],
+[
+113.62,
+"Now it is your turn to shine!"
+],
+[
+116.11,
+"Pause the video after each question and try to answer it first."
+],
+[
+120.87,
+"Question 1: Is salt water a homogeneous or heterogeneous mixture?"
+],
+[
+125.86,
+"Pause the video now."
+],
+[
+127.82,
+"Answer: Homogeneous – the salt is evenly spread."
+],
+[
+132.37,
+"Question 2: Which method separates tea leaves from tea?"
+],
+[
+136.72,
+"Pause the video now."
+],
+[
+138.7,
+"Answer: Filtration."
+],
+[
+141.52,
+"Question 3: A chromatogram of an ink shows one spot."
+],
+[
+145.66,
+"What does this tell you?"
+],
+[
+147.23,
+"Pause the video now."
+],
+[
+149.21,
+"Answer: The ink is a pure substance."
+],
+[
+153.09,
+"Question 4: Why does more sugar dissolve in hot water than in cold water?"
+],
+[
+158.57,
+"Pause the video now."
+],
+[
+160.52,
+"Answer: Solubility increases with temperature."
+]
+],
+"chapters": [
+[
+0.0,
+"Concentration"
+],
+[
+30.57,
+"Solubility and temperature"
+],
+[
+80.06,
+"Real data: solubility of potassium nitrate"
+],
+[
+113.62,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s8u05s3v01",
+"t": 18.15,
+"review": [
+0.0,
+18.5
+]
+},
+{
+"id": "s8u05s3v02",
+"t": 45.58,
+"review": [
+30.57,
+45.93
+]
+},
+{
+"id": "s8u05s3v03",
+"t": 79.71,
+"review": [
+30.57,
+80.06
+]
+},
+{
+"id": "s8u05n13",
+"t": 113.27,
+"review": [
+80.06,
+113.62
+]
+}
+],
+"dur": 164.867,
+"src": "media/s8/u5_s3.0e5098ed.mp4",
+"poster": "media/s8/u5_s3_poster.0e5098ed.jpg"
+}
+}

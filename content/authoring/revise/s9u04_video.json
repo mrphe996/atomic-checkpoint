@@ -1,0 +1,576 @@
+{
+"4.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.54,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.71,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.83,
+"Let's begin!"
+],
+[
+12.25,
+"Welcome to Unit 4: The Structure of the Atom and the Periodic Table."
+],
+[
+17.89,
+"Hydrogen fuel burns cleanly, releasing only water vapour and heat,"
+],
+[
+22.77,
+"so it could help replace fossil fuels."
+],
+[
+25.15,
+"The uses of each element depend on its properties."
+],
+[
+28.29,
+"So how do scientists study elements systematically?"
+],
+[
+32.14,
+"Scientists once thought atoms were like a plum pudding:"
+],
+[
+36.19,
+"positive and negative charges spread evenly."
+],
+[
+38.94,
+"Then Ernest Rutherford fired alpha particles at thin gold foil."
+],
+[
+42.89,
+"Most passed through, but some bounced back!"
+],
+[
+45.58,
+"Atoms must have a tiny, dense nucleus."
+],
+[
+48.63,
+"Today's model: the nucleus contains positive protons and neutral neutrons,"
+],
+[
+53.98,
+"and negative electrons orbit around it in shells."
+],
+[
+57.04,
+"Most of the atom is empty space."
+],
+[
+59.04,
+"An atom has equal numbers of protons and electrons, so it's electrically neutral."
+],
+[
+64.77,
+"Every element's use depends on its properties,"
+],
+[
+68.31,
+"which come from the structure of its atoms."
+],
+[
+71.06,
+"Here are four examples."
+],
+[
+73.19,
+"Helium is much less dense than air and does not react,"
+],
+[
+77.37,
+"so it is used safely in balloons and airships."
+],
+[
+80.96,
+"Lithium is the lightest metal and gives up its one outer electron easily,"
+],
+[
+86.28,
+"which makes it ideal for rechargeable batteries in phones and cars."
+],
+[
+91.15,
+"Silicon conducts electricity only a little,"
+],
+[
+94.62,
+"so it is used to make the tiny switches inside computer chips."
+],
+[
+99.22,
+"Hydrogen burns with oxygen to make only water,"
+],
+[
+102.9,
+"so it can be used as a clean fuel for buses and cars."
+],
+[
+106.94,
+"In each case, the structure of the atom decides the properties,"
+],
+[
+111.65,
+"and the properties decide the use."
+],
+[
+113.8,
+"Pause and think of another element and its use."
+],
+[
+117.44,
+"There are over 100 elements,"
+],
+[
+119.83,
+"each shown on the Periodic Table with its symbol, name,"
+],
+[
+123.35,
+"atomic number and mass number."
+],
+[
+125.94,
+"The atomic number is the number of protons,"
+],
+[
+129.36,
+"which equals the number of electrons."
+],
+[
+131.67,
+"The mass number is protons plus neutrons, together called nucleons."
+],
+[
+135.86,
+"Carbon: atomic number 6, mass number 12, so it has 6 protons,"
+],
+[
+139.68,
+"6 electrons and 12 minus 6, which is 6 neutrons."
+],
+[
+143.35,
+"Atoms are so tiny that we need electron microscopes to see them."
+],
+[
+148.1,
+"These scan a beam of electrons across a surface,"
+],
+[
+151.11,
+"and a transmission electron microscope can even show individual atoms."
+],
+[
+156.16,
+"Electrons move around the nucleus in shells."
+],
+[
+159.53,
+"The first shell holds up to 2 electrons."
+],
+[
+162.04,
+"The second holds up to 8, and the third is stable with 8."
+],
+[
+165.62,
+"We write the arrangement as the electronic structure."
+],
+[
+169.62,
+"Carbon has 6 electrons:"
+],
+[
+171.82,
+"2 in the first shell and 4 in the second,"
+],
+[
+174.45,
+"so its structure is 2, 4."
+],
+[
+176.06,
+"Nitrogen, with 7 electrons, is 2, 5."
+],
+[
+179.02,
+"Magnesium has 12 electrons: 2, 8, 2."
+],
+[
+182.04,
+"Phosphorus has 15: 2, 8, 5."
+],
+[
+183.76,
+"Notice the last number:"
+],
+[
+185.23,
+"it tells you how many electrons are in the outer shell."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.25,
+"The Structure of the Atom and the Periodic Table"
+],
+[
+32.14,
+"The structure of the atom"
+],
+[
+64.77,
+"Real life: elements at work"
+],
+[
+117.44,
+"Reading the Periodic Table"
+],
+[
+156.16,
+"How are electrons arranged?"
+]
+],
+"stops": [
+{
+"id": "s9u04s1v01",
+"t": 48.28,
+"review": [
+32.14,
+48.63
+]
+},
+{
+"id": "s9u04s1v02",
+"t": 64.42,
+"review": [
+32.14,
+64.77
+]
+},
+{
+"id": "s9u04n11",
+"t": 117.09,
+"review": [
+64.77,
+117.44
+]
+},
+{
+"id": "s9u04s1v03",
+"t": 143.0,
+"review": [
+117.44,
+143.35
+]
+},
+{
+"id": "s9u04s1v04",
+"t": 178.67,
+"review": [
+156.16,
+179.02
+]
+}
+],
+"dur": 189.2,
+"src": "media/s9/u4_s1.48f5a004.mp4",
+"poster": "media/s9/u4_s1_poster.48f5a004.jpg"
+},
+"4.2": {
+"captions": [
+[
+0.0,
+"The Periodic Table arranges elements in rows called periods and columns called groups."
+],
+[
+5.41,
+"Elements in the same group have the same number of electrons in their outer shell,"
+],
+[
+10.56,
+"so they have similar chemical properties."
+],
+[
+13.8,
+"Group 1, the alkali metals, includes lithium, sodium and potassium."
+],
+[
+18.79,
+"Lithium is 2, 1; sodium is 2, 8, 1; potassium is 2, 8,"
+],
+[
+22.23,
+"8, 1. Each has just one outer electron,"
+],
+[
+24.71,
+"and the atoms get bigger down the group."
+],
+[
+27.93,
+"Small pieces of lithium, sodium and potassium are dropped into troughs of water,"
+],
+[
+33.66,
+"behind a safety screen."
+],
+[
+35.13,
+"Predict: which metal will react most violently?"
+],
+[
+38.14,
+"Pause and decide."
+],
+[
+39.88,
+"Watch. Lithium floats and fizzes gently."
+],
+[
+43.22,
+"Sodium whizzes around and melts into a ball."
+],
+[
+46.75,
+"Potassium reacts so strongly that the hydrogen catches fire with a lilac flame."
+],
+[
+53.27,
+"Explain what you saw."
+],
+[
+55.34,
+"All three have one electron in their outer shell,"
+],
+[
+58.45,
+"which they lose when they react."
+],
+[
+60.48,
+"Going down the group the atoms are bigger,"
+],
+[
+63.14,
+"so the outer electron is further from the nucleus and held less strongly."
+],
+[
+67.77,
+"It is lost more easily, so potassium reacts most violently."
+],
+[
+71.51,
+"Pause and explain it in your own words."
+],
+[
+74.65,
+"Alkali metals react with water to form a metal hydroxide and hydrogen gas."
+],
+[
+79.93,
+"For sodium: sodium plus water gives sodium hydroxide plus hydrogen."
+],
+[
+84.16,
+"Metal hydroxides are alkaline, which is why they're called the alkali metals."
+],
+[
+89.67,
+"Look at the trend: lithium fizzes gently, sodium vigorously,"
+],
+[
+94.21,
+"and potassium so strongly it makes a lilac flame."
+],
+[
+97.32,
+"Reactivity increases down the group, while melting and boiling points decrease."
+],
+[
+103.0,
+"These are the melting points of the first five alkali metals,"
+],
+[
+107.52,
+"from the Royal Society of Chemistry's Periodic Table."
+],
+[
+111.59,
+"Lithium melts at about 181 degrees Celsius,"
+],
+[
+115.09,
+"sodium at 98 and potassium at 64."
+],
+[
+117.2,
+"Rubidium melts at 39, and caesium at only 28.5 degrees:"
+],
+[
+120.73,
+"it would melt on a very warm day."
+],
+[
+123.51,
+"Pause and decide: what is the trend in melting point down Group 1,"
+],
+[
+128.48,
+"and what would you predict for francium, the next element?"
+],
+[
+132.84,
+"Now it is your turn to shine!"
+],
+[
+135.32,
+"Pause the video after each question and try to answer it first."
+],
+[
+140.06,
+"Question 1: What particles are found in the nucleus?"
+],
+[
+144.22,
+"Pause the video now."
+],
+[
+146.19,
+"Answer: Protons and neutrons."
+],
+[
+149.64,
+"Question 2: An atom has atomic number 11 and mass number 23."
+],
+[
+154.26,
+"How many neutrons does it have?"
+],
+[
+156.27,
+"Pause the video now."
+],
+[
+158.25,
+"Answer: 12 neutrons."
+],
+[
+161.14,
+"Question 3: What is the electronic structure of magnesium?"
+],
+[
+165.67,
+"Pause the video now."
+],
+[
+167.66,
+"Answer: 2, 8, 2."
+],
+[
+170.39,
+"Question 4: What happens to reactivity going down Group 1?"
+],
+[
+174.92,
+"Pause the video now."
+],
+[
+176.91,
+"Answer: It increases."
+]
+],
+"chapters": [
+[
+0.0,
+"Groups and periods"
+],
+[
+27.93,
+"Predict, watch, explain: Group 1 metals in water"
+],
+[
+74.65,
+"Trends in Group 1"
+],
+[
+103.0,
+"Real data: melting points of the Group 1 metals"
+],
+[
+132.84,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s9u04s2v01",
+"t": 13.45,
+"review": [
+0.0,
+13.8
+]
+},
+{
+"id": "s9u04s2v02",
+"t": 27.58,
+"review": [
+0.0,
+27.93
+]
+},
+{
+"id": "s9u04n21p",
+"t": 39.53,
+"review": [
+27.93,
+39.88
+]
+},
+{
+"id": "s9u04n21e",
+"t": 74.3,
+"review": [
+27.93,
+74.65
+]
+},
+{
+"id": "s9u04s2v03",
+"t": 102.65,
+"review": [
+74.65,
+103.0
+]
+},
+{
+"id": "s9u04n22",
+"t": 132.49,
+"review": [
+103.0,
+132.84
+]
+}
+],
+"dur": 179.567,
+"src": "media/s9/u4_s2.8613d467.mp4",
+"poster": "media/s9/u4_s2_poster.8613d467.jpg"
+}
+}

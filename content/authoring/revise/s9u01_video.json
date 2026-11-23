@@ -1,0 +1,600 @@
+{
+"1.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.52,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.64,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.73,
+"Let's begin!"
+],
+[
+12.13,
+"Welcome to Stage 9, Unit 1: Photosynthesis and Transport in Plants."
+],
+[
+17.68,
+"Deforestation is destroying forests full of life."
+],
+[
+21.45,
+"Plants are producers: they make their own food by photosynthesis,"
+],
+[
+25.47,
+"which uses carbon dioxide."
+],
+[
+27.08,
+"So how does cutting down trees affect us, besides reducing our food supply?"
+],
+[
+32.38,
+"Plants make their own food by photosynthesis."
+],
+[
+35.8,
+"They use energy from light to turn carbon dioxide from"
+],
+[
+39.18,
+"the air and water from the soil into glucose,"
+],
+[
+41.99,
+"a sugar, and oxygen."
+],
+[
+43.9,
+"We can summarise it with a word equation: carbon dioxide plus water,"
+],
+[
+48.86,
+"in the presence of light and chlorophyll, makes glucose plus oxygen."
+],
+[
+53.75,
+"'Photo' means from light, and 'synthesis' means putting together."
+],
+[
+58.53,
+"The glucose lets plants form new cells and tissues, which we call biomass."
+],
+[
+63.8,
+"Two pieces of pondweed are placed in water."
+],
+[
+67.07,
+"One lamp is 10 centimetres away from the first beaker;"
+],
+[
+70.43,
+"another lamp is 50 centimetres away from the second."
+],
+[
+73.66,
+"Predict: which pondweed will give off more bubbles of gas?"
+],
+[
+77.26,
+"Pause and decide."
+],
+[
+78.97,
+"Watch. Bubbles start to rise from both pieces of pondweed."
+],
+[
+84.09,
+"The pondweed close to the lamp gives off about 40 bubbles a minute;"
+],
+[
+89.03,
+"the one far away gives off only about 6."
+],
+[
+92.22,
+"Explain what you saw."
+],
+[
+94.25,
+"The bubbles are oxygen, made by photosynthesis."
+],
+[
+97.17,
+"The closer lamp gives the pondweed more light energy,"
+],
+[
+100.45,
+"so it photosynthesises faster and makes more oxygen."
+],
+[
+103.68,
+"Light is needed for photosynthesis, and more light means a faster rate,"
+],
+[
+108.08,
+"up to a limit."
+],
+[
+108.95,
+"Pause and explain it in your own words."
+],
+[
+112.03,
+"A student counts the bubbles given off by pondweed in one minute,"
+],
+[
+116.72,
+"with the lamp at five different distances."
+],
+[
+120.02,
+"At 10 centimetres there are 40 bubbles a minute."
+],
+[
+123.77,
+"At 20 centimetres there are 26, and at 30 centimetres, 15."
+],
+[
+128.07,
+"The further away the lamp, the fewer the bubbles,"
+],
+[
+131.91,
+"but the line is a curve, not a straight line."
+],
+[
+135.41,
+"Pause and decide: what is the independent variable,"
+],
+[
+139.34,
+"and why should the student keep the water temperature the same?"
+],
+[
+143.94,
+"Plants are well adapted for photosynthesis."
+],
+[
+147.21,
+"Leaves have a large surface area to capture sunlight, and they're thin,"
+],
+[
+151.61,
+"so gases diffuse in and out quickly."
+],
+[
+153.85,
+"Tiny openings called stomata, mostly on the underside of leaves,"
+],
+[
+157.82,
+"let gases in and out."
+],
+[
+159.78,
+"Photosynthesis happens in chloroplasts, which contain the green pigment chlorophyll that absorbs light."
+],
+[
+166.88,
+"Root hairs give roots a huge surface area for absorbing water."
+],
+[
+171.39,
+"Some oxygen is used for respiration; the rest escapes through the stomata."
+],
+[
+176.69,
+"Glucose gives the plant energy, and extra glucose is stored as starch,"
+],
+[
+181.02,
+"in leaves, roots, stems and fruits."
+],
+[
+183.18,
+"So the energy in every food chain comes from the Sun!"
+],
+[
+187.12,
+"If a leaf has photosynthesised, it contains starch."
+],
+[
+190.88,
+"To test it, boil the leaf in water to stop all reactions,"
+],
+[
+194.41,
+"then in ethanol, heated in hot water, to remove the green chlorophyll."
+],
+[
+198.75,
+"Careful: ethanol is flammable!"
+],
+[
+200.61,
+"Then soften the leaf in hot water."
+],
+[
+203.37,
+"Add a few drops of iodine solution."
+],
+[
+206.3,
+"Iodine is normally brown, but turns blue-black when starch is present."
+],
+[
+211.37,
+"Keep a plant in the dark for 48 hours so it uses up its starch."
+],
+[
+215.99,
+"Cover half a leaf with black paper and put the plant in bright sunlight."
+],
+[
+220.43,
+"Only the uncovered half turns blue-black, showing that photosynthesis needs light."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.13,
+"Photosynthesis and Transport in Plants"
+],
+[
+32.38,
+"What is photosynthesis?"
+],
+[
+63.8,
+"Predict, watch, explain: pondweed and light"
+],
+[
+112.03,
+"Data: bubbles of oxygen and distance from the lamp"
+],
+[
+143.94,
+"Adaptations for photosynthesis"
+],
+[
+187.12,
+"Testing a leaf for starch"
+]
+],
+"stops": [
+{
+"id": "s9u01s1v01",
+"t": 32.03,
+"review": [
+12.13,
+32.38
+]
+},
+{
+"id": "s9u01s1v02",
+"t": 53.4,
+"review": [
+32.38,
+53.75
+]
+},
+{
+"id": "s9u01n11p",
+"t": 78.62,
+"review": [
+63.8,
+78.97
+]
+},
+{
+"id": "s9u01n11e",
+"t": 111.68,
+"review": [
+63.8,
+112.03
+]
+},
+{
+"id": "s9u01n12",
+"t": 143.59,
+"review": [
+112.03,
+143.94
+]
+},
+{
+"id": "s9u01s1v03",
+"t": 171.04,
+"review": [
+143.94,
+171.39
+]
+},
+{
+"id": "s9u01s1v04",
+"t": 211.02,
+"review": [
+187.12,
+211.37
+]
+}
+],
+"dur": 225.967,
+"src": "media/s9/u1_s1.7fa1ad41.mp4",
+"poster": "media/s9/u1_s1_poster.7fa1ad41.jpg"
+},
+"1.2": {
+"captions": [
+[
+0.0,
+"Water is vital for plants."
+],
+[
+1.56,
+"It carries dissolved mineral salts, it's a raw material for photosynthesis,"
+],
+[
+6.08,
+"it helps control temperature through transpiration, and seeds need it to germinate."
+],
+[
+11.74,
+"Water also keeps plant cells firm."
+],
+[
+14.54,
+"When water fills the vacuole, it pushes against the cell wall,"
+],
+[
+18.32,
+"making the cell turgid."
+],
+[
+19.72,
+"Without enough water, the cell becomes flaccid and the plant wilts."
+],
+[
+24.47,
+"Plants also need mineral salts."
+],
+[
+27.08,
+"Nitrates are used to make proteins and chlorophyll, and magnesium to make chlorophyll."
+],
+[
+32.29,
+"Without nitrates, leaves turn pale or yellow, so farmers add fertilisers."
+],
+[
+37.37,
+"A stalk of celery with leaves stands in water coloured with red food colouring,"
+],
+[
+42.79,
+"for one day. Predict: where will the red colour end up?"
+],
+[
+46.15,
+"Pause and decide."
+],
+[
+47.86,
+"Watch. After a few hours, the red colour starts to climb up the stalk."
+],
+[
+53.61,
+"After a day the leaves have red veins."
+],
+[
+56.69,
+"When the stalk is cut across,"
+],
+[
+58.49,
+"the red shows up only as a ring of small dots."
+],
+[
+62.0,
+"Explain what you saw."
+],
+[
+64.0,
+"The red water travelled up the stalk in the xylem vessels,"
+],
+[
+67.5,
+"the tubes that carry water and mineral salts from the roots to the leaves."
+],
+[
+71.97,
+"Water evaporating from the leaves, transpiration, pulls more water up behind it."
+],
+[
+76.8,
+"Pause and explain it in your own words."
+],
+[
+79.82,
+"Roots anchor the plant and absorb water."
+],
+[
+82.84,
+"Tiny root hairs give a huge surface area."
+],
+[
+85.33,
+"Water moves into root hair cells when the soil"
+],
+[
+88.12,
+"has a higher water concentration than the cells,"
+],
+[
+91.02,
+"carrying dissolved mineral salts like nitrates and magnesium with it."
+],
+[
+95.87,
+"Water and mineral salts travel up the plant in the xylem."
+],
+[
+100.06,
+"Xylem vessels are made of dead cells that have lost their contents and end walls,"
+],
+[
+104.97,
+"forming long hollow tubes with thick, stiff walls."
+],
+[
+108.66,
+"What pulls the water up?"
+],
+[
+110.85,
+"Transpiration: water evaporates in the leaves and escapes through the stomata,"
+],
+[
+115.6,
+"pulling more water up the xylem, like drinking through a straw."
+],
+[
+120.09,
+"Now it is your turn to shine!"
+],
+[
+122.49,
+"Pause the video after each question and try to answer it first."
+],
+[
+127.05,
+"Question 1: Write the word equation for photosynthesis."
+],
+[
+131.25,
+"Pause the video now."
+],
+[
+133.16,
+"Answer: Carbon dioxide and water make glucose and oxygen."
+],
+[
+138.14,
+"Question 2: What colour does iodine turn if starch is present?"
+],
+[
+142.75,
+"Pause the video now."
+],
+[
+144.66,
+"Answer: Blue-black."
+],
+[
+147.43,
+"Question 3: Why do plants need nitrates?"
+],
+[
+150.73,
+"Pause the video now."
+],
+[
+152.66,
+"Answer: To make proteins and chlorophyll."
+],
+[
+156.7,
+"Question 4: Which tissue carries water up a plant,"
+],
+[
+160.56,
+"and what process pulls it?"
+],
+[
+162.18,
+"Pause the video now."
+],
+[
+164.11,
+"Answer: The xylem, pulled by transpiration."
+]
+],
+"chapters": [
+[
+0.0,
+"Why plants need water and mineral salts"
+],
+[
+37.37,
+"Predict, watch, explain: celery in coloured water"
+],
+[
+79.82,
+"From roots to leaves"
+],
+[
+120.09,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s9u01s2v01",
+"t": 11.39,
+"review": [
+0.0,
+11.74
+]
+},
+{
+"id": "s9u01s2v02",
+"t": 37.02,
+"review": [
+0.0,
+37.37
+]
+},
+{
+"id": "s9u01n21p",
+"t": 47.51,
+"review": [
+37.37,
+47.86
+]
+},
+{
+"id": "s9u01n21e",
+"t": 79.47,
+"review": [
+37.37,
+79.82
+]
+},
+{
+"id": "s9u01s2v03",
+"t": 108.31,
+"review": [
+79.82,
+108.66
+]
+}
+],
+"dur": 168.1,
+"src": "media/s9/u1_s2.22103606.mp4",
+"poster": "media/s9/u1_s2_poster.22103606.jpg"
+}
+}

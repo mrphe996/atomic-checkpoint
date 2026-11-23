@@ -1,0 +1,692 @@
+{
+"13.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.5,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.56,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.57,
+"Let's begin!"
+],
+[
+11.97,
+"Welcome to Unit 13: Weather and Climate."
+],
+[
+15.83,
+"Twenty thousand years ago, ice covered about a quarter of the Earth."
+],
+[
+20.68,
+"Ice cores drilled from ancient ice show that Earth has warmed and cooled naturally."
+],
+[
+25.72,
+"But today it's warming very quickly,"
+],
+[
+27.9,
+"and the evidence shows that humans are the cause."
+],
+[
+31.54,
+"Weather is the temporary state of the atmosphere in a specific area."
+],
+[
+36.27,
+"It includes temperature, wind, cloud cover, and precipitation: rain, snow, sleet or hail."
+],
+[
+41.69,
+"It can change from day to day."
+],
+[
+44.16,
+"Meteorologists forecast the weather using data from satellites, weather stations, balloons and buoys."
+],
+[
+51.01,
+"Their tools include a thermometer, a rain gauge, a hygrometer for humidity,"
+],
+[
+55.55,
+"a wind vane and an anemometer for wind speed."
+],
+[
+58.94,
+"A very hot day in the cold season is just weather."
+],
+[
+62.59,
+"Climate is the usual weather pattern of a region over a long time,"
+],
+[
+66.61,
+"based on averages of readings taken over several decades."
+],
+[
+70.74,
+"Earth is divided into climate zones, areas with a similar climate."
+],
+[
+75.47,
+"They're arranged in bands depending on how far they are from the equator:"
+],
+[
+79.89,
+"equatorial, sub-equatorial, tropical, sub-tropical, temperate, sub-polar and polar."
+],
+[
+85.57,
+"Equatorial regions are warm all year with lots of rain."
+],
+[
+89.64,
+"Tropical regions are clear and warm."
+],
+[
+91.83,
+"Temperate regions have four seasons, with rain all year and snow in winter."
+],
+[
+96.39,
+"Polar regions are freezing, and their snow never melts."
+],
+[
+100.39,
+"A climate graph shows the average temperature for each month,"
+],
+[
+104.75,
+"worked out from readings taken over thirty years."
+],
+[
+108.43,
+"In this temperate city, January averages 4 degrees Celsius,"
+],
+[
+112.84,
+"and July and August average 19."
+],
+[
+115.42,
+"The line rises through spring, peaks in summer and falls through autumn:"
+],
+[
+120.64,
+"four clear seasons."
+],
+[
+122.49,
+"Pause and decide: if one day in January reached 15 degrees,"
+],
+[
+126.88,
+"would that change the climate of this city?"
+],
+[
+130.21,
+"Two identical torches shine on squared paper from the same distance."
+],
+[
+134.96,
+"One points straight down; the other is tilted at an angle."
+],
+[
+138.51,
+"Predict: which patch of light will be brighter?"
+],
+[
+141.38,
+"Pause and decide."
+],
+[
+143.07,
+"Watch. Both torches are switched on."
+],
+[
+146.83,
+"The straight-down torch makes a small, bright patch."
+],
+[
+150.76,
+"The tilted torch spreads the same light over a much larger, dimmer patch."
+],
+[
+155.89,
+"Explain what you saw."
+],
+[
+157.91,
+"The same energy is spread over a bigger area when it arrives at an angle,"
+],
+[
+162.35,
+"so each square gets less."
+],
+[
+163.87,
+"Near the equator the Sun's rays arrive almost straight down,"
+],
+[
+167.52,
+"so places there are hot."
+],
+[
+168.98,
+"Near the poles they arrive at a low angle,"
+],
+[
+171.54,
+"so the energy is spread out and it is cold."
+],
+[
+174.15,
+"Pause and explain it in your own words."
+],
+[
+177.17,
+"Earth is a sphere,"
+],
+[
+178.86,
+"so near the equator the Sun's rays hit almost head-on and are concentrated."
+],
+[
+183.43,
+"Further from the equator, the same rays are spread over a larger area,"
+],
+[
+187.68,
+"so the ground heats up less."
+],
+[
+189.39,
+"The further from the equator, the cooler the climate."
+],
+[
+193.27,
+"Four main factors affect climate: latitude,"
+],
+[
+196.63,
+"how far a place is from the equator; altitude, how high it is;"
+],
+[
+200.41,
+"relief, how flat or mountainous it is; and water mass,"
+],
+[
+203.71,
+"whether it's near a large body of water."
+],
+[
+206.8,
+"Death Valley in the USA holds the record for the hottest temperature ever measured:"
+],
+[
+212.57,
+"56.7 degrees Celsius. It lies below sea level,"
+],
+[
+215.36,
+"surrounded by mountains that trap the hot air rising from the valley."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+11.97,
+"Weather and Climate"
+],
+[
+31.54,
+"What is weather?"
+],
+[
+58.94,
+"Climate and climate zones"
+],
+[
+100.39,
+"Data: average monthly temperature in a temperate city"
+],
+[
+130.21,
+"Predict, watch, explain: torch beams and latitude"
+],
+[
+177.17,
+"What affects climate?"
+]
+],
+"stops": [
+{
+"id": "s8u13s1v01",
+"t": 43.81,
+"review": [
+31.54,
+44.16
+]
+},
+{
+"id": "s8u13s1v02",
+"t": 58.59,
+"review": [
+31.54,
+58.94
+]
+},
+{
+"id": "s8u13n12",
+"t": 129.86,
+"review": [
+100.39,
+130.21
+]
+},
+{
+"id": "s8u13n11p",
+"t": 142.72,
+"review": [
+130.21,
+143.07
+]
+},
+{
+"id": "s8u13n11e",
+"t": 176.82,
+"review": [
+130.21,
+177.17
+]
+},
+{
+"id": "s8u13s1v03",
+"t": 192.92,
+"review": [
+177.17,
+193.27
+]
+},
+{
+"id": "s8u13s1v04",
+"t": 219.69,
+"review": [
+177.17,
+220.04
+]
+}
+],
+"dur": 220.167,
+"src": "media/s8/u13_s1.cfdb6f42.mp4",
+"poster": "media/s8/u13_s1_poster.cfdb6f42.jpg"
+},
+"13.2": {
+"captions": [
+[
+0.0,
+"Earth's climate has never stayed the same."
+],
+[
+2.64,
+"Over the last 500 thousand years,"
+],
+[
+4.72,
+"the average temperature has cycled between about 4.5 and 12 degrees Celsius."
+],
+[
+9.51,
+"Cold periods are called ice ages; there have been five major ones,"
+],
+[
+13.66,
+"and we're in the fifth."
+],
+[
+15.77,
+"Within an ice age, there are colder glacials, when glaciers spread,"
+],
+[
+20.74,
+"the climate is drier and sea levels fall, and warmer interglacials,"
+],
+[
+24.98,
+"when ice melts and sea levels rise."
+],
+[
+27.2,
+"Each can last tens of thousands of years."
+],
+[
+30.45,
+"How do we know?"
+],
+[
+32.13,
+"Glacial erratics are rocks carried far from home by glaciers."
+],
+[
+36.0,
+"Moraines are piles of rock left by melting glaciers."
+],
+[
+39.3,
+"Ice cores, ocean sediments with microfossils,"
+],
+[
+42.16,
+"tree rings and fossils all record past climates."
+],
+[
+45.87,
+"Since 1958, scientists have measured carbon dioxide in the air"
+],
+[
+50.43,
+"at an observatory on the Mauna Loa volcano in Hawaii,"
+],
+[
+53.81,
+"far from cities and factories."
+],
+[
+56.38,
+"In 1960 there were about 317 parts per million."
+],
+[
+60.18,
+"By 1990 there were about 354."
+],
+[
+62.75,
+"By 2020 the level had reached about 414 parts per million,"
+],
+[
+67.22,
+"and it is rising faster than in the 1960s."
+],
+[
+70.59,
+"Pause and decide: by how much did carbon dioxide rise between 1960 and 2020,"
+],
+[
+76.21,
+"and what is the main cause?"
+],
+[
+78.59,
+"Two identical jars stand under the same lamp, each with a thermometer inside."
+],
+[
+84.1,
+"One jar is open; the other has a clear lid."
+],
+[
+86.84,
+"Predict: which jar will warm up more?"
+],
+[
+89.2,
+"Pause and decide."
+],
+[
+90.95,
+"Watch. After ten minutes,"
+],
+[
+93.32,
+"the open jar is at 24 degrees Celsius and"
+],
+[
+96.0,
+"the jar with a lid is at 27."
+],
+[
+98.48,
+"After twenty minutes, the open jar is at 26 degrees,"
+],
+[
+102.58,
+"but the jar with a lid has reached 33."
+],
+[
+105.69,
+"Explain what you saw."
+],
+[
+107.75,
+"Light passes through the clear lid and warms the inside of the jar."
+],
+[
+111.97,
+"The lid stops the warm air escaping, so heat builds up."
+],
+[
+115.43,
+"Greenhouse gases in the atmosphere act in a similar way:"
+],
+[
+118.95,
+"they let sunlight in but trap some of the heat that Earth gives off,"
+],
+[
+123.23,
+"keeping it warmer. Pause and explain it in your own words."
+],
+[
+127.55,
+"Earth's early atmosphere was mostly carbon dioxide, released by volcanoes."
+],
+[
+132.81,
+"Over time, carbon dioxide dissolved in the oceans and was used by photosynthesis,"
+],
+[
+137.9,
+"so oxygen increased. Changes in the atmosphere change the climate."
+],
+[
+142.71,
+"A greenhouse traps the Sun's heat to keep plants warm."
+],
+[
+146.86,
+"Earth's atmosphere works in a similar way."
+],
+[
+149.51,
+"Greenhouse gases like carbon dioxide and methane trap heat that would otherwise escape to space,"
+],
+[
+155.57,
+"keeping Earth warm enough for life."
+],
+[
+158.45,
+"Since the industrial revolution,"
+],
+[
+161.21,
+"burning fossil fuels and cutting down forests have increased carbon dioxide."
+],
+[
+166.02,
+"Farm animals release methane."
+],
+[
+167.85,
+"More greenhouse gases trap more heat: this is global warming, causing melting ice,"
+],
+[
+173.04,
+"floods and droughts."
+],
+[
+174.97,
+"These long-term changes are called climate change."
+],
+[
+178.9,
+"Reducing the greenhouse gases we release can help"
+],
+[
+182.02,
+"protect the Earth from its most extreme effects."
+],
+[
+185.74,
+"Now it is your turn to shine!"
+],
+[
+188.22,
+"Pause the video after each question and try to answer it first."
+],
+[
+192.94,
+"Question 1: What is the difference between weather and climate?"
+],
+[
+197.77,
+"Pause the video now."
+],
+[
+199.72,
+"Answer: Weather is day to day; climate is the average over decades."
+],
+[
+205.47,
+"Question 2: Name the four main factors that affect climate."
+],
+[
+210.05,
+"Pause the video now."
+],
+[
+212.01,
+"Answer: Latitude, altitude, relief and water mass."
+],
+[
+216.73,
+"Question 3: Give one piece of evidence for Earth's climate cycles."
+],
+[
+221.74,
+"Pause the video now."
+],
+[
+223.7,
+"Answer: Glacial erratics, moraines, ice cores, sediments or tree rings."
+],
+[
+229.69,
+"Question 4: What causes global warming?"
+],
+[
+233.02,
+"Pause the video now."
+],
+[
+235.01,
+"Answer: More greenhouse gases trapping more heat."
+]
+],
+"chapters": [
+[
+0.0,
+"Ice ages and warm periods"
+],
+[
+45.87,
+"Real data: carbon dioxide in the air at Mauna Loa, Hawaii"
+],
+[
+78.59,
+"Predict, watch, explain: a model greenhouse"
+],
+[
+127.55,
+"The greenhouse effect"
+],
+[
+185.74,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s8u13s2v01",
+"t": 15.42,
+"review": [
+0.0,
+15.77
+]
+},
+{
+"id": "s8u13s2v02",
+"t": 45.52,
+"review": [
+0.0,
+45.87
+]
+},
+{
+"id": "s8u13n21",
+"t": 78.24,
+"review": [
+45.87,
+78.59
+]
+},
+{
+"id": "s8u13n22p",
+"t": 90.6,
+"review": [
+78.59,
+90.95
+]
+},
+{
+"id": "s8u13n22e",
+"t": 127.2,
+"review": [
+78.59,
+127.55
+]
+},
+{
+"id": "s8u13s2v03",
+"t": 158.1,
+"review": [
+127.55,
+158.45
+]
+},
+{
+"id": "s8u13s2v04",
+"t": 174.62,
+"review": [
+127.55,
+174.97
+]
+}
+],
+"dur": 239.467,
+"src": "media/s8/u13_s2.1aa5f646.mp4",
+"poster": "media/s8/u13_s2_poster.1aa5f646.jpg"
+}
+}

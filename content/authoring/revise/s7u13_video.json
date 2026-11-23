@@ -707,179 +707,179 @@
 "The water cycle describes how water moves continuously around the Earth."
 ],
 [
-4.32,
+4.33,
 "First, evaporation: the Sun heats water in oceans, lakes and rivers,"
 ],
 [
-8.41,
+8.42,
 "and it turns into water vapour, which rises into the air."
 ],
 [
-12.48,
+12.5,
 "Next, condensation: as water vapour rises,"
 ],
 [
-15.8,
+15.83,
 "it cools and changes into tiny droplets of water,"
 ],
 [
-18.82,
+18.86,
 "which collect to form clouds."
 ],
 [
-21.28,
+21.3,
 "As droplets grow larger and heavier, they fall as precipitation,"
 ],
 [
-26.0,
+26.02,
 "such as rain or snow."
 ],
 [
-27.96,
+27.99,
 "Water then flows across the land as run-off, and collects in rivers,"
 ],
 [
-32.83,
+32.86,
 "lakes and oceans. Some soaks into the ground to become groundwater,"
 ],
 [
-36.9,
+36.93,
 "which can also flow back to the sea."
 ],
 [
-39.74,
+39.78,
 "And so the cycle goes on and on:"
 ],
 [
-42.41,
+42.47,
 "the rain falling on you today could have been in the ocean yesterday!"
 ],
 [
-46.61,
+46.67,
 "You can model it with warm water in a glass,"
 ],
 [
-49.28,
+49.35,
 "covered with cling film and topped with ice cubes."
 ],
 [
-52.97,
+53.05,
 "A bowl of warm salty water has an empty cup in the middle."
 ],
 [
-57.12,
+57.2,
 "The bowl is covered with cling film, with an ice cube on top,"
 ],
 [
-60.84,
+60.94,
 "right above the cup."
 ],
 [
-62.07,
+62.16,
 "Predict: will any water get into the cup?"
 ],
 [
-64.57,
+64.67,
 "Will it be salty?"
 ],
 [
-65.61,
+65.71,
 "Pause and decide."
 ],
 [
-67.33,
+67.4,
 "Watch. The bowl is left in the sun for an hour."
 ],
 [
-70.99,
+71.06,
 "Tiny drops appear under the cling film."
 ],
 [
-74.08,
+74.15,
 "The drops run to the lowest point and drip into the cup."
 ],
 [
-78.28,
+78.36,
 "The water in the cup does not taste salty."
 ],
 [
-81.54,
+81.61,
 "Explain what you saw."
 ],
 [
-83.54,
+83.61,
 "The warm water evaporated, but the salt stayed behind."
 ],
 [
-86.8,
+86.88,
 "The water vapour cooled under the cold cling film and condensed into drops,"
 ],
 [
-91.33,
+91.41,
 "which fell like rain into the cup."
 ],
 [
-93.38,
+93.47,
 "This models evaporation, condensation and precipitation in the water cycle."
 ],
 [
-97.91,
+98.01,
 "Pause and explain it in your own words."
 ],
 [
-100.92,
+101.04,
 "Now it is your turn to shine!"
 ],
 [
-103.32,
+103.44,
 "Pause the video after each question and try to answer it first."
 ],
 [
-107.88,
+108.02,
 "Question 1: Which layer of the Earth is the hottest?"
 ],
 [
-111.88,
+112.03,
 "Pause the video now."
 ],
 [
-113.79,
+113.96,
 "Answer: The inner core."
 ],
 [
-116.78,
+116.98,
 "Question 2: What type of plate boundary forms fold mountains?"
 ],
 [
-121.33,
+121.53,
 "Pause the video now."
 ],
 [
-123.23,
+123.45,
 "Answer: A convergent boundary – plates collide."
 ],
 [
-127.59,
+127.8,
 "Question 3: Which gas makes up most of the air?"
 ],
 [
-131.3,
+131.52,
 "Pause the video now."
 ],
 [
-133.22,
+133.43,
 "Answer: Nitrogen – about 78%."
 ],
 [
-135.95,
+136.73,
 "Question 4: Name the process in which water vapour turns into droplets to form clouds."
 ],
 [
-141.97,
+142.77,
 "Pause the video now."
 ],
 [
-143.86,
+144.67,
 "Answer: Condensation."
 ]
 ],
@@ -889,42 +889,42 @@
 "The water cycle"
 ],
 [
-52.97,
+53.05,
 "Predict, watch, explain: a water cycle in a bowl"
 ],
 [
-100.92,
+101.04,
 "Quick quiz"
 ]
 ],
 "stops": [
 {
 "id": "u13v4a",
-"t": 39.39,
+"t": 39.43,
 "review": [
 0.0,
-39.74
+39.78
 ]
 },
 {
 "id": "u13n14p",
-"t": 66.98,
+"t": 67.05,
 "review": [
-52.97,
-67.33
+53.05,
+67.4
 ]
 },
 {
 "id": "u13n14e",
-"t": 100.57,
+"t": 100.69,
 "review": [
-52.97,
-100.92
+53.05,
+101.04
 ]
 }
 ],
-"dur": 146.633,
-"src": "media/u13_s4.c26128f5.mp4",
-"poster": "media/u13_s4_poster.c26128f5.jpg"
+"dur": 147.367,
+"src": "media/u13_s4.e15d05e7.mp4",
+"poster": "media/u13_s4_poster.e15d05e7.jpg"
 }
 }

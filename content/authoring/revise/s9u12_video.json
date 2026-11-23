@@ -1,0 +1,617 @@
+{
+"12.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.52,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.64,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.72,
+"Let's begin!"
+],
+[
+12.13,
+"Welcome to Unit 12: Electrical Circuits."
+],
+[
+16.05,
+"Every electrical device has a circuit: a path for current,"
+],
+[
+20.36,
+"from a power source, through wires and components, and back again."
+],
+[
+24.42,
+"Understanding circuits helps us stay safe at home and design devices that waste less energy."
+],
+[
+30.75,
+"An electric current is a flow of electric charge: moving electrons."
+],
+[
+35.5,
+"Think of it like water flowing through a pipe."
+],
+[
+38.35,
+"Current is measured in amperes with an ammeter,"
+],
+[
+41.27,
+"and it only flows around a complete, closed circuit."
+],
+[
+45.15,
+"Voltage, or potential difference, is the push that drives the charge,"
+],
+[
+50.16,
+"like water pressure. Cells, batteries and generators provide it."
+],
+[
+54.13,
+"Voltage is measured in volts with a voltmeter."
+],
+[
+57.64,
+"Circuit diagrams use standard symbols that engineers everywhere understand: cells, lamps, switches, resistors,"
+],
+[
+65.18,
+"ammeters, voltmeters, buzzers and more."
+],
+[
+67.6,
+"A switch opens or closes the circuit."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.13,
+"Electrical Circuits"
+],
+[
+30.75,
+"Current and voltage"
+]
+],
+"stops": [
+{
+"id": "s9u12s1v01",
+"t": 30.4,
+"review": [
+12.13,
+30.75
+]
+},
+{
+"id": "s9u12s1v02",
+"t": 44.8,
+"review": [
+30.75,
+45.15
+]
+},
+{
+"id": "s9u12s1v03",
+"t": 57.29,
+"review": [
+30.75,
+57.64
+]
+},
+{
+"id": "s9u12s1v04",
+"t": 70.02,
+"review": [
+30.75,
+70.37
+]
+}
+],
+"dur": 70.333,
+"src": "media/s9/u12_s1.43b698f2.mp4",
+"poster": "media/s9/u12_s1_poster.43b698f2.jpg"
+},
+"12.2": {
+"captions": [
+[
+0.0,
+"In a series circuit,"
+],
+[
+1.2,
+"components are connected end to end in a single loop,"
+],
+[
+4.4,
+"like a one-lane road."
+],
+[
+5.66,
+"The current is the same at every point,"
+],
+[
+8.01,
+"but the voltage from the cell is shared between the components."
+],
+[
+11.81,
+"With two identical lamps, each gets half."
+],
+[
+14.93,
+"Add a third lamp and the voltage is shared even more,"
+],
+[
+18.87,
+"so all the lamps get dimmer."
+],
+[
+20.57,
+"And if one lamp breaks, the only path is broken,"
+],
+[
+23.48,
+"so every lamp goes out,"
+],
+[
+24.88,
+"just like traffic stopping on a closed one-lane road."
+],
+[
+28.77,
+"To measure current, connect an ammeter in series,"
+],
+[
+32.47,
+"so the current flows through it."
+],
+[
+34.42,
+"To measure voltage, connect a voltmeter in parallel, across the component."
+]
+],
+"chapters": [
+[
+0.0,
+"Series circuits"
+]
+],
+"stops": [
+{
+"id": "s9u12s2v01",
+"t": 14.58,
+"review": [
+0.0,
+14.93
+]
+},
+{
+"id": "s9u12s2v02",
+"t": 28.42,
+"review": [
+0.0,
+28.77
+]
+},
+{
+"id": "s9u12s2v03",
+"t": 39.04,
+"review": [
+0.0,
+39.39
+]
+}
+],
+"dur": 39.367,
+"src": "media/s9/u12_s2.9caedc0a.mp4",
+"poster": "media/s9/u12_s2_poster.9caedc0a.jpg"
+},
+"12.3": {
+"captions": [
+[
+0.0,
+"Two identical lamps are connected in series in one circuit,"
+],
+[
+3.58,
+"and in parallel in another."
+],
+[
+5.22,
+"In each circuit, one lamp is unscrewed."
+],
+[
+7.58,
+"Predict: what will happen to the other lamp in each circuit?"
+],
+[
+11.22,
+"Pause and decide."
+],
+[
+12.91,
+"Watch. In the series circuit, removing one lamp makes the other go out."
+],
+[
+18.73,
+"In the parallel circuit,"
+],
+[
+20.97,
+"removing one lamp leaves the other shining just as brightly."
+],
+[
+25.37,
+"Explain what you saw."
+],
+[
+27.37,
+"In series there is only one path,"
+],
+[
+29.37,
+"so a gap anywhere stops the current everywhere."
+],
+[
+32.21,
+"In parallel, each lamp is on its own branch with the full voltage,"
+],
+[
+36.2,
+"so the other branch still forms a complete circuit."
+],
+[
+39.28,
+"That is why the lights in a house can be switched on and off separately."
+],
+[
+43.64,
+"Pause and explain it in your own words."
+],
+[
+46.67,
+"In a parallel circuit, components sit on separate branches,"
+],
+[
+50.86,
+"like lanes on a highway."
+],
+[
+52.32,
+"Each branch gets the full voltage,"
+],
+[
+54.39,
+"so adding identical lamps doesn't make them dimmer."
+],
+[
+57.49,
+"If one lamp fails, the others stay on,"
+],
+[
+59.81,
+"which is why homes are wired in parallel."
+],
+[
+62.97,
+"The total current is the sum of the branch currents:"
+],
+[
+66.84,
+"three 1-amp lamps draw 3 amps."
+],
+[
+68.66,
+"Road analogies help us picture circuits, but every model has limitations."
+],
+[
+73.07,
+"As scientific understanding grows, scientists develop better models and analogies."
+]
+],
+"chapters": [
+[
+0.0,
+"Predict, watch, explain: removing one lamp"
+],
+[
+46.67,
+"Parallel circuits"
+]
+],
+"stops": [
+{
+"id": "s9u12n31p",
+"t": 12.56,
+"review": [
+0.0,
+12.91
+]
+},
+{
+"id": "s9u12n31e",
+"t": 46.32,
+"review": [
+0.0,
+46.67
+]
+},
+{
+"id": "s9u12s3v01",
+"t": 62.62,
+"review": [
+46.67,
+62.97
+]
+},
+{
+"id": "s9u12s3v02",
+"t": 78.16,
+"review": [
+46.67,
+78.51
+]
+}
+],
+"dur": 78.533,
+"src": "media/s9/u12_s3.e2acd7e2.mp4",
+"poster": "media/s9/u12_s3_poster.e2acd7e2.jpg"
+},
+"12.4": {
+"captions": [
+[
+0.0,
+"A cell stores energy in chemicals."
+],
+[
+2.08,
+"In a closed circuit, they react and the energy is transferred by electricity."
+],
+[
+6.79,
+"A battery is two or more cells joined."
+],
+[
+9.11,
+"In the symbol, the longer line is the positive terminal."
+],
+[
+13.2,
+"Connect cells in series, positive to negative, and their voltages add up:"
+],
+[
+18.46,
+"four 3-volt cells give 12 volts."
+],
+[
+20.45,
+"The current capacity stays the same."
+],
+[
+23.34,
+"Connect cells in parallel, and the voltage stays the same as one cell,"
+],
+[
+28.36,
+"but the capacity increases, so the battery lasts longer."
+],
+[
+31.79,
+"Rechargeable batteries cost more at first, but are cheaper and greener over time."
+]
+],
+"chapters": [
+[
+0.0,
+"Cells and batteries"
+]
+],
+"stops": [
+{
+"id": "s9u12s4v01",
+"t": 12.85,
+"review": [
+0.0,
+13.2
+]
+},
+{
+"id": "s9u12s4v02",
+"t": 22.99,
+"review": [
+0.0,
+23.34
+]
+},
+{
+"id": "s9u12s4v03",
+"t": 36.88,
+"review": [
+0.0,
+37.23
+]
+}
+],
+"dur": 37.267,
+"src": "media/s9/u12_s4.2ea128e9.mp4",
+"poster": "media/s9/u12_s4_poster.2ea128e9.jpg"
+},
+"12.5": {
+"captions": [
+[
+0.0,
+"Resistance is how much a component opposes the current, measured in ohms."
+],
+[
+4.72,
+"By Ohm's Law, more voltage gives more current, and more resistance gives less."
+],
+[
+9.77,
+"Resistance equals voltage divided by current."
+],
+[
+13.34,
+"Example: a light bulb runs on 230 volts with a current of 0.5 amps."
+],
+[
+18.44,
+"Resistance equals 230 divided by 0.5, which is 460 ohms."
+],
+[
+22.09,
+"Electric heaters use resistance to turn electrical energy into heat."
+],
+[
+27.18,
+"A student connects a resistor to a variable power supply,"
+],
+[
+31.54,
+"with an ammeter in series and a voltmeter in parallel."
+],
+[
+35.77,
+"At 1.5 volts the current is 0.1 amps."
+],
+[
+38.98,
+"At 3 volts it is 0.2 amps, and at 6 volts, 0.4 amps."
+],
+[
+43.11,
+"The points make a straight line through the origin:"
+],
+[
+47.24,
+"doubling the voltage doubles the current."
+],
+[
+50.63,
+"Pause and decide: what is the resistance of the resistor,"
+],
+[
+55.19,
+"and does it stay the same?"
+],
+[
+57.58,
+"Now it is your turn to shine!"
+],
+[
+60.11,
+"Pause the video after each question and try to answer it first."
+],
+[
+64.97,
+"Question 1: What instrument measures current, and how is it connected?"
+],
+[
+70.38,
+"Pause the video now."
+],
+[
+72.38,
+"Answer: An ammeter, connected in series."
+],
+[
+76.54,
+"Question 2: What happens to the other lamps if one breaks in a series circuit?"
+],
+[
+82.46,
+"Pause the video now."
+],
+[
+84.45,
+"Answer: They all go out."
+],
+[
+87.61,
+"Question 3: Four 3-volt cells are connected in series."
+],
+[
+91.96,
+"What is the total voltage?"
+],
+[
+93.7,
+"Pause the video now."
+],
+[
+95.71,
+"Answer: 12 volts."
+],
+[
+98.45,
+"Question 4: Calculate the resistance: 12 volts and 2 amps."
+],
+[
+103.08,
+"Pause the video now."
+],
+[
+105.08,
+"Answer: 6 ohms."
+]
+],
+"chapters": [
+[
+0.0,
+"Resistance and Ohm's Law"
+],
+[
+27.18,
+"Class data: current through a resistor at different voltages"
+],
+[
+57.58,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s9u12s5v01",
+"t": 12.99,
+"review": [
+0.0,
+13.34
+]
+},
+{
+"id": "s9u12s5v02",
+"t": 26.83,
+"review": [
+0.0,
+27.18
+]
+},
+{
+"id": "s9u12n51",
+"t": 57.23,
+"review": [
+27.18,
+57.58
+]
+}
+],
+"dur": 107.867,
+"src": "media/s9/u12_s5.c0f309a4.mp4",
+"poster": "media/s9/u12_s5_poster.c0f309a4.jpg"
+}
+}

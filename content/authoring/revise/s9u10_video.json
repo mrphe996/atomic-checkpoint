@@ -1,0 +1,641 @@
+{
+"10.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.52,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.65,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.74,
+"Let's begin!"
+],
+[
+12.16,
+"Welcome to Unit 10: Transfer of Thermal Energy."
+],
+[
+16.5,
+"The Sun is our planet's main source of thermal energy:"
+],
+[
+20.58,
+"the energy of moving, vibrating particles."
+],
+[
+23.19,
+"Understanding how it moves explains why we feel hot or cold,"
+],
+[
+26.91,
+"how we keep homes comfortable, and how many gadgets work."
+],
+[
+31.11,
+"Thermal energy is the total kinetic and potential energy of all the particles in something."
+],
+[
+37.32,
+"A bathtub and a cup of water at room temperature feel the same,"
+],
+[
+41.21,
+"but the bathtub holds far more thermal energy: it has far more particles."
+],
+[
+46.37,
+"Heat is thermal energy flowing from a hotter object to a cooler one,"
+],
+[
+51.32,
+"until both reach the same temperature."
+],
+[
+53.68,
+"It's measured in joules."
+],
+[
+55.17,
+"In the 1790s, Count Rumford noticed drilling cannons made endless heat,"
+],
+[
+59.58,
+"showing that heat is a form of energy."
+],
+[
+62.61,
+"Temperature measures how hot or cold something is:"
+],
+[
+66.45,
+"the average kinetic energy of its particles."
+],
+[
+69.18,
+"Heat a kettle, and the particles move faster,"
+],
+[
+71.97,
+"so the temperature rises until the water boils."
+],
+[
+74.89,
+"It's measured in degrees Celsius with a thermometer."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.16,
+"Transfer of Thermal Energy"
+],
+[
+31.11,
+"Heat and temperature"
+]
+],
+"stops": [
+{
+"id": "s9u10s1v01",
+"t": 30.76,
+"review": [
+12.16,
+31.11
+]
+},
+{
+"id": "s9u10s1v02",
+"t": 46.02,
+"review": [
+31.11,
+46.37
+]
+},
+{
+"id": "s9u10s1v03",
+"t": 62.26,
+"review": [
+31.11,
+62.61
+]
+}
+],
+"dur": 78.633,
+"src": "media/s9/u10_s1.107c6a67.mp4",
+"poster": "media/s9/u10_s1_poster.107c6a67.jpg"
+},
+"10.2": {
+"captions": [
+[
+0.0,
+"The Law of Conservation of Energy says energy can't be created or destroyed,"
+],
+[
+4.81,
+"only transferred from one store to another, so the total stays the same."
+],
+[
+9.36,
+"A pendulum swaps potential and kinetic energy as it swings."
+],
+[
+13.75,
+"Energy diagrams show this."
+],
+[
+16.16,
+"For every 100 joules supplied,"
+],
+[
+18.08,
+"an old incandescent lamp gives only 10 joules of light and 90 joules of heat."
+],
+[
+23.02,
+"An LED lamp gives 75 joules of light and only 25 of heat."
+],
+[
+27.33,
+"The 'lost' energy hasn't vanished; it has gone to stores that aren't useful,"
+],
+[
+32.89,
+"mostly heat. Efficiency measures how much of the input energy becomes useful output."
+],
+[
+38.22,
+"Efficient devices waste less, which helps protect the environment."
+]
+],
+"chapters": [
+[
+0.0,
+"Energy is conserved"
+]
+],
+"stops": [
+{
+"id": "s9u10s2v01",
+"t": 13.4,
+"review": [
+0.0,
+13.75
+]
+},
+{
+"id": "s9u10s2v02",
+"t": 26.98,
+"review": [
+0.0,
+27.33
+]
+},
+{
+"id": "s9u10s2v03",
+"t": 42.54,
+"review": [
+0.0,
+42.89
+]
+}
+],
+"dur": 42.867,
+"src": "media/s9/u10_s2.7745b49c.mp4",
+"poster": "media/s9/u10_s2_poster.7745b49c.jpg"
+},
+"10.3": {
+"captions": [
+[
+0.0,
+"Heat dissipation is thermal energy spreading from a hotter region to a cooler one."
+],
+[
+5.03,
+"A freshly baked pie cools as its heat flows into the cooler air."
+],
+[
+8.95,
+"An ice pack on an injury absorbs heat from the skin."
+],
+[
+12.79,
+"An open system exchanges both energy and matter with its surroundings;"
+],
+[
+17.87,
+"a closed system exchanges only energy."
+],
+[
+20.22,
+"Insulation, as in a vacuum flask, slows the flow of heat,"
+],
+[
+23.76,
+"keeping drinks hot or cold for longer."
+],
+[
+26.77,
+"Nature uses dissipation too."
+],
+[
+29.25,
+"An African elephant's huge, thin ears give a large surface area,"
+],
+[
+33.22,
+"so blood cools quickly."
+],
+[
+34.65,
+"And phones and laptops are designed to dissipate heat so they don't overheat."
+],
+[
+40.08,
+"A cup of freshly made tea is left on"
+],
+[
+42.95,
+"a table in a room at 22 degrees Celsius."
+],
+[
+45.46,
+"Its temperature is measured every few minutes."
+],
+[
+49.01,
+"In the first five minutes the tea cools by 16 degrees."
+],
+[
+53.13,
+"Between 30 and 40 minutes it cools by only 5 degrees."
+],
+[
+57.11,
+"The curve gets less steep as the tea gets closer to room temperature."
+],
+[
+62.89,
+"Pause and decide: why does the tea cool more slowly as time goes on,"
+],
+[
+67.88,
+"and what temperature will it finally reach?"
+]
+],
+"chapters": [
+[
+0.0,
+"Heat dissipation"
+],
+[
+40.08,
+"Class data: a cup of tea cooling"
+]
+],
+"stops": [
+{
+"id": "s9u10s3v01",
+"t": 12.44,
+"review": [
+0.0,
+12.79
+]
+},
+{
+"id": "s9u10s3v02",
+"t": 26.42,
+"review": [
+0.0,
+26.77
+]
+},
+{
+"id": "s9u10s3v03",
+"t": 39.73,
+"review": [
+0.0,
+40.08
+]
+},
+{
+"id": "s9u10n31",
+"t": 70.71,
+"review": [
+40.08,
+71.06
+]
+}
+],
+"dur": 71.033,
+"src": "media/s9/u10_s3.54d120ea.mp4",
+"poster": "media/s9/u10_s3_poster.54d120ea.jpg"
+},
+"10.4": {
+"captions": [
+[
+0.0,
+"Rods of copper, steel and glass, all the same size,"
+],
+[
+3.1,
+"are heated at one end."
+],
+[
+4.44,
+"A metal pin is stuck to the far"
+],
+[
+6.32,
+"end of each rod with a little wax."
+],
+[
+8.39,
+"Predict: on which rod will the pin fall off first?"
+],
+[
+11.43,
+"Pause and decide."
+],
+[
+13.13,
+"Watch. After about 40 seconds the wax on"
+],
+[
+16.36,
+"the copper rod melts and its pin falls."
+],
+[
+19.45,
+"The steel pin falls after about 3 minutes."
+],
+[
+22.8,
+"The pin on the glass rod is still in place."
+],
+[
+26.14,
+"Explain what you saw."
+],
+[
+28.14,
+"Heat travels along the rods by conduction."
+],
+[
+30.67,
+"Particles at the hot end vibrate faster and pass the vibrations along."
+],
+[
+34.89,
+"Metals like copper also have free electrons that carry energy quickly,"
+],
+[
+39.11,
+"so copper is the best conductor."
+],
+[
+41.04,
+"Glass has no free electrons, so it is a poor conductor: an insulator."
+],
+[
+45.2,
+"Pause and explain it in your own words."
+],
+[
+48.21,
+"Conduction transfers heat through direct contact, mainly in solids:"
+],
+[
+52.85,
+"particles at the hot end of a spoon vibrate faster and pass the vibrations along."
+],
+[
+57.73,
+"Metals conduct well; plastic, wood, wool and air are insulators."
+],
+[
+62.25,
+"Convection happens in liquids and gases."
+],
+[
+65.41,
+"Heated fluid becomes less dense and rises; cooler,"
+],
+[
+68.45,
+"denser fluid sinks to take its place, making a convection current."
+],
+[
+72.46,
+"That's how a heater warms a whole room."
+],
+[
+75.49,
+"Radiation transfers heat by infrared waves, with no medium needed:"
+],
+[
+80.23,
+"that's how the Sun's heat crosses space."
+],
+[
+82.66,
+"Dull black surfaces absorb and emit it best;"
+],
+[
+85.34,
+"shiny white or silver surfaces reflect it."
+]
+],
+"chapters": [
+[
+0.0,
+"Predict, watch, explain: which rod conducts heat best?"
+],
+[
+48.21,
+"Conduction, convection and radiation"
+]
+],
+"stops": [
+{
+"id": "s9u10n41p",
+"t": 12.78,
+"review": [
+0.0,
+13.13
+]
+},
+{
+"id": "s9u10n41e",
+"t": 47.86,
+"review": [
+0.0,
+48.21
+]
+},
+{
+"id": "s9u10s4v01",
+"t": 61.9,
+"review": [
+48.21,
+62.25
+]
+},
+{
+"id": "s9u10s4v02",
+"t": 75.14,
+"review": [
+48.21,
+75.49
+]
+},
+{
+"id": "s9u10s4v03",
+"t": 88.01,
+"review": [
+48.21,
+88.36
+]
+}
+],
+"dur": 88.333,
+"src": "media/s9/u10_s4.6facb930.mp4",
+"poster": "media/s9/u10_s4_poster.6facb930.jpg"
+},
+"10.5": {
+"captions": [
+[
+0.0,
+"Even below boiling point,"
+],
+[
+1.52,
+"the fastest particles near a liquid's surface escape as vapour."
+],
+[
+5.34,
+"The particles left behind have less energy on average,"
+],
+[
+8.62,
+"so the liquid's temperature drops."
+],
+[
+10.68,
+"This is cooling by evaporation."
+],
+[
+13.22,
+"That's why sweating cools you down:"
+],
+[
+16.1,
+"evaporating sweat carries heat away from your skin."
+],
+[
+19.21,
+"Evaporation is faster at higher temperatures, in wind, in dry air,"
+],
+[
+23.24,
+"and with a larger surface area."
+],
+[
+25.79,
+"Now it is your turn to shine!"
+],
+[
+28.19,
+"Pause the video after each question and try to answer it first."
+],
+[
+32.77,
+"Question 1: What is the difference between heat and temperature?"
+],
+[
+37.51,
+"Pause the video now."
+],
+[
+39.41,
+"Answer: Heat is energy transferred; temperature is average kinetic energy."
+],
+[
+45.4,
+"Question 2: Can energy be created or destroyed?"
+],
+[
+49.11,
+"Pause the video now."
+],
+[
+51.05,
+"Answer: No, it can only be transferred."
+],
+[
+55.0,
+"Question 3: How does heat travel from the Sun to the Earth?"
+],
+[
+59.44,
+"Pause the video now."
+],
+[
+61.35,
+"Answer: By radiation."
+],
+[
+64.25,
+"Question 4: Why does sweating cool you down?"
+],
+[
+67.78,
+"Pause the video now."
+],
+[
+69.71,
+"Answer: The fastest particles evaporate, leaving cooler sweat behind."
+]
+],
+"chapters": [
+[
+0.0,
+"Cooling by evaporation"
+],
+[
+25.79,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s9u10s5v01",
+"t": 12.87,
+"review": [
+0.0,
+13.22
+]
+},
+{
+"id": "s9u10s5v02",
+"t": 25.44,
+"review": [
+0.0,
+25.79
+]
+}
+],
+"dur": 75.233,
+"src": "media/s9/u10_s5.8b57f7f6.mp4",
+"poster": "media/s9/u10_s5_poster.8b57f7f6.jpg"
+}
+}

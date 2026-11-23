@@ -1,0 +1,779 @@
+{
+"12.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.5,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.57,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.6,
+"Let's begin!"
+],
+[
+11.99,
+"Welcome to Unit 12: Renewable and Non-Renewable Energy Resources."
+],
+[
+17.34,
+"Solar panels use photovoltaic cells: particles of light, called photons,"
+],
+[
+22.47,
+"knock electrons out of atoms, making an electric current."
+],
+[
+25.96,
+"It's clean and renewable."
+],
+[
+27.49,
+"But which energy resources are truly sustainable?"
+],
+[
+31.15,
+"An energy resource is anything from which we can get energy."
+],
+[
+35.4,
+"Wood can be burnt to release its stored chemical energy as heat."
+],
+[
+39.29,
+"Others include fossil fuels like coal and oil, gases, nuclear fuels like uranium,"
+],
+[
+44.21,
+"biofuels, and electricity stored in cells."
+],
+[
+47.43,
+"Every part of society needs energy: homes for heating, lighting and cooking; transport;"
+],
+[
+53.45,
+"industry; computers and data centres; farming; and healthcare."
+],
+[
+57.23,
+"Most of the energy we use is in the form of electricity."
+],
+[
+61.29,
+"Imagine life without a reliable energy supply: homes go dark,"
+],
+[
+65.76,
+"factories stop and the economy suffers."
+],
+[
+68.15,
+"Today we use more technology, and so more energy, than ever before."
+],
+[
+72.92,
+"Energy is needed in every part of daily life."
+],
+[
+76.32,
+"Here are four places that depend on a reliable supply."
+],
+[
+80.33,
+"At home we use energy for cooking, lighting, heating or cooling rooms,"
+],
+[
+85.41,
+"and charging our phones and laptops."
+],
+[
+88.29,
+"Buses, cars, trains and planes all need a fuel,"
+],
+[
+91.93,
+"such as petrol or diesel, or electricity stored in batteries."
+],
+[
+96.37,
+"Hospitals need power all day and night."
+],
+[
+99.52,
+"Many have back-up generators so that life-support machines never stop."
+],
+[
+104.52,
+"Every message and photo you store online sits in a data centre,"
+],
+[
+109.14,
+"where thousands of computers run and are cooled non-stop."
+],
+[
+113.31,
+"If the energy supply fails, homes go dark,"
+],
+[
+116.63,
+"transport stops and hospitals rely on back-up power."
+],
+[
+119.82,
+"Pause and think: which energy resource does your home rely on?"
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+11.99,
+"Renewable and Non-Renewable Energy Resources"
+],
+[
+31.15,
+"Why do we need energy?"
+],
+[
+72.92,
+"Real life: where does our energy go?"
+]
+],
+"stops": [
+{
+"id": "s8u12s1v01",
+"t": 30.8,
+"review": [
+11.99,
+31.15
+]
+},
+{
+"id": "s8u12s1v02",
+"t": 47.08,
+"review": [
+31.15,
+47.43
+]
+},
+{
+"id": "s8u12s1v03",
+"t": 72.57,
+"review": [
+31.15,
+72.92
+]
+},
+{
+"id": "s8u12n11",
+"t": 123.75,
+"review": [
+72.92,
+124.1
+]
+}
+],
+"dur": 124.2,
+"src": "media/s8/u12_s1.6ef29328.mp4",
+"poster": "media/s8/u12_s1_poster.6ef29328.jpg"
+},
+"12.2": {
+"captions": [
+[
+0.0,
+"Fossil fuels formed from the remains of living things,"
+],
+[
+3.34,
+"buried and exposed to intense heat and pressure underground over millions of years."
+],
+[
+9.14,
+"Coal formed from layers of decayed plant matter and is mined."
+],
+[
+13.68,
+"Crude oil and natural gas formed mostly from marine"
+],
+[
+16.86,
+"microorganisms and are extracted by drilling deep into rock."
+],
+[
+21.25,
+"In a power station, fossil fuels are burnt."
+],
+[
+24.68,
+"The heat turns water into steam, the steam drives turbines,"
+],
+[
+28.37,
+"and the turbines turn generators that produce electricity."
+],
+[
+32.64,
+"Fossil fuels took millions of years to form,"
+],
+[
+36.14,
+"so they can't be replaced as fast as we use them."
+],
+[
+39.2,
+"They can only be used once."
+],
+[
+40.89,
+"That's why they're called non-renewable energy resources."
+],
+[
+45.11,
+"Burning fossil fuels releases carbon dioxide, a greenhouse gas responsible for global warming,"
+],
+[
+51.55,
+"and toxic pollutants such as sulfur dioxide and nitrogen oxides."
+],
+[
+56.2,
+"Global warming and climate change are linked to more extreme weather: heatwaves, floods,"
+],
+[
+62.38,
+"tropical storms, droughts and wildfires."
+],
+[
+64.86,
+"Scientists classify these events and map them with keys to plan future action."
+],
+[
+70.35,
+"Fracking pumps water, sand and chemicals at high"
+],
+[
+74.07,
+"pressure into shale rock to release trapped gas."
+],
+[
+77.07,
+"It can cause tremors, releases greenhouse and toxic gases,"
+],
+[
+80.68,
+"uses lots of water and makes noise."
+],
+[
+82.86,
+"And shale gas is still a fossil fuel."
+],
+[
+85.84,
+"Climate scientists compared the carbon dioxide released for each unit of electricity,"
+],
+[
+91.74,
+"a kilowatt hour, over the whole life of a power station,"
+],
+[
+95.23,
+"from building it to running it."
+],
+[
+97.82,
+"Coal releases about 820 grams for every kilowatt hour,"
+],
+[
+101.94,
+"and natural gas about 490."
+],
+[
+103.57,
+"Solar panels release about 48 grams,"
+],
+[
+105.83,
+"while nuclear and wind release only about 12 and 11."
+],
+[
+109.76,
+"Pause and decide: why do solar,"
+],
+[
+112.44,
+"wind and nuclear still release a little carbon dioxide,"
+],
+[
+115.9,
+"even though nothing is burnt to make the electricity?"
+],
+[
+119.9,
+"Some atoms, like uranium, have a large nucleus."
+],
+[
+123.45,
+"Fire a neutron at it, and the nucleus splits,"
+],
+[
+126.27,
+"releasing energy and more neutrons."
+],
+[
+128.46,
+"These split more nuclei in a chain reaction."
+],
+[
+131.22,
+"This is nuclear fission."
+],
+[
+133.39,
+"In a nuclear power plant, the heat from fission boils water into steam,"
+],
+[
+138.53,
+"which turns turbines, just as in a coal power station."
+],
+[
+141.88,
+"Uranium is mined and limited, so nuclear fuel is also non-renewable."
+],
+[
+146.77,
+"Uranium mining clears land and its waste can pollute water."
+],
+[
+151.16,
+"Radioactive waste must be stored safely for a very long time."
+],
+[
+154.94,
+"Hot cooling water harms aquatic life,"
+],
+[
+157.24,
+"and accidents like Chernobyl in 1986 contaminate land for thousands of years."
+]
+],
+"chapters": [
+[
+0.0,
+"Fossil fuels"
+],
+[
+45.11,
+"The cost of burning fossil fuels"
+],
+[
+85.84,
+"Real data: carbon dioxide per unit of electricity"
+],
+[
+119.9,
+"Nuclear energy"
+]
+],
+"stops": [
+{
+"id": "s8u12s2v01",
+"t": 8.79,
+"review": [
+0.0,
+9.14
+]
+},
+{
+"id": "s8u12s2v02",
+"t": 44.76,
+"review": [
+0.0,
+45.11
+]
+},
+{
+"id": "s8u12s2v03",
+"t": 85.49,
+"review": [
+45.11,
+85.84
+]
+},
+{
+"id": "s8u12n21",
+"t": 119.55,
+"review": [
+85.84,
+119.9
+]
+},
+{
+"id": "s8u12s2v04",
+"t": 133.04,
+"review": [
+119.9,
+133.39
+]
+}
+],
+"dur": 162.533,
+"src": "media/s8/u12_s2.e1d79c92.mp4",
+"poster": "media/s8/u12_s2_poster.e1d79c92.jpg"
+},
+"12.3": {
+"captions": [
+[
+0.0,
+"Renewable energy resources are either in constant supply, like the Sun, wind,"
+],
+[
+4.7,
+"moving water and Earth's heat,"
+],
+[
+6.53,
+"or can be replaced as fast as we use them, like plants."
+],
+[
+9.89,
+"That makes them sustainable."
+],
+[
+12.26,
+"Solar energy is free and doesn't pollute when used."
+],
+[
+16.12,
+"Photovoltaic panels turn light directly into electricity."
+],
+[
+19.61,
+"Solar thermal plants and solar furnaces use mirrors to focus the Sun's heat,"
+],
+[
+24.26,
+"boiling water to drive turbines."
+],
+[
+26.87,
+"Molten salt can store the Sun's heat in insulated tanks,"
+],
+[
+31.05,
+"like a battery for solar energy,"
+],
+[
+33.02,
+"so electricity can still be generated after sunset or on a cloudy day."
+],
+[
+37.99,
+"But solar panels are expensive, sunlight varies and stops at night,"
+],
+[
+42.83,
+"and panels need a lot of land."
+],
+[
+44.66,
+"Some contain lead and cadmium that can leak, the metals must be mined,"
+],
+[
+48.94,
+"and birds can crash into panels they mistake for lakes."
+],
+[
+52.96,
+"Two cans hold the same amount of water at 20 degrees Celsius."
+],
+[
+57.32,
+"One is painted matt black; the other is shiny silver."
+],
+[
+60.59,
+"Both stand in bright sunshine."
+],
+[
+62.44,
+"Predict: which water will warm up faster?"
+],
+[
+64.96,
+"Pause and decide."
+],
+[
+66.66,
+"Watch. After 15 minutes the water in the black can is at 29 degrees,"
+],
+[
+71.64,
+"and in the shiny can it is at 23."
+],
+[
+74.36,
+"After 30 minutes the black can has reached 38 degrees,"
+],
+[
+78.49,
+"but the shiny can is only at 26."
+],
+[
+81.16,
+"Explain what you saw."
+],
+[
+83.18,
+"The matt black surface absorbs most of the Sun's energy,"
+],
+[
+86.6,
+"while the shiny surface reflects much of it away."
+],
+[
+89.6,
+"That is why solar water heaters on roofs have black pipes and panels."
+],
+[
+93.81,
+"The energy from the Sun is renewable: it will not run out."
+],
+[
+97.36,
+"Pause and explain it in your own words."
+],
+[
+100.4,
+"People have used windmills for centuries to pump water and grind grain."
+],
+[
+105.34,
+"Today, wind turns giant turbine blades connected to generators,"
+],
+[
+109.19,
+"converting kinetic energy into electricity."
+],
+[
+111.81,
+"Groups of turbines on land or at sea form wind farms."
+],
+[
+115.71,
+"Wind energy is clean, releasing nothing harmful into the air."
+],
+[
+120.2,
+"But turbines are expensive, the wind isn't constant, spinning blades can kill birds,"
+],
+[
+125.35,
+"and turbines can be noisy."
+],
+[
+127.61,
+"Hydropower uses moving water."
+],
+[
+130.12,
+"Water held behind a dam is released through turbines, and tides,"
+],
+[
+134.03,
+"waves and ocean currents can turn turbines too."
+],
+[
+136.91,
+"It's clean, but dams are costly, only work in certain places,"
+],
+[
+140.65,
+"and flood large areas, destroying habitats."
+],
+[
+143.94,
+"Geothermal energy uses heat from hot rock and magma below Earth's surface."
+],
+[
+149.05,
+"It heats underground water into steam to turn turbines, or warms buildings directly."
+],
+[
+154.16,
+"In Iceland, magma is close to the surface, so it's easy to use."
+],
+[
+158.65,
+"Biomass comes from living things, like wood, crops and animal waste."
+],
+[
+163.53,
+"It can be burnt, turned into biogas, or made into biofuels like ethanol."
+],
+[
+167.93,
+"Burning it releases carbon dioxide,"
+],
+[
+170.07,
+"but replanted crops take it back in through photosynthesis."
+],
+[
+174.34,
+"Biomass is only renewable if it's replaced as quickly as it's used."
+],
+[
+179.15,
+"Plants can also replace oil in materials: bioplastics are made from corn starch,"
+],
+[
+184.03,
+"seaweed or wood chips."
+],
+[
+185.37,
+"But some companies exaggerate how green they are, which is called greenwashing."
+],
+[
+190.84,
+"Now it is your turn to shine!"
+],
+[
+193.26,
+"Pause the video after each question and try to answer it first."
+],
+[
+197.87,
+"Question 1: Why are fossil fuels called non-renewable?"
+],
+[
+202.03,
+"Pause the video now."
+],
+[
+203.95,
+"Answer: They take millions of years to form and can only be used once."
+],
+[
+209.75,
+"Question 2: What is nuclear fission?"
+],
+[
+212.83,
+"Pause the video now."
+],
+[
+214.78,
+"Answer: Splitting a large nucleus, like uranium, to release energy."
+],
+[
+220.41,
+"Question 3: Name three renewable energy resources."
+],
+[
+224.33,
+"Pause the video now."
+],
+[
+226.26,
+"Answer: For example solar, wind, hydropower, geothermal or biomass."
+],
+[
+231.89,
+"Question 4: Give one environmental drawback of wind turbines."
+],
+[
+236.47,
+"Pause the video now."
+],
+[
+238.4,
+"Answer: Blades can kill birds, or turbines cause noise pollution."
+]
+],
+"chapters": [
+[
+0.0,
+"Renewable energy: the Sun"
+],
+[
+52.96,
+"Predict, watch, explain: a model solar water heater"
+],
+[
+100.4,
+"Wind and water"
+],
+[
+143.94,
+"Earth's heat and energy from living things"
+],
+[
+190.84,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s8u12s3v01",
+"t": 11.91,
+"review": [
+0.0,
+12.26
+]
+},
+{
+"id": "s8u12s3v02",
+"t": 37.64,
+"review": [
+0.0,
+37.99
+]
+},
+{
+"id": "s8u12n31p",
+"t": 66.31,
+"review": [
+52.96,
+66.66
+]
+},
+{
+"id": "s8u12n31e",
+"t": 100.05,
+"review": [
+52.96,
+100.4
+]
+},
+{
+"id": "s8u12s3v03",
+"t": 127.26,
+"review": [
+100.4,
+127.61
+]
+},
+{
+"id": "s8u12s3v04",
+"t": 190.49,
+"review": [
+143.94,
+190.84
+]
+}
+],
+"dur": 243.733,
+"src": "media/s8/u12_s3.8747a8bf.mp4",
+"poster": "media/s8/u12_s3_poster.8747a8bf.jpg"
+}
+}

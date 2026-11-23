@@ -1,0 +1,965 @@
+{
+"9.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.54,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.71,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.83,
+"Let's begin!"
+],
+[
+12.25,
+"Welcome to Unit 9: Pressure and Diffusion."
+],
+[
+16.31,
+"Deep underground, heat builds up pressure that pushes hot water and steam towards the surface,"
+],
+[
+22.9,
+"where we can use its geothermal energy for electricity."
+],
+[
+26.32,
+"In this unit, we'll explore pressure in solids, liquids and gases,"
+],
+[
+30.43,
+"and how particles spread out by diffusion."
+],
+[
+33.72,
+"Pressure is the amount of force acting on a given area."
+],
+[
+37.79,
+"When you pump up a bicycle tyre,"
+],
+[
+39.81,
+"the air inside presses on the inner surface, making the tyre firm."
+],
+[
+44.64,
+"We calculate pressure by dividing the force by the area."
+],
+[
+48.9,
+"It's measured in newtons per square metre."
+],
+[
+51.54,
+"The triangle helps us rearrange: force equals pressure times area."
+],
+[
+56.34,
+"A rock weighing 5000 newtons rests on an area of 0.5 square metres."
+],
+[
+61.29,
+"The pressure is 5000 divided by 0.5: 10 thousand newtons per square metre."
+],
+[
+66.61,
+"Now the other way:"
+],
+[
+68.48,
+"a truck exerts 10 thousand newtons per square metre over 0.4 square metres."
+],
+[
+73.22,
+"The force is 10 thousand times 0.4: 4000 newtons."
+],
+[
+76.99,
+"The same force can give very different pressures."
+],
+[
+80.67,
+"When you press a pushpin,"
+],
+[
+82.24,
+"the force from your thumb is spread over the broad head,"
+],
+[
+85.77,
+"but it's concentrated on the tiny point."
+],
+[
+88.28,
+"The smaller the area, the greater the pressure,"
+],
+[
+91.24,
+"so the pin goes in easily."
+],
+[
+93.52,
+"Knives and axes have a very thin cutting edge, a small area,"
+],
+[
+98.03,
+"so they exert a high pressure and cut easily."
+],
+[
+100.86,
+"As they're used, the edge gets wider and blunt,"
+],
+[
+103.81,
+"so we sharpen them to keep the area small."
+],
+[
+107.12,
+"Skis, snowboards and surfboards do the opposite:"
+],
+[
+110.87,
+"their large area spreads the rider's weight,"
+],
+[
+113.63,
+"reducing the pressure so they don't sink."
+],
+[
+116.21,
+"A 700 newton skier on 1.4 square metres of"
+],
+[
+118.85,
+"skis exerts just 500 newtons per square metre."
+],
+[
+122.4,
+"Two identical bricks have the same weight."
+],
+[
+125.66,
+"One lies flat on a block of soft modelling clay;"
+],
+[
+128.69,
+"the other stands on its end."
+],
+[
+130.47,
+"Predict: which brick will sink deeper into the clay?"
+],
+[
+133.76,
+"Pause and decide."
+],
+[
+135.48,
+"Watch. Both bricks press down on the clay with the same force."
+],
+[
+140.89,
+"The brick standing on its end makes a much deeper dent."
+],
+[
+145.15,
+"The flat brick hardly sinks at all."
+],
+[
+148.06,
+"Explain what you saw."
+],
+[
+150.11,
+"The force is the same,"
+],
+[
+151.5,
+"but the brick on its end pushes on a much smaller area."
+],
+[
+154.97,
+"Pressure equals force divided by area,"
+],
+[
+157.37,
+"so a smaller area gives a bigger pressure,"
+],
+[
+160.01,
+"and the clay is pushed in further."
+],
+[
+162.16,
+"Pause and explain it in your own words."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.25,
+"Pressure and Diffusion"
+],
+[
+33.72,
+"What is pressure?"
+],
+[
+76.99,
+"Force, area and pressure"
+],
+[
+122.4,
+"Predict, watch, explain: a brick on modelling clay"
+]
+],
+"stops": [
+{
+"id": "s8u09s1v01",
+"t": 44.29,
+"review": [
+33.72,
+44.64
+]
+},
+{
+"id": "s8u09s1v02",
+"t": 66.26,
+"review": [
+33.72,
+66.61
+]
+},
+{
+"id": "s8u09s1v03",
+"t": 122.05,
+"review": [
+76.99,
+122.4
+]
+},
+{
+"id": "s8u09n11p",
+"t": 135.13,
+"review": [
+122.4,
+135.48
+]
+},
+{
+"id": "s8u09n11e",
+"t": 164.74,
+"review": [
+122.4,
+165.09
+]
+}
+],
+"dur": 165.133,
+"src": "media/s8/u9_s1.74fbdc91.mp4",
+"poster": "media/s8/u9_s1_poster.74fbdc91.jpg"
+},
+"9.2": {
+"captions": [
+[
+0.0,
+"Make three holes in a bottle, one above the other,"
+],
+[
+3.11,
+"and fill it with water."
+],
+[
+4.54,
+"The water spurts furthest from the bottom hole,"
+],
+[
+7.46,
+"because the pressure there is greatest."
+],
+[
+10.54,
+"In a liquid, particles are close together but can slide past each other."
+],
+[
+15.7,
+"Their constant collisions with each other and the container walls cause pressure."
+],
+[
+20.69,
+"The deeper you go, the more liquid there is above, pressing down,"
+],
+[
+24.7,
+"so the pressure increases with depth."
+],
+[
+27.64,
+"For every metre you dive,"
+],
+[
+29.94,
+"the water pressure rises by about 10 thousand newtons per square metre."
+],
+[
+34.42,
+"That's why your ears pop."
+],
+[
+36.65,
+"Scuba divers who go deeper than about 40 metres must rise slowly,"
+],
+[
+41.4,
+"stopping on the way up, to avoid decompression sickness."
+],
+[
+44.86,
+"Submarines are built from strong materials to withstand the huge pressure."
+],
+[
+50.1,
+"A diver's gauge measures the extra pressure from the"
+],
+[
+53.98,
+"water above her at different depths in the sea."
+],
+[
+57.62,
+"At the surface the water adds no pressure."
+],
+[
+61.0,
+"At 10 metres it adds 100 kilonewtons per square metre."
+],
+[
+65.07,
+"The points make a straight line through zero:"
+],
+[
+68.65,
+"every 10 metres deeper adds the same amount again."
+],
+[
+72.47,
+"Pause and decide: what is the water pressure at 25 metres,"
+],
+[
+76.85,
+"and what happens to it if the diver goes twice as deep?"
+]
+],
+"chapters": [
+[
+0.0,
+"Pressure increases with depth"
+],
+[
+50.1,
+"Real data: water pressure at different depths"
+]
+],
+"stops": [
+{
+"id": "s8u09s2v01",
+"t": 10.19,
+"review": [
+0.0,
+10.54
+]
+},
+{
+"id": "s8u09s2v02",
+"t": 36.3,
+"review": [
+0.0,
+36.65
+]
+},
+{
+"id": "s8u09n21",
+"t": 80.42,
+"review": [
+50.1,
+80.77
+]
+}
+],
+"dur": 80.8,
+"src": "media/s8/u9_s2.c6556e2b.mp4",
+"poster": "media/s8/u9_s2_poster.c6556e2b.jpg"
+},
+"9.3": {
+"captions": [
+[
+0.0,
+"Gas particles are always moving fast and bumping into things."
+],
+[
+3.67,
+"Each collision with a surface pushes on it."
+],
+[
+6.26,
+"That's gas pressure. In an inflated balloon, more"
+],
+[
+9.21,
+"particles push on the inside than the outside,"
+],
+[
+11.98,
+"so the balloon holds its shape."
+],
+[
+13.85,
+"More particles mean more collisions and more pressure."
+],
+[
+17.76,
+"Heating a gas gives its particles more energy,"
+],
+[
+21.28,
+"so they move faster and hit the walls more often and harder:"
+],
+[
+24.92,
+"the pressure increases. A cold beach ball from the fridge feels soft,"
+],
+[
+29.1,
+"but warm it up and it gets harder."
+],
+[
+31.81,
+"Squeezing a gas into a smaller volume means the particles hit the walls more often,"
+],
+[
+37.61,
+"so the pressure rises."
+],
+[
+38.95,
+"That's what happens when you sit on an exercise ball."
+],
+[
+42.84,
+"Air is always pressing on us."
+],
+[
+45.2,
+"This is atmospheric pressure."
+],
+[
+46.95,
+"Climb a high mountain, and the pressure falls."
+],
+[
+49.74,
+"Near Earth's surface, gravity pulls air particles closer together,"
+],
+[
+53.74,
+"so the air is denser, with more collisions."
+],
+[
+56.35,
+"And at sea level there's more air above, pressing down."
+],
+[
+60.34,
+"Pressure differences let us breathe."
+],
+[
+63.27,
+"When your chest expands,"
+],
+[
+64.73,
+"the pressure in your lungs drops below the air pressure outside,"
+],
+[
+68.64,
+"so air flows in."
+],
+[
+69.61,
+"Gas always moves from high pressure to low pressure."
+],
+[
+72.79,
+"That's what causes wind, too."
+],
+[
+75.21,
+"Gas pressure is at work around us all the time."
+],
+[
+78.75,
+"Here are four everyday examples."
+],
+[
+81.4,
+"Pump more air into a bicycle tyre and"
+],
+[
+84.4,
+"there are more particles hitting the inside walls,"
+],
+[
+87.47,
+"so the pressure rises and the tyre feels firm."
+],
+[
+90.97,
+"Aerosol cans warn you never to heat them."
+],
+[
+94.21,
+"Hotter gas particles move faster and hit the walls harder,"
+],
+[
+97.77,
+"so the pressure could burst the can."
+],
+[
+100.63,
+"When you suck on a straw you lower the pressure inside it."
+],
+[
+104.89,
+"The higher air pressure on the drink outside pushes the liquid up the straw."
+],
+[
+110.19,
+"High up a mountain, the air pressure is lower,"
+],
+[
+113.75,
+"so each breath contains less oxygen."
+],
+[
+115.96,
+"Climbers on the highest peaks often carry oxygen tanks."
+],
+[
+119.97,
+"In every example, the pressure comes from moving gas particles colliding with surfaces."
+],
+[
+126.03,
+"Pause and think of one more example."
+]
+],
+"chapters": [
+[
+0.0,
+"Gas pressure"
+],
+[
+42.84,
+"Atmospheric pressure"
+],
+[
+75.21,
+"Real life: gas pressure every day"
+]
+],
+"stops": [
+{
+"id": "s8u09s3v01",
+"t": 17.41,
+"review": [
+0.0,
+17.76
+]
+},
+{
+"id": "s8u09s3v02",
+"t": 31.46,
+"review": [
+0.0,
+31.81
+]
+},
+{
+"id": "s8u09s3v03",
+"t": 74.86,
+"review": [
+42.84,
+75.21
+]
+},
+{
+"id": "s8u09n31",
+"t": 128.35,
+"review": [
+75.21,
+128.7
+]
+}
+],
+"dur": 128.7,
+"src": "media/s8/u9_s3.fdea43f9.mp4",
+"poster": "media/s8/u9_s3_poster.fdea43f9.jpg"
+},
+"9.4": {
+"captions": [
+[
+0.0,
+"The particle model explains pressure."
+],
+[
+2.32,
+"In a solid, strong forces hold particles close together, vibrating in place."
+],
+[
+7.73,
+"In a liquid, weaker forces let particles slide past each other,"
+],
+[
+12.39,
+"so liquids flow, but they're still close together and can't be squashed."
+],
+[
+16.88,
+"In a gas, particles are far apart and move fast in all directions,"
+],
+[
+20.99,
+"so gases are easy to compress."
+],
+[
+23.53,
+"When a substance is heated, its particles gain energy,"
+],
+[
+27.63,
+"move faster and spread further apart, so it expands."
+],
+[
+30.87,
+"With enough energy, they break away from each other and the substance changes state,"
+],
+[
+36.1,
+"melting and then boiling."
+],
+[
+37.66,
+"Expanding and changing state can greatly increase pressure."
+],
+[
+41.98,
+"Natural diamonds form deep in the Earth's mantle,"
+],
+[
+45.63,
+"where the weight of the rocks above creates enormous pressure."
+],
+[
+49.49,
+"Combined with high temperatures, this forces carbon atoms into diamond's special crystal structure."
+],
+[
+56.31,
+"Today, about 99 percent of synthetic diamonds are made"
+],
+[
+60.41,
+"in labs using high pressure and high temperature."
+],
+[
+63.46,
+"Scientists have even grown diamonds at normal atmospheric pressure, at 1025 degrees Celsius,"
+],
+[
+69.19,
+"using a liquid metal alloy."
+],
+[
+70.88,
+"Lab-grown diamonds have many industrial uses."
+]
+],
+"chapters": [
+[
+0.0,
+"The particle model"
+],
+[
+41.98,
+"Diamonds made by pressure"
+]
+],
+"stops": [
+{
+"id": "s8u09s4v01",
+"t": 7.38,
+"review": [
+0.0,
+7.73
+]
+},
+{
+"id": "s8u09s4v02",
+"t": 23.18,
+"review": [
+0.0,
+23.53
+]
+},
+{
+"id": "s8u09s4v03",
+"t": 55.96,
+"review": [
+41.98,
+56.31
+]
+}
+],
+"dur": 74.233,
+"src": "media/s8/u9_s4.054553ed.mp4",
+"poster": "media/s8/u9_s4_poster.054553ed.jpg"
+},
+"9.5": {
+"captions": [
+[
+0.0,
+"One drop of food colouring is placed gently into a beaker"
+],
+[
+3.46,
+"of cold water and another into a beaker of hot water."
+],
+[
+6.69,
+"Nobody stirs them. Predict: in which beaker will the colour spread out faster?"
+],
+[
+11.43,
+"Pause and decide."
+],
+[
+13.13,
+"Watch. After one minute the colour has started to spread in both beakers."
+],
+[
+19.09,
+"After five minutes the hot water is almost evenly coloured,"
+],
+[
+23.47,
+"but in the cold water the colour is still mostly in the middle."
+],
+[
+28.01,
+"Explain what you saw."
+],
+[
+30.03,
+"The colour spreads by diffusion:"
+],
+[
+31.99,
+"its particles move randomly and spread from where there"
+],
+[
+35.35,
+"are many of them to where there are few."
+],
+[
+37.8,
+"In hot water the particles have more energy and move faster,"
+],
+[
+41.48,
+"so diffusion happens more quickly."
+],
+[
+43.56,
+"Pause and explain it in your own words."
+],
+[
+46.6,
+"Spray perfume in one corner of a room,"
+],
+[
+49.51,
+"and soon you can smell it everywhere."
+],
+[
+51.76,
+"This is diffusion: particles of one substance spreading out through another,"
+],
+[
+56.39,
+"from an area of high concentration to an area of low concentration."
+],
+[
+60.46,
+"It happens on its own, because particles are always moving."
+],
+[
+64.72,
+"Diffusion happens in liquids and gases, where particles move freely and collide randomly."
+],
+[
+70.87,
+"Put a tea bag in water,"
+],
+[
+72.27,
+"and the tea particles slowly spread out until they're evenly mixed with the water particles."
+],
+[
+78.53,
+"Diffusion is faster when the particles are lighter, when the temperature is higher,"
+],
+[
+84.32,
+"and when there are bigger spaces between particles."
+],
+[
+87.43,
+"That's why it's much faster in gases than in liquids."
+],
+[
+90.66,
+"Remember, diffusion isn't the same as dissolving!"
+],
+[
+94.29,
+"Now it is your turn to shine!"
+],
+[
+96.7,
+"Pause the video after each question and try to answer it first."
+],
+[
+101.3,
+"Question 1: A box weighing 600 N rests on 2 m²."
+],
+[
+106.02,
+"What pressure does it exert?"
+],
+[
+107.77,
+"Pause the video now."
+],
+[
+109.69,
+"Answer: 300 N/m²."
+],
+[
+112.7,
+"Question 2: Why does water spurt furthest from the lowest hole in a bottle?"
+],
+[
+118.11,
+"Pause the video now."
+],
+[
+120.01,
+"Answer: Pressure increases with depth."
+],
+[
+123.91,
+"Question 3: What happens to gas pressure in a sealed container when it is heated?"
+],
+[
+129.69,
+"Pause the video now."
+],
+[
+131.58,
+"Answer: It increases – particles move faster and collide more."
+],
+[
+136.83,
+"Question 4: Why does diffusion happen faster in gases than in liquids?"
+],
+[
+141.94,
+"Pause the video now."
+],
+[
+143.85,
+"Answer: Gas particles move faster and have bigger spaces between them."
+]
+],
+"chapters": [
+[
+0.0,
+"Predict, watch, explain: a drop of colour in cold and hot water"
+],
+[
+46.6,
+"Diffusion"
+],
+[
+94.29,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s8u09n51p",
+"t": 12.78,
+"review": [
+0.0,
+13.13
+]
+},
+{
+"id": "s8u09n51e",
+"t": 46.25,
+"review": [
+0.0,
+46.6
+]
+},
+{
+"id": "s8u09s5v01",
+"t": 64.37,
+"review": [
+46.6,
+64.72
+]
+},
+{
+"id": "s8u09s5v02",
+"t": 78.18,
+"review": [
+46.6,
+78.53
+]
+},
+{
+"id": "s8u09s5v03",
+"t": 93.94,
+"review": [
+46.6,
+94.29
+]
+}
+],
+"dur": 149.367,
+"src": "media/s8/u9_s5.467444ce.mp4",
+"poster": "media/s8/u9_s5_poster.467444ce.jpg"
+}
+}

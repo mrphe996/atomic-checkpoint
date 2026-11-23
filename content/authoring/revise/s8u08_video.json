@@ -1,0 +1,1042 @@
+{
+"8.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.54,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.73,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.89,
+"Let's begin!"
+],
+[
+12.3,
+"Welcome to Unit 8: Forces and Motion."
+],
+[
+16.07,
+"Kicking a football, swinging a cricket bat, a rocket taking off,"
+],
+[
+20.81,
+"a car braking at the lights: every action involves forces."
+],
+[
+24.44,
+"Transport produces about one-fifth of the world's carbon dioxide emissions."
+],
+[
+29.14,
+"Understanding forces and motion can help us design more fuel-efficient vehicles."
+],
+[
+34.8,
+"Speed tells us how fast something is moving:"
+],
+[
+38.18,
+"the distance travelled in each unit of time."
+],
+[
+40.96,
+"People walk at about 1 metre per second, run at about 3,"
+],
+[
+44.5,
+"a car might go 15, a train 30,"
+],
+[
+46.4,
+"and a plane about 250 metres per second!"
+],
+[
+48.93,
+"An object that isn't moving has zero speed."
+],
+[
+52.3,
+"To calculate speed, divide the distance travelled by the time taken."
+],
+[
+57.35,
+"The SI unit is metres per second."
+],
+[
+59.44,
+"For longer journeys, we often use kilometres per hour."
+],
+[
+63.52,
+"Let's try it. An Olympic athlete runs 100 metres in 10 seconds."
+],
+[
+68.25,
+"Speed equals 100 metres divided by 10 seconds: 10 metres per second."
+],
+[
+73.23,
+"Speed matters everywhere in daily life."
+],
+[
+76.36,
+"Here are four places where people measure it."
+],
+[
+79.93,
+"Walking to school, most people move at about 1.4 metres every second,"
+],
+[
+85.07,
+"so one kilometre takes about twelve minutes."
+],
+[
+88.53,
+"Near schools, speed limits are lower."
+],
+[
+91.64,
+"A slower car travels less distance while the driver reacts,"
+],
+[
+95.43,
+"so it can stop in time."
+],
+[
+97.57,
+"On sports day, a 100 metre race can be timed electronically."
+],
+[
+102.13,
+"Speed is the distance divided by the time on the clock."
+],
+[
+106.29,
+"Airline pilots work out how long a flight takes by"
+],
+[
+110.23,
+"dividing the distance by the average speed of the plane."
+],
+[
+114.47,
+"In every example, speed is the distance travelled divided by the time taken."
+],
+[
+120.03,
+"Pause and think of one more place where speed matters."
+],
+[
+124.1,
+"We can rearrange the speed equation using a speed triangle."
+],
+[
+128.43,
+"Cover the quantity you want to find."
+],
+[
+130.71,
+"Distance equals speed times time, and time equals distance divided by speed."
+],
+[
+136.18,
+"A car travels 150 kilometres at 50 kilometres per hour."
+],
+[
+140.42,
+"How long is the journey?"
+],
+[
+141.95,
+"Cover t: time equals 150 divided by 50, which is 3 hours."
+],
+[
+146.25,
+"Units really matter. In 1999,"
+],
+[
+148.81,
+"NASA's Mars Climate Orbiter crashed because one team calculated thrust in imperial units,"
+],
+[
+154.44,
+"and another in metric units."
+],
+[
+156.21,
+"The spacecraft flew too close to Mars and was destroyed."
+],
+[
+160.42,
+"An athlete doesn't run at the same speed all race."
+],
+[
+164.17,
+"At the start, she accelerates: she covers more distance each second, 5 metres,"
+],
+[
+169.07,
+"then 6, then 7, then 8."
+],
+[
+170.52,
+"At the end, she decelerates: she covers less distance each second before stopping."
+],
+[
+176.33,
+"So we use average speed: total distance divided by total time."
+],
+[
+180.97,
+"In the first three seconds, she runs 5 plus 6 plus 7,"
+],
+[
+184.32,
+"which is 18 metres."
+],
+[
+185.52,
+"18 metres divided by 3 seconds gives an average speed of 6 metres per second."
+],
+[
+191.03,
+"How do police know if a driver is speeding?"
+],
+[
+194.36,
+"A radar speed camera sends out radio waves,"
+],
+[
+197.08,
+"which bounce off a moving vehicle."
+],
+[
+199.24,
+"The camera uses the returning waves to work out the vehicle's speed."
+],
+[
+204.21,
+"A two-point camera system photographs a vehicle at two"
+],
+[
+208.37,
+"places a known distance apart and records the times."
+],
+[
+211.67,
+"Then it calculates the average speed between them."
+],
+[
+215.5,
+"In the lab, we can use timing gates."
+],
+[
+218.5,
+"A card on a toy car breaks an infrared beam,"
+],
+[
+221.27,
+"which starts and stops a timer very accurately."
+],
+[
+224.22,
+"Races are timed electronically to a thousandth of a second,"
+],
+[
+227.94,
+"much more accurately than a stopwatch, which depends on human reaction time."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.3,
+"Forces and Motion"
+],
+[
+34.8,
+"What is speed?"
+],
+[
+73.23,
+"Real life: speed all around us"
+],
+[
+124.1,
+"The speed triangle"
+],
+[
+160.42,
+"Changing speed and average speed"
+],
+[
+191.03,
+"Measuring speed"
+]
+],
+"stops": [
+{
+"id": "s8u08s1v01",
+"t": 51.95,
+"review": [
+34.8,
+52.3
+]
+},
+{
+"id": "s8u08s1v02",
+"t": 72.88,
+"review": [
+34.8,
+73.23
+]
+},
+{
+"id": "s8u08n11",
+"t": 123.75,
+"review": [
+73.23,
+124.1
+]
+},
+{
+"id": "s8u08s1v03",
+"t": 190.68,
+"review": [
+160.42,
+191.03
+]
+},
+{
+"id": "s8u08s1v04",
+"t": 232.85,
+"review": [
+191.03,
+233.2
+]
+}
+],
+"dur": 233.1,
+"src": "media/s8/u8_s1.1bcc5cc7.mp4",
+"poster": "media/s8/u8_s1_poster.1bcc5cc7.jpg"
+},
+"8.2": {
+"captions": [
+[
+0.0,
+"A distance–time graph shows how an object moves."
+],
+[
+3.04,
+"Time goes along the horizontal axis, and distance up the vertical axis."
+],
+[
+7.45,
+"A flat, horizontal line means the object isn't moving:"
+],
+[
+10.81,
+"its distance stays the same."
+],
+[
+13.2,
+"A straight line sloping upwards means a constant speed:"
+],
+[
+17.43,
+"the same distance is covered every second."
+],
+[
+20.77,
+"A curved line means the speed is changing."
+],
+[
+24.16,
+"If it gets steeper, the object is speeding up."
+],
+[
+27.06,
+"The steeper the line, the faster the object is moving."
+],
+[
+31.11,
+"Let's plot Lee's run."
+],
+[
+33.04,
+"First, he runs 8 kilometres in 1 hour at a constant speed:"
+],
+[
+36.72,
+"a straight line sloping upwards, from A to B."
+],
+[
+40.23,
+"Then he rests for half an hour."
+],
+[
+42.93,
+"His distance doesn't change, so the line from B to C is horizontal."
+],
+[
+47.85,
+"Finally, he runs another 8 kilometres, taking 1.5 hours."
+],
+[
+52.09,
+"The line from C to D slopes upwards again,"
+],
+[
+54.72,
+"but it's less steep than A to B, because he's running more slowly."
+],
+[
+59.53,
+"Graphs help us compare."
+],
+[
+61.57,
+"A cheetah and a man start running from the same place."
+],
+[
+64.95,
+"The cheetah's line is very steep at first: it's much faster."
+],
+[
+68.7,
+"But after about 20 seconds, its line goes flat."
+],
+[
+71.64,
+"The cheetah has stopped, after 400 metres."
+],
+[
+74.93,
+"The man's line is less steep, but it keeps rising steadily."
+],
+[
+79.4,
+"He can't match the cheetah's speed, but he keeps going."
+],
+[
+83.51,
+"Where the two lines cross, the man overtakes the cheetah,"
+],
+[
+87.85,
+"and he carries on to 800 metres."
+],
+[
+89.87,
+"Fast isn't everything: endurance matters too!"
+],
+[
+93.37,
+"A cyclist rides to school."
+],
+[
+95.65,
+"Her distance from home is recorded every 20 seconds."
+],
+[
+99.66,
+"For the first 40 seconds the line is straight and steep:"
+],
+[
+103.96,
+"she covers 100 metres every 20 seconds."
+],
+[
+107.11,
+"From 40 to 60 seconds the line is flat while she waits at traffic lights."
+],
+[
+112.44,
+"Then she rides on, but the line is less steep."
+],
+[
+116.0,
+"Pause and decide: what was her speed in the first 40 seconds,"
+],
+[
+120.59,
+"and was she faster or slower after the traffic lights?"
+]
+],
+"chapters": [
+[
+0.0,
+"Reading distance–time graphs"
+],
+[
+31.11,
+"Plotting a distance–time graph"
+],
+[
+59.53,
+"The cheetah and the runner"
+],
+[
+93.37,
+"Real data: a cyclist's journey to school"
+]
+],
+"stops": [
+{
+"id": "s8u08s2v01",
+"t": 12.85,
+"review": [
+0.0,
+13.2
+]
+},
+{
+"id": "s8u08s2v02",
+"t": 30.76,
+"review": [
+0.0,
+31.11
+]
+},
+{
+"id": "s8u08s2v03",
+"t": 59.18,
+"review": [
+31.11,
+59.53
+]
+},
+{
+"id": "s8u08n21",
+"t": 124.11,
+"review": [
+93.37,
+124.46
+]
+}
+],
+"dur": 124.433,
+"src": "media/s8/u8_s2.78c05e4f.mp4",
+"poster": "media/s8/u8_s2_poster.78c05e4f.jpg"
+},
+"8.3": {
+"captions": [
+[
+0.0,
+"Forces have both size and direction, so we draw them as arrows."
+],
+[
+3.93,
+"In a tug of war,"
+],
+[
+4.93,
+"if both sides pull with 5 newtons in opposite directions,"
+],
+[
+8.49,
+"the forces are balanced."
+],
+[
+9.99,
+"Counting one direction as positive, the resultant force is 5 minus 5,"
+],
+[
+14.3,
+"which is zero, and the rope doesn't move."
+],
+[
+17.52,
+"Balanced forces don't change an object's motion."
+],
+[
+21.25,
+"A lorry at constant speed has its engine force balanced by friction."
+],
+[
+25.51,
+"And when a skydiver's air resistance equals the pull of gravity,"
+],
+[
+29.51,
+"he falls at a steady speed called the terminal speed."
+],
+[
+33.49,
+"Two paper cones have the same mass,"
+],
+[
+36.32,
+"but one is much wider than the other."
+],
+[
+38.67,
+"They are dropped together from the same height."
+],
+[
+41.67,
+"Predict: which will land first?"
+],
+[
+43.64,
+"Pause and decide."
+],
+[
+45.4,
+"Watch. Both cones start to fall, and air pushes up against each one."
+],
+[
+51.17,
+"The small cone lands first."
+],
+[
+53.66,
+"The large cone falls slowly and lands later."
+],
+[
+57.18,
+"Explain what you saw."
+],
+[
+59.24,
+"Both cones have the same weight pulling them down."
+],
+[
+62.39,
+"The large cone has a bigger surface area,"
+],
+[
+64.97,
+"so there is more air resistance pushing up on it."
+],
+[
+68.05,
+"The forces on it become balanced at a lower speed,"
+],
+[
+71.2,
+"so it falls more slowly."
+],
+[
+72.71,
+"Parachutes use the same idea."
+],
+[
+74.53,
+"Pause and explain it in your own words."
+],
+[
+77.65,
+"If the forces don't cancel out, they're unbalanced, and the motion changes."
+],
+[
+82.96,
+"Push a ball right with 12 newtons and left with 5 newtons:"
+],
+[
+86.61,
+"the resultant force is 12 minus 5,"
+],
+[
+88.74,
+"which is 7 newtons to the right."
+],
+[
+90.75,
+"The ball accelerates to the right."
+],
+[
+93.53,
+"Here's a worked example."
+],
+[
+95.78,
+"A box has 100 newtons and 50 newtons pushing right,"
+],
+[
+99.0,
+"and 180 newtons pushing left."
+],
+[
+100.83,
+"Counting right as positive: 100 plus 50 minus 180 is minus 30."
+],
+[
+104.73,
+"So the resultant force is 30 newtons to the left,"
+],
+[
+107.82,
+"and the box moves left."
+],
+[
+109.94,
+"Unbalanced forces can speed things up, like a car accelerating; slow them down,"
+],
+[
+115.64,
+"like friction stopping a sliding book; or change their direction,"
+],
+[
+119.73,
+"like a bat hitting a ball."
+],
+[
+122.02,
+"Air resistance grows with speed and surface area,"
+],
+[
+125.87,
+"so streamlined shapes and lower speeds help vehicles use less fuel."
+]
+],
+"chapters": [
+[
+0.0,
+"Balanced forces"
+],
+[
+33.49,
+"Predict, watch, explain: falling paper cones"
+],
+[
+77.65,
+"Unbalanced forces and resultant force"
+]
+],
+"stops": [
+{
+"id": "s8u08s3v01",
+"t": 17.17,
+"review": [
+0.0,
+17.52
+]
+},
+{
+"id": "s8u08s3v02",
+"t": 33.14,
+"review": [
+0.0,
+33.49
+]
+},
+{
+"id": "s8u08n31p",
+"t": 45.05,
+"review": [
+33.49,
+45.4
+]
+},
+{
+"id": "s8u08n31e",
+"t": 77.3,
+"review": [
+33.49,
+77.65
+]
+},
+{
+"id": "s8u08s3v03",
+"t": 109.59,
+"review": [
+77.65,
+109.94
+]
+}
+],
+"dur": 130.6,
+"src": "media/s8/u8_s3.e11e6b25.mp4",
+"poster": "media/s8/u8_s3_poster.e11e6b25.jpg"
+},
+"8.4": {
+"captions": [
+[
+0.0,
+"Opening a jar, pressing a light switch, cutting with scissors, lifting a wheelbarrow:"
+],
+[
+5.35,
+"each uses the turning effect of a force, called a moment."
+],
+[
+8.93,
+"A moment makes an object rotate around a pivot point, called the fulcrum."
+],
+[
+14.18,
+"A door turns about its hinges."
+],
+[
+16.85,
+"Push near the edge, far from the hinges, and it opens easily."
+],
+[
+20.78,
+"Push near the hinges, and it's very hard!"
+],
+[
+24.09,
+"The moment depends on the size of the force and its distance from the fulcrum:"
+],
+[
+29.8,
+"moment equals force times distance, M equals F times d,"
+],
+[
+33.32,
+"measured in newton metres."
+],
+[
+35.64,
+"A motorist pushes on a wheel wrench with 70 newtons,"
+],
+[
+39.7,
+"0.4 metres from the nut."
+],
+[
+41.24,
+"The moment is 70 times 0.4, which is 28 newton metres."
+],
+[
+44.69,
+"That's why a long spanner makes nuts easier to loosen."
+],
+[
+48.78,
+"Like forces, moments have direction."
+],
+[
+51.68,
+"On a seesaw, the girl's weight turns it one way, anticlockwise,"
+],
+[
+55.71,
+"and the boy's weight turns it the other way, clockwise."
+],
+[
+59.9,
+"A seesaw is a lever: a simple machine that turns around a fulcrum."
+],
+[
+64.86,
+"Scissors, wheelbarrows, staplers and pliers are levers too."
+],
+[
+69.29,
+"So are the bones and joints in our bodies."
+],
+[
+72.73,
+"Galileo found that a lever's balance depends on both"
+],
+[
+76.06,
+"the weights and their distances from the pivot."
+],
+[
+79.75,
+"A ruler balances on a pivot at its centre."
+],
+[
+83.04,
+"Two coins sit 10 centimetres to the left of the pivot."
+],
+[
+86.49,
+"Predict: where must one coin go on the right to balance the ruler?"
+],
+[
+90.71,
+"Pause and decide."
+],
+[
+92.47,
+"Watch. One coin placed 10 centimetres to the right is not enough."
+],
+[
+97.42,
+"The ruler tips to the left."
+],
+[
+99.85,
+"Moved to 20 centimetres from the pivot,"
+],
+[
+103.14,
+"the single coin balances the two coins."
+],
+[
+106.37,
+"Explain what you saw."
+],
+[
+108.43,
+"Two coins at 10 centimetres give the same"
+],
+[
+111.03,
+"turning effect as one coin at 20 centimetres,"
+],
+[
+113.89,
+"because force times distance is equal: 2 times 10 equals 1 times 20."
+],
+[
+118.2,
+"When the anticlockwise moment equals the clockwise moment, the ruler balances."
+],
+[
+123.14,
+"This is the principle of moments."
+],
+[
+125.24,
+"Pause and explain it in your own words."
+],
+[
+128.36,
+"Now it is your turn to shine!"
+],
+[
+130.84,
+"Pause the video after each question and try to answer it first."
+],
+[
+135.61,
+"Question 1: A cyclist rides 600 m in 120 s."
+],
+[
+139.87,
+"What is her average speed?"
+],
+[
+141.56,
+"Pause the video now."
+],
+[
+143.54,
+"Answer: 5 m/s."
+],
+[
+146.92,
+"Question 2: What does a horizontal line on a distance–time graph show?"
+],
+[
+152.27,
+"Pause the video now."
+],
+[
+154.23,
+"Answer: The object is not moving."
+],
+[
+157.91,
+"Question 3: Forces of 20 N right and 8 N left act on a trolley."
+],
+[
+163.49,
+"What is the resultant force?"
+],
+[
+165.3,
+"Pause the video now."
+],
+[
+167.26,
+"Answer: 12 N to the right."
+],
+[
+170.87,
+"Question 4: A force of 50 N acts 0.2 m from a pivot."
+],
+[
+175.72,
+"What is the moment?"
+],
+[
+176.96,
+"Pause the video now."
+],
+[
+178.93,
+"Answer: 10 Nm."
+]
+],
+"chapters": [
+[
+0.0,
+"Moments: the turning effect of a force"
+],
+[
+48.78,
+"Clockwise, anticlockwise and levers"
+],
+[
+79.75,
+"Predict, watch, explain: balancing a ruler"
+],
+[
+128.36,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s8u08s4v01",
+"t": 13.83,
+"review": [
+0.0,
+14.18
+]
+},
+{
+"id": "s8u08s4v02",
+"t": 35.29,
+"review": [
+0.0,
+35.64
+]
+},
+{
+"id": "s8u08s4v03",
+"t": 48.43,
+"review": [
+0.0,
+48.78
+]
+},
+{
+"id": "s8u08n41p",
+"t": 92.12,
+"review": [
+79.75,
+92.47
+]
+},
+{
+"id": "s8u08n41e",
+"t": 128.01,
+"review": [
+79.75,
+128.36
+]
+}
+],
+"dur": 181.7,
+"src": "media/s8/u8_s4.bf21201d.mp4",
+"poster": "media/s8/u8_s4_poster.bf21201d.jpg"
+}
+}

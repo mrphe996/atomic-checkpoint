@@ -1,0 +1,566 @@
+{
+"5.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.52,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.63,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.71,
+"Let's begin!"
+],
+[
+12.11,
+"Welcome to Unit 5: Chemical Bonding and Structure of Materials."
+],
+[
+17.39,
+"Diamond and coal are both made of carbon,"
+],
+[
+20.66,
+"yet one sparkles and the other is dull and crumbly."
+],
+[
+23.82,
+"The secret is chemical bonding: how atoms are joined changes how materials behave."
+],
+[
+29.57,
+"Electrons orbit the nucleus in shells, or energy levels."
+],
+[
+33.65,
+"The outer shell matters most."
+],
+[
+35.45,
+"Group 18 atoms, like neon, have a full outer shell of 8 electrons:"
+],
+[
+39.55,
+"a stable electronic configuration."
+],
+[
+41.66,
+"That's why they hardly react."
+],
+[
+44.11,
+"Other atoms, like sodium with one outer electron or chlorine with seven,"
+],
+[
+49.38,
+"are not stable, so they react."
+],
+[
+51.93,
+"To reach a full outer shell, atoms form chemical bonds."
+],
+[
+56.08,
+"They can share outer electrons, making covalent bonds, or lose or gain electrons,"
+],
+[
+61.12,
+"making ionic bonds."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.11,
+"Chemical Bonding and Structure of Materials"
+],
+[
+29.57,
+"Why do atoms bond?"
+]
+],
+"stops": [
+{
+"id": "s9u05s1v01",
+"t": 43.76,
+"review": [
+29.57,
+44.11
+]
+},
+{
+"id": "s9u05s1v02",
+"t": 62.44,
+"review": [
+29.57,
+62.79
+]
+}
+],
+"dur": 62.733,
+"src": "media/s9/u5_s1.860e9531.mp4",
+"poster": "media/s9/u5_s1_poster.860e9531.jpg"
+},
+"5.2": {
+"captions": [
+[
+0.0,
+"In a covalent bond, two non-metal atoms share a pair of electrons,"
+],
+[
+3.97,
+"forming a molecule. Two hydrogen atoms share their electrons so both get a full shell."
+],
+[
+9.15,
+"Dot-and-cross diagrams show one atom's electrons as dots, the other's as crosses."
+],
+[
+14.69,
+"An oxygen atom has 6 outer electrons and needs 2 more."
+],
+[
+18.74,
+"It shares one pair with each of two hydrogen atoms,"
+],
+[
+21.87,
+"making a water molecule with two covalent bonds."
+],
+[
+25.48,
+"Hydrogen chloride has one covalent bond."
+],
+[
+28.66,
+"Methane has four, because carbon has four outer electrons to share."
+],
+[
+32.77,
+"That's why carbon forms so many different molecules."
+],
+[
+36.63,
+"Many substances we meet every day are made of small covalent molecules."
+],
+[
+41.68,
+"Here are four."
+],
+[
+43.2,
+"Every water molecule has an oxygen atom sharing a"
+],
+[
+46.98,
+"pair of electrons with each of two hydrogen atoms."
+],
+[
+50.75,
+"The bubbles in fizzy drinks are carbon dioxide:"
+],
+[
+54.4,
+"a carbon atom joined to two oxygen atoms by covalent bonds."
+],
+[
+58.71,
+"Natural gas for cooking is mostly methane."
+],
+[
+62.04,
+"Carbon shares its four outer electrons with four hydrogen atoms."
+],
+[
+66.67,
+"The oxygen we breathe is made of O₂ molecules,"
+],
+[
+70.26,
+"where two oxygen atoms share two pairs of electrons."
+],
+[
+74.14,
+"These small molecules are all gases or liquids at room temperature,"
+],
+[
+78.98,
+"because the forces between the molecules are weak."
+],
+[
+82.04,
+"Pause and think of one more covalent substance."
+]
+],
+"chapters": [
+[
+0.0,
+"Covalent bonds: sharing electrons"
+],
+[
+36.63,
+"Real life: covalent molecules all around us"
+]
+],
+"stops": [
+{
+"id": "s9u05s2v01",
+"t": 14.34,
+"review": [
+0.0,
+14.69
+]
+},
+{
+"id": "s9u05s2v02",
+"t": 25.13,
+"review": [
+0.0,
+25.48
+]
+},
+{
+"id": "s9u05n21",
+"t": 85.04,
+"review": [
+36.63,
+85.39
+]
+}
+],
+"dur": 85.433,
+"src": "media/s9/u5_s2.1397045b.mp4",
+"poster": "media/s9/u5_s2_poster.1397045b.jpg"
+},
+"5.3": {
+"captions": [
+[
+0.0,
+"An atom that loses or gains electrons becomes a charged ion."
+],
+[
+3.66,
+"Metals lose electrons to form positive ions, or cations: sodium loses one."
+],
+[
+8.18,
+"Non-metals gain electrons to form negative ions, or anions: chlorine gains one."
+],
+[
+13.66,
+"Opposite charges attract. This electrostatic attraction between oppositely charged ions is an ionic bond,"
+],
+[
+20.85,
+"forming sodium chloride: table salt."
+],
+[
+23.07,
+"Magnesium loses two electrons,"
+],
+[
+24.91,
+"so it bonds with two chloride ions to make magnesium chloride."
+]
+],
+"chapters": [
+[
+0.0,
+"Ionic bonds: losing and gaining electrons"
+]
+],
+"stops": [
+{
+"id": "s9u05s3v01",
+"t": 13.31,
+"review": [
+0.0,
+13.66
+]
+},
+{
+"id": "s9u05s3v02",
+"t": 28.87,
+"review": [
+0.0,
+29.22
+]
+}
+],
+"dur": 29.233,
+"src": "media/s9/u5_s3.3c89393a.mp4",
+"poster": "media/s9/u5_s3_poster.3c89393a.jpg"
+},
+"5.4": {
+"captions": [
+[
+0.0,
+"Electrodes connected to a bulb are dipped into solid salt crystals,"
+],
+[
+4.18,
+"a salt solution, and a sugar solution."
+],
+[
+6.55,
+"Predict: in which will the bulb light?"
+],
+[
+8.92,
+"Pause and decide."
+],
+[
+10.66,
+"Watch. The circuit is completed in each beaker in turn."
+],
+[
+15.61,
+"Only the salt solution lights the bulb."
+],
+[
+18.85,
+"Solid salt and the sugar solution do not."
+],
+[
+22.13,
+"Explain what you saw."
+],
+[
+24.17,
+"Salt is an ionic compound."
+],
+[
+25.79,
+"In the solid, its ions are fixed in a lattice and cannot move."
+],
+[
+29.65,
+"Dissolved in water, the ions are free to move and carry charge,"
+],
+[
+33.57,
+"so the solution conducts."
+],
+[
+35.13,
+"Sugar is made of covalent molecules with no charge,"
+],
+[
+38.31,
+"so its solution does not conduct."
+],
+[
+40.36,
+"Pause and explain it in your own words."
+],
+[
+43.46,
+"Substances made of small, separate molecules, like bromine, oxygen, carbon dioxide and water,"
+],
+[
+49.83,
+"have a simple molecular structure."
+],
+[
+51.93,
+"They have low melting and boiling points and don't conduct electricity."
+],
+[
+56.34,
+"Bromine boils at just 59 degrees Celsius."
+],
+[
+59.54,
+"In giant covalent structures, atoms form a huge network of bonds."
+],
+[
+64.31,
+"In diamond, each carbon bonds to four others, so it's extremely hard."
+],
+[
+68.59,
+"In graphite, each bonds to three, in sliding layers,"
+],
+[
+71.82,
+"so it's soft and conducts electricity."
+],
+[
+74.84,
+"Ionic compounds like sodium chloride form a giant ionic lattice held by strong electrostatic forces,"
+],
+[
+81.79,
+"so they have high melting points."
+],
+[
+83.84,
+"They conduct electricity only when melted or dissolved,"
+],
+[
+87.26,
+"because then the ions can move."
+],
+[
+89.85,
+"Here are the melting points of four solids, from published chemistry data."
+],
+[
+95.83,
+"Sulfur, made of small molecules, melts at only 115 degrees Celsius."
+],
+[
+100.74,
+"Sodium chloride melts at 801, silicon dioxide, found in sand, at about 1713,"
+],
+[
+105.48,
+"and magnesium oxide at 2852."
+],
+[
+107.89,
+"Pause and decide: why does sulfur melt at such"
+],
+[
+111.54,
+"a low temperature compared with the other three?"
+],
+[
+115.25,
+"Now it is your turn to shine!"
+],
+[
+117.7,
+"Pause the video after each question and try to answer it first."
+],
+[
+122.35,
+"Question 1: Why is neon unreactive?"
+],
+[
+125.39,
+"Pause the video now."
+],
+[
+127.38,
+"Answer: It has a full outer shell of electrons."
+],
+[
+131.86,
+"Question 2: What is a covalent bond?"
+],
+[
+134.96,
+"Pause the video now."
+],
+[
+136.93,
+"Answer: A shared pair of electrons between non-metal atoms."
+],
+[
+142.13,
+"Question 3: What is a negative ion called?"
+],
+[
+145.6,
+"Pause the video now."
+],
+[
+147.57,
+"Answer: An anion."
+],
+[
+150.3,
+"Question 4: Why is graphite soft but diamond hard?"
+],
+[
+154.27,
+"Pause the video now."
+],
+[
+156.22,
+"Answer: Graphite's layers slide; diamond's atoms each have four strong bonds."
+]
+],
+"chapters": [
+[
+0.0,
+"Predict, watch, explain: which conducts electricity?"
+],
+[
+43.46,
+"Structure decides properties"
+],
+[
+89.85,
+"Real data: melting points of four solids"
+],
+[
+115.25,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s9u05n41p",
+"t": 10.31,
+"review": [
+0.0,
+10.66
+]
+},
+{
+"id": "s9u05n41e",
+"t": 43.11,
+"review": [
+0.0,
+43.46
+]
+},
+{
+"id": "s9u05s4v01",
+"t": 59.19,
+"review": [
+43.46,
+59.54
+]
+},
+{
+"id": "s9u05s4v02",
+"t": 74.49,
+"review": [
+43.46,
+74.84
+]
+},
+{
+"id": "s9u05s4v03",
+"t": 89.5,
+"review": [
+43.46,
+89.85
+]
+},
+{
+"id": "s9u05n42",
+"t": 114.9,
+"review": [
+89.85,
+115.25
+]
+}
+],
+"dur": 162.333,
+"src": "media/s9/u5_s4.319d6d16.mp4",
+"poster": "media/s9/u5_s4_poster.319d6d16.jpg"
+}
+}

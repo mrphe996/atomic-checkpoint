@@ -1,0 +1,530 @@
+{
+"13.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.47,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.54,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.54,
+"Let's begin!"
+],
+[
+11.94,
+"Welcome to Unit 13: Earth and Climate Change."
+],
+[
+16.09,
+"Over millions of years, Earth's surface has changed as tectonic plates moved."
+],
+[
+21.52,
+"Today, the climate is changing in ways never seen before,"
+],
+[
+24.98,
+"and rising seas are eating away coastlines."
+],
+[
+28.25,
+"A purple crystal of potassium manganate(VII) is placed at"
+],
+[
+32.33,
+"the bottom of a large beaker of water,"
+],
+[
+34.65,
+"at one side. The beaker is heated gently under that side only."
+],
+[
+38.43,
+"Predict: where will the purple colour go?"
+],
+[
+40.93,
+"Pause and decide."
+],
+[
+42.63,
+"Watch. A purple stream rises straight up from the crystal, above the flame."
+],
+[
+48.69,
+"At the top it moves across,"
+],
+[
+51.1,
+"sinks down the far side and flows back along the bottom: a loop."
+],
+[
+55.73,
+"Explain what you saw."
+],
+[
+57.74,
+"The heated water expands, becomes less dense and rises."
+],
+[
+61.08,
+"At the top it cools, becomes denser and sinks,"
+],
+[
+63.87,
+"so the water moves round in a loop: a convection current."
+],
+[
+67.33,
+"Hot rock in Earth's mantle moves in the same way, very slowly,"
+],
+[
+71.09,
+"carrying the tectonic plates with it."
+],
+[
+73.33,
+"Pause and explain it in your own words."
+],
+[
+76.36,
+"Earth's crust is made of huge rigid tectonic plates."
+],
+[
+80.13,
+"Below, in the mantle, hot magma rises, cools near the crust,"
+],
+[
+83.79,
+"and sinks again: a convection current."
+],
+[
+86.11,
+"These currents drag the plates slowly along."
+],
+[
+89.44,
+"Where plates push together, rocks fold upwards into fold mountains."
+],
+[
+94.24,
+"Where they pull apart or slide under one another, volcanoes form."
+],
+[
+98.18,
+"And where they suddenly slip past each other, we get earthquakes."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+11.94,
+"Earth and Climate Change"
+],
+[
+28.25,
+"Predict, watch, explain: a convection current in water"
+],
+[
+76.36,
+"Moving tectonic plates"
+]
+],
+"stops": [
+{
+"id": "s9u13s1v01",
+"t": 27.9,
+"review": [
+11.94,
+28.25
+]
+},
+{
+"id": "s9u13n11p",
+"t": 42.28,
+"review": [
+28.25,
+42.63
+]
+},
+{
+"id": "s9u13n11e",
+"t": 76.01,
+"review": [
+28.25,
+76.36
+]
+},
+{
+"id": "s9u13s1v02",
+"t": 89.09,
+"review": [
+76.36,
+89.44
+]
+},
+{
+"id": "s9u13s1v03",
+"t": 102.26,
+"review": [
+76.36,
+102.61
+]
+}
+],
+"dur": 102.633,
+"src": "media/s9/u13_s1.257fe2d4.mp4",
+"poster": "media/s9/u13_s1_poster.257fe2d4.jpg"
+},
+"13.2": {
+"captions": [
+[
+0.0,
+"For a long time, people didn't believe plates move."
+],
+[
+3.11,
+"One clue: the coasts of South America and Africa fit together like jigsaw pieces."
+],
+[
+8.04,
+"Scientists suggested there was once a single giant continent that broke apart."
+],
+[
+13.46,
+"Volcanoes and earthquakes occur mainly along plate boundaries,"
+],
+[
+18.05,
+"such as the Pacific Ring of Fire, where plates are moving."
+],
+[
+22.31,
+"Identical fossils of Mesosaurus, a freshwater reptile,"
+],
+[
+26.39,
+"are found in both South America and Africa."
+],
+[
+29.05,
+"It couldn't have swum across an ocean,"
+],
+[
+31.41,
+"so the lands must once have been joined."
+],
+[
+34.56,
+"At the Mid-Atlantic Ridge,"
+],
+[
+36.91,
+"rising magma cools into rock that records Earth's magnetic field,"
+],
+[
+40.94,
+"which has flipped many times."
+],
+[
+42.73,
+"Matching stripes on both sides show the plates moving apart,"
+],
+[
+46.45,
+"2.5 centimetres a year."
+]
+],
+"chapters": [
+[
+0.0,
+"Evidence for moving plates"
+]
+],
+"stops": [
+{
+"id": "s9u13s2v01",
+"t": 13.11,
+"review": [
+0.0,
+13.46
+]
+},
+{
+"id": "s9u13s2v02",
+"t": 21.96,
+"review": [
+0.0,
+22.31
+]
+},
+{
+"id": "s9u13s2v03",
+"t": 34.21,
+"review": [
+0.0,
+34.56
+]
+}
+],
+"dur": 48.4,
+"src": "media/s9/u13_s2.ad711eeb.mp4",
+"poster": "media/s9/u13_s2_poster.ad711eeb.jpg"
+},
+"13.3": {
+"captions": [
+[
+0.0,
+"Carbon moves around the Earth in the carbon cycle."
+],
+[
+3.06,
+"Plants take in carbon dioxide for photosynthesis."
+],
+[
+6.07,
+"Animals get carbon by feeding."
+],
+[
+7.91,
+"All living things release carbon dioxide by respiration,"
+],
+[
+11.34,
+"and decomposers release carbon from dead organisms."
+],
+[
+15.12,
+"Some dead organisms weren't decomposed, and became fossil fuels."
+],
+[
+19.8,
+"Burning them, called combustion, releases their carbon."
+],
+[
+23.19,
+"Humans now add carbon faster than the cycle can remove it."
+]
+],
+"chapters": [
+[
+0.0,
+"The carbon cycle"
+]
+],
+"stops": [
+{
+"id": "s9u13s3v01",
+"t": 14.77,
+"review": [
+0.0,
+15.12
+]
+},
+{
+"id": "s9u13s3v02",
+"t": 26.9,
+"review": [
+0.0,
+27.25
+]
+}
+],
+"dur": 27.233,
+"src": "media/s9/u13_s3.eeace768.mp4",
+"poster": "media/s9/u13_s3_poster.eeace768.jpg"
+},
+"13.4": {
+"captions": [
+[
+0.0,
+"Climate change is a change in Earth's long-term pattern of temperature,"
+],
+[
+4.64,
+"wind and rainfall. In the past, asteroid impacts threw up dust that blocked sunlight,"
+],
+[
+10.19,
+"and there were ice ages and even a 'snowball Earth'."
+],
+[
+14.23,
+"Records since 1880 show the planet is warming,"
+],
+[
+18.02,
+"and the last 30 years have warmed much faster than the long-term rate."
+],
+[
+22.65,
+"Human activity is upsetting the carbon cycle."
+],
+[
+26.29,
+"Scientists predict more severe storms, droughts and floods."
+],
+[
+30.94,
+"Warmer oceans expand and ice sheets melt,"
+],
+[
+33.65,
+"so sea levels rise about 3.5 millimetres a year,"
+],
+[
+36.83,
+"threatening coastal cities like Jakarta."
+],
+[
+40.13,
+"NASA scientists compare each year's average global surface"
+],
+[
+44.61,
+"temperature with the average for 1951 to 1980."
+],
+[
+48.36,
+"Before 1940 most years were cooler than that average."
+],
+[
+52.67,
+"Since 1980 every value shown is warmer."
+],
+[
+55.96,
+"By 2024, the warmest year on record,"
+],
+[
+59.1,
+"the planet was 1.28 degrees Celsius above the 1951 to 1980 average."
+],
+[
+64.25,
+"Pause and decide: how has the rate of warming changed since 1980,"
+],
+[
+69.37,
+"and what is the main cause?"
+],
+[
+71.85,
+"Now it is your turn to shine!"
+],
+[
+74.4,
+"Pause the video after each question and try to answer it first."
+],
+[
+79.31,
+"Question 1: What causes tectonic plates to move?"
+],
+[
+83.34,
+"Pause the video now."
+],
+[
+85.38,
+"Answer: Convection currents in the mantle."
+],
+[
+89.71,
+"Question 2: Give two pieces of evidence for tectonic plates."
+],
+[
+94.51,
+"Pause the video now."
+],
+[
+96.54,
+"Answer: Fitting coastlines, matching fossils, volcano locations or magnetic stripes."
+],
+[
+103.56,
+"Question 3: Name two processes in the carbon cycle that release carbon dioxide."
+],
+[
+109.59,
+"Pause the video now."
+],
+[
+111.59,
+"Answer: Respiration and combustion (also decomposition)."
+],
+[
+116.81,
+"Question 4: Why is sea level rising?"
+],
+[
+120.05,
+"Pause the video now."
+],
+[
+122.1,
+"Answer: Warmer seawater expands and ice sheets melt."
+]
+],
+"chapters": [
+[
+0.0,
+"Climate change: past and future"
+],
+[
+40.13,
+"Real data: global temperature since 1880"
+],
+[
+71.85,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "s9u13s4v01",
+"t": 13.88,
+"review": [
+0.0,
+14.23
+]
+},
+{
+"id": "s9u13s4v02",
+"t": 25.94,
+"review": [
+0.0,
+26.29
+]
+},
+{
+"id": "s9u13s4v03",
+"t": 39.78,
+"review": [
+0.0,
+40.13
+]
+},
+{
+"id": "s9u13n41",
+"t": 71.5,
+"review": [
+40.13,
+71.85
+]
+}
+],
+"dur": 126.8,
+"src": "media/s9/u13_s4.3c3d3af8.mp4",
+"poster": "media/s9/u13_s4_poster.3c3d3af8.jpg"
+}
+}
