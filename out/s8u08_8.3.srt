@@ -1,0 +1,103 @@
+1
+00:00:00,000 --> 00:00:03,882
+Forces have both size and direction, so we draw them as arrows.
+
+2
+00:00:03,882 --> 00:00:09,949
+In a tug of war, if both sides pull with 5 newtons in opposite directions, the forces are balanced.
+
+3
+00:00:09,949 --> 00:00:15,105
+Counting one direction as positive, the resultant force is 5 minus 5, which is zero,
+
+4
+00:00:15,105 --> 00:00:16,683
+and the rope doesn't move.
+
+5
+00:00:17,743 --> 00:00:20,716
+Balanced forces don't change an object's motion.
+
+6
+00:00:20,716 --> 00:00:24,902
+A lorry at constant speed has its engine force balanced by friction.
+
+7
+00:00:24,902 --> 00:00:28,845
+And when a skydiver's air resistance equals the pull of gravity,
+
+8
+00:00:28,845 --> 00:00:32,060
+he falls at a steady speed called the terminal speed.
+
+9
+00:00:33,121 --> 00:00:37,610
+Two paper cones have the same mass, but one is much wider than the other.
+
+10
+00:00:37,610 --> 00:00:43,494
+They are dropped together from the same height. Predict: which will land first? Pause and decide.
+
+11
+00:00:44,555 --> 00:00:48,680
+Watch. Both cones start to fall, and air pushes up against each one.
+
+12
+00:00:49,741 --> 00:00:54,108
+The small cone lands first. The large cone falls slowly and lands later.
+
+13
+00:00:55,169 --> 00:00:59,597
+Explain what you saw. Both cones have the same weight pulling them down.
+
+14
+00:00:59,597 --> 00:01:05,179
+The large cone has a bigger surface area, so there is more air resistance pushing up on it.
+
+15
+00:01:05,179 --> 00:01:11,609
+The forces on it become balanced at a lower speed, so it falls more slowly. Parachutes use the same idea.
+
+16
+00:01:11,609 --> 00:01:13,975
+Pause and explain it in your own words.
+
+17
+00:01:15,035 --> 00:01:19,646
+If the forces don't cancel out, they're unbalanced, and the motion changes.
+
+18
+00:01:19,646 --> 00:01:25,348
+Push a ball right with 12 newtons and left with 5 newtons: the resultant force is 12 minus 5,
+
+19
+00:01:25,348 --> 00:01:29,413
+which is 7 newtons to the right. The ball accelerates to the right.
+
+20
+00:01:30,473 --> 00:01:36,965
+Here's a worked example. A box has 100 newtons and 50 newtons pushing right, and 180 newtons pushing left.
+
+21
+00:01:36,965 --> 00:01:40,786
+Counting right as positive: 100 plus 50 minus 180 is minus 30.
+
+22
+00:01:40,786 --> 00:01:45,215
+So the resultant force is 30 newtons to the left, and the box moves left.
+
+23
+00:01:46,275 --> 00:01:51,129
+Unbalanced forces can speed things up, like a car accelerating; slow them down,
+
+24
+00:01:51,129 --> 00:01:56,710
+like friction stopping a sliding book; or change their direction, like a bat hitting a ball.
+
+25
+00:01:57,770 --> 00:02:00,804
+Air resistance grows with speed and surface area,
+
+26
+00:02:00,804 --> 00:02:04,868
+so streamlined shapes and lower speeds help vehicles use less fuel.

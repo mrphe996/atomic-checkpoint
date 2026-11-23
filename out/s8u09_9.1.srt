@@ -1,0 +1,123 @@
+1
+00:00:00,000 --> 00:00:01,696
+Welcome to Atomic Education.
+
+2
+00:00:02,757 --> 00:00:10,087
+This lesson was written by the Atomic teaching team to help you learn Cambridge Lower Secondary Science with confidence.
+
+3
+00:00:10,087 --> 00:00:10,813
+Let's begin!
+
+4
+00:00:11,874 --> 00:00:14,418
+Welcome to Unit 9: Pressure and Diffusion.
+
+5
+00:00:15,479 --> 00:00:21,234
+Deep underground, heat builds up pressure that pushes hot water and steam towards the surface,
+
+6
+00:00:21,234 --> 00:00:27,534
+where we can use its geothermal energy for electricity. In this unit, we'll explore pressure in solids,
+
+7
+00:00:27,534 --> 00:00:31,229
+liquids and gases, and how particles spread out by diffusion.
+
+8
+00:00:32,289 --> 00:00:35,682
+Pressure is the amount of force acting on a given area.
+
+9
+00:00:35,682 --> 00:00:41,679
+When you pump up a bicycle tyre, the air inside presses on the inner surface, making the tyre firm.
+
+10
+00:00:42,740 --> 00:00:48,797
+We calculate pressure by dividing the force by the area. It's measured in newtons per square metre.
+
+11
+00:00:48,797 --> 00:00:52,795
+The triangle helps us rearrange: force equals pressure times area.
+
+12
+00:00:53,856 --> 00:00:57,975
+A rock weighing 5000 newtons rests on an area of 0.5 square metres.
+
+13
+00:00:57,975 --> 00:01:02,458
+The pressure is 5000 divided by 0.5: 10 thousand newtons per square metre.
+
+14
+00:01:03,518 --> 00:01:09,273
+Now the other way: a truck exerts 10 thousand newtons per square metre over 0.4 square metres.
+
+15
+00:01:09,273 --> 00:01:12,242
+The force is 10 thousand times 0.4: 4000 newtons.
+
+16
+00:01:13,302 --> 00:01:17,906
+The same force can give very different pressures. When you press a pushpin,
+
+17
+00:01:17,906 --> 00:01:23,842
+the force from your thumb is spread over the broad head, but it's concentrated on the tiny point.
+
+18
+00:01:23,842 --> 00:01:28,325
+The smaller the area, the greater the pressure, so the pin goes in easily.
+
+19
+00:01:29,386 --> 00:01:35,868
+Knives and axes have a very thin cutting edge, a small area, so they exert a high pressure and cut easily.
+
+20
+00:01:35,868 --> 00:01:41,319
+As they're used, the edge gets wider and blunt, so we sharpen them to keep the area small.
+
+21
+00:01:42,380 --> 00:01:48,074
+Skis, snowboards and surfboards do the opposite: their large area spreads the rider's weight,
+
+22
+00:01:48,074 --> 00:01:50,619
+reducing the pressure so they don't sink.
+
+23
+00:01:50,619 --> 00:01:56,010
+A 700 newton skier on 1.4 square metres of skis exerts just 500 newtons per square metre.
+
+24
+00:01:57,070 --> 00:01:59,675
+Two identical bricks have the same weight.
+
+25
+00:01:59,675 --> 00:02:04,400
+One lies flat on a block of soft modelling clay; the other stands on its end.
+
+26
+00:02:04,400 --> 00:02:08,641
+Predict: which brick will sink deeper into the clay? Pause and decide.
+
+27
+00:02:09,701 --> 00:02:13,457
+Watch. Both bricks press down on the clay with the same force.
+
+28
+00:02:14,518 --> 00:02:20,030
+The brick standing on its end makes a much deeper dent. The flat brick hardly sinks at all.
+
+29
+00:02:21,091 --> 00:02:27,209
+Explain what you saw. The force is the same, but the brick on its end pushes on a much smaller area.
+
+30
+00:02:27,209 --> 00:02:32,176
+Pressure equals force divided by area, so a smaller area gives a bigger pressure,
+
+31
+00:02:32,176 --> 00:02:36,659
+and the clay is pushed in further. Pause and explain it in your own words.

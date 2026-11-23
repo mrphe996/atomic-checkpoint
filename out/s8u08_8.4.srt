@@ -1,0 +1,139 @@
+1
+00:00:00,000 --> 00:00:03,873
+Opening a jar, pressing a light switch, cutting with scissors,
+
+2
+00:00:03,873 --> 00:00:08,853
+lifting a wheelbarrow: each uses the turning effect of a force, called a moment.
+
+3
+00:00:08,853 --> 00:00:13,341
+A moment makes an object rotate around a pivot point, called the fulcrum.
+
+4
+00:00:14,403 --> 00:00:20,120
+A door turns about its hinges. Push near the edge, far from the hinges, and it opens easily.
+
+5
+00:00:20,120 --> 00:00:22,641
+Push near the hinges, and it's very hard!
+
+6
+00:00:23,703 --> 00:00:30,773
+The moment depends on the size of the force and its distance from the fulcrum: moment equals force times distance,
+
+7
+00:00:30,773 --> 00:00:33,601
+M equals F times d, measured in newton metres.
+
+8
+00:00:34,662 --> 00:00:39,458
+A motorist pushes on a wheel wrench with 70 newtons, 0.4 metres from the nut.
+
+9
+00:00:39,458 --> 00:00:42,839
+The moment is 70 times 0.4, which is 28 newton metres.
+
+10
+00:00:42,839 --> 00:00:46,159
+That's why a long spanner makes nuts easier to loosen.
+
+11
+00:00:47,221 --> 00:00:53,430
+Like forces, moments have direction. On a seesaw, the girl's weight turns it one way, anticlockwise,
+
+12
+00:00:53,430 --> 00:00:56,812
+and the boy's weight turns it the other way, clockwise.
+
+13
+00:00:57,873 --> 00:01:01,992
+A seesaw is a lever: a simple machine that turns around a fulcrum.
+
+14
+00:01:01,992 --> 00:01:05,619
+Scissors, wheelbarrows, staplers and pliers are levers too.
+
+15
+00:01:06,681 --> 00:01:09,325
+So are the bones and joints in our bodies.
+
+16
+00:01:09,325 --> 00:01:15,473
+Galileo found that a lever's balance depends on both the weights and their distances from the pivot.
+
+17
+00:01:16,534 --> 00:01:22,559
+A ruler balances on a pivot at its centre. Two coins sit 10 centimetres to the left of the pivot.
+
+18
+00:01:22,559 --> 00:01:27,724
+Predict: where must one coin go on the right to balance the ruler? Pause and decide.
+
+19
+00:01:28,785 --> 00:01:34,503
+Watch. One coin placed 10 centimetres to the right is not enough. The ruler tips to the left.
+
+20
+00:01:35,564 --> 00:01:40,421
+Moved to 20 centimetres from the pivot, the single coin balances the two coins.
+
+21
+00:01:41,483 --> 00:01:42,835
+Explain what you saw.
+
+22
+00:01:42,835 --> 00:01:48,245
+Two coins at 10 centimetres give the same turning effect as one coin at 20 centimetres,
+
+23
+00:01:48,245 --> 00:01:52,488
+because force times distance is equal: 2 times 10 equals 1 times 20.
+
+24
+00:01:52,488 --> 00:01:57,344
+When the anticlockwise moment equals the clockwise moment, the ruler balances.
+
+25
+00:01:57,344 --> 00:02:01,833
+This is the principle of moments. Pause and explain it in your own words.
+
+26
+00:02:02,894 --> 00:02:08,612
+Now it is your turn to shine! Pause the video after each question and try to answer it first.
+
+27
+00:02:09,673 --> 00:02:15,944
+Question 1: A cyclist rides 600 metres in 120 seconds. What is her average speed? Pause the video now.
+
+28
+00:02:17,006 --> 00:02:18,727
+Answer: 5 metres per second.
+
+29
+00:02:19,789 --> 00:02:25,445
+Question 2: What does a horizontal line on a distance, time graph show? Pause the video now.
+
+30
+00:02:26,506 --> 00:02:28,535
+Answer: The object is not moving.
+
+31
+00:02:29,597 --> 00:02:36,052
+Question 3: Forces of 20 newtons right and 8 newtons left act on a trolley. What is the resultant force?
+
+32
+00:02:36,052 --> 00:02:37,282
+Pause the video now.
+
+33
+00:02:38,343 --> 00:02:40,310
+Answer: 12 newtons to the right.
+
+34
+00:02:41,372 --> 00:02:47,766
+Question 4: A force of 50 newtons acts 0.2 metres from a pivot. What is the moment? Pause the video now.
+
+35
+00:02:48,827 --> 00:02:49,688
+Answer: 10 Nm.
