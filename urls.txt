@@ -1,13 +1,6 @@
-s8u02_2.1.mp3 https://voicezuno.com/v1/files/bbc340600198cc68/audio?exp=1795440001&sig=55755db3e319181630f3da37185ab1b1
-s8u02_2.1.srt https://voicezuno.com/v1/files/bbc340600198cc68/srt?exp=1795440001&sig=cebb6904f7a98ec590818d19698bd472
-s8u02_2.2.mp3 https://voicezuno.com/v1/files/5786dac812745c5e/audio?exp=1795440302&sig=c4de3b4c28d887bfb6b7eb4128931591
-s8u02_2.2.srt https://voicezuno.com/v1/files/5786dac812745c5e/srt?exp=1795440302&sig=f805980c89bf2e46e4e1eee336e96658
-s8u02_2.3.mp3 https://voicezuno.com/v1/files/96223af20aa8cf16/audio?exp=1795440302&sig=51beff77e074bf181b9720d59da25b99
-s8u02_2.3.srt https://voicezuno.com/v1/files/96223af20aa8cf16/srt?exp=1795440302&sig=0662641ea9032dbbf72a29e6de059a49
-s8u03_3.1.mp3 https://voicezuno.com/v1/files/aaf0c07ba00df400/audio?exp=1795440902&sig=efe039b3a8806b6f2aa5842f795dda47
-s8u03_3.1.srt https://voicezuno.com/v1/files/aaf0c07ba00df400/srt?exp=1795440902&sig=c115d74b0a6ea1a79d5a387d6971c0b6
-s8u03_3.2.mp3 https://voicezuno.com/v1/files/8bd4a8823313c0d7/audio?exp=1795440602&sig=c2a7a425b7d8e4339627ef7ff7fcef42
-s8u03_3.2.srt https://voicezuno.com/v1/files/8bd4a8823313c0d7/srt?exp=1795440602&sig=6cfbd99b213e5393cb75f891c082e73d
-s8u04_4.1.mp3 https://voicezuno.com/v1/files/a7877e1ca9a07411/audio?exp=1795440902&sig=f337ccf221b2c9ea89f408edf1acb6b9
-s8u04_4.1.srt https://voicezuno.com/v1/files/a7877e1ca9a07411/srt?exp=1795440902&sig=5f029ea9733e8554a2cafd5badee4694
-
+s8u04_4.2.mp3 https://voicezuno.com/v1/files/53bc3173cde33795/audio?exp=1795445252&sig=17f408e1986d52c42e4952aa4c7fd84b
+s8u04_4.2.srt https://voicezuno.com/v1/files/53bc3173cde33795/srt?exp=1795445252&sig=4b1bfea42466bc756a06f646c5ea304a
+s8u05_5.1.mp3 https://voicezuno.com/v1/files/5b9ef817b176b878/audio?exp=1795445255&sig=b3cba278c1f8db3560b62048f359ca2f
+s8u05_5.1.srt https://voicezuno.com/v1/files/5b9ef817b176b878/srt?exp=1795445255&sig=f78b8de767af45de9c8399e04fa28593
+s8u05_5.2.mp3 https://voicezuno.com/v1/files/af491038cded8876/audio?exp=1795445255&sig=0b8f41014a99ec9f78d000fafa6dd4da
+s8u05_5.2.srt https://voicezuno.com/v1/files/af491038cded8876/srt?exp=1795445255&sig=02dfb7896a0f633e4387a36ab561b2d3
