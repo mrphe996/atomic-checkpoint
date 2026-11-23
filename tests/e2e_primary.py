@@ -4,9 +4,11 @@ import os, sys
 from playwright.sync_api import sync_playwright
 BASE = os.environ.get('BASE', 'http://localhost:8765/'); LOG = []
 def ok(c, m): LOG.append(('PASS' if c else 'FAIL') + '  ' + m); print(LOG[-1])
-def grown_up_exit(pg):   # the practice / experiment room only opens to a 3-second hold
-    if not pg.query_selector('.froom .fgrown'): return
-    b = pg.query_selector('.froom .fgrown').bounding_box(); pg.mouse.move(b['x'] + 10, b['y'] + 8); pg.mouse.down(); pg.wait_for_timeout(3300); pg.mouse.up(); pg.wait_for_timeout(700)
+def grown_up_exit(pg):   # leave the practice / experiment room: Exit, then "Leave for now" if the round is not finished
+    if not pg.query_selector('.froom #leaveRoom'): return
+    pg.click('.froom #leaveRoom'); pg.wait_for_timeout(300)
+    if pg.query_selector('#leaveAnyway'): pg.click('#leaveAnyway')
+    pg.wait_for_timeout(700)
 # a stand-in for the browser's speech recognition: it "hears" whatever window.__heard holds
 FAKE_SR = """window.__heard = 'heart'; window.webkitSpeechRecognition = class { start() { setTimeout(() => { const alt = [{ transcript: window.__heard }]; alt.length = 1; this.onresult && this.onresult({ results: [alt] }); this.onend && this.onend(); }, 30); } stop() {} }; window.SpeechRecognition = window.webkitSpeechRecognition;"""
 with sync_playwright() as p:
@@ -47,7 +49,9 @@ with sync_playwright() as p:
     pg.click('#lv-prac'); pg.wait_for_timeout(300)
     ok(pg.query_selector('#lv-prac.on') is not None and len(pg.query_selector_all('.froom .fq')) == pg.evaluate("Core.C.sections[0].prac.length"), 'P67 Learners can switch to the Medium level and see all its questions')
     pg.click('#leaveRoom'); pg.wait_for_timeout(400)
-    ok(pg.query_selector('.froom') is not None, 'P68 “Exit task” stays closed until the Easy (Core) questions are done')
+    ok(pg.query_selector('.froom') is not None and pg.query_selector('#keepGoing') is not None and 'Easy question' in pg.inner_text('.modal'), 'P68 “Exit” with Easy (Core) questions left shows a reminder to finish them')
+    pg.click('#keepGoing'); pg.wait_for_timeout(300)
+    ok(pg.query_selector('.modal') is None and pg.query_selector('.froom') is not None, 'P68b “Keep going” stays in the room')
     pg.click('#lv-req'); pg.wait_for_timeout(300); pg.click('.froom .fq >> nth=0'); pg.wait_for_timeout(300)
     ok(pg.evaluate("document.getElementById('nextQ').disabled"), 'P65 “Next” waits until the question is answered')
     ok(pg.evaluate("Core.secLock(Core.cur(), Core.C.sections[1]) !== null"), 'P9 Lesson 1.2 is locked before the word checks are done')
@@ -87,11 +91,12 @@ with sync_playwright() as p:
     ok(len(pg.query_selector_all('.labqs .qcard')) == 3, 'P19 Using the model opens the lab questions')
     ok(pg.query_selector('.froom') is not None and pg.evaluate("document.body.classList.contains('focus-mode')"), 'P59 The experiment room opens full screen')
     pg.evaluate("location.hash='home'"); pg.wait_for_timeout(900)
-    ok(pg.evaluate("location.hash") == '#lab-1-2' and pg.query_selector('.froom') is not None, 'P60 Leaving an unfinished experiment is blocked (back in the room)')
-    pg.mouse.move(5, 5); b0 = pg.query_selector('.froom .fgrown').bounding_box(); pg.mouse.move(b0['x'] + 10, b0['y'] + 8); pg.mouse.down(); pg.wait_for_timeout(800); pg.mouse.up(); pg.wait_for_timeout(300)
-    ok(pg.query_selector('.froom') is not None, 'P61 A short tap on the grown-up exit does nothing')
+    ok(pg.evaluate("location.hash") == '#lab-1-2' and pg.query_selector('.froom') is not None and pg.query_selector('#leaveAnyway') is not None, 'P60 Leaving an unfinished experiment asks first (reminder, still in the room)')
+    pg.click('#leaveAnyway'); pg.wait_for_timeout(800)
+    ok(pg.query_selector('.froom') is None and pg.evaluate("location.hash") == '#home', 'P61 “Leave for now” goes where the learner wanted')
+    pg.evaluate("location.hash='lab-1-2'"); pg.wait_for_timeout(800)
     grown_up_exit(pg)
-    ok(pg.query_selector('.froom') is None and pg.evaluate("location.hash") == '#u-1', 'P62 Holding the grown-up exit for 3 seconds leaves the room')
+    ok(pg.query_selector('.froom') is None and pg.evaluate("location.hash") == '#u-1', 'P62 The room’s Exit button leaves an unfinished experiment after the reminder')
     pg.evaluate("location.hash='lab-1-4'"); pg.wait_for_timeout(800)
     pg.evaluate("(()=>{const st=Core.cur(); Core.C.sections.forEach(s=>{const vs=Core.vstate(st,s.id); vs.completed=true; s.stops.forEach(x=>vs.stops[x.id]={done:true,tries:1}); s.req.forEach(q=>st.items[q.id]={done:true,ok:true,tries:1});}); Core.persist();})()")
     pg.evaluate("location.hash='home'"); pg.wait_for_timeout(300); pg.evaluate("location.hash='lab-1-4'"); pg.wait_for_timeout(800)

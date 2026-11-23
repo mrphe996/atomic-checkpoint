@@ -1589,6 +1589,10 @@ select{max-width:100%}
 .wstats div{min-width:0;flex:1}
 .mainnav .navlogin{display:none}
 @media (max-width:374px){.top.guest #signInLink{display:none}.top.guest .mainnav .navlogin{display:block}}
+/* leaving an unfinished practice or experiment room: the reminder sits above the room */
+body.focus-mode .modal-bg{z-index:1000}
+.leaveask p{margin:0 0 8px}.leaveask p.big{font:700 18px Lexend,Lexend,sans-serif}
+.fexit{white-space:nowrap}
 
 /* ---------- Design system B (generated: edit tools/build-theme.mjs) ---------- */
 :root{--band:#F4F4F1;--sh:0 1px 2px rgba(34,34,34,.10),0 10px 24px rgba(34,34,34,.12);--bd:1px solid #D6D6D2}

@@ -711,18 +711,28 @@
   /* ---------- experiment room (Primary): a virtual lab and an experiment to try at home ---------- */
   let labStop = null;
   /* ---------- Primary focus room: practice and experiments open full screen, one thing at a time.
-     The rest of the site is closed until the round is finished (a grown-up can hold the exit button for 3 seconds). ---------- */
+     Learners can leave whenever they like; if the round is not finished, a reminder asks them to finish it first. ---------- */
   const Focus = { on: false, route: '', left: () => 0, what: '' };
   const ROUND = 8;
   function focusOff() { Focus.on = false; Focus.route = ''; document.body.classList.remove('focus-mode'); }
   function focusOn(route, left, what) { Focus.on = true; Focus.route = route; Focus.left = left; Focus.what = what; document.body.classList.add('focus-mode'); }
-  function focusNudge() { const n = Focus.left(); toast(n > 0 ? `Finish first! ${Focus.what === 'lab' ? 'Complete the experiment' : `${n} question${n > 1 ? 's' : ''} to go`} 💪` : 'Well done!'); }
-  function grownUpExit(to) {
-    let t = null; const b = el('button', { type: 'button', class: 'fgrown', title: 'For grown-ups: press and hold for 3 seconds to leave' }, el('span', { class: 'fill' }), el('span', {}, '🔒 Grown-up exit (hold)'));
-    const start = e => { e.preventDefault(); b.classList.add('hold'); t = setTimeout(() => { focusOff(); go(to); }, 3000); };
-    const stop = () => { b.classList.remove('hold'); clearTimeout(t); };
-    ['pointerdown'].forEach(k => b.addEventListener(k, start)); ['pointerup', 'pointerleave', 'pointercancel'].forEach(k => b.addEventListener(k, stop));
-    return b;
+  // what is still to do, in words a young learner understands
+  function leftText(what, n) { return what === 'lab' ? 'You have not finished the virtual lab yet.' : `You still have ${n} Easy question${n > 1 ? 's' : ''} to do.`; }
+  // Leaving before the round is finished: a reminder, then the learner decides. Answers are already saved.
+  let leaveAsk = null;
+  function confirmLeave(to, done) {
+    if (leaveAsk) leaveAsk(); const n = Focus.left(), what = Focus.what;
+    const body = el('div', { class: 'leaveask' }, el('p', { class: 'big' }, leftText(what, n)),
+      el('p', {}, what === 'lab' ? 'Finish the experiment to complete this topic.' : 'Finish them to open the next lesson.'),
+      el('p', { class: 'muted' }, 'Your work is saved, so you can come back and finish any time.'));
+    leaveAsk = modal('Not finished yet!', body, [
+      { t: 'Leave for now', cls: 'ghost', on: () => { leaveAsk = null; if (done) done(); focusOff(); go(to); } },
+      { t: 'Keep going', cls: 'primary', on: () => { leaveAsk = null; } }]);
+    const kg = [...document.querySelectorAll('.modal .btn')].pop(); if (kg) { kg.id = 'keepGoing'; kg.previousElementSibling && (kg.previousElementSibling.id = 'leaveAnyway'); kg.focus(); }
+  }
+  // the room's own exit button: leaves straight away when the round is done, otherwise reminds first
+  function exitBtn(to, done) {
+    return el('button', { type: 'button', class: 'btn small fexit', id: 'leaveRoom', title: 'Leave the room', onclick: () => { if (Focus.left() > 0) confirmLeave(to, done); else { if (done) done(); focusOff(); go(to); } } }, '✕ Exit');
   }
   function focusFrame(icon, title, sub) {
     const room = el('div', { class: 'froom', role: 'dialog', 'aria-modal': 'true', 'aria-label': title });
@@ -745,14 +755,14 @@
     const coreLeft = () => Core.reqLeft(st, s).length;
     focusOn(route, coreLeft, 'practice');
     const F = focusFrame('🎯', `${s.id} ${s.title}`, 'Practice room · pick a level and any question');
-    const leaveBtn = el('button', { type: 'button', class: 'btn small fexit', id: 'leaveRoom', onclick: () => { if (coreLeft()) { focusNudge(); return; } focusOff(); UI.fl[key] = null; go('u-' + Core.UNO); } }, 'Exit task');
+    const leaveBtn = exitBtn('u-' + Core.UNO, () => { if (!coreLeft()) UI.fl[key] = null; });
     if (s.vocab && s.vocab.length && window.Primary) {   // the lesson's words, in a drawer inside the room
       const wb = Primary.wordBank(s); const fresh = !s.req.some(q => (st.items[q.id] || {}).tries);
       const drawer = el('div', { class: 'fwords' }, wb);
       const wbtn = el('button', { type: 'button', class: 'btn small fwbtn' + (fresh ? ' glow' : ''), id: 'wordsBtn', 'aria-expanded': 'false', onclick: () => { const o = drawer.classList.toggle('open'); wbtn.classList.remove('glow'); wbtn.setAttribute('aria-expanded', String(o)); QE.setTxt(wbtn, o ? '✕ Close words' : '📒 Words'); } }, '📒 Words');
       F.head.append(wbtn); F.head.after(drawer);
     }
-    F.head.append(leaveBtn, grownUpExit('u-' + Core.UNO));
+    F.head.append(leaveBtn);
     const levels = el('div', { class: 'flevels', role: 'tablist' }); const strip = el('div', { class: 'fstrip' });
     F.prog.append(levels, strip);
     const list = () => s[P.tab];
@@ -765,7 +775,7 @@
       strip.append(el('div', { class: 'fpct' }, el('span', { style: `width:${Math.round(d / qs.length * 100)}%` })), el('small', { class: 'fpctn' }, `${Math.round(d / qs.length * 100)}%`),
         el('div', { class: 'fqs' }, ...qs.map((q, i) => { const r = st.items[q.id] || {};
           return el('button', { type: 'button', class: 'fq' + (i === P.i ? ' cur' : '') + (r.done ? (r.ok ? ' ok' : ' half') : r.tries ? ' bad' : ''), 'aria-label': `Question ${i + 1}${r.done ? ', done' : ''}`, onclick: () => { P.i = i; show(); } }, 'Q' + (i + 1)); })));
-      leaveBtn.classList.toggle('locked', coreLeft() > 0); leaveBtn.title = coreLeft() ? `Finish the ${coreLeft()} Easy (Core) questions first` : 'Leave the practice room';
+      leaveBtn.title = coreLeft() ? `Leave the room (${coreLeft()} Easy questions still to do)` : 'Leave the practice room';
     };
     const levelDone = () => {
       const qs = list(); const k = P.tab; const right = qs.filter(q => (st.items[q.id] || {}).ok && (st.items[q.id] || {}).tries === 1).length;
@@ -800,10 +810,10 @@
       const LS = () => ((st.labs || {})[s.id] || {}); const route = 'lab-' + R(sid);
       focusOn(route, () => (LS().v || {}).done ? 0 : 1, 'lab');
       const F = focusFrame('🧪', `${s.id} ${s.lab.title}`, 'Experiment room · do the virtual lab, then try it at home');
-      F.head.append(grownUpExit('u-' + Core.UNO));
-      const leaveRow = () => { F.foot.innerHTML = ''; if (!(LS().v || {}).done) { F.foot.append(el('span', { class: 'muted' }, 'Finish the virtual lab to leave the room.')); return; }
+      F.head.append(exitBtn('u-' + Core.UNO));
+      const leaveRow = () => { F.foot.innerHTML = ''; if (!(LS().v || {}).done) { F.foot.append(el('span', { class: 'muted' }, 'Finish the virtual lab to complete this topic.')); return; }
         const i = C.sections.indexOf(s), nxt = C.sections[i + 1];
-        F.foot.append(el('button', { type: 'button', class: 'btn big', id: 'leaveRoom', onclick: () => { focusOff(); go('u-' + Core.UNO); } }, 'Finish'),
+        F.foot.append(el('button', { type: 'button', class: 'btn big', id: 'finishLab', onclick: () => { focusOff(); go('u-' + Core.UNO); } }, 'Finish'),
           nxt && Core.secDone(st, s) ? el('button', { type: 'button', class: 'btn big primary', onclick: () => { focusOff(); go('v-' + R(nxt.id)); } }, `Next lesson ${nxt.id} →`) : null); };
       F.body.append(Primary.labRoom(s, st, { tab: UI.labTab[sid] || 'v', setTab: k => { UI.labTab[sid] = k; render(); }, persist: () => { Core.persist(); xpTick(); refreshToc(); leaveRow(); }, toast, onLeave: f => { labStop = f; } }));
       leaveRow(); return;
@@ -2179,13 +2189,27 @@
   const LEARNER = { words: viewWords, home: viewHome, unit: viewUnit, test: viewTest, tests: viewTests, final: viewFinal, checkpoint: viewCheckpoint, level: viewLevel, result: viewResult, remedial: viewRemedial, map: viewMap, profile: viewProfile, topic: viewTopic, bank: viewBank, drill: viewDrill, board: viewBoard, cert: viewCert, settings: viewSettings };
   const GUEST_WALL = { board: 'Sign up free to join the leaderboard', cert: 'Sign up free to earn a certificate', result: 'Sign up free to take the Unit Test', remedial: 'Sign up free to take the Unit Test', settings: 'Sign up free to get your own account' };
   let renderSeq = 0;
+  // Stages 7–9 practise on normal pages: leaving a practice or experiment page with work left shows a reminder.
+  let lastWork = null;
+  function remindUnfinished(r) {
+    const prev = lastWork; lastWork = /^(ex|lab)-\d+-\d+$/.test(r) ? r : null;
+    if (!prev || prev === r || !st || !C || Focus.on || Core.IS_PRIMARY) return;
+    const m = prev.match(/^(ex|lab)-(\d+)-(\d+)$/); if (Number(m[2]) !== Core.UNO) return;
+    const s = Core.sec(m[2] + '.' + m[3]); if (!s || Core.secLock(st, s)) return;
+    if (m[1] === 'ex') { const n = Core.reqLeft(st, s).length; if (n && Core.videoDone(st, s)) toast(`Remember to finish ${s.id}: ${n} Core question${n > 1 ? 's' : ''} left`); }
+    else if (s.lab && !(((st.labs || {})[s.id] || {}).v || {}).done) toast(`Remember to finish the ${s.id} experiment`);
+  }
   async function render() {
     if (labStop) { try { labStop(); } catch (e) { } labStop = null; }
     if (activeVideo) { try { activeVideo.pause(); } catch (e) { } activeVideo = null; }
     clearInterval(timer); const seq = ++renderSeq;
     let r = location.hash.slice(1) || 'home';
     if (Guard.on && r !== Guard.route) { location.replace('#' + Guard.route); leave('navigate'); return; }   // Back / links are closed during an exam
-    if (Focus.on && r !== Focus.route) { if (Focus.left() > 0) { location.replace('#' + Focus.route); focusNudge(); return; } focusOff(); }   // the practice room stays open until the round is done
+    if (Focus.on && r !== Focus.route) {   // leaving an unfinished room (Back button, a link): stay, and ask first
+      if (Focus.left() > 0) { history.replaceState(null, '', '#' + Focus.route); confirmLeave(r); return; }
+      focusOff();
+    }
+    remindUnfinished(r);
     if (r === 'unit3') { location.replace('#u-3'); return; }
     // the unit is part of the address: u-4, v-4-1, ex-4-2, ws-4-3
     const um = r.match(/^u-(\d+)$/) || r.match(/^(?:v|ex|ws|lab)-(\d+)-\d+$/);

@@ -1588,3 +1588,7 @@ select{max-width:100%}
 .wstats div{min-width:0;flex:1}
 .mainnav .navlogin{display:none}
 @media (max-width:374px){.top.guest #signInLink{display:none}.top.guest .mainnav .navlogin{display:block}}
+/* leaving an unfinished practice or experiment room: the reminder sits above the room */
+body.focus-mode .modal-bg{z-index:1000}
+.leaveask p{margin:0 0 8px}.leaveask p.big{font:700 18px Lexend,Figtree,sans-serif}
+.fexit{white-space:nowrap}
