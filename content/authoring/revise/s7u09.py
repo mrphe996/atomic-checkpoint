@@ -33,15 +33,15 @@ NEW_STOPS = {
         [("it keeps air / oxygen out", ["air|oxygen"]), ("it keeps water out", ["water|moist|damp"])],
         "The layer is a barrier that stops oxygen and water reaching the iron, and iron needs both to rust."),
    twin=mc("u9n94_t", "M", "O3", "Which treatment protected the nail best in the class results?", "Galvanising (zinc coating)", [("Oiling", ""), ("Painting", ""), ("No treatment", "")])),
- "u9n95p": dict(note="Paused before the iron nail is left in blue copper sulfate solution.",
-   q=mc("u9n95p_q", "M", "O4", "PREDICT: what will you see after an hour?", ("The colour changes and the nail gets a coating", "Good prediction – now watch."),
-        [("Nothing will change", "Watch carefully."), ("The nail will melt", "Watch carefully."), ("The solution will boil", "Watch carefully.")], skill="Prediction"),
+ "u9n95p": dict(note="Paused before green copper carbonate is heated, with the gas bubbled through limewater.",
+   q=mc("u9n95p_q", "M", "O4", "PREDICT: what signs of a reaction might you see?", ("A colour change and a gas that turns limewater milky", "Good prediction – now watch."),
+        [("Nothing will change", "Watch carefully."), ("The powder will melt into a green liquid", "Watch carefully."), ("A squeaky pop", "That is the test for hydrogen.")], skill="Prediction"),
    twin=mc("u9n95p_t", "M", "O4", "Which is a sign of a chemical reaction?", "A colour change", [("A change of shape", ""), ("Melting", ""), ("Dissolving", "")])),
- "u9n95e": dict(note="Paused after the solution turned pale green and the nail was coated with copper.",
-   q=ex("u9n95e_q", "H", "O4", "EXPLAIN what happened, and write the word equation.",
-        [("iron swapped places with copper / iron is more reactive", ["swap|replace|displac|more reactive"]), ("iron + copper sulfate → iron sulfate + copper", ["iron sulfate|iron sulphate"]), ("colour change / new substances show a reaction", ["new|colour|green|reaction"])],
-        "Iron swapped places with copper. Iron + copper sulfate → iron sulfate + copper. The pale green iron sulfate and the copper coating are new substances, so a reaction happened.", need=2),
-   twin=mc("u9n95e_t", "H", "O4", "What is the reddish-brown coating on the nail?", "Copper", [("Rust", ""), ("Sulfur", ""), ("Iron sulfate", "")])),
+ "u9n95e": dict(note="Paused after the powder turned black and the limewater turned milky.",
+   q=ex("u9n95e_q", "H", "O4", "EXPLAIN what the observations show, and write the word equation.",
+        [("colour change shows a new substance (copper oxide)", ["colour|black|copper oxide|new substance"]), ("limewater milky shows carbon dioxide was given off", ["carbon dioxide|co2|limewater"]), ("copper carbonate → copper oxide + carbon dioxide", ["copper oxide.{0,30}carbon dioxide|carbon dioxide.{0,30}copper oxide"])],
+        "The green powder turned into a new black substance, copper oxide, and the gas turned limewater milky, so it was carbon dioxide. Copper carbonate → copper oxide + carbon dioxide.", need=2),
+   twin=mc("u9n95e_t", "H", "O4", "What is the black powder left in the tube?", "Copper oxide", [("Copper carbonate", ""), ("Carbon", ""), ("Rust", "")])),
 }
 
 DROP = {"9.1": ["u9s1p02", "u9s1p04", "u9s1p16"], "9.2": ["u9s2p01", "u9s2p11", "u9s2p15"], "9.3": ["u9s3p01", "u9s3p06", "u9s3p16"], "9.4": ["u9s4p01", "u9s4p08", "u9s4p13"]}
