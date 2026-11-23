@@ -1,0 +1,918 @@
+{
+"10.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.5,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.57,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.59,
+"Let's begin!"
+],
+[
+11.99,
+"Welcome to Unit 10: Forces."
+],
+[
+15.11,
+"When you ride a bicycle, forces are working all the time."
+],
+[
+19.32,
+"You push the pedals, friction stops the wheels skidding,"
+],
+[
+22.74,
+"and the air pushes against you."
+],
+[
+24.64,
+"Why do cyclists pedal harder into the wind?"
+],
+[
+27.26,
+"Let's find out about the forces around us."
+],
+[
+30.48,
+"A force is a push or a pull."
+],
+[
+32.84,
+"You can push a trolley in front of you,"
+],
+[
+35.29,
+"or pull it along behind you."
+],
+[
+37.71,
+"Forces can make a still object start moving,"
+],
+[
+41.13,
+"or make a moving object stop."
+],
+[
+42.9,
+"They can change an object's speed, its direction, or its shape."
+],
+[
+46.74,
+"Forces always act in pairs, and always involve at least two objects."
+],
+[
+51.57,
+"Some forces only act when objects touch."
+],
+[
+54.63,
+"These are contact forces."
+],
+[
+56.17,
+"When a box rests on a floor,"
+],
+[
+57.89,
+"the floor pushes up on it with a normal force."
+],
+[
+60.73,
+"When you push the box, you exert an applied force."
+],
+[
+64.46,
+"As the box slides, the floor exerts a frictional force."
+],
+[
+68.56,
+"Friction opposes motion, acting against the applied force, and slows things down."
+],
+[
+74.19,
+"A stretched or squashed spring exerts a spring force."
+],
+[
+78.16,
+"And a rope pulled tight from both ends has a tension force in it."
+],
+[
+82.14,
+"If the pulls at each end are equal, nothing moves."
+],
+[
+85.87,
+"The same wooden block is pulled slowly across glass,"
+],
+[
+89.66,
+"wood and sandpaper with a force meter."
+],
+[
+91.99,
+"Predict: on which surface will the force meter show the biggest reading?"
+],
+[
+96.41,
+"Pause and decide."
+],
+[
+98.11,
+"Watch. Each time, the block is pulled at a slow, steady speed."
+],
+[
+103.42,
+"The readings are 1.0 newtons on glass, 2.5 newtons on wood,"
+],
+[
+107.85,
+"and 6.0 newtons on sandpaper."
+],
+[
+110.33,
+"Explain what you saw."
+],
+[
+112.34,
+"Friction acts against the motion."
+],
+[
+114.35,
+"Rough surfaces grip each other more, so the friction is bigger,"
+],
+[
+118.19,
+"and a bigger pull is needed to keep the block moving."
+],
+[
+121.42,
+"Sandpaper is the roughest, so it has the most friction."
+],
+[
+124.77,
+"Glass is the smoothest, so it has the least."
+],
+[
+127.45,
+"Pause and explain it in your own words."
+],
+[
+130.47,
+"Other forces act at a distance, without touching."
+],
+[
+134.07,
+"Gravitational force, or gravity, attracts objects towards each other."
+],
+[
+138.3,
+"It's why an apple falls from a tree,"
+],
+[
+140.5,
+"and it gives objects their weight."
+],
+[
+143.24,
+"Electrical force acts between charged objects: opposite charges attract, and like charges repel."
+],
+[
+149.82,
+"Magnetic force attracts some metals, and can push other magnets away."
+],
+[
+154.68,
+"So: normal, applied, friction, spring and tension forces are contact forces."
+],
+[
+160.06,
+"Gravitational, electrical and magnetic forces act at a distance."
+],
+[
+164.63,
+"We show forces using a force diagram."
+],
+[
+167.5,
+"On a windsurfer, the wind in the sail gives forward thrust,"
+],
+[
+171.12,
+"drag acts backwards, lift pushes up, and gravity pulls down."
+],
+[
+175.45,
+"Each arrow shows the direction of a force,"
+],
+[
+178.77,
+"and the length of the arrow shows its size."
+],
+[
+181.42,
+"Force is measured in newtons, symbol N,"
+],
+[
+183.82,
+"named after the scientist Sir Isaac Newton."
+],
+[
+187.13,
+"We measure force with a force meter, also called a newton meter."
+],
+[
+191.77,
+"Its spring stretches when a force is applied,"
+],
+[
+194.51,
+"moving a pointer along a scale."
+],
+[
+196.4,
+"An apple with a mass of about 100 grams is pulled"
+],
+[
+199.39,
+"down by gravity with a force of about 1 newton."
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+11.99,
+"Forces"
+],
+[
+30.48,
+"What is a force?"
+],
+[
+51.57,
+"Contact forces"
+],
+[
+85.87,
+"Predict, watch, explain: which surface has the most friction?"
+],
+[
+130.47,
+"Forces that act at a distance"
+],
+[
+164.63,
+"Force diagrams and measuring force"
+]
+],
+"stops": [
+{
+"id": "u10v1a",
+"t": 73.84,
+"review": [
+51.57,
+74.19
+]
+},
+{
+"id": "u10n11p",
+"t": 97.76,
+"review": [
+85.87,
+98.11
+]
+},
+{
+"id": "u10n11e",
+"t": 130.12,
+"review": [
+85.87,
+130.47
+]
+},
+{
+"id": "u10v1b",
+"t": 154.33,
+"review": [
+130.47,
+154.68
+]
+},
+{
+"id": "u10v1c",
+"t": 186.78,
+"review": [
+164.63,
+187.13
+]
+}
+],
+"dur": 202.833,
+"src": "media/u10_s1.18cfc855.mp4",
+"poster": "media/u10_s1_poster.18cfc855.jpg"
+},
+"10.2": {
+"captions": [
+[
+0.0,
+"Gravity is a force of attraction between objects."
+],
+[
+2.92,
+"It keeps the planets in orbit around the Sun,"
+],
+[
+5.6,
+"the Moon in orbit around the Earth, and keeps us on the ground."
+],
+[
+9.35,
+"Why doesn't the Moon fall down?"
+],
+[
+11.2,
+"It's moving sideways, so as Earth pulls it in, Earth's surface curves away."
+],
+[
+15.66,
+"The Moon keeps falling around the Earth, in an orbit!"
+],
+[
+19.49,
+"The size of the gravitational force depends on mass."
+],
+[
+23.37,
+"Objects with larger masses pull with a greater force,"
+],
+[
+26.57,
+"which is why we notice Earth's gravity so easily."
+],
+[
+30.21,
+"It also depends on distance."
+],
+[
+32.63,
+"The further apart two objects are, the weaker the gravitational force between them."
+],
+[
+37.63,
+"That's why astronauts far out in space feel almost weightless."
+],
+[
+42.03,
+"Gravity is at work everywhere, from a raindrop to the whole Solar System."
+],
+[
+47.79,
+"Rain falls because Earth's gravity pulls every raindrop towards the centre of the Earth."
+],
+[
+54.54,
+"Gravity holds the atmosphere around our planet."
+],
+[
+58.17,
+"Without it, the air would drift away into space."
+],
+[
+61.78,
+"The Moon's gravity pulls on Earth's oceans,"
+],
+[
+65.16,
+"making the sea rise and fall twice a day."
+],
+[
+67.69,
+"These are the tides."
+],
+[
+69.59,
+"Satellites stay in orbit because Earth's gravity keeps pulling them round,"
+],
+[
+74.81,
+"instead of letting them fly off in a straight line."
+],
+[
+78.56,
+"Pause and decide: the Moon is smaller than the Earth."
+],
+[
+82.52,
+"Why does it pull on the oceans much"
+],
+[
+84.65,
+"less strongly than the Earth pulls on you?"
+]
+],
+"chapters": [
+[
+0.0,
+"Gravity: a force of attraction"
+],
+[
+42.03,
+"Real life: gravity at work"
+]
+],
+"stops": [
+{
+"id": "u10v2a",
+"t": 41.68,
+"review": [
+0.0,
+42.03
+]
+},
+{
+"id": "u10n12",
+"t": 87.34,
+"review": [
+42.03,
+87.69
+]
+}
+],
+"dur": 87.7,
+"src": "media/u10_s2.93a5dd92.mp4",
+"poster": "media/u10_s2_poster.93a5dd92.jpg"
+},
+"10.3": {
+"captions": [
+[
+0.0,
+"People often mix up mass and weight."
+],
+[
+2.29,
+"Imagine an object with a mass of 10 kilograms."
+],
+[
+5.21,
+"On Earth, gravity pulls on it with a force of about 98 newtons."
+],
+[
+9.21,
+"That's its weight."
+],
+[
+11.02,
+"Take the same object to the Moon."
+],
+[
+13.85,
+"It still contains the same amount of matter,"
+],
+[
+16.66,
+"so its mass is still 10 kilograms."
+],
+[
+18.82,
+"But the Moon's gravity is weaker, so it weighs only about 16 newtons."
+],
+[
+23.87,
+"In outer space, far from any planet, there is almost no gravity,"
+],
+[
+28.71,
+"so its weight is about 0 newtons."
+],
+[
+30.82,
+"But its mass is still 10 kilograms!"
+],
+[
+33.72,
+"So, mass is the amount of matter in an object,"
+],
+[
+37.38,
+"measured in kilograms or grams, and it's the same everywhere."
+],
+[
+41.25,
+"Weight is the pull of gravity, measured in newtons,"
+],
+[
+44.49,
+"and it changes depending on where you are."
+],
+[
+47.82,
+"The mass of this object is 10 kilograms everywhere."
+],
+[
+51.65,
+"But its weight depends on the gravity where it is."
+],
+[
+54.83,
+"These values use the gravity of each world from NASA's planetary fact sheet."
+],
+[
+60.3,
+"On the Moon it weighs only 16 newtons, on Mars 37,"
+],
+[
+64.24,
+"and on Earth 98 newtons."
+],
+[
+65.78,
+"On Jupiter, the biggest planet, it would weigh about 231 newtons!"
+],
+[
+70.59,
+"Pause and decide: an astronaut has a mass of 70 kilograms."
+],
+[
+75.08,
+"Does her mass change on Mars?"
+],
+[
+76.95,
+"Does her weight change?"
+]
+],
+"chapters": [
+[
+0.0,
+"Mass and weight"
+],
+[
+47.82,
+"Real data: the weight of a 10 kg mass"
+]
+],
+"stops": [
+{
+"id": "u10v3a",
+"t": 47.47,
+"review": [
+0.0,
+47.82
+]
+},
+{
+"id": "u10n13",
+"t": 78.58,
+"review": [
+47.82,
+78.93
+]
+}
+],
+"dur": 78.867,
+"src": "media/u10_s3.e3c437e5.mp4",
+"poster": "media/u10_s3_poster.e3c437e5.jpg"
+},
+"10.4": {
+"captions": [
+[
+0.0,
+"Cycling into a strong wind is hard work, because of air resistance,"
+],
+[
+4.05,
+"also called drag. It acts against an object moving through the air."
+],
+[
+8.1,
+"When a skydiver jumps, gravity pulls him down, and air resistance pushes up."
+],
+[
+12.69,
+"His surface area is small,"
+],
+[
+14.26,
+"so the drag is small and he falls fast."
+],
+[
+17.28,
+"When the parachute opens, its large surface area greatly increases the air resistance."
+],
+[
+23.29,
+"The skydiver slows down and can land safely."
+],
+[
+26.65,
+"Racing cyclists crouch low over the handlebars to reduce drag."
+],
+[
+31.19,
+"Engineers test vehicles in wind tunnels:"
+],
+[
+33.65,
+"a vehicle with less drag needs less fuel,"
+],
+[
+36.16,
+"which is better for the environment."
+],
+[
+39.03,
+"Two identical sheets of paper have the same mass."
+],
+[
+42.64,
+"One stays flat; the other is crumpled into a tight ball."
+],
+[
+46.07,
+"Both are dropped from the same height at the same time."
+],
+[
+49.44,
+"Predict: which lands first?"
+],
+[
+51.1,
+"Pause and decide."
+],
+[
+52.8,
+"Watch. Both are let go at exactly the same moment."
+],
+[
+57.4,
+"The crumpled ball lands first."
+],
+[
+60.05,
+"The flat sheet drifts slowly down."
+],
+[
+62.89,
+"Explain what you saw."
+],
+[
+64.9,
+"Both have the same mass and the same weight,"
+],
+[
+67.6,
+"so gravity pulls them equally."
+],
+[
+69.43,
+"But the flat sheet has a much larger surface area,"
+],
+[
+72.49,
+"so it pushes against much more air and has much more air resistance."
+],
+[
+76.65,
+"That slows it down."
+],
+[
+77.81,
+"Pause and explain it in your own words."
+],
+[
+80.85,
+"Drop a ball and a feather from the same height."
+],
+[
+84.34,
+"The ball lands first."
+],
+[
+85.63,
+"The feather's shape and large surface area mean the air pushes against it much more,"
+],
+[
+90.8,
+"slowing it down."
+],
+[
+92.44,
+"Galileo found that objects of the same shape and"
+],
+[
+96.11,
+"size but different weights hit the ground together."
+],
+[
+99.22,
+"In a vacuum, a space with no matter, not even air,"
+],
+[
+102.26,
+"there is no air resistance at all,"
+],
+[
+104.34,
+"so even a feather and a bowling ball fall at the same rate!"
+],
+[
+108.58,
+"Outer space is almost a vacuum."
+],
+[
+111.22,
+"Once a spacecraft leaves the atmosphere, there's no air resistance to slow it,"
+],
+[
+115.99,
+"so if it switches off its engine,"
+],
+[
+118.01,
+"it just keeps moving forward at the same speed."
+],
+[
+121.56,
+"Our ideas about gravity grew over many centuries."
+],
+[
+125.15,
+"In India, the mathematician and astronomer Brahmagupta was the first"
+],
+[
+129.29,
+"to describe objects falling because of Earth's force of attraction."
+],
+[
+134.04,
+"Later, Galileo Galilei experimented with falling objects and showed that objects"
+],
+[
+139.68,
+"of the same shape and size fall at the same rate,"
+],
+[
+142.69,
+"whatever their weight."
+],
+[
+144.71,
+"About a thousand years after Brahmagupta, in 1687,"
+],
+[
+148.48,
+"Isaac Newton published his Law of Universal Gravitation."
+],
+[
+151.89,
+"He said that he could see further only by standing on the shoulders of giants:"
+],
+[
+156.63,
+"he built on the work of scientists before him."
+],
+[
+160.08,
+"Now it is your turn to shine!"
+],
+[
+162.49,
+"Pause the video after each question and try to answer it first."
+],
+[
+167.09,
+"Question 1: Name one force that acts only when objects touch,"
+],
+[
+171.62,
+"and one that acts at a distance."
+],
+[
+173.61,
+"Pause the video now."
+],
+[
+175.53,
+"Answer: e.g. friction (contact); gravity or magnetism (at a distance)."
+],
+[
+181.71,
+"Question 2: An astronaut has a mass of 70 kg on Earth."
+],
+[
+186.24,
+"What is her mass on the Moon?"
+],
+[
+188.05,
+"Pause the video now."
+],
+[
+189.95,
+"Answer: Still 70 kg – mass doesn't change; only weight does."
+],
+[
+195.49,
+"Question 3: How does a parachute slow a skydiver down?"
+],
+[
+199.63,
+"Pause the video now."
+],
+[
+201.55,
+"Answer: Its large surface area increases air resistance."
+],
+[
+206.5,
+"Question 4: Why is there no air resistance in outer space?"
+],
+[
+210.89,
+"Pause the video now."
+],
+[
+212.81,
+"Answer: It is almost a vacuum – there is no air."
+]
+],
+"chapters": [
+[
+0.0,
+"Air resistance (drag)"
+],
+[
+39.03,
+"Predict, watch, explain: flat sheet or crumpled ball?"
+],
+[
+80.85,
+"Falling objects and the vacuum"
+],
+[
+121.56,
+"Standing on the shoulders of giants"
+],
+[
+160.08,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "u10v4a",
+"t": 38.68,
+"review": [
+0.0,
+39.03
+]
+},
+{
+"id": "u10n14p",
+"t": 52.45,
+"review": [
+39.03,
+52.8
+]
+},
+{
+"id": "u10n14e",
+"t": 80.5,
+"review": [
+39.03,
+80.85
+]
+},
+{
+"id": "u10v4b",
+"t": 121.21,
+"review": [
+80.85,
+121.56
+]
+},
+{
+"id": "u10v4c",
+"t": 159.73,
+"review": [
+121.56,
+160.08
+]
+}
+],
+"dur": 217.0,
+"src": "media/u10_s4.2e5676f9.mp4",
+"poster": "media/u10_s4_poster.2e5676f9.jpg"
+}
+}

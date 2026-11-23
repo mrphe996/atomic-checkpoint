@@ -9,6 +9,7 @@ A revision module defines (all optional except where used):
   NEW_STOPS {stop_id: {note, q, twin?}}  pause questions written for the new video scenes
   SOURCES   [{id,name,url,use}]     sources for the externally adapted questions
   TESTS     from content/private: TEST_A, TEST_B (30 marks each)
+  REPLACE   {question id: question}  corrected versions of existing Core/Practice/Challenge questions (same id)
 The video data (src, captions, chapters, stops with times) comes from revise/KEY_video.json (finalize_v2.py).
 Applying twice gives the same result."""
 import json, os, importlib, sys
@@ -52,6 +53,9 @@ def apply_key(key, quiet=False):
         na = NA.get(k, []); ids = {q['id'] for q in na}
         for q in na: q['adv'] = True
         s['adv'] = [q for q in s['adv'] if q['id'] not in ids] + na
+        RP = getattr(R, 'REPLACE', {})
+        for L in ('req', 'prac', 'adv'):
+            s[L] = [dict(RP[q['id']], adv=True) if (q['id'] in RP and L == 'adv') else RP.get(q['id'], q) for q in s[L]]
         if vid and k in vid:
             v = vid[k]
             s['video'] = {"src": v['src'], "poster": v['poster'], "offset": 0, "dur": round(v['dur'], 3), "range": ""}
