@@ -1,0 +1,79 @@
+1
+00:00:00,000 --> 00:00:01,644
+Welcome to Atomic Education.
+
+2
+00:00:02,703 --> 00:00:09,808
+This lesson was written by the Atomic teaching team to help you learn Cambridge Lower Secondary Science with confidence.
+
+3
+00:00:09,808 --> 00:00:10,513
+Let's begin!
+
+4
+00:00:11,571 --> 00:00:14,214
+Welcome to Unit 13: Earth and Climate Change.
+
+5
+00:00:15,272 --> 00:00:19,852
+Over millions of years, Earth's surface has changed as tectonic plates moved.
+
+6
+00:00:19,852 --> 00:00:25,783
+Today, the climate is changing in ways never seen before, and rising seas are eating away coastlines.
+
+7
+00:00:26,842 --> 00:00:33,301
+A purple crystal of potassium manganate(VII) is placed at the bottom of a large beaker of water, at one side.
+
+8
+00:00:33,301 --> 00:00:39,701
+The beaker is heated gently under that side only. Predict: where will the purple colour go? Pause and decide.
+
+9
+00:00:40,760 --> 00:00:45,164
+Watch. A purple stream rises straight up from the crystal, above the flame.
+
+10
+00:00:46,223 --> 00:00:51,625
+At the top it moves across, sinks down the far side and flows back along the bottom: a loop.
+
+11
+00:00:52,683 --> 00:00:57,264
+Explain what you saw. The heated water expands, becomes less dense and rises.
+
+12
+00:00:57,264 --> 00:01:03,429
+At the top it cools, becomes denser and sinks, so the water moves round in a loop: a convection current.
+
+13
+00:01:03,429 --> 00:01:09,360
+Hot rock in Earth's mantle moves in the same way, very slowly, carrying the tectonic plates with it.
+
+14
+00:01:09,360 --> 00:01:11,650
+Pause and explain it in your own words.
+
+15
+00:01:12,708 --> 00:01:15,821
+Earth's crust is made of huge rigid tectonic plates.
+
+16
+00:01:15,821 --> 00:01:21,693
+Below, in the mantle, hot magma rises, cools near the crust, and sinks again: a convection current.
+
+17
+00:01:21,693 --> 00:01:24,276
+These currents drag the plates slowly along.
+
+18
+00:01:25,335 --> 00:01:29,328
+Where plates push together, rocks fold upwards into fold mountains.
+
+19
+00:01:29,328 --> 00:01:33,203
+Where they pull apart or slide under one another, volcanoes form.
+
+20
+00:01:33,203 --> 00:01:37,020
+And where they suddenly slip past each other, we get earthquakes.

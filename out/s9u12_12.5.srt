@@ -1,0 +1,79 @@
+1
+00:00:00,000 --> 00:00:04,671
+Resistance is how much a component opposes the current, measured in ohms.
+
+2
+00:00:04,671 --> 00:00:09,657
+By Ohm's Law, more voltage gives more current, and more resistance gives less.
+
+3
+00:00:09,657 --> 00:00:12,497
+Resistance equals voltage divided by current.
+
+4
+00:00:13,560 --> 00:00:17,852
+Example: a light bulb runs on 230 volts with a current of 0.5 amps.
+
+5
+00:00:17,852 --> 00:00:21,450
+Resistance equals 230 divided by 0.5, which is 460 ohms.
+
+6
+00:00:21,450 --> 00:00:25,742
+Electric heaters use resistance to turn electrical energy into heat.
+
+7
+00:00:26,805 --> 00:00:30,465
+A student connects a resistor to a variable power supply,
+
+8
+00:00:30,465 --> 00:00:33,874
+with an ammeter in series and a voltmeter in parallel.
+
+9
+00:00:34,937 --> 00:00:40,617
+At 1.5 volts the current is 0.1 amps. At 3 volts it is 0.2 amps, and at 6 volts, 0.4 amps.
+
+10
+00:00:41,680 --> 00:00:47,550
+The points make a straight line through the origin: doubling the voltage doubles the current.
+
+11
+00:00:48,613 --> 00:00:53,915
+Pause and decide: what is the resistance of the resistor, and does it stay the same?
+
+12
+00:00:54,978 --> 00:01:00,848
+Now it is your turn to shine! Pause the video after each question and try to answer it first.
+
+13
+00:01:01,911 --> 00:01:07,655
+Question 1: What instrument measures current, and how is it connected? Pause the video now.
+
+14
+00:01:08,718 --> 00:01:11,242
+Answer: An ammeter, connected in series.
+
+15
+00:01:12,305 --> 00:01:18,554
+Question 2: What happens to the other lamps if one breaks in a series circuit? Pause the video now.
+
+16
+00:01:19,617 --> 00:01:21,132
+Answer: They all go out.
+
+17
+00:01:22,195 --> 00:01:28,633
+Question 3: Four 3-volt cells are connected in series. What is the total voltage? Pause the video now.
+
+18
+00:01:29,696 --> 00:01:30,769
+Answer: 12 volts.
+
+19
+00:01:31,832 --> 00:01:36,818
+Question 4: Calculate the resistance: 12 volts and 2 amps. Pause the video now.
+
+20
+00:01:37,881 --> 00:01:38,828
+Answer: 6 ohms.
