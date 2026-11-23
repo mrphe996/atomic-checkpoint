@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:06,012
+Carbon moves around the Earth in the carbon cycle. Plants take in carbon dioxide for photosynthesis.
+
+2
+00:00:06,012 --> 00:00:07,857
+Animals get carbon by feeding.
+
+3
+00:00:07,857 --> 00:00:14,285
+All living things release carbon dioxide by respiration, and decomposers release carbon from dead organisms.
+
+4
+00:00:15,345 --> 00:00:19,214
+Some dead organisms weren't decomposed, and became fossil fuels.
+
+5
+00:00:19,214 --> 00:00:22,547
+Burning them, called combustion, releases their carbon.
+
+6
+00:00:22,547 --> 00:00:25,999
+Humans now add carbon faster than the cycle can remove it.
