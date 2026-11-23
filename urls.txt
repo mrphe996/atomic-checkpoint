@@ -1,6 +1,10 @@
-s9u04_4.1.mp3 https://voicezuno.com/v1/files/26068157df6987ae/audio?exp=1795447052&sig=704f9e7ed2878c6b987b4aefd03da49e
-s9u04_4.1.srt https://voicezuno.com/v1/files/26068157df6987ae/srt?exp=1795447052&sig=68ff68a746c93fe17a52a2c6f38c778d
-s9u04_4.2.mp3 https://voicezuno.com/v1/files/2afa726a1dd06fb0/audio?exp=1795447052&sig=4f12bb96a5b544ec75797b4fb7d4c160
-s9u04_4.2.srt https://voicezuno.com/v1/files/2afa726a1dd06fb0/srt?exp=1795447052&sig=d7edef09187c5a76e0499d1ed9da6936
-s9u05_5.1.mp3 https://voicezuno.com/v1/files/31af1e055d5b4623/audio?exp=1795447052&sig=c2715c97a1197d5da542e16d87f1e27f
-s9u05_5.1.srt https://voicezuno.com/v1/files/31af1e055d5b4623/srt?exp=1795447052&sig=6fce628b8a308d037b144caa54cc92fb
+s7u13_13.4_fix.mp3 https://voicezuno.com/v1/files/dce3ec43d5dfbe38/audio?exp=1795447181&sig=66f00c24db72b10fb5217b759921fb5d
+s7u13_13.4_fix.srt https://voicezuno.com/v1/files/dce3ec43d5dfbe38/srt?exp=1795447181&sig=b51b43c9bdd0796b53f634b9e45d4e17
+s9u05_5.2.mp3 https://voicezuno.com/v1/files/8584051cb50526d3/audio?exp=1795447181&sig=a320a4026d445cc883f69080a3608c39
+s9u05_5.2.srt https://voicezuno.com/v1/files/8584051cb50526d3/srt?exp=1795447181&sig=ae9899517d667cf55366bc4b070f2a4d
+s9u02_2.1_fix.mp3 https://voicezuno.com/v1/files/c96d815a22feab0a/audio?exp=1795447286&sig=b2a6f46d371eaa9169c99bea769a6ce6
+s9u02_2.1_fix.srt https://voicezuno.com/v1/files/c96d815a22feab0a/srt?exp=1795447286&sig=0f829deb9412db89b016a224ca68af3b
+s9u05_5.3.mp3 https://voicezuno.com/v1/files/8b556ed886f74222/audio?exp=1795447287&sig=0ac506ba1cb2fc8dbe82b755aa9ea660
+s9u05_5.3.srt https://voicezuno.com/v1/files/8b556ed886f74222/srt?exp=1795447287&sig=a10ca676f9f8fdc885838f0d4434eee1
+s9u05_5.4.mp3 https://voicezuno.com/v1/files/3cc3f906b89ff2e8/audio?exp=1795447286&sig=7900b040816ed59c85b5f136ed2c3917
+s9u05_5.4.srt https://voicezuno.com/v1/files/3cc3f906b89ff2e8/srt?exp=1795447286&sig=dce113085fde0af5c92898a32ec6d071
