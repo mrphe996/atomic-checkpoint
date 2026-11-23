@@ -1,0 +1,111 @@
+1
+00:00:00,000 --> 00:00:01,663
+Welcome to Atomic Education.
+
+2
+00:00:02,723 --> 00:00:09,910
+This lesson was written by the Atomic teaching team to help you learn Cambridge Lower Secondary Science with confidence.
+
+3
+00:00:09,910 --> 00:00:10,623
+Let's begin!
+
+4
+00:00:11,682 --> 00:00:13,227
+Welcome to Unit 11: Sound.
+
+5
+00:00:14,286 --> 00:00:15,949
+Close your eyes and listen.
+
+6
+00:00:15,949 --> 00:00:21,889
+A car engine, a bird singing, people talking: some sounds are loud, some soft, some high, some low.
+
+7
+00:00:21,889 --> 00:00:25,394
+Where do sounds come from, and how do they reach your ears?
+
+8
+00:00:26,453 --> 00:00:32,334
+All sounds come from vibrating, or oscillating, objects. A plucked guitar string, a drum membrane,
+
+9
+00:00:32,334 --> 00:00:36,670
+the reed of a saxophone, your vocal cords and a speaker cone all vibrate.
+
+10
+00:00:37,729 --> 00:00:42,362
+A speaker cone moving forward squeezes air particles together: a compression.
+
+11
+00:00:42,362 --> 00:00:45,392
+Moving back, it spreads them apart: a rarefaction.
+
+12
+00:00:45,392 --> 00:00:50,856
+These travel outwards as a sound wave, passing energy from particle to particle to your ear.
+
+13
+00:00:51,916 --> 00:00:54,292
+Sound needs a medium to travel through.
+
+14
+00:00:54,292 --> 00:01:00,054
+The closer the particles, the faster sound travels: fastest in solids, then liquids, then gases.
+
+15
+00:01:00,054 --> 00:01:04,924
+In a vacuum there are no particles, so sound can't travel at all. Space is silent!
+
+16
+00:01:05,984 --> 00:01:11,567
+An electric bell rings inside a sealed glass jar. A pump slowly removes the air from the jar.
+
+17
+00:01:11,567 --> 00:01:15,428
+Predict: what will happen to the sound we hear? Pause and decide.
+
+18
+00:01:16,488 --> 00:01:20,646
+Watch. As the air is pumped out, the ringing gets quieter and quieter.
+
+19
+00:01:21,705 --> 00:01:25,388
+With almost all the air removed, we can hardly hear anything,
+
+20
+00:01:25,388 --> 00:01:28,595
+although we can still see the hammer hitting the bell.
+
+21
+00:01:29,655 --> 00:01:32,446
+Explain what you saw. The bell still vibrates,
+
+22
+00:01:32,446 --> 00:01:37,495
+but sound needs particles to carry the vibrations to the glass and then to our ears.
+
+23
+00:01:37,495 --> 00:01:43,198
+As the air is removed, there are fewer particles to pass on the vibrations, so the sound fades.
+
+24
+00:01:43,198 --> 00:01:47,950
+In a vacuum, sound cannot travel at all. Pause and explain it in your own words.
+
+25
+00:01:49,009 --> 00:01:54,236
+The speed of sound depends on the material it travels through. These are typical values.
+
+26
+00:01:55,296 --> 00:01:59,810
+In air at 20 degrees Celsius, sound travels at about 343 metres per second.
+
+27
+00:01:59,810 --> 00:02:02,899
+In water it is about 1480, and in steel nearly 6000.
+
+28
+00:02:03,958 --> 00:02:07,938
+Pause and decide: why is sound fastest in steel and slowest in air?

@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:06,194
+An oscilloscope displays sound as a waveform. The highest point is the crest, the lowest the trough.
+
+2
+00:00:06,194 --> 00:00:10,242
+The amplitude is the height from the equilibrium line to a crest,
+
+3
+00:00:10,242 --> 00:00:13,063
+and the wavelength is the length of one cycle.
+
+4
+00:00:14,124 --> 00:00:18,110
+To draw a waveform graph, label the axes and choose even scales.
+
+5
+00:00:18,110 --> 00:00:23,017
+Mark the amplitude above and below the equilibrium line, mark one cycle's time,
+
+6
+00:00:23,017 --> 00:00:26,451
+then draw a smooth curve through the crests and troughs.
+
+7
+00:00:27,512 --> 00:00:32,725
+The bigger the amplitude, the more energy a sound carries, and the louder it sounds.
+
+8
+00:00:32,725 --> 00:00:37,938
+Loudness is measured on the decibel scale, from rustling leaves to a jet taking off.
+
+9
+00:00:37,938 --> 00:00:40,943
+Too much noise can cause stress and hearing loss.
+
+10
+00:00:42,004 --> 00:00:45,929
+Frequency is the number of waves per second, measured in hertz.
+
+11
+00:00:45,929 --> 00:00:50,713
+Higher frequency means higher pitch: a violin sounds high, a bass guitar low.
+
+12
+00:00:50,713 --> 00:00:53,595
+Humans hear from about 20 to 20 thousand hertz.
+
+13
+00:00:54,656 --> 00:01:00,176
+US health agencies publish typical sound levels for everyday noises, measured in decibels.
+
+14
+00:01:01,237 --> 00:01:07,063
+A whisper is about 30 decibels and normal conversation about 60. A lawnmower reaches about 90,
+
+15
+00:01:07,063 --> 00:01:12,399
+a loud concert about 105, an emergency siren about 120, and a jet taking off about 140.
+
+16
+00:01:13,460 --> 00:01:19,041
+Pause and decide: which of these could damage your hearing if you listened for a long time?

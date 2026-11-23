@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:02,327
+When sound waves meet, they interfere.
+
+2
+00:00:02,327 --> 00:00:08,710
+If they're in phase, crests line up with crests, and their amplitudes add together, making a louder sound.
+
+3
+00:00:08,710 --> 00:00:12,349
+This is constructive interference, used in some hearing aids.
+
+4
+00:00:13,409 --> 00:00:18,599
+If they're out of phase, crests meet troughs and cancel out: destructive interference.
+
+5
+00:00:18,599 --> 00:00:24,506
+Noise-cancelling headphones record outside noise, reverse it, and play it back to cancel the noise.
+
+6
+00:00:25,565 --> 00:00:31,114
+Now it is your turn to shine! Pause the video after each question and try to answer it first.
+
+7
+00:00:32,173 --> 00:00:35,454
+Question 1: How is sound produced? Pause the video now.
+
+8
+00:00:36,514 --> 00:00:38,244
+Answer: By vibrating objects.
+
+9
+00:00:39,304 --> 00:00:43,480
+Question 2: Why can't sound travel through space? Pause the video now.
+
+10
+00:00:44,540 --> 00:00:48,000
+Answer: There are no particles to carry it: it's a vacuum.
+
+11
+00:00:49,060 --> 00:00:53,832
+Question 3: What property of a wave decides how loud it is? Pause the video now.
+
+12
+00:00:54,892 --> 00:00:56,204
+Answer: Its amplitude.
+
+13
+00:00:57,264 --> 00:01:01,619
+Question 4: How do noise-cancelling headphones work? Pause the video now.
+
+14
+00:01:02,679 --> 00:01:06,676
+Answer: Destructive interference: out-of-phase sound cancels noise.
