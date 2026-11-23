@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:04,319
+Many metals react with water to form a metal hydroxide and hydrogen gas.
+
+2
+00:00:04,319 --> 00:00:09,762
+Potassium reacts even more violently than sodium: it whizzes around on the water's surface,
+
+3
+00:00:09,762 --> 00:00:12,128
+and the heat can make the hydrogen burn.
+
+4
+00:00:13,187 --> 00:00:14,726
+Calcium is less reactive.
+
+5
+00:00:14,726 --> 00:00:21,115
+It reacts steadily with water, forming hydrogen bubbles and a milky white precipitate of calcium hydroxide.
+
+6
+00:00:21,115 --> 00:00:25,730
+Test the solutions with Universal Indicator, and you'll find they're alkaline.
+
+7
+00:00:26,789 --> 00:00:32,054
+Magnesium reacts only slowly with cold water. Heated, it reacts with hot water or steam,
+
+8
+00:00:32,054 --> 00:00:37,497
+but forms magnesium oxide instead of the hydroxide, an unexpected result, called an anomaly.
+
+9
+00:00:38,556 --> 00:00:44,413
+Zinc and iron only react with hot water, and copper, silver and gold don't react with water at all.
+
+10
+00:00:45,473 --> 00:00:48,608
+A small piece of calcium is dropped into cold water,
+
+11
+00:00:48,608 --> 00:00:52,690
+and the hydrogen it gives off is collected and measured every minute.
+
+12
+00:00:53,749 --> 00:01:00,198
+The volume rises quickly at first, then levels off at about 80 cubic centimetres when the calcium is used up.
+
+13
+00:01:01,257 --> 00:01:04,570
+When the same mass of magnesium ribbon is used instead,
+
+14
+00:01:04,570 --> 00:01:08,712
+only a few bubbles form: less than 1 cubic centimetre in five minutes.
+
+15
+00:01:09,771 --> 00:01:13,261
+Pause and decide: which metal is more reactive with water,
+
+16
+00:01:13,261 --> 00:01:16,397
+and what evidence from the data supports your answer?

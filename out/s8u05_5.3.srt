@@ -1,0 +1,119 @@
+1
+00:00:00,000 --> 00:00:05,292
+Solutions are everywhere: lemonade, rubbing alcohol and the saline used in hospitals.
+
+2
+00:00:05,292 --> 00:00:10,339
+Concentration tells us how much solute is dissolved in a given amount of solvent.
+
+3
+00:00:10,339 --> 00:00:14,708
+More solute particles in the same volume means a higher concentration.
+
+4
+00:00:14,708 --> 00:00:17,662
+Add more sugar to lemonade, and it gets sweeter!
+
+5
+00:00:18,723 --> 00:00:24,201
+To calculate concentration, divide the mass of the solute by the volume of the solution.
+
+6
+00:00:24,201 --> 00:00:29,124
+5 grams of sugar in 100 cubic centimetres gives 0.05 grams per cubic centimetre.
+
+7
+00:00:30,185 --> 00:00:35,908
+Keep adding sugar to water, and eventually no more will dissolve. The solution is saturated.
+
+8
+00:00:35,908 --> 00:00:38,185
+Before that point, it's unsaturated.
+
+9
+00:00:38,185 --> 00:00:44,032
+A supersaturated solution holds more than it normally can, so it's unstable, and crystals form.
+
+10
+00:00:45,093 --> 00:00:51,555
+Solubility is how much solute can dissolve in a solvent. For most solids, it increases with temperature.
+
+11
+00:00:51,555 --> 00:00:56,663
+At 10 degrees Celsius, one sugar cube might saturate the water, but at 40 degrees,
+
+12
+00:00:56,663 --> 00:01:01,463
+three cubes can dissolve. That's why it's easier to dissolve sugar in hot tea.
+
+13
+00:01:02,524 --> 00:01:05,601
+Here's a graph of solubility against temperature.
+
+14
+00:01:05,601 --> 00:01:11,386
+Different substances have different solubilities, but they all rise as the water gets hotter.
+
+15
+00:01:11,386 --> 00:01:16,986
+When testing this, keep everything the same except the temperature, to make it a fair test.
+
+16
+00:01:18,048 --> 00:01:23,217
+This graph shows the maximum mass of potassium nitrate, a salt used in fertilisers,
+
+17
+00:01:23,217 --> 00:01:27,094
+that dissolves in 100 grams of water at different temperatures.
+
+18
+00:01:28,156 --> 00:01:33,140
+At 20 degrees Celsius, only 32 grams dissolve. At 60 degrees, 110 grams dissolve.
+
+19
+00:01:34,202 --> 00:01:39,371
+The curve gets steeper: solubility rises faster and faster as the water gets hotter.
+
+20
+00:01:40,433 --> 00:01:46,587
+Pause and decide: a saturated solution in 100 grams of water at 60 degrees is cooled to 20 degrees.
+
+21
+00:01:46,587 --> 00:01:48,310
+What mass of crystals forms?
+
+22
+00:01:49,371 --> 00:01:55,095
+Now it is your turn to shine! Pause the video after each question and try to answer it first.
+
+23
+00:01:56,156 --> 00:02:01,449
+Question 1: Is salt water a homogeneous or heterogeneous mixture? Pause the video now.
+
+24
+00:02:02,510 --> 00:02:05,403
+Answer: Homogeneous, the salt is evenly spread.
+
+25
+00:02:06,464 --> 00:02:11,141
+Question 2: Which method separates tea leaves from tea? Pause the video now.
+
+26
+00:02:12,203 --> 00:02:13,372
+Answer: Filtration.
+
+27
+00:02:14,433 --> 00:02:20,464
+Question 3: A chromatogram of an ink shows one spot. What does this tell you? Pause the video now.
+
+28
+00:02:21,526 --> 00:02:23,741
+Answer: The ink is a pure substance.
+
+29
+00:02:24,803 --> 00:02:30,588
+Question 4: Why does more sugar dissolve in hot water than in cold water? Pause the video now.
+
+30
+00:02:31,649 --> 00:02:34,480
+Answer: Solubility increases with temperature.

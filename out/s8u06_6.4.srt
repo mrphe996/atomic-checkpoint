@@ -1,0 +1,119 @@
+1
+00:00:00,000 --> 00:00:01,285
+Do you see a pattern?
+
+2
+00:00:01,285 --> 00:00:06,603
+A metal that reacts strongly with oxygen also reacts strongly with water and dilute acids.
+
+3
+00:00:06,603 --> 00:00:12,796
+So we can list metals from most reactive to least reactive: potassium, sodium, calcium, magnesium, zinc...
+
+4
+00:00:13,796 --> 00:00:16,075
+...then iron, copper, silver and gold.
+
+5
+00:00:16,075 --> 00:00:20,925
+This list is the reactivity series, and it helps us predict how a metal will react.
+
+6
+00:00:21,983 --> 00:00:25,782
+We use it every day. Steel is galvanised with a coating of zinc,
+
+7
+00:00:25,782 --> 00:00:30,514
+which forms a protective oxide layer that keeps air and water away from the iron.
+
+8
+00:00:31,573 --> 00:00:33,618
+Catalytic converters use platinum,
+
+9
+00:00:33,618 --> 00:00:39,812
+palladium and rhodium as catalysts: substances that speed up a reaction without being changed themselves.
+
+10
+00:00:39,812 --> 00:00:44,661
+They turn harmful exhaust gases into less harmful ones, but these metals are rare,
+
+11
+00:00:44,661 --> 00:00:46,882
+costly and mined in only a few places.
+
+12
+00:00:47,940 --> 00:00:51,329
+A strip of zinc is put into blue copper sulfate solution.
+
+13
+00:00:51,329 --> 00:00:55,069
+A strip of copper is put into colourless zinc sulfate solution.
+
+14
+00:00:55,069 --> 00:00:58,925
+Predict: in which beaker will a reaction happen? Pause and decide.
+
+15
+00:00:59,984 --> 00:01:02,788
+Watch. Both beakers are left for twenty minutes.
+
+16
+00:01:03,847 --> 00:01:08,288
+In the first beaker, the blue colour fades and brown copper coats the zinc.
+
+17
+00:01:08,288 --> 00:01:10,450
+Nothing happens in the second beaker.
+
+18
+00:01:11,508 --> 00:01:14,839
+Explain what you saw. Zinc is more reactive than copper,
+
+19
+00:01:14,839 --> 00:01:20,565
+so it pushes copper out of its compound: zinc plus copper sulfate gives zinc sulfate plus copper.
+
+20
+00:01:20,565 --> 00:01:26,174
+This is a displacement reaction. Copper is less reactive than zinc, so it cannot displace zinc.
+
+21
+00:01:26,174 --> 00:01:28,453
+Pause and explain it in your own words.
+
+22
+00:01:29,512 --> 00:01:34,946
+Now it is your turn to shine! Pause the video after each question and try to answer it first.
+
+23
+00:01:36,004 --> 00:01:41,204
+Question 1: Write the word equation for magnesium burning in oxygen. Pause the video now.
+
+24
+00:01:42,263 --> 00:01:45,477
+Answer: magnesium plus oxygen leads to magnesium oxide.
+
+25
+00:01:46,535 --> 00:01:50,976
+Question 2: Why are sodium and potassium stored in oil? Pause the video now.
+
+26
+00:01:52,034 --> 00:01:55,248
+Answer: They react very quickly with oxygen in the air.
+
+27
+00:01:56,306 --> 00:02:01,916
+Question 3: What salt forms when zinc reacts with dilute hydrochloric acid? Pause the video now.
+
+28
+00:02:02,974 --> 00:02:05,428
+Answer: Zinc chloride (plus hydrogen gas).
+
+29
+00:02:06,487 --> 00:02:10,986
+Question 4: Which is more reactive: copper or magnesium? Pause the video now.
+
+30
+00:02:12,044 --> 00:02:15,375
+Answer: Magnesium, it is higher in the reactivity series.
