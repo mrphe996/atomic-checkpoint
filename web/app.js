@@ -1838,7 +1838,7 @@
     }
     function drawWatch() {
       if (!vid) {
-        vid = el('video', { src: 'media/u3_s3.mp4', poster: 'media/u3_s3_poster.jpg', playsinline: true, preload: 'metadata', 'aria-label': 'Lesson video: specialised plant cells', class: 'lp-video' }); activeVideo = vid;
+        vid = el('video', { src: 'media/demo_u3_s3.mp4', poster: 'media/demo_u3_s3_poster.jpg', playsinline: true, preload: 'metadata', 'aria-label': 'Lesson video: specialised plant cells', class: 'lp-video' }); activeVideo = vid;
         const ov = el('div', { class: 'lp-ov', hidden: true }), playBig = el('button', { type: 'button', class: 'lp-play pulse', 'aria-label': 'Play lesson', onclick: () => vid.play() }, svgI(I.play, 32, '#1C2A3A', 2.6));
         const pbar = el('i'), time = el('span', { class: 'lp-time' }, '0:00 / 1:28'), pp = el('button', { type: 'button', class: 'btn primary small lp-pp', 'aria-label': 'Play or pause' }, svgI(I.play, 16, '#fff', 2.6));
         pp.onclick = () => { if (ov.hidden === false && !D.pqDone) return; vid.paused ? vid.play() : vid.pause(); };

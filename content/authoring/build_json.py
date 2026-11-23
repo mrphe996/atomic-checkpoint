@@ -92,6 +92,9 @@ def main(out):
         json.dump(data, f, ensure_ascii=False, indent=0)
     print("sections", [(s["id"], len(s["req"]), len(s["prac"]), len(s["adv"]), len(s["stops"])) for s in secs])
     print("total questions", len(allq), "+ test", len(TEST_A), len(TEST_B))
+    # revision v2 (Nov 2026): new videos, Practice changes and Unit Tests – see revise/s7u03.py
+    from revise.s7u03 import apply as revise_v2
+    revise_v2(out)
 
 if __name__ == "__main__":
     main(sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src", "stage7-unit03.json"))

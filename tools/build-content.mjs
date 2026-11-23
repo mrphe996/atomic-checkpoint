@@ -15,13 +15,15 @@ const G = require('../shared/grade-core.js');
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'content/src');
 // the figure library, loaded the way the browser loads it, so every fig:{kind} in the content is checked
-const FIGLIB = (() => { const win = {}; try { for (const f of ['web/figures.js', 'web/figures2.js', 'web/figures3.js']) { const p = path.join(ROOT, f); if (fs.existsSync(p)) new Function('window', fs.readFileSync(p, 'utf8'))(win); } } catch (e) { console.error('figure library:', e.message); } return win.AtomicFig; })();
+const FIGLIB = (() => { const win = {}; try { for (const f of ['web/figures.js', 'web/figures2.js', 'web/figures3.js', 'web/figures4.js']) { const p = path.join(ROOT, f); if (fs.existsSync(p)) new Function('window', fs.readFileSync(p, 'utf8'))(win); } } catch (e) { console.error('figure library:', e.message); } return win.AtomicFig; })();
 const ANCHORS = { // label anchors each figure provides (keep in sync with web/figures.js)
   microscope: ['eyepiece', 'objective', 'stage', 'clips', 'diaphragm', 'light', 'coarse', 'fine', 'arm', 'base'],
   plantcell: ['wall', 'membrane', 'cytoplasm', 'nucleus', 'vacuole', 'chloroplast', 'mito'],
   animalcell: ['membrane', 'cytoplasm', 'nucleus', 'mito'], roothair: ['extension', 'nucleus', 'vacuole', 'wall'],
   neurone: ['body', 'fibre', 'endings', 'nucleus'], ciliated: ['mucus', 'cilia', 'nucleus'],
   palisade: ['wall', 'nucleus', 'chloroplast', 'vacuole'], plant: ['flower', 'leaf', 'stem', 'root'], body: ['brain', 'lungs', 'heart', 'stomach'] };
+// figures4.js (and any later figure file) report their own anchors
+for (const k of ['leafsection', 'stainsetup', 'rootpath', 'polyp']) { if (FIGLIB && FIGLIB.F[k]) ANCHORS[k] = Object.keys(FIGLIB.get(k, {}).a || {}); }
 const TYPES = ['mcq', 'multi', 'num', 'scale', 'label', 'order', 'match', 'explain', 'grid', 'table', 'graph', 'sim', 'short', 'cloze', 'expr', 'say', 'para'];
 const WRITTEN = q => q.type === 'explain' || q.type === 'para';
 
