@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:05,050
+Look around your class: unless there are identical twins, everyone looks different.
+
+2
+00:00:05,050 --> 00:00:10,522
+Variation is the differences between members of the same species, like height, eye colour,
+
+3
+00:00:10,522 --> 00:00:15,212
+earlobes or blood group. Some variation, like blood group, can't even be seen.
+
+4
+00:00:16,272 --> 00:00:22,164
+Individuals of a species share almost the same DNA, but small differences in DNA cause variation.
+
+5
+00:00:22,164 --> 00:00:27,996
+Each gamete carries a different half set of DNA, so every fertilised egg gets a new combination.
+
+6
+00:00:27,996 --> 00:00:29,620
+That's inherited variation.
+
+7
+00:00:30,680 --> 00:00:33,024
+Not all variation is genetic. Climate,
+
+8
+00:00:33,024 --> 00:00:38,676
+nutrition and soil also matter: hydrangeas are blue in acidic soil and pink in alkaline soil,
+
+9
+00:00:38,676 --> 00:00:43,667
+exercise builds muscles, and sunshine darkens skin. That's environmental variation.
+
+10
+00:00:44,727 --> 00:00:50,679
+A class of thirty students measured their heights and grouped them into ranges of five centimetres.
+
+11
+00:00:51,739 --> 00:00:56,128
+Most students are in the middle groups, between 150 and 159 centimetres.
+
+12
+00:00:56,128 --> 00:00:58,473
+Only a few are very short or very tall.
+
+13
+00:00:59,533 --> 00:01:06,027
+Pause and decide: is height an example of continuous or discontinuous variation, and is it caused by genes,
+
+14
+00:01:06,027 --> 00:01:07,530
+the environment, or both?

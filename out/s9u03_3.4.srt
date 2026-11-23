@@ -1,0 +1,83 @@
+1
+00:00:00,000 --> 00:00:03,420
+Ten red and ten green paper worms are scattered on grass.
+
+2
+00:00:03,420 --> 00:00:08,256
+Students act as hungry birds and pick up as many worms as they can in one minute.
+
+3
+00:00:08,256 --> 00:00:11,794
+Predict: which colour will survive better? Pause and decide.
+
+4
+00:00:12,853 --> 00:00:18,043
+Watch. After 30 seconds, most of the red worms have been found, but only one green worm.
+
+5
+00:00:19,102 --> 00:00:23,879
+After one minute, just one red worm is left, but eight green worms have survived.
+
+6
+00:00:24,938 --> 00:00:26,235
+Explain what you saw.
+
+7
+00:00:26,235 --> 00:00:31,484
+The green worms are camouflaged against the grass, so the 'birds' find them less easily.
+
+8
+00:00:31,484 --> 00:00:37,204
+In a real population, the better-camouflaged individuals survive, breed and pass on their genes,
+
+9
+00:00:37,204 --> 00:00:43,514
+so over many generations more of the population has that variation. Pause and explain it in your own words.
+
+10
+00:00:44,573 --> 00:00:47,816
+A population of mice has light grey and dark grey fur.
+
+11
+00:00:47,816 --> 00:00:54,244
+Owls hunt at night and spot the light mice more easily. Dark mice survive, breed and pass on their dark fur.
+
+12
+00:00:54,244 --> 00:00:58,608
+Over generations, almost all the mice are dark. This is natural selection.
+
+13
+00:00:59,667 --> 00:01:04,562
+Darwin based this theory on Galápagos finches, whose beaks suited different foods.
+
+14
+00:01:04,562 --> 00:01:07,746
+Individuals vary, and more are born than can survive.
+
+15
+00:01:07,746 --> 00:01:13,113
+Those with favourable variations survive and pass them on. Over time, new species can form.
+
+16
+00:01:14,172 --> 00:01:18,005
+Natural selection can be fast in species that reproduce quickly.
+
+17
+00:01:18,005 --> 00:01:22,900
+In a population of bacteria, one may carry a variation that resists an antibiotic.
+
+18
+00:01:22,900 --> 00:01:27,677
+The antibiotic kills the rest, and the resistant ones multiply into 'super bugs'.
+
+19
+00:01:28,735 --> 00:01:34,633
+Insecticides work the same way. A few mosquitoes have genes to resist them; they survive and breed,
+
+20
+00:01:34,633 --> 00:01:40,412
+so over generations the insecticide on bed nets stops working. That answers our malaria question!
+
+21
+00:01:40,412 --> 00:01:42,476
+New insecticides must be developed.
