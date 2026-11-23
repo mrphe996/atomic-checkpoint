@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:04,759
+The Law of Conservation of Energy says energy can't be created or destroyed,
+
+2
+00:00:04,759 --> 00:00:09,271
+only transferred from one store to another, so the total stays the same.
+
+3
+00:00:09,271 --> 00:00:12,918
+A pendulum swaps potential and kinetic energy as it swings.
+
+4
+00:00:13,980 --> 00:00:17,565
+Energy diagrams show this. For every 100 joules supplied,
+
+5
+00:00:17,565 --> 00:00:22,386
+an old incandescent lamp gives only 10 joules of light and 90 joules of heat.
+
+6
+00:00:22,386 --> 00:00:25,909
+An LED lamp gives 75 joules of light and only 25 of heat.
+
+7
+00:00:26,971 --> 00:00:32,533
+The 'lost' energy hasn't vanished; it has gone to stores that aren't useful, mostly heat.
+
+8
+00:00:32,533 --> 00:00:36,984
+Efficiency measures how much of the input energy becomes useful output.
+
+9
+00:00:36,984 --> 00:00:41,063
+Efficient devices waste less, which helps protect the environment.

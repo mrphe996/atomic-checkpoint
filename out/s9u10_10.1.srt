@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:01,680
+Welcome to Atomic Education.
+
+2
+00:00:02,740 --> 00:00:10,001
+This lesson was written by the Atomic teaching team to help you learn Cambridge Lower Secondary Science with confidence.
+
+3
+00:00:10,001 --> 00:00:10,721
+Let's begin!
+
+4
+00:00:11,781 --> 00:00:14,602
+Welcome to Unit 10: Transfer of Thermal Energy.
+
+5
+00:00:15,662 --> 00:00:21,543
+The Sun is our planet's main source of thermal energy: the energy of moving, vibrating particles.
+
+6
+00:00:21,543 --> 00:00:27,064
+Understanding how it moves explains why we feel hot or cold, how we keep homes comfortable,
+
+7
+00:00:27,064 --> 00:00:28,624
+and how many gadgets work.
+
+8
+00:00:29,684 --> 00:00:35,205
+Thermal energy is the total kinetic and potential energy of all the particles in something.
+
+9
+00:00:35,205 --> 00:00:39,045
+A bathtub and a cup of water at room temperature feel the same,
+
+10
+00:00:39,045 --> 00:00:43,426
+but the bathtub holds far more thermal energy: it has far more particles.
+
+11
+00:00:44,486 --> 00:00:50,967
+Heat is thermal energy flowing from a hotter object to a cooler one, until both reach the same temperature.
+
+12
+00:00:50,967 --> 00:00:56,788
+It's measured in joules. In the 1790s, Count Rumford noticed drilling cannons made endless heat,
+
+13
+00:00:56,788 --> 00:00:59,068
+showing that heat is a form of energy.
+
+14
+00:01:00,128 --> 00:01:05,889
+Temperature measures how hot or cold something is: the average kinetic energy of its particles.
+
+15
+00:01:05,889 --> 00:01:11,530
+Heat a kettle, and the particles move faster, so the temperature rises until the water boils.
+
+16
+00:01:11,530 --> 00:01:14,650
+It's measured in degrees Celsius with a thermometer.

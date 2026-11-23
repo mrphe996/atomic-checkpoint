@@ -1,0 +1,111 @@
+1
+00:00:00,000 --> 00:00:03,062
+Two fresh eggs are gently lowered into two beakers.
+
+2
+00:00:03,062 --> 00:00:09,538
+One holds tap water; the other holds water with lots of salt dissolved in it. Predict: what will each egg do?
+
+3
+00:00:09,538 --> 00:00:10,539
+Pause and decide.
+
+4
+00:00:11,598 --> 00:00:15,013
+Watch. In tap water, the egg sinks straight to the bottom.
+
+5
+00:00:16,072 --> 00:00:20,017
+In the very salty water, the egg rises and floats near the surface.
+
+6
+00:00:21,075 --> 00:00:26,904
+Explain what you saw. A fresh egg has a density of a little more than 1 gram per cubic centimetre,
+
+7
+00:00:26,904 --> 00:00:29,377
+so it is denser than tap water and sinks.
+
+8
+00:00:29,377 --> 00:00:34,087
+Dissolving lots of salt makes the water denser than the egg, so the egg floats.
+
+9
+00:00:34,087 --> 00:00:40,152
+An object floats if it is less dense than the liquid around it. Pause and explain it in your own words.
+
+10
+00:00:41,211 --> 00:00:47,511
+A stone sinks in a pond, but wood floats. An upward force from the water acts against the object's weight.
+
+11
+00:00:47,511 --> 00:00:53,398
+The rule is simple: if an object is less dense than the fluid, it floats; if it's denser, it sinks.
+
+12
+00:00:53,398 --> 00:00:56,401
+Water has a density of 1 gram per cubic centimetre.
+
+13
+00:00:57,460 --> 00:01:02,877
+Pour honey, water and oil into a jar, and they layer by density: the densest at the bottom.
+
+14
+00:01:02,877 --> 00:01:08,470
+A glass marble sinks to the bottom, ice floats on water, and cork floats on top of everything.
+
+15
+00:01:08,470 --> 00:01:11,296
+Helium balloons rise in air for the same reason.
+
+16
+00:01:12,355 --> 00:01:14,710
+Why does ice float? When water freezes,
+
+17
+00:01:14,710 --> 00:01:20,833
+its molecules form an open crystal structure that takes up more space, so ice is less dense than water.
+
+18
+00:01:20,833 --> 00:01:26,368
+That's why icebergs float! And it's easier to float in the sea, because salty water is denser.
+
+19
+00:01:27,427 --> 00:01:32,902
+Now it is your turn to shine! Pause the video after each question and try to answer it first.
+
+20
+00:01:33,961 --> 00:01:37,788
+Question 1: What is the formula for density? Pause the video now.
+
+21
+00:01:38,847 --> 00:01:41,556
+Answer: Density equals mass divided by volume.
+
+22
+00:01:42,614 --> 00:01:49,032
+Question 2: An object has a mass of 180 grams and a volume of 240 cubic centimetres. Will it float in water?
+
+23
+00:01:49,032 --> 00:01:50,210
+Pause the video now.
+
+24
+00:01:51,269 --> 00:01:55,802
+Answer: Yes: its density is 0.75 grams per cubic centimetre, less than water.
+
+25
+00:01:56,861 --> 00:02:00,099
+Question 3: Why does hot air rise? Pause the video now.
+
+26
+00:02:01,158 --> 00:02:04,455
+Answer: It expands and becomes less dense than cold air.
+
+27
+00:02:05,514 --> 00:02:09,106
+Question 4: Why does ice float on water? Pause the video now.
+
+28
+00:02:10,165 --> 00:02:12,343
+Answer: Ice is less dense than water.
