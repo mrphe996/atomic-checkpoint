@@ -87,6 +87,12 @@ class Paper:
         g = _gr(self._id(), d, o, prompt, x, y, pts_, follow=follow); g["plot"] = g.pop("pts")  # marks live in "pts"
         return self._add(g, pts)
 
+    def para(self, q):
+        """Add a ready-made 6-mark paragraph question (type 'para', built by the para kits) as its own numbered question."""
+        self.qn += 1; self.part = 0; self.ctx = None
+        q = dict(q); q["id"] = f"{self.pre}q{self.qn:02d}p"; self.items.append(q)
+        return q
+
     def done(self, total):
         s = sum(x["pts"] for x in self.items)
         import os
