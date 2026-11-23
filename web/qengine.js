@@ -1,0 +1,328 @@
+/* Atomic Education — question engine.
+   Renders every question type, collects a response, grades it and gives
+   misconception-specific feedback. Content lives in content/unit3.json. */
+(function () {
+  const Fig = window.AtomicFig;
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const TH = window.AtomicTheme && window.AtomicTheme.name === 'oak' ? window.AtomicTheme.mapText : null;   // inline colours follow the theme
+  const THS = TH ? window.AtomicTheme.style : null;                                                          // …and light / dark mode
+  function el(tag, attrs, ...kids) {
+    const e = document.createElement(tag);
+    for (const k in (attrs || {})) {
+      const v = attrs[k];
+      if (v == null || v === false) continue;
+      if (k === 'class') e.className = v; else if (k === 'html') e.innerHTML = TH ? TH(v) : v;
+      else if (TH && k === 'style') e.setAttribute(k, THS(v));
+      else if (TH && (k === 'fill' || k === 'stroke')) e.setAttribute(k, TH(v));
+      else if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v === true ? '' : v);
+    }
+    const AI = window.AtomicIcons, cls = (attrs && attrs.class) || '';
+    const iconsOk = AI && !NOICON_TAG.test(tag) && !NOICON_CLS.test(cls);
+    const filled = iconsOk && (/(^|\s)(on|active|current|cur)(\s|$)/.test(cls) || attrs && ['aria-current', 'aria-selected', 'aria-pressed'].some(k => attrs[k] && attrs[k] !== 'false'));
+    for (const c of kids.flat()) if (c != null && c !== false) {
+      if (c.nodeType) e.append(c);
+      else if (iconsOk && AI.has(String(c))) e.append(...AI.swap(String(c), filled));
+      else e.append(document.createTextNode(c));
+    }
+    return e;
+  }
+  // picture emoji (question pictures, word cards) stay pictures; form controls cannot hold icons
+  const NOICON_TAG = /^(option|optgroup|textarea|title|style|script|select)$/i;
+  const NOICON_CLS = /(^|\s)(pe|we|qpic|sayemo|pt|ot|emo|noicon)(\s|$)/;
+  // textContent with interface glyphs turned into icons
+  function setTxt(node, s) { const AI = window.AtomicIcons; if (AI && AI.has(String(s))) node.replaceChildren(...AI.swap(String(s))); else node.textContent = s; }
+  function rng(seedStr) { let h = 2166136261; for (const ch of seedStr) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; }
+  function shuffle(arr, seed) { const r = rng(seed), a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+  const TYPE_VI = window.GradeCore.TYPE_VI;
+  const DIFF = { M: 'Medium', H: 'Hard', VH: 'Very hard' };
+  const near = (a, b, tol) => Math.abs(a - b) <= Math.max(tol || 0, 1e-9 * Math.max(1, Math.abs(b)));
+  const parseNum = s => { if (s == null) return null; const t = String(s).replace(/[×x,\s]/gi, m => m === ',' ? '.' : '').trim(); if (t === '') return null; const v = Number(t); return isFinite(v) ? v : null; };
+  const LEN = { 'µm': 0.001, 'mm': 1, 'cm': 10 };
+
+  /* ---------------- grading: the one shared marker (shared/grade-core.js), same as the server ---------------- */
+  const GC = window.GradeCore; const grade = GC.grade, answerText = GC.answerText, isTick = GC.isTick;
+
+  /* ---------------- renderers ---------------- */
+  function dataTable(d) {
+    const t = el('table', { class: 'grid data' }); if (d.caption) t.append(el('caption', {}, d.caption));
+    t.append(el('tr', {}, ...d.head.map(h => el('th', {}, h)))); d.rows.forEach(r => t.append(el('tr', {}, ...r.map(c => el('td', {}, String(c))))));
+    return el('div', { class: 'tablewrap' }, t);
+  }
+  function figureBox(name, opts, extra) {
+    const f = Fig.get(name, opts); const box = el('div', { class: 'fig' }); box.innerHTML = f.svg; if (extra) box.append(extra); return { box, f };
+  }
+  function renderBody(q, host, ctx) {
+    const seed = (ctx.seed || 's') + q.id; let resp = ctx.resp != null ? JSON.parse(JSON.stringify(ctx.resp)) : null;
+    const changed = () => { ctx.onChange && ctx.onChange(resp); };
+    const api = { get: () => resp, lock() { host.classList.add('locked'); host.querySelectorAll('input,select,textarea,button.opt,button.chip,button.mv,button.cell').forEach(x => x.disabled = true); } };
+    const W = el('div', { class: 'qbody' }); host.append(W);
+    // shared context of a multi-part question (investigation text, diagram, results table) – shown above the question
+    if (q.ctx || q.data) {
+      const cx = el('div', { class: 'qctx' }); if (q.ctx) String(q.ctx).split('\n').forEach(t => cx.append(el('p', {}, t)));
+      if (q.fig && typeof q.fig === 'object' && q.type !== 'scale') cx.append(figureBox(q.fig.kind, q.fig).box);
+      if (q.data) cx.append(dataTable(q.data));
+      const h = host.querySelector('.qp') || (host.parentNode && host.parentNode.querySelector(':scope > .qp')); if (h) h.before(cx); else W.append(cx);
+    } else if (q.fig && typeof q.fig === 'object' && q.type !== 'scale') { W.append(figureBox(q.fig.kind, q.fig).box); }
+    switch (q.type) {
+      case 'mcq': case 'multi': {
+        const order = shuffle(q.options.map((_, i) => i), seed); const multi = q.type === 'multi';
+        if (multi) resp = resp || [];
+        // picture questions (Primary): a big picture above, and picture cards to tap when every option has one
+        if (q.pic) W.append(el('div', { class: 'qpic', 'aria-hidden': 'true' }, q.pic));
+        const pics = q.options.every(o => o.e);
+        const list = el('div', { class: 'opts' + (pics ? ' pics n' + q.options.length : ''), role: multi ? 'group' : 'radiogroup' });
+        order.forEach((oi, k) => {
+          const b = pics ? el('button', { class: 'opt pcard', type: 'button', 'aria-pressed': 'false', 'data-oi': oi, 'aria-label': q.options[oi].t },
+            el('span', { class: 'pe', 'aria-hidden': 'true' }, q.options[oi].e), el('span', { class: 'pt' }, q.options[oi].t))
+            : el('button', { class: 'opt', type: 'button', 'aria-pressed': 'false', 'data-oi': oi },
+            el('span', { class: 'key' }, String.fromCharCode(65 + k)), el('span', { class: 'ot' }, q.options[oi].t));
+          const sync = () => { const on = multi ? resp.includes(oi) : resp === oi; b.classList.toggle('sel', on); b.setAttribute('aria-pressed', on); };
+          b.onclick = () => { if (multi) { resp = resp.includes(oi) ? resp.filter(x => x !== oi) : resp.concat(oi); } else resp = oi; list.querySelectorAll('.opt').forEach(x => x._sync()); changed(); };
+          b._sync = sync; sync(); list.append(b);
+        });
+        if (multi) W.append(el('p', { class: 'muted' }, 'Select all the correct answers.'));
+        W.append(list); api.markOpts = (g) => list.querySelectorAll('.opt').forEach(b => { const o = q.options[+b.dataset.oi]; if (o.ok) b.classList.add('right'); else if (b.classList.contains('sel')) b.classList.add('wrong'); });
+        break;
+      }
+      case 'num': case 'scale': {
+        resp = resp || { v: '', u: q.unit === '×' ? '×' : '' };
+        if (q.type === 'scale') {
+          const zoomBtn = el('button', { class: 'btn small', type: 'button' }, '🔍 Zoom in on the scale');
+          const { box, f } = figureBox(q.fig.kind, q.fig);
+          const zoom = el('div', { class: 'zoom', hidden: true }); zoom.innerHTML = f.svg.replace('viewBox="0 0 480 320"', `viewBox="${f.zoom}"`);
+          zoomBtn.onclick = () => { zoom.hidden = !zoom.hidden; setTxt(zoomBtn, zoom.hidden ? '🔍 Zoom in on the scale' : 'Zoom out'); };
+          W.append(el('div', { class: 'scalewrap' }, box, el('div', {}, zoomBtn, zoom)));
+        }
+        const inp = el('input', { type: 'text', inputmode: 'decimal', class: 'numin', 'aria-label': 'Value', value: resp.v, placeholder: 'value' });
+        inp.oninput = () => { resp.v = inp.value; changed(); };
+        const row = el('div', { class: 'numrow' }, inp);
+        if (q.unit !== '×') {
+          const sel = el('select', { 'aria-label': 'Unit' }, el('option', { value: '' }, '– unit –'), ...shuffle(q.units, seed + 'u').map(u => el('option', { value: u }, u)));
+          sel.value = resp.u || ''; sel.onchange = () => { resp.u = sel.value; changed(); }; row.append(sel);
+        } else if (!q.bare) row.append(el('span', { class: 'unit' }, '× (no unit)'));
+        W.append(row); break;
+      }
+      case 'label': {
+        resp = resp || {}; const keys = Object.keys(q.spots); const labels = shuffle(Object.values(q.spots), seed);
+        const { box, f } = figureBox(q.fig, {}); let picked = null;
+        const svg = box.querySelector('svg'); const NS = 'http://www.w3.org/2000/svg';
+        const pool = el('div', { class: 'chips', role: 'listbox', 'aria-label': 'Labels' });
+        const selects = {};
+        const redraw = () => {
+          svg.querySelectorAll('.spot').forEach(g => { const k = g.dataset.k; g.querySelector('text.lab').textContent = resp[k] ? resp[k] : ''; g.classList.toggle('filled', !!resp[k]); });
+          pool.querySelectorAll('.chip').forEach(c => { c.classList.toggle('used', Object.values(resp).includes(c.dataset.l)); c.classList.toggle('picked', picked === c.dataset.l); });
+          keys.forEach(k => selects[k].value = resp[k] || '');
+        };
+        const place = (k, l) => { for (const kk in resp) if (resp[kk] === l) delete resp[kk]; if (l) resp[k] = l; else delete resp[k]; picked = null; redraw(); changed(); };
+        keys.forEach((k, i) => {
+          const [x, y] = f.a[k]; const g = document.createElementNS(NS, 'g'); g.setAttribute('class', 'spot'); g.dataset.k = k; g.setAttribute('tabindex', '0'); g.setAttribute('role', 'button'); g.setAttribute('aria-label', 'Position ' + (i + 1));
+          const lx = x < 240 ? 8 : 472, anchor = x < 240 ? 'start' : 'end';
+          g.innerHTML = `<line x1="${x}" y1="${y}" x2="${x < 240 ? x - 6 : x + 6}" y2="${y}" stroke="#0B2545" stroke-width="1.5"/><circle cx="${x}" cy="${y}" r="13" class="dot"/><text x="${x}" y="${y + 5}" text-anchor="middle" class="num">${i + 1}</text><text x="${x}" y="${y + (y > 260 ? -18 : 30)}" text-anchor="middle" class="lab"></text>`;
+          const act = () => { if (picked) place(k, picked); else if (resp[k]) place(k, null); };
+          g.addEventListener('click', act); g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); act(); } });
+          g.addEventListener('dragover', e => e.preventDefault()); g.addEventListener('drop', e => { e.preventDefault(); place(k, e.dataTransfer.getData('text/plain')); });
+          svg.append(g);
+          selects[k] = el('select', { 'aria-label': 'Label for position ' + (i + 1) }, el('option', { value: '' }, '—'), ...labels.map(l => el('option', { value: l }, l)));
+          selects[k].onchange = () => place(k, selects[k].value);
+        });
+        labels.forEach(l => { const c = el('button', { class: 'chip', type: 'button', draggable: 'true', 'data-l': l }, l); c.onclick = () => { picked = picked === l ? null : l; redraw(); }; c.ondragstart = e => e.dataTransfer.setData('text/plain', l); pool.append(c); });
+        W.append(el('p', { class: 'muted' }, 'Tap a label, then tap a number on the diagram (or drag and drop, or choose from the lists below).'), pool, box,
+          el('div', { class: 'selgrid' }, ...keys.map((k, i) => el('label', {}, el('b', {}, (i + 1) + '. '), selects[k]))));
+        api.markSpots = () => svg.querySelectorAll('.spot').forEach(g => g.classList.add(resp[g.dataset.k] === q.spots[g.dataset.k] ? 'ok' : 'bad'));
+        redraw(); break;
+      }
+      case 'order': {
+        if (!resp) { let s = shuffle(q.items, seed); if (s.join() === q.items.join()) s = s.slice().reverse(); resp = s; }
+        const ol = el('ol', { class: 'order' });
+        const draw = () => { ol.innerHTML = ''; resp.forEach((it, i) => ol.append(el('li', {}, el('span', {}, it),
+          el('span', { class: 'mvs' }, el('button', { class: 'mv', type: 'button', 'aria-label': 'Up', disabled: i === 0, onclick: () => { [resp[i - 1], resp[i]] = [resp[i], resp[i - 1]]; draw(); changed(); } }, '▲'),
+            el('button', { class: 'mv', type: 'button', 'aria-label': 'Down', disabled: i === resp.length - 1, onclick: () => { [resp[i + 1], resp[i]] = [resp[i], resp[i + 1]]; draw(); changed(); } }, '▼'))))); };
+        draw(); W.append(ol); break;
+      }
+      case 'match': {
+        resp = resp || {}; const rights = shuffle(q.pairs.map(p => p.r), seed);
+        const tb = el('div', { class: 'match' });
+        q.pairs.forEach(p => { const s = el('select', { 'aria-label': p.l }, el('option', { value: '' }, '— choose —'), ...rights.map(r => el('option', { value: r }, r))); s.value = resp[p.l] || ''; s.onchange = () => { resp[p.l] = s.value; changed(); }; tb.append(el('div', { class: 'mrow' }, el('b', {}, p.l), s)); });
+        W.append(tb); break;
+      }
+      case 'short': {
+        const inp = el('input', { type: 'text', class: 'shortin', 'aria-label': 'Your answer', autocomplete: 'off', spellcheck: 'false', placeholder: 'Type your answer', value: resp || '' });
+        if (q.width) inp.style.maxWidth = q.width + 'ch';
+        inp.oninput = () => { resp = inp.value; changed(); }; W.append(el('div', { class: 'shortrow' }, inp)); break;
+      }
+      case 'expr': {
+        const inp = el('input', { type: 'text', class: 'shortin mathin', 'aria-label': 'Your answer', autocomplete: 'off', spellcheck: 'false', placeholder: 'e.g. 3x^2 + 2x − 5', value: resp || '' });
+        const prev = el('span', { class: 'mathprev', 'aria-live': 'polite' });
+        const pretty = t => String(t || '').replace(/\^\(?(-?\d+)\)?/g, (m, d) => d.split('').map(c => '⁰¹²³⁴⁵⁶⁷⁸⁹'['0123456789'.indexOf(c)] || (c === '-' ? '⁻' : c)).join('')).replace(/\*/g, '×').replace(/sqrt/g, '√');
+        const show = () => { prev.textContent = inp.value.trim() ? 'You typed: ' + (q.lhs ? q.lhs + ' = ' : '') + pretty(inp.value) : ''; };
+        inp.oninput = () => { resp = inp.value; changed(); show(); }; show();
+        const keys = el('div', { class: 'mathkeys' }, ...['x', 'y', '^2', '(', ')', '/', '√', '−'].map(k => el('button', { type: 'button', class: 'mk2', onclick: () => { const ins = k === '−' ? '-' : k; const a = inp.selectionStart ?? inp.value.length; inp.value = inp.value.slice(0, a) + ins + inp.value.slice(inp.selectionEnd ?? a); inp.focus(); inp.setSelectionRange(a + ins.length, a + ins.length); resp = inp.value; changed(); show(); } }, k)));
+        W.append(el('div', { class: 'shortrow' }, q.lhs ? el('b', { class: 'lhs' }, q.lhs + ' =') : null, inp), prev, keys,
+          el('small', { class: 'muted' }, 'Type powers with ^ (x^2), multiply with * or by writing letters together (3xy), divide with /, and use brackets.')); break;
+      }
+      case 'cloze': {
+        resp = Array.isArray(resp) ? resp : []; const p = el('p', { class: 'cloze' }); const n = q.blanks ? q.blanks.length : q.n;
+        String(q.text).split(/(\{\d+\})/).forEach(part => { const m = part.match(/^\{(\d+)\}$/);
+          if (!m) { if (part) p.append(part); return; }
+          const i = +m[1]; const inp = el('input', { type: 'text', class: 'gap', 'aria-label': 'Gap ' + (i + 1), autocomplete: 'off', spellcheck: 'false', value: resp[i] || '' });
+          inp.oninput = () => { resp[i] = inp.value; for (let k = 0; k < n; k++) if (resp[k] == null) resp[k] = ''; changed(); }; p.append(inp); });
+        W.append(p); break;
+      }
+      case 'explain': {
+        const ta = el('textarea', { rows: 5, 'aria-label': 'Your answer', placeholder: 'Write your answer in English (full sentences, use because / so).' }); ta.value = resp || '';
+        ta.oninput = () => { resp = ta.value; changed(); }; W.append(ta); break;
+      }
+      case 'para': {
+        const [sMin, sMax] = q.sentences || [1], wMin = q.minWords || 0;
+        const ta = el('textarea', { rows: 8, class: 'para', 'aria-label': 'Your answer', placeholder: `Write a paragraph in English: ${sMin}${sMax && sMax !== sMin ? '–' + sMax : ''} full sentences${wMin ? `, at least ${wMin} words` : ''}.` });
+        ta.value = typeof resp === 'string' ? resp : '';
+        const cnt = el('p', { class: 'pcount muted', 'aria-live': 'polite' });
+        const upd = () => { const st = GC.paraStats(ta.value); const ok = st.sentences >= sMin && st.words >= wMin; cnt.className = 'pcount ' + (ok ? 'ok' : 'muted');
+          cnt.textContent = `${st.words} word${st.words === 1 ? '' : 's'}${wMin ? ' / ' + wMin : ''} · ${st.sentences} sentence${st.sentences === 1 ? '' : 's'} / ${sMin}${sMax && sMax !== sMin ? '–' + sMax : ''}`; };
+        ta.oninput = () => { resp = ta.value; upd(); changed(); };
+        W.append(ta, cnt); upd();
+        if (q.frame) { const fr = el('p', { class: 'pframe', hidden: true }, el('b', {}, 'Writing frame: '), q.frame);
+          W.append(el('button', { class: 'btn small ghost', type: 'button', onclick: e => { fr.hidden = !fr.hidden; e.target.textContent = fr.hidden ? 'Show a writing frame' : 'Hide the writing frame'; } }, 'Show a writing frame'), fr); }
+        break;
+      }
+      case 'grid': {
+        const tick = isTick(q); resp = resp || q.rows.map(() => tick ? q.cols.map(() => '') : ['']);
+        const t = el('table', { class: 'grid' }); t.append(el('tr', {}, el('th', {}, ''), ...(tick ? q.cols : ['Choose']).map(c => el('th', {}, c))));
+        q.rows.forEach((row, ri) => {
+          const tr = el('tr', {}, el('th', { scope: 'row' }, row.l));
+          if (tick) q.cols.forEach((c, ci) => { const b = el('button', { class: 'cell', type: 'button', 'aria-label': `${row.l} – ${c}` }, resp[ri][ci] || '·'); b.onclick = () => { const v = resp[ri][ci]; resp[ri][ci] = v === '' ? '✓' : v === '✓' ? '✗' : ''; b.textContent = resp[ri][ci] || '·'; changed(); }; tr.append(el('td', {}, b)); });
+          else { const s = el('select', { 'aria-label': row.l }, el('option', { value: '' }, '—'), ...q.cols.map(c => el('option', { value: c }, c))); s.value = resp[ri][0] || ''; s.onchange = () => { resp[ri] = [s.value]; changed(); }; tr.append(el('td', {}, s)); }
+          t.append(tr);
+        });
+        if (tick) W.append(el('p', { class: 'muted' }, 'Tap a cell to change it: · → ✓ (present) → ✗ (absent).'));
+        W.append(el('div', { class: 'tablewrap' }, t)); break;
+      }
+      case 'table': {
+        resp = resp || {}; const t = el('table', { class: 'grid' }); t.append(el('tr', {}, ...q.head.map(h => el('th', {}, h))));
+        q.rows.forEach((row, ri) => t.append(el('tr', {}, ...row.map((c, ci) => { if (c && typeof c === 'object') { const i = el('input', { type: 'text', inputmode: typeof c.ans === 'string' ? 'text' : 'decimal', class: 'cellin', 'aria-label': `${q.head[ci]} row ${ri + 1}`, value: (resp[ri] || {})[ci] || '' }); i.oninput = () => { (resp[ri] = resp[ri] || {})[ci] = i.value; changed(); }; return el('td', {}, i); } return el('td', {}, c); }))));
+        W.append(el('div', { class: 'tablewrap' }, t)); break;
+      }
+      case 'graph': {
+        resp = resp || { pts: [], f: null };
+        if (q.table_rows) { const t = el('table', { class: 'grid small' }); t.append(el('tr', {}, el('th', {}, q.x.label), el('th', {}, q.y.label))); q.table_rows.forEach(r => t.append(el('tr', {}, el('td', {}, r[0]), el('td', {}, r[1])))); W.append(t); }
+        const X0 = 60, Y0 = 280, Wd = 400, Ht = 250, nx = (q.x.max - q.x.min) / q.x.step, ny = (q.y.max - q.y.min) / q.y.step;
+        const px = v => X0 + (v - q.x.min) / (q.x.max - q.x.min) * Wd, py = v => Y0 - (v - q.y.min) / (q.y.max - q.y.min) * Ht;
+        const box = el('div', { class: 'fig graph' }); const NS = 'http://www.w3.org/2000/svg';
+        let g = ''; for (let i = 0; i <= nx; i++) { const v = q.x.min + i * q.x.step; g += `<line x1="${px(v)}" y1="${Y0}" x2="${px(v)}" y2="${Y0 - Ht}" class="gl"/><text x="${px(v)}" y="${Y0 + 18}" text-anchor="middle" class="tk">${v}</text>`; }
+        for (let j = 0; j <= ny; j++) { const v = q.y.min + j * q.y.step; g += `<line x1="${X0}" y1="${py(v)}" x2="${X0 + Wd}" y2="${py(v)}" class="gl"/><text x="${X0 - 8}" y="${py(v) + 4}" text-anchor="end" class="tk">${v}</text>`; }
+        box.innerHTML = `<svg viewBox="0 0 480 330" xmlns="${NS}">${g}<line x1="${X0}" y1="${Y0}" x2="${X0 + Wd}" y2="${Y0}" class="ax"/><line x1="${X0}" y1="${Y0}" x2="${X0}" y2="${Y0 - Ht}" class="ax"/><text x="${X0 + Wd / 2}" y="${Y0 + 42}" text-anchor="middle" class="al">${esc(q.x.label)}</text><text transform="translate(16 ${Y0 - Ht / 2}) rotate(-90)" text-anchor="middle" class="al">${esc(q.y.label)}</text><g class="plotted"></g><g class="hit"></g></svg>`;
+        const svg = box.querySelector('svg'), plotted = svg.querySelector('.plotted'), hit = svg.querySelector('.hit');
+        const draw = () => { plotted.innerHTML = resp.pts.map(p => `<circle cx="${px(p[0])}" cy="${py(p[1])}" r="7" class="pt"/>`).join('') + (resp.pts.length > 1 ? `<polyline points="${resp.pts.slice().sort((a, b) => a[0] - b[0]).map(p => px(p[0]) + ',' + py(p[1])).join(' ')}" class="pl"/>` : ''); };
+        for (let i = 0; i <= nx; i++) for (let j = 0; j <= ny; j++) {
+          const xv = +(q.x.min + i * q.x.step).toFixed(6), yv = +(q.y.min + j * q.y.step).toFixed(6);
+          const c = document.createElementNS(NS, 'circle'); c.setAttribute('cx', px(xv)); c.setAttribute('cy', py(yv)); c.setAttribute('r', 9); c.setAttribute('class', 'hitc'); c.setAttribute('data-p', xv + ',' + yv);
+          c.addEventListener('click', () => { const k = xv + ',' + yv; const i2 = resp.pts.findIndex(p => p.join(',') === k); if (i2 >= 0) resp.pts.splice(i2, 1); else resp.pts.push([xv, yv]); draw(); changed(); });
+          hit.append(c);
+        }
+        // keyboard alternative
+        const kx = el('input', { type: 'text', inputmode: 'decimal', class: 'numin s', 'aria-label': 'x' }), ky = el('input', { type: 'text', inputmode: 'decimal', class: 'numin s', 'aria-label': 'y' });
+        const add = el('button', { class: 'btn small', type: 'button', onclick: () => { const a = parseNum(kx.value), b = parseNum(ky.value); if (a == null || b == null) return; const k = a + ',' + b; if (!resp.pts.some(p => p.join(',') === k)) resp.pts.push([a, b]); draw(); changed(); kx.value = ky.value = ''; } }, 'Add point');
+        const clr = el('button', { class: 'btn small ghost', type: 'button', onclick: () => { resp.pts = []; draw(); changed(); } }, 'Clear all');
+        W.append(box, el('div', { class: 'numrow' }, el('span', {}, 'Or type: x ='), kx, el('span', {}, 'y ='), ky, add, clr));
+        draw();
+        if (q.follow) {
+          const f = q.follow, fl = el('div', { class: 'opts' }); W.append(el('p', { class: 'qp' }, f.prompt), fl);
+          shuffle(f.options.map((_, i) => i), seed + 'f').forEach((oi, k) => { const b = el('button', { class: 'opt', type: 'button', 'data-oi': oi }, el('span', { class: 'key' }, String.fromCharCode(65 + k)), el('span', {}, f.options[oi].t)); b.onclick = () => { resp.f = oi; fl.querySelectorAll('.opt').forEach(x => x.classList.toggle('sel', +x.dataset.oi === oi)); changed(); }; if (resp.f === oi) b.classList.add('sel'); fl.append(b); });
+        }
+        break;
+      }
+      case 'sim': {
+        resp = resp || { pred: null, trials: [], concl: null }; let cur = 10;
+        const view = el('div', { class: 'scope' }); const setView = () => { view.innerHTML = Fig.F.scopeView(cur); objBtns.forEach(b => b.classList.toggle('sel', +b.dataset.o === cur)); setTxt(mag, `Eyepiece ×10 · Objective ×${cur} → Total magnification ×${10 * cur}`); };
+        const steps = el('ol', { class: 'simsteps' });
+        const predOpts = [['more', 'More cells across the field of view'], ['fewer', 'Fewer cells across the field of view'], ['same', 'The same number of cells']];
+        const pred = el('div', { class: 'opts' }, ...predOpts.map(([v, t]) => { const b = el('button', { class: 'opt' + (resp.pred === v ? ' sel' : ''), type: 'button' }, t); b.onclick = () => { resp.pred = v; pred.querySelectorAll('.opt').forEach(x => x.classList.remove('sel')); b.classList.add('sel'); changed(); }; return b; }));
+        const objBtns = [4, 10, 40].map(o => el('button', { class: 'btn small', type: 'button', 'data-o': o, onclick: () => { cur = o; setView(); } }, '×' + o));
+        const mag = el('p', { class: 'muted' });
+        const cnt = el('input', { type: 'text', inputmode: 'decimal', class: 'numin s', 'aria-label': 'Number of cells' });
+        const rec = el('table', { class: 'grid small' });
+        const drawRec = () => { rec.innerHTML = '<tr><th>Trial</th><th>Total magnification</th><th>Cells on the red line</th></tr>' + resp.trials.map((t, i) => `<tr><td>${i + 1}</td><td>×${10 * t.obj}</td><td>${esc(t.count)}</td></tr>`).join(''); };
+        const recBtn = el('button', { class: 'btn small', type: 'button', onclick: () => { if (parseNum(cnt.value) == null) { cnt.focus(); return; } resp.trials.push({ obj: cur, count: cnt.value }); cnt.value = ''; drawRec(); changed(); } }, 'Record result');
+        const redo = el('button', { class: 'btn small ghost', type: 'button', onclick: () => { resp.trials = []; drawRec(); changed(); } }, 'Start again');
+        const conc = el('div', { class: 'opts' }, ...[['fewer', 'Higher magnification → cells look bigger → FEWER cells fit across the field of view.'], ['more', 'Higher magnification → MORE cells fit across the field of view.'], ['same', 'Magnification does not change what we see.']].map(([v, t]) => { const b = el('button', { class: 'opt' + (resp.concl === v ? ' sel' : ''), type: 'button' }, t); b.onclick = () => { resp.concl = v; conc.querySelectorAll('.opt').forEach(x => x.classList.remove('sel')); b.classList.add('sel'); changed(); }; return b; }));
+        steps.append(
+          el('li', {}, el('b', {}, 'Predict: '), 'If you change from a low-power to a high-power objective lens, what will you see?', pred),
+          el('li', {}, el('b', {}, 'Change ONE variable: '), 'choose the objective lens (keep the ×10 eyepiece and the onion epidermis slide the same).', el('div', { class: 'btnrow' }, ...objBtns), mag, view),
+          el('li', {}, el('b', {}, 'Observe & record: '), 'count the cells sitting on the red line (estimate and round).', el('div', { class: 'numrow' }, cnt, recBtn, redo), rec),
+          el('li', {}, el('b', {}, 'Conclude: '), 'Compare at least 2 trials.', conc));
+        W.append(steps); setView(); drawRec(); break;
+      }
+    }
+    return api;
+  }
+
+  /* Practice controller: tries, hints, guided reasoning and a twin after two wrong tries. */
+  function practice(q, host, o) {
+    // o: {rec, save(rec), seed, onDone(rec), mode:'stop'|'ex'}
+    const rec = o.rec || {}; rec.tries = rec.tries || 0;
+    host.innerHTML = '';
+    if (q.type === 'say' && window.Primary) return window.Primary.say(q, host, o, rec);
+    const head = el('div', { class: 'qhead' }, o.nested ? null : el('code', {}, q.id),
+      el('span', { class: 'tag t-' + q.type }, q.tag || TYPE_VI[q.type] || q.type), el('span', { class: 'tag d-' + q.diff }, DIFF[q.diff] || q.diff), el('span', { class: 'tag' }, q.obj),
+      q.adv ? el('span', { class: 'tag adv' }, '* Advanced') : null);
+    host.append(head, el('p', { class: 'qp' }, q.prompt.replace(/^\* Advanced\.\s*/, '')));
+    if (q.audio && window.Primary) host.append(window.Primary.audioBar(q.audio, q.slow));
+    if (q.src) host.append(el('p', { class: 'src' }, 'Source: ', el('a', { href: q.src.url, target: '_blank', rel: 'noopener' }, q.src.name)));
+    const body = el('div'); host.append(body);
+    const api = renderBody(q, body, { seed: o.seed, resp: rec.resp, onChange: r => { rec.resp = r; } });
+    const fb = el('div', { class: 'fb', 'aria-live': 'polite' }); const add = (...k) => fb.append(...k.filter(x => x != null && x !== false)); const actions = el('div', { class: 'btnrow' });
+    const checkBtn = el('button', { class: 'btn primary shine', type: 'button' }, 'Check answer');
+    actions.append(checkBtn); host.append(actions, fb);
+    const finish = (msg) => { api.lock(); checkBtn.remove(); o.save(rec); o.onDone && o.onDone(rec, msg); };
+    function showSolved(g) {
+      fb.className = 'fb ok'; fb.innerHTML = '';
+      add(el('b', {}, rec.tries === 1 ? '✓ Spot on!' : '✓ Correct (attempt ' + rec.tries + ').'), g.fb.length && q.type === 'mcq' ? el('p', {}, g.fb[0]) : null,
+        q.reason ? el('p', { class: 'reason' }, '💡 ', q.reason) : null,
+        (q.type === 'explain' || q.type === 'para') ? rubricView(q, g) : null);
+      api.markOpts && api.markOpts(); api.markSpots && api.markSpots();
+    }
+    if (rec.done) { const g = grade(q, rec.resp); if (rec.ok) showSolved(g); else showReveal(g, true); api.lock(); checkBtn.remove(); return; }
+    function showReveal(g, quiet) {
+      fb.className = 'fb guide'; fb.innerHTML = '';
+      if (!quiet && g && g.fb && g.fb.length) add(el('div', { class: 'fb bad' }, ...g.fb.slice(0, 3).map(t => el('p', {}, t))));
+      add(el('b', {}, 'Let\'s reason it through step by step'), el('p', { class: 'reason' }, q.reason || q.hint || 'Re-read the question, underline the key words and rule out the wrong answers.'),
+        el('p', {}, el('b', {}, 'Answer: '), answerText(q)), (q.type === 'explain' || q.type === 'para') ? rubricView(q, g) : null);
+      api.markOpts && api.markOpts(); api.markSpots && api.markSpots();
+      if (quiet) return;
+      if (q.twin) {
+        const tw = el('div', { class: 'twin' }); add(el('p', { class: 'muted' }, 'Now try a similar question to make sure you\'ve got it:'), tw);
+        const twRec = rec.twin || {}; rec.twin = twRec;
+        practice(q.twin, tw, { rec: twRec, seed: o.seed, save: () => o.save(rec), onDone: () => { rec.done = true; o.save(rec); o.onDone && o.onDone(rec); }, nested: true });
+      } else {
+        add(el('button', { class: 'btn', type: 'button', onclick: () => { rec.done = true; o.save(rec); o.onDone && o.onDone(rec); } }, 'I understand – continue'));
+      }
+    }
+    checkBtn.onclick = async () => {
+      let g = grade(q, api.get());
+      // paragraph answers: the server marks them against the mark scheme with AI (live site); keywords otherwise
+      if (q.type === 'para' && g.answered !== false && !g.short && QE.aiMark) {
+        checkBtn.disabled = true; const t0 = checkBtn.textContent; checkBtn.textContent = 'Marking…';
+        try { const r = await QE.aiMark(q, api.get()); if (r && Array.isArray(r.hits)) g = Object.assign({}, g, r, { answered: true }); } catch (e) { /* keyword mark stands */ }
+        checkBtn.disabled = false; checkBtn.textContent = t0;
+      }
+      if (!g.answered) { fb.className = 'fb warn'; fb.textContent = g.fb[0] || 'Please answer first.'; return; }
+      rec.tries++; rec.resp = api.get();
+      o.onCheck && o.onCheck(g, rec);
+      if (g.ok) { rec.ok = true; rec.done = true; rec.score = rec.tries === 1 ? 1 : rec.tries === 2 ? 0.5 : 0; showSolved(g); finish(); return; }
+      rec.wrong = (rec.wrong || 0) + 1; rec.everWrong = true;
+      if (rec.tries >= 2) { rec.score = 0; checkBtn.remove(); api.lock(); showReveal(g); o.save(rec); return; }
+      fb.className = 'fb bad'; fb.innerHTML = '';
+      add(el('b', {}, g.detail ? `Not all correct yet (${g.detail}).` : 'Not quite.'), ...g.fb.slice(0, 4).map(t => el('p', {}, t)), q.hint ? el('p', { class: 'hint' }, '👉 Hint: ', q.hint) : null,
+        el('p', { class: 'muted' }, 'Change your answer, then press “Check answer” again.'));
+      checkBtn.textContent = 'Check again'; o.save(rec);
+    };
+    return rec;
+  }
+  function rubricView(q, g) {
+    return el('div', { class: 'rubric' }, el('b', {}, 'Mark scheme (1 mark per point):'),
+      el('ul', {}, ...q.rubric.map((p, i) => el('li', { class: g.hits && g.hits[i] ? 'hit' : '' }, (g.hits && g.hits[i] ? '✓ ' : '○ ') + p.pt))),
+      el('p', {}, el('b', {}, 'Model answer: '), q.model));
+  }
+
+  window.QE = { aiMark: null, el, setTxt, esc, grade, renderBody, practice, answerText, TYPE_VI, DIFF, shuffle, isTick, parseNum, dataTable };
+})();

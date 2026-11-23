@@ -1,0 +1,930 @@
+{
+"13.1": {
+"captions": [
+[
+0.0,
+"Welcome to Atomic Education."
+],
+[
+2.52,
+"This lesson was written by the Atomic teaching team to"
+],
+[
+6.64,
+"help you learn Cambridge Lower Secondary Science with confidence."
+],
+[
+10.73,
+"Let's begin!"
+],
+[
+12.13,
+"Welcome to Unit 13: Earth Processes."
+],
+[
+15.81,
+"Volcanoes are found all over the world, from Iceland to Indonesia."
+],
+[
+20.6,
+"They are openings where heat escapes from deep inside the Earth."
+],
+[
+24.54,
+"That heat, called geothermal energy, can even generate electricity."
+],
+[
+28.67,
+"Let's explore what's happening beneath our feet, and in the air above us."
+],
+[
+33.82,
+"The Earth is made of layers."
+],
+[
+36.19,
+"On the outside is the crust, a thin layer of solid rock,"
+],
+[
+39.73,
+"up to about 60 kilometres thick."
+],
+[
+42.41,
+"Below is the mantle."
+],
+[
+44.39,
+"The upper mantle is semi-molten rock called magma."
+],
+[
+47.52,
+"The lower mantle is extremely hot, but the huge pressure keeps it solid."
+],
+[
+52.7,
+"At the centre is the core, made mainly of iron and nickel."
+],
+[
+57.06,
+"The outer core is liquid metal."
+],
+[
+59.0,
+"The inner core is the hottest layer,"
+],
+[
+61.25,
+"but the enormous pressure keeps it solid."
+],
+[
+64.47,
+"Diagrams often show the crust as one solid piece,"
+],
+[
+68.1,
+"but it's actually broken into huge slabs of rock called tectonic plates."
+],
+[
+72.55,
+"They fit together like the pieces of a jigsaw puzzle and rest on the mantle."
+],
+[
+77.25,
+"This is the model of plate tectonics."
+],
+[
+80.19,
+"Plates are made of two kinds of crust."
+],
+[
+83.29,
+"Oceanic crust is heavy and dense, and forms the ocean floor."
+],
+[
+87.03,
+"Continental crust is less dense, and forms the continents."
+],
+[
+91.31,
+"The plates are about 100 kilometres thick, and they move very slowly,"
+],
+[
+96.31,
+"between 1 and 10 centimetres a year."
+],
+[
+98.54,
+"Scientists believe they move because the hot core heats magma in the mantle,"
+],
+[
+103.23,
+"making it rise, spread and sink, dragging the plates along."
+],
+[
+107.53,
+"These are approximate thicknesses of the Earth's layers."
+],
+[
+111.65,
+"For the inner core, the bar shows its radius,"
+],
+[
+114.48,
+"from the centre to its edge."
+],
+[
+116.89,
+"The crust is so thin that its bar is almost invisible:"
+],
+[
+120.99,
+"on average about 35 kilometres under the continents."
+],
+[
+124.24,
+"The mantle is nearly 3000 kilometres thick."
+],
+[
+127.58,
+"Pause and decide: which layer is the thickest,"
+],
+[
+131.2,
+"and why is the crust sometimes compared to the skin of an apple?"
+]
+],
+"chapters": [
+[
+0.0,
+"Cambridge Lower Secondary Science"
+],
+[
+12.13,
+"Earth Processes"
+],
+[
+33.82,
+"The layers of the Earth"
+],
+[
+64.47,
+"Tectonic plates"
+],
+[
+107.53,
+"Real data: how thick are the Earth's layers?"
+]
+],
+"stops": [
+{
+"id": "u13v1a",
+"t": 64.12,
+"review": [
+33.82,
+64.47
+]
+},
+{
+"id": "u13v1b",
+"t": 107.18,
+"review": [
+64.47,
+107.53
+]
+},
+{
+"id": "u13n11",
+"t": 135.36,
+"review": [
+107.53,
+135.71
+]
+}
+],
+"dur": 135.767,
+"src": "media/u13_s1.f3e806ef.mp4",
+"poster": "media/u13_s1_poster.f3e806ef.jpg"
+},
+"13.2": {
+"captions": [
+[
+0.0,
+"The place where two or more plates meet is a plate boundary."
+],
+[
+3.66,
+"Over millions of years,"
+],
+[
+5.06,
+"moving plates can create oceans and mountains and even move continents."
+],
+[
+9.39,
+"At a transform boundary, two plates slide past each other in opposite directions."
+],
+[
+14.33,
+"This can cause earthquakes."
+],
+[
+16.63,
+"At a divergent boundary, plates move away from each other."
+],
+[
+20.98,
+"Magma rises into the gap, forming volcanoes and valleys."
+],
+[
+25.12,
+"At a convergent boundary, plates collide, pushing the land up into fold mountains."
+],
+[
+31.63,
+"Four flat layers of coloured modelling clay are stacked on a table,"
+],
+[
+36.38,
+"like layers of rock."
+],
+[
+37.62,
+"Two hands push them slowly together from both ends."
+],
+[
+40.78,
+"Predict: what will happen to the layers?"
+],
+[
+43.25,
+"Pause and decide."
+],
+[
+44.98,
+"Watch. The ends are pushed slowly towards each other."
+],
+[
+49.77,
+"The layers bend and fold upwards into hills and valleys."
+],
+[
+54.04,
+"They stay in the same order."
+],
+[
+56.48,
+"Explain what you saw."
+],
+[
+58.5,
+"The pushes model two continental plates moving towards each other at a convergent boundary."
+],
+[
+64.07,
+"The rock layers have nowhere to go, so they fold upwards,"
+],
+[
+67.56,
+"forming fold mountains. This is how the Himalayas formed."
+],
+[
+71.05,
+"Pause and explain it in your own words."
+],
+[
+74.11,
+"The plates are always moving, so the ground is always moving too."
+],
+[
+78.76,
+"Usually we can't feel it."
+],
+[
+80.31,
+"But sometimes the ground shakes violently."
+],
+[
+82.93,
+"That's an earthquake."
+],
+[
+84.88,
+"Earthquakes often happen at transform boundaries."
+],
+[
+88.62,
+"Friction can make the plates stick, so stress builds up."
+],
+[
+92.05,
+"Eventually the stress is too great, and the plates move suddenly,"
+],
+[
+96.03,
+"releasing a huge amount of energy as seismic waves, or shock waves,"
+],
+[
+100.14,
+"which make the ground shake."
+],
+[
+102.51,
+"The point underground where the earthquake starts is the focus."
+],
+[
+107.12,
+"The point on the surface directly above it is the epicentre."
+],
+[
+110.8,
+"Indonesia has many earthquakes, because three plates meet there."
+],
+[
+115.39,
+"A volcano is a vent in the crust where magma and gases escape."
+],
+[
+119.79,
+"Volcanoes form at weak points, often at divergent and convergent boundaries."
+],
+[
+124.45,
+"Magma is less dense than the solid rock around it,"
+],
+[
+127.51,
+"so it rises and is trapped in a magma chamber,"
+],
+[
+130.33,
+"where pressure builds up."
+],
+[
+132.53,
+"When the pressure gets too high, magma pushes up through the vent,"
+],
+[
+137.3,
+"and the volcano erupts."
+],
+[
+138.71,
+"Magma that reaches the surface is called lava."
+],
+[
+141.52,
+"Over time, layers of lava and ash build up into a cone."
+],
+[
+144.89,
+"There are about 600 active volcanoes today."
+],
+[
+147.52,
+"Mount Vesuvius destroyed the Roman city of Pompeii almost 2000 years ago."
+],
+[
+152.65,
+"Magma also heats underground water, making hot water and steam."
+],
+[
+157.27,
+"Geothermal power plants use this thermal energy to generate electricity."
+],
+[
+162.38,
+"Fold mountains form at convergent boundaries,"
+],
+[
+165.8,
+"where two continental plates move towards each other."
+],
+[
+169.78,
+"The movement forces the rock layers to fold upwards, forming hills, mountains,"
+],
+[
+175.37,
+"or even whole mountain ranges."
+],
+[
+177.9,
+"The Himalayas formed about 50 million years ago when"
+],
+[
+181.81,
+"the Indian Plate pushed into the Eurasian Plate."
+],
+[
+184.75,
+"The plates are still colliding,"
+],
+[
+186.65,
+"so Mount Everest may still be growing by up to half a centimetre a year!"
+],
+[
+191.06,
+"You can model this by gently pushing two sheets of paper together."
+]
+],
+"chapters": [
+[
+0.0,
+"Where plates meet"
+],
+[
+31.63,
+"Predict, watch, explain: modelling fold mountains"
+],
+[
+74.11,
+"What causes earthquakes?"
+],
+[
+115.39,
+"How volcanoes form"
+],
+[
+162.38,
+"How fold mountains form"
+]
+],
+"stops": [
+{
+"id": "u13v2a",
+"t": 31.28,
+"review": [
+0.0,
+31.63
+]
+},
+{
+"id": "u13n12p",
+"t": 44.63,
+"review": [
+31.63,
+44.98
+]
+},
+{
+"id": "u13n12e",
+"t": 73.76,
+"review": [
+31.63,
+74.11
+]
+},
+{
+"id": "u13v2b",
+"t": 115.04,
+"review": [
+74.11,
+115.39
+]
+},
+{
+"id": "u13v2c",
+"t": 162.03,
+"review": [
+115.39,
+162.38
+]
+}
+],
+"dur": 195.6,
+"src": "media/u13_s2.f7366579.mp4",
+"poster": "media/u13_s2_poster.f7366579.jpg"
+},
+"13.3": {
+"captions": [
+[
+0.0,
+"The Earth is surrounded by a layer of air called the atmosphere."
+],
+[
+4.05,
+"Air is a mixture of gases, and the biggest part, 78 percent,"
+],
+[
+7.84,
+"about four-fifths, is nitrogen!"
+],
+[
+10.46,
+"Oxygen, the gas we need to breathe, makes up only about 21 percent."
+],
+[
+15.47,
+"Together, nitrogen and oxygen make up 99 percent of clean, dry air."
+],
+[
+20.39,
+"The last 1 percent is carbon dioxide and other gases."
+],
+[
+24.48,
+"Even small changes in carbon dioxide have big effects on the Earth."
+],
+[
+28.72,
+"Real air also contains water vapour."
+],
+[
+31.0,
+"The amount, called humidity, is higher on warm days,"
+],
+[
+34.3,
+"because warm air holds more water vapour."
+],
+[
+37.56,
+"The composition of air can change."
+],
+[
+40.32,
+"Natural emissions add gases: a volcanic eruption releases ash, carbon dioxide,"
+],
+[
+45.26,
+"water vapour and sulfur dioxide,"
+],
+[
+47.29,
+"and every living thing gives off carbon dioxide when it respires."
+],
+[
+52.08,
+"Pollution changes the air too."
+],
+[
+54.72,
+"Burning fossil fuels in power plants,"
+],
+[
+57.06,
+"factories and vehicles releases pollutants such as sulfur dioxide,"
+],
+[
+61.24,
+"oxides of nitrogen and tiny particles called particulate matter,"
+],
+[
+65.3,
+"which can cause breathing problems."
+],
+[
+67.51,
+"It also increases the carbon dioxide in the air."
+],
+[
+71.2,
+"Since 1958, scientists have measured carbon dioxide in the air at Mauna Loa,"
+],
+[
+76.69,
+"a mountain in Hawaii."
+],
+[
+78.04,
+"The unit is parts per million."
+],
+[
+80.63,
+"In 1960 the level was about 317 parts per million."
+],
+[
+84.63,
+"By 2024 it had risen to about 425."
+],
+[
+87.49,
+"The line is getting steeper:"
+],
+[
+90.05,
+"carbon dioxide is rising faster now than in the 1960s."
+],
+[
+94.22,
+"Pause and decide: what human activity is the main cause of this rise?"
+],
+[
+100.11,
+"Scientists have been measuring carbon dioxide in the atmosphere for decades,"
+],
+[
+105.55,
+"and the amount keeps rising."
+],
+[
+107.34,
+"Carbon dioxide traps heat,"
+],
+[
+108.99,
+"so more of it causes global warming and climate change."
+],
+[
+113.17,
+"NASA has attached an instrument called OCO-3 to the International Space Station."
+],
+[
+118.97,
+"It can measure carbon dioxide in the atmosphere 72 thousand times a day!"
+],
+[
+124.2,
+"The data show that tropical forests absorb carbon dioxide for photosynthesis."
+],
+[
+129.79,
+"But when forests are cut down and burnt, more carbon dioxide is released,"
+],
+[
+134.39,
+"and fewer trees are left to absorb it."
+],
+[
+136.79,
+"Information like this helps us find solutions to climate change."
+]
+],
+"chapters": [
+[
+0.0,
+"What makes up the air?"
+],
+[
+37.56,
+"How the air changes"
+],
+[
+71.2,
+"Real data: carbon dioxide in the air (Mauna Loa)"
+],
+[
+100.11,
+"Monitoring carbon dioxide"
+]
+],
+"stops": [
+{
+"id": "u13v3a",
+"t": 37.21,
+"review": [
+0.0,
+37.56
+]
+},
+{
+"id": "u13n13",
+"t": 99.76,
+"review": [
+71.2,
+100.11
+]
+},
+{
+"id": "u13v3b",
+"t": 112.82,
+"review": [
+100.11,
+113.17
+]
+}
+],
+"dur": 141.367,
+"src": "media/u13_s3.bbb501b7.mp4",
+"poster": "media/u13_s3_poster.bbb501b7.jpg"
+},
+"13.4": {
+"captions": [
+[
+0.0,
+"The water cycle describes how water moves continuously around the Earth."
+],
+[
+4.32,
+"First, evaporation: the Sun heats water in oceans, lakes and rivers,"
+],
+[
+8.41,
+"and it turns into water vapour, which rises into the air."
+],
+[
+12.48,
+"Next, condensation: as water vapour rises,"
+],
+[
+15.8,
+"it cools and changes into tiny droplets of water,"
+],
+[
+18.82,
+"which collect to form clouds."
+],
+[
+21.28,
+"As droplets grow larger and heavier, they fall as precipitation,"
+],
+[
+26.0,
+"such as rain or snow."
+],
+[
+27.96,
+"Water then flows across the land as run-off, and collects in rivers,"
+],
+[
+32.83,
+"lakes and oceans. Some soaks into the ground to become groundwater,"
+],
+[
+36.9,
+"which can also flow back to the sea."
+],
+[
+39.74,
+"And so the cycle goes on and on:"
+],
+[
+42.41,
+"the rain falling on you today could have been in the ocean yesterday!"
+],
+[
+46.61,
+"You can model it with warm water in a glass,"
+],
+[
+49.28,
+"covered with cling film and topped with ice cubes."
+],
+[
+52.97,
+"A bowl of warm salty water has an empty cup in the middle."
+],
+[
+57.12,
+"The bowl is covered with cling film, with an ice cube on top,"
+],
+[
+60.84,
+"right above the cup."
+],
+[
+62.07,
+"Predict: will any water get into the cup?"
+],
+[
+64.57,
+"Will it be salty?"
+],
+[
+65.61,
+"Pause and decide."
+],
+[
+67.33,
+"Watch. The bowl is left in the sun for an hour."
+],
+[
+70.99,
+"Tiny drops appear under the cling film."
+],
+[
+74.08,
+"The drops run to the lowest point and drip into the cup."
+],
+[
+78.28,
+"The water in the cup does not taste salty."
+],
+[
+81.54,
+"Explain what you saw."
+],
+[
+83.54,
+"The warm water evaporated, but the salt stayed behind."
+],
+[
+86.8,
+"The water vapour cooled under the cold cling film and condensed into drops,"
+],
+[
+91.33,
+"which fell like rain into the cup."
+],
+[
+93.38,
+"This models evaporation, condensation and precipitation in the water cycle."
+],
+[
+97.91,
+"Pause and explain it in your own words."
+],
+[
+100.92,
+"Now it is your turn to shine!"
+],
+[
+103.32,
+"Pause the video after each question and try to answer it first."
+],
+[
+107.88,
+"Question 1: Which layer of the Earth is the hottest?"
+],
+[
+111.88,
+"Pause the video now."
+],
+[
+113.79,
+"Answer: The inner core."
+],
+[
+116.78,
+"Question 2: What type of plate boundary forms fold mountains?"
+],
+[
+121.33,
+"Pause the video now."
+],
+[
+123.23,
+"Answer: A convergent boundary – plates collide."
+],
+[
+127.59,
+"Question 3: Which gas makes up most of the air?"
+],
+[
+131.3,
+"Pause the video now."
+],
+[
+133.22,
+"Answer: Nitrogen – about 78%."
+],
+[
+135.95,
+"Question 4: Name the process in which water vapour turns into droplets to form clouds."
+],
+[
+141.97,
+"Pause the video now."
+],
+[
+143.86,
+"Answer: Condensation."
+]
+],
+"chapters": [
+[
+0.0,
+"The water cycle"
+],
+[
+52.97,
+"Predict, watch, explain: a water cycle in a bowl"
+],
+[
+100.92,
+"Quick quiz"
+]
+],
+"stops": [
+{
+"id": "u13v4a",
+"t": 39.39,
+"review": [
+0.0,
+39.74
+]
+},
+{
+"id": "u13n14p",
+"t": 66.98,
+"review": [
+52.97,
+67.33
+]
+},
+{
+"id": "u13n14e",
+"t": 100.57,
+"review": [
+52.97,
+100.92
+]
+}
+],
+"dur": 146.633,
+"src": "media/u13_s4.c26128f5.mp4",
+"poster": "media/u13_s4_poster.c26128f5.jpg"
+}
+}

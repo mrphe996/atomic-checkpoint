@@ -1,0 +1,22 @@
+{
+  "name": "atomic-checkpoint",
+  "private": true,
+  "type": "module",
+  "description": "Atomic Checkpoint \u2013 Cambridge Lower Secondary Science self-study platform (static web app on Vercel + Supabase database, auth and edge functions).",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node tools/write-config.mjs && node tools/build-icons.mjs && node tools/build-theme.mjs",
+    "build:content": "cd content/authoring && python3 build_json.py && cd ../.. && node tools/build-content.mjs",
+    "build:edge": "node tools/build-edge.mjs",
+    "check:content": "node tools/build-content.mjs --check",
+    "test:api": "node --test tests/api.test.mjs",
+    "test:edge": "EDGE=1 node --test tests/api.test.mjs",
+    "test:sql": "sh tests/sql/run.sh",
+    "test:e2e": "python3 tests/e2e.py",
+    "test:ui": "python3 tests/e2e_ui.py",
+    "dev": "node tools/write-config.mjs && node tools/dev-server.mjs",
+    "test:keys": "node tools/check-keys.mjs"
+  }
+}
