@@ -7,7 +7,7 @@ from kit6 import TITLES
 VID = os.path.join(HERE, '..', '..', '..', '..', 'build', 'p6', 'out'); MEDIA = os.path.join(HERE, '..', '..', '..', 'web', 'media', 's6')
 
 def build(n):
-    U = importlib.import_module(f'u{n:02d}').U; T = importlib.import_module(f'tests_stage6_unit{n:02d}')
+    U = importlib.import_module(f'u{n:02d}').U; T = importlib.import_module(f'tests_stage6_unit{n:02d}_v3' if os.path.exists(os.path.join(HERE, '..', '..', 'private', f'tests_stage6_unit{n:02d}_v3.py')) else f'tests_stage6_unit{n:02d}')
     metas = {}
     for s in U.sections:
         k = int(s.sid.split('.')[1]); mp = os.path.join(VID, f'u{n}_s{k}.json'); metas[s.sid] = json.load(open(mp))

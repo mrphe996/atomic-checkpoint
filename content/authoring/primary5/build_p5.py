@@ -11,7 +11,7 @@ def load(path, name):   # load by file path: Stage 6 has modules with the same n
     spec = importlib.util.spec_from_file_location(name, path); m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); return m
 
 def build(n):
-    U = load(os.path.join(HERE, f'u{n:02d}.py'), f'p5u{n:02d}').U; T = load(os.path.join(PRIV, f'tests_stage5_unit{n:02d}.py'), f'p5t{n:02d}')
+    U = load(os.path.join(HERE, f'u{n:02d}.py'), f'p5u{n:02d}').U; T = load(next(p for p in (os.path.join(PRIV, f'tests_stage5_unit{n:02d}_v3.py'), os.path.join(PRIV, f'tests_stage5_unit{n:02d}.py')) if os.path.exists(p)), f'p5t{n:02d}')
     metas = {}; os.makedirs(MEDIA, exist_ok=True)
     for s in U.sections:
         k = int(s.sid.split('.')[1]); metas[s.sid] = json.load(open(os.path.join(VID, f'u{n}_s{k}.json')))

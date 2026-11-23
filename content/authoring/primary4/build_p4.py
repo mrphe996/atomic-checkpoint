@@ -22,7 +22,8 @@ def dry_meta(n, k):
 
 def build(n, dry=False):
     U = load(os.path.join(HERE, f'u{n:02d}.py'), f'p{STAGE}u{n:02d}').U
-    tp = os.path.join(PRIV, f'tests_stage{STAGE}_unit{n:02d}.py')
+    tp = os.path.join(PRIV, f'tests_stage{STAGE}_unit{n:02d}_v3.py')   # 2026 Unit Test format wins
+    if not os.path.exists(tp): tp = os.path.join(PRIV, f'tests_stage{STAGE}_unit{n:02d}.py')
     T = load(tp, f'p{STAGE}t{n:02d}') if os.path.exists(tp) else None
     metas = {}; os.makedirs(MEDIA, exist_ok=True)
     for s in U.sections:
