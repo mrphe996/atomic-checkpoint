@@ -226,7 +226,7 @@ def apply(path=SRC, video_json=os.path.join(HERE, 's7u03_video.json')):
         ids = {q['id'] for q in NEW_ADV[k]}; s['adv'] = [q for q in s['adv'] if q['id'] not in ids] + NEW_ADV[k]
         if vid and k in vid:
             v = vid[k]; n = k[-1]
-            s['video'] = {"src": f"media/u3_s{n}.mp4", "poster": f"media/u3_s{n}_poster.jpg", "offset": 0, "dur": round(v['dur'], 3), "range": ""}
+            s['video'] = {"src": v.get('src', f"media/u3_s{n}.mp4"), "poster": v.get('poster', f"media/u3_s{n}_poster.jpg"), "offset": 0, "dur": round(v['dur'], 3), "range": ""}
             s['captions'] = v['captions']; s['chapters'] = v['chapters']
             s['stops'] = [dict(stop_q(x['id']), t=x['t'], review=x['review']) for x in v['stops']]
     have = {x['id'] for x in d.get('sources', [])}

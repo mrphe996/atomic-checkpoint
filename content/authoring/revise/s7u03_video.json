@@ -558,7 +558,9 @@
 ]
 }
 ],
-"dur": 432.52
+"dur": 434.467,
+"src": "media/u3_s1.ed63a05b.mp4",
+"poster": "media/u3_s1_poster.ed63a05b.jpg"
 },
 "3.2": {
 "captions": [
@@ -947,7 +949,9 @@
 ]
 }
 ],
-"dur": 274.9
+"dur": 276.2,
+"src": "media/u3_s2.6bc2a3d2.mp4",
+"poster": "media/u3_s2_poster.6bc2a3d2.jpg"
 },
 "3.3": {
 "captions": [
@@ -1224,7 +1228,9 @@
 ]
 }
 ],
-"dur": 183.21
+"dur": 184.033,
+"src": "media/u3_s3.76553ddd.mp4",
+"poster": "media/u3_s3_poster.76553ddd.jpg"
 },
 "3.4": {
 "captions": [
@@ -1573,6 +1579,8 @@
 ]
 }
 ],
-"dur": 257.27
+"dur": 258.1,
+"src": "media/u3_s4.56ea1f20.mp4",
+"poster": "media/u3_s4_poster.56ea1f20.jpg"
 }
 }
