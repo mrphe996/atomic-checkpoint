@@ -1,0 +1,79 @@
+1
+00:00:00,000 --> 00:00:05,266
+When light bounces off a surface, it's reflected, a bit like a ball bouncing off a wall.
+
+2
+00:00:05,266 --> 00:00:10,888
+The ray hitting the mirror is the incident ray, and the ray bouncing off is the reflected ray.
+
+3
+00:00:10,888 --> 00:00:14,557
+The normal is an imaginary line at right angles to the mirror.
+
+4
+00:00:15,616 --> 00:00:20,468
+The law of reflection says the angle of incidence equals the angle of reflection,
+
+5
+00:00:20,468 --> 00:00:26,859
+both measured from the normal. The incident ray, the reflected ray and the normal all lie in the same plane.
+
+6
+00:00:27,918 --> 00:00:32,888
+So if a ray hits a mirror at 35 degrees to the normal, it's reflected at 35 degrees.
+
+7
+00:00:33,948 --> 00:00:39,392
+Smooth, shiny surfaces like mirrors give specular reflection: all rays bounce the same way,
+
+8
+00:00:39,392 --> 00:00:40,693
+making a sharp image.
+
+9
+00:00:40,693 --> 00:00:46,315
+Rough surfaces like paper scatter the rays in different directions: this is diffuse reflection.
+
+10
+00:00:47,374 --> 00:00:53,173
+When you look in a flat, or plane, mirror, light from you reflects off the mirror into your eyes.
+
+11
+00:00:53,173 --> 00:00:58,795
+Your brain traces the rays back in straight lines, so the image seems to be behind the mirror,
+
+12
+00:00:58,795 --> 00:01:01,043
+even though no light comes from there.
+
+13
+00:01:02,102 --> 00:01:08,020
+So the image is virtual: it can't be caught on a screen. It's upright, the same size as the object,
+
+14
+00:01:08,020 --> 00:01:11,984
+and the same distance behind the mirror as the object is in front.
+
+15
+00:01:11,984 --> 00:01:16,896
+And it's laterally inverted: raise your right hand, and your image raises its left!
+
+16
+00:01:17,955 --> 00:01:24,109
+A student shines a ray box at a plane mirror and measures both angles from the normal with a protractor.
+
+17
+00:01:25,168 --> 00:01:28,423
+At 10 degrees the reflected ray is also at 10 degrees.
+
+18
+00:01:28,423 --> 00:01:32,269
+At 20 degrees she measures 21, and at 30 degrees she measures 29.
+
+19
+00:01:33,328 --> 00:01:39,009
+The points lie very close to a straight line through the origin, where the two angles are equal.
+
+20
+00:01:40,068 --> 00:01:46,281
+Pause and decide: do her results support the law of reflection, and why are some readings one degree out?

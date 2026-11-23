@@ -1,0 +1,103 @@
+1
+00:00:00,000 --> 00:00:06,204
+Gas particles are always moving fast and bumping into things. Each collision with a surface pushes on it.
+
+2
+00:00:06,204 --> 00:00:07,433
+That's gas pressure.
+
+3
+00:00:07,433 --> 00:00:13,755
+In an inflated balloon, more particles push on the inside than the outside, so the balloon holds its shape.
+
+4
+00:00:13,755 --> 00:00:16,916
+More particles mean more collisions and more pressure.
+
+5
+00:00:17,974 --> 00:00:20,725
+Heating a gas gives its particles more energy,
+
+6
+00:00:20,725 --> 00:00:25,700
+so they move faster and hit the walls more often and harder: the pressure increases.
+
+7
+00:00:25,700 --> 00:00:30,383
+A cold beach ball from the fridge feels soft, but warm it up and it gets harder.
+
+8
+00:00:31,441 --> 00:00:37,704
+Squeezing a gas into a smaller volume means the particles hit the walls more often, so the pressure rises.
+
+9
+00:00:37,704 --> 00:00:40,806
+That's what happens when you sit on an exercise ball.
+
+10
+00:00:41,865 --> 00:00:48,128
+Air is always pressing on us. This is atmospheric pressure. Climb a high mountain, and the pressure falls.
+
+11
+00:00:48,128 --> 00:00:54,625
+Near Earth's surface, gravity pulls air particles closer together, so the air is denser, with more collisions.
+
+12
+00:00:54,625 --> 00:00:57,844
+And at sea level there's more air above, pressing down.
+
+13
+00:00:58,902 --> 00:01:01,068
+Pressure differences let us breathe.
+
+14
+00:01:01,068 --> 00:01:07,331
+When your chest expands, the pressure in your lungs drops below the air pressure outside, so air flows in.
+
+15
+00:01:07,331 --> 00:01:12,130
+Gas always moves from high pressure to low pressure. That's what causes wind, too.
+
+16
+00:01:13,189 --> 00:01:17,871
+Gas pressure is at work around us all the time. Here are four everyday examples.
+
+17
+00:01:18,930 --> 00:01:24,139
+Pump more air into a bicycle tyre and there are more particles hitting the inside walls,
+
+18
+00:01:24,139 --> 00:01:26,832
+so the pressure rises and the tyre feels firm.
+
+19
+00:01:27,890 --> 00:01:30,348
+Aerosol cans warn you never to heat them.
+
+20
+00:01:30,348 --> 00:01:35,909
+Hotter gas particles move faster and hit the walls harder, so the pressure could burst the can.
+
+21
+00:01:36,968 --> 00:01:40,421
+When you suck on a straw you lower the pressure inside it.
+
+22
+00:01:40,421 --> 00:01:44,869
+The higher air pressure on the drink outside pushes the liquid up the straw.
+
+23
+00:01:45,928 --> 00:01:50,844
+High up a mountain, the air pressure is lower, so each breath contains less oxygen.
+
+24
+00:01:50,844 --> 00:01:54,064
+Climbers on the highest peaks often carry oxygen tanks.
+
+25
+00:01:55,122 --> 00:02:00,273
+In every example, the pressure comes from moving gas particles colliding with surfaces.
+
+26
+00:02:00,273 --> 00:02:02,380
+Pause and think of one more example.

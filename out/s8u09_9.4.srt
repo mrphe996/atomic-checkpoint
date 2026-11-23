@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:02,297
+The particle model explains pressure.
+
+2
+00:00:02,297 --> 00:00:06,891
+In a solid, strong forces hold particles close together, vibrating in place.
+
+3
+00:00:07,951 --> 00:00:12,847
+In a liquid, weaker forces let particles slide past each other, so liquids flow,
+
+4
+00:00:12,847 --> 00:00:16,232
+but they're still close together and can't be squashed.
+
+5
+00:00:16,232 --> 00:00:22,096
+In a gas, particles are far apart and move fast in all directions, so gases are easy to compress.
+
+6
+00:00:23,156 --> 00:00:28,777
+When a substance is heated, its particles gain energy, move faster and spread further apart,
+
+7
+00:00:28,777 --> 00:00:34,822
+so it expands. With enough energy, they break away from each other and the substance changes state,
+
+8
+00:00:34,822 --> 00:00:39,960
+melting and then boiling. Expanding and changing state can greatly increase pressure.
+
+9
+00:00:41,020 --> 00:00:44,043
+Natural diamonds form deep in the Earth's mantle,
+
+10
+00:00:44,043 --> 00:00:47,851
+where the weight of the rocks above creates enormous pressure.
+
+11
+00:00:47,851 --> 00:00:53,835
+Combined with high temperatures, this forces carbon atoms into diamond's special crystal structure.
+
+12
+00:00:54,895 --> 00:01:01,242
+Today, about 99 percent of synthetic diamonds are made in labs using high pressure and high temperature.
+
+13
+00:01:01,242 --> 00:01:06,863
+Scientists have even grown diamonds at normal atmospheric pressure, at 1025 degrees Celsius,
+
+14
+00:01:06,863 --> 00:01:11,276
+using a liquid metal alloy. Lab-grown diamonds have many industrial uses.
