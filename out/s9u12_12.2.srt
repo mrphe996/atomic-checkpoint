@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:05,650
+In a series circuit, components are connected end to end in a single loop, like a one-lane road.
+
+2
+00:00:05,650 --> 00:00:11,709
+The current is the same at every point, but the voltage from the cell is shared between the components.
+
+3
+00:00:11,709 --> 00:00:14,097
+With two identical lamps, each gets half.
+
+4
+00:00:15,155 --> 00:00:21,388
+Add a third lamp and the voltage is shared even more, so all the lamps get dimmer. And if one lamp breaks,
+
+5
+00:00:21,388 --> 00:00:27,330
+the only path is broken, so every lamp goes out, just like traffic stopping on a closed one-lane road.
+
+6
+00:00:28,388 --> 00:00:33,223
+To measure current, connect an ammeter in series, so the current flows through it.
+
+7
+00:00:33,223 --> 00:00:37,534
+To measure voltage, connect a voltmeter in parallel, across the component.

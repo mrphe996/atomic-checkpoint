@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:05,159
+Two identical lamps are connected in series in one circuit, and in parallel in another.
+
+2
+00:00:05,159 --> 00:00:11,079
+In each circuit, one lamp is unscrewed. Predict: what will happen to the other lamp in each circuit?
+
+3
+00:00:11,079 --> 00:00:12,076
+Pause and decide.
+
+4
+00:00:13,135 --> 00:00:17,297
+Watch. In the series circuit, removing one lamp makes the other go out.
+
+5
+00:00:18,355 --> 00:00:23,338
+In the parallel circuit, removing one lamp leaves the other shining just as brightly.
+
+6
+00:00:24,397 --> 00:00:30,493
+Explain what you saw. In series there is only one path, so a gap anywhere stops the current everywhere.
+
+7
+00:00:30,493 --> 00:00:34,421
+In parallel, each lamp is on its own branch with the full voltage,
+
+8
+00:00:34,421 --> 00:00:37,469
+so the other branch still forms a complete circuit.
+
+9
+00:00:37,469 --> 00:00:41,749
+That is why the lights in a house can be switched on and off separately.
+
+10
+00:00:41,749 --> 00:00:44,035
+Pause and explain it in your own words.
+
+11
+00:00:45,094 --> 00:00:50,076
+In a parallel circuit, components sit on separate branches, like lanes on a highway.
+
+12
+00:00:50,076 --> 00:00:55,177
+Each branch gets the full voltage, so adding identical lamps doesn't make them dimmer.
+
+13
+00:00:55,177 --> 00:00:59,866
+If one lamp fails, the others stay on, which is why homes are wired in parallel.
+
+14
+00:01:00,925 --> 00:01:05,849
+The total current is the sum of the branch currents: three 1-amp lamps draw 3 amps.
+
+15
+00:01:05,849 --> 00:01:10,187
+Road analogies help us picture circuits, but every model has limitations.
+
+16
+00:01:10,187 --> 00:01:14,994
+As scientific understanding grows, scientists develop better models and analogies.
