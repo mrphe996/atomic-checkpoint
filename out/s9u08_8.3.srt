@@ -1,0 +1,139 @@
+1
+00:00:00,000 --> 00:00:05,564
+Two identical fizzy vitamin tablets are dropped into glasses of water at 20 degrees Celsius.
+
+2
+00:00:05,564 --> 00:00:11,189
+One is whole; the other has been crushed into powder. Predict: which will stop fizzing first?
+
+3
+00:00:11,189 --> 00:00:12,206
+Pause and decide.
+
+4
+00:00:13,266 --> 00:00:17,514
+Watch. The crushed tablet fizzes much more strongly than the whole one.
+
+5
+00:00:18,573 --> 00:00:23,659
+The crushed tablet stops fizzing after 24 seconds. The whole tablet takes 62 seconds.
+
+6
+00:00:24,719 --> 00:00:26,035
+Explain what you saw.
+
+7
+00:00:26,035 --> 00:00:32,377
+Crushing the tablet gives it a much larger surface area, so many more particles are exposed to the water.
+
+8
+00:00:32,377 --> 00:00:36,386
+There are more collisions every second, so the reaction is faster.
+
+9
+00:00:36,386 --> 00:00:41,532
+Both tablets make the same amount of gas in the end, because they have the same mass.
+
+10
+00:00:41,532 --> 00:00:43,865
+Pause and explain it in your own words.
+
+11
+00:00:44,925 --> 00:00:49,352
+Raise the temperature, and particles gain kinetic energy and move faster.
+
+12
+00:00:49,352 --> 00:00:53,900
+They collide more often and harder, so there are more effective collisions.
+
+13
+00:00:53,900 --> 00:00:57,968
+An effervescent tablet fizzes much faster in hot water than in cold.
+
+14
+00:00:59,028 --> 00:01:04,174
+Increase the concentration, and there are more reactant particles in the same volume,
+
+15
+00:01:04,174 --> 00:01:10,157
+like a crowded room where people bump into each other more. More collisions means a faster reaction.
+
+16
+00:01:11,217 --> 00:01:17,619
+Increase the surface area by breaking a lump into small pieces, and more particles are exposed to collide.
+
+17
+00:01:17,619 --> 00:01:23,961
+Powdered calcium carbonate reacts faster than marble chips, though both make the same total amount of gas.
+
+18
+00:01:25,021 --> 00:01:29,867
+Line A is steeper at the start and levels off sooner, so its reaction is faster,
+
+19
+00:01:29,867 --> 00:01:31,602
+as with hot water or powder.
+
+20
+00:01:31,602 --> 00:01:37,226
+Both lines end at the same height, because the same reactants give the same amount of product.
+
+21
+00:01:38,286 --> 00:01:43,252
+When you plot results, look for any anomalous result that doesn't fit the pattern.
+
+22
+00:01:43,252 --> 00:01:47,261
+It might be a measuring error, so repeat that measurement to check.
+
+23
+00:01:48,321 --> 00:01:54,065
+The class repeats the experiment with whole tablets, changing only the temperature of the water.
+
+24
+00:01:55,124 --> 00:01:58,236
+At 10 degrees Celsius the fizzing lasts 95 seconds.
+
+25
+00:01:58,236 --> 00:02:02,484
+At 20 degrees it lasts 62, at 40 degrees 32, and at 60 degrees only 18.
+
+26
+00:02:03,543 --> 00:02:08,330
+Pause and decide: what is the pattern, and how does collision theory explain it?
+
+27
+00:02:09,390 --> 00:02:14,954
+Now it is your turn to shine! Pause the video after each question and try to answer it first.
+
+28
+00:02:16,014 --> 00:02:20,681
+Question 1: Why is mass conserved in a chemical reaction? Pause the video now.
+
+29
+00:02:21,741 --> 00:02:25,331
+Answer: Atoms are only rearranged, not created or destroyed.
+
+30
+00:02:26,390 --> 00:02:29,921
+Question 2: What is activation energy? Pause the video now.
+
+31
+00:02:30,980 --> 00:02:34,451
+Answer: The minimum energy needed for a reaction to start.
+
+32
+00:02:35,510 --> 00:02:40,716
+Question 3: Give three factors that increase the rate of reaction. Pause the video now.
+
+33
+00:02:41,776 --> 00:02:45,964
+Answer: Higher temperature, higher concentration, larger surface area.
+
+34
+00:02:47,024 --> 00:02:51,391
+Question 4: Why does a reaction slow down over time? Pause the video now.
+
+35
+00:02:52,451 --> 00:02:56,101
+Answer: Reactants are used up, so there are fewer collisions.
