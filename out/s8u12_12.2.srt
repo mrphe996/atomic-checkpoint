@@ -1,0 +1,115 @@
+1
+00:00:00,000 --> 00:00:03,307
+Fossil fuels formed from the remains of living things,
+
+2
+00:00:03,307 --> 00:00:08,299
+buried and exposed to intense heat and pressure underground over millions of years.
+
+3
+00:00:09,359 --> 00:00:13,087
+Coal formed from layers of decayed plant matter and is mined.
+
+4
+00:00:13,087 --> 00:00:19,822
+Crude oil and natural gas formed mostly from marine microorganisms and are extracted by drilling deep into rock.
+
+5
+00:00:20,882 --> 00:00:27,137
+In a power station, fossil fuels are burnt. The heat turns water into steam, the steam drives turbines,
+
+6
+00:00:27,137 --> 00:00:30,624
+and the turbines turn generators that produce electricity.
+
+7
+00:00:31,685 --> 00:00:37,397
+Fossil fuels took millions of years to form, so they can't be replaced as fast as we use them.
+
+8
+00:00:37,397 --> 00:00:42,509
+They can only be used once. That's why they're called non-renewable energy resources.
+
+9
+00:00:43,569 --> 00:00:49,282
+Burning fossil fuels releases carbon dioxide, a greenhouse gas responsible for global warming,
+
+10
+00:00:49,282 --> 00:00:53,131
+and toxic pollutants such as sulfur dioxide and nitrogen oxides.
+
+11
+00:00:54,191 --> 00:01:00,565
+Global warming and climate change are linked to more extreme weather: heatwaves, floods, tropical storms,
+
+12
+00:01:00,565 --> 00:01:06,699
+droughts and wildfires. Scientists classify these events and map them with keys to plan future action.
+
+13
+00:01:07,759 --> 00:01:13,652
+Fracking pumps water, sand and chemicals at high pressure into shale rock to release trapped gas.
+
+14
+00:01:13,652 --> 00:01:19,365
+It can cause tremors, releases greenhouse and toxic gases, uses lots of water and makes noise.
+
+15
+00:01:19,365 --> 00:01:21,590
+And shale gas is still a fossil fuel.
+
+16
+00:01:22,650 --> 00:01:28,844
+Climate scientists compared the carbon dioxide released for each unit of electricity, a kilowatt hour,
+
+17
+00:01:28,844 --> 00:01:33,114
+over the whole life of a power station, from building it to running it.
+
+18
+00:01:34,174 --> 00:01:39,105
+Coal releases about 820 grams for every kilowatt hour, and natural gas about 490.
+
+19
+00:01:39,105 --> 00:01:44,457
+Solar panels release about 48 grams, while nuclear and wind release only about 12 and 11.
+
+20
+00:01:45,517 --> 00:01:50,809
+Pause and decide: why do solar, wind and nuclear still release a little carbon dioxide,
+
+21
+00:01:50,809 --> 00:01:53,996
+even though nothing is burnt to make the electricity?
+
+22
+00:01:55,056 --> 00:01:57,943
+Some atoms, like uranium, have a large nucleus.
+
+23
+00:01:57,943 --> 00:02:02,874
+Fire a neutron at it, and the nucleus splits, releasing energy and more neutrons.
+
+24
+00:02:02,874 --> 00:02:07,023
+These split more nuclei in a chain reaction. This is nuclear fission.
+
+25
+00:02:08,083 --> 00:02:13,736
+In a nuclear power plant, the heat from fission boils water into steam, which turns turbines,
+
+26
+00:02:13,736 --> 00:02:19,810
+just as in a coal power station. Uranium is mined and limited, so nuclear fuel is also non-renewable.
+
+27
+00:02:20,870 --> 00:02:24,478
+Uranium mining clears land and its waste can pollute water.
+
+28
+00:02:24,478 --> 00:02:30,492
+Radioactive waste must be stored safely for a very long time. Hot cooling water harms aquatic life,
+
+29
+00:02:30,492 --> 00:02:35,122
+and accidents like Chernobyl in 1986 contaminate land for thousands of years.
