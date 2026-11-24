@@ -149,7 +149,7 @@
     const foot = el('footer', { class: 'foot' }, el('div', { class: 'in' }, el('img', { src: 'atomic_logo.png', alt: 'Atomic — Quality Learning, Brighter Future.' }),
       el('nav', { class: 'footnav', 'aria-label': 'Legal and help' }, el('a', { href: '#privacy' }, 'Privacy'), el('a', { href: '#terms' }, 'Terms'), el('a', { href: '#cookies' }, 'Cookies'), el('a', { href: '#help' }, 'Help & contact'), el('a', { href: '#verify' }, 'Verify a certificate')),
       el('span', { class: 'tag2' }, el('b', {}, 'ATOMIC EDUCATION'), ' ✦ Quality Learning, Brighter Future. · Written by the Atomic teaching team'),
-      el('p', { class: 'muted disclaimer' }, 'Atomic courses are written by Atomic Education and aligned to Cambridge curriculum frameworks (Primary Science 0097, Lower Secondary Science 0893, Mathematics 0862). Checkpoint-format papers are written by Atomic – they are not Cambridge papers. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.')));
+      el('p', { class: 'muted disclaimer' }, 'Atomic courses are written by Atomic Education and aligned to Cambridge curriculum frameworks (Primary Science 0097, Lower Secondary Science 0893, Primary Mathematics 0096, Lower Secondary Mathematics 0862). Checkpoint-format papers are written by Atomic – they are not Cambridge papers. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.')));
     app.append(...[demoBar, header, sub, wrap, foot].filter(Boolean));
     lastXp = null;
   }
@@ -241,12 +241,12 @@
   /* where am I / what remains / next button (shown on every learning screen) */
   // dotted page header shared by every student page (the "Home 01" look)
   /* ---------- course switcher: Science Stages 7–9 and Mathematics Stage 9 ---------- */
-  const STAGE_N = { 15: 18, 16: 17, 17: 16, 18: 16, 19: 15 };
+  const STAGE_N = { 13: 17, 15: 18, 16: 17, 17: 16, 18: 16, 19: 15 };
   const stagePct = g => Math.round(Object.keys((st && st.results) || {}).filter(k => k.startsWith(`stage${g}-unit`)).length / (STAGE_N[g] || (g >= 10 ? 15 : g <= 6 ? 6 : 14)) * 100);
   const stageShort = g => (g >= 10 ? `Stage ${g - 10}` : `Stage ${g}`);
   function stageSoon(g) {
     const m = $main();
-    pageHero(g >= 10 ? 'CAMBRIDGE LOWER SECONDARY MATHEMATICS' : 'LOWER SECONDARY', `Cambridge ${Core.stageLabel(g)}`, 'This course is being reviewed by the Atomic teaching team and is not open yet.');
+    pageHero(g >= 10 ? (g <= 16 ? 'CAMBRIDGE PRIMARY MATHEMATICS' : 'CAMBRIDGE LOWER SECONDARY MATHEMATICS') : g <= 6 ? 'PRIMARY' : 'LOWER SECONDARY', `Cambridge ${Core.stageLabel(g)}`, 'This course is being reviewed by the Atomic teaching team and is not open yet.');
     m.append(crumbs(`Cambridge ${Core.stageName(g)}`), el('section', { class: 'card lockcard', id: 'stageSoon' }, el('h2', {}, `🔒 Cambridge ${Core.stageLabel(g)} – coming soon`),
       el('p', {}, 'Lessons, practice, Unit Tests and Checkpoint papers for this course open here once the review is finished. Your Science courses stay open as usual.'),
       el('div', { class: 'btnrow' }, el('a', { class: 'btn primary small', href: `#stage-${Core.STAGE}` }, `Back to Cambridge ${Core.stageLabel()}`, el('span', { class: 'arr' }, ' →')))));
@@ -1092,7 +1092,7 @@
         if (img.width) { const h = 120, w = img.width / img.height * h; g.drawImage(img, W / 2 - w / 2, 120, w, h); }
         center('CERTIFICATE OF ACHIEVEMENT', 320, '600 34px Outfit, Figtree, Arial', GOLD, 8);
         center(`Cambridge ${Core.stageLabel()}`, 410, '700 76px Outfit, Figtree, Arial', NAVY);
-        center(Core.IS_MATHS ? 'Cambridge Lower Secondary Mathematics (curriculum framework 0862)' : Core.IS_PRIMARY ? 'Cambridge Primary Science (curriculum framework 0097)' : 'Cambridge Lower Secondary Science (curriculum framework 0893)', 462, '28px Figtree, Arial', '#52627A');
+        center(Core.IS_MATHS ? (Core.STAGE <= 16 ? 'Cambridge Primary Mathematics (curriculum framework 0096)' : 'Cambridge Lower Secondary Mathematics (curriculum framework 0862)') : Core.IS_PRIMARY ? 'Cambridge Primary Science (curriculum framework 0097)' : 'Cambridge Lower Secondary Science (curriculum framework 0893)', 462, '28px Figtree, Arial', '#52627A');
         center('This is to certify that', 545, 'italic 32px Georgia, serif', '#3A4B63');
         center(c.name, 640, 'italic 700 96px Georgia, serif', BLUE);
         g.strokeStyle = GOLD; g.lineWidth = 2; g.beginPath(); g.moveTo(W / 2 - 420, 668); g.lineTo(W / 2 + 420, 668); g.stroke();
@@ -1203,7 +1203,7 @@
       return;
     }
     const tot = Core.totalSeconds(), passedN = Object.keys(st.results || {}).filter(k => k.startsWith(`stage${Core.STAGE}-unit`)).length;
-    pageHero(Core.IS_MATHS ? 'CAMBRIDGE LOWER SECONDARY MATHEMATICS' : Core.IS_PRIMARY ? 'CAMBRIDGE PRIMARY SCIENCE' : 'CAMBRIDGE LOWER SECONDARY SCIENCE', `Cambridge ${Core.stageLabel()}`, 'Open any unit at any time – you do not have to finish one before starting another.',
+    pageHero(Core.IS_MATHS ? (Core.STAGE <= 16 ? 'CAMBRIDGE PRIMARY MATHEMATICS' : 'CAMBRIDGE LOWER SECONDARY MATHEMATICS') : Core.IS_PRIMARY ? 'CAMBRIDGE PRIMARY SCIENCE' : 'CAMBRIDGE LOWER SECONDARY SCIENCE', `Cambridge ${Core.stageLabel()}`, 'Open any unit at any time – you do not have to finish one before starting another.',
       [statCard(el('span', { class: 'ti big' }, '⏱'), `≈ ${estH(Core.INDEX.est || 0)}`, 'whole course'), statCard(el('span', { class: 'ti big' }, '📚'), hrs(tot), 'you have studied'), statCard(ringIcon(Math.round(passedN / Core.unitCount() * 100)), `${passedN} / ${Core.unitCount()}`, 'units completed')]);
     m.append(crumbs(`Cambridge ${Core.stageName(Core.STAGE)}`));
     const rows = Core.INDEX.units.map(u => { const res = (st.results || {})[u.id], sec = Core.unitSeconds(u.n);
@@ -1973,7 +1973,7 @@
     m.append(faq());
   }
   function faq() {
-    const qa = [['Who is Atomic for?', 'Learners aged about 11–14 following Cambridge Lower Secondary Science (Stages 7, 8 and 9) or Mathematics (Stage 9), at an international or bilingual school or studying at home.'],
+    const qa = [['Who is Atomic for?', 'Learners aged about 7–14 following Cambridge Primary or Lower Secondary Science (Stages 3 to 9) or Mathematics (Stages 3, 5, 6, 7, 8 and 9), at an international or bilingual school or studying at home.'],
       ['Do I need an account?', 'Not to try it: topic 3.1 is open to guests. Create a free account to save your progress, unlock every topic and take the Unit Test.'],
       ['Will my parents know how I am doing?', 'If you add a parent’s email when you sign up (it is optional), we send them a short email when you finish a unit. You can add or remove it any time in Settings.'],
       ['Am I on a public leaderboard?', 'Not unless you switch it on in Settings. Everyone is hidden by default, and only your nickname is ever shown.'],
@@ -2191,7 +2191,7 @@
       el('p', { class: 'muted' }, 'This is a short summary of our ', el('a', { href: '#privacy' }, 'Privacy notice'), '.')));
   }
   const viewTerms = () => legal('Terms of use', [
-    ['The service', 'Atomic provides online courses for Cambridge Lower Secondary learners: Science Stages 7, 8 and 9 and Mathematics Stage 9. Courses are written by Atomic and aligned to the Cambridge Lower Secondary Science (0893) and Mathematics (0862) curriculum frameworks. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.'],
+    ['The service', 'Atomic provides online courses for Cambridge Primary and Lower Secondary learners: Science Stages 3 to 9 and Mathematics Stages 3, 5, 6, 7, 8 and 9. Courses are written by Atomic and aligned to the Cambridge Primary Science (0097), Lower Secondary Science (0893), Primary Mathematics (0096) and Lower Secondary Mathematics (0862) curriculum frameworks. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.'],
     ['Who the course is for', 'The courses are designed for learners aged about 11 to 14. Anyone can try topic 3.1 of Science Stage 7 as a guest. Learners create their own free account to save progress; each course is a separate enrolment.'],
     ['Accounts', 'One account per learner. Keep your password private. If you are under the age of digital consent where you live, ask a parent or guardian before you sign up.'],
     ['Plans, trials and refunds', 'Plans renew automatically until cancelled. A free trial converts to a paid plan unless cancelled before it ends. Our order process is conducted by our online reseller Paddle.com, the Merchant of Record for all orders; Paddle provides customer service enquiries and handles returns.'],
