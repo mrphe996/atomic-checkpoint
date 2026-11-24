@@ -38,7 +38,7 @@ for n in range(1, NU + 1):
     rnd.shuffle(easy); rnd.shuffle(hard)
     blocks, used = [], set()
     for k in range(10):
-        h = next(x for x in hard if id(x[1]) not in used); used.add(id(h[1]))
+        h = next((x for x in hard if id(x[1]) not in used), None) or next(x for x in easy if id(x[1]) not in used); used.add(id(h[1]))
         e = next((x for x in easy if id(x[1]) not in used and x[0] != h[0]), None) or next(x for x in easy if id(x[1]) not in used)
         used.add(id(e[1]))
         blocks.append([(clean(e[1], o), 1), (clean(h[1], o), 2)])

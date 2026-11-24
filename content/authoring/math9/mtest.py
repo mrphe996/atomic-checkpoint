@@ -17,7 +17,7 @@ SECS = {"A": "Fluency", "B": "Methods", "C": "Problem solving", "D": "Reasoning"
 MULTI = ("table", "grid", "match", "order", "cloze", "multi")
 STOP = set("a an the of to in on at for and or is are was were be by with as it its this that these those which what why how who when where "
            "do does did can could would should will from into than then so not no yes your you their they he she his her them each one two "
-           "select correct statement following describe explain give use".split())
+           "select correct statement following describe explain give use answer fraction decimal simplest form mixed number places nearest".split())
 
 
 def words(q):
@@ -57,7 +57,7 @@ def assemble(U):
                 if q.get("type") == "explain": q = None; break
                 if key(q) in banned or key(q) in used: q = None; continue
                 break
-            if q: cands.append({"sid": sid, "q": q, "w": words(prettify(dict(q))), "i": i})
+            if q: cands.append({"sid": sid, "q": q, "w": words(prettify(dict(q))), "i": i, "t": t})
         rng.shuffle(cands)
         secs = list(dict.fromkeys(c["sid"] for c in cands))
         ex = tex[:2]; tex = tex[2:]
@@ -77,6 +77,22 @@ def assemble(U):
                     pp = [c for c in pool if prefer(c)]
                     pool = pp or pool
                 if not pool: pool = [c for c in cands if ok(c)]
+                if not pool:   # few templates (short units): a second, different question from the least-used template
+                    use = {}
+                    for x in chosen:
+                        for k_, (sd, tt) in enumerate(U.tpl):
+                            if x.get("t") is tt: use[k_] = use.get(k_, 0) + 1
+                    order = sorted(range(len(U.tpl)), key=lambda k_: (use.get(k_, 0), rng.random()))
+                    for strict in (True, False):
+                        for k_ in order:
+                            sid_, t_ = U.tpl[k_]
+                            for _ in range(30):
+                                q = t_(rng)
+                                if q is None or q.get("type") == "explain" or key(q) in banned or key(q) in used: continue
+                                c = {"sid": sid_, "q": q, "w": words(prettify(dict(q))), "i": -2, "t": t_}
+                                if ok(c) and (pred(c) or not strict): pool = [c]; cands.append(c); break
+                            if pool: break
+                        if pool: break
                 if not pool: raise AssertionError(f"{U.pre}{P}: ran out of templates ({len(chosen)} chosen, {len(cands)} candidates)")
                 pool.sort(key=lambda c: cnt[c["sid"]])
                 c = pool[0]; chosen.append(c); got.append(c)

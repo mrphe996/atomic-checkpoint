@@ -295,6 +295,7 @@ class Section:
         V = [q for q in cand if vis(q)][:2]
         assert len(V) == 2, f"{self.sid}: Core needs 2 diagram/data templates"
         rest = [q for q in cand if all(q is not v for v in V)][:n_core - 2]
+        assert len(V + rest) == n_core, f"{self.sid}: only {len(V + rest)} Core templates work"
         self.core(*(V + rest), ex)
         self.gen("p", n_prac, *T); self.gen("a", n_adv, *(adv or T))
         return self

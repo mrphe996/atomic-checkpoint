@@ -1,0 +1,151 @@
+# -*- coding: utf-8 -*-
+"""Stage 7 Mathematics · Unit 9 Sequences and functions (9.1 Generating sequences (1), 9.2 Generating sequences (2),
+9.3 Using the nth term, 9.4 Representing simple functions). Written by the Atomic teaching team."""
+from kit import *
+
+U = Unit(9, "Sequences and Functions", "Algebra",
+         "Term-to-term rules, sequences from patterns, finding terms from a position-to-term rule, and function machines.",
+         {"O1": {"code": "7As.01", "sec": "9.1", "codeNote": "", "t": "Generate sequences from a first term and a term-to-term rule, and find missing terms."},
+          "O2": {"code": "7As.02", "sec": "9.2", "codeNote": "", "t": "Recognise and extend sequences from spatial patterns and say whether they are linear."},
+          "O3": {"code": "7As.03", "sec": "9.3", "codeNote": "", "t": "Use a position-to-term rule (nth term) to generate terms of a sequence."},
+          "O4": {"code": "7As.04", "sec": "9.4", "codeNote": "", "t": "Use function machines and mappings to find outputs and inputs of simple functions."}})
+lin = lambda a, b: (f"{a}n" if a != 1 else "n") + (f" + {b}" if b > 0 else f" − {-b}" if b < 0 else "")
+
+# ================================================================== 9.1
+s = U.section("9.1", "Generating sequences (1)", ["O1"])
+s.idea("Term-to-term rules", ["A **sequence** is a list of numbers in order. Each number is a **term**.",
+       "A **term-to-term rule** tells you how to get the next term: start at 4 and add 3 → 4, 7, 10, 13, …"])
+s.check(N("A sequence starts at 5 and the rule is 'add 4'. What is the 4th term?", 17, o="O1"))
+s.mistake("Count the terms", ["The 4th term is three steps after the first term, not four."])
+
+
+def t1(r):
+    a, d, k = r.randint(-5, 20), r.randint(2, 9), r.randint(4, 8)
+    return N(f"A sequence starts at {a}. The rule is 'add {d}'. What is term {k}?", a + (k - 1) * d, o="O1")
+def t2(r):
+    a, d, k = r.randint(30, 80), r.randint(2, 9), r.randint(4, 7)
+    return N(f"A sequence starts at {a}. The rule is 'subtract {d}'. What is term {k}?", a - (k - 1) * d, o="O1")
+def t3(r):
+    a, d = r.randint(1, 20), r.randint(2, 9); t = [a + i * d for i in range(5)]
+    return N("The table shows the first four terms of a sequence. Find the 5th term.", t[4], o="O1", data={"head": ["Term", "1st", "2nd", "3rd", "4th"], "rows": [["Value", *map(str, t[:4])]]})
+def t4(r):
+    a, d = r.randint(1, 20), nz(r, -6, 9); t = [a + i * d for i in range(5)]; k = r.randint(1, 3)
+    return N(f"Find the missing term: {', '.join(str(x) if i != k else '☐' for i, x in enumerate(t))}", t[k], o="O1")
+def t5(r):
+    a, m = r.randint(1, 5), r.randint(2, 3)
+    return N(f"A sequence starts at {a}. The rule is 'multiply by {m}'. What is the 4th term?", a * m ** 3, o="O1")
+def t6(r):
+    a, d = r.randint(1, 20), r.randint(2, 9)
+    return TB(f"The first term is {a} and the rule is 'add {d}'. Complete the table.", ["Term", "Value"], [["1st", str(a)], ["2nd", B(a + d)], ["3rd", B(a + 2 * d)], ["5th", B(a + 4 * d)]], o="O1")
+def t7(r):
+    a, d = r.randint(2, 20), r.randint(2, 9); t = [a + i * d for i in range(4)]
+    return S(f"Write the term-to-term rule for {', '.join(map(str, t))}, …", [f"add {d}", f"+{d}", f"+ {d}", f"plus {d}", f"increase by {d}", f"goes up by {d}"], o="O1")
+def t8(r):
+    a, d = r.randint(2, 10), r.randint(2, 9); v = a + r.randint(5, 20) * d + pick(r, [0, 1, 2])
+    yes = (v - a) % d == 0
+    return MC(f"The sequence {a}, {a + d}, {a + 2 * d}, … goes on. Is {v} in the sequence?", "Yes" if yes else "No", ["No" if yes else "Yes", "Cannot tell"], o="O1", d="H")
+
+
+s.std([t6, t3, t1, t2, t4, t5, t7, t8], EX("Explain how to find the 10th term of the sequence 3, 7, 11, 15, …", [("the rule is add 4", ["add 4|\\+ ?4|goes up by 4"]), ("3 + 9 × 4 = 39", ["39|9 ?× ?4"])], "The rule is add 4. The 10th term is 9 steps after the first: 3 + 9 × 4 = 39.", o="O1"))
+
+# ================================================================== 9.2
+s = U.section("9.2", "Generating sequences (2)", ["O2"])
+s.idea("Patterns", ["Patterns of shapes make sequences: count the dots, tiles or matchsticks in each pattern.",
+       "If the number goes up by the same amount each time, the sequence is **linear**. 1, 4, 9, 16 (square numbers) is **not** linear."])
+s.check(MC("Is 2, 5, 8, 11 linear?", "Yes", ["No", "Only after 11"], o="O2"))
+s.mistake("Check every gap", ["1, 2, 4, 7 goes up by 1, 2, 3 — not the same each time."])
+
+
+def p1(r):
+    a, d = r.randint(3, 8), r.randint(2, 5); t = [a + i * d for i in range(3)]
+    return N(f"Pattern 1 has {t[0]} tiles, pattern 2 has {t[1]} and pattern 3 has {t[2]}. How many tiles are in pattern 5?", a + 4 * d, "tiles", units=["tiles"], o="O2", data={"head": ["Pattern", "1", "2", "3"], "rows": [["Tiles", *map(str, t)]]})
+def p2(r):
+    rows = [("3, 6, 9, 12", "Linear"), ("1, 4, 9, 16", "Not linear"), ("2, 4, 8, 16", "Not linear"), ("20, 17, 14, 11", "Linear"), ("1, 3, 6, 10", "Not linear"), ("5, 10, 15, 20", "Linear")]
+    return GD("Is each sequence linear?", "Linear?", r.sample(rows, 4), o="O2")
+def p3(r):
+    k = r.randint(5, 12)
+    return N(f"What is the {k}th square number?", k * k, o="O2")
+def p4(r):
+    k = r.randint(4, 9)
+    return N(f"The triangular numbers are 1, 3, 6, 10, … What is the {k}th triangular number?", k * (k + 1) // 2, o="O2", d="H")
+def p5(r):
+    a, d = r.randint(3, 6), r.randint(2, 4); t = [a + i * d for i in range(4)]
+    return TB("Matchstick patterns: continue the table.", ["Pattern", "Matchsticks"], [["4", B(t[3])], ["5", B(t[3] + d)], ["10", B(a + 9 * d)]], o="O2", data={"head": ["Pattern", "1", "2", "3"], "rows": [["Matchsticks", *map(str, t[:3])]]}, d="H")
+def p6(r):
+    a, d = r.randint(2, 6), r.randint(2, 5)
+    return N(f"Each new pattern adds {d} counters. Pattern 1 has {a} counters. How many counters are in pattern 8?", a + 7 * d, "counters", units=["counters"], o="O2")
+def p7(r):
+    a = r.randint(1, 4); t = [a * 2 ** i for i in range(5)]
+    return N(f"Find the next term: {', '.join(map(str, t[:4]))}, …", t[4], o="O2")
+
+
+s.std([p1, p2, p3, p4, p5, p6, p7], EX("Explain why 1, 4, 9, 16, … is not a linear sequence.", [("the differences are 3, 5, 7: not the same", ["3, ?5|differences|not the same"]), ("these are the square numbers", ["square"])], "The differences are 3, 5, 7, so they are not the same each time. These are the square numbers, which do not go up by a fixed amount.", o="O2"))
+
+# ================================================================== 9.3
+s = U.section("9.3", "Using the nth term", ["O3"])
+s.idea("Position-to-term rule", ["The **nth term** gives any term from its position n. For 2n + 3: n = 1 → 5, n = 2 → 7, n = 10 → 23.",
+       "You can find the 100th term without listing all the terms before it."])
+s.check(N("The nth term is 4n − 1. Find the 5th term.", 19, o="O3"))
+s.mistake("Multiply first", ["For 3n + 2 with n = 4: 3 × 4 + 2 = 14, not 3 × 6."])
+
+
+def n1(r):
+    a, b, k = r.randint(2, 9), r.randint(-5, 10), r.randint(3, 20)
+    return N(f"The nth term of a sequence is {lin(a, b)}. Find the {k}th term.", a * k + b, o="O3")
+def n2(r):
+    a, b = r.randint(2, 9), r.randint(-5, 10)
+    return TB(f"Write the first three terms of the sequence with nth term {lin(a, b)}.", ["n", "Term"], [[str(n), B(a * n + b)] for n in (1, 2, 3)], o="O3")
+def n3(r):
+    a, b = r.randint(2, 9), r.randint(-5, 10)
+    return N(f"The nth term is {lin(a, b)}. Find the 100th term.", 100 * a + b, o="O3")
+def n4(r):
+    a, b = r.randint(2, 6), r.randint(0, 6); t = [a * n + b for n in range(1, 5)]
+    return MC(f"Which nth term gives the sequence {', '.join(map(str, t))}, …?", lin(a, b), [lin(1, a + b) if a + b != b else lin(1, a), lin(a, b + a), lin(b if b > 1 else a + 1, a)], o="O3", d="H")
+def n5(r):
+    a, b, k = r.randint(2, 9), r.randint(1, 10), r.randint(5, 20)
+    return N(f"The nth term is {lin(a, b)}. Which term is equal to {a * k + b}?", k, o="O3", d="H")
+def n6(r):
+    a = r.randint(2, 9)
+    return N(f"A sequence has nth term {a}n. What is the difference between consecutive terms?", a, o="O3")
+def n7(r):
+    rows = [("3n", "3, 6, 9"), ("n + 4", "5, 6, 7"), ("2n − 1", "1, 3, 5"), ("5n + 2", "7, 12, 17"), ("10 − n", "9, 8, 7")]
+    return GD("Match each nth term to its first three terms.", "First terms", r.sample(rows, 4), o="O3", extra=["2, 4, 6"])
+
+
+s.std([n2, n7, n1, n3, n4, n5, n6], EX("Explain how the nth term 5n + 1 gives the sequence 6, 11, 16, …", [("substitute n = 1, 2, 3", ["n ?= ?1|substitute|put n"]), ("5 × 1 + 1 = 6, 5 × 2 + 1 = 11, 5 × 3 + 1 = 16", ["6|11|16"])], "Substitute the positions: n = 1 gives 5 × 1 + 1 = 6, n = 2 gives 11 and n = 3 gives 16.", o="O3"))
+
+# ================================================================== 9.4
+s = U.section("9.4", "Representing simple functions", ["O4"])
+s.idea("Function machines", ["A **function machine** takes an input, does one or more operations, and gives an output: 3 → × 4 → + 1 → 13.",
+       "To find the input from an output, work **backwards** using the inverse operations: 13 → − 1 → ÷ 4 → 3."])
+s.check(N("Input 5 → × 3 → − 2 → output. What is the output?", 13, o="O4"))
+s.mistake("Backwards means inverse", ["To undo + 1 you subtract 1; to undo × 4 you divide by 4."])
+
+
+def f1(r):
+    a, b, x = r.randint(2, 9), r.randint(1, 12), r.randint(1, 12)
+    return N(f"Input {x} → × {a} → + {b} → output. What is the output?", a * x + b, o="O4")
+def f2(r):
+    a, b, x = r.randint(2, 9), r.randint(1, 12), r.randint(1, 12)
+    return N(f"Input → × {a} → + {b} → output. The output is {a * x + b}. What was the input?", x, o="O4", d="H")
+def f3(r):
+    a, b = r.randint(2, 6), r.randint(1, 9); xs = r.sample(range(1, 10), 3)
+    return TB(f"Complete the table for the function x → × {a} → + {b}.", ["Input", "Output"], [[str(x), B(a * x + b)] for x in sorted(xs)], o="O4")
+def f4(r):
+    a, b = r.randint(2, 6), r.randint(1, 9)
+    return MC(f"Which is the inverse of 'multiply by {a}, then add {b}'?", f"subtract {b}, then divide by {a}", [f"divide by {a}, then subtract {b}", f"add {b}, then multiply by {a}", f"subtract {a}, then divide by {b}"], o="O4")
+def f5(r):
+    a, b = r.randint(2, 5), r.randint(1, 9); pairs = [(x, a * x + b) for x in r.sample(range(1, 8), 3)]
+    return X(f"A function maps {', '.join(f'{x} → {y}' for x, y in pairs)}. Write the function as y = …", f"{a}x+{b}", vars="xy", lhs="y", o="O4", d="H", data={"head": ["x", *[str(x) for x, _ in pairs]], "rows": [["y", *[str(y) for _, y in pairs]]]})
+def f6(r):
+    a, x = r.randint(2, 9), r.randint(2, 30)
+    return N(f"Input → ÷ {a} → output. The output is {x}. What was the input?", a * x, o="O4")
+def f7(r):
+    a, b = r.randint(2, 9), r.randint(1, 12)
+    return X(f"Write the function machine x → × {a} → + {b} → y as an equation.", f"{a}x+{b}", vars="xy", lhs="y", o="O4")
+
+
+s.std([f3, f5, f1, f2, f4, f6, f7], EX("Explain how to find the input when the output of x → × 2 → + 5 is 17.", [("work backwards: subtract 5", ["subtract 5|− ?5|- ?5|take away 5|12"]), ("then divide by 2: 6", ["divide by 2|÷ ?2|\\b6\\b"])], "Work backwards with the inverse operations: 17 − 5 = 12, then 12 ÷ 2 = 6. The input was 6.", o="O4"))
+
+U.mindmap(("Term-to-term", "Start and a rule • next term", "O1", "9.1"), ("Patterns", "Count each pattern • linear or not", "O2", "9.2"),
+          ("nth term", "Substitute n • any term directly", "O3", "9.3"), ("Function machines", "Input → operations → output • inverse to go back", "O4", "9.4"))
