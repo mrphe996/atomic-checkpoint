@@ -48,6 +48,16 @@
     s += `<circle cx="${cx}" cy="${cy}" r="4" fill="#1F2A37"/>`;
     return { svg: W(s), a: {} };
   };
+  // squares on a grid (nets, patterns): o.cells [[col,row]...], o.cols, o.rows, o.grid (faint background grid), o.mirror {x|y: line position}
+  F.cells = (o) => {
+    const cs = o.cells || [], C = o.cols || Math.max(...cs.map(c => c[0]), 0) + 1, R = o.rows || Math.max(...cs.map(c => c[1]), 0) + 1;
+    const sz = Math.min(400 / C, 280 / R, 60), x0 = 240 - C * sz / 2, y0 = 160 - R * sz / 2; let s = '';
+    if (o.grid) for (let i = 0; i < C; i++) for (let j = 0; j < R; j++) s += `<rect x="${x0 + i * sz}" y="${y0 + j * sz}" width="${sz}" height="${sz}" fill="none" stroke="#C9D3E3" stroke-width="1"/>`;
+    cs.forEach(([i, j]) => { s += `<rect x="${x0 + i * sz}" y="${y0 + j * sz}" width="${sz}" height="${sz}" fill="#DCE8FB" stroke="#1F2A37" stroke-width="2.4"/>`; });
+    if (o.mirror && o.mirror.x != null) s += `<line x1="${x0 + o.mirror.x * sz}" y1="${y0 - 10}" x2="${x0 + o.mirror.x * sz}" y2="${y0 + R * sz + 10}" stroke="#D62F4B" stroke-width="3" stroke-dasharray="8 5"/>`;
+    if (o.mirror && o.mirror.y != null) s += `<line x1="${x0 - 10}" y1="${y0 + o.mirror.y * sz}" x2="${x0 + C * sz + 10}" y2="${y0 + o.mirror.y * sz}" stroke="#D62F4B" stroke-width="3" stroke-dasharray="8 5"/>`;
+    return { svg: W(s), a: {} };
+  };
   // analogue clock: o.h (0-23), o.m
   F.clock = (o) => {
     const cx = 240, cy = 160, r = 120, h = (o.h || 0) % 12, m = o.m || 0; let s = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="#FFFFFF" stroke="#1F2A37" stroke-width="4"/>`;

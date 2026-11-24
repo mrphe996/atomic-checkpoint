@@ -9,8 +9,8 @@ const cfg = {
   apiBase: e('API_BASE', '/api'), directSignup: e('DIRECT_SIGNUP', 'off') === 'on', signupUrl: e('SIGNUP_URL', ''), supabaseUrl: e('SUPABASE_URL'), supabaseAnonKey: e('SUPABASE_ANON_KEY'),
   paddle: { env: e('PADDLE_ENV', 'sandbox'), token: e('PADDLE_CLIENT_TOKEN'), prices: { monthly: e('PADDLE_PRICE_MONTHLY'), yearly: e('PADDLE_PRICE_YEARLY') } },
   priceLabels: { monthly: e('PRICE_LABEL_MONTHLY', '£9.99 / month'), yearly: e('PRICE_LABEL_YEARLY', '£79 / year') },
-  // stages learners cannot open yet (16–19 = Mathematics Stages 6–9); set LOCKED_STAGES= (empty) to open them
-  lockedStages: e('LOCKED_STAGES', process.env.LOCKED_STAGES === '' ? '' : '16,17,18,19').split(',').map(x => Number(x.trim())).filter(Boolean),
+  // stages learners cannot open yet (15–19 = Mathematics Stages 5–9); set LOCKED_STAGES= (empty) to open them
+  lockedStages: e('LOCKED_STAGES', process.env.LOCKED_STAGES === '' ? '' : '15,16,17,18,19').split(',').map(x => Number(x.trim())).filter(Boolean),
   supportEmail: e('SUPPORT_EMAIL', 'support@example.com'), legalVersion: '2026-11-draft'
 };
 if (cfg.mode === 'live' && (!cfg.supabaseUrl || !cfg.supabaseAnonKey)) { console.error('ATOMIC_MODE=live needs SUPABASE_URL and SUPABASE_ANON_KEY'); process.exit(1); }

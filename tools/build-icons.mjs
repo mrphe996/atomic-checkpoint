@@ -39,6 +39,7 @@ export const UNITS = {
   7: ['microscope', 'ruler-measure', 'cell', 'hierarchy-2', 'fish', 'atom-2', 'cube', 'test-pipe', 'flask', 'arrows-move', 'bolt', 'plug-connected', 'volcano', 'planet'],
   8: ['apple', 'lungs', 'trees', 'atom', 'droplet-half', 'flame', 'temperature', 'gauge', 'wind', 'prism-light', 'magnet', 'solar-panel', 'cloud-rain', 'planet'],
   9: ['plant-2', 'droplet', 'dna-2', 'atom-2', 'grain', 'replace', 'salt', 'stopwatch', 'weight', 'temperature-plus', 'wave-sine', 'circuit-battery', 'temperature-sun', 'telescope'],
+  15: ['calculator', 'angle', 'list-numbers', 'chart-bar', 'equal', 'box', 'percentage', 'dice', 'math-function', 'angle', 'divide', 'chart-line', 'scale', 'ruler-2', 'calculator', 'clock', 'equal', 'arrows-move'],
   16: ['calculator', 'list-numbers', 'chart-bar', 'equal', 'ruler-2', 'percentage', 'clock', 'math-function', 'dice', 'divide', 'box', 'scale', 'angle', 'calculator', 'chart-line', 'equal', 'arrows-move'],
   17: ['calculator', 'math-function', 'ruler-measure', 'equal', 'angle', 'chart-bar', 'divide', 'ruler-2', 'list-numbers', 'percentage', 'chart-line', 'scale', 'dice', 'arrows-move', 'box', 'presentation-analytics'],
   18: ['calculator', 'math-function', 'ruler-measure', 'equal', 'angle', 'chart-bar', 'divide', 'ruler-2', 'list-numbers', 'percentage', 'chart-line', 'scale', 'dice', 'arrows-move', 'box', 'presentation-analytics'],

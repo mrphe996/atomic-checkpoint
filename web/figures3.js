@@ -86,7 +86,12 @@
   // number line with an inequality: o.min,o.max; o.from {v, closed}, o.to {v, closed} (omit for an arrow to infinity)
   F.numline = (o) => {
     const mn = o.min != null ? o.min : -5, mx = o.max != null ? o.max : 5, x0 = 50, x1 = 430, y = 170, sx = v => x0 + (v - mn) / (mx - mn) * (x1 - x0), id = 'nl' + (++uid);
-    let s = arrow(id) + L(x0 - 20, y, x1 + 20, y, { w: 2 }); for (let v = mn; v <= mx; v++) s += L(sx(v), y - 7, sx(v), y + 7, { w: 1.5 }) + T(sx(v), y + 24, v, { size: 13 });
+    let s = arrow(id) + L(x0 - 20, y, x1 + 20, y, { w: 2 }); for (let v = mn; v <= mx; v++) s += L(sx(v), y - 7, sx(v), y + 7, { w: 1.5 }) + T(sx(v), y + 24, v < 0 ? '−' + (-v) : v, { size: 13 });
+    // o.minor: equal divisions between whole numbers (10 = tenths); o.ticks: [[value, label]] extra labelled ticks; o.mark: value to point at
+    const mi = o.minor || (mx - mn <= 2 && !o.ticks ? 10 : 0);
+    if (mi > 1) for (let v = mn; v < mx; v++) for (let k = 1; k < mi; k++) s += L(sx(v + k / mi), y - 4, sx(v + k / mi), y + 4, { w: 1 });
+    (o.ticks || []).forEach(([v, lb]) => { s += L(sx(v), y - 7, sx(v), y + 7, { w: 1.5 }) + T(sx(v), y + 24, lb, { size: 13 }); });
+    if (o.mark != null) { const xm = sx(o.mark), idm = id + 'm'; s += arrow(idm, BLUE) + L(xm, y - 70, xm, y - 10, { c: BLUE, w: 3, m: idm }); }
     const a = o.from, b = o.to, yy = y - 34;
     if (a || b) { const xa = a ? sx(a.v) : x0 - 20, xb = b ? sx(b.v) : x1 + 20; s += L(xa, yy, xb, yy, { c: BLUE, w: 4 }) + (!a ? `<path d="M${x0 - 14} ${yy - 6} l-10 6 l10 6" fill="${BLUE}"/>` : '') + (!b ? `<path d="M${x1 + 14} ${yy - 6} l10 6 l-10 6" fill="${BLUE}"/>` : '');
       [a, b].forEach(p => { if (!p) return; s += `<circle cx="${sx(p.v)}" cy="${yy}" r="7" fill="${p.closed ? BLUE : '#fff'}" stroke="${BLUE}" stroke-width="3"/>`; }); }
