@@ -10,7 +10,7 @@ const cfg = {
   paddle: { env: e('PADDLE_ENV', 'sandbox'), token: e('PADDLE_CLIENT_TOKEN'), prices: { monthly: e('PADDLE_PRICE_MONTHLY'), yearly: e('PADDLE_PRICE_YEARLY') } },
   priceLabels: { monthly: e('PRICE_LABEL_MONTHLY', '£9.99 / month'), yearly: e('PRICE_LABEL_YEARLY', '£79 / year') },
   // stages learners cannot open yet (19 = Mathematics Stage 9); set LOCKED_STAGES= (empty) to open them
-  lockedStages: e('LOCKED_STAGES', process.env.LOCKED_STAGES === '' ? '' : '19').split(',').map(x => Number(x.trim())).filter(Boolean),
+  lockedStages: e('LOCKED_STAGES', process.env.LOCKED_STAGES === '' ? '' : '18,19').split(',').map(x => Number(x.trim())).filter(Boolean),
   supportEmail: e('SUPPORT_EMAIL', 'support@example.com'), legalVersion: '2026-11-draft'
 };
 if (cfg.mode === 'live' && (!cfg.supabaseUrl || !cfg.supabaseAnonKey)) { console.error('ATOMIC_MODE=live needs SUPABASE_URL and SUPABASE_ANON_KEY'); process.exit(1); }

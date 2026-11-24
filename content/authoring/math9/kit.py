@@ -136,6 +136,11 @@ def S(prompt, accept, d="M", o="O1", reason="", hint="", skill="Knowledge", **kw
     return Q.base("short", prompt, d, o, skill, accept=[accept] if isinstance(accept, str) else list(accept), reason=reason, hint=hint, **kw)
 
 
+def CMP(a, b, sign, d="M", o="O1", reason="", **kw):
+    """which sign goes between a and b: tap <, > or ="""
+    return MC(f"Which sign goes between {a} and {b}?  {a} ☐ {b}", sign, [(x, "") for x in ("<", ">", "=") if x != sign], d=d, o=o, reason=reason, **kw)
+
+
 def CZ(prompt, text, blanks, d="M", o="O1", reason="", hint="", skill="Knowledge", **kw):
     return Q.base("cloze", prompt, d, o, skill, text=text, blanks=[[b] if isinstance(b, str) else list(b) for b in blanks], reason=reason, hint=hint, **kw)
 
@@ -195,7 +200,7 @@ def pretty(t):
     t = _re.sub(r"([+−]) \((\d+(?:\.\d+)?)\)", r"\1 \2", t)                      # x + (1) → x + 1
     t = _re.sub(r"\+ \(−(\d+(?:\.\d+)?)\)", r"− \1", t)                         # x + (−7) → x − 7
     t = _re.sub(r"− \(−(\d+(?:\.\d+)?)\)", r"+ \1", t)                           # x − (−7) → x + 7
-    t = _re.sub(r"\d+\.\d{7,}(?![\d…])", lambda m: fmt(round(float(m.group(0)), 3)), t)  # float noise 1.1400000000000001 → 1.14
+    t = _re.sub(r"\d+\.\d{7,}(?![\d…])", lambda m: fmt(float(f"{float(m.group(0)):.10g}")), t)  # float noise 1.1400000000000001 → 1.14
     return t
 def prettify(o, key=None):
     if key in _SKIP: return o
@@ -227,7 +232,7 @@ class Section:
         self.u, self.sid, self.title, self.objs = unit, sid, title, objs
         self.lesson, self.stops, self.pools = [], [], {"r": [], "p": [], "a": []}
         self.n = int(sid.split(".")[1])
-        self.rng = random.Random(f"m9-{sid}")
+        self.rng = random.Random(f"m9-{sid}" if unit.stage == 9 else f"m{unit.stage}-{sid}")
 
     # ---- lesson blocks: text uses **bold**; steps = [(working, why)]
     def _blk(self, k, t, p, **kw):
@@ -265,6 +270,8 @@ class Section:
     def gen(self, pool, n, *templates, unique=True):
         """call templates(rng) in turn until n new questions (distinct prompts) are added"""
         kf = lambda q: q["prompt"] + str(q.get("fig")) + str(q.get("data")) + str(q.get("rows")) + str(q.get("pairs")) + str(q.get("_mc", q.get("options", "")))[:200]
+        for t in templates:
+            if all(t is not x for _, x in self.u.tpl): self.u.tpl.append((self.sid, t))
         seen = {kf(q) for q in self.pools[pool]}; added = 0; tries = 0
         while added < n and tries < n * 40:
             t = templates[(added + tries) % len(templates)]; tries += 1
@@ -276,6 +283,22 @@ class Section:
         assert added == n, (self.sid, pool, added, n)
         return self
 
+    def std(self, T, ex, adv=None, n_core=7, n_prac=40, n_adv=8):
+        """standard pools: Core = one question from each of the first n_core templates + the written explanation,
+        Practice = n_prac from all templates, Advanced = n_adv from adv (or the templates)"""
+        vis = lambda q: q.get("type") in ("grid", "table", "graph", "label", "scale") or bool(q.get("fig") or q.get("data"))
+        cand = []
+        for t in T:
+            for _ in range(20):
+                q = t(self.rng)
+                if q is not None: cand.append(q); break
+        V = [q for q in cand if vis(q)][:2]
+        assert len(V) == 2, f"{self.sid}: Core needs 2 diagram/data templates"
+        rest = [q for q in cand if all(q is not v for v in V)][:n_core - 2]
+        self.core(*(V + rest), ex)
+        self.gen("p", n_prac, *T); self.gen("a", n_adv, *(adv or T))
+        return self
+
     def export(self, dur):
         return {"id": self.sid, "title": self.title, "objs": self.objs, "lesson": self.lesson,
                 "video": {"src": None, "offset": 0, "dur": dur, "range": ""},
@@ -284,14 +307,25 @@ class Section:
 
 
 class Unit:
-    def __init__(self, n, title, strand, blurb, objectives):
+    def __init__(self, n, title, strand, blurb, objectives, stage=None):
         self.n, self.title, self.strand, self.blurb = n, title, strand, blurb
-        self.pre = f"m9u{n:02d}"
+        self.stage = stage or STAGE
+        self.pre = f"m{self.stage}u{n:02d}"
+        self.tpl, self.tex = [], []      # test templates (from gen) and written test explain questions
         self.objectives = objectives      # {O1: {sec, code, t}}
         self.sections = []; self.mind = []
 
     def section(self, sid, title, objs):
         s = Section(self, sid, title, objs); self.sections.append(s); return s
+
+    def ttpl(self, sid, *fns):
+        """extra question templates used only by the Unit Tests"""
+        for t in fns: self.tpl.append((sid, t))
+        return self
+
+    def texp(self, *qs):
+        """explain questions written for the Unit Tests only (never in practice)"""
+        self.tex += list(qs); return self
 
     def mindmap(self, *kids):
         self.mind = [{"id": f"k{i}", "t": t, "d": d, "obj": o, "sec": s} for i, (t, d, o, s) in enumerate(kids)]
@@ -305,14 +339,17 @@ class Unit:
         segs = {}
         for s in secs:
             for o in s["objs"]: segs.setdefault(o, [s["id"], 0.0, s["video"]["dur"], s["title"]])
-        return {"course": {"id": "s19", "title": "Atomic – Cambridge Lower Secondary Mathematics — Stage 9", "units": [{"n": i + 1, "t": t} for i, t in enumerate(titles)]},
-                "unit": {"n": self.n, "stage": 19, "title": self.title, "strandShort": self.strand, "blurb": self.blurb, "strand": self.strand,
-                         "framework": "Cambridge Lower Secondary Mathematics (0862), Stage 9", "lesson": True, "subject": "maths"},
+        st = self.stage; prim = st <= 6
+        lvl = "Primary" if prim else "Lower Secondary"; fw = f"Cambridge {lvl} Mathematics ({'0096' if prim else '0862'}), Stage {st}"
+        return {"course": {"id": f"s{10 + st}", "title": f"Atomic – Cambridge {lvl} Mathematics — Stage {st}", "units": [{"n": i + 1, "t": t} for i, t in enumerate(titles)]},
+                "unit": {"n": self.n, "stage": 10 + st, "title": self.title, "strandShort": self.strand, "blurb": self.blurb, "strand": self.strand,
+                         "framework": fw, "lesson": True, "subject": "maths", "read": f"media/read/m{st}u{self.n:02d}.pdf"},
                 "objectives": self.objectives, "sections": secs, "segments": segs, "sources": [],
                 "tests": {"A": tests[0], "B": tests[1], "pass": 0.7},
                 "mindmap": {"id": "root", "t": self.title, "sec": None, "kids": self.mind}}
 
 
+STAGE = 9
 TITLES = ["Number and Calculation", "Expressions and Formulae", "Decimals, Percentages and Rounding", "Equations and Inequalities", "Angles",
           "Statistical Investigations", "Shapes and Measurements", "Fractions", "Sequences and Functions", "Graphs",
           "Ratio and Proportion", "Probability", "Position and Transformation", "Volume, Surface Area and Symmetry", "Interpreting and Discussing Results"]

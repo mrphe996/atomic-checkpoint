@@ -3,10 +3,13 @@ Each paper: one 3-mark block per unit (1-mark Medium question + 2-mark Hard ques
 plus a 2-mark Very Hard problem and a 3-mark written explanation = 50. Questions are drawn from the practice and
 advanced pools of the 15 built units; no question is used twice across the 10 papers.
 Usage: python3 build_final_math.py   (git-ignored output; answer keys stay private). Written by the Atomic teaching team."""
-import json, os, random, copy, re
+import json, os, random, copy, re, sys
 H = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(H, "..", "..", "src")
-rnd = random.Random(1919)
+ST = int(sys.argv[1]) if len(sys.argv) > 1 else 9          # Mathematics Stage (course key 10 + ST)
+KEY = 10 + ST
+NU = len([f for f in os.listdir(SRC) if f.startswith(f"stage{KEY}-unit")])
+rnd = random.Random(1919 if ST == 9 else 1900 + KEY)
 AUTO = ("num", "expr", "mcq", "multi", "table", "grid", "match", "order", "short", "cloze")
 
 
@@ -19,9 +22,9 @@ def clean(q, obj):
 
 
 units, OBJ, VH, W = {}, {}, [], []
-for n in range(1, 16):
-    d = json.load(open(os.path.join(SRC, f"stage19-unit{n:02d}.json")))
-    o = f"U{n}"; OBJ[o] = {"t": f"Unit {n}: {d['unit']['title']}", "code": f"Stage 9 Mathematics Unit {n}"}
+for n in range(1, NU + 1):
+    d = json.load(open(os.path.join(SRC, f"stage{KEY}-unit{n:02d}.json")))
+    o = f"U{n}"; OBJ[o] = {"t": f"Unit {n}: {d['unit']['title']}", "code": f"Stage {ST} Mathematics Unit {n}"}
     easy, hard = [], []
     for s in d["sections"]:
         for q in s["prac"]:
@@ -60,18 +63,19 @@ VH, W = spread(VH, 10), spread(W, 10)
 
 def paper(k):
     out = []
-    for n in range(1, 16):
+    for n in range(1, NU + 1):
         for j, (q, pts) in enumerate(units[n][k]):
-            q = dict(q); q["id"] = f"m9f{k+1:02d}u{n:02d}{'ab'[j]}"; q["pts"] = pts; out.append(q)
-    o, q = VH[k]; q = clean(q, o); q["id"] = f"m9f{k+1:02d}x1"; q["pts"] = 2; q["diff"] = "VH"; out.append(q)
-    o, q = W[k]; q = clean(q, o); q["id"] = f"m9f{k+1:02d}w1"; q["pts"] = 3; q["diff"] = "VH"; out.append(q)
+            q = dict(q); q["id"] = f"m{ST}f{k+1:02d}u{n:02d}{'ab'[j]}"; q["pts"] = pts; out.append(q)
+    o, q = VH[k]; q = clean(q, o); q["id"] = f"m{ST}f{k+1:02d}x1"; q["pts"] = 2; q["diff"] = "VH"; out.append(q)
+    o, q = W[k]; q = clean(q, o); q["id"] = f"m{ST}f{k+1:02d}w1"; q["pts"] = 3; q["diff"] = "VH"; out.append(q)
     return out
 
 
 PAPERS = {f"{k+1:02d}": paper(k) for k in range(10)}
-for k, p in PAPERS.items(): assert sum(q["pts"] for q in p) == 50, (k, sum(q["pts"] for q in p))
-out = {"final": True, "unit": {"title": "End-of-year exam", "stage": 19, "subject": "Mathematics"}, "objectives": OBJ,
-       "minutes": 75, "max": 50, "pass": 0.6, "level": 10, "papers": PAPERS}
-json.dump(out, open(os.path.join(SRC, "stage19-final.json"), "w"), ensure_ascii=False)
+MAX = 3 * NU + 5
+for k, p in PAPERS.items(): assert sum(q["pts"] for q in p) == MAX, (k, sum(q["pts"] for q in p))
+out = {"final": True, "unit": {"title": "End-of-year exam", "stage": KEY, "subject": "Mathematics"}, "objectives": OBJ,
+       "minutes": 75, "max": MAX, "pass": 0.6, "level": 10, "papers": PAPERS}
+json.dump(out, open(os.path.join(SRC, f"stage{KEY}-final.json"), "w"), ensure_ascii=False)
 allp = [q["prompt"] + str(q.get("data")) + str(q.get("fig")) for p in PAPERS.values() for q in p]
-print("stage 19 papers", len(PAPERS), "questions", len(allp), "distinct", len(set(allp)))
+print(f"stage {KEY} papers", len(PAPERS), "questions", len(allp), "distinct", len(set(allp)))

@@ -15,7 +15,7 @@ const G = require('../shared/grade-core.js');
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'content/src');
 // the figure library, loaded the way the browser loads it, so every fig:{kind} in the content is checked
-const FIGLIB = (() => { const win = {}; try { for (const f of ['web/figures.js', 'web/figures2.js', 'web/figures3.js', 'web/figures4.js']) { const p = path.join(ROOT, f); if (fs.existsSync(p)) new Function('window', fs.readFileSync(p, 'utf8'))(win); } } catch (e) { console.error('figure library:', e.message); } return win.AtomicFig; })();
+const FIGLIB = (() => { const win = {}; try { for (const f of ['web/figures.js', 'web/figures2.js', 'web/figures3.js', 'web/figures4.js', 'web/figures5.js']) { const p = path.join(ROOT, f); if (fs.existsSync(p)) new Function('window', fs.readFileSync(p, 'utf8'))(win); } } catch (e) { console.error('figure library:', e.message); } return win.AtomicFig; })();
 const ANCHORS = { // label anchors each figure provides (keep in sync with web/figures.js)
   microscope: ['eyepiece', 'objective', 'stage', 'clips', 'diaphragm', 'light', 'coarse', 'fine', 'arm', 'base'],
   plantcell: ['wall', 'membrane', 'cytoplasm', 'nucleus', 'vacuole', 'chloroplast', 'mito'],
@@ -228,6 +228,10 @@ export function writeIndex() {
     9: [['Photosynthesis and Transport in Plants', 'Biology'], ['Excretion', 'Biology'], ['Variation and Inheritance', 'Biology'], ['The Structure of the Atom and the Periodic Table', 'Chemistry'],
       ['Chemical Bonding and Structure of Materials', 'Chemistry'], ['Displacement Reactions', 'Chemistry'], ['Salts', 'Chemistry'], ['Rate of Reaction', 'Chemistry'], ['Density', 'Physics'],
       ['Transfer of Thermal Energy', 'Physics'], ['Sound', 'Physics'], ['Electrical Circuits', 'Physics'], ['Earth and Climate Change', 'Earth and Space'], ['Astronomy', 'Earth and Space']],
+    // 18 = Mathematics Stage 8
+    18: [['Integers', 'Number'], ['Expressions, Formulae and Equations', 'Algebra'], ['Place Value and Rounding', 'Number'], ['Decimals', 'Number'], ['Angles and Constructions', 'Geometry'],
+      ['Collecting Data', 'Statistics'], ['Fractions', 'Number'], ['Shapes and Symmetry', 'Geometry'], ['Sequences and Functions', 'Algebra'], ['Percentages', 'Number'],
+      ['Graphs', 'Algebra'], ['Ratio and Proportion', 'Number'], ['Probability', 'Probability'], ['Position and Transformation', 'Geometry'], ['Distance, Area and Volume', 'Geometry'], ['Interpreting and Discussing Results', 'Statistics']],
     // 19 = Mathematics Stage 9
     19: [['Number and Calculation', 'Number'], ['Expressions and Formulae', 'Algebra'], ['Decimals, Percentages and Rounding', 'Number'], ['Equations and Inequalities', 'Algebra'], ['Angles', 'Geometry'],
       ['Statistical Investigations', 'Statistics'], ['Shapes and Measurements', 'Geometry'], ['Fractions', 'Number'], ['Sequences and Functions', 'Algebra'], ['Graphs', 'Algebra'],

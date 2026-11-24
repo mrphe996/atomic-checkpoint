@@ -260,7 +260,7 @@
     if (/^stage-\d+$/.test(r)) go('stage-' + g); else if (TOC_ROUTES(r) && r !== 'map') go('u-' + Core.UNO); else render();
   }
   function stageSwitcher() {
-    const groups = [['Primary Science', '🌱', Core.STAGES.filter(g => g <= 6)], ['Lower Secondary Science', '🔬', [7, 8, 9]], ['Mathematics', '📐', [19]]];
+    const groups = [['Primary Science', '🌱', Core.STAGES.filter(g => g <= 6)], ['Lower Secondary Science', '🔬', [7, 8, 9]], ['Mathematics', '📐', Core.STAGES.filter(g => g >= 10)]];
     const btn = g => {
       const mine = g === Core.STAGE, lk = !mine && Core.stageLocked(g), en = mine || Core.enrolled(g), p = en ? stagePct(g) : 0, math = g >= 10;
       const b = el('button', { type: 'button', class: 'sw' + (mine ? ' on' : '') + (lk ? ' locked' : en ? '' : ' enrol') + (math ? ' math' : ''), 'data-stage': g, 'aria-pressed': String(mine), 'aria-disabled': lk ? 'true' : null,

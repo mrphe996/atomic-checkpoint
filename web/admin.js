@@ -2,7 +2,7 @@
    Tabs: Overview · Users · Content · Exams · Reports · Announcements · Settings · Audit log. */
 (function () {
   const { el } = QE;
-  const COURSES = [[3, 'Science Stage 3 (Primary)'], [4, 'Science Stage 4 (Primary)'], [5, 'Science Stage 5 (Primary)'], [6, 'Science Stage 6 (Primary)'], [7, 'Science Stage 7'], [8, 'Science Stage 8'], [9, 'Science Stage 9'], [19, 'Mathematics Stage 9']];
+  const COURSES = [[3, 'Science Stage 3 (Primary)'], [4, 'Science Stage 4 (Primary)'], [5, 'Science Stage 5 (Primary)'], [6, 'Science Stage 6 (Primary)'], [7, 'Science Stage 7'], [8, 'Science Stage 8'], [9, 'Science Stage 9'], [18, 'Mathematics Stage 8'], [19, 'Mathematics Stage 9']];
   const courseName = g => (COURSES.find(c => c[0] === g) || [0, 'Stage ' + g])[1];
   const unitCourse = u => Number((String(u).match(/^stage(\d+)/) || [0, 0])[1]);
   const unitLabel = u => { const g = unitCourse(u), m = String(u).match(/-(unit(\d+)|final|cp)$/); return `${courseName(g)} · ${m ? (m[2] ? 'Unit ' + Number(m[2]) : m[1] === 'final' ? 'End-of-year exam' : 'Checkpoint') : u}`; };
@@ -85,7 +85,7 @@
           el('div', { class: 'btnrow' }, el('label', { class: 'adtoggle' }, (() => { const c = el('input', { type: 'checkbox', checked: x.tester, id: 'adTester-' + l.id }); c.onchange = () => busy(() => B().setTester(l.id, c.checked), c.checked ? 'Tester on – locks skipped' : 'Tester off'); return c; })(), ' Tester (skips locks)'),
             ...COURSES.map(([g, n]) => el('label', { class: 'adtoggle' }, (() => { const c = el('input', { type: 'checkbox', checked: g === l.stage || enrolled(g), disabled: g === l.stage }); c.onchange = () => busy(() => B().setEnrolment(l.id, g, c.checked), c.checked ? `Enrolled in ${n}` : `Removed from ${n}`); return c; })(), ' ' + n))),
           el('h4', {}, `Unit results (${(x.results || []).length})`),
-          (x.results || []).length ? el('div', { class: 'adchips' }, ...x.results.map(r => tag(`${unitLabel(r.unit).replace(/^.*· /, unitCourse(r.unit) === 19 ? 'M ' : 'S' + unitCourse(r.unit) + ' ')}: ${num(r.pct)}%`, 'd-M'))) : el('p', { class: 'muted' }, 'No unit passed yet.'),
+          (x.results || []).length ? el('div', { class: 'adchips' }, ...x.results.map(r => tag(`${unitLabel(r.unit).replace(/^.*· /, unitCourse(r.unit) >= 10 ? 'M' + (unitCourse(r.unit) - 10) + ' ' : 'S' + unitCourse(r.unit) + ' ')}: ${num(r.pct)}%`, 'd-M'))) : el('p', { class: 'muted' }, 'No unit passed yet.'),
           el('h4', {}, `Test attempts (${(x.attempts || []).length})`),
           (x.attempts || []).length ? attemptTable(x.attempts.map(a => ({ ...a, nickname: l.nickname })), () => showUser(host)) : el('p', { class: 'muted' }, 'No tests taken.'),
           el('h4', {}, 'Saved progress'),
