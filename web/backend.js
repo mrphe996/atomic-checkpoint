@@ -179,6 +179,7 @@
       async videoStats(unit) { const m = {}; D.events.filter(e => e.name === 'video_complete' && e.props.unit === unit).forEach(e => { m[e.props.sec] = (m[e.props.sec] || 0) + 1; }); const starts = {}; D.events.filter(e => e.name === 'video_start' && e.props.unit === unit).forEach(e => { starts[e.props.sec] = (starts[e.props.sec] || 0) + 1; }); return Object.keys(starts).sort().map(s => ({ sec: s, started: starts[s], completed: m[s] || 0 })); },
 
       /* content changes made in the admin console (shared by every account in this browser) */
+      logError(e) { D.errors = (D.errors || []).concat([{ at: new Date().toISOString(), email: (D.session && D.accounts[D.session] || {}).email || null, ...e }]).slice(-200); save(); },
       async contentOverrides(unit) { const A = D.admin || {}; return Object.entries(A.overrides || {}).filter(([, o]) => o.unit === unit).map(([id, o]) => ({ question_id: id, hidden: o.hidden, patch: o.is_test ? o.public_patch : (o.key_patch || o.public_patch) })); },
       async unitSettings() { return Object.entries((D.admin || {}).units || {}).map(([unit, u]) => ({ unit, ...u })); },
       async announcements() { return ((D.admin || {}).ann || []).filter(x => x.active); },
@@ -244,6 +245,7 @@
           async settings() { guard(); return { ...A().settings }; },
           async setSetting(name, value) { guard(); if (name !== 'mock_payments' || !['on', 'off'].includes(value)) throw err('setting'); A().settings[name] = value; log('setting', name, { value }); save(); },
           async audit() { guard(); return A().audit.slice(); },
+          async errors() { guard(); return (D.errors || []).slice().reverse(); },
           async setReport(id, status) { guard(); for (const x of Object.values(D.accounts)) { const r = x.reports.find(y => y.id === id); if (r) r.status = status; } log('report_status', String(id), { status }); save(); }
         };
       })(),
@@ -349,11 +351,14 @@
         rest('events', { method: 'POST', body: { learner_id: props && props.learner || null, parent_id: uid(), name, props, essential } }).catch(() => { }); },
       async itemStats(unit) { return rpc('item_stats', { p_unit: unit }); },
       async videoStats() { return []; },
+      logError(e) { const h = { apikey: ANON, 'Content-Type': 'application/json', Authorization: `Bearer ${S && Date.now() < S.expires_at ? S.access_token : ANON}` };
+        fetch(`${URL_}/rest/v1/rpc/log_client_error`, { method: 'POST', headers: h, body: JSON.stringify({ p_msg: e.msg, p_src: e.src || null, p_line: e.line || null, p_route: e.route || null, p_ua: e.ua || null, p_release: e.release || null }) }).catch(() => { }); },
       async contentOverrides(unit) { const r = await fetch(`${URL_}/rest/v1/rpc/content_overrides`, { method: 'POST', headers: { apikey: ANON, 'Content-Type': 'application/json', ...(S ? { Authorization: `Bearer ${S.access_token}` } : {}) }, body: JSON.stringify({ p_unit: unit }) }); return r.ok ? r.json() : []; },
       async unitSettings() { const r = await fetch(`${URL_}/rest/v1/unit_settings?select=unit,hidden,note`, { headers: { apikey: ANON } }); return r.ok ? r.json() : []; },
       async announcements() { const r = await fetch(`${URL_}/rest/v1/announcements?active=eq.true&order=created_at.desc&limit=5`, { headers: { apikey: ANON } }); return r.ok ? r.json() : []; },
       admin: {
         overview: () => rpc('admin_overview'),
+        errors: () => rpc('admin_client_errors', { p_limit: 300 }),
         users: (q = '', limit = 50, offset = 0) => rpc('admin_users', { p_q: q, p_limit: limit, p_offset: offset }),
         user: id => rpc('admin_user', { p_id: id }),
         setRole: (id, role) => rpc('admin_set_role', { p_user: id, p_role: role }),
@@ -383,4 +388,12 @@
   }
 
   window.Backend = CFG.mode === 'live' && CFG.supabaseUrl ? LiveBackend() : DemoBackend();
+  // page errors are reported (at most 10 per page view) so the team can see problems learners meet
+  (function () {
+    let n = 0; const seen = new Set();
+    const send = (msg, src, line) => { msg = String(msg || '').slice(0, 500); if (!msg || n >= 10 || seen.has(msg)) return; seen.add(msg); n++;
+      try { window.Backend.logError({ msg, src: src ? String(src).replace(location.origin, '') : null, line: line || null, route: location.hash.slice(0, 120), ua: navigator.userAgent.slice(0, 200), release: CFG.release || null }); } catch (e) { /* never break the page */ } };
+    window.addEventListener('error', e => { if (e && e.message) send(e.message, e.filename, e.lineno); });
+    window.addEventListener('unhandledrejection', e => { const r = e && e.reason; if (r && (r.code === 'sign_in' || r.name === 'AbortError')) return; send('Unhandled: ' + ((r && (r.message || r.code)) || String(r)), null, null); });
+  })();
 })();

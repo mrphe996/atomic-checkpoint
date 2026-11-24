@@ -14,7 +14,7 @@ with sync_playwright() as p:
     pg.evaluate("location.hash='admin'"); pg.wait_for_timeout(900)
     ok(pg.query_selector('#adTab-overview') is None and pg.query_selector('#becomeAdmin') is not None, 'A2 A learner cannot open the admin console')
     pg.click('#becomeAdmin'); pg.wait_for_timeout(1200)
-    tabs = ['overview', 'users', 'content', 'exams', 'reports', 'news', 'settings', 'audit']
+    tabs = ['overview', 'users', 'content', 'exams', 'reports', 'news', 'settings', 'errors', 'audit']
     good = True
     for t in tabs:
         pg.click(f'#adTab-{t}'); pg.wait_for_timeout(900)
@@ -49,5 +49,7 @@ with sync_playwright() as p:
     ok(v == '3x^2+x/2-1' and pg.query_selector('#mqT .mqf .katex .mfrac') is not None and pg.query_selector('#mqT .mqf .katex .msupsub') is not None, f'A13 Maths field builds powers and fractions as you type ({v})')
     pg.click('#mqT .mkey[aria-label=clear]'); pg.click('#mqT .mkey[aria-label="square root"]'); pg.keyboard.type('50')
     ok(pg.evaluate('window.__mq') == '√50', 'A14 Keypad root key builds √50')
+    pg.evaluate("Backend.logError({ msg: 'E2E test error', src: '/app.js', line: 1, route: '#home' })"); pg.evaluate("location.hash='admin'"); pg.wait_for_timeout(900); pg.click('#adTab-errors'); pg.wait_for_timeout(900)
+    ok('E2E test error' in pg.inner_text('#adBody'), 'A15 Page errors are logged and listed for admins')
     ok(not errs, 'A12 No page errors ' + '; '.join(errs[:3])); b.close()
 f = [l for l in LOG if l.startswith('FAIL')]; print(f'{len(LOG)-len(f)}/{len(LOG)} passed'); sys.exit(1 if f else 0)

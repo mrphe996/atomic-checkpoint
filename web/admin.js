@@ -25,13 +25,13 @@
           Backend.demo ? el('button', { class: 'btn small', type: 'button', id: 'becomeAdmin', onclick: () => { Backend.demo.setRole('admin'); Core.S.me.profile.role = 'admin'; render(); } }, 'Make this preview account an administrator') : null));
         return;
       }
-      const tabs = [['overview', 'Overview'], ['users', 'Users'], ['content', 'Content'], ['exams', 'Exams'], ['reports', 'Reports'], ['news', 'Announcements'], ['settings', 'Settings'], ['audit', 'Audit log']];
+      const tabs = [['overview', 'Overview'], ['users', 'Users'], ['content', 'Content'], ['exams', 'Exams'], ['reports', 'Reports'], ['news', 'Announcements'], ['settings', 'Settings'], ['errors', 'Page errors'], ['audit', 'Audit log']];
       m.append(el('div', { class: 'adhead' }, el('div', {}, el('span', { class: 'eyebrow' }, 'ATOMIC EDUCATION'), el('h1', { style: 'margin:0' }, 'Admin console')),
         el('a', { class: 'btn small', href: '#staff' }, 'Marking queue →')),
         el('div', { class: 'btnrow adtabs', role: 'tablist' }, ...tabs.map(([k, t]) => el('button', { class: 'chip' + (A.tab === k ? ' on' : ''), type: 'button', role: 'tab', id: 'adTab-' + k, 'aria-selected': String(A.tab === k), onclick: () => { A.tab = k; render(); } }, t))));
       const box = el('div', { class: 'adbody', id: 'adBody' }); m.append(box);
       box.append(el('p', { class: 'muted' }, 'Loading…'));
-      try { const f = { overview, users, content, exams, reports, news, settings, audit }[A.tab]; const kids = await f(); box.innerHTML = ''; box.append(...[].concat(kids)); }
+      try { const f = { overview, users, content, exams, reports, news, settings, errors, audit }[A.tab]; const kids = await f(); box.innerHTML = ''; box.append(...[].concat(kids)); }
       catch (e) { console.error(e); box.innerHTML = ''; box.append(el('div', { class: 'banner adv', role: 'alert' }, errText(e))); }
     }
 
@@ -271,6 +271,16 @@
         el('label', { class: 'adtoggle' }, mp, ' Test checkout (learners can enrol in other courses without paying)'),
         el('p', { class: 'muted' }, `Data: ${Backend.mode === 'live' ? 'live database' : 'preview (this browser only)'} · Billing: ${cfg.billing || 'off'} · Server: ${cfg.apiBase || '/api'}`),
         el('p', { class: 'muted' }, 'Payment keys, email and other secrets are set in the hosting dashboards and are never shown here.'));
+    }
+
+    /* ---------- page errors reported by learners' browsers ---------- */
+    async function errors() {
+      const rows = await B().errors();
+      if (!rows.length) return el('section', { class: 'card' }, el('h3', { style: 'margin-top:0' }, 'Page errors'), el('p', { class: 'muted' }, 'No page errors reported. Errors that happen in a learner\'s browser appear here (kept for 90 days).'));
+      const byMsg = {}; rows.forEach(x => { byMsg[x.msg] = (byMsg[x.msg] || 0) + 1; });
+      const top = Object.entries(byMsg).sort((a, b) => b[1] - a[1]).slice(0, 5);
+      return [el('section', { class: 'card' }, el('h3', { style: 'margin-top:0' }, 'Most common'), el('ul', {}, ...top.map(([m, c]) => el('li', {}, tag(c + '×'), ' ', el('code', {}, m))))),
+        table(['When', 'Who', 'Error', 'Where', 'Page'], rows.map(x => el('tr', {}, el('td', {}, day(x.at)), el('td', {}, x.email || 'guest'), el('td', { class: 'adq' }, x.msg), el('td', {}, el('code', {}, (x.src || '') + (x.line ? ':' + x.line : ''))), el('td', {}, el('code', {}, x.route || '')))))];
     }
 
     /* ---------- audit log ---------- */
