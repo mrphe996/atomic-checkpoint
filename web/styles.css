@@ -1632,3 +1632,31 @@ a.stm-it:hover{background:var(--band)}
 .mainnav .stmenu a.stm-it.on{background:var(--ink);color:#fff}.mainnav .stmenu a.stm-it.on small{color:#C9D3E6}
 .mainnav .stm-btn{font-weight:600;font-size:15px;color:var(--ink);padding:9px 16px;border-radius:99px}
 .stm-col{min-width:168px}.stm-it>span{white-space:nowrap}
+
+/* ---------- maths typesetting (KaTeX) and the maths answer box ---------- */
+.mt .katex{font-size:1.08em}
+.opt .mt .katex,.grid .mt .katex,td .mt .katex{font-size:1.04em}
+.mxbox{display:flex;flex-direction:column;gap:6px;max-width:640px}
+.mxin{display:flex;align-items:center;gap:8px}
+.mxin .lhs{font-size:20px}
+.mxin .mathin{flex:1;font:500 19px/1.3 "Courier New",ui-monospace,monospace;letter-spacing:.02em}
+.mktog{display:grid;place-items:center;width:52px;height:46px;border-radius:10px;border:1.5px solid #C9D6EA;background:#F2F5FA;cursor:pointer;font-size:12px}
+.mktog[aria-expanded="true"]{background:#E3ECFA;border-color:#0149AF}
+.mathprev{display:flex;align-items:center;gap:10px;min-height:44px;padding:6px 12px;border-radius:10px;background:transparent;color:var(--ink)}
+.mathprev.on{background:#F4F8FF;border:1px dashed #B8CFEF}
+.mathprev.bad{background:#FFF6E3;border-color:#F3D296}
+.mathprev .mpv .katex{font-size:1.45em}
+.mathprev .mphint{color:#8A5A00;font-size:13px}
+.numprev{min-height:0}.numprev:empty{display:none}.numprev .katex{font-size:1.35em}
+.mkpad{display:grid;grid-template-columns:repeat(8,minmax(44px,1fr));gap:6px;padding:10px;border-radius:14px;background:#EEF2F8;border:1px solid #DCE3EE}
+.mkpad[hidden]{display:none}
+.mkey{min-height:44px;border-radius:9px;border:1px solid #C9D6EA;background:#fff;cursor:pointer;font:600 17px/1 Figtree,sans-serif;color:var(--ink);display:grid;place-items:center;padding:4px}
+.mkey:hover{background:#EAF1FC}.mkey:active{transform:translateY(1px)}
+.mkey.num{background:#fff}.mkey.op{background:#F7F9FD}.mkey.var{background:#FFF8E6;font-style:italic;font-family:KaTeX_Math,serif}
+.mkey.nav{background:#E6EBF3;font-size:14px}
+.mkey .katex{font-size:1.15em}
+@media (max-width:600px){.mkpad{grid-template-columns:repeat(6,1fr)}}
+.mathprev:not(.on){display:none}
+.mkgap{min-height:44px}
+.mathprev .mpv .katex{font-size:1.3em}
+@media (max-width:600px){.mkpad{grid-template-columns:repeat(8,1fr);gap:4px;padding:6px}.mkey{min-height:40px;font-size:15px}}

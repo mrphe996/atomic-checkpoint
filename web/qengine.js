@@ -94,13 +94,16 @@
           W.append(el('div', { class: 'scalewrap' }, box, el('div', {}, zoomBtn, zoom)));
         }
         const inp = el('input', { type: 'text', inputmode: 'decimal', class: 'numin', 'aria-label': 'Value', value: resp.v, placeholder: 'value' });
-        inp.oninput = () => { resp.v = inp.value; changed(); };
+        // fractions and powers typed in a number box are shown typeset underneath (3/4, 1 1/2, 2^3)
+        const npv = el('span', { class: 'mathprev numprev', 'aria-live': 'polite' });
+        const nshow = () => { const v = String(inp.value || '').trim(); const t = window.AtomicMath && /[\/^√]/.test(v) ? AtomicMath.tex(v.replace(/^(\d+) (\d+)\/(\d+)$/, '$1 $2/$3')) : null; if (t) AtomicMath.render(t, npv); else npv.textContent = ''; };
+        inp.oninput = () => { resp.v = inp.value; changed(); nshow(); };
         const row = el('div', { class: 'numrow' }, inp);
         if (q.unit !== '×') {
           const sel = el('select', { 'aria-label': 'Unit' }, el('option', { value: '' }, '– unit –'), ...shuffle(q.units, seed + 'u').map(u => el('option', { value: u }, u)));
           sel.value = resp.u || ''; sel.onchange = () => { resp.u = sel.value; changed(); }; row.append(sel);
         } else if (!q.bare) row.append(el('span', { class: 'unit' }, '× (no unit)'));
-        W.append(row); break;
+        W.append(row, npv); nshow(); break;
       }
       case 'label': {
         resp = resp || {}; const keys = Object.keys(q.spots); const labels = shuffle(Object.values(q.spots), seed);
@@ -151,14 +154,15 @@
         inp.oninput = () => { resp = inp.value; changed(); }; W.append(el('div', { class: 'shortrow' }, inp)); break;
       }
       case 'expr': {
+        // maths answer box: typed answer + live typeset preview + on-screen keypad (web/mathtype.js)
+        if (window.AtomicMath && window.katex) {
+          const mx = AtomicMath.input({ value: resp || '', vars: q.vars || 'x', lhs: q.lhs, onInput: v => { resp = v; changed(); } });
+          W.append(mx.el, el('small', { class: 'muted' }, 'Type with the keyboard or the keypad: x^2 for a power, ( )/( ) for a fraction, √( ) for a root. Letters next to each other multiply (3xy).'));
+          break;
+        }
         const inp = el('input', { type: 'text', class: 'shortin mathin', 'aria-label': 'Your answer', autocomplete: 'off', spellcheck: 'false', placeholder: 'e.g. 3x^2 + 2x − 5', value: resp || '' });
-        const prev = el('span', { class: 'mathprev', 'aria-live': 'polite' });
-        const pretty = t => String(t || '').replace(/\^\(?(-?\d+)\)?/g, (m, d) => d.split('').map(c => '⁰¹²³⁴⁵⁶⁷⁸⁹'['0123456789'.indexOf(c)] || (c === '-' ? '⁻' : c)).join('')).replace(/\*/g, '×').replace(/sqrt/g, '√');
-        const show = () => { prev.textContent = inp.value.trim() ? 'You typed: ' + (q.lhs ? q.lhs + ' = ' : '') + pretty(inp.value) : ''; };
-        inp.oninput = () => { resp = inp.value; changed(); show(); }; show();
-        const keys = el('div', { class: 'mathkeys' }, ...['x', 'y', '^2', '(', ')', '/', '√', '−'].map(k => el('button', { type: 'button', class: 'mk2', onclick: () => { const ins = k === '−' ? '-' : k; const a = inp.selectionStart ?? inp.value.length; inp.value = inp.value.slice(0, a) + ins + inp.value.slice(inp.selectionEnd ?? a); inp.focus(); inp.setSelectionRange(a + ins.length, a + ins.length); resp = inp.value; changed(); show(); } }, k)));
-        W.append(el('div', { class: 'shortrow' }, q.lhs ? el('b', { class: 'lhs' }, q.lhs + ' =') : null, inp), prev, keys,
-          el('small', { class: 'muted' }, 'Type powers with ^ (x^2), multiply with * or by writing letters together (3xy), divide with /, and use brackets.')); break;
+        inp.oninput = () => { resp = inp.value; changed(); };
+        W.append(el('div', { class: 'shortrow' }, q.lhs ? el('b', { class: 'lhs' }, q.lhs + ' =') : null, inp)); break;
       }
       case 'cloze': {
         resp = Array.isArray(resp) ? resp : []; const p = el('p', { class: 'cloze' }); const n = q.blanks ? q.blanks.length : q.n;

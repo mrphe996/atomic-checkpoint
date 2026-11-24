@@ -34,7 +34,7 @@ with sync_playwright() as p:
     pg.evaluate("location.hash='profile'"); pg.wait_for_timeout(800); pg.click('#simAll'); pg.wait_for_timeout(600)
     pg.evaluate("location.hash='v-1-1'"); pg.wait_for_timeout(1200)
     pg.evaluate("location.hash='u-8'"); pg.wait_for_timeout(1200); pg.evaluate("location.hash='v-8-1'"); pg.wait_for_timeout(1500)
-    ok(pg.query_selector('.mf') is not None, 'A8 Fractions are typeset in maths lessons')
+    ok(pg.query_selector('.mt .katex .mfrac') is not None, 'A8 Fractions are typeset (KaTeX) in maths lessons')
     pg.evaluate("location.hash='bank'"); pg.wait_for_timeout(1200)
     n0 = int(pg.inner_text('#bankCount').split()[0]); pg.fill('#bankSearch', 'recurring'); pg.press('#bankSearch', 'Enter'); pg.wait_for_timeout(900)
     n1 = int(pg.inner_text('#bankCount').split()[0])
