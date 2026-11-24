@@ -156,8 +156,8 @@
       case 'expr': {
         // maths answer box: typed answer + live typeset preview + on-screen keypad (web/mathtype.js)
         if (window.AtomicMath && window.katex) {
-          const mx = AtomicMath.input({ value: resp || '', vars: q.vars || 'x', lhs: q.lhs, onInput: v => { resp = v; changed(); } });
-          W.append(mx.el, el('small', { class: 'muted notex' }, 'Type with the keyboard or the keypad: x^2 for a power, ( )/( ) for a fraction, √( ) for a root. Letters next to each other multiply (3xy).'));
+          const mx = (AtomicMath.field || AtomicMath.input)({ value: resp || '', vars: q.vars || 'x', lhs: q.lhs, onInput: v => { resp = v; changed(); } });
+          W.append(mx.el, el('small', { class: 'muted notex' }, 'Type straight into the box: / makes a fraction, ^ makes a power, the arrow keys move between the boxes. Letters next to each other multiply (3xy).'));
           break;
         }
         const inp = el('input', { type: 'text', class: 'shortin mathin', 'aria-label': 'Your answer', autocomplete: 'off', spellcheck: 'false', placeholder: 'e.g. 3x^2 + 2x − 5', value: resp || '' });
