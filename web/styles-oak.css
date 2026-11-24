@@ -1594,6 +1594,90 @@ body.focus-mode .modal-bg{z-index:1000}
 .leaveask p{margin:0 0 8px}.leaveask p.big{font:700 18px Lexend,Lexend,sans-serif}
 .fexit{white-space:nowrap}
 
+/* Unit Test sections */
+.examsec{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--t-222222,#222222);margin:0 0 8px}.examsec b{font-weight:800}
+.navgrid .navsec{grid-column:1/-1;font-size:12px;font-weight:700;color:var(--t-575757,#575757);margin-top:6px}
+.examsecs{border-collapse:collapse;max-width:420px}.examsecs th,.examsecs td{border:1px solid var(--l-E9E9E9,#E9E9E9);padding:6px 12px;text-align:left}.examsecs th{background:var(--b-FFFFFF,#FBFAF6)}
+
+.readfirst{display:flex;align-items:center;gap:16px;margin:12px 0}.readfirst .rfico{font-size:34px}.readfirst>div:nth-child(2){flex:1}@media(max-width:600px){.readfirst{flex-wrap:wrap}}
+
+/* course switcher by stage: Science, Mathematics and ESL side by side for each stage */
+.stsw.bystage{flex-direction:column;gap:10px}
+.stsw .swlevel{display:flex;flex-direction:column;gap:6px}
+.stsw .swlh{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--t-222222,#222222);padding:2px 10px 0}
+.stsw .swlrow{display:flex;gap:10px;flex-wrap:wrap}
+.stsw.bystage .sw{min-width:132px;min-height:50px;padding:6px 10px 6px 8px}
+.stsw.bystage .sw .swn,.stsw .swx .swn{font-size:18px;width:34px;height:34px}
+.swx{display:flex;align-items:center;gap:10px;min-width:132px;min-height:50px;padding:6px 10px 6px 8px;border-radius:6px;opacity:.55;color:var(--t-222222,#222222)}
+.swx .swn{display:grid;place-items:center;border-radius:6px;background:var(--b-F2F2F2,#ECEAE3);border:1.5px solid var(--l-E4E4E4,#D9D7CF);flex:none}
+.swx .swt{display:flex;flex-direction:column;line-height:1.2}.swx .swt b{font-family:Lexend,system-ui,sans-serif;font-size:15px}.swx .swt small{font-size:12px;color:var(--t-575757,#575757);font-weight:600}
+@media (max-width:900px){.stsw.bystage{flex-wrap:nowrap}.stsw .swlrow{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory}.stsw .swlrow .sg{flex:none;scroll-snap-align:start}}
+.stsw .swlrow>.sg{flex:1 1 480px}.stsw .swlrow>.sg .sgrow{justify-content:flex-start}@media (max-width:900px){.stsw .swlrow>.sg{flex:none}}
+
+/* top menu: stages, each with Science / Mathematics / ESL */
+.stm-wrap{position:relative;display:inline-flex}
+.stm-btn{font:inherit;font-weight:700;background:none;border:0;cursor:pointer;color:inherit;padding:8px 10px;border-radius:6px}
+.stm-btn:hover,.stm-btn[aria-expanded="true"]{background:var(--b-F4F4F1,#E9E7E0)}
+.stmenu{position:absolute;top:calc(100% + 8px);left:0;z-index:60;background:var(--b-FFFFFF,#FBFAF6);border:1px solid var(--l-D6D6D2,#CFCDC5);border-radius:6px;box-shadow:0 1px 2px rgba(34,34,34,.10),0 10px 24px rgba(34,34,34,.12);padding:14px 16px;display:flex;flex-direction:column;gap:12px;min-width:520px}
+.stm-h{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--t-575757,#575757);margin-bottom:6px}
+.stm-row{display:flex;gap:16px}
+.stm-col{display:flex;flex-direction:column;gap:2px;min-width:140px}
+.stm-col>b{font-family:Lexend,system-ui,sans-serif;font-size:14px;padding:2px 8px}
+.stm-it{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;font-size:14px;color:var(--t-222222,#222222);text-decoration:none}
+a.stm-it:hover{background:var(--b-F4F4F1,#E9E7E0)}
+.stm-it.on{background:var(--b-222222,#222222);color:#FFFFFF}
+.stm-it.soon{color:var(--t-575757,#575757)}
+.stm-it small{font-size:11px;font-weight:700;color:var(--t-575757,#575757)}
+@media (max-width:900px){.stm-wrap{display:block}.stmenu{position:static;min-width:0;box-shadow:none;padding:8px 0}.stm-row{flex-wrap:wrap;gap:8px}.stm-col{min-width:46%}}
+.mainnav .stmenu a.stm-it,.mainnav .stmenu .stm-it{padding:6px 10px;border-radius:6px;font-size:14px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.mainnav .stmenu a.stm-it.on{background:var(--b-222222,#222222);color:#FFFFFF}.mainnav .stmenu a.stm-it.on small{color:#D8D8D8}
+.mainnav .stm-btn{font-weight:600;font-size:15px;color:var(--t-222222,#222222);padding:9px 16px;border-radius:99px}
+.stm-col{min-width:168px}.stm-it>span{white-space:nowrap}
+
+/* ---------- maths typesetting (KaTeX) and the maths answer box ---------- */
+.mt .katex{font-size:1.08em}
+.opt .mt .katex,.grid .mt .katex,td .mt .katex{font-size:1.04em}
+.mxbox{display:flex;flex-direction:column;gap:6px;max-width:640px}
+.mxin{display:flex;align-items:center;gap:8px}
+.mxin .lhs{font-size:20px}
+.mxin .mathin{flex:1;font:500 19px/1.3 "Courier New",ui-monospace,monospace;letter-spacing:.02em}
+.mktog{display:grid;place-items:center;width:52px;height:46px;border-radius:6px;border:1.5px solid var(--l-DADADA,#DADADA);background:var(--b-F6F6F6,#F6F6F6);cursor:pointer;font-size:12px}
+.mktog[aria-expanded="true"]{background:var(--b-EFEFEF,#EFEFEF);border-color:var(--l-222222,#222222)}
+.mathprev{display:flex;align-items:center;gap:10px;min-height:44px;padding:6px 12px;border-radius:6px;background:transparent;color:var(--t-222222,#222222)}
+.mathprev.on{background:var(--b-FFFFFF,#FBFAF6);border:1px dashed var(--l-D3D3D3,#D3D3D3)}
+.mathprev.bad{background:var(--b-FFF7CC,#F8EFC4);border-color:var(--l-FFE555,#FFE555)}
+.mathprev .mpv .katex{font-size:1.45em}
+.mathprev .mphint{color:var(--t-222222,#222222);font-size:13px}
+.numprev{min-height:0}.numprev:empty{display:none}.numprev .katex{font-size:1.35em}
+.mkpad{display:grid;grid-template-columns:repeat(8,minmax(44px,1fr));gap:6px;padding:10px;border-radius:6px;background:var(--b-F3F3F3,#F3F3F3);border:1px solid var(--l-E5E5E5,#E5E5E5)}
+.mkpad[hidden]{display:none}
+.mkey{min-height:44px;border-radius:6px;border:1px solid var(--l-DADADA,#DADADA);background:var(--b-FFFFFF,#FBFAF6);cursor:pointer;font:600 17px/1 Lexend,sans-serif;color:var(--t-222222,#222222);display:grid;place-items:center;padding:4px}
+.mkey:hover{background:var(--b-F2F2F2,#ECEAE3)}.mkey:active{transform:translateY(1px)}
+.mkey.num{background:var(--b-FFFFFF,#FBFAF6)}.mkey.op{background:var(--b-FFFFFF,#FBFAF6)}.mkey.var{background:var(--b-FFF7CC,#F8EFC4);font-style:italic;font-family:KaTeX_Math,serif}
+.mkey.nav{background:var(--b-EDEDED,#EDEDED);font-size:14px}
+.mkey .katex{font-size:1.15em}
+@media (max-width:600px){.mkpad{grid-template-columns:repeat(6,1fr)}}
+.mathprev:not(.on){display:none}
+.mkgap{min-height:44px}
+.mathprev .mpv .katex{font-size:1.3em}
+@media (max-width:600px){.mkpad{grid-template-columns:repeat(8,1fr);gap:4px;padding:6px}.mkey{min-height:40px;font-size:15px}}
+
+/* compact course switcher: only the stage being studied until "All stages" is opened */
+.stsw.compact .swlevel:not(.cur),.stsw.compact .sg:not(.cur){display:none}
+.stsw.compact .swlh{display:none}
+.stsw.compact{flex-direction:row;align-items:center;flex-wrap:wrap}
+.stsw.compact .swlevel{flex:1 1 auto}
+.stsw.compact .swlrow>.sg{flex:1 1 auto}
+.stsw .swall{align-self:center;white-space:nowrap}
+.stsw:not(.compact) .swall{align-self:flex-start}
+@media (max-width:900px){.stsw.bystage{flex-wrap:wrap}.stsw .swlrow{flex-wrap:wrap;overflow:visible}.stsw .swlrow>.sg{flex:1 1 100%}.stsw .sgrow{flex-wrap:wrap}.stsw.bystage .sw,.swx{min-width:0;flex:1 1 30%}.sw .swp,.sw .swtag{display:none}}
+/* top menu fits on one line on laptops */
+@media (max-width:1500px) and (min-width:901px){.mainnav a,.mainnav .stm-btn{padding:8px 10px;font-size:14px}.mainnav{flex-wrap:nowrap;white-space:nowrap}}
+/* pre-reading card on phones */
+@media (max-width:600px){.readfirst{flex-direction:column;align-items:flex-start}.readfirst .rfico{display:none}}
+@media (max-width:900px){.stsw.bystage .sw,.stsw .swx{flex:1 1 100%}.stsw .sgrow{flex-direction:column}.sw .swp,.sw .swtag{display:inline-flex}.stsw.compact .swx{display:none}}
+@media (max-width:900px){.stsw .sgrow{flex-wrap:nowrap}.stsw.bystage .sw,.stsw .swx{flex:none;width:100%}.stsw .swlrow>.sg{min-width:0}}
+
 /* ---------- Design system B (generated: edit tools/build-theme.mjs) ---------- */
 :root{--band:#F4F4F1;--sh:0 1px 2px rgba(34,34,34,.10),0 10px 24px rgba(34,34,34,.12);--bd:1px solid #D6D6D2}
 body{background:var(--b-F4F4F1,#E9E7E0);color:var(--t-222222,#222222);line-height:1.55}
@@ -1675,10 +1759,10 @@ html.theme-oak #splash .sp-bar{background:var(--b-F2F2F2,#ECEAE3)}
 html.theme-oak #splash .sp-bar i{background:var(--b-222222,#222222)}
 
 /* ---------- dark mode: values for the themed colours (generated) ---------- */
-html.dark{color-scheme:dark;--b-FFFFFF:#1F2329;--t-222222:#ECEBE7;--t-000000:#FFFFFF;--l-FFE555:#6A6339;--b-CACACA:#3B424B;--t-575757:#B7BBC2;--l-222222:#8A919B;--b-F2F2F2:#2B3038;--b-FFF7CC:#3A3417;--l-CACACA:#3F4650;--b-222222:#39404A;--b-FFE555:#544A16;--b-7FD3A1:#1E482F;--b-E98A8A:#481E1E;--l-FFFFFF:#40464F;--t-808080:#8F959E;--l-F2F2F2:#40464F;--l-BEF2BD:#3A6A39;--b-E8F9E8:#1B3024;--l-F0B4B4:#6A3939;--b-FFF8F8:#332025;--b-000000:#4A525E;--l-575757:#6B737E;--b-FDECEC:#3D2026;--t-DD0035:#FF8094;--t-287C34:#7FD88D;--b-F3F3F3:#22262B;--b-F9F9F9:#252A31;--b-8E6CC9:#2D1E48;--l-E4E4E4:#333A43;--t-145C34:#8AE5B3;--t-8F2424:#E28D8D;--l-D9D9D9:#40464F;--l-F3F3F3:#40464F;--l-E9E9E9:#40464F;--t-111111:#EDEDED;--l-999999:#40464F;--b-CCCCCC:#31373F;--l-666666:#9198A1;--t-555555:#CCCCCC;--t-7E7E7E:#B3B3B3;--b-F0F0F0:#23272D;--l-D4D4D4:#40464F;--b-F08A4B:#482E1E;--l-F3C2C2:#6A3939;--b-F4F4F1:#14171B;--l-D6D6D2:#333A43;--l-8FD0AA:#396A4D;--b-F1FAF4:#1E482C;--l-EBA9A9:#6A3939;--l-000000:#A3AAB4;--l-D0D0D0:#40464F;--b-E3F5EA:#1E482E;--t-167A47:#86E9B7;--l-B5E2C7:#396A4D;--b-E4E4E4:#323840;--t-939393:#A7A7A7;--l-939393:#40464F;--l-DADADA:#40464F;--l-ABABAB:#40464F;--b-F4F4F4:#22252B;--l-333333:#9198A1;--b-FFF7F7:#481E1E;--b-F6F6F6:#21242A;--b-EEF8F1:#1E482A;--b-F1EAFD:#2D1E48;--t-5B33B0:#A990DF;--t-6E6E6E:#BDBDBD;--b-FBE3E3:#481E1E;--t-9B1C1C:#E98686;--b-ECECEC:#25292F;--l-DEDEDE:#40464F;--b-575757:#4A525E;--b-F0A3A3:#481E1E;--b-F0646B:#481E20;--b-A5A5A5:#414852;--l-9BD2A4:#396A41;--b-EAF7EC:#1E4824;--l-BABABA:#40464F;--t-B3261E:#EB8A85;--l-C7C7C7:#40464F;--t-949494:#A6A6A6;--t-1E7D4F:#8CE3B9;--b-FFEAF5:#481E34;--b-E3F5FA:#1E3F48;--t-0149AF:#8DB6FF;--t-013A8C:#B1CDFF;--b-BEF2BD:#1F3B2A;--l-0149AF:#5E97F5;--b-0149AF:#2F6FD6;--b-013A8C:#3B7BE2;--b-808080:#5B6470;--l-808080:#40464F;--l-BDBDB8:#4A525E;--l-FFF7CC:#6A6239;--l-E8F9E8:#396A39}
+html.dark{color-scheme:dark;--b-FFFFFF:#1F2329;--t-222222:#ECEBE7;--t-000000:#FFFFFF;--l-FFE555:#6A6339;--b-CACACA:#3B424B;--t-575757:#B7BBC2;--l-222222:#8A919B;--b-F2F2F2:#2B3038;--b-FFF7CC:#3A3417;--l-CACACA:#3F4650;--b-222222:#39404A;--b-FFE555:#544A16;--b-7FD3A1:#1E482F;--b-E98A8A:#481E1E;--l-FFFFFF:#40464F;--t-808080:#8F959E;--l-F2F2F2:#40464F;--l-BEF2BD:#3A6A39;--b-E8F9E8:#1B3024;--l-F0B4B4:#6A3939;--b-FFF8F8:#332025;--b-000000:#4A525E;--l-575757:#6B737E;--b-FDECEC:#3D2026;--t-DD0035:#FF8094;--t-287C34:#7FD88D;--b-F3F3F3:#22262B;--b-F9F9F9:#252A31;--b-8E6CC9:#2D1E48;--l-E4E4E4:#333A43;--t-145C34:#8AE5B3;--t-8F2424:#E28D8D;--l-D9D9D9:#40464F;--l-F3F3F3:#40464F;--l-E9E9E9:#40464F;--t-111111:#EDEDED;--l-999999:#40464F;--b-CCCCCC:#31373F;--l-666666:#9198A1;--t-555555:#CCCCCC;--t-7E7E7E:#B3B3B3;--b-F0F0F0:#23272D;--l-D4D4D4:#40464F;--b-F08A4B:#482E1E;--l-F3C2C2:#6A3939;--b-F4F4F1:#14171B;--l-D6D6D2:#333A43;--l-8FD0AA:#396A4D;--b-F1FAF4:#1E482C;--l-EBA9A9:#6A3939;--l-000000:#A3AAB4;--l-D0D0D0:#40464F;--b-E3F5EA:#1E482E;--t-167A47:#86E9B7;--l-B5E2C7:#396A4D;--b-E4E4E4:#323840;--t-939393:#A7A7A7;--l-939393:#40464F;--l-DADADA:#40464F;--l-ABABAB:#40464F;--b-F4F4F4:#22252B;--l-333333:#9198A1;--b-FFF7F7:#481E1E;--b-F6F6F6:#21242A;--b-EEF8F1:#1E482A;--b-F1EAFD:#2D1E48;--t-5B33B0:#A990DF;--t-6E6E6E:#BDBDBD;--b-FBE3E3:#481E1E;--t-9B1C1C:#E98686;--b-ECECEC:#25292F;--l-DEDEDE:#40464F;--b-575757:#4A525E;--b-F0A3A3:#481E1E;--b-F0646B:#481E20;--b-A5A5A5:#414852;--l-9BD2A4:#396A41;--b-EAF7EC:#1E4824;--l-BABABA:#40464F;--t-B3261E:#EB8A85;--l-C7C7C7:#40464F;--t-949494:#A6A6A6;--t-1E7D4F:#8CE3B9;--b-FFEAF5:#481E34;--b-E3F5FA:#1E3F48;--b-EFEFEF:#24282D;--l-D3D3D3:#40464F;--l-E5E5E5:#40464F;--b-EDEDED:#24282E;--t-0149AF:#8DB6FF;--t-013A8C:#B1CDFF;--b-BEF2BD:#1F3B2A;--l-0149AF:#5E97F5;--b-0149AF:#2F6FD6;--b-013A8C:#3B7BE2;--b-808080:#5B6470;--l-808080:#40464F;--l-BDBDB8:#4A525E;--l-FFF7CC:#6A6239;--l-E8F9E8:#396A39}
 html.dark body{background:#14171B;color:#ECEBE7}
 /* printed pages (worksheets, certificates) stay white paper in dark mode: their colours fall back to the light values */
-html.dark .a4{color-scheme:light;--b-FFFFFF:initial;--t-222222:initial;--t-000000:initial;--l-FFE555:initial;--b-CACACA:initial;--t-575757:initial;--l-222222:initial;--b-F2F2F2:initial;--b-FFF7CC:initial;--l-CACACA:initial;--b-222222:initial;--b-FFE555:initial;--b-7FD3A1:initial;--b-E98A8A:initial;--l-FFFFFF:initial;--t-808080:initial;--l-F2F2F2:initial;--l-BEF2BD:initial;--b-E8F9E8:initial;--l-F0B4B4:initial;--b-FFF8F8:initial;--b-000000:initial;--l-575757:initial;--b-FDECEC:initial;--t-DD0035:initial;--t-287C34:initial;--b-F3F3F3:initial;--b-F9F9F9:initial;--b-8E6CC9:initial;--l-E4E4E4:initial;--t-145C34:initial;--t-8F2424:initial;--l-D9D9D9:initial;--l-F3F3F3:initial;--l-E9E9E9:initial;--t-111111:initial;--l-999999:initial;--b-CCCCCC:initial;--l-666666:initial;--t-555555:initial;--t-7E7E7E:initial;--b-F0F0F0:initial;--l-D4D4D4:initial;--b-F08A4B:initial;--l-F3C2C2:initial;--b-F4F4F1:initial;--l-D6D6D2:initial;--l-8FD0AA:initial;--b-F1FAF4:initial;--l-EBA9A9:initial;--l-000000:initial;--l-D0D0D0:initial;--b-E3F5EA:initial;--t-167A47:initial;--l-B5E2C7:initial;--b-E4E4E4:initial;--t-939393:initial;--l-939393:initial;--l-DADADA:initial;--l-ABABAB:initial;--b-F4F4F4:initial;--l-333333:initial;--b-FFF7F7:initial;--b-F6F6F6:initial;--b-EEF8F1:initial;--b-F1EAFD:initial;--t-5B33B0:initial;--t-6E6E6E:initial;--b-FBE3E3:initial;--t-9B1C1C:initial;--b-ECECEC:initial;--l-DEDEDE:initial;--b-575757:initial;--b-F0A3A3:initial;--b-F0646B:initial;--b-A5A5A5:initial;--l-9BD2A4:initial;--b-EAF7EC:initial;--l-BABABA:initial;--t-B3261E:initial;--l-C7C7C7:initial;--t-949494:initial;--t-1E7D4F:initial;--b-FFEAF5:initial;--b-E3F5FA:initial;--t-0149AF:initial;--t-013A8C:initial;--b-BEF2BD:initial;--l-0149AF:initial;--b-0149AF:initial;--b-013A8C:initial;--b-808080:initial;--l-808080:initial;--l-BDBDB8:initial;--l-FFF7CC:initial;--l-E8F9E8:initial}
+html.dark .a4{color-scheme:light;--b-FFFFFF:initial;--t-222222:initial;--t-000000:initial;--l-FFE555:initial;--b-CACACA:initial;--t-575757:initial;--l-222222:initial;--b-F2F2F2:initial;--b-FFF7CC:initial;--l-CACACA:initial;--b-222222:initial;--b-FFE555:initial;--b-7FD3A1:initial;--b-E98A8A:initial;--l-FFFFFF:initial;--t-808080:initial;--l-F2F2F2:initial;--l-BEF2BD:initial;--b-E8F9E8:initial;--l-F0B4B4:initial;--b-FFF8F8:initial;--b-000000:initial;--l-575757:initial;--b-FDECEC:initial;--t-DD0035:initial;--t-287C34:initial;--b-F3F3F3:initial;--b-F9F9F9:initial;--b-8E6CC9:initial;--l-E4E4E4:initial;--t-145C34:initial;--t-8F2424:initial;--l-D9D9D9:initial;--l-F3F3F3:initial;--l-E9E9E9:initial;--t-111111:initial;--l-999999:initial;--b-CCCCCC:initial;--l-666666:initial;--t-555555:initial;--t-7E7E7E:initial;--b-F0F0F0:initial;--l-D4D4D4:initial;--b-F08A4B:initial;--l-F3C2C2:initial;--b-F4F4F1:initial;--l-D6D6D2:initial;--l-8FD0AA:initial;--b-F1FAF4:initial;--l-EBA9A9:initial;--l-000000:initial;--l-D0D0D0:initial;--b-E3F5EA:initial;--t-167A47:initial;--l-B5E2C7:initial;--b-E4E4E4:initial;--t-939393:initial;--l-939393:initial;--l-DADADA:initial;--l-ABABAB:initial;--b-F4F4F4:initial;--l-333333:initial;--b-FFF7F7:initial;--b-F6F6F6:initial;--b-EEF8F1:initial;--b-F1EAFD:initial;--t-5B33B0:initial;--t-6E6E6E:initial;--b-FBE3E3:initial;--t-9B1C1C:initial;--b-ECECEC:initial;--l-DEDEDE:initial;--b-575757:initial;--b-F0A3A3:initial;--b-F0646B:initial;--b-A5A5A5:initial;--l-9BD2A4:initial;--b-EAF7EC:initial;--l-BABABA:initial;--t-B3261E:initial;--l-C7C7C7:initial;--t-949494:initial;--t-1E7D4F:initial;--b-FFEAF5:initial;--b-E3F5FA:initial;--b-EFEFEF:initial;--l-D3D3D3:initial;--l-E5E5E5:initial;--b-EDEDED:initial;--t-0149AF:initial;--t-013A8C:initial;--b-BEF2BD:initial;--l-0149AF:initial;--b-0149AF:initial;--b-013A8C:initial;--b-808080:initial;--l-808080:initial;--l-BDBDB8:initial;--l-FFF7CC:initial;--l-E8F9E8:initial}
 html.dark .brand img{background:#FBFAF6;border-radius:6px;padding:2px 6px}
 html.dark .fig,html.dark .pfig,html.dark .scope,html.dark .cmap svg,html.dark .ws{background:#F3F1EB;border-radius:6px;color:#222}
 html.dark .fig *{color:#222}
@@ -1696,71 +1780,3 @@ html.dark .brand img{mix-blend-mode:normal}
 @media (max-width:480px){.topright .pill.streak{display:none}}
 .modebtn{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid #222;background:#FBFAF6;cursor:pointer;display:grid;place-items:center;font-size:19px;line-height:1;padding:0}
 html.dark .modebtn{background:#2B3038;border-color:#8A919B}
-
-/* Unit Test sections */
-.examsec{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#0149AF;margin:0 0 8px}.examsec b{font-weight:800}
-.navgrid .navsec{grid-column:1/-1;font-size:12px;font-weight:700;color:#556377;margin-top:6px}
-.examsecs{border-collapse:collapse;max-width:420px}.examsecs th,.examsecs td{border:1px solid #DCE6F5;padding:6px 12px;text-align:left}.examsecs th{background:#F2F6FC}
-
-.readfirst{display:flex;align-items:center;gap:16px;margin:12px 0}.readfirst .rfico{font-size:34px}.readfirst>div:nth-child(2){flex:1}@media(max-width:600px){.readfirst{flex-wrap:wrap}}
-
-/* course switcher by stage: Science, Mathematics and ESL side by side for each stage */
-.stsw.bystage{flex-direction:column;gap:10px}
-.stsw .swlevel{display:flex;flex-direction:column;gap:6px}
-.stsw .swlh{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:2px 10px 0}
-.stsw .swlrow{display:flex;gap:10px;flex-wrap:wrap}
-.stsw.bystage .sw{min-width:132px;min-height:50px;padding:6px 10px 6px 8px}
-.stsw.bystage .sw .swn,.stsw .swx .swn{font-size:18px;width:34px;height:34px}
-.swx{display:flex;align-items:center;gap:10px;min-width:132px;min-height:50px;padding:6px 10px 6px 8px;border-radius:13px;opacity:.55;color:var(--ink)}
-.swx .swn{display:grid;place-items:center;border-radius:11px;background:#EEF1F6;border:1.5px solid #E1E6EF;flex:none}
-.swx .swt{display:flex;flex-direction:column;line-height:1.2}.swx .swt b{font-family:Outfit,sans-serif;font-size:15px}.swx .swt small{font-size:12px;color:var(--muted);font-weight:600}
-@media (max-width:900px){.stsw.bystage{flex-wrap:nowrap}.stsw .swlrow{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory}.stsw .swlrow .sg{flex:none;scroll-snap-align:start}}
-.stsw .swlrow>.sg{flex:1 1 480px}.stsw .swlrow>.sg .sgrow{justify-content:flex-start}@media (max-width:900px){.stsw .swlrow>.sg{flex:none}}
-
-/* top menu: stages, each with Science / Mathematics / ESL */
-.stm-wrap{position:relative;display:inline-flex}
-.stm-btn{font:inherit;font-weight:700;background:none;border:0;cursor:pointer;color:inherit;padding:8px 10px;border-radius:10px}
-.stm-btn:hover,.stm-btn[aria-expanded="true"]{background:var(--band)}
-.stmenu{position:absolute;top:calc(100% + 8px);left:0;z-index:60;background:#fff;border:var(--bd);border-radius:16px;box-shadow:var(--sh);padding:14px 16px;display:flex;flex-direction:column;gap:12px;min-width:520px}
-.stm-h{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.stm-row{display:flex;gap:16px}
-.stm-col{display:flex;flex-direction:column;gap:2px;min-width:140px}
-.stm-col>b{font-family:Outfit,sans-serif;font-size:14px;padding:2px 8px}
-.stm-it{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 8px;border-radius:9px;font-size:14px;color:var(--ink);text-decoration:none}
-a.stm-it:hover{background:var(--band)}
-.stm-it.on{background:var(--ink);color:#fff}
-.stm-it.soon{color:var(--muted)}
-.stm-it small{font-size:11px;font-weight:700;color:var(--muted)}
-@media (max-width:900px){.stm-wrap{display:block}.stmenu{position:static;min-width:0;box-shadow:none;padding:8px 0}.stm-row{flex-wrap:wrap;gap:8px}.stm-col{min-width:46%}}
-.mainnav .stmenu a.stm-it,.mainnav .stmenu .stm-it{padding:6px 10px;border-radius:9px;font-size:14px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:8px}
-.mainnav .stmenu a.stm-it.on{background:var(--ink);color:#fff}.mainnav .stmenu a.stm-it.on small{color:#C9D3E6}
-.mainnav .stm-btn{font-weight:600;font-size:15px;color:var(--ink);padding:9px 16px;border-radius:99px}
-.stm-col{min-width:168px}.stm-it>span{white-space:nowrap}
-
-/* ---------- maths typesetting (KaTeX) and the maths answer box ---------- */
-.mt .katex{font-size:1.08em}
-.opt .mt .katex,.grid .mt .katex,td .mt .katex{font-size:1.04em}
-.mxbox{display:flex;flex-direction:column;gap:6px;max-width:640px}
-.mxin{display:flex;align-items:center;gap:8px}
-.mxin .lhs{font-size:20px}
-.mxin .mathin{flex:1;font:500 19px/1.3 "Courier New",ui-monospace,monospace;letter-spacing:.02em}
-.mktog{display:grid;place-items:center;width:52px;height:46px;border-radius:10px;border:1.5px solid #C9D6EA;background:#F2F5FA;cursor:pointer;font-size:12px}
-.mktog[aria-expanded="true"]{background:#E3ECFA;border-color:#0149AF}
-.mathprev{display:flex;align-items:center;gap:10px;min-height:44px;padding:6px 12px;border-radius:10px;background:transparent;color:var(--ink)}
-.mathprev.on{background:#F4F8FF;border:1px dashed #B8CFEF}
-.mathprev.bad{background:#FFF6E3;border-color:#F3D296}
-.mathprev .mpv .katex{font-size:1.45em}
-.mathprev .mphint{color:#8A5A00;font-size:13px}
-.numprev{min-height:0}.numprev:empty{display:none}.numprev .katex{font-size:1.35em}
-.mkpad{display:grid;grid-template-columns:repeat(8,minmax(44px,1fr));gap:6px;padding:10px;border-radius:14px;background:#EEF2F8;border:1px solid #DCE3EE}
-.mkpad[hidden]{display:none}
-.mkey{min-height:44px;border-radius:9px;border:1px solid #C9D6EA;background:#fff;cursor:pointer;font:600 17px/1 Figtree,sans-serif;color:var(--ink);display:grid;place-items:center;padding:4px}
-.mkey:hover{background:#EAF1FC}.mkey:active{transform:translateY(1px)}
-.mkey.num{background:#fff}.mkey.op{background:#F7F9FD}.mkey.var{background:#FFF8E6;font-style:italic;font-family:KaTeX_Math,serif}
-.mkey.nav{background:#E6EBF3;font-size:14px}
-.mkey .katex{font-size:1.15em}
-@media (max-width:600px){.mkpad{grid-template-columns:repeat(6,1fr)}}
-.mathprev:not(.on){display:none}
-.mkgap{min-height:44px}
-.mathprev .mpv .katex{font-size:1.3em}
-@media (max-width:600px){.mkpad{grid-template-columns:repeat(8,1fr);gap:4px;padding:6px}.mkey{min-height:40px;font-size:15px}}

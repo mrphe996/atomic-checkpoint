@@ -22,7 +22,7 @@ with sync_playwright() as p:
     sw = pg.query_selector('#stageSwitch')
     ok(sw is not None and len(pg.query_selector_all('#stageSwitch .sw')) == pg.evaluate('Core.STAGES.length') and pg.query_selector('#stageSwitch .sw.on[data-stage="7"]') is not None, 'U4 Dashboard shows the course switcher with Stage 7 current')
     ok(pg.query_selector('#stageSwitch .sw.locked[data-stage="19"]') is not None, 'U5 Mathematics Stage 9 shows as locked in the switcher')
-    pg.click('#stageSwitch .sw[data-stage="19"]', force=True); pg.wait_for_timeout(500)
+    pg.evaluate("document.querySelector('#stageSwitch .sw[data-stage=\"19\"]').click()"); pg.wait_for_timeout(500)
     ok(pg.evaluate("Core.STAGE") == 7, 'U6 Clicking the locked course does not switch')
     pg.evaluate("location.hash='stage-19'"); pg.wait_for_timeout(700)
     ok(pg.query_selector('#stageSoon') is not None and pg.evaluate("Core.STAGE") == 7, 'U7 The Mathematics Stage 9 page says coming soon')
@@ -34,7 +34,7 @@ with sync_playwright() as p:
     # enrol Stage 8 and switch through the switcher
     pg.evaluate("location.hash='checkout-8'"); pg.wait_for_timeout(600); pg.click('#payBtn'); pg.wait_for_function("Core.STAGE===8", timeout=8000)
     pg.evaluate("location.hash='bank'"); pg.wait_for_timeout(900)
-    pg.click('#stageSwitch .sw[data-stage="7"]'); pg.wait_for_function("Core.STAGE===7", timeout=8000); pg.wait_for_timeout(500)
+    pg.evaluate("document.querySelector('#stageSwitch .sw[data-stage=\"7\"]').click()"); pg.wait_for_function("Core.STAGE===7", timeout=8000); pg.wait_for_timeout(500)
     ok(pg.evaluate("location.hash") == '#bank' and pg.query_selector('#bankFilters') is not None, 'U11 Switching course keeps you on the Question Bank')
     # Question Bank filters
     n0 = int(pg.inner_text('#bankCount').split()[0])

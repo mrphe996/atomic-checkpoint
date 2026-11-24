@@ -1660,3 +1660,19 @@ a.stm-it:hover{background:var(--band)}
 .mkgap{min-height:44px}
 .mathprev .mpv .katex{font-size:1.3em}
 @media (max-width:600px){.mkpad{grid-template-columns:repeat(8,1fr);gap:4px;padding:6px}.mkey{min-height:40px;font-size:15px}}
+
+/* compact course switcher: only the stage being studied until "All stages" is opened */
+.stsw.compact .swlevel:not(.cur),.stsw.compact .sg:not(.cur){display:none}
+.stsw.compact .swlh{display:none}
+.stsw.compact{flex-direction:row;align-items:center;flex-wrap:wrap}
+.stsw.compact .swlevel{flex:1 1 auto}
+.stsw.compact .swlrow>.sg{flex:1 1 auto}
+.stsw .swall{align-self:center;white-space:nowrap}
+.stsw:not(.compact) .swall{align-self:flex-start}
+@media (max-width:900px){.stsw.bystage{flex-wrap:wrap}.stsw .swlrow{flex-wrap:wrap;overflow:visible}.stsw .swlrow>.sg{flex:1 1 100%}.stsw .sgrow{flex-wrap:wrap}.stsw.bystage .sw,.swx{min-width:0;flex:1 1 30%}.sw .swp,.sw .swtag{display:none}}
+/* top menu fits on one line on laptops */
+@media (max-width:1500px) and (min-width:901px){.mainnav a,.mainnav .stm-btn{padding:8px 10px;font-size:14px}.mainnav{flex-wrap:nowrap;white-space:nowrap}}
+/* pre-reading card on phones */
+@media (max-width:600px){.readfirst{flex-direction:column;align-items:flex-start}.readfirst .rfico{display:none}}
+@media (max-width:900px){.stsw.bystage .sw,.stsw .swx{flex:1 1 100%}.stsw .sgrow{flex-direction:column}.sw .swp,.sw .swtag{display:inline-flex}.stsw.compact .swx{display:none}}
+@media (max-width:900px){.stsw .sgrow{flex-wrap:nowrap}.stsw.bystage .sw,.stsw .swx{flex:none;width:100%}.stsw .swlrow>.sg{min-width:0}}

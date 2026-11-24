@@ -296,7 +296,13 @@
     const block = n => el('div', { class: 'sg', 'data-stage-block': n }, el('small', {}, `Stage ${n}`), el('div', { class: 'sgrow' },
       Core.STAGES.includes(n) ? btn(n, 'sci') : soon('sci'), Core.STAGES.includes(10 + n) ? btn(10 + n, 'math') : soon('math'), soon('esl')));
     const level = (name, ns) => el('div', { class: 'swlevel' }, el('b', { class: 'swlh' }, name), el('div', { class: 'swlrow' }, ...ns.map(block)));
-    return el('nav', { class: 'stsw bystage', id: 'stageSwitch', 'aria-label': 'Switch course' }, level('Lower Secondary', [7, 8, 9]), level('Primary', [3, 4, 5, 6]));
+    // compact by default: only the stage being studied (its three subjects); "All stages" opens the full grid
+    const cur = Core.stageNo(Core.STAGE);
+    const nav = el('nav', { class: 'stsw bystage' + (UI.swOpen ? '' : ' compact'), id: 'stageSwitch', 'aria-label': 'Switch course' }, level('Lower Secondary', [7, 8, 9]), level('Primary', [3, 4, 5, 6]));
+    nav.querySelectorAll('[data-stage-block]').forEach(b => { if (+b.getAttribute('data-stage-block') === cur) { b.classList.add('cur'); b.parentElement.parentElement.classList.add('cur'); } });
+    const all = el('button', { type: 'button', class: 'btn small swall', id: 'swAll', 'aria-expanded': String(!!UI.swOpen), onclick: () => { UI.swOpen = !UI.swOpen; nav.classList.toggle('compact', !UI.swOpen); all.setAttribute('aria-expanded', String(UI.swOpen)); all.textContent = UI.swOpen ? 'Show less ▴' : 'All stages ▾'; } }, UI.swOpen ? 'Show less ▴' : 'All stages ▾');
+    nav.append(all);
+    return nav;
   }
   function pageHero(eyebrow, title, sub, side) {
     const w = document.getElementById('wrap'); w.classList.add('landing');
@@ -494,7 +500,7 @@
   }
   function viewUnit() {
     const m = $main(); const nx = Core.nextActivity(st);
-    const meta = Core.INDEX.units.find(u => u.n === Core.UNO) || {}; const art = window.UnitArt ? UnitArt(Core.STAGE === 7 ? Core.UNO : 0, meta.strand) : { svg: '', tag: '' };
+    const meta = Core.INDEX.units.find(u => u.n === Core.UNO) || {}; const art = window.UnitArt ? UnitArt(Core.STAGE === 7 ? Core.UNO : 0, Core.IS_MATHS ? 'Maths:' + (meta.strand || '') : meta.strand) : { svg: '', tag: '' };
     const nobj = Object.keys(C.objectives).length, sec = Object.keys(C.objectives).filter(objSecure).length, pct = unitPct();
     const studied = Core.unitSeconds(Core.UNO);
     const crumbs4 = el('nav', { class: 'u4crumbs', 'aria-label': 'Breadcrumb' }, el('a', { href: '#home' }, 'Dashboard'), el('span', {}, '›'), el('a', { href: '#level' }, 'Cambridge ' + Core.levelName(Core.STAGE)), el('span', {}, '›'),
@@ -513,10 +519,10 @@
         el('div', { class: 'float' }, el('i', {}, Core.passed(st) ? '🏆' : '▶'), el('div', {}, el('b', {}, Core.passed(st) ? 'Unit passed' : 'Next up'), nx.label)))));
     document.getElementById('wrap').before(heroS);
     m.append(tocBtn(), el('div', { class: 'u4head' }, el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, `Cambridge ${Core.stageName(Core.STAGE)} · Unit ${Core.UNO}`), el('h2', {}, 'Your learning path')),
-      el('div', { class: 'u4steps' }, ...(Core.IS_PRIMARY ? ['1 Watch', C.unit.young ? '2 Listen & practise' : '2 Listen & say', '3 Experiment', '4 Unit Test'] : [C.unit.read ? '0 Read first' : null, '1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test'].filter(Boolean)).map(t => el('span', {}, t)))),
+      el('div', { class: 'u4steps' }, ...(Core.IS_PRIMARY ? ['1 Watch', C.unit.young ? '2 Listen & practise' : '2 Listen & say', '3 Experiment', '4 Unit Test'] : [C.unit.read ? '0 Read first' : null, Core.IS_MATHS ? '1 Read the lesson' : '1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test'].filter(Boolean)).map(t => el('span', {}, t)))),
       C.unit.read ? el('section', { class: 'card readfirst', id: 'readFirst' }, el('div', { class: 'rfico', 'aria-hidden': 'true' }, '📘'),
-        el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, 'Read before you watch'), el('h3', { style: 'margin:2px 0 4px' }, `Unit ${Core.UNO} pre-reading pack (PDF)`),
-          el('p', { class: 'muted', style: 'margin:0' }, 'The key ideas of each video, the key words and “Think first” questions. Read a section before you watch its video.')),
+        el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, Core.IS_MATHS ? 'Read before the lesson' : 'Read before you watch'), el('h3', { style: 'margin:2px 0 4px' }, `Unit ${Core.UNO} pre-reading pack (PDF)`),
+          el('p', { class: 'muted', style: 'margin:0' }, Core.IS_MATHS ? 'The key ideas, methods and worked examples of every section, with “Try it” questions. Print it or read it before you start the unit.' : 'The key ideas of each video, the key words and “Think first” questions. Read a section before you watch its video.')),
         el('a', { class: 'btn primary small', id: 'readPdf', href: C.unit.read, target: '_blank', rel: 'noopener', download: '', onclick: () => Backend.track('read_pdf', { learner: st.id, unit: Core.UNIT }) }, '⬇ Download PDF')) : null,
       learningPath(), examBlock());
     m.append(el('div', { class: 'u4two' },
@@ -954,14 +960,14 @@
     const d = info.date, dd = String(d.getDate()).padStart(2, '0') + String(d.getMonth() + 1).padStart(2, '0') + d.getFullYear();
     // cover
     const cover = page(
-      el('div', { class: 'pcv-h' }, el('img', { src: 'atomic_logo.png', alt: '' }), el('div', {}, el('div', { class: 'nm' }, 'ATOMIC EDUCATION'), el('div', { class: 'tg' }, el('b', {}, 'Cambridge'), ' Lower Secondary Science · Checkpoint preparation'))),
+      el('div', { class: 'pcv-h' }, el('img', { src: 'atomic_logo.png', alt: '' }), el('div', {}, el('div', { class: 'nm' }, 'ATOMIC EDUCATION'), el('div', { class: 'tg' }, el('b', {}, 'Cambridge'), ` ${Core.levelName(Core.STAGE)} ${Core.subjectOf(Core.STAGE)}` + (Core.IS_PRIMARY ? '' : ' · Checkpoint preparation')))),
       el('div', { html: Paper.waves() }),
       el('div', { class: 'pcv-meta' }, 'Written by the Atomic teaching team · Videos, practice and Unit Tests online at Atomic'),
       el('div', { class: 'pcv-ttl' }, el('span', {}, 'PRACTICE WORKSHEET'), el('span', {}, `SCORE: ______ / ${qs.length}`)),
       el('table', { class: 'pgrid' }, el('tbody', {}, el('tr', {}, el('td', { class: 'k' }, 'LEARNER NAME'), el('td', { colspan: '3', class: 'pre' }, info.name)),
         el('tr', {}, el('td', { class: 'k' }, 'LEARNER ID'), el('td', {}, boxes(info.lid.replace(/-/g, ''), 8)), el('td', { class: 'k', style: 'width:22mm' }, 'DATE'), el('td', {}, boxes(dd, 8))))),
       el('div', { class: 'psubj' }, el('div', { class: 'ico', html: '<svg width="52" height="52" viewBox="0 0 56 56"><rect x="6" y="10" width="44" height="36" rx="10" fill="none" stroke="#0E1B3D" stroke-width="3"/><ellipse cx="28" cy="28" rx="13" ry="9" fill="#DCE8FA" stroke="#0149AF" stroke-width="2"/><circle cx="33" cy="27" r="4" fill="#0E1B3D"/></svg>' }),
-        el('div', {}, el('div', { class: 'camline' }, el('b', {}, 'CAMBRIDGE'), ` ${Core.stageName(Core.STAGE).toUpperCase()} · SCIENCE`), el('div', {}, `Unit ${Core.UNO} · ${C.unit.title}`, el('br'), `${s.id} ${s.title}`)),
+        el('div', {}, el('div', { class: 'camline' }, el('b', {}, 'CAMBRIDGE'), ` ${Core.stageLabel(Core.STAGE).toUpperCase()}`), el('div', {}, `Unit ${Core.UNO} · ${C.unit.title}`, el('br'), `${s.id} ${s.title}`)),
         el('div', { style: 'text-align:right' }, el('div', { class: 'code' }, doc), el('div', {}, `${mins} minutes`), el('small', {}, `${qs.length} questions`))),
       el('p', { style: 'margin:5mm 0 0' }, 'You must answer on this worksheet.'),
       el('div', { class: 'psec' }, 'INSTRUCTIONS'), el('ul', {}, el('li', {}, 'Answer ', el('b', {}, 'all'), ' questions. Questions 1–8 are Core; 9–14 are extra practice.'), el('li', {}, 'Use a black or dark blue pen. You may use an HB pencil for diagrams.'), el('li', {}, 'Write your answer to each question in the space provided. Show your working.'), el('li', {}, `When you finish, open topic ${s.id} on Atomic and check your answers with the worked solutions.`)),
@@ -1126,7 +1132,7 @@
       if (!fin) items.push({ what: `pass an end-of-year exam (needs level ${TestRules.FINAL_LEVEL}; you are level ${Core.levelInfo().level})`, route: 'final' });
       m.append(lockScreen(`Your Cambridge ${Core.stageName(Core.STAGE)} certificate`, `The certificate is awarded when you have passed all ${Core.unitCount()} Unit Tests and one end-of-year exam. Here is how it will look:`, items));
       const img = el('img', { class: 'certimg', alt: `Preview of the Cambridge ${Core.stageName(Core.STAGE)} certificate` }); m.append(el('section', { class: 'card certwrap' }, img));
-      drawCert({ name: st.name, code: `AE-${Core.IS_MATHS ? 'M9' : 'S' + Core.STAGE}-XXXX-XXXXXXXX`, date: '—', ...certStats() }, true).then(cv => { img.src = cv.toDataURL('image/png'); });
+      drawCert({ name: st.name, code: `AE-${Core.IS_MATHS ? 'M' + Core.stageNo(Core.STAGE) : 'S' + Core.STAGE}-XXXX-XXXXXXXX`, date: '—', ...certStats() }, true).then(cv => { img.src = cv.toDataURL('image/png'); });
       return;
     }
     const c = { name: cert.name, code: cert.code, date: new Date(cert.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }), ...certStats() };
@@ -1565,7 +1571,7 @@
         start: async ev => { ev.currentTarget.disabled = true; try { const c = await Core.startClock(`stage${Core.STAGE}-cp`, k); draft.deadline = c.deadline; save(); UI.testOn = true; UI.examKey = 'C' + k; UI.testIdx = 0; render(); } catch (x) { ev.currentTarget.disabled = false; modal('Could not open the paper', errText(x), [{ t: 'OK', cls: 'primary' }]); } } }));
       return;
     }
-    examRoom({ title, badge: 'CHECKPOINT · SCIENCE ' + t.code, qs, max: P.max, draft, save, seed: st.id + 'C' + k, deadline: draft.deadline,
+    examRoom({ title, badge: 'CHECKPOINT · ' + Core.subjectOf(Core.STAGE).toUpperCase() + ' ' + t.code, qs, max: P.max, draft, save, seed: st.id + 'C' + k, deadline: draft.deadline,
       onSubmit: async (answers, key, meta) => { await Core.submitCp(k, answers, key, meta); try { localStorage.removeItem(fdKey(dk)); } catch (e) { } UI.examKey = null; go('cpr-' + k); } });
   }
   async function viewCpResult(k) {
