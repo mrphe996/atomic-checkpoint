@@ -228,6 +228,10 @@ export function writeIndex() {
     9: [['Photosynthesis and Transport in Plants', 'Biology'], ['Excretion', 'Biology'], ['Variation and Inheritance', 'Biology'], ['The Structure of the Atom and the Periodic Table', 'Chemistry'],
       ['Chemical Bonding and Structure of Materials', 'Chemistry'], ['Displacement Reactions', 'Chemistry'], ['Salts', 'Chemistry'], ['Rate of Reaction', 'Chemistry'], ['Density', 'Physics'],
       ['Transfer of Thermal Energy', 'Physics'], ['Sound', 'Physics'], ['Electrical Circuits', 'Physics'], ['Earth and Climate Change', 'Earth and Space'], ['Astronomy', 'Earth and Space']],
+    // 17 = Mathematics Stage 7
+    17: [['Integers', 'Number'], ['Expressions, Formulae and Equations', 'Algebra'], ['Place Value and Rounding', 'Number'], ['Decimals', 'Number'], ['Angles and Constructions', 'Geometry'],
+      ['Collecting Data', 'Statistics'], ['Fractions', 'Number'], ['Shapes and Symmetry', 'Geometry'], ['Sequences and Functions', 'Algebra'], ['Percentages', 'Number'],
+      ['Graphs', 'Algebra'], ['Ratio and Proportion', 'Number'], ['Probability', 'Probability'], ['Position and Transformation', 'Geometry'], ['Shapes, Area and Volume', 'Geometry'], ['Interpreting and Discussing Results', 'Statistics']],
     // 18 = Mathematics Stage 8
     18: [['Integers', 'Number'], ['Expressions, Formulae and Equations', 'Algebra'], ['Place Value and Rounding', 'Number'], ['Decimals', 'Number'], ['Angles and Constructions', 'Geometry'],
       ['Collecting Data', 'Statistics'], ['Fractions', 'Number'], ['Shapes and Symmetry', 'Geometry'], ['Sequences and Functions', 'Algebra'], ['Percentages', 'Number'],

@@ -2,7 +2,7 @@
    The learner's progress lives in the backend (Backend.saveProgress); marking happens on the server
    (Backend.submitTest) – this file only mirrors results for the screens. */
 (function () {
-  const STAGES = [3, 4, 5, 6, 7, 8, 9, 18, 19], STAGE_UNITS = 14;
+  const STAGES = [3, 4, 5, 6, 7, 8, 9, 17, 18, 19], STAGE_UNITS = 14;
   // course keys: 7–9 = Science Stages 7–9; 10 + N = Mathematics Stage N, 13–19 (same machinery, their own units, tests and certificates)
   const MATHS = g => g >= 10;
   // 3–6 = Cambridge Primary Science Stages 3 to 6 (animated lessons, listening and speaking checks, experiment rooms)
