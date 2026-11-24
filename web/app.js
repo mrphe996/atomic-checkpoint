@@ -132,6 +132,7 @@
       right.append(modeBtn(), el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
       nav = [navLink('home', 'Home', area === 'home'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
     }
+    if (st || !me) nav.splice(1, 0, stagesMenu());
     if (!st && !me || st && isGuest()) nav.push(el('a', { class: 'navlogin', href: '#signin' }, 'Log in'));
     nav.push(navMode());
     const header = el('header', { class: 'top' + (st && isGuest() || !st && !me ? ' guest' : '') }, el('div', { class: 'top-in' },
@@ -240,7 +241,8 @@
   /* where am I / what remains / next button (shown on every learning screen) */
   // dotted page header shared by every student page (the "Home 01" look)
   /* ---------- course switcher: Science Stages 7–9 and Mathematics Stage 9 ---------- */
-  const stagePct = g => Math.round(Object.keys((st && st.results) || {}).filter(k => k.startsWith(`stage${g}-unit`)).length / (g >= 10 ? 15 : g <= 6 ? 6 : 14) * 100);
+  const STAGE_N = { 18: 16, 19: 15 };
+  const stagePct = g => Math.round(Object.keys((st && st.results) || {}).filter(k => k.startsWith(`stage${g}-unit`)).length / (STAGE_N[g] || (g >= 10 ? 15 : g <= 6 ? 6 : 14)) * 100);
   const stageShort = g => (g >= 10 ? `Stage ${g - 10}` : `Stage ${g}`);
   function stageSoon(g) {
     const m = $main();
@@ -259,19 +261,42 @@
     catch (e) { if (btn) btn.classList.remove('busy'); toast(errText(e)); return; }
     if (/^stage-\d+$/.test(r)) go('stage-' + g); else if (TOC_ROUTES(r) && r !== 'map') go('u-' + Core.UNO); else render();
   }
+  // top menu: every stage, with Science, Mathematics and ESL listed separately under it
+  function stagesMenu() {
+    const panel = el('div', { class: 'stmenu', id: 'stagesMenu', hidden: true, role: 'menu' });
+    const item = (g, icon, name) => {
+      if (!Core.STAGES.includes(g)) return el('span', { class: 'stm-it soon', 'aria-disabled': 'true' }, el('span', {}, icon + ' ' + name), el('small', {}, 'Soon'));
+      const lk = g !== Core.STAGE && Core.stageLocked(g), cur = st && g === Core.STAGE;
+      return el('a', { class: 'stm-it' + (cur ? ' on' : '') + (lk ? ' soon' : ''), href: '#stage-' + g, role: 'menuitem', 'data-stage': g,
+        onclick: ev => { panel.hidden = true; if (st && !isGuest() && Core.enrolled(g) && !lk) { ev.preventDefault(); pickStage(g); } } },
+        el('span', {}, icon + ' ' + name), lk || cur ? el('small', {}, lk ? 'Soon' : 'Now') : null);
+    };
+    const col = n => el('div', { class: 'stm-col' }, el('b', {}, `Stage ${n}`), item(n, '🔬', 'Science'), item(10 + n, '📐', 'Mathematics'), item(-n, '🗣', 'ESL'));
+    panel.append(el('div', { class: 'stm-lv' }, el('span', { class: 'stm-h' }, 'Lower Secondary'), el('div', { class: 'stm-row' }, ...[7, 8, 9].map(col))),
+      el('div', { class: 'stm-lv' }, el('span', { class: 'stm-h' }, 'Primary'), el('div', { class: 'stm-row' }, ...[3, 4, 5, 6].map(col))));
+    const b = el('button', { type: 'button', class: 'stm-btn', id: 'stagesBtn', 'aria-haspopup': 'true', 'aria-expanded': 'false',
+      onclick: ev => { ev.stopPropagation(); panel.hidden = !panel.hidden; b.setAttribute('aria-expanded', String(!panel.hidden)); if (!panel.hidden) document.addEventListener('click', () => { panel.hidden = true; b.setAttribute('aria-expanded', 'false'); }, { once: true }); } }, 'Stages ▾');
+    panel.addEventListener('click', ev => ev.stopPropagation());
+    return el('span', { class: 'stm-wrap' }, b, panel);
+  }
+  // course switcher, one block per stage with each subject kept separate: Science, Mathematics (course key 10 + stage) and ESL
+  const SUBJ = { sci: ['🔬', 'Science'], math: ['📐', 'Mathematics'], esl: ['🗣', 'ESL'] };
   function stageSwitcher() {
-    const groups = [['Primary Science', '🌱', Core.STAGES.filter(g => g <= 6)], ['Lower Secondary Science', '🔬', [7, 8, 9]], ['Mathematics', '📐', Core.STAGES.filter(g => g >= 10)]];
-    const btn = g => {
+    const btn = (g, subj) => {
       const mine = g === Core.STAGE, lk = !mine && Core.stageLocked(g), en = mine || Core.enrolled(g), p = en ? stagePct(g) : 0, math = g >= 10;
       const b = el('button', { type: 'button', class: 'sw' + (mine ? ' on' : '') + (lk ? ' locked' : en ? '' : ' enrol') + (math ? ' math' : ''), 'data-stage': g, 'aria-pressed': String(mine), 'aria-disabled': lk ? 'true' : null,
-        title: lk ? 'Coming soon' : mine ? 'You are studying this course' : en ? 'Switch to this course' : 'Enrol to open',
+        title: lk ? 'Coming soon' : mine ? 'You are studying this course' : en ? 'Switch to this course' : 'Enrol to open', 'aria-label': `${SUBJ[subj][1]} ${stageShort(g)}`,
         onclick: () => pickStage(g, b) },
-        el('span', { class: 'swn' }, String(math ? g - 10 : g)), el('span', { class: 'swt' }, el('b', {}, stageShort(g)), el('small', {}, lk ? (math ? 'Mathematics' : 'Science') : g <= 6 && !mine && !en ? 'New · Primary' : mine ? 'Studying now' : en ? `${p}% complete` : 'Not enrolled')),
-        lk ? el('span', { class: 'swtag' }, '🔒 Soon') : en ? el('span', { class: 'swp', style: `--p:${p}`, 'data-p': p + '%', 'aria-hidden': 'true' }) : el('span', { class: 'swtag' }, 'Enrol'));
+        el('span', { class: 'swn', 'aria-hidden': 'true' }, SUBJ[subj][0]), el('span', { class: 'swt' }, el('b', {}, SUBJ[subj][1]), el('small', {}, lk ? 'Coming soon' : !mine && !en ? 'Enrol to open' : mine ? 'Studying now' : `${p}% done`)),
+        lk ? el('span', { class: 'swtag' }, '🔒') : en ? el('span', { class: 'swp', style: `--p:${p}`, 'data-p': p + '%', 'aria-hidden': 'true' }) : el('span', { class: 'swtag' }, 'Enrol'));
       return b;
     };
-    const parts = []; groups.forEach(([name, icon, gs], i) => { if (i) parts.push(el('span', { class: 'sep', 'aria-hidden': 'true' })); parts.push(el('div', { class: 'sg' }, el('small', {}, `${icon} ${name}`), el('div', { class: 'sgrow' }, ...gs.map(btn)))); });
-    return el('nav', { class: 'stsw', id: 'stageSwitch', 'aria-label': 'Switch course' }, ...parts);
+    // a subject that has no course for this stage yet: shown, but not a button
+    const soon = subj => el('span', { class: 'swx', title: 'Not open yet' }, el('span', { class: 'swn', 'aria-hidden': 'true' }, SUBJ[subj][0]), el('span', { class: 'swt' }, el('b', {}, SUBJ[subj][1]), el('small', {}, 'Coming soon')));
+    const block = n => el('div', { class: 'sg', 'data-stage-block': n }, el('small', {}, `Stage ${n}`), el('div', { class: 'sgrow' },
+      Core.STAGES.includes(n) ? btn(n, 'sci') : soon('sci'), Core.STAGES.includes(10 + n) ? btn(10 + n, 'math') : soon('math'), soon('esl')));
+    const level = (name, ns) => el('div', { class: 'swlevel' }, el('b', { class: 'swlh' }, name), el('div', { class: 'swlrow' }, ...ns.map(block)));
+    return el('nav', { class: 'stsw bystage', id: 'stageSwitch', 'aria-label': 'Switch course' }, level('Lower Secondary', [7, 8, 9]), level('Primary', [3, 4, 5, 6]));
   }
   function pageHero(eyebrow, title, sub, side) {
     const w = document.getElementById('wrap'); w.classList.add('landing');
