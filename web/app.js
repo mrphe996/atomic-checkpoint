@@ -241,7 +241,7 @@
   /* where am I / what remains / next button (shown on every learning screen) */
   // dotted page header shared by every student page (the "Home 01" look)
   /* ---------- course switcher: Science Stages 7–9 and Mathematics Stage 9 ---------- */
-  const STAGE_N = { 13: 17, 15: 18, 16: 17, 17: 16, 18: 16, 19: 15 };
+  const STAGE_N = { 13: 17, 14: 18, 15: 18, 16: 17, 17: 16, 18: 16, 19: 15 };
   const stagePct = g => Math.round(Object.keys((st && st.results) || {}).filter(k => k.startsWith(`stage${g}-unit`)).length / (STAGE_N[g] || (g >= 10 ? 15 : g <= 6 ? 6 : 14)) * 100);
   const stageShort = g => (g >= 10 ? `Stage ${g - 10}` : `Stage ${g}`);
   function stageSoon(g) {
@@ -1973,7 +1973,7 @@
     m.append(faq());
   }
   function faq() {
-    const qa = [['Who is Atomic for?', 'Learners aged about 7–14 following Cambridge Primary or Lower Secondary Science (Stages 3 to 9) or Mathematics (Stages 3, 5, 6, 7, 8 and 9), at an international or bilingual school or studying at home.'],
+    const qa = [['Who is Atomic for?', 'Learners aged about 7–14 following Cambridge Primary or Lower Secondary Science (Stages 3 to 9) or Mathematics (Stages 3 to 9), at an international or bilingual school or studying at home.'],
       ['Do I need an account?', 'Not to try it: topic 3.1 is open to guests. Create a free account to save your progress, unlock every topic and take the Unit Test.'],
       ['Will my parents know how I am doing?', 'If you add a parent’s email when you sign up (it is optional), we send them a short email when you finish a unit. You can add or remove it any time in Settings.'],
       ['Am I on a public leaderboard?', 'Not unless you switch it on in Settings. Everyone is hidden by default, and only your nickname is ever shown.'],
@@ -2191,7 +2191,7 @@
       el('p', { class: 'muted' }, 'This is a short summary of our ', el('a', { href: '#privacy' }, 'Privacy notice'), '.')));
   }
   const viewTerms = () => legal('Terms of use', [
-    ['The service', 'Atomic provides online courses for Cambridge Primary and Lower Secondary learners: Science Stages 3 to 9 and Mathematics Stages 3, 5, 6, 7, 8 and 9. Courses are written by Atomic and aligned to the Cambridge Primary Science (0097), Lower Secondary Science (0893), Primary Mathematics (0096) and Lower Secondary Mathematics (0862) curriculum frameworks. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.'],
+    ['The service', 'Atomic provides online courses for Cambridge Primary and Lower Secondary learners: Science Stages 3 to 9 and Mathematics Stages 3 to 9. Courses are written by Atomic and aligned to the Cambridge Primary Science (0097), Lower Secondary Science (0893), Primary Mathematics (0096) and Lower Secondary Mathematics (0862) curriculum frameworks. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.'],
     ['Who the course is for', 'The courses are designed for learners aged about 11 to 14. Anyone can try topic 3.1 of Science Stage 7 as a guest. Learners create their own free account to save progress; each course is a separate enrolment.'],
     ['Accounts', 'One account per learner. Keep your password private. If you are under the age of digital consent where you live, ask a parent or guardian before you sign up.'],
     ['Plans, trials and refunds', 'Plans renew automatically until cancelled. A free trial converts to a paid plan unless cancelled before it ends. Our order process is conducted by our online reseller Paddle.com, the Merchant of Record for all orders; Paddle provides customer service enquiries and handles returns.'],
