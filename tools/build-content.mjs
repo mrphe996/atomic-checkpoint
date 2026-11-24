@@ -153,7 +153,7 @@ export function validateFinal(c) {
     fake.tests['Z'] = paper; const r = validate({ ...fake, tests: { Z: paper.map(q => ({ ...q })) } });
     r.errs.filter(e => !/must be 30/.test(e)).forEach(e => errs.push(`paper ${k}: ${e}`));
   }
-  const minPapers = c.kind === 'checkpoint' ? 2 : 10; if (Object.keys(c.papers).length < minPapers) errs.push(`needs at least ${minPapers} papers`);
+  const minPapers = c.kind === 'checkpoint' ? 2 : c.kind === 'challenge' ? 4 : 10; if (Object.keys(c.papers).length < minPapers) errs.push(`needs at least ${minPapers} papers`);
   return { errs, warn };
 }
 function buildFinal(file, c, check) {

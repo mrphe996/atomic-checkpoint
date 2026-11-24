@@ -12,6 +12,7 @@ if (EDGE) { globalThis.self = globalThis; globalThis.Deno = { env: { get: (k) =>
 const base = EDGE ? '../supabase/functions/_shared/' : '../api/';
 if (EDGE) { const { setUnits } = await import('../supabase/functions/_shared/supa.js'); setUnits((await import('../supabase/functions/api/units.js')).UNITS); }
 const submit = await import(base + 'submit-test.js');
+const challenge = await import(base + 'challenge.js');
 const start = await import(base + 'start-test.js');
 const marking = await import(base + 'marking.js');
 const paddle = await import('../api/paddle-webhook.js');
@@ -324,4 +325,35 @@ test('ai-mark + paragraph questions: AI marks against the mark scheme, keywords 
     const [, mq] = await marking.handle(req('GET', 'tM'), f);
     const it = mq.queue[0].items.find(x => x.id === pq.id); assert.equal(it.answer, pq.model); assert.equal(it.ai.confidence, 0.5);
   } finally { delete process.env.ANTHROPIC_API_KEY; }
+});
+
+test('challenge: practice marks one question with its solution, keeps the first answer, then locks the timed paper', async () => {
+  const { T, f } = fakeSupabase(); T.challenge_practice = []; T.testers = [];
+  T.subscriptions.push({ parent_id: PARENT, status: 'active', provider_subscription_id: 'sub_1' });
+  const ck = JSON.parse(fs.readFileSync(new URL('../server/private/ch-junior.tests.json', import.meta.url))).papers;
+  const q = ck['02'][0], good = q.options.findIndex(o => o.ok), bad = q.options.findIndex(o => !o.ok);
+  const call = (b, tok = 'tA') => challenge.handle(req('POST', tok, { learnerId: KID, unit: 'ch-junior', ...b }), f);
+  assert.equal((await call({ action: 'check', form: '02', qid: q.id, answer: good }, 'tB'))[0], 403, 'another parent cannot practise for this child');
+  assert.equal((await challenge.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', action: 'state' }), f))[0], 400, 'only challenge papers');
+  assert.equal((await call({ action: 'check', form: '01', qid: q.id, answer: good }))[0], 400, 'question must be on that paper');
+  const [s1, r1] = await call({ action: 'check', form: '02', qid: q.id, answer: bad });
+  assert.equal(s1, 200, JSON.stringify(r1)); assert.equal(r1.ok, false); assert.equal(r1.answer, q.options[good].t); assert.ok(r1.reason.length > 10);
+  const [, r2] = await call({ action: 'check', form: '02', qid: q.id, answer: good });
+  assert.equal(r2.ok, false, 'the first answer counts'); assert.equal(T.challenge_practice.length, 1);
+  const [, st] = await call({ action: 'state' }); assert.equal(st.done.length, 1); assert.ok(st.solutions[q.id]);
+  assert.equal((await call({ action: 'solutions', form: '02' }))[1].error, 'not_taken', 'all solutions only after sitting the paper');
+  const sub = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'ch-junior', form: '02', answers: {}, clientKey: 'c1' }), f);
+  assert.equal(sub[0], 409); assert.equal(sub[1].error, 'practised');
+  const all = Object.fromEntries(ck['01'].map(x => [x.id, x.options.findIndex(o => o.ok)]));
+  const [s3, r3] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'ch-junior', form: '01', answers: all, clientKey: 'c2' }), f);
+  assert.equal(s3, 201); assert.equal(r3.attempt.score, 135); assert.equal(T.unit_results.length, 0);
+  const [s4, r4] = await call({ action: 'solutions', form: '01' }); assert.equal(s4, 200); assert.equal(Object.keys(r4.solutions).length, 25);
+});
+
+test('every Maths stage (course keys 13–19) and the challenge papers are known to the server', async () => {
+  const { f } = fakeSupabase();
+  for (const u of ['stage13-final', 'stage14-unit01', 'stage15-final', 'stage16-unit02', 'stage17-final', 'stage18-unit03', 'stage19-final', 'ch-olympiad']) {
+    const [s, r] = await start.handle(req('POST', 'tA', { learnerId: KID, unit: u, form: u.includes('unit') ? 'A' : u.startsWith('ch-') ? '01' : '01' }), f);
+    assert.equal(s, 200, u + ' ' + JSON.stringify(r));
+  }
 });

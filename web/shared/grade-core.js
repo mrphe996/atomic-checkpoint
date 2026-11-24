@@ -258,7 +258,7 @@
   /* A copy of a question safe to show before submission: no keys, no feedback, no model answers. */
   function stripKeys(q) {
     const s = { id: q.id, type: q.type, prompt: q.prompt, diff: q.diff, obj: q.obj, skill: q.skill };
-    if (q.pts != null) s.pts = q.pts; if (q.teacher) s.teacher = true; if (q.fig) s.fig = q.fig; if (q.ctx) s.ctx = q.ctx; if (q.data) s.data = q.data; if (q.sec) s.sec = q.sec;
+    if (q.pts != null) s.pts = q.pts; if (q.teacher) s.teacher = true; if (q.fig) s.fig = q.fig; if (q.ctx) s.ctx = q.ctx; if (q.fixed) s.fixed = true; if (q.data) s.data = q.data; if (q.sec) s.sec = q.sec;
     switch (q.type) {
       case 'mcq': case 'multi': s.options = q.options.map(o => ({ t: o.t })); break;
       case 'num': case 'scale': s.unit = q.unit; s.units = q.units; if (q.bare) s.bare = true; break;

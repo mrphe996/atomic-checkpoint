@@ -1688,3 +1688,27 @@ a.stm-it:hover{background:var(--band)}
 .mqf.empty:not(.on)::after{content:"Type your answer";position:absolute;left:16px;color:#8A94A6;font-size:15px}
 @media (prefers-reduced-motion: reduce){.mqf.on .mqcur{animation:none}}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* ---------- Maths Challenge ---------- */
+.chgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:6px 0 22px}
+.chfolder{display:flex;flex-direction:column;gap:10px;padding:20px;border-radius:20px;background:#fff;border:2px solid var(--line);border-top:6px solid var(--c);text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.chfolder:hover,.chfolder:focus-visible{transform:translateY(-3px);box-shadow:0 12px 28px rgba(11,37,69,.12)}
+.chico{font-size:34px;line-height:1}.chico.big{font-size:56px}
+.chft{display:flex;flex-direction:column}.chft b{font-family:Outfit,sans-serif;font-size:20px;color:var(--c)}.chft small{color:#556377}
+.chfa{font-size:14px;color:#3A4B63;border-top:1px solid var(--line2);padding-top:10px;flex:1}
+.chfp{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px;font-weight:700;color:#556377}
+.chaward{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:700;background:#EEF2F8;color:#3A4B63}
+.chaward.gold{background:#FFF1CC;color:#7A5300}.chaward.silver{background:#EDF0F4;color:#46505E}.chaward.bronze{background:#F8E3D3;color:#7A3F12}
+.chhow3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.chhow3 p{margin:4px 0 0;color:#3A4B63}
+.chhead{display:flex;gap:20px;align-items:flex-start;border-top:6px solid var(--c)}
+.chrules{margin:0;padding-left:20px;color:#3A4B63}
+.chpapers{display:flex;flex-direction:column;gap:12px}
+.chpaper{display:grid;grid-template-columns:auto 1fr auto auto;gap:16px;align-items:center;padding:14px 18px;border-radius:16px;background:#fff;border:2px solid var(--line)}
+.chpaper .chdoc{font-size:28px}.chpt{display:flex;flex-direction:column}.chps{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+@media (max-width:760px){.chpaper{grid-template-columns:auto 1fr}.chpaper .chps,.chpaper .btnrow{grid-column:1/-1}}
+.chresult.gold{border-top:6px solid #E0A800}.chresult.silver{border-top:6px solid #9AA5B4}.chresult.bronze{border-top:6px solid #B86B30}
+.chbig{font-family:Outfit,sans-serif;font-size:22px;font-weight:800;margin:6px 0}
+.chrev{border-top:1px solid var(--line2);padding:16px 0}.chrevh{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.chrev .qp{font-size:17px;margin:6px 0}.chmark{font-weight:700;font-size:14px}.chrev.ok .chmark{color:#1E8E4E}.chrev.no .chmark{color:#C93A3A}.chrev.blank .chmark{color:#8A94A6}
+.chsol,.chfb{margin-top:10px;padding:12px 14px;border-radius:12px;background:#F4F8FE;border-left:4px solid var(--blue)}
+.chfb.ok{background:#EAF7EF;border-left-color:#1E8E4E}.chfb.no{background:#FDF0F0;border-left-color:#C93A3A}
+.navgrid button.okq{background:#1E8E4E;border-color:#1E8E4E;color:#fff}.navgrid button.noq{background:#C93A3A;border-color:#C93A3A;color:#fff}

@@ -65,7 +65,7 @@
     } else if (q.fig && typeof q.fig === 'object' && q.type !== 'scale') { W.append(figureBox(q.fig.kind, q.fig).box); }
     switch (q.type) {
       case 'mcq': case 'multi': {
-        const order = shuffle(q.options.map((_, i) => i), seed); const multi = q.type === 'multi';
+        const order = q.fixed ? q.options.map((_, i) => i) : shuffle(q.options.map((_, i) => i), seed); const multi = q.type === 'multi';
         if (multi) resp = resp || [];
         // picture questions (Primary): a big picture above, and picture cards to tap when every option has one
         if (q.pic) W.append(el('div', { class: 'qpic', 'aria-hidden': 'true' }, q.pic));

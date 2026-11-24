@@ -99,7 +99,7 @@
   function shell(opts) {
     const r = location.hash.slice(1) || 'home'; const app = document.getElementById('app'); app.innerHTML = '';
     const me = Core.S.me;
-    const area = r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || /^stage-\d+$/.test(r) || /^checkout-\d+$/.test(r) || r === 'map' || r === 'level' ? 'course' : r === 'bank' || r === 'topic' || r === 'drill' ? 'bank' : r === 'test' || r === 'tests' || r === 'result' || r === 'remedial' || r === 'final' || /^f(x|res)-\d+$/.test(r) ? 'test' : r === 'profile' || r === 'cert' ? 'profile' : r === 'board' ? 'board' : r === 'home' ? 'home' : r;
+    const area = r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || /^stage-\d+$/.test(r) || /^checkout-\d+$/.test(r) || r === 'map' || r === 'level' ? 'course' : r === 'bank' || r === 'topic' || r === 'drill' ? 'bank' : r === 'test' || r === 'tests' || r === 'result' || r === 'remedial' || r === 'final' || /^f(x|res)-\d+$/.test(r) ? 'test' : r === 'profile' || r === 'cert' ? 'profile' : r === 'board' ? 'board' : r === 'home' ? 'home' : r === 'challenge' || /^ch[lxpr]-/.test(r) ? 'challenge' : r;
     const right = el('span', { class: 'topright' });
     let nav;
     if (st) {
@@ -121,7 +121,7 @@
         document.addEventListener('click', () => { menu.hidden = true; }, { once: true });
         right.append(s, lv, bell(), el('span', { class: 'userwrap' }, av, menu));
       }
-      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
+      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('challenge', 'Maths Challenge', area === 'challenge'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
       if (Core.IS_PRIMARY) { nav.splice(2, 0, navLink('words', '📒 My words', area === 'words')); nav[3].textContent = 'Questions'; nav[4].textContent = 'Tests'; }
     } else if (me) {
       right.append(modeBtn(), bell(), el('button', { class: 'btn small', type: 'button', id: 'signOut', onclick: async () => { await Backend.signOut(); await Core.boot(C); go('home'); } }, 'Sign out'));
@@ -130,7 +130,7 @@
       if (me.profile.role === 'admin') nav.push(navLink('admin', 'Admin', area === 'admin'));
     } else {
       right.append(modeBtn(), el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
-      nav = [navLink('home', 'Home', area === 'home'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
+      nav = [navLink('home', 'Home', area === 'home'), navLink('challenge', 'Maths Challenge', area === 'challenge'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
     }
     if (st || !me) nav.splice(1, 0, stagesMenu());
     if (!st && !me || st && isGuest()) nav.push(el('a', { class: 'navlogin', href: '#signin' }, 'Log in'));
@@ -1587,6 +1587,173 @@
       el('a', { class: 'btn small primary', href: '#checkpoint' }, 'Back to the Checkpoint exam room')));
   }
 
+  /* ---------- Maths Challenge: problem-solving competition papers (Atomic originals, keys on the server) ---------- */
+  const CH = [
+    { id: 'primary', icon: '🦉', color: '#1F9D5C' }, { id: 'junior', icon: '🦊', color: '#0149AF' }, { id: 'inter', icon: '🐺', color: '#7A4BD1' },
+    { id: 'kangaroo', icon: '🦘', color: '#D9722A' }, { id: 'olympiad', icon: '🏆', color: '#B9842B' }];
+  const CH_AWARDS = { olympiad: [[60, 'Distinction', '🏅', 'gold'], [40, 'Merit', '🎖', 'silver']], _: [[65, 'Gold', '🥇', 'gold'], [45, 'Silver', '🥈', 'silver'], [30, 'Bronze', '🥉', 'bronze']] };
+  const chAward = (id, pct) => (CH_AWARDS[id] || CH_AWARDS._).find(b => pct >= b[0]) || null;
+  const CHP = {};
+  async function chPack(id) { if (!CHP[id]) { const r = await fetch(`content/ch-${id}.json`); if (!r.ok) throw new Error('missing'); CHP[id] = await Core.withOv('ch-' + id, await r.json()); } return CHP[id]; }
+  const chSigned = () => !!(st && !isGuest());
+  async function chAttempts(id) { if (!chSigned()) return []; try { return await Backend.attempts(st.id, 'ch-' + id); } catch (e) { return []; } }
+  async function chState(id) { if (!chSigned()) return { done: [], solutions: {} }; try { return await Backend.challenge({ action: 'state', learnerId: st.id, unit: 'ch-' + id }); } catch (e) { return { done: [], solutions: {} }; } }
+  const chPaperName = (P, k) => `${P.unit.title} · Paper ${Number(k)}`;
+  function chAwardChip(id, a) { if (!a || a.status !== 'final') return null; const b = chAward(id, a.pct); return b ? el('span', { class: 'chaward ' + b[3] }, b[2] + ' ' + b[1]) : el('span', { class: 'chaward none' }, 'Certificate of participation'); }
+  function chRules(P, id) {
+    const olymp = id === 'olympiad', n = P.papers['01'].length;
+    return [`${n} questions · ${P.minutes} minutes · ${P.max} marks. ` + (olymp ? 'Questions 1–4 are worth 5 marks and 5–12 are worth 10 marks.' : 'Questions 1–15 are worth 5 marks and 16–25 are worth 6 marks.') + ' A wrong answer simply scores 0.',
+      P.unit.format === 'num' ? 'There are no options: type a whole number from 0 to 999 for each answer.' : 'Choose one answer, A to E, for each question.',
+      'Calculators are not allowed. Have pencil and rough paper ready – these problems need thinking, not just calculating.',
+      'Awards: ' + (CH_AWARDS[id] || CH_AWARDS._).map(b => `${b[2]} ${b[1]} from ${b[0]}%`).join(' · ') + '.'];
+  }
+  async function viewChallenge() {
+    const m = $main();
+    pageHero('PROBLEM SOLVING · FOR ABLE MATHEMATICIANS', 'Maths Challenge', 'Competition-style papers that stretch strong mathematicians: clever problems, not routine exercises. Sit a paper against the clock and win an award, or practise it question by question with full worked solutions.');
+    const grid = el('div', { class: 'chgrid', id: 'chGrid' });
+    const packs = await Promise.all(CH.map(c => chPack(c.id).catch(() => null)));
+    const tries = await Promise.all(CH.map(c => chAttempts(c.id)));
+    CH.forEach((c, i) => { const P = packs[i]; if (!P) return; const at = tries[i].filter(a => a.status === 'final'); const best = at.reduce((b, a) => (!b || a.pct > b.pct ? a : b), null);
+      grid.append(el('a', { class: 'chfolder', href: '#chl-' + c.id, id: 'chFolder-' + c.id, style: `--c:${c.color}` },
+        el('span', { class: 'chico', 'aria-hidden': 'true' }, c.icon),
+        el('span', { class: 'chft' }, el('b', {}, P.unit.title), el('small', {}, `${Object.keys(P.papers).length} papers · ${P.unit.ages}`)),
+        el('span', { class: 'chfa' }, P.unit.about),
+        el('span', { class: 'chfp' }, at.length ? [`${at.length} sat`, best ? ' · best ' + best.pct.toFixed(0) + '%' : ''].join('') : 'Not started', best ? chAwardChip(c.id, best) : null))); });
+    m.append(grid);
+    m.append(el('section', { class: 'card chhow' }, el('h2', {}, 'How it works'),
+      el('div', { class: 'chhow3' },
+        el('div', {}, el('b', {}, '⏱ Sit the paper'), el('p', {}, 'Full screen, against the clock, like the real competition. Your score and award appear straight away, with a worked solution to every question.')),
+        el('div', {}, el('b', {}, '🧩 Practise question by question'), el('p', {}, 'No clock. Answer one question, check it at once and read the full solution. A paper you practise cannot then be sat as a timed paper – so try the timed paper first if you want an award.')),
+        el('div', {}, el('b', {}, '📈 Which level?'), el('p', {}, 'Primary for Stages 5–6, Junior for Stages 7–8, Intermediate for Stage 9 and IGCSE. The Kangaroo and Olympiad rounds are the next step for anyone who scores Gold.'))),
+      el('p', { class: 'muted', style: 'margin:16px 0 0;font-size:14px' }, 'Every problem is an original written by the Atomic teaching team in the style of national maths challenges. These are not UKMT papers.')));
+    if (!chSigned()) m.append(el('div', { class: 'banner info' }, 'You can look at every paper. ', el('a', { href: '#signup' }, 'Sign up free'), ' to sit papers, practise and keep your awards.'));
+  }
+  async function viewChList(id) {
+    const m = $main(); const c = CH.find(x => x.id === id); if (!c) return go('challenge');
+    const P = await chPack(id); const [tries, S] = await Promise.all([chAttempts(id), chState(id)]);
+    m.append(el('nav', { class: 'crumb2' }, el('a', { href: '#challenge' }, 'Maths Challenge'), ` › ${P.unit.title}`));
+    m.append(el('section', { class: 'card chhead', style: `--c:${c.color}` }, el('span', { class: 'chico big', 'aria-hidden': 'true' }, c.icon),
+      el('div', {}, el('h1', { style: 'margin:0' }, P.unit.title), el('p', { class: 'muted', style: 'margin:2px 0 8px' }, `${P.unit.ages} · ${P.unit.about}`), el('ul', { class: 'chrules' }, ...chRules(P, id).map(t => el('li', {}, t))))));
+    const list = el('div', { class: 'chpapers', id: 'chPapers' });
+    Object.keys(P.papers).sort().forEach(k => {
+      const a = tries.find(x => x.form === k); const pr = S.done.filter(x => x.form === k); const n = P.papers[k].length; const d = chSigned() ? fdLoad('ch' + id + k) : null;
+      const status = a ? (a.status === 'final' ? el('span', { class: 'status done' }, `${+a.score.toFixed(0)}/${P.max} · ${a.pct.toFixed(0)}%`) : el('span', { class: 'status cur' }, '⏳ Marking'))
+        : pr.length ? el('span', { class: 'status cur' }, `Practising · ${pr.filter(x => x.ok).length}/${pr.length} right · ${n - pr.length} left`) : d && d.deadline ? el('span', { class: 'status cur' }, 'Timed paper running') : el('span', { class: 'status todo' }, 'Not tried');
+      const btns = !chSigned() ? [el('a', { class: 'btn small primary', href: '#signup' }, 'Sign up to start')]
+        : a ? [el('a', { class: 'btn small primary', href: `#chr-${id}-${k}`, id: `chRes-${id}-${k}` }, 'Results & solutions'), el('a', { class: 'btn small', href: `#chp-${id}-${k}` }, 'Practise again')]
+        : pr.length ? [el('a', { class: 'btn small primary', href: `#chp-${id}-${k}`, id: `chPrac-${id}-${k}` }, pr.length < n ? 'Carry on practising' : 'Review')]
+        : [el('a', { class: 'btn small gold', href: `#chx-${id}-${k}`, id: `chSit-${id}-${k}` }, d && d.deadline ? 'Back to the paper' : '⏱ Sit the paper'), d && d.deadline ? null : el('a', { class: 'btn small', href: `#chp-${id}-${k}`, id: `chPrac-${id}-${k}` }, '🧩 Practise')];
+      list.append(el('div', { class: 'chpaper' }, el('span', { class: 'chdoc', 'aria-hidden': 'true' }, '📄'),
+        el('span', { class: 'chpt' }, el('b', {}, chPaperName(P, k)), el('small', { class: 'muted' }, `${n} questions · ${P.minutes} min · ${P.max} marks`)),
+        el('span', { class: 'chps' }, status, chAwardChip(id, a)), el('span', { class: 'btnrow', style: 'margin:0' }, ...btns)));
+    });
+    m.append(list);
+  }
+  async function viewChExam(id, k) {
+    const m = $main(); const P = await chPack(id); if (!P.papers[k]) return go('chl-' + id);
+    if (isGuest()) { m.append(guestWall('Sign up free to sit Maths Challenge papers')); return; }
+    const tries = await chAttempts(id); if (tries.some(a => a.form === k)) return go(`chr-${id}-${k}`);
+    const unit = 'ch-' + id, dk = 'ch' + id + k, qs = P.papers[k];
+    const draft = fdLoad(dk) || { answers: {}, ts: Date.now() }; const save = () => fdSave(dk, draft);
+    if (!draft.deadline) { const S = await chState(id); if (S.done.some(x => x.form === k)) { m.append(el('section', { class: 'card' }, el('h2', {}, 'You have practised this paper'), el('p', {}, 'You have already seen solutions to some of its questions, so it can no longer be sat as a timed paper. Choose another paper for an award.'), el('div', { class: 'btnrow' }, el('a', { class: 'btn primary small', href: `#chp-${id}-${k}` }, 'Carry on practising'), el('a', { class: 'btn small', href: '#chl-' + id }, 'All papers')))); return; } }
+    const title = chPaperName(P, k);
+    if (!UI.testOn || UI.examKey !== 'H' + id + k) {
+      UI.testOn = false;
+      m.append(examIntro({ title, n: qs.length, max: P.max, minutes: P.minutes, passTxt: (CH_AWARDS[id] || CH_AWARDS._).slice(-1)[0][0] + '%', resume: !!draft.deadline,
+        extra: chRules(P, id).concat('One timed attempt per paper. Afterwards you can review every question with its worked solution.'),
+        start: async ev => { ev.currentTarget.disabled = true; try { const c = await Core.startClock(unit, k); draft.deadline = c.deadline; save(); UI.testOn = true; UI.examKey = 'H' + id + k; UI.testIdx = 0; render(); } catch (x) { ev.currentTarget.disabled = false; modal('Could not open the paper', errText(x), [{ t: 'OK', cls: 'primary' }]); } } }));
+      const pt = m.querySelector('.stats3 > div:last-child small'); if (pt) pt.textContent = 'for an award';
+      return;
+    }
+    examRoom({ title, badge: 'MATHS CHALLENGE · ' + P.unit.title.toUpperCase(), qs, max: P.max, draft, save, seed: st.id + 'H' + id + k, deadline: draft.deadline,
+      onSubmit: async (answers, key, meta) => { const r = await Backend.submitTest({ learnerId: st.id, unit, form: k, answers, clientKey: key, meta }); try { localStorage.removeItem(fdKey(dk)); } catch (e) { }
+        UI.chSol = Object.assign(UI.chSol || {}, r.solutions || {}); UI.examKey = null; const b = r.attempt && r.attempt.status === 'final' && chAward(id, r.attempt.pct); if (b && b[3] === 'gold') confetti(); go(`chr-${id}-${k}`); } });
+  }
+  function chYour(q, v) {
+    if (v == null || v === '') return '—';
+    if (q.type === 'mcq') return q.options[v] ? `${String.fromCharCode(65 + v)}  ${q.options[v].t}` : '—';
+    if (typeof v === 'object') return String(v.v || '').trim() || '—';
+    return String(v);
+  }
+  function chReview(q, i, your, sol, ok, pts) {
+    const card = el('div', { class: 'chrev ' + (ok ? 'ok' : your == null || your === '' ? 'blank' : 'no'), id: 'chRev-' + q.id });
+    card.append(el('div', { class: 'chrevh' }, el('b', {}, `Question ${i + 1}`), el('span', { class: 'chmark' }, ok ? `✓ ${pts != null ? pts + ' marks' : 'Right'}` : your == null || your === '' ? 'Not answered' : '✗ Not right')),
+      el('p', { class: 'qp' }, q.prompt));
+    const body = el('div'); card.append(body);
+    const qq = q.type === 'mcq' && sol ? { ...q, options: q.options.map(o => ({ ...o, ok: o.t === sol.answer })) } : q;
+    const api = QE.renderBody(qq, body, { seed: 'rev', resp: your }); api.lock(); if (api.markOpts && sol) api.markOpts();
+    if (sol) card.append(el('div', { class: 'chsol' }, el('p', { style: 'margin:0 0 4px' }, el('b', {}, 'Answer: '), q.type === 'mcq' ? `${String.fromCharCode(65 + q.options.findIndex(o => o.t === sol.answer))}  ${sol.answer}` : sol.answer, q.type !== 'mcq' && your != null ? el('span', { class: 'muted' }, ` · you wrote ${chYour(q, your)}`) : null),
+      el('p', { style: 'margin:0' }, el('b', {}, 'Solution: '), sol.reason || '—')));
+    return card;
+  }
+  async function viewChResult(id, k) {
+    const m = $main(); const P = await chPack(id); const tries = await chAttempts(id); const a = tries.find(x => x.form === k); if (!a) return go(`chx-${id}-${k}`);
+    m.append(el('nav', { class: 'crumb2' }, el('a', { href: '#challenge' }, 'Maths Challenge'), ' › ', el('a', { href: '#chl-' + id }, P.unit.title), ` › Paper ${Number(k)}`));
+    if (a.status !== 'final') { m.append(el('section', { class: 'card' }, el('h2', {}, '⏳ Being marked'), el('p', {}, 'Your paper is being marked. Check back in a moment.'))); return; }
+    const b = chAward(id, a.pct); const right = P.papers[k].filter(q => (a.per[q.id] || {}).pts > 0).length;
+    m.append(el('section', { class: 'card chresult' + (b ? ' ' + b[3] : '') }, el('div', { class: 'resultbig' }, ring(a.pct, !!b),
+      el('div', {}, el('span', { class: 'eyebrow' }, chPaperName(P, k).toUpperCase()), el('h2', { style: 'margin:0' }, `${+a.score.toFixed(0)}/${P.max} marks · ${right} of ${P.papers[k].length} right`),
+        el('p', { class: 'chbig' }, b ? `${b[2]} ${b[1]} award` : 'Certificate of participation – keep going!'),
+        el('p', { style: 'margin:4px 0' }, a.duration != null ? `Time taken: ${Math.floor(a.duration / 60)} min ${a.duration % 60} s of ${P.minutes} min${a.overtime ? ' (after the time limit)' : ''}` : ''), leavesNote(a),
+        el('div', { class: 'btnrow' }, el('a', { class: 'btn primary small', href: '#chl-' + id }, 'All papers'), el('a', { class: 'btn small', href: '#challenge' }, 'Maths Challenge'))))));
+    const byO = Object.entries(a.byObj || {});
+    m.append(el('section', { class: 'card' }, el('h2', {}, 'Marks by area'), el('div', { class: 'weak' }, ...byO.map(([o, x]) => { const pct = x.max ? x.got / x.max * 100 : 0;
+      return el('div', { class: 'wk' }, el('b', {}, (P.objectives[o] || {}).t || o), el('div', { class: 'pbar' + (pct < 50 ? ' red' : '') }, el('i', { style: `width:${Math.max(2, pct)}%` })), el('small', { class: 'muted' }, `${+x.got.toFixed(0)}/${x.max} marks`)); }))));
+    let sols = UI.chSol || {}; if (!P.papers[k].every(q => sols[q.id])) { try { sols = Object.assign({}, sols, (await Backend.challenge({ action: 'solutions', learnerId: st.id, unit: 'ch-' + id, form: k })).solutions); UI.chSol = sols; } catch (e) { } }
+    const sec = el('section', { class: 'card' }, el('h2', {}, 'Every question, with its solution'));
+    P.papers[k].forEach((q, i) => { const p = a.per[q.id] || {}; sec.append(chReview(q, i, (a.answers || {})[q.id], sols[q.id], p.pts > 0, p.pts)); });
+    m.append(sec);
+  }
+  async function viewChPractice(id, k) {
+    const m = $main(); const P = await chPack(id); if (!P.papers[k]) return go('chl-' + id);
+    if (isGuest()) { m.append(guestWall('Sign up free to practise Maths Challenge papers')); return; }
+    const qs = P.papers[k]; const [S, tries] = await Promise.all([chState(id), chAttempts(id)]);
+    const sat = tries.some(a => a.form === k); const done = Object.fromEntries(S.done.filter(x => x.form === k).map(x => [x.qid, x]));
+    const sols = S.solutions || {};
+    if (!sat && !Object.keys(done).length && UI.chOk !== id + k) {
+      m.append(el('nav', { class: 'crumb2' }, el('a', { href: '#challenge' }, 'Maths Challenge'), ' › ', el('a', { href: '#chl-' + id }, P.unit.title), ` › Paper ${Number(k)}`));
+      m.append(el('section', { class: 'card', style: 'max-width:720px;margin:0 auto', id: 'chPracGate' }, el('span', { class: 'eyebrow' }, 'PRACTISE QUESTION BY QUESTION'), el('h2', {}, chPaperName(P, k)),
+        el('p', {}, 'You will see whether each answer is right, and its full worked solution, straight away. Because you will have seen the solutions, ', el('b', {}, 'this paper can then no longer be sat as a timed paper for an award.')),
+        el('div', { class: 'btnrow' }, el('button', { class: 'btn primary', type: 'button', id: 'chPracGo', onclick: () => { UI.chOk = id + k; UI.chIdx = 0; render(); } }, 'Start practising', el('span', { class: 'arr' }, ' →')), el('a', { class: 'btn gold', href: `#chx-${id}-${k}` }, '⏱ Sit it timed instead'))));
+      return;
+    }
+    const i = Math.min(UI.chIdx || 0, qs.length - 1), q = qs[i]; const got = done[q.id];
+    const nOk = Object.values(done).filter(x => x.ok).length;
+    m.append(el('nav', { class: 'crumb2' }, el('a', { href: '#challenge' }, 'Maths Challenge'), ' › ', el('a', { href: '#chl-' + id }, P.unit.title), ` › Paper ${Number(k)} · practice`));
+    const card = el('section', { class: 'card qcard', style: 'flex:999 1 600px;min-width:0', id: 'chPracCard' },
+      el('div', { class: 'btnrow between', style: 'margin:0' }, el('span', { class: 'lex', style: 'font-weight:700;color:#556377' }, `Question ${i + 1} of ${qs.length} · ${q.pts} marks`), el('span', { class: 'tag d-' + q.diff }, { M: 'Warm-up', H: 'Harder', VH: 'Hardest' }[q.diff] || '')),
+      el('h2', { class: 'qp', style: 'font-size:22px' }, q.prompt));
+    const fbBox = el('div', { 'aria-live': 'polite' }); let resp = got ? got.answer : null;
+    const show = (ok, sol, your) => {
+      fbBox.innerHTML = '';
+      fbBox.append(el('div', { class: 'chfb ' + (ok ? 'ok' : 'no'), id: 'chFb' }, el('b', {}, ok ? '✓ Right!' : '✗ Not quite.'),
+        el('p', { style: 'margin:6px 0 0' }, el('b', {}, 'Answer: '), q.type === 'mcq' ? `${String.fromCharCode(65 + q.options.findIndex(o => o.t === sol.answer))}  ${sol.answer}` : sol.answer, !ok && your != null ? el('span', { class: 'muted' }, ` · you answered ${chYour(q, your)}`) : null),
+        el('p', { style: 'margin:6px 0 0' }, el('b', {}, 'Solution: '), sol.reason)));
+    };
+    const qq = got && sols[q.id] && q.type === 'mcq' ? { ...q, options: q.options.map(o => ({ ...o, ok: o.t === sols[q.id].answer })) } : q;
+    const api = QE.renderBody(qq, card, { seed: st.id + 'P' + id + k, resp, onChange: r => { resp = r; } });
+    if (got && sols[q.id]) { api.lock(); if (api.markOpts) api.markOpts(); show(got.ok, sols[q.id], got.answer); }
+    const check = el('button', { class: 'btn primary', type: 'button', id: 'chCheck', hidden: !!got, onclick: async ev => {
+      if (resp == null || resp === '' || (typeof resp === 'object' && resp.v != null && !String(resp.v).trim())) { toast('Answer the question first.'); return; }
+      ev.currentTarget.disabled = true;
+      try { const r = await Backend.challenge({ action: 'check', learnerId: st.id, unit: 'ch-' + id, form: k, qid: q.id, answer: resp });
+        done[q.id] = { qid: q.id, form: k, ok: r.ok, answer: r.first != null ? r.first : resp }; sols[q.id] = { answer: r.answer, reason: r.reason };
+        api.lock(); if (q.type === 'mcq' && api.markOpts) { q.options.forEach(o => { o.ok = o.t === r.answer; }); api.markOpts(); q.options.forEach(o => { delete o.ok; }); }
+        show(r.ok, sols[q.id], done[q.id].answer); check.hidden = true; drawNav(); if (r.ok) toast('✓ Right!');
+      } catch (x) { ev.currentTarget.disabled = false; modal('Could not check', errText(x), [{ t: 'OK', cls: 'primary' }]); } } }, 'Check answer');
+    card.append(fbBox, el('div', { class: 'btnrow between', style: 'padding-top:16px;border-top:1px solid #E6EEF8' },
+      el('button', { class: 'btn small', type: 'button', disabled: i === 0, onclick: () => { UI.chIdx = i - 1; render(); } }, '← Previous'), check,
+      i < qs.length - 1 ? el('button', { class: 'btn small', type: 'button', id: 'chNext', onclick: () => { UI.chIdx = i + 1; render(); } }, 'Next', el('span', { class: 'arr' }, ' →')) : el('a', { class: 'btn small navy', href: '#chl-' + id }, 'Finish')));
+    const nav = el('div', { class: 'navgrid' });
+    const drawNav = () => { nav.innerHTML = ''; qs.forEach((x, j) => nav.append(el('button', { type: 'button', class: (done[x.id] ? (done[x.id].ok ? 'okq' : 'noq') : '') + (j === i ? ' on' : ''), 'aria-label': `Question ${j + 1}${done[x.id] ? (done[x.id].ok ? ', right' : ', not right') : ''}`, onclick: () => { UI.chIdx = j; render(); } }, String(j + 1)))); };
+    drawNav();
+    m.append(el('div', { style: 'display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start' }, card,
+      el('aside', { class: 'card', style: 'flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:14px' }, el('b', { class: 'lex' }, 'Questions'), nav,
+        el('div', { class: 'legend' }, el('span', {}, el('i', { style: 'background:#1E8E4E' }), 'Right'), el('span', {}, el('i', { style: 'background:#C93A3A' }), 'Not right'), el('span', {}, el('i', { style: 'border:2px solid #D3E0F4' }), 'Not tried')),
+        el('p', { class: 'muted', style: 'margin:0', id: 'chTally' }, `${Object.keys(done).length} of ${qs.length} tried · ${nOk} right`),
+        sat ? el('p', { class: 'muted', style: 'margin:0;font-size:13px' }, 'You have sat this paper; practice here does not change your award.') : el('p', { class: 'muted', style: 'margin:0;font-size:13px' }, 'Your first answer to each question is the one that counts. Rough paper helps!'))));
+  }
+
   /* ---------- end-of-year exams ---------- */
   const fdKey = f => `atomic.fdraft.${st.id}.${f}`;
   const fdLoad = f => { try { return JSON.parse(localStorage.getItem(fdKey(f))) || null; } catch (e) { return null; } };
@@ -1821,7 +1988,7 @@
   /* =====================================================================
      ACCOUNT, PLANS, HELP, LEGAL  (P0 / P1 screens)
      ===================================================================== */
-  const ERR = { locked: 'This course is not open yet.', bad_email: 'Please enter a valid email address.', weak_password: 'Use at least 8 characters for your password.', email_taken: 'An account with this email already exists – sign in instead.',
+  const ERR = { practised: 'You have practised this paper, so it can no longer be sat as a timed paper.', not_taken: 'Sit this paper first to see all its solutions.', wrong_question: 'That question is not on this paper.', locked: 'This course is not open yet.', bad_email: 'Please enter a valid email address.', weak_password: 'Use at least 8 characters for your password.', email_taken: 'An account with this email already exists – sign in instead.',
     bad_credentials: 'That email and password do not match.', account_disabled: 'This account has been switched off by Atomic. Please contact us via Help & contact.', user_banned: 'This account has been switched off by Atomic. Please contact us via Help & contact.', admin_only: 'Only administrators can do this.', own_admin: 'You cannot remove your own administrator role.', own_account: 'You cannot switch off your own account.', sign_in: 'Please sign in again.', parental_consent: 'Please tick the parental consent box.', bad_nickname: 'Use a nickname of 2–24 characters.',
     subscription_required: 'This needs an Atomic course plan.', locked: 'Finish every lesson or video and every Core question first.', awaiting_marking: 'Your last test is still being marked.', review_first: 'Finish your review questions first.',
     already_passed: 'You have already passed this test.', wrong_paper: 'Please reload the page and try again.', confirm: 'Type the confirmation exactly as shown.', staff_only: 'Staff only.', message: 'Please write a short message.' };
@@ -2230,7 +2397,7 @@
 
   /* ---------- router ---------- */
   const TOC_ROUTES = r => r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || ['map', 'result', 'remedial', 'topic', 'drill', 'cert', 'unit', 'words'].includes(r);
-  const PUBLIC = { home: () => viewHome(), signin: viewSignin, signup: viewSignup, forgot: viewForgot, pricing: viewPricing, help: viewHelp, privacy: viewPrivacy, 'privacy-kids': viewKidsPrivacy, terms: viewTerms, cookies: viewCookies, verify: viewVerify };
+  const PUBLIC = { home: () => viewHome(), signin: viewSignin, signup: viewSignup, forgot: viewForgot, pricing: viewPricing, help: viewHelp, privacy: viewPrivacy, 'privacy-kids': viewKidsPrivacy, terms: viewTerms, cookies: viewCookies, verify: viewVerify, challenge: viewChallenge };
   const viewAdmin = window.AtomicAdmin ? window.AtomicAdmin({ modal, toast, errText: e => errText(e), $main, render: () => render() }) : null;
   const ACCOUNT = { staff: viewStaff, teacher: viewStaff, admin: () => viewAdmin && viewAdmin() };
   const LEARNER = { words: viewWords, home: viewHome, unit: viewUnit, test: viewTest, tests: viewTests, final: viewFinal, checkpoint: viewCheckpoint, level: viewLevel, result: viewResult, remedial: viewRemedial, map: viewMap, profile: viewProfile, topic: viewTopic, bank: viewBank, drill: viewDrill, board: viewBoard, cert: viewCert, settings: viewSettings };
@@ -2263,11 +2430,11 @@
     if (um && Number(um[1]) !== Core.UNO) { if (!Core.unitReady(Number(um[1]))) { location.replace('#home'); return; } try { await Core.switchUnit(Number(um[1])); } catch (e) { location.replace('#home'); return; } if (seq !== renderSeq) return; }
     C = Core.C; st = Core.cur(); if (/^u-\d+$/.test(r)) r = 'unit';
     document.body.classList.toggle('young', !!(C && C.unit && C.unit.young));   // Stages 3–4: bigger, simpler question cards
-    if (r !== 'test' && !/^(fx|cpx)-/.test(r)) UI.testOn = false;
+    if (r !== 'test' && !/^(fx|cpx|chx)-/.test(r)) UI.testOn = false;
     document.body.classList.remove('menu-open', 'toc-open');
     const me = Core.S.me;
     if (me && me.profile && me.profile.disabled) { try { Core.flush && Core.flush(); } catch (e) { } await Backend.signOut(); await Core.boot(C); st = null; location.replace('#signin'); setTimeout(() => toast(ERR.account_disabled), 300); return; }
-    const needsLearner = !!LEARNER[r] && r !== 'home' || /^(v|ex|ws|lab)-/.test(r) || /^(stage|checkout|fx|fres)-\d+$/.test(r) || /^(cpx|cpr)-[A-Z]{1,2}\d$/.test(r);
+    const needsLearner = !!LEARNER[r] && r !== 'home' || /^(v|ex|ws|lab)-/.test(r) || /^(stage|checkout|fx|fres)-\d+$/.test(r) || /^(cpx|cpr)-[A-Z]{1,2}\d$/.test(r) || /^ch[xpr]-[a-z]+-\d{2}$/.test(r);
     const freeTopic = /^(v|ex|ws|lab)-\d+-1$/.test(location.hash.slice(1)) || r === 'unit';
     if (['learners', 'add-learner', 'parent'].includes(r)) { location.replace('#home'); return; }   // old parent-area links
     if (!me && !st && (ACCOUNT[r] || needsLearner)) { if (freeTopic) { Core.startGuest(); st = Core.cur(); } else { location.replace('#signin'); return; } }  // a link into topic 3.1 starts a guest session
@@ -2279,11 +2446,12 @@
     let skel = null; const skT = setTimeout(() => { if (seq !== renderSeq || m.children.length) return; skel = Loading.skeleton(/^stage-|^(bank|board|tests|checkpoint|final|profile)$/.test(r) ? 'rows' : 'cards'); m.append(skel); }, 140);
     const mo = new MutationObserver(recs => { if (skel && recs.some(x => [...x.addedNodes].some(n => n !== skel))) { skel.remove(); skel = null; mo.disconnect(); } }); mo.observe(m, { childList: true });
     try {
-      const pm = r.match(/^(stage|checkout|fx|fres)-(\d+)$/); const cpm = r.match(/^(cpx|cpr)-([A-Z]{1,2}\d)$/);
+      const pm = r.match(/^(stage|checkout|fx|fres)-(\d+)$/); const cpm = r.match(/^(cpx|cpr)-([A-Z]{1,2}\d)$/); const chm = r.match(/^chl-([a-z]+)$/) ? ['', 'chl', r.slice(4)] : r.match(/^(chx|chp|chr)-([a-z]+)-(\d{2})$/);
       if (r.startsWith('v-')) viewVideo(secFromRoute(r)); else if (r.startsWith('ex-')) viewExercises(secFromRoute(r)); else if (r.startsWith('ws-')) viewWorksheet(secFromRoute(r)); else if (r.startsWith('lab-')) viewLab(secFromRoute(r));
       else if (/^courses(-\w+)?$/.test(r)) await viewCourses(r.split('-')[1]);
       else if (/^course-[a-z0-9-]+$/.test(r)) await viewCourse(r.slice(7));
       else if (cpm && st) { if (cpm[1] === 'cpx') await viewCpExam(cpm[2]); else await viewCpResult(cpm[2]); }
+      else if (chm) { if (chm[1] === 'chl') await viewChList(chm[2]); else if (!st) go('signin'); else if (chm[1] === 'chx') await viewChExam(chm[2], chm[3]); else if (chm[1] === 'chp') await viewChPractice(chm[2], chm[3]); else await viewChResult(chm[2], chm[3]); }
       else if (pm && st) { if (isGuest() && pm[1] !== 'stage') m.append(guestWall('Sign up free to continue')); else if (pm[1] === 'stage') await viewStage(+pm[2]); else if (pm[1] === 'checkout') viewCheckout(+pm[2]); else if (pm[1] === 'fx') await viewFinalExam(pm[2]); else await viewFinalResult(pm[2]); }
       else if (st && isGuest() && GUEST_WALL[r]) m.append(guestWall(GUEST_WALL[r]));
       else if (st && LEARNER[r]) await LEARNER[r](); else if (ACCOUNT[r]) await ACCOUNT[r](); else if (PUBLIC[r]) await PUBLIC[r](); else viewHome();

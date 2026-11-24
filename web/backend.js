@@ -83,13 +83,22 @@
       async enrol(lid, stage, amount) { mine(lid); D.enrol = D.enrol || {}; const l = (D.enrol[lid] = D.enrol[lid] || []); if (!l.some(e => e.stage === stage)) l.push({ stage, method: 'test', amount: amount || null, status: 'active', created_at: new Date().toISOString() });
         note(need(), lid, 'billing', `You are enrolled in Cambridge Stage ${stage}`, 'Test checkout – no money was taken.'); save(); return 'ok'; },
       async startTest({ learnerId, unit, form }) { mine(learnerId); D.starts = D.starts || {}; const k = `${learnerId}|${unit}|${form}`; D.starts[k] = D.starts[k] || new Date().toISOString(); save();
-        const minutes = /-final$/.test(unit) ? 60 : /-cp$/.test(unit) ? 45 : TestRules.UNIT_MINUTES; return { startedAt: D.starts[k], minutes, deadline: new Date(Date.parse(D.starts[k]) + minutes * 60000).toISOString(), now: new Date().toISOString() }; },
+        const minutes = /^ch-/.test(unit) ? ({ 'ch-primary': 45, 'ch-olympiad': 90 }[unit] || 60) : /-final$/.test(unit) ? 60 : /-cp$/.test(unit) ? 45 : TestRules.UNIT_MINUTES; return { startedAt: D.starts[k], minutes, deadline: new Date(Date.parse(D.starts[k]) + minutes * 60000).toISOString(), now: new Date().toISOString() }; },
       async saveProgress(lid, unit, state) { mine(lid); (D.progress[lid] = D.progress[lid] || {})[unit] = JSON.parse(JSON.stringify(state)); save(); },
+      // Maths Challenge practice (same rules as api/challenge.js): first answer kept, full solution returned
+      async challenge({ action, learnerId, unit, form, qid, answer }) { need(); mine(learnerId); if (!/^ch-[a-z]+$/.test(String(unit))) throw err('unknown_unit');
+        const keys = keyedDemo(unit, await (await fetch(`content/demo/${unit}.tests.json`)).json()); const byId = {}; for (const [k, p] of Object.entries(keys.papers)) for (const q of p) byId[q.id] = { q, form: k };
+        const mineP = (((D.chp = D.chp || {})[learnerId] = D.chp[learnerId] || {})[unit] = D.chp[learnerId][unit] || {}); const sol = q => ({ answer: GradeCore.answerText(q), reason: q.reason || '' });
+        if (action === 'state') { const solutions = {}; Object.keys(mineP).forEach(id => { if (byId[id]) solutions[id] = sol(byId[id].q); }); return { done: Object.entries(mineP).map(([id, x]) => ({ form: x.form, qid: id, ok: x.ok, answer: x.answer })), solutions }; }
+        if (action === 'solutions') { if (!keys.papers[form]) throw err('wrong_paper'); if (!(((D.attempts[learnerId] || {})[unit]) || []).some(x => x.form === form && x.status === 'final')) throw err('not_taken'); return { solutions: Object.fromEntries(keys.papers[form].map(q => [q.id, sol(q)])) }; }
+        const hit = byId[qid]; if (!hit || hit.form !== form) throw err('wrong_question');
+        if (mineP[qid]) return { ok: mineP[qid].ok, first: mineP[qid].answer, ...sol(hit.q), repeat: true };
+        const ok = !hit.q.voided && !!GradeCore.grade(hit.q, answer).ok; mineP[qid] = { form, ok, answer }; save(); return { ok, ...sol(hit.q) }; },
       async attempts(lid, unit) { mine(lid); return ((D.attempts[lid] || {})[unit] || []).slice(); },
       async submitTest({ learnerId, unit, form, answers, clientKey, meta }) { // same rules as api/submit-test.js
         const a = need(); const l = mine(learnerId);
         if ((CFG.billing || 'off') !== 'off' && !subActive(a)) throw err('subscription_required');
-        const stage = Number(unit.match(/^stage(\d+)/)[1]); if (stage !== (l.stage || 7) && !(((D.enrol || {})[learnerId]) || []).some(e => e.stage === stage)) throw err('not_enrolled');
+        const stage = Number((unit.match(/^stage(\d+)/) || [0, 0])[1]); if (stage && stage !== (l.stage || 7) && !(((D.enrol || {})[learnerId]) || []).some(e => e.stage === stage)) throw err('not_enrolled');
         const list = ((D.attempts[learnerId] = D.attempts[learnerId] || {})[unit] = D.attempts[learnerId][unit] || []);
         const keys = keyedDemo(unit, await (await fetch(`content/demo/${unit}.tests.json`)).json());
         const same = list.find(x => x.clientKey === clientKey);
@@ -98,12 +107,13 @@
         if (keys.final) {
           const lastF = list[list.length - 1]; if (lastF && lastF.status === 'pending') throw err('awaiting_marking');
           if (!keys.papers[form]) throw err('wrong_paper'); if (list.some(x => x.form === form)) throw err('paper_done');
+          if (/^ch-/.test(unit) && Object.values(((D.chp || {})[learnerId] || {})[unit] || {}).some(x => x.form === form)) throw err('practised');
           const passes = Object.keys(D.results[learnerId] || {}).filter(k => !k.includes(':')).length;
           const xp = TestRules.xpTotal(D.progress[learnerId] || {}, passes); if (TestRules.levelOf(xp) < keys.level) throw err('level_required', { level: keys.level, have: TestRules.levelOf(xp) });
           const paper = keys.papers[form];
           const at = TestRules.finalizeFinal(TestRules.mark(paper, answers, { n: list.length + 1, form, id: uuid(), clientKey }), paper, keys.max, keys.pass);
           at.duration = duration; at.overtime = duration != null && duration > (keys.minutes || 60) * 60 + TestRules.GRACE_S; at.leaves = (meta && meta.leaves) || 0; at.autoSubmitted = !!(meta && meta.auto); delete D.starts[sk];
-          list.push(at); if (at.status === 'final' && at.passed) note(a, learnerId, 'test_passed', `You passed the end-of-year exam (paper ${form})!`, `Score ${at.pct.toFixed(1)}%`); save();
+          list.push(at); if (at.status === 'final' && at.passed && !/^ch-/.test(unit)) note(a, learnerId, 'test_passed', `You passed the end-of-year exam (paper ${form})!`, `Score ${at.pct.toFixed(1)}%`); save();
           return { attempt: at, solutions: TestRules.solutions(paper) };
         }
         const content = await loadPublic(unit);
@@ -323,6 +333,7 @@
         return rows.map(r => ({ id: r.id, n: r.n, form: r.form, ts: Date.parse(r.created_at), answers: r.answers, per: r.per, auto: Number(r.auto), pending: Object.keys(r.per).filter(k => r.per[k].teacher), status: r.status, score: r.score == null ? null : Number(r.score), pct: r.pct == null ? null : Number(r.pct), passed: r.passed, byObj: r.by_obj, weak: r.weak || [], remed: r.remed || [], duration: r.duration_s, overtime: !!r.overtime, leaves: Number(r.leaves || 0), autoSubmitted: !!r.auto_submitted })); },
       async submitTest(b) { return api('submit-test', { method: 'POST', body: b }); },
       async aiMark(b) { return api('ai-mark', { method: 'POST', body: b }); },
+      async challenge(b) { return api('challenge', { method: 'POST', body: b }); },
       async markingQueue() { return (await api('marking')).queue; },
       async markAttempt(attemptId, grades) { return (await api('marking', { method: 'POST', body: { attemptId, grades } })).attempt; },
       async leaderboard(stage = 7) { return rpc('leaderboard', { p_stage: stage }); },

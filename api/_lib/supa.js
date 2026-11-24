@@ -11,7 +11,7 @@ export const env = (k, d) => (process.env[k] != null && process.env[k] !== '' ? 
 // 'off' = test phase: every family gets the full course free. Turns on only when BILLING=paddle (or Paddle is configured).
 export const billingOn = () => env('BILLING', env('PADDLE_API_KEY') ? 'paddle' : 'off') === 'paddle';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
-const UNIT_RE = /^stage(3|4|5|6|7|8|9|19)-(unit\d{2}|final|cp)$/;
+const UNIT_RE = /^(stage(3|4|5|6|7|8|9|1[3-9])-(unit\d{2}|final|cp)|ch-[a-z]+)$/;   // Science 3–9, Maths 13–19 (Stages 3–9), Maths Challenge
 
 export function send(res, status, body, headers = {}) {
   res.statusCode = status;

@@ -83,7 +83,7 @@
     a.weak = Object.keys(a.byObj).filter(k => a.byObj[k].got / a.byObj[k].max < 0.5); a.remed = [];
     return a;
   }
-  const isFinal = unit => /-(final|cp)$/.test(String(unit));
+  const isFinal = unit => /-(final|cp)$|^ch-/.test(String(unit));   // ch-*: Maths Challenge papers
 
   return { PASS, MAX, UNIT_MINUTES, GRACE_S, OPEN_UNITS, FINAL_LEVEL, isPass, missingForTest, pickRemediation, finalize, finalizeFinal, isFinal, mark, solutions, nextForm, xpOfState, xpTotal, xpForLevel, levelOf };
 });
