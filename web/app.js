@@ -241,7 +241,7 @@
   /* where am I / what remains / next button (shown on every learning screen) */
   // dotted page header shared by every student page (the "Home 01" look)
   /* ---------- course switcher: Science Stages 7–9 and Mathematics Stage 9 ---------- */
-  const STAGE_N = { 17: 16, 18: 16, 19: 15 };
+  const STAGE_N = { 16: 17, 17: 16, 18: 16, 19: 15 };
   const stagePct = g => Math.round(Object.keys((st && st.results) || {}).filter(k => k.startsWith(`stage${g}-unit`)).length / (STAGE_N[g] || (g >= 10 ? 15 : g <= 6 ? 6 : 14)) * 100);
   const stageShort = g => (g >= 10 ? `Stage ${g - 10}` : `Stage ${g}`);
   function stageSoon(g) {

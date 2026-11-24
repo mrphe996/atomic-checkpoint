@@ -30,7 +30,7 @@ export const GLYPHS = {
   '🟢': ['circle*', '#287C34'], '🟡': ['circle*', '#E0A800'], '🔴': ['circle*', '#DD0035'], '⚫': ['circle*', '#222222'],
 };
 
-// Unit (topic) icons by stage. Stage 19 = Maths.
+// Unit (topic) icons by stage. Stages 16–19 = Maths (stage + 10).
 export const UNITS = {
   3: ['seedling', 'bowl-spoon', 'sun', 'heart', 'magnet', 'moon-stars'],
   4: ['paw', 'bolt', 'cube', 'world', 'bulb', 'plug-connected'],
@@ -39,6 +39,9 @@ export const UNITS = {
   7: ['microscope', 'ruler-measure', 'cell', 'hierarchy-2', 'fish', 'atom-2', 'cube', 'test-pipe', 'flask', 'arrows-move', 'bolt', 'plug-connected', 'volcano', 'planet'],
   8: ['apple', 'lungs', 'trees', 'atom', 'droplet-half', 'flame', 'temperature', 'gauge', 'wind', 'prism-light', 'magnet', 'solar-panel', 'cloud-rain', 'planet'],
   9: ['plant-2', 'droplet', 'dna-2', 'atom-2', 'grain', 'replace', 'salt', 'stopwatch', 'weight', 'temperature-plus', 'wave-sine', 'circuit-battery', 'temperature-sun', 'telescope'],
+  16: ['calculator', 'list-numbers', 'chart-bar', 'equal', 'ruler-2', 'percentage', 'clock', 'math-function', 'dice', 'divide', 'box', 'scale', 'angle', 'calculator', 'chart-line', 'equal', 'arrows-move'],
+  17: ['calculator', 'math-function', 'ruler-measure', 'equal', 'angle', 'chart-bar', 'divide', 'ruler-2', 'list-numbers', 'percentage', 'chart-line', 'scale', 'dice', 'arrows-move', 'box', 'presentation-analytics'],
+  18: ['calculator', 'math-function', 'ruler-measure', 'equal', 'angle', 'chart-bar', 'divide', 'ruler-2', 'list-numbers', 'percentage', 'chart-line', 'scale', 'dice', 'arrows-move', 'box', 'presentation-analytics'],
   19: ['calculator', 'math-function', 'percentage', 'equal', 'angle', 'chart-bar', 'ruler-2', 'divide', 'list-numbers', 'chart-line', 'scale', 'dice', 'arrows-move', 'box', 'presentation-analytics'],
 };
 

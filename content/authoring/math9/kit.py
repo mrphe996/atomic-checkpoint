@@ -172,7 +172,7 @@ def TK(prompt, cols, rows, d="M", o="O1", reason="", skill="Data", **kw):
 
 
 def EX(prompt, rubric, model, d="H", o="O1", need=None, reason="", skill="Reasoning", **kw):
-    return Q.base("explain", prompt, d, o, skill, rubric=[{"pt": p, "kw": k} for p, k in rubric], model=model, need=need if need is not None else max(1, (len(rubric) + 1) // 2), reason=reason or model, **kw)
+    return Q.base("explain", prompt, d, o, skill, rubric=[{"pt": p, "kw": [k] if isinstance(k, str) else k} for p, k in rubric], model=model, need=need if need is not None else max(1, (len(rubric) + 1) // 2), reason=reason or model, **kw)
 
 
 def OD(prompt, items, d="M", o="O1", reason="", skill="Reasoning", **kw):

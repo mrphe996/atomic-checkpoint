@@ -228,6 +228,8 @@ export function writeIndex() {
     9: [['Photosynthesis and Transport in Plants', 'Biology'], ['Excretion', 'Biology'], ['Variation and Inheritance', 'Biology'], ['The Structure of the Atom and the Periodic Table', 'Chemistry'],
       ['Chemical Bonding and Structure of Materials', 'Chemistry'], ['Displacement Reactions', 'Chemistry'], ['Salts', 'Chemistry'], ['Rate of Reaction', 'Chemistry'], ['Density', 'Physics'],
       ['Transfer of Thermal Energy', 'Physics'], ['Sound', 'Physics'], ['Electrical Circuits', 'Physics'], ['Earth and Climate Change', 'Earth and Space'], ['Astronomy', 'Earth and Space']],
+    // 16 = Mathematics Stage 6 (Primary)
+    16: [['The Number System', 'Number'], ['Numbers and Sequences', 'Number'], ['Averages', 'Statistics'], ['Addition and Subtraction (1)', 'Number'], ['2D Shapes', 'Geometry'], ['Fractions and Percentages', 'Number'], ['Exploring Measures', 'Geometry'], ['Addition and Subtraction (2)', 'Number'], ['Probability', 'Probability'], ['Multiplication and Division (1)', 'Number'], ['3D Shapes', 'Geometry'], ['Ratio and Proportion', 'Number'], ['Angles', 'Geometry'], ['Multiplication and Division (2)', 'Number'], ['Data', 'Statistics'], ['The Laws of Arithmetic', 'Number'], ['Transformations', 'Geometry']],
     // 17 = Mathematics Stage 7
     17: [['Integers', 'Number'], ['Expressions, Formulae and Equations', 'Algebra'], ['Place Value and Rounding', 'Number'], ['Decimals', 'Number'], ['Angles and Constructions', 'Geometry'],
       ['Collecting Data', 'Statistics'], ['Fractions', 'Number'], ['Shapes and Symmetry', 'Geometry'], ['Sequences and Functions', 'Algebra'], ['Percentages', 'Number'],
