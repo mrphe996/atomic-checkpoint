@@ -40,7 +40,7 @@ with sync_playwright() as p:
     n1 = int(pg.inner_text('#bankCount').split()[0])
     ok(0 < n1 < n0, f'A9 Question Bank search narrows the list ({n0} → {n1})')
     pg.evaluate("location.hash='board'"); pg.wait_for_timeout(900)
-    ok('MATHEMATICS' in pg.inner_text('.lbhero').upper(), 'A10 Leaderboard is for the current course')
+    ok(pg.evaluate("location.hash") == '#home', 'A10 The leaderboard is switched off (#board goes to the dashboard)')
     pg.evaluate("location.hash='cert'"); pg.wait_for_timeout(1500)
     ok('Mathematics' in pg.inner_text('#main') or 'MATHEMATICS' in pg.inner_text('#main').upper(), 'A11 Certificate page is for Mathematics')
     pg.evaluate("""(()=>{ const m = AtomicMath.field({ value: '', vars: 'x', onInput: v => { window.__mq = v; } }); m.el.id = 'mqT'; document.body.prepend(m.el); })()""")

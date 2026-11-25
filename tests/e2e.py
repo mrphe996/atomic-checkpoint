@@ -88,7 +88,7 @@ with sync_playwright() as p:
     ok(pg.evaluate("!!localStorage.getItem('atomic.guest.v1')"), '1j Guest progress is kept in this browser')
     lk = pg.evaluate("Core.secLock(Core.cur(), Core.sec('3.2'))"); ok(lk and lk.get('guest'), '1k Topic 3.2 asks a guest to sign up')
     go(pg, 'test'); ok(pg.query_selector('#guestWall') is not None, '1l Unit Test asks a guest to sign up')
-    go(pg, 'board'); ok(pg.query_selector('#guestWall') is not None, '1m Leaderboard asks a guest to sign up')
+    go(pg, 'board'); ok(pg.evaluate('location.hash') == '#home' and 'Leaderboard' not in pg.inner_text('header'), '1m Leaderboard is switched off: no nav link, #board goes to the dashboard')
     go(pg, 'home'); ok(pg.query_selector('#guestBanner') is not None and pg.query_selector('.dcont') is not None and pg.query_selector('#weekStrip') is not None, '1n Guest dashboard shows the guest banner, continue card and this-week streak')
     pg.screenshot(path=f'{SHOTS}/02_guest_home.png', full_page=True)
 
@@ -178,13 +178,11 @@ with sync_playwright() as p:
     ob = pg.evaluate('Backend.demo.outbox()')
     ok(len(ob) == 1 and ob[0]['to_email'] == 'mum@example.com' and 'Unit 3' in ob[0]['subject'], '6d One “finished Unit 3” email is queued for the parent')
 
-    # ---------- 7. leaderboard opt-in (by the student) ----------
-    go(pg, 'board'); ok(pg.query_selector('#lbHidden') is not None and 'Mai (you)' in txt(pg), '7a Hidden learner sees own row and a “you are hidden” note')
+    # ---------- 7. account menu and settings (the leaderboard is switched off) ----------
+    go(pg, 'home'); ok(pg.query_selector('.dlb') is None and pg.query_selector('a[href="#board"]') is None, '7a No leaderboard card or link on the dashboard')
     pg.click('#whoBtn'); pg.wait_for_timeout(200); ok(pg.is_visible('#userMenu') and pg.query_selector('#userMenu #signOut') is not None, '7b Avatar opens the account menu')
-    go(pg, 'settings'); pg.wait_for_selector('#setBoard')
-    pg.click('#setBoard'); pg.wait_for_timeout(200); ok(pg.query_selector('.modal') is not None, '7c Switching the leaderboard on asks for confirmation')
-    pg.click('.modal .btn.primary'); pg.wait_for_timeout(500)
-    ok(pg.evaluate("Backend.learners().then(l=>l[0].leaderboard_opt_in)"), '7d Leaderboard opt-in saved')
+    go(pg, 'settings'); pg.wait_for_selector('#setNick')
+    ok(pg.query_selector('#setBoard') is None and 'leaderboard' not in txt(pg).lower(), '7c Settings has no leaderboard switch')
     pg.fill('#setParent', ''); pg.fill('#setNick', 'Maisy'); pg.click('#setSave'); pg.wait_for_timeout(500)
     l0 = pg.evaluate("Backend.learners().then(l=>l[0])"); ok(l0['parent_email'] is None and l0['nickname'] == 'Maisy', '7e Student can remove the parent email and change nickname')
     pg.screenshot(path=f'{SHOTS}/06_settings.png', full_page=True)
@@ -201,7 +199,6 @@ with sync_playwright() as p:
     ok(dl.value.suggested_filename.endswith('.pdf'), '8c Certificate downloads as PDF')
     go(pg, 'verify'); pg.fill('#vfCode', code); pg.click('#vfBtn'); pg.wait_for_timeout(400); ok('Genuine' in txt(pg), '8d Public verification confirms the code')
     pg.fill('#vfCode', 'AE-S7-2026-FAKE0000'); pg.click('#vfBtn'); pg.wait_for_timeout(400); ok('No certificate has this code' in txt(pg), '8e Unknown codes are rejected')
-    go(pg, 'board'); ok('Shown' in txt(pg), '8f Leaderboard row now marked as shown')
 
     # ---------- 9. staff tools ----------
     go(pg, 'staff'); pg.wait_for_timeout(300)

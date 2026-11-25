@@ -3,6 +3,8 @@
 (function () {
   const { el, esc } = QE;
   let C, st;
+  // The leaderboard is switched off (the user asked to remove it). Set to true to bring back the page, nav link, dashboard card and settings switch.
+  const LEADERBOARD = false;
   const UI = { tab: {}, idx: {}, seek: null, drill: null, staffTab: 'marking', side: 'chapters', testIdx: 0, flags: {}, testOn: false, cc: true, speed: 1 };
   const $main = () => document.getElementById('main');
   const R = s => s.replace('.', '-');
@@ -82,7 +84,7 @@
   const isGuest = () => !!Core.S.guest;
   function startGuest(n) { n = typeof n === 'number' ? n : 3; if (!Core.S.me && !Core.cur()) toast('Welcome! You are learning as a guest.'); go(`v-${n}-1`); }
   function guestWall(title) {
-    return el('section', { class: 'card lockcard', id: 'guestWall' }, el('h2', {}, '✨ ' + title), el('p', {}, 'Create a free account to unlock every topic, take the Unit Test and join the leaderboard. What you have done as a guest comes with you.'),
+    return el('section', { class: 'card lockcard', id: 'guestWall' }, el('h2', {}, '✨ ' + title), el('p', {}, 'Create a free account to unlock every topic and take the Unit Test. What you have done as a guest comes with you.'),
       el('div', { class: 'btnrow' }, el('a', { class: 'btn gold', href: '#signup' }, 'Sign up free'), el('a', { class: 'btn ghost', href: '#signin' }, 'I already have an account')));
   }
   function burst(host) {
@@ -121,7 +123,7 @@
         document.addEventListener('click', () => { menu.hidden = true; }, { once: true });
         right.append(s, lv, bell(), el('span', { class: 'userwrap' }, av, menu));
       }
-      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
+      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('profile', 'Progress', area === 'profile'), LEADERBOARD ? navLink('board', 'Leaderboard', area === 'board') : null].filter(Boolean);
       if (Core.IS_PRIMARY) { nav.splice(2, 0, navLink('words', '📒 My words', area === 'words')); nav[3].textContent = 'Questions'; nav[4].textContent = 'Tests'; }
     } else if (me) {
       right.append(modeBtn(), bell(), el('button', { class: 'btn small', type: 'button', id: 'signOut', onclick: async () => { await Backend.signOut(); await Core.boot(C); go('home'); } }, 'Sign out'));
@@ -429,15 +431,15 @@
     const ts = Core.testState(st), totalReq = C.sections.reduce((a, s) => a + 8 - Core.reqLeft(st, s).length, 0);
     aside.append(el('section', { class: 'dtest' }, el('div', { class: 'blob drift', 'aria-hidden': 'true' }),
       el('div', { class: 'dtest-h' }, el('span', { class: 'wobble', html: AtomicIcons.html('lock', { size: 26, color: '#E0A800' }) }), el('b', {}, `Unit Test ${Core.UNO}`)),
-      el('p', {}, ts.state === 'passed' ? 'Passed — well done! Your first-pass score counts towards the leaderboard.' : Core.unitOpen(Core.UNIT) ? `Open now · ${TestRules.UNIT_MINUTES} minutes in the exam room · pass above 70%.` : `Unlocks when you finish every ${C.sections[0] && C.sections[0].lesson ? 'lesson' : 'video'} and Core question in this unit · ${TestRules.UNIT_MINUTES} minutes · pass above 70%.`),
+      el('p', {}, ts.state === 'passed' ? (LEADERBOARD ? 'Passed — well done! Your first-pass score counts towards the leaderboard.' : 'Passed — well done!') : Core.unitOpen(Core.UNIT) ? `Open now · ${TestRules.UNIT_MINUTES} minutes in the exam room · pass above 70%.` : `Unlocks when you finish every ${C.sections[0] && C.sections[0].lesson ? 'lesson' : 'video'} and Core question in this unit · ${TestRules.UNIT_MINUTES} minutes · pass above 70%.`),
       el('div', { class: 'dsegs' }, ...C.sections.map(s => el('span', { class: Core.secDone(st, s) ? 'on' : (8 - Core.reqLeft(st, s).length) ? 'half' : '' }))),
       el('small', {}, `Core questions: ${totalReq} of ${C.sections.length * 8}`),
       el('a', { class: 'btn gold', href: isGuest() ? '#signup' : ts.state === 'passed' ? '#result' : '#tests', id: 'dashTest' }, isGuest() ? 'Sign up to take the test' : ts.state === 'passed' ? 'See my result' : ts.state === 'ready' ? 'Start the test' : 'Preview the test', el('span', { class: 'arr' }, ' →'))));
     // aside: leaderboard
     const lb = el('section', { class: 'card dside' }, el('div', { class: 'dth' }, el('b', { class: 'lex' }, 'Leaderboard'), el('span', { class: 'bob', html: AtomicIcons.html('trophy', { size: 24, color: '#935A00' }) })));
     const lbBody = el('div', { class: 'dlb' }, Loading.skeleton('lines')); lb.append(lbBody, el('a', { class: 'ul', href: '#board' }, 'Full leaderboard →'));
-    aside.append(lb);
-    if (!isGuest()) Backend.leaderboard(Core.STAGE).then(rows => { rows = (rows || []).filter(r => r.score != null).map(r => ({ alias: r.nickname, score: Number(r.score), me: !!r.is_mine })); Core.competitionRank(rows); lbBody.innerHTML = '';
+    if (LEADERBOARD) aside.append(lb);
+    if (!LEADERBOARD) { } else if (!isGuest()) Backend.leaderboard(Core.STAGE).then(rows => { rows = (rows || []).filter(r => r.score != null).map(r => ({ alias: r.nickname, score: Number(r.score), me: !!r.is_mine })); Core.competitionRank(rows); lbBody.innerHTML = '';
       if (!rows.length) lbBody.append(el('p', { class: 'muted', style: 'margin:0' }, 'No ranked learners yet – pass a Unit Test to appear here.'));
       rows.slice(0, 4).forEach((r, i) => lbBody.append(el('div', { class: 'lbmini' + (r.me ? ' me' : '') }, el('b', { class: 'rk' }, String(r.rank)), el('span', { class: 'a', style: `background:${['#0149AF', '#F08A4B', '#3FA34D', '#0B2545'][i % 4]}` }, r.alias.slice(0, 1).toUpperCase()), el('span', { class: 'n' }, r.me ? 'You' : r.alias), el('b', { class: 'sc' }, r.score.toFixed(1) + '%')))); }).catch(() => { lbBody.innerHTML = ''; });
     else { lbBody.innerHTML = ''; lbBody.append(el('p', { class: 'muted', style: 'margin:0' }, 'Sign up free to join the leaderboard.')); }
@@ -1955,7 +1957,7 @@
     if (a.leaves) m.append(el('div', { class: 'banner info' }, leavesNote(a)));
     if (a.status === 'pending') m.append(el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, 'Your written answer is waiting for an Atomic marker. Pass/not passed is decided only when the final mark is in – you will get a notification.')));
     else if (a.passed) m.append(el('section', { class: 'card done' }, el('div', { class: 'resultbig' }, ring(a.pct, true), el('div', {}, el('span', { class: 'eyebrow' }, 'PASSED'), el('h2', { style: 'margin:0' }, `${+a.score.toFixed(2)}/30 (${a.pct.toFixed(1)}%)`), el('p', { style: 'margin:4px 0' }, `Unit ${Core.UNO} complete in ${hrs(Core.unitSeconds(Core.UNO))} of study. Your ranking score for this unit = your first-pass %: ` + ((st.results || {})[Core.UNIT] ? st.results[Core.UNIT].pct.toFixed(1) : a.pct.toFixed(1)) + '%.' + (a.duration != null ? ` Time in the exam room: ${Math.floor(a.duration / 60)} min.` : '')))),
-      el('div', { class: 'btnrow' }, el('a', { class: 'btn primary small', href: '#board' }, '🏆 Leaderboard'), el('a', { class: 'btn small', href: '#cert' }, '🎓 Certificate'))));
+      el('div', { class: 'btnrow' }, LEADERBOARD ? el('a', { class: 'btn primary small', href: '#board' }, '🏆 Leaderboard') : null, el('a', { class: 'btn small', href: '#cert' }, '🎓 Certificate'))));
     else {
       const left = Core.remLeft(st, a);
       m.append(el('section', { class: 'card bad' }, el('div', { class: 'resultbig' }, ring(a.pct, false), el('div', {}, el('span', { class: 'eyebrow', style: 'color:#B42318' }, 'NOT PASSED · YOU NEED ABOVE 70%'), el('h2', { style: 'margin:0' }, `${+a.score.toFixed(2)}/30 (${a.pct.toFixed(1)}%)`), el('p', { style: 'margin:4px 0' }, 'Here is where you went wrong and what to do next:'))),
@@ -2092,7 +2094,7 @@
     if (st.ws.length) m.append(el('div', { class: 'btnrow' }, ...st.ws.map(x => el('a', { class: 'chip', href: '#ws-' + R(x) }, '📄 Worksheet ' + x))));
     m.append(el('section', { class: 'card' }, el('h2', {}, `Unit ${Core.UNO} progress`), ...C.sections.map(s => el('div', { style: 'margin:10px 0' }, el('div', { class: 'prow', style: 'display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px;font-size:14px;font-weight:600' }, el('span', {}, `${s.id} ${s.title}`), el('span', { class: 'muted' }, `${s.lesson ? 'lesson' : 'video'} ${Core.videoDone(st, s) ? '✓' : '…'} · Core ${8 - Core.reqLeft(st, s).length}/8 · practice ${s.prac.filter(q => (st.items[q.id] || {}).done).length}/${s.prac.length} · advanced ${s.adv.filter(q => (st.items[q.id] || {}).done).length}/${s.adv.length}`)), el('div', { class: 'pbar' + (Core.secDone(st, s) ? ' ok' : '') }, el('i', { style: `width:${secPct(s)}%` })))),
       el('p', {}, `Unit Test: ${Core.attempts(st).length} attempt(s) · ${Core.passed(st) ? 'Passed' : 'not passed yet'} · Ranking score: ` + (rs ? rs.score.toFixed(2) + '% (' + rs.units + (rs.units === 1 ? ' unit)' : ' units)') : 'none yet')),
-      el('div', { class: 'btnrow' }, el('a', { class: 'btn small', href: '#result' }, 'Results & history'), el('a', { class: 'btn small', href: '#cert' }, '🎓 Certificate'), el('a', { class: 'btn small', href: '#board' }, '🏆 Leaderboard'))));
+      el('div', { class: 'btnrow' }, el('a', { class: 'btn small', href: '#result' }, 'Results & history'), el('a', { class: 'btn small', href: '#cert' }, '🎓 Certificate'), LEADERBOARD ? el('a', { class: 'btn small', href: '#board' }, '🏆 Leaderboard') : null)));
     m.append(testerTools());
     m.append(el('p', { class: 'muted' }, el('a', { href: '#privacy-kids' }, 'How Atomic looks after your data'), ' – the short version for learners.'));
   }
@@ -2278,7 +2280,6 @@
     const qa = [['Who is Atomic for?', 'Learners aged about 7–14 following Cambridge Primary or Lower Secondary Science (Stages 3 to 9) or Mathematics (Stages 3 to 9), at an international or bilingual school or studying at home.'],
       ['Do I need an account?', 'Not to try it: topic 3.1 is open to guests. Create a free account to save your progress, unlock every topic and take the Unit Test.'],
       ['Will my parents know how I am doing?', 'If you add a parent’s email when you sign up (it is optional), we send them a short email when you finish a unit. You can add or remove it any time in Settings.'],
-      ['Am I on a public leaderboard?', 'Not unless you switch it on in Settings. Everyone is hidden by default, and only your nickname is ever shown.'],
       ['How are Unit Tests marked?', 'Multiple-choice, diagram and data questions are marked automatically. Written answers are marked by the Atomic teaching team; you get a notification when it is done.'],
       ['Can I delete my data?', 'Yes. In Settings you can download everything we hold about you or delete your account, which removes all your learning records.']];
     return el('section', { class: 'card' }, el('h2', {}, 'Questions'), ...qa.map(([q, a]) => el('details', { class: 'faq' }, el('summary', {}, q), el('p', {}, a))));
@@ -2391,10 +2392,10 @@
     lb.onchange = () => { if (lb.checked) modal('Show me on the leaderboard?', 'Your nickname and ranking score will be visible to other Atomic learners. Nothing else is shown. You can switch this off at any time.', [{ t: 'Keep me hidden', cls: 'ghost', on: () => { lb.checked = false; } }, { t: 'Show my nickname', cls: 'primary', on: async () => { await Backend.updateLearner(l.id, { leaderboard_opt_in: true }); await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); } }]); else Backend.updateLearner(l.id, { leaderboard_opt_in: false }).then(async () => { await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); }); };
     pageHero('ACCOUNT', 'Settings', `Signed in as ${Core.S.me.user.email}`, statCard(initialChip(44), st.alias, l.grade || `Cambridge ${Core.stageLabel()} learner`));
     m.append(
-      el('section', { class: 'card' }, el('h2', {}, 'Profile'), el('div', { class: 'form' }, field('Nickname', nick, 'Shown in the app and, if you switch it on, on the leaderboard.'), field('Full name for the certificate', full), field('School year', gr), field('Country', country), field('School', school), field('School name', other))),
+      el('section', { class: 'card' }, el('h2', {}, 'Profile'), el('div', { class: 'form' }, field('Nickname', nick, LEADERBOARD ? 'Shown in the app and, if you switch it on, on the leaderboard.' : 'Shown in the app.'), field('Full name for the certificate', full), field('School year', gr), field('Country', country), field('School', school), field('School name', other))),
       el('section', { class: 'card' }, el('h2', {}, '📧 Parent or guardian'), el('div', { class: 'form' }, field('Parent or guardian’s email (optional)', parent, 'We send them one short email when you finish a unit. Leave empty to send nothing.'))),
       el('div', { class: 'btnrow' }, save, msg), e,
-      el('section', { class: 'card' }, el('h2', {}, 'Leaderboard'), el('label', { class: 'switch' }, lb, el('span', {}, el('b', {}, 'Show me on the leaderboard'), el('br'), el('small', { class: 'muted' }, 'Off by default. Only your nickname and ranking score are shown.')))),
+      !LEADERBOARD ? null : el('section', { class: 'card' }, el('h2', {}, 'Leaderboard'), el('label', { class: 'switch' }, lb, el('span', {}, el('b', {}, 'Show me on the leaderboard'), el('br'), el('small', { class: 'muted' }, 'Off by default. Only your nickname and ranking score are shown.')))),
       el('section', { class: 'card' }, el('h2', {}, 'Your data'), el('p', {}, 'Download a copy of everything we hold about you, or delete your account and all learning records.'),
         el('div', { class: 'btnrow' }, el('button', { class: 'btn small', type: 'button', id: 'exportBtn', onclick: async () => { const d = await Backend.exportData(); const r = await Core.saveFile('atomic-data-export.json', new Blob([JSON.stringify(d, null, 2)], { type: 'application/json' })); msg3.textContent = r === 'saved' ? 'Downloaded.' : 'Could not download.'; } }, '⬇ Download my data (JSON)'),
           el('button', { class: 'btn small ghost', type: 'button', id: 'deleteBtn', onclick: () => deleteAccountFlow() }, 'Delete account…')), el('p', { class: 'muted', id: 'msg3', 'aria-live': 'polite' })));
@@ -2475,7 +2476,7 @@
       'Optional parent or guardian email: used only to send one short email when the learner finishes a unit. It can be changed or removed at any time in Settings.',
       'Learning records: answers, progress, test results – to give feedback, mark tests, show progress and issue certificates.',
       'Payments (later, not during the test phase): handled by Paddle as Merchant of Record; we receive only the subscription status, not card details.']],
-    ['High privacy by default', 'We follow the UK Age Appropriate Design Code (Children’s code): we collect the minimum, there is no advertising and no profiling for advertising, no geolocation and no public profile. Learners are hidden from the leaderboard unless they switch it on, and then only the nickname is shown.'],
+    ['High privacy by default', 'We follow the UK Age Appropriate Design Code (Children’s code): we collect the minimum, there is no advertising and no profiling for advertising, no geolocation and no public profile.'],
     ['Where data is stored', 'Our database and authentication run on Supabase; the website runs on Vercel; emails will be sent by an email provider such as Resend. Data may be processed outside your country; we use contractual safeguards for international transfers.'],
     ['How long we keep data', 'While the account is open. When you delete the account, all your data is deleted at once; backups are overwritten within 30 days.'],
     ['Children and consent', 'Several of our markets require a parent’s or guardian’s consent before a child’s personal data is used (for example Singapore under 13, Vietnam under 16, Malaysia, Indonesia and the Philippines under 18, Thailand for younger minors). During the test phase learners sign up themselves; before Atomic is offered commercially we will add the parental-consent step each country requires. If you are a parent and want your child’s account removed, contact us and we will delete it.'],
@@ -2486,7 +2487,7 @@
       row('🙂', 'We only ask for what we need', 'Your name, email, age, school year and school. We never ask for your address, photo or where you are.'),
       row('📝', 'We keep your answers to help you learn', 'Your answers, scores and progress let us give you hints, mark your tests and show you how you are doing.'),
       row('📧', 'Your parent’s email is up to you', 'If you add it, we only send them a short message when you finish a unit.'),
-      row('🙈', 'You are hidden on the leaderboard', 'Nobody else sees you unless you switch it on. Even then, they only see your nickname and score.'),
+      LEADERBOARD ? row('🙈', 'You are hidden on the leaderboard', 'Nobody else sees you unless you switch it on. Even then, they only see your nickname and score.') : null,
       row('🚫', 'No adverts, no selling', 'We never show you adverts and we never sell your information to anyone.'),
       row('🗑️', 'You can delete it', 'In Settings you can download or delete everything at any time.'),
       row('💬', 'Worried about something?', 'Talk to a grown-up you trust, or contact us through Help.'),
@@ -2573,7 +2574,8 @@
     if (me && me.profile && me.profile.disabled) { try { Core.flush && Core.flush(); } catch (e) { } await Backend.signOut(); await Core.boot(C); st = null; location.replace('#signin'); setTimeout(() => toast(ERR.account_disabled), 300); return; }
     const needsLearner = !!LEARNER[r] && r !== 'home' || /^(v|ex|ws|lab|gm)-/.test(r) || /^(stage|checkout|fx|fres)-\d+$/.test(r) || /^(cpx|cpr)-[A-Z]{1,2}\d$/.test(r) || /^ch[xpr]-[a-z]+-\d{2}$/.test(r);
     const freeTopic = /^(v|ex|ws|lab)-\d+-1$/.test(location.hash.slice(1)) || r === 'unit';
-    if (['learners', 'add-learner', 'parent'].includes(r)) { location.replace('#home'); return; }   // old parent-area links
+    if (['learners', 'add-learner', 'parent'].includes(r)) { location.replace('#home'); return; }
+    if (r === 'board' && !LEADERBOARD) { location.replace('#home'); return; }   // old parent-area links
     if (!me && !st && (ACCOUNT[r] || needsLearner)) { if (freeTopic) { Core.startGuest(); st = Core.cur(); } else { location.replace('#signin'); return; } }  // a link into topic 3.1 starts a guest session
     if (!me && ACCOUNT[r]) { location.replace('#signin'); return; }
     if (me && !st && needsLearner) { location.replace('#home'); return; }
