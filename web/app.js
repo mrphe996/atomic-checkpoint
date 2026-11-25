@@ -213,11 +213,29 @@
     wrap.append(tocSearch());
     // the current course, with a small menu to change it
     const g0 = Core.STAGE; const cmenu = el('div', { class: 'tmenu', hidden: true });
-    Core.STAGES.forEach(g => { if (g === g0) return; const lk = Core.stageLocked(g), en = Core.enrolled(g);
-      const name = el('span', {}, el('b', { class: 'cam' }, 'Cambridge'), ' ' + (g >= 20 ? '🗣 ESL Stage ' + (g - 20) : g >= 10 ? '📐 Maths Stage ' + (g - 10) : 'Stage ' + g));
-      cmenu.append(lk ? el('span', { class: 'it lockedit', 'aria-disabled': 'true' }, name, el('small', { class: 'lkd' }, '🔒 Soon'))
-        : el('a', { class: 'it', href: '#stage-' + g, onclick: en ? ev => { ev.preventDefault(); pickStage(g, ev.currentTarget); } : null }, name, el('small', { class: 'sl' }, en ? stagePct(g) + '%' : 'Enrol →'))); });
-    cmenu.append(el('a', { class: 'it', href: '#courses', style: 'font-size:13.5px' }, 'All courses · IGCSE & A Level →'));
+    // Only the learner's own courses: same subject first, at most 3 shown until "Show all".
+    // The next stage is suggested only when the current course is finished.
+    const subj = g => (g >= 20 ? 2 : g >= 10 ? 1 : 0);
+    const cname = g => el('span', {}, el('b', { class: 'cam' }, 'Cambridge'), ' ' + (g >= 20 ? '🗣 ESL Stage ' + (g - 20) : g >= 10 ? '📐 Maths Stage ' + (g - 10) : 'Stage ' + g));
+    const mine = Core.STAGES.filter(g => g !== g0 && !Core.stageLocked(g) && Core.enrolled(g))
+      .sort((a, b) => (subj(a) !== subj(g0)) - (subj(b) !== subj(g0)) || Math.abs(a - g0) - Math.abs(b - g0));
+    const myItem = g => el('a', { class: 'it', href: '#stage-' + g, onclick: ev => { ev.preventDefault(); pickStage(g, ev.currentTarget); } }, cname(g), el('small', { class: 'sl' }, stagePct(g) + '%'));
+    const nxt = g0 + 1;
+    if (stagePct(g0) >= 100 && Core.STAGES.includes(nxt) && subj(nxt) === subj(g0) && !Core.stageLocked(nxt) && !mine.slice(0, 1).includes(nxt)) {
+      cmenu.append(el('span', { class: 'h' }, '🎉 COURSE FINISHED – UP NEXT'),
+        el('a', { class: 'it tnext', href: '#stage-' + nxt, onclick: Core.enrolled(nxt) ? ev => { ev.preventDefault(); pickStage(nxt, ev.currentTarget); } : null }, cname(nxt), el('small', { class: 'sl' }, Core.enrolled(nxt) ? 'Start →' : 'Enrol →')));
+    }
+    if (mine.length) {
+      cmenu.append(el('span', { class: 'h' }, 'YOUR OTHER COURSES'));
+      mine.slice(0, 3).forEach(g => cmenu.append(myItem(g)));
+      if (mine.length > 3) {
+        const more = el('div', { class: 'tmore', hidden: true }, ...mine.slice(3).map(myItem));
+        const tog = el('button', { type: 'button', class: 'it tshowall', 'aria-expanded': 'false', onclick: () => { more.hidden = !more.hidden; tog.setAttribute('aria-expanded', String(!more.hidden)); tog.firstChild.textContent = more.hidden ? `Show all my courses (${mine.length})` : 'Show fewer'; } },
+          el('span', {}, `Show all my courses (${mine.length})`));
+        cmenu.append(tog, more);
+      }
+    }
+    cmenu.append(el('a', { class: 'it tbrowse', href: '#courses' }, 'Browse all courses →'));
     const cbtn = el('button', { type: 'button', class: 'tcourse', id: 'tocCourse', 'aria-expanded': 'false', onclick: () => { cmenu.hidden = !cmenu.hidden; cbtn.setAttribute('aria-expanded', String(!cmenu.hidden)); } },
       el('span', {}, el('small', {}, 'YOUR COURSE'), el('b', {}, el('span', { class: 'cam' }, 'Cambridge'), ' ' + Core.stageLabel())), el('span', { class: 'tpct' }, stagePct(g0) + '%'), el('span', { class: 'chev', 'aria-hidden': 'true' }, '▾'));
     wrap.append(el('div', { class: 'card lvl tcoursebox' }, cbtn, cmenu));

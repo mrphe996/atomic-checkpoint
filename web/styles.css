@@ -1773,3 +1773,9 @@ body.tiny .opt.pcard .pe{font-size:64px}
 body.tiny .lessonbody .lp{font-size:21px;line-height:1.55}
 body.tiny .lessonbody .qfig svg{max-height:320px}
 .readq{margin:2px 0 8px;font-weight:700}
+/* course switcher: only the learner's own courses */
+.tmenu .tmore{display:flex;flex-direction:column;gap:2px}
+.tmenu .tmore[hidden]{display:none}
+.tmenu .tshowall{background:none;border:0;font:inherit;font-size:13.5px;font-weight:700;color:var(--link,#0149AF);text-align:left;cursor:pointer}
+.tmenu .tbrowse{font-size:13px;color:var(--muted);border-top:1px dashed var(--line2);margin-top:4px;padding-top:8px}
+.tmenu .tnext{background:#FFF6DC;border-radius:10px}

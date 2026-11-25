@@ -70,5 +70,14 @@ with sync_playwright() as p:
     asked = pg.query_selector('#leaveAnyway') is not None and 'Not finished yet' in pg.inner_text('.modal')
     pg.click('#leaveAnyway'); pg.wait_for_timeout(500)
     ok(room and asked and pg.evaluate("location.hash") == '#home', 'U23 Stage 7 practice opens in the practice room; leaving with Core left asks first, then is allowed')
+    # the sidebar course menu lists only the learner's own courses (3 at a time) and suggests the next stage only after finishing
+    pg.set_viewport_size({'width': 1300, 'height': 900}); pg.evaluate("location.hash='u-1'"); pg.wait_for_selector('#tocCourse'); pg.click('#tocCourse'); pg.wait_for_timeout(300)
+    one = pg.eval_on_selector_all('.tcoursebox .tmenu .it', "els=>els.filter(e=>e.offsetParent).length")
+    pg.evaluate("Core.S.enrolments=[8,9,3,4,5].map(s=>({stage:s,status:'active'}))"); pg.evaluate("location.hash='home'"); pg.wait_for_timeout(500)
+    pg.evaluate("location.hash='u-1'"); pg.wait_for_selector('#tocCourse'); pg.wait_for_timeout(400); pg.click('#tocCourse'); pg.wait_for_timeout(300)
+    shown = pg.eval_on_selector_all('.tcoursebox .tmenu > a.it', "els=>els.filter(e=>e.offsetParent).map(e=>e.getAttribute('href'))")
+    ok(one <= 2 and len(shown) == 4 and shown[0] == '#stage-8' and shown[-1] == '#courses' and pg.query_selector('.tshowall') is not None and pg.query_selector('.tnext') is None,
+       'U24 The sidebar course menu shows only the learner\'s own courses (3 + "Show all"), no suggestion before finishing')
+    pg.evaluate("Core.S.enrolments=[]")
     ok(not errs, 'U22 No page errors ' + '; '.join(errs[:3])); b.close()
 f = [l for l in LOG if l.startswith('FAIL')]; print(f'{len(LOG)-len(f)}/{len(LOG)} passed'); sys.exit(1 if f else 0)
