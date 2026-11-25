@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 9 Sequences and functions. Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 9 Sequences and functions. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 
@@ -61,6 +63,8 @@ s.idea("Finding the nth term of a linear sequence", ["The **common difference** 
 s.example("Decreasing", "Find the nth term of 20, 17, 14, 11, …", [("d = −3", ""), ("−3n: −3, −6, −9", ""), ("add 23", "−3 + 23 = 20"), ("Tₙ = 23 − 3n", "")], "23 − 3n")
 s.check(X("Find the nth term of 5, 9, 13, 17, …", "4n+1", vars="n", o="O2", show="4n + 1"))
 s.example("Is it in the sequence?", "Is 150 a term of Tₙ = 4n + 3?", [("4n + 3 = 150", ""), ("4n = 147, n = 36.75", ""), ("not a whole number", "")], "No, 150 is not a term.")
+s.idea("Quadratic sequences", ["If the first differences are not equal but the second differences are, the sequence has an n² term. 2, 5, 10, 17, …: differences 3, 5, 7; second differences 2, 2. Compare with the square numbers 1, 4, 9, 16: every term is 1 more, so the nth term is n² + 1.",
+       "For sequences of the form n² ± a, compare each term with the square numbers."])
 s.mistake("Do not use the first term as the multiplier", ["For 7, 11, 15, … the nth term is 4n + 3, not 7n + 4. The difference goes with n."])
 s.check(MC("Is 101 a term of the sequence 3n − 1?", "No, because 3n = 102 gives n = 34 — wait, that is whole, so yes" if False else "Yes, it is the 34th term", [("No, because 101 is odd", ""), ("Yes, it is the 33rd term", "Solve 3n − 1 = 101."), ("No, because 101 is prime", "")], o="O2", d="H"))
 def n1(r):
@@ -91,7 +95,15 @@ def n7(r):
     return N(f"For which n do the sequences {nth(d1, b1)} and {nth(d2, b2)} have the same term?", int(n), reason=f"{nth(d1, b1)} = {nth(d2, b2)} gives {d1 - d2}n = {b2 - b1}, so n = {int(n)}.", o="O2", d="VH")
 s.core(n1(s.rng), n2(s.rng), n3(s.rng), n4(s.rng), n5(s.rng), n6(s.rng), n1(s.rng),
        EX("Explain why the nth term of 6, 10, 14, 18, … is 4n + 2 and not 6n + 4.", [("difference is 4 so 4n", ["difference|goes up by 4|adds 4|4n"]), ("4 × 1 + 2 = 6", ["4 ?(×|x) ?1|\\+ ?2|first term"]), ("6n + 4 gives 10 for n = 1", ["10|does not|doesn't|wrong"])], "The terms go up by 4, so the nth term starts 4n. When n = 1, 4n = 4 and we need 6, so add 2: 4n + 2. 6n + 4 would give 10 for the first term.", o="O2", d="H"))
+def i2_1(r):
+    a, c = 1, r.randint(-3, 9)   # Stage 9 framework: n² ± a
+    seq = [a * n * n + c for n in range(1, 5)]
+    return MC(f"What is the nth term of {', '.join(map(str, seq))}, …?", f"{'' if a == 1 else a}n² {'+' if c >= 0 else '−'} {abs(c)}", [(f"{2 * a}n² {'+' if c >= 0 else '−'} {abs(c)}", "The coefficient of n² is HALF the second difference."), (f"{seq[1] - seq[0]}n {'+' if seq[0] - (seq[1] - seq[0]) >= 0 else '−'} {abs(seq[0] - (seq[1] - seq[0]))}", "The first differences are not constant, so it is not linear.")], o="O2", d="VH",
+              reason=f"Second differences are {2 * a}, so {a}n²; then add {c}.")
+
+
 s.gen("p", 44, n1, n2, n3, n4, n5, n6, n7)
+s.capped("p", [1] * 1, [i2_1]).capped("m", [2] * 1, [i2_1])   # v2 reasoning kinds
 s.gen("a", 8, n7, n3, lambda r: (lambda d_, b: X(f"The 5th term of a linear sequence is {5*d_+b} and the 12th term is {12*d_+b}. Find the nth term.", f"{d_}n+({b})", vars="n", reason=f"7 steps from the 5th to the 12th term add {7 * d_}, so d = {d_}; then {5 * d_ + b} − 5 × {d_} = {b}.", o="O2", d="VH", show=nth(d_, b)))(nz(r, -6, 9), r.randint(-20, 20)))
 
 # ================================================================== 9.3

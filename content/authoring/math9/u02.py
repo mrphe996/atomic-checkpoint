@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 2 Expressions and formulae. Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 2 Expressions and formulae. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 
@@ -21,6 +23,7 @@ s.idea("Substitution", ["To **substitute** means to replace each letter with its
 s.example("Negative values", "Find the value of 2a² − 5b when a = −3 and b = −4.", [("2 × (−3)² − 5 × (−4)", "brackets round negative values"), ("2 × 9 − (−20)", "power first: (−3)² = 9"), ("18 + 20 = 38", "subtracting a negative is adding")], "38")
 s.check(N("Work out 4x² when x = −3.", 36, o="O1", reason="x² = 9, 4 × 9 = 36."))
 s.example("Fractions", "Find the value of (p + q)/(2p) when p = 1/2 and q = 3/4.", [("p + q = 1/2 + 3/4 = 5/4", ""), ("2p = 1", ""), ("5/4 ÷ 1 = 5/4", "")], "5/4 = 1.25")
+s.check(MC("Before you read on: when x = −3, what is x²?", "9", [("−9", "(−3) × (−3) = 9."), ("−6", "Squaring is not doubling.")], o="O1"))
 s.mistake("−x² is not (−x)²", ["When x = 3, −x² = −(3²) = −9, but (−x)² = (−3)² = 9. The power only applies to what is directly before it."])
 s.check(MC("What is the value of −a² when a = 5?", "−25", [("25", "Square first, then apply the minus sign."), ("−10", "a² means a × a, not 2a."), ("10", "")], o="O1", d="H"))
 
@@ -57,7 +60,13 @@ s.core(t_sub1(s.rng), t_sub2(s.rng), t_table(s.rng), t_sub4(s.rng), t_sub3(s.rng
        EX("Ana says that when x = −4, 3x² = −48. Explain her mistake and give the correct value.", [("square first / power before multiplying", ["square|power|first|before"]), ("(−4)² = 16 is positive", ["16|positive"]), ("3 × 16 = 48", ["\\b48\\b"])],
           "She multiplied before squaring or forgot that (−4)² is positive. (−4)² = 16, so 3x² = 3 × 16 = 48.", o="O1", d="H"),
        TB("Complete the table for P = 2l + 2w.", ["l", "w", "P"], [["4.5", "3", B(15)], ["7", "2.5", B(19)], ["1/2", "3/4", B(2.5)]], reason="P = 2 × 4.5 + 2 × 3 = 15; 2 × 7 + 2 × 2.5 = 19; 2 × 1/2 + 2 × 3/4 = 2.5.", o="O1"))
+def b1_1(r):
+    x = -r.randint(2, 5)
+    return MC(f"When x = {x}, which expression has the smallest value?", "x³", [("x²", f"x² = {x * x}."), ("2x", f"2x = {2 * x}."), ("−x", f"−x = {-x}.")], o="O1", d="H", reason=f"x³ = {x ** 3}, x² = {x * x}, 2x = {2 * x}, −x = {-x}.")
+
+
 s.gen("p", 44, t_sub1, t_sub2, t_sub3, t_sub4, t_sub5, t_table, t_sqrt, t_compare, t_find)
+s.capped("p", [1] * 1, [b1_1]).capped("m", [2] * 1, [b1_1])   # v2 reasoning kinds
 s.gen("a", 8,
       lambda r: (lambda x: N(f"Find the value of (2x − 1)²(x + 3) when x = {fmt(x)}.", (2 * x - 1) ** 2 * (x + 3), o="O1", d="VH", reason=f"(2 × {fmt(x)} − 1)² = {(2*x-1)**2}; × ({fmt(x)} + 3) = {fmt((2*x-1)**2*(x+3))}."))(nz(r, -5, 5)),
       lambda r: (lambda a, b: N(f"Find the value of (a² − b²) ÷ (a − b) when a = {a} and b = {b}.", a + b, o="O1", d="VH", reason=f"a² − b² = {a*a-b*b}, a − b = {a-b}; {a*a-b*b} ÷ {a-b} = {a+b}. (In general it equals a + b.)"))(r.randint(5, 15), nz(r, -6, 4)),
@@ -162,6 +171,9 @@ s.idea("Double brackets", ["To expand (x + a)(x + b), multiply **every term in t
 s.example("With negatives", "Expand and simplify (x − 4)(x + 7).", [("x × x = x²", ""), ("x × 7 = 7x,  −4 × x = −4x", ""), ("−4 × 7 = −28", ""), ("x² + 3x − 28", "7x − 4x = 3x")], "x² + 3x − 28")
 s.check(X("Expand and simplify (x + 2)(x + 6).", "x^2+8x+12", o="O4", mustNot=["\\("], show="x² + 8x + 12"))
 s.example("Squaring a bracket", "Expand (2x − 3)².", [("(2x − 3)(2x − 3)", "write it twice"), ("4x² − 6x − 6x + 9", ""), ("4x² − 12x + 9", "")], "4x² − 12x + 9")
+s.idea("Why (a + b)² is not a² + b²", ["A square of side (a + b) splits into four parts: a², b² and two rectangles ab. So (a + b)² = a² + 2ab + b².",
+       "Check with numbers: (3 + 4)² = 49, but 3² + 4² = 25. The missing 24 is 2 × 3 × 4."], table={"head": ["×", "a", "+b"], "rows": [["a", "a²", "ab"], ["+b", "ab", "b²"]]})
+s.check(MC("Before you read on: expand (x − 5)².", "x² − 10x + 25", [("x² − 25", "There are two −5x parts."), ("x² + 25", "Expand (x − 5)(x − 5).")], o="O4"))
 s.mistake("(x + 5)² is not x² + 25", ["You must include the two middle terms: (x + 5)² = x² + 10x + 25."])
 s.check(MC("Expand (x + 5)².", "x² + 10x + 25", [("x² + 25", "Do not forget the middle terms 5x + 5x."), ("x² + 5x + 25", "There are two 5x terms."), ("2x + 10", "")], o="O4", d="H"))
 
@@ -198,7 +210,14 @@ def t_err(r):
 s.core(t_e1(s.rng), t_e2(s.rng), t_sq(s.rng), t_dop(s.rng), t_grid(s.rng), t_area(s.rng), t_err(s.rng),
        EX("Explain why (x + 4)(x − 4) has no x term when expanded.", [("4x and −4x", ["4x"]), ("they cancel / add to zero", ["cancel|zero|0x|add to 0"]), ("x² − 16", ["x\\^?2 ?- ?16|x² ?− ?16"])],
           "Expanding gives x² − 4x + 4x − 16. The terms −4x and +4x cancel, so the result is x² − 16 with no x term.", o="O4", d="H"))
+def b4_1(r):
+    a, b = r.randint(1, 7), r.randint(1, 7)
+    return MC(f"Which is the expansion of (x + {a})(x − {b})?", f"x² {'+' if a - b > 0 else '−'} {abs(a - b)}x − {a * b}" if a != b else f"x² − {a * b}", [(f"x² + {a + b}x − {a * b}", "The x parts are +" + str(a) + "x and −" + str(b) + "x."), (f"x² − {a * b}x + {a + b}", "Multiply the numbers for the last term; add them for the x term.")], o="O4", d="H",
+              reason=f"x² − {b}x + {a}x − {a * b}.")
+
+
 s.gen("p", 44, t_e1, t_e2, t_sq, t_dop, t_grid, t_coef, t_area, t_find, t_err)
+s.capped("p", [1] * 1, [b4_1]).capped("m", [2] * 1, [b4_1])   # v2 reasoning kinds
 s.gen("a", 8,
       lambda r: (lambda a, b: X(f"Expand and simplify (x + {a})(x + {b}) − (x + {a+b})².", f"-{a+b}x-{(a+b)**2-a*b}", o="O4", d="VH", show=f"−{a+b}x − {(a+b)**2 - a*b}", reason=f"x² + {a+b}x + {a*b} − (x² + {2*(a+b)}x + {(a+b)**2}) = −{a+b}x − {(a+b)**2-a*b}."))(r.randint(1, 5), r.randint(1, 5)),
       lambda r: (lambda a: N(f"Use (100 + {a})(100 − {a}) = 100² − {a}² to work out {100+a} × {100-a} without a calculator.", 10000 - a * a, reason=f"100² − {a}² = 10 000 − {a * a} = {10000 - a * a}.", o="O4", d="VH"))(r.randint(2, 9)),
@@ -212,6 +231,9 @@ s.idea("Algebraic fractions", ["Algebraic fractions follow the same rules as num
 s.example("Adding", "Write (2x)/5 − (x − 1)/3 as a single fraction.", [("3(2x)/15 − 5(x − 1)/15", "common denominator 15"), ("(6x − 5x + 5)/15", "careful: −5 × −1 = +5"), ("(x + 5)/15", "")], "(x + 5)/15")
 s.check(X("Write x/2 + x/3 as a single fraction.", "5x/6", o="O5", show="5x/6"))
 s.example("Dividing", "Simplify (3a/4) ÷ (9a²/8).", [("3a/4 × 8/(9a²)", "multiply by the reciprocal"), ("24a/(36a²)", ""), ("2/(3a)", "cancel 12a")], "2/(3a)")
+s.idea("Why you can only cancel factors", ["(x + 2)/2 is NOT x + 1: the 2 divides the whole top, so (x + 2)/2 = x/2 + 1. You may cancel only a factor of the whole numerator and the whole denominator.",
+       "Factorise first: (3x + 6)/3 = 3(x + 2)/3 = x + 2."])
+s.check(MC("Before you read on: simplify (4x + 8)/4.", "x + 2", [("x + 8", "Both terms are divided by 4."), ("4x + 2", "Divide the 4x by 4 as well.")], o="O5"))
 s.mistake("Cancel factors, not terms", ["(x + 6)/6 is NOT x + 1. You can only cancel a common FACTOR of the whole top and bottom."])
 s.check(MC("Which simplification is correct?", "6x/9 = 2x/3", [("(x + 3)/3 = x", "3 is not a factor of the whole numerator."), ("(x + 4)/(x + 2) = 2", ""), ("x/(x + 1) = 1/1", "")], o="O5", d="H"))
 
@@ -243,7 +265,13 @@ s.core(t_add(s.rng) or t_add(s.rng), t_sub(s.rng) or t_sub(s.rng), t_mul(s.rng),
        TB("Complete the table for x = 6.", ["Expression", "x/2 + x/3", "x/2 − x/3", "x/2 × x/3", "x/2 ÷ x/3"], [["Value", B(5), B(1), B(6), B(1.5)]], reason="x/2 = 3 and x/3 = 2: 3 + 2 = 5, 3 − 2 = 1, 3 × 2 = 6, 3 ÷ 2 = 1.5.", o="O5"),
        EX("Explain why (x + 9)/3 is not equal to x + 3.", [("only 9 is divided / x is not divided by 3", ["x is not|only|both|whole|every term"]), ("it equals x/3 + 3", ["x/3"])], "Every term of the numerator must be divided by 3: (x + 9)/3 = x/3 + 3, not x + 3.", o="O5", d="H"),
        t_cancel(s.rng))
+def b5_1(r):
+    a = r.randint(2, 6)
+    return MC(f"Jo simplifies (x + {a})/{a} to x + 1. What is right?", f"x/{a} + 1", [("x + 1", f"Only the {a} was divided by {a}."), (f"x/{a} + {a}", f"{a} ÷ {a} = 1.")], o="O5", d="H", reason=f"(x + {a})/{a} = x/{a} + {a}/{a} = x/{a} + 1.")
+
+
 s.gen("p", 44, t_add, t_sub, t_mul, t_div, t_cancel, t_val, t_tf)
+s.capped("p", [1] * 1, [b5_1]).capped("m", [2] * 1, [b5_1])   # v2 reasoning kinds
 s.gen("a", 8,
       lambda r: (lambda a: X(f"Write 1/x + 1/(x + {a}) as a single fraction.", f"1/x+1/(x+{a})", o="O5", d="VH", must=["^[^/]*/[^/]*$"], show=f"(2x + {a})/(x(x + {a}))", formFb="Write it as ONE fraction.", reason=f"Common denominator x(x + {a}): (x + {a} + x)/(x(x + {a}))."))(r.randint(1, 6)),
       lambda r: (lambda a: X(f"Simplify (x² − {a*a})/(x + {a}).", f"x-{a}", o="O5", d="VH", mustNot=["/"], show=f"x − {a}", reason=f"x² − {a*a} = (x + {a})(x − {a}); cancel (x + {a})."))(r.randint(2, 9)))
@@ -257,6 +285,7 @@ s.check(X("Make w the subject of A = lw.", "A/l", vars="Al", lhs="w", o="O6", sh
 s.example("With a square", "Make r the subject of A = πr².", [("A/π = r²", "divide by π"), ("r = √(A/π)", "square root")], "r = √(A/π)")
 s.example("Deriving a formula", "A taxi charges $3 plus $2 for every km. Write a formula for the cost C dollars of a journey of d km, then find C for 7.5 km.", [("C = 3 + 2d", ""), ("C = 3 + 2 × 7.5 = 18", "")], "C = 2d + 3; $18")
 s.check(N("Use C = 2d + 3 to find the distance d when the cost is $26.", 11.5, "km", units=["km", "$"], o="O6", d="M", reason="26 = 2d + 3 → 2d = 23 → d = 11.5 km."))
+s.check(MC("Before you read on: make r the subject of A = πr².", "r = √(A/π)", [("r = A/π", "That gives r², not r."), ("r = √A/π", "Divide by π before taking the square root.")], o="O6"))
 s.mistake("Undo in the right order", ["To make x the subject of y = 3x + 5, subtract 5 first, then divide by 3: x = (y − 5)/3, not y/3 − 5."])
 
 def t_s1(r):
@@ -289,7 +318,12 @@ s.core(t_s1(s.rng), t_s2(s.rng), t_use(s.rng), t_derive(s.rng), t_rev(s.rng), t_
        TB("Use F = 1.8C + 32 to complete the table.", ["C (°C)", "0", "25", B(-10), B(100)], [["F (°F)", B(32), B(77), "14", "212"]], reason="F = 1.8 × 0 + 32 = 32; 1.8 × 25 + 32 = 77; C = (14 − 32) ÷ 1.8 = −10; (212 − 32) ÷ 1.8 = 100.", o="O6", d="H", hint="To find C from F, work backwards: subtract 32, then divide by 1.8."),
        EX("Kim makes x the subject of y = 4x − 7 and writes x = y/4 + 7. Explain her mistake and give the correct formula.", [("undo in reverse order / add 7 first", ["add 7 first|first add|reverse|order|before dividing"]), ("x = (y + 7)/4", ["\\(y ?\\+ ?7\\) ?/ ?4|y/4 ?\\+ ?7/4|y ?\\+ ?7 all over 4"])],
           "She did the steps in the wrong order. Add 7 first: y + 7 = 4x, then divide by 4: x = (y + 7)/4.", o="O6", d="H"))
+def b6_1(r):
+    return MC("Make t the subject of v = u + at.", "t = (v − u)/a", [("t = v − u − a", "a multiplies t, so divide by a."), ("t = (v − u)a", "Undo × a by dividing.")], o="O6", d="H", reason="Subtract u: v − u = at. Divide by a: t = (v − u)/a.")
+
+
 s.gen("p", 44, t_s1, t_s2, t_s3, t_s4, t_use, t_derive, t_rev, t_sq, t_order)
+s.capped("p", [1] * 1, [b6_1]).capped("m", [2] * 1, [b6_1])   # v2 reasoning kinds
 s.gen("a", 8,
       lambda r: X("Make x the subject of y = √(x + a).", "y^2-a", vars="xya", lhs="x", o="O6", d="VH", show="y² − a", reason="Square both sides: y² = x + a, so x = y² − a."),
       lambda r: X("Make a the subject of v² = u² + 2as.", "(v^2-u^2)/(2s)", vars="vuas", lhs="a", o="O6", d="VH", show="(v² − u²)/(2s)"),

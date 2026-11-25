@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 1 Number and calculation (1.1 Irrational numbers, 1.2 Standard form, 1.3 Indices). Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 1 Number and calculation (1.1 Irrational numbers, 1.2 Standard form, 1.3 Indices). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 import math
 from fractions import Fraction as Fr
 from kit import *
@@ -29,6 +31,9 @@ s.idea("Estimating roots", ["To find the two whole numbers a root lies between, 
 s.example("Between which whole numbers?", "Between which two consecutive whole numbers does ∛90 lie?",
           [("4³ = 64, 5³ = 125", "find the cube numbers either side of 90"), ("64 < 90 < 125", ""), ("4 < ∛90 < 5", "take cube roots")], "∛90 lies between 4 and 5.")
 s.check(N("√75 lies between two consecutive whole numbers. What is the smaller one?", 8, d="M", o="O2", reason="64 < 75 < 81, so 8 < √75 < 9."))
+s.idea("Why √2 cannot be a fraction", ["Every fraction becomes a decimal that stops or repeats. √2 = 1.41421356… never stops and never repeats, so it cannot be written as a fraction: it is irrational.",
+       "√n is rational only when n is a square number (√49 = 7); otherwise it is irrational."])
+s.check(MC("Before you read on: is √16 rational or irrational?", "Rational: it equals 4", [("Irrational", "16 is a square number, so √16 = 4 exactly."), ("Neither", "Every real number is one or the other.")], o="O1"))
 s.mistake("Halving instead of rooting", ["√50 is NOT 25. A square root asks which number multiplied by ITSELF gives 50. 7 × 7 = 49, so √50 is just over 7."])
 s.check(MC("Which is the best estimate of √50?", "7.1", [("25", "25 is half of 50, not its square root."), ("5", "5 × 5 = 25, not 50."), ("7.9", "7.9² is about 62, too big.")], d="M", o="O2"))
 
@@ -89,7 +94,16 @@ s.core(t_rational(s.rng), MS("Select ALL the rational numbers.", ["√121", "0.8
        EX("Sam says '√2 × √2 is irrational because √2 is irrational.' Is Sam right? Explain.", [("no / Sam is wrong", ["\\bno\\b|wrong|not right|incorrect"]), ("√2 × √2 = 2", ["= ?2\\b|equals 2|is 2"]), ("2 is an integer / a fraction, so rational", ["rational|integer|whole number|fraction"])],
           "No, Sam is wrong. √2 × √2 = 2, and 2 is an integer, so it is rational.", o="O1", d="H"),
        t_side(s.rng))
+def a1_1(r):
+    rows = r.sample([("√25", "Rational"), ("√7", "Irrational"), ("π", "Irrational"), ("0.333…", "Rational"), ("√2 × √2", "Rational"), ("3/7", "Rational"), ("√10", "Irrational")], 5)
+    return GD("Is each number rational or irrational?", "Type", rows, o="O1", d="H", extra=["Rational", "Irrational"], reason="Rational numbers can be written as a fraction; their decimals stop or repeat. √2 × √2 = 2 is rational even though √2 is not.")
+def a1_2(r):
+    rows = r.sample([("The sum of two rational numbers is rational", "Always true"), ("The product of two irrational numbers is irrational", "Sometimes true"), ("A rational number plus an irrational number is irrational", "Always true"), ("The square root of a whole number is irrational", "Sometimes true")], 4)
+    return GD("Is each statement always true, sometimes true or never true?", "Always / sometimes / never", rows, o="O1", d="VH", extra=["Always true", "Sometimes true", "Never true"], reason="√2 × √2 = 2 is rational, but √2 × √3 = √6 is irrational. √9 = 3 is rational.")
+
+
 s.gen("p", 44, t_between, t_rational, t_est, t_which_rational, t_order, t_product, t_side, t_recur, t_cube)
+s.capped("p", [1] * 2, [a1_1, a1_2]).capped("m", [2] * 2, [a1_1, a1_2])   # v2 reasoning kinds
 s.gen("a", 8,
       lambda r: (lambda a: N(f"√{a} = {math.sqrt(a):.6f}… Use a calculator to find the integer n such that n < √{a}·√{a+1} < n + 1.", int(math.sqrt(a * (a + 1))), o="O2", d="VH", reason=f"√{a}·√{a+1} = √{a*(a+1)} ≈ {math.sqrt(a*(a+1)):.3f}."))(r.randint(10, 60)),
       lambda r: EX("Explain why √n is irrational when n lies strictly between two consecutive square numbers.", [("√n lies between two consecutive integers", ["between|integer|whole number"]), ("so √n is not an integer", ["not (an )?(integer|whole)"]), ("square root of a whole number is either an integer or irrational", ["irrational|cannot be a fraction|not a fraction"])],
@@ -109,6 +123,9 @@ s.example("Small number", "Write 0.000 504 in standard form.", [("5.04", "first 
 s.method("Calculating in standard form", ["Multiply: multiply the A parts and **add** the powers. Divide: divide the A parts and **subtract** the powers. Then make sure A is between 1 and 10."],
          steps=[("(3 × 10⁴) × (5 × 10⁶) = 15 × 10¹⁰", "3 × 5 = 15, 4 + 6 = 10"), ("15 × 10¹⁰ = 1.5 × 10¹¹", "adjust so that 1 ≤ A < 10")])
 s.check(N("Work out (2 × 10³) × (4 × 10⁵). Give the answer as an ordinary number.", 800000000, o="O3", d="M", reason="8 × 10⁸ = 800 000 000."))
+s.idea("Why standard form uses a number from 1 to 10", ["Writing 4.7 × 10⁶ tells you the size at a glance: the power of 10 counts the places. Keeping the first number between 1 and 10 means each number has exactly one way of being written.",
+       "47 × 10⁵ has the same value but is not in standard form."])
+s.check(MC("Before you read on: is 0.6 × 10⁴ in standard form?", "No: 6 × 10³", [("Yes", "The first number must be at least 1."), ("No: 60 × 10²", "The first number must be less than 10.")], o="O2"))
 s.mistake("A must be between 1 and 10", ["23 × 10⁴ is NOT standard form. Write 23 as 2.3 × 10¹ and add the powers: 2.3 × 10⁵."])
 s.check(MC("Write 23 × 10⁴ correctly in standard form.", "2.3 × 10⁵", [("2.3 × 10³", "23 = 2.3 × 10, so the power goes UP by 1."), ("23 × 10⁴", "A must be less than 10.")], o="O3", d="H"))
 
@@ -157,7 +174,17 @@ s.core(t_to_sf(s.rng), t_from_sf(s.rng), t_small_to(s.rng), t_mul(s.rng), t_tabl
        EX("Explain why 0.75 × 10⁶ is not in standard form, and write it correctly.", [("A must be at least 1 / between 1 and 10", ["1 and 10|at least 1|less than 1|between 1|bigger than (or equal to )?1"]), ("7.5 × 10⁵", ["7\\.5 ?(×|x|\\*) ?10\\^?5|7\\.5 × 10⁵"])],
           "In standard form A must be between 1 and 10, and 0.75 is less than 1. 0.75 × 10⁶ = 7.5 × 10⁵.", o="O3", d="H"),
        t_div(s.rng))
+def a2_1(r):
+    a, n = r.randint(11, 99), r.randint(3, 8)
+    return MC(f"Write {a} × 10{sup(n)} in standard form.", f"{a / 10:g} × 10{sup(n + 1)}", [(f"{a / 10:g} × 10{sup(n - 1)}", "Dividing the first number by 10 means multiplying the power by 10."), (f"{a} × 10{sup(n)}", "The first number must be less than 10.")], o="O2", d="H",
+              reason=f"{a} = {a / 10:g} × 10, so {a} × 10{sup(n)} = {a / 10:g} × 10{sup(n + 1)}.")
+def a2_2(r):
+    vals = r.sample([("3.2 × 10⁴", 32000), ("4.5 × 10³", 4500), ("9 × 10³", 9000), ("1.1 × 10⁵", 110000), ("8.7 × 10²", 870)], 4); vals.sort(key=lambda v: v[1])
+    return OD("Put these in order, smallest first.", [v[0] for v in vals], o="O2", d="H", reason="Compare the powers of 10 first, then the first numbers.")
+
+
 s.gen("p", 44, t_to_sf, t_small, t_from_sf, t_small_to, t_mul, t_div, t_order_sf, t_table, t_context, t_add)
+s.capped("p", [1] * 2, [a2_1, a2_2]).capped("m", [2] * 2, [a2_1, a2_2])   # v2 reasoning kinds
 s.gen("a", 8, t_compare,
       lambda r: (lambda n: N(f"Light travels about 3 × 10⁵ km in one second. How far does it travel in {n} hours? Give your answer in standard form.", 3e5 * 3600 * n, "km", units=["km", "m"], o="O3", d="VH", reason=f"{n} h = {3600*n} s; 3 × 10⁵ × {3600*n} = {stdform(3e5*3600*n)} km."))(r.randint(2, 9)),
       lambda r: (lambda m, e: N(f"Find the square of {fmt(m)} × 10{sup(e)}. Give your answer in standard form, correct to 3 significant figures.", sf((m * 10 ** e) ** 2, 3), o="O3", d="VH", tol=abs(sf((m*10**e)**2, 3)) * 0.002, reason=f"({fmt(m)})² = {m*m:.4f}, (10{sup(e)})² = 10{sup(2*e)} → {stdform(sf((m*10**e)**2,3))}."))(r.randint(11, 99) / 10, r.randint(-5, 6)))
@@ -171,6 +198,9 @@ s.example("Simplify", "Simplify 7⁵ × 7⁻² ÷ 7⁶, leaving your answer as a
 s.check(X("Simplify x⁴ × x³. Type your answer like x^7.", "x^7", o="O4", d="M", reason="Add the indices: 4 + 3 = 7."))
 s.example("Powers of powers with numbers", "Simplify (3a²)³.", [("3³ × (a²)³", "cube every part of the bracket"), ("27a⁶", "3³ = 27 and 2 × 3 = 6")], "27a⁶")
 s.check(N("Work out 4⁻². Give your answer as a fraction or a decimal.", 0.0625, o="O4", d="M", reason="4⁻² = 1/4² = 1/16 = 0.0625."))
+s.idea("Why a negative index is a reciprocal", ["Divide powers: 2³ ÷ 2⁵ = 2⁻². But also 8 ÷ 32 = 1/4 = 1/2². So 2⁻² must equal 1/2².",
+       "A negative index means 'one over': a⁻ⁿ = 1/aⁿ. It does not make the number negative."])
+s.check(MC("Before you read on: what is 5⁻¹?", "1/5", [("−5", "A negative index gives a reciprocal, not a negative number."), ("−1/5", "The value is positive.")], o="O3"))
 s.mistake("Do not multiply the bases", ["2³ × 2⁴ is 2⁷, NOT 4⁷. The base stays the same; only the indices change."])
 s.check(MC("Simplify 5³ × 5⁶.", "5⁹", [("25⁹", "Do not multiply the bases."), ("5¹⁸", "Add the indices when multiplying, do not multiply them."), ("25¹⁸", "The base stays 5.")], o="O4"))
 
@@ -211,7 +241,16 @@ s.core(t_mulp(s.rng), t_divp(s.rng), t_neg(s.rng), t_tf(s.rng),
        t_powp(s.rng), t_find_n(s.rng),
        EX("Use the law aᵐ ÷ aⁿ = aᵐ⁻ⁿ to explain why a⁰ = 1.", [("aⁿ ÷ aⁿ = aⁿ⁻ⁿ = a⁰", ["a\\^?n ?÷ ?a\\^?n|a⁰|a\\^?0|n ?- ?n|same power"]), ("any number divided by itself is 1", ["divided by itself|itself|= ?1\\b|equals 1|is 1"])],
           "aⁿ ÷ aⁿ = aⁿ⁻ⁿ = a⁰. But any non-zero number divided by itself is 1, so a⁰ = 1.", o="O4", d="H"))
+def a3_1(r):
+    a = r.randint(2, 5); n = r.randint(2, 3)
+    return MC(f"Kim says {a}⁻{sup(n)} = −{a ** n}. What is right?", f"1/{a ** n}", [(f"−{a ** n}", "A negative index means a reciprocal."), (f"−1/{a ** n}", "The answer is positive.")], o="O3", d="H", reason=f"{a}⁻{sup(n)} = 1/{a}{sup(n)} = 1/{a ** n}.")
+def a3_2(r):
+    a, b, c = r.randint(2, 6), r.randint(2, 6), r.randint(2, 3)
+    return N(f"Find n: (x{sup(a)}){sup(c)} × x{sup(b)} = xⁿ", a * c + b, o="O3", d="H", reason=f"(x{sup(a)}){sup(c)} = x{sup(a * c)}; × x{sup(b)} = x{sup(a * c + b)}.")
+
+
 s.gen("p", 44, t_mulp, t_divp, t_powp, t_neg, t_zero, t_find_n, t_mixed, t_coef, t_value, t_tf)
+s.capped("p", [1] * 2, [a3_1, a3_2]).capped("m", [2] * 2, [a3_1, a3_2])   # v2 reasoning kinds
 s.gen("a", 8,
       lambda r: (lambda k: N(f"2ˣ = {2**k} × 2⁻⁵. Find x.", k - 5, o="O4", d="VH", reason=f"{2**k} = 2{sup(k)}, so 2ˣ = 2{sup(k-5)} and x = {k-5}."))(r.randint(3, 10)),
       lambda r: (lambda a, b: N(f"Find the value of n if {a}ⁿ = 1/{a**b}.", -b, o="O4", d="VH", reason=f"1/{a**b} = 1/{a}{sup(b)} = {a}{sup(-b)}."))(pick(r, [2, 3, 4, 5]), r.randint(2, 4)),

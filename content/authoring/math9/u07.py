@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 7 Shapes and measurements. Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 7 Shapes and measurements. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 import math
 from kit import *
 
@@ -18,6 +20,9 @@ s.idea("Circle formulae", ["The **circumference** is the distance round a circle
 s.example("Area from a diameter", "Find the area of a circle with diameter 12 cm, to 1 d.p.", [("r = 6 cm", "halve the diameter"), ("A = π × 6² = 36π", ""), ("= 113.1 cm²", "")], "113.1 cm²")
 s.check(N("Find the circumference of a circle with radius 5 cm, to 1 d.p.", 31.4, "cm", units=["cm", "cm²"], tol=0.05, reason="C = 2πr = 2 × π × 5 = 10π ≈ 31.4 cm.", o="O1"))
 s.example("Semicircle perimeter", "Find the perimeter of a semicircle with diameter 10 cm.", [("curved part = ½ × π × 10 = 15.71", ""), ("+ diameter 10", "include the straight edge"), ("= 25.71 cm", "")], "25.7 cm", fig={"kind": "circle", "part": "semi", "d": "10 cm"})
+s.idea("Why the area of a circle is πr²", ["Cut a circle into many thin sectors and arrange them top-to-tail: they make a shape close to a rectangle. Its length is half the circumference (πr) and its height is the radius r.",
+       "So the area is πr × r = πr²."])
+s.check(MC("Before you read on: if the radius of a circle doubles, what happens to its area?", "It is 4 times bigger", [("It doubles", "Area uses r²: 2² = 4."), ("It is 8 times bigger", "That would be a volume.")], o="O1"))
 s.mistake("Diameter in the area formula", ["A = πr² uses the RADIUS. For d = 8 cm, A = π × 4² = 50.3 cm², not π × 8²."])
 s.check(N("Find the area of a semicircle of radius 4 cm, to 1 d.p.", 25.1, "cm²", units=["cm²", "cm"], tol=0.05, reason="½ × π × 4² = 8π ≈ 25.1 cm².", o="O1", d="H"))
 def k1(r):
@@ -52,7 +57,14 @@ def k9(r):
     return TB("Complete the table (circumference and area to 1 d.p.).", ["Radius (cm)", "Diameter (cm)", "Circumference (cm)", "Area (cm²)"], rows, reason="d = 2r; C = 2πr; A = πr².", o="O1", d="H")
 s.core(k1(s.rng), k2(s.rng), k3(s.rng), k4(s.rng), k5(s.rng), k9(s.rng), k7(s.rng),
        EX("Explain why doubling the radius of a circle multiplies its area by 4.", [("A = πr²", ["πr|pi ?r|r²|r\\^2|r squared"]), ("(2r)² = 4r²", ["4r|2r\\)?²|\\(2r\\)|4 ?(×|x|times)"])], "A = πr². If the radius is doubled, the area is π(2r)² = 4πr², which is 4 times as large.", o="O1", d="H"))
+def g1_1(r):
+    rr = r.randint(2, 12)
+    return MC(f"Sam says a circle with radius {rr} cm has area 2π × {rr} cm². What is right?", f"π × {rr}² = {rr * rr}π cm²", [(f"2π × {rr} = {2 * rr}π cm²", "That is the circumference (in cm)."), (f"π × {2 * rr}² cm²", "Use the radius, not the diameter.")], o="O1", d="H",
+              reason=f"A = πr² = π × {rr * rr} ≈ {3.14159 * rr * rr:.1f} cm².")
+
+
 s.gen("p", 44, k1, k2, k3, k4, k5, k6, k7, k8, k9)
+s.capped("p", [1] * 1, [g1_1]).capped("m", [2] * 1, [g1_1])   # v2 reasoning kinds
 s.gen("a", 8, lambda r: (lambda R, rr: N(f"A circular path of width {R-rr} m runs around a circular pond of radius {rr} m. Find the area of the path, to 1 d.p.", round(PI * (R * R - rr * rr), 1), "m²", units=["m²", "m"], tol=0.05, reason=f"π × {R}² − π × {rr}² = π × {R * R - rr * rr} ≈ {round(PI * (R * R - rr * rr), 1)} m².", o="O1", d="VH"))(r.randint(6, 20), r.randint(3, 5)),
       lambda r: (lambda a: N(f"A sector has angle {a}° and radius 9 cm. Find its area, to 1 d.p.", round(a / 360 * PI * 81, 1), "cm²", units=["cm²", "cm"], tol=0.05, reason=f"{a}/360 × π × 9² ≈ {round(a / 360 * PI * 81, 1)} cm².", o="O1", d="VH", fig={"kind": "circle", "part": "sector", "angle": a, "r": "9 cm"}))(pick(r, [40, 60, 72, 100, 120, 150, 200, 240, 300])), k6)
 
@@ -107,6 +119,7 @@ s.idea("Area and volume units", ["1 cm = 10 mm, but **1 cm² = 10 × 10 = 100 mm
 s.example("Square units", "Convert 3.5 m² to cm².", [("1 m² = 10 000 cm²", ""), ("3.5 × 10 000 = 35 000", "")], "35 000 cm²")
 s.check(N("Convert 4 cm² to mm².", 400, "mm²", units=["mm²", "cm²"], reason="1 cm² = 10 × 10 = 100 mm²: 4 × 100 = 400 mm².", o="O3"))
 s.example("Volume to capacity", "A tank holds 0.6 m³ of water. How many litres is that?", [("0.6 × 1 000 000 = 600 000 cm³", ""), ("÷ 1000 = 600 litres", "")], "600 litres")
+s.check(MC("Before you read on: how many cm³ are in 1 litre?", "1000", [("100", "1 litre = 10 cm × 10 cm × 10 cm."), ("10", "Volume conversions use cubes.")], o="O3"))
 s.mistake("Not just × 100", ["1 m = 100 cm, but 1 m² is NOT 100 cm². Square the conversion factor for area and cube it for volume."])
 s.check(MC("How many cm³ are in 1 m³?", "1 000 000", [("100", ""), ("10 000", "That is cm² in 1 m²."), ("1000", "")], o="O3", d="H"))
 CONV = [("cm²", "mm²", 100), ("m²", "cm²", 10000), ("km²", "m²", 1e6), ("hectares", "m²", 10000), ("cm³", "mm³", 1000), ("m³", "cm³", 1e6), ("litres", "cm³", 1000), ("m³", "litres", 1000)]
@@ -133,7 +146,13 @@ def u7(r):
     return N(f"A cube has side {s_} cm. Find its volume in mm³.", s_ ** 3 * 1000, "mm³", units=["mm³", "cm³"], reason=f"{s_}³ = {s_ ** 3} cm³; × 1000 = {s_ ** 3 * 1000} mm³.", o="O3", d="H")
 s.core(u1(s.rng), u2(s.rng), u3(s.rng), u4(s.rng), u5(s.rng), u6(s.rng), u7(s.rng),
        EX("Explain why 1 m² = 10 000 cm².", [("a 1 m square is 100 cm by 100 cm", ["100 ?(cm)? ?(by|×|x) ?100"]), ("100 × 100 = 10 000", ["10 ?000|100 ?(×|x) ?100"])], "A square of side 1 m is 100 cm by 100 cm, so its area is 100 × 100 = 10 000 cm².", o="O3"))
+def g3_1(r):
+    a = r.randint(2, 9)
+    return MC(f"Ben says {a} m³ = {a * 100} cm³. What is right?", f"{a * 1_000_000:,} cm³", [(f"{a * 100} cm³", "1 m³ = 100 × 100 × 100 cm³."), (f"{a * 10000:,} cm³", "That is the area conversion.")], o="O3", d="H", reason=f"1 m³ = 1 000 000 cm³, so {a} m³ = {a * 1_000_000:,} cm³.")
+
+
 s.gen("p", 44, u1, u2, u3, u4, u5, u6, u7)
+s.capped("p", [1] * 1, [g3_1]).capped("m", [2] * 1, [g3_1])   # v2 reasoning kinds
 s.gen("a", 8, u3, u4, lambda r: (lambda rr, h: N(f"A cylindrical tank has radius {rr} cm and height {h} cm. How many litres does it hold, to 1 d.p.?", round(PI * rr * rr * h / 1000, 1), "litres", units=["litres", "cm³"], tol=0.05, reason=f"π × {rr}² × {h} ≈ {round(PI * rr * rr * h, 1)} cm³; ÷ 1000 ≈ {round(PI * rr * rr * h / 1000, 1)} litres.", o="O3", d="VH"))(r.randint(10, 60), r.randint(20, 120)))
 
 U.mindmap(("Circumference", "C = πd = 2πr", "O1", "7.1"), ("Area of a circle", "A = πr² • use the radius", "O1", "7.1"),

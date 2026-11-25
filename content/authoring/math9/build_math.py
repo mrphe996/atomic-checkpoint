@@ -7,6 +7,7 @@ sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "..", "pri
 from kit import TITLES
 
 def build(n):
+    import kit; kit.RAW_SIGNS = False
     U = importlib.import_module(f"u{n:02d}").U
     import math9_tx as TX, mtest
     U.texp(*TX.EXP[n]); U.ttpl and [U.ttpl(sid, f) for sid, f in TX.TPL.get(n, [])]

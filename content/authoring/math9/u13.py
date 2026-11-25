@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 13 Position and transformation. Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 13 Position and transformation. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 
@@ -19,6 +21,7 @@ s.idea("Bearings", ["A **bearing** is an angle measured **clockwise from north**
 s.example("Back bearing", "The bearing of B from A is 065°. Find the bearing of A from B.", [("065 + 180 = 245", "")], "245°")
 s.check(N("The bearing of Q from P is 310°. Find the bearing of P from Q, in degrees.", 130, "°", units=["°"], reason="310 − 180 = 130, so the bearing is 130°.", o="O1"))
 s.idea("Scale drawings", ["A scale such as **1 cm : 5 km** means every 1 cm on the drawing is 5 km in real life. Multiply to get the real length; divide to get the drawing length."])
+s.check(MC("Before you read on: B is on a bearing of 120° from A. What is the bearing of A from B?", "300°", [("120°", "Going back is the opposite direction."), ("060°", "Add 180°.")], o="O1"))
 s.mistake("Three figures", ["A bearing of 45° is written 045°. Always measure from NORTH and go CLOCKWISE."])
 s.check(N("A plan uses 1 cm : 2.5 m. A wall is 7.4 cm on the plan. How long is the real wall in metres?", 18.5, "m", units=["m"], reason="7.4 × 2.5 = 18.5 m.", o="O1"))
 def b1(r):
@@ -47,7 +50,13 @@ def b7(r):
 s.core(b1(s.rng), b2(s.rng), b3(s.rng), b4(s.rng), b6(s.rng), b7(s.rng),
        OD("Order these bearings from north going clockwise.", ["030°", "095°", "180°", "265°", "340°"], o="O1", skill="Data"),
        EX("Explain how to find a back bearing.", [("add or subtract 180°", ["180"]), ("keep it between 000° and 360°", ["less than 360|subtract if|over 360|between|three figures|if .*more"])], "Add 180° to the bearing. If the answer is 360° or more, subtract 180° instead (or subtract 360°).", o="O1"))
+def m1_1(r):
+    b = r.randint(10, 350)
+    return N(f"The bearing of Y from X is {b:03d}°. Find the bearing of X from Y.", (b + 180) % 360, "°", units=["°"], o="O1", d="H", reason=f"{b} ± 180 = {(b + 180) % 360:03d}°.")
+
+
 s.gen("p", 44, b1, b2, b3, b4, b5, b6, b7)
+s.capped("p", [1] * 1, [m1_1]).capped("m", [2] * 1, [m1_1])   # v2 reasoning kinds
 s.gen("a", 8, b7, b6, lambda r: (lambda a: N(f"Town B is {a} km due east of A. Town C is due north of B and on a bearing of 045° from A. How far is A from C? (1 d.p.)", round(a * 2 ** 0.5, 1), "km", units=["km"], tol=0.06, reason=f"Bearing 045° makes a right-angled isosceles triangle, so BC = {a} km and AC = √({a}² + {a}²) = {round(a * 2 ** 0.5, 1)} km.", o="O1", d="VH"))(r.randint(4, 30)))
 
 # ================================================================== 13.2
@@ -138,6 +147,9 @@ s.idea("Enlargement", ["An **enlargement** changes size but not shape. Every len
 s.example("Enlarge a point", "Enlarge (4, 3) by scale factor 2, centre (1, 1).", [("vector from centre: (3, 2)", ""), ("× 2: (6, 4)", ""), ("add to centre: (7, 5)", "")], "(7, 5)")
 s.check(TB("Enlarge (5, 2) by scale factor 3, centre (0, 0).", ["x", "y"], [[B(15), B(6)]], reason="Multiply each coordinate by 3: (15, 6).", o="O4"))
 s.idea("Areas and enlargement", ["If lengths are multiplied by k, **areas are multiplied by k²**."])
+s.idea("Why area grows by the square of the scale factor", ["Enlarge a square of side 1 by scale factor 3: its side is 3, so its area is 9 – three times as long AND three times as wide.",
+       "Lengths × k, areas × k², volumes × k³."])
+s.check(MC("Before you read on: a shape is enlarged by scale factor 2. Its area was 5 cm². What is it now?", "20 cm²", [("10 cm²", "Area grows by 2² = 4."), ("40 cm²", "That is the volume factor 2³.")], o="O4"))
 s.mistake("Area scale factor", ["Doubling lengths does NOT double area – it multiplies area by 4."])
 s.check(N("A shape of area 6 cm² is enlarged by scale factor 3. Find the new area.", 54, "cm²", units=["cm²"], reason="Areas multiply by 3² = 9: 6 × 9 = 54 cm².", o="O4", d="H"))
 def g1(r):
@@ -165,7 +177,13 @@ def g7(r):
     return MT("When a shape is enlarged by scale factor k, what happens to each?", rows, o="O4")
 s.core(g1(s.rng), g2(s.rng), g3(s.rng), g4(s.rng), g5(s.rng), g6(s.rng), g7(s.rng),
        EX("Explain why the angles in a shape do not change when it is enlarged.", [("all lengths multiplied by the same factor", ["same|all|every|scale factor"]), ("so the shape (and angles) stay the same / similar", ["shape|similar|same angle|angles stay"])], "Every length is multiplied by the same scale factor, so the shape stays the same and only the size changes. The angles stay the same.", o="O4"))
+def m4_1(r):
+    k, a = r.randint(2, 4), r.randint(2, 9)
+    return N(f"A shape with area {a} cm² is enlarged by scale factor {k}. Find the new area.", a * k * k, "cm²", units=["cm²"], o="O4", d="H", reason=f"Area × {k}² = × {k * k}: {a * k * k} cm².")
+
+
 s.gen("p", 44, g1, g2, g3, g4, g5, g6, g7)
+s.capped("p", [1] * 1, [m4_1]).capped("m", [2] * 1, [m4_1])   # v2 reasoning kinds
 s.gen("a", 8, g5, g4, lambda r: (lambda A, B_: N(f"Two similar shapes have areas {A} cm² and {A*B_*B_} cm². What is the scale factor of the enlargement?", B_, reason=f"Area factor {A * B_ * B_} ÷ {A} = {B_ * B_} = k², so k = {B_}.", o="O4", d="VH"))(r.randint(3, 15), pick(r, [2, 3, 4, 5])))
 
 U.mindmap(("Bearings", "Clockwise from north • three figures • back bearing ± 180°", "O1", "13.1"), ("Line segments", "Midpoint = mean of coordinates • m : n → m/(m + n) of the way", "O2", "13.2"),

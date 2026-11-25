@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 4 Equations and inequalities. Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 4 Equations and inequalities. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 
@@ -20,6 +22,7 @@ s.check(N("Solve 4x + 3 = x + 21.", 6, o="O1", reason="3x = 18, x = 6."))
 s.example("Fractions", "Solve (x + 4)/3 = (x − 2)/2.", [("2(x + 4) = 3(x − 2)", "multiply both sides by 6"), ("2x + 8 = 3x − 6", ""), ("x = 14", "")], "x = 14")
 s.example("Constructing", "The angles of a triangle are x, 2x + 10 and 3x − 40 degrees. Find x.", [("x + 2x + 10 + 3x − 40 = 180", "angles in a triangle"), ("6x − 30 = 180", ""), ("x = 35", "")], "x = 35")
 s.check(N("The perimeter of a square of side 2x − 3 is 36 cm. Find x.", 6, o="O1", d="H", reason="4(2x − 3) = 36 → 8x − 12 = 36 → x = 6."))
+s.check(MC("Before you read on: what is the first step for 3(x − 2) = 2(x + 5)?", "Expand both brackets", [("Divide by 3", "That leaves a fraction on the right."), ("Subtract 2", "The 2 is inside a bracket.")], o="O1"))
 s.mistake("Multiply every term", ["When you clear fractions, multiply EVERY term: x/2 + 3 = 7 → x + 6 = 14, not x + 3 = 14."])
 def e1(r):
     x = nz(r, -9, 12); a, c = r.sample(range(2, 10), 2); b = r.randint(-15, 15); d = (a - c) * x + b
@@ -57,7 +60,14 @@ def e9(r):
 s.core(e1(s.rng), e3(s.rng) or e1(s.rng), e4(s.rng), e5(s.rng) or e6(s.rng), e6(s.rng), e9(s.rng),
        TB("Complete the table: each equation's solution.", ["Equation", "x"], [["7x − 4 = 3x + 20", B(6)], ["2(x + 5) = 3(x − 1)", B(13)], ["x/4 + 3 = 8", B(20)]], reason="7x − 3x = 20 + 4 gives x = 6. 2x + 10 = 3x − 3 gives x = 13. x/4 = 5 gives x = 20.", o="O1", d="H"),
        EX("Jo solves 2(x + 3) = 14 and writes 2x + 3 = 14, x = 5.5. Explain her mistake and find the correct solution.", [("she did not multiply the 3 by 2 / expand both terms", ["3 by 2|2 × 3|both terms|6|expand"]), ("x = 4", ["x ?= ?4"])], "She only multiplied x by 2. It should be 2x + 6 = 14, so 2x = 8 and x = 4.", o="O1", d="H"))
+def d1_1(r):
+    x = r.randint(2, 9); a, b = r.randint(3, 6), r.randint(1, 2)
+    c = a * (x - 1) - b * x
+    return N(f"Solve {a}(x − 1) = {b if b > 1 else ''}x + {c}.", x, o="O1", d="H", reason=f"{a}x − {a} = {b}x + {c}; {a - b}x = {c + a}; x = {x}.") if c > 0 else None
+
+
 s.gen("p", 44, e1, e2, e3, e4, e5, e6, e7, e8)
+s.capped("p", [1] * 1, [d1_1]).capped("m", [2] * 1, [d1_1])   # v2 reasoning kinds
 s.gen("a", 8, lambda r: (lambda x: N(f"Solve (2x + 1)/3 − (x − 2)/4 = {Fr(2*x+1,3) - Fr(x-2,4)}." if (Fr(2*x+1,3) - Fr(x-2,4)).denominator == 1 else f"Solve 2(3x − 1) − 3(x − 4) = {2*(3*x-1)-3*(x-4)}.", x, o="O1", d="VH"))(r.randint(-5, 20)),
       lambda r: (lambda x: N(f"Consecutive odd numbers: the sum of three consecutive odd numbers is {3*x+6}. Find the smallest.", x, o="O1", d="VH", reason="n + (n + 2) + (n + 4) = 3n + 6."))(r.randrange(5, 99, 2)))
 
@@ -69,6 +79,9 @@ s.example("Substitution", "Solve y = 2x + 1 and 3x + y = 21.", [("3x + (2x + 1) 
 s.check(TB("Solve y = x + 3 and y = 3x − 5.", ["x", "y"], [[B(4), B(7)]], o="O2", reason="x + 3 = 3x − 5 → x = 4, y = 7."))
 s.example("Elimination", "Solve 3x + 2y = 16 and 5x − 2y = 8.", [("add: 8x = 24", "the y terms cancel"), ("x = 3", ""), ("3 × 3 + 2y = 16 → y = 3.5", "")], "x = 3, y = 3.5")
 s.idea("Graphs", ["Draw both lines on the same grid. The coordinates of the crossing point are the solution."], fig={"kind": "coord", "x": [-1, 6], "y": [-1, 10], "lines": [{"m": 1, "c": 3, "label": "y = x + 3"}, {"m": 3, "c": -5, "label": "y = 3x − 5"}], "points": [{"x": 4, "y": 7, "l": "(4, 7)"}]})
+s.idea("Why we eliminate a letter", ["Two equations with two unknowns are two facts about the same x and y. Adding or subtracting the equations can cancel one letter, leaving one equation with one unknown.",
+       "2x + y = 11 and x − y = 1: adding cancels y: 3x = 12, so x = 4 and y = 3. Check in BOTH equations."])
+s.check(MC("Before you read on: to eliminate y from x + 2y = 8 and 3x − 2y = 4, should you add or subtract?", "Add", [("Subtract", "+2y and −2y cancel when you ADD."), ("Neither works", "Adding removes y.")], o="O2"))
 s.mistake("Check in both", ["Always check your answer in BOTH original equations – if it only fits one, something went wrong."])
 s.check(MC("The lines y = 2x and y = x + 4 cross at…", "(4, 8)", [("(2, 4)", "This is on y = 2x but not y = x + 4."), ("(4, 4)", ""), ("(8, 4)", "x comes first.")], o="O2", d="H"))
 def sim(r):
@@ -106,7 +119,14 @@ def s7(r):
     return TB(f"Two numbers add to {t} and differ by {dif}. Find the larger and the smaller number.", ["Larger", "Smaller"], [[B(max(a, b)), B(min(a, b))]], reason=f"Larger = ({t} + {dif}) ÷ 2 = {max(a, b)}; smaller = ({t} − {dif}) ÷ 2 = {min(a, b)}.", o="O2", d="M")
 s.core(s1(s.rng), s2(s.rng) or s3(s.rng), s3(s.rng), s4(s.rng) or s7(s.rng), s5(s.rng) or s5(s.rng) or s3(s.rng), s6(s.rng), s7(s.rng),
        EX("Explain how a graph can be used to solve the simultaneous equations y = 2x + 1 and y = 7 − x.", [("draw both lines on the same axes", ["draw|plot|both lines|same axes|graph"]), ("read the point where they cross / intersect", ["cross|intersect|meet"]), ("solution x = 2, y = 5", ["2.{0,10}5|\\(2, ?5\\)"])], "Draw both lines on the same axes. The point where they cross gives the solution; they meet at (2, 5), so x = 2 and y = 5.", o="O2", d="H"))
+def d2_1(r):
+    x, y = r.randint(1, 8), r.randint(1, 8)
+    return MC(f"Max says x = {x + 1}, y = {y - 1} solves x + y = {x + y} and x − y = {x - y}. Is he right?", f"No – x = {x}, y = {y}", [("Yes", f"Check the second equation: {x + 1} − {y - 1} = {x - y + 2}."), (f"No – x = {y}, y = {x}", "Check by substituting in both equations.")], o="O2", d="H",
+              reason=f"Add the equations: 2x = {2 * x}, x = {x}; then y = {y}.") if x != y else None
+
+
 s.gen("p", 44, s1, s2, s3, s4, s5, s6, s7)
+s.capped("p", [1] * 1, [d2_1]).capped("m", [2] * 1, [d2_1])   # v2 reasoning kinds
 s.gen("a", 8, s1, lambda r: (lambda c, a: TB(f"Adult tickets cost ${a} and child tickets ${c}. 120 tickets were sold for ${a*70 + c*50}. How many of each were sold?", ["Adult", "Child"], [[B(70), B(50)]], o="O2", d="VH"))(r.randint(3, 8), r.randint(9, 15)))
 
 # ================================================================== 4.3
@@ -118,6 +138,7 @@ s.example("Solving", "Solve 3x − 5 > 13.", [("3x > 18", "add 5"), ("x > 6", "d
 s.check(N("x is an integer and 2x + 1 ≤ 15. What is the largest possible value of x?", 7, reason="2x ≤ 14, so x ≤ 7; the largest integer is 7.", o="O3"))
 s.idea("Multiplying by a negative", ["If you multiply or divide both sides by a **negative** number, **reverse the inequality sign**: −2x < 8 → x > −4."])
 s.example("Double inequality", "List the integers n with −4 < 2n ≤ 6.", [("−2 < n ≤ 3", "divide every part by 2"), ("n = −1, 0, 1, 2, 3", "")], "−1, 0, 1, 2, 3")
+s.check(MC("Before you read on: solve 5 − 2x > 1.", "x < 2", [("x > 2", "Dividing by −2 turns the sign round."), ("x > −2", "−2x > −4 gives x < 2.")], o="O3"))
 s.mistake("The open circle", ["x > 2 does NOT include 2: draw an open circle at 2."])
 s.check(MC("Solve −3x ≥ 12.", "x ≤ −4", [("x ≥ −4", "Dividing by −3 reverses the sign."), ("x ≤ 4", ""), ("x ≥ 4", "")], o="O3", d="H"))
 def i1(r):
@@ -152,7 +173,13 @@ def i8(r):
     return N(f"Solve {a}(x − {b}) ≥ {a*(k-b)} + x and give the smallest integer x." if a > 1 else "", None, o="O3") if False else N(f"Solve {a}x + {b} ≥ x + {(a-1)*k + b}. What is the smallest possible integer value of x?", k, reason=f"{a}x − x ≥ {(a - 1) * k + b} − {b}: {a - 1}x ≥ {(a - 1) * k}, so x ≥ {k}.", o="O3", d="H")
 s.core(i1(s.rng), i2(s.rng), i3(s.rng), i4(s.rng), i5(s.rng), i6(s.rng), i7(s.rng),
        EX("Explain why 5 is not a solution of x < 5 but is a solution of x ≤ 5.", [("< means less than / does not include 5", ["less than|not included|not include|strictly"]), ("≤ includes 5 / equal to", ["equal|include"])], "x < 5 means x is less than 5, so 5 itself is not included. x ≤ 5 means less than OR equal to 5, so 5 is included.", o="O3"))
+def d3_1(r):
+    a, b = r.randint(-3, 2), r.randint(4, 8)
+    return N(f"How many integers satisfy {a} ≤ 2n < {2 * b}?", len([n for n in range(-20, 20) if a <= 2 * n < 2 * b]), o="O3", d="H", reason=f"{a / 2:g} ≤ n < {b}: n = " + ", ".join(str(n) for n in range(-20, 20) if a <= 2 * n < 2 * b) + ".")
+
+
 s.gen("p", 44, i1, i2, i3, i4, i5, i6, i7, i8)
+s.capped("p", [1] * 1, [d3_1]).capped("m", [2] * 1, [d3_1])   # v2 reasoning kinds
 s.gen("a", 8, lambda r: (lambda a, b: N(f"How many integers satisfy both 3x − 2 > {3*a-2} and 2x + 5 ≤ {2*b+5}?", max(0, b - a), o="O3", d="VH", reason=f"x > {a} and x ≤ {b}."))(r.randint(-4, 3), r.randint(4, 10)),
       lambda r: (lambda k: N(f"The sides of a triangle are x, x + 3 and {k} cm. The perimeter is less than {2*k+20} cm. Find the largest integer x.", max(x for x in range(1, 100) if 2 * x + 3 + k < 2 * k + 20), "cm", units=["cm"], reason=f"2x + 3 + {k} < {2 * k + 20} gives 2x < {k + 17}, so x < {fmt((k + 17) / 2)}.", o="O3", d="VH"))(r.randint(6, 20)))
 

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 11 Ratio and proportion. Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 11 Ratio and proportion. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from math import gcd
 from kit import *
@@ -16,6 +18,7 @@ s.idea("Ratios", ["A **ratio** compares quantities: 12 : 18 simplifies to **2 : 
 s.example("Sharing", "Share $84 in the ratio 3 : 4.", [("3 + 4 = 7 parts", ""), ("one part = 84 ÷ 7 = $12", ""), ("3 × 12 = $36 and 4 × 12 = $48", "")], "$36 and $48")
 s.check(N("Share 90 kg in the ratio 2 : 7. How much is the larger share?", 70, "kg", units=["kg"], reason="2 + 7 = 9 parts; one part = 90 ÷ 9 = 10 kg; larger share = 7 × 10 = 70 kg.", o="O1"))
 s.example("Using the difference", "Ana and Ben share sweets in the ratio 5 : 2. Ana gets 21 more than Ben. How many sweets are there?", [("difference = 5 − 2 = 3 parts = 21", ""), ("one part = 7", ""), ("total = 7 parts = 49", "")], "49")
+s.check(MC("Before you read on: the ratio of boys to girls is 3 : 5. What fraction of the class are boys?", "3/8", [("3/5", "There are 3 + 5 = 8 parts in total."), ("5/8", "That is the girls.")], o="O1"))
 s.mistake("Parts, not people", ["In 3 : 5, there are 8 parts, not 2. Dividing by the number of people is a common error."])
 s.check(N("Write the ratio 4 : 10 in the form 1 : n. Find n.", 2.5, reason="Divide both parts by 4: 1 : 2.5.", o="O1"))
 def a1(r):
@@ -62,7 +65,13 @@ s.core(a1(s.rng) or a1(s.rng) or TB("Simplify the ratio 24 : 36.", ["First", "Se
        a4(s.rng), a6(s.rng) or N("Girls : boys = 3 : 4, 18 girls. Total members?", 42, "members", units=["members"], o="O1"),
        a7(s.rng), a8(s.rng) or MC("Mix A is juice : water = 1 : 3. Mix B is 2 : 5. Which has the greater fraction of juice?", "Mix B", [("Mix A", ""), ("They are the same", "")], o="O1", d="H"),
        EX("Explain how to share $60 in the ratio 1 : 4.", [("5 parts in total", ["5 parts|five parts|1 ?\\+ ?4"]), ("one part is $12, so $12 and $48", ["12|48"])], "There are 1 + 4 = 5 parts, so one part is 60 ÷ 5 = $12. The shares are $12 and $48.", o="O1"))
+def k1_1(r):
+    a, b = r.sample(range(2, 8), 2); extra = r.randint(2, 6); k = r.randint(2, 6)
+    return N(f"A bag has red and blue counters in the ratio {a} : {b}. There are {a * k} red counters. How many counters are there altogether?", (a + b) * k, o="O1", d="H", reason=f"{a} parts = {a * k}, 1 part = {k}; total {a + b} parts = {(a + b) * k}.")
+
+
 s.gen("p", 44, a1, a2, a3, a4, a5, a6, a7, a8, a9)
+s.capped("p", [1] * 1, [k1_1]).capped("m", [2] * 1, [k1_1])   # v2 reasoning kinds
 s.gen("a", 8, a3, a8, lambda r: (lambda a, b, k: N(f"The ratio of boys to girls in a class is {a} : {b}. {k} more boys join and the ratio becomes 1 : 1. How many students were there at first?", (a + b) * (k // (b - a)) if False else (a + b) * k // (b - a), reason=f"The gap of {b - a} parts is {k} boys, so one part = {k // (b - a)}; at first there were {a + b} parts = {(a + b) * k // (b - a)}." if b > a and k % (b - a) == 0 else "", o="O1", d="VH") if b > a and k % (b - a) == 0 else None)(r.randint(2, 6), r.randint(3, 9), r.randint(2, 24)))
 
 # ================================================================== 11.2
@@ -73,6 +82,9 @@ s.example("Unitary method", "5 pens cost $3.40. Find the cost of 8 pens.", [("1 
 s.check(N("6 m of rope has mass 1.5 kg. Find the mass of 10 m.", 2.5, "kg", units=["kg"], o="O2"))
 s.idea("Inverse proportion", ["Two quantities are in **inverse proportion** if, when one doubles, the other **halves**. Their **product is constant**: xy = k.",
        "Example: more workers → fewer days. 4 workers take 6 days, so the job is 24 worker-days; 3 workers take 24 ÷ 3 = 8 days."])
+s.idea("Direct or inverse?", ["Direct proportion: double one, double the other (cost of apples). Inverse proportion: double one, HALVE the other (more workers, less time). In inverse proportion the product stays the same.",
+       "4 workers take 6 days: 4 × 6 = 24 worker-days, so 8 workers take 24 ÷ 8 = 3 days."])
+s.check(MC("Before you read on: 3 pumps empty a tank in 12 hours. How long do 6 pumps take?", "6 hours", [("24 hours", "More pumps empty it faster."), ("12 hours", "Doubling the pumps halves the time.")], o="O2"))
 s.mistake("Which proportion?", ["Ask: if one quantity goes up, does the other go up (direct) or down (inverse)? Then multiply or divide accordingly."])
 s.check(N("4 pumps empty a tank in 9 hours. How long do 6 pumps take?", 6, "hours", units=["hours"], o="O2"))
 def b1(r):
@@ -114,7 +126,17 @@ def b9(r):
     return MC(f"Is y = {k}x + {c} an example of direct proportion?", "No, because the line does not pass through the origin", [("Yes, because it is a straight line", "Direct proportion needs y = kx (through (0, 0))."), (f"Yes, the constant is {k}", ""), ("No, because it is a curve", "")], o="O2", d="H")
 s.core(b1(s.rng), b2(s.rng), b3(s.rng), b4(s.rng) or b4(s.rng) or b4(s.rng), b5(s.rng), b8(s.rng), b9(s.rng),
        EX("Explain how you can tell from a table whether x and y are in inverse proportion.", [("multiply x by y", ["multipl|product|x ?× ?y|xy"]), ("the product is always the same", ["same|constant|equal"])], "Multiply each x by its y. If the product is always the same, x and y are in inverse proportion.", o="O2"))
+def k2_1(r):
+    rows = r.sample([("number of workers and time to finish a job", "Inverse"), ("number of tickets and total cost", "Direct"), ("speed and time for a fixed journey", "Inverse"), ("length of fabric and its price", "Direct")], 4)
+    return GD("Is each relationship direct or inverse proportion?", "Proportion", rows, o="O2", d="H", extra=["Direct", "Inverse"], reason="Ask: when one doubles, does the other double (direct) or halve (inverse)?")
+def k2_2(r):
+    w, d = pick(r, [(4, 6), (3, 8), (6, 10), (5, 12)]); w2 = pick(r, [2, 8, 10, 12, 15])
+    if (w * d) % w2: return None
+    return N(f"{w} workers take {d} days to build a wall. How long would {w2} workers take, working at the same rate?", w * d // w2, "days", units=["days"], o="O2", d="H", reason=f"{w} × {d} = {w * d} worker-days; ÷ {w2} = {w * d // w2} days.")
+
+
 s.gen("p", 44, b1, b2, b3, b4, b5, b6, b7, b8, b9)
+s.capped("p", [1] * 2, [k2_1, k2_2]).capped("m", [2] * 2, [k2_1, k2_2])   # v2 reasoning kinds
 s.gen("a", 8, b6, b4, lambda r: (lambda w, d, e: N(f"{w} machines complete an order in {d} hours. After 2 hours, {e} machines break down. How many more hours are needed to finish? (1 d.p.)", round((w * d - 2 * w) / (w - e), 1), "hours", units=["hours"], tol=0.06, reason=f"The order needs {w} × {d} = {w * d} machine-hours; after 2 hours {w * d - 2 * w} are left for {w - e} machines: {round((w * d - 2 * w) / (w - e), 1)} hours." if d > 2 and w > e else "", o="O2", d="VH") if d > 2 and w > e else None)(r.randint(4, 10), r.randint(3, 12), r.randint(1, 3)))
 
 U.mindmap(("Ratios", "Simplify by the HCF • total parts • value of one part", "O1", "11.1"), ("Proportion", "Direct: y ÷ x constant • inverse: x × y constant • unitary method", "O2", "11.2"))

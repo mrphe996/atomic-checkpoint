@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 10 Graphs. Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 10 Graphs. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 
@@ -92,6 +94,8 @@ s.idea("y = mx + c", ["In **y = mx + c**, **m is the gradient** (steepness) and 
 s.example("Two points", "Find the gradient of the line through (1, 3) and (3, 7).", [("change in y = 7 − 3 = 4", ""), ("change in x = 3 − 1 = 2", ""), ("m = 4 ÷ 2 = 2", "")], "2")
 s.check(N("What is the gradient of y = 7 − 3x?", -3, o="O3"))
 s.example("Equation from gradient and a point", "A line has gradient 3 and passes through (2, 5). Find its equation.", [("y = 3x + c", ""), ("5 = 3 × 2 + c → c = −1", ""), ("y = 3x − 1", "")], "y = 3x − 1")
+s.idea("Finding the equation from two points", ["Gradient m = change in y ÷ change in x. Then substitute one point into y = mx + c to find c.",
+       "Through (1, 5) and (3, 11): m = 6 ÷ 2 = 3; 5 = 3 × 1 + c, so c = 2: y = 3x + 2."])
 s.mistake("Rearrange first", ["For 2y = 6x + 4 the gradient is NOT 6. Divide by 2 first: y = 3x + 2, so the gradient is 3."])
 s.check(MC("Which line is parallel to y = 4x − 2?", "y = 4x + 7", [("y = −4x − 2", "Same intercept, different gradient."), ("y = 2x + 4", ""), ("y = x/4", "")], o="O3"))
 def gr1(r):
@@ -123,7 +127,14 @@ def gr8(r):
     return MT("Match each line with a line parallel to it.", rows, o="O3")
 s.core(gr1(s.rng), gr2(s.rng), gr3(s.rng), gr4(s.rng), gr5(s.rng), gr7(s.rng), gr8(s.rng),
        EX("Explain how you know the lines y = 2x + 3 and 4x − 2y = 6 are parallel.", [("rearrange: y = 2x − 3", ["2x ?- ?3|2x − 3|rearrang"]), ("both have gradient 2", ["gradient|same|both 2|m ?= ?2"])], "Rearranging 4x − 2y = 6 gives y = 2x − 3. Both lines have gradient 2, so they are parallel.", o="O3", d="H"))
+def j3_1(r):
+    m, c = r.randint(-3, 4) or 2, r.randint(-5, 5); x1, x2 = r.randint(-2, 1), r.randint(2, 5)
+    return TB(f"A line passes through ({x1}, {m * x1 + c}) and ({x2}, {m * x2 + c}). Complete the table.", ["", "Value"], [["Gradient m", B(m)], ["Intercept c", B(c)]], o="O3", d="H",
+              reason=f"m = {m * (x2 - x1)} ÷ {x2 - x1} = {m}; c = {m * x1 + c} − {m} × {x1} = {c}.")
+
+
 s.gen("p", 44, gr1, gr2, gr3, gr4, gr5, gr6, gr7, gr8)
+s.capped("p", [1] * 1, [j3_1]).capped("m", [2] * 1, [j3_1])   # v2 reasoning kinds
 s.gen("a", 8, gr6, gr3, lambda r: (lambda m, c, x: X(f"Find the equation of the line parallel to y = {m}x + {c} that passes through ({x}, 0).", f"{m}x-{m*x}", reason=f"Parallel lines have the same gradient {m}. 0 = {m} × {x} + c gives c = {-m * x}.", o="O3", d="VH", show=poly((m, 'x'), (-m * x, '')), lhs="y"))(r.randint(2, 5), r.randint(1, 9), r.randint(1, 6)))
 
 # ================================================================== 10.4
@@ -133,6 +144,7 @@ s.idea("Real-life graphs", ["On a **distance–time graph** the gradient is the 
        fig={"kind": "linegraph", "x": {"min": 0, "max": 60, "step": 10, "label": "Time in minutes"}, "y": {"min": 0, "max": 20, "step": 5, "label": "Distance in km"}, "series": [{"pts": [[0, 0], [20, 10], [30, 10], [60, 20]]}]})
 s.example("Speed from the graph", "In the graph, how fast does the cyclist travel in the first 20 minutes?", [("10 km in 20 minutes", ""), ("= 30 km per hour", "× 3")], "30 km/h")
 s.check(N("In the graph, for how many minutes is the cyclist stopped?", 10, "minutes", units=["minutes"], o="O4"))
+s.check(MC("Before you read on: on a speed–time graph, what does a horizontal line show?", "Constant speed", [("Stopped", "That would be a horizontal line at speed 0."), ("Speeding up", "Speeding up makes the line go up.")], o="O4"))
 s.mistake("Units of speed", ["Check the time units: 10 km in 20 minutes is 0.5 km per minute, or 30 km per HOUR."])
 s.check(MC("On a distance–time graph, what does a steeper line mean?", "a faster speed", [("a slower speed", ""), ("stopped", "Horizontal means stopped."), ("going uphill", "")], o="O4"))
 def r1(r):
@@ -160,7 +172,13 @@ def r6(r):
     return N(f"A car travels {a} km in 1 hour then {b} km in the next 2 hours. Find its average speed for the whole journey, in km/h (1 d.p.).", round((a + b) / 3, 1), "km/h", units=["km/h"], tol=0.05, reason=f"Total distance {a} + {b} = {a + b} km in 3 hours: {a + b} ÷ 3 = {round((a + b) / 3, 1)} km/h.", o="O4", d="H")
 s.core(r1(s.rng), r1(s.rng), r2(s.rng), r3(s.rng), r4(s.rng), r5(s.rng), r6(s.rng),
        EX("Explain why the gradient of a distance–time graph gives the speed.", [("gradient = change in distance ÷ change in time", ["distance ?(÷|/|over|divided by) ?time|change in distance"]), ("distance ÷ time is speed", ["speed"])], "The gradient is change in distance ÷ change in time, and distance ÷ time is speed.", o="O4"))
+def j4_1(r):
+    rows = r.sample([("distance–time: horizontal line", "Not moving"), ("speed–time: horizontal line", "Constant speed"), ("distance–time: straight line up", "Constant speed"), ("speed–time: line going up", "Speeding up")], 4)
+    return GD("What does each graph feature show?", "Meaning", rows, o="O4", d="H", extra=["Slowing down"], reason="Always read the axis labels: the same shape means different things on different graphs.")
+
+
 s.gen("p", 44, r1, r2, r3, r4, r5, r6)
+s.capped("p", [1] * 1, [j4_1]).capped("m", [2] * 1, [j4_1])   # v2 reasoning kinds
 s.gen("a", 8, r1, r6, lambda r: (lambda v1, v2, d_: N(f"Two cars set off towards each other from towns {d_} km apart at {v1} km/h and {v2} km/h. After how many hours do they meet? (2 d.p.)", round(d_ / (v1 + v2), 2), "hours", units=["hours"], tol=0.006, reason=f"They close the gap at {v1} + {v2} = {v1 + v2} km/h, so time = {d_} ÷ {v1 + v2} = {round(d_ / (v1 + v2), 2)} hours.", o="O4", d="VH"))(r.randint(40, 90), r.randint(40, 90), r.randint(100, 400)))
 
 U.mindmap(("Linear functions", "y = mx + c • straight line • tables of values", "O1", "10.1"), ("Plotting", "At least three points • intercepts for 2x + 3y = 12", "O2", "10.2"),

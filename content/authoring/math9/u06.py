@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 6 Statistical investigations. Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 6 Statistical investigations. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 
 U = Unit(6, "Statistical Investigations", "Statistics",
@@ -18,6 +20,7 @@ s.method("Sampling methods", ["**Random**: every member has the same chance (e.g
 s.example("Proportional sample", "A school has 360 Stage 7, 300 Stage 8 and 240 Stage 9 students. A sample of 60 is taken in proportion. How many Stage 9 students?", [("total 900", ""), ("240 ÷ 900 × 60 = 16", "")], "16 Stage 9 students")
 s.check(N("A list has 800 names. A systematic sample of 40 is taken. Every how many names is one chosen?", 20, reason="800 ÷ 40 = 20, so every 20th name.", o="O1"))
 s.idea("Types of data", ["**Primary** data you collect yourself; **secondary** data was collected by someone else. **Discrete** data can be counted (number of pets); **continuous** data is measured (height, time)."])
+s.check(MC("Before you read on: what is the difference between a census and a sample?", "A census asks everyone; a sample asks some", [("They are the same", "A census covers the whole population."), ("A sample is always more accurate", "A census is complete; a sample is quicker and cheaper.")], o="O1"))
 s.mistake("Sample size", ["A sample of 5 people cannot represent a school of 1000 – the results could change a lot by chance. A common guide is at least 10% for small populations, and never fewer than about 30."])
 s.check(MC("Which is the best sample to estimate the average height of 1200 students?", "60 students chosen at random from the whole school", [("the 60 students in the basketball club", "They may be taller than average."), ("5 students chosen at random", "Too small to be reliable."), ("the first 60 students to arrive", "")], o="O2", d="H"))
 def g1(r):
@@ -50,7 +53,13 @@ def g9(r):
     return TB(f"A club has {m} male and {f} female members. Complete the proportional sample of {n}.", ["Male", "Female"], [[B(round(m / (m + f) * n), 0.5), B(round(f / (m + f) * n), 0.5)]], reason=f"Male: {m} ÷ {m + f} × {n} ≈ {round(m / (m + f) * n)}; female: {f} ÷ {m + f} × {n} ≈ {round(f / (m + f) * n)}.", o="O1", d="H")
 s.core(g1(s.rng), g2(s.rng), g3(s.rng), g4(s.rng), g9(s.rng), g8(s.rng), g7(s.rng),
        EX("Suggest two advantages of using a sample rather than the whole population.", [("quicker / less time", ["quick|time|faster"]), ("cheaper / less cost / easier", ["cheap|cost|money|easier|less work"])], "Taking a sample is quicker than asking everyone, and it is cheaper and easier to organise.", o="O2"))
+def f1_1(r):
+    rows = r.sample([("every pupil in a school of 1200 about lunch", "Sample"), ("all 25 members of a club", "Census"), ("the lifetime of light bulbs (testing destroys them)", "Sample"), ("every family in a small village of 40 homes", "Census")], 4)
+    return GD("Should each survey use a census or a sample?", "Method", rows, o="O1", d="H", extra=["Census", "Sample"], reason="Small populations can all be asked. Large populations, or tests that destroy the item, need a sample.")
+
+
 s.gen("p", 44, g1, g2, g3, g4, g5, g6, g7, g9)
+s.capped("p", [1] * 1, [f1_1]).capped("m", [2] * 1, [f1_1])   # v2 reasoning kinds
 s.gen("a", 8, g1, g9, lambda r: EX("A biologist counts 40 fish, tags them, and later catches 50 fish of which 8 are tagged. Estimate the number of fish in the lake and explain.", [("8/50 of the fish are tagged", ["8 ?/ ?50|8 out of 50|16%"]), ("40 ÷ (8/50) = 250", ["250"])], "In the sample 8 out of 50 fish are tagged, so about 8/50 of the lake is tagged. 40 ÷ (8/50) = 250 fish.", o="O2", d="VH"))
 
 # ================================================================== 6.2
@@ -60,6 +69,8 @@ s.idea("What is bias?", ["A sample or question is **biased** if it makes some an
 s.example("Spot the bias", "A council asks people in a car park whether a new car park is needed.", [("people in a car park drive", ""), ("they are more likely to say yes", ""), ("so the sample is biased", "")], "Biased – ask a random sample of all residents instead.")
 s.check(MC("Which question is NOT leading?", "How many hours of sport do you do each week?", [("Don't you agree that sport is good for you?", "It pushes people to agree."), ("Most people love football – do you?", ""), ("Sport is boring, isn't it?", "")], o="O3"))
 s.idea("Good questions", ["Use **response boxes** that do not overlap and cover every possible answer, e.g. 0–1, 2–3, 4–5, 6 or more (hours).", "Keep questions short, clear and about one thing only."])
+s.idea("Where bias comes from", ["Bias makes results lean one way. It can come from WHO you ask (only people at a gym), HOW you ask (a leading question: 'Don't you agree that…?') or WHEN you ask (a traffic survey only on Sunday).",
+       "A large sample does not remove bias."])
 s.mistake("Overlapping boxes", ["Boxes 0–2, 2–4, 4–6 overlap: someone who answers 2 could tick two boxes."])
 s.check(MC("Which set of response boxes for 'hours of TV per day' is best?", "0 to less than 1, 1 to less than 2, 2 to less than 3, 3 or more", [("0–1, 1–2, 2–3", "The boxes overlap and do not cover 3+."), ("1–2, 3–4, 5–6", "There are gaps (e.g. 2.5) and no 0."), ("a little, some, a lot", "Too vague.")], o="O3", d="H"))
 def b1(r):
@@ -102,7 +113,13 @@ def b10(r):
               "The samples may be of different kinds of people, so one could be biased, and one sample may be too small or the questions may have been worded differently.", o="O3", d="H")
 s.core(b1(s.rng), b2(s.rng), b3(s.rng), b4(s.rng), b5(s.rng), b7(s.rng), b6(s.rng),
        EX("Rewrite the question 'You eat lots of healthy food, don't you?' so that it is not leading, and give suitable response boxes.", [("neutral question about how often / how many portions", ["how many|how often|portions|times"]), ("non-overlapping boxes covering all answers", ["0|or more|none|1–2|1-2|boxes"])], "How many portions of fruit and vegetables do you eat on a typical day? Boxes: 0, 1–2, 3–4, 5 or more.", o="O3", d="H"))
+def f2_1(r):
+    rows = r.sample([("'Don't you think the park needs more bins?'", "Leading question"), ("asking only people at a football match about sport", "Unrepresentative sample"), ("counting traffic only at 3 a.m.", "Unrepresentative timing"), ("'How many hours do you sleep on a school night?'", "Fair question")], 4)
+    return GD("What, if anything, is wrong with each survey choice?", "Problem", rows, o="O2", d="H", extra=["Leading question", "Unrepresentative sample", "Unrepresentative timing", "Fair question"], reason="Ask who, how and when.")
+
+
 s.gen("p", 44, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10)
+s.capped("p", [1] * 1, [f2_1]).capped("m", [2] * 1, [f2_1])   # v2 reasoning kinds
 s.gen("a", 8, b2, b10, lambda r: (lambda y, t: N(f"In a survey of {t} people chosen at a youth club, {y} said the town needs a skate park. Explain the bias; then, as a percentage, how many said yes? (1 d.p.)", round(y / t * 100, 1), "%", units=["%"], tol=0.05, reason=f"Young people at a youth club are more likely to want a skate park. {y} ÷ {t} × 100 = {round(y / t * 100, 1)}%.", o="O3", d="VH"))(r.randint(20, 60), r.randint(61, 90)))
 
 U.mindmap(("Population and sample", "A sample must represent the population", "O1", "6.1"), ("Sampling methods", "Random • systematic • proportional", "O1", "6.1"),

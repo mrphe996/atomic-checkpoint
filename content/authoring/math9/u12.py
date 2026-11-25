@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 12 Probability. Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 12 Probability. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 
@@ -61,6 +63,9 @@ s.idea("Independent events", ["Events are **independent** if one does **not affe
        "For independent events, **P(A and B) = P(A) × P(B)**."])
 s.example("Multiply", "A fair coin is flipped and a fair dice is rolled. Find P(heads and a 6).", [("P(heads) = 1/2, P(6) = 1/6", ""), ("1/2 × 1/6 = 1/12", "")], "1/12")
 s.check(P("P(Ali is late) = 0.2 and P(Bea is late) = 0.3, independently. Find P(both late).", Fr(6, 100), o="O2"))
+s.idea("Why independent probabilities multiply", ["For two coins, half of all outcomes have a head on the first coin, and half of THOSE have a head on the second: 1/2 of 1/2 = 1/4.",
+       "'And' for independent events means multiply. 'Or' for mutually exclusive events means add."])
+s.check(MC("Before you read on: P(rain today) = 0.3 and P(rain tomorrow) = 0.3, independently. What is P(rain both days)?", "0.09", [("0.6", "That adds; 'both' needs multiplying."), ("0.3", "Both days is less likely than one day.")], o="O2"))
 s.mistake("And means multiply", ["'A and B' for independent events: MULTIPLY. 'A or B' for mutually exclusive events: ADD."])
 s.check(MC("A counter is taken from a bag, NOT replaced, then a second is taken. Are the two picks independent?", "No, the first pick changes what is left", [("Yes, always", ""), ("Yes, if the counters are the same size", ""), ("No, because there are two picks", "")], o="O2", d="H"))
 def i1(r):
@@ -89,7 +94,13 @@ def i7(r):
 s.core(i1(s.rng), i2(s.rng), i3(s.rng), i4(s.rng), i5(s.rng), i6(s.rng),
        TB("A fair dice is rolled and a fair coin is flipped. Complete the probabilities.", ["P(6 and heads)", "P(even and tails)", "P(not 6 and heads)"], [[B(1 / 12, 0.0015), B(0.25, 0.0015), B(5 / 12, 0.0015)]], o="O2", hint="Fractions or decimals are both fine."),
        EX("Explain the difference between independent and mutually exclusive events.", [("independent: one does not affect the other", ["affect|influence|depend"]), ("mutually exclusive: cannot happen together", ["cannot|can't|not.*same time|together"])], "Independent events do not affect each other. Mutually exclusive events cannot happen at the same time.", o="O2"))
+def l2_1(r):
+    rows = r.sample([("P(A and B) for independent events", "Multiply"), ("P(A or B) for mutually exclusive events", "Add"), ("P(not A)", "Subtract from 1")], 3)
+    return GD("Which operation do you use?", "Operation", rows, o="O2", d="H", extra=["Divide"], reason="'And' with independent events: multiply. 'Or' with mutually exclusive events: add. 'Not': 1 − P.")
+
+
 s.gen("p", 44, i1, i2, i3, i4, i5, i6, i7)
+s.capped("p", [1] * 1, [l2_1]).capped("m", [2] * 1, [l2_1])   # v2 reasoning kinds
 s.gen("a", 8, i4, i7, lambda r: (lambda p: N(f"P(a light bulb fails in a year) = {p}. A lamp has 3 bulbs that fail independently. Find P(at least one fails). (4 d.p.)", round(1 - (1 - p) ** 3, 4), reason=f"P(none fail) = (1 − {p})³ = {fmt(round((1 - p) ** 3, 4))}; P(at least one) = 1 − that = {round(1 - (1 - p) ** 3, 4)}.", o="O2", d="VH", tol=0.00006))(r.randint(1, 30) / 100))
 
 # ================================================================== 12.3
@@ -103,6 +114,7 @@ s.idea("Tree diagrams", ["On a **tree diagram**, multiply **along** the branches
        fig={"kind": "tree", "a": [["R", "3/5"], ["B", "2/5"]], "b": [["R", "3/5"], ["B", "2/5"]], "outcomes": True})
 s.example("Tree diagram", "From the tree, find P(one red and one blue).", [("P(RB) = 3/5 × 2/5 = 6/25", ""), ("P(BR) = 2/5 × 3/5 = 6/25", ""), ("add: 12/25", "")], "12/25")
 s.check(P("From the tree in the lesson, find P(both blue).", Fr(4, 25), o="O3"))
+s.check(MC("Before you read on: a coin is flipped and a dice rolled. How many outcomes are there?", "12", [("8", "2 × 6 = 12."), ("6", "Each of the 6 dice scores pairs with heads or tails.")], o="O3"))
 def c1(r):
     k = r.randint(3, 11); cnt = sum(1 for a in range(1, 7) for b in range(1, 7) if a + b == k)
     which = pick(r, ["total is {k}", "total is more than {k}"])
@@ -134,7 +146,13 @@ def c7(r):
     return P(f"A box has {a} milk and {b} dark chocolates. Two are eaten at random (no replacement). Find P(one of each type).", f, reason=f"P(milk then dark) + P(dark then milk) = 2 × {a}/{n} × {b}/{n - 1} = {frac(f)}.", o="O3", d="VH")
 s.core(c1(s.rng), c2(s.rng), c3(s.rng), c4(s.rng), c5(s.rng), c6(s.rng), c1(s.rng),
        EX("Explain why the probabilities change on the second branch of a tree diagram when you do not replace the first item.", [("one fewer item in total", ["fewer|less|one less|total.*(down|smaller|changes)|n ?- ?1"]), ("the number of that colour may also go down", ["colour|that type|same kind|numerator|left"])], "Without replacement there is one fewer item in total, and one fewer of the type taken first, so both the numerator and denominator can change.", o="O3"))
+def l3_1(r):
+    a, b = pick(r, [(Fr(1, 2), Fr(1, 6)), (Fr(1, 4), Fr(1, 3)), (Fr(2, 5), Fr(1, 2))])
+    return P(f"Two independent events have probabilities {frac(a)} and {frac(b)}. What is the probability that both happen?", a * b, o="O3", d="H", reason=f"{frac(a)} × {frac(b)} = {frac(a * b)}.")
+
+
 s.gen("p", 44, c1, c2, c3, c4, c5, c7)
+s.capped("p", [1] * 1, [l3_1]).capped("m", [2] * 1, [l3_1])   # v2 reasoning kinds
 s.gen("a", 8, c7, c2, lambda r: (lambda n: P(f"Three fair dice are rolled. Find P(all three show the same number) for dice numbered 1 to {n}.", Fr(1, n * n), reason=f"The first dice can be anything; the other two must match it: 1/{n} × 1/{n} = 1/{n * n}.", o="O3", d="VH"))(pick(r, [4, 6, 8, 10, 12])), lambda r: (lambda a, b: P(f"A bag has {a} red and {b} blue balls. Three are taken without replacement. Find P(all red).", Fr(a, a + b) * Fr(a - 1, a + b - 1) * Fr(a - 2, a + b - 2), o="O3", d="VH"))(r.randint(3, 7), r.randint(2, 6)))
 
 # ================================================================== 12.4

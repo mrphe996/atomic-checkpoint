@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 3 Decimals, percentages and rounding. Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 3 Decimals, percentages and rounding. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 import math
 from kit import *
 
@@ -17,6 +19,7 @@ s.idea("Powers of 10", ["Multiplying by 10ⁿ moves the digits **n places to the
 s.example("Negative powers", "Work out 3.7 × 10⁻³.", [("10⁻³ = 0.001", ""), ("3.7 ÷ 1000", "× 10⁻³ is the same as ÷ 10³"), ("0.0037", "")], "0.0037")
 s.check(N("Work out 45 ÷ 0.01.", 4500, o="O1", reason="÷ 0.01 is × 100."))
 s.example("Mixed", "Work out 0.62 × 10⁴ ÷ 10².", [("0.62 × 10⁴ = 6200", ""), ("6200 ÷ 100 = 62", "")], "62")
+s.check(MC("Before you read on: what is 3.6 × 10⁻²?", "0.036", [("360", "A negative power of 10 makes the number smaller."), ("−360", "10⁻² = 0.01, a positive number.")], o="O1"))
 s.mistake("Adding zeros", ["0.5 × 100 is not 0.500. The digits move: 0.5 × 100 = 50."])
 s.check(MC("Which calculation gives the same answer as 72 × 0.1?", "72 ÷ 10", [("72 × 10", "0.1 is smaller than 1, so the answer is smaller."), ("72 ÷ 0.1", "That is 720."), ("72 ÷ 100", "")], o="O1"))
 def t1(r):
@@ -47,7 +50,13 @@ def t8(r):
 s.core(t1(s.rng), t2(s.rng), t3(s.rng), t4(s.rng), t6(s.rng), t7(s.rng),
        EX("Explain why multiplying by 10⁻² gives the same answer as dividing by 100.", [("10⁻² = 1/100 = 0.01", ["1/100|0\\.01|one hundredth"]), ("multiplying by 1/100 is dividing by 100", ["divid|same as"])], "10⁻² = 1/10² = 1/100. Multiplying by 1/100 is the same as dividing by 100.", o="O1", d="H"),
        TB("Complete the place value table.", ["Number", "× 0.1", "÷ 0.1"], [["36", B(3.6), B(360)], ["0.8", B(0.08), B(8)]], reason="× 0.1 is ÷ 10; ÷ 0.1 is × 10.", o="O1"))
+def c1_1(r):
+    a = r.randint(12, 98) / 10; n = r.randint(2, 3)
+    return MS(f"Select ALL the calculations equal to {a:g} × 10⁻{sup(n)}.", [f"{a:g} ÷ {10 ** n}", f"{a:g} × {10 ** -n:g}"], [f"{a:g} × {10 ** n}", f"{a:g} ÷ 0.{'0' * (n - 1)}1"], o="O1", d="H", reason=f"10⁻{sup(n)} = 1/{10 ** n} = {10 ** -n:g}.")
+
+
 s.gen("p", 44, t1, t2, t3, t4, t5, t6, t7, t8)
+s.capped("p", [1] * 1, [c1_1]).capped("m", [2] * 1, [c1_1])   # v2 reasoning kinds
 s.gen("a", 8, lambda r: (lambda a, b: N(f"Work out ({fmt(a)} × 10{sup(b)}) ÷ (0.01 × 10{sup(b-1)}).", round(a * 1000, 8), o="O1", d="VH", reason=f"Denominator = 10{sup(b-3)}; {fmt(a)} × 10{sup(b)} ÷ 10{sup(b-3)} = {fmt(a)} × 10³."))(round(r.uniform(1, 9), 2), r.randint(2, 6)),
       lambda r: (lambda n: N(f"How many times bigger is 10⁻² than 10{sup(-n)}?", 10 ** (n - 2), reason=f"10⁻² ÷ 10{sup(-n)} = 10{sup(n - 2)} = {10 ** (n - 2)}.", o="O1", d="VH"))(r.randint(4, 7)))
 
@@ -58,6 +67,7 @@ s.idea("Multiplying decimals", ["Multiply the numbers **without the decimal poin
 s.example("Multiply", "Work out 0.48 × 3.2.", [("48 × 32 = 1536", "ignore the points"), ("2 + 1 = 3 decimal places", ""), ("1.536", "check: estimate was 1.5 ✓")], "1.536")
 s.check(N("Work out 0.7 × 0.06.", 0.042, o="O2", reason="7 × 6 = 42; 3 decimal places → 0.042."))
 s.example("Divide by a decimal", "Work out 9.36 ÷ 0.4.", [("× both by 10: 93.6 ÷ 4", "make the divisor a whole number"), ("93.6 ÷ 4 = 23.4", "")], "23.4")
+s.check(MC("Before you read on: is 12 ÷ 0.4 bigger or smaller than 12?", "Bigger: 30", [("Smaller: 4.8", "That is 12 × 0.4. How many 0.4s fit in 12?"), ("The same", "Dividing by less than 1 gives more.")], o="O2"))
 s.mistake("Multiplying can make numbers smaller", ["Multiplying by a number between 0 and 1 makes the answer SMALLER: 20 × 0.3 = 6. Dividing by a number between 0 and 1 makes it BIGGER: 20 ÷ 0.5 = 40."])
 s.check(MC("Without calculating, which answer is greater than 50?", "50 ÷ 0.8", [("50 × 0.8", "× 0.8 makes it smaller."), ("50 ÷ 1.2", ""), ("50 × 0.99", "")], o="O2", d="H"))
 def d(r, lo, hi, dp): return round(r.uniform(lo, hi), dp)
@@ -87,7 +97,13 @@ def m8(r):
     return N(f"A rectangle measures {fmt(w)} m by {fmt(l)} m. Find its area.", round(w * l, 6), "m²", units=["m²", "m"], reason=f"{fmt(w)} × {fmt(l)} = {fmt(round(w * l, 6))} m².", o="O2", fig={"kind": "shape", "pts": [[0, 0], [8, 0], [8, 4], [0, 4]], "s": [f"{fmt(l)} m", f"{fmt(w)} m", "", ""]})
 s.core(m1(s.rng), m2(s.rng), m4(s.rng), m6(s.rng), m7(s.rng), m5(s.rng), m8(s.rng),
        EX("Ravi says 3.2 × 0.5 = 16. Use estimation to explain why he must be wrong.", [("× 0.5 is half / makes it smaller", ["half|smaller|less than 3"]), ("answer is about 1.6", ["1\\.6|about 1|around 1|less than"])], "Multiplying by 0.5 halves the number, so the answer must be about 1.6, not 16. In fact 3.2 × 0.5 = 1.6.", o="O2", d="H"))
+def c2_1(r):
+    a, b = pick(r, [(7.2, 0.08), (4.5, 0.05), (3.6, 0.12), (0.96, 0.4)])
+    return MC(f"Which calculation gives the same answer as {a} ÷ {b}?", f"{a * 100:g} ÷ {b * 100:g}", [(f"{a * 100:g} ÷ {b:g}", "Multiply BOTH numbers by the same power of 10."), (f"{a:g} ÷ {b * 100:g}", "Both numbers must change.")], o="O2", d="H", reason=f"× 100 on both: {a * 100:g} ÷ {b * 100:g} = {a / b:g}.")
+
+
 s.gen("p", 44, m1, m2, m3, m4, m5, m6, m7, m8)
+s.capped("p", [1] * 1, [c2_1]).capped("m", [2] * 1, [c2_1])   # v2 reasoning kinds
 s.gen("a", 8, lambda r: (lambda a, b, c: N(f"Work out ({fmt(a)} × {fmt(b)}) ÷ {fmt(c)}.", round(a * b / c, 6), reason=f"{fmt(a)} × {fmt(b)} = {fmt(round(a * b, 6))}; ÷ {fmt(c)} = {fmt(round(a * b / c, 6))}.", o="O2", d="VH", tol=1e-6))(d(r, 0.2, 9, 1), pick(r, [0.4, 1.2, 2.5]), pick(r, [0.2, 0.05, 0.4])),
       lambda r: (lambda v: N(f"Petrol costs $1.38 per litre. Sam has ${fmt(v)}. How many whole litres can he buy?", int(v // 1.38), "litres", units=["litres", "$"], reason=f"{fmt(v)} ÷ 1.38 = {round(v / 1.38, 2)}, so {int(v // 1.38)} whole litres.", o="O2", d="VH"))(r.randint(20, 90)))
 
@@ -98,6 +114,9 @@ s.idea("Multipliers", ["An increase of r% means multiplying by **1 + r/100**. A 
 s.example("Compound interest", "$2000 is invested at 4% compound interest per year. Find the value after 3 years.", [("multiplier 1.04", ""), ("2000 × 1.04³", ""), ("= 2249.73", "")], "$2249.73")
 s.check(N("Write the multiplier for a 7% decrease.", 0.93, reason="100% − 7% = 93% = 0.93.", o="O3"))
 s.example("Overall change", "A price rises by 20% then falls by 25%. What is the overall percentage change?", [("1.2 × 0.75 = 0.9", ""), ("0.9 means 90% of the original", ""), ("10% decrease", "")], "a 10% decrease")
+s.idea("Why compound percentages use powers", ["A 5% increase each year multiplies by 1.05 each year. After 3 years: × 1.05 × 1.05 × 1.05 = × 1.05³ ≈ 1.158, an increase of about 15.8%, not 15%.",
+       "Each year's increase is worked out on a bigger amount than the year before."])
+s.check(MC("Before you read on: $1000 grows by 10% a year for 2 years. How much is it worth?", "$1210", [("$1200", "The second 10% is of $1100, not $1000."), ("$1020", "10% of 1000 is 100, not 10.")], o="O3"))
 s.mistake("Percentages do not simply add", ["+20% then −20% is not 0%: 1.2 × 0.8 = 0.96, a 4% decrease."])
 s.check(MC("A price is increased by 50% and then decreased by 50%. Overall it has…", "decreased by 25%", [("stayed the same", "1.5 × 0.5 = 0.75."), ("decreased by 50%", ""), ("increased by 25%", "")], o="O3", d="H"))
 def c1(r):
@@ -129,7 +148,18 @@ def c8(r):
     return N(f"After a {p}% increase, a price is ${fmt(new)}. What was the price before the increase?", orig, "$", units=["$", "%"], o="O3", d="VH", tol=0.01, reason=f"{fmt(new)} ÷ {1+p/100} = {orig}.")
 s.core(c1(s.rng), c2(s.rng), c3(s.rng), c5(s.rng), c6(s.rng), c7(s.rng), c4(s.rng),
        GD("Compare simple and compound interest on $1000 at 10% for 2 years.", "Value after 2 years", [("Simple interest", "$1200"), ("Compound interest", "$1210")], extra=["$1100", "$1020"], o="O3", d="H"))
+def c3_1(r):
+    p, n, v = pick(r, [5, 10, 20]), r.randint(2, 4), pick(r, [500, 1000, 2000])
+    return MC(f"${v} increases by {p}% each year for {n} years. Which calculation gives the final amount?", f"{v} × {1 + p / 100:g}{sup(n)}", [(f"{v} × {1 + p * n / 100:g}", f"That adds {p}% {n} times as simple interest."), (f"{v} + {p}% × {n}", "Use the multiplier to a power.")], o="O3", d="H",
+              reason=f"Multiply by {1 + p / 100:g} each year: {v} × {1 + p / 100:g}{sup(n)} = {v * (1 + p / 100) ** n:.2f}.")
+def c3_2(r):
+    p = pick(r, [10, 20, 25, 50])
+    return MC(f"A price falls by {p}% and then by another {p}%. Is that the same as falling by {2 * p}%?", f"No – it falls by less than {2 * p}%", [("Yes", f"The second fall is {p}% of a smaller amount."), (f"No – it falls by more than {2 * p}%", "Each fall is on a smaller amount, so the total is less.")], o="O3", d="H",
+              reason=f"× {1 - p / 100:g} × {1 - p / 100:g} = × {(1 - p / 100) ** 2:g}: a fall of {(1 - (1 - p / 100) ** 2) * 100:g}%.")
+
+
 s.gen("p", 44, c1, c2, c3, c4, c5, c7, c8)
+s.capped("p", [1] * 2, [c3_1, c3_2]).capped("m", [2] * 2, [c3_1, c3_2])   # v2 reasoning kinds
 s.gen("a", 8, c8, lambda r: (lambda rate: N(f"Money is invested at {rate}% compound interest per year. After how many whole years does it first double?", next(n for n in range(1, 200) if (1 + rate / 100) ** n >= 2), "years", units=["years", "%"], reason=f"Find the first n with {fmt(1 + rate / 100)}ⁿ ≥ 2 by trying values.", o="O3", d="VH"))(pick(r, [3, 4, 5, 6, 8, 10, 12])))
 
 # ================================================================== 3.4
@@ -139,6 +169,8 @@ s.idea("Bounds", ["A rounded number could have been any value in a range. If a l
 s.example("Nearest 10", "A crowd is 3400 to the nearest 100. Write the lower and upper bounds.", [("half of 100 = 50", ""), ("3400 − 50 = 3350, 3400 + 50 = 3450", "")], "3350 ≤ n < 3450")
 s.check(N("A mass is 2.6 kg correct to 1 decimal place. Write the lower bound.", 2.55, "kg", units=["kg", "g"], reason="Half of 0.1 is 0.05: 2.6 − 0.05 = 2.55 kg.", o="O4"))
 s.example("Decimal places", "x = 0.37 to 2 decimal places. Write the error interval.", [("half of 0.01 = 0.005", ""), ("0.365 ≤ x < 0.375", "")], "0.365 ≤ x < 0.375")
+s.idea("Why the upper bound is not included", ["A length of 7 cm to the nearest cm could be anything from 6.5 cm up to (but not including) 7.5 cm: 7.5 would round up to 8. We write 6.5 ≤ l < 7.5.",
+       "For calculations, the biggest result comes from the biggest values – but for a division, divide the biggest by the smallest."])
 s.mistake("The upper bound", ["For 8 cm to the nearest cm the upper bound is 8.5 cm, not 8.4 cm or 8.49 cm – values up to (but not including) 8.5 round to 8."])
 s.check(MC("A length is 120 cm to the nearest 10 cm. Which is the error interval?", "115 ≤ l < 125", [("119.5 ≤ l < 120.5", "That is for the nearest cm."), ("110 ≤ l < 130", "Half of 10 is 5."), ("115 ≤ l ≤ 124", "")], o="O4", d="H"))
 UNITS = [("to the nearest whole number", 1, 0), ("to the nearest 10", 10, 0), ("to the nearest 100", 100, 0), ("to 1 decimal place", 0.1, 1), ("to 2 decimal places", 0.01, 2)]
@@ -166,7 +198,17 @@ def b7(r):
 s.core(b1(s.rng), b2(s.rng), b3(s.rng), b4(s.rng), b5(s.rng), b6(s.rng),
        EX("A box has a mass of 4 kg to the nearest kg. Explain why its mass could be 3.5 kg but not 4.5 kg.", [("3.5 rounds up to 4", ["3\\.5.{0,30}(round|4)"]), ("4.5 rounds up to 5", ["4\\.5.{0,30}(round|5)"])], "3.5 kg rounds up to 4 kg, so it is the lower bound. 4.5 kg would round up to 5 kg, so 4.5 is not included – the mass is less than 4.5 kg.", o="O4", d="H"),
        b7(s.rng))
+def c4_1(r):
+    a, b = r.randint(20, 60), r.randint(3, 9)
+    return N(f"A length is {a} cm and a width is {b} cm, both to the nearest cm. What is the upper bound of the area?", (a + 0.5) * (b + 0.5), "cm²", units=["cm²"], o="O4", d="H", reason=f"Upper bounds {a + 0.5} and {b + 0.5}: {(a + 0.5) * (b + 0.5):g} cm².")
+def c4_2(r):
+    d, t = r.randint(100, 200), r.randint(10, 20)
+    return MC(f"A distance is {d} m and a time is {t} s, both to the nearest whole number. Which gives the upper bound of the speed?", f"{d + 0.5} ÷ {t - 0.5}", [(f"{d + 0.5} ÷ {t + 0.5}", "Dividing by a bigger number gives a smaller answer."), (f"{d - 0.5} ÷ {t - 0.5}", "Use the biggest distance.")], o="O4", d="VH",
+              reason="Biggest top ÷ smallest bottom gives the biggest result.")
+
+
 s.gen("p", 44, b1, b2, b3, b4, b5, b6, b7)
+s.capped("p", [1] * 2, [c4_1, c4_2]).capped("m", [2] * 2, [c4_1, c4_2])   # v2 reasoning kinds
 s.gen("a", 8, lambda r: (lambda dd, t: N(f"A car travels {dd} km (nearest km) in {t} hours (nearest hour). Find the upper bound of its average speed, to 1 decimal place.", round((dd + 0.5) / (t - 0.5), 1), "km/h", units=["km/h", "km"], tol=0.05, o="O4", d="VH", reason="Greatest speed = greatest distance ÷ least time."))(r.randint(100, 400), r.randint(2, 6)),
       lambda r: (lambda a: N(f"The area of a square is {a} cm² to the nearest cm². Find the lower bound of its side, to 2 decimal places.", round(math.sqrt(a - 0.5), 2), "cm", units=["cm", "cm²"], tol=0.006, reason=f"Lower bound of the area is {a - 0.5}; side = √{a - 0.5} ≈ {round(math.sqrt(a - 0.5), 2)} cm.", o="O4", d="VH"))(r.randint(20, 150)))
 

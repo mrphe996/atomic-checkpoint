@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 14 Volume, surface area and symmetry. Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 14 Volume, surface area and symmetry. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from math import pi
 from kit import *
 
@@ -17,6 +19,7 @@ s.idea("Prisms", ["A **prism** has the same cross-section all the way through. *
 s.example("Triangular prism", "A triangular prism has a triangle of base 8 cm and height 5 cm, and length 12 cm. Find its volume.", [("cross-section = ½ × 8 × 5 = 20 cm²", ""), ("V = 20 × 12 = 240 cm³", "")], "240 cm³")
 s.check(N("A cylinder has radius 3 cm and height 10 cm. Find its volume to 1 d.p.", r1(pi * 90), "cm³", units=["cm³"], tol=0.06, reason="V = πr²h = π × 3² × 10 = 90π ≈ 282.7 cm³.", o="O1"))
 s.idea("Units", ["1 cm³ = 1 ml and 1000 cm³ = 1 litre. 1 m³ = 1 000 000 cm³."])
+s.check(MC("Before you read on: a cylinder has radius 2 cm and height 5 cm. Which calculation gives its volume?", "π × 2² × 5", [("2π × 2 × 5", "That is the curved surface area."), ("π × 5² × 2", "The radius is 2, the height 5.")], o="O1"))
 s.mistake("Square the radius", ["V = πr²h: square the radius BEFORE multiplying by π and h. Using the diameter instead of the radius gives 4 times the volume."])
 s.check(N("A tank holds 24 000 cm³. How many litres is that?", 24, "litres", units=["litres", "l"], reason="1000 cm³ = 1 litre: 24 000 ÷ 1000 = 24 litres.", o="O1"))
 def v1(r):
@@ -46,7 +49,13 @@ s.core(v1(s.rng), v2(s.rng), v3(s.rng), v4(s.rng), v5(s.rng), v6(s.rng),
        TB("Complete the table for prisms.", ["Cross-section area (cm²)", "Length (cm)", "Volume (cm³)"], [[B(15), B(8), B(120)]], o="O1", hint="V = area × length", data={"head": ["Prism", "Area", "Length", "Volume"], "rows": [["P", "15", "8", "?"]]}) if False else
        MC("Which solid is NOT a prism?", "a square-based pyramid", [("a cylinder", "Its cross-section is always a circle."), ("a cuboid", ""), ("a triangular prism", "")], o="O1", fig={"kind": "solid", "solid": "pyramid"}),
        EX("Explain why the volume of a cylinder is πr²h.", [("it is a prism with circular cross-section", ["prism|cross.?section|same all the way"]), ("area of the circle πr² times the height", ["πr²|pi ?r|area of.*circle|times.*h|× ?h"])], "A cylinder is a prism with a circular cross-section. Volume is area of cross-section × length, and the circle's area is πr², so V = πr² × h.", o="O1"))
+def n1_1(r):
+    rr, h = r.randint(2, 6), r.randint(3, 12)
+    return N(f"A cylinder has radius {rr} cm and height {h} cm. Find its volume to 1 decimal place.", round(3.14159265 * rr * rr * h, 1), "cm³", units=["cm³"], o="O1", d="H", tol=0.1, reason=f"π × {rr}² × {h} = {3.14159265 * rr * rr * h:.1f} cm³.")
+
+
 s.gen("p", 44, v1, v2, v3, v4, v5, v6)
+s.capped("p", [1] * 1, [n1_1]).capped("m", [2] * 1, [n1_1])   # v2 reasoning kinds
 s.gen("a", 8, v7, v4, lambda r: (lambda a, l: N(f"A prism has a cross-section that is a right-angled triangle with shorter sides {a} cm and {a+1} cm. Its volume is {a*(a+1)*l//2 if a*(a+1)*l % 2 == 0 else a*(a+1)*l/2} cm³. Find its length.", l, "cm", units=["cm"], reason=f"Cross-section = ½ × {a} × {a + 1} = {fmt(a * (a + 1) / 2)} cm²; length = volume ÷ area = {l} cm.", o="O1", d="VH"))(r.randint(3, 12), r.randint(4, 20)))
 
 # ================================================================== 14.2
@@ -89,6 +98,7 @@ s = U.section("14.3", "Symmetry in 3D shapes", ["O3"])
 s.idea("Planes of symmetry", ["A **plane of symmetry** cuts a solid into two halves that are mirror images.",
        "A cuboid (not a cube) has **3** planes of symmetry. A cube has **9**. A square-based pyramid has **4**. A cylinder has **infinitely many**."], fig={"kind": "solid", "solid": "cuboid", "a": "6 cm", "b": "4 cm", "c": "3 cm"})
 s.check(N("How many planes of symmetry does a cuboid with three different edge lengths have?", 3, reason="One plane through the middle of each pair of opposite faces: 3.", o="O3"))
+s.check(MC("Before you read on: how many planes of symmetry does a cube have?", "9", [("6", "There are also 6 diagonal planes, through opposite edges… and 3 through the middles: 9."), ("3", "There are more than the three middle planes.")], o="O3"))
 s.mistake("Diagonal planes", ["A cube has diagonal planes too (through opposite edges): 3 parallel to the faces + 6 diagonal = 9."])
 s.check(MC("How many planes of symmetry does a triangular prism with an equilateral cross-section have?", "4", [("3", "Include the plane across the middle of the length."), ("2", ""), ("6", "")], o="O3", d="H"))
 SOL = [("Cube", 9), ("Cuboid with a square end (not a cube)", 5), ("Cuboid with all edges different", 3), ("Square-based pyramid", 4), ("Equilateral triangular prism", 4),

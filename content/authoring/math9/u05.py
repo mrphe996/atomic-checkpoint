@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 5 Angles. Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 5 Angles. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 import math
 from kit import *
 
@@ -63,6 +65,7 @@ s.idea("Sum of interior angles", ["A polygon with n sides can be split into **(n
 s.example("Regular polygon", "Find the size of each interior angle of a regular octagon.", [("(8 − 2) × 180 = 1080°", ""), ("1080 ÷ 8 = 135°", "")], "135°")
 s.check(N("Find the sum of the interior angles of a hexagon.", 720, "°", units=["°"], reason="(6 − 2) × 180 = 720°.", o="O2"))
 s.example("Missing angle", "A pentagon has angles 110°, 95°, 120°, 100° and x. Find x.", [("sum = 540°", ""), ("x = 540 − 425 = 115°", "")], "115°", fig={"kind": "shape", "pts": [[0, 0], [5, 0], [6.5, 3], [2, 4.5], [-1, 2.5]], "ang": ["110°", "x", "95°", "120°", "100°"]})
+s.check(MC("Before you read on: what is the sum of the interior angles of an octagon?", "1080°", [("1440°", "An octagon makes 6 triangles, not 8."), ("360°", "That is the exterior angle sum.")], o="O2"))
 s.mistake("Use n − 2", ["The number of triangles is n − 2, not n. A hexagon has 6 − 2 = 4 triangles, so its angle sum is 720°."])
 s.check(MC("How many triangles can a decagon be split into from one vertex?", "8", [("10", "It is n − 2."), ("9", ""), ("12", "")], o="O2"))
 NAMES = {3: "triangle", 4: "quadrilateral", 5: "pentagon", 6: "hexagon", 7: "heptagon", 8: "octagon", 9: "nonagon", 10: "decagon", 12: "dodecagon"}
@@ -94,7 +97,13 @@ def p8(r):
     return MC("Can a regular polygon have an interior angle of 130°?", "No – the number of sides would not be a whole number", [("Yes – a 13-sided polygon", "Each angle of a 13-gon is about 152°."), ("Yes – any angle is possible", ""), ("No – angles must be less than 120°", "")], o="O2", d="VH", reason="Exterior = 50°; 360 ÷ 50 = 7.2, not whole.")
 s.core(p1(s.rng), p2(s.rng), p3(s.rng) or p3(s.rng) or p1(s.rng), p4(s.rng) or p5(s.rng), p5(s.rng), p6(s.rng), p8(s.rng),
        EX("Explain why the interior angles of a quadrilateral add to 360°.", [("split into two triangles", ["two triangles|2 triangles|diagonal"]), ("2 × 180 = 360", ["2 ?(×|x) ?180|180 ?\\+ ?180"])], "A diagonal splits a quadrilateral into two triangles. Each triangle's angles add to 180°, so the total is 2 × 180° = 360°.", o="O2"))
+def e2_1(r):
+    t = pick(r, [140, 144, 150, 160, 156])
+    return N(f"Each interior angle of a regular polygon is {t}°. How many sides does it have?", 360 // (180 - t), o="O2", d="H", reason=f"Exterior angle = 180 − {t} = {180 - t}°; 360 ÷ {180 - t} = {360 // (180 - t)} sides.")
+
+
 s.gen("p", 44, p1, p2, p3, p4, p5, p6, p7)
+s.capped("p", [1] * 1, [e2_1]).capped("m", [2] * 1, [e2_1])   # v2 reasoning kinds
 s.gen("a", 8, p8, p4, p2, lambda r: (lambda n: N(f"A polygon has {n} sides. All but one of its interior angles are 150°. Find the remaining angle.", (n - 2) * 180 - 150 * (n - 1), "°", units=["°"], reason=f"Sum = ({n} − 2) × 180 = {(n - 2) * 180}; minus {n - 1} × 150 = {150 * (n - 1)} leaves {(n - 2) * 180 - 150 * (n - 1)}°.", o="O2", d="VH"))(r.randint(8, 11)))
 
 # ================================================================== 5.3
@@ -104,6 +113,8 @@ s.idea("Exterior angles", ["The **exterior angles** of any polygon add to **360�
 s.example("Number of sides", "Each exterior angle of a regular polygon is 24°. How many sides does it have?", [("n = 360 ÷ 24", ""), ("n = 15", "")], "15 sides")
 s.check(N("Find each exterior angle of a regular dodecagon (12 sides).", 30, "°", units=["°"], reason="360 ÷ 12 = 30°.", o="O3"))
 s.example("From interior to exterior", "Each interior angle of a regular polygon is 156°. Find n.", [("exterior = 180 − 156 = 24°", ""), ("n = 360 ÷ 24 = 15", "")], "15")
+s.idea("Why the exterior angles add to 360°", ["Walk all the way round a polygon: at each corner you turn through the exterior angle. After one full lap you face your starting direction again, having turned 360° in total.",
+       "This is true for every convex polygon, however many sides."])
 s.mistake("Which angle?", ["Divide 360 by the number of sides to get the EXTERIOR angle, not the interior one."])
 s.check(MC("Each exterior angle of a regular polygon is 40°. What is each interior angle?", "140°", [("40°", ""), ("320°", ""), ("9°", "That is the number of sides.")], o="O3"))
 def x1(r):
@@ -129,7 +140,13 @@ def x7(r):
     return MC(f"Can a regular polygon have an exterior angle of {a}°?", "No, because 360 is not divisible by " + str(a), [("Yes", f"360 ÷ {a} is not a whole number."), ("Only if it is a triangle", "")], o="O3", d="H")
 s.core(x1(s.rng), x2(s.rng), x3(s.rng), x4(s.rng) or x1(s.rng), x5(s.rng), x6(s.rng), x7(s.rng),
        EX("Explain why the exterior angles of a polygon add to 360°.", [("walking round the shape you turn at each corner", ["walk|turn|go round|around"]), ("you make one full turn = 360°", ["full turn|one turn|complete turn|360"])], "If you walk round the edge of the polygon you turn through the exterior angle at each corner. When you get back to the start you have made one full turn, which is 360°.", o="O3", d="H"))
+def e3_1(r):
+    e = r.randint(7, 50)
+    return MC(f"Can a regular polygon have an exterior angle of {e}°?", "Yes" if 360 % e == 0 else "No", [("No" if 360 % e == 0 else "Yes", f"360 ÷ {e} = {360 / e:g}; the number of sides must be a whole number.")], o="O3", d="H", reason=f"360 ÷ {e} = {360 / e:g}.")
+
+
 s.gen("p", 44, x1, x2, x3, x4, x5, x6, x7)
+s.capped("p", [1] * 1, [e3_1]).capped("m", [2] * 1, [e3_1])   # v2 reasoning kinds
 s.gen("a", 8, x6, lambda r: (lambda n: N(f"Two regular polygons: A has {n} sides and B has {2*n} sides. How many degrees larger is each interior angle of B than of A?", 180 / n, "°", units=["°"], reason=f"Exterior angles: 360 ÷ {n} = {fmt(360 / n)} and 360 ÷ {2 * n} = {fmt(180 / n)}; the interior angle of B is larger by {fmt(360 / n)} − {fmt(180 / n)} = {fmt(180 / n)}°.", o="O3", d="VH"))(pick(r, [5, 6, 9, 10, 12])))
 
 # ================================================================== 5.4
@@ -174,6 +191,9 @@ s.idea("Pythagoras' theorem", ["In a right-angled triangle the longest side, opp
 s.example("Hypotenuse", "Find the hypotenuse when the shorter sides are 9 cm and 12 cm.", [("c² = 9² + 12² = 81 + 144 = 225", ""), ("c = √225 = 15", "")], "15 cm")
 s.check(N("The two shorter sides of a right-angled triangle are 5 cm and 12 cm. Find the hypotenuse.", 13, "cm", units=["cm", "cm²"], reason="√(5² + 12²) = √169 = 13 cm.", o="O5"))
 s.example("Shorter side", "The hypotenuse is 17 cm and one side is 8 cm. Find the other side.", [("b² = 17² − 8² = 289 − 64 = 225", "subtract"), ("b = 15", "")], "15 cm")
+s.idea("Why Pythagoras' theorem is true", ["Draw squares on each side of a right-angled triangle. The area of the square on the hypotenuse equals the two smaller squares together: c² = a² + b².",
+       "It only works for right-angled triangles. If a² + b² ≠ c², the triangle has no right angle."])
+s.check(MC("Before you read on: do sides 5, 12 and 13 make a right-angled triangle?", "Yes", [("No", "5² + 12² = 25 + 144 = 169 = 13²."), ("Only if drawn carefully", "The calculation decides.")], o="O5"))
 s.mistake("Subtract for a shorter side", ["If the side you want is NOT the hypotenuse, subtract the squares. The hypotenuse must be the longest side."])
 s.check(MC("Is a triangle with sides 6, 8 and 11 cm right-angled?", "No, because 6² + 8² = 100 and 11² = 121", [("Yes, because 6 + 8 > 11", ""), ("Yes, because 11 is the longest side", ""), ("No, because it has no 90° label", "")], o="O5", d="H"))
 TRIP = [(3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25), (6, 8, 10), (9, 12, 15), (20, 21, 29), (9, 40, 41)]
@@ -203,7 +223,18 @@ def h8(r):
     return TB("Complete the table for right-angled triangles (c is the hypotenuse).", ["a", "b", "c"], [["9", "40", B(41)], ["20", B(21), "29"], [B(12), "35", "37"]], reason="a² + b² = c²: √(9² + 40²) = 41; √(29² − 20²) = 21; √(37² − 35²) = 12.", o="O5")
 s.core(h1(s.rng), h2(s.rng), h3(s.rng), h4(s.rng), h5(s.rng) or h4(s.rng), h6(s.rng), h8(s.rng),
        EX("Kai finds a side of a right-angled triangle with hypotenuse 10 cm and side 6 cm. He gets √136. Explain his mistake.", [("he added the squares", ["add|added|\\+"]), ("should subtract: 100 − 36 = 64", ["subtract|100 ?- ?36|64"]), ("answer 8 cm", ["\\b8\\b"])], "He added 10² + 6². For a shorter side you subtract: 10² − 6² = 64, so the side is √64 = 8 cm.", o="O5", d="H"))
+def e5_1(r):
+    a, b, c = pick(r, [(6, 8, 10), (5, 12, 13), (7, 24, 25), (8, 15, 17), (6, 7, 9), (4, 6, 7), (9, 12, 15)])
+    rt = a * a + b * b == c * c
+    return MC(f"Is a triangle with sides {a} cm, {b} cm and {c} cm right-angled?", "Yes" if rt else "No", [("No" if rt else "Yes", f"Compare {a}² + {b}² = {a * a + b * b} with {c}² = {c * c}.")], o="O5", d="H", reason=f"{a}² + {b}² = {a * a + b * b}; {c}² = {c * c}.")
+def e5_2(r):
+    a, c = pick(r, [(6, 10), (5, 13), (8, 17), (9, 15)])
+    return MC(f"Lia finds the missing side of a right-angled triangle with hypotenuse {c} cm and side {a} cm by working out √({a}² + {c}²). What is wrong?", f"She should subtract: √({c}² − {a}²) = {int((c * c - a * a) ** 0.5)} cm", [("Nothing", f"The answer would be longer than the hypotenuse {c} cm."), (f"She should halve: {c / 2:g} cm", "Use Pythagoras.")], o="O5", d="H",
+              reason="The hypotenuse is the longest side, so a shorter side = √(c² − a²).")
+
+
 s.gen("p", 44, h1, h2, h3, h4, h5, h6, h7, h8)
+s.capped("p", [1] * 2, [e5_1, e5_2]).capped("m", [2] * 2, [e5_1, e5_2])   # v2 reasoning kinds
 s.gen("a", 8, lambda r: (lambda a: N(f"Find the length of the space diagonal of a cube of side {a} cm, to 2 d.p.", round(a * math.sqrt(3), 2), "cm", units=["cm"], tol=0.006, reason=f"Face diagonal √({a}² + {a}²); space diagonal √({a}² + {a}² + {a}²) = {a}√3 = {round(a * math.sqrt(3), 2)} cm.", o="O5", d="VH"))(r.randint(2, 12)),
       lambda r: (lambda e, w: N(f"A ship sails {e} km east then {w} km north. How far is it from its start, to 1 d.p.?", round(math.hypot(e, w), 1), "km", units=["km"], tol=0.05, reason=f"√({e}² + {w}²) = {round(math.hypot(e, w), 1)} km.", o="O5", d="VH"))(r.randint(5, 40), r.randint(5, 40)))
 

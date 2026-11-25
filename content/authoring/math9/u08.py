@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Mathematics · Unit 8 Fractions. Written by the Atomic teaching team."""
+"""Stage 9 Mathematics · Unit 8 Fractions. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 
@@ -23,6 +25,8 @@ s.idea("Terminating or recurring?", ["Write the fraction in its simplest form. I
 s.example("Recurring decimal to a fraction", "Write 0.272727… as a fraction.", [("x = 0.2727…", ""), ("100x = 27.2727…", "two digits repeat, so × 100"), ("99x = 27", "subtract"), ("x = 27/99 = 3/11", "")], "3/11")
 s.check(MC("Which fraction gives a terminating decimal?", "7/40", [("2/3", "3 is not 2 or 5."), ("5/6", "6 = 2 × 3."), ("4/7", "")], o="O1"))
 s.example("One digit repeating", "Write 0.7777… as a fraction.", [("10x = 7.777…", ""), ("9x = 7", ""), ("x = 7/9", "")], "7/9")
+s.idea("Turning a recurring decimal into a fraction", ["Let x = 0.454545… Then 100x = 45.4545… Subtract: 99x = 45, so x = 45/99 = 5/11.",
+       "Multiply by 10 for one repeating digit, 100 for two, 1000 for three – so that the repeating parts line up and cancel."])
 s.mistake("Simplify first", ["3/12 terminates, because it simplifies to 1/4. Always simplify before looking at the denominator."])
 s.check(N("Write 0.4̇ (0.444…) as a fraction.", 4 / 9, tol=TOL, reason="x = 0.444…, 10x = 4.444…; subtract: 9x = 4, so x = 4/9.", o="O1"))
 def r1(r):
@@ -56,7 +60,13 @@ def r7(r):
     return OD("Put the steps in order to write 0.363636… as a fraction.", ["Let x = 0.3636…", "Multiply by 100: 100x = 36.3636…", "Subtract: 99x = 36", "Divide and simplify: x = 36/99 = 4/11"], o="O1", skill="Data")
 s.core(r1(s.rng), r2(s.rng), r3(s.rng), r5(s.rng), r6(s.rng), r7(s.rng), r4(s.rng),
        EX("Explain how you can tell, without dividing, that 9/40 is a terminating decimal.", [("40 = 2 × 2 × 2 × 5", ["2 ?(×|x) ?2|2³|prime factors|2s and 5|2 and 5"]), ("only factors 2 and 5 give a terminating decimal", ["only|terminat"])], "40 = 2³ × 5 has only the prime factors 2 and 5, and 9/40 is in its simplest form, so its decimal terminates.", o="O1", d="H"))
+def h1_1(r):
+    d = pick(r, [(Fr(1, 3), "0.333…"), (Fr(2, 9), "0.222…"), (Fr(4, 11), "0.3636…"), (Fr(1, 6), "0.1666…")])
+    return F(f"Write {d[1]} as a fraction in its simplest form.", d[0], o="O1", d="H", reason=f"= {frac(d[0])}.")
+
+
 s.gen("p", 44, r1, r2, r3, r4, r5, r6)
+s.capped("p", [1] * 1, [h1_1]).capped("m", [2] * 1, [h1_1])   # v2 reasoning kinds
 s.gen("a", 8, r4, lambda r: (lambda a: N(f"Write 1.{a:03d}{a:03d}… (the three digits {a:03d} repeat) as a fraction (or mixed number).", 1 + a / 999, tol=TOL, reason=f"x = 0.{a:03d}…: 1000x − x = {a}, so 0.{a:03d}… = {a}/999; the number is 1 + {frac(Fr(a, 999))}.", o="O1", d="VH"))(r.randint(1, 998)))
 
 # ================================================================== 8.2
@@ -105,6 +115,7 @@ s.idea("Multiplying fractions", ["Multiply the numerators and multiply the denom
 s.example("Mixed numbers", "Work out 2 1/3 × 1 4/5.", [("7/3 × 9/5", "improper fractions"), ("cancel 3 with 9: 7/1 × 3/5", ""), ("21/5 = 4 1/5", "")], "4 1/5")
 s.check(N("Work out 3/4 × 8/9.", 2 / 3, tol=TOL, reason="Cancel first: 3/4 × 8/9 = (1 × 2)/(1 × 3) = 2/3.", o="O3"))
 s.example("Fraction of an amount", "Find 5/8 of 3 1/5 kg.", [("5/8 × 16/5", ""), ("= 2", "cancel 5 and 8")], "2 kg")
+s.check(MC("Before you read on: is 2/3 × 3/4 bigger or smaller than 3/4?", "Smaller: 1/2", [("Bigger", "Multiplying by 2/3 (less than 1) gives less."), ("The same", "Only × 1 keeps it the same.")], o="O3"))
 s.mistake("Mixed numbers", ["2 1/2 × 3 1/3 is NOT 6 1/6. Change to 5/2 × 10/3 = 50/6 = 8 1/3."])
 s.check(MC("Work out 1 1/2 × 2 1/2.", "3 3/4", [("2 1/4", "Change to improper fractions first."), ("3 1/4", ""), ("4", "")], o="O3", d="H"))
 def mx(r): w = r.randint(1, 4); f = rf(r); return w + f
@@ -128,7 +139,13 @@ def m8(r):
     return TB("Complete the table.", ["×", frac(b), "1 1/2"], [[frac(a), B(float(x), 1e-6), B(float(a * Fr(3, 2)), 1e-6)]], reason=f"Multiply numerators and denominators: {frac(a)} × {frac(b)} = {frac(x)}; 1 1/2 = 3/2, so {frac(a)} × 3/2 = {frac(a * Fr(3, 2))}.", o="O3")
 s.core(m1(s.rng), m2(s.rng), m3(s.rng), m4(s.rng), m6(s.rng), m8(s.rng), m5(s.rng),
        EX("Explain why 2/3 × 3/4 is smaller than both 2/3 and 3/4.", [("multiplying by a fraction less than 1 makes it smaller", ["less than 1|smaller|part of"]), ("answer is 1/2", ["1/2|half|0\\.5"])], "Multiplying by a number less than 1 gives a smaller answer. 2/3 × 3/4 = 1/2, which is smaller than both.", o="O3"))
+def h3_1(r):
+    a, b = pick(r, [(Fr(5, 2), Fr(4, 3)), (Fr(7, 4), Fr(2, 3)), (Fr(9, 4), Fr(2, 5))])
+    return F(f"Work out {frac(a, True)} × {frac(b, True)}.", a * b, o="O3", d="H", reason=f"Use improper fractions: {frac(a)} × {frac(b)} = {frac(a * b)}.")
+
+
 s.gen("p", 44, m1, m2, m3, m4, m5, m6, m8)
+s.capped("p", [1] * 1, [h3_1]).capped("m", [2] * 1, [h3_1])   # v2 reasoning kinds
 s.gen("a", 8, m2, m5, lambda r: (lambda a: F(f"Work out (1 + {frac(a)})(1 − {frac(a)}).", 1 - a * a, o="O3", d="VH"))(rf(r)))
 
 # ================================================================== 8.4
@@ -137,6 +154,7 @@ s.idea("Dividing fractions", ["To divide by a fraction, **multiply by its recipr
 s.example("Mixed numbers", "Work out 3 1/2 ÷ 1 3/4.", [("7/2 ÷ 7/4", ""), ("7/2 × 4/7", "reciprocal"), ("= 2", "")], "2")
 s.check(N("Work out 2/3 ÷ 4/9.", 1.5, tol=TOL, reason="2/3 × 9/4 = 18/12 = 3/2 = 1.5.", o="O4"))
 s.example("How many fit?", "How many 3/8 kg bags can be filled from 6 kg?", [("6 ÷ 3/8", ""), ("6 × 8/3 = 16", "")], "16 bags")
+s.check(MC("Before you read on: 3/4 ÷ 1/8 asks 'how many eighths are in 3/4?' What is it?", "6", [("3/32", "That multiplies."), ("3/2", "Multiply by the reciprocal 8/1.")], o="O4"))
 s.mistake("Flip the second fraction only", ["2/3 ÷ 4/5 = 2/3 × 5/4. Do not turn the first fraction upside down."])
 s.check(MC("Work out 5 ÷ 1/4.", "20", [("5/4", "Dividing by 1/4 means how many quarters in 5."), ("1 1/4", ""), ("4/5", "")], o="O4"))
 def d1(r):
@@ -157,7 +175,14 @@ def d7(r):
     return GD(f"Is the answer bigger or smaller than 10?", "Answer", [(f"10 ÷ {frac(a)}", "Bigger"), (f"10 × {frac(a)}", "Smaller"), (f"10 ÷ {frac(b + 1, True)}", "Smaller")], o="O4", d="H")
 s.core(d1(s.rng), d2(s.rng), d3(s.rng), d4(s.rng), d5(s.rng), d6(s.rng), d7(s.rng),
        EX("Explain why 4 ÷ 1/2 = 8.", [("how many halves in 4", ["how many halves|halves in|half"]), ("there are 2 halves in each whole: 4 × 2 = 8", ["4 ?(×|x) ?2|2 in each|two in each|8"])], "Dividing by 1/2 asks how many halves fit into 4. There are 2 halves in each whole, so 4 × 2 = 8 halves.", o="O4"))
+def h4_1(r):
+    a, b = pick(r, [(Fr(2, 3), Fr(4, 9)), (Fr(5, 6), Fr(5, 12)), (Fr(3, 5), Fr(9, 10))])
+    return MC(f"Is {frac(a)} ÷ {frac(b)} bigger or smaller than 1?", "Bigger" if a > b else "Smaller", [("Smaller" if a > b else "Bigger", f"Compare: {frac(a)} {'>' if a > b else '<'} {frac(b)}."), ("Exactly 1", "Only if the fractions are equal.")], o="O4", d="H",
+              reason=f"{frac(a)} ÷ {frac(b)} = {frac(a / b)}.")
+
+
 s.gen("p", 44, d1, d2, d3, d4, d5, d6, d7)
+s.capped("p", [1] * 1, [h4_1]).capped("m", [2] * 1, [h4_1])   # v2 reasoning kinds
 s.gen("a", 8, d2, lambda r: (lambda a, b, c: F(f"Work out ({frac(a)} ÷ {frac(b)}) ÷ {frac(c)}.", a / b / c, o="O4", d="VH"))(rf(r), rf(r), rf(r)))
 
 # ================================================================== 8.5
