@@ -19,7 +19,16 @@ def main(st, ns):
         assert U.stage == st, (n, U.stage)
         U.texp(*TX.EXP[n])
         for sid, f in getattr(TX, "TPL", {}).get(n, []): U.ttpl(sid, f)
-        data = U.export(mtest.assemble(U), TITLES)
+        # the Unit Test must not reuse any practice question; if a unit's templates have too few variants,
+        # trim its "More practice" pool until two fresh papers fit
+        while True:
+            try: tests = mtest.assemble(U); break
+            except AssertionError:
+                tot = lambda x: sum(len(v) for v in x.pools.values())
+                secs = [x for x in U.sections if x.pools["m"] and tot(x) > 27]
+                if not secs: raise
+                for x in secs: x.pools["m"] = x.pools["m"][:max(len(x.pools["m"]) // 2, len(x.pools["m"]) - (tot(x) - 27))]
+        data = U.export(tests, TITLES)
         json.dump(data, open(os.path.join(HERE, "..", "src", f"stage{10 + st}-unit{n:02d}.json"), "w", encoding="utf-8"), ensure_ascii=False)
         print(st, n, len(U.tpl), [(s["id"], len(s["req"]), len(s["prac"]), len(s["adv"]), len(s["stops"])) for s in data["sections"]])
 

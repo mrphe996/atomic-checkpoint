@@ -73,6 +73,7 @@ window.Games = (function () {
   let WORDS = null;
   async function words() { if (!WORDS) { const r = await fetch('content/game-words.json'); WORDS = (await r.json()).words; } return WORDS; }
   function pool(S) {
+    S.stage = Math.min(5, S.stage || 3);
     const all = WORDS.filter(w => (S.subj === 'all' || w.subj === S.subj) && w.stage <= S.stage);
     return all.length >= 8 ? all : WORDS.filter(w => w.stage <= Math.max(S.stage, 2));
   }
@@ -172,7 +173,7 @@ window.Games = (function () {
         h('div', { class: 'gpx' }, h('b', { style: 'font-family:Outfit,Figtree,system-ui,sans-serif;font-size:20px' }, (ctx.name ? ctx.name + ' · ' : '') + `Level ${lv.level} word champion`),
           h('div', { class: 'gxp' }, h('i', { style: `width:${Math.round(lv.into / lv.need * 100)}%` })), h('small', { class: 'muted' }, `${lv.into}/${lv.need} XP to level ${lv.level + 1} · ${S.xp || 0} XP in all · ${S.played || 0} games played · no top level – every level is a little harder`)),
         h('div', { style: 'text-align:center' }, h('b', { style: 'font:900 28px Outfit,Figtree,system-ui,sans-serif;color:#1F9D5C' }, String(learned)), h('br'), h('small', { class: 'muted' }, `of ${P.length} words learned`))),
-        h('div', { class: 'gsel', role: 'group', 'aria-label': 'Stage' }, h('b', {}, 'Stage:'), ...[1, 2, 3, 4, 5, 6].map(n => h('button', { type: 'button', class: 'chip' + (S.stage === n ? ' on' : ''), id: 'gStage' + n, onclick: () => { S.stage = n; ctx.save(S); sel(); } }, String(n)))),
+        h('div', { class: 'gsel', role: 'group', 'aria-label': 'Stage' }, h('b', {}, 'Stage:'), ...[1, 2, 3, 4, 5].map(n => h('button', { type: 'button', class: 'chip' + (S.stage === n ? ' on' : ''), id: 'gStage' + n, onclick: () => { S.stage = n; ctx.save(S); sel(); } }, String(n)))),
         h('div', { class: 'gsel', role: 'group', 'aria-label': 'Subject' }, h('b', {}, 'Words from:'), ...Object.entries(SUBJ).map(([k, t]) => h('button', { type: 'button', class: 'chip' + (S.subj === k ? ' on' : ''), id: 'gSubj-' + k, onclick: () => { S.subj = k; ctx.save(S); sel(); } }, t))),
         ctx.signedIn ? null : h('p', { class: 'muted', style: 'margin:6px 0 0;font-size:14px' }, 'Your level is saved on this device. Sign in to keep it on every device.')));
       wrap.append(h('div', { class: 'glist' }, ...GAMES.map(g => h('a', { class: 'gg', href: '#game-' + g.id, id: 'gOpen-' + g.id, style: `--c:${g.color}` }, h('span', { class: 'gi', 'aria-hidden': 'true' }, g.icon), h('b', {}, g.name), h('span', {}, g.about), h('small', {}, (S.best || {})[g.id] ? `Best: ${S.best[g.id]} points` : 'Not played yet')))));
@@ -202,7 +203,8 @@ window.Games = (function () {
     W.append(card, arena); host.innerHTML = ''; host.append(W);
     const hud = () => { hearts.textContent = id === 'memory' || id === 'spell' ? `✔ ${st.right}` : '❤️'.repeat(Math.max(0, st.hearts)) + '🤍'.repeat(Math.max(0, 3 - st.hearts)); pts.textContent = `⭐ ${st.score} points`; };
     hud();
-    const T = () => tuning(L);
+    // a short round when the game sits between practice questions
+    const T = () => ctx.short ? Object.assign(tuning(L), { rounds: 6, pairs: Math.min(4, tuning(L).pairs) }) : tuning(L);
     function showPrompt(r) {   // what to look for: picture + meaning, meaning only, or the word read aloud
       promptBox.innerHTML = ''; const w = r.t;
       if (r.mode === 'hear') { promptBox.append(h('button', { type: 'button', class: 'hear', id: 'gHear', onclick: () => { const v = Snd.voice; Snd.voice = true; say(w.w, w.audio); Snd.voice = v; } }, '🔊 Listen'), h('span', {}, 'Find the word you hear')); const v = Snd.voice; Snd.voice = true; say(w.w, w.audio); Snd.voice = v; }
@@ -230,11 +232,13 @@ window.Games = (function () {
         h('small', { class: 'muted' }, `Level ${after.level}: ${after.into}/${after.need} XP to level ${after.level + 1}`),
         st.missed.length ? h('div', {}, h('p', { style: 'margin:12px 0 0;font-weight:700' }, 'Words to practise – tap to hear them:'), h('div', { class: 'gwl' }, ...st.missed.slice(0, 12).map(w => h('button', { type: 'button', title: w.def, onclick: () => { const v = Snd.voice; Snd.voice = true; say(w.w, w.audio); Snd.voice = v; } }, `${w.emoji} ${w.w}`)))) : null,
         h('div', { style: 'display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px' },
-          h('button', { type: 'button', class: 'gbtn on', id: 'gAgain', onclick: () => play(host, ctx, id) }, '↻ Play again'), h('a', { class: 'gbtn', href: ctx.back || '#games', id: 'gBack', style: 'text-decoration:none' }, ctx.back ? 'Choose another game' : 'All games')));
+          ctx.cont ? h('button', { type: 'button', class: 'gbtn on', id: 'gCont', onclick: () => { stop(); ctx.cont.fn(); } }, ctx.cont.label) : null,
+          h('button', { type: 'button', class: 'gbtn' + (ctx.cont ? '' : ' on'), id: 'gAgain', onclick: () => play(host, ctx, id) }, '↻ Play again'),
+          ctx.cont ? null : h('a', { class: 'gbtn', href: ctx.back || '#games', id: 'gBack', style: 'text-decoration:none' }, ctx.back ? 'Choose another game' : 'All games')));
       arena.innerHTML = ''; arena.append(res); arena.style.background = '#fff'; card.style.display = 'none';
       setTimeout(() => { const b = document.getElementById('gXpBar'); if (b) b.style.width = Math.round(after.into / after.need * 100) + '%'; }, 80);
     }
-    const api = { S, P, L, T, st, arena, showPrompt, good, bad, finish, progress, hud, float, sfx, say };
+    const api = { S, P, L, T, st, short: !!ctx.short, arena, showPrompt, good, bad, finish, progress, hud, float, sfx, say };
     RUN = ({ racer, balloon, memory, spell, whack })[id](api) || { stop() { } };
     const prevStop = RUN.stop; RUN.stop = () => { prevStop(); st.done = true; };
   }
@@ -249,8 +253,8 @@ window.Games = (function () {
     // the whole road and both buttons stay on screen, even on a small phone
     const fit = () => { const wrap = document.getElementById('gameWrap'); if (!wrap) return; const top = cv.getBoundingClientRect().top - wrap.getBoundingClientRect().top;
       const room = window.innerHeight - top - 120, wmax = A.arena.clientWidth - 12; const w = Math.max(200, Math.min(wmax, room * CW / CH)); cv.style.width = w + 'px'; };
-    if (window.innerWidth < 760) setTimeout(() => { const wrap = document.getElementById('gameWrap'); if (wrap) wrap.scrollIntoView({ block: 'start' }); }, 120);
     fit(); window.addEventListener('resize', fit);
+    setTimeout(() => { const wrap = document.getElementById('gameWrap'); if (wrap && wrap.getBoundingClientRect().bottom > window.innerHeight) { wrap.scrollIntoView({ block: 'start' }); setTimeout(fit, 60); } }, 120);
     let lane = 1, carX = roadX + lw * 1.5, offset = 0, rowY = -60, R = null, n = 0, raf = 0, last = 0, judged = false, stars = [], parts = [];
     const total = T.rounds, speed = () => (110 + 26 * A.L) * Math.min(3.2, T.speed) / 2 + 40;
     function move(d) { lane = Math.max(0, Math.min(lanes - 1, lane + d)); A.sfx('tap'); }
@@ -355,7 +359,7 @@ window.Games = (function () {
 
   /* ===== 4. Spell It ===== */
   function spell(A) {
-    const T = A.T(); const total = Math.min(12, 6 + Math.floor(A.L / 4)); let n = 0, w = null, filled = [], tries = 0, pos = 0;
+    const T = A.T(); const total = A.short ? 4 : Math.min(12, 6 + Math.floor(A.L / 4)); let n = 0, w = null, filled = [], tries = 0, pos = 0;
     const box = h('div', { class: 'gsp' }); A.arena.append(box);
     const ABC = 'abcdefghijklmnopqrstuvwxyz';
     function next() {

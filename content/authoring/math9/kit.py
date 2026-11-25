@@ -230,7 +230,7 @@ def finish(q, qid):
 class Section:
     def __init__(self, unit, sid, title, objs):
         self.u, self.sid, self.title, self.objs = unit, sid, title, objs
-        self.lesson, self.stops, self.pools = [], [], {"r": [], "p": [], "a": []}
+        self.lesson, self.stops, self.pools = [], [], {"r": [], "p": [], "a": [], "m": []}
         self.n = int(sid.split(".")[1])
         self.rng = random.Random(f"m9-{sid}" if unit.stage == 9 else f"m{unit.stage}-{sid}")
 
@@ -252,7 +252,7 @@ class Section:
 
     # ---- pools
     def add(self, pool, q):
-        lst = self.pools[pool]; tag = {"r": "r", "p": "p", "a": "a"}[pool]
+        lst = self.pools[pool]; tag = {"r": "r", "p": "p", "a": "a", "m": "m"}[pool]
         qid = f"{self.u.pre}s{self.n}{tag}{len(lst) + 1:02d}"
         q = finish(q, qid)
         if pool == "a" and not q["prompt"].startswith("* Advanced."): q["prompt"] = "* Advanced. " + q["prompt"]
@@ -268,7 +268,11 @@ class Section:
         return self
 
     def gen(self, pool, n, *templates, unique=True):
-        """call templates(rng) in turn until n new questions (distinct prompts) are added"""
+        """call templates(rng) in turn until n new questions (distinct prompts) are added.
+        Main Practice ("p") takes ONE question of each kind; the other variants go to More practice ("m")."""
+        if pool == "p":
+            per = max(2, -(-(32 - 16 - len(templates)) // len(templates)))   # enough for 30+ questions in the section
+            return self.capped("p", [1] * len(templates), list(templates)).capped("m", [per] * len(templates), list(templates))
         kf = lambda q: q["prompt"] + str(q.get("fig")) + str(q.get("data")) + str(q.get("rows")) + str(q.get("pairs")) + str(q.get("_mc", q.get("options", "")))[:200]
         for t in templates:
             if all(t is not x for _, x in self.u.tpl): self.u.tpl.append((self.sid, t))
@@ -283,9 +287,34 @@ class Section:
         assert added == n, (self.sid, pool, added, n)
         return self
 
-    def std(self, T, ex, adv=None, n_core=7, n_prac=40, n_adv=8):
+    def capped(self, pool, per, templates):
+        """per[i] questions from templates[i] (distinct prompts), interleaved so no two of a kind sit together"""
+        kf = lambda q: q["prompt"] + str(q.get("fig")) + str(q.get("data")) + str(q.get("rows")) + str(q.get("pairs")) + str(q.get("_mc", q.get("options", "")))[:200]
+        seen = {kf(q) for p in self.pools.values() for q in p}; buckets = []
+        for t, n in zip(templates, per):
+            if all(t is not x for _, x in self.u.tpl): self.u.tpl.append((self.sid, t))
+            got, tries = [], 0
+            while len(got) < n and tries < 60:
+                tries += 1; q = t(self.rng)
+                if q is None: continue
+                kk = kf(q)
+                if kk in seen: continue
+                seen.add(kk); got.append(q)
+            buckets.append(got)
+        i = 0
+        while any(buckets):
+            b = buckets[i % len(buckets)]
+            if b: self.add(pool, b.pop(0))
+            i += 1
+        return self
+
+    def std(self, T, ex, adv=None, n_core=7, n_prac=40, n_adv=8, deep=None, cap=1, n_more=16):
         """standard pools: Core = one question from each of the first n_core templates + the written explanation,
-        Practice = n_prac from all templates, Advanced = n_adv from adv (or the templates)"""
+        Practice = at most `cap` questions of each routine template plus up to 3 of each reasoning (deep) template —
+        so the main Practice never repeats one method many times; the extra routine variants go to More practice.
+        Advanced = n_adv from adv (or the templates)"""
+        if deep is not None:
+            return self._std2(T, ex, adv, n_core, n_adv, deep, cap, n_more)
         vis = lambda q: q.get("type") in ("grid", "table", "graph", "label", "scale") or bool(q.get("fig") or q.get("data"))
         cand = []
         for t in T:
@@ -297,14 +326,40 @@ class Section:
         rest = [q for q in cand if all(q is not v for v in V)][:n_core - 2]
         assert len(V + rest) == n_core, f"{self.sid}: only {len(V + rest)} Core templates work"
         self.core(*(V + rest), ex)
-        self.gen("p", n_prac, *T); self.gen("a", n_adv, *(adv or T))
+        # Practice: each routine template at most `cap` times (the rest of the variety goes to More practice)
+        self.capped("p", [cap] * len(T), T)
+        self.gen("a", n_adv, *(adv or T))
+        self.capped("m", [max(2, n_more // len(T), -(-(32 - 16 - len(T)) // len(T)))] * len(T), T)
+        return self
+
+    def _std2(self, T, ex, adv, n_core, n_adv, deep, cap, n_more):
+        """upgraded sections: Core keeps the essentials but includes reasoning; Practice is mostly decision-making"""
+        vis = lambda q: q.get("type") in ("grid", "table", "graph", "label", "scale") or bool(q.get("fig") or q.get("data"))
+        cand = []
+        for t in list(T) + list(deep):
+            for _ in range(20):
+                q = t(self.rng)
+                if q is not None: cand.append(q); break
+        V = [q for q in cand if vis(q)][:2]
+        assert len(V) == 2, f"{self.sid}: Core needs 2 diagram/data templates"
+        routine = [q for q in cand[:len(T)] if all(q is not v for v in V)]
+        reason = [q for q in cand[len(T):] if all(q is not v for v in V)]
+        k_r = min(len(reason), 2); rest = routine[:n_core - 2 - k_r] + reason[:k_r]
+        assert len(V + rest) == n_core, f"{self.sid}: only {len(V + rest)} Core templates work"
+        self.core(*(V + rest), ex)
+        # main Practice: ONE question of each kind (no two that can be solved by copying the steps of the other),
+        # routine kinds first, then the reasoning kinds; every further variant goes to More practice
+        self.capped("p", [1] * (len(T) + len(deep)), list(T) + list(deep))
+        src = list(adv or deep); self.capped("a", [-(-n_adv // len(src))] * len(src), src)
+        self.pools["a"] = self.pools["a"][:n_adv]
+        self.capped("m", [2] * len(T) + [2] * len(deep), list(T) + list(deep))
         return self
 
     def export(self, dur):
         return {"id": self.sid, "title": self.title, "objs": self.objs, "lesson": self.lesson,
                 "video": {"src": None, "offset": 0, "dur": dur, "range": ""},
                 "stops": self.stops, "captions": [], "chapters": [[0.0, dur]],
-                "req": self.pools["r"], "prac": self.pools["p"], "adv": self.pools["a"]}
+                "req": self.pools["r"], "prac": self.pools["p"], "adv": self.pools["a"], "more": self.pools["m"]}
 
 
 class Unit:

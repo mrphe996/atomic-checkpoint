@@ -298,7 +298,7 @@
     const finish = (msg) => { api.lock(); checkBtn.remove(); o.save(rec); o.onDone && o.onDone(rec, msg); };
     function showSolved(g) {
       fb.className = 'fb ok'; fb.innerHTML = '';
-      add(fbHead('ok', rec.tries === 1 ? 'Spot on!' : 'Correct (attempt ' + rec.tries + ')', rec.tries === 1 ? 'Right first time · full XP' : 'Right on the second try · half XP'), g.fb.length && q.type === 'mcq' ? el('p', {}, g.fb[0]) : null,
+      add(fbHead('ok', rec.tries === 1 ? 'Spot on!' : 'Correct (attempt ' + rec.tries + ')', rec.tries === 1 ? 'Right first time · full XP' : 'Right on the second try · half XP'), g.answered !== false && g.fb.length && q.type === 'mcq' ? el('p', {}, g.fb[0]) : null,
         q.reason ? el('div', { class: 'why' }, el('b', {}, 'Why it works'), steps(q.reason)) : null,
         (q.type === 'explain' || q.type === 'para') ? rubricView(q, g) : null);
       api.markOpts && api.markOpts(); api.markSpots && api.markSpots();

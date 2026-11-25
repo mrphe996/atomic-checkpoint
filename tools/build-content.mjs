@@ -75,8 +75,10 @@ export function validate(c) {
   };
   for (const s of c.sections) {
     const ext = s.ext || [];
-    const n = s.req.length + s.prac.length + s.adv.length;
-    if (n < 30) errs.push(`section ${s.id}: ${n} questions (minimum 30)`);
+    const n = s.req.length + s.prac.length + s.adv.length + (s.more || []).length;
+    // sections with a More practice pool keep ONE question of each kind in Practice (no copy-the-steps repeats), so 27 is enough
+    const minQ = (s.more || []).length ? 27 : 30;
+    if (n < minQ) errs.push(`section ${s.id}: ${n} questions (minimum ${minQ})`);
     if (s.req.length !== 8) errs.push(`section ${s.id}: needs 8 Core questions (has ${s.req.length})`);
     const fig = s.req.filter(q => ['label', 'scale', 'grid', 'table', 'graph', 'sim'].includes(q.type) || q.skill === 'Data' || q.skill === 'Figure').length;
     if (c.unit && c.unit.primary) {
@@ -111,7 +113,7 @@ export function validate(c) {
       s.req.forEach(q => { if (!q.twin && q.type !== 'sim') warn.push(`section ${s.id} ${q.id}: Core question without a similar (twin) question`); });
     }
     s.adv.forEach(q => { if (!/^\* Advanced\./.test(q.prompt)) errs.push(`section ${s.id} ${q.id}: advanced prompt must start "* Advanced."`); });
-    [...s.req, ...s.prac, ...s.adv, ...(s.retired || [])].forEach(q => checkQ(q, `section ${s.id}`));
+    [...s.req, ...s.prac, ...s.adv, ...(s.more || []), ...(s.retired || [])].forEach(q => checkQ(q, `section ${s.id}`));
     ext.forEach(q => { checkQ({ ...q, tier: 'ext' }, `section ${s.id} extreme`); if (q.diff !== 'VH') errs.push(`section ${s.id} ${q.id}: Extreme questions are Very hard (VH)`); });
     if (ext.length && c.unit && !c.unit.young && c.unit.stage >= 5 && !ext.some(q => q.type === 'para')) errs.push(`section ${s.id}: Extreme needs a paragraph question from Stage 5`);
     (s.stops || []).forEach(st => { checkQ(st.q, `section ${s.id} stop`); if (!(st.t > 0 && st.t < s.video.dur)) errs.push(`section ${s.id} stop ${st.id}: time outside the clip`); });

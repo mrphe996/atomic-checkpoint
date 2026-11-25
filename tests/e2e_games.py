@@ -9,14 +9,14 @@ with sync_playwright() as p:
     pg.on('pageerror', lambda e: errs.append(str(e)))
     pg.goto(BASE + '?reset=1#games'); pg.wait_for_timeout(1500)
     ok(len(pg.query_selector_all('.gg')) == 5, 'G1 Visitors see five word games')
-    ok(pg.query_selector('#gStage1') is not None and pg.query_selector('#gStage6') is not None and pg.query_selector('#gSubj-maths') is not None, 'G2 Stage 1–6 and subject choices')
+    ok(pg.query_selector('#gStage1') is not None and pg.query_selector('#gStage5') is not None and pg.query_selector('#gStage6') is None and pg.query_selector('#gSubj-maths') is not None, 'G2 Stage 1–5 and subject choices (no Stage 6)')
     W = json.loads(pg.evaluate("fetch('content/game-words.json').then(r=>r.text())"))['words']
     ok(len(W) > 600 and {w['subj'] for w in W} == {'science', 'maths', 'english'} and {w['stage'] for w in W} == {1, 2, 3, 4, 5, 6}, f'G3 Word bank covers every subject and Stages 1–6 ({len(W)} words)')
     byw = {w['w']: w for w in W}
     # sign up so the level is saved with the learner
     pg.evaluate("""(async()=>{ await Backend.signUp({email:'gm@example.com',password:'password123',name:'Gia Game',birthYear:2016,grade:'Year 4',country:'VN',schoolOther:'Atomic'}); await Core.boot(Core.C); location.hash='games'; })()""")
     pg.wait_for_timeout(2500)
-    ok(pg.query_selector('nav a[href="#games"]') is not None, 'G4 "Games" is in the main menu')
+    ok(pg.query_selector('nav a[href="#games"]') is None, 'G4 Games are not in the top menu (they live inside the course)')
     pg.click('#gStage2'); pg.wait_for_timeout(300); pg.click('#gSubj-english'); pg.wait_for_timeout(300)
     # helpers: the word being asked for (from the prompt's meaning)
     def target():
@@ -111,6 +111,9 @@ with sync_playwright() as p:
     pg.evaluate("location.hash='ex-1-1'"); pg.wait_for_timeout(2000)
     hd = pg.inner_text('.qcard .qhead2') if pg.query_selector('.qcard .qhead2') else ''
     ok('Question 1' in hd and 'of' in hd and pg.query_selector('.qcard .qid') is None and pg.query_selector('.qcard .qhead code') is None, 'G23 Practice cards show "Question n of N", level and answer type – no internal codes')
+    # Stage 6: no word games in the course
+    pg.evaluate("Core.switchStage(6)"); pg.wait_for_timeout(2500); pg.evaluate("location.hash='u-1'"); pg.wait_for_timeout(2000)
+    ok(pg.query_selector('a[href^="#gm-"]') is None, 'G24 Stage 6 has no word games')
     pg.evaluate("location.hash='games'"); pg.wait_for_timeout(500)
     ok(not errs, 'G18 No page errors' + (': ' + errs[0] if errs else ''))
     b.close()

@@ -121,7 +121,7 @@
         document.addEventListener('click', () => { menu.hidden = true; }, { once: true });
         right.append(s, lv, bell(), el('span', { class: 'userwrap' }, av, menu));
       }
-      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('challenge', 'Maths Challenge', area === 'challenge'), navLink('games', '🎮 Games', area === 'games'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
+      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('challenge', 'Maths Challenge', area === 'challenge'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
       if (Core.IS_PRIMARY) { nav.splice(2, 0, navLink('words', '📒 My words', area === 'words')); nav[3].textContent = 'Questions'; nav[4].textContent = 'Tests'; }
     } else if (me) {
       right.append(modeBtn(), bell(), el('button', { class: 'btn small', type: 'button', id: 'signOut', onclick: async () => { await Backend.signOut(); await Core.boot(C); go('home'); } }, 'Sign out'));
@@ -130,7 +130,7 @@
       if (me.profile.role === 'admin') nav.push(navLink('admin', 'Admin', area === 'admin'));
     } else {
       right.append(modeBtn(), el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
-      nav = [navLink('home', 'Home', area === 'home'), navLink('games', '🎮 Games', area === 'games'), navLink('challenge', 'Maths Challenge', area === 'challenge'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
+      nav = [navLink('home', 'Home', area === 'home'), navLink('challenge', 'Maths Challenge', area === 'challenge'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
     }
     if (st || !me) nav.splice(1, 0, stagesMenu());
     if (!st && !me || st && isGuest()) nav.push(el('a', { class: 'navlogin', href: '#signin' }, 'Log in'));
@@ -520,11 +520,12 @@
         el('div', { class: 'float' }, el('i', {}, Core.passed(st) ? '🏆' : '▶'), el('div', {}, el('b', {}, Core.passed(st) ? 'Unit passed' : 'Next up'), nx.label)))));
     document.getElementById('wrap').before(heroS);
     m.append(...[tocBtn(), el('div', { class: 'u4head' }, el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, `Cambridge ${Core.stageName(Core.STAGE)} · Unit ${Core.UNO}`), el('h2', {}, 'Your learning path')),
-      el('div', { class: 'u4steps' }, ...(Core.IS_PRIMARY ? ['1 Watch', C.unit.young ? '2 Listen & practise' : '2 Listen & say', '3 Experiment', '4 Word games', '5 Unit Test'] : [C.unit.read ? '0 Read first' : null, Core.IS_MATHS ? '1 Read the lesson' : '1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test'].filter(Boolean)).map(t => el('span', {}, t)))),
+      el('div', { class: 'u4steps' }, ...(Core.IS_PRIMARY ? (Core.stageNo(Core.STAGE) <= 5 ? ['1 Watch', C.unit.young ? '2 Listen & practise' : '2 Listen & say', '3 Experiment', '4 Word games', '5 Unit Test'] : ['1 Watch', '2 Listen & say', '3 Experiment', '4 Unit Test']) : [C.unit.read ? '0 Read first' : null, Core.IS_MATHS ? '1 Read the lesson' : '1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test'].filter(Boolean)).map(t => el('span', {}, t)))),
       C.unit.read ? el('section', { class: 'card readfirst', id: 'readFirst' }, el('div', { class: 'rfico', 'aria-hidden': 'true' }, '📘'),
         el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, Core.IS_MATHS ? 'Read before the lesson' : 'Read before you watch'), el('h3', { style: 'margin:2px 0 4px' }, `Unit ${Core.UNO} pre-reading pack (PDF)`),
           el('p', { class: 'muted', style: 'margin:0' }, Core.IS_MATHS ? 'The key ideas, methods and worked examples of every section, with “Try it” questions. Print it or read it before you start the unit.' : 'The key ideas of each video, the key words and “Think first” questions. Read a section before you watch its video.')),
-        el('a', { class: 'btn primary small', id: 'readPdf', href: C.unit.read, target: '_blank', rel: 'noopener', download: '', onclick: () => Backend.track('read_pdf', { learner: st.id, unit: Core.UNIT }) }, '⬇ Download PDF')) : null,
+        el('div', { class: 'btnrow', style: 'margin:0' }, hasNotes() ? el('button', { class: 'btn primary small', type: 'button', id: 'readSite', onclick: () => openReader(C.sections[0].id) }, '📖 Read on screen') : null,
+          el('a', { class: 'btn small', id: 'readPdf', href: C.unit.read, target: '_blank', rel: 'noopener', download: '', onclick: () => Backend.track('read_pdf', { learner: st.id, unit: Core.UNIT }) }, '⬇ Download PDF'))) : null,
       learningPath(), examBlock()].filter(Boolean));
     m.append(el('div', { class: 'u4two' },
       el('section', { class: 'card' }, el('h2', { style: 'margin:0;font-size:22px' }, 'What you will learn'), el('span', { class: 'muted' }, `${sec} of ${nobj} secure`),
@@ -699,6 +700,56 @@
     v.src = s.video.src; drawMarks(); drawSide(); syncUi();
   }
 
+  /* ---------- lesson notes reader: the whole unit's notes on the site (the same content as the PDF reading pack).
+     Opens at a section, zoom, full screen, remembers where each learner stopped; an overlay, so Practice answers stay as typed. ---------- */
+  let READIDX = null;
+  async function readIndex() { if (!READIDX) { try { READIDX = await (await fetch('media/read/index.json')).json(); } catch (e) { READIDX = {}; } } return READIDX; }
+  const hasNotes = () => !!(C && C.sections && C.sections.some(s => (s.lesson || []).length));
+  function noteBlock(b) {
+    const kind = b.k || 'idea', icon = { idea: '💡', example: '✏️', tip: '✅', mistake: '⚠️', method: '🧭' }[kind] || '💡';
+    const para = t => el('p', { class: 'lp' }, ...String(t).split(/(\*\*[^*]+\*\*)/).map(part => /^\*\*.*\*\*$/.test(part) ? el('b', {}, part.slice(2, -2)) : part));
+    const card = el('div', { class: 'lblock lb-' + kind }, el('h3', {}, el('span', { class: 'lbi', 'aria-hidden': 'true' }, icon), ' ', (kind === 'example' ? 'Worked example: ' : kind === 'mistake' ? 'Common mistake: ' : kind === 'method' ? 'Method: ' : '') + b.t));
+    (b.p || []).forEach(t => card.append(para(t)));
+    if (b.fig) { const f = window.AtomicFig && window.AtomicFig.get ? window.AtomicFig.get(b.fig.kind, b.fig) : null; if (f) card.append(el('div', { class: 'qfig', html: f.svg })); }
+    if (b.table) card.append(QE.dataTable ? QE.dataTable(b.table) : el('div'));
+    if (b.q) card.append(el('p', { class: 'lq' }, el('b', {}, 'Question: '), b.q));
+    if (b.steps) { const ol = el('ol', { class: 'lsteps' }); b.steps.forEach(([work, why]) => ol.append(el('li', {}, el('code', { class: 'mwork' }, work), why ? el('span', { class: 'why' }, ' ' + why) : null))); card.append(ol); }
+    if (b.a) card.append(el('p', { class: 'lans' }, el('b', {}, 'Answer: '), b.a));
+    return card;
+  }
+  async function openReader(sid) {
+    if (!hasNotes()) return;
+    const key = `atomic.read.${st ? st.id : 'guest'}.${Core.UNIT}`; let saved = null; try { saved = JSON.parse(localStorage.getItem(key) || 'null'); } catch (e) { }
+    const idx = (await readIndex()); const pk = C.unit.read ? String(C.unit.read).split('/').pop().replace(/\.pdf$/, '') : ''; const pages = (idx[pk] || {}).secs || {};
+    let zoom = (saved && saved.zoom) || 1;
+    const body = el('div', { class: 'rdbody', id: 'readerBody' });
+    const ov = el('div', { class: 'rdover', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'Lesson notes', id: 'reader' });
+    const close = () => { save(); try { if (document.fullscreenElement) document.exitFullscreen(); } catch (e) { } ov.remove(); document.removeEventListener('keydown', esc); };
+    const esc = e => { if (e.key === 'Escape') close(); };
+    const setZoom = z => { zoom = Math.max(0.85, Math.min(1.8, z)); body.style.setProperty('--rz', zoom); save(); };
+    const pdfLink = s0 => C.unit.read ? C.unit.read + (pages[s0] ? '#page=' + pages[s0][0] : '') : null;
+    const sel = el('select', { class: 'rdsel', 'aria-label': 'Go to section', id: 'readerSec', onchange: () => jump(sel.value) }, ...C.sections.map(s => el('option', { value: s.id }, `${s.id} ${s.title}${pages[s.id] ? ` · pages ${pages[s.id][0]}–${pages[s.id][1]}` : ''}`)));
+    const dl = el('a', { class: 'btn small ghost', id: 'readerPdf', target: '_blank', rel: 'noopener', href: pdfLink(sid) || '#' }, '⬇ PDF');
+    const bar = el('div', { class: 'rdbar' }, el('b', { class: 'rdttl' }, `📖 Unit ${Core.UNO} notes`), sel,
+      el('span', { class: 'rdz' }, el('button', { type: 'button', class: 'btn small ghost', 'aria-label': 'Smaller', id: 'readerSmall', onclick: () => setZoom(zoom - 0.15) }, 'A−'), el('button', { type: 'button', class: 'btn small ghost', 'aria-label': 'Bigger', id: 'readerBig', onclick: () => setZoom(zoom + 0.15) }, 'A+')),
+      el('button', { type: 'button', class: 'btn small ghost', id: 'readerFull', onclick: () => { try { document.fullscreenElement ? document.exitFullscreen() : ov.requestFullscreen(); } catch (e) { } } }, '⛶ Full screen'),
+      C.unit.read ? dl : null, el('button', { type: 'button', class: 'btn small primary', id: 'readerClose', onclick: close }, '✕ Close'));
+    body.append(el('header', { class: 'rdhead' }, el('p', { class: 'eyebrow' }, `${Core.stageLabel()} · Unit ${Core.UNO}`), el('h1', {}, C.unit.title), C.unit.blurb ? el('p', { class: 'muted' }, C.unit.blurb) : null));
+    C.sections.forEach(s => {
+      const sec = el('section', { class: 'rdsec', id: 'rd-' + R(s.id), 'data-sid': s.id }, el('h2', {}, `${s.id} ${s.title}`, pages[s.id] ? el('small', { class: 'rdpg' }, `PDF pages ${pages[s.id][0]}–${pages[s.id][1]}`) : null));
+      (s.lesson || []).forEach((b, bi) => { sec.append(noteBlock(b)); (s.stops || []).filter(x => x.after === bi).forEach(x => sec.append(el('div', { class: 'rdtry' }, el('b', {}, 'Try it: '), x.q.prompt))); });
+      body.append(sec);
+    });
+    ov.append(bar, body); document.body.append(ov); document.addEventListener('keydown', esc); setZoom(zoom);
+    function cur() { const top = body.scrollTop + 80; let c = C.sections[0].id; body.querySelectorAll('.rdsec').forEach(x => { if (x.offsetTop <= top) c = x.dataset.sid; }); return c; }
+    function save() { try { localStorage.setItem(key, JSON.stringify({ top: body.scrollTop, sid: cur(), zoom, at: Date.now() })); } catch (e) { } }
+    function jump(s0) { const t = body.querySelector('#rd-' + R(s0)); if (t) body.scrollTop = t.offsetTop - 10; sel.value = s0; dl.href = pdfLink(s0) || '#'; }
+    let tm = null; body.addEventListener('scroll', () => { clearTimeout(tm); tm = setTimeout(() => { const c = cur(); sel.value = c; dl.href = pdfLink(c) || '#'; save(); }, 200); });
+    // first time for this section: open at its start; otherwise where the learner stopped (if that was in this section)
+    requestAnimationFrame(() => { if (saved && saved.sid === sid && saved.top != null) { body.scrollTop = saved.top; sel.value = sid; } else jump(sid || C.sections[0].id); });
+    Backend.track && Backend.track('notes_open', { learner: st && st.id, unit: Core.UNIT, sec: sid });
+  }
+
   /* ---------- reading lesson (Mathematics): key ideas, worked examples and check questions, no video ---------- */
   function viewLesson(sid) {
     const s = Core.sec(sid), m = $main();
@@ -715,8 +766,10 @@
     const status = el('div'); m.append(status);
     const drawStatus = () => { status.innerHTML = ''; const left = Core.stopsLeft(st, s).length;
       if (vs.completed && !left) { const i = C.sections.indexOf(s), nxt = C.sections[i + 1];
-        status.append(el('div', { class: 'banner ok' }, el('b', {}, `✓ Lesson ${s.id} finished. `), 'Now practise: the Core questions unlock the next lesson.',
-          el('button', { class: 'btn primary small', type: 'button', onclick: () => go('ex-' + R(s.id)) }, `Practise ${s.id}`, el('span', { class: 'arr' }, ' →'))));
+        status.append(el('section', { class: 'card lchoose', id: 'lessonChoose' }, el('b', {}, `✓ Lesson ${s.id} finished. What next? You choose the order.`),
+          el('div', { class: 'lchoices' },
+            el('button', { class: 'lch', type: 'button', id: 'readNotes', onclick: () => openReader(s.id) }, el('span', { 'aria-hidden': 'true' }, '📖'), el('b', {}, 'Read the lesson notes'), el('small', {}, 'The whole unit, on screen – opens at this lesson')),
+            el('button', { class: 'lch go', type: 'button', id: 'toPractice', onclick: () => go('ex-' + R(s.id)) }, el('span', { 'aria-hidden': 'true' }, '✏️'), el('b', {}, `Practise ${s.id}`), el('small', {}, 'The Core questions unlock the next lesson')))));
         return; }
       status.append(el('section', { class: 'card', style: 'display:flex;gap:12px;align-items:center;flex-wrap:wrap' },
         el('span', {}, left ? `${left} check question${left > 1 ? 's' : ''} left in this lesson.` : 'You have answered every check question.'),
@@ -799,6 +852,7 @@
       const wbtn = el('button', { type: 'button', class: 'btn small fwbtn' + (fresh ? ' glow' : ''), id: 'wordsBtn', 'aria-expanded': 'false', onclick: () => { const o = drawer.classList.toggle('open'); wbtn.classList.remove('glow'); wbtn.setAttribute('aria-expanded', String(o)); QE.setTxt(wbtn, o ? '✕ Close words' : '📒 Words'); } }, '📒 Words');
       F.head.append(wbtn); F.head.after(drawer);
     }
+    if (hasNotes()) F.head.append(el('button', { type: 'button', class: 'btn small fwbtn', id: 'reviewNotes', onclick: () => openReader(s.id) }, '📖 Notes'));
     const repBtn = el('button', { type: 'button', class: 'btn small ghost fexit', id: 'reportQ', title: 'Report a problem with this question', 'aria-label': 'Report a problem with this question' }, '⚑');
     F.head.append(repBtn, leaveBtn);
     const levels = el('div', { class: 'flevels', role: 'tablist' }); const strip = el('div', { class: 'fstrip' });
@@ -826,6 +880,18 @@
       focusDone(F, `${name} questions finished!`, `⭐ ${right} of ${qs.length} right first time. ${k === 'req' && nxt ? `Lesson ${nxt.id} is now open.` : ''}`, btns);
       drawTop(); xpTick(); refreshToc();
     };
+    function gameBreak(after) {
+      const words = secGameWords(s); P.games = (P.games || 0) + 1; const G = Games.GAMES[(P.games - 1) % Games.GAMES.length];
+      F.body.innerHTML = ''; F.foot.innerHTML = '';
+      const back = () => { P.sinceGame = 0; after(); };
+      F.body.append(el('section', { class: 'card gbreak', id: 'gameBreak', style: 'text-align:center;padding:30px' }, el('div', { style: 'font-size:56px', 'aria-hidden': 'true' }, G.icon),
+        el('h2', { style: 'margin:6px 0' }, `Game time: ${G.name}!`), el('p', { class: 'muted' }, `A quick round with the words from ${s.id} – ${words.slice(0, 5).map(w => w.w).join(', ')}${words.length > 5 ? '…' : ''}. Then back to your questions.`),
+        el('div', { class: 'btnrow', style: 'justify-content:center' }, el('button', { type: 'button', class: 'btn big gold shine', id: 'gbPlay', onclick: () => {
+          F.body.innerHTML = ''; const host = el('div'); F.body.append(host); st.games = st.games || {}; const rec0 = st.games[s.id] || { n: 0, best: 0, by: {} };
+          Games.play(host, Object.assign(gameCtx(), { pool: words, short: true, cont: { label: 'Back to practice ▶', fn: back },
+            onFinish: r => { rec0.n++; rec0.best = Math.max(rec0.best, r.score); rec0.by[r.id] = Math.max(rec0.by[r.id] || 0, r.score); st.games[s.id] = rec0; Core.persist(); refreshToc(); } }), G.id); } }, '▶ Play'),
+          el('button', { type: 'button', class: 'btn big ghost', id: 'gbSkip', onclick: back }, 'Skip for now'))));
+    }
     function show() {
       st.last = { route, tab: P.tab, idx: P.i }; Core.persist();
       drawTop(); F.body.innerHTML = ''; F.foot.innerHTML = '';
@@ -834,10 +900,12 @@
       const prev = el('button', { type: 'button', class: 'btn big ghost', disabled: P.i === 0, onclick: () => { P.i--; show(); } }, '◀ Back');
       const last = P.i === qs.length - 1;
       const next = el('button', { type: 'button', class: 'btn big gold shine', id: 'nextQ', disabled: !rec.done }, last ? 'Finish ✓' : 'Next ▶');
-      next.onclick = () => { if (!rec.done) return; if (!qs.some(notDone)) { levelDone(); return; } const j = qs.findIndex((x, k) => k > P.i && notDone(x)); P.i = j >= 0 ? j : qs.findIndex(notDone); show(); F.room.scrollTop = 0; };
+      const advance = () => { if (!qs.some(notDone)) { levelDone(); return; } const j = qs.findIndex((x, k) => k > P.i && notDone(x)); P.i = j >= 0 ? j : qs.findIndex(notDone); show(); F.room.scrollTop = 0; };
+      // Stages 1–5: every 4 questions, a short word game with this lesson's words, then back to the practice
+      next.onclick = () => { if (!rec.done) return; if ((P.sinceGame || 0) >= 4 && secGameWords(s).length && qs.some(notDone)) { gameBreak(advance); return; } advance(); };
       F.foot.append(prev, next); repBtn.onclick = () => reportQuestion(q);
       const lvI = LV.find(x => x[0] === P.tab) || [];
-      QE.practice(q, card, { num: P.i + 1, of: qs.length, level: lvI[1], levelKey: 'lv-' + P.tab, rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; Core.persist(); next.disabled = false; drawTop(); xpTick(); refreshToc(); setTimeout(() => next.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 150); } });
+      QE.practice(q, card, { num: P.i + 1, of: qs.length, level: lvI[1], levelKey: 'lv-' + P.tab, rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; P.sinceGame = (P.sinceGame || 0) + 1; Core.persist(); next.disabled = false; drawTop(); xpTick(); refreshToc(); setTimeout(() => next.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 150); } });
     }
     show();
   }
@@ -879,15 +947,15 @@
     st.last = { route, tab, idx }; Core.persist();
     const q = list[idx]; const go2 = i => { UI.idx[route + tab] = i; render(); };
     const pips = el('div', { class: 'pips', 'aria-hidden': 'true' }, ...list.map((x, i) => { const r = st.items[x.id] || {}; return el('span', { class: i === idx ? 'cur' : r.done ? (r.ok ? (r.tries === 1 ? 'ok' : 'half') : 'bad') : r.tries ? 'bad' : '' }); }));
-    const tabName = { req: 'Core', prac: 'Practise', adv: '* Advanced', ext: 'Extreme' }[tab];
+    const tabName = { req: 'Core', prac: 'Practise', adv: '* Advanced', ext: 'Extreme', more: 'More practice' }[tab];
     subbar('blue', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}`), el('span', { style: 'font-size:15px;color:#DCE8FA' }, `${s.id} ${s.title} · ${tabName} · `, el('b', { style: 'color:#fff' }, `Question ${idx + 1} of ${list.length}`)), pips,
       el('button', { class: 'btn small onblue', type: 'button', disabled: idx === 0, onclick: () => go2(idx - 1) }, '← Previous'),
       el('button', { class: 'btn small gold', type: 'button', id: 'nextQ', disabled: idx === list.length - 1, onclick: () => go2(idx + 1) }, 'Next', el('span', { class: 'arr' }, '→')));
-    const tabs = el('div', { class: 'btnrow', role: 'tablist' }, ...[['req', `Core · ${8 - Core.reqLeft(st, s).length}/8`], ['prac', `Practice · ${s.prac.filter(x => (st.items[x.id] || {}).done).length}/${s.prac.length}`], ['adv', `* Advanced · ${s.adv.filter(x => (st.items[x.id] || {}).done).length}/${s.adv.length}`]].concat((s.ext || []).length ? [['ext', `⚫ Extreme · ${s.ext.filter(x => (st.items[x.id] || {}).done).length}/${s.ext.length}`]] : [])
+    const tabs = el('div', { class: 'btnrow', role: 'tablist' }, ...[['req', `Core · ${8 - Core.reqLeft(st, s).length}/8`], ['prac', `Practice · ${s.prac.filter(x => (st.items[x.id] || {}).done).length}/${s.prac.length}`], ['adv', `* Advanced · ${s.adv.filter(x => (st.items[x.id] || {}).done).length}/${s.adv.length}`]].concat((s.more || []).length ? [['more', `More practice · ${s.more.filter(x => (st.items[x.id] || {}).done).length}/${s.more.length}`]] : [], (s.ext || []).length ? [['ext', `⚫ Extreme · ${s.ext.filter(x => (st.items[x.id] || {}).done).length}/${s.ext.length}`]] : [])
       .map(([k, t]) => el('button', { class: 'chip' + (k === tab ? ' on' : ''), role: 'tab', type: 'button', 'aria-selected': String(k === tab), onclick: () => { UI.tab[route] = k; render(); } }, t)));
     st.marks = st.marks || {};
     const mk = el('button', { type: 'button', class: 'chip' + (st.marks[q.id] ? ' on' : ''), 'aria-pressed': String(!!st.marks[q.id]), style: 'margin-left:auto', onclick: () => { st.marks[q.id] = !st.marks[q.id]; Core.persist(); mk.classList.toggle('on'); mk.setAttribute('aria-pressed', String(!!st.marks[q.id])); } }, '★ Bookmark');
-    tabs.append(mk);
+    tabs.append(mk); if (hasNotes()) tabs.append(el('button', { type: 'button', class: 'chip', id: 'reviewNotes', onclick: () => openReader(s.id) }, '📖 Review the notes'));
     const chips = el('div', { class: 'qnav' }, ...list.map((x, i) => { const r = st.items[x.id] || {}; return el('button', { class: 'qc' + (i === idx ? ' on' : '') + (r.done ? (r.ok ? ' ok' : ' half') : r.tries ? ' bad' : ''), type: 'button', 'aria-label': `Question ${i + 1}${r.done ? ', done' : ''}`, onclick: () => go2(i) }, String(i + 1)); }));
     const card = el('section', { class: 'card qcard' });
     const doneBanner = el('div');
@@ -917,7 +985,7 @@
     m.append(...[bar(`Unit ${Core.UNO} › ${s.id} › ${tabName} › question ${idx + 1}`), tocBtn(), doneBanner, tab === 'req' && window.Primary ? Primary.wordBank(s) : null, tabs, chips, el('div', { class: 'exgrid' }, el('div', { class: 'q' }, card), aside)].filter(Boolean));
     if (s.lab) tabs.append(el('a', { class: 'chip', href: '#lab-' + R(sid), id: 'labLink' }, '🧪 Experiment'));
     showBanner(); drawSol();
-    QE.practice(q, card, { num: idx + 1, of: list.length, level: { req: 'Core', prac: 'Practice', adv: 'Advanced', ext: 'Extreme' }[tab], levelKey: 'lv-' + tab, rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; Core.persist(); showBanner(); refreshToc(); drawSol(); xpTick();
+    QE.practice(q, card, { num: idx + 1, of: list.length, level: { req: 'Core', prac: 'Practice', adv: 'Advanced', ext: 'Extreme', more: 'More practice' }[tab], levelKey: 'lv-' + tab, rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; Core.persist(); showBanner(); refreshToc(); drawSol(); xpTick();
       const c = chips.children[idx]; if (c) c.className = 'qc on ' + (rec.ok ? 'ok' : 'half'); } });
     card.append(el('div', { class: 'btnrow between objline' }, el('span', {}, el('b', { style: 'color:#1C2A3A' }, 'Learning objective: '), C.objectives[q.obj].t, el('small', { class: 'muted' }, ` · ${C.objectives[q.obj].code || ''}`)),
       el('button', { class: 'btn small ghost', type: 'button', id: 'reportQ', onclick: () => reportQuestion(q) }, '⚑ Report a problem')));
@@ -1048,8 +1116,8 @@
     });
   }
   // retired = questions replaced in a content revision, kept only so review lists made before the revision still open
-  function findQ(id) { for (const s of C.sections) for (const q of s.req.concat(s.prac, s.adv, s.ext || [], s.stops.map(x => x.q), s.retired || [])) if (q.id === id) return q; return null; }
-  const allQs = () => C.sections.flatMap(s => s.req.concat(s.prac, s.adv, s.ext || []));
+  function findQ(id) { for (const s of C.sections) for (const q of s.req.concat(s.prac, s.adv, s.more || [], s.ext || [], s.stops.map(x => x.q), s.retired || [])) if (q.id === id) return q; return null; }
+  const allQs = () => C.sections.flatMap(s => s.req.concat(s.prac, s.adv, s.more || [], s.ext || []));
 
   /* ---------- drills: wrong answers / by topic ---------- */
   function startDrill(title, qs, ns) { UI.drill = { title, ids: qs.map(q => q.id), ns }; go('drill'); }
@@ -1256,7 +1324,7 @@
     // ---- what each filter means ----
     st.marks = st.marks || {};
     const ALL = allQs();
-    const SEC = {}, TIER = {}; C.sections.forEach(s => { s.req.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'req'; }); s.prac.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = q.adv ? 'adv' : 'prac'; }); s.adv.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'adv'; }); (s.ext || []).forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'ext'; }); });
+    const SEC = {}, TIER = {}; C.sections.forEach(s => { s.req.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'req'; }); s.prac.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = q.adv ? 'adv' : 'prac'; }); s.adv.forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'adv'; }); (s.more || []).forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'prac'; }); (s.ext || []).forEach(q => { SEC[q.id] = s.id; TIER[q.id] = 'ext'; }); });
     const isFig = q => ['label', 'scale', 'graph', 'table', 'grid', 'sim'].includes(q.type) || !!q.fig;
     const TYPE = { fig: isFig, calc: q => ['num', 'scale', 'table', 'expr'].includes(q.type), explain: q => q.type === 'explain' || q.type === 'para', mcq: q => ['mcq', 'multi'].includes(q.type), other: q => !['mcq', 'multi', 'num', 'scale', 'table', 'expr', 'explain', 'para'].includes(q.type) && !isFig(q) };
     const STATUS = { todo: q => !(st.items[q.id] || {}).done, done: q => !!(st.items[q.id] || {}).done, wrong: q => !!(st.items[q.id] || {}).everWrong, first: q => { const r = st.items[q.id] || {}; return !!(r.done && r.ok && r.tries === 1); }, mark: q => !!st.marks[q.id] };
@@ -1592,7 +1660,7 @@
   /* ---------- word games (Stages 1–6, every subject): one player level, saved with the learner ---------- */
   function gameCtx() {
     const signed0 = () => !!(st && !isGuest()), lkey = () => 'atomic.games.v1' + (st ? '.' + st.id : '');
-    const dflt = () => { const s = st ? Core.STAGE : 3; return { xp: 0, stage: s >= 1 && s <= 6 ? s : s >= 13 && s <= 16 ? s - 10 : s >= 7 ? 6 : 3, subj: 'all', best: {}, words: {}, played: 0 }; };
+    const dflt = () => { const s = st ? Core.STAGE : 3; return { xp: 0, stage: s >= 1 && s <= 5 ? s : s >= 13 && s <= 15 ? s - 10 : s >= 6 ? 5 : 3, subj: 'all', best: {}, words: {}, played: 0 }; };
     return { get signedIn() { return signed0(); }, get name() { return st ? st.alias || st.name : ''; }, go,
       load: () => { const signed = signed0(), lk = lkey(); let s = null; if (signed) s = (Core.S.states || {}).games; if (!s) { try { s = JSON.parse(localStorage.getItem(lk) || 'null'); } catch (e) { } } return Object.assign(dflt(), s || {}); },
       save: S => { const signed = signed0(), lk = lkey(); try { localStorage.setItem(lk, JSON.stringify(S)); } catch (e) { } if (signed) { Core.S.states = Core.S.states || {}; Core.S.states.games = S; Backend.saveProgress(st.id, 'games', S).catch(() => { }); } } };
@@ -1600,7 +1668,7 @@
   // a lesson's key words as game words (Stages 1–6: the lesson word bank)
   function secGameWords(s) {
     const stg = Core.stageNo(Core.STAGE);
-    if (!s || !Array.isArray(s.vocab) || s.vocab.length < 3 || stg > 6) return [];
+    if (!s || !Array.isArray(s.vocab) || s.vocab.length < 3 || stg > 5) return [];   // word games: Stages 1–5 only
     const subj = Core.IS_MATHS ? 'maths' : 'science';
     return s.vocab.filter(v => v.w && v.def).map(v => ({ id: `${subj[0]}${stg}-${String(v.w).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`, w: v.w, def: v.def, emoji: v.emoji || '📘', audio: v.audio || '', subj, stage: stg, topic: s.title }));
   }
@@ -1620,7 +1688,7 @@
   }
   async function viewGames() {
     const m = $main();
-    pageHero('LEARN WORDS BY PLAYING · STAGES 1–6', 'Word games', 'Five games for Science, Maths and English words. Every game you finish earns XP – there is no top level, and every level is a little faster and trickier.');
+    pageHero('LEARN WORDS BY PLAYING · STAGES 1–5', 'Word games', 'Five games for Science, Maths and English words. Every game you finish earns XP – there is no top level, and every level is a little faster and trickier.');
     const host = el('div'); m.append(host); await Games.hub(host, gameCtx());
   }
   async function viewGame(id) {

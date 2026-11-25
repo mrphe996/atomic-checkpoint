@@ -58,6 +58,34 @@
     if (o.mirror && o.mirror.y != null) s += `<line x1="${x0 - 10}" y1="${y0 + o.mirror.y * sz}" x2="${x0 + C * sz + 10}" y2="${y0 + o.mirror.y * sz}" stroke="#D62F4B" stroke-width="3" stroke-dasharray="8 5"/>`;
     return { svg: W(s), a: {} };
   };
+
+  // algebra tiles: o.rows [[label, [[kind, count], …], …]]; kind 'x' | 'y' (long rods) or '1' (unit squares); groups joined by '+'
+  const TILE = { x: ['#3B7DD8', 'x'], y: ['#1E8E4E', 'y'], '1': ['#F3BF69', '1'], n: ['#D64545', '−1'] };
+  function tileRow(groups, x0, y0) {
+    let s = '', x = x0;
+    groups.forEach((g, gi) => {
+      if (gi) { s += T(x + 10, y0 + 22, '+', { size: 22, bold: true }); x += 26; }
+      g.forEach(([k, n]) => { const [c, l] = TILE[k] || TILE.x; for (let i = 0; i < n; i++) {
+        if (k === 'x' || k === 'y') { s += `<rect x="${x}" y="${y0}" width="18" height="46" rx="3" fill="${c}" stroke="#1F2A37" stroke-width="1.5"/>` + T(x + 9, y0 + 23, l, { size: 13, bold: true, fill: '#fff' }); x += 22; }
+        else { s += `<rect x="${x}" y="${y0 + 26}" width="18" height="18" rx="3" fill="${c}" stroke="#1F2A37" stroke-width="1.5"/>` + T(x + 9, y0 + 35, l, { size: 11, bold: true, fill: k === 'n' ? '#fff' : INK }); x += 22; } } });
+    });
+    return { s, x };
+  }
+  F.tiles = (o) => {
+    const rows = o.rows || []; const h = 64; let s = '';
+    rows.forEach(([lab, groups], i) => { const y = 10 + i * h; s += T(8, y + 23, lab, { anchor: 'start', bold: true, size: 15 }); s += tileRow(groups, 120, y).s; });
+    const H = 20 + rows.length * h + (o.title ? 22 : 0);
+    if (o.title) s += T(240, H - 10, o.title, { size: 13, fill: GREY });
+    return { svg: W(s).replace('viewBox="0 0 480 320"', `viewBox="0 0 480 ${H}"`), a: {} };
+  };
+  // a balance for equations: o.left / o.right as tile groups; level beam
+  F.balance = (o) => {
+    let s = `<polygon points="240,290 222,316 258,316" fill="#8A94A6"/><line x1="240" y1="120" x2="240" y2="292" stroke="#5B6478" stroke-width="6"/>`;
+    s += `<line x1="40" y1="120" x2="440" y2="120" stroke="#1F2A37" stroke-width="6" stroke-linecap="round"/><circle cx="240" cy="120" r="8" fill="#1F2A37"/>`;
+    [['left', 120], ['right', 360]].forEach(([k, cx]) => { s += `<line x1="${cx - 70}" y1="120" x2="${cx - 90}" y2="230" stroke="#8A94A6" stroke-width="2"/><line x1="${cx + 70}" y1="120" x2="${cx + 90}" y2="230" stroke="#8A94A6" stroke-width="2"/><path d="M${cx - 100} 230 Q${cx} 270 ${cx + 100} 230 Z" fill="#DCE8FA" stroke="#1F2A37" stroke-width="2"/>`;
+      const g = o[k] || []; const w = g.reduce((a, [kk, n]) => a + n * 22, 0); const r = tileRow([g], cx - w / 2, 178); s += r.s; if (o[k + 'Label']) s += T(cx, 292, o[k + 'Label'], { bold: true, size: 15 }); });
+    return { svg: W(s), a: {} };
+  };
   // analogue clock: o.h (0-23), o.m
   F.clock = (o) => {
     const cx = 240, cy = 160, r = 120, h = (o.h || 0) % 12, m = o.m || 0; let s = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="#FFFFFF" stroke="#1F2A37" stroke-width="4"/>`;

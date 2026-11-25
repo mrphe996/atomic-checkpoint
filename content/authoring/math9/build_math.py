@@ -10,7 +10,13 @@ def build(n):
     U = importlib.import_module(f"u{n:02d}").U
     import math9_tx as TX, mtest
     U.texp(*TX.EXP[n]); U.ttpl and [U.ttpl(sid, f) for sid, f in TX.TPL.get(n, [])]
-    tests = mtest.assemble(U)       # 2026 format: 25 questions, sections A-D, 30 marks
+    while True:   # trim "More practice" if the Unit Test needs fresh variants (tests never reuse practice questions)
+        try: tests = mtest.assemble(U); break
+        except AssertionError:
+            tot = lambda x: sum(len(v) for v in x.pools.values())
+            secs = [x for x in U.sections if x.pools["m"] and tot(x) > 27]
+            if not secs: raise
+            for x in secs: x.pools["m"] = x.pools["m"][:max(len(x.pools["m"]) // 2, len(x.pools["m"]) - (tot(x) - 27))]
     data = U.export(tests, TITLES)
     out = os.path.join(HERE, "..", "..", "src", f"stage19-unit{n:02d}.json")
     json.dump(data, open(out, "w", encoding="utf-8"), ensure_ascii=False)

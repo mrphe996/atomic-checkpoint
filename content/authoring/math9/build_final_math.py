@@ -27,7 +27,7 @@ for n in range(1, NU + 1):
     o = f"U{n}"; OBJ[o] = {"t": f"Unit {n}: {d['unit']['title']}", "code": f"Stage {ST} Mathematics Unit {n}"}
     easy, hard = [], []
     for s in d["sections"]:
-        for q in s["prac"]:
+        for q in s["prac"] + s.get("more", []):
             if q["type"] not in AUTO: continue
             (hard if q.get("diff") in ("H", "VH") else easy).append((s["id"], q))
         for q in s["adv"]:
