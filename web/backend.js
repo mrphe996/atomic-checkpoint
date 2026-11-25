@@ -52,8 +52,9 @@
         D.accounts[email] = { id, email, pw: await sha(form.password), profile: { id, role: 'student', display_name: name, country: form.country || 'XX', weekly_report: false, marketing_opt_in: false, product_analytics: false, created_at: now },
           consents: [{ kind: 'terms', version: LEGAL, given: true, at: now }, { kind: 'privacy', version: LEGAL, given: true, at: now }],
           learners: [{ id: uuid(), user_id: id, parent_id: null, nickname: name.split(' ')[0].slice(0, 24), certificate_name: name, birth_year: by, grade: form.grade || null, country: form.country || 'XX',
-            school_id: form.schoolId || null, school_other: form.schoolId ? null : (form.schoolOther || null), parent_email: pe || null, consent_status: 'not_required', stage: 7, leaderboard_opt_in: false, created_at: now }],
+            school_id: form.schoolId || null, school_other: form.schoolId ? null : (form.schoolOther || null), parent_email: pe || null, consent_status: 'not_required', stage: [1, 2, 3, 4, 5, 6, 7, 8, 9].includes(Number(form.stage)) ? Number(form.stage) : 7, leaderboard_opt_in: false, created_at: now }],
           subscription: null, notifications: [], reports: [] };
+        if (form.tester) { D.admin = D.admin || { overrides: {}, units: {}, ann: [], audit: [], settings: { mock_payments: 'on' } }; (D.admin.testers = D.admin.testers || {})[D.accounts[email].learners[0].id] = true; }   // preview only (automated tests)
         D.session = email; save(); return this.me();
       },
       async schools(country) { return (window.ATOMIC_SCHOOLS || []).filter(s => s.country === country); },
@@ -79,8 +80,23 @@
       async allDays(lid) { mine(lid); return [].concat(...Object.values(D.progress[lid] || {}).map(p => (p && p.days) || [])); },
       async allStates(lid) { mine(lid); return JSON.parse(JSON.stringify(D.progress[lid] || {})); },
       async isTester(lid) { return !!((((D.admin || {}).testers) || {})[lid]); },
+      isMultiStage(lid) { return !!(D.multiStage || {})[lid]; },
+      devMultiStage(lid) { (D.multiStage = D.multiStage || {})[lid] = true; save(); },   // preview only: lets automated tests buy courses of several stages (no other rule changes)
+      devTester(lid) { D.admin = D.admin || { overrides: {}, units: {}, ann: [], audit: [], settings: { mock_payments: 'on' } }; (D.admin.testers = D.admin.testers || {})[lid] = true; save(); },   // preview only: lets the automated tests study several stages
       async enrolments(lid) { mine(lid); return ((D.enrol || {})[lid] || []).slice(); },
-      async enrol(lid, stage, amount) { mine(lid); D.enrol = D.enrol || {}; const l = (D.enrol[lid] = D.enrol[lid] || []); if (!l.some(e => e.stage === stage)) l.push({ stage, method: 'test', amount: amount || null, status: 'active', created_at: new Date().toISOString() });
+      async enrol(lid, stage, amount) { const lr = mine(lid); D.enrol = D.enrol || {}; const l = (D.enrol[lid] = D.enrol[lid] || []);
+        // one stage per learner (same rule as enrol_stage): another level only after 80 % of the current level's Unit Tests are passed
+        const lv = stage % 10, cur = lr.stage || 7, own = l.filter(e => e.status !== 'canceled');
+        if (own.length && lv !== cur && !((D.admin || {}).testers || {})[lid] && !(D.multiStage || {})[lid]) {   // testers (staff) may open any stage
+          let need = 0, have = 0;
+          for (const k of own.map(e => e.stage).filter(k => k % 10 === cur)) {
+            const ix = await fetch(`content/stage${k}.json`).then(r => r.ok ? r.json() : { units: [] }).catch(() => ({ units: [] }));
+            need += (ix.units || []).length; have += Object.keys(D.results[lid] || {}).filter(u => !u.includes(':') && u.startsWith(`stage${k}-unit`)).length;
+          }
+          if (!need || have < Math.ceil(need * 0.8)) throw err('stage_locked', { have, need });
+        }
+        lr.stage = lv;
+        if (!l.some(e => e.stage === stage)) l.push({ stage, method: 'test', amount: amount || null, status: 'active', created_at: new Date().toISOString() });
         note(need(), lid, 'billing', `You are enrolled in Cambridge Stage ${stage}`, 'Test checkout – no money was taken.'); save(); return 'ok'; },
       async startTest({ learnerId, unit, form }) { mine(learnerId); D.starts = D.starts || {}; const k = `${learnerId}|${unit}|${form}`; D.starts[k] = D.starts[k] || new Date().toISOString(); save();
         const minutes = /^ch-/.test(unit) ? ({ 'ch-primary': 45, 'ch-olympiad': 90 }[unit] || 60) : /-final$/.test(unit) ? 60 : /-cp$/.test(unit) ? 45 : TestRules.UNIT_MINUTES; return { startedAt: D.starts[k], minutes, deadline: new Date(Date.parse(D.starts[k]) + minutes * 60000).toISOString(), now: new Date().toISOString() }; },
@@ -162,8 +178,7 @@
       async unitResults(lid) { mine(lid); return Object.fromEntries(Object.entries(D.results[lid] || {}).filter(([k]) => !k.includes(':'))); },
       async issueCertificate(lid, stageUnits, stage = 7) {
         const l = mine(lid); const key = stage === 7 ? lid : `${lid}:s${stage}`; if (D.certs[key]) return D.certs[key];
-        const have = Object.keys(D.results[lid] || {}).filter(k => !k.includes(':') && k.startsWith(`stage${stage}-unit`)).length; if (have < stageUnits) throw err('stage_incomplete', { have, need: stageUnits });
-        if (!(((D.attempts[lid] || {})[`stage${stage}-final`]) || []).some(x => x.status === 'final' && x.passed)) throw err('final_required');
+        const have = Object.keys(D.results[lid] || {}).filter(k => !k.includes(':') && k.startsWith(`stage${stage}-unit`)).length; if (have < Math.ceil(stageUnits * 0.8)) throw err('stage_incomplete', { have, need: Math.ceil(stageUnits * 0.8) });   // 80 % of the Unit Tests (same rule as issue_certificate)
         const hex = [...crypto.getRandomValues(new Uint8Array(4))].map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase();
         D.certs[key] = { code: `AE-${stage >= 20 ? 'E' + (stage - 20) : stage >= 10 ? 'M' + (stage - 10) : 'S' + stage}-${new Date().getFullYear()}-${hex}`, name: l.certificate_name || l.nickname, date: new Date().toISOString().slice(0, 10), stage }; save(); return D.certs[key];
       },
@@ -326,7 +341,7 @@
       async allStates(lid) { const r = await rest(`progress?learner_id=eq.${lid}&select=unit,state`); return Object.fromEntries(r.filter(x => !/-final$/.test(x.unit)).map(x => [x.unit, x.state])); },
       async enrolments(lid) { return rest(`enrolments?learner_id=eq.${lid}&select=stage,method,status,created_at`); },
       async isTester(lid) { const r = await rest(`testers?learner_id=eq.${lid}&select=learner_id`); return Array.isArray(r) && r.length > 0; },
-      async enrol(lid, stage, amount) { try { return await rpc('enrol_stage', { p_learner: lid, p_stage: stage, p_amount: amount || null }); } catch (e) { throw err(/not open/.test(e.detail || '') ? 'payments_closed' : 'enrol_failed', { detail: e.detail }); } },
+      async enrol(lid, stage, amount) { try { return await rpc('enrol_stage', { p_learner: lid, p_stage: stage, p_amount: amount || null }); } catch (e) { throw err(/not open/.test(e.detail || '') ? 'payments_closed' : /stage locked/.test(e.detail || '') ? 'stage_locked' : 'enrol_failed', { detail: e.detail }); } },
       async startTest(b) { return api('start-test', { method: 'POST', body: b }); },
       async saveProgress(lid, unit, state) { await rest('progress?on_conflict=learner_id,unit', { method: 'POST', prefer: 'resolution=merge-duplicates', body: { learner_id: lid, unit, state, updated_at: new Date().toISOString() } }); },
       async attempts(lid, unit) { const rows = await rest(`attempts?learner_id=eq.${lid}&unit=eq.${unit}&order=n.asc`);

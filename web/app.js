@@ -222,10 +222,14 @@
     const mine = Core.STAGES.filter(g => g !== g0 && !Core.stageLocked(g) && Core.enrolled(g))
       .sort((a, b) => (subj(a) !== subj(g0)) - (subj(b) !== subj(g0)) || Math.abs(a - g0) - Math.abs(b - g0));
     const myItem = g => el('a', { class: 'it', href: '#stage-' + g, onclick: ev => { ev.preventDefault(); pickStage(g, ev.currentTarget); } }, cname(g), el('small', { class: 'sl' }, stagePct(g) + '%'));
-    const nxt = g0 + 1;
-    if (stagePct(g0) >= 100 && Core.STAGES.includes(nxt) && subj(nxt) === subj(g0) && !Core.stageLocked(nxt) && !mine.slice(0, 1).includes(nxt)) {
-      cmenu.append(el('span', { class: 'h' }, '🎉 COURSE FINISHED – UP NEXT'),
-        el('a', { class: 'it tnext', href: '#stage-' + nxt, onclick: Core.enrolled(nxt) ? ev => { ev.preventDefault(); pickStage(nxt, ev.currentTarget); } : null }, cname(nxt), el('small', { class: 'sl' }, Core.enrolled(nxt) ? 'Start →' : 'Enrol →')));
+    // the next stage: suggested only when 80 % of this stage's lessons and Unit Tests are done (one stage per learner)
+    const upnext = el('div', { class: 'tupnext' }); cmenu.append(upnext);
+    if (st && !isGuest() && Core.myCourses().length) {
+      const lv = Core.learnerStage(), nxt = Core.levelOf(g0) + 1 + (g0 - Core.levelOf(g0));
+      Core.levelProgress(lv).then(p => { if (!p.ready || !Core.STAGES.includes(nxt) || Core.stageLocked(nxt) || Core.enrolled(nxt)) return;
+        upnext.append(el('span', { class: 'h' }, `🎉 STAGE ${lv} ${p.lessons}% DONE – UP NEXT`), el('a', { class: 'it tnext', href: '#checkout-' + nxt }, cname(nxt), el('small', { class: 'sl' }, 'Enrol →'))); }).catch(() => { });
+      const add = Core.subjectKeys(lv).filter(k => !Core.enrolled(k) && !Core.stageLocked(k));
+      if (add.length) cmenu.append(el('span', { class: 'h' }, `ADD A SUBJECT TO STAGE ${lv}`), ...add.map(k => el('a', { class: 'it tadd', href: '#checkout-' + k }, cname(k), el('small', { class: 'sl' }, 'Add →'))));
     }
     if (mine.length) {
       cmenu.append(el('span', { class: 'h' }, 'YOUR OTHER COURSES'));
@@ -1216,12 +1220,12 @@
     const m = $main(); m.append(bar(`Cambridge ${Core.stageName(Core.STAGE)} certificate`));
     await Core.refreshFinal().catch(() => { });
     let cert = null; try { cert = await Core.certificate(st); } catch (e) { cert = null; }
-    const passedU = Object.keys(st.results || {}).filter(k => k.startsWith(`stage${Core.STAGE}-unit`)).length, fin = Core.finalPassed();
+    const passedU = Object.keys(st.results || {}).filter(k => k.startsWith(`stage${Core.STAGE}-unit`)).length;
     if (!cert) {
-      const items = [];
-      if (passedU < Core.unitCount()) items.push({ what: `pass every Unit Test (${passedU} of ${Core.unitCount()} so far)`, route: 'tests' });
-      if (!fin) items.push({ what: `pass an end-of-year exam (needs level ${TestRules.FINAL_LEVEL}; you are level ${Core.levelInfo().level})`, route: 'final' });
-      m.append(lockScreen(`Your Cambridge ${Core.stageName(Core.STAGE)} certificate`, `The certificate is awarded when you have passed all ${Core.unitCount()} Unit Tests and one end-of-year exam. Here is how it will look:`, items));
+      const items = [], needU = Math.ceil(Core.unitCount() * Core.MOVE_ON / 100), pr = await Core.courseProgress(Core.STAGE, st).catch(() => ({ lessons: 0 }));
+      if (passedU < needU) items.push({ what: `pass ${needU} of the ${Core.unitCount()} Unit Tests (${Core.MOVE_ON}%) – ${passedU} so far`, route: 'tests' });
+      if (pr.lessons < Core.MOVE_ON) items.push({ what: `finish ${Core.MOVE_ON}% of the lessons – ${pr.lessons}% so far`, route: 'u-' + Core.UNO });
+      m.append(lockScreen(`Your Cambridge ${Core.stageName(Core.STAGE)} certificate`, `The certificate is awarded when you have finished ${Core.MOVE_ON}% of the lessons and passed ${Core.MOVE_ON}% of the Unit Tests. It also opens the next stage. Here is how it will look:`, items));
       const img = el('img', { class: 'certimg', alt: `Preview of the Cambridge ${Core.stageName(Core.STAGE)} certificate` }); m.append(el('section', { class: 'card certwrap' }, img));
       drawCert({ name: st.name, code: `AE-${Core.IS_ESL ? 'E' + Core.stageNo(Core.STAGE) : Core.IS_MATHS ? 'M' + Core.stageNo(Core.STAGE) : 'S' + Core.STAGE}-XXXX-XXXXXXXX`, date: '—', ...certStats() }, true).then(cv => { img.src = cv.toDataURL('image/png'); });
       return;
@@ -1242,16 +1246,18 @@
   async function loadCatalog() { if (!CATALOG) { try { const r = await fetch('content/catalog.json'); CATALOG = r.ok ? await r.json() : null; } catch (e) { CATALOG = null; } } return CATALOG; }
   const subjTag = (S0) => el('span', { class: 'subjtag', style: `--sc:${S0.color}` }, S0.icon + ' ' + S0.name);
   function courseCard(c, S0) {
-    const isStage = !!c.stage && c.status !== 'soon' && !Core.stageLocked(c.stage); const mine = isStage && st && c.stage === Core.learnerStage(), en = isStage && st && Core.enrolled(c.stage);
-    const state = c.status === 'soon' || (c.stage && Core.stageLocked(c.stage)) ? 'soon' : mine ? 'mine' : en ? 'enrolled' : c.status === 'enrol' ? 'enrol' : 'open';
-    const tag = { soon: 'COMING SOON', mine: 'YOUR COURSE', enrolled: 'ENROLLED', enrol: 'NOT ENROLLED', open: 'OPEN' }[state];
+    const isStage = !!c.stage && c.status !== 'soon' && !Core.stageLocked(c.stage); const en = isStage && st && !isGuest() && Core.enrolled(c.stage), mine = en;
+    const other = isStage && st && !isGuest() && !en && Core.myCourses().length && Core.levelOf(c.stage) !== Core.learnerStage();   // one stage per learner
+    const state = c.status === 'soon' || (c.stage && Core.stageLocked(c.stage)) ? 'soon' : mine ? 'mine' : other ? 'locked' : c.status === 'enrol' || isStage ? 'enrol' : 'open';
+    const tag = { soon: 'COMING SOON', mine: 'YOUR COURSE', enrolled: 'ENROLLED', enrol: 'NOT ENROLLED', open: 'OPEN', locked: `LOCKED · FINISH STAGE ${Core.learnerStage()} FIRST` }[state];
     const btn = state === 'soon' ? el('a', { class: 'btn small', href: c.stage ? '#stage-' + c.stage : '#course-' + c.id }, 'Details', el('span', { class: 'arr' }, ' →'))
+      : state === 'locked' ? el('a', { class: 'btn small', href: '#stage-' + c.stage }, '🔒 Locked')
       : state === 'mine' || state === 'enrolled' || state === 'open' ? el('a', { class: 'btn small primary', href: '#stage-' + c.stage }, 'Open', el('span', { class: 'arr' }, ' →'))
         : el('a', { class: 'btn small gold', href: '#checkout-' + c.stage }, `Enrol · ${PRICE}`, el('span', { class: 'arr' }, ' →'));
     return el('section', { class: 'card ccard ' + state + (mine ? ' cur' : ''), id: isStage ? 'stageCard' + c.stage : 'course-' + c.id, style: `--sc:${S0.color}` },
       el('div', { class: 'cchead' }, el('span', { class: 'cclv' }, c.stage ? String(c.badge || c.stage) : c.level === 'igcse' ? 'IG' : 'A'), el('span', { class: 'cccode' }, c.code)),
       el('span', { class: 'eyebrow', style: 'margin:0' }, tag), el('h3', { style: 'margin:0' }, c.title),
-      el('p', { class: 'muted', style: 'margin:0;font-size:14px' }, mine ? `${Core.unitCount()} units · ≈ ${estH(Core.INDEX.est || 0)} of learning · Unit Tests, Checkpoint exam room, end-of-year exams and a certificate` : c.about || (c.stage ? `Cambridge Stage ${c.stage} – units are being prepared` : '')), btn);
+      el('p', { class: 'muted', style: 'margin:0;font-size:14px' }, mine && c.stage === Core.STAGE ? `${Core.unitCount()} units · ≈ ${estH(Core.INDEX.est || 0)} of learning · Unit Tests, Checkpoint exam room, end-of-year exams and a certificate` : c.about || (c.stage ? `Cambridge Stage ${c.stage} – units are being prepared` : '')), btn);
   }
   async function viewCourses(subject) {
     const m = $main(); const K = await loadCatalog(); if (!K) { m.append(el('p', {}, 'Could not load the courses.')); return; }
@@ -1289,7 +1295,7 @@
     if (g !== Core.STAGE) {
       pageHero(Core.levelName(g).toUpperCase(), `Cambridge ${Core.stageName(g)}`, Core.enrolled(g) ? `You are enrolled in Cambridge ${Core.stageName(g)}.` : `Cambridge ${Core.stageName(g)} is a separate course.`);
       m.append(crumbs(`Cambridge ${Core.stageName(g)}`));
-      if (!Core.enrolled(g)) { m.append(el('section', { class: 'card lockcard' }, el('h2', {}, `🔒 Enrol in Cambridge ${Core.stageName(g)}`), el('p', {}, `Each stage is its own course. Enrol and pay for Cambridge ${Core.stageName(g)} to open it on this account.`), el('a', { class: 'btn gold', href: '#checkout-' + g }, `Enrol · ${PRICE}`, el('span', { class: 'arr' }, ' →')))); return; }
+      if (!Core.enrolled(g)) { m.append(await buyOrLockCard(g)); return; }
       m.append(el('section', { class: 'card done' }, el('h2', {}, `✓ Enrolled in Cambridge ${Core.stageName(g)}`), el('p', {}, `The Cambridge ${Core.stageName(g)} units open here as soon as they have been reviewed. You will get a notification.`), el('a', { class: 'btn small', href: `#stage-${Core.STAGE}` }, `Back to Cambridge ${Core.stageName(Core.STAGE)}`)));
       return;
     }
@@ -1305,10 +1311,43 @@
       el('div', { class: 'lbrow srow2 tot' }, el('span', {}, ''), el('b', {}, 'Whole course (with 2 end-of-year papers)'), el('b', {}, estH(Core.INDEX.est || 0)), el('b', {}, hrs(tot)), el('span', {}))));
     Core.loadFinal().then(F => { if (F) m.append(finalCard(F, Core.levelInfo())); });
   }
-  function viewCheckout(g) {
+  // one stage per learner: a course of the learner's own stage can be added; another stage opens after 80 % of the current one
+  async function buyOrLockCard(g) {
+    const lv = Core.learnerStage(), same = Core.levelOf(g) === lv || !Core.myCourses().length;
+    if (isGuest()) return guestWall('Create a free account first');
+    if (same) return el('section', { class: 'card lockcard', id: 'addCourse' }, el('h2', {}, `➕ Add ${Core.subjectOf(g)} to your Stage ${Core.levelOf(g)}`),
+      el('p', {}, `You study Stage ${lv}. You can add ${Core.subjectOf(g)} Stage ${Core.levelOf(g)} to your plan at any time.`), el('a', { class: 'btn gold', href: '#checkout-' + g }, `Add · ${PRICE}`, el('span', { class: 'arr' }, ' →')));
+    const p = await Core.levelProgress(lv);
+    if (p.ready) return el('section', { class: 'card done', id: 'moveOn' }, el('h2', {}, `🎉 You can move on to Cambridge ${Core.stageName(g)}`),
+      el('p', {}, `You have finished ${p.lessons}% of the lessons and ${p.tests}% of the Unit Tests of Stage ${lv}.`), el('a', { class: 'btn gold', href: '#checkout-' + g }, `Enrol · ${PRICE}`, el('span', { class: 'arr' }, ' →')));
+    const bar = (label, v) => el('div', { class: 'mvbar' }, el('span', {}, label), el('span', { class: 'pbar' }, el('i', { style: `width:${Math.min(100, v)}%` })), el('b', {}, `${v}% / ${Core.MOVE_ON}%`));
+    return el('section', { class: 'card lockcard', id: 'stageLocked' }, el('h2', {}, `🔒 Cambridge ${Core.stageName(g)} is locked`),
+      el('p', {}, `You are studying Stage ${lv}. Each learner studies one stage at a time. Finish at least ${Core.MOVE_ON}% of the lessons and ${Core.MOVE_ON}% of the Unit Tests of Stage ${lv} to get your certificate and open the next stage.`),
+      bar('Lessons finished', p.lessons), bar('Unit Tests passed', p.tests),
+      el('div', { class: 'btnrow' }, el('a', { class: 'btn primary small', href: '#stage-' + Core.STAGE }, `Back to my Stage ${lv}`, el('span', { class: 'arr' }, ' →'))));
+  }
+  // choose (or complete) a plan for the learner's stage: one subject, or every subject of the stage
+  async function viewPlans() {
+    const m = $main(); const lv = Core.learnerStage(); const e = errBox();
+    const avail = Core.subjectKeys(lv).filter(k => !Core.stageLocked(k)), todo = avail.filter(k => !Core.enrolled(k));
+    pageHero('YOUR PLAN', `Cambridge Stage ${lv}`, Core.myCourses().length ? 'Add another subject of your stage.' : 'Choose what you want to study in your stage.');
+    if (!todo.length) { m.append(el('section', { class: 'card done' }, el('h2', {}, `✓ You have every subject of Stage ${lv}`), el('a', { class: 'btn primary small', href: '#home' }, 'Go to my dashboard'))); return; }
+    const buy = async (keys, amount, btn) => { e.textContent = ''; btn.disabled = true; btn.classList.add('busy');
+      try { for (const k of keys) await Core.enrol(k, amount); await Core.ensureOwnStage(); C = Core.C; st = Core.cur(); confetti(); toast(`You are enrolled in Stage ${lv}.`); go('home'); }
+      catch (x) { btn.disabled = false; btn.classList.remove('busy'); e.textContent = x.code === 'payments_closed' ? 'Payments are not open yet.' : errText(x); } };
+    const sec = el('section', { class: 'card narrow', id: 'plans' }, el('h2', {}, 'Choose your plan'));
+    if (todo.length >= 2) { const b = el('button', { class: 'btn gold', type: 'button', id: 'buyBundle', onclick: () => buy(todo, `Stage ${lv} bundle ${BUNDLE()}`, b) }, `Whole Stage ${lv} · ${BUNDLE()}`);
+      sec.append(el('div', { class: 'ordrow' }, el('span', {}, `⭐ Every subject of Stage ${lv}: ${todo.map(SUBJ_NAME).join(', ')}`), b)); }
+    todo.forEach(k => { const b = el('button', { class: 'btn', type: 'button', 'data-course': k, onclick: () => buy([k], PRICE, b) }, `${PRICE}`);
+      sec.append(el('div', { class: 'ordrow' }, el('span', {}, `${SUBJ_ICON(k)} ${SUBJ_NAME(k)} · Stage ${lv}`), b)); });
+    sec.append(el('div', { class: 'banner info' }, el('b', {}, 'Test checkout. '), 'No money is taken on the test server.'), e);
+    m.append(sec);
+  }
+  async function viewCheckout(g) {
     const m = $main();
     if (Core.stageLocked(g)) return go('stage-' + g);
-    if (g === Core.STAGE || Core.enrolled(g)) return go('stage-' + g);
+    if (Core.enrolled(g)) return go('stage-' + g);
+    if (!isGuest() && !(await Core.canBuy(g))) { pageHero('ENROL', `Cambridge ${Core.stageName(g)} course`, ''); m.append(await buyOrLockCard(g)); return; }
     pageHero('ENROL', `Cambridge ${Core.stageName(g)} course`, 'Each stage is a separate course with its own Unit Tests, end-of-year exams and certificate.');
     m.append(crumbs(el('a', { href: '#stage-' + g }, `Cambridge ${Core.stageName(g)}`), 'Checkout'));
     if (isGuest()) { m.append(guestWall('Create a free account first')); return; }
@@ -1454,6 +1493,9 @@
       el('div', { class: 'btnrow' }, ...C.sections.map(s => btn(`Complete ${s.id}`, () => fill([s.id]), 'sim' + R(s.id))),
         btn('Complete all sections → Unit Test', () => { fill(C.sections.map(s => s.id)); }, 'simAll'),
         el('button', { class: 'btn small', type: 'button', id: 'simOthers', onclick: async () => { await Backend.demo.simulateOtherUnits(st.id, 82); await Core.refreshResults(st); msg.textContent = `Done – the other ${Core.unitCount() - 1} units are marked as passed at 82%.`; setTimeout(render, 500); } }, 'Pass the other 13 units (82%)'),
+        el('button', { class: 'btn small', type: 'button', id: 'simLessons', onclick: async () => { for (const u of Core.INDEX.units) { const key = Core.unitId(u.n), s0 = key === Core.UNIT ? st : (Core.S.states[key] || {}); s0.video = s0.video || {};
+          for (const s of u.sections || []) s0.video[s.id] = Object.assign({ pos: 0, stops: {} }, s0.video[s.id], { completed: true }); if (key !== Core.UNIT) { Core.S.states[key] = s0; await Backend.saveProgress(st.id, key, s0); } }
+          Core.persist(); msg.textContent = 'Done – every lesson of this stage is marked as finished.'; setTimeout(render, 500); } }, 'Finish every lesson'),
         el('button', { class: 'btn small', type: 'button', id: 'simFinal', onclick: async () => { Backend.demo.simulateFinal(st.id, 80); await Core.refreshFinal(); msg.textContent = 'Done – an end-of-year exam is marked as passed at 80%.'; setTimeout(render, 500); } }, 'Pass an end-of-year exam (80%)'),
         el('button', { class: 'btn small', type: 'button', id: 'simXp', onclick: async () => { Backend.demo.simulateXp(st.id, 400); await Core.selectLearner(st.id); msg.textContent = 'Done – +4 800 XP (level 10).'; setTimeout(render, 500); } }, 'Add XP to reach level 10'),
         el('button', { class: 'btn small', type: 'button', id: 'simStaff', onclick: () => { Backend.demo.setRole('admin'); msg.textContent = 'This account is now an administrator – open Staff from the account menu.'; } }, 'Make this account staff'),
@@ -2286,21 +2328,17 @@
   }
 
   /* ---------- sign up (3 steps, Mathspace style) / sign in ---------- */
-  const YEARS = ['Year 6 / Grade 5', 'Year 7 / Grade 6', 'Year 8 / Grade 7', 'Year 9 / Grade 8', 'Year 10 / Grade 9', 'Other'];
-  async function schoolPicker(country, sel, other, value) {
-    sel.innerHTML = ''; sel.append(el('option', { value: '' }, 'Loading schools…'));
-    const list = country && country !== 'XX' ? await Backend.schools(country).catch(() => []) : [];
-    sel.innerHTML = ''; sel.append(el('option', { value: '' }, list.length ? 'Choose your school' : 'No schools listed – type it below'));
-    const grp = k => { const g = el('optgroup', { label: k === 'international' ? 'International schools' : 'Bilingual schools' }); list.filter(x => x.kind === k).forEach(x => g.append(el('option', { value: x.id }, x.name + (x.city ? ` (${x.city})` : '')))); return g.children.length ? g : null; };
-    [grp('international'), grp('bilingual')].filter(Boolean).forEach(g => sel.append(g));
-    sel.append(el('option', { value: 'other' }, 'My school isn’t listed'));
-    if (value) sel.value = String(value); other.closest('label').hidden = sel.value !== 'other' && list.length > 0;
-  }
+  // ---- sign-up (B2C): account → about you and your school → choose ONE stage → choose a plan (one subject or the whole stage) ----
+  const SCHOOL_YEARS = [['Year 1 / Kindergarten', 1], ['Year 2 / Grade 1', 2], ['Year 3 / Grade 2', 3], ['Year 4 / Grade 3', 4], ['Year 5 / Grade 4', 5], ['Year 6 / Grade 5', 6], ['Year 7 / Grade 6', 7], ['Year 8 / Grade 7', 8], ['Year 9 / Grade 8', 9], ['Year 10 / Grade 9', 9], ['Other', 0]];
+  const SUBJ_NAME = k => (k >= 20 ? 'English (ESL)' : k >= 10 ? 'Mathematics' : 'Science'), SUBJ_ICON = k => (k >= 20 ? '🗣' : k >= 10 ? '📐' : '🔬');
+  const BUNDLE = () => (window.ATOMIC_CONFIG || {}).bundlePrice || 'US$119';
+  const lvName = lv => (lv <= 6 ? 'Cambridge Primary' : 'Cambridge Lower Secondary');
   function viewSignup() {
     const m = $main(); const e = errBox(); const F = UI.su = UI.su || { step: 1 };
     const card = el('section', { class: 'card narrow signup' }); m.append(el('div', { class: 'authwrap dots' }, card)); document.getElementById('wrap').classList.add('authpage');
-    const dots = () => el('div', { class: 'steps', 'aria-label': `Step ${F.step} of 3` }, ...[1, 2, 3].map(i => el('span', { class: i < F.step ? 'done' : i === F.step ? 'on' : '' }, String(i))));
+    const dots = () => el('div', { class: 'steps', 'aria-label': `Step ${F.step} of 4` }, ...[1, 2, 3, 4].map(i => el('span', { class: i < F.step ? 'done' : i === F.step ? 'on' : '' }, String(i))));
     const next = () => { e.textContent = ''; F.step++; draw(); }, back = () => { e.textContent = ''; F.step--; draw(); };
+    const open = lv => Core.subjectKeys(lv).filter(k => !Core.stageLocked(k));
     function draw() {
       card.innerHTML = '';
       if (F.step === 1) {
@@ -2315,41 +2353,71 @@
           el('p', { class: 'muted' }, 'Already have an account? ', el('a', { href: '#signin' }, 'Log in')));
       } else if (F.step === 2) {
         const now = new Date().getFullYear();
-        const by = el('select', { id: 'suYear' }, el('option', { value: '' }, 'Choose…'), ...Array.from({ length: 12 }, (_, i) => now - 8 - i).map(y => el('option', { value: y }, `${y} (about ${now - y} years old)`)));
-        const gr = el('select', { id: 'suGrade' }, el('option', { value: '' }, 'Choose…'), ...YEARS.map(y => el('option', { value: y }, y)));
-        by.value = F.birthYear || ''; gr.value = F.grade || '';
-        card.append(dots(), el('h1', {}, 'About you'), el('p', { class: 'muted' }, 'This helps us check the course suits you. It is never shown to anyone.'),
-          el('div', { class: 'form' }, field('Year of birth', by), field('School year', gr), e,
-            el('div', { class: 'btnrow between' }, el('button', { class: 'btn ghost', type: 'button', onclick: back }, '← Back'),
-              el('button', { class: 'btn primary', type: 'button', id: 'suNext2', onclick: () => { if (!by.value) { e.textContent = 'Please choose your year of birth.'; return; } if (!gr.value) { e.textContent = 'Please choose your school year.'; return; } Object.assign(F, { birthYear: Number(by.value), grade: gr.value }); next(); } }, 'Next', el('span', { class: 'arr' }, ' →')))));
-      } else {
-        const country = el('select', { id: 'suCountry' }, el('option', { value: '' }, 'Choose your country'), ...COUNTRIES.map(([v, t]) => el('option', { value: v }, t)));
-        const school = el('select', { id: 'suSchool' }), other = el('input', { type: 'text', id: 'suSchoolOther', maxlength: 120, value: F.schoolOther || '' });
+        const by = el('select', { id: 'suYear' }, el('option', { value: '' }, 'Choose…'), ...Array.from({ length: 13 }, (_, i) => now - 5 - i).map(y => el('option', { value: y }, `${y} (about ${now - y} years old)`)));
+        const gr = el('select', { id: 'suGrade' }, el('option', { value: '' }, 'Choose…'), ...SCHOOL_YEARS.map(([y]) => el('option', { value: y }, y)));
+        const school = el('input', { type: 'text', id: 'suSchool', maxlength: 120, value: F.school || '', placeholder: 'e.g. Hanoi International School', autocomplete: 'organization' });
+        const town = el('input', { type: 'text', id: 'suTown', maxlength: 80, value: F.town || '', placeholder: 'optional – e.g. Hanoi, Vietnam' });
         const parent = el('input', { type: 'email', id: 'suParent', autocomplete: 'off', value: F.parentEmail || '', placeholder: 'optional' });
-        const terms = el('input', { type: 'checkbox', id: 'suTerms' });
-        country.value = F.country || ''; country.onchange = () => schoolPicker(country.value, school, other);
-        school.onchange = () => { other.closest('label').hidden = school.value !== 'other'; };
+        by.value = F.birthYear || ''; gr.value = F.grade || '';
+        card.append(dots(), el('h1', {}, 'About you and your school'), el('p', { class: 'muted' }, 'This helps us suggest the right stage. It is never shown to anyone.'),
+          el('div', { class: 'form' }, field('Year of birth', by), field('School year', gr), field('Your school', school, 'Type the name of your school.'), field('Town and country', town),
+            field('Parent or guardian’s email (optional)', parent, 'If you add it, we send them one short email when you finish a unit – nothing else. You can change it in Settings.'), e,
+            el('div', { class: 'btnrow between' }, el('button', { class: 'btn ghost', type: 'button', onclick: back }, '← Back'),
+              el('button', { class: 'btn primary', type: 'button', id: 'suNext2', onclick: () => {
+                if (!by.value) { e.textContent = 'Please choose your year of birth.'; return; }
+                if (!gr.value) { e.textContent = 'Please choose your school year.'; return; }
+                if (school.value.trim().length < 2) { e.textContent = 'Please type the name of your school.'; return; }
+                const pe = parent.value.trim();
+                if (pe && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(pe)) { e.textContent = 'That parent email does not look right – check it or leave it empty.'; return; }
+                if (pe && pe.toLowerCase() === F.email.toLowerCase()) { e.textContent = 'The parent email must be different from your own.'; return; }
+                const sug = (SCHOOL_YEARS.find(([y]) => y === gr.value) || [0, 0])[1];
+                Object.assign(F, { birthYear: Number(by.value), grade: gr.value, school: school.value.trim(), town: town.value.trim(), parentEmail: pe });
+                if (!F.stage && sug && open(sug).length) F.stage = sug; next(); } }, 'Next', el('span', { class: 'arr' }, ' →')))));
+      } else if (F.step === 3) {
+        const sug = (SCHOOL_YEARS.find(([y]) => y === F.grade) || [0, 0])[1];
+        const grid = el('div', { class: 'su-stages', role: 'radiogroup', 'aria-label': 'Stage' });
+        const pick = lv => { F.stage = lv; F.plan = null; grid.querySelectorAll('.su-stage').forEach(b => { const on = Number(b.dataset.stage) === lv; b.classList.toggle('on', on); b.setAttribute('aria-checked', String(on)); }); };
+        for (let lv = 1; lv <= 9; lv++) {
+          const ks = open(lv), ok = ks.length > 0;
+          grid.append(el('button', { type: 'button', class: 'su-stage' + (F.stage === lv ? ' on' : '') + (ok ? '' : ' off'), role: 'radio', 'aria-checked': String(F.stage === lv), 'data-stage': lv, disabled: !ok, onclick: () => pick(lv) },
+            el('b', {}, `Stage ${lv}`), el('small', {}, lvName(lv).replace('Cambridge ', '')), el('small', { class: 'su-subj' }, ok ? ks.map(SUBJ_ICON).join(' ') : 'coming soon'),
+            lv === sug ? el('span', { class: 'su-tag' }, 'Suggested') : null));
+        }
+        card.append(dots(), el('h1', {}, 'Choose your stage'), el('p', { class: 'muted' }, 'You study one stage at a time. When you have finished 80% of its lessons and Unit Tests, you get your certificate and can move on to the next stage.'),
+          el('div', { class: 'form' }, grid, e, el('div', { class: 'btnrow between' }, el('button', { class: 'btn ghost', type: 'button', onclick: back }, '← Back'),
+            el('button', { class: 'btn primary', type: 'button', id: 'suNext3', onclick: () => { if (!F.stage) { e.textContent = 'Please choose your stage.'; return; } next(); } }, 'Next', el('span', { class: 'arr' }, ' →')))));
+      } else {
+        const lv = F.stage, keys = Core.subjectKeys(lv), avail = open(lv), bundleOk = avail.length >= 2;
+        F.plan = F.plan || (bundleOk ? 'bundle' : String(avail[0]));
+        const total = el('b', { id: 'suTotal' }); const terms = el('input', { type: 'checkbox', id: 'suTerms' });
+        const chosen = () => (F.plan === 'bundle' ? avail.slice() : [Number(F.plan)]);
+        const opts = el('div', { class: 'su-plans', role: 'radiogroup', 'aria-label': 'Plan' });
+        const refresh = () => { opts.querySelectorAll('.su-plan').forEach(b => { const on = b.dataset.plan === F.plan; b.classList.toggle('on', on); b.setAttribute('aria-checked', String(on)); }); total.textContent = F.plan === 'bundle' ? BUNDLE() : PRICE; };
+        const plan = (id, icon, title, sub, price, ok) => el('button', { type: 'button', class: 'su-plan' + (ok ? '' : ' off') + (id === 'bundle' ? ' bundle' : ''), role: 'radio', 'data-plan': id, disabled: !ok, onclick: () => { F.plan = id; refresh(); } },
+          el('span', { class: 'su-pi', 'aria-hidden': 'true' }, icon), el('span', { class: 'su-pt' }, el('b', {}, title), el('small', {}, sub)), el('b', { class: 'su-pp' }, ok ? price : 'Soon'));
+        if (avail.length >= 2) opts.append(plan('bundle', '⭐', `Whole Stage ${lv}`, `All ${avail.length} subjects: ${avail.map(SUBJ_NAME).join(', ')}`, BUNDLE(), true));
+        keys.forEach(k => opts.append(plan(String(k), SUBJ_ICON(k), `${SUBJ_NAME(k)} · Stage ${lv}`, `${lvName(lv)} ${SUBJ_NAME(k)} – one subject`, PRICE, avail.includes(k))));
         const b = el('button', { class: 'btn gold', type: 'button', id: 'suBtn', onclick: async () => {
           e.textContent = '';
-          if (!country.value) { e.textContent = 'Please choose your country.'; return; }
-          const sid = /^\d+$/.test(school.value) ? Number(school.value) : null;
-          if (!sid && other.value.trim().length < 2) { e.textContent = 'Choose your school, or type its name.'; return; }
-          const pe = parent.value.trim();
-          if (pe && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(pe)) { e.textContent = 'That parent email does not look right – check it or leave it empty.'; return; }
-          if (pe && pe.toLowerCase() === F.email.toLowerCase()) { e.textContent = 'The parent email must be different from your own.'; return; }
           if (!terms.checked) { e.textContent = 'Please agree to the Terms and the Privacy notice.'; return; }
-          b.disabled = true; b.classList.add('busy'); setTimeout(() => b.classList.remove('busy'), 15000);
+          b.disabled = true; b.classList.add('busy'); setTimeout(() => b.classList.remove('busy'), 20000);
+          const courses = chosen(), amount = F.plan === 'bundle' ? `Stage ${lv} bundle ${BUNDLE()}` : PRICE;
           try {
-            await Backend.signUp({ name: F.name, email: F.email, password: F.password, birthYear: F.birthYear, grade: F.grade, country: country.value, schoolId: sid, schoolOther: sid ? null : other.value.trim(), parentEmail: pe || null });
+            await Backend.signUp({ name: F.name, email: F.email, password: F.password, birthYear: F.birthYear, grade: F.grade, stage: lv, country: 'XX', schoolId: null,
+              schoolOther: [F.school, F.town].filter(Boolean).join(', ').slice(0, 120), parentEmail: F.parentEmail || null });
             const hadGuest = isGuest(); UI.su = null; await Core.boot(C); st = Core.cur();
-            toast(hadGuest ? 'Account created – your guest progress is saved!' : 'Welcome to Atomic!'); confetti(); go('home');
-          } catch (x) { e.textContent = errText(x); b.disabled = false; if (x && x.code === 'email_taken') { F.step = 1; } }
-        } }, 'Create my account');
-        card.append(dots(), el('h1', {}, 'Your school'), el('div', { class: 'form' }, field('Country', country), field('School', school, 'International and bilingual schools on Atomic.'), field('School name', other),
-          field('Parent or guardian’s email (optional)', parent, 'If you add it, we send them one short email when you finish a unit – nothing else. You can change it in Settings.'),
-          el('label', { class: 'check' }, terms, el('span', {}, 'I agree to the ', el('a', { href: '#terms', target: '_blank' }, 'Terms'), ' and have read the ', el('a', { href: '#privacy', target: '_blank' }, 'Privacy notice'), ' (', el('a', { href: '#privacy-kids', target: '_blank' }, 'short version'), ').')), e,
-          el('div', { class: 'btnrow between' }, el('button', { class: 'btn ghost', type: 'button', onclick: back }, '← Back'), b)));
-        schoolPicker(country.value, school, other, F.schoolId);
+            let paid = true; try { for (const k of courses) await Core.enrol(k, amount); } catch (x) { paid = false; }
+            if (paid) { try { await Core.ensureOwnStage(); } catch (x) { } C = Core.C; st = Core.cur(); }
+            toast(paid ? `Welcome to Atomic! You are enrolled in ${F.plan === 'bundle' ? 'the whole of Stage ' + lv : SUBJ_NAME(courses[0]) + ' Stage ' + lv}.` : (hadGuest ? 'Account created – your guest progress is saved! ' : 'Account created! ') + 'Enrol in your course to start.');
+            confetti(); go(paid ? 'home' : 'checkout-' + courses[0]);
+          } catch (x) { e.textContent = errText(x); b.disabled = false; if (x && x.code === 'email_taken') { F.step = 1; draw(); } }
+        } }, 'Create my account and enrol');
+        card.append(dots(), el('h1', {}, `Stage ${lv}: choose your plan`), el('p', { class: 'muted' }, 'Buy one subject, or the whole stage with every subject. You can add another subject of this stage later.'),
+          el('div', { class: 'form' }, opts, el('div', { class: 'ordrow su-total' }, el('span', {}, 'Total'), total),
+            el('div', { class: 'banner info' }, el('b', {}, 'Test checkout. '), 'This is the test server: no money is taken. The real payment page replaces this before launch.'),
+            el('label', { class: 'check' }, terms, el('span', {}, 'I agree to the ', el('a', { href: '#terms', target: '_blank' }, 'Terms'), ' and have read the ', el('a', { href: '#privacy', target: '_blank' }, 'Privacy notice'), ' (', el('a', { href: '#privacy-kids', target: '_blank' }, 'short version'), ').')), e,
+            el('div', { class: 'btnrow between' }, el('button', { class: 'btn ghost', type: 'button', onclick: back }, '← Back'), b)));
+        refresh();
       }
       const f = card.querySelector('input,select'); if (f) f.focus();
     }
@@ -2375,24 +2443,21 @@
     const m = $main(); await Core.refreshAccount(); const l = (Core.S.learners.find(x => x.id === st.id)) || st.learner || {};
     const msg = el('span', { class: 'muted', 'aria-live': 'polite' }); const e = errBox();
     const nick = el('input', { type: 'text', id: 'setNick', value: l.nickname || '', maxlength: 24 }), full = el('input', { type: 'text', id: 'setName', value: l.certificate_name || '', maxlength: 80 });
-    const gr = el('select', { id: 'setGrade' }, el('option', { value: '' }, '—'), ...YEARS.map(y => el('option', { value: y }, y))); gr.value = l.grade || '';
-    const country = el('select', { id: 'setCountry' }, ...COUNTRIES.map(([v, t]) => el('option', { value: v }, t))); country.value = l.country || 'XX';
-    const school = el('select', { id: 'setSchool' }), other = el('input', { type: 'text', id: 'setSchoolOther', value: l.school_other || '', maxlength: 120 });
+    const gr = el('select', { id: 'setGrade' }, el('option', { value: '' }, '—'), ...SCHOOL_YEARS.map(([y]) => el('option', { value: y }, y))); if (l.grade && !SCHOOL_YEARS.some(([y]) => y === l.grade)) gr.append(el('option', { value: l.grade }, l.grade)); gr.value = l.grade || '';
+    const school = el('input', { type: 'text', id: 'setSchool', value: l.school_other || '', maxlength: 120, placeholder: 'Type the name of your school' });
     const parent = el('input', { type: 'email', id: 'setParent', value: l.parent_email || '', placeholder: 'optional' });
-    country.onchange = () => schoolPicker(country.value, school, other); school.onchange = () => { other.closest('label').hidden = school.value !== 'other'; };
     const save = el('button', { class: 'btn primary', type: 'button', id: 'setSave', onclick: async () => {
       e.textContent = ''; msg.textContent = '';
       const pe = parent.value.trim(); if (pe && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(pe)) { e.textContent = 'That parent email does not look right.'; return; }
       if (nick.value.trim().length < 2) { e.textContent = ERR.bad_nickname; return; }
-      const sid = /^\d+$/.test(school.value) ? Number(school.value) : null;
-      try { await Backend.updateLearner(l.id, { nickname: nick.value.trim(), certificate_name: full.value.trim() || null, grade: gr.value || null, school_id: sid, school_other: sid ? null : (other.value.trim() || null), parent_email: pe || null });
+      try { await Backend.updateLearner(l.id, { nickname: nick.value.trim(), certificate_name: full.value.trim() || null, grade: gr.value || null, school_id: null, school_other: school.value.trim() || null, parent_email: pe || null });
         await Core.refreshAccount(); const nl = Core.S.learners.find(x => x.id === l.id); if (nl) { st.learner = nl; st.alias = nl.nickname; st.name = nl.certificate_name || nl.nickname; } QE.setTxt(msg, 'Saved ✓'); } catch (x) { e.textContent = errText(x); }
     } }, 'Save changes');
     const lb = el('input', { type: 'checkbox', id: 'setBoard' }); lb.checked = !!l.leaderboard_opt_in;
     lb.onchange = () => { if (lb.checked) modal('Show me on the leaderboard?', 'Your nickname and ranking score will be visible to other Atomic learners. Nothing else is shown. You can switch this off at any time.', [{ t: 'Keep me hidden', cls: 'ghost', on: () => { lb.checked = false; } }, { t: 'Show my nickname', cls: 'primary', on: async () => { await Backend.updateLearner(l.id, { leaderboard_opt_in: true }); await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); } }]); else Backend.updateLearner(l.id, { leaderboard_opt_in: false }).then(async () => { await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); }); };
     pageHero('ACCOUNT', 'Settings', `Signed in as ${Core.S.me.user.email}`, statCard(initialChip(44), st.alias, l.grade || `Cambridge ${Core.stageLabel()} learner`));
     m.append(
-      el('section', { class: 'card' }, el('h2', {}, 'Profile'), el('div', { class: 'form' }, field('Nickname', nick, LEADERBOARD ? 'Shown in the app and, if you switch it on, on the leaderboard.' : 'Shown in the app.'), field('Full name for the certificate', full), field('School year', gr), field('Country', country), field('School', school), field('School name', other))),
+      el('section', { class: 'card' }, el('h2', {}, 'Profile'), el('div', { class: 'form' }, field('Nickname', nick, LEADERBOARD ? 'Shown in the app and, if you switch it on, on the leaderboard.' : 'Shown in the app.'), field('Full name for the certificate', full), field('School year', gr), field('Your school', school))),
       el('section', { class: 'card' }, el('h2', {}, '📧 Parent or guardian'), el('div', { class: 'form' }, field('Parent or guardian’s email (optional)', parent, 'We send them one short email when you finish a unit. Leave empty to send nothing.'))),
       el('div', { class: 'btnrow' }, save, msg), e,
       !LEADERBOARD ? null : el('section', { class: 'card' }, el('h2', {}, 'Leaderboard'), el('label', { class: 'switch' }, lb, el('span', {}, el('b', {}, 'Show me on the leaderboard'), el('br'), el('small', { class: 'muted' }, 'Off by default. Only your nickname and ranking score are shown.')))),
@@ -2400,7 +2465,6 @@
         el('div', { class: 'btnrow' }, el('button', { class: 'btn small', type: 'button', id: 'exportBtn', onclick: async () => { const d = await Backend.exportData(); const r = await Core.saveFile('atomic-data-export.json', new Blob([JSON.stringify(d, null, 2)], { type: 'application/json' })); msg3.textContent = r === 'saved' ? 'Downloaded.' : 'Could not download.'; } }, '⬇ Download my data (JSON)'),
           el('button', { class: 'btn small ghost', type: 'button', id: 'deleteBtn', onclick: () => deleteAccountFlow() }, 'Delete account…')), el('p', { class: 'muted', id: 'msg3', 'aria-live': 'polite' })));
     const msg3 = m.querySelector('#msg3');
-    schoolPicker(country.value, school, other, l.school_id || (l.school_other ? 'other' : ''));
   }
   function deleteAccountFlow() {
     const inp = el('input', { type: 'text', id: 'delConfirm', placeholder: 'DELETE MY ACCOUNT' }); const e = errBox();
@@ -2536,7 +2600,7 @@
   const PUBLIC = { home: () => viewHome(), signin: viewSignin, signup: viewSignup, forgot: viewForgot, pricing: viewPricing, help: viewHelp, privacy: viewPrivacy, 'privacy-kids': viewKidsPrivacy, terms: viewTerms, cookies: viewCookies, verify: viewVerify, challenge: viewChallenge, games: viewGames };
   const viewAdmin = window.AtomicAdmin ? window.AtomicAdmin({ modal, toast, errText: e => errText(e), $main, render: () => render() }) : null;
   const ACCOUNT = { staff: viewStaff, teacher: viewStaff, admin: () => viewAdmin && viewAdmin() };
-  const LEARNER = { words: viewWords, home: viewHome, unit: viewUnit, test: viewTest, tests: viewTests, final: viewFinal, checkpoint: viewCheckpoint, level: viewLevel, result: viewResult, remedial: viewRemedial, map: viewMap, profile: viewProfile, topic: viewTopic, bank: viewBank, drill: viewDrill, board: viewBoard, cert: viewCert, settings: viewSettings };
+  const LEARNER = { words: viewWords, home: viewHome, unit: viewUnit, test: viewTest, tests: viewTests, final: viewFinal, checkpoint: viewCheckpoint, level: viewLevel, result: viewResult, remedial: viewRemedial, map: viewMap, profile: viewProfile, topic: viewTopic, bank: viewBank, drill: viewDrill, board: viewBoard, cert: viewCert, settings: viewSettings, plans: viewPlans };
   const GUEST_WALL = { board: 'Sign up free to join the leaderboard', cert: 'Sign up free to earn a certificate', result: 'Sign up free to take the Unit Test', remedial: 'Sign up free to take the Unit Test', settings: 'Sign up free to get your own account' };
   let renderSeq = 0;
   // Stages 7–9 practise on normal pages: leaving a practice or experiment page with work left shows a reminder.
@@ -2580,6 +2644,10 @@
     if (!me && ACCOUNT[r]) { location.replace('#signin'); return; }
     if (me && !st && needsLearner) { location.replace('#home'); return; }
     if (me && (r === 'signin' || r === 'signup')) { location.replace('#home'); return; }
+    // one stage per learner: a student studies only the courses they bought
+    const plainStudent = me && st && !isGuest() && !['marker', 'admin'].includes(me.profile.role) && !Core.S.tester;
+    if (plainStudent && !Core.myCourses().length && r !== 'plans' && !/^checkout-\d+$/.test(r) && !['settings', 'courses', 'terms', 'privacy', 'privacy-kids', 'help', 'verify'].includes(r) && !/^courses-/.test(r)) { location.replace('#plans'); return; }
+    if (plainStudent && Core.myCourses().length && !Core.enrolled(Core.STAGE)) { await Core.ensureOwnStage(); C = Core.C; st = Core.cur(); }
     shell({ toc: TOC_ROUTES(r) }); const m = $main();
     // a placeholder in the shape of the page if it takes a moment (removed as soon as real content arrives)
     let skel = null; const skT = setTimeout(() => { if (seq !== renderSeq || m.children.length) return; skel = Loading.skeleton(/^stage-|^(bank|board|tests|checkpoint|final|profile)$/.test(r) ? 'rows' : 'cards'); m.append(skel); }, 140);
@@ -2592,7 +2660,7 @@
       else if (cpm && st) { if (cpm[1] === 'cpx') await viewCpExam(cpm[2]); else await viewCpResult(cpm[2]); }
       else if (/^game-[a-z]+$/.test(r)) await viewGame(r.slice(5));
       else if (chm) { if (chm[1] === 'chl') await viewChList(chm[2]); else if (!st) go('signin'); else if (chm[1] === 'chx') await viewChExam(chm[2], chm[3]); else if (chm[1] === 'chp') await viewChPractice(chm[2], chm[3]); else await viewChResult(chm[2], chm[3]); }
-      else if (pm && st) { if (isGuest() && pm[1] !== 'stage') m.append(guestWall('Sign up free to continue')); else if (pm[1] === 'stage') await viewStage(+pm[2]); else if (pm[1] === 'checkout') viewCheckout(+pm[2]); else if (pm[1] === 'fx') await viewFinalExam(pm[2]); else await viewFinalResult(pm[2]); }
+      else if (pm && st) { if (isGuest() && pm[1] !== 'stage') m.append(guestWall('Sign up free to continue')); else if (pm[1] === 'stage') await viewStage(+pm[2]); else if (pm[1] === 'checkout') await viewCheckout(+pm[2]); else if (pm[1] === 'fx') await viewFinalExam(pm[2]); else await viewFinalResult(pm[2]); }
       else if (st && isGuest() && GUEST_WALL[r]) m.append(guestWall(GUEST_WALL[r]));
       else if (st && LEARNER[r]) await LEARNER[r](); else if (ACCOUNT[r]) await ACCOUNT[r](); else if (PUBLIC[r]) await PUBLIC[r](); else viewHome();
     } catch (e) { console.error(e); if (seq === renderSeq) m.append(el('div', { class: 'banner adv', role: 'alert' }, 'Something went wrong loading this page. ', el('button', { class: 'btn small', type: 'button', onclick: () => render() }, 'Try again'))); }

@@ -15,8 +15,8 @@ def silences(path):
 def signup(pg):
     pg.evaluate("location.hash='signup'"); pg.wait_for_timeout(300)
     pg.fill('#suName', 'Vic Video'); pg.fill('#suEmail', 'video@example.com'); pg.fill('#suPw', 'password123'); pg.click('#suNext1'); pg.wait_for_selector('#suYear')
-    pg.select_option('#suYear', index=3); pg.select_option('#suGrade', index=2); pg.click('#suNext2'); pg.wait_for_selector('#suCountry')
-    pg.select_option('#suCountry', 'SG'); pg.wait_for_timeout(200); pg.select_option('#suSchool', index=1); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home'")
+    pg.select_option('#suYear', index=3); pg.select_option('#suGrade', 'Year 7 / Grade 6'); pg.fill('#suSchool', 'Test School'); pg.click('#suNext2'); pg.wait_for_selector('.su-stage')
+    pg.click('.su-stage[data-stage="7"]'); pg.click('#suNext3'); pg.wait_for_selector('.su-plan'); pg.click('.su-plan[data-plan="7"]'); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home'")
 FILL = """(sid)=>{const st=Core.cur(); for (const s of Core.C.sections){ if (s.id===sid) break; const vs=Core.vstate(st,s.id);
   s.stops.forEach(x=>vs.stops[x.id]={done:true,ok:true,tries:1,sim:true}); vs.completed=true; vs.pos=0;
   s.req.forEach(q=>st.items[q.id]={done:true,ok:true,tries:1,score:1,sim:true}); } Core.persist();}"""

@@ -33,8 +33,8 @@ CHECK = r"""
 def signup(pg):
     pg.evaluate("location.hash='signup'"); pg.wait_for_timeout(300)
     pg.fill('#suName', 'Mo Bile'); pg.fill('#suEmail', 'mobile@example.com'); pg.fill('#suPw', 'password123'); pg.click('#suNext1'); pg.wait_for_selector('#suYear')
-    pg.select_option('#suYear', index=3); pg.select_option('#suGrade', index=2); pg.click('#suNext2'); pg.wait_for_selector('#suCountry')
-    pg.select_option('#suCountry', 'SG'); pg.wait_for_timeout(200); pg.select_option('#suSchool', index=1); pg.check('#suTerms')
+    pg.select_option('#suYear', index=3); pg.select_option('#suGrade', 'Year 7 / Grade 6'); pg.fill('#suSchool', 'Test School'); pg.click('#suNext2'); pg.wait_for_selector('.su-stage')
+    pg.click('.su-stage[data-stage="7"]'); pg.click('#suNext3'); pg.wait_for_selector('.su-plan'); pg.click('.su-plan[data-plan="7"]'); pg.check('#suTerms')
     ok(not pg.evaluate(CHECK), 'M0 The last sign-up step fits the phone screen')
     pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home'"); pg.wait_for_timeout(500)
 def unlock(pg):
@@ -63,6 +63,7 @@ with sync_playwright() as p:
         signup(pg); unlock(pg)
         if dark: pg.evaluate("AtomicTheme.setMode('dark')")
         run('learner', LEARN)
+        pg.evaluate("Backend.devMultiStage(Core.cur().id); Core.S.multiStage = true")   # one stage per learner: this test also checks Stage 3 screens, as a tester
         pg.evaluate("location.hash='checkout-3'"); pg.wait_for_timeout(700)
         if pg.query_selector('#leaveAnyway'): pg.click('#leaveAnyway'); pg.wait_for_timeout(700)   # the practice room asks before letting a learner leave
         pg.click('#payBtn'); pg.wait_for_function("Core.STAGE===3", timeout=8000); pg.wait_for_timeout(700); unlock(pg)

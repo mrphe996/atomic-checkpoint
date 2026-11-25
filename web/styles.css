@@ -1779,3 +1779,22 @@ body.tiny .lessonbody .qfig svg{max-height:320px}
 .tmenu .tshowall{background:none;border:0;font:inherit;font-size:13.5px;font-weight:700;color:var(--link,#0149AF);text-align:left;cursor:pointer}
 .tmenu .tbrowse{font-size:13px;color:var(--muted);border-top:1px dashed var(--line2);margin-top:4px;padding-top:8px}
 .tmenu .tnext{background:#FFF6DC;border-radius:10px}
+/* sign-up: choose ONE stage, then a plan (one subject or the whole stage) */
+.su-stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.su-stage{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:12px 12px 10px;border:2px solid var(--line2,#D6DEE9);border-radius:14px;background:#fff;cursor:pointer;text-align:left;font:inherit;color:var(--ink)}
+.su-stage b{font-size:17px}.su-stage small{font-size:12px;color:var(--muted)}.su-stage .su-subj{font-size:15px;color:var(--ink)}
+.su-stage:hover{border-color:#9DB7D5}.su-stage.on{border-color:var(--blue,#0149AF);background:#EAF1FC;box-shadow:0 0 0 3px rgba(1,73,175,.15)}
+.su-stage.off{opacity:.45;cursor:not-allowed}
+.su-tag{position:absolute;top:-9px;right:8px;background:#F3BF69;color:#4A3300;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:8px;letter-spacing:.03em}
+.su-plans{display:flex;flex-direction:column;gap:10px}
+.su-plan{display:flex;align-items:center;gap:12px;padding:12px 14px;border:2px solid var(--line2,#D6DEE9);border-radius:14px;background:#fff;cursor:pointer;text-align:left;font:inherit;color:var(--ink)}
+.su-plan.on{border-color:var(--blue,#0149AF);background:#EAF1FC;box-shadow:0 0 0 3px rgba(1,73,175,.15)}
+.su-plan.bundle{border-style:dashed}.su-plan.bundle.on{border-style:solid}
+.su-plan.off{opacity:.45;cursor:not-allowed}
+.su-pi{font-size:24px;width:32px;text-align:center}.su-pt{flex:1;display:flex;flex-direction:column}.su-pt small{color:var(--muted);font-size:12.5px}.su-pp{font-size:16px;white-space:nowrap}
+.su-total{font-size:17px}
+@media (max-width:520px){.su-stages{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* move-on progress (one stage per learner) */
+.mvbar{display:grid;grid-template-columns:150px 1fr auto;gap:10px;align-items:center;margin:6px 0}
+.mvbar .pbar{height:10px;border-radius:6px;background:#E3EAF3;overflow:hidden;display:block}.mvbar .pbar i{display:block;height:100%;background:var(--blue,#0149AF)}
+.tmenu .tadd{font-size:14px}

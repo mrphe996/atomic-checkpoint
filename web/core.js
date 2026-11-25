@@ -100,7 +100,7 @@
     const own = S.learners.find(l => l.user_id === S.me.user.id) || S.learners[0];
     let wantL = null; try { wantL = sessionStorage.getItem('atomic.learner'); } catch (e) { }
     const pick = (wantL && S.learners.find(l => l.id === wantL)) || own;
-    if (pick) { await selectLearner(pick.id); await adoptGuest(); }
+    if (pick) { await selectLearner(pick.id); await adoptGuest(); await ensureOwnStage(); }
     return S;
   }
 
@@ -140,6 +140,7 @@
     try { S.states = (Backend.allStates ? await Backend.allStates(id) : {}) || {}; } catch (e) { S.states = {}; }
     try { S.enrolments = Backend.enrolments ? await Backend.enrolments(id) : []; } catch (e) { S.enrolments = []; }
     try { S.tester = Backend.isTester ? await Backend.isTester(id) : false; } catch (e) { S.tester = false; }
+    S.multiStage = !!(Backend.isMultiStage && Backend.isMultiStage(id));   // preview only (automated tests)
     S.profiles = { [id]: st }; S.current = id; S.states[UNIT()] = strip(st); lastXp = xpNow();
     try { sessionStorage.setItem('atomic.learner', id); } catch (e) { }
     return st;
@@ -219,10 +220,47 @@
     return out;
   }
 
-  /* ---------- stages: the learner's own stage is included; other stages need an enrolment ---------- */
+  /* ---------- one stage per learner (B2C plans) ----------
+     A learner studies ONE stage level (learners.stage = 1–9) and opens only the courses they bought for it:
+     Science (key N), Mathematics (10 + N), ESL (20 + N), one by one or as the whole-stage bundle.
+     Another level opens only after MOVE_ON % of the lessons and Unit Tests of the current level are done (the server checks the tests). */
+  const MOVE_ON = 80;
+  const levelOf = g => g % 10;
+  const subjectKeys = lv => [lv, 10 + lv, 20 + lv].filter(k => STAGES.includes(k));
   const learnerStage = () => { const st = cur(); return (st && st.learner && st.learner.stage) || 7; };
-  const enrolled = stage => stageLocked(stage) ? false : S.guest ? stage === 7 : (stage === learnerStage() || (S.enrolments || []).some(e => e.stage === stage && e.status !== 'canceled'));
-  async function enrol(stage, amount) { const st = cur(); await Backend.enrol(st.id, stage, amount); S.enrolments = await Backend.enrolments(st.id); return true; }
+  const myCourses = () => (S.enrolments || []).filter(e => e.status !== 'canceled').map(e => e.stage);
+  const enrolled = stage => stageLocked(stage) ? false : S.guest ? stage === 7 : myCourses().includes(stage);
+  async function enrol(stage, amount) { const st = cur(); await Backend.enrol(st.id, stage, amount); S.enrolments = await Backend.enrolments(st.id);
+    const L = await Backend.learners().catch(() => null); const l = L && L.find(x => x.id === st.id); if (l) { st.learner = l; S.learners = L; } return true; }
+  // progress of one course (key g) or of the learner's whole level: % of lessons finished and % of Unit Tests passed
+  const IDX = {};
+  async function courseIndex(g) { if (g === STAGE && INDEX) return INDEX; if (!IDX[g]) { try { const r = await fetch(`content/stage${g}.json`); IDX[g] = r.ok ? await r.json() : { units: [] }; } catch (e) { IDX[g] = { units: [] }; } } return IDX[g]; }
+  async function courseProgress(g, st0) {
+    const st = st0 || cur(); const ix = await courseIndex(g); const units = (ix.units || []).filter(u => u.ready !== false);
+    let secs = 0, done = 0, passed = 0;
+    for (const u of units) {
+      const key = `stage${g}-unit${String(u.n).padStart(2, '0')}`; const sv = (g === STAGE && u.n === UNO ? st.video : ((S.states[key] || {}).video)) || {};
+      for (const s of u.sections || []) { secs++; if ((sv[s.id] || {}).completed) done++; }
+      if (st && st.results && st.results[key]) passed++;
+    }
+    return { lessons: secs ? Math.round(done / secs * 100) : 0, tests: units.length ? Math.round(passed / units.length * 100) : 0, units: units.length, passed, secs, done };
+  }
+  async function levelProgress(lv) {
+    lv = lv || learnerStage(); const keys = myCourses().filter(k => levelOf(k) === lv); if (!keys.length) return { lessons: 0, tests: 0, ready: false, keys };
+    let secs = 0, done = 0, units = 0, passed = 0;
+    for (const k of keys) { const p = await courseProgress(k); secs += p.secs; done += p.done; units += p.units; passed += p.passed; }
+    const lessons = secs ? Math.round(done / secs * 100) : 0, tests = units ? Math.round(passed / units * 100) : 0;
+    return { lessons, tests, ready: lessons >= MOVE_ON && tests >= MOVE_ON, keys };
+  }
+  // may the learner buy course g? the same level: always; another level: only when the current level is MOVE_ON % done
+  async function canBuy(g) { if (S.guest) return false; if (S.tester || S.multiStage || isAdminMe(S.me)) return true; if (stageLocked(g)) return false; if (!myCourses().length) return true; if (levelOf(g) === learnerStage()) return true; return (await levelProgress()).ready; }
+  // after signing in, open one of the learner's own courses
+  async function ensureOwnStage() {
+    if (S.guest || !cur() || isAdminMe(S.me) || S.tester) return;
+    const mine = myCourses().filter(k => STAGES.includes(k) && !stageLocked(k)); if (!mine.length || mine.includes(STAGE)) return;
+    const lv = learnerStage(); const best = mine.find(k => k === lv) || mine.find(k => levelOf(k) === lv) || mine[0];
+    try { await switchStage(best); } catch (e) { }
+  }
 
   /* ---------- exam room clock (the server keeps the official start time) ---------- */
   async function startClock(unit, form) {
@@ -287,8 +325,9 @@
     if (!list.length) return null;
     return { score: list.reduce((a, b) => a + b, 0) / list.length, units: list.length };
   }
-  const stageComplete = st => Object.keys(st.results || {}).filter(k => k.startsWith(`stage${STAGE}-unit`)).length >= unitCount();
-  async function certificate(st) { if (S.guest) return null; if (st.cert) return st.cert; if (!stageComplete(st)) return null; await refreshFinal(); if (!finalPassed()) return null; st.cert = await Backend.issueCertificate(st.id, unitCount(), STAGE); return st.cert; }
+  // certificate: MOVE_ON % of the Unit Tests passed (the server checks) and MOVE_ON % of the lessons finished
+  const stageComplete = st => Object.keys(st.results || {}).filter(k => k.startsWith(`stage${STAGE}-unit`)).length >= Math.ceil(unitCount() * MOVE_ON / 100);
+  async function certificate(st) { if (S.guest) return null; if (st.cert) return st.cert; if (!stageComplete(st)) return null; if ((await courseProgress(STAGE, st)).lessons < MOVE_ON) return null; st.cert = await Backend.issueCertificate(st.id, unitCount(), STAGE); return st.cert; }
   function competitionRank(rows) {
     rows.sort((a, b) => b.score - a.score);
     let prev = null, rank = 0; rows.forEach((r, i) => { const k = Math.round(r.score * 100); if (k !== prev) { rank = i + 1; prev = k; } r.rank = rank; });
@@ -369,7 +408,7 @@
   window.Core = {
     get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; }, get STAGE() { return STAGE; }, STAGES, switchStage, stageLocked, LOCKED, PRIMARY, levelName, get IS_PRIMARY() { return PRIMARY(STAGE); }, MATHS, stageNo, subjectOf, stageLabel, stageName, unitCount, get IS_MATHS() { return MATHS(STAGE); }, ESL, get IS_ESL() { return ESL(STAGE); },
     unitId, unitReady, switchUnit, loadIndex, peekUnit, cached, loadFinal, get FINAL() { return FINAL; },
-    xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, startClock, refreshFinal, finalPassed, submitFinal, loadCp, refreshCp, dropCache, withOv, submitCp, activity,
+    xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, MOVE_ON, levelOf, subjectKeys, myCourses, courseProgress, levelProgress, canBuy, ensureOwnStage, startClock, refreshFinal, finalPassed, submitFinal, loadCp, refreshCp, dropCache, withOv, submitCp, activity,
     boot, selectLearner, leaveLearner, refreshAccount, cur, persist, flush, canOpen,
     sec, secs, vstate, stopDone, stopsLeft, videoDone, reqLeft, secDone, secLock, firstMissingIn, missingForTest,
     attempts, lastAttempt, passed, isPass, nextForm, remKey, remLeft, testState, submitTest, refreshAttempts, refreshResults,

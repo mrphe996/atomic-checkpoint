@@ -14,7 +14,7 @@ with sync_playwright() as p:
     ok(len(W) > 600 and {w['subj'] for w in W} == {'science', 'maths', 'english'} and {w['stage'] for w in W} == {1, 2, 3, 4, 5, 6}, f'G3 Word bank covers every subject and Stages 1–6 ({len(W)} words)')
     byw = {w['w']: w for w in W}
     # sign up so the level is saved with the learner
-    pg.evaluate("""(async()=>{ await Backend.signUp({email:'gm@example.com',password:'password123',name:'Gia Game',birthYear:2016,grade:'Year 4',country:'VN',schoolOther:'Atomic'}); await Core.boot(Core.C); location.hash='games'; })()""")
+    pg.evaluate("""(async()=>{ await Backend.signUp({email:'gm@example.com',password:'password123',name:'Gia Game',birthYear:2016,grade:'Year 4',country:'VN',schoolOther:'Atomic',tester:true}); await Core.boot(Core.C); location.hash='games'; })()""")
     pg.wait_for_timeout(2500)
     ok(pg.query_selector('nav a[href="#games"]') is None, 'G4 Games are not in the top menu (they live inside the course)')
     pg.click('#gStage2'); pg.wait_for_timeout(300); pg.click('#gSubj-english'); pg.wait_for_timeout(300)

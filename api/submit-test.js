@@ -7,7 +7,7 @@ import { isChallenge, practised } from './challenge.js';
 
 const stageOf = unit => Number((String(unit).match(/^stage(\d+)/) || [0, 0])[1]);
 export async function hasStage(learner, unit, f) {
-  const s = stageOf(unit); if (!s || s === (learner.stage || 7)) return true;
+  const s = stageOf(unit); if (!s) return true;   // one stage per learner: only the courses they bought (sign-up no longer opens a course for free)
   const e = await db(`enrolments?learner_id=eq.${learner.id}&stage=eq.${s}&status=eq.active&select=stage`, {}, f);
   return !!(e && e.length);
 }

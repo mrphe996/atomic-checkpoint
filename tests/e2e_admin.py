@@ -7,7 +7,7 @@ with sync_playwright() as p:
     b = p.chromium.launch(executable_path='/usr/bin/google-chrome'); pg = b.new_page(viewport={'width': 1360, 'height': 1000}, reduced_motion='reduce'); errs = []
     pg.on('pageerror', lambda e: errs.append(str(e)))
     pg.goto(BASE + '?reset=1'); pg.wait_for_timeout(700)
-    pg.evaluate("""(async()=>{ await Backend.signUp({email:'adm@example.com',password:'password123',name:'Ada Admin',birthYear:2011,grade:'Year 9',country:'VN',schoolOther:'Atomic'}); await Core.boot(Core.C); location.hash='checkout-19'; })()""")
+    pg.evaluate("""(async()=>{ await Backend.signUp({email:'adm@example.com',password:'password123',name:'Ada Admin',birthYear:2011,grade:'Year 9',country:'VN',schoolOther:'Atomic',tester:true}); await Core.boot(Core.C); location.hash='checkout-19'; })()""")
     pg.wait_for_timeout(1500); pg.click('#payBtn'); pg.wait_for_timeout(1500)
     ok(pg.evaluate("Core.STAGE") == 19 and pg.evaluate("Core.unitCount()") == 15, 'A1 Enrolled in Mathematics Stage 9 (15 units)')
     # a learner is refused, an admin gets the console

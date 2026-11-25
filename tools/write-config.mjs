@@ -9,6 +9,8 @@ const cfg = {
   apiBase: e('API_BASE', '/api'), directSignup: e('DIRECT_SIGNUP', 'off') === 'on', signupUrl: e('SIGNUP_URL', ''), supabaseUrl: e('SUPABASE_URL'), supabaseAnonKey: e('SUPABASE_ANON_KEY'),
   paddle: { env: e('PADDLE_ENV', 'sandbox'), token: e('PADDLE_CLIENT_TOKEN'), prices: { monthly: e('PADDLE_PRICE_MONTHLY'), yearly: e('PADDLE_PRICE_YEARLY') } },
   priceLabels: { monthly: e('PRICE_LABEL_MONTHLY', '£9.99 / month'), yearly: e('PRICE_LABEL_YEARLY', '£79 / year') },
+  // B2C plans: one subject of a stage, or the whole stage (all its subjects). Labels only until the real checkout is connected.
+  stagePrice: e('COURSE_PRICE', 'US$49'), bundlePrice: e('BUNDLE_PRICE', 'US$119'),
   // stages learners cannot open yet (11–19 = Mathematics Stages 1–9, 22–29 = ESL Stages 2–9); set LOCKED_STAGES= (empty) to open them
   lockedStages: e('LOCKED_STAGES', process.env.LOCKED_STAGES === '' ? '' : '11,12,13,14,15,16,17,18,19,22,23,24,25,26,27,28,29').split(',').map(x => Number(x.trim())).filter(Boolean),
   supportEmail: e('SUPPORT_EMAIL', 'support@example.com'), legalVersion: '2026-11-draft',

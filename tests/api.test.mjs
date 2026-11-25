@@ -28,7 +28,7 @@ const PARENT = '00000000-0000-0000-0000-00000000000a', OTHER = '00000000-0000-00
 const KID = '10000000-0000-0000-0000-000000000001';
 function fakeSupabase() {
   const T = { profiles: [{ id: PARENT, role: 'parent', weekly_report: true, display_name: 'Ana' }, { id: OTHER, role: 'parent' }, { id: MARKER, role: 'marker' }],
-    learners: [{ id: KID, parent_id: PARENT, nickname: 'Neutron', stage: 7 }], progress: [], attempts: [], subscriptions: [], consents: [], reports: [], notifications: [], unit_results: [], certificates: [], events: [], deleted: [], test_starts: [], enrolments: [] };
+    learners: [{ id: KID, parent_id: PARENT, nickname: 'Neutron', stage: 7 }], progress: [], attempts: [], subscriptions: [], consents: [], reports: [], notifications: [], unit_results: [], certificates: [], events: [], deleted: [], test_starts: [], enrolments: [{ learner_id: KID, stage: 7, status: 'active' }] };
   const tokens = { tA: PARENT, tB: OTHER, tM: MARKER };
   const split = s => { const out = []; let d = 0, cur = ''; for (const ch of s) { if (ch === '(') d++; if (ch === ')') d--; if (ch === ',' && d === 0) { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out; };
   const cond = (row, c) => { const g = /^(and|or)\((.*)\)$/.exec(c); if (g) return g[1] === 'and' ? split(g[2]).every(x => cond(row, x)) : split(g[2]).some(x => cond(row, x));
@@ -182,7 +182,7 @@ test('signup: a student creates a confirmed account with school, grade and an op
 
 test('submit-test: a student can submit for themself only after parental consent', async () => {
   const { T, f } = fakeSupabase(); const STU = '00000000-0000-0000-0000-0000000000d1', LID = '10000000-0000-0000-0000-0000000000d1';
-  T.profiles.push({ id: STU, role: 'student' }); T.learners.push({ id: LID, user_id: STU, parent_id: null, nickname: 'Kid', consent_status: 'pending' });
+  T.profiles.push({ id: STU, role: 'student' }); T.learners.push({ id: LID, user_id: STU, parent_id: null, nickname: 'Kid', consent_status: 'pending' }); T.enrolments.push({ learner_id: LID, stage: 7, status: 'active' });
   const tok = 'tS'; const f2 = async (url, init = {}) => { if (String(url).endsWith('/auth/v1/user') && (init.headers.Authorization || '').endsWith(tok)) return { ok: true, status: 200, json: async () => ({ id: STU }) }; return f(url, init); };
   const body = { learnerId: LID, unit: 'stage7-unit04', form: 'A', answers: {}, clientKey: 'ks' };
   assert.equal((await submit.handle(req('POST', tok, body), f2))[0], 403, 'pending consent → not allowed');
@@ -231,10 +231,10 @@ test('end-of-year exam: needs Level 10, one attempt per paper, marked out of 50'
   } finally { process.env.BILLING = 'paddle'; }
 });
 
-test('a stage the learner is not enrolled in is refused', async () => {
+test('a course the learner has not bought is refused (learners.stage alone opens nothing)', async () => {
   const { T, f } = fakeSupabase(); process.env.BILLING = 'off';
   try {
-    T.learners[0].stage = 8;
+    T.enrolments.length = 0;   // one stage per learner: the learner's stage level alone opens nothing – only bought courses
     const [s, b] = await submit.handle(req('POST', 'tA', { learnerId: KID, unit: 'stage7-unit03', form: 'A', answers: {}, clientKey: 'e1' }), f);
     assert.equal(s, 402); assert.equal(b.error, 'not_enrolled');
     T.enrolments.push({ learner_id: KID, stage: 7, status: 'active' });

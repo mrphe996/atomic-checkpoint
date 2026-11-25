@@ -10,9 +10,9 @@ with sync_playwright() as p:
     pg.goto(BASE + '?reset=1'); pg.wait_for_selector('#heroStart')
     go(pg, 'signup')
     pg.fill('#suName', 'Pia Paragraph'); pg.fill('#suEmail', 'para@example.com'); pg.fill('#suPw', 'password123'); pg.click('#suNext1'); pg.wait_for_selector('#suYear')
-    pg.select_option('#suYear', index=3); pg.select_option('#suGrade', index=2); pg.click('#suNext2'); pg.wait_for_selector('#suCountry')
-    pg.select_option('#suCountry', 'SG'); pg.wait_for_timeout(200); pg.select_option('#suSchool', index=1); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home'")
-    go(pg, 'checkout-8'); pg.click('#payBtn'); pg.wait_for_function("Core.STAGE===8", timeout=8000)
+    pg.select_option('#suYear', index=3); pg.select_option('#suGrade', 'Year 7 / Grade 6'); pg.fill('#suSchool', 'Test School'); pg.click('#suNext2'); pg.wait_for_selector('.su-stage')
+    pg.click('.su-stage[data-stage="8"]'); pg.click('#suNext3'); pg.wait_for_selector('.su-plan'); pg.click('.su-plan[data-plan="8"]'); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home'")
+    pg.wait_for_function("Core.STAGE===8", timeout=8000)   # one stage per learner: this learner signs up for Stage 8
     pg.evaluate("Core.switchUnit(7)"); pg.wait_for_function("Core.UNO===7 && Core.C && Core.C.sections[0].ext", timeout=8000)
     go(pg, 'profile'); pg.click('#simAll'); pg.wait_for_timeout(900)
     go(pg, 'ex-7-1'); pg.wait_for_selector('.qcard')

@@ -15,7 +15,7 @@ with sync_playwright() as p:
     pg.click('#chFolder-junior'); pg.wait_for_timeout(1200)
     ok(len(pg.query_selector_all('.chpaper')) == 6 and 'Sign up' in pg.inner_text('#chPapers'), 'C2 A competition lists its papers; sitting one needs an account')
     # sign up
-    pg.evaluate("""(async()=>{ await Backend.signUp({email:'mc@example.com',password:'password123',name:'Mia Challenge',birthYear:2013,grade:'Year 7',country:'VN',schoolOther:'Atomic'}); await Core.boot(Core.C); location.hash='challenge'; })()""")
+    pg.evaluate("""(async()=>{ await Backend.signUp({email:'mc@example.com',password:'password123',name:'Mia Challenge',birthYear:2013,grade:'Year 7',country:'VN',schoolOther:'Atomic',tester:true}); await Core.boot(Core.C); location.hash='challenge'; })()""")
     pg.wait_for_timeout(2500)
     ok(pg.query_selector('nav a[href="#challenge"]') is None and pg.query_selector('nav a[href="#games"]') is None, 'C3 Neither Maths Challenge nor Games is in the top menu')
     # timed paper: every answer right → Gold

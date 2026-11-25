@@ -1,5 +1,6 @@
 // POST /api/signup  – a student creates their own account (test phase: no confirmation email needed)
-// { name, email, password, birthYear, grade, country, schoolId? | schoolOther?, parentEmail? }
+// { name, email, password, birthYear, grade, stage (1–9), schoolOther (the school name the student typed), country?, parentEmail? }
+// The courses of that stage are bought next with enrol_stage (one stage per learner).
 // Creates the login (already confirmed) and the student's learner profile. A parent's email is optional:
 // if given, the parent gets an email each time the student finishes a unit.
 // Turn off with DIRECT_SIGNUP=off once a real email sender is set up.
@@ -27,6 +28,7 @@ export async function handle(req, f = fetch) {
   const parentEmail = String(b.parentEmail || '').trim().toLowerCase();
   if (parentEmail && (!EMAIL.test(parentEmail) || parentEmail.length > 200)) return [400, { error: 'bad_parent_email' }];
   if (parentEmail && parentEmail === e) return [400, { error: 'parent_email_same' }];
+  const stage = [1, 2, 3, 4, 5, 6, 7, 8, 9].includes(Number(b.stage)) ? Number(b.stage) : 7;
   const nickname = name.split(' ')[0].slice(0, 24).padEnd(2, '.');
 
   const key = env('SUPABASE_SERVICE_ROLE_KEY');
@@ -41,7 +43,7 @@ export async function handle(req, f = fetch) {
   }
   await db('learners', { method: 'POST', prefer: 'return=minimal', body: {
     user_id: j.id, nickname, certificate_name: name, birth_year: by, grade, country, school_id: schoolId, school_other: schoolOther,
-    parent_email: parentEmail || null, consent_status: 'not_required' } }, f);
+    parent_email: parentEmail || null, consent_status: 'not_required', stage } }, f);
   await db('consents', { method: 'POST', prefer: 'return=minimal', body: [{ parent_id: j.id, kind: 'terms', version: 'signup' }, { parent_id: j.id, kind: 'privacy', version: 'signup' }] }, f);
   return [201, { created: true }];
 }

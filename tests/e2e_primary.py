@@ -18,9 +18,10 @@ with sync_playwright() as p:
     pg.goto(BASE + '?reset=1'); pg.wait_for_selector('#heroStart')
     pg.evaluate("location.hash='signup'"); pg.wait_for_timeout(300)
     pg.fill('#suName', 'Pia Primary'); pg.fill('#suEmail', 'pia@example.com'); pg.fill('#suPw', 'password123'); pg.click('#suNext1'); pg.wait_for_selector('#suYear')
-    pg.select_option('#suYear', index=3); pg.select_option('#suGrade', index=2); pg.click('#suNext2'); pg.wait_for_selector('#suCountry')
-    pg.select_option('#suCountry', 'SG'); pg.wait_for_timeout(200); pg.select_option('#suSchool', index=1); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home'")
+    pg.select_option('#suYear', index=3); pg.select_option('#suGrade', 'Year 7 / Grade 6'); pg.fill('#suSchool', 'Test School'); pg.click('#suNext2'); pg.wait_for_selector('.su-stage')
+    pg.click('.su-stage[data-stage="7"]'); pg.click('#suNext3'); pg.wait_for_selector('.su-plan'); pg.click('.su-plan[data-plan="7"]'); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home'")
     ok(pg.query_selector('#stageSwitch .sw[data-stage="6"]') is not None, 'P1 The course switcher offers Primary Science Stage 6')
+    pg.evaluate("Backend.devMultiStage(Core.cur().id); Core.S.multiStage = true")   # one stage per learner: this test studies several stages as a tester
     pg.evaluate("location.hash='checkout-6'"); pg.wait_for_timeout(600); pg.click('#payBtn'); pg.wait_for_function("Core.STAGE===6", timeout=10000); pg.wait_for_timeout(600)
     ok(pg.evaluate("Core.IS_PRIMARY && Core.unitCount()===6 && Core.INDEX.units.every(u => u.ready)"), 'P2 Stage 6 has 6 units, all open')
     s = pg.evaluate("Core.C.sections.map(s => ({id: s.id, req: s.req.length, say: s.req.filter(q => q.type==='say').length, aud: s.req.filter(q => q.audio && q.type!=='say').length, lab: !!s.lab, vocab: (s.vocab||[]).length, stops: s.stops.length, src: s.video.src}))")

@@ -7,8 +7,8 @@ def ok(c, m): LOG.append(('PASS' if c else 'FAIL') + '  ' + m); print(LOG[-1])
 def signup(pg):
     pg.evaluate("location.hash='signup'"); pg.wait_for_timeout(300)
     pg.fill('#suName', 'Uma Interface'); pg.fill('#suEmail', 'ui@example.com'); pg.fill('#suPw', 'password123'); pg.click('#suNext1'); pg.wait_for_selector('#suYear')
-    pg.select_option('#suYear', index=3); pg.select_option('#suGrade', index=2); pg.click('#suNext2'); pg.wait_for_selector('#suCountry')
-    pg.select_option('#suCountry', 'SG'); pg.wait_for_timeout(200); pg.select_option('#suSchool', index=1); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home'")
+    pg.select_option('#suYear', index=3); pg.select_option('#suGrade', 'Year 7 / Grade 6'); pg.fill('#suSchool', 'Test School'); pg.click('#suNext2'); pg.wait_for_selector('.su-stage')
+    pg.click('.su-stage[data-stage="7"]'); pg.click('#suNext3'); pg.wait_for_selector('.su-plan'); pg.click('.su-plan[data-plan="7"]'); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home'")
 with sync_playwright() as p:
     b = p.chromium.launch(executable_path='/usr/bin/google-chrome'); pg = b.new_page(reduced_motion='reduce', viewport={'width': 1300, 'height': 900}); errs = []
     pg.on('pageerror', lambda e: errs.append(str(e)))
@@ -32,6 +32,10 @@ with sync_playwright() as p:
     pg.evaluate("location.hash='courses-maths'"); pg.wait_for_timeout(700)
     ok('COMING SOON' in pg.inner_text('#stageCard19, #course-maths-ls9') if pg.query_selector('#stageCard19, #course-maths-ls9') else 'coming soon' in pg.inner_text('.subjtabs').lower(), 'U10 The course list shows Mathematics as coming soon')
     # enrol Stage 8 and switch through the switcher
+    pg.evaluate("location.hash='checkout-8'"); pg.wait_for_timeout(900)
+    ok(pg.query_selector('#stageLocked') is not None and pg.query_selector('#payBtn') is None and '80%' in pg.inner_text('#stageLocked'), 'U25 One stage per learner: Stage 8 is locked for a Stage 7 learner until 80% is done')
+    pg.evaluate("location.hash='stage-9'"); pg.wait_for_timeout(900); ok(pg.query_selector('#stageLocked') is not None, 'U26 Another stage page shows the lock and the 80% progress')
+    pg.evaluate("Backend.devMultiStage(Core.cur().id); Core.S.multiStage = true")   # the rest of this test studies several stages as a tester
     pg.evaluate("location.hash='checkout-8'"); pg.wait_for_timeout(600); pg.click('#payBtn'); pg.wait_for_function("Core.STAGE===8", timeout=8000)
     pg.evaluate("location.hash='bank'"); pg.wait_for_timeout(900)
     pg.evaluate("document.querySelector('#stageSwitch .sw[data-stage=\"7\"]').click()"); pg.wait_for_function("Core.STAGE===7", timeout=8000); pg.wait_for_timeout(500)
@@ -73,7 +77,7 @@ with sync_playwright() as p:
     # the sidebar course menu lists only the learner's own courses (3 at a time) and suggests the next stage only after finishing
     pg.set_viewport_size({'width': 1300, 'height': 900}); pg.evaluate("location.hash='u-1'"); pg.wait_for_selector('#tocCourse'); pg.click('#tocCourse'); pg.wait_for_timeout(300)
     one = pg.eval_on_selector_all('.tcoursebox .tmenu .it', "els=>els.filter(e=>e.offsetParent).length")
-    pg.evaluate("Core.S.enrolments=[8,9,3,4,5].map(s=>({stage:s,status:'active'}))"); pg.evaluate("location.hash='home'"); pg.wait_for_timeout(500)
+    pg.evaluate("Core.S.enrolments=[7,8,9,3,4,5].map(s=>({stage:s,status:'active'}))"); pg.evaluate("location.hash='home'"); pg.wait_for_timeout(500)
     pg.evaluate("location.hash='u-1'"); pg.wait_for_selector('#tocCourse'); pg.wait_for_timeout(400); pg.click('#tocCourse'); pg.wait_for_timeout(300)
     shown = pg.eval_on_selector_all('.tcoursebox .tmenu > a.it', "els=>els.filter(e=>e.offsetParent).map(e=>e.getAttribute('href'))")
     ok(one <= 2 and len(shown) == 4 and shown[0] == '#stage-8' and shown[-1] == '#courses' and pg.query_selector('.tshowall') is not None and pg.query_selector('.tnext') is None,
