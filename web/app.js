@@ -121,7 +121,7 @@
         document.addEventListener('click', () => { menu.hidden = true; }, { once: true });
         right.append(s, lv, bell(), el('span', { class: 'userwrap' }, av, menu));
       }
-      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('challenge', 'Maths Challenge', area === 'challenge'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
+      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
       if (Core.IS_PRIMARY) { nav.splice(2, 0, navLink('words', '📒 My words', area === 'words')); nav[3].textContent = 'Questions'; nav[4].textContent = 'Tests'; }
     } else if (me) {
       right.append(modeBtn(), bell(), el('button', { class: 'btn small', type: 'button', id: 'signOut', onclick: async () => { await Backend.signOut(); await Core.boot(C); go('home'); } }, 'Sign out'));
@@ -130,7 +130,7 @@
       if (me.profile.role === 'admin') nav.push(navLink('admin', 'Admin', area === 'admin'));
     } else {
       right.append(modeBtn(), el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
-      nav = [navLink('home', 'Home', area === 'home'), navLink('challenge', 'Maths Challenge', area === 'challenge'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
+      nav = [navLink('home', 'Home', area === 'home'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
     }
     if (st || !me) nav.splice(1, 0, stagesMenu());
     if (!st && !me || st && isGuest()) nav.push(el('a', { class: 'navlogin', href: '#signin' }, 'Log in'));
@@ -526,7 +526,7 @@
           el('p', { class: 'muted', style: 'margin:0' }, Core.IS_MATHS ? 'The key ideas, methods and worked examples of every section, with “Try it” questions. Print it or read it before you start the unit.' : 'The key ideas of each video, the key words and “Think first” questions. Read a section before you watch its video.')),
         el('div', { class: 'btnrow', style: 'margin:0' }, hasNotes() ? el('button', { class: 'btn primary small', type: 'button', id: 'readSite', onclick: () => openReader(C.sections[0].id) }, '📖 Read on screen') : null,
           el('a', { class: 'btn small', id: 'readPdf', href: C.unit.read, target: '_blank', rel: 'noopener', download: '', onclick: () => Backend.track('read_pdf', { learner: st.id, unit: Core.UNIT }) }, '⬇ Download PDF'))) : null,
-      learningPath(), examBlock()].filter(Boolean));
+      learningPath(), examBlock(), Core.IS_MATHS ? challengeCard() : null].filter(Boolean));
     m.append(el('div', { class: 'u4two' },
       el('section', { class: 'card' }, el('h2', { style: 'margin:0;font-size:22px' }, 'What you will learn'), el('span', { class: 'muted' }, `${sec} of ${nobj} secure`),
         el('ul', { class: 'u4objs objs' }, ...Object.entries(C.objectives).map(([k, o]) => el('li', { class: objSecure(k) ? 'ok' : '' }, o.t)))),
@@ -1587,6 +1587,13 @@
     m.append(el('section', { class: 'card lbtable', id: 'testsTable' }, el('div', { class: 'lbrow h trow' }, el('span', {}, ''), el('span', {}, 'UNIT TEST'), el('span', {}, 'TIME'), el('span', {}, 'STATUS'), el('span', {}, '')), ...rows));
     if (F) m.append(finalCard(F, li));
     const P = await Core.loadCp(); if (P) { await Core.refreshCp().catch(() => { }); m.append(checkpointCard(P)); }
+    if (Core.IS_MATHS) m.append(challengeCard());
+  }
+  // Maths Challenge sits inside the Maths course (Tests & exams, unit pages), not in the top menu
+  function challengeCard() {
+    return el('section', { class: 'card finalcard', id: 'challengeCard' }, el('span', { class: 'eyebrow' }, 'PROBLEM SOLVING · FOR ABLE MATHEMATICIANS'), el('h2', { style: 'margin:2px 0' }, '🏆 Maths Challenge'),
+      el('p', {}, 'Competition-style papers – Primary, Junior and Intermediate Challenge, Kangaroo and Olympiad rounds. Sit one against the clock for an award, or practise question by question with full solutions.'),
+      el('a', { class: 'btn gold', href: '#challenge', id: 'openChallenge' }, 'Open Maths Challenge', el('span', { class: 'arr' }, ' →')));
   }
   function finalCard(F, li) {
     const ok = (Core.S.tester || li.level >= F.level), done = (Core.S.finalAttempts || []).filter(a => a.status === 'final'), best = done.reduce((a, x) => Math.max(a, x.pct), 0);

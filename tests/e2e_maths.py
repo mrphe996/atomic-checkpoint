@@ -50,6 +50,10 @@ with sync_playwright() as p:
     pg.set_viewport_size({'width': 390, 'height': 844}); pg.click('#reviewNotes'); pg.wait_for_timeout(700)
     ok(pg.evaluate("document.querySelector('#readerBody').scrollWidth <= document.querySelector('#readerBody').clientWidth + 2"), 'M14 The notes fit a phone screen')
     pg.click('#readerClose')
+    pg.set_viewport_size({'width': 1280, 'height': 900}); pg.evaluate("location.hash='tests'"); pg.wait_for_timeout(1500)
+    ok(pg.query_selector('#challengeCard a[href="#challenge"]') is not None, 'M16 Maths Challenge opens from Tests & exams inside the Maths course')
+    pg.evaluate("location.hash='u-2'"); pg.wait_for_timeout(1500)
+    ok(pg.query_selector('#challengeCard') is not None and pg.query_selector('nav a[href="#challenge"]') is None, 'M17 …and from the Maths unit page, not the top menu')
     ok(not errs, 'M15 No page errors' + (': ' + errs[0] if errs else ''))
     b.close()
 fails = [l for l in LOG if l.startswith('FAIL')]

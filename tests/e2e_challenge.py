@@ -17,7 +17,7 @@ with sync_playwright() as p:
     # sign up
     pg.evaluate("""(async()=>{ await Backend.signUp({email:'mc@example.com',password:'password123',name:'Mia Challenge',birthYear:2013,grade:'Year 7',country:'VN',schoolOther:'Atomic'}); await Core.boot(Core.C); location.hash='challenge'; })()""")
     pg.wait_for_timeout(2500)
-    ok(pg.query_selector('nav a[href="#challenge"]') is not None, 'C3 "Maths Challenge" is in the main menu')
+    ok(pg.query_selector('nav a[href="#challenge"]') is None and pg.query_selector('nav a[href="#games"]') is None, 'C3 Neither Maths Challenge nor Games is in the top menu')
     # timed paper: every answer right → Gold
     pg.evaluate("location.hash='chl-junior'"); pg.wait_for_timeout(1200)
     pg.click('#chSit-junior-01'); pg.wait_for_timeout(1200)
