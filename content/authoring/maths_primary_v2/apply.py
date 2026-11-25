@@ -24,6 +24,12 @@ def apply(stage, unit, d):
             cut = next((i for i, b in enumerate(L) if b['k'] == 'mistake'), len(L))
             L = L[:cut] + add + L[cut:]
         s['lesson'] = L
+    try: RQ = importlib.import_module("maths_primary_v2.rq").Q.get((stage, unit), {})
+    except ModuleNotFoundError: RQ = {}
+    for s in d['sections']:   # reasoning Practice, after the first 3 Practice questions
+        s['prac'] = [q for q in s['prac'] if not q['id'].startswith('v2_')]
+        new = RQ.get(s['id'], [])
+        if new: s['prac'] = s['prac'][:3] + new + s['prac'][3:]
     return d
 
 if __name__ == '__main__':
