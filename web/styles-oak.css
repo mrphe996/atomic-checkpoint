@@ -1765,6 +1765,16 @@ a.stm-it:hover{background:var(--b-F4F4F1,#E9E7E0)}
 .lch span{font-size:28px}.lch b{font:800 17px Lexend,system-ui,sans-serif}.lch small{color:var(--t-575757,#575757)}.lch:hover{border-color:var(--l-575757,#575757);transform:translateY(-2px)}.lch.go{border-color:var(--l-222222,#222222);background:var(--b-FFF7CC,#F8EFC4)}
 @media (max-width:640px){.rdbar{padding:8px 10px}.rdttl{width:100%}.rdbody{padding:16px 14px 80px}}
 
+/* Stages 1–2 (ages 5–7): picture lessons, very large tap targets, questions read aloud */
+body.tiny .qhead2 .qxp, body.tiny .qhead2 .qkind{display:none}
+body.tiny .qcard .qp, body.tiny .qp{font-size:24px;font-weight:700;line-height:1.35}
+body.tiny .opt{min-height:68px;font-size:21px}
+body.tiny .opt.pcard{min-height:170px}
+body.tiny .opt.pcard .pe{font-size:64px}
+body.tiny .lessonbody .lp{font-size:21px;line-height:1.55}
+body.tiny .lessonbody .qfig svg{max-height:320px}
+.readq{margin:2px 0 8px;font-weight:700}
+
 /* ---------- Design system B (generated: edit tools/build-theme.mjs) ---------- */
 :root{--band:#F4F4F1;--sh:0 1px 2px rgba(34,34,34,.10),0 10px 24px rgba(34,34,34,.12);--bd:1px solid #D6D6D2}
 body{background:var(--b-F4F4F1,#E9E7E0);color:var(--t-222222,#222222);line-height:1.55}

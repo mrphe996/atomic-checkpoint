@@ -32,6 +32,10 @@ export const GLYPHS = {
 
 // Unit (topic) icons by stage. Stages 16–19 = Maths (stage + 10).
 export const UNITS = {
+  1: ['seedling', 'ear', 'cube', 'arrows-move', 'wave-sine', 'sun'],
+  2: ['paw', 'heart', 'test-pipe', 'bulb', 'plug-connected', 'mountain'],
+  11: ['list-numbers', 'list-numbers', 'calculator', 'divide', 'box', 'ruler-2', 'clock', 'chart-bar'],
+  12: ['list-numbers', 'calculator', 'divide', 'percentage', 'angle', 'scale', 'clock', 'chart-bar'],
   3: ['seedling', 'bowl-spoon', 'sun', 'heart', 'magnet', 'moon-stars'],
   4: ['paw', 'bolt', 'cube', 'world', 'bulb', 'plug-connected'],
   5: ['flower', 'ear', 'droplet-half', 'apple', 'magnet', 'sun-wind'],

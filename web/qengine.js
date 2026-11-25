@@ -286,6 +286,9 @@
           rec.done ? null : el('span', { class: 'qxp', title: 'XP for a right answer: full XP first time, less after a second try' }, rec.tries ? '+7 XP' : '+12 XP'),
           QE.showIds ? el('code', { class: 'qid' }, q.id + ' · ' + q.obj) : null));
     host.append(head, el('p', { class: 'qp' }, q.prompt.replace(/^\* Advanced\.\s*/, '')));
+    // Stages 1–2: children who cannot read well yet can hear the question and the answers
+    if (document.body.classList.contains('tiny') && ('speechSynthesis' in window)) host.append(el('button', { type: 'button', class: 'btn small ghost readq', 'aria-label': 'Read the question to me',
+      onclick: () => QE.speak([q.prompt.replace(/^\* Advanced\.\s*/, '')].concat(q.type === 'mcq' || q.type === 'multi' ? (q.options || []).map(x => x.t) : []).join('. ')) }, '🔊 Read to me'));
     if (q.audio && window.Primary) host.append(window.Primary.audioBar(q.audio, q.slow));
     if (q.src) host.append(el('p', { class: 'src' }, 'Source: ', el('a', { href: q.src.url, target: '_blank', rel: 'noopener' }, q.src.name)));
     const body = el('div'); host.append(body);
@@ -346,5 +349,7 @@
       el('p', {}, el('b', {}, 'Model answer: '), q.model));
   }
 
-  window.QE = { showIds: false, aiMark: null, el, setTxt, esc, grade, renderBody, practice, answerText, TYPE_VI, DIFF, shuffle, isTick, parseNum, dataTable };
+  // read text aloud (British English voice, a little slower for young children)
+  function speak(t) { try { const ss = window.speechSynthesis; if (!ss) return; ss.cancel(); const u = new SpeechSynthesisUtterance(String(t).replace(/\*\*/g, '').replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, ' ')); u.lang = 'en-GB'; u.rate = 0.82; const v = ss.getVoices().find(x => /en-GB/i.test(x.lang)); if (v) u.voice = v; ss.speak(u); } catch (e) { } }
+  window.QE = { speak, showIds: false, aiMark: null, el, setTxt, esc, grade, renderBody, practice, answerText, TYPE_VI, DIFF, shuffle, isTick, parseNum, dataTable };
 })();

@@ -86,6 +86,28 @@
       const g = o[k] || []; const w = g.reduce((a, [kk, n]) => a + n * 22, 0); const r = tileRow([g], cx - w / 2, 178); s += r.s; if (o[k + 'Label']) s += T(cx, 292, o[k + 'Label'], { bold: true, size: 15 }); });
     return { svg: W(s), a: {} };
   };
+
+  // picture counting for young learners: o.groups [[emoji, count], …] drawn in rows of up to o.per (default 5); o.ten → ten frames
+  F.emojis = (o) => {
+    const gs = o.groups || [], per = o.per || 5, sz = o.size || 40; let s = '', y = 20;
+    gs.forEach(([e, n], gi) => {
+      if (gi && o.plus) { s += T(240, y + 4, '+', { size: 28, bold: true }); y += 30; }
+      for (let i = 0; i < n; i++) { const r = Math.floor(i / per), c = i % per, rowN = Math.min(per, n - r * per);
+        const x0 = 240 - rowN * (sz + 8) / 2 + (sz + 8) / 2; s += `<text x="${(x0 + c * (sz + 8)).toFixed(1)}" y="${(y + r * (sz + 8) + sz / 2).toFixed(1)}" font-size="${sz}" text-anchor="middle" dominant-baseline="middle">${esc(e)}</text>`; }
+      y += Math.ceil(n / per) * (sz + 8) + 10;
+    });
+    const H = Math.max(80, y + 10);
+    return { svg: W(s).replace('viewBox="0 0 480 320"', `viewBox="0 0 480 ${H}"`), a: {} };
+  };
+  F.tenframe = (o) => {
+    const n = o.n || 0, frames = Math.max(1, Math.ceil((o.of || n) / 10)), cs = 40; let s = '';
+    for (let f = 0; f < frames; f++) { const x0 = 240 - 5 * cs / 2 * 2 / 2 - 100 + 0, y0 = 14 + f * (2 * cs + 16);
+      for (let i = 0; i < 10; i++) { const r = Math.floor(i / 5), c = i % 5, x = 140 + c * cs, y = y0 + r * cs, k = f * 10 + i;
+        s += `<rect x="${x}" y="${y}" width="${cs}" height="${cs}" fill="#fff" stroke="#1F2A37" stroke-width="2"/>`;
+        if (k < n) s += `<circle cx="${x + cs / 2}" cy="${y + cs / 2}" r="${cs * 0.33}" fill="${o.color || '#D64545'}"/>`; } }
+    const H = 14 + frames * (2 * cs + 16);
+    return { svg: W(s).replace('viewBox="0 0 480 320"', `viewBox="0 0 480 ${H}"`), a: {} };
+  };
   // analogue clock: o.h (0-23), o.m
   F.clock = (o) => {
     const cx = 240, cy = 160, r = 120, h = (o.h || 0) % 12, m = o.m || 0; let s = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="#FFFFFF" stroke="#1F2A37" stroke-width="4"/>`;

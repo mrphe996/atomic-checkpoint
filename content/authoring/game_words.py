@@ -367,12 +367,14 @@ def main():
             if line.startswith('#'): topic = line[1:].strip(); continue
             w, d, e = [x.strip() for x in line.split('|')]
             words.append({'w': w, 'def': d, 'emoji': e, 'stage': stage, 'subj': subj, 'topic': topic})
-    for stage in (3, 4, 5, 6):
-        for f in sorted(glob.glob(os.path.join(ROOT, f'web/content/stage{stage}-unit*.json'))):
+    # word banks of the course units: Science Stages 1–6 (keys 1–6) and Mathematics Stages 1–2 (keys 11, 12)
+    for key in (1, 2, 3, 4, 5, 6, 11, 12):
+        stage, subj = (key - 10, 'maths') if key > 10 else (key, 'science')
+        for f in sorted(glob.glob(os.path.join(ROOT, f'web/content/stage{key}-unit*.json'))):
             u = json.load(open(f)); topic = u['unit']['title']
             for s in u['sections']:
                 for v in s.get('vocab') or []:
-                    x = {'w': v['w'], 'def': v.get('def', ''), 'emoji': v.get('emoji', '📘'), 'stage': stage, 'subj': 'science', 'topic': topic}
+                    x = {'w': v['w'], 'def': v.get('def', ''), 'emoji': v.get('emoji', '📘'), 'stage': stage, 'subj': subj, 'topic': topic}
                     if v.get('audio') and os.path.exists(os.path.join(ROOT, 'web', v['audio'])): x['audio'] = v['audio']
                     words.append(x)
     seen, out = set(), []

@@ -241,7 +241,7 @@
   /* where am I / what remains / next button (shown on every learning screen) */
   // dotted page header shared by every student page (the "Home 01" look)
   /* ---------- course switcher: Science Stages 7–9 and Mathematics Stage 9 ---------- */
-  const STAGE_N = { 13: 17, 14: 18, 15: 18, 16: 17, 17: 16, 18: 16, 19: 15 };
+  const STAGE_N = { 1: 6, 2: 6, 11: 8, 12: 8, 13: 17, 14: 18, 15: 18, 16: 17, 17: 16, 18: 16, 19: 15 };
   const stagePct = g => Math.round(Object.keys((st && st.results) || {}).filter(k => k.startsWith(`stage${g}-unit`)).length / (STAGE_N[g] || (g >= 10 ? 15 : g <= 6 ? 6 : 14)) * 100);
   const stageShort = g => (g >= 10 ? `Stage ${g - 10}` : `Stage ${g}`);
   function stageSoon(g) {
@@ -273,7 +273,7 @@
     };
     const col = n => el('div', { class: 'stm-col' }, el('b', {}, `Stage ${n}`), item(n, '🔬', 'Science'), item(10 + n, '📐', 'Mathematics'), item(-n, '🗣', 'ESL'));
     panel.append(el('div', { class: 'stm-lv' }, el('span', { class: 'stm-h' }, 'Lower Secondary'), el('div', { class: 'stm-row' }, ...[7, 8, 9].map(col))),
-      el('div', { class: 'stm-lv' }, el('span', { class: 'stm-h' }, 'Primary'), el('div', { class: 'stm-row' }, ...[3, 4, 5, 6].map(col))));
+      el('div', { class: 'stm-lv' }, el('span', { class: 'stm-h' }, 'Primary'), el('div', { class: 'stm-row' }, ...[1, 2, 3, 4, 5, 6].map(col))));
     const b = el('button', { type: 'button', class: 'stm-btn', id: 'stagesBtn', 'aria-haspopup': 'true', 'aria-expanded': 'false',
       onclick: ev => { ev.stopPropagation(); panel.hidden = !panel.hidden; b.setAttribute('aria-expanded', String(!panel.hidden)); if (!panel.hidden) document.addEventListener('click', () => { panel.hidden = true; b.setAttribute('aria-expanded', 'false'); }, { once: true }); } }, 'Stages ▾');
     panel.addEventListener('click', ev => ev.stopPropagation());
@@ -298,7 +298,7 @@
     const level = (name, ns) => el('div', { class: 'swlevel' }, el('b', { class: 'swlh' }, name), el('div', { class: 'swlrow' }, ...ns.map(block)));
     // compact by default: only the stage being studied (its three subjects); "All stages" opens the full grid
     const cur = Core.stageNo(Core.STAGE);
-    const nav = el('nav', { class: 'stsw bystage' + (UI.swOpen ? '' : ' compact'), id: 'stageSwitch', 'aria-label': 'Switch course' }, level('Lower Secondary', [7, 8, 9]), level('Primary', [3, 4, 5, 6]));
+    const nav = el('nav', { class: 'stsw bystage' + (UI.swOpen ? '' : ' compact'), id: 'stageSwitch', 'aria-label': 'Switch course' }, level('Lower Secondary', [7, 8, 9]), level('Primary', [1, 2, 3, 4, 5, 6]));
     nav.querySelectorAll('[data-stage-block]').forEach(b => { if (+b.getAttribute('data-stage-block') === cur) { b.classList.add('cur'); b.parentElement.parentElement.classList.add('cur'); } });
     const all = el('button', { type: 'button', class: 'btn small swall', id: 'swAll', 'aria-expanded': String(!!UI.swOpen), onclick: () => { UI.swOpen = !UI.swOpen; nav.classList.toggle('compact', !UI.swOpen); all.setAttribute('aria-expanded', String(UI.swOpen)); all.textContent = UI.swOpen ? 'Show less ▴' : 'All stages ▾'; } }, UI.swOpen ? 'Show less ▴' : 'All stages ▾');
     nav.append(all);
@@ -520,7 +520,7 @@
         el('div', { class: 'float' }, el('i', {}, Core.passed(st) ? '🏆' : '▶'), el('div', {}, el('b', {}, Core.passed(st) ? 'Unit passed' : 'Next up'), nx.label)))));
     document.getElementById('wrap').before(heroS);
     m.append(...[tocBtn(), el('div', { class: 'u4head' }, el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, `Cambridge ${Core.stageName(Core.STAGE)} · Unit ${Core.UNO}`), el('h2', {}, 'Your learning path')),
-      el('div', { class: 'u4steps' }, ...(Core.IS_PRIMARY ? (Core.stageNo(Core.STAGE) <= 5 ? ['1 Watch', C.unit.young ? '2 Listen & practise' : '2 Listen & say', '3 Experiment', '4 Word games', '5 Unit Test'] : ['1 Watch', '2 Listen & say', '3 Experiment', '4 Unit Test']) : [C.unit.read ? '0 Read first' : null, Core.IS_MATHS ? '1 Read the lesson' : '1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test'].filter(Boolean)).map(t => el('span', {}, t)))),
+      el('div', { class: 'u4steps' }, ...(C.unit.tiny ? ['1 Read the lesson', '2 Practise', '3 Word games', '4 Unit Test'] : Core.IS_PRIMARY ? (Core.stageNo(Core.STAGE) <= 5 ? ['1 Watch', C.unit.young ? '2 Listen & practise' : '2 Listen & say', '3 Experiment', '4 Word games', '5 Unit Test'] : ['1 Watch', '2 Listen & say', '3 Experiment', '4 Unit Test']) : [C.unit.read ? '0 Read first' : null, Core.IS_MATHS ? '1 Read the lesson' : '1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test'].filter(Boolean)).map(t => el('span', {}, t)))),
       C.unit.read ? el('section', { class: 'card readfirst', id: 'readFirst' }, el('div', { class: 'rfico', 'aria-hidden': 'true' }, '📘'),
         el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, Core.IS_MATHS ? 'Read before the lesson' : 'Read before you watch'), el('h3', { style: 'margin:2px 0 4px' }, `Unit ${Core.UNO} pre-reading pack (PDF)`),
           el('p', { class: 'muted', style: 'margin:0' }, Core.IS_MATHS ? 'The key ideas, methods and worked examples of every section, with “Try it” questions. Print it or read it before you start the unit.' : 'The key ideas of each video, the key words and “Think first” questions. Read a section before you watch its video.')),
@@ -780,6 +780,7 @@
       const kind = b.k || 'idea', icon = { idea: '💡', example: '✏️', tip: '✅', mistake: '⚠️', method: '🧭' }[kind] || '💡';
       const card = el('section', { class: 'card lblock lb-' + kind, id: 'lb-' + bi }, el('h2', {}, el('span', { class: 'lbi', 'aria-hidden': 'true' }, icon), ' ', (kind === 'example' ? 'Worked example: ' : kind === 'mistake' ? 'Common mistake: ' : '') + b.t));
       (b.p || []).forEach(t => card.append(para(t)));
+      if (C.unit.tiny && ('speechSynthesis' in window)) card.append(el('button', { type: 'button', class: 'btn small ghost readq', onclick: () => QE.speak([b.t].concat(b.p || [], b.q ? [b.q] : [], b.a ? [b.a] : []).join('. ')) }, '🔊 Read to me'));
       if (b.fig) { const f = window.AtomicFig && window.AtomicFig.get ? window.AtomicFig.get(b.fig.kind, b.fig) : null; if (f) card.append(el('div', { class: 'qfig', html: f.svg })); }
       if (b.table) card.append(QE.dataTable ? QE.dataTable(b.table) : el('div'));
       if (b.q) card.append(el('p', { class: 'lq' }, el('b', {}, 'Question: '), b.q));
@@ -2546,7 +2547,8 @@
     const um = r.match(/^u-(\d+)$/) || r.match(/^(?:v|ex|ws|lab|gm)-(\d+)-\d+$/);
     if (um && Number(um[1]) !== Core.UNO) { if (!Core.unitReady(Number(um[1]))) { location.replace('#home'); return; } try { await Core.switchUnit(Number(um[1])); } catch (e) { location.replace('#home'); return; } if (seq !== renderSeq) return; }
     C = Core.C; st = Core.cur(); if (/^u-\d+$/.test(r)) r = 'unit';
-    document.body.classList.toggle('young', !!(C && C.unit && C.unit.young));   // Stages 3–4: bigger, simpler question cards
+    document.body.classList.toggle('young', !!(C && C.unit && C.unit.young));
+    document.body.classList.toggle('tiny', !!(C && C.unit && C.unit.tiny));   // Stages 1–2: picture lessons, questions read aloud   // Stages 3–4: bigger, simpler question cards
     if (r !== 'test' && !/^(fx|cpx|chx)-/.test(r)) UI.testOn = false;
     document.body.classList.remove('menu-open', 'toc-open');
     const me = Core.S.me; if (window.QE) QE.showIds = !!(me && me.profile && ['marker', 'admin'].includes(me.profile.role));

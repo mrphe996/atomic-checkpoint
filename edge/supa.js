@@ -7,7 +7,7 @@ export const G = globalThis.GradeCore;
 export const Rules = globalThis.TestRules;
 export const env = (k, d) => { const v = Deno.env.get(k); return v != null && v !== '' ? v : d; };
 export const billingOn = () => env('BILLING', env('PADDLE_API_KEY') ? 'paddle' : 'off') === 'paddle';
-const UNIT_RE = /^(stage(3|4|5|6|7|8|9|1[3-9])-(unit\d{2}|final|cp)|ch-[a-z]+)$/;   // Science 3–9, Maths 13–19 (Stages 3–9), Maths Challenge
+const UNIT_RE = /^(stage([1-9]|1[1-9])-(unit\d{2}|final|cp)|ch-[a-z]+)$/;   // Science 1–9, Maths 11–19 (Stages 1–9), Maths Challenge
 // answer keys are not in this shared (public) file: the deployed function passes them in with setUnits()
 let UNITS = {};
 export function setUnits(u) { UNITS = u; }

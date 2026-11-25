@@ -2,7 +2,7 @@
    Tabs: Overview · Users · Content · Exams · Reports · Announcements · Settings · Audit log. */
 (function () {
   const { el } = QE;
-  const COURSES = [[3, 'Science Stage 3 (Primary)'], [4, 'Science Stage 4 (Primary)'], [5, 'Science Stage 5 (Primary)'], [6, 'Science Stage 6 (Primary)'], [7, 'Science Stage 7'], [8, 'Science Stage 8'], [9, 'Science Stage 9'], [13, 'Mathematics Stage 3 (Primary)'], [14, 'Mathematics Stage 4 (Primary)'], [15, 'Mathematics Stage 5 (Primary)'], [16, 'Mathematics Stage 6 (Primary)'], [17, 'Mathematics Stage 7'], [18, 'Mathematics Stage 8'], [19, 'Mathematics Stage 9']];
+  const COURSES = [[1, 'Science Stage 1 (Primary)'], [2, 'Science Stage 2 (Primary)'], [3, 'Science Stage 3 (Primary)'], [4, 'Science Stage 4 (Primary)'], [5, 'Science Stage 5 (Primary)'], [6, 'Science Stage 6 (Primary)'], [7, 'Science Stage 7'], [8, 'Science Stage 8'], [9, 'Science Stage 9'], [11, 'Mathematics Stage 1 (Primary)'], [12, 'Mathematics Stage 2 (Primary)'], [13, 'Mathematics Stage 3 (Primary)'], [14, 'Mathematics Stage 4 (Primary)'], [15, 'Mathematics Stage 5 (Primary)'], [16, 'Mathematics Stage 6 (Primary)'], [17, 'Mathematics Stage 7'], [18, 'Mathematics Stage 8'], [19, 'Mathematics Stage 9']];
   const courseName = g => (COURSES.find(c => c[0] === g) || [0, 'Stage ' + g])[1];
   const unitCourse = u => Number((String(u).match(/^stage(\d+)/) || [0, 0])[1]);
   const unitLabel = u => { const g = unitCourse(u), m = String(u).match(/-(unit(\d+)|final|cp)$/); return `${courseName(g)} · ${m ? (m[2] ? 'Unit ' + Number(m[2]) : m[1] === 'final' ? 'End-of-year exam' : 'Checkpoint') : u}`; };

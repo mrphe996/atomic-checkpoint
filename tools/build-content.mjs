@@ -107,6 +107,14 @@ export function validate(c) {
         if (!['pulse', 'lungs', 'growth', 'germs', 'test', 'sort'].includes(V.kind)) errs.push(`section ${s.id}: unknown virtual lab kind ${V.kind}`);
         if (V.kind === 'test') (V.conds || []).forEach(c => { if (!(c.val >= 0 && c.val <= V.max)) errs.push(`section ${s.id} lab: ${c.t} value ${c.val} is off the scale (0–${V.max})`); if (Math.abs(c.val / V.step * 2 - Math.round(c.val / V.step * 2)) > 1e-9) errs.push(`section ${s.id} lab: ${c.t} value ${c.val} is not readable on a ${V.step} scale`); });
         if (V.kind === 'sort') (V.items || []).forEach(it => { if (!(it.g >= 0 && it.g < V.groups.length)) errs.push(`section ${s.id} lab: ${it.t} has no group`); }); }
+    } else if (c.unit && c.unit.tiny) {
+      // Stages 1–2 (ages 5–7): picture lessons; every answer is tapped and most answers are pictures
+      const TYPING = ['short', 'cloze', 'explain', 'para', 'num', 'expr', 'scale', 'table', 'graph', 'say', 'label'];
+      const all = [...s.req, ...s.prac, ...s.adv, ...(s.more || []), ...(s.stops || []).map(x => x.q)];
+      all.filter(q => q && TYPING.includes(q.type)).forEach(q => errs.push(`section ${s.id} ${q.id}: young learners cannot type – ${q.type} questions are not allowed`));
+      const pic = q => ['grid', 'match', 'order'].includes(q.type) || q.fig || q.pic || (q.options || []).some(o => o.e);
+      if (s.req.filter(pic).length < 2) errs.push(`section ${s.id}: Core needs 2+ picture questions`);
+      if (!s.vocab || s.vocab.length < 3) errs.push(`section ${s.id}: needs a word bank (3+ words) for the word games`);
     } else {
       if (fig < 2) errs.push(`section ${s.id}: Core needs 2+ diagram/data questions (has ${fig})`);
       if (!s.req.some(WRITTEN)) errs.push(`section ${s.id}: Core needs a written-reasoning question`);
@@ -122,7 +130,7 @@ export function validate(c) {
     const pts = c.tests[f].reduce((a, q) => a + q.pts, 0);
     if (c.unit && c.unit.young) c.tests[f].filter(q => ['short', 'cloze', 'explain', 'para', 'num', 'expr', 'scale', 'table', 'graph'].includes(q.type)).forEach(q => errs.push(`test ${f} ${q.id}: young learners cannot type – ${q.type} is not allowed`));
     if (pts !== 30) errs.push(`test ${f}: ${pts} marks (must be 30)`);
-    if (!c.tests[f].some(q => ['label', 'grid', 'table', 'graph', 'scale'].includes(q.type) || q.fig || q.data)) errs.push(`test ${f}: needs a diagram or data question`);
+    if (!c.tests[f].some(q => ['label', 'grid', 'table', 'graph', 'scale'].includes(q.type) || q.fig || q.data || (c.unit && c.unit.tiny && (q.pic || q.type === 'match' || (q.options || []).some(o => o.e))))) errs.push(`test ${f}: needs a diagram or data question`);
     c.tests[f].forEach(q => checkQ(q, `test ${f}`));
     c.tests[f].filter(q => q.type === 'para' && !q.teacher).forEach(q => errs.push(`test ${f} ${q.id}: paragraph questions in a test must be teacher:true (the AI marks them first; unsure marks go to a teacher)`));
   }
@@ -217,7 +225,13 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
 
 // web/content/stage7.json – the stage's units; "ready" when a unit's content has been built
 export function writeIndex() {
-  const T = { 3: [['Plants Are Living Things', 'Biology'], ['Mixing Materials', 'Chemistry'], ['Light and Shadows', 'Physics'], ['Staying Alive', 'Biology'], ['Forces and Magnets', 'Physics'], ['The Earth and the Moon', 'Earth and Space']],
+  const T = {
+    // 1, 2 = Science Stages 1–2; 11, 12 = Mathematics Stages 1–2 (picture lessons for ages 5–7)
+    1: [["Living Things", "Biology"], ["Ourselves", "Biology"], ["Materials", "Chemistry"], ["Pushes and Pulls", "Physics"], ["Sound", "Physics"], ["Earth and Sky", "Earth and Space"]],
+    2: [["Living Things and Habitats", "Biology"], ["Growing Up and Staying Healthy", "Biology"], ["Using Materials", "Chemistry"], ["Light and Dark", "Physics"], ["Electricity", "Physics"], ["Rocks, Soil and Weather", "Earth and Space"]],
+    11: [["Numbers to 10", "Number"], ["Numbers to 20", "Number"], ["Addition", "Number"], ["Subtraction", "Number"], ["Shapes", "Geometry"], ["Measures", "Geometry"], ["Time", "Geometry"], ["Halves, Patterns and Data", "Statistics"]],
+    12: [["Numbers to 100", "Number"], ["Addition and Subtraction", "Number"], ["Multiplication and Division", "Number"], ["Fractions", "Number"], ["Shapes and Symmetry", "Geometry"], ["Measures", "Geometry"], ["Time", "Geometry"], ["Data", "Statistics"]],
+    3: [['Plants Are Living Things', 'Biology'], ['Mixing Materials', 'Chemistry'], ['Light and Shadows', 'Physics'], ['Staying Alive', 'Biology'], ['Forces and Magnets', 'Physics'], ['The Earth and the Moon', 'Earth and Space']],
     4: [['Living Things', 'Biology'], ['Energy', 'Physics'], ['Materials', 'Chemistry'], ['Earth and Its Habitats', 'Earth and Space'], ['Light', 'Physics'], ['Electricity', 'Physics']],
     5: [['Life Cycles of Flowering Plants', 'Biology'], ['Sound', 'Physics'], ['States and Properties of Matter', 'Chemistry'], ['The Digestive System', 'Biology'], ['Forces and Magnetism', 'Physics'], ['Seasons and Adaptations', 'Earth and Space']],
     6: [['The Human Body', 'Biology'], ['Materials: Properties and Changes', 'Chemistry'], ['Rocks, the Rock Cycle and Soil', 'Earth and Space'], ['Food Chains and Food Webs', 'Biology'], ['Forces and Electricity', 'Physics'], ['Light and the Solar System', 'Physics']],

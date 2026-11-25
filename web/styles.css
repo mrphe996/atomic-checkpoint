@@ -1763,3 +1763,13 @@ a.stm-it:hover{background:var(--band)}
 .lch{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:16px 18px;border-radius:16px;border:2px solid var(--line);background:#fff;cursor:pointer;text-align:left;font:inherit}
 .lch span{font-size:28px}.lch b{font:800 17px Outfit,sans-serif}.lch small{color:var(--muted)}.lch:hover{border-color:var(--blue5);transform:translateY(-2px)}.lch.go{border-color:var(--blue);background:#F3F8FF}
 @media (max-width:640px){.rdbar{padding:8px 10px}.rdttl{width:100%}.rdbody{padding:16px 14px 80px}}
+
+/* Stages 1–2 (ages 5–7): picture lessons, very large tap targets, questions read aloud */
+body.tiny .qhead2 .qxp, body.tiny .qhead2 .qkind{display:none}
+body.tiny .qcard .qp, body.tiny .qp{font-size:24px;font-weight:700;line-height:1.35}
+body.tiny .opt{min-height:68px;font-size:21px}
+body.tiny .opt.pcard{min-height:170px}
+body.tiny .opt.pcard .pe{font-size:64px}
+body.tiny .lessonbody .lp{font-size:21px;line-height:1.55}
+body.tiny .lessonbody .qfig svg{max-height:320px}
+.readq{margin:2px 0 8px;font-weight:700}
