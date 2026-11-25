@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 6 Mathematics (Primary) · Unit 3 Averages (3.1 Mode, median, mean and range). Written by the Atomic teaching team."""
+"""Stage 6 Mathematics (Primary) · Unit 3 Averages (3.1 Mode, median, mean and range). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 
 U = Unit(3, "Averages", "Statistics and probability",
@@ -22,6 +24,9 @@ s.idea("Three averages", ["An **average** is one number that represents a set of
 s.check(N("Find the mean of 4, 6, 8, 10 and 12.", 8, o="O1"))
 s.idea("Range", ["The **range** is the biggest value minus the smallest value. It shows how **spread out** the data are. A small range means the data are close together."])
 s.example("Median of an even set", "Find the median of 3, 9, 4, 7.", [("Order: 3, 4, 7, 9", "write the data in order"), ("Middle two are 4 and 7: (4 + 7) ÷ 2 = 5.5", "halfway between them")], "5.5")
+s.idea("Which average to use", ["The mode is the most common value. The median is the middle value when the data is in order. The mean shares the total out equally.",
+       "One very big or very small value changes the mean a lot but the median only a little."])
+s.check(MC("Before you read on: the values 2, 3, 3, 4, 50 – which average is most typical?", "The median, 3", [("The mean, 12.4", "The 50 pulls the mean up."), ("The range, 48", "The range is a spread, not an average.")], o="O1"))
 s.mistake("Order first", ["Always put the data in order before finding the median."])
 
 
@@ -61,6 +66,13 @@ def a10(r):
     return MC(f"Team A scored {', '.join(map(str, a))}. Team B scored {', '.join(map(str, b))}. Which team's scores are more consistent?", "Team A" if ra < rb else "Team B", ["Team B" if ra < rb else "Team A"], o="O2", reason=f"The smaller range ({min(ra, rb)}) shows scores closer together.", d="H")
 
 
-s.std([a5, a6, a1, a2, a3, a4, a8, a7, a9], EX("Explain how to find the median of 8, 2, 6, 9, 5.", [("put the numbers in order: 2, 5, 6, 8, 9", "order|2, ?5, ?6"), ("the middle number is 6", "middle|\\b6\\b")], "Put the numbers in order: 2, 5, 6, 8, 9. The middle value is 6, so the median is 6.", o="O1"), adv=[a7, a9, a10, a8])
+def c1_1(r):
+    v = sorted(r.sample(range(2, 15), 4)); m = r.randint(5, 10); x = 5 * m - sum(v)
+    if not 0 < x < 40: return None
+    return N(f"The mean of five numbers is {m}. Four of them are {', '.join(map(str, v))}. What is the fifth?", x, o="O1", d="H", reason=f"Total = 5 × {m} = {5 * m}; {5 * m} − {sum(v)} = {x}.")
+
+
+s.std([a5, a6, a1, a2, a3, a4, a8, a7, a9], EX("Explain how to find the median of 8, 2, 6, 9, 5.", [("put the numbers in order: 2, 5, 6, 8, 9", "order|2, ?5, ?6"), ("the middle number is 6", "middle|\\b6\\b")], "Put the numbers in order: 2, 5, 6, 8, 9. The middle value is 6, so the median is 6.", o="O1"), adv=[a7, a9, a10, a8],
+      deep=[c1_1])
 
 U.mindmap(("Mode", "Most common value", "O1", "3.1"), ("Median", "Middle value in order", "O1", "3.1"), ("Mean", "Total ÷ number of values", "O1", "3.1"), ("Range", "Biggest − smallest; shows spread", "O2", "3.1"))

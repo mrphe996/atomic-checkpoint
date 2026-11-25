@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 16 Time (16.1 Time intervals, 16.2 Time zones).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -14,6 +16,7 @@ s = U.section("16.1", "Time intervals", ["O1"])
 s.idea("Counting on", ["To find how long something takes, **count on** in steps to the next hour, then whole hours, then the minutes left.",
        "From 10:35 to 13:10: 25 min to 11:00, 2 hours to 13:00, 10 min to 13:10 → **2 hours 35 minutes**."], fig={"kind": "clock", "h": 10, "m": 35})
 s.check(N("A lesson starts at 09:15 and ends at 10:00. How many minutes long is it?", 45, "minutes", units=["minutes", "min"], o="O1"))
+s.check(MC('Before you read on: from 9:45 to 11:15, how long is it?', '1 hour 30 minutes', [('1 hour 70 minutes', 'There are 60 minutes in an hour.'), ('2 hours 30 minutes', 'Count: 9:45 → 10:45 → 11:15.')], o='O1'))
 s.mistake("60, not 100", ["There are 60 minutes in an hour, so 1:45 + 30 minutes is 2:15, not 1:75."])
 
 
@@ -51,6 +54,7 @@ s = U.section("16.2", "Time zones", ["O2"])
 s.idea("Different times around the world", ["The world is split into **time zones**. When it is midday in London it is **7 p.m. in Hanoi** (7 hours ahead) and **7 a.m. in New York** (5 hours behind).",
        "To find the time in another place, **add** hours if it is ahead and **subtract** hours if it is behind."], table={"head": ["City", "London", "Cairo", "Dubai", "Hanoi", "Tokyo", "New York"], "rows": [["Hours ahead of London", "0", "+2", "+4", "+7", "+9", "−5"]]})
 s.check(N("Tokyo is 9 hours ahead of London. When it is 08:00 in London, what hour is it in Tokyo? Give the hour as a number from 0 to 23.", 17, o="O2"))
+s.check(MC('Before you read on: it is 10:00 in London. Paris is 1 hour ahead. What time is it in Paris?', '11:00', [('9:00', 'Ahead means later.'), ('10:00', 'The time is different.')], o='O2'))
 s.mistake("Ahead or behind?", ["Ahead means later in the day: add hours. Behind means earlier: subtract."])
 
 

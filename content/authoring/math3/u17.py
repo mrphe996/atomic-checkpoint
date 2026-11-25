@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 17 Pattern and symmetry (17.1 Shape and symmetry, 17.2 Pattern and symmetry).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -15,6 +17,7 @@ s = U.section("17.1", "Shape and symmetry", ["O1"])
 s.idea("Mirror lines", ["A **line of symmetry** splits a shape into two halves that match like a mirror. Fold along it and the halves fit exactly.",
        "A square has 4 lines of symmetry; a rectangle has 2."], fig={"kind": "cells", "cells": [[0, 0], [1, 0], [2, 1], [3, 1], [1, 1], [2, 0]], "cols": 4, "rows": 2, "grid": True, "mirror": {"x": 2}})
 s.check(N("How many lines of symmetry does a square have?", 4, o="O1"))
+s.check(MC('Before you read on: does a circle have a line of symmetry?', 'Yes – many', [('No', 'Fold a circle through its centre: the halves match.'), ('Only one', 'Any line through the centre works.')], o='O1'))
 s.mistake("Diagonals of a rectangle", ["Folding a rectangle along its diagonal does not make the halves match."])
 
 
@@ -50,6 +53,7 @@ s = U.section("17.2", "Pattern and symmetry", ["O2"])
 s.idea("Repeating patterns", ["A **repeating pattern** uses the same group again and again: ▲●■ ▲●■ ▲●■ …",
        "To find what comes next, find the group that repeats. Some patterns are also symmetrical."], table={"head": ["1", "2", "3", "4", "5", "6"], "rows": [["▲", "●", "■", "▲", "●", "■"]]})
 s.check(S("What comes next: red, blue, red, blue, red, …?", ["blue", "Blue"], o="O2"))
+s.check(MC('Before you read on: a pattern goes red, blue, red, blue, … What colour is the 7th?', 'Red', [('Blue', 'Odd places are red.'), ('Green', 'Only red and blue repeat.')], o='O2'))
 s.mistake("Find the whole group", ["In ▲●●▲●● the group is ▲●●, not ▲●."])
 SYM = ["triangle", "circle", "square", "star"]
 

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 7 Fractions (7.1 Understanding fractions, 7.2 Fractions as operators).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
@@ -14,6 +16,7 @@ s = U.section("7.1", "Understanding fractions", ["O1"])
 s.idea("Parts of a whole", ["The **denominator** tells you how many equal parts the whole is split into; the **numerator** tells you how many parts you have. **3/8** = 3 of 8 equal parts.",
        "A fraction can be a **division**: 3 pizzas shared by 4 children gives each child 3 ÷ 4 = **3/4** of a pizza."], fig=PIE(8, range(3)))
 s.check(S("4 cakes are shared equally between 5 children. What fraction of a cake does each child get?", ["4/5"], o="O1"))
+s.check(MC('Before you read on: which is bigger, 1/3 or 1/5?', '1/3', [('1/5', 'Cutting into 5 pieces makes smaller pieces than cutting into 3.'), ('They are equal', 'The pieces are different sizes.')], o='O1'))
 s.mistake("Equal parts", ["Only equal parts can be called eighths."])
 
 
@@ -44,12 +47,18 @@ def f8(r):
     return S(f"Mo eats {n}/{d} of a bar and Ana eats {k}/{d}. What fraction of the bar have they eaten?", [f"{n + k}/{d}"], o="O1", d="H")
 
 
-s.std([f1, f3, f2, f4, f5, f6, f7, f8], EX("Explain why 3 ÷ 4 = 3/4.", [("a fraction is a division", "division|divide|÷"), ("3 shared equally between 4 gives 3/4 each", "share|each|equal")], "A fraction is a division: 3/4 means 3 ÷ 4. If 3 cakes are shared equally between 4 children, each gets 3/4 of a cake.", o="O1"))
+def d71(r):
+    return MC('Ben says 1/8 is bigger than 1/4 because 8 is bigger than 4. Is he right?', 'No: 1/4 is bigger', [('Yes', 'More pieces means smaller pieces.'), ('They are equal', '1/4 = 2/8.')], o='O1', d="H", reason='1/4 = 2/8, which is more than 1/8.')
+
+
+s.std([f1, f3, f2, f4, f5, f6, f7, f8], EX("Explain why 3 ÷ 4 = 3/4.", [("a fraction is a division", "division|divide|÷"), ("3 shared equally between 4 gives 3/4 each", "share|each|equal")], "A fraction is a division: 3/4 means 3 ÷ 4. If 3 cakes are shared equally between 4 children, each gets 3/4 of a cake.", o="O1"),
+      deep=[d71])
 
 s = U.section("7.2", "Fractions as operators", ["O2"])
 s.idea("Finding a fraction of an amount", ["To find **1/5 of 30**, divide by 5: 30 ÷ 5 = **6**.",
        "To find **3/5 of 30**, find 1/5 (6), then multiply by 3: **18**."], fig={"kind": "cells", "cells": [[i, j] for i in range(6) for j in range(5)]})
 s.check(N("Find 2/3 of 18.", 12, o="O2"))
+s.check(MC('Before you read on: what is 1/4 of 20?', '5', [('80', 'Divide by 4.'), ('16', '1/4 means one of four equal parts.')], o='O2'))
 s.mistake("Divide by the denominator", ["1/4 of 20 means 20 ÷ 4, not 20 ÷ 1."])
 
 

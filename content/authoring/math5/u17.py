@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 17 Number and the laws of arithmetic (17.1 Order of operations, 17.2 Using the laws of arithmetic).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -13,6 +15,7 @@ s = U.section("17.1", "Order of operations", ["O1"])
 s.idea("What comes first", ["Work out **brackets first**, then **× and ÷**, then **+ and −**.",
        "4 + 5 × 2 = 4 + 10 = **14**, but (4 + 5) × 2 = 9 × 2 = **18**."], table={"head": ["Order", "1st", "2nd", "3rd"], "rows": [["", "Brackets", "× and ÷", "+ and −"]]})
 s.check(N("Work out 10 − 2 × 3.", 4, o="O1"))
+s.check(MC('Before you read on: what is 3 + 4 × 2?', '11', [('14', 'Multiply before adding.'), ('9', '4 × 2 = 8, then + 3.')], o='O1'))
 s.mistake("Not always left to right", ["3 + 4 × 5 is 23, not 35. Multiply first."])
 
 
@@ -42,13 +45,19 @@ def o8(r):
     return N(f"Work out {a} × {b} + {c} × {d}.", a * b + c * d, o="O1", d="H")
 
 
-s.std([o4, o7, o1, o2, o3, o5, o6, o8], EX("Explain why (2 + 3) × 4 = 20 but 2 + 3 × 4 = 14.", [("brackets are worked out first: 5 × 4 = 20", "brackets first|5 ?× ?4|20"), ("without brackets multiply first: 2 + 12 = 14", "multiply first|12|14")], "With brackets, add first: (2 + 3) × 4 = 5 × 4 = 20. Without brackets, multiply first: 3 × 4 = 12, then 2 + 12 = 14.", o="O1"))
+def g171(r):
+    return MC('Lia says 20 − 6 ÷ 2 = 7. What is right?', '17', [('7', 'Divide first: 6 ÷ 2 = 3.'), ('13', '20 − 3 = 17.')], o='O1', d="H", reason='Divide before subtracting: 20 − 3 = 17.')
+
+
+s.std([o4, o7, o1, o2, o3, o5, o6, o8], EX("Explain why (2 + 3) × 4 = 20 but 2 + 3 × 4 = 14.", [("brackets are worked out first: 5 × 4 = 20", "brackets first|5 ?× ?4|20"), ("without brackets multiply first: 2 + 12 = 14", "multiply first|12|14")], "With brackets, add first: (2 + 3) × 4 = 5 × 4 = 20. Without brackets, multiply first: 3 × 4 = 12, then 2 + 12 = 14.", o="O1"),
+      deep=[g171])
 
 s = U.section("17.2", "Using the laws of arithmetic", ["O2"])
 s.idea("Laws that make calculating easier", ["**Commutative law**: you can swap the order when adding or multiplying: 6 × 7 = 7 × 6.",
        "**Associative law**: you can group numbers differently: (5 × 2) × 9 = 5 × (2 × 9).",
        "**Distributive law**: split a number to multiply: 7 × 23 = 7 × 20 + 7 × 3 = 140 + 21 = **161**."])
 s.check(N("Work out 25 × 7 × 4 in your head.", 700, o="O2"))
+s.check(MC('Before you read on: is 6 × 7 the same as 7 × 6?', 'Yes', [('No', 'Multiplying can be done in either order.'), ('Only for small numbers', 'It works for every number.')], o='O2'))
 s.mistake("Not for subtraction", ["8 − 3 is not the same as 3 − 8. Swapping only works for + and ×."])
 
 

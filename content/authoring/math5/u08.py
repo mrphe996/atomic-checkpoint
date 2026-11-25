@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 8 Probability (8.1 Likelihood, 8.2 Experiments and simulations).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
@@ -22,6 +24,7 @@ s.idea("Words for chance", ["We describe how likely something is with words: **i
        "Events with an **even chance** are as likely to happen as not, like a coin landing on heads."],
        fig={"kind": "numline", "min": 0, "max": 1, "minor": 4, "ticks": [[0.5, "even chance"]]})
 s.check(MC("How likely is it that the sun will rise tomorrow?", "certain", [("likely", ""), ("even chance", "")], o="O1"))
+s.check(MC('Before you read on: a bag has 3 red and 1 blue ball. Which colour is more likely?', 'Red', [('Blue', 'There are more red balls.'), ('Equally likely', '3 red, 1 blue.')], o='O1'))
 s.mistake("Unlikely is not impossible", ["Rolling a 6 is unlikely, but it can still happen."])
 
 
@@ -63,6 +66,7 @@ s.idea("Testing predictions", ["In a **chance experiment** we repeat something m
        "If you flip a coin 20 times you might predict 10 heads. The real result may be a little different, like 12 heads. The more times you repeat, the closer results usually get to the prediction."],
        table={"head": ["Outcome", "Tally", "Frequency"], "rows": [["Heads", "|||| |||| ||", "12"], ["Tails", "|||| |||", "8"]]})
 s.check(N("A coin is flipped 40 times. About how many heads would you expect?", 20, "heads", units=["heads"], o="O2"))
+s.check(MC('Before you read on: you flip a coin 10 times. Will you get exactly 5 heads?', 'Not always', [('Yes, always', 'Results vary by chance.'), ('Never', '5 heads can happen.')], o='O2'))
 s.mistake("Results vary", ["Getting 7 heads in 10 flips does not mean the coin is unfair. Small experiments vary a lot."])
 
 

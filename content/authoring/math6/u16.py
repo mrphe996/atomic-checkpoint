@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 16 The laws of arithmetic (16.1 The laws of arithmetic).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 
@@ -15,6 +17,8 @@ s.check(N("Work out 20 − 3 × 5.", 5, o="O1"))
 s.idea("Laws that help", ["**Commutative**: order does not matter for + and ×: 7 × 25 = 25 × 7.",
        "**Associative**: grouping does not matter for + and ×: (4 × 25) × 3 = 4 × (25 × 3).",
        "**Distributive**: 6 × 47 = 6 × 40 + 6 × 7 = 240 + 42 = 282."])
+s.idea("Why the laws make calculating easier", ["Adding and multiplying can be done in any order (commutative) and grouped any way (associative): 4 × 17 × 25 = 4 × 25 × 17 = 100 × 17.",
+       "Multiplying spreads over adding (distributive): 6 × 23 = 6 × 20 + 6 × 3."])
 s.mistake("Not left to right", ["5 + 4 × 2 is 13, not 18. Multiply before you add."])
 
 
@@ -65,6 +69,12 @@ def l8(r):
     return N(f"Work out ({a} + {b}) × ({c} + 1).", (a + b) * (c + 1), o="O1", d="H")
 
 
-s.std([o5, l3, o1, o2, o3, o4, l1, l2, l4, l5, l7, o6, l6, l8], EX("Explain why 3 + 4 × 5 = 23 and not 35.", [("multiply before you add", "multipl.* before|× before|first"), ("4 × 5 = 20, then 3 + 20 = 23", "20|23")], "Multiplication comes before addition. 4 × 5 = 20 first, then 3 + 20 = 23. Working left to right gives the wrong answer, 35.", o="O1"), adv=[o6, l6, l8, l2, l1])
+def p1_1(r):
+    rows = r.sample([("25 × 13 × 4", "Make 100 first"), ("38 + 47 + 2", "Make a ten first"), ("6 × 98", "Round and adjust"), ("7 × 24", "Split one number")], 4)
+    return GD("Choose the best strategy for each.", "Strategy", rows, o="O1", d="H", extra=["Column method"], reason="Look for pairs that make 10 or 100, or numbers close to a round number.")
+
+
+s.std([o5, l3, o1, o2, o3, o4, l1, l2, l4, l5, l7, o6, l6, l8], EX("Explain why 3 + 4 × 5 = 23 and not 35.", [("multiply before you add", "multipl.* before|× before|first"), ("4 × 5 = 20, then 3 + 20 = 23", "20|23")], "Multiplication comes before addition. 4 × 5 = 20 first, then 3 + 20 = 23. Working left to right gives the wrong answer, 35.", o="O1"), adv=[o6, l6, l8, l2, l1],
+      deep=[p1_1])
 
 U.mindmap(("Order of operations", "Brackets • × ÷ • + −", "O1", "16.1"), ("Laws", "Commutative • associative • distributive", "O2", "16.1"))

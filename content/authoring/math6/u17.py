@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 17 Transformations (17.1 Coordinates, 17.2 Reflections, 17.3 Rotations).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 
@@ -17,6 +19,7 @@ s.idea("Four quadrants", ["A point is written **(x, y)**: go **across** first, t
        "The axes cross at the **origin** (0, 0). Negative x is left; negative y is down."], fig=G([{"x": -3, "y": 2, "l": "A"}, {"x": 4, "y": -1, "l": "B"}]))
 s.check(S("Write the coordinates of a point 5 right and 2 down from the origin.", PP(5, -2), o="O1"))
 s.idea("Translation", ["A **translation** slides a shape without turning it. 'Move 3 right and 2 down' adds 3 to x and takes 2 from y."])
+s.check(MC("Before you read on: which point is 3 to the right and 2 down from the origin?", "(3, −2)", [("(−2, 3)", "x (across) comes first."), ("(3, 2)", "Down means a negative y.")], o="O1"))
 s.mistake("Across, then up", ["(2, 5) and (5, 2) are different points: x always comes first."])
 
 
@@ -57,6 +60,7 @@ s.idea("Mirror lines", ["When a shape is **reflected**, each point ends up the *
        "Reflect in the **y-axis**: (x, y) → (−x, y). Reflect in the **x-axis**: (x, y) → (x, −y). Reflect in **y = x**: (x, y) → (y, x)."],
        fig=G(polys=[{"pts": [[1, 1], [4, 1], [1, 3]], "l": "A"}, {"pts": [[-1, 1], [-4, 1], [-1, 3]], "l": "B"}]))
 s.check(S("(3, 5) is reflected in the y-axis. Write its new coordinates.", PP(-3, 5), o="O2"))
+s.check(MC("Before you read on: reflect (2, 5) in the x-axis. Where does it go?", "(2, −5)", [("(−2, 5)", "That is a reflection in the y-axis."), ("(5, 2)", "That swaps the coordinates.")], o="O2"))
 s.mistake("Same distance", ["A point 2 squares from the mirror line must end up 2 squares from it on the other side."])
 
 
@@ -95,6 +99,7 @@ s.idea("Turning a shape", ["A **rotation** turns a shape about a fixed point cal
        "Rotating 90° clockwise about the origin: (x, y) → (y, −x). A half turn (180°): (x, y) → (−x, −y)."],
        fig=G(polys=[{"pts": [[0, 0], [3, 0], [0, 2]], "l": "A"}, {"pts": [[0, 0], [0, -3], [2, 0]], "l": "B"}]))
 s.check(MC("A shape is rotated 90° clockwise and then 90° clockwise again. What single rotation is this?", "180°", [("90° anticlockwise", ""), ("360°", "")], o="O3"))
+s.check(MC("Before you read on: is a quarter turn clockwise the same as three quarter turns anticlockwise?", "Yes", [("No", "Both end in the same position."), ("Only for squares", "It is true for any shape.")], o="O3"))
 s.mistake("Use tracing paper", ["Trace the shape, hold the centre with a pencil, and turn the paper."])
 
 

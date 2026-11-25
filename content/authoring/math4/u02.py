@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 2 Time and timetables (2.1 Time, 2.2 Timetables and time intervals).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -14,6 +16,7 @@ s = U.section("2.1", "Time", ["O1"])
 s.idea("12-hour and 24-hour clocks", ["The 24-hour clock counts from **00:00** (midnight) to **23:59**. For afternoon times, add 12 to the hour: 4:20 p.m. = **16:20**.",
        "1 minute = 60 seconds, 1 hour = 60 minutes, 1 day = 24 hours."], fig={"kind": "clock", "h": 4, "m": 20})
 s.check(S("Write 3:45 p.m. in 24-hour time.", ["15:45", "1545"], o="O1"))
+s.check(MC('Before you read on: what is 15:30 in 12-hour time?', '3:30 p.m.', [('5:30 p.m.', '15 − 12 = 3.'), ('3:30 a.m.', '15:30 is in the afternoon.')], o='O1'))
 s.mistake("Morning times", ["9:30 a.m. is 09:30, not 21:30."])
 
 
@@ -50,6 +53,7 @@ s = U.section("2.2", "Timetables and time intervals", ["O2"])
 s.idea("Reading a timetable", ["A **timetable** lists times in rows and columns, usually in 24-hour time.",
        "To find a **time interval**, count on: from 10:45 to 12:20 is 15 minutes to 11:00, 1 hour to 12:00 and 20 minutes more: **1 hour 35 minutes**."], table={"head": ["Stop", "Bridge", "Market", "Library"], "rows": [["Bus A", "09:05", "09:25", "09:40"], ["Bus B", "10:05", "10:25", "10:40"]]})
 s.check(N("From 09:05 to 09:40, how many minutes?", 35, "minutes", units=["minutes", "min"], o="O2"))
+s.check(MC('Before you read on: a bus leaves at 10:40 and arrives at 11:15. How long is the journey?', '35 minutes', [('75 minutes', 'There are 60 minutes in an hour, not 100.'), ('25 minutes', '10:40 → 11:00 is 20 min, then 15 more.')], o='O2'))
 s.mistake("Hours are 60 minutes", ["From 10:50 to 11:10 is 20 minutes, not 60."])
 
 

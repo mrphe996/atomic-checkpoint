@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 13 Addition and subtraction (13.1 Adding and subtracting efficiently,
-13.2 Adding and subtracting fractions with the same denominator). Written by the Atomic teaching team."""
+13.2 Adding and subtracting fractions with the same denominator). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 from h import *
@@ -14,6 +16,7 @@ s = U.section("13.1", "Adding and subtracting efficiently", ["O1"])
 s.idea("Round and adjust", ["To add 99, add 100 then take away 1: 245 + 99 = 345 − 1 = **344**.",
        "To subtract 49, subtract 50 then add 1: 186 − 49 = 136 + 1 = **137**. Use **number bonds**: 63 + 37 = 100."], fig=NL(0, 10))
 s.check(N("Work out 356 + 199.", 555, o="O1"))
+s.check(MC('Before you read on: what is the easiest way to work out 46 + 99?', '46 + 100 − 1', [('Count on 99 ones', 'That is slow.'), ('46 + 90 + 9 in columns', 'It works but 100 − 1 is quicker.')], o='O1'))
 s.mistake("Adjust the right way", ["When you subtract 50 instead of 49, you took 1 too many: add it back."])
 
 
@@ -50,6 +53,7 @@ s = U.section("13.2", "Adding and subtracting fractions with the same denominato
 s.idea("Same-sized parts", ["When the denominators are the same, add or subtract the **numerators**: 3/7 + 2/7 = **5/7** and 6/8 − 1/8 = **5/8**.",
        "The denominator stays the same because the parts are the same size. One whole is 7/7, 8/8 and so on."], fig=PIE(7, range(5)))
 s.check(S("Work out 2/5 + 2/5.", ["4/5"], o="O2"))
+s.check(MC('Before you read on: what is 2/7 + 3/7?', '5/7', [('5/14', 'Add the tops; the pieces are still sevenths.'), ('6/7', '2 + 3 = 5.')], o='O2'))
 s.mistake("Keep the denominator", ["3/7 + 2/7 is 5/7, not 5/14."])
 
 
@@ -83,6 +87,11 @@ def f8(r):
     return S(f"A jug is {a}/{d} full. {b}/{d} is poured out. How full is it now?", [f"{a - b}/{d}"], o="O2")
 
 
-s.std([f3, f5, f1, f2, f4, f8, f6, f7], EX("Explain why 2/9 + 5/9 = 7/9.", [("the parts are all ninths", "ninths|same size|same denominator"), ("2 + 5 = 7 ninths", "2 ?\\+ ?5|7 ninths|seven")], "Both fractions are ninths, so the parts are the same size. 2 ninths and 5 ninths make 7 ninths: 7/9.", o="O2"))
+def e132(r):
+    return MC('Mia writes 3/8 + 2/8 = 5/16. What is right?', '5/8', [('5/16', 'The pieces are still eighths: do not add the bottoms.'), ('6/8', '3 + 2 = 5.')], o='O2', d="H", reason='3 eighths + 2 eighths = 5 eighths.')
+
+
+s.std([f3, f5, f1, f2, f4, f8, f6, f7], EX("Explain why 2/9 + 5/9 = 7/9.", [("the parts are all ninths", "ninths|same size|same denominator"), ("2 + 5 = 7 ninths", "2 ?\\+ ?5|7 ninths|seven")], "Both fractions are ninths, so the parts are the same size. 2 ninths and 5 ninths make 7 ninths: 7/9.", o="O2"),
+      deep=[e132])
 
 U.mindmap(("Mental strategies", "Round and adjust • number bonds to 100", "O1", "13.1"), ("Fractions", "Same denominator: add or subtract the numerators", "O2", "13.2"))

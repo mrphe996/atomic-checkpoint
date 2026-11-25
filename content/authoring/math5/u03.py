@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 3 Numbers and sequences (3.1 Counting and sequences, 3.2 Square and triangular numbers,
-3.3 Prime and composite numbers). Written by the Atomic teaching team."""
+3.3 Prime and composite numbers). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 from h import *
 
@@ -16,6 +18,7 @@ s = U.section("3.1", "Counting and sequences", ["O1"])
 s.idea("Steps of the same size", ["A **linear sequence** goes up or down by the same amount each time. 50, 42, 34, 26, … counts back in **eights**.",
        "You can count back past zero: 9, 5, 1, −3, −7, …"], fig=NL(-8, 10))
 s.check(N("What is the next number: 45, 38, 31, 24, …?", 17, o="O1"))
+s.check(MC('Before you read on: the sequence is 4, 7, 10, 13, … What is the next term?', '16', [('17', 'The rule is add 3.'), ('15', '13 + 3 = 16.')], o='O1'))
 s.mistake("Through zero", ["Counting back 4 from 2 gives −2."])
 
 
@@ -53,6 +56,7 @@ s.idea("Square numbers", ["A **square number** is made by multiplying a number b
        "Square numbers: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100."], table={"head": ["n", "1", "2", "3", "4", "5"], "rows": [["n × n", "1", "4", "9", "16", "25"]]})
 s.idea("Triangular numbers", ["**Triangular numbers** make a triangle of dots: 1, 3, 6, 10, 15, 21, … Each time, add one more than last time: +2, +3, +4, …"])
 s.check(N("What is the next triangular number after 10?", 15, o="O2"))
+s.check(MC('Before you read on: is 10 a triangular number?', 'Yes: 1 + 2 + 3 + 4', [('No', 'Add 1 + 2 + 3 + 4.'), ('Only a square number', '10 is not square, but it is triangular.')], o='O2'))
 s.mistake("Not doubling", ["5 squared is 5 × 5 = 25, not 5 × 2 = 10."])
 
 
@@ -90,6 +94,7 @@ s.idea("Factors", ["A **factor** divides exactly into a number. The factors of 1
        "A **prime number** has exactly **two** factors: 1 and itself (2, 3, 5, 7, 11, …). A **composite number** has more than two factors. 1 is neither."],
        table={"head": ["Number", "Factors", "Type"], "rows": [["7", "1, 7", "prime"], ["8", "1, 2, 4, 8", "composite"]]})
 s.check(MC("Which number is prime?", "13", [("15", ""), ("21", ""), ("9", "")], o="O3"))
+s.check(MC('Before you read on: is 21 prime?', 'No: 3 × 7', [('Yes', '21 = 3 × 7.'), ('Only odd numbers are prime', 'Many odd numbers, like 9 and 21, are not prime.')], o='O3'))
 s.mistake("Odd is not prime", ["9 is odd but composite: 9 = 3 × 3."])
 
 
@@ -120,6 +125,12 @@ def f9(r):
     return N(f"Two prime numbers add up to {a + b}. One is {a}. What is the other?", b, o="O3", d="H")
 
 
-s.std([f1, f4, f2, f3, f5, f6, f7, f9], EX("Explain why 2 is the only even prime number.", [("2 has only two factors, 1 and 2", "1 and 2|two factors"), ("every other even number divides by 2 as well", "divide by 2|divisible by 2|factor of 2|2 is a factor")], "2 has only two factors, 1 and 2, so it is prime. Every other even number can also be divided by 2, so it has more than two factors and is composite.", o="O3"))
+def c53(r):
+    rows = r.sample([('A prime number is odd', 'Sometimes true'), ('An even number bigger than 2 is prime', 'Never true'), ('A composite number has more than two factors', 'Always true'), ('A number ending in 5 is prime', 'Sometimes true')], 4)
+    return GD('Is each statement always, sometimes or never true?', "Always / sometimes / never", rows, o='O3', d="H", extra=["Always true", "Sometimes true", "Never true"], reason='2 is an even prime; 5 is prime but 15 is not.')
+
+
+s.std([f1, f4, f2, f3, f5, f6, f7, f9], EX("Explain why 2 is the only even prime number.", [("2 has only two factors, 1 and 2", "1 and 2|two factors"), ("every other even number divides by 2 as well", "divide by 2|divisible by 2|factor of 2|2 is a factor")], "2 has only two factors, 1 and 2, so it is prime. Every other even number can also be divided by 2, so it has more than two factors and is composite.", o="O3"),
+      deep=[c53])
 
 U.mindmap(("Sequences", "Count on and back • through zero", "O1", "3.1"), ("Special numbers", "Square • triangular", "O2", "3.2"), ("Primes", "Exactly two factors • composite has more", "O3", "3.3"))

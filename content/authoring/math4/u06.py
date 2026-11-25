@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 6 2D shapes (6.1 2D shapes and tessellation, 6.2 Symmetry).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -18,6 +20,7 @@ s = U.section("6.1", "2D shapes and tessellation", ["O1"])
 s.idea("Polygons", ["A **polygon** is a flat shape with straight sides. A pentagon has 5 sides, a hexagon 6, a heptagon 7, an octagon 8.",
        "A **regular** polygon has all sides and all angles equal. Shapes **tessellate** when they fit together with no gaps or overlaps, like squares on a floor."], fig={"kind": "shape", "pts": PTS[6]})
 s.check(N("How many sides does an octagon have?", 8, "sides", units=["sides"], o="O1"))
+s.check(MC('Before you read on: do regular hexagons tessellate (fit together with no gaps)?', 'Yes', [('No', 'Each angle is 120°, and 3 × 120° = 360°.'), ('Only squares do', 'Triangles and hexagons do too.')], o='O1'))
 s.mistake("Irregular shapes count", ["A shape with 6 sides of different lengths is still a hexagon – an irregular one."])
 
 
@@ -53,6 +56,7 @@ s = U.section("6.2", "Symmetry", ["O2"])
 s.idea("Lines of symmetry", ["A **line of symmetry** divides a shape into two halves that are mirror images.",
        "A regular polygon has as many lines of symmetry as it has sides: a regular hexagon has 6."], fig={"kind": "cells", "cells": [[1, 0], [2, 0], [0, 1], [3, 1], [1, 2], [2, 2]], "cols": 4, "rows": 3, "grid": True, "mirror": {"x": 2}})
 s.check(N("How many lines of symmetry does a regular pentagon have?", 5, o="O2"))
+s.check(MC('Before you read on: how many lines of symmetry does an equilateral triangle have?', '3', [('1', 'There is one from each corner.'), ('0', 'Fold it from any corner to the middle of the opposite side.')], o='O2'))
 s.mistake("Diagonals of rectangles", ["A rectangle's diagonals are not lines of symmetry."])
 
 

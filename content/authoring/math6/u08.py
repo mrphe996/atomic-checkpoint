@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 8 Addition and subtraction (2) (8.1 Adding and subtracting decimal numbers,
-8.2 Adding and subtracting fractions). Written by the Atomic teaching team."""
+8.2 Adding and subtracting fractions). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from math import gcd
 from kit import *
@@ -25,6 +27,7 @@ s.idea("Line up the points", ["When you add or subtract decimals, **line up the 
        "Fill gaps with zeros: 6.4 − 2.75 → 6.40 − 2.75 = **3.65**."], table={"head": ["", "Tens", "Ones", ".", "Tenths", "Hundredths"], "rows": [["", "", "6", ".", "4", "0"], ["−", "", "2", ".", "7", "5"], ["=", "", "3", ".", "6", "5"]]})
 s.check(N("Work out 4.6 + 2.35.", 6.95, o="O1"))
 s.idea("Estimate first", ["Round to whole numbers to check: 12.8 + 7.15 ≈ 13 + 7 = 20."])
+s.check(MC("Before you read on: what is 3.5 + 1.25?", "4.75", [("4.30", "Line up the decimal points: 3.50 + 1.25."), ("1.60", "Line up the points, not the last digits.")], o="O1"))
 s.mistake("Points in line", ["3.5 + 1.25 is 4.75, not 1.60. Line up the decimal points, not the last digits."])
 
 
@@ -58,13 +61,21 @@ def d9(r):
     return N(f"Work out {fmt(a)} + {fmt(b)} − {fmt(c)}.", round(a + b - c, 2), o="O1", d="H")
 
 
-s.std([d4, d5, d1, d2, d3, d6, d7, d8, d9], EX("Explain how to work out 7 − 2.45.", [("write 7 as 7.00", "7\\.00|zeros"), ("7.00 − 2.45 = 4.55", "4\\.55")], "Write 7 as 7.00 so the decimal places line up, then subtract: 7.00 − 2.45 = 4.55.", o="O1"))
+def h1_1(r):
+    a, b = pick(r, [(5.4, 2.35), (3.6, 1.25), (8.2, 0.45)])
+    return MC(f"Sam writes {a} + {b} = {round(int(a * 10) / 100 + b, 2)}. What is the right answer?", f"{a + b:.2f}", [(f"{round(int(a * 10) / 100 + b, 2)}", "He lined up the last digits instead of the decimal points."), (f"{a + b + 1:.2f}", "Check by estimating.")], o="O1", d="H", reason=f"{a:.2f} + {b:.2f} = {a + b:.2f}.")
+
+
+s.std([d4, d5, d1, d2, d3, d6, d7, d8, d9], EX("Explain how to work out 7 − 2.45.", [("write 7 as 7.00", "7\\.00|zeros"), ("7.00 − 2.45 = 4.55", "4\\.55")], "Write 7 as 7.00 so the decimal places line up, then subtract: 7.00 − 2.45 = 4.55.", o="O1"),
+      deep=[h1_1])
 
 s = U.section("8.2", "Adding and subtracting fractions", ["O2"])
 s.idea("Common denominators", ["You can only add fractions when the **denominators are the same**. 1/3 + 1/6 = 2/6 + 1/6 = **3/6 = 1/2**.",
        "Find a **common multiple** of the denominators, change each fraction, then add or subtract the numerators."], fig={"kind": "pie", "labels": [""] * 6, "values": [1] * 6, "shade": [0, 1, 2]})
 s.check(F("Work out 1/4 + 1/2.", Fr(3, 4), o="O2"))
 s.idea("Mixed numbers", ["Add the whole numbers, then the fractions: 1 1/2 + 2 1/4 = 3 + 3/4 = **3 3/4**."])
+s.idea("Why we need the same denominator", ["You can only add pieces of the same size. 1/2 + 1/4: change 1/2 into 2/4, then 2/4 + 1/4 = 3/4.",
+       "Adding the denominators would change the size of the pieces: 1/2 + 1/4 is NOT 2/6."])
 s.mistake("Don't add the bottoms", ["1/2 + 1/3 is not 2/5. Change to sixths: 3/6 + 2/6 = 5/6."])
 PAIRS = [(2, 4), (2, 6), (3, 6), (4, 8), (2, 8), (3, 9), (5, 10), (2, 10), (4, 12), (3, 12), (6, 12), (2, 3), (3, 4), (2, 5), (4, 5)]
 
@@ -100,6 +111,12 @@ def g8(r):
     return MC(f"Which is equal to {frac(a)} + {frac(b)}?", frac(t), [f"{a.numerator + b.numerator}/{a.denominator + b.denominator}", frac(t + Fr(1, 12)), frac(abs(a - b)) if a != b else "1"], o="O2", d="H")
 
 
-s.std([g3, g5, g1, g2, g4, g7, g8, g6], EX("Explain how to work out 2/3 + 1/6.", [("change 2/3 to 4/6", "4/6|sixths"), ("4/6 + 1/6 = 5/6", "5/6")], "The denominators are different, so change 2/3 into sixths: 2/3 = 4/6. Then 4/6 + 1/6 = 5/6.", o="O2"))
+def h2_1(r):
+    a, b = pick(r, [(Fr(1, 2), Fr(1, 3)), (Fr(1, 4), Fr(1, 2)), (Fr(2, 3), Fr(1, 6))])
+    return MC(f"Lia writes {frac(a)} + {frac(b)} = {a.numerator + b.numerator}/{a.denominator + b.denominator}. What is right?", frac(a + b), [(f"{a.numerator + b.numerator}/{a.denominator + b.denominator}", "Do not add the denominators."), (frac(a * b), "That multiplies.")], o="O2", d="H", reason=f"Use a common denominator: {frac(a + b)}.")
+
+
+s.std([g3, g5, g1, g2, g4, g7, g8, g6], EX("Explain how to work out 2/3 + 1/6.", [("change 2/3 to 4/6", "4/6|sixths"), ("4/6 + 1/6 = 5/6", "5/6")], "The denominators are different, so change 2/3 into sixths: 2/3 = 4/6. Then 4/6 + 1/6 = 5/6.", o="O2"),
+      deep=[h2_1])
 
 U.mindmap(("Decimals", "Line up the points • estimate first", "O1", "8.1"), ("Fractions", "Common denominator • mixed numbers", "O2", "8.2"))

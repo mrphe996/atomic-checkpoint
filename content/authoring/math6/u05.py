@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 5 2D shapes (5.1 Quadrilaterals, 5.2 Circles, 5.3 Rotational symmetry).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 
@@ -16,6 +18,7 @@ s = U.section("5.1", "Quadrilaterals", ["O1"])
 s.idea("Families of quadrilaterals", ["A **quadrilateral** has 4 straight sides. Look at **sides** (equal? parallel?), **angles** (right angles?) and **diagonals**.",
        "A **trapezium** has one pair of parallel sides. A **kite** has two pairs of equal sides next to each other. A **parallelogram** has two pairs of parallel sides; a **rhombus** is a parallelogram with 4 equal sides."], fig={"kind": "shape", "pts": Q4["trapezium"]})
 s.check(MC("Which quadrilateral has exactly one pair of parallel sides?", "trapezium", [("kite", ""), ("rectangle", ""), ("rhombus", "")], o="O1"))
+s.check(MC("Before you read on: is a square a rectangle?", "Yes", [("No", "A square has 4 right angles and opposite sides equal, so it fits the rectangle rules."), ("Only if it is big", "Size does not matter.")], o="O1"))
 s.mistake("A square is a rectangle", ["A square has four right angles, so it is a special rectangle (and a special rhombus too)."])
 
 
@@ -56,12 +59,19 @@ def g10(r):
     return N(f"Lina bends a {4 * s_} cm wire into a {p_}. How long is each side?", s_, "cm", units=["cm"], o="O1", d="H")
 
 
-s.std([g1, g2, g3, g4, g5, g7, g8, g6, g9, g10], EX("Explain why a square is also a rhombus.", [("a rhombus has four equal sides", "four equal|4 equal|equal sides"), ("a square also has four equal sides", "square.*equal|also")], "A rhombus is a quadrilateral with four equal sides. A square also has four equal sides, so a square is a special rhombus (with right angles).", o="O1"))
+def e1_1(r):
+    rows = r.sample([("A square is a rhombus", "Always true"), ("A rectangle is a square", "Sometimes true"), ("A trapezium has two pairs of parallel sides", "Sometimes true"), ("A kite has four equal sides", "Sometimes true"), ("A parallelogram has a right angle", "Sometimes true"), ("A rhombus has four equal sides", "Always true")], 4)
+    return GD("Is each statement always true, sometimes true or never true?", "Always / sometimes / never", rows, o="O1", d="H", extra=["Always true", "Sometimes true", "Never true"], reason="Check the properties of each shape; a special case (square, rhombus) can make a 'sometimes' statement true.")
+
+
+s.std([g1, g2, g3, g4, g5, g7, g8, g6, g9, g10], EX("Explain why a square is also a rhombus.", [("a rhombus has four equal sides", "four equal|4 equal|equal sides"), ("a square also has four equal sides", "square.*equal|also")], "A rhombus is a quadrilateral with four equal sides. A square also has four equal sides, so a square is a special rhombus (with right angles).", o="O1"),
+      deep=[e1_1])
 
 s = U.section("5.2", "Circles", ["O2"])
 s.idea("Parts of a circle", ["The **centre** is the middle point. The **radius** goes from the centre to the edge. The **diameter** goes all the way across through the centre.",
        "**diameter = 2 × radius**. The distance all the way round is the **circumference**."], fig={"kind": "circle", "r": "radius"})
 s.check(N("A circle has radius 6 cm. What is its diameter?", 12, "cm", units=["cm"], o="O2"))
+s.check(MC("Before you read on: a circle has radius 6 cm. What is its diameter?", "12 cm", [("3 cm", "The diameter is twice the radius."), ("6 cm", "That is the radius.")], o="O2"))
 s.mistake("Radius or diameter", ["The radius is half the diameter. Do not mix them up."])
 
 
@@ -104,6 +114,7 @@ s = U.section("5.3", "Rotational symmetry", ["O3"])
 s.idea("Turning symmetry", ["A shape has **rotational symmetry** if it looks exactly the same after a turn of less than a full turn.",
        "The **order** of rotational symmetry is how many times it fits onto itself in one full turn. A square has order 4; a rectangle has order 2."], fig={"kind": "shape", "pts": Q4["square"]})
 s.check(N("What is the order of rotational symmetry of an equilateral triangle?", 3, o="O3"))
+s.check(MC("Before you read on: what is the order of rotational symmetry of a square?", "4", [("2", "It fits onto itself after each quarter turn."), ("1", "It looks the same more than once in a full turn.")], o="O3"))
 s.mistake("Order 1", ["A shape that only fits onto itself after a full turn has order 1 (no rotational symmetry)."])
 POLY = {"square": 4, "rectangle": 2, "parallelogram": 2, "rhombus": 2, "kite": 1, "trapezium": 1, "equilateral triangle": 3, "regular hexagon": 6, "regular pentagon": 5, "regular octagon": 8}
 TRIPTS = [[0, 0], [6, 0], [3, 5.2]]

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 4 Addition and subtraction (1) (4.1 Positive and negative integers,
-4.2 Using letters to represent numbers). Written by the Atomic teaching team."""
+4.2 Using letters to represent numbers). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 
 U = Unit(4, "Addition and Subtraction (1)", "Number",
@@ -15,6 +17,7 @@ s.idea("Below zero", ["Numbers below zero are **negative**: −1, −2, −3, �
        "To add, move **right**. To subtract, move **left**. −3 + 5 = 2 and 2 − 6 = −4."], fig=NL(-6, 6))
 s.check(N("Work out −4 + 7.", 3, o="O1"))
 s.idea("Temperature", ["Temperatures below 0 °C are negative. A rise from −5 °C to 3 °C is a change of 8 degrees."])
+s.check(MC("Before you read on: the temperature is −3 °C and falls by 4 degrees. What is it now?", "−7 °C", [("1 °C", "Falling means getting colder: go down."), ("−1 °C", "Count 4 down from −3.")], o="O1"))
 s.mistake("Left is smaller", ["−7 is smaller than −2, because it is further left on the number line."])
 
 
@@ -49,13 +52,20 @@ def n9(r):
     return N(f"What must you add to {sg(a)} to get {sg(t)}?", t - a, o="O1", d="H")
 
 
-s.std([n4, n8, n1, n2, n3, n5, n6, n7, n9], EX("Explain why −2 − 5 = −7.", [("start at −2 and move 5 to the left", "left|move 5|count back"), ("you land on −7", "−7|-7")], "Start at −2 on the number line. Subtracting 5 means moving 5 places to the left, which lands on −7.", o="O1"))
+def d1_1(r):
+    a, b = -r.randint(2, 9), r.randint(1, 9)
+    return N(f"How many degrees warmer is {b} °C than {a} °C?", b - a, "degrees", units=["degrees", "°C"], o="O1", d="H", fig=NL(a - 1, b + 1), reason=f"From {a} up to 0 is {-a}, then up to {b} is {b}: {b - a} degrees.")
+
+
+s.std([n4, n8, n1, n2, n3, n5, n6, n7, n9], EX("Explain why −2 − 5 = −7.", [("start at −2 and move 5 to the left", "left|move 5|count back"), ("you land on −7", "−7|-7")], "Start at −2 on the number line. Subtracting 5 means moving 5 places to the left, which lands on −7.", o="O1"),
+      deep=[d1_1])
 
 s = U.section("4.2", "Using letters to represent numbers", ["O2"])
 s.idea("Letters for numbers", ["A letter can stand for an unknown number. In **n + 4 = 11**, n stands for 7 because 7 + 4 = 11.",
        "**3n** means 3 × n. If n = 5, then 3n = 15."], table={"head": ["n", "1", "2", "3", "4"], "rows": [["n + 4", "5", "6", "7", "8"], ["3n", "3", "6", "9", "12"]]})
 s.check(N("If a + 9 = 20, what is a?", 11, o="O2"))
 s.idea("Inverse operations", ["Use the **inverse** to find the unknown: if n − 6 = 9, then n = 9 + 6 = 15. If 4n = 28, then n = 28 ÷ 4 = 7."])
+s.check(MC("Before you read on: a pencil costs p cents. What do 3 pencils cost?", "3p cents", [("p + 3 cents", "That is one pencil and 3 cents more."), ("3 + p cents", "That adds 3 instead of multiplying.")], o="O2"))
 s.mistake("3n is not 3 + n", ["3n means 3 × n. If n = 2, 3n = 6, not 5."])
 
 
@@ -88,6 +98,12 @@ def l9(r):
     return N(f"Find the value of n: {a}n + {b} = {a * n + b}", n, o="O2", d="H")
 
 
-s.std([l5, l8, l1, l2, l3, l4, l7, l6, l9], EX("Explain how to find n when n − 8 = 15.", [("use the inverse: add 8", "add 8|\\+ ?8|inverse"), ("n = 23", "23")], "The inverse of subtracting 8 is adding 8. So n = 15 + 8 = 23.", o="O2"))
+def d2_1(r):
+    a = r.randint(2, 9)
+    return MC(f"Which expression means '{a} more than n'?", f"n + {a}", [(f"{a}n", f"That is {a} times n."), (f"n − {a}", f"That is {a} less.")], o="O2", d="H", reason=f"More than means add: n + {a}.")
+
+
+s.std([l5, l8, l1, l2, l3, l4, l7, l6, l9], EX("Explain how to find n when n − 8 = 15.", [("use the inverse: add 8", "add 8|\\+ ?8|inverse"), ("n = 23", "23")], "The inverse of subtracting 8 is adding 8. So n = 15 + 8 = 23.", o="O2"),
+      deep=[d2_1])
 
 U.mindmap(("Negative numbers", "Number line • temperature", "O1", "4.1"), ("Letters", "n stands for a number • 3n = 3 × n", "O2", "4.2"))

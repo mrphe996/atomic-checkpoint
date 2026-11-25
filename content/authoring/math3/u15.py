@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 15 Graphs (15.1 Pictograms and bar charts, 15.2 Venn and Carroll diagrams).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -19,6 +21,7 @@ s = U.section("15.1", "Pictograms and bar charts", ["O1"])
 s.idea("Pictures and bars", ["In a **pictogram**, one picture can stand for more than one: if ● = 2 children, then ●●● = 6 children and half a picture is 1.",
        "In a **bar chart**, read the top of each bar across to the scale."], fig=BC(SP, [6, 10, 4, 8]))
 s.check(N("In the bar chart, how many children chose Run?", 10, "children", units=["children"], o="O1"))
+s.check(MC('Before you read on: in a bar chart, what does the tallest bar show?', 'The biggest number', [('The smallest number', 'Taller means more.'), ('The first group', 'Height shows the amount.')], o='O1'))
 s.mistake("Check the key", ["Always read the key: one picture might stand for 2, 5 or 10."])
 
 
@@ -54,6 +57,7 @@ s = U.section("15.2", "Venn and Carroll diagrams", ["O2"])
 s.idea("Sorting", ["A **Venn diagram** uses circles to sort. Things that fit both rules go in the **overlap**. Things that fit neither go outside.",
        "A **Carroll diagram** uses a table: one rule across the top, the other down the side."], table={"head": ["", "even", "not even"], "rows": [["less than 10", "2, 6", "3, 7"], ["not less than 10", "12, 18", "11, 15"]]})
 s.check(MC("In a Carroll diagram for 'even' and 'less than 10', where does 8 go?", "even and less than 10", [("not even and less than 10", ""), ("even and not less than 10", "")], o="O2"))
+s.check(MC('Before you read on: in a Venn diagram, where do things go that fit BOTH groups?', 'In the overlap', [('Outside both circles', 'That is for things in neither group.'), ('In one circle only', 'They belong to both.')], o='O2'))
 s.mistake("The overlap", ["A number that fits both rules goes in the overlap, not in just one circle."])
 
 

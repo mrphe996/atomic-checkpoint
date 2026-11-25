@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 12 Data (12.1 Representing and interpreting data, 12.2 Frequency diagrams and line graphs).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -20,6 +22,7 @@ s = U.section("12.1", "Representing and interpreting data", ["O1"])
 s.idea("Charts and tables", ["A **tally chart** records data as you collect it. A **frequency table** shows the totals. A **bar chart** shows each total as a bar.",
        "Always check the **scale**: if it goes up in 2s, a bar between 6 and 8 shows 7."], fig=BC(PETS[:4], [8, 12, 4, 6]))
 s.check(N("In the bar chart, how many children chose dog?", 12, o="O1"))
+s.check(MC("Before you read on: which graph best shows how a plant's height changes over 4 weeks?", 'A line graph', [('A pie chart', 'Pie charts show parts of a whole.'), ('A Venn diagram', 'Venn diagrams sort into groups.')], o='O1'))
 s.mistake("Labels", ["Read the label under the bar you need, then read across to the scale."])
 
 
@@ -58,6 +61,7 @@ s.idea("Grouped data", ["When there are lots of different values, put them into 
        "A **line graph** shows how something changes over time, like temperature through a day. Read across from a point to the scale."],
        fig={"kind": "linegraph", "x": {"min": 0, "max": 6, "step": 1, "label": "Hour"}, "y": {"min": 0, "max": 30, "step": 5, "label": "°C"}, "series": [{"pts": [[0, 12], [1, 15], [2, 20], [3, 24], [4, 23], [5, 19], [6, 16]]}]})
 s.check(N("In the line graph, what was the temperature at hour 3?", 24, "°C", units=["°C"], o="O2"))
+s.check(MC('Before you read on: in a frequency diagram, what does the height of a bar show?', 'How many are in that group', [('The size of the group', 'The width shows the group; the height shows how many.'), ('The average', 'It shows the frequency.')], o='O2'))
 s.mistake("Between points", ["The line between two points gives an estimate of values in between."])
 GRP = ["0–9", "10–19", "20–29", "30–39"]
 

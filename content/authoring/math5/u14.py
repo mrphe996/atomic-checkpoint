@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 14 Area and perimeter (14.1 Perimeter, 14.2 Area).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -14,6 +16,7 @@ s = U.section("14.1", "Perimeter", ["O1"])
 s.idea("The distance round", ["The **perimeter** is the total distance all the way round a shape. Add the lengths of all the sides.",
        "For a rectangle: perimeter = length + width + length + width = **2 × (length + width)**."], fig=RECT(6, 4))
 s.check(N("A rectangle is 7 cm long and 3 cm wide. What is its perimeter?", 20, "cm", units=["cm"], o="O1"))
+s.check(MC('Before you read on: what is the perimeter of a square with side 6 cm?', '24 cm', [('36 cm', 'That is the area (in cm²).'), ('12 cm', 'A square has 4 sides.')], o='O1'))
 s.mistake("All the sides", ["A rectangle has 4 sides: don't just add the two lengths you can see labelled."])
 
 
@@ -52,6 +55,7 @@ s = U.section("14.2", "Area", ["O2"])
 s.idea("Counting squares", ["The **area** is the space inside a shape. We measure it in **square units**: square centimetres (**cm²**) or square metres (**m²**).",
        "A rectangle 5 cm by 3 cm has 3 rows of 5 squares: **area = length × width = 15 cm²**."], fig={"kind": "cells", "cells": [[i, j] for i in range(5) for j in range(3)]})
 s.check(N("A rectangle is 6 cm by 4 cm. What is its area?", 24, "cm²", units=["cm²"], o="O2"))
+s.check(MC('Before you read on: two rectangles have the same perimeter. Must they have the same area?', 'No', [('Yes', '2 × 6 and 3 × 5 both have perimeter 16 cm but areas 12 cm² and 15 cm².'), ('Only if they are squares', 'Try 2 × 6 and 3 × 5.')], o='O2'))
 s.mistake("Area or perimeter?", ["Area counts the squares inside (cm²); perimeter measures the distance round (cm)."])
 
 
@@ -85,6 +89,12 @@ def a8(r):
     return N("Each square is 1 cm². What is the area of the shaded shape?", len(cells), "cm²", units=["cm²"], o="O2", fig={"kind": "cells", "cells": cells, "cols": 5, "rows": 4, "grid": True})
 
 
-s.std([a1, a2, a8, a3, a6, a7, a4, a5], EX("Explain why a rectangle 4 cm by 3 cm has an area of 12 cm².", [("it has 3 rows of 4 squares", "rows|3 ?× ?4|4 ?× ?3"), ("3 × 4 = 12 squares of 1 cm²", "12")], "The rectangle can be split into 3 rows of 4 one-centimetre squares. 3 × 4 = 12 squares, so the area is 12 cm².", o="O2"))
+def f142(r):
+    rows = r.sample([('A square has a bigger area than its perimeter', 'Sometimes true'), ('Area is measured in square units', 'Always true'), ('Doubling the sides of a square doubles its area', 'Never true')], 3)
+    return GD('Is each statement always, sometimes or never true?', "Always / sometimes / never", rows, o='O2', d="H", extra=["Always true", "Sometimes true", "Never true"], reason='A 5 cm square has area 25 and perimeter 20, but a 2 cm square has area 4 and perimeter 8. Doubling the sides makes the area 4 times bigger.')
+
+
+s.std([a1, a2, a8, a3, a6, a7, a4, a5], EX("Explain why a rectangle 4 cm by 3 cm has an area of 12 cm².", [("it has 3 rows of 4 squares", "rows|3 ?× ?4|4 ?× ?3"), ("3 × 4 = 12 squares of 1 cm²", "12")], "The rectangle can be split into 3 rows of 4 one-centimetre squares. 3 × 4 = 12 squares, so the area is 12 cm².", o="O2"),
+      deep=[f142])
 
 U.mindmap(("Perimeter", "Distance round • 2 × (l + w)", "O1", "14.1"), ("Area", "Squares inside • l × w • cm² and m²", "O2", "14.2"))

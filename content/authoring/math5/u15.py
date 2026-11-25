@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 15 Multiplying and dividing fractions and decimals (15.1 Multiplying a fraction by a whole number,
-15.2 Multiplying and dividing decimals). Written by the Atomic teaching team."""
+15.2 Multiplying and dividing decimals). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 from h import *
@@ -14,6 +16,7 @@ s = U.section("15.1", "Multiplying a fraction by a whole number", ["O1"])
 s.idea("Repeated addition", ["1/5 × 3 means three lots of 1/5: 1/5 + 1/5 + 1/5 = **3/5**.",
        "2/7 × 3 = 6/7. Multiply the **numerator** only: the parts are still sevenths."], fig=PIE(5, range(3)))
 s.check(F("Work out 1/8 × 5.", Fr(5, 8), o="O1"))
+s.check(MC('Before you read on: what is 3 × 2/5?', '6/5 = 1 1/5', [('6/15', 'Only the numerator is multiplied.'), ('5/5', '3 × 2 = 6 fifths.')], o='O1'))
 s.mistake("Not the denominator", ["1/4 × 3 = 3/4, not 3/12."])
 
 
@@ -50,6 +53,7 @@ s = U.section("15.2", "Multiplying and dividing decimals", ["O2"])
 s.idea("Use whole numbers", ["To work out 3.4 × 2, think 34 × 2 = 68, then make it 10 times smaller: **6.8**.",
        "To divide 8.4 ÷ 4, split it: 8 ÷ 4 = 2 and 0.4 ÷ 4 = 0.1, so **2.1**. Estimate to check."], table={"head": ["×", "3", "0.4"], "rows": [["2", "6", "0.8"]]})
 s.check(N("Work out 1.3 × 3.", 3.9, o="O2"))
+s.check(MC('Before you read on: what is 0.4 × 3?', '1.2', [('12', '4 tenths × 3 = 12 tenths.'), ('0.12', 'There is one decimal place.')], o='O2'))
 s.mistake("The point", ["0.6 × 3 = 1.8, not 18."])
 
 

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 9 Comparing, rounding and dividing (9.1 Rounding, ordering and comparing whole numbers,
-9.2 Division of 2-digit numbers). Written by the Atomic teaching team."""
+9.2 Division of 2-digit numbers). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 from h import *
 
@@ -13,6 +15,7 @@ s = U.section("9.1", "Rounding, ordering and comparing whole numbers", ["O1"])
 s.idea("Rounding", ["To round to the nearest **10**, look at the ones; to the nearest **100**, look at the tens; to the nearest **1000**, look at the hundreds. 5 or more rounds up.",
        "6478 → 6480 (nearest 10), 6500 (nearest 100), 6000 (nearest 1000)."], table={"head": ["Number", "Nearest 10", "Nearest 100", "Nearest 1000"], "rows": [["6478", "6480", "6500", "6000"]]})
 s.check(N("Round 3750 to the nearest 1000.", 4000, o="O1"))
+s.check(MC('Before you read on: round 4 650 to the nearest hundred.', '4 700', [('4 600', '50 rounds up.'), ('5 000', 'That is the nearest thousand.')], o='O1'))
 s.mistake("Look at one digit", ["To round 6478 to the nearest 1000, only the hundreds digit (4) matters."])
 
 
@@ -53,6 +56,7 @@ s = U.section("9.2", "Division of 2-digit numbers", ["O2"])
 s.idea("Dividing and remainders", ["To divide 72 ÷ 4, split 72 into 40 + 32: 40 ÷ 4 = 10 and 32 ÷ 4 = 8, so **72 ÷ 4 = 18**.",
        "If it doesn't divide exactly, there is a **remainder**: 25 ÷ 4 = 6 r1. In a story, decide whether to round up or down."], table={"head": ["Split", "40", "32"], "rows": [["÷ 4", "10", "8"]]})
 s.check(N("Work out 84 ÷ 4.", 21, o="O2"))
+s.check(MC('Before you read on: what is 84 ÷ 4?', '21', [('24', '80 ÷ 4 = 20 and 4 ÷ 4 = 1.'), ('12', 'Check: 12 × 4 = 48.')], o='O2'))
 s.mistake("Remainder too big", ["The remainder must be smaller than the number you divide by: 25 ÷ 4 is 6 r1, not 5 r5."])
 
 

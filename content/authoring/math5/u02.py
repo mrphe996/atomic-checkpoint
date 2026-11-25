@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 5 Mathematics (Primary) · Unit 2 2D shapes (2.1 Triangles, 2.2 Symmetry). Written by the Atomic teaching team."""
+"""Stage 5 Mathematics (Primary) · Unit 2 2D shapes (2.1 Triangles, 2.2 Symmetry). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 from h import *
 
@@ -15,6 +17,7 @@ s = U.section("2.1", "Triangles", ["O1"])
 s.idea("Three kinds of triangle", ["An **equilateral** triangle has 3 equal sides and 3 equal angles. An **isosceles** triangle has 2 equal sides and 2 equal angles. A **scalene** triangle has no equal sides.",
        "Little marks called **hatch marks** show which sides are equal."], fig={"kind": "shape", "pts": TRI["isosceles"], "ticks": [0, 1, 1]})
 s.check(MC("A triangle has sides 5 cm, 5 cm and 3 cm. What type is it?", "isosceles", [("equilateral", ""), ("scalene", "")], o="O1"))
+s.check(MC('Before you read on: can a triangle have two right angles?', 'No', [('Yes', 'Two right angles already make 180°.'), ('Only a big one', 'Size does not change the angles.')], o='O1'))
 s.mistake("Right-angled can be isosceles", ["A right-angled triangle can also be isosceles if its two shorter sides are equal."])
 
 
@@ -52,13 +55,20 @@ def t8(r):
     return N(f"An isosceles triangle has a perimeter of {p} cm. Its odd side is {b} cm. How long is each equal side?", (p - b) // 2, "cm", units=["cm"], o="O1", d="H")
 
 
-s.std([t1, t4, t2, t3, t5, t7, t6, t8], EX("Explain the difference between an isosceles and a scalene triangle.", [("an isosceles triangle has two equal sides", "two equal|2 equal"), ("a scalene triangle has no equal sides", "no equal|all different|none")], "An isosceles triangle has two equal sides (and two equal angles). A scalene triangle has no equal sides at all.", o="O1"))
+def b51(r):
+    rows = r.sample([('An equilateral triangle has three equal angles', 'Always true'), ('An isosceles triangle has a right angle', 'Sometimes true'), ('A triangle has four sides', 'Never true'), ('A scalene triangle has two equal sides', 'Never true')], 4)
+    return GD('Is each statement about triangles always, sometimes or never true?', "Always / sometimes / never", rows, o='O1', d="H", extra=["Always true", "Sometimes true", "Never true"], reason='Use the definitions: equilateral = all sides equal, isosceles = two equal, scalene = none equal.')
+
+
+s.std([t1, t4, t2, t3, t5, t7, t6, t8], EX("Explain the difference between an isosceles and a scalene triangle.", [("an isosceles triangle has two equal sides", "two equal|2 equal"), ("a scalene triangle has no equal sides", "no equal|all different|none")], "An isosceles triangle has two equal sides (and two equal angles). A scalene triangle has no equal sides at all.", o="O1"),
+      deep=[b51])
 
 s = U.section("2.2", "Symmetry", ["O2"])
 s.idea("Lines of symmetry", ["A **line of symmetry** splits a shape into two halves that are mirror images. If you fold along it, the halves match exactly.",
        "A square has 4 lines of symmetry; a rectangle has 2; an equilateral triangle has 3."], fig={"kind": "shape", "pts": [[0, 0], [4, 0], [4, 4], [0, 4]]})
 s.check(N("How many lines of symmetry does a rectangle (not a square) have?", 2, o="O2"))
 s.idea("Reflecting", ["To complete a symmetrical pattern, **reflect** each square in the mirror line: it lands the same distance away on the other side."])
+s.check(MC('Before you read on: how many lines of symmetry does a rectangle (not a square) have?', '2', [('4', 'Folding along a diagonal does not match the corners.'), ('0', 'Fold it in half both ways.')], o='O2'))
 s.mistake("Diagonals of a rectangle", ["The diagonals of a rectangle are NOT lines of symmetry: the halves do not match when folded."])
 
 

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 10 Angles (10.1 Estimating and measuring angles, 10.2 Angles on a straight line).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -14,6 +16,7 @@ s = U.section("10.1", "Estimating and measuring angles", ["O1"])
 s.idea("Types of angle", ["Angles are measured in **degrees (°)**. A **right angle** is 90°. An **acute** angle is less than 90°. An **obtuse** angle is between 90° and 180°.",
        "To **estimate**, compare with a right angle: is it smaller or bigger? Then measure with a **protractor**."], fig={"kind": "anglept", "line": True, "angles": [60, 120]})
 s.check(MC("What type of angle is 110°?", "obtuse", [("acute", ""), ("right angle", "")], o="O1"))
+s.check(MC('Before you read on: which is bigger, an acute angle or an obtuse angle?', 'An obtuse angle', [('An acute angle', 'Acute is less than 90°; obtuse is more.'), ('They are equal', 'They are different types.')], o='O1'))
 s.mistake("Size of the arms", ["Longer arms do not make a bigger angle. The angle is the amount of turn."])
 
 
@@ -52,6 +55,7 @@ s = U.section("10.2", "Angles on a straight line", ["O2"])
 s.idea("180° on a line", ["Angles that sit together on a **straight line** add up to **180°** (a half turn).",
        "If one angle is 70°, the other is 180° − 70° = **110°**."], fig={"kind": "anglept", "line": True, "angles": [70, 110], "labels": ["70°", "x"]})
 s.check(N("Two angles on a straight line are 45° and x. Find x.", 135, "°", units=["°"], o="O2"))
+s.check(MC('Before you read on: two angles on a straight line are 130° and x. What is x?', '50°', [('230°', 'Angles on a straight line add to 180°.'), ('130°', '180 − 130 = 50.')], o='O2'))
 s.mistake("Check by adding", ["After finding x, add the angles: they must make 180°."])
 
 

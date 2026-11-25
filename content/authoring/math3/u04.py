@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 4 3D shapes (4.1 Naming 3D shapes, 4.2 Faces, edges and vertices).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -16,6 +18,7 @@ s = U.section("4.1", "Naming 3D shapes", ["O1"])
 s.idea("Solid shapes", ["3D shapes are solid. Some have **flat faces** (cube, cuboid, pyramid, prism) and some have **curved surfaces** (sphere, cylinder, cone).",
        "A **prism** is the same shape all the way through. A **pyramid** has faces that meet at a point."], fig={"kind": "solid", "solid": "cylinder"})
 s.check(MC("Which shape is a football?", "sphere", [("cylinder", ""), ("cube", ""), ("cone", "")], o="O1"))
+s.check(MC('Before you read on: which shape rolls: a cube or a cylinder?', 'A cylinder', [('A cube', 'A cube has only flat faces.'), ('Both', 'Only shapes with a curved surface roll.')], o='O1'))
 s.mistake("Square or cube?", ["A square is flat (2D). A cube is solid (3D) and has 6 square faces."])
 
 
@@ -49,6 +52,7 @@ s = U.section("4.2", "Faces, edges and vertices", ["O2"])
 s.idea("Counting parts", ["A **face** is a surface. An **edge** is where two faces meet. A **vertex** is a corner (more than one: **vertices**).",
        "A cube has 6 faces, 12 edges and 8 vertices."], fig={"kind": "solid", "solid": "cuboid", "a": "", "b": "", "c": ""})
 s.check(N("How many faces does a cube have?", 6, "faces", units=["faces"], o="O2"))
+s.check(MC('Before you read on: how many faces does a cube have?', '6', [('4', 'Count top, bottom and 4 sides.'), ('8', '8 is the number of corners.')], o='O2'))
 s.mistake("Hidden parts", ["Some faces, edges and corners are at the back. Count those too."])
 
 

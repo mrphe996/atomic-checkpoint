@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 3 Multiplication and division (3.1 Exploring multiplication and division,
-3.2 Connecting 2×, 4× and 8×, 3.3 Connecting 3×, 6× and 9×). Written by the Atomic teaching team."""
+3.2 Connecting 2×, 4× and 8×, 3.3 Connecting 3×, 6× and 9×). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 from h import *
 
@@ -15,6 +17,7 @@ s = U.section("3.1", "Exploring multiplication and division", ["O1"])
 s.idea("Equal groups and arrays", ["**3 × 4** means 3 groups of 4. An **array** shows it as 3 rows of 4: 3 × 4 = **12**.",
        "**Division** is sharing equally or making equal groups: 12 ÷ 3 = 4. Multiplication and division are **inverses**."], fig=ARR(3, 4))
 s.check(N("There are 4 bags with 5 apples in each. How many apples?", 20, "apples", units=["apples"], o="O1"))
+s.check(MC('Before you read on: is 3 × 4 the same as 4 × 3?', 'Yes', [('No', '3 rows of 4 and 4 rows of 3 have the same number of dots.'), ('Only sometimes', 'It is always true.')], o='O1'))
 s.mistake("Order does not matter for ×", ["3 × 4 and 4 × 3 both make 12, but 12 ÷ 3 is not the same as 3 ÷ 12."])
 
 
@@ -50,6 +53,7 @@ s = U.section("3.2", "Connecting 2×, 4× and 8×", ["O2"])
 s.idea("Doubling", ["The **4 times table** is double the 2 times table: 2 × 6 = 12, so 4 × 6 = **24**.",
        "The **8 times table** is double the 4 times table: 4 × 6 = 24, so 8 × 6 = **48**."], table={"head": ["×", "1", "2", "3", "4", "5", "6"], "rows": [["2", "2", "4", "6", "8", "10", "12"], ["4", "4", "8", "12", "16", "20", "24"], ["8", "8", "16", "24", "32", "40", "48"]]})
 s.check(N("What is 8 × 4?", 32, o="O2"))
+s.check(MC('Before you read on: 4 × 6 = 24. What is 8 × 6?', '48', [('28', '8 is double 4, so the answer doubles.'), ('30', 'Double 24.')], o='O2'))
 s.mistake("Double, not add 2", ["4 × 7 is double 2 × 7 (14), so 28 – not 14 + 2."])
 
 
@@ -79,12 +83,18 @@ def t8(r):
     return N(f"Count in {k}s: {k}, {2 * k}, {3 * k}, … What is the {n}th number?", k * n, o="O2", d="H")
 
 
-s.std([t3, t7, t1, t2, t4, t5, t6, t8], EX("Explain how to use 4 × 7 = 28 to find 8 × 7.", [("8 is double 4", "double|twice|× ?2"), ("double 28 is 56", "56")], "8 × 7 is double 4 × 7 because 8 is double 4. Double 28 is 56, so 8 × 7 = 56.", o="O2"))
+def b32(r):
+    return MC('Lily says 8 × 5 = 45. How can she check using the 4 times table?', '4 × 5 = 20, so 8 × 5 = 40', [('She cannot check', '8 × 5 is double 4 × 5.'), ('8 × 5 = 4 × 5 + 5', 'Doubling 4 × 5 gives 8 × 5.')], o='O2', d="H", reason='8 is double 4, so 8 × 5 is double 4 × 5 = 20: 40.')
+
+
+s.std([t3, t7, t1, t2, t4, t5, t6, t8], EX("Explain how to use 4 × 7 = 28 to find 8 × 7.", [("8 is double 4", "double|twice|× ?2"), ("double 28 is 56", "56")], "8 × 7 is double 4 × 7 because 8 is double 4. Double 28 is 56, so 8 × 7 = 56.", o="O2"),
+      deep=[b32])
 
 s = U.section("3.3", "Connecting 3×, 6× and 9×", ["O3"])
 s.idea("Linked tables", ["The **6 times table** is double the 3 times table: 3 × 5 = 15, so 6 × 5 = **30**.",
        "The **9 times table** is three times the 3 times table. A trick: 9 × n = 10 × n − n, so 9 × 4 = 40 − 4 = **36**."], table={"head": ["×", "1", "2", "3", "4", "5"], "rows": [["3", "3", "6", "9", "12", "15"], ["6", "6", "12", "18", "24", "30"], ["9", "9", "18", "27", "36", "45"]]})
 s.check(N("What is 6 × 7?", 42, o="O3"))
+s.check(MC('Before you read on: 3 × 7 = 21. What is 6 × 7?', '42', [('24', '6 is double 3, so double 21.'), ('27', 'Double the answer.')], o='O3'))
 s.mistake("Check with a pattern", ["The digits of answers in the 9 times table add up to 9: 9 × 6 = 54 and 5 + 4 = 9."])
 
 

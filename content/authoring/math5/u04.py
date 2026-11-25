@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 5 Mathematics (Primary) · Unit 4 Averages (4.1 The mode, 4.2 The median). Written by the Atomic teaching team."""
+"""Stage 5 Mathematics (Primary) · Unit 4 Averages (4.1 The mode, 4.2 The median). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 from h import *
 
@@ -14,6 +16,7 @@ s = U.section("4.1", "The mode", ["O1"])
 s.idea("Most common", ["The **mode** is the value that appears **most often**. In 3, 5, 5, 7, 8 the mode is 5.",
        "A set can have **two modes**, or **no mode** if every value appears the same number of times."], fig={"kind": "barchart", "labels": FRUIT[:4], "values": [4, 9, 6, 3], "ymax": 10, "step": 2, "ylabel": "Children"})
 s.check(S("Favourite fruits: apple, mango, apple, pear, mango, apple. What is the mode?", ["apple", "Apple"], o="O1"))
+s.check(MC('Before you read on: what is the mode of 3, 5, 5, 7, 8?', '5', [('7', 'The mode is the most common value.'), ('5.6', 'That is the mean.')], o='O1'))
 s.mistake("The mode is a value", ["In the bar chart the mode is 'banana', not 9. Give the value, not how many."])
 
 
@@ -53,6 +56,7 @@ s = U.section("4.2", "The median", ["O2"])
 s.idea("The middle value", ["The **median** is the **middle value** when the data are in order. For 8, 3, 6, 2, 9 → 2, 3, **6**, 8, 9 → the median is 6.",
        "If there are two middle values, the median is halfway between them: 2, 4, 6, 8 → (4 + 6) ÷ 2 = **5**."], table={"head": ["In order", "2", "3", "6", "8", "9"], "rows": [["", "", "", "↑ middle", "", ""]]})
 s.check(N("Find the median of 7, 1, 4, 9, 5.", 5, o="O2"))
+s.check(MC('Before you read on: what is the median of 9, 2, 6?', '6', [('2', 'Put the numbers in order first: 2, 6, 9.'), ('9', 'The median is the middle value.')], o='O2'))
 s.mistake("Order first", ["The median of 9, 1, 5 is 5 (order: 1, 5, 9), not 1."])
 
 
@@ -84,6 +88,11 @@ def d8(r):
     return TB(f"Data: {', '.join(map(str, xs))}. Complete the table.", ["Smallest", "Median", "Largest"], [[B(min(xs)), B(m), B(max(xs))]], o="O2")
 
 
-s.std([d3, d6, d1, d2, d5, d8, d4, d7], EX("Explain how to find the median of 10, 4, 7.", [("put them in order: 4, 7, 10", "order|4, ?7, ?10"), ("the middle value is 7", "middle|\\b7\\b")], "Put the numbers in order: 4, 7, 10. The middle value is 7, so the median is 7.", o="O2"))
+def d52(r):
+    return MC('Ali says the median of 8, 3, 5, 1, 9 is 5 because 5 is in the middle of the list. Is his method right?', 'No – he must order the numbers first; the median is 5 by luck', [('Yes', 'Always put the numbers in order first.'), ('No – the median is 8', 'Order them: 1, 3, 5, 8, 9.')], o='O2', d="H", reason='In order: 1, 3, 5, 8, 9. The middle value is 5.')
+
+
+s.std([d3, d6, d1, d2, d5, d8, d4, d7], EX("Explain how to find the median of 10, 4, 7.", [("put them in order: 4, 7, 10", "order|4, ?7, ?10"), ("the middle value is 7", "middle|\\b7\\b")], "Put the numbers in order: 4, 7, 10. The middle value is 7, so the median is 7.", o="O2"),
+      deep=[d52])
 
 U.mindmap(("Mode", "Most common value • can have none or two", "O1", "4.1"), ("Median", "Middle value in order", "O2", "4.2"))

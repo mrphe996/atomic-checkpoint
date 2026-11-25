@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 11 Multiplication and division (11.1 Multiplication, 11.2 Division, 11.3 Tests of divisibility).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -14,6 +16,7 @@ s = U.section("11.1", "Multiplication", ["O1"])
 s.idea("Grid method", ["Split numbers into hundreds, tens and ones and multiply each part. 236 × 4 = 800 + 120 + 24 = **944**.",
        "For 2-digit × 2-digit, split both: 34 × 26 = 600 + 80 + 180 + 24 = **884**."], table={"head": ["×", "30", "4"], "rows": [["20", "600", "80"], ["6", "180", "24"]]})
 s.check(N("Work out 213 × 3.", 639, o="O1"))
+s.check(MC('Before you read on: what is 40 × 30?', '1200', [('120', '4 × 3 = 12, and there are two zeros.'), ('70', 'That adds.')], o='O1'))
 s.mistake("Place value", ["30 × 20 is 600, not 60."])
 
 
@@ -49,6 +52,7 @@ s = U.section("11.2", "Division", ["O2"])
 s.idea("Sharing and grouping", ["Divide using known facts: 96 ÷ 4 → 80 ÷ 4 = 20 and 16 ÷ 4 = 4, so **24**.",
        "A **remainder** is what is left over. 50 ÷ 6 = 8 r2. In a problem, decide whether to round up or down."], table={"head": ["Split", "80", "16"], "rows": [["÷ 4", "20", "4"]]})
 s.check(N("Work out 84 ÷ 4.", 21, o="O2"))
+s.check(MC('Before you read on: 47 children, 5 to a table. How many tables are needed?', '10', [('9', '9 tables seat 45; 2 children would have no table.'), ('9.4', 'You need a whole number of tables: round up.')], o='O2'))
 s.mistake("Rounding up", ["30 children, 4 per table: 30 ÷ 4 = 7 r2, so 8 tables are needed."])
 
 
@@ -88,6 +92,7 @@ s.idea("Quick checks", ["**÷ 2**: the last digit is even. **÷ 5**: ends in 0 o
        "**÷ 4**: the last two digits make a multiple of 4. **÷ 25**: ends in 00, 25, 50 or 75. **÷ 50**: ends in 00 or 50."],
        table={"head": ["Divisible by", "Test"], "rows": [["2", "even last digit"], ["4", "last two digits ÷ 4"], ["5", "ends in 0 or 5"], ["25", "ends 00, 25, 50, 75"], ["50", "ends 00 or 50"], ["100", "ends 00"]]})
 s.check(MC("Which number is divisible by 25?", "375", [("360", ""), ("410", ""), ("385", "")], o="O3"))
+s.check(MC('Before you read on: is 135 divisible by 5?', 'Yes', [('No', 'It ends in 5.'), ('Only by 3', 'It ends in 5, so 5 divides it.')], o='O3'))
 s.mistake("Even is not enough", ["34 is even but not divisible by 4: 34 is not a multiple of 4."])
 
 

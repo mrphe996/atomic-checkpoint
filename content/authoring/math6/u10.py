@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 10 Multiplication and division (1) (10.1 Multiplication, 10.2 Division,
-10.3 Tests of divisibility). Written by the Atomic teaching team."""
+10.3 Tests of divisibility). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 
 U = Unit(10, "Multiplication and Division (1)", "Number",
@@ -13,6 +15,7 @@ s = U.section("10.1", "Multiplication", ["O1"])
 s.idea("Long multiplication", ["To work out 346 × 27, multiply by 7 and by 20, then add: 346 × 7 = 2422 and 346 × 20 = 6920, so 346 × 27 = **9342**.",
        "Estimate first: 346 × 27 ≈ 350 × 30 = 10 500."], table={"head": ["×", "300", "40", "6"], "rows": [["20", "6000", "800", "120"], ["7", "2100", "280", "42"]]})
 s.check(N("Work out 124 × 13.", 1612, o="O1"))
+s.check(MC("Before you read on: what is 25 × 4 × 17?", "1700", [("425", "Multiply 25 × 4 = 100 first."), ("1070", "100 × 17 = 1700.")], o="O1"))
 s.mistake("The zero", ["When you multiply by the tens digit, remember it is tens: 346 × 2**0**."])
 
 
@@ -43,12 +46,19 @@ def m8(r):
     return N(f"Work out {a} × {b} × {c}.", a * b * c, o="O1", d="H")
 
 
-s.std([m3, m6, m1, m2, m4, m5, m7, m8], EX("Explain how to estimate 498 × 21.", [("round to 500 × 20", "500|20"), ("500 × 20 = 10 000", "10 ?000|10,000")], "Round each number: 498 ≈ 500 and 21 ≈ 20. Then 500 × 20 = 10 000, so the answer is about 10 000.", o="O1"))
+def j1_1(r):
+    a, b = r.randint(12, 49), r.randint(12, 49)
+    return MC(f"Which is the best estimate of {a} × {b}?", f"{round(a, -1) * round(b, -1)}", [(f"{round(a, -1) * round(b, -1) * 10}", "Too big by 10 times."), (f"{round(a, -1) + round(b, -1)}", "That adds.")], o="O1", d="H", reason=f"{round(a, -1)} × {round(b, -1)} = {round(a, -1) * round(b, -1)}.")
+
+
+s.std([m3, m6, m1, m2, m4, m5, m7, m8], EX("Explain how to estimate 498 × 21.", [("round to 500 × 20", "500|20"), ("500 × 20 = 10 000", "10 ?000|10,000")], "Round each number: 498 ≈ 500 and 21 ≈ 20. Then 500 × 20 = 10 000, so the answer is about 10 000.", o="O1"),
+      deep=[j1_1])
 
 s = U.section("10.2", "Division", ["O2"])
 s.idea("Short and long division", ["Divide from the left: 756 ÷ 6 → 7 ÷ 6 = 1 r1, 15 ÷ 6 = 2 r3, 36 ÷ 6 = 6, so 756 ÷ 6 = **126**.",
        "A **remainder** is what is left over. In a story, decide whether to **round up** (buses needed) or **round down** (full boxes)."], table={"head": ["", "1", "2", "6"], "rows": [["6 )", "7", "5", "6"]]})
 s.check(N("Work out 504 ÷ 4.", 126, o="O2"))
+s.check(MC("Before you read on: 50 children go on a trip. Each minibus holds 12. How many minibuses are needed?", "5", [("4", "4 buses hold 48, leaving 2 children behind."), ("4.17", "You cannot have part of a minibus: round up.")], o="O2"))
 s.mistake("Remainders in context", ["70 children, 30 per bus: 70 ÷ 30 = 2 r10, so you need 3 buses, not 2."])
 
 
@@ -81,13 +91,21 @@ def v8(r):
     return N(f"Find the missing number: {b} × ☐ = {b * q}", q, o="O2", d="H")
 
 
-s.std([v3, v6, v1, v2, v5, v7, v4, v8], EX("Explain why 100 children need 4 minibuses if each minibus holds 30.", [("100 ÷ 30 = 3 remainder 10", "3 r|remainder|3 ?r ?10"), ("the 10 left over need another bus", "10 left|another|extra|round up")], "100 ÷ 30 = 3 remainder 10. Three buses carry 90 children, and the 10 left over still need a bus, so 4 minibuses are needed.", o="O2"))
+def j2_1(r):
+    n, k = r.randint(40, 99), r.randint(6, 12)
+    if n % k == 0: n += 1
+    return MC(f"{n} eggs are packed into boxes of {k}. How many boxes can be filled completely?", str(n // k), [(str(n // k + 1), "The last box is not full."), (f"{n / k:.2f}", "You need a whole number of boxes.")], o="O2", d="H", reason=f"{n} ÷ {k} = {n // k} remainder {n % k}.")
+
+
+s.std([v3, v6, v1, v2, v5, v7, v4, v8], EX("Explain why 100 children need 4 minibuses if each minibus holds 30.", [("100 ÷ 30 = 3 remainder 10", "3 r|remainder|3 ?r ?10"), ("the 10 left over need another bus", "10 left|another|extra|round up")], "100 ÷ 30 = 3 remainder 10. Three buses carry 90 children, and the 10 left over still need a bus, so 4 minibuses are needed.", o="O2"),
+      deep=[j2_1])
 
 s = U.section("10.3", "Tests of divisibility", ["O3"])
 s.idea("Quick tests", ["A number is divisible by **3** if its **digit sum** is divisible by 3. It is divisible by **9** if its digit sum is divisible by 9.",
        "It is divisible by **6** if it is even and divisible by 3. Divisible by **4** if the last two digits make a multiple of 4."],
        table={"head": ["Divisible by", "Test"], "rows": [["2", "last digit even"], ["3", "digit sum ÷ 3"], ["4", "last two digits ÷ 4"], ["5", "ends in 0 or 5"], ["6", "even and ÷ 3"], ["9", "digit sum ÷ 9"], ["10", "ends in 0"]]})
 s.check(MC("Which number is divisible by 9?", "3456", [("3455", ""), ("3454", ""), ("3457", "")], o="O3"))
+s.check(MC("Before you read on: is 342 divisible by 9?", "Yes", [("No", "3 + 4 + 2 = 9, which is divisible by 9."), ("Only by 3", "The digit sum 9 is divisible by 9 as well.")], o="O3"))
 s.mistake("Even is not enough", ["14 is even but not divisible by 6, because 1 + 4 = 5 is not divisible by 3."])
 dsum = lambda n: sum(map(int, str(n)))
 

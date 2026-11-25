@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 14 Area and perimeter (14.1 Estimating and measuring area and perimeter,
-14.2 Area and perimeter of rectangles). Written by the Atomic teaching team."""
+14.2 Area and perimeter of rectangles). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 from h import *
 
@@ -14,6 +16,7 @@ s = U.section("14.1", "Estimating and measuring area and perimeter", ["O1"])
 s.idea("Squares and edges", ["**Area** is the space inside a shape, measured in **square centimetres (cm²)**. Count the whole squares inside.",
        "**Perimeter** is the distance around the edge. On squared paper, count the edges of the squares all the way round."], fig={"kind": "cells", "cells": [[0, 0], [1, 0], [2, 0], [0, 1], [1, 1]], "cols": 4, "rows": 3, "grid": True})
 s.check(N("A shape covers 9 whole squares of 1 cm². What is its area?", 9, "cm²", units=["cm²"], o="O1"))
+s.check(MC('Before you read on: is the perimeter the space inside a shape?', 'No – it is the distance around the edge', [('Yes', 'The space inside is the area.'), ('It is both', 'They are different measurements.')], o='O1'))
 s.mistake("Area or perimeter?", ["Area counts squares inside; perimeter counts the edges around."])
 
 
@@ -52,6 +55,7 @@ s = U.section("14.2", "Area and perimeter of rectangles", ["O2"])
 s.idea("Formulas for rectangles", ["**Area of a rectangle = length × width**. A 7 cm by 4 cm rectangle has area 28 cm².",
        "**Perimeter = length + width + length + width**, or 2 × (length + width) = 22 cm."], fig=RECT(7, 4))
 s.check(N("A rectangle is 6 cm by 5 cm. What is its area?", 30, "cm²", units=["cm²"], o="O2"))
+s.check(MC('Before you read on: what is the area of a rectangle 5 cm by 3 cm?', '15 cm²', [('16 cm²', 'That is the perimeter (in cm).'), ('8 cm²', 'Multiply, do not add.')], o='O2'))
 s.mistake("Units", ["Area is in cm², perimeter in cm."])
 
 

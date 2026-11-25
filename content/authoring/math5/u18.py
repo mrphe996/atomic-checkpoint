@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 18 Position and direction (18.1 Coordinates, 18.2 Translation).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -14,6 +16,7 @@ s = U.section("18.1", "Coordinates", ["O1"])
 s.idea("Across, then up", ["**Coordinates** give the position of a point: **(x, y)**. Go **across** the x-axis first, then **up** the y-axis.",
        "The point (0, 0) is called the **origin**. (4, 2) is 4 across and 2 up."], fig=Q([{"x": 4, "y": 2, "l": "A"}, {"x": 1, "y": 6, "l": "B"}]))
 s.check(S("Write the coordinates of a point 3 across and 7 up from the origin.", PP(3, 7), o="O1"))
+s.check(MC('Before you read on: in the coordinate (2, 5), which number tells you how far across?', '2', [('5', 'The first number is across (x).'), ('Both', 'Across comes first, then up.')], o='O1'))
 s.mistake("Order matters", ["(2, 5) and (5, 2) are different points. x comes first."])
 
 
@@ -40,7 +43,8 @@ def c7(r):
     x, y = r.randint(1, 9), r.randint(1, 9)
     return N(f"What is the x-coordinate of the point ({x}, {y})?", x, o="O1")
 def c8(r):
-    x = r.randint(1, 8)
+    x = r.randint(2, 8)
+    if x == 7: x = 6
     return MS(f"Select ALL the points that lie on the line where x = {x}.", [f"({x}, 1)", f"({x}, 7)"], [f"(1, {x})", f"({x + 1}, {x})"], o="O1")
 
 
@@ -50,6 +54,7 @@ s = U.section("18.2", "Translation", ["O2"])
 s.idea("Sliding a shape", ["A **translation** slides a point or shape without turning or flipping it. Every point moves the same distance in the same direction.",
        "'3 right, 2 up' adds 3 to x and 2 to y: (1, 4) → (4, 6)."], fig=Q(polys=[{"pts": [[1, 1], [3, 1], [1, 3]], "l": "A"}, {"pts": [[5, 3], [7, 3], [5, 5]], "l": "B"}]))
 s.check(S("(2, 5) is translated 4 right. Write the new coordinates.", PP(6, 5), o="O2"))
+s.check(MC('Before you read on: does a translation change the size of a shape?', 'No', [('Yes', 'A translation only slides the shape.'), ('Only sometimes', 'It never changes the size.')], o='O2'))
 s.mistake("Same shape", ["After a translation the shape is the same size and faces the same way."])
 
 

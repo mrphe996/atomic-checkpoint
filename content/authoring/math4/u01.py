@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 1 Numbers and the number system (1.1 Counting and sequences, 1.2 Negative numbers,
-1.3 Understanding place value). Written by the Atomic teaching team."""
+1.3 Understanding place value). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 from h import *
 
@@ -14,6 +16,7 @@ s = U.section("1.1", "Counting and sequences", ["O1"])
 s.idea("Steps of the same size", ["A **sequence** follows a rule. 10, 40, 70, 100, … goes up in **30s**: the **term-to-term rule** is 'add 30'.",
        "Sequences can count back too: 95, 80, 65, … takes away 15 each time."], fig=NL(0, 10))
 s.check(N("What is the next number: 25, 50, 75, 100, …?", 125, o="O1"))
+s.check(MC('Before you read on: the sequence is 50, 45, 40, … What is the next term?', '35', [('45', 'The rule is subtract 5.'), ('30', '40 − 5 = 35.')], o='O1'))
 s.mistake("Check every step", ["Look at more than two numbers to find the rule: it must work for every step."])
 
 
@@ -50,6 +53,7 @@ s = U.section("1.2", "More on negative numbers", ["O2"])
 s.idea("Below zero", ["**Negative numbers** are less than zero. On a number line they are to the left of 0: −5 is less than −2.",
        "A thermometer shows them: −3 °C is 3 degrees below freezing. To find a change, count the steps between the two numbers."], fig=NL(-6, 6))
 s.check(N("The temperature is −4 °C. It rises by 6 degrees. What is it now?", 2, "°C", units=["°C"], o="O2"))
+s.check(MC('Before you read on: which is colder, −2 °C or −6 °C?', '−6 °C', [('−2 °C', '−6 is further below zero.'), ('They are the same', 'They are different temperatures.')], o='O2'))
 s.mistake("Further left is smaller", ["−8 is smaller than −3 even though 8 is bigger than 3."])
 
 
@@ -82,12 +86,18 @@ def n8(r):
     return TB("Complete the table.", ["Start (°C)", "Change", "End (°C)"], [[sg(a), f"rises {b}", B(a + b)], [sg(a), f"falls {b}", B(a - b)]], o="O2")
 
 
-s.std([n3, n6, n1, n2, n4, n5, n8, n7], EX("Explain why −7 is less than −2.", [("−7 is further left on the number line", "left|further|below"), ("numbers to the left are smaller", "smaller|less")], "On a number line −7 is further to the left than −2, and numbers further left are smaller. So −7 < −2.", o="O2"))
+def a42(r):
+    return MC('Zoe says −8 is bigger than −3 because 8 is bigger than 3. Is she right?', 'No: −3 is bigger', [('Yes', 'On a number line, −8 is further left.'), ('They are equal', 'They are different numbers.')], o='O2', d="H", reason='Numbers further right on the number line are bigger: −3 > −8.')
+
+
+s.std([n3, n6, n1, n2, n4, n5, n8, n7], EX("Explain why −7 is less than −2.", [("−7 is further left on the number line", "left|further|below"), ("numbers to the left are smaller", "smaller|less")], "On a number line −7 is further to the left than −2, and numbers further left are smaller. So −7 < −2.", o="O2"),
+      deep=[a42])
 
 s = U.section("1.3", "Understanding place value", ["O3"])
 s.idea("Thousands, hundreds, tens and ones", ["In **4627** the 4 is worth 4000, the 6 is worth 600, the 2 is worth 20 and the 7 is worth 7.",
        "× 10 moves every digit one place left: 46 × 10 = 460. × 100 moves two places: 46 × 100 = 4600. ÷ 10 moves digits one place right."], table={"head": ["Th", "H", "T", "O"], "rows": [["4", "6", "2", "7"]]})
 s.check(N("What is the value of the digit 8 in 3851?", 800, o="O3"))
+s.check(MC('Before you read on: what is the value of the 4 in 2 403?', '400', [('4', 'The 4 is in the hundreds place.'), ('40', 'Count the places: ones, tens, hundreds.')], o='O3'))
 s.mistake("Zero as a place holder", ["5060 has no hundreds and no ones; the zeros keep the other digits in place."])
 
 

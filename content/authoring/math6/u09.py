@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 9 Probability (9.1 Describing and predicting likelihood).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
@@ -28,6 +30,7 @@ s.check(MC("A normal dice is rolled. How likely is it to show a 7?", "impossible
 s.idea("Equally likely outcomes", ["A fair spinner with 4 equal sections has 4 **equally likely** outcomes. The chance of landing on one section is 1/4.",
        "**Mutually exclusive** events cannot happen at the same time: a dice cannot show 2 and 5 at once."], fig={"kind": "spinner", "labels": ["A", "B", "C", "D"]})
 s.idea("Experiments", ["If you repeat an experiment many times, the results help you **predict**. If a red counter is picked 30 times out of 100, red is probably about 3/10 of the counters."])
+s.check(MC("Before you read on: you roll a dice. Which is more likely: an even number or a number less than 3?", "An even number", [("A number less than 3", "Even: 2, 4, 6 (3 ways). Less than 3: 1, 2 (2 ways)."), ("They are equally likely", "Count the ways.")], o="O1"))
 s.mistake("Even chance", ["'Even chance' means 1/2 – it is not the same as 'likely'."])
 COL = ["red", "blue", "green", "yellow"]
 
@@ -68,6 +71,12 @@ def p10(r):
     return MC(f"Is this spinner fair for two players, one who wins on red and one on blue?", "Yes, red and blue are equally likely" if n % 2 == 0 else "No, red is more likely", ["No, red is more likely" if n % 2 == 0 else "Yes, red and blue are equally likely", "No, blue is more likely"], o="O2", fig={"kind": "spinner", "labels": lab})
 
 
-s.std([p1, p8, p2, p3, p4, p5, p6, p9, p7, p10], EX("Explain why the chance of rolling a 3 on a fair dice is 1/6.", [("there are 6 equally likely outcomes", "6|six|equally likely"), ("only one of them is a 3", "one|1 of|only")], "A fair dice has 6 equally likely outcomes (1 to 6) and only one of them is a 3, so the chance is 1/6.", o="O2"), adv=[p5, p6, p7, p4, p10])
+def i1_1(r):
+    rows = r.sample([("rolling a 7 on a normal dice", "Impossible"), ("the sun rising tomorrow", "Certain"), ("a coin landing heads", "Even chance"), ("rolling a number less than 6", "Likely"), ("picking a red card from a bag of 1 red and 9 blue", "Unlikely")], 4)
+    return GD("Describe the likelihood of each event.", "Likelihood", rows, o="O1", d="H", extra=["Impossible", "Unlikely", "Even chance", "Likely", "Certain"], reason="Count the ways it can happen out of all the possible outcomes.")
+
+
+s.std([p1, p8, p2, p3, p4, p5, p6, p9, p7, p10], EX("Explain why the chance of rolling a 3 on a fair dice is 1/6.", [("there are 6 equally likely outcomes", "6|six|equally likely"), ("only one of them is a 3", "one|1 of|only")], "A fair dice has 6 equally likely outcomes (1 to 6) and only one of them is a 3, so the chance is 1/6.", o="O2"), adv=[p5, p6, p7, p4, p10],
+      deep=[i1_1])
 
 U.mindmap(("Likelihood", "Impossible • unlikely • even chance • likely • certain", "O1", "9.1"), ("Equally likely", "Fair spinner • dice • 1/n chance", "O2", "9.1"), ("Experiments", "Results help predict", "O2", "9.1"))

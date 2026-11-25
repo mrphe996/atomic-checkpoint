@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 10 Collecting and recording data (10.1 Planning and collecting data, 10.2 Recording and sorting data).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -18,6 +20,7 @@ s = U.section("10.1", "Planning and collecting data", ["O1"])
 s.idea("Asking a good question", ["Start with a **question** you can answer with data, such as 'Which sport is the most popular in our class?'.",
        "Decide **what** to collect and **who** to ask, then record answers with **tally marks**: ||||/ is a group of five."], table={"head": ["Sport", "Tally", "Frequency"], "rows": [["football", "||||/ |||", "8"], ["swimming", "||||/", "5"]]})
 s.check(N("How many is ||||/ ||||/ ||?", 12, o="O1"))
+s.check(MC('Before you read on: which question is best for a survey about pets?', 'How many pets do you have?', [('Do you like pets?', 'This does not tell you how many.'), ("Pets are great, aren't they?", 'That pushes people to say yes.')], o='O1'))
 s.mistake("Count in fives", ["Each crossed group is 5 marks, not 4."])
 
 
@@ -53,6 +56,7 @@ s.idea("Tables and sorting diagrams", ["A **frequency table** shows how many tim
        "A **Venn diagram** sorts with overlapping circles; things that fit both rules go in the overlap. A **Carroll diagram** sorts in a table with 'yes' and 'not' for each rule."],
        table={"head": ["", "even", "not even"], "rows": [["more than 20", "24, 30", "25, 31"], ["not more than 20", "12, 18", "7, 15"]]})
 s.check(MC("Where does 30 go in a Venn diagram for 'even' and 'multiple of 5'?", "the overlap", [("'even' only", ""), ("'multiple of 5' only", ""), ("outside", "")], o="O2"))
+s.check(MC('Before you read on: a tally shows |||| ||. What number is it?', '7', [('6', '|||| is 5, then 2 more.'), ('5', 'Count the extra marks.')], o='O2'))
 s.mistake("The overlap", ["A number that fits both rules goes in the overlap, not in one circle."])
 
 

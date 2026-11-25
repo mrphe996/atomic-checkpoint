@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 8 Time (8.1 Telling the time, 8.2 Days, weeks, months and years).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -16,6 +18,7 @@ s = U.section("8.1", "Telling the time", ["O1"])
 s.idea("Analogue and digital", ["On an **analogue clock** the short hand shows the **hour** and the long hand shows the **minutes**. Each number on the clock is **5 minutes** for the long hand.",
        "A **digital clock** shows 3:45, which means 45 minutes past 3. **a.m.** is morning; **p.m.** is afternoon and evening."], fig={"kind": "clock", "h": 3, "m": 45})
 s.check(S("What time is half past 7 on a digital clock?", ["7:30"], o="O1"))
+s.check(MC('Before you read on: the minute hand points at 6. How many minutes past the hour is it?', '30 minutes', [('6 minutes', 'Each number on the clock is 5 minutes.'), ('60 minutes', '6 × 5 = 30.')], o='O1'))
 s.mistake("Long hand, short hand", ["The long hand shows minutes, not hours."])
 
 
@@ -53,6 +56,7 @@ s = U.section("8.2", "Days, weeks, months and years", ["O2"])
 s.idea("Units of time", ["60 seconds = 1 minute, 60 minutes = 1 hour, 24 hours = 1 day, **7 days = 1 week**, 12 months = 1 year.",
        "A **calendar** shows the days of a month. Months have 28, 29, 30 or 31 days."], table={"head": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"], "rows": [["1", "2", "3", "4", "5", "6", "7"], ["8", "9", "10", "11", "12", "13", "14"]]})
 s.check(N("How many days are in 2 weeks?", 14, "days", units=["days"], o="O2"))
+s.check(MC('Before you read on: how many days are in 2 weeks?', '14', [('10', 'A week has 7 days.'), ('12', '7 + 7 = 14.')], o='O2'))
 s.mistake("Months are not all the same", ["February is shorter than other months."])
 
 

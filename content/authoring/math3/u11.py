@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 11 More fractions (11.1 Fractions of numbers, 11.2 Ordering and comparing fractions,
-11.3 Calculating with fractions). Written by the Atomic teaching team."""
+11.3 Calculating with fractions). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 from h import *
@@ -15,6 +17,7 @@ s = U.section("11.1", "Fractions of numbers", ["O1"])
 s.idea("Sharing into equal parts", ["To find **1/4 of 20**, share 20 into 4 equal groups: 20 ÷ 4 = **5**.",
        "To find **3/4 of 20**, find 1/4 (5) and take 3 of them: 5 × 3 = **15**."], fig={"kind": "cells", "cells": [[i, j] for i in range(5) for j in range(4)]})
 s.check(N("Find 1/3 of 12.", 4, o="O1"))
+s.check(MC('Before you read on: what is 1/2 of 14?', '7', [('28', 'Half means divide by 2.'), ('12', '14 ÷ 2 = 7.')], o='O1'))
 s.mistake("Divide by the bottom number", ["1/5 of 30 means 30 ÷ 5 = 6, not 30 ÷ 1."])
 
 
@@ -50,6 +53,7 @@ s = U.section("11.2", "Ordering and comparing fractions", ["O2"])
 s.idea("Same bottom number", ["When the denominators are the same, compare the numerators: **3/8 < 5/8**.",
        "For **unit fractions** (top number 1), the bigger the bottom number, the smaller the fraction: 1/10 < 1/4 < 1/2."], fig=PIE(8, range(5)))
 s.check(CMP("2/5", "4/5", "<", o="O2"))
+s.check(MC('Before you read on: which is bigger, 1/2 or 1/4?', '1/2', [('1/4', 'Halves are bigger pieces than quarters.'), ('They are equal', 'The pieces are different sizes.')], o='O2'))
 s.mistake("1/10 is not bigger than 1/2", ["Tenths are tiny pieces. Halves are big pieces."])
 
 
@@ -89,6 +93,7 @@ s = U.section("11.3", "Calculating with fractions", ["O3"])
 s.idea("Adding parts", ["With the **same denominator**, add or subtract the top numbers: **2/5 + 1/5 = 3/5** and **4/6 − 1/6 = 3/6**.",
        "One whole is the same as 5/5, 6/6 or 10/10."], fig=PIE(5, range(3)))
 s.check(S("Work out 1/4 + 2/4.", ["3/4"], o="O3"))
+s.check(MC('Before you read on: what is 1/4 + 2/4?', '3/4', [('3/8', 'The pieces are still quarters.'), ('2/4', '1 + 2 = 3.')], o='O3'))
 s.mistake("Keep the bottom number", ["2/5 + 1/5 = 3/5, not 3/10."])
 
 

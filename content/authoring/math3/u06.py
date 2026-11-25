@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 6 Fractions of shapes (6.1 Fractions of shapes, 6.2 Equivalent fractions of shapes).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
@@ -15,6 +17,7 @@ s = U.section("6.1", "Fractions of shapes", ["O1"])
 s.idea("Equal parts", ["A fraction is **equal parts** of a whole. A circle cut into 4 equal parts shows **quarters**. One part is **1/4**.",
        "**3/4** means 3 of the 4 equal parts. The bottom number (denominator) is how many equal parts; the top number (numerator) is how many we have."], fig=PIE(4, range(3)))
 s.check(MC("A pizza is cut into 3 equal slices. What is one slice called?", "one third", [("one half", ""), ("one quarter", "")], o="O1"))
+s.check(MC('Before you read on: a shape is cut into 4 parts, but they are different sizes. Is each part a quarter?', 'No', [('Yes', 'Quarters must be 4 EQUAL parts.'), ('Only the biggest', 'All 4 parts must be the same size.')], o='O1'))
 s.mistake("Equal parts only", ["If the parts are not equal, they are not quarters."])
 
 
@@ -50,6 +53,7 @@ s = U.section("6.2", "Equivalent fractions of shapes", ["O2"])
 s.idea("Same amount, different names", ["**1/2 = 2/4**: half a circle covers the same amount as two quarters.",
        "Other equivalent fractions: 1/2 = 3/6 = 4/8 = 5/10 and 1/5 = 2/10."], fig=PIE(8, range(4)))
 s.check(N("How many quarters are the same as one half?", 2, "quarters", units=["quarters"], o="O2"))
+s.check(MC('Before you read on: is 2/4 of a shape the same as 1/2?', 'Yes', [('No', '2 quarters cover half the shape.'), ('Only for circles', 'It works for any shape.')], o='O2'))
 s.mistake("More parts, same amount", ["2/4 has more parts than 1/2, but the parts are smaller, so the amount is the same."])
 
 

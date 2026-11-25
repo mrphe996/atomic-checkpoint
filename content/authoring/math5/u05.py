@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 5 Addition and subtraction (1) (5.1 Addition and subtraction including decimal numbers,
-5.2 Addition and subtraction of positive and negative numbers). Written by the Atomic teaching team."""
+5.2 Addition and subtraction of positive and negative numbers). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 from h import *
 
@@ -13,6 +15,7 @@ s = U.section("5.1", "Addition and subtraction including decimal numbers", ["O1"
 s.idea("Columns and points", ["Write numbers in columns with the **decimal points in line**. Then add or subtract as with whole numbers.",
        "Estimate first: 38.6 + 24.7 ≈ 39 + 25 = 64. The answer 63.3 is close."], table={"head": ["", "Tens", "Ones", ".", "Tenths"], "rows": [["", "3", "8", ".", "6"], ["+", "2", "4", ".", "7"], ["=", "6", "3", ".", "3"]]})
 s.check(N("Work out 9.4 − 3.5.", 5.9, o="O1"))
+s.check(MC('Before you read on: what is 4.5 + 2.75?', '7.25', [('6.80', 'Line up the decimal points.'), ('7.20', '0.5 + 0.75 = 1.25.')], o='O1'))
 s.mistake("Exchange", ["In 9.4 − 3.5 you cannot take 5 tenths from 4 tenths: exchange 1 one for 10 tenths."])
 
 
@@ -52,6 +55,7 @@ s = U.section("5.2", "Addition and subtraction of positive and negative numbers"
 s.idea("Using a number line", ["To **add**, move **right**. To **subtract**, move **left**. −4 + 6 = 2 and 3 − 5 = −2.",
        "On a thermometer, colder temperatures are lower: −8 °C is colder than −3 °C."], fig=NL(-6, 6))
 s.check(N("The temperature is −2 °C. It rises by 5 degrees. What is the new temperature?", 3, "°C", units=["°C"], o="O2"))
+s.check(MC('Before you read on: what is −3 + 5?', '2', [('−8', 'Adding a positive number moves right.'), ('8', 'Start at −3, not 3.')], o='O2'))
 s.mistake("The difference", ["From −3 to 4 is 7 steps: 3 steps to 0, then 4 more."])
 
 

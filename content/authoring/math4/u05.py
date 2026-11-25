@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 5 Multiplication, multiples and factors (5.1 Tables, multiples and factors, 5.2 Multiplication).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -13,6 +15,7 @@ s = U.section("5.1", "Tables, multiples and factors", ["O1"])
 s.idea("Multiples and factors", ["**Multiples** of 6 are in the 6 times table: 6, 12, 18, 24, …",
        "**Factors** of 12 divide into 12 exactly: 1, 2, 3, 4, 6 and 12. Factors come in **pairs**: 1 × 12, 2 × 6, 3 × 4."], fig={"kind": "cells", "cells": [[i, j] for i in range(4) for j in range(3)]})
 s.check(N("What is 7 × 8?", 56, o="O1"))
+s.check(MC('Before you read on: is 4 a factor of 30?', 'No', [('Yes', '30 ÷ 4 = 7 remainder 2.'), ('Only a multiple', '4 is not a multiple of 30 either.')], o='O1'))
 s.mistake("Factor or multiple?", ["3 is a factor of 12; 12 is a multiple of 3."])
 
 
@@ -50,6 +53,7 @@ s = U.section("5.2", "Multiplication", ["O2"])
 s.idea("Partitioning", ["To work out 34 × 6, split 34 into 30 + 4: 30 × 6 = 180 and 4 × 6 = 24, so **34 × 6 = 204**.",
        "× 10 moves digits one place left (23 × 10 = 230); × 100 moves them two places (23 × 100 = 2300). Estimate first: 34 × 6 ≈ 30 × 6 = 180."], table={"head": ["×", "30", "4"], "rows": [["6", "180", "24"]]})
 s.check(N("Work out 27 × 4.", 108, o="O2"))
+s.check(MC('Before you read on: what is 23 × 4?', '92', [('812', 'That writes 2 × 4 and 3 × 4 side by side.'), ('82', '20 × 4 = 80, 3 × 4 = 12: 92.')], o='O2'))
 s.mistake("Multiply both parts", ["34 × 6 is not 30 × 6 + 4. Multiply the 4 by 6 too."])
 
 
@@ -80,6 +84,11 @@ def m8(r):
     return N(f"Find the missing number: ☐ ÷ {b} = {a}", a * b, o="O2", d="H")
 
 
-s.std([m2, m5, m1, m3, m4, m6, m7, m8], EX("Explain how to work out 46 × 3.", [("split 46 into 40 + 6", "40|split"), ("120 + 18 = 138", "138")], "Split 46 into 40 + 6. 40 × 3 = 120 and 6 × 3 = 18. Add: 120 + 18 = 138.", o="O2"))
+def b52(r):
+    return MC('Kai works out 23 × 4 as 20 × 4 + 3 = 83. What is right?', '92', [('83', 'He forgot to multiply the 3 by 4.'), ('27', 'That adds 4.')], o='O2', d="H", reason='Both parts are multiplied: 20 × 4 + 3 × 4 = 80 + 12 = 92.')
+
+
+s.std([m2, m5, m1, m3, m4, m6, m7, m8], EX("Explain how to work out 46 × 3.", [("split 46 into 40 + 6", "40|split"), ("120 + 18 = 138", "138")], "Split 46 into 40 + 6. 40 × 3 = 120 and 6 × 3 = 18. Add: 120 + 18 = 138.", o="O2"),
+      deep=[b52])
 
 U.mindmap(("Tables", "To 10 × 10 • multiples • factor pairs", "O1", "5.1"), ("Multiplication", "Partition • × 10, × 100 • estimate", "O2", "5.2"))

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 12 Investigating 3D shapes and nets (12.1 The properties of 3D shapes, 12.2 Nets of 3D shapes).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -17,6 +19,7 @@ s = U.section("12.1", "The properties of 3D shapes", ["O1"])
 s.idea("Faces, edges and vertices", ["A **prism** has the same shape at both ends, joined by rectangles. A **pyramid** has a base and triangular faces meeting at a point (the apex).",
        "A triangular prism has 5 faces, 9 edges and 6 vertices."], fig={"kind": "solid", "solid": "triprism"})
 s.check(N("How many edges does a cube have?", 12, "edges", units=["edges"], o="O1"))
+s.check(MC('Before you read on: how many edges does a cube have?', '12', [('6', '6 is the number of faces.'), ('8', '8 is the number of vertices.')], o='O1'))
 s.mistake("Count hidden parts", ["Some edges and vertices are at the back. Dashed lines show them."])
 
 
@@ -50,6 +53,7 @@ s = U.section("12.2", "Nets of 3D shapes", ["O2"])
 s.idea("Unfolding solids", ["A **net** is a flat shape that folds up into a 3D shape. A cube has 11 different nets, each of 6 squares.",
        "A net of a square-based pyramid has 1 square and 4 triangles. A net of a triangular prism has 2 triangles and 3 rectangles."], fig={"kind": "cells", "cells": CUBE_NETS[0]})
 s.check(N("How many triangles are in the net of a square-based pyramid?", 4, "triangles", units=["triangles"], o="O2"))
+s.check(MC('Before you read on: can 6 squares in a straight line fold into a cube?', 'No', [('Yes', 'The end squares would overlap and the sides would be open.'), ('Only big squares', 'Size does not matter.')], o='O2'))
 s.mistake("Overlaps", ["If two squares fold onto the same place, it is not a net of a cube."])
 
 

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 9 Addition and subtraction of fractions (9.1 Adding fractions, 9.2 Subtracting fractions).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
@@ -15,6 +17,7 @@ s = U.section("9.1", "Adding fractions", ["O1"])
 s.idea("Same denominator", ["When the denominators are the **same**, add the numerators: 2/7 + 3/7 = **5/7**. The size of the parts does not change.",
        "If one denominator is a multiple of the other, change one fraction first: 1/2 + 1/4 = 2/4 + 1/4 = **3/4**."], fig=PIE(7, range(5)))
 s.check(F("Work out 3/8 + 4/8.", Fr(7, 8), o="O1"))
+s.check(MC('Before you read on: what is 1/3 + 1/3?', '2/3', [('2/6', 'Add the tops; the size of the pieces stays thirds.'), ('1/6', 'Adding should not make it smaller.')], o='O1'))
 s.mistake("Don't add the denominators", ["2/7 + 3/7 is 5/7, not 5/14."])
 
 
@@ -49,12 +52,18 @@ def a8(r):
     return N(f"Find the missing number: {a}/{d} + ☐/{d} = 1", d - a, o="O1")
 
 
-s.std([a3, a5, a1, a2, a6, a8, a4, a7], EX("Explain why 2/5 + 1/5 = 3/5 and not 3/10.", [("the parts are all fifths", "fifths|same size|same denominator"), ("add the numerators: 2 + 1 = 3", "numerator|2 ?\\+ ?1|top")], "Both fractions are in fifths, so the parts are the same size. Add the number of parts: 2 + 1 = 3 fifths. The denominator stays 5.", o="O1"))
+def e91(r):
+    return MC('Tom writes 1/4 + 2/4 = 3/8. What is right?', '3/4', [('3/8', 'Do not add the denominators: the pieces are still quarters.'), ('2/8', 'Add the numerators.')], o='O1', d="H", reason='1 quarter + 2 quarters = 3 quarters.')
+
+
+s.std([a3, a5, a1, a2, a6, a8, a4, a7], EX("Explain why 2/5 + 1/5 = 3/5 and not 3/10.", [("the parts are all fifths", "fifths|same size|same denominator"), ("add the numerators: 2 + 1 = 3", "numerator|2 ?\\+ ?1|top")], "Both fractions are in fifths, so the parts are the same size. Add the number of parts: 2 + 1 = 3 fifths. The denominator stays 5.", o="O1"),
+      deep=[e91])
 
 s = U.section("9.2", "Subtracting fractions", ["O2"])
 s.idea("Taking away parts", ["With the same denominator, subtract the numerators: 7/9 − 4/9 = **3/9 = 1/3**.",
        "1 whole is d/d, so 1 − 3/8 = 8/8 − 3/8 = **5/8**."], fig=PIE(9, range(3)))
 s.check(F("Work out 5/6 − 1/6.", Fr(4, 6), o="O2"))
+s.check(MC('Before you read on: what is 5/6 − 2/6?', '3/6 = 1/2', [('3/0', 'The denominator stays 6.'), ('7/6', 'That adds.')], o='O2'))
 s.mistake("Change first", ["3/4 − 1/2: change 1/2 into 2/4 first, then 3/4 − 2/4 = 1/4."])
 
 

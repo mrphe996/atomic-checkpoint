@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 13 Angles (13.1 Measuring and drawing angles, 13.2 Angles in a triangle).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 
@@ -15,6 +17,7 @@ s.idea("Types of angle", ["An **acute** angle is less than 90°. A **right angle
        "Use a **protractor** to measure angles: put the centre on the vertex and line up 0° with one arm."], fig={"kind": "anglept", "line": True, "angles": [72, 108]})
 s.check(MC("What type of angle is 135°?", "obtuse", [("acute", ""), ("reflex", ""), ("right angle", "")], o="O1"))
 s.idea("Angles on a line and at a point", ["Angles on a **straight line** add up to **180°**. Angles all the way round a **point** add up to **360°**."])
+s.check(MC("Before you read on: an angle measures 130°. What type is it?", "Obtuse", [("Acute", "Acute angles are less than 90°."), ("Reflex", "Reflex angles are more than 180°.")], o="O1"))
 s.mistake("Which scale?", ["A protractor has two scales. Start from the 0° that lines up with the arm."])
 
 
@@ -52,6 +55,8 @@ s = U.section("13.2", "Angles in a triangle", ["O2"])
 s.idea("Angle sum of a triangle", ["The three angles inside **any triangle** add up to **180°**. If two angles are 50° and 60°, the third is 180 − 110 = **70°**.",
        "An **equilateral** triangle has three 60° angles. An **isosceles** triangle has two equal angles."], fig=TRI("50°", "60°", "x"))
 s.check(N("A triangle has angles 40° and 75°. Find the third angle.", 65, "°", units=["°"], o="O2"))
+s.idea("Why a triangle's angles add to 180°", ["Tear the three corners off a paper triangle and put them together: they make a straight line, which is 180°.",
+       "This works for every triangle."])
 s.mistake("180 not 360", ["Triangles: 180°. Quadrilaterals and full turns: 360°."])
 
 
@@ -85,6 +90,12 @@ def t8(r):
     return N(f"In a triangle two angles are {a}° and {b}°. The third angle is next to an outside angle on a straight line. Find the outside angle.", 180 - c, "°", units=["°"], o="O2", d="H")
 
 
-s.std([t1, t2, t3, t4, t5, t6, t7, t8], EX("Explain why each angle of an equilateral triangle is 60°.", [("the three angles are equal", "equal|same"), ("180 ÷ 3 = 60", "180|÷ ?3|60")], "The angles of a triangle add up to 180°. In an equilateral triangle all three angles are equal, so each is 180° ÷ 3 = 60°.", o="O2"))
+def m2_1(r):
+    rows = r.sample([("A triangle can have two right angles", "Never true"), ("A triangle can have one obtuse angle", "Always true"), ("The angles in a triangle add to 180°", "Always true"), ("An isosceles triangle has a right angle", "Sometimes true")], 4)
+    return GD("Is each statement always true, sometimes true or never true?", "Always / sometimes / never", rows, o="O2", d="H", extra=["Always true", "Sometimes true", "Never true"], reason="Two right angles already make 180°, leaving nothing for the third angle.")
+
+
+s.std([t1, t2, t3, t4, t5, t6, t7, t8], EX("Explain why each angle of an equilateral triangle is 60°.", [("the three angles are equal", "equal|same"), ("180 ÷ 3 = 60", "180|÷ ?3|60")], "The angles of a triangle add up to 180°. In an equilateral triangle all three angles are equal, so each is 180° ÷ 3 = 60°.", o="O2"),
+      deep=[m2_1])
 
 U.mindmap(("Angle types", "Acute • right • obtuse • reflex", "O1", "13.1"), ("Angle facts", "Straight line 180° • point 360°", "O1", "13.1"), ("Triangles", "Angles add up to 180°", "O2", "13.2"))

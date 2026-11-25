@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 11 Fractions and percentages (11.1 Equivalence, comparing and ordering fractions, 11.2 Percentages).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
@@ -15,6 +17,7 @@ s = U.section("11.1", "Equivalence, comparing and ordering fractions", ["O1"])
 s.idea("Equivalent fractions", ["**Equivalent fractions** show the same amount: 1/2 = 2/4 = 4/8. Multiply (or divide) the numerator and denominator by the same number.",
        "To compare fractions, use the same denominator: 3/4 = 6/8, and 6/8 > 5/8."], fig=PIE(8, range(4)))
 s.check(N("Find the missing number: 3/4 = ☐/8", 6, o="O1"))
+s.check(MC('Before you read on: is 2/4 the same as 1/2?', 'Yes', [('No', 'Two quarters fill half.'), ('Only for pizzas', 'It is true for any whole.')], o='O1'))
 s.mistake("Same number top and bottom", ["2/3 = 4/6 because both 2 and 3 are doubled."])
 
 
@@ -50,6 +53,7 @@ s = U.section("11.2", "Percentages", ["O2"])
 s.idea("Out of 100", ["**Per cent** (%) means 'out of 100'. On a 100 square, 37 shaded squares is **37%**.",
        "**50% = 1/2**, **25% = 1/4**, **10% = 1/10**. 100% is the whole."], fig={"kind": "waffle", "n": 37})
 s.check(N("What percentage is the same as 1/2?", 50, "%", units=["%"], o="O2"))
+s.check(MC('Before you read on: what is 50% of 30?', '15', [('50', '50% is half.'), ('20', 'Half of 30 is 15.')], o='O2'))
 s.mistake("The whole is 100%", ["If 30% are shaded, 70% are not."])
 
 

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 2 Addition, subtraction and money (2.1 Addition, 2.2 Subtraction, 2.3 Money).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -15,6 +17,7 @@ s = U.section("2.1", "Addition", ["O1"])
 s.idea("Adding in parts", ["Split numbers into hundreds, tens and ones: 245 + 132 = 300 + 70 + 7 = **377**.",
        "When the ones add to 10 or more, **exchange** 10 ones for 1 ten."], table={"head": ["", "H", "T", "O"], "rows": [["", "2", "4", "5"], ["+", "1", "3", "2"], ["=", "3", "7", "7"]]})
 s.check(N("Work out 36 + 47.", 83, o="O1"))
+s.check(MC('Before you read on: what is 38 + 5?', '43', [('33', 'Adding makes it bigger.'), ('313', '8 + 5 = 13: write 3 and carry 1 ten.')], o='O1'))
 s.mistake("Line up the columns", ["Ones go under ones, tens under tens and hundreds under hundreds."])
 
 
@@ -50,6 +53,7 @@ s = U.section("2.2", "Subtraction", ["O2"])
 s.idea("Taking away", ["Subtract the hundreds, tens and ones: 586 − 243 = **343**.",
        "If there are not enough ones, **exchange** 1 ten for 10 ones. Check by adding back: 343 + 243 = 586."], fig=NL(0, 10))
 s.check(N("Work out 75 − 28.", 47, o="O2"))
+s.check(MC('Before you read on: what is 50 − 7?', '43', [('57', 'Subtracting makes it smaller.'), ('47', '50 − 7: count back 7.')], o='O2'))
 s.mistake("Bigger take smaller?", ["In 52 − 17 you cannot do 7 − 2. Exchange a ten: 12 − 7 = 5."])
 
 
@@ -86,6 +90,7 @@ s = U.section("2.3", "Money", ["O3"])
 s.idea("Dollars and cents", ["**100 cents = 1 dollar**. We write $3.45 for 3 dollars and 45 cents.",
        "To find **change**, take the cost away from the money you pay: pay $5, cost $3.20, change = **$1.80**."], table={"head": ["Coins", "1c", "5c", "10c", "25c", "50c"], "rows": [["Value (cents)", "1", "5", "10", "25", "50"]]})
 s.check(N("How many cents are in $2?", 200, "cents", units=["cents"], o="O3"))
+s.check(MC('Before you read on: you pay $1 for something that costs 65c. How much change?', '35c', [('45c', '65 + 35 = 100.'), ('25c', 'Count on from 65c to $1.')], o='O3'))
 s.mistake("Dollars and cents", ["$1.5 is not 1 dollar 5 cents. Write $1.05 for 1 dollar 5 cents."])
 
 

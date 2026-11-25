@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 7 Fractions, decimals and percentages (7.1 Understanding fractions,
-7.2 Percentages, decimals and fractions, 7.3 Equivalence and comparison). Written by the Atomic teaching team."""
+7.2 Percentages, decimals and fractions, 7.3 Equivalence and comparison). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 from h import *
@@ -16,6 +18,7 @@ s.idea("Parts of a whole", ["A fraction shows equal parts of a whole. In **3/5**
        "A fraction is also a **division**: 3/5 = 3 ÷ 5."], fig=PIE(5, [0, 1, 2]))
 s.check(N("Find 1/4 of 28.", 7, o="O1"))
 s.idea("Fractions of amounts", ["To find 3/4 of 20: 20 ÷ 4 = 5 (one quarter), then 5 × 3 = **15**."])
+s.check(MC('Before you read on: which is bigger, 3/4 or 3/5?', '3/4', [('3/5', 'Quarters are bigger pieces than fifths.'), ('They are equal', 'The pieces are different sizes.')], o='O1'))
 s.mistake("Equal parts", ["A shape split into 4 unequal pieces is not split into quarters."])
 
 
@@ -53,6 +56,7 @@ s = U.section("7.2", "Percentages, decimals and fractions", ["O2"])
 s.idea("Per cent means out of 100", ["**37%** means 37 out of 100. On a 100 square it is 37 small squares.",
        "50% = 1/2 = 0.5, 25% = 1/4 = 0.25, 10% = 1/10 = 0.1, 1% = 1/100 = 0.01."], fig={"kind": "waffle", "n": 37})
 s.check(N("What percentage is 1/2?", 50, "%", units=["%"], o="O2"))
+s.check(MC('Before you read on: what is 0.7 as a percentage?', '70%', [('7%', '0.7 = 70 hundredths.'), ('0.7%', 'Multiply by 100.')], o='O2'))
 s.mistake("0.3 is 30%", ["0.3 is 3 tenths = 30 hundredths = 30%, not 3%."])
 EQ = [(Fr(1, 2), "0.5", 50), (Fr(1, 4), "0.25", 25), (Fr(3, 4), "0.75", 75), (Fr(1, 10), "0.1", 10), (Fr(3, 10), "0.3", 30), (Fr(7, 10), "0.7", 70), (Fr(1, 5), "0.2", 20), (Fr(1, 100), "0.01", 1)]
 
@@ -89,6 +93,7 @@ s = U.section("7.3", "Equivalence and comparison", ["O3"])
 s.idea("Equivalent fractions", ["**Equivalent fractions** have the same value: 1/2 = 2/4 = 3/6 = 4/8. Multiply (or divide) the numerator and denominator by the same number.",
        "To compare fractions, give them the same denominator: 2/3 = 8/12 and 3/4 = 9/12, so 2/3 < 3/4."], fig=PIE(8, range(4)))
 s.check(N("Find the missing number: 2/5 = ☐/10", 4, o="O3"))
+s.check(MC('Before you read on: which is bigger: 0.3, 1/4 or 35%?', '35%', [('0.3', '0.3 = 30%.'), ('1/4', '1/4 = 25%.')], o='O3'))
 s.mistake("More parts, smaller parts", ["1/6 is smaller than 1/4: sixths are smaller pieces than quarters."])
 
 

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 16 Chance (16.1 Describing chance, 16.2 Chance experiments).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -15,6 +17,7 @@ s = U.section("16.1", "Describing chance", ["O1"])
 s.idea("Will, might, will not", ["Some things **will happen** (the sun will set today). Some things **might happen** (it might rain). Some things **will not happen** (a cat will fly).",
        "If a bag has only red cubes, you **will** pick red. If it has red and blue, you **might** pick red."], fig={"kind": "spinner", "labels": ["R", "B", "R", "B"]})
 s.check(MC("A bag has only blue counters. Will you pick a blue one?", "will happen", [("might happen", ""), ("will not happen", "")], o="O1"))
+s.check(MC('Before you read on: is it certain that a dice will show a 7?', 'No – it is impossible', [('Yes', 'A normal dice only has 1 to 6.'), ('It is likely', '7 is not on the dice.')], o='O1'))
 s.mistake("Might is not will", ["If there are other colours in the bag, red only might happen."])
 
 
@@ -55,6 +58,7 @@ s = U.section("16.2", "Chance experiments", ["O2"])
 s.idea("Try it and record", ["In a **chance experiment** we try something many times and **record** what happens, often with tally marks.",
        "If you flip a coin 10 times, you might get 4 heads and 6 tails. The results can change each time you try."], table={"head": ["Result", "Tally", "Total"], "rows": [["Heads", "||||", "4"], ["Tails", "||||/ |", "6"]]})
 s.check(N("A coin was flipped 10 times. It landed on heads 3 times. How many tails?", 7, "tails", units=["tails"], o="O2"))
+s.check(MC('Before you read on: you flip a coin 4 times. Must you get 2 heads?', 'No', [('Yes', 'Results vary by chance.'), ('Only on a new coin', 'Any coin can give different results.')], o='O2'))
 s.mistake("Results change", ["If you try again, you may get different results."])
 
 

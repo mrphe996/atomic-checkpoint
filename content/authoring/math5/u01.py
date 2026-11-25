@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 1 The number system (1.1 Understanding place value, 1.2 Rounding decimal numbers).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -17,6 +19,7 @@ s.idea("Ones, tenths and hundredths", ["The digits after the decimal point are *
 s.check(N("What is the value of the digit 8 in 5.81? Give your answer as a decimal.", 0.8, o="O1"))
 s.idea("× and ÷ by 10 and 100", ["× 10 moves every digit **one place left**; ÷ 10 moves every digit one place right. × 100 and ÷ 100 move **two places**.",
        "4.6 × 10 = 46 and 52 ÷ 100 = 0.52."])
+s.check(MC('Before you read on: what is the value of the 6 in 3.06?', '6 hundredths', [('6 tenths', 'The tenths digit is 0.'), ('6 ones', 'It is after the decimal point.')], o='O1'))
 s.mistake("Do not just add a zero", ["4.6 × 10 is 46, not 4.60."])
 
 
@@ -53,12 +56,18 @@ def p9(r):
     return N(f"A pack of {k} stickers costs ${v}. How much does one sticker cost?", round(v / k, 2), "$", units=["$", "dollars"], o="O1", d="H")
 
 
-s.std([p4, p5, p1, p2, p3, p6, p8, p7, p9], EX("Explain why 3.5 × 10 = 35.", [("multiplying by 10 makes it 10 times bigger", "10 times|bigger"), ("each digit moves one place to the left", "one place|1 place|left")], "Multiplying by 10 makes the number 10 times bigger, so every digit moves one place to the left: 3.5 becomes 35.", o="O1"))
+def a51(r):
+    return MC('Mo says 0.5 is smaller than 0.45 because 5 is smaller than 45. Is he right?', 'No: 0.5 = 0.50, which is bigger than 0.45', [('Yes', 'Compare tenths first: 5 tenths is more than 4 tenths.'), ('They are equal', 'Write 0.5 as 0.50.')], o='O1', d="H", reason='Line up the decimal points and compare the tenths.')
+
+
+s.std([p4, p5, p1, p2, p3, p6, p8, p7, p9], EX("Explain why 3.5 × 10 = 35.", [("multiplying by 10 makes it 10 times bigger", "10 times|bigger"), ("each digit moves one place to the left", "one place|1 place|left")], "Multiplying by 10 makes the number 10 times bigger, so every digit moves one place to the left: 3.5 becomes 35.", o="O1"),
+      deep=[a51])
 
 s = U.section("1.2", "Rounding decimal numbers", ["O2"])
 s.idea("Nearest whole number", ["To round a number with one decimal place to the nearest whole number, look at the **tenths** digit.",
        "If it is **5 or more**, round up. If it is less than 5, round down. 7.6 → 8 and 7.4 → 7. 7.5 rounds up to 8."], fig={"kind": "numline", "min": 7, "max": 8})
 s.check(N("Round 12.7 to the nearest whole number.", 13, o="O2"))
+s.check(MC('Before you read on: round 6.5 to the nearest whole number.', '7', [('6', '5 or more rounds up.'), ('6.5', 'A whole number has no decimal part.')], o='O2'))
 s.mistake("Look at one digit only", ["To round 4.49 to the nearest whole number, look at the tenths digit, 4: it rounds down to 4."])
 
 

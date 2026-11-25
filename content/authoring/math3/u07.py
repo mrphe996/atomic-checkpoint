@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 7 Statistics: tally charts and frequency tables (7.1 Tally charts, 7.2 Frequency tables).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -19,6 +21,7 @@ s = U.section("7.1", "Tally charts", ["O1"])
 s.idea("Tally marks", ["When we collect data we make a **tally mark** for each answer: |, ||, |||, ||||.",
        "The fifth mark goes **across** the first four to make a group of five: ||||/ . Then we count in fives."], table={"head": ["Fruit", "Tally", "Total"], "rows": [["apple", "||||/ ||", "7"], ["banana", "||||", "4"]]})
 s.check(N("How many is ||||/ ||||/ |?", 11, o="O1"))
+s.check(MC('Before you read on: what number does |||| ||| show?', '8', [('7', '|||| is 5; add 3.'), ('4', 'The crossed group is 5.')], o='O1'))
 s.mistake("The fifth mark", ["The fifth tally mark crosses the other four, so each group is 5, not 4."])
 
 
@@ -54,6 +57,7 @@ s = U.section("7.2", "Frequency tables", ["O2"])
 s.idea("How many?", ["A **frequency table** shows how many times each answer was given. **Frequency** means 'how many'.",
        "We can use it to answer questions: which was most popular? How many more chose red than blue? How many altogether?"], table={"head": ["Colour", "red", "blue", "green"], "rows": [["Frequency", "8", "5", "11"]]})
 s.check(N("In the table above, how many children chose green?", 11, "children", units=["children"], o="O2"))
+s.check(MC('Before you read on: in a frequency table, what does the frequency tell you?', 'How many times something happened', [('The name of the group', 'That is the category.'), ('The biggest number', 'It is a count.')], o='O2'))
 s.mistake("Read the right row", ["Put your finger on the label first, then read the number next to it."])
 
 

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 14 Multiplication and division (2) (14.1 Multiplying decimals,
-14.2 Multiplying and dividing fractions, 14.3 Dividing decimals). Written by the Atomic teaching team."""
+14.2 Multiplying and dividing fractions, 14.3 Dividing decimals). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 
@@ -24,6 +26,7 @@ s = U.section("14.1", "Multiplying decimals", ["O1"])
 s.idea("Multiply as whole numbers", ["To work out 2.4 × 3, think 24 × 3 = 72, then put the decimal point back: **7.2**. The answer has the same number of decimal places as the decimal.",
        "Estimate to check: 2.4 × 3 ≈ 2 × 3 = 6."], table={"head": ["×", "2", "0.4"], "rows": [["3", "6", "1.2"]]})
 s.check(N("Work out 1.7 × 4.", 6.8, o="O1"))
+s.check(MC("Before you read on: what is 0.3 × 4?", "1.2", [("12", "3 tenths × 4 = 12 tenths = 1.2."), ("0.12", "Count the decimal places: one.")], o="O1"))
 s.mistake("Decimal places", ["0.3 × 4 = 1.2, not 0.12. Only one decimal place is in the question, so only one in the answer."])
 
 
@@ -62,6 +65,7 @@ s = U.section("14.2", "Multiplying and dividing fractions", ["O2"])
 s.idea("Fraction × whole number", ["2/5 × 3 means three lots of 2/5: 2/5 + 2/5 + 2/5 = **6/5 = 1 1/5**. Multiply the numerator by the whole number.",
        "To divide a fraction by a whole number, multiply the **denominator**: 3/4 ÷ 2 = **3/8**."], fig={"kind": "pie", "labels": [""] * 5, "values": [1] * 5, "shade": [0, 1]})
 s.check(F("Work out 3/8 × 2.", Fr(3, 4), o="O2"))
+s.check(MC("Before you read on: what is 1/2 × 1/3?", "1/6", [("2/5", "Multiply the tops and the bottoms."), ("2/6", "1 × 1 = 1 on top.")], o="O2"))
 s.mistake("Only the top", ["2/5 × 3 is 6/5, not 6/15. The size of the parts (fifths) does not change."])
 
 
@@ -98,6 +102,7 @@ s = U.section("14.3", "Dividing decimals", ["O3"])
 s.idea("Dividing a decimal", ["Divide as usual and keep the decimal point in line: 8.4 ÷ 4 = **2.1**. Split if it helps: 8.4 = 8 + 0.4, 8 ÷ 4 = 2, 0.4 ÷ 4 = 0.1.",
        "Estimate: 18.6 ÷ 3 ≈ 18 ÷ 3 = 6."], table={"head": ["", "2", ".", "1"], "rows": [["4 )", "8", ".", "4"]]})
 s.check(N("Work out 9.6 ÷ 3.", 3.2, o="O3"))
+s.check(MC("Before you read on: what is 7.2 ÷ 3?", "2.4", [("24", "Keep the decimal point in line."), ("0.24", "7.2 ÷ 3 is about 2.")], o="O3"))
 s.mistake("Point in line", ["7.5 ÷ 5 = 1.5, not 15. The point in the answer sits above the point in the question."])
 
 

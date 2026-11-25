@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 1 The number system (1.1 Place value, 1.2 Rounding decimal numbers).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 
@@ -29,6 +31,9 @@ s.idea("Digits and places", ["Every digit has a **value** that depends on its **
 s.check(N("What is the value of the digit 6 in 3.462? Give your answer as a decimal.", 0.06, o="O1"))
 s.idea("× and ÷ by 10, 100 and 1000", ["Multiplying by 10 moves every digit **one place to the left**; dividing by 10 moves every digit one place to the right. × 100 and ÷ 100 move two places; × 1000 and ÷ 1000 move three places."])
 s.example("Moving digits", "Work out 3.75 × 100 and 52 ÷ 1000.", [("3.75 × 100 = 375", "digits move 2 places left"), ("52 ÷ 1000 = 0.052", "digits move 3 places right")], "375 and 0.052")
+s.idea("Why each place is 10 times the next", ["Ten ones make one ten, ten tens make one hundred, and ten tenths make one whole. Every place is worth 10 times the place to its right.",
+       "So the 3 in 3.45 is worth 3 ones, the 4 is 4 tenths and the 5 is 5 hundredths."])
+s.check(MC("Before you read on: what is the value of the 7 in 2.074?", "7 hundredths", [("7 tenths", "The first place after the point is tenths, and it holds 0."), ("7 ones", "The 7 is after the decimal point.")], o="O1"))
 s.mistake("Zeros keep places", ["0.5 and 0.05 are not the same: the 5 is in a different place."])
 
 
@@ -63,7 +68,17 @@ def p9(r):
     return MS(f"Select ALL the numbers that are 10 times bigger than {fmt(v)}.", [fmt(round(v * 10, 3))], [fmt(round(v * 100, 3)), fmt(round(v / 10, 4)), fmt(round(v + 10, 3))], o="O1")
 
 
-s.std([p4, p6, p1, p2, p3, p5, p7, p8, p9], EX("Explain why 0.3 is ten times bigger than 0.03.", [("the 3 is in the tenths place in 0.3", ["tenth"]), ("and in the hundredths place in 0.03; a tenth is 10 hundredths", ["hundredth|10 times|one place"])], "In 0.3 the 3 is worth 3 tenths, but in 0.03 it is worth 3 hundredths. One tenth is 10 hundredths, so 0.3 is ten times bigger.", o="O1"))
+def a1_1(r):
+    n = r.randint(1000, 9999) / 1000
+    d = str(n).split(".")[1].ljust(3, "0")
+    k = r.randrange(3); names = ["tenths", "hundredths", "thousandths"]
+    if d[k] == "0": return None
+    return MC(f"In {n:.3f}, what is the value of the digit {d[k]}?", f"{d[k]} {names[k]}", [(f"{d[k]} {names[(k + 1) % 3]}", "Count the places after the decimal point."), (f"{d[k]} ones", "It is after the decimal point.")], o="O1", d="H",
+              reason=f"It is in place {k + 1} after the point: {names[k]}.")
+
+
+s.std([p4, p6, p1, p2, p3, p5, p7, p8, p9], EX("Explain why 0.3 is ten times bigger than 0.03.", [("the 3 is in the tenths place in 0.3", ["tenth"]), ("and in the hundredths place in 0.03; a tenth is 10 hundredths", ["hundredth|10 times|one place"])], "In 0.3 the 3 is worth 3 tenths, but in 0.03 it is worth 3 hundredths. One tenth is 10 hundredths, so 0.3 is ten times bigger.", o="O1"),
+      deep=[a1_1])
 
 # ================================================================== 1.2
 s = U.section("1.2", "Rounding decimal numbers", ["O2"])
@@ -71,6 +86,7 @@ s.idea("Rounding", ["To round to the **nearest whole number**, look at the tenth
        "**5 or more**: round up. **4 or less**: round down."], fig={"kind": "numline", "min": 3, "max": 5})
 s.example("Nearest tenth", "Round 6.47 to one decimal place.", [("6.47 is between 6.4 and 6.5", ""), ("the hundredths digit is 7, so round up", "")], "6.5")
 s.check(N("Round 8.36 to the nearest whole number.", 8, o="O2"))
+s.check(MC("Before you read on: round 4.96 to 1 decimal place.", "5.0", [("4.10", "A digit cannot be 10: 9 tenths + 1 tenth = 1 whole."), ("4.9", "The next digit is 6, so round up.")], o="O2"))
 s.mistake("Rounding up 9", ["4.96 to one decimal place is 5.0, because 4.9 + 0.1 = 5.0."])
 
 
@@ -103,6 +119,14 @@ def r8(r):
     return N(f"A number has one decimal place and rounds to {a} (nearest whole number). What is the smallest it could be?", a - 0.5, o="O2", d="H")
 
 
-s.std([r3, r4, r1, r2, r5, r6, r7, r8], EX("Explain how to round 7.85 to one decimal place.", [("look at the hundredths digit, 5", ["hundredth|the 5|next digit"]), ("5 or more rounds up: 7.9", ["7\\.9|round up"])], "Look at the hundredths digit, which is 5. Five or more rounds up, so 7.85 becomes 7.9.", o="O2"))
+def a2_1(r):
+    t = r.randint(21, 89) / 10
+    good = [f"{t - 0.05 + k / 100:.2f}" for k in r.sample(range(0, 10), 2)]
+    bad = [f"{t - 0.06:.2f}", f"{t + 0.05:.2f}"]
+    return MS(f"Select ALL the numbers that round to {t:.1f} (1 decimal place).", good, bad, o="O2", d="H", reason=f"They must be at least {t - 0.05:.2f} and less than {t + 0.05:.2f}.")
+
+
+s.std([r3, r4, r1, r2, r5, r6, r7, r8], EX("Explain how to round 7.85 to one decimal place.", [("look at the hundredths digit, 5", ["hundredth|the 5|next digit"]), ("5 or more rounds up: 7.9", ["7\\.9|round up"])], "Look at the hundredths digit, which is 5. Five or more rounds up, so 7.85 becomes 7.9.", o="O2"),
+      deep=[a2_1])
 
 U.mindmap(("Place value", "Thousands to thousandths • × and ÷ by 10, 100, 1000", "O1", "1.1"), ("Rounding", "Look at the next digit • 5 or more rounds up", "O2", "1.2"))

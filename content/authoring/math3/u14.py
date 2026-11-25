@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 14 Angles and movement (14.1 Angles and turns, 14.2 Direction, position and movement).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -14,6 +16,7 @@ s = U.section("14.1", "Angles and turns", ["O1"])
 s.idea("Turning", ["An **angle** is an amount of turn. A **quarter turn** is a **right angle**. Two quarter turns make a **half turn**; four make a **whole turn**.",
        "Angles smaller than a right angle are **acute**; bigger ones (less than a half turn) are **obtuse**."], fig={"kind": "anglept", "line": True, "angles": [90, 90]})
 s.check(N("How many right angles make a whole turn?", 4, "right angles", units=["right angles"], o="O1"))
+s.check(MC('Before you read on: how many right angles make a full turn?', '4', [('2', '2 right angles make half a turn.'), ('3', '4 quarter turns make a full turn.')], o='O1'))
 s.mistake("Clockwise", ["Clockwise means turning the same way as clock hands."])
 
 
@@ -51,6 +54,7 @@ s = U.section("14.2", "Direction, position and movement", ["O2"])
 s.idea("Moving on a grid", ["The four **compass directions** are North, East, South and West.",
        "To describe movement on a grid say how many squares and which way: '3 squares East, then 2 squares North'."], fig=G([{"x": 1, "y": 1, "l": "A"}, {"x": 4, "y": 3, "l": "B"}], rng=6, lo=0))
 s.check(S("Which direction is opposite to North?", ["South", "south"], o="O2"))
+s.check(MC('Before you read on: you face north and make a half turn. Which way do you face?', 'South', [('East', 'That is a quarter turn clockwise.'), ('North', 'A half turn faces the opposite way.')], o='O2'))
 s.mistake("Count squares, not lines", ["Count the jumps from one square to the next."])
 
 

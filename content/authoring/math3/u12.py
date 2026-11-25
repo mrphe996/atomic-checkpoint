@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 12 Measure (12.1 Mass, 12.2 Capacity, 12.3 Temperature).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -15,6 +17,7 @@ s = U.section("12.1", "Mass", ["O1"])
 s.idea("Grams and kilograms", ["**Mass** tells us how heavy something is. Light things are measured in **grams (g)**; heavier things in **kilograms (kg)**.",
        "**1000 g = 1 kg**. Read the scale carefully: work out what each small mark is worth."], fig={"kind": "numline", "min": 0, "max": 5, "minor": 2, "ticks": [], "mark": 3.5})
 s.check(N("How many grams are in 2 kg?", 2000, "g", units=["g"], o="O1"))
+s.check(MC('Before you read on: which is heavier, 1 kg or 900 g?', '1 kg', [('900 g', '1 kg = 1000 g.'), ('They are equal', '1000 g is more than 900 g.')], o='O1'))
 s.mistake("Half-way marks", ["If marks go 0, 1, 2 kg with a mark between each, that mark shows a half."])
 
 
@@ -50,6 +53,7 @@ s = U.section("12.2", "Capacity", ["O2"])
 s.idea("Millilitres and litres", ["**Capacity** is how much a container holds. Small amounts are measured in **millilitres (ml)**; larger amounts in **litres (l)**.",
        "**1000 ml = 1 l**. A spoon holds about 5 ml; a big bottle holds about 2 l."], fig={"kind": "numline", "min": 0, "max": 10, "ticks": [], "mark": 6})
 s.check(N("How many millilitres are in 1 litre?", 1000, "ml", units=["ml"], o="O2"))
+s.check(MC('Before you read on: how many millilitres are in 1 litre?', '1000', [('100', '1 litre = 1000 ml.'), ('10', 'There are 1000.')], o='O2'))
 s.mistake("Read the top of the liquid", ["Read the level where the top of the water is, looking straight at it."])
 
 
@@ -85,6 +89,7 @@ s = U.section("12.3", "Temperature", ["O3"])
 s.idea("Degrees Celsius", ["**Temperature** tells us how hot or cold something is. We measure it in **degrees Celsius (°C)** with a **thermometer**.",
        "Water freezes at 0 °C and boils at 100 °C. A warm day might be 25 °C."], fig={"kind": "thermometer", "min": 0, "max": 50, "value": 25, "minor": 5, "major": 10})
 s.check(N("What temperature does water freeze at?", 0, "°C", units=["°C"], o="O3"))
+s.check(MC('Before you read on: the temperature is 18 °C and rises by 5 degrees. What is it now?', '23 °C', [('13 °C', 'Rises means goes up.'), ('185 °C', 'Add 5.')], o='O3'))
 s.mistake("Count the marks", ["On a thermometer each mark might be 2 °C or 5 °C. Check before you read."])
 
 

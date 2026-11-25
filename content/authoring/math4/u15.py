@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 15 Special numbers (15.1 Ordering and comparing numbers, 15.2 Working with special numbers,
-15.3 Tests of divisibility). Written by the Atomic teaching team."""
+15.3 Tests of divisibility). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 from h import *
 
@@ -14,6 +16,7 @@ s = U.section("15.1", "Ordering and comparing numbers", ["O1"])
 s.idea("Using < and >", ["**<** means 'is less than' and **>** means 'is greater than': −6 < −2 and 4250 > 4205.",
        "On a number line, numbers get bigger to the right. Every negative number is less than every positive number."], fig=NL(-8, 8))
 s.check(CMP("−5", "−9", ">", o="O1"))
+s.check(MC('Before you read on: which is bigger, 1 099 or 1 909?', '1 909', [('1 099', 'Compare the hundreds: 9 hundreds beat 0.'), ('They are equal', 'The digits are in different places.')], o='O1'))
 s.mistake("Negative numbers", ["−9 is less than −5, even though 9 is bigger than 5."])
 
 
@@ -49,6 +52,7 @@ s = U.section("15.2", "Working with special numbers", ["O2"])
 s.idea("Square numbers and multiples", ["A **square number** comes from multiplying a number by itself: 6 × 6 = **36**. Square numbers make square arrays.",
        "A **multiple** is in a times table. A number can be a multiple of several numbers: 12 is a multiple of 2, 3, 4 and 6."], fig={"kind": "cells", "cells": [[i, j] for i in range(4) for j in range(4)]})
 s.check(N("What is 7 × 7?", 49, o="O2"))
+s.check(MC('Before you read on: is 9 a square number?', 'Yes: 3 × 3', [('No', '3 × 3 = 9.'), ('Only an odd number', 'It is odd AND square.')], o='O2'))
 s.mistake("Square, not double", ["5 squared is 5 × 5 = 25, not 10."])
 
 
@@ -85,6 +89,7 @@ s = U.section("15.3", "Tests of divisibility", ["O3"])
 s.idea("Quick tests", ["**÷ 2**: ends in an even digit. **÷ 5**: ends in 0 or 5. **÷ 10**: ends in 0. **÷ 100**: ends in 00.",
        "**÷ 25**: ends in 00, 25, 50 or 75. **÷ 50**: ends in 00 or 50."], table={"head": ["Divisible by", "Last digits"], "rows": [["2", "0, 2, 4, 6, 8"], ["5", "0 or 5"], ["10", "0"], ["25", "00, 25, 50, 75"], ["50", "00 or 50"], ["100", "00"]]})
 s.check(MC("Which number is divisible by 25?", "675", [("660", ""), ("640", ""), ("615", "")], o="O3"))
+s.check(MC('Before you read on: is 246 divisible by 2?', 'Yes', [('No', 'It ends in 6, an even digit.'), ('Only by 3', 'Even numbers divide by 2.')], o='O3'))
 s.mistake("Ends in 5 is not ÷ 25", ["35 ends in 5 but is not divisible by 25."])
 
 

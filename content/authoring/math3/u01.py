@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 1 Numbers to 1000 (1.1 Hundreds, tens and ones, 1.2 Comparing and ordering,
-1.3 Estimating and rounding). Written by the Atomic teaching team."""
+1.3 Estimating and rounding). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 from h import *
 
@@ -24,6 +26,7 @@ s = U.section("1.1", "Hundreds, tens and ones", ["O1"])
 s.idea("Three places", ["A 3-digit number has **hundreds**, **tens** and **ones**. In **472** there are 4 hundreds, 7 tens and 2 ones.",
        "472 = 400 + 70 + 2. The 7 is worth 70."], table={"head": ["Hundreds", "Tens", "Ones"], "rows": [["4", "7", "2"]]})
 s.check(N("What is the value of the digit 5 in 356?", 50, o="O1"))
+s.check(MC('Before you read on: what does the 5 in 352 mean?', '5 tens (50)', [('5 ones', 'The 5 is in the tens place.'), ('5 hundreds', 'The 3 is in the hundreds place.')], o='O1'))
 s.mistake("Zero holds a place", ["In 405 there are no tens. The 0 keeps the 5 in the ones place."])
 
 
@@ -64,6 +67,7 @@ s = U.section("1.2", "Comparing and ordering", ["O2"])
 s.idea("Which is bigger?", ["To compare, look at the **hundreds** first. If they are the same, look at the **tens**, then the **ones**.",
        "**<** means 'is less than' and **>** means 'is greater than': 345 < 354."], fig={"kind": "numline", "min": 0, "max": 10, "ticks": [[3.45, "345"], [3.54, "354"]]})
 s.check(CMP("629", "692", "<", o="O2"))
+s.check(MC('Before you read on: which is bigger, 409 or 490?', '490', [('409', 'Compare the tens: 9 tens beat 0 tens.'), ('They are equal', 'The digits are in different places.')], o='O2'))
 s.mistake("The mouth eats the bigger number", ["The open side of < or > always faces the bigger number."])
 
 
@@ -96,12 +100,18 @@ def c9(r):
     return N(f"Which hundred comes next: {n}, {n + 100}, ☐?", n + 200, o="O2", fig={"kind": "numline", "min": 0, "max": 10, "ticks": [[n / 100, str(n)], [n / 100 + 1, str(n + 100)]], "mark": n / 100 + 2})
 
 
-s.std([c8, c9, c1, c2, c3, c4, c7, c5, c6], EX("Explain why 512 is greater than 498.", [("compare the hundreds first", "hundreds"), ("5 hundreds is more than 4 hundreds", "5 ?> ?4|more|bigger")], "Compare the hundreds first. 512 has 5 hundreds and 498 has only 4 hundreds, so 512 is greater.", o="O2"))
+def a12(r):
+    return MC('Sam says 98 is bigger than 102 because 9 is bigger than 1. Is he right?', 'No: 102 is bigger', [('Yes', '102 has a hundred; 98 does not.'), ('They are equal', 'They are different numbers.')], o='O2', d="H", reason='102 has 1 hundred; 98 has no hundreds, so 102 is bigger.')
+
+
+s.std([c8, c9, c1, c2, c3, c4, c7, c5, c6], EX("Explain why 512 is greater than 498.", [("compare the hundreds first", "hundreds"), ("5 hundreds is more than 4 hundreds", "5 ?> ?4|more|bigger")], "Compare the hundreds first. 512 has 5 hundreds and 498 has only 4 hundreds, so 512 is greater.", o="O2"),
+      deep=[a12])
 
 s = U.section("1.3", "Estimating and rounding", ["O3"])
 s.idea("Nearest 10 and 100", ["To round to the nearest **10**, look at the **ones** digit. 5 or more rounds up; less than 5 rounds down. 347 → **350**.",
        "To round to the nearest **100**, look at the **tens** digit. 347 → **300**."], fig={"kind": "numline", "min": 34, "max": 35, "minor": 10, "ticks": [], "mark": 34.7})
 s.check(N("Round 68 to the nearest 10.", 70, o="O3"))
+s.check(MC('Before you read on: round 65 to the nearest ten.', '70', [('60', '5 rounds up.'), ('65', 'The nearest ten ends in 0.')], o='O3'))
 s.mistake("Halfway rounds up", ["45 is exactly halfway between 40 and 50. We round it up to 50."])
 
 

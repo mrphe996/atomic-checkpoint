@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 10 More multiplication and division (10.1 Revisiting multiplication and division,
-10.2 Playing with multiplication and division, 10.3 Extending multiplication and division). Written by the Atomic teaching team."""
+10.2 Playing with multiplication and division, 10.3 Extending multiplication and division). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 from h import *
 
@@ -15,6 +17,7 @@ s = U.section("10.1", "Revisiting multiplication and division", ["O1"])
 s.idea("Facts and inverses", ["If you know **6 × 7 = 42**, you also know 7 × 6 = 42, 42 ÷ 6 = 7 and 42 ÷ 7 = 6.",
        "A **multiplication square** helps you find facts quickly."], table={"head": ["×", "2", "3", "4", "5"], "rows": [["3", "6", "9", "12", "15"], ["4", "8", "12", "16", "20"]]})
 s.check(N("What is 42 ÷ 6?", 7, o="O1"))
+s.check(MC('Before you read on: 20 sweets are shared between 4 children. How many each?', '5', [('16', 'Sharing means dividing.'), ('80', 'That multiplies.')], o='O1'))
 s.mistake("Division order", ["42 ÷ 6 = 7, but 6 ÷ 42 is not 7."])
 
 
@@ -50,6 +53,7 @@ s = U.section("10.2", "Playing with multiplication and division", ["O2"])
 s.idea("Odd and even", ["**Even** numbers end in 0, 2, 4, 6 or 8 and can be shared into 2 equal groups. **Odd** numbers end in 1, 3, 5, 7 or 9.",
        "Patterns: multiples of 5 end in 0 or 5. Multiples of 10 end in 0. Even × anything is even."], fig={"kind": "cells", "cells": [[0, 0], [1, 0], [2, 0], [0, 1], [1, 1], [2, 1]]})
 s.check(MC("Is 37 odd or even?", "odd", [("even", "")], o="O2"))
+s.check(MC('Before you read on: 6 × 5 = 30. What is 30 ÷ 5?', '6', [('25', 'Division undoes multiplication.'), ('35', '30 ÷ 5 = 6.')], o='O2'))
 s.mistake("Look at the last digit", ["74 is even because it ends in 4, even though 7 is odd."])
 
 
@@ -85,6 +89,7 @@ s = U.section("10.3", "Extending multiplication and division", ["O3"])
 s.idea("× 10 and 2-digit × 1-digit", ["Multiplying by **10** moves every digit one place to the left: 36 × 10 = **360**.",
        "For 23 × 4, split 23 into 20 + 3: 20 × 4 = 80 and 3 × 4 = 12, so 23 × 4 = **92**."], table={"head": ["×", "20", "3"], "rows": [["4", "80", "12"]]})
 s.check(N("Work out 45 × 10.", 450, o="O3"))
+s.check(MC('Before you read on: what is 3 × 20?', '60', [('23', '3 groups of 20.'), ('600', '3 × 2 = 6, so 3 × 20 = 60.')], o='O3'))
 s.mistake("Not just adding 10", ["36 × 10 is 360, not 46."])
 
 

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 16 Data display and interpretation (16.1 Pictograms and bar charts, 16.2 Dot plots and interpreting data).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -19,6 +21,7 @@ s = U.section("16.1", "Pictograms and bar charts", ["O1"])
 s.idea("Keys and scales", ["In a **pictogram**, the **key** tells you what one picture stands for: if ● = 5, then ●●● = 15 and half a picture is 1 when ● = 2.",
        "In a **bar chart**, the **scale** may go up in 2s, 5s or 10s. A bar halfway between 20 and 30 shows 25."], fig=BC(FR, [12, 18, 6, 14]))
 s.check(N("In the bar chart, how many children chose banana?", 18, "children", units=["children"], o="O1"))
+s.check(MC('Before you read on: in a pictogram, one ☺ stands for 4 children. How many does ☺☺☺ show?', '12', [('3', 'Each symbol is 4 children.'), ('7', '3 × 4 = 12.')], o='O1'))
 s.mistake("Read the scale", ["Count how much each grid line is worth before reading a bar."])
 
 
@@ -54,6 +57,7 @@ s = U.section("16.2", "Dot plots and interpreting data", ["O2"])
 s.idea("Dot plots and the mode", ["A **dot plot** shows each piece of data as a dot above a number line.",
        "The **mode** is the value that appears most often – the tallest column of dots."], table={"head": ["Pets", "0", "1", "2", "3"], "rows": [["Dots", "●●", "●●●●●", "●●●", "●"]]})
 s.check(N("In the dot plot above, what is the mode number of pets?", 1, o="O2"))
+s.check(MC('Before you read on: in a dot plot, what does the tallest column show?', 'The most common value', [('The biggest value', 'Height shows how many times a value appears.'), ('The average', 'It shows the mode.')], o='O2'))
 s.mistake("Mode is a value", ["The mode is the value (1 pet), not how many dots there are (5)."])
 
 

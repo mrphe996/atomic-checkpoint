@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 13 Ratio and proportion (13.1 Ratio, 13.2 Proportion).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -13,6 +15,7 @@ s = U.section("13.1", "Ratio", ["O1"])
 s.idea("For every", ["A **ratio** compares one part with another part. In a pattern with **2 red beads for every 3 blue beads**, the ratio of red to blue is **2 : 3**.",
        "If the pattern repeats, both numbers grow together: 4 red for 6 blue, 6 red for 9 blue."], table={"head": ["Red", "2", "4", "6", "8"], "rows": [["Blue", "3", "6", "9", "12"]]})
 s.check(N("A necklace has 3 white beads for every 1 black bead. How many white beads are there if there are 5 black beads?", 15, "beads", units=["beads"], o="O1"))
+s.check(MC('Before you read on: for every 1 red bead there are 3 blue beads. With 4 red beads, how many blue?', '12', [('6', 'Multiply: 4 groups of 3.'), ('7', 'Ratio is about multiplying, not adding.')], o='O1'))
 s.mistake("Not adding", ["2 red for every 3 blue: with 4 red there are 6 blue (double), not 5."])
 
 
@@ -51,6 +54,7 @@ s = U.section("13.2", "Proportion", ["O2"])
 s.idea("In every", ["**Proportion** compares a part with the **whole**. If **2 in every 5** beads are red, the proportion of red beads is 2/5.",
        "In 20 beads, 2 in every 5 are red: 20 ÷ 5 = 4 groups, 4 × 2 = **8** red beads."], fig=PIE(5, [0, 1]))
 s.check(N("1 in every 4 children in a class has a bike. There are 24 children. How many have a bike?", 6, "children", units=["children"], o="O2"))
+s.check(MC('Before you read on: 2 apples cost 60c. How much do 5 apples cost?', '$1.50', [('$1.20', 'One apple costs 30c.'), ('$3.00', '5 × 30c = 150c.')], o='O2'))
 s.mistake("Part or whole?", ["2 red for every 3 blue (ratio) means 2 in every 5 are red (proportion)."])
 
 

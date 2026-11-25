@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 5 Measurement, area and perimeter (5.1 Measurement, 5.2 Perimeter, 5.3 Introducing area).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -15,6 +17,7 @@ s = U.section("5.1", "Measurement", ["O1"])
 s.idea("Units of length", ["We measure short things in **centimetres (cm)**, longer things in **metres (m)** and long distances in **kilometres (km)**.",
        "**100 cm = 1 m** and **1000 m = 1 km**. Line up the 0 on a ruler with the end of the object."], fig={"kind": "numline", "min": 0, "max": 10, "ticks": [], "mark": 7})
 s.check(N("How many centimetres are in 2 metres?", 200, "cm", units=["cm"], o="O1"))
+s.check(MC('Before you read on: which is longer, 1 m or 90 cm?', '1 m', [('90 cm', '1 m = 100 cm.'), ('They are equal', '100 cm is more than 90 cm.')], o='O1'))
 s.mistake("Start at zero", ["Measure from the 0 mark, not from the end of the ruler."])
 
 
@@ -51,6 +54,7 @@ s = U.section("5.2", "Perimeter", ["O2"])
 s.idea("Around the edge", ["The **perimeter** is the distance all the way around the edge of a shape.",
        "Add the lengths of all the sides: a rectangle 5 cm by 3 cm has perimeter 5 + 3 + 5 + 3 = **16 cm**."], fig=RECT(5, 3))
 s.check(N("A square has sides of 4 cm. What is its perimeter?", 16, "cm", units=["cm"], o="O2"))
+s.check(MC('Before you read on: a square has sides of 3 cm. What is its perimeter?', '12 cm', [('9 cm', 'That multiplies 3 by 3. Add all 4 sides.'), ('6 cm', 'There are 4 sides.')], o='O2'))
 s.mistake("Count every side", ["A rectangle has 4 sides even if only 2 lengths are written."])
 
 
@@ -88,6 +92,7 @@ s = U.section("5.3", "Introducing area", ["O3"])
 s.idea("Counting squares", ["The **area** is the amount of space inside a shape. We can find it by **counting squares**.",
        "If each square is 1 square centimetre (**1 cm²**), a shape covering 8 squares has an area of **8 cm²**."], fig={"kind": "cells", "cells": [[0, 0], [1, 0], [2, 0], [3, 0], [0, 1], [1, 1], [2, 1], [3, 1]]})
 s.check(N("A rectangle covers 3 rows of 4 squares. How many squares is that?", 12, "squares", units=["squares"], o="O3"))
+s.check(MC('Before you read on: a shape covers 6 squares. What is its area?', '6 squares', [('4 squares', 'Count every square inside.'), ('12 squares', 'Count each square once.')], o='O3'))
 s.mistake("Count each square once", ["Mark each square as you count so you don't count it twice."])
 
 

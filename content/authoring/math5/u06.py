@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 5 Mathematics (Primary) · Unit 6 3D shapes (6.1 Nets of cubes, 6.2 Describing and drawing 3D shapes).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -22,6 +24,7 @@ s = U.section("6.1", "Nets of cubes", ["O1"])
 s.idea("Unfolding a cube", ["A **net** is a flat shape that folds up to make a 3D shape. A cube has **6 square faces**, so every net of a cube is made of 6 squares.",
        "There are **11** different nets of a cube. Some arrangements of 6 squares do NOT fold into a cube because two faces would overlap."], fig=NET(CUBE_NETS[0]))
 s.check(N("How many squares are in a net of a cube?", 6, "squares", units=["squares"], o="O1"))
+s.check(MC('Before you read on: how many squares are in the net of a cube?', '6', [('4', 'A cube has 6 faces.'), ('8', '8 is the number of vertices.')], o='O1'))
 s.mistake("A row of 5", ["Five squares in a row cannot fold into a cube: the end squares overlap."])
 
 
@@ -58,6 +61,7 @@ s = U.section("6.2", "Describing and drawing 3D shapes", ["O2"])
 s.idea("Faces, edges and vertices", ["A **face** is a flat or curved surface, an **edge** is where two faces meet and a **vertex** is a corner.",
        "A cuboid has 6 faces, 12 edges and 8 vertices. On isometric (dotty) paper we can draw 3D shapes so they look solid."], fig={"kind": "solid", "solid": "cuboid", "a": "", "b": "", "c": ""})
 s.check(N("How many vertices does a square-based pyramid have?", 5, o="O2"))
+s.check(MC('Before you read on: which 3D shape has 5 faces: 2 triangles and 3 rectangles?', 'Triangular prism', [('Square-based pyramid', 'That has 1 square and 4 triangles.'), ('Cube', 'A cube has 6 squares.')], o='O2'))
 s.mistake("Hidden edges", ["Some edges are hidden at the back. Dashed lines show them."])
 
 

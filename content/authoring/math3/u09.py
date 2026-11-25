@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 9 More addition and subtraction (9.1 Addition, 9.2 Subtraction, 9.3 Complements).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -14,6 +16,7 @@ s = U.section("9.1", "Addition", ["O1"])
 s.idea("Column addition", ["Add the **ones**, then the **tens**, then the **hundreds**. If a column makes 10 or more, **exchange**: 10 ones = 1 ten, 10 tens = 1 hundred.",
        "Estimate first: 368 + 257 ≈ 370 + 260 = 630. The answer is 625."], table={"head": ["", "H", "T", "O"], "rows": [["", "3", "6", "8"], ["+", "2", "5", "7"], ["=", "6", "2", "5"]]})
 s.check(N("Work out 245 + 168.", 413, o="O1"))
+s.check(MC('Before you read on: what is 45 + 30?', '75', [('48', 'Add 3 tens, not 3 ones.'), ('85', '40 + 30 = 70, plus 5.')], o='O1'))
 s.mistake("Carry the 1", ["When 8 + 7 = 15, write 5 and exchange the ten into the tens column."])
 
 
@@ -50,6 +53,7 @@ s = U.section("9.2", "Subtraction", ["O2"])
 s.idea("Column subtraction", ["Subtract the ones, then the tens, then the hundreds. If the top digit is smaller, **exchange** from the next column.",
        "Check with the inverse: if 532 − 178 = 354, then 354 + 178 = 532."], table={"head": ["", "H", "T", "O"], "rows": [["", "5", "3", "2"], ["−", "1", "7", "8"], ["=", "3", "5", "4"]]})
 s.check(N("Work out 463 − 128.", 335, o="O2"))
+s.check(MC('Before you read on: what is 82 − 9?', '73', [('71', '82 − 10 = 72, then add 1 back.'), ('91', 'Subtracting makes it smaller.')], o='O2'))
 s.mistake("Top minus bottom", ["In 532 − 178, the ones are 2 − 8, not 8 − 2. Exchange first."])
 
 
@@ -86,6 +90,7 @@ s = U.section("9.3", "Complements", ["O3"])
 s.idea("Pairs that make 100 and 1000", ["Pairs of tens that make 100: 30 + 70, 40 + 60, 80 + 20.",
        "Pairs of hundreds that make 1000: 300 + 700, 600 + 400. Use what you know: 3 + 7 = 10, so 30 + 70 = 100 and 300 + 700 = 1000."], table={"head": ["", "", ""], "rows": [["3 + 7 = 10", "30 + 70 = 100", "300 + 700 = 1000"]]})
 s.check(N("What do you add to 60 to make 100?", 40, o="O3"))
+s.check(MC('Before you read on: what goes with 37 to make 100?', '63', [('73', '37 + 63 = 100.'), ('67', 'Check: 37 + 67 = 104.')], o='O3'))
 s.mistake("Not 1000 − 10", ["The partner of 400 to make 1000 is 600."])
 
 
@@ -115,6 +120,11 @@ def k8(r):
     return N(f"Lily needs 1000 points to win. She has {a}. How many more does she need?", 1000 - a, "points", units=["points"], o="O3", d="H")
 
 
-s.std([k3, k4, k1, k2, k5, k7, k6, k8], EX("Explain how knowing 4 + 6 = 10 helps you find 400 + 600.", [("400 is 4 hundreds and 600 is 6 hundreds", "hundreds|4 hundreds"), ("4 + 6 = 10 hundreds = 1000", "1000|10 hundreds")], "400 is 4 hundreds and 600 is 6 hundreds. 4 + 6 = 10, so together they make 10 hundreds, which is 1000.", o="O3"))
+def c93(r):
+    return MC('Tom says 46 + 64 = 100. Is he right?', 'No: 46 + 54 = 100', [('Yes', '46 + 64 = 110.'), ('No: 46 + 44 = 100', '46 + 44 = 90.')], o='O3', d="H", reason='The ones must make 10 and the tens must make 90: 46 + 54.')
+
+
+s.std([k3, k4, k1, k2, k5, k7, k6, k8], EX("Explain how knowing 4 + 6 = 10 helps you find 400 + 600.", [("400 is 4 hundreds and 600 is 6 hundreds", "hundreds|4 hundreds"), ("4 + 6 = 10 hundreds = 1000", "1000|10 hundreds")], "400 is 4 hundreds and 600 is 6 hundreds. 4 + 6 = 10, so together they make 10 hundreds, which is 1000.", o="O3"),
+      deep=[c93])
 
 U.mindmap(("Addition", "Columns • exchange • estimate", "O1", "9.1"), ("Subtraction", "Exchange • check with adding", "O2", "9.2"), ("Complements", "Pairs to 100 and 1000", "O3", "9.3"))

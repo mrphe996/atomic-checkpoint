@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 8 Angles (8.1 Comparing angles, 8.2 Acute and obtuse, 8.3 Estimating angles).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -16,6 +18,7 @@ s = U.section("8.1", "Comparing angles", ["O1"])
 s.idea("Amount of turn", ["An **angle** is an amount of turn. A **right angle** is a quarter turn, **90°**. A straight line is two right angles, **180°**.",
        "To compare angles, look at how far one arm turns from the other – not at how long the arms are."], fig=ANG(90, "90°"))
 s.check(N("How many degrees are in a right angle?", 90, "°", units=["°"], o="O1"))
+s.check(MC('Before you read on: is a right angle bigger than half a turn?', 'No – it is a quarter turn', [('Yes', 'A right angle is 90°; half a turn is 180°.'), ('They are equal', 'Two right angles make half a turn.')], o='O1'))
 s.mistake("Long arms", ["Longer arms do not make a bigger angle."])
 
 
@@ -52,6 +55,7 @@ s = U.section("8.2", "Acute and obtuse", ["O2"])
 s.idea("Naming angles", ["An **acute** angle is less than 90°. A **right** angle is exactly 90°. An **obtuse** angle is more than 90° but less than 180°."],
        table={"head": ["Angle", "Size"], "rows": [["acute", "less than 90°"], ["right", "90°"], ["obtuse", "between 90° and 180°"]]})
 s.check(MC("What type of angle is 125°?", "obtuse", [("acute", ""), ("right", "")], o="O2"))
+s.check(MC('Before you read on: is 100° acute or obtuse?', 'Obtuse', [('Acute', 'Acute angles are less than 90°.'), ('Right', 'A right angle is exactly 90°.')], o='O2'))
 s.mistake("Acute is small", ["Remember: 'a cute little angle' is small – less than 90°."])
 
 
@@ -88,6 +92,7 @@ s = U.section("8.3", "Estimating angles", ["O3"])
 s.idea("Use known angles", ["Use angles you know to estimate: **90°** (right angle), **45°** (half a right angle), **180°** (straight line).",
        "An angle a bit less than a right angle might be about 80°; halfway between 90° and 180° is about 135°."], fig=ANG(45, "45°"))
 s.check(MC("Which is the best estimate for half a right angle?", "45°", [("90°", ""), ("10°", ""), ("150°", "")], o="O3"))
+s.check(MC('Before you read on: which is the best estimate for an angle a little bigger than a right angle?', '100°', [('45°', 'That is half a right angle.'), ('180°', 'That is a straight line.')], o='O3'))
 s.mistake("Check with a right angle", ["If an angle is obtuse, your estimate must be more than 90°."])
 
 

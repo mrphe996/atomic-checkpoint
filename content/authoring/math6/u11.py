@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 11 3D shapes (11.1 Shapes and nets, 11.2 Capacity and volume).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 
@@ -17,6 +19,7 @@ s.idea("Faces, edges and vertices", ["A **face** is a flat surface. An **edge** 
 s.check(N("How many faces does a triangular prism have?", 5, o="O1"))
 s.idea("Nets", ["A **net** is a flat shape that folds up to make a 3D shape. A cube has 11 different nets, each made of 6 squares.",
        "A **prism** has the same cross-section all the way through. A **pyramid** has a base and triangular faces meeting at a point."], fig={"kind": "solid", "solid": "triprism"})
+s.check(MC("Before you read on: how many faces does a cube have?", "6", [("8", "8 is the number of corners (vertices)."), ("12", "12 is the number of edges.")], o="O1"))
 s.mistake("Six squares are not enough", ["Not every arrangement of 6 squares folds into a cube: check that no two faces overlap."])
 
 
@@ -54,6 +57,8 @@ s = U.section("11.2", "Capacity and volume", ["O2"])
 s.idea("Capacity and volume", ["**Capacity** is how much a container can hold, usually in **millilitres (ml)** and **litres (l)**: 1 l = 1000 ml.",
        "**Volume** is how much space a solid takes up. It can be measured by counting **cubes**, in **cm³**. A cuboid 4 cm × 3 cm × 2 cm holds 4 × 3 × 2 = **24 cm³**."], fig=CUB("4 cm", "3 cm", "2 cm"))
 s.check(N("How many millilitres are in 2.5 litres?", 2500, "ml", units=["ml"], o="O2"))
+s.idea("Volume counts cubes", ["A box 4 cm long, 3 cm wide and 2 cm high holds 2 layers of 4 × 3 = 12 cubes: 24 cubes of 1 cm³. That is why volume = length × width × height.",
+       "Capacity is how much a container holds: 1 litre = 1000 millilitres."])
 s.mistake("Count every layer", ["A cuboid of cubes has more than one layer: count one layer, then multiply by the number of layers."])
 
 
@@ -83,6 +88,14 @@ def v8(r):
     return N(f"A tank has {l1} litres of water. {m} ml is poured out. How much is left in millilitres?", l1 * 1000 - m, "ml", units=["ml"], o="O2", d="H")
 
 
-s.std([v1, v4, v2, v3, v5, v7, v6, v8], EX("Explain the difference between capacity and volume.", [("capacity is how much a container can hold", "hold|container|liquid"), ("volume is the space a solid takes up", "space|takes up|solid")], "Capacity is how much a container can hold (e.g. litres of water). Volume is how much space an object takes up (e.g. cm³).", o="O2"))
+def k2_1(r):
+    v = pick(r, [24, 36, 48])
+    good = [f"{a} cm × {b} cm × {v // (a * b)} cm" for a, b in [(2, 3), (2, 2), (3, 4)] if v % (a * b) == 0][:2]
+    bad = [f"{v // 4} cm × 2 cm × 3 cm"]
+    return MS(f"Select ALL the boxes with a volume of {v} cm³.", good, bad, o="O2", d="H", reason="Multiply the three lengths.") if len(good) == 2 else None
+
+
+s.std([v1, v4, v2, v3, v5, v7, v6, v8], EX("Explain the difference between capacity and volume.", [("capacity is how much a container can hold", "hold|container|liquid"), ("volume is the space a solid takes up", "space|takes up|solid")], "Capacity is how much a container can hold (e.g. litres of water). Volume is how much space an object takes up (e.g. cm³).", o="O2"),
+      deep=[k2_1])
 
 U.mindmap(("3D shapes", "Faces • edges • vertices • prisms and pyramids", "O1", "11.1"), ("Nets", "Flat shapes that fold into solids", "O1", "11.1"), ("Capacity and volume", "1 l = 1000 ml • count cubes in cm³", "O2", "11.2"))

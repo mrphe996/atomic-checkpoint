@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 3 Addition and subtraction of whole numbers (3.1 Using a symbol to represent a missing number
-or operation, 3.2 Addition and subtraction of whole numbers, 3.3 Generalising with odd and even numbers). Written by the Atomic teaching team."""
+or operation, 3.2 Addition and subtraction of whole numbers, 3.3 Generalising with odd and even numbers). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 from h import *
 
@@ -14,6 +16,7 @@ s = U.section("3.1", "Using a symbol to represent a missing number or operation"
 s.idea("Missing numbers and signs", ["A shape can stand for a missing number: in **▲ + 25 = 60**, ▲ = 35.",
        "A missing **operation** can be +, −, × or ÷: 12 ○ 4 = 3 means 12 **÷** 4 = 3."], table={"head": ["Number sentence", "Missing"], "rows": [["▲ + 25 = 60", "35"], ["12 ○ 4 = 3", "÷"]]})
 s.check(N("Find ▲: ▲ − 18 = 30", 48, o="O1"))
+s.check(MC('Before you read on: ☐ + 7 = 15. What is ☐?', '8', [('22', '15 − 7 = 8.'), ('7', 'Check: 7 + 7 = 14.')], o='O1'))
 s.mistake("Use the inverse", ["To find ▲ in ▲ − 18 = 30, add: 30 + 18 = 48."])
 
 
@@ -51,6 +54,7 @@ s = U.section("3.2", "Addition and subtraction of whole numbers", ["O2"])
 s.idea("Columns and estimates", ["Line up hundreds, tens and ones. **Exchange** when a column makes 10 or more (adding) or is too small (subtracting).",
        "Estimate first by rounding: 487 + 236 ≈ 490 + 240 = 730. Check by using the inverse."], table={"head": ["", "H", "T", "O"], "rows": [["", "4", "8", "7"], ["+", "2", "3", "6"], ["=", "7", "2", "3"]]})
 s.check(N("Work out 487 + 236.", 723, o="O2"))
+s.check(MC('Before you read on: what is 300 − 1?', '299', [('209', 'Count back 1 from 300.'), ('290', '300 − 10 = 290; 300 − 1 = 299.')], o='O2'))
 s.mistake("Exchange across zeros", ["In 402 − 167, exchange from the hundreds through the tens."])
 
 
@@ -86,6 +90,7 @@ s = U.section("3.3", "Generalising with odd and even numbers", ["O3"])
 s.idea("Odd and even rules", ["**even + even = even**, **odd + odd = even**, **odd + even = odd**. The same rules work for subtraction.",
        "Test a rule with examples, and look for a counter-example that breaks it."], table={"head": ["+", "even", "odd"], "rows": [["even", "even", "odd"], ["odd", "odd", "even"]]})
 s.check(MC("Is 37 + 45 odd or even?", "even", [("odd", "")], o="O3"))
+s.check(MC('Before you read on: is odd + odd always even?', 'Yes', [('No, always odd', '3 + 5 = 8, 7 + 1 = 8.'), ('Sometimes', 'Pair up the dots: the two odd ones pair together.')], o='O3'))
 s.mistake("Look at the ones digit", ["Only the ones digit tells you if a number is odd or even."])
 
 
@@ -114,6 +119,12 @@ def e8(r):
     return MS("Select ALL the sums that are even.", [f"{2 * a + 1} + {2 * b + 1}", f"{2 * a} + {2 * b}"], [f"{2 * a + 1} + {2 * b}", f"{2 * a} + {2 * b + 1}"], o="O3")
 
 
-s.std([e3, e4, e1, e2, e6, e7, e8, e5], EX("Explain why odd + odd is always even.", [("each odd number has one left over when paired", "left over|one extra|spare"), ("the two left-overs make a pair", "pair|together|even")], "When you make pairs, each odd number has one left over. The two left-overs make one more pair, so the total has no left-over: it is even.", o="O3"))
+def c43(r):
+    rows = r.sample([('odd + odd = even', 'Always true'), ('even + odd = even', 'Never true'), ('odd × odd = odd', 'Always true'), ('a number that ends in 6 is even', 'Always true'), ('an odd number divides by 3', 'Sometimes true')], 4)
+    return GD('Is each statement always, sometimes or never true?', "Always / sometimes / never", rows, o='O3', d="H", extra=["Always true", "Sometimes true", "Never true"], reason='Test a few examples, then explain with pairs: an odd number has one left over.')
+
+
+s.std([e3, e4, e1, e2, e6, e7, e8, e5], EX("Explain why odd + odd is always even.", [("each odd number has one left over when paired", "left over|one extra|spare"), ("the two left-overs make a pair", "pair|together|even")], "When you make pairs, each odd number has one left over. The two left-overs make one more pair, so the total has no left-over: it is even.", o="O3"),
+      deep=[c43])
 
 U.mindmap(("Symbols", "▲ for a missing number • ○ for a missing sign", "O1", "3.1"), ("Columns", "Exchange • estimate • inverse", "O2", "3.2"), ("Odd and even", "odd + odd = even", "O3", "3.3"))

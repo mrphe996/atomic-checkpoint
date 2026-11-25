@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 4 Probability (4.1 Likelihood, 4.2 Chance experiments).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
@@ -21,6 +23,7 @@ s = U.section("4.1", "Likelihood", ["O1"])
 s.idea("Five words for chance", ["Events can be **impossible**, **unlikely**, have an **even chance**, be **likely** or **certain**.",
        "On a spinner with 3 red parts out of 4, red is **likely**. With 2 out of 4 it has an **even chance**."], fig={"kind": "spinner", "labels": ["R", "R", "R", "B"]})
 s.check(MC("A bag has 1 red and 9 blue cubes. How likely is picking red?", "unlikely", [("likely", ""), ("certain", ""), ("impossible", "")], o="O1"))
+s.check(MC('Before you read on: is it certain that it will rain tomorrow?', 'No – it is possible, but not certain', [('Yes', 'Weather can change.'), ('It is impossible', 'Rain can happen.')], o='O1'))
 s.mistake("Even chance", ["'Even chance' means exactly as likely to happen as not."])
 
 
@@ -61,6 +64,7 @@ s = U.section("4.2", "Chance experiments", ["O2"])
 s.idea("Doing an experiment", ["In a **chance experiment** we repeat something, like spinning a spinner, and **record** what happens in a tally chart or table.",
        "If the outcomes are **equally likely**, they should come up about the same number of times — but not exactly the same."], table={"head": ["Colour", "red", "blue", "green"], "rows": [["Times", "11", "9", "10"]]})
 s.check(N("A coin is flipped 30 times. About how many heads would you expect?", 15, "heads", units=["heads"], o="O2"))
+s.check(MC('Before you read on: you spin a spinner with 4 equal colours 20 times. Will each colour come up exactly 5 times?', 'Not always', [('Yes', 'Results vary by chance.'), ('Never', 'It could happen.')], o='O2'))
 s.mistake("Not exactly", ["A fair coin flipped 10 times might give 6 heads. That does not mean it is unfair."])
 
 

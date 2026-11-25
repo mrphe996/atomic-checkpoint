@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 18 Position, direction and movement (18.1 Position and movement, 18.2 Reflecting 2D shapes).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -15,6 +17,7 @@ s = U.section("18.1", "Position and movement", ["O1"])
 s.idea("Coordinates and directions", ["**Coordinates (x, y)**: go across first, then up. (5, 2) is 5 across and 2 up from the origin (0, 0).",
        "The 8 compass directions are N, NE, E, SE, S, SW, W and NW. A **translation** slides a shape: '3 right, 2 up' adds 3 to x and 2 to y."], fig=Q([{"x": 5, "y": 2, "l": "A"}, {"x": 2, "y": 6, "l": "B"}]))
 s.check(S("Write the coordinates of a point 4 across and 7 up.", PP(4, 7), o="O1"))
+s.check(MC('Before you read on: you face north and turn a quarter turn clockwise. Which way do you face?', 'East', [('West', 'Clockwise from north goes to east.'), ('South', 'That is a half turn.')], o='O1'))
 s.mistake("Across first", ["(3, 6) and (6, 3) are different points."])
 
 
@@ -50,6 +53,7 @@ s = U.section("18.2", "Reflecting 2D shapes", ["O2"])
 s.idea("Mirror lines", ["When a shape is **reflected**, each point moves to the same distance on the other side of the **mirror line**.",
        "A reflection flips a shape: it is the same size, but faces the other way."], fig={"kind": "cells", "cells": [[0, 0], [1, 0], [1, 1], [4, 0], [3, 0], [3, 1]], "cols": 5, "rows": 2, "grid": True, "mirror": {"x": 2.5}})
 s.check(N("A corner is 3 squares left of a vertical mirror line. How many squares right of the line is its reflection?", 3, "squares", units=["squares"], o="O2"))
+s.check(MC('Before you read on: when you reflect a shape, does it change size?', 'No', [('Yes', 'A reflection flips the shape but keeps its size.'), ('It gets smaller', 'Only the position and direction change.')], o='O2'))
 s.mistake("Same distance", ["Count the squares to the mirror line, then the same number on the other side."])
 
 

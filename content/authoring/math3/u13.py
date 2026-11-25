@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 3 Mathematics (Primary) · Unit 13 Time (2) (13.1 Time intervals, 13.2 Timetables).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 from h import *
@@ -14,6 +16,7 @@ s = U.section("13.1", "Time intervals", ["O1"])
 s.idea("How long?", ["To find how long something takes, **count on** from the start time to the end time: from 2:40 to 3:15 is 20 minutes to 3:00 and 15 more: **35 minutes**.",
        "Remember: **60 minutes = 1 hour**."], fig={"kind": "clock", "h": 2, "m": 40})
 s.check(N("A lesson starts at 10:15 and ends at 11:00. How many minutes long is it?", 45, "minutes", units=["minutes", "min"], o="O1"))
+s.check(MC('Before you read on: from 2:30 to 3:15, how long is it?', '45 minutes', [('85 minutes', 'There are 60 minutes in an hour.'), ('1 hour 15 minutes', '2:30 → 3:00 is 30 min, then 15 more.')], o='O1'))
 s.mistake("Not 100 minutes", ["From 9:50 to 10:10 is 20 minutes, not 60."])
 
 
@@ -50,6 +53,7 @@ s = U.section("13.2", "Timetables", ["O2"])
 s.idea("Reading a timetable", ["A **timetable** shows when things happen. Read across a row to find a time.",
        "To find how long a journey takes, subtract the start time from the end time."], table={"head": ["Stop", "Park", "School", "Shops"], "rows": [["Bus 1", "8:00", "8:15", "8:30"], ["Bus 2", "9:00", "9:15", "9:30"]]})
 s.check(N("In the timetable, how many minutes does bus 1 take from Park to Shops?", 30, "minutes", units=["minutes", "min"], o="O2"))
+s.check(MC('Before you read on: a bus leaves at 9:10 and the journey takes 20 minutes. When does it arrive?', '9:30', [('9:20', 'Add 20 minutes.'), ('11:10', '20 minutes, not 2 hours.')], o='O2'))
 s.mistake("Same row", ["Keep your finger on one row so you read the times for the same bus."])
 ST = ["Park", "School", "Shops", "Pool"]
 

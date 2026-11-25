@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 4 Mathematics (Primary) · Unit 17 Multiplication and division (17.1 Developing written methods of multiplication,
-17.2 Developing written methods of division). Written by the Atomic teaching team."""
+17.2 Developing written methods of division). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 from h import *
 
@@ -13,6 +15,7 @@ s = U.section("17.1", "Developing written methods of multiplication", ["O1"])
 s.idea("Grid and short multiplication", ["**Grid method**: 243 × 4 = 800 + 160 + 12 = **972**.",
        "**Short multiplication**: multiply the ones, then tens, then hundreds, carrying when a product is 10 or more."], table={"head": ["×", "200", "40", "3"], "rows": [["4", "800", "160", "12"]]})
 s.check(N("Work out 312 × 3.", 936, o="O1"))
+s.check(MC('Before you read on: what is 34 × 6?', '204', [('184', '4 × 6 = 24: carry the 2.'), ('1824', 'That writes 18 and 24 side by side.')], o='O1'))
 s.mistake("Carry", ["In 47 × 3, 7 × 3 = 21: write 1 and carry 2 tens."])
 
 
@@ -48,6 +51,7 @@ s = U.section("17.2", "Developing written methods of division", ["O2"])
 s.idea("Short division", ["Divide from the left: 156 ÷ 4 → 15 ÷ 4 = 3 r3, carry the 3 to make 36; 36 ÷ 4 = 9. So **156 ÷ 4 = 39**.",
        "If it doesn't divide exactly, write the **remainder**: 158 ÷ 4 = 39 r2."], table={"head": ["", "0", "3", "9"], "rows": [["4 )", "1", "5", "6"]]})
 s.check(N("Work out 135 ÷ 5.", 27, o="O2"))
+s.check(MC('Before you read on: what is 96 ÷ 3?', '32', [('23', '90 ÷ 3 = 30 and 6 ÷ 3 = 2.'), ('36', 'Check: 36 × 3 = 108.')], o='O2'))
 s.mistake("Check with ×", ["Check: 39 × 4 = 156. If not, look for a mistake."])
 
 

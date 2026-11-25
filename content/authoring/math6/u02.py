@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 2 Numbers and sequences (2.1 Counting and sequences, 2.2 Special numbers,
-2.3 Common multiples and factors). Written by the Atomic teaching team."""
+2.3 Common multiples and factors). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from math import gcd
 from kit import *
 
@@ -55,6 +57,9 @@ s.idea("Squares, cubes and primes", ["A **square number** is a number times itse
        "A **prime number** has exactly two factors, 1 and itself: 2, 3, 5, 7, 11, 13, … 1 is not prime."],
        table={"head": ["n", "1", "2", "3", "4", "5"], "rows": [["n²", "1", "4", "9", "16", "25"], ["n³", "1", "8", "27", "64", "125"]]})
 s.check(MC("Which number is prime?", "29", [("27", "27 = 3 × 9"), ("21", "21 = 3 × 7"), ("25", "25 = 5 × 5")], o="O2"))
+s.idea("Why square numbers are called square", ["16 counters can be arranged in a 4 by 4 square: 16 = 4 × 4 = 4². That is why we say '4 squared'.",
+       "A prime number has exactly two factors, 1 and itself, so its counters only make one row. 1 is not prime: it has only one factor."])
+s.check(MC("Before you read on: is 1 a prime number?", "No", [("Yes", "A prime has exactly two factors; 1 has only one."), ("Only sometimes", "1 always has one factor.")], o="O2"))
 s.mistake("2 is prime", ["2 is the only even prime number."])
 
 
@@ -87,7 +92,13 @@ def q8(r):
     return N(f"Work out {a}² + {a}³.", a * a + a ** 3, o="O2", d="H")
 
 
-s.std([q3, q6, q1, q2, q5, q7, q4, q8], EX("Explain why 9 is not a prime number.", [("9 has the factor 3 (3 × 3 = 9)", ["3|three"]), ("a prime has only two factors, 1 and itself", ["two factors|only 1 and|only factors"])], "A prime number has exactly two factors, 1 and itself. 9 has three factors: 1, 3 and 9 (because 3 × 3 = 9), so it is not prime.", o="O2"))
+def b2_1(r):
+    rows = r.sample([("A square number can be odd", "Sometimes true"), ("A prime number is odd", "Sometimes true"), ("2 is the only even prime", "Always true"), ("A multiple of 4 is prime", "Never true"), ("A square number has an odd number of factors", "Always true")], 4)
+    return GD("Is each statement always true, sometimes true or never true?", "Always / sometimes / never", rows, o="O2", d="H", extra=["Always true", "Sometimes true", "Never true"], reason="Try examples: 9 is an odd square and 4 is even; 2 is prime and even; every multiple of 4 has 2 as a factor.")
+
+
+s.std([q3, q6, q1, q2, q5, q7, q4, q8], EX("Explain why 9 is not a prime number.", [("9 has the factor 3 (3 × 3 = 9)", ["3|three"]), ("a prime has only two factors, 1 and itself", ["two factors|only 1 and|only factors"])], "A prime number has exactly two factors, 1 and itself. 9 has three factors: 1, 3 and 9 (because 3 × 3 = 9), so it is not prime.", o="O2"),
+      deep=[b2_1])
 
 # ================================================================== 2.3
 s = U.section("2.3", "Common multiples and factors", ["O3"])
@@ -95,6 +106,7 @@ s.idea("Multiples and factors", ["**Multiples** of 4 are in the 4 times table: 4
        "**Factors** of 12 divide into 12 exactly: 1, 2, 3, 4, 6, 12. A **common factor** of 12 and 18 divides into both: 1, 2, 3, 6."],
        table={"head": ["Number", "Factors"], "rows": [["12", "1, 2, 3, 4, 6, 12"], ["18", "1, 2, 3, 6, 9, 18"]]})
 s.check(N("What is the biggest common factor of 12 and 18?", 6, o="O3"))
+s.check(MC("Before you read on: is the lowest common multiple of 4 and 6 equal to 24?", "No: 12", [("Yes", "12 is in both times tables and is smaller."), ("No: 2", "2 is a common factor, not a multiple.")], o="O3"))
 s.mistake("Factors and multiples", ["Factors of a number are smaller than or equal to it; multiples are bigger than or equal to it."])
 
 
@@ -125,7 +137,13 @@ def m8(r):
     return TB(f"Write the first four multiples of {n}.", ["1st", "2nd", "3rd", "4th"], [[B(n), B(2 * n), B(3 * n), B(4 * n)]], o="O3")
 
 
-s.std([m4, m5, m1, m2, m3, m8, m6, m7], EX("Explain the difference between a factor and a multiple of 6.", [("a factor divides into 6: 1, 2, 3, 6", ["divides|1, ?2, ?3"]), ("a multiple is in the 6 times table: 12, 18", ["times table|12|18"])], "A factor of 6 divides into 6 exactly (1, 2, 3, 6). A multiple of 6 is in the 6 times table (6, 12, 18, …).", o="O3"))
+def b3_1(r):
+    rows = r.sample([("Bells ringing together again", "Common multiple"), ("Sharing sweets into equal bags", "Common factor"), ("Buses leaving together again", "Common multiple"), ("Cutting two ribbons into equal pieces", "Common factor")], 4)
+    return GD("Does each problem need a common multiple or a common factor?", "Need", rows, o="O3", d="H", extra=["Common multiple", "Common factor"], reason="Waiting until things line up → multiple; splitting into equal groups → factor.")
+
+
+s.std([m4, m5, m1, m2, m3, m8, m6, m7], EX("Explain the difference between a factor and a multiple of 6.", [("a factor divides into 6: 1, 2, 3, 6", ["divides|1, ?2, ?3"]), ("a multiple is in the 6 times table: 12, 18", ["times table|12|18"])], "A factor of 6 divides into 6 exactly (1, 2, 3, 6). A multiple of 6 is in the 6 times table (6, 12, 18, …).", o="O3"),
+      deep=[b3_1])
 
 U.mindmap(("Sequences", "Term-to-term rule • position-to-term rule", "O1", "2.1"), ("Special numbers", "Squares • cubes • primes", "O2", "2.2"),
           ("Multiples and factors", "Common multiples • common factors", "O3", "2.3"))

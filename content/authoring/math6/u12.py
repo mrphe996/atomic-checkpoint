@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 12 Ratio and proportion (12.1 Ratio, 12.2 Direct proportion).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from math import gcd
 from kit import *
@@ -15,6 +17,7 @@ s.idea("Ratio compares parts", ["A **ratio** compares one part with another. If 
        "The **proportion** of red beads is 3 out of 5, or 3/5."], table={"head": ["Red", "Blue", "Total"], "rows": [["3", "2", "5"], ["6", "4", "10"]]})
 s.check(S("A pattern has 4 squares for every 1 circle. Write the ratio of squares to circles.", ["4 : 1", "4:1"], o="O1"))
 s.idea("Simplifying", ["Divide both numbers by a common factor: 6 : 4 = **3 : 2**."])
+s.check(MC("Before you read on: for every 2 red beads there are 3 blue beads. If there are 10 red beads, how many are blue?", "15", [("11", "The ratio is about multiplying, not adding."), ("6", "10 red is 5 groups of 2.")], o="O1"))
 s.mistake("Order matters", ["'Red to blue' 3 : 2 is not the same as 'blue to red' 2 : 3."])
 
 
@@ -54,6 +57,7 @@ s = U.section("12.2", "Direct proportion", ["O2"])
 s.idea("Direct proportion", ["Two amounts are in **direct proportion** if they go up and down together at the same rate: 1 pen costs 30c, so 4 pens cost 4 × 30 = **120c**.",
        "Use the **unitary method**: find the value of **one**, then multiply."], table={"head": ["Pens", "1", "2", "4", "10"], "rows": [["Cost (c)", "30", "60", "120", "300"]]})
 s.check(N("3 apples cost 75 cents. How much do 5 apples cost, in cents?", 125, "cents", units=["cents"], o="O2"))
+s.check(MC("Before you read on: 3 pens cost $1.50. How much do 5 pens cost?", "$2.50", [("$3.50", "Find one pen first: $0.50."), ("$2.00", "5 × $0.50 = $2.50.")], o="O2"))
 s.mistake("Not adding", ["If 2 tickets cost $10, 4 tickets cost $20 (double), not $12."])
 FOOD = [("flour", "g"), ("sugar", "g"), ("milk", "ml"), ("butter", "g")]
 
@@ -87,6 +91,12 @@ def d8(r):
     return N(f"A tap fills {m} litres every minute. How many litres does it fill in {m + 4} minutes?", m * (m + 4), "litres", units=["litres", "l"], o="O2")
 
 
-s.std([d2, d3, d1, d4, d6, d8, d5, d7], EX("Explain how to find the cost of 7 stamps if 4 stamps cost 80 cents.", [("1 stamp costs 80 ÷ 4 = 20 cents", "20|÷ ?4|one stamp"), ("7 stamps cost 7 × 20 = 140 cents", "140")], "Find the cost of one stamp: 80 ÷ 4 = 20 cents. Then 7 stamps cost 7 × 20 = 140 cents.", o="O2"))
+def l2_1(r):
+    n, p, m = r.randint(2, 5), r.randint(2, 9), r.randint(6, 12)
+    return N(f"{n} notebooks cost ${n * p}. How much do {m} notebooks cost?", m * p, "$", units=["$"], o="O2", d="H", reason=f"One costs ${p}; {m} cost ${m * p}.")
+
+
+s.std([d2, d3, d1, d4, d6, d8, d5, d7], EX("Explain how to find the cost of 7 stamps if 4 stamps cost 80 cents.", [("1 stamp costs 80 ÷ 4 = 20 cents", "20|÷ ?4|one stamp"), ("7 stamps cost 7 × 20 = 140 cents", "140")], "Find the cost of one stamp: 80 ÷ 4 = 20 cents. Then 7 stamps cost 7 × 20 = 140 cents.", o="O2"),
+      deep=[l2_1])
 
 U.mindmap(("Ratio", "Part : part • simplify by a common factor", "O1", "12.1"), ("Proportion", "Part of the whole • fraction", "O1", "12.1"), ("Direct proportion", "Find one, then multiply • recipes", "O2", "12.2"))

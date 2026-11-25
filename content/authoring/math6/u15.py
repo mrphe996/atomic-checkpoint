@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 15 Data (15.1 Bar charts, dot plots, waffle diagrams and pie charts;
-15.2 Frequency diagrams, line graphs and scatter graphs). Written by the Atomic teaching team."""
+15.2 Frequency diagrams, line graphs and scatter graphs). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 
 U = Unit(15, "Data", "Statistics and probability",
@@ -20,6 +22,7 @@ s = U.section("15.1", "Bar charts, dot plots, waffle diagrams and pie charts", [
 s.idea("Showing categories", ["A **bar chart** uses bars to show how many are in each group. Always read the **scale** on the axis carefully.",
        "A **dot plot** shows each value as a dot. A **waffle diagram** is a 10 × 10 grid: each square is **1%**. A **pie chart** shows each group as a slice of a circle."], fig={"kind": "barchart", "labels": SPORTS[:4], "values": [12, 6, 10, 4], "ymax": 14, "step": 2, "ylabel": "Children"})
 s.check(N("In the bar chart, how many more children chose football than tennis?", 6, o="O1"))
+s.check(MC("Before you read on: which chart is best for showing the parts of one whole?", "A pie chart", [("A line graph", "Line graphs show change over time."), ("A dot plot", "Dot plots show how often each value appears.")], o="O1"))
 s.mistake("Scale steps", ["If the scale goes up in 2s, a bar halfway between 8 and 10 shows 9."])
 
 
@@ -65,6 +68,7 @@ s.idea("Line graphs and scatter graphs", ["A **line graph** shows how something 
        "A **scatter graph** plots pairs of values. If the points go up from left to right, as one value increases the other tends to increase."],
        fig={"kind": "linegraph", "x": {"min": 0, "max": 6, "step": 1, "label": "Hour"}, "y": {"min": 0, "max": 30, "step": 5, "label": "°C"}, "series": [{"pts": [[0, 10], [1, 14], [2, 19], [3, 24], [4, 22], [5, 18], [6, 15]]}]})
 s.check(N("In the frequency diagram, how many children are 140–149 cm tall?", 11, o="O2"))
+s.check(MC("Before you read on: which graph shows how a temperature changes during a day?", "A line graph", [("A pie chart", "Pie charts show parts of a whole."), ("A scatter graph", "Scatter graphs compare two measurements.")], o="O2"))
 s.mistake("Read across carefully", ["Use a ruler to read across from a point to the axis."])
 GRP = ["0–9", "10–19", "20–29", "30–39"]
 
