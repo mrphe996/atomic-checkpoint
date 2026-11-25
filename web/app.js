@@ -99,7 +99,7 @@
   function shell(opts) {
     const r = location.hash.slice(1) || 'home'; const app = document.getElementById('app'); app.innerHTML = '';
     const me = Core.S.me;
-    const area = r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || /^stage-\d+$/.test(r) || /^checkout-\d+$/.test(r) || r === 'map' || r === 'level' ? 'course' : r === 'bank' || r === 'topic' || r === 'drill' ? 'bank' : r === 'test' || r === 'tests' || r === 'result' || r === 'remedial' || r === 'final' || /^f(x|res)-\d+$/.test(r) ? 'test' : r === 'profile' || r === 'cert' ? 'profile' : r === 'board' ? 'board' : r === 'home' ? 'home' : r === 'challenge' || /^ch[lxpr]-/.test(r) ? 'challenge' : r;
+    const area = r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || /^stage-\d+$/.test(r) || /^checkout-\d+$/.test(r) || r === 'map' || r === 'level' ? 'course' : r === 'bank' || r === 'topic' || r === 'drill' ? 'bank' : r === 'test' || r === 'tests' || r === 'result' || r === 'remedial' || r === 'final' || /^f(x|res)-\d+$/.test(r) ? 'test' : r === 'profile' || r === 'cert' ? 'profile' : r === 'board' ? 'board' : r === 'home' ? 'home' : r === 'challenge' || /^ch[lxpr]-/.test(r) ? 'challenge' : r === 'games' || /^game-/.test(r) ? 'games' : r;
     const right = el('span', { class: 'topright' });
     let nav;
     if (st) {
@@ -121,7 +121,7 @@
         document.addEventListener('click', () => { menu.hidden = true; }, { once: true });
         right.append(s, lv, bell(), el('span', { class: 'userwrap' }, av, menu));
       }
-      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('challenge', 'Maths Challenge', area === 'challenge'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
+      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('challenge', 'Maths Challenge', area === 'challenge'), navLink('games', '🎮 Games', area === 'games'), navLink('profile', 'Progress', area === 'profile'), navLink('board', 'Leaderboard', area === 'board')];
       if (Core.IS_PRIMARY) { nav.splice(2, 0, navLink('words', '📒 My words', area === 'words')); nav[3].textContent = 'Questions'; nav[4].textContent = 'Tests'; }
     } else if (me) {
       right.append(modeBtn(), bell(), el('button', { class: 'btn small', type: 'button', id: 'signOut', onclick: async () => { await Backend.signOut(); await Core.boot(C); go('home'); } }, 'Sign out'));
@@ -130,7 +130,7 @@
       if (me.profile.role === 'admin') nav.push(navLink('admin', 'Admin', area === 'admin'));
     } else {
       right.append(modeBtn(), el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
-      nav = [navLink('home', 'Home', area === 'home'), navLink('challenge', 'Maths Challenge', area === 'challenge'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
+      nav = [navLink('home', 'Home', area === 'home'), navLink('games', '🎮 Games', area === 'games'), navLink('challenge', 'Maths Challenge', area === 'challenge'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
     }
     if (st || !me) nav.splice(1, 0, stagesMenu());
     if (!st && !me || st && isGuest()) nav.push(el('a', { class: 'navlogin', href: '#signin' }, 'Log in'));
@@ -1587,6 +1587,24 @@
       el('a', { class: 'btn small primary', href: '#checkpoint' }, 'Back to the Checkpoint exam room')));
   }
 
+  /* ---------- word games (Stages 1–6, every subject): one player level, saved with the learner ---------- */
+  function gameCtx() {
+    const signed0 = () => !!(st && !isGuest()), lkey = () => 'atomic.games.v1' + (st ? '.' + st.id : '');
+    const dflt = () => { const s = st ? Core.STAGE : 3; return { xp: 0, stage: s >= 1 && s <= 6 ? s : s >= 13 && s <= 16 ? s - 10 : s >= 7 ? 6 : 3, subj: 'all', best: {}, words: {}, played: 0 }; };
+    return { get signedIn() { return signed0(); }, get name() { return st ? st.alias || st.name : ''; }, go,
+      load: () => { const signed = signed0(), lk = lkey(); let s = null; if (signed) s = (Core.S.states || {}).games; if (!s) { try { s = JSON.parse(localStorage.getItem(lk) || 'null'); } catch (e) { } } return Object.assign(dflt(), s || {}); },
+      save: S => { const signed = signed0(), lk = lkey(); try { localStorage.setItem(lk, JSON.stringify(S)); } catch (e) { } if (signed) { Core.S.states = Core.S.states || {}; Core.S.states.games = S; Backend.saveProgress(st.id, 'games', S).catch(() => { }); } } };
+  }
+  async function viewGames() {
+    const m = $main();
+    pageHero('LEARN WORDS BY PLAYING · STAGES 1–6', 'Word games', 'Five games for Science, Maths and English words. Every game you finish earns XP – there is no top level, and every level is a little faster and trickier.');
+    const host = el('div'); m.append(host); await Games.hub(host, gameCtx());
+  }
+  async function viewGame(id) {
+    const m = $main(); m.append(el('nav', { class: 'crumb2' }, el('a', { href: '#games' }, 'Word games'), ' › ' + ((Games.GAMES.find(g => g.id === id) || {}).name || '')));
+    const host = el('div', { style: 'padding:8px 0 30px' }); m.append(host); await Games.play(host, gameCtx(), id);
+  }
+
   /* ---------- Maths Challenge: problem-solving competition papers (Atomic originals, keys on the server) ---------- */
   const CH = [
     { id: 'primary', icon: '🦉', color: '#1F9D5C' }, { id: 'junior', icon: '🦊', color: '#0149AF' }, { id: 'inter', icon: '🐺', color: '#7A4BD1' },
@@ -2397,7 +2415,7 @@
 
   /* ---------- router ---------- */
   const TOC_ROUTES = r => r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || ['map', 'result', 'remedial', 'topic', 'drill', 'cert', 'unit', 'words'].includes(r);
-  const PUBLIC = { home: () => viewHome(), signin: viewSignin, signup: viewSignup, forgot: viewForgot, pricing: viewPricing, help: viewHelp, privacy: viewPrivacy, 'privacy-kids': viewKidsPrivacy, terms: viewTerms, cookies: viewCookies, verify: viewVerify, challenge: viewChallenge };
+  const PUBLIC = { home: () => viewHome(), signin: viewSignin, signup: viewSignup, forgot: viewForgot, pricing: viewPricing, help: viewHelp, privacy: viewPrivacy, 'privacy-kids': viewKidsPrivacy, terms: viewTerms, cookies: viewCookies, verify: viewVerify, challenge: viewChallenge, games: viewGames };
   const viewAdmin = window.AtomicAdmin ? window.AtomicAdmin({ modal, toast, errText: e => errText(e), $main, render: () => render() }) : null;
   const ACCOUNT = { staff: viewStaff, teacher: viewStaff, admin: () => viewAdmin && viewAdmin() };
   const LEARNER = { words: viewWords, home: viewHome, unit: viewUnit, test: viewTest, tests: viewTests, final: viewFinal, checkpoint: viewCheckpoint, level: viewLevel, result: viewResult, remedial: viewRemedial, map: viewMap, profile: viewProfile, topic: viewTopic, bank: viewBank, drill: viewDrill, board: viewBoard, cert: viewCert, settings: viewSettings };
@@ -2416,6 +2434,7 @@
   async function render() {
     if (labStop) { try { labStop(); } catch (e) { } labStop = null; }
     if (activeVideo) { try { activeVideo.pause(); } catch (e) { } activeVideo = null; }
+    if (window.Games) Games.stop();
     clearInterval(timer); const seq = ++renderSeq;
     let r = location.hash.slice(1) || 'home';
     if (Guard.on && r !== Guard.route) { location.replace('#' + Guard.route); leave('navigate'); return; }   // Back / links are closed during an exam
@@ -2451,6 +2470,7 @@
       else if (/^courses(-\w+)?$/.test(r)) await viewCourses(r.split('-')[1]);
       else if (/^course-[a-z0-9-]+$/.test(r)) await viewCourse(r.slice(7));
       else if (cpm && st) { if (cpm[1] === 'cpx') await viewCpExam(cpm[2]); else await viewCpResult(cpm[2]); }
+      else if (/^game-[a-z]+$/.test(r)) await viewGame(r.slice(5));
       else if (chm) { if (chm[1] === 'chl') await viewChList(chm[2]); else if (!st) go('signin'); else if (chm[1] === 'chx') await viewChExam(chm[2], chm[3]); else if (chm[1] === 'chp') await viewChPractice(chm[2], chm[3]); else await viewChResult(chm[2], chm[3]); }
       else if (pm && st) { if (isGuest() && pm[1] !== 'stage') m.append(guestWall('Sign up free to continue')); else if (pm[1] === 'stage') await viewStage(+pm[2]); else if (pm[1] === 'checkout') viewCheckout(+pm[2]); else if (pm[1] === 'fx') await viewFinalExam(pm[2]); else await viewFinalResult(pm[2]); }
       else if (st && isGuest() && GUEST_WALL[r]) m.append(guestWall(GUEST_WALL[r]));
