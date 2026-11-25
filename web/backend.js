@@ -36,6 +36,12 @@
         if (first && l.parent_email) (D.outbox = D.outbox || []).push({ to_email: l.parent_email, kind: 'unit_complete', subject: `${l.nickname} has finished ${uname} on Atomic`, created_at: new Date().toISOString(), status: 'queued' });
       } else if (at.status === 'final') note(a, lid, 'test_marked', 'Your Unit Test has been marked', `Score ${at.pct.toFixed(1)}%`);
     }
+    const roadmapAll = () => { if (!D.roadmap) { D.roadmap = [['One stage per learner, with subject plans', 'Choose your stage when you sign up, then one subject or the whole stage. The next stage opens when 80% of your lessons and Unit Tests are done.', 'released', 'November 2026', 'Account'],
+          ['Primary Mathematics: deeper lessons', 'Every Stage 3–6 lesson now explains why each method works, with a worked example, a method box and reasoning questions.', 'released', 'November 2026', 'Mathematics'],
+          ['Online payment', 'Pay for a subject or a whole stage by card and other local methods.', 'building', 'December 2026', 'Account'],
+          ['Sign in with Google and Apple', 'Log in with one tap, without a new password.', 'planned', 'December 2026', 'Account'],
+          ['Weekly report for parents', 'A short email each week: time spent, lessons finished and Unit Test results.', 'planned', 'January 2027', 'Parents']].map(([title, body, status, target, tag], i) => ({ id: i + 1, title, body, status, target, tag, sort: (i + 1) * 10, published: true })); }
+      return D.roadmap.slice().sort((a, b) => a.sort - b.sort); };
     return {
       mode: 'demo', label: 'Preview – data stays in this browser',
       async me() { const a = acct(); return a ? { user: { id: a.id, email: a.email }, profile: a.profile } : null; },
@@ -208,6 +214,8 @@
       async contentOverrides(unit) { const A = D.admin || {}; return Object.entries(A.overrides || {}).filter(([, o]) => o.unit === unit).map(([id, o]) => ({ question_id: id, hidden: o.hidden, patch: o.is_test ? o.public_patch : (o.key_patch || o.public_patch) })); },
       async unitSettings() { return Object.entries((D.admin || {}).units || {}).map(([unit, u]) => ({ unit, ...u })); },
       async announcements() { return ((D.admin || {}).ann || []).filter(x => x.active); },
+      // news page: the roadmap of coming features (preview data is seeded once; admins edit it)
+      async roadmap() { return roadmapAll().filter(x => x.published); },
       admin: (() => {
         const A = () => (D.admin = D.admin || { overrides: {}, units: {}, ann: [], audit: [], settings: { mock_payments: 'on' } });
         const guard = () => { const a = need(); if (a.profile.role !== 'admin') throw err('admin_only'); return a; };
@@ -241,6 +249,11 @@
           async setRole(id, role) { const me = guard(); if (id === me.id && role !== 'admin') throw err('own_admin'); Object.values(D.accounts).find(x => x.id === id).profile.role = role; log('set_role', id, { role }); save(); },
           async setDisabled(id, on) { const me = guard(); if (id === me.id) throw err('own_account'); Object.values(D.accounts).find(x => x.id === id).profile.disabled = !!on; log(on ? 'disable_account' : 'enable_account', id); save(); },
           async setTester(lid, on) { guard(); const t = (A().testers = A().testers || {}); if (on) t[lid] = true; else delete t[lid]; log(on ? 'tester_on' : 'tester_off', lid); save(); },
+          async roadmap() { guard(); return roadmapAll(); },
+          async saveRoadmap(x) { guard(); roadmapAll(); const it = x.id ? D.roadmap.find(y => y.id === x.id) : null; const v = { title: x.title, body: x.body || '', status: x.status || 'planned', target: x.target || '', tag: x.tag || '', sort: Number(x.sort) || 0, published: x.published !== false };
+            if (it) Object.assign(it, v); else D.roadmap.push({ id: Math.max(0, ...D.roadmap.map(y => y.id)) + 1, ...v }); log('roadmap_save', x.title); save(); },
+          async deleteRoadmap(id) { guard(); roadmapAll(); D.roadmap = D.roadmap.filter(y => y.id !== id); log('roadmap_delete', String(id)); save(); },
+          async setLearnerStage(lid, stage) { guard(); const x = allLearners().find(y => y.l.id === lid); if (x) x.l.stage = stage; log('learner_stage', lid); save(); },
           async setEnrolment(lid, stage, on) { guard(); D.enrol = D.enrol || {}; const l = (D.enrol[lid] = D.enrol[lid] || []); if (on) { if (!l.some(e => e.stage === stage)) l.push({ stage, method: 'admin', status: 'active', created_at: new Date().toISOString() }); } else D.enrol[lid] = l.filter(e => e.stage !== stage); log(on ? 'enrol' : 'unenrol', lid, { stage }); save(); },
           async resetProgress(lid, unit) { guard(); if (D.progress[lid]) delete D.progress[lid][unit]; log('reset_progress', lid, { unit }); save(); },
           async attempts(unit = '', status = '') { guard(); return allAttempts().filter(x => (!unit || x.unit === unit || x.unit.startsWith(unit + '-')) && (!status || x.at.status === status)).map(({ lid, unit, at }) => { const o = allLearners().find(y => y.l.id === lid) || {};
@@ -382,6 +395,7 @@
       async contentOverrides(unit) { const r = await fetch(`${URL_}/rest/v1/rpc/content_overrides`, { method: 'POST', headers: { apikey: ANON, 'Content-Type': 'application/json', ...(S ? { Authorization: `Bearer ${S.access_token}` } : {}) }, body: JSON.stringify({ p_unit: unit }) }); return r.ok ? r.json() : []; },
       async unitSettings() { const r = await fetch(`${URL_}/rest/v1/unit_settings?select=unit,hidden,note`, { headers: { apikey: ANON } }); return r.ok ? r.json() : []; },
       async announcements() { const r = await fetch(`${URL_}/rest/v1/announcements?active=eq.true&order=created_at.desc&limit=5`, { headers: { apikey: ANON } }); return r.ok ? r.json() : []; },
+      async roadmap() { const r = await fetch(`${URL_}/rest/v1/roadmap?published=eq.true&order=sort.asc`, { headers: { apikey: ANON } }); return r.ok ? r.json() : []; },
       admin: {
         overview: () => rpc('admin_overview'),
         errors: () => rpc('admin_client_errors', { p_limit: 300 }),
@@ -391,6 +405,10 @@
         setDisabled: (id, on) => rpc('admin_set_disabled', { p_user: id, p_on: !!on }),
         setTester: (lid, on) => rpc('admin_set_tester', { p_learner: lid, p_on: !!on }),
         setEnrolment: (lid, stage, on) => rpc('admin_set_enrolment', { p_learner: lid, p_stage: stage, p_on: !!on }),
+        roadmap: () => rest('roadmap?order=sort.asc'),
+        saveRoadmap: x => rpc('admin_roadmap_save', { p_id: x.id || null, p_title: x.title, p_body: x.body || '', p_status: x.status || 'planned', p_target: x.target || '', p_tag: x.tag || '', p_sort: Number(x.sort) || 0, p_published: x.published !== false }),
+        deleteRoadmap: id => rpc('admin_roadmap_delete', { p_id: id }),
+        setLearnerStage: (lid, stage) => rpc('admin_set_learner_stage', { p_learner: lid, p_stage: stage }),
         resetProgress: (lid, unit) => rpc('admin_reset_progress', { p_learner: lid, p_unit: unit }),
         attempts: (unit = '', status = '') => rpc('admin_attempts', { p_unit: unit, p_status: status, p_limit: 300 }),
         voidAttempt: id => rpc('admin_void_attempt', { p_attempt: id }),

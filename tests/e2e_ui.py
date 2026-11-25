@@ -30,7 +30,7 @@ with sync_playwright() as p:
     ok(pg.query_selector('#payBtn') is None, 'U8 Mathematics Stage 9 cannot be bought while locked')
     ok(pg.evaluate("Core.switchStage(19).then(()=>'open',e=>e.message)") == 'locked', 'U9 Switching to stage 19 in code is refused')
     pg.evaluate("location.hash='courses-maths'"); pg.wait_for_timeout(700)
-    ok('COMING SOON' in pg.inner_text('#stageCard19, #course-maths-ls9') if pg.query_selector('#stageCard19, #course-maths-ls9') else 'coming soon' in pg.inner_text('.subjtabs').lower(), 'U10 The course list shows Mathematics as coming soon')
+    ok(pg.evaluate("[...document.querySelectorAll('.ccard')].some(c => /COMING SOON/.test(c.innerText) && (c.querySelector('.cclv') || {}).innerText === '9')"), 'U10 The course list shows Mathematics Stage 9 as coming soon')
     # enrol Stage 8 and switch through the switcher
     pg.evaluate("location.hash='checkout-8'"); pg.wait_for_timeout(900)
     ok(pg.query_selector('#stageLocked') is not None and pg.query_selector('#payBtn') is None and '80%' in pg.inner_text('#stageLocked'), 'U25 One stage per learner: Stage 8 is locked for a Stage 7 learner until 80% is done')
@@ -76,10 +76,10 @@ with sync_playwright() as p:
     ok(room and asked and pg.evaluate("location.hash") == '#home', 'U23 Stage 7 practice opens in the practice room; leaving with Core left asks first, then is allowed')
     # the sidebar course menu lists only the learner's own courses (3 at a time) and suggests the next stage only after finishing
     pg.set_viewport_size({'width': 1300, 'height': 900}); pg.evaluate("location.hash='u-1'"); pg.wait_for_selector('#tocCourse'); pg.click('#tocCourse'); pg.wait_for_timeout(300)
-    one = pg.eval_on_selector_all('.tcoursebox .tmenu .it', "els=>els.filter(e=>e.offsetParent).length")
+    one = pg.eval_on_selector_all('.tcoursebox .tmenu .it:not(.tadd)', "els=>els.filter(e=>e.offsetParent).length")
     pg.evaluate("Core.S.enrolments=[7,8,9,3,4,5].map(s=>({stage:s,status:'active'}))"); pg.evaluate("location.hash='home'"); pg.wait_for_timeout(500)
     pg.evaluate("location.hash='u-1'"); pg.wait_for_selector('#tocCourse'); pg.wait_for_timeout(400); pg.click('#tocCourse'); pg.wait_for_timeout(300)
-    shown = pg.eval_on_selector_all('.tcoursebox .tmenu > a.it', "els=>els.filter(e=>e.offsetParent).map(e=>e.getAttribute('href'))")
+    shown = pg.eval_on_selector_all('.tcoursebox .tmenu > a.it:not(.tadd)', "els=>els.filter(e=>e.offsetParent).map(e=>e.getAttribute('href'))")
     ok(one <= 2 and len(shown) == 4 and shown[0] == '#stage-8' and shown[-1] == '#courses' and pg.query_selector('.tshowall') is not None and pg.query_selector('.tnext') is None,
        'U24 The sidebar course menu shows only the learner\'s own courses (3 + "Show all"), no suggestion before finishing')
     pg.evaluate("Core.S.enrolments=[]")

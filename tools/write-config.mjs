@@ -11,8 +11,8 @@ const cfg = {
   priceLabels: { monthly: e('PRICE_LABEL_MONTHLY', '£9.99 / month'), yearly: e('PRICE_LABEL_YEARLY', '£79 / year') },
   // B2C plans: one subject of a stage, or the whole stage (all its subjects). Labels only until the real checkout is connected.
   stagePrice: e('COURSE_PRICE', 'US$49'), bundlePrice: e('BUNDLE_PRICE', 'US$119'),
-  // stages learners cannot open yet (11–19 = Mathematics Stages 1–9, 22–29 = ESL Stages 2–9); set LOCKED_STAGES= (empty) to open them
-  lockedStages: e('LOCKED_STAGES', process.env.LOCKED_STAGES === '' ? '' : '11,12,13,14,15,16,17,18,19,22,23,24,25,26,27,28,29').split(',').map(x => Number(x.trim())).filter(Boolean),
+  // stages learners cannot open yet, e.g. LOCKED_STAGES=19 (11–19 = Mathematics Stages 1–9, 22–29 = ESL Stages 2–9). Default: every course is open (26/11/2026).
+  lockedStages: e('LOCKED_STAGES', '').split(',').map(x => Number(x.trim())).filter(Boolean),
   supportEmail: e('SUPPORT_EMAIL', 'support@example.com'), legalVersion: '2026-11-draft',
   release: (process.env.VERCEL_GIT_COMMIT_SHA || '').slice(0, 7)
 };

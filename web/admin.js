@@ -25,7 +25,7 @@
           Backend.demo ? el('button', { class: 'btn small', type: 'button', id: 'becomeAdmin', onclick: () => { Backend.demo.setRole('admin'); Core.S.me.profile.role = 'admin'; render(); } }, 'Make this preview account an administrator') : null));
         return;
       }
-      const tabs = [['overview', 'Overview'], ['users', 'Users'], ['content', 'Content'], ['exams', 'Exams'], ['reports', 'Reports'], ['news', 'Announcements'], ['settings', 'Settings'], ['errors', 'Page errors'], ['audit', 'Audit log']];
+      const tabs = [['overview', 'Overview'], ['users', 'Users'], ['content', 'Content'], ['exams', 'Exams'], ['reports', 'Reports'], ['news', 'News & roadmap'], ['settings', 'Settings'], ['errors', 'Page errors'], ['audit', 'Audit log']];
       m.append(el('div', { class: 'adhead' }, el('div', {}, el('span', { class: 'eyebrow' }, 'ATOMIC EDUCATION'), el('h1', { style: 'margin:0' }, 'Admin console')),
         el('a', { class: 'btn small', href: '#staff' }, 'Marking queue →')),
         el('div', { class: 'btnrow adtabs', role: 'tablist' }, ...tabs.map(([k, t]) => el('button', { class: 'chip' + (A.tab === k ? ' on' : ''), type: 'button', role: 'tab', id: 'adTab-' + k, 'aria-selected': String(A.tab === k), onclick: () => { A.tab = k; render(); } }, t))));
@@ -83,7 +83,9 @@
         const l = x.learner; const enrolled = g => (x.enrolments || []).some(e => e.stage === g);
         const lc = el('div', { class: 'adlearner' }, el('h3', {}, `${l.nickname}`, el('small', { class: 'muted' }, ` · sign-up stage ${l.stage}${l.birth_year ? ' · born ' + l.birth_year : ''}${l.parent_email ? ' · parent ' + l.parent_email : ''}`)),
           el('div', { class: 'btnrow' }, el('label', { class: 'adtoggle' }, (() => { const c = el('input', { type: 'checkbox', checked: x.tester, id: 'adTester-' + l.id }); c.onchange = () => busy(() => B().setTester(l.id, c.checked), c.checked ? 'Tester on – locks skipped' : 'Tester off'); return c; })(), ' Tester (skips locks)'),
-            ...COURSES.map(([g, n]) => el('label', { class: 'adtoggle' }, (() => { const c = el('input', { type: 'checkbox', checked: g === l.stage || enrolled(g), disabled: g === l.stage }); c.onchange = () => busy(() => B().setEnrolment(l.id, g, c.checked), c.checked ? `Enrolled in ${n}` : `Removed from ${n}`); return c; })(), ' ' + n))),
+            (() => { const s = el('select', { id: 'adStage-' + l.id }, ...[1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => el('option', { value: n, selected: n === (l.stage || 7) }, 'Stage ' + n)));
+              return el('label', { class: 'adtoggle' }, 'Stage level ', s, el('button', { class: 'btn small', type: 'button', onclick: () => busy(() => B().setLearnerStage(l.id, Number(s.value)), 'Stage level saved') }, 'Save')); })(),
+            ...COURSES.map(([g, n]) => el('label', { class: 'adtoggle' }, (() => { const c = el('input', { type: 'checkbox', checked: enrolled(g) }); c.onchange = () => busy(() => B().setEnrolment(l.id, g, c.checked), c.checked ? `Enrolled in ${n}` : `Removed from ${n}`); return c; })(), ' ' + n))),
           el('h4', {}, `Unit results (${(x.results || []).length})`),
           (x.results || []).length ? el('div', { class: 'adchips' }, ...x.results.map(r => tag(`${unitLabel(r.unit).replace(/^.*· /, unitCourse(r.unit) >= 20 ? 'E' + (unitCourse(r.unit) - 20) + ' ' : unitCourse(r.unit) >= 10 ? 'M' + (unitCourse(r.unit) - 10) + ' ' : 'S' + unitCourse(r.unit) + ' ')}: ${num(r.pct)}%`, 'd-M'))) : el('p', { class: 'muted' }, 'No unit passed yet.'),
           el('h4', {}, `Test attempts (${(x.attempts || []).length})`),
@@ -253,14 +255,31 @@
 
     /* ---------- announcements ---------- */
     async function news() {
-      const list = await B().allAnnouncements();
+      const list = await B().allAnnouncements(); const road = B().roadmap ? await B().roadmap() : [];
       const t = el('input', { placeholder: 'Title', id: 'adNewsTitle', maxlength: 120 }); const b = el('textarea', { rows: 3, placeholder: 'Message (optional)', id: 'adNewsBody', maxlength: 1000 });
       const au = el('select', { id: 'adNewsAud' }, el('option', { value: 'all' }, 'Everyone'), ...COURSES.map(([g, n]) => el('option', { value: String(g) }, n)));
       const lv = el('select', {}, el('option', { value: 'info' }, 'Information'), el('option', { value: 'warn' }, 'Important'));
       return [el('section', { class: 'card' }, el('h3', { style: 'margin-top:0' }, 'New announcement'), el('p', { class: 'muted' }, 'Shown as a banner on learners’ dashboards until you switch it off.'), t, b,
         el('div', { class: 'btnrow' }, el('label', {}, 'Who sees it ', au), el('label', {}, 'Style ', lv), el('button', { class: 'btn small primary', type: 'button', id: 'adNewsGo', onclick: () => { if (t.value.trim().length < 2) return toast('Add a title.'); busy(() => B().announce(t.value.trim(), b.value.trim(), au.value, lv.value), 'Announcement published').then(render); } }, 'Publish'))),
         list.length ? table(['Date', 'Title', 'Who', 'Shown'], list.map(x => el('tr', {}, el('td', {}, day(x.created_at)), el('td', {}, el('b', {}, x.title), x.body ? el('br') : null, x.body ? el('small', { class: 'muted' }, x.body) : null),
-          el('td', {}, x.audience === 'all' ? 'Everyone' : courseName(+x.audience)), el('td', {}, (() => { const c = el('input', { type: 'checkbox', checked: x.active }); c.onchange = () => busy(() => B().setAnnouncement(x.id, c.checked), c.checked ? 'Shown' : 'Hidden'); return c; })())))) : el('p', { class: 'muted' }, 'No announcements yet.')];
+          el('td', {}, x.audience === 'all' ? 'Everyone' : courseName(+x.audience)), el('td', {}, (() => { const c = el('input', { type: 'checkbox', checked: x.active }); c.onchange = () => busy(() => B().setAnnouncement(x.id, c.checked), c.checked ? 'Shown' : 'Hidden'); return c; })())))) : el('p', { class: 'muted' }, 'No announcements yet.'),
+        roadmapEditor(road)];
+    }
+    // roadmap on the public News page (#news): what is coming, being built, or just released
+    const RSTATUS = [['planned', 'Planned'], ['building', 'Being built'], ['released', 'Released']];
+    function roadmapEditor(road) {
+      const form = (x = {}) => {
+        const ti = el('input', { placeholder: 'Feature title', maxlength: 120, value: x.title || '', class: 'rmTitle' }), bo = el('textarea', { rows: 2, maxlength: 1000, placeholder: 'One or two sentences for learners and parents' }); bo.value = x.body || '';
+        const stt = el('select', {}, ...RSTATUS.map(([v, n]) => el('option', { value: v, selected: v === (x.status || 'planned') }, n)));
+        const tg = el('input', { placeholder: 'When, e.g. December 2026', maxlength: 40, value: x.target || '' }), tag = el('input', { placeholder: 'Area, e.g. Mathematics', maxlength: 40, value: x.tag || '' });
+        const so = el('input', { type: 'number', value: x.sort != null ? x.sort : (road.length + 1) * 10, style: 'width:80px' }), pub = el('input', { type: 'checkbox', checked: x.published !== false });
+        const save = () => { if (ti.value.trim().length < 2) return toast('Add a title.'); busy(() => B().saveRoadmap({ id: x.id, title: ti.value.trim(), body: bo.value.trim(), status: stt.value, target: tg.value.trim(), tag: tag.value.trim(), sort: Number(so.value) || 0, published: pub.checked }), 'Roadmap saved').then(render); };
+        return el('div', { class: 'adrm' + (x.id ? '' : ' new'), 'data-id': x.id || '' }, ti, bo, el('div', { class: 'btnrow' }, el('label', {}, 'Status ', stt), tg, tag, el('label', {}, 'Order ', so), el('label', { class: 'adtoggle' }, pub, ' Published'),
+          el('button', { class: 'btn small primary', type: 'button', onclick: save }, x.id ? 'Save' : 'Add to roadmap'),
+          x.id ? el('button', { class: 'btn small ghost', type: 'button', onclick: () => { if (confirm('Delete this roadmap item?')) busy(() => B().deleteRoadmap(x.id), 'Deleted').then(render); } }, 'Delete') : null));
+      };
+      return el('section', { class: 'card', id: 'adRoadmap' }, el('h3', { style: 'margin-top:0' }, 'Roadmap on the News page'), el('p', { class: 'muted' }, 'Learners and parents see these on the public News page (#news), grouped as Being built, Planned and Released.'),
+        form(), ...road.map(x => form(x)));
     }
 
     /* ---------- settings ---------- */

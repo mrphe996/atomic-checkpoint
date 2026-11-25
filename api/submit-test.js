@@ -17,6 +17,10 @@ export async function learnerXp(learnerId, f) {
   return Rules.xpTotal(Object.fromEntries((rows || []).filter(r => !Rules.isFinal(r.unit)).map(r => [r.unit, r.state])), (passes || []).length);
 }
 
+// admins (profiles.role = 'admin') can open and sit every course to check it
+export async function isStaff(userId, f) {
+  try { const r = await db(`profiles?id=eq.${userId}&select=role`, {}, f); return Array.isArray(r) && r[0] && r[0].role === 'admin'; } catch (e) { return false; }
+}
 // accounts flagged as testers (public.testers, staff-only) skip the learning-order, level and review locks
 export async function isTester(learnerId, f) {
   try { const r = await db(`testers?learner_id=eq.${learnerId}&select=learner_id`, {}, f); return Array.isArray(r) && r.length > 0; } catch (e) { return false; }
@@ -35,7 +39,7 @@ export async function handle(req, f = fetch) {
     if (sub !== true) return [402, { error: 'subscription_required' }];
   }
   let pack; try { pack = await loadPack(unit, f); } catch (e) { return [400, { error: 'unknown_unit' }]; }
-  if (!(await hasStage(learner, unit, f))) return [402, { error: 'not_enrolled' }];
+  if (!(await hasStage(learner, unit, f)) && !(await isTester(learnerId, f)) && !(await isStaff(user.id, f))) return [402, { error: 'not_enrolled' }];
   // Maths Challenge: a paper practised question by question (solutions seen) cannot then be sat as a timed paper
   if (isChallenge(unit) && pack.papers[form] && await practised(learnerId, unit, form, f)) return [409, { error: 'practised' }];
 

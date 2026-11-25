@@ -123,16 +123,16 @@
         document.addEventListener('click', () => { menu.hidden = true; }, { once: true });
         right.append(s, lv, bell(), el('span', { class: 'userwrap' }, av, menu));
       }
-      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('profile', 'Progress', area === 'profile'), LEADERBOARD ? navLink('board', 'Leaderboard', area === 'board') : null].filter(Boolean);
+      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('profile', 'Progress', area === 'profile'), navLink('news', 'News', area === 'news'), LEADERBOARD ? navLink('board', 'Leaderboard', area === 'board') : null].filter(Boolean);
       if (Core.IS_PRIMARY) { nav.splice(2, 0, navLink('words', '📒 My words', area === 'words')); nav[3].textContent = 'Questions'; nav[4].textContent = 'Tests'; }
     } else if (me) {
       right.append(modeBtn(), bell(), el('button', { class: 'btn small', type: 'button', id: 'signOut', onclick: async () => { await Backend.signOut(); await Core.boot(C); go('home'); } }, 'Sign out'));
-      nav = [navLink('home', 'Home', area === 'home'), navLink('help', 'Help', area === 'help')];
+      nav = [navLink('home', 'Home', area === 'home'), navLink('news', 'News', area === 'news'), navLink('help', 'Help', area === 'help')];
       if (['marker', 'admin'].includes(me.profile.role)) nav.push(navLink('staff', 'Staff', area === 'staff'));
       if (me.profile.role === 'admin') nav.push(navLink('admin', 'Admin', area === 'admin'));
     } else {
       right.append(modeBtn(), el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
-      nav = [navLink('home', 'Home', area === 'home'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
+      nav = [navLink('home', 'Home', area === 'home'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('news', 'News', area === 'news'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
     }
     if (st || !me) nav.splice(1, 0, stagesMenu());
     if (!st && !me || st && isGuest()) nav.push(el('a', { class: 'navlogin', href: '#signin' }, 'Log in'));
@@ -149,7 +149,7 @@
     const main = el('div', { class: 'content', id: 'main', tabindex: '-1' });
     const wrap = el('div', { class: 'wrap' + (opts.toc && st ? '' : ' nosidebar'), id: 'wrap' }, el('div', { class: 'layout' }, side, main));
     const foot = el('footer', { class: 'foot' }, el('div', { class: 'in' }, el('img', { src: 'atomic_logo.png', alt: 'Atomic — Quality Learning, Brighter Future.' }),
-      el('nav', { class: 'footnav', 'aria-label': 'Legal and help' }, el('a', { href: '#privacy' }, 'Privacy'), el('a', { href: '#terms' }, 'Terms'), el('a', { href: '#cookies' }, 'Cookies'), el('a', { href: '#help' }, 'Help & contact'), el('a', { href: '#verify' }, 'Verify a certificate')),
+      el('nav', { class: 'footnav', 'aria-label': 'Legal and help' }, el('a', { href: '#privacy' }, 'Privacy'), el('a', { href: '#terms' }, 'Terms'), el('a', { href: '#cookies' }, 'Cookies'), el('a', { href: '#help' }, 'Help & contact'), el('a', { href: '#news' }, 'News & roadmap'), el('a', { href: '#verify' }, 'Verify a certificate')),
       el('span', { class: 'tag2' }, el('b', {}, 'ATOMIC EDUCATION'), ' ✦ Quality Learning, Brighter Future. · Written by the Atomic teaching team'),
       el('p', { class: 'muted disclaimer' }, 'Atomic courses are written by Atomic Education and aligned to Cambridge curriculum frameworks (Primary Science 0097, Lower Secondary Science 0893, Primary Mathematics 0096, Lower Secondary Mathematics 0862). Checkpoint-format papers are written by Atomic – they are not Cambridge papers. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.')));
     app.append(...[demoBar, header, sub, wrap, foot].filter(Boolean));
@@ -2328,6 +2328,22 @@
   }
 
   /* ---------- sign up (3 steps, Mathspace style) / sign in ---------- */
+  // ---- News: announcements + the roadmap of coming features (admins edit both in Admin → News & roadmap) ----
+  async function viewNews() {
+    const m = $main();
+    pageHero('NEWS', 'What’s new and what’s coming', 'Announcements from the Atomic team and the features we are building next. Dates are our current plan and may move.');
+    const [ann, road] = await Promise.all([Backend.announcements().catch(() => []), (Backend.roadmap ? Backend.roadmap() : Promise.resolve([])).catch(() => [])]);
+    const when = d => { try { return new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return ''; } };
+    m.append(el('section', { class: 'card', id: 'newsList' }, el('h2', {}, '📣 Latest news'),
+      ann.length ? el('div', { class: 'newslist' }, ...ann.map(a => el('article', { class: 'newsit' + (a.level === 'warn' ? ' warn' : '') }, el('small', { class: 'muted' }, when(a.created_at)), el('h3', {}, a.title), a.body ? el('p', {}, a.body) : null)))
+        : el('p', { class: 'muted' }, 'No news right now – check back soon.')));
+    const COLS = [['building', '🛠 Being built', 'We are working on these now.'], ['planned', '🗓 Planned', 'Coming next, in this order.'], ['released', '✅ Released', 'Recently added to Atomic.']];
+    const tl = el('div', { class: 'roadmap', id: 'roadmap' }, ...COLS.map(([k, h, sub]) => { const items = road.filter(x => x.status === k);
+      return el('section', { class: 'rmcol rm-' + k }, el('h3', {}, h), el('small', { class: 'muted' }, sub),
+        ...(items.length ? items.map((x, i) => el('article', { class: 'rmit rise', style: `animation-delay:${i * 0.06}s` }, el('div', { class: 'rmmeta' }, x.target ? el('span', { class: 'rmwhen' }, x.target) : null, x.tag ? el('span', { class: 'rmtag' }, x.tag) : null), el('b', {}, x.title), x.body ? el('p', {}, x.body) : null))
+          : [el('p', { class: 'muted' }, 'Nothing here yet.')])); }));
+    m.append(el('section', { class: 'card' }, el('h2', {}, '🧭 Roadmap'), tl));
+  }
   // ---- sign-up (B2C): account → about you and your school → choose ONE stage → choose a plan (one subject or the whole stage) ----
   const SCHOOL_YEARS = [['Year 1 / Kindergarten', 1], ['Year 2 / Grade 1', 2], ['Year 3 / Grade 2', 3], ['Year 4 / Grade 3', 4], ['Year 5 / Grade 4', 5], ['Year 6 / Grade 5', 6], ['Year 7 / Grade 6', 7], ['Year 8 / Grade 7', 8], ['Year 9 / Grade 8', 9], ['Year 10 / Grade 9', 9], ['Other', 0]];
   const SUBJ_NAME = k => (k >= 20 ? 'English (ESL)' : k >= 10 ? 'Mathematics' : 'Science'), SUBJ_ICON = k => (k >= 20 ? '🗣' : k >= 10 ? '📐' : '🔬');
@@ -2597,7 +2613,7 @@
 
   /* ---------- router ---------- */
   const TOC_ROUTES = r => r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || ['map', 'result', 'remedial', 'topic', 'drill', 'cert', 'unit', 'words'].includes(r);
-  const PUBLIC = { home: () => viewHome(), signin: viewSignin, signup: viewSignup, forgot: viewForgot, pricing: viewPricing, help: viewHelp, privacy: viewPrivacy, 'privacy-kids': viewKidsPrivacy, terms: viewTerms, cookies: viewCookies, verify: viewVerify, challenge: viewChallenge, games: viewGames };
+  const PUBLIC = { news: viewNews, home: () => viewHome(), signin: viewSignin, signup: viewSignup, forgot: viewForgot, pricing: viewPricing, help: viewHelp, privacy: viewPrivacy, 'privacy-kids': viewKidsPrivacy, terms: viewTerms, cookies: viewCookies, verify: viewVerify, challenge: viewChallenge, games: viewGames };
   const viewAdmin = window.AtomicAdmin ? window.AtomicAdmin({ modal, toast, errText: e => errText(e), $main, render: () => render() }) : null;
   const ACCOUNT = { staff: viewStaff, teacher: viewStaff, admin: () => viewAdmin && viewAdmin() };
   const LEARNER = { words: viewWords, home: viewHome, unit: viewUnit, test: viewTest, tests: viewTests, final: viewFinal, checkpoint: viewCheckpoint, level: viewLevel, result: viewResult, remedial: viewRemedial, map: viewMap, profile: viewProfile, topic: viewTopic, bank: viewBank, drill: viewDrill, board: viewBoard, cert: viewCert, settings: viewSettings, plans: viewPlans };

@@ -229,7 +229,7 @@
   const subjectKeys = lv => [lv, 10 + lv, 20 + lv].filter(k => STAGES.includes(k));
   const learnerStage = () => { const st = cur(); return (st && st.learner && st.learner.stage) || 7; };
   const myCourses = () => (S.enrolments || []).filter(e => e.status !== 'canceled').map(e => e.stage);
-  const enrolled = stage => stageLocked(stage) ? false : S.guest ? stage === 7 : myCourses().includes(stage);
+  const enrolled = stage => stageLocked(stage) ? false : S.guest ? stage === 7 : isAdminMe(S.me) ? true : myCourses().includes(stage);   // admins can open every course
   async function enrol(stage, amount) { const st = cur(); await Backend.enrol(st.id, stage, amount); S.enrolments = await Backend.enrolments(st.id);
     const L = await Backend.learners().catch(() => null); const l = L && L.find(x => x.id === st.id); if (l) { st.learner = l; S.learners = L; } return true; }
   // progress of one course (key g) or of the learner's whole level: % of lessons finished and % of Unit Tests passed
