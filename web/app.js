@@ -176,7 +176,7 @@
       const link = (r, label, ok) => el('a', { href: '#' + r, class: route === r ? 'on' : '' }, el('span', { class: 'st' + (ok ? ' ok' : '') }, ok ? '✓' : ''), label);
       if (lock && lock.paywall) sn.append(el('div', { class: 'why' }, lock.reason));
       else if (lock) sn.append(el('div', { class: 'why' }, lock.reason), link('ws-' + R(s.id), 'Worksheet', (ss.ws || []).includes(s.id)));
-      else sn.append(...[link('v-' + R(s.id), s.lesson ? 'Read' : 'Watch', vd), link('ex-' + R(s.id), `Practise · ${s.req.length - rl}/${s.req.length} Core`, rl === 0), s.lab ? link('lab-' + R(s.id), '🧪 Experiment', !!((ss.labs || {})[s.id] || {}).v && !!(((ss.labs || {})[s.id] || {}).v || {}).done) : null, link('ws-' + R(s.id), 'Worksheet', (ss.ws || []).includes(s.id))].filter(Boolean));
+      else sn.append(...[link('v-' + R(s.id), s.lesson ? 'Read' : 'Watch', vd), link('ex-' + R(s.id), `Practise · ${s.req.length - rl}/${s.req.length} Core`, rl === 0), s.lab ? link('lab-' + R(s.id), '🧪 Experiment', !!((ss.labs || {})[s.id] || {}).v && !!(((ss.labs || {})[s.id] || {}).v || {}).done) : null, secGameWords(s).length ? link('gm-' + R(s.id), '🎮 Word games', !!((ss.games || {})[s.id])) : null, link('ws-' + R(s.id), 'Worksheet', (ss.ws || []).includes(s.id))].filter(Boolean));
     });
     const passed = !!(st.results || {})[Core.unitId(n)];
     sn.append(el('a', { href: here ? '#test' : '#u-' + n, class: route === 'test' && here ? 'on' : '', onclick: here ? null : e => { e.preventDefault(); Core.switchUnit(n).then(() => go('test')); } }, el('span', { class: 'st' + (passed ? ' ok' : '') }, passed ? '✓' : '★'), `Unit Test ${n} · 45 min`));
@@ -469,7 +469,8 @@
         tile(vd ? 'ok' : ansStops ? 'go' : '', s.lesson ? '📖' : '▶', s.lesson ? 'Read the lesson' : 'Watch', vd ? vlen + ' ✓' : ansStops ? `${ansStops} of ${s.stops.length} pauses · ${fmt(vs.pos || 0)}` : vlen, '#v-' + R(s.id), !!lock),
         tile(reqDone === 8 ? 'ok' : reqDone || pracDone ? 'go' : '', reqDone === 8 ? '✓' : s.vocab ? (C.unit.young ? '🎧' : '🎤') : '✎', s.vocab ? (C.unit.young ? 'Listen & practise' : 'Listen, say & practise') : 'Practise', `${pracDone}/${s.prac.length} · ${reqDone}/8 Core`, '#ex-' + R(s.id), !!lock || !vd, reqDone && reqDone < 8 ? el('span', { class: 'u4mini' }, el('i', { style: `width:${reqDone / 8 * 100}%` })) : null),
         s.lab ? (() => { const L = (st.labs || {})[s.id] || {}; const vdn = !!(L.v || {}).done, hdn = !!(L.h || {}).done; return tile(vdn && hdn ? 'ok' : vdn || hdn ? 'go' : '', '🧪', 'Experiment', vdn && hdn ? 'Lab + home ✓' : vdn ? 'Lab ✓ · try it at home' : 'Virtual lab + at home', '#lab-' + R(s.id), !!lock); })()
-          : tile(st.ws.includes(s.id) ? 'ok' : '', '🖨', 'Worksheet', st.ws.includes(s.id) ? 'Printed' : 'Print only', '#ws-' + R(s.id), !!lock));
+          : tile(st.ws.includes(s.id) ? 'ok' : '', '🖨', 'Worksheet', st.ws.includes(s.id) ? 'Printed' : 'Print only', '#ws-' + R(s.id), !!lock),
+        secGameWords(s).length ? (() => { const gg = (st.games || {})[s.id]; return tile(gg ? 'ok' : '', '🎮', 'Word games', gg ? `${gg.n} played · best ${gg.best}` : `5 games · ${secGameWords(s).length} words`, '#gm-' + R(s.id), !!lock); })() : null);
       const pill = { lock: ['lock', '🔒 Locked'], done: ['ok', 'Completed'], go: ['go', 'In progress'], new: ['no', 'Not started'] }[state];
       const btn = lock ? (lock.paywall ? el('a', { class: 'btn small gold', href: '#' + lock.route }, lock.guest ? 'Sign up free' : 'See plans') : null)
         : done ? el('a', { class: 'btn small ghost', href: '#v-' + R(s.id) }, `Review ${s.id}`)
@@ -518,13 +519,13 @@
       el('div', { class: 'u4art', 'aria-hidden': 'true' }, el('div', { class: 'lens2', html: `<svg viewBox="0 0 380 380">${art.svg}</svg>` }), el('span', { class: 'tag' }, art.tag),
         el('div', { class: 'float' }, el('i', {}, Core.passed(st) ? '🏆' : '▶'), el('div', {}, el('b', {}, Core.passed(st) ? 'Unit passed' : 'Next up'), nx.label)))));
     document.getElementById('wrap').before(heroS);
-    m.append(tocBtn(), el('div', { class: 'u4head' }, el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, `Cambridge ${Core.stageName(Core.STAGE)} · Unit ${Core.UNO}`), el('h2', {}, 'Your learning path')),
-      el('div', { class: 'u4steps' }, ...(Core.IS_PRIMARY ? ['1 Watch', C.unit.young ? '2 Listen & practise' : '2 Listen & say', '3 Experiment', '4 Unit Test'] : [C.unit.read ? '0 Read first' : null, Core.IS_MATHS ? '1 Read the lesson' : '1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test'].filter(Boolean)).map(t => el('span', {}, t)))),
+    m.append(...[tocBtn(), el('div', { class: 'u4head' }, el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, `Cambridge ${Core.stageName(Core.STAGE)} · Unit ${Core.UNO}`), el('h2', {}, 'Your learning path')),
+      el('div', { class: 'u4steps' }, ...(Core.IS_PRIMARY ? ['1 Watch', C.unit.young ? '2 Listen & practise' : '2 Listen & say', '3 Experiment', '4 Word games', '5 Unit Test'] : [C.unit.read ? '0 Read first' : null, Core.IS_MATHS ? '1 Read the lesson' : '1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test'].filter(Boolean)).map(t => el('span', {}, t)))),
       C.unit.read ? el('section', { class: 'card readfirst', id: 'readFirst' }, el('div', { class: 'rfico', 'aria-hidden': 'true' }, '📘'),
         el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, Core.IS_MATHS ? 'Read before the lesson' : 'Read before you watch'), el('h3', { style: 'margin:2px 0 4px' }, `Unit ${Core.UNO} pre-reading pack (PDF)`),
           el('p', { class: 'muted', style: 'margin:0' }, Core.IS_MATHS ? 'The key ideas, methods and worked examples of every section, with “Try it” questions. Print it or read it before you start the unit.' : 'The key ideas of each video, the key words and “Think first” questions. Read a section before you watch its video.')),
         el('a', { class: 'btn primary small', id: 'readPdf', href: C.unit.read, target: '_blank', rel: 'noopener', download: '', onclick: () => Backend.track('read_pdf', { learner: st.id, unit: Core.UNIT }) }, '⬇ Download PDF')) : null,
-      learningPath(), examBlock());
+      learningPath(), examBlock()].filter(Boolean));
     m.append(el('div', { class: 'u4two' },
       el('section', { class: 'card' }, el('h2', { style: 'margin:0;font-size:22px' }, 'What you will learn'), el('span', { class: 'muted' }, `${sec} of ${nobj} secure`),
         el('ul', { class: 'u4objs objs' }, ...Object.entries(C.objectives).map(([k, o]) => el('li', { class: objSecure(k) ? 'ok' : '' }, o.t)))),
@@ -835,7 +836,8 @@
       const next = el('button', { type: 'button', class: 'btn big gold shine', id: 'nextQ', disabled: !rec.done }, last ? 'Finish ✓' : 'Next ▶');
       next.onclick = () => { if (!rec.done) return; if (!qs.some(notDone)) { levelDone(); return; } const j = qs.findIndex((x, k) => k > P.i && notDone(x)); P.i = j >= 0 ? j : qs.findIndex(notDone); show(); F.room.scrollTop = 0; };
       F.foot.append(prev, next); repBtn.onclick = () => reportQuestion(q);
-      QE.practice(q, card, { rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; Core.persist(); next.disabled = false; drawTop(); xpTick(); refreshToc(); setTimeout(() => next.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 150); } });
+      const lvI = LV.find(x => x[0] === P.tab) || [];
+      QE.practice(q, card, { num: P.i + 1, of: qs.length, level: lvI[1], levelKey: 'lv-' + P.tab, rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; Core.persist(); next.disabled = false; drawTop(); xpTick(); refreshToc(); setTimeout(() => next.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 150); } });
     }
     show();
   }
@@ -915,7 +917,7 @@
     m.append(...[bar(`Unit ${Core.UNO} › ${s.id} › ${tabName} › question ${idx + 1}`), tocBtn(), doneBanner, tab === 'req' && window.Primary ? Primary.wordBank(s) : null, tabs, chips, el('div', { class: 'exgrid' }, el('div', { class: 'q' }, card), aside)].filter(Boolean));
     if (s.lab) tabs.append(el('a', { class: 'chip', href: '#lab-' + R(sid), id: 'labLink' }, '🧪 Experiment'));
     showBanner(); drawSol();
-    QE.practice(q, card, { rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; Core.persist(); showBanner(); refreshToc(); drawSol(); xpTick();
+    QE.practice(q, card, { num: idx + 1, of: list.length, level: { req: 'Core', prac: 'Practice', adv: 'Advanced', ext: 'Extreme' }[tab], levelKey: 'lv-' + tab, rec, seed: st.id, save: () => Core.persist(), onCheck: onCheck(card, q, rec), onDone: () => { rec.done = true; Core.persist(); showBanner(); refreshToc(); drawSol(); xpTick();
       const c = chips.children[idx]; if (c) c.className = 'qc on ' + (rec.ok ? 'ok' : 'half'); } });
     card.append(el('div', { class: 'btnrow between objline' }, el('span', {}, el('b', { style: 'color:#1C2A3A' }, 'Learning objective: '), C.objectives[q.obj].t, el('small', { class: 'muted' }, ` · ${C.objectives[q.obj].code || ''}`)),
       el('button', { class: 'btn small ghost', type: 'button', id: 'reportQ', onclick: () => reportQuestion(q) }, '⚑ Report a problem')));
@@ -1594,6 +1596,27 @@
     return { get signedIn() { return signed0(); }, get name() { return st ? st.alias || st.name : ''; }, go,
       load: () => { const signed = signed0(), lk = lkey(); let s = null; if (signed) s = (Core.S.states || {}).games; if (!s) { try { s = JSON.parse(localStorage.getItem(lk) || 'null'); } catch (e) { } } return Object.assign(dflt(), s || {}); },
       save: S => { const signed = signed0(), lk = lkey(); try { localStorage.setItem(lk, JSON.stringify(S)); } catch (e) { } if (signed) { Core.S.states = Core.S.states || {}; Core.S.states.games = S; Backend.saveProgress(st.id, 'games', S).catch(() => { }); } } };
+  }
+  // a lesson's key words as game words (Stages 1–6: the lesson word bank)
+  function secGameWords(s) {
+    const stg = Core.stageNo(Core.STAGE);
+    if (!s || !Array.isArray(s.vocab) || s.vocab.length < 3 || stg > 6) return [];
+    const subj = Core.IS_MATHS ? 'maths' : 'science';
+    return s.vocab.filter(v => v.w && v.def).map(v => ({ id: `${subj[0]}${stg}-${String(v.w).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`, w: v.w, def: v.def, emoji: v.emoji || '📘', audio: v.audio || '', subj, stage: stg, topic: s.title }));
+  }
+  async function viewSecGames(sid) {
+    const s = Core.sec(sid), m = $main(); if (!s) return go('home');
+    const words = secGameWords(s); if (!words.length) return go('ex-' + R(sid));
+    const lock = Core.secLock(st, s);
+    subbar('blue', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}: ${C.unit.title}`), el('span', { class: 'ttl' }, `${s.id} ${s.title} · Word games`));
+    if (lock) { m.append(bar(`Section ${s.id} · Word games`), lockScreen(`Word games for section ${s.id} are locked`, lock.reason, [lock])); return; }
+    st.last = { route: 'gm-' + R(sid) }; Core.persist();
+    const host = el('div', { style: 'padding-bottom:30px' });
+    m.append(bar(`Section ${s.id} · Word games`), tocBtn(), host);
+    st.games = st.games || {}; const rec = st.games[s.id] || { n: 0, best: 0, by: {} };
+    const ctx = Object.assign(gameCtx(), { pool: words, title: `${s.id} ${s.title} · word games`, back: '#gm-' + R(sid), best: rec.by,
+      onFinish: r => { rec.n++; rec.best = Math.max(rec.best, r.score); rec.by[r.id] = Math.max(rec.by[r.id] || 0, r.score); st.games[s.id] = rec; Core.persist(); refreshToc(); } });
+    await Games.picker(host, ctx);
   }
   async function viewGames() {
     const m = $main();
@@ -2445,15 +2468,15 @@
     remindUnfinished(r);
     if (r === 'unit3') { location.replace('#u-3'); return; }
     // the unit is part of the address: u-4, v-4-1, ex-4-2, ws-4-3
-    const um = r.match(/^u-(\d+)$/) || r.match(/^(?:v|ex|ws|lab)-(\d+)-\d+$/);
+    const um = r.match(/^u-(\d+)$/) || r.match(/^(?:v|ex|ws|lab|gm)-(\d+)-\d+$/);
     if (um && Number(um[1]) !== Core.UNO) { if (!Core.unitReady(Number(um[1]))) { location.replace('#home'); return; } try { await Core.switchUnit(Number(um[1])); } catch (e) { location.replace('#home'); return; } if (seq !== renderSeq) return; }
     C = Core.C; st = Core.cur(); if (/^u-\d+$/.test(r)) r = 'unit';
     document.body.classList.toggle('young', !!(C && C.unit && C.unit.young));   // Stages 3–4: bigger, simpler question cards
     if (r !== 'test' && !/^(fx|cpx|chx)-/.test(r)) UI.testOn = false;
     document.body.classList.remove('menu-open', 'toc-open');
-    const me = Core.S.me;
+    const me = Core.S.me; if (window.QE) QE.showIds = !!(me && me.profile && ['marker', 'admin'].includes(me.profile.role));
     if (me && me.profile && me.profile.disabled) { try { Core.flush && Core.flush(); } catch (e) { } await Backend.signOut(); await Core.boot(C); st = null; location.replace('#signin'); setTimeout(() => toast(ERR.account_disabled), 300); return; }
-    const needsLearner = !!LEARNER[r] && r !== 'home' || /^(v|ex|ws|lab)-/.test(r) || /^(stage|checkout|fx|fres)-\d+$/.test(r) || /^(cpx|cpr)-[A-Z]{1,2}\d$/.test(r) || /^ch[xpr]-[a-z]+-\d{2}$/.test(r);
+    const needsLearner = !!LEARNER[r] && r !== 'home' || /^(v|ex|ws|lab|gm)-/.test(r) || /^(stage|checkout|fx|fres)-\d+$/.test(r) || /^(cpx|cpr)-[A-Z]{1,2}\d$/.test(r) || /^ch[xpr]-[a-z]+-\d{2}$/.test(r);
     const freeTopic = /^(v|ex|ws|lab)-\d+-1$/.test(location.hash.slice(1)) || r === 'unit';
     if (['learners', 'add-learner', 'parent'].includes(r)) { location.replace('#home'); return; }   // old parent-area links
     if (!me && !st && (ACCOUNT[r] || needsLearner)) { if (freeTopic) { Core.startGuest(); st = Core.cur(); } else { location.replace('#signin'); return; } }  // a link into topic 3.1 starts a guest session
@@ -2466,7 +2489,7 @@
     const mo = new MutationObserver(recs => { if (skel && recs.some(x => [...x.addedNodes].some(n => n !== skel))) { skel.remove(); skel = null; mo.disconnect(); } }); mo.observe(m, { childList: true });
     try {
       const pm = r.match(/^(stage|checkout|fx|fres)-(\d+)$/); const cpm = r.match(/^(cpx|cpr)-([A-Z]{1,2}\d)$/); const chm = r.match(/^chl-([a-z]+)$/) ? ['', 'chl', r.slice(4)] : r.match(/^(chx|chp|chr)-([a-z]+)-(\d{2})$/);
-      if (r.startsWith('v-')) viewVideo(secFromRoute(r)); else if (r.startsWith('ex-')) viewExercises(secFromRoute(r)); else if (r.startsWith('ws-')) viewWorksheet(secFromRoute(r)); else if (r.startsWith('lab-')) viewLab(secFromRoute(r));
+      if (r.startsWith('gm-')) await viewSecGames(secFromRoute(r)); else if (r.startsWith('v-')) viewVideo(secFromRoute(r)); else if (r.startsWith('ex-')) viewExercises(secFromRoute(r)); else if (r.startsWith('ws-')) viewWorksheet(secFromRoute(r)); else if (r.startsWith('lab-')) viewLab(secFromRoute(r));
       else if (/^courses(-\w+)?$/.test(r)) await viewCourses(r.split('-')[1]);
       else if (/^course-[a-z0-9-]+$/.test(r)) await viewCourse(r.slice(7));
       else if (cpm && st) { if (cpm[1] === 'cpx') await viewCpExam(cpm[2]); else await viewCpResult(cpm[2]); }

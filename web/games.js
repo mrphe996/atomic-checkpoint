@@ -76,6 +76,13 @@ window.Games = (function () {
     const all = WORDS.filter(w => (S.subj === 'all' || w.subj === S.subj) && w.stage <= S.stage);
     return all.length >= 8 ? all : WORDS.filter(w => w.stage <= Math.max(S.stage, 2));
   }
+  // a lesson's own words (from the course); topped up with nearby words so every game has enough choices
+  function lessonPool(list, S) {
+    const own = list.map(w => Object.assign({ stage: S.stage, topic: 'lesson' }, w, { stage: S.stage, own: true }));
+    if (own.length >= 8) return own;
+    const extra = shuffle(WORDS.filter(w => w.subj === (list[0].subj || 'science') && w.stage <= S.stage && !own.some(o => o.w === w.w))).slice(0, 8 - own.length).map(w => Object.assign({}, w, { stage: S.stage - 1 }));
+    return own.concat(extra);
+  }
   function mastery(S, w) { const m = (S.words || {})[w.id]; return m ? m[1] / Math.max(1, m[0]) : 0; }
   function pickTarget(S, P, T, avoid) {   // weak and new words come up more often; most words come from the chosen stage
     const cur = P.filter(w => w.stage === S.stage && !avoid.has(w.id)), old = P.filter(w => w.stage < S.stage && !avoid.has(w.id));
@@ -104,36 +111,36 @@ window.Games = (function () {
 .gw .gcard{background:#fff;color:#0E2A52;border-radius:20px;padding:12px 16px;box-shadow:0 6px 0 rgba(0,0,0,.15);margin-bottom:12px;position:relative}
 .gw .ghud{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:15px}
 .gw .gprompt{display:flex;align-items:center;justify-content:center;gap:12px;min-height:64px;text-align:center;font-size:20px;font-weight:800;line-height:1.25;padding:4px 0}
-.gw .gprompt .ge{font-size:42px}.gw .gprompt .hear{border:0;background:#0149AF;color:#fff;border-radius:999px;font:800 18px Outfit;padding:10px 16px;cursor:pointer}
+.gw .gprompt .ge{font-size:42px}.gw .gprompt .hear{border:0;background:#0149AF;color:#fff;border-radius:999px;font:800 18px Outfit,Figtree,system-ui,sans-serif;padding:10px 16px;cursor:pointer}
 .gw .gbar{height:8px;background:#E3EAF5;border-radius:9px;overflow:hidden}.gw .gbar i{display:block;height:100%;background:#2FA8F5;border-radius:9px;transition:width .3s}
 .gw .garena{position:relative;border-radius:22px;overflow:hidden;background:#fff;border:6px solid #fff}
 .gw canvas{display:block;width:100%;height:auto;margin:0 auto;touch-action:none}
 .gw .garena:has(canvas){background:#5DBB63}
 .gw .gctrl{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.gw .gctrl button{height:74px;border:0;border-radius:20px;background:#fff;box-shadow:0 6px 0 #9DB8D9;font-size:34px;color:#E2463A;cursor:pointer}
 .gw .gctrl button:active{transform:translateY(3px);box-shadow:0 3px 0 #9DB8D9}
-.gw .float{position:absolute;font:900 26px Outfit;color:#FFD25A;text-shadow:0 2px 0 #0008;pointer-events:none;animation:gfl 0.9s ease-out forwards}
+.gw .float{position:absolute;font:900 26px Outfit,Figtree,system-ui,sans-serif;color:#FFD25A;text-shadow:0 2px 0 #0008;pointer-events:none;animation:gfl 0.9s ease-out forwards}
 @keyframes gfl{to{transform:translateY(-60px);opacity:0}}
 .gw .shake{animation:gsh .35s}@keyframes gsh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
 .gsky{height:min(460px,calc(100vh - 330px));min-height:320px;background:linear-gradient(#8FD3FF,#D9F1FF)}
 .gbal{position:absolute;width:118px;height:140px;cursor:pointer;display:flex;align-items:flex-start;justify-content:center;border:0;background:none;padding:0}
-.gbal span{display:flex;align-items:center;justify-content:center;width:112px;height:126px;border-radius:50% 50% 46% 46%;color:#fff;font:800 16px Outfit;text-align:center;padding:10px;box-shadow:inset -10px -12px 0 rgba(0,0,0,.12);word-break:break-word;line-height:1.1}
+.gbal span{display:flex;align-items:center;justify-content:center;width:112px;height:126px;border-radius:50% 50% 46% 46%;color:#fff;font:800 16px Outfit,Figtree,system-ui,sans-serif;text-align:center;padding:10px;box-shadow:inset -10px -12px 0 rgba(0,0,0,.12);word-break:break-word;line-height:1.1}
 .gbal:after{content:'';position:absolute;left:58px;top:124px;width:2px;height:30px;background:#7A8699}
 .gbal.popped span{animation:gpop .25s forwards}@keyframes gpop{to{transform:scale(1.6);opacity:0}}
 .gmem{display:grid;gap:10px;padding:10px;background:#E9F6EE}
-.gmc{aspect-ratio:3/4;border:0;border-radius:14px;cursor:pointer;perspective:600px;background:none;padding:0;font-family:Outfit}
+.gmc{aspect-ratio:3/4;border:0;border-radius:14px;cursor:pointer;perspective:600px;background:none;padding:0;font-family:Outfit,Figtree,system-ui,sans-serif}
 .gmc .in{position:relative;width:100%;height:100%;transition:transform .35s;transform-style:preserve-3d}.gmc.open .in,.gmc.done .in{transform:rotateY(180deg)}
 .gmc .fa,.gmc .fb{position:absolute;inset:0;border-radius:14px;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:6px;text-align:center}
 .gmc .fa{background:linear-gradient(135deg,#1F9D5C,#16794A);color:#fff;font-size:30px;box-shadow:0 4px 0 #0F5C38}
 .gmc .fb{background:#fff;color:#0E2A52;transform:rotateY(180deg);font-weight:800;font-size:15px;line-height:1.15;box-shadow:0 4px 0 #B7C6DA;flex-direction:column;gap:2px}
 .gmc .fb b{font-size:28px}.gmc .fb small{font-weight:600;font-size:12px}.gmc.done .fb{background:#DDF5E6;box-shadow:0 4px 0 #7BC79A}
 .gsp{padding:18px;background:#EEF4FD;min-height:330px;display:flex;flex-direction:column;gap:18px;align-items:center}
-.gslots{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}.gslot{width:40px;height:50px;border-radius:10px;background:#fff;border:3px solid #9DB8D9;display:flex;align-items:center;justify-content:center;font:900 26px Outfit;color:#0E2A52;text-transform:lowercase}
+.gslots{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}.gslot{width:40px;height:50px;border-radius:10px;background:#fff;border:3px solid #9DB8D9;display:flex;align-items:center;justify-content:center;font:900 26px Outfit,Figtree,system-ui,sans-serif;color:#0E2A52;text-transform:lowercase}
 .gslot.sp{border:0;background:none;width:16px}.gslot.cur{border-color:#0149AF;box-shadow:0 0 0 3px #A9C6F2}.gslot.ok{background:#DDF5E6;border-color:#1F9D5C}
-.gtiles{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:460px}.gtile{width:52px;height:56px;border:0;border-radius:12px;background:#0149AF;color:#fff;font:900 26px Outfit;cursor:pointer;box-shadow:0 4px 0 #013A8C;text-transform:lowercase}
+.gtiles{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:460px}.gtile{width:52px;height:56px;border:0;border-radius:12px;background:#0149AF;color:#fff;font:900 26px Outfit,Figtree,system-ui,sans-serif;cursor:pointer;box-shadow:0 4px 0 #013A8C;text-transform:lowercase}
 .gtile:disabled{opacity:.25;cursor:default}
 .gholes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px;background:linear-gradient(#7CCB6B,#4FAE52);min-height:400px}
 .ghole{position:relative;height:118px;border-radius:50%/40%;background:radial-gradient(ellipse at 50% 80%,#3A2716 0 45%,transparent 46%);overflow:hidden;border:0;padding:0;cursor:pointer}
-.gmole{position:absolute;left:8%;right:8%;bottom:-100%;height:92%;border-radius:46% 46% 12% 12%;background:#9C6B43;transition:bottom .18s;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:10px;color:#fff;font:800 14px Outfit;text-align:center}
+.gmole{position:absolute;left:8%;right:8%;bottom:-100%;height:92%;border-radius:46% 46% 12% 12%;background:#9C6B43;transition:bottom .18s;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:10px;color:#fff;font:800 14px Outfit,Figtree,system-ui,sans-serif;text-align:center}
 .gmole:before{content:'• •';display:block;font-size:20px;line-height:1;margin-bottom:2px}.gmole b{font-family:Outfit,sans-serif;background:#fff;color:#0E2A52;border-radius:8px;padding:2px 6px;font-size:14px;line-height:1.15;max-width:96%;word-break:break-word}
 .ghole.up .gmole{bottom:0}.ghole.hit .gmole{background:#4BB46B}.ghole.bad .gmole{background:#C93A3A}
 .gres{text-align:center;padding:24px 18px}.gres h3{font-size:30px;margin:6px 0;color:#0E2A52}.gres .big{font-size:56px}
@@ -142,8 +149,8 @@ window.Games = (function () {
 .ghub .gsel{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}.ghub .chip{border:2px solid #D3E0F4;background:#fff;border-radius:999px;padding:6px 14px;font:700 15px Figtree;cursor:pointer;color:#1C2A3A}.ghub .chip.on{background:#0149AF;border-color:#0149AF;color:#fff}
 .ghub .glist{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-top:16px}
 .ghub .gg{display:flex;flex-direction:column;gap:8px;padding:18px;border-radius:22px;text-decoration:none;color:#fff;background:var(--c);box-shadow:0 6px 0 rgba(0,0,0,.18);transition:transform .15s}
-.ghub .gg:hover{transform:translateY(-3px)}.ghub .gg .gi{font-size:44px;line-height:1}.ghub .gg b{font:800 22px Outfit}.ghub .gg span{font-size:14px;opacity:.95}.ghub .gg small{font-weight:700;background:rgba(255,255,255,.22);border-radius:999px;padding:3px 10px;align-self:flex-start}
-.ghub .gplayer{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.ghub .glv{width:86px;height:86px;border-radius:50%;background:linear-gradient(135deg,#FFD25A,#FFB800);display:flex;flex-direction:column;align-items:center;justify-content:center;font:900 30px Outfit;color:#5A3D00;box-shadow:0 5px 0 #C48A2C}
+.ghub .gg:hover{transform:translateY(-3px)}.ghub .gg .gi{font-size:44px;line-height:1}.ghub .gg b{font:800 22px Outfit,Figtree,system-ui,sans-serif}.ghub .gg span{font-size:14px;opacity:.95}.ghub .gg small{font-weight:700;background:rgba(255,255,255,.22);border-radius:999px;padding:3px 10px;align-self:flex-start}
+.ghub .gplayer{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.ghub .glv{width:86px;height:86px;border-radius:50%;background:linear-gradient(135deg,#FFD25A,#FFB800);display:flex;flex-direction:column;align-items:center;justify-content:center;font:900 30px Outfit,Figtree,system-ui,sans-serif;color:#5A3D00;box-shadow:0 5px 0 #C48A2C}
 .ghub .glv small{font-size:11px;letter-spacing:.08em}.ghub .gpx{flex:1;min-width:220px}
 @media (max-width:520px){.gw{padding:12px;border-radius:20px}.gw .gtop h2{font-size:19px}.gw .gbtn{padding:8px 11px;font-size:13px}.gbal{width:96px}.gbal span{width:92px;height:110px;font-size:14px}.gslot{width:32px;height:44px;font-size:22px}.gtile{width:44px;height:50px}}
 .gconf{position:fixed;inset:0;pointer-events:none;z-index:99}.gconf i{position:absolute;top:-10px;width:10px;height:14px;animation:gcf 1.6s linear forwards}@keyframes gcf{to{transform:translateY(105vh) rotate(720deg)}}`;
@@ -162,9 +169,9 @@ window.Games = (function () {
     function draw() {
       const P = pool(S), learned = P.filter(w => mastery(S, w) >= 0.75 && ((S.words || {})[w.id] || [0])[0] >= 2).length;
       wrap.append(h('section', { class: 'card' }, h('div', { class: 'gplayer' }, h('div', { class: 'glv', id: 'gLevel' }, h('small', {}, 'LEVEL'), String(lv.level)),
-        h('div', { class: 'gpx' }, h('b', { style: 'font-family:Outfit;font-size:20px' }, (ctx.name ? ctx.name + ' · ' : '') + `Level ${lv.level} word champion`),
+        h('div', { class: 'gpx' }, h('b', { style: 'font-family:Outfit,Figtree,system-ui,sans-serif;font-size:20px' }, (ctx.name ? ctx.name + ' · ' : '') + `Level ${lv.level} word champion`),
           h('div', { class: 'gxp' }, h('i', { style: `width:${Math.round(lv.into / lv.need * 100)}%` })), h('small', { class: 'muted' }, `${lv.into}/${lv.need} XP to level ${lv.level + 1} · ${S.xp || 0} XP in all · ${S.played || 0} games played · no top level – every level is a little harder`)),
-        h('div', { style: 'text-align:center' }, h('b', { style: 'font:900 28px Outfit;color:#1F9D5C' }, String(learned)), h('br'), h('small', { class: 'muted' }, `of ${P.length} words learned`))),
+        h('div', { style: 'text-align:center' }, h('b', { style: 'font:900 28px Outfit,Figtree,system-ui,sans-serif;color:#1F9D5C' }, String(learned)), h('br'), h('small', { class: 'muted' }, `of ${P.length} words learned`))),
         h('div', { class: 'gsel', role: 'group', 'aria-label': 'Stage' }, h('b', {}, 'Stage:'), ...[1, 2, 3, 4, 5, 6].map(n => h('button', { type: 'button', class: 'chip' + (S.stage === n ? ' on' : ''), id: 'gStage' + n, onclick: () => { S.stage = n; ctx.save(S); sel(); } }, String(n)))),
         h('div', { class: 'gsel', role: 'group', 'aria-label': 'Subject' }, h('b', {}, 'Words from:'), ...Object.entries(SUBJ).map(([k, t]) => h('button', { type: 'button', class: 'chip' + (S.subj === k ? ' on' : ''), id: 'gSubj-' + k, onclick: () => { S.subj = k; ctx.save(S); sel(); } }, t))),
         ctx.signedIn ? null : h('p', { class: 'muted', style: 'margin:6px 0 0;font-size:14px' }, 'Your level is saved on this device. Sign in to keep it on every device.')));
@@ -179,7 +186,8 @@ window.Games = (function () {
   async function play(host, ctx, id) {
     styles(); stop(); await words();
     const G = GAMES.find(g => g.id === id); if (!G) { ctx.go('games'); return; }
-    const S = ctx.load(); const L = levelOf(S.xp || 0).level; const P = pool(S);
+    const S = ctx.load(); const L = levelOf(S.xp || 0).level;
+    const P = ctx.pool && ctx.pool.length >= 3 ? lessonPool(ctx.pool, S) : pool(S);
     const st = { score: 0, right: 0, wrong: 0, combo: 0, hearts: 3, n: 0, missed: [], seen: [], done: false };
     if (Snd.music === undefined) Snd.music = false;
     const btn = (label, on, idv, fn) => h('button', { type: 'button', class: 'gbtn' + (on ? ' on' : ''), id: idv, onclick: fn }, label);
@@ -211,7 +219,7 @@ window.Games = (function () {
       const before = levelOf(S.xp || 0); const gain = Math.max(5, Math.round(st.score * 0.6) + (st.hearts > 0 ? 10 : 0));
       S.xp = (S.xp || 0) + gain; S.played = (S.played || 0) + 1; S.best = S.best || {}; const newBest = st.score > (S.best[id] || 0); if (newBest) S.best[id] = st.score;
       const k = Object.keys(S.words || {}); if (k.length > 1500) { k.sort((a, b) => S.words[a][2] - S.words[b][2]).slice(0, k.length - 1500).forEach(x => delete S.words[x]); }
-      ctx.save(S); const after = levelOf(S.xp);
+      ctx.save(S); const after = levelOf(S.xp); ctx.onFinish && ctx.onFinish({ id, score: st.score, right: st.right, wrong: st.wrong });
       sfx(after.level > before.level ? 'level' : 'end'); if (after.level > before.level || newBest) confetti();
       const res = h('div', { class: 'gcard gres', id: 'gResult' },
         h('div', { class: 'big', 'aria-hidden': 'true' }, after.level > before.level ? '🏆' : st.right >= st.wrong * 2 ? '🌟' : '💪'),
@@ -222,7 +230,7 @@ window.Games = (function () {
         h('small', { class: 'muted' }, `Level ${after.level}: ${after.into}/${after.need} XP to level ${after.level + 1}`),
         st.missed.length ? h('div', {}, h('p', { style: 'margin:12px 0 0;font-weight:700' }, 'Words to practise – tap to hear them:'), h('div', { class: 'gwl' }, ...st.missed.slice(0, 12).map(w => h('button', { type: 'button', title: w.def, onclick: () => { const v = Snd.voice; Snd.voice = true; say(w.w, w.audio); Snd.voice = v; } }, `${w.emoji} ${w.w}`)))) : null,
         h('div', { style: 'display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px' },
-          h('button', { type: 'button', class: 'gbtn on', id: 'gAgain', onclick: () => play(host, ctx, id) }, '↻ Play again'), h('a', { class: 'gbtn', href: '#games', id: 'gBack', style: 'text-decoration:none' }, 'All games')));
+          h('button', { type: 'button', class: 'gbtn on', id: 'gAgain', onclick: () => play(host, ctx, id) }, '↻ Play again'), h('a', { class: 'gbtn', href: ctx.back || '#games', id: 'gBack', style: 'text-decoration:none' }, ctx.back ? 'Choose another game' : 'All games')));
       arena.innerHTML = ''; arena.append(res); arena.style.background = '#fff'; card.style.display = 'none';
       setTimeout(() => { const b = document.getElementById('gXpBar'); if (b) b.style.width = Math.round(after.into / after.need * 100) + '%'; }, 80);
     }
@@ -272,7 +280,7 @@ window.Games = (function () {
       const tx = roadX + lw * (lane + 0.5); carX += (tx - carX) * 0.25; const cy = CH - 90;
       c.fillStyle = 'rgba(0,0,0,.25)'; rr(carX - 23, cy + 6, 46, 74, 14); c.fill();
       c.fillStyle = '#E53935'; rr(carX - 24, cy, 48, 74, 16); c.fill(); c.fillStyle = '#fff'; c.fillRect(carX - 4, cy, 8, 74);
-      c.fillStyle = '#8FD3FF'; rr(carX - 16, cy + 14, 32, 16, 6); c.fill(); c.fillStyle = '#FFD25A'; c.beginPath(); c.arc(carX, cy + 40, 9, 0, 7); c.fill(); c.fillStyle = '#B71C1C'; c.font = '800 12px Outfit'; c.fillText(String(Math.min(99, A.L)), carX, cy + 41);
+      c.fillStyle = '#8FD3FF'; rr(carX - 16, cy + 14, 32, 16, 6); c.fill(); c.fillStyle = '#FFD25A'; c.beginPath(); c.arc(carX, cy + 40, 9, 0, 7); c.fill(); c.fillStyle = '#B71C1C'; c.font = '800 12px Outfit,Figtree,system-ui,sans-serif'; c.fillText(String(Math.min(99, A.L)), carX, cy + 41);
       c.fillStyle = '#222'; c.fillRect(carX - 28, cy + 10, 5, 16); c.fillRect(carX + 23, cy + 10, 5, 16); c.fillRect(carX - 28, cy + 50, 5, 16); c.fillRect(carX + 23, cy + 50, 5, 16);
       c.fillStyle = '#FFE082'; c.beginPath(); c.arc(carX - 14, cy + 2, 4, 0, 7); c.arc(carX + 14, cy + 2, 4, 0, 7); c.fill();
       parts = parts.filter(p => (p.t -= 1) > 0); parts.forEach(p => { c.globalAlpha = p.t / 30; c.fillStyle = p.c; c.fillRect(p.x, p.y += p.vy, 4, 4); p.x += p.vx; c.globalAlpha = 1; });
@@ -401,5 +409,16 @@ window.Games = (function () {
     next(); return { stop() { clear(); } };
   }
 
-  return { GAMES, hub, play, stop, levelOf, tuning, need, _words: () => WORDS };
+  async function picker(host, ctx) {
+    styles(); stop(); await words(); const S = ctx.load(); const lv = levelOf(S.xp || 0);
+    const box = h('div', { class: 'ghub', id: 'gamesPick' },
+      h('section', { class: 'card' }, h('div', { class: 'gplayer' }, h('div', { class: 'glv' }, h('small', {}, 'LEVEL'), String(lv.level)),
+        h('div', { class: 'gpx' }, h('b', { style: 'font-family:Outfit,Figtree,system-ui,sans-serif;font-size:20px' }, ctx.title || 'Word games'),
+          h('div', { class: 'gxp' }, h('i', { style: `width:${Math.round(lv.into / lv.need * 100)}%` })),
+          h('small', { class: 'muted' }, `${ctx.pool.length} words from this lesson: ${ctx.pool.slice(0, 8).map(w => w.w).join(', ')}${ctx.pool.length > 8 ? '…' : ''}`)))),
+      h('div', { class: 'glist' }, ...GAMES.map(g => h('button', { type: 'button', class: 'gg', id: 'gPick-' + g.id, style: `--c:${g.color};border:0;text-align:left;cursor:pointer;font:inherit`, onclick: () => { host.innerHTML = ''; play(host, ctx, g.id); } },
+        h('span', { class: 'gi', 'aria-hidden': 'true' }, g.icon), h('b', {}, g.name), h('span', {}, g.about), h('small', {}, (ctx.best || {})[g.id] ? `Best here: ${ctx.best[g.id]} points` : 'Not played here yet')))));
+    host.append(box);
+  }
+  return { GAMES, hub, play, picker, stop, levelOf, tuning, need, _words: () => WORDS };
 })();

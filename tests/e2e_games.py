@@ -91,6 +91,26 @@ with sync_playwright() as p:
     pg.set_viewport_size({'width': 390, 'height': 844}); pg.evaluate("location.hash='game-racer'"); pg.wait_for_timeout(1300)
     if SHOTS: pg.screenshot(path=SHOTS + '/racer_phone.png')
     ok(pg.evaluate("document.documentElement.scrollWidth <= 392"), 'G17 Games fit a phone screen')
+    pg.set_viewport_size({'width': 1280, 'height': 1000})
+    # word games inside the course (Stage 5 Science, topic 1.1) – a step like Practice
+    pg.evaluate("Core.switchStage(5)"); pg.wait_for_timeout(2500); pg.evaluate("location.hash='profile'"); pg.wait_for_timeout(1500); pg.click('#simAll'); pg.wait_for_timeout(800)
+    pg.evaluate("location.hash='u-1'"); pg.wait_for_timeout(2000)
+    ok(pg.query_selector('a.u4tile[href="#gm-1-1"]') is not None and pg.query_selector('.secnav a[href="#gm-1-1"]') is not None and 'null' not in pg.inner_text('.u4head'), 'G19 Each topic has a "Word games" step in the course, next to Practise')
+    pg.evaluate("location.hash='gm-1-1'"); pg.wait_for_timeout(1500)
+    ok(len(pg.query_selector_all('#gamesPick .gg')) == 5 and 'words from this lesson' in pg.inner_text('#gamesPick'), 'G20 The topic\'s game page offers five games with that lesson\'s words')
+    pg.click('#gPick-memory'); pg.wait_for_timeout(1200)
+    lesson = set(pg.evaluate("Core.sec('1.1').vocab.map(v => v.w)"))
+    shown = set(x.inner_text().strip() for x in pg.query_selector_all('.gmc[data-side="word"] .fb b'))
+    ok(shown and shown <= lesson | set(w['w'] for w in W), 'G21 The cards use the lesson\'s own words')
+    ids = {}
+    for c in pg.query_selector_all('.gmc'): ids.setdefault(c.get_attribute('data-w'), []).append(c.get_attribute('id'))
+    for k, pair in ids.items(): pg.click('#' + pair[0]); pg.wait_for_timeout(120); pg.click('#' + pair[1]); pg.wait_for_timeout(500)
+    pg.wait_for_selector('#gResult', timeout=8000); pg.wait_for_timeout(400)
+    ok(pg.evaluate("!!(Core.cur().games || {})['1.1']") and pg.get_attribute('#gBack', 'href') == '#gm-1-1', 'G22 Playing is recorded for the topic and leads back to its games')
+    # practice card: friendly header, no internal codes for learners
+    pg.evaluate("location.hash='ex-1-1'"); pg.wait_for_timeout(2000)
+    hd = pg.inner_text('.qcard .qhead2') if pg.query_selector('.qcard .qhead2') else ''
+    ok('Question 1' in hd and 'of' in hd and pg.query_selector('.qcard .qid') is None and pg.query_selector('.qcard .qhead code') is None, 'G23 Practice cards show "Question n of N", level and answer type – no internal codes')
     pg.evaluate("location.hash='games'"); pg.wait_for_timeout(500)
     ok(not errs, 'G18 No page errors' + (': ' + errs[0] if errs else ''))
     b.close()

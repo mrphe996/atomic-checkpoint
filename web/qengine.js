@@ -261,14 +261,30 @@
   }
 
   /* Practice controller: tries, hints, guided reasoning and a twin after two wrong tries. */
+  const KIND = { mcq: '☝️ Choose one', multi: '☑️ Choose all that are right', num: '🔢 Work it out', scale: '📏 Read the scale', label: '🏷️ Label the diagram', order: '↕️ Put in order', match: '🔗 Match up',
+    explain: '✍️ Explain', grid: '🗂️ Sort into the table', table: '📊 Complete the table', graph: '📈 Plot the graph', sim: '🔬 Experiment', short: '⌨️ Type the answer', cloze: '🧩 Fill the gaps', expr: '🧮 Type the expression', say: '🎤 Say it', para: '📝 Write a paragraph' };
+  // a worked solution shown as numbered steps when it has more than one sentence
+  function steps(text) {
+    const t = String(text || '').trim(); if (!t) return null;
+    const parts = t.split(/(?<=[.!?])\s+(?=[A-Z0-9(“"'])/).map(x => x.trim()).filter(Boolean);
+    if (parts.length < 2 || parts.length > 8) return el('p', { class: 'reason' }, t);
+    return el('ol', { class: 'steps' }, ...parts.map(p => el('li', {}, p)));
+  }
+  function fbHead(kind, title, sub) { return el('div', { class: 'fbh' }, el('span', { class: 'fbi ' + kind, 'aria-hidden': 'true' }, { ok: '✓', bad: '✗', guide: '💡', warn: '!' }[kind] || '•'), el('div', {}, el('b', {}, title), sub ? el('small', {}, sub) : null)); }
   function practice(q, host, o) {
     // o: {rec, save(rec), seed, onDone(rec), mode:'stop'|'ex'}
     const rec = o.rec || {}; rec.tries = rec.tries || 0;
     host.innerHTML = '';
     if (q.type === 'say' && window.Primary) return window.Primary.say(q, host, o, rec);
-    const head = el('div', { class: 'qhead' }, o.nested ? null : el('code', {}, q.id),
-      el('span', { class: 'tag t-' + q.type }, q.tag || TYPE_VI[q.type] || q.type), el('span', { class: 'tag d-' + q.diff }, DIFF[q.diff] || q.diff), el('span', { class: 'tag' }, q.obj),
-      q.adv ? el('span', { class: 'tag adv' }, '* Advanced') : null);
+    // card header: which question, how hard, what kind of answer, what it is worth (question codes only for staff)
+    const lvName = o.level || DIFF[q.diff] || q.diff, lvKey = o.levelKey || ('d-' + q.diff);
+    const head = o.nested ? el('div', { class: 'qhead2 nested' }, el('span', { class: 'qkind' }, KIND[q.type] || q.tag || TYPE_VI[q.type] || q.type))
+      : el('div', { class: 'qhead2' },
+        el('div', { class: 'qnum' }, el('span', { class: 'qn' }, o.num ? String(o.num) : '?'), el('span', {}, el('b', {}, o.num ? `Question ${o.num}` : 'Question'), o.of ? el('small', {}, ` of ${o.of}`) : null)),
+        el('div', { class: 'qchips' }, el('span', { class: 'qpill ' + lvKey }, el('i', { 'aria-hidden': 'true', style: 'background:' + ({ 'lv-req': '#1F9D5C', 'd-M': '#1F9D5C', 'lv-prac': '#E0A800', 'd-H': '#E0A800', 'lv-adv': '#D64545', 'd-VH': '#D64545', 'lv-ext': '#1C2A3A' }[lvKey] || '#8A94A6') }), lvName), el('span', { class: 'qkind' }, KIND[q.type] || q.tag || TYPE_VI[q.type] || q.type),
+          q.adv ? el('span', { class: 'qkind adv' }, '⭐ Advanced') : null,
+          rec.done ? null : el('span', { class: 'qxp', title: 'XP for a right answer: full XP first time, less after a second try' }, rec.tries ? '+7 XP' : '+12 XP'),
+          QE.showIds ? el('code', { class: 'qid' }, q.id + ' · ' + q.obj) : null));
     host.append(head, el('p', { class: 'qp' }, q.prompt.replace(/^\* Advanced\.\s*/, '')));
     if (q.audio && window.Primary) host.append(window.Primary.audioBar(q.audio, q.slow));
     if (q.src) host.append(el('p', { class: 'src' }, 'Source: ', el('a', { href: q.src.url, target: '_blank', rel: 'noopener' }, q.src.name)));
@@ -276,21 +292,23 @@
     const api = renderBody(q, body, { seed: o.seed, resp: rec.resp, onChange: r => { rec.resp = r; } });
     const fb = el('div', { class: 'fb', 'aria-live': 'polite' }); const add = (...k) => fb.append(...k.filter(x => x != null && x !== false)); const actions = el('div', { class: 'btnrow' });
     const checkBtn = el('button', { class: 'btn primary shine', type: 'button' }, 'Check answer');
-    actions.append(checkBtn); host.append(actions, fb);
+    let hintShown = false; const hintBox = el('div', { class: 'hintbox', hidden: true });
+    const hintBtn = q.hint && !rec.done ? el('button', { class: 'btn ghost hintbtn', type: 'button', onclick: () => { hintShown = true; hintBox.hidden = false; hintBox.replaceChildren(el('b', {}, '💡 Hint'), el('p', {}, q.hint)); hintBtn.remove(); } }, '💡 Hint') : null;
+    actions.className = 'btnrow qacts'; actions.append(checkBtn); if (hintBtn) actions.append(hintBtn); host.append(hintBox, actions, fb);
     const finish = (msg) => { api.lock(); checkBtn.remove(); o.save(rec); o.onDone && o.onDone(rec, msg); };
     function showSolved(g) {
       fb.className = 'fb ok'; fb.innerHTML = '';
-      add(el('b', {}, rec.tries === 1 ? '✓ Spot on!' : '✓ Correct (attempt ' + rec.tries + ').'), g.fb.length && q.type === 'mcq' ? el('p', {}, g.fb[0]) : null,
-        q.reason ? el('p', { class: 'reason' }, '💡 ', q.reason) : null,
+      add(fbHead('ok', rec.tries === 1 ? 'Spot on!' : 'Correct (attempt ' + rec.tries + ')', rec.tries === 1 ? 'Right first time · full XP' : 'Right on the second try · half XP'), g.fb.length && q.type === 'mcq' ? el('p', {}, g.fb[0]) : null,
+        q.reason ? el('div', { class: 'why' }, el('b', {}, 'Why it works'), steps(q.reason)) : null,
         (q.type === 'explain' || q.type === 'para') ? rubricView(q, g) : null);
       api.markOpts && api.markOpts(); api.markSpots && api.markSpots();
     }
     if (rec.done) { const g = grade(q, rec.resp); if (rec.ok) showSolved(g); else showReveal(g, true); api.lock(); checkBtn.remove(); return; }
     function showReveal(g, quiet) {
       fb.className = 'fb guide'; fb.innerHTML = '';
-      if (!quiet && g && g.fb && g.fb.length) add(el('div', { class: 'fb bad' }, ...g.fb.slice(0, 3).map(t => el('p', {}, t))));
-      add(el('b', {}, 'Let\'s reason it through step by step'), el('p', { class: 'reason' }, q.reason || q.hint || 'Re-read the question, underline the key words and rule out the wrong answers.'),
-        el('p', {}, el('b', {}, 'Answer: '), answerText(q)), (q.type === 'explain' || q.type === 'para') ? rubricView(q, g) : null);
+      if (!quiet && g && g.fb && g.fb.length) add(el('div', { class: 'miscon' }, el('b', {}, '✗ Why that answer is not right'), ...g.fb.slice(0, 3).map(t => el('p', {}, t))));
+      add(fbHead('guide', 'Let\'s reason it through step by step', 'Read each step, then try the similar question'), steps(q.reason || q.hint || 'Re-read the question, underline the key words and rule out the wrong answers.'),
+        el('div', { class: 'ansline' }, el('b', {}, 'Answer: '), answerText(q)), (q.type === 'explain' || q.type === 'para') ? rubricView(q, g) : null);
       api.markOpts && api.markOpts(); api.markSpots && api.markSpots();
       if (quiet) return;
       if (q.twin) {
@@ -316,8 +334,8 @@
       rec.wrong = (rec.wrong || 0) + 1; rec.everWrong = true;
       if (rec.tries >= 2) { rec.score = 0; checkBtn.remove(); api.lock(); showReveal(g); o.save(rec); return; }
       fb.className = 'fb bad'; fb.innerHTML = '';
-      add(el('b', {}, g.detail ? `Not all correct yet (${g.detail}).` : 'Not quite.'), ...g.fb.slice(0, 4).map(t => el('p', {}, t)), q.hint ? el('p', { class: 'hint' }, '👉 Hint: ', q.hint) : null,
-        el('p', { class: 'muted' }, 'Change your answer, then press “Check answer” again.'));
+      add(fbHead('bad', g.detail ? `Not all correct yet (${g.detail})` : 'Not quite', 'One more try – change your answer, then check again'), ...g.fb.slice(0, 4).map(t => el('p', {}, t)), q.hint && !hintShown ? el('p', { class: 'hint' }, '👉 Hint: ', q.hint) : null);
+      if (head.querySelector('.qxp')) head.querySelector('.qxp').textContent = '+7 XP';
       checkBtn.textContent = 'Check again'; o.save(rec);
     };
     return rec;
@@ -328,5 +346,5 @@
       el('p', {}, el('b', {}, 'Model answer: '), q.model));
   }
 
-  window.QE = { aiMark: null, el, setTxt, esc, grade, renderBody, practice, answerText, TYPE_VI, DIFF, shuffle, isTick, parseNum, dataTable };
+  window.QE = { showIds: false, aiMark: null, el, setTxt, esc, grade, renderBody, practice, answerText, TYPE_VI, DIFF, shuffle, isTick, parseNum, dataTable };
 })();
