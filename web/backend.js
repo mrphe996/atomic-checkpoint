@@ -165,7 +165,7 @@
         const have = Object.keys(D.results[lid] || {}).filter(k => !k.includes(':') && k.startsWith(`stage${stage}-unit`)).length; if (have < stageUnits) throw err('stage_incomplete', { have, need: stageUnits });
         if (!(((D.attempts[lid] || {})[`stage${stage}-final`]) || []).some(x => x.status === 'final' && x.passed)) throw err('final_required');
         const hex = [...crypto.getRandomValues(new Uint8Array(4))].map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase();
-        D.certs[key] = { code: `AE-${stage >= 10 ? 'M' + (stage - 10) : 'S' + stage}-${new Date().getFullYear()}-${hex}`, name: l.certificate_name || l.nickname, date: new Date().toISOString().slice(0, 10), stage }; save(); return D.certs[key];
+        D.certs[key] = { code: `AE-${stage >= 20 ? 'E' + (stage - 20) : stage >= 10 ? 'M' + (stage - 10) : 'S' + stage}-${new Date().getFullYear()}-${hex}`, name: l.certificate_name || l.nickname, date: new Date().toISOString().slice(0, 10), stage }; save(); return D.certs[key];
       },
       async certificate(lid, stage = 7) { mine(lid); return D.certs[stage === 7 ? lid : `${lid}:s${stage}`] || null; },
       async verifyCertificate(code) { const c = Object.values(D.certs).find(x => x.code === String(code || '').trim().toUpperCase()); return c ? { name_on_certificate: c.name, stage: c.stage || 7, issued_at: c.date } : null; },

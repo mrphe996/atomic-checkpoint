@@ -2,16 +2,18 @@
    The learner's progress lives in the backend (Backend.saveProgress); marking happens on the server
    (Backend.submitTest) – this file only mirrors results for the screens. */
 (function () {
-  const STAGES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19], STAGE_UNITS = 14;
+  const STAGES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 22, 23, 24, 25, 26, 27, 28, 29], STAGE_UNITS = 14;
   // course keys: 7–9 = Science Stages 7–9; 10 + N = Mathematics Stage N, 13–19 (same machinery, their own units, tests and certificates)
-  const MATHS = g => g >= 10;
+  // 20 + N = English as a Second Language Stage N (22–29)
+  const MATHS = g => g >= 10 && g < 20;
+  const ESL = g => g >= 20;
   // 3–6 = Cambridge Primary Science Stages 3 to 6 (animated lessons, listening and speaking checks, experiment rooms)
   const PRIMARY = g => g <= 6;
-  const levelName = g => (PRIMARY(MATHS(g) ? g - 10 : g) ? 'Primary' : 'Lower Secondary');
-  const stageNo = g => (MATHS(g) ? g - 10 : g);
-  const subjectOf = g => (MATHS(g) ? 'Mathematics' : 'Science');
-  const stageName = g => (MATHS(g) ? `Stage ${stageNo(g)} Mathematics` : `Stage ${g}`);
-  const stageLabel = (g = STAGE) => (MATHS(g) ? `Stage ${stageNo(g)} Mathematics` : `Stage ${g} Science`);
+  const stageNo = g => (ESL(g) ? g - 20 : MATHS(g) ? g - 10 : g);
+  const levelName = g => (PRIMARY(stageNo(g)) ? 'Primary' : 'Lower Secondary');
+  const subjectOf = g => (ESL(g) ? 'English as a Second Language' : MATHS(g) ? 'Mathematics' : 'Science');
+  const stageName = g => (ESL(g) ? `Stage ${stageNo(g)} ESL` : MATHS(g) ? `Stage ${stageNo(g)} Mathematics` : `Stage ${g}`);
+  const stageLabel = (g = STAGE) => (ESL(g) ? `Stage ${stageNo(g)} English (ESL)` : MATHS(g) ? `Stage ${stageNo(g)} Mathematics` : `Stage ${g} Science`);
   const unitCount = () => ((INDEX && INDEX.units && INDEX.units.length) || STAGE_UNITS);
   // the stage on screen (a learner can study every stage they are enrolled in)
   // stages switched off for learners (config lockedStages, e.g. Maths Stage 9 while it is reviewed); admins still open them
@@ -365,7 +367,7 @@
   }
 
   window.Core = {
-    get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; }, get STAGE() { return STAGE; }, STAGES, switchStage, stageLocked, LOCKED, PRIMARY, levelName, get IS_PRIMARY() { return PRIMARY(STAGE); }, MATHS, stageNo, subjectOf, stageLabel, stageName, unitCount, get IS_MATHS() { return MATHS(STAGE); },
+    get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; }, get STAGE() { return STAGE; }, STAGES, switchStage, stageLocked, LOCKED, PRIMARY, levelName, get IS_PRIMARY() { return PRIMARY(STAGE); }, MATHS, stageNo, subjectOf, stageLabel, stageName, unitCount, get IS_MATHS() { return MATHS(STAGE); }, ESL, get IS_ESL() { return ESL(STAGE); },
     unitId, unitReady, switchUnit, loadIndex, peekUnit, cached, loadFinal, get FINAL() { return FINAL; },
     xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, startClock, refreshFinal, finalPassed, submitFinal, loadCp, refreshCp, dropCache, withOv, submitCp, activity,
     boot, selectLearner, leaveLearner, refreshAccount, cur, persist, flush, canOpen,

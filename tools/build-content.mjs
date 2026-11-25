@@ -107,6 +107,13 @@ export function validate(c) {
         if (!['pulse', 'lungs', 'growth', 'germs', 'test', 'sort'].includes(V.kind)) errs.push(`section ${s.id}: unknown virtual lab kind ${V.kind}`);
         if (V.kind === 'test') (V.conds || []).forEach(c => { if (!(c.val >= 0 && c.val <= V.max)) errs.push(`section ${s.id} lab: ${c.t} value ${c.val} is off the scale (0–${V.max})`); if (Math.abs(c.val / V.step * 2 - Math.round(c.val / V.step * 2)) > 1e-9) errs.push(`section ${s.id} lab: ${c.t} value ${c.val} is not readable on a ${V.step} scale`); });
         if (V.kind === 'sort') (V.items || []).forEach(it => { if (!(it.g >= 0 && it.g < V.groups.length)) errs.push(`section ${s.id} lab: ${it.t} has no group`); }); }
+    } else if (c.unit && c.unit.esl) {
+      // ESL: a lesson video with two pause questions, a word bank, grammar, reading and spelling questions
+      if (!s.vocab || s.vocab.length < 6) errs.push(`section ${s.id}: ESL lesson needs a word bank (6+ words)`);
+      if ((s.stops || []).length !== 2) errs.push(`section ${s.id}: ESL lesson video needs 2 pause questions`);
+      if (!s.video || !s.video.src) warn.push(`section ${s.id}: no lesson video yet`);
+      if (![...s.req, ...s.prac].some(q => q.ctx)) errs.push(`section ${s.id}: ESL needs reading questions on the lesson text`);
+      if ((c.unit.stage - 20) <= 5) [...s.req, ...s.prac, ...s.adv, ...(s.more || [])].filter(q => !['mcq', 'multi', 'grid', 'match', 'order'].includes(q.type)).forEach(q => errs.push(`section ${s.id} ${q.id}: ESL Stages 2–5 are tap-only`));
     } else if (c.unit && c.unit.tiny) {
       // Stages 1–2 (ages 5–7): picture lessons; every answer is tapped and most answers are pictures
       const TYPING = ['short', 'cloze', 'explain', 'para', 'num', 'expr', 'scale', 'table', 'graph', 'say', 'label'];
@@ -130,7 +137,7 @@ export function validate(c) {
     const pts = c.tests[f].reduce((a, q) => a + q.pts, 0);
     if (c.unit && c.unit.young) c.tests[f].filter(q => ['short', 'cloze', 'explain', 'para', 'num', 'expr', 'scale', 'table', 'graph'].includes(q.type)).forEach(q => errs.push(`test ${f} ${q.id}: young learners cannot type – ${q.type} is not allowed`));
     if (pts !== 30) errs.push(`test ${f}: ${pts} marks (must be 30)`);
-    if (!c.tests[f].some(q => ['label', 'grid', 'table', 'graph', 'scale'].includes(q.type) || q.fig || q.data || (c.unit && c.unit.tiny && (q.pic || q.type === 'match' || (q.options || []).some(o => o.e))))) errs.push(`test ${f}: needs a diagram or data question`);
+    if (!c.tests[f].some(q => ['label', 'grid', 'table', 'graph', 'scale'].includes(q.type) || q.fig || q.data || (c.unit && (c.unit.tiny || c.unit.esl) && (q.pic || q.ctx || ['match', 'order'].includes(q.type) || (q.options || []).some(o => o.e))))) errs.push(`test ${f}: needs a diagram or data question`);
     c.tests[f].forEach(q => checkQ(q, `test ${f}`));
     c.tests[f].filter(q => q.type === 'para' && !q.teacher).forEach(q => errs.push(`test ${f} ${q.id}: paragraph questions in a test must be teacher:true (the AI marks them first; unsure marks go to a teacher)`));
   }
@@ -264,6 +271,11 @@ export function writeIndex() {
     19: [['Number and Calculation', 'Number'], ['Expressions and Formulae', 'Algebra'], ['Decimals, Percentages and Rounding', 'Number'], ['Equations and Inequalities', 'Algebra'], ['Angles', 'Geometry'],
       ['Statistical Investigations', 'Statistics'], ['Shapes and Measurements', 'Geometry'], ['Fractions', 'Number'], ['Sequences and Functions', 'Algebra'], ['Graphs', 'Algebra'],
       ['Ratio and Proportion', 'Number'], ['Probability', 'Probability'], ['Position and Transformation', 'Geometry'], ['Volume, Surface Area and Symmetry', 'Geometry'], ['Interpreting and Discussing Results', 'Statistics']] };
+  // 22–29 = ESL Stages 2–9: titles come from the built units themselves
+  for (let k = 21; k <= 29; k++) {
+    const fs0 = fs.readdirSync(path.join(ROOT, 'content/src')).filter(f => new RegExp(`^stage${k}-unit\\d{2}\\.json$`).test(f)).sort();
+    if (fs0.length) T[k] = fs0.map(f => { const u = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/src', f), 'utf8')).unit; return [u.title, u.strand]; });
+  }
   for (const [stage, list] of Object.entries(T)) {
     const units = list.map(([t, strand], i) => { const id = `stage${stage}-unit${String(i + 1).padStart(2, '0')}`; const f = path.join(ROOT, 'web/content', id + '.json');
       if (!fs.existsSync(f)) return { n: i + 1, id, t, strand, ready: false };

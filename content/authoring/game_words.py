@@ -368,8 +368,8 @@ def main():
             w, d, e = [x.strip() for x in line.split('|')]
             words.append({'w': w, 'def': d, 'emoji': e, 'stage': stage, 'subj': subj, 'topic': topic})
     # word banks of the course units: Science Stages 1–6 (keys 1–6) and Mathematics Stages 1–2 (keys 11, 12)
-    for key in (1, 2, 3, 4, 5, 6, 11, 12):
-        stage, subj = (key - 10, 'maths') if key > 10 else (key, 'science')
+    for key in (1, 2, 3, 4, 5, 6, 11, 12, 22, 23, 24, 25, 26):
+        stage, subj = (key - 20, 'english') if key > 20 else (key - 10, 'maths') if key > 10 else (key, 'science')
         for f in sorted(glob.glob(os.path.join(ROOT, f'web/content/stage{key}-unit*.json'))):
             u = json.load(open(f)); topic = u['unit']['title']
             for s in u['sections']:

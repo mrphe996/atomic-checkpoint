@@ -214,7 +214,7 @@
     // the current course, with a small menu to change it
     const g0 = Core.STAGE; const cmenu = el('div', { class: 'tmenu', hidden: true });
     Core.STAGES.forEach(g => { if (g === g0) return; const lk = Core.stageLocked(g), en = Core.enrolled(g);
-      const name = el('span', {}, el('b', { class: 'cam' }, 'Cambridge'), ' ' + (g >= 10 ? '📐 Maths Stage ' + (g - 10) : 'Stage ' + g));
+      const name = el('span', {}, el('b', { class: 'cam' }, 'Cambridge'), ' ' + (g >= 20 ? '🗣 ESL Stage ' + (g - 20) : g >= 10 ? '📐 Maths Stage ' + (g - 10) : 'Stage ' + g));
       cmenu.append(lk ? el('span', { class: 'it lockedit', 'aria-disabled': 'true' }, name, el('small', { class: 'lkd' }, '🔒 Soon'))
         : el('a', { class: 'it', href: '#stage-' + g, onclick: en ? ev => { ev.preventDefault(); pickStage(g, ev.currentTarget); } : null }, name, el('small', { class: 'sl' }, en ? stagePct(g) + '%' : 'Enrol →'))); });
     cmenu.append(el('a', { class: 'it', href: '#courses', style: 'font-size:13.5px' }, 'All courses · IGCSE & A Level →'));
@@ -242,11 +242,11 @@
   // dotted page header shared by every student page (the "Home 01" look)
   /* ---------- course switcher: Science Stages 7–9 and Mathematics Stage 9 ---------- */
   const STAGE_N = { 1: 6, 2: 6, 11: 8, 12: 8, 13: 17, 14: 18, 15: 18, 16: 17, 17: 16, 18: 16, 19: 15 };
-  const stagePct = g => Math.round(Object.keys((st && st.results) || {}).filter(k => k.startsWith(`stage${g}-unit`)).length / (STAGE_N[g] || (g >= 10 ? 15 : g <= 6 ? 6 : 14)) * 100);
-  const stageShort = g => (g >= 10 ? `Stage ${g - 10}` : `Stage ${g}`);
+  const stagePct = g => Math.round(Object.keys((st && st.results) || {}).filter(k => k.startsWith(`stage${g}-unit`)).length / (STAGE_N[g] || (g >= 20 ? 6 : g >= 10 ? 15 : g <= 6 ? 6 : 14)) * 100);
+  const stageShort = g => (g >= 10 ? `Stage ${Core.stageNo(g)}` : `Stage ${g}`);
   function stageSoon(g) {
     const m = $main();
-    pageHero(g >= 10 ? (g <= 16 ? 'CAMBRIDGE PRIMARY MATHEMATICS' : 'CAMBRIDGE LOWER SECONDARY MATHEMATICS') : g <= 6 ? 'PRIMARY' : 'LOWER SECONDARY', `Cambridge ${Core.stageLabel(g)}`, 'This course is being reviewed by the Atomic teaching team and is not open yet.');
+    pageHero(g >= 20 ? (g <= 26 ? 'CAMBRIDGE PRIMARY ESL' : 'CAMBRIDGE LOWER SECONDARY ESL') : g >= 10 ? (g <= 16 ? 'CAMBRIDGE PRIMARY MATHEMATICS' : 'CAMBRIDGE LOWER SECONDARY MATHEMATICS') : g <= 6 ? 'PRIMARY' : 'LOWER SECONDARY', `Cambridge ${Core.stageLabel(g)}`, 'This course is being reviewed by the Atomic teaching team and is not open yet.');
     m.append(crumbs(`Cambridge ${Core.stageName(g)}`), el('section', { class: 'card lockcard', id: 'stageSoon' }, el('h2', {}, `🔒 Cambridge ${Core.stageLabel(g)} – coming soon`),
       el('p', {}, 'Lessons, practice, Unit Tests and Checkpoint papers for this course open here once the review is finished. Your Science courses stay open as usual.'),
       el('div', { class: 'btnrow' }, el('a', { class: 'btn primary small', href: `#stage-${Core.STAGE}` }, `Back to Cambridge ${Core.stageLabel()}`, el('span', { class: 'arr' }, ' →')))));
@@ -271,7 +271,7 @@
         onclick: ev => { panel.hidden = true; if (st && !isGuest() && Core.enrolled(g) && !lk) { ev.preventDefault(); pickStage(g); } } },
         el('span', {}, icon + ' ' + name), lk || cur ? el('small', {}, lk ? 'Soon' : 'Now') : null);
     };
-    const col = n => el('div', { class: 'stm-col' }, el('b', {}, `Stage ${n}`), item(n, '🔬', 'Science'), item(10 + n, '📐', 'Mathematics'), item(-n, '🗣', 'ESL'));
+    const col = n => el('div', { class: 'stm-col' }, el('b', {}, `Stage ${n}`), item(n, '🔬', 'Science'), item(10 + n, '📐', 'Mathematics'), item(20 + n, '🗣', 'ESL'));
     panel.append(el('div', { class: 'stm-lv' }, el('span', { class: 'stm-h' }, 'Lower Secondary'), el('div', { class: 'stm-row' }, ...[7, 8, 9].map(col))),
       el('div', { class: 'stm-lv' }, el('span', { class: 'stm-h' }, 'Primary'), el('div', { class: 'stm-row' }, ...[1, 2, 3, 4, 5, 6].map(col))));
     const b = el('button', { type: 'button', class: 'stm-btn', id: 'stagesBtn', 'aria-haspopup': 'true', 'aria-expanded': 'false',
@@ -283,8 +283,8 @@
   const SUBJ = { sci: ['🔬', 'Science'], math: ['📐', 'Mathematics'], esl: ['🗣', 'ESL'] };
   function stageSwitcher() {
     const btn = (g, subj) => {
-      const mine = g === Core.STAGE, lk = !mine && Core.stageLocked(g), en = mine || Core.enrolled(g), p = en ? stagePct(g) : 0, math = g >= 10;
-      const b = el('button', { type: 'button', class: 'sw' + (mine ? ' on' : '') + (lk ? ' locked' : en ? '' : ' enrol') + (math ? ' math' : ''), 'data-stage': g, 'aria-pressed': String(mine), 'aria-disabled': lk ? 'true' : null,
+      const mine = g === Core.STAGE, lk = !mine && Core.stageLocked(g), en = mine || Core.enrolled(g), p = en ? stagePct(g) : 0, math = g >= 10 && g < 20, esl = g >= 20;
+      const b = el('button', { type: 'button', class: 'sw' + (mine ? ' on' : '') + (lk ? ' locked' : en ? '' : ' enrol') + (math ? ' math' : '') + (esl ? ' esl' : ''), 'data-stage': g, 'aria-pressed': String(mine), 'aria-disabled': lk ? 'true' : null,
         title: lk ? 'Coming soon' : mine ? 'You are studying this course' : en ? 'Switch to this course' : 'Enrol to open', 'aria-label': `${SUBJ[subj][1]} ${stageShort(g)}`,
         onclick: () => pickStage(g, b) },
         el('span', { class: 'swn', 'aria-hidden': 'true' }, SUBJ[subj][0]), el('span', { class: 'swt' }, el('b', {}, SUBJ[subj][1]), el('small', {}, lk ? 'Coming soon' : !mine && !en ? 'Enrol to open' : mine ? 'Studying now' : `${p}% done`)),
@@ -294,7 +294,7 @@
     // a subject that has no course for this stage yet: shown, but not a button
     const soon = subj => el('span', { class: 'swx', title: 'Not open yet' }, el('span', { class: 'swn', 'aria-hidden': 'true' }, SUBJ[subj][0]), el('span', { class: 'swt' }, el('b', {}, SUBJ[subj][1]), el('small', {}, 'Coming soon')));
     const block = n => el('div', { class: 'sg', 'data-stage-block': n }, el('small', {}, `Stage ${n}`), el('div', { class: 'sgrow' },
-      Core.STAGES.includes(n) ? btn(n, 'sci') : soon('sci'), Core.STAGES.includes(10 + n) ? btn(10 + n, 'math') : soon('math'), soon('esl')));
+      Core.STAGES.includes(n) ? btn(n, 'sci') : soon('sci'), Core.STAGES.includes(10 + n) ? btn(10 + n, 'math') : soon('math'), Core.STAGES.includes(20 + n) ? btn(20 + n, 'esl') : soon('esl')));
     const level = (name, ns) => el('div', { class: 'swlevel' }, el('b', { class: 'swlh' }, name), el('div', { class: 'swlrow' }, ...ns.map(block)));
     // compact by default: only the stage being studied (its three subjects); "All stages" opens the full grid
     const cur = Core.stageNo(Core.STAGE);
@@ -1163,7 +1163,7 @@
         if (img.width) { const h = 120, w = img.width / img.height * h; g.drawImage(img, W / 2 - w / 2, 120, w, h); }
         center('CERTIFICATE OF ACHIEVEMENT', 320, '600 34px Outfit, Figtree, Arial', GOLD, 8);
         center(`Cambridge ${Core.stageLabel()}`, 410, '700 76px Outfit, Figtree, Arial', NAVY);
-        center(Core.IS_MATHS ? (Core.STAGE <= 16 ? 'Cambridge Primary Mathematics (curriculum framework 0096)' : 'Cambridge Lower Secondary Mathematics (curriculum framework 0862)') : Core.IS_PRIMARY ? 'Cambridge Primary Science (curriculum framework 0097)' : 'Cambridge Lower Secondary Science (curriculum framework 0893)', 462, '28px Figtree, Arial', '#52627A');
+        center(Core.IS_ESL ? (Core.STAGE <= 26 ? 'Cambridge Primary English as a Second Language (curriculum framework 0057)' : 'Cambridge Lower Secondary English as a Second Language (curriculum framework 0876)') : Core.IS_MATHS ? (Core.STAGE <= 16 ? 'Cambridge Primary Mathematics (curriculum framework 0096)' : 'Cambridge Lower Secondary Mathematics (curriculum framework 0862)') : Core.IS_PRIMARY ? 'Cambridge Primary Science (curriculum framework 0097)' : 'Cambridge Lower Secondary Science (curriculum framework 0893)', 462, '28px Figtree, Arial', '#52627A');
         center('This is to certify that', 545, 'italic 32px Georgia, serif', '#3A4B63');
         center(c.name, 640, 'italic 700 96px Georgia, serif', BLUE);
         g.strokeStyle = GOLD; g.lineWidth = 2; g.beginPath(); g.moveTo(W / 2 - 420, 668); g.lineTo(W / 2 + 420, 668); g.stroke();
@@ -1183,7 +1183,7 @@
         g.font = '24px Figtree, Arial'; g.fillStyle = '#52627A'; g.fillText('Atomic Education', W - 375, 1045);
         g.textAlign = 'center'; g.fillStyle = NAVY; g.font = '600 24px Figtree, Arial'; g.fillText(`Awarded ${c.date}`, W / 2 - 60, 985); g.fillText(`Code ${c.code}`, W / 2 - 60, 1022);
         g.font = '20px Figtree, Arial'; g.fillStyle = '#6B7A90'; g.fillText('Check it at Atomic → “Verify a certificate”.', W / 2 - 60, 1060);
-        g.fillText(`Atomic courses follow the Cambridge ${Core.levelName(Core.STAGE)} ${Core.IS_MATHS ? 'Mathematics' : 'Science'} framework. This is an Atomic certificate, not a Cambridge qualification.`, W / 2, 1120);
+        g.fillText(`Atomic courses follow the Cambridge ${Core.levelName(Core.STAGE)} ${Core.IS_ESL ? 'English as a Second Language' : Core.IS_MATHS ? 'Mathematics' : 'Science'} framework. This is an Atomic certificate, not a Cambridge qualification.`, W / 2, 1120);
         if (preview) { g.save(); g.translate(W / 2, H / 2); g.rotate(-0.35); g.font = '800 190px Outfit, Figtree, Arial'; g.fillStyle = 'rgba(201,58,58,0.13)'; g.textAlign = 'center'; g.fillText('PREVIEW', 0, 60); g.restore(); }
         res(cv);
       } });
@@ -1203,7 +1203,7 @@
       if (!fin) items.push({ what: `pass an end-of-year exam (needs level ${TestRules.FINAL_LEVEL}; you are level ${Core.levelInfo().level})`, route: 'final' });
       m.append(lockScreen(`Your Cambridge ${Core.stageName(Core.STAGE)} certificate`, `The certificate is awarded when you have passed all ${Core.unitCount()} Unit Tests and one end-of-year exam. Here is how it will look:`, items));
       const img = el('img', { class: 'certimg', alt: `Preview of the Cambridge ${Core.stageName(Core.STAGE)} certificate` }); m.append(el('section', { class: 'card certwrap' }, img));
-      drawCert({ name: st.name, code: `AE-${Core.IS_MATHS ? 'M' + Core.stageNo(Core.STAGE) : 'S' + Core.STAGE}-XXXX-XXXXXXXX`, date: '—', ...certStats() }, true).then(cv => { img.src = cv.toDataURL('image/png'); });
+      drawCert({ name: st.name, code: `AE-${Core.IS_ESL ? 'E' + Core.stageNo(Core.STAGE) : Core.IS_MATHS ? 'M' + Core.stageNo(Core.STAGE) : 'S' + Core.STAGE}-XXXX-XXXXXXXX`, date: '—', ...certStats() }, true).then(cv => { img.src = cv.toDataURL('image/png'); });
       return;
     }
     const c = { name: cert.name, code: cert.code, date: new Date(cert.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }), ...certStats() };
@@ -1274,7 +1274,7 @@
       return;
     }
     const tot = Core.totalSeconds(), passedN = Object.keys(st.results || {}).filter(k => k.startsWith(`stage${Core.STAGE}-unit`)).length;
-    pageHero(Core.IS_MATHS ? (Core.STAGE <= 16 ? 'CAMBRIDGE PRIMARY MATHEMATICS' : 'CAMBRIDGE LOWER SECONDARY MATHEMATICS') : Core.IS_PRIMARY ? 'CAMBRIDGE PRIMARY SCIENCE' : 'CAMBRIDGE LOWER SECONDARY SCIENCE', `Cambridge ${Core.stageLabel()}`, 'Open any unit at any time – you do not have to finish one before starting another.',
+    pageHero(Core.IS_ESL ? (Core.STAGE <= 26 ? 'CAMBRIDGE PRIMARY ESL' : 'CAMBRIDGE LOWER SECONDARY ESL') : Core.IS_MATHS ? (Core.STAGE <= 16 ? 'CAMBRIDGE PRIMARY MATHEMATICS' : 'CAMBRIDGE LOWER SECONDARY MATHEMATICS') : Core.IS_PRIMARY ? 'CAMBRIDGE PRIMARY SCIENCE' : 'CAMBRIDGE LOWER SECONDARY SCIENCE', `Cambridge ${Core.stageLabel()}`, 'Open any unit at any time – you do not have to finish one before starting another.',
       [statCard(el('span', { class: 'ti big' }, '⏱'), `≈ ${estH(Core.INDEX.est || 0)}`, 'whole course'), statCard(el('span', { class: 'ti big' }, '📚'), hrs(tot), 'you have studied'), statCard(ringIcon(Math.round(passedN / Core.unitCount() * 100)), `${passedN} / ${Core.unitCount()}`, 'units completed')]);
     m.append(crumbs(`Cambridge ${Core.stageName(Core.STAGE)}`));
     const rows = Core.INDEX.units.map(u => { const res = (st.results || {})[u.id], sec = Core.unitSeconds(u.n);
@@ -1668,7 +1668,7 @@
   /* ---------- word games (Stages 1–6, every subject): one player level, saved with the learner ---------- */
   function gameCtx() {
     const signed0 = () => !!(st && !isGuest()), lkey = () => 'atomic.games.v1' + (st ? '.' + st.id : '');
-    const dflt = () => { const s = st ? Core.STAGE : 3; return { xp: 0, stage: s >= 1 && s <= 5 ? s : s >= 13 && s <= 15 ? s - 10 : s >= 6 ? 5 : 3, subj: 'all', best: {}, words: {}, played: 0 }; };
+    const dflt = () => { const s = st ? Core.STAGE : 3; return { xp: 0, stage: s >= 1 && s <= 5 ? s : (s >= 11 && s <= 15) || (s >= 22 && s <= 25) ? Core.stageNo(s) : s >= 6 ? 5 : 3, subj: 'all', best: {}, words: {}, played: 0 }; };
     return { get signedIn() { return signed0(); }, get name() { return st ? st.alias || st.name : ''; }, go,
       load: () => { const signed = signed0(), lk = lkey(); let s = null; if (signed) s = (Core.S.states || {}).games; if (!s) { try { s = JSON.parse(localStorage.getItem(lk) || 'null'); } catch (e) { } } return Object.assign(dflt(), s || {}); },
       save: S => { const signed = signed0(), lk = lkey(); try { localStorage.setItem(lk, JSON.stringify(S)); } catch (e) { } if (signed) { Core.S.states = Core.S.states || {}; Core.S.states.games = S; Backend.saveProgress(st.id, 'games', S).catch(() => { }); } } };
@@ -1677,7 +1677,7 @@
   function secGameWords(s) {
     const stg = Core.stageNo(Core.STAGE);
     if (!s || !Array.isArray(s.vocab) || s.vocab.length < 3 || stg > 5) return [];   // word games: Stages 1–5 only
-    const subj = Core.IS_MATHS ? 'maths' : 'science';
+    const subj = Core.IS_ESL ? 'english' : Core.IS_MATHS ? 'maths' : 'science';
     return s.vocab.filter(v => v.w && v.def).map(v => ({ id: `${subj[0]}${stg}-${String(v.w).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`, w: v.w, def: v.def, emoji: v.emoji || '📘', audio: v.audio || '', subj, stage: stg, topic: s.title }));
   }
   async function viewSecGames(sid) {
