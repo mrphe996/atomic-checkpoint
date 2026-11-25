@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 7 Mathematics · Unit 8 Shapes and symmetry (8.1 Identifying the symmetry of 2D shapes, 8.2 Circles and polygons,
-8.3 Recognising congruent shapes, 8.4 3D shapes). Written by the Atomic teaching team."""
+8.3 Recognising congruent shapes, 8.4 3D shapes). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from math import cos, sin, pi
 from kit import *
 
@@ -20,6 +22,10 @@ s.idea("Line symmetry", ["A **line of symmetry** splits a shape into two halves 
        "A rectangle has 2 lines of symmetry; a square has 4."], fig={"kind": "shape", "pts": [[0, 0], [8, 0], [8, 4], [0, 4]]})
 s.idea("Rotational symmetry", ["A shape has **rotational symmetry** if it looks the same after a turn of less than 360°. The **order** is how many times it fits onto itself in one full turn."])
 s.check(N("What is the order of rotational symmetry of a square?", 4, o="O1"))
+s.idea("Why a regular polygon has as many lines as sides", ["In a regular polygon every side and every angle is the same, so a mirror line through any corner (or the middle of any side) gives two matching halves.",
+       "A regular hexagon has 6 lines of symmetry and rotational symmetry of order 6: turning it by 360° ÷ 6 = 60° looks identical."], fig=REG(6))
+s.check(MC("Before you read on: how many lines of symmetry does a rectangle (not a square) have?", "2", [("4", "The diagonals are not mirror lines – folding along one does not match the corners."), ("0", "Folding along the middle lines works.")], o="O1", hint="Imagine folding a sheet of paper."))
+s.example("Same shape, different symmetry", "Compare a square and a rhombus that is not a square.", [("square: 4 lines, order 4", "all sides and angles equal"), ("rhombus: 2 lines (the diagonals), order 2", "the angles are not all equal")], "4 and 2 lines")
 s.mistake("Diagonals of a rectangle", ["The diagonals of a rectangle are NOT lines of symmetry."])
 
 
@@ -49,13 +55,31 @@ def y8(r):
     return MC("Which shape has rotational symmetry of order 2 but no lines of symmetry?", "a parallelogram", ["a rectangle", "a kite", "an isosceles triangle"], o="O1", d="H")
 
 
-s.std([y3, y4, y1, y2, y5, y6, y7, y8], EX("Explain why an equilateral triangle has rotational symmetry of order 3.", [("it looks the same after a turn of 120°", ["120|third of a turn"]), ("this happens 3 times in a full turn", ["3 times|three times|360"])], "Turning an equilateral triangle through 120° makes it look exactly the same, and this happens 3 times in one full turn (3 × 120° = 360°).", o="O1"))
+def h1(r):   # always / sometimes / never
+    rows = r.sample([("A regular polygon has line symmetry", "Always true"), ("A triangle has rotational symmetry", "Sometimes true"), ("A shape with 2 lines of symmetry has rotational symmetry of order 2", "Always true"),
+                     ("A parallelogram has a line of symmetry", "Sometimes true"), ("A shape has rotational symmetry of order 1", "Always true")], 4)
+    return GD("Is each statement always true, sometimes true or never true?", "Always / sometimes / never", rows, o="O1", d="H", extra=["Always true", "Sometimes true", "Never true"],
+              reason="Test examples: an equilateral triangle has order 3 but a scalene triangle has order 1; a rhombus is a parallelogram with 2 lines, but most parallelograms have none. Every shape fits onto itself after a full turn, so every shape has order at least 1.")
+def h2(r):   # angle of turn
+    n = pick(r, [3, 4, 5, 6, 8, 10])
+    return N(f"A regular {NAMES[n]} is turned about its centre. What is the smallest angle of turn that makes it look the same?", 360 // n if 360 % n == 0 else round(360 / n, 1), "°", units=["°"], o="O1", d="H", fig=REG(n),
+             reason=f"It has rotational symmetry of order {n}, so the smallest turn is 360° ÷ {n}.")
+def h3(r):   # spot the error
+    return MC("Leo says a parallelogram has 2 lines of symmetry, along its diagonals. Is he right?", "No – it has none, but rotational symmetry of order 2", [("Yes", "Fold along a diagonal: the halves do not match."), ("No – it has 4", "It has no mirror lines at all.")], o="O1", d="H",
+              reason="A parallelogram (not a rhombus or rectangle) has no lines of symmetry. A half turn fits it onto itself, so its order of rotational symmetry is 2.")
+
+
+s.std([y3, y4, y1, y2, y5, y6, y7, y8], EX("Explain why an equilateral triangle has rotational symmetry of order 3.", [("it looks the same after a turn of 120°", ["120|third of a turn"]), ("this happens 3 times in a full turn", ["3 times|three times|360"])], "Turning an equilateral triangle through 120° makes it look exactly the same, and this happens 3 times in one full turn (3 × 120° = 360°).", o="O1"),
+      deep=[h1, h2, h3])
 
 # ================================================================== 8.2
 s = U.section("8.2", "Circles and polygons", ["O2"])
 s.idea("Parts of a circle", ["The **centre** is the middle. The **radius** goes from the centre to the edge. The **diameter** goes across through the centre: **diameter = 2 × radius**. The **circumference** is the distance all the way round."], fig={"kind": "circle", "r": "radius"})
 s.idea("Polygons", ["A **polygon** is a flat shape with straight sides. A **regular polygon** has all sides equal and all angles equal."])
 s.check(N("A circle has radius 7 cm. What is its diameter?", 14, "cm", units=["cm"], o="O2"))
+s.idea("Why the diameter is twice the radius", ["The diameter goes from the edge, through the centre, to the edge on the other side. It is made of two radii end to end, so d = 2r.",
+       "Every radius of a circle is the same length – that is what makes it a circle: every point on the edge is the same distance from the centre."])
+s.check(MC("Before you read on: a chord passes through the centre of a circle. What else is it called?", "A diameter", [("A radius", "A radius stops at the centre."), ("A tangent", "A tangent only touches the circle.")], o="O2"))
 s.mistake("Radius or diameter?", ["The radius is HALF the diameter."])
 
 
@@ -84,13 +108,29 @@ def c8(r):
     return N(f"Two circles of radius {rr} cm touch in a row inside a rectangle. How long is the rectangle?", 4 * rr, "cm", units=["cm"], o="O2", d="H", reason=f"Two diameters: 2 × {2 * rr} = {4 * rr} cm.")
 
 
-s.std([c4, c1, c2, c3, c5, c6, c7, c8], EX("Explain why the diameter of a circle is twice the radius.", [("the diameter goes from edge to edge through the centre", ["through the centre|across"]), ("it is made of two radii", ["two radii|2 radii|two radius|2 ?×"])], "The diameter goes across the circle through the centre, so it is made of two radii end to end: diameter = 2 × radius.", o="O2"))
+def k1(r):   # regular or not
+    rows = r.sample([("a square", "Regular"), ("a rectangle that is not a square", "Not regular"), ("an equilateral triangle", "Regular"), ("a rhombus that is not a square", "Not regular"), ("a hexagon with equal sides and equal angles", "Regular")], 4)
+    return GD("Is each polygon regular?", "Regular?", rows, o="O2", d="H", extra=["Regular", "Not regular"], reason="Regular means ALL sides equal AND all angles equal. A rhombus has equal sides but unequal angles; a rectangle has equal angles but unequal sides.")
+def k2(r):   # radius from diameter in context
+    d = r.randint(6, 40) * 2
+    return N(f"A round table has a diameter of {d} cm. A cloth hangs 10 cm over the edge all the way round. What is the radius of the cloth?", d // 2 + 10, "cm", units=["cm"], o="O2", d="H",
+             reason=f"Table radius {d // 2} cm, plus 10 cm overhang = {d // 2 + 10} cm.")
+def k3(r):   # spot the error
+    return MC("Sara says a regular polygon with 6 sides has all angles equal to 60°. Is she right?", "No – each angle is 120°", [("Yes", "60° is the angle at the centre, not the interior angle."), ("No – each angle is 90°", "That is a square.")], o="O2", d="VH",
+              reason="A hexagon splits into 6 equilateral triangles from the centre; each interior angle is made of two 60° angles: 120°.")
+
+
+s.std([c4, c1, c2, c3, c5, c6, c7, c8], EX("Explain why the diameter of a circle is twice the radius.", [("the diameter goes from edge to edge through the centre", ["through the centre|across"]), ("it is made of two radii", ["two radii|2 radii|two radius|2 ?×"])], "The diameter goes across the circle through the centre, so it is made of two radii end to end: diameter = 2 × radius.", o="O2"),
+      deep=[k1, k2, k3])
 
 # ================================================================== 8.3
 s = U.section("8.3", "Recognising congruent shapes", ["O3"])
 s.idea("Congruent", ["Shapes are **congruent** if they are exactly the same shape and size. One may be turned or flipped.",
        "**Corresponding** sides and angles are equal: if triangle ABC is congruent to PQR, then AB = PQ and angle A = angle P."], fig={"kind": "coord", "x": [0, 12], "y": [0, 6], "polys": [{"pts": [[1, 1], [5, 1], [1, 4]], "l": "A"}, {"pts": [[11, 1], [7, 1], [11, 4]], "l": "B"}]})
 s.check(MC("Are two squares with sides 5 cm and 5 cm congruent?", "Yes", ["No", "Only if they are the same colour"], o="O3"))
+s.idea("How to test for congruence", ["Congruent shapes match exactly when one is placed on the other – after turning or flipping if needed. Matching sides must be equal and matching angles must be equal.",
+       "An enlarged copy is NOT congruent: the shape is the same but the size is not."])
+s.check(MC("Before you read on: a triangle is flipped over. Is the new triangle congruent to the old one?", "Yes", [("No", "Flipping does not change any length or angle."), ("Only if it is isosceles", "Every triangle stays the same size when flipped.")], o="O3"))
 s.mistake("Same shape is not enough", ["Two squares of different sizes are similar, not congruent."])
 
 
@@ -119,13 +159,28 @@ def g7(r):
     return N(f"Two squares are congruent. One has a perimeter of {p} cm. What is the side length of the other?", a, "cm", units=["cm"], o="O3")
 
 
-s.std([g4, g5, g1, g2, g3, g6, g7], EX("Explain how you can tell if two triangles are congruent.", [("they have the same shape and size", ["same shape|same size"]), ("all corresponding sides (and angles) are equal; one may be turned or flipped", ["sides|angles|turned|flipped|rotat|reflect"])], "Two triangles are congruent if they are exactly the same shape and size: all corresponding sides and angles are equal, even if one is turned or flipped.", o="O3"))
+def m1_(r):   # always/sometimes/never
+    rows = r.sample([("Two squares with the same side length are congruent", "Always true"), ("Two rectangles with the same area are congruent", "Sometimes true"),
+                     ("A shape and its enlargement (scale factor 2) are congruent", "Never true"), ("Two circles with the same radius are congruent", "Always true")], 4)
+    return GD("Is each statement always true, sometimes true or never true?", "Always / sometimes / never", rows, o="O3", d="H", extra=["Always true", "Sometimes true", "Never true"],
+              reason="A 2 × 6 rectangle and a 3 × 4 rectangle both have area 12 but are not congruent. An enlargement changes the size.")
+def m2_(r):   # matching side
+    a, b, c = r.sample(range(4, 15), 3)
+    return N(f"Triangle ABC is congruent to triangle PQR, with A matching P, B matching Q and C matching R. AB = {a} cm, BC = {b} cm, CA = {c} cm. How long is QR?", b, "cm", units=["cm"], o="O3", d="H",
+             reason=f"QR matches BC, so QR = {b} cm.")
+
+
+s.std([g4, g5, g1, g2, g3, g6, g7], EX("Explain how you can tell if two triangles are congruent.", [("they have the same shape and size", ["same shape|same size"]), ("all corresponding sides (and angles) are equal; one may be turned or flipped", ["sides|angles|turned|flipped|rotat|reflect"])], "Two triangles are congruent if they are exactly the same shape and size: all corresponding sides and angles are equal, even if one is turned or flipped.", o="O3"),
+      deep=[m1_, m2_])
 
 # ================================================================== 8.4
 s = U.section("8.4", "3D shapes", ["O4"])
 s.idea("Faces, edges and vertices", ["A **face** is a flat surface, an **edge** is where two faces meet, and a **vertex** is a corner.",
        "A cube has 6 faces, 12 edges and 8 vertices. A **net** is a flat shape that folds up to make the solid."], fig={"kind": "solid", "solid": "cuboid", "a": "", "b": "", "c": ""})
 s.check(N("How many faces does a triangular prism have?", 5, o="O4"))
+s.idea("A check that always works", ["For a prism or pyramid made of flat faces, count: faces + vertices − edges. A cube gives 6 + 8 − 12 = 2. A square-based pyramid gives 5 + 5 − 8 = 2.",
+       "This is Euler's rule (F + V − E = 2). If your count gives any other number, you have missed or double-counted something."], table={"head": ["Shape", "F", "V", "E", "F + V − E"], "rows": [["Cube", "6", "8", "12", "2"], ["Triangular prism", "5", "6", "9", "2"], ["Square-based pyramid", "5", "5", "8", "2"]]})
+s.check(MC("Before you read on: how many edges does a triangular prism have?", "9", [("6", "That is the number of vertices."), ("5", "That is the number of faces.")], o="O4", hint="3 edges on each triangle, plus 3 joining them."))
 s.mistake("Count hidden edges", ["Remember the edges and corners you cannot see in the picture."])
 SOL = [("cube", 6, 12, 8), ("cuboid", 6, 12, 8), ("triangular prism", 5, 9, 6), ("square-based pyramid", 5, 8, 5), ("tetrahedron (triangular pyramid)", 4, 6, 4)]
 
@@ -152,7 +207,20 @@ def d7(r):
     return N(f"A pyramid has a base with {n} sides. How many faces does it have?", n + 1, o="O4", d="H")
 
 
-s.std([d2, d3, d1, d4, d5, d6, d7], EX("Explain the difference between a face, an edge and a vertex.", [("a face is a flat surface", ["flat|surface"]), ("an edge is where two faces meet; a vertex is a corner", ["meet|corner|point"])], "A face is a flat surface of the solid. An edge is a line where two faces meet. A vertex is a corner where edges meet.", o="O4"))
+def p1_(r):   # use Euler
+    F, V = pick(r, [(6, 8), (5, 6), (5, 5), (7, 10), (8, 12)])
+    return N(f"A solid has {F} faces and {V} vertices. Use F + V − E = 2 to find how many edges it has.", F + V - 2, o="O4", d="H", reason=f"E = F + V − 2 = {F} + {V} − 2 = {F + V - 2}.")
+def p2_(r):   # spot the error
+    return MC("Nia counts a cuboid: 6 faces, 8 vertices, 8 edges. Which number is wrong?", "The edges: there are 12", [("The faces", "A cuboid has 6 faces."), ("The vertices", "A cuboid has 8 corners.")], o="O4", d="H",
+              reason="Check with F + V − E = 2: 6 + 8 − 8 = 6, not 2. A cuboid has 12 edges.")
+def p3_(r):   # prism pattern
+    n = r.randint(5, 9)
+    return TB(f"A prism has a {n}-sided polygon as its end. Complete the table.", ["", "Number"], [["Faces", B(n + 2)], ["Vertices", B(2 * n)], ["Edges", B(3 * n)]], o="O4", d="VH",
+              reason=f"2 ends + {n} side faces; {n} vertices on each end; {n} edges on each end + {n} joining them.")
+
+
+s.std([d2, d3, d1, d4, d5, d6, d7], EX("Explain the difference between a face, an edge and a vertex.", [("a face is a flat surface", ["flat|surface"]), ("an edge is where two faces meet; a vertex is a corner", ["meet|corner|point"])], "A face is a flat surface of the solid. An edge is a line where two faces meet. A vertex is a corner where edges meet.", o="O4"),
+      deep=[p1_, p2_, p3_])
 
 U.mindmap(("Symmetry", "Lines of symmetry • order of rotational symmetry", "O1", "8.1"), ("Circles and polygons", "Radius × 2 = diameter • regular polygons", "O2", "8.2"),
           ("Congruent shapes", "Same shape and size • corresponding sides and angles", "O3", "8.3"), ("3D shapes", "Faces, edges, vertices • nets", "O4", "8.4"))

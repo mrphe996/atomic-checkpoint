@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 7 Mathematics · Unit 6 Collecting data (6.1 Conducting an investigation, 6.2 Taking a sample).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 
@@ -15,6 +17,11 @@ s.idea("The data cycle", ["1. Ask a **question** you can answer with data. 2. **
        "**Categorical** data are words (favourite colour). **Discrete** data are counted (number of pets). **Continuous** data are measured (height)."])
 s.method("Tally charts", ["Make one mark for each result. Every fifth mark crosses the four before it: |||| , so you can count in fives.", "The **frequency** is the total number of tallies."])
 s.check(N("A tally shows |||| |||| |||. What is the frequency?", 13, o="O1"))
+s.idea("Why the type of data matters", ["The type of data decides how you collect and show it. Categorical data (colours) cannot be put in number order, so a bar chart with gaps fits.",
+       "Continuous data (heights) can take any value, so you group it into classes such as 140 ≤ h < 150, with no gaps and no overlaps, so every value fits exactly one class."])
+s.check(MC("Before you read on: is 'shoe size' discrete or continuous?", "Discrete", [("Continuous", "Feet grow continuously, but shoe sizes are only sold in set steps (4, 4½, 5 …)."), ("Categorical", "Shoe sizes are numbers.")], o="O1"))
+s.example("A good question or a vague one?", "Compare: 'Do students like sport?' and 'How many hours of sport do Stage 7 students do each week?'", [("the first is vague", "'like' means different things, and the answer is only yes or no"),
+          ("the second can be measured", "it names the group and the quantity")], "The second question")
 s.mistake("Count in fives", ["Each bundle |||| is 5, not 4."])
 FRUIT = ["Apple", "Banana", "Mango", "Orange", "Grape", "Pear"]
 
@@ -71,7 +78,26 @@ def d15(r):
     return MC(pick(r, ["Which question is best for a survey about reading?", "Which is the best survey question about reading habits?"]), "How many books did you read last month?", ["Do you read a lot?", "Don't you agree reading is great?", "Why don't you read more?"], o="O1")
 
 
-s.std([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15], EX("Explain why a tally chart groups marks in fives.", [("it makes the tallies easy to count", ["easy|quick|count"]), ("you can count in fives", ["five|5"])], "Crossing every fifth tally makes bundles of 5, so you can count the tallies quickly in fives instead of one by one.", o="O1"))
+def q1(r):   # classify data types
+    rows = r.sample([("eye colour", "Categorical"), ("number of brothers", "Discrete"), ("time to run 100 m", "Continuous"), ("favourite sport", "Categorical"),
+                     ("mass of a bag", "Continuous"), ("goals scored", "Discrete"), ("height of a plant", "Continuous")], 4)
+    return GD("What type of data is each one?", "Type", rows, o="O1", d="H", extra=["Categorical", "Discrete", "Continuous"],
+              reason="Words → categorical; counted → discrete; measured → continuous.")
+def q2(r):   # spot the error in classes
+    return MC("Lin groups heights as 140–150, 150–160, 160–170 cm. What is wrong?", "A height of exactly 150 cm fits two classes", [("Nothing", "Where does 150 cm go?"), ("The classes are too wide", "Width 10 cm is fine.")], o="O1", d="H",
+              reason="Use classes such as 140 ≤ h < 150 so every height belongs to exactly one class.")
+def q3(r):   # best question
+    return MC("Which is the best question for an investigation about screen time?", "How many minutes did you spend on a screen yesterday?",
+              [("Do you use screens too much?", "Too much is an opinion; the answer cannot be compared."), ("Screens are bad, aren't they?", "This is a leading question."), ("Do you have a phone?", "It does not measure screen time.")], o="O1", d="H",
+              reason="A good question is clear, not leading, and gives data you can compare.")
+def q4(r):   # missing frequency from total
+    t = [r.randint(3, 15) for _ in range(4)]; tot = sum(t); k = r.randrange(4)
+    return N(f"In a vote with 4 options, the frequency for one option is smudged. The others are " + ", ".join(str(t[i]) for i in range(4) if i != k) + f". The total was {tot}. Find the missing frequency.", t[k], o="O1", d="H",
+             reason=f"{tot} − " + " − ".join(str(t[i]) for i in range(4) if i != k) + f" = {t[k]}.")
+
+
+s.std([d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15], EX("Explain why a tally chart groups marks in fives.", [("it makes the tallies easy to count", ["easy|quick|count"]), ("you can count in fives", ["five|5"])], "Crossing every fifth tally makes bundles of 5, so you can count the tallies quickly in fives instead of one by one.", o="O1"),
+      deep=[q1, q2, q3, q4])
 
 # ================================================================== 6.2
 s = U.section("6.2", "Taking a sample", ["O2"])
@@ -79,6 +105,9 @@ s.idea("Population and sample", ["The **population** is everyone you want to kno
        "A good sample is **big enough** and **represents** the whole population, for example by choosing people at **random**."])
 s.example("Biased sample", "To find out what Stage 7 students think of lunch, Ravi asks his 5 best friends. Why is this a poor sample?", [("5 is a very small sample", ""), ("friends may have similar opinions", "")], "Too small and not random")
 s.check(N("A school has 400 students. A 10% sample is taken. How many students is that?", 40, "students", units=["students"], o="O2"))
+s.idea("Why a random sample is fairer", ["If every member of the population has the same chance of being chosen, no group is left out on purpose, so the sample tends to look like the population.",
+       "A bigger sample gives results that change less from sample to sample, but it costs more time. Choose a size that is practical and big enough."])
+s.check(MC("Before you read on: to find out how students travel to school, is it fair to ask only the students at the bus stop?", "No", [("Yes", "Everyone there arrived by bus – walkers and cyclists are left out."), ("Yes, if you ask many of them", "A big biased sample is still biased.")], o="O2"))
 s.mistake("Not just friends", ["Asking only your friends, or only people in one place, can give biased results."])
 
 
@@ -127,6 +156,20 @@ def g14(r):
     return N(f"A teacher picks one student out of every {k} on the register. There are {n * k} students. How many does she pick?", n, "students", units=["students"], o="O2")
 
 
-s.std([g2, g6, g1, g3, g4, g5, g7, g8, g9, g10, g11, g12, g13, g14], EX("Explain why choosing a sample at random helps to avoid bias.", [("everyone has the same chance of being chosen", ["same chance|equal chance|anyone"]), ("so no group is left out or favoured", ["left out|favour|represent|fair"])], "In a random sample everyone has the same chance of being picked, so no group is favoured or left out and the sample is more likely to represent the population.", o="O2"))
+def s1(r):   # biased or fair
+    rows = r.sample([("asking every 10th name on the school register", "Fair"), ("asking people leaving a gym about exercise", "Biased"), ("drawing names from a hat", "Fair"),
+                     ("asking only Stage 9 students about the Stage 7 menu", "Biased"), ("asking your friends", "Biased"), ("choosing students with a random-number generator", "Fair")], 4)
+    return GD("Is each sampling method fair or biased?", "Fair or biased", rows, o="O2", d="H", extra=["Fair", "Biased"], reason="A fair method gives everyone in the population the same chance; a biased one leaves some groups out.")
+def s2(r):   # estimate from sample
+    pop = pick(r, [400, 500, 600, 800]); n = pick(r, [40, 50]); k = r.randint(5, n // 2)
+    return N(f"In a random sample of {n} students from a school of {pop}, {k} walk to school. Estimate how many students in the whole school walk.", k * pop // n, "students", units=["students"], o="O2", d="H",
+             reason=f"{k} out of {n} is the same fraction as ? out of {pop}: {k} × {pop // n} = {k * pop // n}.") if pop % n == 0 else None
+def s3(r):   # which sample size
+    return MC("A town has 20 000 people. Which sample size is most sensible for a quick survey?", "200", [("2", "Too small: two people can easily be unusual."), ("20 000", "That is the whole population – a census, not a sample."), ("19 000", "Almost everyone – too slow and costly.")], o="O2", d="H",
+              reason="A few hundred people is big enough to be reliable and small enough to be practical.")
+
+
+s.std([g2, g6, g1, g3, g4, g5, g7, g8, g9, g10, g11, g12, g13, g14], EX("Explain why choosing a sample at random helps to avoid bias.", [("everyone has the same chance of being chosen", ["same chance|equal chance|anyone"]), ("so no group is left out or favoured", ["left out|favour|represent|fair"])], "In a random sample everyone has the same chance of being picked, so no group is favoured or left out and the sample is more likely to represent the population.", o="O2"),
+      deep=[s1, s2, s3])
 
 U.mindmap(("Investigation", "Question • collect • organise • interpret • tally charts", "O1", "6.1"), ("Sampling", "Population • sample • random • big enough", "O2", "6.2"))

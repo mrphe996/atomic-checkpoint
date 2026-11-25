@@ -15,6 +15,7 @@ def main(st, ns):
     TX = importlib.import_module(f"math{st}_tx")
     ns = ns or [n for n in range(1, 30) if os.path.exists(os.path.join(d, f"u{n:02d}.py"))]
     for n in ns:
+        kit.RAW_SIGNS = False
         U = importlib.import_module(f"u{n:02d}").U
         assert U.stage == st, (n, U.stage)
         U.texp(*TX.EXP[n])

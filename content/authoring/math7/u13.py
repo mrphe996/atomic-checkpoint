@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 7 Mathematics · Unit 13 Probability (13.1 The probability scale, 13.2 Mutually exclusive outcomes,
-13.3 Experimental probabilities). Written by the Atomic teaching team."""
+13.3 Experimental probabilities). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 
@@ -24,6 +26,9 @@ s = U.section("13.1", "The probability scale", ["O1"])
 s.idea("From 0 to 1", ["Probability measures how likely something is, on a scale from **0** (impossible) to **1** (certain). **½** is an even chance.",
        "Words: impossible, unlikely, even chance, likely, certain."], fig={"kind": "numline", "min": 0, "max": 1})
 s.check(MC("What is the probability of an impossible event?", "0", ["1", "½", "−1"], o="O1"))
+s.idea("Why probability is a fraction", ["When outcomes are equally likely, the probability of an event is (number of ways it can happen) ÷ (number of possible outcomes). A fair dice has 6 outcomes and 3 are even, so P(even) = 3/6 = 1/2.",
+       "This is why every probability is between 0 (no ways) and 1 (every way)."])
+s.check(MC("Before you read on: can a probability be 1.2?", "No", [("Yes", "The number of ways cannot be more than the number of outcomes."), ("Only for big events", "Every probability is between 0 and 1.")], o="O1"))
 s.mistake("Never above 1", ["A probability cannot be bigger than 1 or less than 0."])
 EV = [("Rolling a 7 on a normal dice", "Impossible"), ("Rolling a number less than 7 on a normal dice", "Certain"), ("Getting a head when you toss a coin", "Even chance"),
       ("Rolling a 6 on a normal dice", "Unlikely"), ("Rolling a number bigger than 1 on a dice", "Likely"), ("Picking a red sock from a drawer of only blue socks", "Impossible")]
@@ -51,13 +56,29 @@ def l7(r):
     return OD("Put these probabilities in order, least likely first.", [fmt(v) for v in vs], o="O1")
 
 
-s.std([l1, l3, l2, l4, l5, l6, l7], EX("Explain why a probability can never be more than 1.", [("1 means certain", ["certain|definitely|always"]), ("nothing can be more likely than certain", ["more than certain|nothing|can't be more|cannot be more"])], "A probability of 1 means the event is certain to happen. Nothing can be more likely than certain, so a probability can never be more than 1.", o="O1"))
+def e9(r):   # spot the error
+    return MC("Ravi says that when you roll a dice, getting a 6 and getting a 1 are not equally likely because 6 is a bigger number. Is he right?", "No – on a fair dice each number has probability 1/6", [("Yes", "The size of the number on the face does not change the chance."), ("Only on some dice", "On a fair dice every face is equally likely.")], o="O1", d="H",
+              reason="A fair dice has 6 equally likely outcomes, so P(6) = P(1) = 1/6.")
+def e10(r):   # bag design
+    n = pick(r, [10, 12, 20]); k = pick(r, [k for k in range(2, n) if n % k == 0 and k * 2 != n])
+    return N(f"A bag has {n} counters. You want P(red) = {frac(Fr(k, n))}. How many red counters should you put in?", k, "counters", units=["counters"], o="O1", d="H", reason=f"{frac(Fr(k, n))} of {n} = {k}.")
+def e11(r):   # always / sometimes / never
+    rows = r.sample([("P(event) + P(not event) = 1", "Always true"), ("A probability is bigger than 1", "Never true"), ("An event with probability 1/2 happens every other time", "Sometimes true"), ("Impossible events have probability 0", "Always true")], 3)
+    return GD("Is each statement always true, sometimes true or never true?", "Always / sometimes / never", rows, o="O1", d="H", extra=["Always true", "Sometimes true", "Never true"],
+              reason="Probability tells you what happens in the long run, not the exact pattern: a coin can land heads three times in a row.")
+
+
+s.std([l1, l3, l2, l4, l5, l6, l7], EX("Explain why a probability can never be more than 1.", [("1 means certain", ["certain|definitely|always"]), ("nothing can be more likely than certain", ["more than certain|nothing|can't be more|cannot be more"])], "A probability of 1 means the event is certain to happen. Nothing can be more likely than certain, so a probability can never be more than 1.", o="O1"),
+      deep=[e9, e10, e11])
 
 # ================================================================== 13.2
 s = U.section("13.2", "Mutually exclusive outcomes", ["O2"])
 s.idea("Equally likely outcomes", ["When outcomes are equally likely: **P(event) = number of ways it can happen ÷ total number of outcomes**.",
        "Outcomes that cannot happen together are **mutually exclusive**. The probabilities of all of them add up to **1**, so **P(not A) = 1 − P(A)**."])
 s.check(P("A fair dice is rolled. What is the probability of an even number?", Fr(1, 2), o="O2"))
+s.idea("Why mutually exclusive probabilities add", ["Mutually exclusive outcomes cannot happen together, so there is no overlap. The ways of getting a 1 and the ways of getting a 2 are different ways, so P(1 or 2) = 1/6 + 1/6 = 2/6.",
+       "If outcomes CAN happen together (an even number OR a number less than 3 – the 2 is both), adding counts the 2 twice."])
+s.check(MC("Before you read on: on one dice roll, are 'even' and 'bigger than 4' mutually exclusive?", "No – 6 is both", [("Yes", "6 is even and bigger than 4."), ("Yes, because they are different words", "Check every outcome: 6 fits both.")], o="O2"))
 s.mistake("Total outcomes", ["Count ALL the outcomes in the bottom of the fraction."])
 
 
@@ -97,13 +118,30 @@ def m11(r):
     return P(f"A {'day of the week' if d[2] == 7 else 'month of the year'} is chosen at random. Find P({d[0]}).", Fr(d[1], d[2]), o="O2", d="H")
 
 
-s.std([m1, m4, m2, m3, m5, m6, m7, m8, m9, m10, m11], EX("Explain why P(not red) = 1 − P(red).", [("a counter is either red or not red", ["either|or not"]), ("the two probabilities add up to 1", ["add.*1|total.*1|sum.*1"])], "Every counter picked is either red or not red, and these outcomes are mutually exclusive, so their probabilities add up to 1. So P(not red) = 1 − P(red).", o="O2"))
+def f9_(r):   # complement
+    v = pick(r, [Fr(3, 10), Fr(2, 5), Fr(7, 20), Fr(0.15).limit_denominator(100)])
+    return P(f"The probability that a train is late is {frac(v)}. What is the probability that it is not late?", 1 - v, o="O2", d="H", reason=f"1 − {frac(v)} = {frac(1 - v)}.")
+def f10_(r):   # missing probability in table
+    a, b, c = r.sample([Fr(1, 10), Fr(2, 10), Fr(3, 10), Fr(1, 5), Fr(1, 20), Fr(3, 20)], 3)
+    if a + b + c >= 1: return None
+    return P(f"A spinner can land on red, blue, green or yellow. P(red) = {frac(a)}, P(blue) = {frac(b)}, P(green) = {frac(c)}. Find P(yellow).", 1 - a - b - c, o="O2", d="H", reason=f"The four probabilities add to 1: 1 − {frac(a)} − {frac(b)} − {frac(c)} = {frac(1 - a - b - c)}.")
+def f11_(r):   # exclusive or not
+    rows = r.sample([("rolling a 2; rolling a 5", "Mutually exclusive"), ("rolling an even number; rolling a 2", "Not mutually exclusive"), ("a card is red; a card is a spade", "Mutually exclusive"),
+                     ("a card is red; a card is a king", "Not mutually exclusive"), ("it rains today; it is cold today", "Not mutually exclusive")], 4)
+    return GD("Are the two outcomes mutually exclusive?", "Mutually exclusive?", rows, o="O2", d="H", extra=["Mutually exclusive", "Not mutually exclusive"], reason="Ask: can both happen at the same time? If yes, they are not mutually exclusive.")
+
+
+s.std([m1, m4, m2, m3, m5, m6, m7, m8, m9, m10, m11], EX("Explain why P(not red) = 1 − P(red).", [("a counter is either red or not red", ["either|or not"]), ("the two probabilities add up to 1", ["add.*1|total.*1|sum.*1"])], "Every counter picked is either red or not red, and these outcomes are mutually exclusive, so their probabilities add up to 1. So P(not red) = 1 − P(red).", o="O2"),
+      deep=[f9_, f10_, f11_])
 
 # ================================================================== 13.3
 s = U.section("13.3", "Experimental probabilities", ["O3"])
 s.idea("From experiments", ["**Experimental probability** = number of times an event happens ÷ number of trials.",
        "The **expected** number = probability × number of trials. A fair coin tossed 50 times: expect about 25 heads. More trials give a better estimate."])
 s.check(N("A coin is tossed 40 times and lands heads 18 times. What is the experimental probability of heads? Give a decimal.", 0.45, o="O3"))
+s.idea("Why more trials give a better estimate", ["Flip a coin 10 times and you might get 7 heads (0.7). Flip it 1000 times and the fraction of heads settles close to 0.5.",
+       "Experimental probability = number of times it happened ÷ number of trials. The more trials, the more you can trust it."])
+s.check(MC("Before you read on: Sam rolls a dice 12 times and gets no 6s. Is the dice unfair?", "Not necessarily – 12 rolls is a small number of trials", [("Yes", "With so few rolls, no 6s can happen by chance."), ("Yes – a 6 should come every 6 rolls", "Probability describes the long run, not each set of 6 rolls.")], o="O3"))
 s.mistake("Results vary", ["Experimental results are not always exactly what you expect."])
 
 
@@ -139,7 +177,17 @@ def x9(r):
     return N(f"A basketball player scored {k} out of {n} shots. Estimate the probability that she scores her next shot, as a percentage.", k / n * 100, "%", units=["%"], o="O3", tol=TOL)
 
 
-s.std([x4, x5, x1, x2, x3, x6, x7, x8, x9], EX("Explain why tossing a coin 10 times might not give 5 heads.", [("each toss is random / chance", ["chance|random|luck"]), ("5 is only the expected number; results vary", ["expect|vary|average"])], "Each toss depends on chance, so results vary. 5 heads is only what you expect on average; with 10 tosses you might get 3, 4, 6 or 7.", o="O3"))
+def x9(r):   # which estimate more reliable
+    a, n1, b, n2 = 7, 10, pick(r, [52, 48, 55]), 100
+    return MC(f"Tia flips a drawing pin {n1} times and it lands point up {a} times. Jo flips it {n2} times and it lands point up {b} times. Whose estimate of P(point up) is more reliable?", "Jo's",
+              [("Tia's", f"{n1} trials is fewer than {n2}."), ("They are equally reliable", "More trials give a more reliable estimate.")], o="O3", d="H", reason=f"Jo did {n2} trials, so her estimate {b}/{n2} is more reliable.")
+def x10(r):   # expected number
+    p = pick(r, [Fr(1, 4), Fr(1, 5), Fr(3, 10), Fr(2, 5)]); n = pick(r, [40, 60, 100, 200])
+    return N(f"The probability that a seed grows is {frac(p)}. About how many of {n} seeds would you expect to grow?", float(p * n), "seeds", units=["seeds"], o="O3", d="H", reason=f"{frac(p)} × {n} = {p * n}.")
+
+
+s.std([x4, x5, x1, x2, x3, x6, x7, x8, x9], EX("Explain why tossing a coin 10 times might not give 5 heads.", [("each toss is random / chance", ["chance|random|luck"]), ("5 is only the expected number; results vary", ["expect|vary|average"])], "Each toss depends on chance, so results vary. 5 heads is only what you expect on average; with 10 tosses you might get 3, 4, 6 or 7.", o="O3"),
+      deep=[x9, x10])
 
 U.mindmap(("Probability scale", "0 impossible • ½ even chance • 1 certain", "O1", "13.1"), ("Equally likely outcomes", "Ways ÷ total • P(not A) = 1 − P(A)", "O2", "13.2"),
           ("Experiments", "Times ÷ trials • expected = P × trials", "O3", "13.3"))

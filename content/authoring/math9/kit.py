@@ -190,16 +190,19 @@ def GR(prompt, x, y, pts, d="H", o="O1", reason="", skill="Data", **kw):
 # ------------------------------------------------------------------ display clean-up (applied to every string a learner sees)
 import re as _re
 _SKIP = {"id", "type", "diff", "obj", "skill", "expr", "chk", "must", "mustNot", "accept", "rubric", "blanks", "vars", "lhs", "kind", "unit", "units", "answer", "solid", "part"}
+RAW_SIGNS = False   # set True by units that teach the signs themselves (integers): keep "5 − (−3)" as written
 def pretty(t):
     if not isinstance(t, str) or not t: return t
-    t = _re.sub(r"\s*\+\s*[-−]\s*(?=[\dA-Za-z(√])", " − ", t)            # a + -b → a − b
-    t = _re.sub(r"(?<=[\w)²³])\s*[-−]\s*[-−]\s*(?=[\dA-Za-z(])", " + ", t)  # a - -b → a + b
+    if not RAW_SIGNS:
+        t = _re.sub(r"\s*\+\s*[-−]\s*(?=[\dA-Za-z(√])", " − ", t)            # a + -b → a − b
+        t = _re.sub(r"(?<=[\w)²³])\s*[-−]\s*[-−]\s*(?=[\dA-Za-z(])", " + ", t)  # a - -b → a + b
     t = _re.sub(r"(^|[\s(=,:;\[{])-(?=[\d.]|[a-z]\b|[a-z][²³(]|\()", lambda m: m.group(1) + "−", t)  # ASCII minus → −
     t = _re.sub(r"(?<![\w.,/)²³])1(?=[a-zA-Z](?![a-zA-Z]))(?!x10)", "", t)   # 1x → x, −1x → −x
     t = _re.sub(r"([×÷]\s?)−(\d+(?:\.\d+)?|[a-z]\b)", r"\1(−\2)", t)   # 3 × −4 → 3 × (−4)
     t = _re.sub(r"([+−]) \((\d+(?:\.\d+)?)\)", r"\1 \2", t)                      # x + (1) → x + 1
-    t = _re.sub(r"\+ \(−(\d+(?:\.\d+)?)\)", r"− \1", t)                         # x + (−7) → x − 7
-    t = _re.sub(r"− \(−(\d+(?:\.\d+)?)\)", r"+ \1", t)                           # x − (−7) → x + 7
+    if not RAW_SIGNS:
+        t = _re.sub(r"\+ \(−(\d+(?:\.\d+)?)\)", r"− \1", t)                         # x + (−7) → x − 7
+        t = _re.sub(r"− \(−(\d+(?:\.\d+)?)\)", r"+ \1", t)                           # x − (−7) → x + 7
     t = _re.sub(r"\d+\.\d{7,}(?![\d…])", lambda m: fmt(float(f"{float(m.group(0)):.10g}")), t)  # float noise 1.1400000000000001 → 1.14
     return t
 def prettify(o, key=None):

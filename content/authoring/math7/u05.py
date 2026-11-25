@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 7 Mathematics · Unit 5 Angles and constructions (5.1 A sum of 360°, 5.2 Intersecting lines, 5.3 Drawing lines and
-quadrilaterals). Written by the Atomic teaching team."""
+quadrilaterals). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 
 U = Unit(5, "Angles and Constructions", "Geometry and measure",
@@ -16,6 +18,11 @@ s.idea("Angles at a point", ["A full turn is **360°**. Angles that meet at a po
        "The angles inside any **quadrilateral** also add up to 360° (it splits into two triangles of 180°)."], fig={"kind": "shape", "pts": [[0, 0], [7, 0], [8, 4], [1, 5]], "ang": ["75°", "105°", "80°", "100°"]})
 s.example("Missing angle at a point", "Three angles at a point are 120°, 95° and x. Find x.", [("120 + 95 = 215", ""), ("360 − 215 = 145", "")], "x = 145°")
 s.check(N("Angles at a point are 90°, 150° and x. Find x.", 120, "°", units=["°"], o="O1"))
+s.idea("Why a quadrilateral makes 360°", ["Draw one diagonal: the quadrilateral splits into two triangles. Each triangle's angles add up to 180°, and together they make exactly the four angles of the quadrilateral.",
+       "So 180° + 180° = 360°. This works for every quadrilateral, even one that does not look regular."], table={"head": ["", "Triangle 1", "Triangle 2", "Quadrilateral"], "rows": [["Angle total", "180°", "180°", "360°"]]})
+s.check(MC("Before you read on: a quadrilateral has three right angles. What is the fourth angle?", "90°", [("180°", "90 + 90 + 90 = 270, and 360 − 270 = 90."), ("270°", "That is the total of the three right angles.")], o="O1"))
+s.example("Equal angles at a point", "Four equal angles meet at a point with an angle of 100°. Find each of the equal angles.", [("360 − 100 = 260", "what the four equal angles share"), ("260 ÷ 4 = 65", "")], "65°",
+          p=["Check: 4 × 65 + 100 = 360."])
 s.mistake("180 or 360?", ["Angles on a straight line make 180°; angles all the way round a point make 360°."])
 
 
@@ -51,7 +58,28 @@ def p8(r):
     return N(f"A quadrilateral has three equal angles of {a}°. Find the fourth angle.", 360 - 3 * a, "°", units=["°"], o="O1", d="H") if 360 - 3 * a > 0 else None
 
 
-s.std([p2, p7, p1, p3, p4, p5, p6, p8], EX("Explain why the angles in a quadrilateral add up to 360°.", [("a diagonal splits it into two triangles", ["two triangles|2 triangles|diagonal"]), ("2 × 180° = 360°", ["2 ?× ?180|180 ?\\+ ?180|360"])], "A diagonal splits a quadrilateral into two triangles. The angles of each triangle add to 180°, so the total is 2 × 180° = 360°.", o="O1"))
+def a1(r):   # could these be the angles of a quadrilateral?
+    good = r.sample([(90, 90, 100, 80), (120, 60, 120, 60), (70, 110, 85, 95), (100, 100, 80, 80)], 2)
+    bad = r.sample([(90, 90, 90, 100), (120, 120, 60, 70), (80, 80, 80, 80), (100, 110, 90, 80)], 2)
+    f = lambda t: ", ".join(f"{x}°" for x in t)
+    return MS("Select ALL the sets of angles that could be the four angles of a quadrilateral.", [f(t) for t in good], [f(t) for t in bad], o="O1", d="H", reason="The four angles must add up to exactly 360°.")
+def a2(r):   # algebra at a point
+    k = r.randint(2, 4); rest = r.randint(100, 200); x = (360 - rest) / (k + 1)
+    if x != int(x): return None
+    return N(f"At a point there are angles of {rest}°, x and {k}x. Find x.", int(x), "°", units=["°"], o="O1", d="H", reason=f"x + {k}x = {k + 1}x = 360 − {rest} = {360 - rest}, so x = {int(x)}°.")
+def a3(r):   # spot the error
+    a, b, c = r.randint(60, 110), r.randint(60, 110), r.randint(60, 110)
+    if a + b + c >= 350: return None
+    return MC(f"A quadrilateral has angles {a}°, {b}° and {c}°. Nia takes {a + b + c}° away from 180° and says the fourth angle is {abs(180 - a - b - c)}°. What is the right answer?", f"{360 - a - b - c}°",
+              [(f"{abs(180 - a - b - c)}°", "180° is the total for a triangle, not a quadrilateral."), (f"{a + b + c}°", "That is the total of the three angles.")], o="O1", d="H",
+              reason=f"{a} + {b} + {c} = {a + b + c}; 360 − {a + b + c} = {360 - a - b - c}°.")
+def a4(r):   # reflex angle decision
+    a = r.randint(40, 140)
+    return N(f"The smaller angle between two lines from a point is {a}°. What is the reflex angle on the other side?", 360 - a, "°", units=["°"], o="O1", d="H", reason=f"The two angles fill the full turn: 360 − {a} = {360 - a}°.")
+
+
+s.std([p2, p7, p1, p3, p4, p5, p6, p8], EX("Explain why the angles in a quadrilateral add up to 360°.", [("a diagonal splits it into two triangles", ["two triangles|2 triangles|diagonal"]), ("2 × 180° = 360°", ["2 ?× ?180|180 ?\\+ ?180|360"])], "A diagonal splits a quadrilateral into two triangles. The angles of each triangle add to 180°, so the total is 2 × 180° = 360°.", o="O1"),
+      deep=[a1, a2, a3, a4])
 
 # ================================================================== 5.2
 s = U.section("5.2", "Intersecting lines", ["O2"])
@@ -59,6 +87,10 @@ s.idea("Straight lines", ["Angles on a **straight line** add up to **180°**.",
        "When two lines cross, the opposite angles are equal: these are **vertically opposite angles**.", "The angles in a **triangle** add up to **180°**."], fig=TRI("60°", "50°", "70°"))
 s.check(N("Two angles on a straight line are 65° and x. Find x.", 115, "°", units=["°"], o="O2"))
 s.check(N("A triangle has angles 40° and 75°. Find the third angle.", 65, "°", units=["°"], o="O2"))
+s.idea("Why vertically opposite angles are equal", ["When two lines cross, the angles a and b sit on one straight line, so a + b = 180°. The angles b and c also sit on a straight line, so b + c = 180°.",
+       "Both a and c are '180° take away b', so a = c. No measuring needed – the reason works for every crossing."])
+s.check(MC("Before you read on: two lines cross and one angle is 130°. What is the angle next to it?", "50°", [("130°", "That is the opposite angle, not the one next to it."), ("230°", "Next-door angles on a line add to 180°.")], o="O2"))
+s.example("One angle gives all four", "Two lines cross. One angle is 72°. Find the other three angles.", [("next to it: 180 − 72 = 108°", "angles on a straight line"), ("opposite: 72°", "vertically opposite"), ("the last one: 108°", "opposite the 108°")], "72°, 108°, 72°, 108°")
 s.mistake("Opposite, not next to", ["Vertically opposite angles are across the crossing point, not next to each other (those add to 180°)."])
 
 
@@ -91,13 +123,37 @@ def l9(r):
     return MC("Why are the angles in an equilateral triangle each 60°?", "they are equal and add to 180°", ["they are all right angles", "a full turn is 360°", "the sides are 60 cm"], o="O2")
 
 
-s.std([l2, l4, l1, l3, l5, l6, l7, l8, l9], EX("Explain why vertically opposite angles are equal.", [("each makes 180° with the same angle between them", ["180|straight line"]), ("so they must be the same size", ["same|equal"])], "Each of the two opposite angles lies on a straight line with the same angle between them, so each equals 180° minus that angle. So they are equal.", o="O2"))
+def b1(r):   # reason choice
+    rows = r.sample([("a = 180° − 65° because they are on a straight line", "Angles on a straight line"), ("the angle opposite 40° is 40°", "Vertically opposite angles"),
+                     ("x = 180° − 50° − 60°", "Angles in a triangle"), ("y = 360° − 250°", "Angles at a point")], 4)
+    return GD("Which reason goes with each step?", "Reason", rows, o="O2", d="H", extra=["Angles at a point"],
+              reason="Name the fact you use: line 180°, triangle 180°, point 360°, vertically opposite angles are equal.")
+def b2(r):   # isosceles decision
+    t = r.randint(30, 100)
+    return N(f"An isosceles triangle has a top angle of {t}°. The other two angles are equal. Find one of them.", (180 - t) / 2, "°", units=["°"], o="O2", d="H",
+             fig={"kind": "shape", "pts": [[0, 0], [8, 0], [4, 6]], "ang": ["x", "x", f"{t}°"]}, reason=f"(180 − {t}) ÷ 2 = {(180 - t) / 2}°.")
+def b3(r):   # always/sometimes/never
+    rows = r.sample([("A triangle can have two obtuse angles", "Never true"), ("A triangle with a right angle has two acute angles", "Always true"),
+                     ("Vertically opposite angles add to 180°", "Sometimes true"), ("The angles of a triangle are all 60°", "Sometimes true")], 4)
+    return GD("Is each statement always true, sometimes true or never true?", "Always / sometimes / never", rows, o="O2", d="VH", extra=["Always true", "Sometimes true", "Never true"],
+              reason="Two obtuse angles already make more than 180°. Vertically opposite angles add to 180° only if both are 90°.")
+def b4(r):   # algebra triangle
+    k = r.randint(2, 3); x = r.randint(15, 35); t = 180 - (k + 1) * x
+    if t <= 0: return None
+    return N(f"A triangle has angles x, {k}x and {t}°. Find x.", x, "°", units=["°"], o="O2", d="H", reason=f"x + {k}x + {t} = 180, so {k + 1}x = {180 - t} and x = {x}°.")
+
+
+s.std([l2, l4, l1, l3, l5, l6, l7, l8, l9], EX("Explain why vertically opposite angles are equal.", [("each makes 180° with the same angle between them", ["180|straight line"]), ("so they must be the same size", ["same|equal"])], "Each of the two opposite angles lies on a straight line with the same angle between them, so each equals 180° minus that angle. So they are equal.", o="O2"),
+      deep=[b1, b2, b3, b4])
 
 # ================================================================== 5.3
 s = U.section("5.3", "Drawing lines and quadrilaterals", ["O3"])
 s.idea("Parallel and perpendicular", ["**Parallel** lines stay the same distance apart and never meet (marked with arrows). **Perpendicular** lines meet at a **right angle** (90°).",
        "To draw a quadrilateral accurately, use a ruler for lengths (to the nearest mm) and a protractor for angles (to the nearest degree)."], fig={"kind": "shape", "pts": [[0, 0], [8, 0], [8, 4], [0, 4]], "s": ["8 cm", "4 cm", "", ""], "right": [0, 1, 2, 3]})
 s.check(MC("Which angle do perpendicular lines make?", "90°", ["180°", "45°", "60°"], o="O3"))
+s.idea("Checking a drawing", ["An accurate drawing can be checked: opposite sides of a rectangle should measure the same, and the diagonals of a rectangle should be equal.",
+       "If your last side does not meet the start, one length or angle was measured wrongly – check each one again."])
+s.check(MC("Before you read on: you draw a quadrilateral with angles 90°, 90°, 90°. What must the fourth angle be?", "90°", [("180°", "The four angles add to 360°."), ("Any angle", "The total is always 360°.")], o="O3"))
 s.mistake("Read the right scale", ["A protractor has two scales. Start from 0° on the line you are measuring from."])
 
 
@@ -126,7 +182,21 @@ def c8(r):
     return N(f"A kite has angles of {a}°, {a}°, 70° and x. Find x.", 290 - 2 * a, "°", units=["°"], o="O3", d="H") if 290 - 2 * a > 0 else None
 
 
-s.std([c1, c4, c2, c3, c5, c6, c7, c8], EX("Explain the difference between parallel and perpendicular lines.", [("parallel lines never meet / stay the same distance apart", ["never meet|same distance|don't meet|do not meet"]), ("perpendicular lines meet at a right angle", ["right angle|90"])], "Parallel lines stay the same distance apart and never meet. Perpendicular lines meet (or cross) at a right angle, 90°.", o="O3"))
+def e1(r):   # which shape from description
+    rows = r.sample([("4 right angles, all sides equal", "Square"), ("4 right angles, opposite sides equal", "Rectangle"), ("one pair of parallel sides", "Trapezium"),
+                     ("two pairs of parallel sides, no right angle", "Parallelogram"), ("all sides equal, no right angle", "Rhombus")], 4)
+    return GD("Name each quadrilateral.", "Shape", rows, o="O3", d="H", extra=["Kite"], reason="Use the properties: parallel sides, equal sides and right angles.")
+def e2(r):   # spot the error: perpendicular
+    return MC("Ali says two lines that cross are always perpendicular. Is he right?", "No – only if they meet at 90°", [("Yes", "Lines can cross at any angle."), ("No – perpendicular lines never meet", "That describes parallel lines.")], o="O3", d="H",
+              reason="Perpendicular means meeting at a right angle. Most crossing lines do not.")
+def e3(r):   # protractor reading
+    a = r.randint(20, 80)
+    return MC(f"Kai measures an obtuse angle and reads {a}° from the protractor. What is the angle?", f"{180 - a}°", [(f"{a}°", f"An obtuse angle is bigger than 90°, so {a}° cannot be right – he used the wrong scale."), (f"{360 - a}°", "That is a reflex angle.")], o="O3", d="H",
+              reason=f"The two scales add to 180°: 180 − {a} = {180 - a}°.")
+
+
+s.std([c1, c4, c2, c3, c5, c6, c7, c8], EX("Explain the difference between parallel and perpendicular lines.", [("parallel lines never meet / stay the same distance apart", ["never meet|same distance|don't meet|do not meet"]), ("perpendicular lines meet at a right angle", ["right angle|90"])], "Parallel lines stay the same distance apart and never meet. Perpendicular lines meet (or cross) at a right angle, 90°.", o="O3"),
+      deep=[e1, e2, e3])
 
 U.mindmap(("360°", "Angles at a point • quadrilateral", "O1", "5.1"), ("180°", "Straight line • triangle • vertically opposite are equal", "O2", "5.2"),
           ("Drawing", "Parallel • perpendicular • ruler and protractor", "O3", "5.3"))
