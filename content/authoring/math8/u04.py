@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 8 Mathematics · Unit 4 Decimals (4.1 Ordering decimals, 4.2 Multiplying decimals, 4.3 Dividing by decimals,
-4.4 Making decimal calculations easier). Written by the Atomic teaching team."""
+4.4 Making decimal calculations easier). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 
 U = Unit(4, "Decimals", "Number",
@@ -18,6 +20,7 @@ s.idea("Comparing decimals", ["Line the decimal points up and compare digits fro
        "For **negative** decimals, the one further from zero is smaller: −2.3 < −2.03."], fig={"kind": "numline", "min": -3, "max": 3})
 s.check(MC("Which is the largest?", "0.7", [("0.65", "0.70 > 0.65"), ("0.699", "0.700 > 0.699"), ("0.07", "")], o="O1"))
 s.idea("Signs", ["**<** is less than, **>** is greater than, **≠** means 'is not equal to'. 4.50 = 4.5 but 4.05 ≠ 4.5."])
+s.check(MC("Before you read on: which is bigger, −0.3 or −0.25?", "−0.25", [("−0.3", "On a number line −0.3 is further left."), ("They are equal", "−0.30 and −0.25 differ by 0.05.")], o="O1", hint="Think of temperatures."))
 s.mistake("Longer is not bigger", ["0.125 is NOT bigger than 0.2 just because it has more digits: 0.125 < 0.200."])
 s.check(CMP("3.08", "3.8", "<", o="O1", reason="3.08 < 3.80."))
 
@@ -58,7 +61,13 @@ def o9(r):
     return MC("These are times (seconds) in a 100 m race. Which lane wins?", w, [n for n in nm if n != w], o="O1", data={"head": ["Lane", *nm], "rows": [["Time (s)", *[f"{v:.2f}" for v in sh]]]}, d="H", reason="The smallest time wins.")
 
 
-s.std([o4, o5, o1, o2, o3, o6, o8, o7, o9], EX("Explain why 0.4 is greater than 0.35.", [("write 0.4 as 0.40", ["0\\.40|same number of decimal|add a zero"]), ("40 hundredths > 35 hundredths / 4 tenths > 3 tenths", ["40.*35|tenths|4 ?> ?3|hundredths"])], "0.4 = 0.40. Comparing the tenths, 4 tenths is more than 3 tenths, so 0.40 > 0.35.", o="O1"))
+def z11(r):   # find all between negatives
+    good = r.sample(["−0.35", "−0.32", "−0.38", "−0.31"], 2); bad = r.sample(["−0.29", "−0.41", "−0.3", "−0.4"], 2)
+    return MS("Select ALL the numbers between −0.4 and −0.3.", good, bad, o="O1", d="H", reason="On the number line they lie between −0.40 and −0.30 (not including the ends).")
+
+
+s.std([o4, o5, o1, o2, o3, o6, o8, o7, o9], EX("Explain why 0.4 is greater than 0.35.", [("write 0.4 as 0.40", ["0\\.40|same number of decimal|add a zero"]), ("40 hundredths > 35 hundredths / 4 tenths > 3 tenths", ["40.*35|tenths|4 ?> ?3|hundredths"])], "0.4 = 0.40. Comparing the tenths, 4 tenths is more than 3 tenths, so 0.40 > 0.35.", o="O1"),
+      deep=[z11])
 
 # ================================================================== 4.2
 s = U.section("4.2", "Multiplying decimals", ["O2"])
@@ -66,6 +75,9 @@ s.idea("Method", ["Ignore the decimal points and multiply the whole numbers. The
        "0.3 × 0.04: 3 × 4 = 12; 1 + 2 = 3 decimal places → 0.012."])
 s.example("Two decimals", "Work out 2.6 × 1.4.", [("26 × 14 = 364", "whole numbers"), ("1 + 1 = 2 decimal places", ""), ("3.64", "estimate: 3 × 1 = 3 ✓")], "3.64")
 s.check(N("Work out 0.6 × 0.07.", 0.042, o="O2", reason="6 × 7 = 42; 3 decimal places → 0.042."))
+s.idea("Estimate first, then place the point", ["2.3 × 0.4: estimate 2 × 0.4 = 0.8. Work out 23 × 4 = 92, then use the estimate (or count 2 decimal places) to place the point: 0.92.",
+       "Multiplying by a number between 0 and 1 gives a smaller answer."])
+s.check(MC("Before you read on: is 0.6 × 0.7 more or less than 0.6?", "Less: 0.42", [("More: 4.2", "Multiplying by 0.7 (less than 1) makes it smaller."), ("More: 0.42", "0.42 is less than 0.6.")], o="O2"))
 s.mistake("Estimate first", ["Always estimate: 4.8 × 3.1 ≈ 5 × 3 = 15, so an answer of 148.8 or 1.488 is clearly wrong."])
 
 
@@ -100,7 +112,14 @@ def x9(r):
     return N(f"One tile is {fmt(w)} m long. How long is a row of {n} tiles?", round(w * n, 4), "m", units=["m"], o="O2", reason=f"{fmt(w)} × {n} = {fmt(round(w * n, 4))} m.")
 
 
-s.std([x5, x6, x1, x2, x3, x7, x9, x4, x8], EX("Explain why 0.2 × 0.3 = 0.06 and not 0.6.", [("2 × 3 = 6", ["2 ?× ?3|\\b6\\b"]), ("tenths × tenths = hundredths: two decimal places", ["hundredth|two decimal|2 decimal|tenths"])], "2 × 3 = 6. Tenths multiplied by tenths give hundredths, so the answer has two decimal places: 0.06.", o="O2"))
+def z21(r):   # spot error by estimate
+    a, b = pick(r, [(2.4, 0.3), (3.6, 0.2), (1.5, 0.4), (4.8, 0.5)])
+    return MC(f"Max says {a} × {b} = {round(a * b * 10, 2):g}. Use an estimate to decide what is right.", f"{round(a * b, 3):g}", [(f"{round(a * b * 10, 2):g}", f"{a} × {b} should be less than {a}."), (f"{round(a * b / 10, 4):g}", "Too small: estimate it.")], o="O2", d="H",
+              reason=f"Estimate {round(a)} × {b} ≈ {round(a) * b:g}; the answer is {round(a * b, 3):g}.")
+
+
+s.std([x5, x6, x1, x2, x3, x7, x9, x4, x8], EX("Explain why 0.2 × 0.3 = 0.06 and not 0.6.", [("2 × 3 = 6", ["2 ?× ?3|\\b6\\b"]), ("tenths × tenths = hundredths: two decimal places", ["hundredth|two decimal|2 decimal|tenths"])], "2 × 3 = 6. Tenths multiplied by tenths give hundredths, so the answer has two decimal places: 0.06.", o="O2"),
+      deep=[z21])
 
 # ================================================================== 4.3
 s = U.section("4.3", "Dividing by decimals", ["O3"])
@@ -108,6 +127,9 @@ s.idea("Make the divisor whole", ["To divide by a decimal, multiply **both** num
        "4.8 ÷ 0.6 = 48 ÷ 6 = 8.   7.2 ÷ 0.08 = 720 ÷ 8 = 90."])
 s.example("Dividing", "Work out 15.6 ÷ 1.2.", [("× 10: 156 ÷ 12", "both numbers"), ("= 13", "")], "13")
 s.check(N("Work out 3.6 ÷ 0.4.", 9, o="O3", reason="36 ÷ 4 = 9."))
+s.idea("Why we multiply both numbers by 10", ["7.2 ÷ 0.3 is the same as 72 ÷ 3, because multiplying both numbers by 10 keeps the answer the same (how many 3s in 72 = how many 0.3s in 7.2).",
+       "Make the divisor a whole number, then divide as normal."])
+s.check(MC("Before you read on: is 8 ÷ 0.5 bigger or smaller than 8?", "Bigger: 16", [("Smaller: 4", "That is 8 × 0.5. How many halves are in 8?"), ("The same", "Dividing by less than 1 gives more.")], o="O3"))
 s.mistake("Both numbers", ["If you multiply only the divisor by 10, the answer is 10 times too small."])
 
 
@@ -141,7 +163,14 @@ def v9(r):
     return N(f"A car travels {fmt(d * t)} km in {fmt(t)} hours. Find its average speed in km/h.", d, "km/h", units=["km/h"], o="O3", d="H", reason=f"{fmt(d * t)} ÷ {fmt(t)} = {d}.")
 
 
-s.std([v5, v8, v1, v2, v6, v7, v4, v3, v9], EX("Explain why 6 ÷ 0.5 = 12.", [("how many halves in 6", ["halves|0\\.5 goes|how many"]), ("2 halves in each 1, so 6 × 2 = 12 / multiply both by 10: 60 ÷ 5", ["2 halves|× ?2|60 ?÷ ?5|twice"])], "Dividing by 0.5 asks how many halves fit into 6. There are 2 halves in each whole, so 6 × 2 = 12 (or 60 ÷ 5 = 12).", o="O3"))
+def z31(r):   # equivalent divisions
+    a, b = pick(r, [(4.8, 0.6), (3.6, 0.4), (2.5, 0.5), (9.6, 0.8)])
+    good = [f"{a * 10:g} ÷ {b * 10:g}", f"{a * 100:g} ÷ {b * 100:g}"]; bad = [f"{a * 10:g} ÷ {b:g}", f"{a:g} ÷ {b * 10:g}"]
+    return MS(f"Select ALL the calculations with the same answer as {a} ÷ {b}.", good, bad, o="O3", d="H", reason="Multiply BOTH numbers by the same power of 10.")
+
+
+s.std([v5, v8, v1, v2, v6, v7, v4, v3, v9], EX("Explain why 6 ÷ 0.5 = 12.", [("how many halves in 6", ["halves|0\\.5 goes|how many"]), ("2 halves in each 1, so 6 × 2 = 12 / multiply both by 10: 60 ÷ 5", ["2 halves|× ?2|60 ?÷ ?5|twice"])], "Dividing by 0.5 asks how many halves fit into 6. There are 2 halves in each whole, so 6 × 2 = 12 (or 60 ÷ 5 = 12).", o="O3"),
+      deep=[z31])
 
 # ================================================================== 4.4
 s = U.section("4.4", "Making decimal calculations easier", ["O4"])
@@ -149,6 +178,7 @@ s.idea("Strategies", ["**Re-order** to make nice pairs: 0.25 × 7.3 × 4 = (0.25
        "**Split** a number: 4.9 × 6 = 5 × 6 − 0.1 × 6 = 30 − 0.6 = 29.4.  **Use factors**: 1.5 × 12 = 1.5 × 2 × 6 = 3 × 6 = 18."])
 s.example("Compensation", "Work out 3.99 × 5 in your head.", [("3.99 = 4 − 0.01", ""), ("4 × 5 − 0.01 × 5 = 20 − 0.05", "")], "19.95")
 s.check(N("Work out 0.5 × 3.7 × 2 mentally.", 3.7, o="O4", reason="0.5 × 2 = 1, so the answer is 3.7."))
+s.check(MC("Before you read on: which is easiest to work out mentally, 0.25 × 36 or 36 ÷ 4?", "They are the same – 36 ÷ 4 = 9", [("0.25 × 36 is easier", "0.25 = 1/4, so it is the same as ÷ 4."), ("They give different answers", "0.25 × 36 = 36 ÷ 4.")], o="O4"))
 s.mistake("Keep the value", ["When you split 4.9 into 5 − 0.1, you must multiply BOTH parts."])
 
 
@@ -182,7 +212,13 @@ def k9(r):
     return N(f"A T-shirt costs ${fmt(p)}. How much do {n} T-shirts cost? Work it out mentally.", round(p * n, 2), "$", units=["$"], o="O4", reason=f"{round(p + 0.01)} × {n} − 0.01 × {n} = {fmt(round(p * n, 2))}.")
 
 
-s.std([k6, k7, k1, k2, k4, k5, k8, k3, k9], EX("Explain an easy way to work out 0.25 × 9.6 × 4.", [("re-order: 0.25 × 4 first", ["0\\.25 ?× ?4|re.?order|swap|first"]), ("= 1, so the answer is 9.6", ["9\\.6|= ?1"])], "Multiply in any order: 0.25 × 4 = 1, then 1 × 9.6 = 9.6.", o="O4"))
+def z41(r):   # pick strategy
+    rows = r.sample([("0.25 × 48", "Divide by 4"), ("0.5 × 86", "Halve"), ("19.9 × 3", "Round and adjust"), ("2.5 × 4 × 1.7", "Make 10 first")], 4)
+    return GD("Choose the best strategy for each.", "Strategy", rows, o="O4", d="H", extra=["Long multiplication"], reason="0.25 is a quarter, 0.5 is a half, 19.9 is close to 20, and 2.5 × 4 = 10.")
+
+
+s.std([k6, k7, k1, k2, k4, k5, k8, k3, k9], EX("Explain an easy way to work out 0.25 × 9.6 × 4.", [("re-order: 0.25 × 4 first", ["0\\.25 ?× ?4|re.?order|swap|first"]), ("= 1, so the answer is 9.6", ["9\\.6|= ?1"])], "Multiply in any order: 0.25 × 4 = 1, then 1 × 9.6 = 9.6.", o="O4"),
+      deep=[z41])
 
 U.mindmap(("Ordering", "Line up points • same number of d.p. • < > = ≠", "O1", "4.1"), ("Multiplying", "Ignore points • count the d.p. • estimate", "O2", "4.2"),
           ("Dividing", "Make the divisor whole • change both numbers", "O3", "4.3"), ("Easier calculations", "Re-order • split • factors • compensate", "O4", "4.4"))

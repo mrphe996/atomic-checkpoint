@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 8 Mathematics · Unit 13 Probability (13.1 Calculating probabilities, 13.2 Experimental and theoretical probabilities).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
@@ -25,6 +27,9 @@ s.idea("Equally likely outcomes", ["**P(event) = number of favourable outcomes �
 s.example("A bag of counters", "A bag has 3 red, 5 blue and 2 green counters. One is taken at random. Find P(blue) and P(not blue).", [("total = 10", ""), ("P(blue) = 5/10 = 1/2", ""), ("P(not blue) = 1 − 1/2 = 1/2", "")], "1/2 and 1/2")
 s.check(P("A fair six-sided dice is rolled. Find P(a number greater than 4).", Fr(1, 3), o="O1"))
 s.idea("Mutually exclusive outcomes", ["Outcomes that cannot happen at the same time are **mutually exclusive**. The probabilities of all the mutually exclusive outcomes add up to **1**."])
+s.idea("Listing outcomes systematically", ["For two events, list every pair in a table (a sample space). Two coins give HH, HT, TH, TT – four equally likely outcomes, so P(one head and one tail) = 2/4, not 1/3.",
+       "A table stops you missing or double-counting outcomes."])
+s.check(MC("Before you read on: two fair coins are flipped. What is P(two heads)?", "1/4", [("1/3", "There are 4 outcomes, not 3: HT and TH are different."), ("1/2", "Only HH gives two heads.")], o="O1"))
 s.mistake("Add to 1", ["If P(red) = 0.3 and P(blue) = 0.5 and these are the only colours with green, then P(green) = 1 − 0.3 − 0.5 = 0.2."])
 
 
@@ -79,7 +84,15 @@ def p14(r):
     return P(f"A fair spinner has {n} equal sections, one of them blue. Find P(not blue).", 1 - p, o="O1", fig={"kind": "spinner", "labels": ["B"] + [str(i) for i in range(2, n + 1)]})
 
 
-s.std([p1, p7, p2, p3, p4, p5, p6, p8, p9, p10, p11, p12, p13, p14], EX("Explain why P(not A) = 1 − P(A).", [("A either happens or it does not", ["either|happens or|one or the other"]), ("these probabilities add to 1", ["add.*1|total.*1|sum.*1|= ?1"])], "Event A either happens or it does not. These two outcomes are mutually exclusive and cover everything, so their probabilities add to 1. So P(not A) = 1 − P(A).", o="O1"))
+def i131(r):
+    t = r.randint(3, 11)
+    ways = sum(1 for a in range(1, 7) for b in range(1, 7) if a + b == t)
+    return MC(f"Two dice are rolled and the scores added. What is P(total = {t})?", frac(Fr(ways, 36)) if True else "", [(frac(Fr(1, 11)), "There are 36 equally likely pairs, not 11 totals."), (frac(Fr(ways + 1, 36)), "Count the pairs carefully.")], o="O1", d="H",
+              reason=f"There are {ways} pairs that add to {t}, out of 36.") if frac(Fr(ways, 36)) != frac(Fr(1, 11)) else None
+
+
+s.std([p1, p7, p2, p3, p4, p5, p6, p8, p9, p10, p11, p12, p13, p14], EX("Explain why P(not A) = 1 − P(A).", [("A either happens or it does not", ["either|happens or|one or the other"]), ("these probabilities add to 1", ["add.*1|total.*1|sum.*1|= ?1"])], "Event A either happens or it does not. These two outcomes are mutually exclusive and cover everything, so their probabilities add to 1. So P(not A) = 1 − P(A).", o="O1"),
+      deep=[i131])
 
 # ================================================================== 13.2
 s = U.section("13.2", "Experimental and theoretical probabilities", ["O2"])
@@ -88,6 +101,7 @@ s.idea("Relative frequency", ["**Experimental probability** (relative frequency)
 s.example("A coin", "A coin is tossed 80 times and lands heads 46 times. Find the experimental probability of heads.", [("46 ÷ 80", ""), ("= 0.575", "")], "0.575")
 s.check(N("A drawing pin lands point up 13 times in 50 drops. Find the relative frequency of 'point up'.", 0.26, o="O2"))
 s.idea("Expected frequency", ["**Expected number = probability × number of trials**. A fair dice rolled 120 times: expect 120 × 1/6 = 20 sixes."])
+s.check(MC("Before you read on: a coin lands heads 7 times in 10 flips. Is P(heads) for this coin 7/10?", "That is only an estimate from a few trials", [("Yes, exactly", "Ten flips is not enough to be sure."), ("No, it must be 1/2", "It could be a biased coin.")], o="O2"))
 s.mistake("Not exactly", ["Experimental results do not have to match the expected number exactly; they vary by chance."])
 
 
@@ -131,7 +145,13 @@ def e12(r):
     return N(f"A survey of {t} students recorded how they travel. Estimate the probability that a student chosen at random does NOT {('come by ' + c[k].lower()) if k < 2 else 'walk'}. Give your answer to 2 d.p.", round((t - f[k]) / t, 2), o="O2", tol=0.006, data={"head": ["Travel", *c], "rows": [["Students", *map(str, f)]]})
 
 
-s.std([e4, e5, e1, e2, e3, e6, e7, e8, e9, e10, e11, e12], EX("Explain why tossing a fair coin 10 times might not give exactly 5 heads.", [("each toss is random / depends on chance", ["chance|random|luck|independent"]), ("5 is only what you expect on average; results vary", ["expect|average|vary|over many"])], "Each toss is random, so the results vary by chance. 5 heads is only the expected number; with only 10 tosses you could easily get 3, 4, 6 or 7.", o="O2"))
+def i132(r):
+    p, n = pick(r, [(Fr(1, 6), 120), (Fr(1, 4), 200), (Fr(2, 5), 150)])
+    return N(f"The probability of an event is {frac(p)}. How many times would you expect it in {n} trials?", int(p * n), o="O2", d="H", reason=f"{frac(p)} × {n} = {int(p * n)}.")
+
+
+s.std([e4, e5, e1, e2, e3, e6, e7, e8, e9, e10, e11, e12], EX("Explain why tossing a fair coin 10 times might not give exactly 5 heads.", [("each toss is random / depends on chance", ["chance|random|luck|independent"]), ("5 is only what you expect on average; results vary", ["expect|average|vary|over many"])], "Each toss is random, so the results vary by chance. 5 heads is only the expected number; with only 10 tosses you could easily get 3, 4, 6 or 7.", o="O2"),
+      deep=[i132])
 
 U.mindmap(("Calculating probabilities", "P = favourable ÷ total • P(not A) = 1 − P(A) • mutually exclusive outcomes add to 1", "O1", "13.1"),
           ("Experiments", "Relative frequency = times ÷ trials • expected = P × trials • more trials, better estimate", "O2", "13.2"))

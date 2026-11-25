@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 8 Mathematics · Unit 12 Ratio and proportion (12.1 Simplifying ratios, 12.2 Sharing in a ratio,
-12.3 Ratio and direct proportion). Written by the Atomic teaching team."""
+12.3 Ratio and direct proportion). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from math import gcd
 from kit import *
 
@@ -26,6 +28,7 @@ s.idea("Simplest form", ["A **ratio** compares quantities. Simplify it by dividi
        "Write both parts in the **same units** first: 40 cm : 2 m = 40 : 200 = 1 : 5."])
 s.check(S("Write 45 : 60 in its simplest form.", ACC([3, 4]), o="O1"))
 s.example("Three parts", "Simplify 12 : 18 : 30.", [("HCF of 12, 18 and 30 is 6", ""), ("÷ 6", "")], "2 : 3 : 5")
+s.check(MC("Before you read on: simplify 1.5 : 2.5.", "3 : 5", [("1 : 2", "Multiply both by 2 to clear the decimals: 3 : 5."), ("15 : 25", "Correct value, but not simplest form.")], o="O1"))
 s.mistake("Same units", ["500 g : 2 kg is NOT 500 : 2. Change 2 kg to 2000 g: 500 : 2000 = 1 : 4."])
 
 
@@ -63,7 +66,15 @@ def r8(r):
     return N(f"The ratio of red to blue counters is {a} : {b}. There are {a * x} red counters. How many blue counters are there?", b * x, "counters", units=["counters"], o="O1", reason=f"{a * x} ÷ {a} = {x}; {b} × {x} = {b * x}.")
 
 
-s.std([r5, r6, r1, r2, r3, r4, r7, r8], EX("Explain why 2 m : 50 cm is 4 : 1, not 2 : 50.", [("change to the same units: 2 m = 200 cm", ["200|same unit"]), ("200 : 50 = 4 : 1", ["200 ?: ?50|÷ ?50|4 ?: ?1"])], "The parts must be in the same units: 2 m = 200 cm. Then 200 : 50 = 4 : 1 (divide by 50).", o="O1"))
+def h121(r):
+    a, b = pick(r, [(0.4, 1.2), (2.5, 1.5), (0.6, 0.9)])
+    from math import gcd
+    A, B_ = round(a * 10), round(b * 10); g = gcd(A, B_)
+    return MC(f"Write {a} : {b} in its simplest form with whole numbers.", f"{A // g} : {B_ // g}", [(f"{A} : {B_}", "Simplify further: divide by the common factor."), (f"{B_ // g} : {A // g}", "Keep the order.")], o="O1", d="H", reason=f"× 10: {A} : {B_}; ÷ {g}: {A // g} : {B_ // g}.")
+
+
+s.std([r5, r6, r1, r2, r3, r4, r7, r8], EX("Explain why 2 m : 50 cm is 4 : 1, not 2 : 50.", [("change to the same units: 2 m = 200 cm", ["200|same unit"]), ("200 : 50 = 4 : 1", ["200 ?: ?50|÷ ?50|4 ?: ?1"])], "The parts must be in the same units: 2 m = 200 cm. Then 200 : 50 = 4 : 1 (divide by 50).", o="O1"),
+      deep=[h121])
 
 # ================================================================== 12.2
 s = U.section("12.2", "Sharing in a ratio", ["O2"])
@@ -71,6 +82,7 @@ s.idea("Sharing", ["To share an amount in a ratio: **add the parts**, find the v
        "Share $60 in the ratio 2 : 3: 5 parts; one part = 60 ÷ 5 = 12; shares $24 and $36."])
 s.example("Three people", "Share 180 g in the ratio 1 : 3 : 5.", [("1 + 3 + 5 = 9 parts", ""), ("one part = 180 ÷ 9 = 20 g", ""), ("20 g, 60 g, 100 g", "")], "20 g, 60 g, 100 g")
 s.check(N("Share $45 in the ratio 4 : 5. How much is the larger share?", 25, "$", units=["$"], o="O2"))
+s.check(MC("Before you read on: $60 is shared 2 : 3 : 5. What is the smallest share?", "$12", [("$20", "There are 10 parts, so one part is $6."), ("$2", "One part is $6; the smallest share is 2 parts.")], o="O2"))
 s.mistake("Add the parts", ["For 2 : 3, divide by 5 (the total number of parts), not by 2 or 3."])
 NM = ["Ana", "Ben", "Cai", "Dee", "Eva", "Fin"]
 
@@ -103,7 +115,14 @@ def h8(r):
     return N(f"Angles of a triangle are in the ratio {a} : {b} : {c}. Find the largest angle (1 d.p. if needed).", round(180 / (a + b + c) * max(a, b, c), 1), "°", units=["°"], o="O2", d="H", tol=0.05, reason=f"180 ÷ {a + b + c} × {max(a, b, c)} ≈ {round(180 / (a + b + c) * max(a, b, c), 1)}°.")
 
 
-s.std([h2, h7, h1, h3, h5, h6, h4, h8], EX("Explain how to share $56 in the ratio 3 : 4.", [("3 + 4 = 7 parts, one part = 56 ÷ 7 = 8", ["7 parts|÷ ?7|= ?8|one part"]), ("shares 3 × 8 = 24 and 4 × 8 = 32", ["24|32"])], "Add the parts: 3 + 4 = 7. One part is 56 ÷ 7 = $8. The shares are 3 × 8 = $24 and 4 × 8 = $32.", o="O2"))
+def h122(r):
+    a, b, c = r.sample(range(1, 6), 3); p = r.randint(2, 9)
+    return N(f"Money is shared in the ratio {a} : {b} : {c}. The biggest share is ${max(a, b, c) * p}. How much was shared?", (a + b + c) * p, "$", units=["$"], o="O2", d="H",
+             reason=f"{max(a, b, c)} parts = {max(a, b, c) * p}, so 1 part = {p}; total = {a + b + c} × {p} = {(a + b + c) * p}.")
+
+
+s.std([h2, h7, h1, h3, h5, h6, h4, h8], EX("Explain how to share $56 in the ratio 3 : 4.", [("3 + 4 = 7 parts, one part = 56 ÷ 7 = 8", ["7 parts|÷ ?7|= ?8|one part"]), ("shares 3 × 8 = 24 and 4 × 8 = 32", ["24|32"])], "Add the parts: 3 + 4 = 7. One part is 56 ÷ 7 = $8. The shares are 3 × 8 = $24 and 4 × 8 = $32.", o="O2"),
+      deep=[h122])
 
 # ================================================================== 12.3
 s = U.section("12.3", "Ratio and direct proportion", ["O3"])
@@ -111,6 +130,8 @@ s.idea("Unitary method", ["Two quantities are in **direct proportion** if they i
        "**Unitary method**: find the value of ONE first, then multiply. 5 pens cost $8, so 1 pen costs $1.60 and 7 pens cost $11.20."])
 s.example("Best buy", "Which is better value: 300 g for $2.40 or 500 g for $3.75?", [("$2.40 ÷ 300 = 0.8 cents per g", ""), ("$3.75 ÷ 500 = 0.75 cents per g", "")], "500 g for $3.75")
 s.check(N("4 tickets cost $26. How much do 6 tickets cost?", 39, "$", units=["$"], o="O3"))
+s.idea("Ratio and proportion are the same idea", ["If a recipe uses flour and sugar in the ratio 3 : 1, then flour is always 3 times the sugar: the amounts are in direct proportion.",
+       "Use the ratio to scale: 450 g of flour needs 150 g of sugar."])
 s.mistake("Same rate", ["Add the SAME multiplier to both quantities: 3 → 9 is × 3, so 4 → 12, not 4 + 6."])
 
 
@@ -143,7 +164,13 @@ def d8(r):
     return N(f"y is directly proportional to x. When x = {x}, y = {y}. Find y when x = {a}.", y * a / x, o="O3", d="H", reason=f"y = {fmt(y / x)}x → {fmt(y * a / x)}.")
 
 
-s.std([d3, d4, d1, d2, d5, d7, d6, d8], EX("Explain how to find which is better value: 6 eggs for $1.80 or 10 eggs for $2.80.", [("find the price of one egg for each", ["one egg|each egg|per egg|unit|÷ ?6|÷ ?10"]), ("30 cents vs 28 cents, so 10 eggs is better value", ["30|28|10 eggs"])], "Work out the cost of one egg: $1.80 ÷ 6 = 30 cents and $2.80 ÷ 10 = 28 cents. The 10 eggs are better value.", o="O3"))
+def h123(r):
+    a, b = r.sample(range(2, 7), 2); k = r.randint(20, 60) * 5
+    return N(f"Cement and sand are mixed in the ratio {a} : {b}. How much sand is needed with {a * k} kg of cement?", b * k, "kg", units=["kg"], o="O3", d="H", reason=f"{a} parts = {a * k} kg, so 1 part = {k} kg; sand = {b} × {k} = {b * k} kg.")
+
+
+s.std([d3, d4, d1, d2, d5, d7, d6, d8], EX("Explain how to find which is better value: 6 eggs for $1.80 or 10 eggs for $2.80.", [("find the price of one egg for each", ["one egg|each egg|per egg|unit|÷ ?6|÷ ?10"]), ("30 cents vs 28 cents, so 10 eggs is better value", ["30|28|10 eggs"])], "Work out the cost of one egg: $1.80 ÷ 6 = 30 cents and $2.80 ÷ 10 = 28 cents. The 10 eggs are better value.", o="O3"),
+      deep=[h123])
 
 U.mindmap(("Simplifying", "Divide by the HCF • same units first", "O1", "12.1"), ("Sharing", "Add the parts • one part • multiply", "O2", "12.2"),
           ("Direct proportion", "Unitary method • best buys", "O3", "12.3"))

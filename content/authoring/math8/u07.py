@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """Stage 8 Mathematics · Unit 7 Fractions (7.1 Fractions and recurring decimals, 7.2 Ordering fractions, 7.3 Subtracting
 mixed numbers, 7.4 Multiplying an integer by a mixed number, 7.5 Dividing an integer by a fraction, 7.6 Making fraction
-calculations easier). Written by the Atomic teaching team."""
+calculations easier). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 
@@ -42,6 +44,9 @@ s.idea("Terminating or recurring?", ["Divide the numerator by the denominator. I
        "A fraction in its simplest form terminates only if its denominator has **no prime factors other than 2 and 5**. 7/20 terminates (20 = 2² × 5); 5/12 recurs (12 has a factor 3)."])
 s.example("Recurring", "Write 5/11 as a decimal.", [("5 ÷ 11 = 0.454545…", "short division"), ("the digits 45 repeat", "")], "0.4̇5̇")
 s.check(MC("Which fraction gives a recurring decimal?", "4/15", [("3/16", "16 = 2⁴: terminates."), ("7/25", "25 = 5²: terminates."), ("9/40", "40 = 2³ × 5: terminates.")], o="O1"))
+s.idea("Why some fractions recur", ["A fraction becomes a decimal by dividing. 1/8 = 0.125 stops because 8 = 2 × 2 × 2 divides into a power of 10. 1/3 = 0.333… never stops because 3 never divides exactly into 10, 100, 1000, …",
+       "A fraction in its simplest form terminates only when its denominator has no prime factors other than 2 and 5."])
+s.check(MC("Before you read on: does 7/20 give a terminating decimal?", "Yes: 0.35", [("No", "20 = 2 × 2 × 5: only 2s and 5s."), ("Only if you round it", "7 ÷ 20 = 0.35 exactly.")], o="O1"))
 s.mistake("Simplify first", ["3/6 looks like it has a factor 3 in the denominator, but 3/6 = 1/2 = 0.5 terminates. Always simplify first."])
 
 
@@ -73,7 +78,14 @@ def t8(r):
     return MS("Select ALL the denominators that give a terminating decimal for a fraction 1/d.", [str(d) for d in ds if term(d)] or ["10"], [str(d) for d in ds if not term(d)] or ["3"], o="O1", d="H")
 
 
-s.std([t2, t5, t1, t3, t4, t7, t6, t8], EX("Explain why 7/40 is a terminating decimal.", [("40 = 2³ × 5", ["2³ ?× ?5|2 ?× ?2 ?× ?2 ?× ?5|only 2 and 5|2s and 5"]), ("so it can be written as a fraction over a power of 10 / only factors 2 and 5", ["power of 10|1000|only.*2.*5|no other"])], "In simplest form the denominator 40 = 2³ × 5 has no prime factors other than 2 and 5, so 7/40 can be written as 175/1000 = 0.175.", o="O1"))
+def c71(r):
+    rows = r.sample([("3/8", "Terminating"), ("2/9", "Recurring"), ("7/25", "Terminating"), ("5/6", "Recurring"), ("9/40", "Terminating"), ("4/15", "Recurring")], 4)
+    return GD("Does each fraction give a terminating or a recurring decimal?", "Decimal", rows, o="O1", d="H", extra=["Terminating", "Recurring"],
+              reason="Look at the denominator in simplest form: only 2s and 5s → terminating; any other prime → recurring.")
+
+
+s.std([t2, t5, t1, t3, t4, t7, t6, t8], EX("Explain why 7/40 is a terminating decimal.", [("40 = 2³ × 5", ["2³ ?× ?5|2 ?× ?2 ?× ?2 ?× ?5|only 2 and 5|2s and 5"]), ("so it can be written as a fraction over a power of 10 / only factors 2 and 5", ["power of 10|1000|only.*2.*5|no other"])], "In simplest form the denominator 40 = 2³ × 5 has no prime factors other than 2 and 5, so 7/40 can be written as 175/1000 = 0.175.", o="O1"),
+      deep=[c71])
 
 # ================================================================== 7.2
 s = U.section("7.2", "Ordering fractions", ["O2"])
@@ -81,6 +93,7 @@ s.idea("Common denominators", ["To compare fractions, write them with a **common
        "You can also change each fraction to a **decimal**, or compare mixed numbers by looking at the whole numbers first."])
 s.example("Order", "Put 5/8, 2/3 and 3/5 in order, smallest first.", [("LCM of 8, 3, 5 = 120", ""), ("75/120, 80/120, 72/120", "")], "3/5, 5/8, 2/3")
 s.check(CMP("5/6", "7/9", ">", o="O2", reason="15/18 > 14/18."))
+s.check(MC("Before you read on: which is bigger, 5/8 or 0.6?", "5/8", [("0.6", "5/8 = 0.625."), ("They are equal", "Change 5/8 to a decimal: 0.625.")], o="O2"))
 s.mistake("Bigger denominator", ["1/8 is smaller than 1/6: bigger denominators mean smaller pieces."])
 
 
@@ -116,7 +129,13 @@ def o8(r):
     return N(f"How much bigger is {frac(max(a, b))} than {frac(min(a, b))}? Give your answer as a fraction.", float(abs(a - b)), tol=TOL, o="O2", d="H", reason=f"{frac(max(a, b))} − {frac(min(a, b))} = {frac(abs(a - b))}.")
 
 
-s.std([o5, o7, o1, o2, o3, o4, o6, o8], EX("Explain why 3/7 is less than 1/2.", [("half of 7 is 3.5", ["3\\.5|half of 7|3½"]), ("3 is less than 3.5 / 6/14 < 7/14", ["6/14|less than 3\\.5|3 ?< ?3\\.5|smaller"])], "Half of 7 is 3.5, so 1/2 = 3.5/7. 3/7 is less than 3.5/7 (or 6/14 < 7/14), so 3/7 < 1/2.", o="O2"))
+def c72(r):
+    vals = r.sample([("3/5", 0.6), ("0.65", 0.65), ("5/8", 0.625), ("2/3", 2 / 3), ("0.58", 0.58), ("7/12", 7 / 12)], 4); vals.sort(key=lambda v: v[1])
+    return OD("Put these in order, smallest first.", [v[0] for v in vals], o="O2", d="H", reason="Change them all to decimals: " + ", ".join(f"{v[0]} ≈ {v[1]:.3f}" for v in vals) + ".")
+
+
+s.std([o5, o7, o1, o2, o3, o4, o6, o8], EX("Explain why 3/7 is less than 1/2.", [("half of 7 is 3.5", ["3\\.5|half of 7|3½"]), ("3 is less than 3.5 / 6/14 < 7/14", ["6/14|less than 3\\.5|3 ?< ?3\\.5|smaller"])], "Half of 7 is 3.5, so 1/2 = 3.5/7. 3/7 is less than 3.5/7 (or 6/14 < 7/14), so 3/7 < 1/2.", o="O2"),
+      deep=[c72])
 
 # ================================================================== 7.3
 s = U.section("7.3", "Subtracting mixed numbers", ["O3"])
@@ -124,6 +143,7 @@ s.idea("Two methods", ["**Method 1**: subtract the whole numbers, then the fract
        "**Method 2**: change both to improper fractions, subtract, then change back."])
 s.example("Regrouping", "Work out 4 1/5 − 1 2/3.", [("4 3/15 − 1 10/15", "common denominator 15"), ("3 18/15 − 1 10/15", "regroup: 4 3/15 = 3 18/15"), ("= 2 8/15", "")], "2 8/15")
 s.check(F("Work out 5 3/4 − 2 1/3.", Fr(41, 12), o="O3"))
+s.check(MC("Before you read on: what is 3 1/4 − 1 3/4?", "1 1/2", [("2 1/2", "1/4 − 3/4 needs exchanging one whole."), ("2 −1/2", "Exchange 1 whole for 4/4 first.")], o="O3"))
 s.mistake("Regroup", ["In 3 1/4 − 1 3/4 you cannot take 3/4 from 1/4: write 3 1/4 as 2 5/4 first."])
 
 
@@ -158,7 +178,14 @@ def m8(r):
     return F(f"Kai runs {frac(big, True)} km and Lia runs {frac(small, True)} km. How much further does Kai run?", big - small, o="O3", units=["km"], data={"head": ["Runner", "Kai", "Lia"], "rows": [["Distance (km)", frac(big, True), frac(small, True)]]})
 
 
-s.std([m5, m8, m1, m2, m3, m4, m6, m7], EX("Explain how to work out 3 1/4 − 1 3/4.", [("you cannot take 3/4 from 1/4, so regroup", ["regroup|borrow|exchange|cannot take|can't take"]), ("2 5/4 − 1 3/4 = 1 2/4 = 1 1/2", ["1 ?1/2|1 ?2/4|1½|1\\.5|3/2"])], "You cannot take 3/4 from 1/4, so regroup: 3 1/4 = 2 5/4. Then 2 5/4 − 1 3/4 = 1 2/4 = 1 1/2.", o="O3"))
+def c73(r):
+    a, b = pick(r, [(Fr(13, 4), Fr(7, 4)), (Fr(16, 5), Fr(9, 5)), (Fr(17, 6), Fr(11, 6))])
+    return MC(f"Work out {frac(a, True)} − {frac(b, True)}.", frac(a - b, True), [(frac(a - b + 1, True), f"The fractions part {frac(a - int(a))} is smaller than {frac(b - int(b))}: exchange one whole first."), (frac(a - b + Fr(1, a.denominator), True), "Change both to improper fractions and subtract.")], o="O3", d="H",
+              reason=f"{frac(a)} − {frac(b)} = {frac(a - b)} = {frac(a - b, True)}.")
+
+
+s.std([m5, m8, m1, m2, m3, m4, m6, m7], EX("Explain how to work out 3 1/4 − 1 3/4.", [("you cannot take 3/4 from 1/4, so regroup", ["regroup|borrow|exchange|cannot take|can't take"]), ("2 5/4 − 1 3/4 = 1 2/4 = 1 1/2", ["1 ?1/2|1 ?2/4|1½|1\\.5|3/2"])], "You cannot take 3/4 from 1/4, so regroup: 3 1/4 = 2 5/4. Then 2 5/4 − 1 3/4 = 1 2/4 = 1 1/2.", o="O3"),
+      deep=[c73])
 
 # ================================================================== 7.4
 s = U.section("7.4", "Multiplying an integer by a mixed number", ["O4"])
@@ -166,6 +193,7 @@ s.idea("Methods", ["**Split** the mixed number: 4 × 2 3/5 = 4 × 2 + 4 × 3/5 =
        "Or change to an **improper fraction**: 4 × 13/5 = 52/5 = 10 2/5."])
 s.example("Improper fractions", "Work out 6 × 1 3/4.", [("1 3/4 = 7/4", ""), ("6 × 7/4 = 42/4 = 10 2/4", ""), ("= 10 1/2", "simplify")], "10 1/2")
 s.check(F("Work out 3 × 2 1/4.", Fr(27, 4), o="O4"))
+s.check(MC("Before you read on: is 4 × 2 1/2 equal to 8 1/2?", "No: 10", [("Yes", "Multiply the 1/2 by 4 as well: 8 + 2."), ("No: 8 1/8", "4 × 1/2 = 2, not 1/8.")], o="O4"))
 s.mistake("Multiply both parts", ["3 × 2 1/4 is NOT 6 1/4. Multiply the fraction part too: 6 + 3/4 = 6 3/4."])
 
 
@@ -195,7 +223,14 @@ def x8(r):
     return N(f"Work out {k} × {frac(m, True)}.", float(k * m), tol=TOL, o="O4", d="H", reason=f"{k} × {frac(m)} = {fmt(float(k * m))} (a whole number).")
 
 
-s.std([x4, x5, x1, x2, x3, x6, x7, x8], EX("Explain why 5 × 2 1/3 = 11 2/3.", [("5 × 2 = 10", ["10"]), ("5 × 1/3 = 5/3 = 1 2/3, and 10 + 1 2/3 = 11 2/3", ["5/3|1 ?2/3"])], "Split 2 1/3 into 2 + 1/3. 5 × 2 = 10 and 5 × 1/3 = 5/3 = 1 2/3. 10 + 1 2/3 = 11 2/3.", o="O4"))
+def c74(r):
+    n, w, f = r.randint(2, 6), r.randint(1, 4), pick(r, [Fr(1, 2), Fr(1, 3), Fr(1, 4), Fr(2, 3)])
+    return MC(f"Kim works out {n} × {frac(w + f, True)} as {n * w} + {frac(f)}. What is the right answer?", frac(n * (w + f), True), [(frac(n * w + f, True), f"She forgot to multiply {frac(f)} by {n}."), (frac(n * w, True), "The fraction part must be included.")], o="O4", d="H",
+              reason=f"{n} × {w} = {n * w} and {n} × {frac(f)} = {frac(n * f)}; total {frac(n * (w + f), True)}.")
+
+
+s.std([x4, x5, x1, x2, x3, x6, x7, x8], EX("Explain why 5 × 2 1/3 = 11 2/3.", [("5 × 2 = 10", ["10"]), ("5 × 1/3 = 5/3 = 1 2/3, and 10 + 1 2/3 = 11 2/3", ["5/3|1 ?2/3"])], "Split 2 1/3 into 2 + 1/3. 5 × 2 = 10 and 5 × 1/3 = 5/3 = 1 2/3. 10 + 1 2/3 = 11 2/3.", o="O4"),
+      deep=[c74])
 
 # ================================================================== 7.5
 s = U.section("7.5", "Dividing an integer by a fraction", ["O5"])
@@ -203,6 +238,9 @@ s.idea("How many fit?", ["6 ÷ 1/4 asks 'how many quarters are in 6?'. There are
        "To divide by a fraction, **multiply by its reciprocal** (turn it upside down): 6 ÷ 3/4 = 6 × 4/3 = 24/3 = 8."])
 s.example("Reciprocal", "Work out 5 ÷ 2/3.", [("5 × 3/2", "reciprocal of 2/3 is 3/2"), ("= 15/2 = 7 1/2", "")], "7 1/2")
 s.check(N("Work out 3 ÷ 1/5.", 15, o="O5"))
+s.idea("Why dividing by a fraction multiplies", ["6 ÷ 1/2 asks: how many halves are in 6? There are 12. So dividing by 1/2 is the same as multiplying by 2.",
+       "In general, dividing by a/b is the same as multiplying by b/a."])
+s.check(MC("Before you read on: is 4 ÷ 2/3 bigger or smaller than 4?", "Bigger: 6", [("Smaller", "Dividing by a number less than 1 gives a bigger answer."), ("The same", "Only ÷ 1 keeps it the same.")], o="O5"))
 s.mistake("Not smaller", ["Dividing by a proper fraction gives a BIGGER answer: 4 ÷ 1/2 = 8."])
 
 
@@ -232,7 +270,14 @@ def v8(r):
     return TB(f"Complete the pattern.", ["Calculation", "Answer"], [[f"{n} ÷ {frac(f)}", B(float(n / f))], [f"{2 * n} ÷ {frac(f)}", B(float(2 * n / f))], [f"{n} ÷ {frac(f / 2)}", B(float(n / (f / 2)))]], o="O5", d="H")
 
 
-s.std([v5, v8, v1, v2, v3, v6, v7, v4], EX("Explain why 2 ÷ 1/3 = 6.", [("how many thirds in 2", ["how many thirds|thirds in"]), ("3 thirds in each whole, so 2 × 3 = 6", ["2 ?× ?3|3 thirds|three thirds|each whole"])], "Dividing by 1/3 asks how many thirds are in 2. Each whole has 3 thirds, so there are 2 × 3 = 6 thirds.", o="O5"))
+def c75(r):
+    n, f = r.randint(2, 9), pick(r, [Fr(1, 3), Fr(2, 5), Fr(3, 4)])
+    return MC(f"Which calculation has the same answer as {n} ÷ {frac(f)}?", f"{n} × {f.denominator}/{f.numerator}", [(f"{n} × {frac(f)}", "That multiplies by the fraction, giving a smaller answer."), (f"{frac(f)} ÷ {n}", "Division order matters.")], o="O5", d="H",
+              reason=f"Dividing by {frac(f)} is multiplying by its reciprocal {f.denominator}/{f.numerator}.")
+
+
+s.std([v5, v8, v1, v2, v3, v6, v7, v4], EX("Explain why 2 ÷ 1/3 = 6.", [("how many thirds in 2", ["how many thirds|thirds in"]), ("3 thirds in each whole, so 2 × 3 = 6", ["2 ?× ?3|3 thirds|three thirds|each whole"])], "Dividing by 1/3 asks how many thirds are in 2. Each whole has 3 thirds, so there are 2 × 3 = 6 thirds.", o="O5"),
+      deep=[c75])
 
 # ================================================================== 7.6
 s = U.section("7.6", "Making fraction calculations easier", ["O6"])
@@ -240,6 +285,7 @@ s.idea("Strategies", ["**Re-order** so fractions that make wholes go together: 3
        "**Simplify before multiplying**: 4/9 × 3/8 — cancel 4 with 8 and 3 with 9: 1/3 × 1/2 = 1/6.",
        "**Distributive law**: 3/4 × 7 + 3/4 × 5 = 3/4 × 12 = 9."])
 s.check(N("Work out 2/5 + 1 3/4 + 3/5 mentally.", 2.75, o="O6", reason="2/5 + 3/5 = 1; 1 + 1 3/4 = 2 3/4."))
+s.check(MC("Before you read on: what is the easiest first step for 2/7 × 3/5 × 7/2?", "2/7 × 7/2 = 1", [("2/7 × 3/5", "Possible, but 2/7 × 7/2 cancels to 1."), ("3/5 × 7/2", "Look for a pair of reciprocals.")], o="O6"))
 s.mistake("Cancel across, not within addition", ["You can cancel common factors when multiplying fractions, but not when adding them."])
 
 
@@ -270,7 +316,12 @@ def e8(r):
     return MC("Which law does 3/4 × 6 + 3/4 × 2 = 3/4 × 8 use?", "the distributive law", [("the commutative law", "That is swapping the order."), ("the associative law", "That is changing the grouping."), ("the inverse law", "")], o="O6")
 
 
-s.std([e5, e7, e1, e2, e3, e4, e8, e6], EX("Explain the quickest way to work out 5/7 × 9 + 5/7 × 5.", [("take out 5/7: 5/7 × (9 + 5)", ["5/7 ?× ?\\(9|distributive|common|14"]), ("5/7 × 14 = 10", ["\\b10\\b"])], "Use the distributive law: 5/7 × 9 + 5/7 × 5 = 5/7 × (9 + 5) = 5/7 × 14 = 10.", o="O6"))
+def c76(r):
+    return MC("Which calculation is quickest to do mentally?", "1/4 × 13 × 4", [("1/4 × 13 × 3", "No pair makes a whole number."), ("2/9 × 13 × 4", "No cancelling pair.")], o="O6", d="H", reason="1/4 × 4 = 1, so 1/4 × 13 × 4 = 13.")
+
+
+s.std([e5, e7, e1, e2, e3, e4, e8, e6], EX("Explain the quickest way to work out 5/7 × 9 + 5/7 × 5.", [("take out 5/7: 5/7 × (9 + 5)", ["5/7 ?× ?\\(9|distributive|common|14"]), ("5/7 × 14 = 10", ["\\b10\\b"])], "Use the distributive law: 5/7 × 9 + 5/7 × 5 = 5/7 × (9 + 5) = 5/7 × 14 = 10.", o="O6"),
+      deep=[c76])
 
 U.mindmap(("Recurring decimals", "Simplest form: only 2s and 5s in the denominator → terminating", "O1", "7.1"), ("Ordering", "Common denominator or decimals", "O2", "7.2"),
           ("Subtracting mixed numbers", "Regroup when the fraction is too small", "O3", "7.3"), ("Integer × mixed number", "Split or use improper fractions", "O4", "7.4"),

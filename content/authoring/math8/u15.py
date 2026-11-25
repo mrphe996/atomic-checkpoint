@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 8 Mathematics · Unit 15 Distance, area and volume (15.1 Converting between miles and kilometres, 15.2 The area of a
 parallelogram and trapezium, 15.3 Volume of triangular prisms, 15.4 Surface area of triangular prisms and pyramids).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 
@@ -60,6 +62,9 @@ s.idea("Parallelogram", ["**Area of a parallelogram = base × perpendicular heig
 s.idea("Trapezium", ["**Area of a trapezium = ½ (a + b) h**, where a and b are the parallel sides and h is the height between them."], fig=TRAP(4, 9, 5))
 s.example("Trapezium", "Find the area of a trapezium with parallel sides 6 cm and 10 cm and height 4 cm.", [("½ × (6 + 10) × 4", ""), ("= ½ × 16 × 4 = 32", "")], "32 cm²")
 s.check(N("A parallelogram has base 9 cm and perpendicular height 6 cm. Find its area.", 54, "cm²", units=["cm²"], o="O2"))
+s.idea("Why a parallelogram has area base × height", ["Cut the triangle off one end of a parallelogram and slide it to the other end: you get a rectangle with the same base and the same perpendicular height.",
+       "A trapezium is half of a parallelogram made from two copies: area = 1/2 (a + b) h."])
+s.check(MC("Before you read on: a parallelogram has base 8 cm, sloping side 5 cm and height 4 cm. What is its area?", "32 cm²", [("40 cm²", "Use the perpendicular height, not the sloping side."), ("16 cm²", "There is no 1/2 for a parallelogram.")], o="O2"))
 s.mistake("Sloping side", ["Do not use the slanted side for the height."])
 
 
@@ -91,7 +96,13 @@ def a8(r):
     return N(f"A tile is a parallelogram with base {b} cm and height {h} cm. How much area do 20 tiles cover?", 20 * b * h, "cm²", units=["cm²"], o="O2", reason=f"20 × {b} × {h} = {20 * b * h} cm².")
 
 
-s.std([a1, a2, a3, a5, a6, a8, a4, a7], EX("Explain why the area of a parallelogram is base × perpendicular height.", [("cut a triangle off one end and move it to the other end", ["cut|move|rearrange|triangle"]), ("this makes a rectangle with the same base and height", ["rectangle"])], "Cut the triangle off one end and slide it to the other end. The parallelogram becomes a rectangle with the same base and height, so its area is base × height.", o="O2"))
+def m152(r):
+    a, b, h = r.randint(3, 8), r.randint(9, 14), r.randint(2, 6) * 2
+    return N(f"A trapezium has parallel sides {a} cm and {b} cm and area {(a + b) * h // 2} cm². Find its height.", h, "cm", units=["cm"], o="O2", d="H", reason=f"1/2 × ({a} + {b}) × h = {(a + b) * h // 2}, so h = {h} cm.")
+
+
+s.std([a1, a2, a3, a5, a6, a8, a4, a7], EX("Explain why the area of a parallelogram is base × perpendicular height.", [("cut a triangle off one end and move it to the other end", ["cut|move|rearrange|triangle"]), ("this makes a rectangle with the same base and height", ["rectangle"])], "Cut the triangle off one end and slide it to the other end. The parallelogram becomes a rectangle with the same base and height, so its area is base × height.", o="O2"),
+      deep=[m152])
 
 # ================================================================== 15.3
 s = U.section("15.3", "Calculating the volume of triangular prisms", ["O3"])
@@ -99,6 +110,8 @@ s.idea("Prisms", ["A **prism** has the same cross-section all along its length. 
        "For a triangular prism: volume = ½ × base × height × length."], fig={"kind": "solid", "solid": "triprism", "a": "6 cm", "b": "4 cm", "c": "10 cm"})
 s.example("Triangular prism", "A triangular prism has a cross-section with base 6 cm and height 4 cm. It is 10 cm long. Find its volume.", [("area = ½ × 6 × 4 = 12 cm²", ""), ("volume = 12 × 10 = 120 cm³", "")], "120 cm³")
 s.check(N("A prism has cross-section area 15 cm² and length 8 cm. Find its volume.", 120, "cm³", units=["cm³"], o="O3"))
+s.idea("Volume of any prism", ["A prism has the same cross-section all the way through, so its volume = area of the cross-section × length. For a triangular prism, find the triangle's area first.",
+       "This is the same idea as a cuboid: area of the end (l × w) × height."])
 s.mistake("Halve the triangle", ["The triangle's area is ½ × base × height. Forgetting the ½ doubles the volume."])
 
 
@@ -128,7 +141,13 @@ def v8(r):
     return N(f"A prism has a right-angled triangle cross-section with shorter sides {a} cm and {b} cm. Its length is {l} cm. Find the volume.", a * b * l / 2, "cm³", units=["cm³"], o="O3", fig={"kind": "solid", "solid": "triprism", "right": True, "a": f"{a} cm", "b": f"{b} cm", "c": f"{l} cm"})
 
 
-s.std([v1, v5, v2, v3, v4, v6, v7, v8], EX("Explain why you multiply by the length to find the volume of a prism.", [("the cross-section is the same all the way along", ["same all|same cross|constant|layers|slices"]), ("so the volume is the cross-section area repeated along the length", ["stack|repeat|layer|times the length|× ?length"])], "A prism has the same cross-section all along its length, so it is like layers of that area stacked up. Volume = area of cross-section × length.", o="O3"))
+def m153(r):
+    b, h, l = r.randint(3, 10), r.randint(2, 8) * 2, r.randint(5, 15)
+    return N(f"A triangular prism has a triangle end with base {b} cm and height {h} cm. The prism is {l} cm long. Find its volume.", b * h // 2 * l, "cm³", units=["cm³"], o="O3", d="H", reason=f"End area 1/2 × {b} × {h} = {b * h // 2} cm²; × {l} = {b * h // 2 * l} cm³.")
+
+
+s.std([v1, v5, v2, v3, v4, v6, v7, v8], EX("Explain why you multiply by the length to find the volume of a prism.", [("the cross-section is the same all the way along", ["same all|same cross|constant|layers|slices"]), ("so the volume is the cross-section area repeated along the length", ["stack|repeat|layer|times the length|× ?length"])], "A prism has the same cross-section all along its length, so it is like layers of that area stacked up. Volume = area of cross-section × length.", o="O3"),
+      deep=[m153])
 
 # ================================================================== 15.4
 s = U.section("15.4", "Calculating the surface area of triangular prisms and pyramids", ["O4"])

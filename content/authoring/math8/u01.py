@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 """Stage 8 Mathematics · Unit 1 Integers (1.1 Factors, multiples and primes, 1.2 Multiplying and dividing integers,
-1.3 Square roots and cube roots, 1.4 Indices). Written by the Atomic teaching team."""
+1.3 Square roots and cube roots, 1.4 Indices). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from math import gcd, isqrt
 from kit import *
+import kit as _kit
+_kit.RAW_SIGNS = True   # this unit teaches the signs: keep them as written
 
 U = Unit(1, "Integers", "Number",
          "Prime factors, HCF and LCM, multiplying and dividing negative numbers, square and cube roots, and index notation.",
@@ -49,6 +53,9 @@ s.idea("HCF and LCM", ["The **highest common factor** (HCF) is the biggest numbe
        "The **lowest common multiple** (LCM) is the smallest number both divide into. Take every prime factor, using the **highest power** that appears."])
 s.example("HCF and LCM of 60 and 72", "Find the HCF and LCM of 60 and 72.", [("60 = 2² × 3 × 5, 72 = 2³ × 3²", "prime factors"), ("HCF = 2² × 3 = 12", "shared primes, lowest powers"), ("LCM = 2³ × 3² × 5 = 360", "all primes, highest powers")], "HCF 12, LCM 360")
 s.check(N("Find the HCF of 36 and 84.", 12, o="O1", reason="36 = 2² × 3², 84 = 2² × 3 × 7; HCF = 2² × 3 = 12."))
+s.idea("Why prime factors find the HCF and LCM", ["Every factor of 60 is built from some of its prime factors 2, 2, 3, 5. A common factor of 60 and 72 can only use primes both numbers have – so the HCF takes the shared primes.",
+       "A common multiple must contain every prime of both numbers, so the LCM takes each prime at its highest power. That is also why HCF × LCM = the two numbers multiplied: 12 × 360 = 60 × 72."])
+s.check(MC("Before you read on: is 51 prime?", "No: 51 = 3 × 17", [("Yes", "Check the digit sum: 5 + 1 = 6, so 3 divides it."), ("No: 51 = 7 × 7 + 2", "That does not show a factor pair.")], o="O1", hint="Try dividing by 3."))
 s.mistake("HCF or LCM?", ["The HCF can be no bigger than the smaller number; the LCM can be no smaller than the bigger number. Use this to check your answer."])
 
 
@@ -95,7 +102,23 @@ def f10(r):
 
 
 T1 = [f9, f10, f1, f2, f3, f4, f5, f6, f8, f7]
-s.std(T1, EX("Explain why the HCF of two different prime numbers is always 1.", [("a prime only has factors 1 and itself", ["only.*1 and itself|two factors|only factors"]), ("so the only common factor is 1", ["only common|share only 1|nothing else|no other common"])], "A prime number has only two factors: 1 and itself. Two different primes therefore share only the factor 1, so their HCF is 1.", o="O1"), adv=[fa, f4, f5])
+def v11(r):   # always/sometimes/never
+    rows = r.sample([("The product of two primes is prime", "Never true"), ("An odd number is prime", "Sometimes true"), ("Two different primes have HCF 1", "Always true"),
+                     ("The LCM of two numbers is bigger than both", "Sometimes true"), ("HCF × LCM equals the product of the two numbers", "Always true")], 4)
+    return GD("Is each statement always true, sometimes true or never true?", "Always / sometimes / never", rows, o="O1", d="H", extra=["Always true", "Sometimes true", "Never true"],
+              reason="Test examples: 9 is odd and not prime; the LCM of 4 and 12 is 12, not bigger than 12; a product of two primes always has those primes as extra factors.")
+def v12(r):   # work backwards from prime factors
+    a, b, c = r.randint(1, 3), r.randint(0, 2), r.randint(0, 1)
+    n = 2 ** a * 3 ** b * 5 ** c * 7
+    return N(f"A number is 2{sup(a) if a > 1 else ''} × " + (f"3{sup(b) if b > 1 else ''} × " if b else "") + (f"5 × " if c else "") + "7. What is the number?", n, o="O1", d="H", reason=f"Multiply out: {n}.")
+def v13(r):   # spot the error
+    return MC("Ravi says the HCF of 2³ × 3 and 2² × 3² is 2³ × 3² because you take the highest powers. What is wrong?", "That is the LCM: the HCF uses the lowest powers, 2² × 3 = 12",
+              [("Nothing", "2³ × 3² = 72 is bigger than 24, so it cannot divide 24."), ("The HCF is 2 × 3", "2² × 3 = 12 divides both, and it is bigger than 6.")], o="O1", d="H",
+              reason="Shared primes at their LOWEST powers give the HCF: 2² × 3 = 12. Highest powers give the LCM: 2³ × 3² = 72.")
+
+
+s.std(T1, EX("Explain why the HCF of two different prime numbers is always 1.", [("a prime only has factors 1 and itself", ["only.*1 and itself|two factors|only factors"]), ("so the only common factor is 1", ["only common|share only 1|nothing else|no other common"])], "A prime number has only two factors: 1 and itself. Two different primes therefore share only the factor 1, so their HCF is 1.", o="O1"), adv=[fa, f4, f5],
+      deep=[v11, v12, v13])
 
 # ================================================================== 1.2
 s = U.section("1.2", "Multiplying and dividing integers", ["O2"])
@@ -107,6 +130,9 @@ s.idea("Order of operations", ["Brackets first, then indices, then × and ÷ fro
        "With several negative factors, count them: an **even** number of negatives gives a positive product, an **odd** number gives a negative."])
 s.example("Mixed calculation", "Work out −3 × (4 − 9) + (−12) ÷ 4.", [("4 − 9 = −5", "brackets"), ("−3 × −5 = 15", "multiply"), ("−12 ÷ 4 = −3", "divide"), ("15 + (−3) = 12", "add")], "12")
 s.check(N("Work out (−2) × (−3) × (−5).", -30, o="O2", reason="Three negatives: an odd number, so the answer is negative. 2 × 3 × 5 = 30 → −30."))
+s.idea("Why a negative × a negative is positive", ["Look at the pattern: 3 × (−2) = −6, 2 × (−2) = −4, 1 × (−2) = −2, 0 × (−2) = 0. Each time the first number goes down by 1, the answer goes UP by 2.",
+       "Carry on: (−1) × (−2) = 2, (−2) × (−2) = 4. The pattern forces a negative times a negative to be positive."],
+       table={"head": ["Calculation", "Answer"], "rows": [["2 × (−2)", "−4"], ["1 × (−2)", "−2"], ["0 × (−2)", "0"], ["(−1) × (−2)", "2"], ["(−2) × (−2)", "4"]]})
 s.mistake("Squaring a negative", ["(−5)² = (−5) × (−5) = 25. But −5² means −(5²) = −25. Use brackets on your calculator."])
 
 
@@ -155,7 +181,23 @@ def m9(r):
 
 
 T2 = [m6, m9, m1, m2, m3, m4, m5, m7, m8]
-s.std(T2, EX("Explain why (−1) × (−1) × (−1) is negative.", [("(−1) × (−1) = 1", ["= ?1\\b|positive|two negatives"]), ("1 × (−1) = −1: an odd number of negatives", ["odd|three|−1|-1"])], "(−1) × (−1) = 1, because two negatives make a positive. Then 1 × (−1) = −1. An odd number of negative factors gives a negative answer.", o="O2"), adv=[ma, mb, m8])
+def v21(r):   # sign of a long product (decision)
+    k = r.randint(2, 6); nums = [-r.randint(1, 5) for _ in range(k)] + [r.randint(1, 5) for _ in range(r.randint(0, 2))]
+    r.shuffle(nums); p = 1
+    for x in nums: p *= x
+    return MC("Without working it out: is " + " × ".join(f"({x})" if x < 0 else str(x) for x in nums) + " positive or negative?", "Positive" if p > 0 else "Negative", [("Negative" if p > 0 else "Positive", "Count the negative numbers."), ("It depends on the sizes", "Only the number of negatives decides the sign.")],
+              o="O2", d="H", reason=f"There are {sum(1 for x in nums if x < 0)} negative numbers: an {'even' if sum(1 for x in nums if x < 0) % 2 == 0 else 'odd'} number, so the answer is {'positive' if p > 0 else 'negative'}.")
+def v22(r):   # spot the error: (−3)² vs −3²
+    a = r.randint(2, 9)
+    return MC(f"Kim says −{a}² = {a * a}. What is −{a}²?", str(-a * a), [(str(a * a), f"Only {a} is squared, then the minus is applied. ({-a})² would be {a * a}."), (str(-2 * a), "Squaring is not doubling.")], o="O2", d="VH",
+              reason=f"The power comes before the minus sign: −({a}²) = −{a * a}. With brackets, (−{a})² = {a * a}.")
+def v23(r):   # missing number
+    a, b = r.randint(2, 9), r.randint(2, 9)
+    return N(f"Find the missing number: ☐ × ({-a}) = {a * b}", -b, o="O2", d="H", reason=f"The answer is positive and {-a} is negative, so ☐ is negative: {a * b} ÷ ({-a}) = {-b}.")
+
+
+s.std(T2, EX("Explain why (−1) × (−1) × (−1) is negative.", [("(−1) × (−1) = 1", ["= ?1\\b|positive|two negatives"]), ("1 × (−1) = −1: an odd number of negatives", ["odd|three|−1|-1"])], "(−1) × (−1) = 1, because two negatives make a positive. Then 1 × (−1) = −1. An odd number of negative factors gives a negative answer.", o="O2"), adv=[ma, mb, m8],
+      deep=[v21, v22, v23])
 
 # ================================================================== 1.3
 s = U.section("1.3", "Square roots and cube roots", ["O3"])
@@ -165,6 +207,9 @@ s.check(N("Find ∛−125.", -5, o="O3", reason="(−5)³ = −125."))
 s.idea("Estimating roots", ["Find the square (or cube) numbers either side. 50 is between 49 and 64, so √50 is between 7 and 8, and close to 7."])
 s.example("Between two integers", "Between which two whole numbers does √130 lie?", [("11² = 121 and 12² = 144", ""), ("121 < 130 < 144", "")], "Between 11 and 12")
 s.check(N("√90 lies between two consecutive whole numbers. Write the smaller one.", 9, o="O3", reason="81 < 90 < 100, so 9 < √90 < 10."))
+s.idea("Why a square root has two answers but a cube root has one", ["Both 6 × 6 and (−6) × (−6) equal 36, so 36 has two square roots: 6 and −6 (written ±6). The symbol √36 means the positive one.",
+       "For cubes the sign survives: (−5)³ = −125, so ∛−125 = −5. Each number has exactly one cube root."])
+s.check(MC("Before you read on: what are the solutions of x² = 49?", "7 and −7", [("7 only", "(−7)² = 49 as well."), ("−7 only", "7² = 49 too.")], o="O3"))
 s.mistake("Roots are not halves", ["√64 is 8, not 32. A root asks which number multiplied by itself gives 64."])
 SQ = [n * n for n in range(1, 16)]; CU = [n ** 3 for n in range(1, 11)]
 
@@ -210,7 +255,18 @@ def r10(r):
 
 
 T3 = [r9, r10, r1, r2, r3, r4, r7, r8, r6, r5, rb]
-s.std(T3, EX("Explain why 64 has two square roots but only one cube root.", [("8 × 8 = 64 and (−8) × (−8) = 64", ["−8|-8|negative"]), ("only 4³ = 64; (−4)³ = −64", ["4|−64|-64|negative cube"])], "Both 8² and (−8)² equal 64, so the square roots are ±8. But 4³ = 64 while (−4)³ = −64, so the only cube root of 64 is 4.", o="O3"), adv=[ra, rb, r5])
+def v31(r):   # estimate to 1 dp decision
+    n = r.randint(3, 12); v = n * n + r.randint(1, n)
+    return MC(f"Which is the best estimate of √{v}?", f"{n}.{min(9, round((v - n * n) / (2 * n) * 10))}" , [(f"{n + 1}.{r.randint(1, 4)}", f"{n + 1}² = {(n + 1) ** 2}, which is more than {v}."), (f"{v / 2:g}", "Square-rooting is not halving.")], o="O3", d="H",
+              reason=f"{n}² = {n * n} and {n + 1}² = {(n + 1) ** 2}; {v} is just above {n * n}, so √{v} is a little more than {n}.")
+def v32(r):   # always/sometimes/never
+    rows = r.sample([("A negative number has a square root (in whole or decimal numbers)", "Never true"), ("A negative number has a cube root", "Always true"), ("√n is smaller than n", "Sometimes true"), ("The cube of a negative number is negative", "Always true")], 4)
+    return GD("Is each statement always true, sometimes true or never true?", "Always / sometimes / never", rows, o="O3", d="H", extra=["Always true", "Sometimes true", "Never true"],
+              reason="Any number squared is 0 or positive, so −9 has no square root; (−2)³ = −8, so negatives have cube roots. √0.25 = 0.5 is bigger than 0.25.")
+
+
+s.std(T3, EX("Explain why 64 has two square roots but only one cube root.", [("8 × 8 = 64 and (−8) × (−8) = 64", ["−8|-8|negative"]), ("only 4³ = 64; (−4)³ = −64", ["4|−64|-64|negative cube"])], "Both 8² and (−8)² equal 64, so the square roots are ±8. But 4³ = 64 while (−4)³ = −64, so the only cube root of 64 is 4.", o="O3"), adv=[ra, rb, r5],
+      deep=[v31, v32])
 
 # ================================================================== 1.4
 s = U.section("1.4", "Indices", ["O4"])
@@ -221,6 +277,9 @@ s.idea("Laws of indices", ["To **multiply** powers of the same number, **add** t
        "To **divide** powers of the same number, **subtract** the indices: 7⁵ ÷ 7² = 7³."])
 s.example("Simplify", "Simplify 2⁵ × 2³ ÷ 2⁴, leaving your answer as a power of 2.", [("2⁵ × 2³ = 2⁸", "add 5 + 3"), ("2⁸ ÷ 2⁴ = 2⁴", "subtract 8 − 4")], "2⁴")
 s.check(S("Simplify 5⁶ ÷ 5², giving your answer as a power of 5.", ["5⁴", "5^4"], o="O4", reason="6 − 2 = 4."))
+s.idea("Why the index laws work", ["2³ × 2⁴ = (2 × 2 × 2) × (2 × 2 × 2 × 2) = seven 2s = 2⁷. Multiplying powers of the same number ADDS the indices.",
+       "5⁶ ÷ 5² cancels two 5s from the top: four 5s are left, 5⁴. Dividing SUBTRACTS the indices. Then 10² ÷ 10² = 10⁰ must be 1, and 10⁰ ÷ 10¹ = 10⁻¹ = 1/10."])
+s.check(MC("Before you read on: what is 3² × 3⁴?", "3⁶", [("3⁸", "Add the indices, do not multiply them."), ("9⁶", "The base stays 3.")], o="O4"))
 s.mistake("Don't multiply the base", ["3² × 3⁴ is 3⁶, not 9⁶. The base stays the same; only the indices change."])
 
 
@@ -262,7 +321,20 @@ def i9(r):
 
 
 T4 = [i7, i9, i1, i2, i3, i4, i5, i8, i6, ib]
-s.std(T4, EX("Explain why 6⁰ = 1.", [("6² ÷ 6² = 6²⁻² = 6⁰", ["÷|divide|subtract|2 ?− ?2|2 ?- ?2"]), ("any number divided by itself is 1", ["itself|= ?1|is 1"])], "Using the law for division, 6² ÷ 6² = 6⁰. But any number divided by itself is 1, so 6⁰ = 1.", o="O4"), adv=[ia, i6, ib])
+def v41(r):   # spot the error
+    a, b = r.randint(2, 5), r.randint(2, 5)
+    return MC(f"Leo says 2{sup(a)} × 2{sup(b)} = 4{sup(a + b)}. What is right?", f"2{sup(a + b)}", [(f"4{sup(a + b)}", "The base stays 2: you are counting 2s."), (f"2{sup(a * b)}", "Add the indices, do not multiply.")], o="O4", d="H",
+              reason=f"{a} twos times {b} twos is {a + b} twos: 2{sup(a + b)}.")
+def v42(r):   # missing index
+    a, c = r.randint(2, 6), r.randint(7, 12)
+    return N(f"Find the missing index: 7{sup(a)} × 7^☐ = 7{sup(c)}", c - a, o="O4", d="H", reason=f"{a} + ☐ = {c}, so ☐ = {c - a}.")
+def v43(r):   # order powers of 10
+    vals = r.sample([("10⁻²", -2), ("10⁰", 0), ("10³", 3), ("10⁻¹", -1), ("10¹", 1)], 4); vals.sort(key=lambda v: v[1])
+    return OD("Put these in order, smallest first.", [v[0] for v in vals], o="O4", d="H", reason="10⁻² = 0.01, 10⁻¹ = 0.1, 10⁰ = 1, 10¹ = 10, 10³ = 1000.")
+
+
+s.std(T4, EX("Explain why 6⁰ = 1.", [("6² ÷ 6² = 6²⁻² = 6⁰", ["÷|divide|subtract|2 ?− ?2|2 ?- ?2"]), ("any number divided by itself is 1", ["itself|= ?1|is 1"])], "Using the law for division, 6² ÷ 6² = 6⁰. But any number divided by itself is 1, so 6⁰ = 1.", o="O4"), adv=[ia, i6, ib],
+      deep=[v41, v42, v43])
 
 U.mindmap(("Primes and factors", "Prime factors with indices • HCF: shared primes • LCM: all primes, highest powers", "O1", "1.1"),
           ("Negative numbers", "Same signs → positive • different signs → negative", "O2", "1.2"),

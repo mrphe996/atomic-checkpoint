@@ -191,6 +191,7 @@ def k2(r):   # missing term
              hint=f"Collect the a terms you already have: {a}a − a. How many more a do you need?", reason=f"{a}a − a = {a - 1}a. To make {a - 1 + m}a you need {m}a more, so the missing term is {m}a.")
 def k3(r):   # choose the two that add to a target
     p, q, u, v = r.randint(2, 6), r.randint(1, 6), r.randint(2, 6), r.randint(1, 6)
+    if (p, q) == (u, v): return None
     rights = [f"{p}x + {q}", f"{u}x + {v}"]
     wrongs = [f"{p + u}x", f"{q + v}x + {p}"]
     return MS(f"Choose the TWO expressions that add up to {p + u}x + {q + v}.", rights, wrongs, o="O3", d="H",

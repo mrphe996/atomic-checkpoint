@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 8 Mathematics · Unit 10 Percentages (10.1 Percentage increases and decreases, 10.2 Using a multiplier).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 
@@ -20,6 +22,9 @@ s.check(N("Increase 250 by 12%.", 280, o="O1", reason="12% of 250 = 30; 250 + 30
 s.idea("Percentage change", ["**Percentage change = change ÷ original amount × 100**.",
        "A price goes from $50 to $62: change = 12, 12 ÷ 50 × 100 = 24% increase."])
 s.check(N("A plant grows from 40 cm to 46 cm. Find the percentage increase.", 15, "%", units=["%"], o="O1"))
+s.idea("Why the order of increases matters", ["A 10% increase followed by a 10% decrease does NOT bring you back. $100 → $110 → $99, because the second 10% is of $110, not $100.",
+       "Always ask: a percentage OF WHAT?"])
+s.check(MC("Before you read on: a price rises by 20% and then falls by 20%. Is it back to the start?", "No – it is 4% lower", [("Yes", "The fall is 20% of a bigger amount."), ("No – it is higher", "100 → 120 → 96.")], o="O1"))
 s.mistake("Divide by the original", ["The percentage change is worked out from the ORIGINAL amount, not the new one."])
 
 
@@ -79,7 +84,14 @@ def p15(r):
     return N(f"A puppy has a mass of {fmt(w)} kg. It gains {pc}% in a month. What is its new mass in kg?", m2(w * (1 + pc / 100)), "kg", units=["kg"], o="O1", tol=0.005, reason=f"{fmt(w)} × {fmt(1 + pc / 100)} = {fmt(m2(w * (1 + pc / 100)))} kg.")
 
 
-s.std([p6, p7, p1, p2, p3, p9, p10, p4, p5, p8, p11, p12, p13, p14, p15], EX("Explain how to find the percentage increase when a price rises from $40 to $50.", [("the change is $10", ["\\b10\\b|change"]), ("divide by the original 40 and multiply by 100: 25%", ["25|÷ ?40|original"])], "The change is $50 − $40 = $10. Divide by the original price and multiply by 100: 10 ÷ 40 × 100 = 25%.", o="O1"))
+def f101(r):
+    p = pick(r, [10, 20, 25, 50]); v = pick(r, [80, 120, 200, 400])
+    return N(f"A price of ${v} rises by {p}% and then falls by {p}%. What is the final price?", round(v * (1 + p / 100) * (1 - p / 100), 2), "$", units=["$"], o="O1", d="H",
+             reason=f"{v} × {1 + p / 100:g} = {v * (1 + p / 100):g}; × {1 - p / 100:g} = {v * (1 + p / 100) * (1 - p / 100):g}.")
+
+
+s.std([p6, p7, p1, p2, p3, p9, p10, p4, p5, p8, p11, p12, p13, p14, p15], EX("Explain how to find the percentage increase when a price rises from $40 to $50.", [("the change is $10", ["\\b10\\b|change"]), ("divide by the original 40 and multiply by 100: 25%", ["25|÷ ?40|original"])], "The change is $50 − $40 = $10. Divide by the original price and multiply by 100: 10 ÷ 40 × 100 = 25%.", o="O1"),
+      deep=[f101])
 
 # ================================================================== 10.2
 s = U.section("10.2", "Using a multiplier", ["O2"])
@@ -88,6 +100,9 @@ s.idea("Multipliers", ["An increase of 15% means you have 100% + 15% = 115% of t
        table={"head": ["Change", "Multiplier"], "rows": [["+ 20%", "1.2"], ["+ 5%", "1.05"], ["− 30%", "0.7"], ["− 3%", "0.97"]]})
 s.example("With a multiplier", "Decrease $260 by 35%.", [("100% − 35% = 65% → 0.65", ""), ("260 × 0.65 = 169", "")], "$169")
 s.check(N("What decimal multiplier increases an amount by 8%?", 1.08, o="O2"))
+s.idea("Why a multiplier works", ["Increasing by 15% means keeping 100% and adding 15%: 115% = 1.15. So the new amount is 1.15 × the old one, in one step.",
+       "A decrease of 15% leaves 85% = 0.85."])
+s.check(MC("Before you read on: what multiplier decreases an amount by 8%?", "0.92", [("0.08", "That finds the 8%, not what is left."), ("1.08", "That is an increase.")], o="O2"))
 s.mistake("1.5 is not 5%", ["An increase of 5% is × 1.05, not × 1.5 (that is a 50% increase)."])
 
 
@@ -137,7 +152,18 @@ def u13(r):
     return N(f"Sales tax of {t}% is added to a price of ${p}. Use a multiplier to find the price including tax.", m2(p * (1 + t / 100)), "$", units=["$"], o="O2", tol=0.005, reason=f"{p} × {fmt(1 + t / 100)} = {fmt(m2(p * (1 + t / 100)))}.")
 
 
-s.std([u4, u6, u1, u2, u3, u8, u9, u5, u7, u10, u11, u12, u13], EX("Explain why multiplying by 0.85 decreases an amount by 15%.", [("0.85 = 85%", ["85"]), ("100% − 15% = 85% is what is left", ["100 ?− ?15|100 ?- ?15|left|remain"])], "0.85 is 85%. Decreasing by 15% leaves 100% − 15% = 85% of the amount, so multiplying by 0.85 does the decrease in one step.", o="O2"))
+def f102(r):
+    rows = r.sample([("increase by 30%", "1.3"), ("decrease by 30%", "0.7"), ("increase by 5%", "1.05"), ("decrease by 5%", "0.95"), ("increase by 100%", "2")], 4)
+    return GD("Write the multiplier for each change.", "Multiplier", rows, o="O2", d="H", extra=["0.3", "0.05"], reason="Increase: 1 + p/100. Decrease: 1 − p/100.")
+def f103(r):
+    p = pick(r, [10, 20, 25]); new = pick(r, [66, 90, 120, 150])
+    old = new / (1 + p / 100)
+    if old != int(old): return None
+    return N(f"After a {p}% increase, a price is ${new}. What was it before?", int(old), "$", units=["$"], o="O2", d="VH", reason=f"{new} ÷ {1 + p / 100:g} = {int(old)}. (Not {new} − {p}% of {new}.)")
+
+
+s.std([u4, u6, u1, u2, u3, u8, u9, u5, u7, u10, u11, u12, u13], EX("Explain why multiplying by 0.85 decreases an amount by 15%.", [("0.85 = 85%", ["85"]), ("100% − 15% = 85% is what is left", ["100 ?− ?15|100 ?- ?15|left|remain"])], "0.85 is 85%. Decreasing by 15% leaves 100% − 15% = 85% of the amount, so multiplying by 0.85 does the decrease in one step.", o="O2"),
+      deep=[f102, f103])
 
 U.mindmap(("Increase and decrease", "Find the % then add or subtract • % change = change ÷ original × 100", "O1", "10.1"),
           ("Multipliers", "+15% → × 1.15 • −15% → × 0.85", "O2", "10.2"))

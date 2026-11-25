@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 8 Mathematics · Unit 9 Sequences and functions (9.1 Generating sequences, 9.2 Finding rules for sequences,
-9.3 Using the nth term, 9.4 Representing simple functions). Written by the Atomic teaching team."""
+9.3 Using the nth term, 9.4 Representing simple functions). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 
 U = Unit(9, "Sequences and Functions", "Algebra",
@@ -22,6 +24,7 @@ s.idea("Two kinds of rule", ["A **term-to-term rule** tells you how to get from 
        "Sequences can also multiply (2, 6, 18, 54, …) or use squares (1, 4, 9, 16, …): these are **non-linear**."])
 s.check(N("The first term of a sequence is 4. The rule is 'multiply by 3, then subtract 2'. What is the third term?", 28, o="O1", reason="4 → 10 → 28."))
 s.example("Position-to-term", "Write the first three terms of the sequence with nth term 5n − 3.", [("n = 1: 5 − 3 = 2", ""), ("n = 2: 10 − 3 = 7", ""), ("n = 3: 15 − 3 = 12", "")], "2, 7, 12")
+s.check(MC("Before you read on: a sequence has term-to-term rule 'multiply by 2, then subtract 1' and first term 3. What is the third term?", "9", [("5", "That is the second term."), ("11", "3 → 5 → 9.")], o="O1"))
 s.mistake("Start at n = 1", ["The first term uses n = 1, not n = 0."])
 
 
@@ -55,13 +58,22 @@ def g8(r):
     return GD("Is each sequence linear or non-linear?", "Type", r.sample(rows, 4), o="O1")
 
 
-s.std([g3, g8, g1, g2, g4, g6, g7, g5], EX("Explain the difference between a term-to-term rule and a position-to-term rule.", [("term-to-term: from one term to the next", ["next|previous|one term to"]), ("position-to-term: uses the position n to find any term directly", ["position|n|directly|any term"])], "A term-to-term rule tells you how to get from one term to the next. A position-to-term rule uses the term's position n, so you can find any term directly.", o="O1"))
+def e91(r):
+    a, d = r.randint(2, 9), r.randint(2, 5)
+    return MC(f"A sequence starts {a} and the rule is 'add {d}'. Will every term be odd?", "Sometimes – it depends on a and d" if False else ("Yes" if a % 2 and d % 2 == 0 else "No"), [("No" if a % 2 and d % 2 == 0 else "Yes", f"Write out a few terms: {a}, {a + d}, {a + 2 * d}, …"), ("You cannot tell", "Look at whether you start odd and add an even number.")], o="O1", d="H",
+              reason=f"{a}, {a + d}, {a + 2 * d}, {a + 3 * d}: " + ("adding an even number to an odd number keeps it odd." if a % 2 and d % 2 == 0 else "the parity changes or starts even."))
+
+
+s.std([g3, g8, g1, g2, g4, g6, g7, g5], EX("Explain the difference between a term-to-term rule and a position-to-term rule.", [("term-to-term: from one term to the next", ["next|previous|one term to"]), ("position-to-term: uses the position n to find any term directly", ["position|n|directly|any term"])], "A term-to-term rule tells you how to get from one term to the next. A position-to-term rule uses the term's position n, so you can find any term directly.", o="O1"),
+      deep=[e91])
 
 # ================================================================== 9.2
 s = U.section("9.2", "Finding rules for sequences", ["O2"])
 s.idea("Differences", ["Find the **difference** between terms. If it is always the same, the sequence is **linear**: 7, 11, 15, 19 has difference +4.",
        "Patterns of shapes often make sequences: count the matchsticks or tiles in each pattern number."])
 s.check(S("Write the term-to-term rule for 23, 18, 13, 8, …", ["subtract 5", "minus 5", "−5", "-5", "take away 5"], o="O2"))
+s.idea("Why the nth term starts with the difference", ["In 5, 8, 11, 14, … each term is 3 more than the last, so the sequence grows like the 3 times table: 3n gives 3, 6, 9, 12. Each term is 2 more than 3n, so the nth term is 3n + 2.",
+       "Check with n = 1: 3 × 1 + 2 = 5 ✓."])
 s.mistake("Check every gap", ["2, 4, 8, 14 does not have a constant difference (2, 4, 6), so it is not linear."])
 
 
@@ -94,7 +106,15 @@ def f8(r):
     return MC(f"Is {v} a term of the sequence {', '.join(map(str, t))}, …?", "Yes" if yes else "No", [("No" if yes else "Yes", ""), ("It cannot be decided", "")], o="O2", d="H", reason=f"Terms are {a} + a multiple of {d}. {v} − {a} = {v - a}, which is {'' if yes else 'not '}a multiple of {d}.")
 
 
-s.std([f3, f7, f1, f2, f5, f6, f4, f8], EX("Explain how you know that 3, 7, 11, 15, … is a linear sequence.", [("the difference is always 4", ["4|same difference|constant|common difference"]), ("a constant difference means linear", ["constant|same.*each time|linear"])], "The difference between consecutive terms is always +4. A constant difference means the sequence is linear.", o="O2"))
+def e92(r):
+    a, b = r.randint(2, 7), r.randint(-6, 9)
+    seq = [a * n + b for n in range(1, 5)]
+    return MC(f"Which is the nth term of {', '.join(map(str, seq))}, …?", lin(a, b), [(lin(a + 1, b - 1) if a + 1 != a else lin(a, b + 1), "Check n = 2."), (lin(b if b > 0 else 1, a), "The difference goes in front of n.")], o="O2", d="H",
+              reason=f"The difference is {a}, so {a}n; {a}n gives {a}, {2 * a}, …; add {b}.") if lin(b if b > 0 else 1, a) != lin(a, b) and lin(a + 1, b - 1) != lin(a, b) else None
+
+
+s.std([f3, f7, f1, f2, f5, f6, f4, f8], EX("Explain how you know that 3, 7, 11, 15, … is a linear sequence.", [("the difference is always 4", ["4|same difference|constant|common difference"]), ("a constant difference means linear", ["constant|same.*each time|linear"])], "The difference between consecutive terms is always +4. A constant difference means the sequence is linear.", o="O2"),
+      deep=[e92])
 
 # ================================================================== 9.3
 s = U.section("9.3", "Using the nth term", ["O3"])
@@ -102,6 +122,7 @@ s.idea("Finding the nth term", ["For a linear sequence, the **difference** tells
        "7, 11, 15, 19: difference 4 → 4n. 4n gives 4, 8, 12, … — each term is 3 more, so the nth term is **4n + 3**."])
 s.example("Decreasing", "Find the nth term of 20, 17, 14, 11, …", [("difference −3 → −3n", ""), ("−3n gives −3, −6, −9; add 23", ""), ("nth term = 23 − 3n", "")], "23 − 3n")
 s.check(X("Find the nth term of 5, 9, 13, 17, …", "4n+1", vars="n", o="O3"))
+s.check(MC("Before you read on: is 100 a term of the sequence 3n + 1?", "Yes – n = 33", [("No", "Solve 3n + 1 = 100: n = 33, a whole number."), ("Yes – n = 100", "Substitute: 3 × 100 + 1 = 301.")], o="O3"))
 s.mistake("Not n + 4", ["For 5, 9, 13 the difference 4 goes in FRONT of n: 4n + 1, not n + 4."])
 
 
@@ -134,7 +155,14 @@ def n8(r):
     return N(f"A sequence has nth term {lin(a, b)}. What is the difference between the 10th and 11th terms?", a, o="O3", reason=f"Consecutive terms differ by {a}.")
 
 
-s.std([n5, n6, n1, n2, n3, n4, n8, n7], EX("Explain why the nth term of 6, 11, 16, 21, … is 5n + 1.", [("the difference is 5, so 5n", ["difference.*5|5n|goes up by 5"]), ("5n gives 5, 10, 15 … each 1 less, so add 1", ["\\+ ?1|add 1|one more|1 more"])], "The terms go up by 5, so the nth term starts with 5n. 5n gives 5, 10, 15, 20, which are each 1 less than the sequence, so the nth term is 5n + 1.", o="O3"))
+def e93(r):
+    a, b = r.randint(3, 8), r.randint(1, 9); t = a * r.randint(10, 30) + b + r.choice([0, 1, 2])
+    ok = (t - b) % a == 0
+    return MC(f"Is {t} a term of the sequence with nth term {lin(a, b)}?", "Yes" if ok else "No", [("No" if ok else "Yes", f"Solve {lin(a, b)} = {t}.")], o="O3", d="H", reason=f"n = ({t} − {b}) ÷ {a} = {(t - b) / a:g}" + (", a whole number." if ok else ", not a whole number."))
+
+
+s.std([n5, n6, n1, n2, n3, n4, n8, n7], EX("Explain why the nth term of 6, 11, 16, 21, … is 5n + 1.", [("the difference is 5, so 5n", ["difference.*5|5n|goes up by 5"]), ("5n gives 5, 10, 15 … each 1 less, so add 1", ["\\+ ?1|add 1|one more|1 more"])], "The terms go up by 5, so the nth term starts with 5n. 5n gives 5, 10, 15, 20, which are each 1 less than the sequence, so the nth term is 5n + 1.", o="O3"),
+      deep=[e93])
 
 # ================================================================== 9.4
 s = U.section("9.4", "Representing simple functions", ["O4"])
@@ -142,6 +170,7 @@ s.idea("Function machines", ["A **function** turns each input into exactly one o
        "A **mapping** x → 3x + 2 shows the same thing. To find an input from an output, use the **inverse**: undo the operations in reverse order (− 2, then ÷ 3)."])
 s.example("Inverse", "The function is y = 4x − 5. Find x when y = 23.", [("+ 5: 28", "undo − 5"), ("÷ 4: 7", "undo × 4")], "x = 7")
 s.check(N("x → × 5 → − 1 → y. Find y when x = 6.", 29, o="O4"))
+s.check(MC("Before you read on: the inverse of 'multiply by 4 then add 3' is…", "subtract 3 then divide by 4", [("divide by 4 then subtract 3", "Undo in reverse order: the last step first."), ("add 3 then multiply by 4", "That is the same machine.")], o="O4"))
 s.mistake("Reverse order", ["For the inverse of 'multiply by 2, then add 3', subtract 3 FIRST, then divide by 2."])
 
 
@@ -171,7 +200,13 @@ def m8(r):
     return N(f"A function machine is: input → square → × {a} → output. Find the output when the input is {x}.", a * x * x, o="O4", reason=f"{x}² × {a} = {a * x * x}.")
 
 
-s.std([m3, m6, m1, m2, m4, m5, m8, m7], EX("Explain how to find the input of the function y = 3x − 4 when the output is 11.", [("work backwards / use the inverse: add 4, then divide by 3", ["inverse|backwards|add 4|\\+ ?4|divide by 3|÷ ?3"]), ("(11 + 4) ÷ 3 = 5", ["\\b5\\b|15"])], "Use the inverse function: add 4, then divide by 3. (11 + 4) ÷ 3 = 15 ÷ 3 = 5.", o="O4"))
+def e94(r):
+    a, b = r.randint(2, 6), r.randint(1, 9); y = a * r.randint(2, 9) + b
+    return N(f"A function is x → {a}x + {b}. Which input gives the output {y}?", (y - b) // a, o="O4", d="H", reason=f"Inverse: ({y} − {b}) ÷ {a} = {(y - b) // a}.")
+
+
+s.std([m3, m6, m1, m2, m4, m5, m8, m7], EX("Explain how to find the input of the function y = 3x − 4 when the output is 11.", [("work backwards / use the inverse: add 4, then divide by 3", ["inverse|backwards|add 4|\\+ ?4|divide by 3|÷ ?3"]), ("(11 + 4) ÷ 3 = 5", ["\\b5\\b|15"])], "Use the inverse function: add 4, then divide by 3. (11 + 4) ÷ 3 = 15 ÷ 3 = 5.", o="O4"),
+      deep=[e94])
 
 U.mindmap(("Generating sequences", "Term-to-term • position-to-term • linear and non-linear", "O1", "9.1"), ("Finding rules", "Constant difference → linear • patterns", "O2", "9.2"),
           ("nth term", "Difference in front of n, then adjust", "O3", "9.3"), ("Functions", "Function machines • mappings • inverse: undo in reverse", "O4", "9.4"))

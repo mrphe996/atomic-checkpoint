@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 8 Mathematics · Unit 3 Place value and rounding (3.1 Multiplying and dividing by 0.1 and 0.01, 3.2 Rounding).
+Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
 Written by the Atomic teaching team."""
 from kit import *
 
@@ -19,6 +21,10 @@ s.idea("Equivalent operations", ["Multiplying by **0.1** is the same as **dividi
        table={"head": ["Operation", "Same as"], "rows": [["× 0.1", "÷ 10"], ["× 0.01", "÷ 100"], ["÷ 0.1", "× 10"], ["÷ 0.01", "× 100"]]})
 s.example("Using place value", "Work out 36 × 0.01 and 4.2 ÷ 0.1.", [("36 × 0.01 = 36 ÷ 100 = 0.36", "digits move 2 places right"), ("4.2 ÷ 0.1 = 4.2 × 10 = 42", "digits move 1 place left")], "0.36 and 42")
 s.check(N("Work out 7.5 ÷ 0.01.", 750, o="O1", reason="÷ 0.01 is the same as × 100: 750."))
+s.idea("Why × 0.1 is the same as ÷ 10", ["0.1 is one tenth, so multiplying by 0.1 means finding one tenth of the number: 45 × 0.1 = 4.5 = 45 ÷ 10.",
+       "In the same way × 0.01 = ÷ 100, and ÷ 0.1 = × 10 (how many tenths are in 4.5? 45)."],
+       table={"head": ["Calculation", "Same as", "Answer"], "rows": [["45 × 0.1", "45 ÷ 10", "4.5"], ["45 × 0.01", "45 ÷ 100", "0.45"], ["4.5 ÷ 0.1", "4.5 × 10", "45"], ["4.5 ÷ 0.01", "4.5 × 100", "450"]]})
+s.check(MC("Before you read on: is 6 ÷ 0.1 bigger or smaller than 6?", "Bigger: 60", [("Smaller: 0.6", "That is 6 × 0.1. How many tenths make 6?"), ("The same", "Dividing by a number less than 1 makes it bigger.")], o="O1"))
 s.mistake("Bigger or smaller?", ["Multiplying by a number less than 1 makes a positive number **smaller**. Dividing by a number less than 1 makes it **bigger**. Use this to check."])
 s.check(MC("Which gives the biggest answer?", "8 ÷ 0.01", [("8 × 0.01", "This divides by 100."), ("8 ÷ 0.1", "This is × 10, but ÷ 0.01 is × 100."), ("8 × 0.1", "This divides by 10.")], o="O1"))
 OPS = [("× 0.1", lambda v: v / 10), ("× 0.01", lambda v: v / 100), ("÷ 0.1", lambda v: v * 10), ("÷ 0.01", lambda v: v * 100)]
@@ -68,7 +74,16 @@ def pa(r):
     return N(f"Work out {v} ÷ 0.01 ÷ 0.1.", v * 1000, o="O1", d="VH", reason=f"× 100 then × 10: {v * 1000}.")
 
 
-s.std([p3, p4, p1, p2, p5, p6, p7, p11, p8, p9, p10], EX("Explain why 5 ÷ 0.1 = 50.", [("0.1 goes into 1 ten times", ["ten|10 times|goes into|how many tenths"]), ("so ÷ 0.1 is the same as × 10", ["× ?10|multiply.*10|same as"])], "Dividing by 0.1 asks how many tenths are in 5. There are 10 tenths in each 1, so 5 ÷ 0.1 = 5 × 10 = 50.", o="O1"), adv=[pa, p2, p8])
+def y11(r):   # match equivalent
+    rows = r.sample([("× 0.1", "÷ 10"), ("× 0.01", "÷ 100"), ("÷ 0.1", "× 10"), ("÷ 0.01", "× 100")], 4)
+    return GD("Match each operation to the one that gives the same answer.", "Same as", rows, o="O1", d="H", extra=["× 1000"], reason="0.1 = 1/10 and 0.01 = 1/100.")
+def y12(r):   # spot error
+    a = r.randint(12, 98)
+    return MC(f"Ben says {a} ÷ 0.1 = {a / 10:g}. What is right?", str(a * 10), [(f"{a / 10:g}", "That is × 0.1. Dividing by a tenth asks how many tenths fit in."), (f"{a / 100:g}", "That is ÷ 100.")], o="O1", d="H", reason=f"There are 10 tenths in each 1, so {a} ÷ 0.1 = {a * 10}.")
+
+
+s.std([p3, p4, p1, p2, p5, p6, p7, p11, p8, p9, p10], EX("Explain why 5 ÷ 0.1 = 50.", [("0.1 goes into 1 ten times", ["ten|10 times|goes into|how many tenths"]), ("so ÷ 0.1 is the same as × 10", ["× ?10|multiply.*10|same as"])], "Dividing by 0.1 asks how many tenths are in 5. There are 10 tenths in each 1, so 5 ÷ 0.1 = 5 × 10 = 50.", o="O1"), adv=[pa, p2, p8],
+      deep=[y11, y12])
 
 # ================================================================== 3.2
 s = U.section("3.2", "Rounding", ["O2"])
@@ -79,6 +94,9 @@ s.idea("Significant figures", ["The **first significant figure** is the first di
        "Round 48 361 to 2 s.f.: 48 000 (keep the place value with zeros). Round 0.006 829 to 2 s.f.: 0.0068."])
 s.example("Two kinds of rounding", "Round 0.030 76 to (a) 3 d.p. (b) 3 s.f.", [("3 d.p.: 0.030|76 → 0.031", "4th decimal is 7"), ("3 s.f.: 0.0307|6 → 0.0308", "first s.f. is the 3")], "0.031 and 0.0308")
 s.check(N("Round 72 449 to 2 significant figures.", 72000, o="O2", reason="72|449: the third figure is 4, so round down: 72 000."))
+s.idea("Why significant figures", ["Decimal places count from the decimal point; significant figures count from the first non-zero digit. 0.004 572 to 2 s.f. is 0.0046 – the zeros at the front only show the size.",
+       "Use significant figures to keep the same accuracy for very big or very small numbers."])
+s.check(MC("Before you read on: round 38 472 to 2 significant figures.", "38 000", [("38", "Keep the place value: fill with zeros."), ("39 000", "The next digit is 4, so round down.")], o="O2"))
 s.mistake("Keep the size", ["Rounding 3876 to 1 s.f. gives 4000, not 4. The rounded number must be about the same size."])
 
 
@@ -131,6 +149,16 @@ def qa(r):
     return N(f"Work out ({fmt(a)} + {fmt(b)}) ÷ {fmt(c)}. Give your answer to 3 significant figures.", float(f"{sfr((a + b) / c, 3):.10g}"), o="O2", d="VH", tol=0.0001, reason=f"{fmt(round(a + b, 2))} ÷ {fmt(c)} = {(a + b) / c:.5f} → {float(f'{sfr((a + b) / c, 3):.10g}')}.")
 
 
-s.std([q4, q5, q1, q2, q3, q6, q8, q9, q7, q10, q11, q12], EX("Explain why 0.0507 rounded to 2 significant figures is 0.051 and not 0.05.", [("the first significant figure is the 5 (not the zeros at the start)", ["first significant|first non.?zero|leading zeros|zeros.*don't count|zeros.*do not count"]), ("the 2nd significant figure is 0, and the next digit 7 rounds it up to 1", ["7.*round|round.*up|0 becomes 1|next digit"])], "Leading zeros are not significant, so the first significant figure is 5 and the second is 0. The next digit is 7, so the 0 rounds up to 1: 0.051.", o="O2"), adv=[qa, q3, q11])
+def y21(r):   # s.f. vs d.p.
+    v = pick(r, [0.04567, 0.3089, 1.2345, 0.007218])
+    return MC(f"Round {v} to 2 significant figures.", f"{float(f'{v:.2g}'):g}", [(f"{v:.2f}", "That is 2 decimal places."), (f"{float(f'{v:.3g}'):g}", "That is 3 significant figures.")], o="O2", d="H",
+              reason="Start counting at the first non-zero digit.") if f"{v:.2f}" != f"{float(f'{v:.2g}'):g}" else None
+def y22(r):   # bounds
+    t = r.randint(3, 9) * 10
+    return TB(f"A length is {t} cm to the nearest 10 cm. Complete the table.", ["", "Length (cm)"], [["Lower bound", B(t - 5)], ["Upper bound", B(t + 5)]], o="O2", d="H", reason=f"Halfway points: {t - 5} and {t + 5}.")
+
+
+s.std([q4, q5, q1, q2, q3, q6, q8, q9, q7, q10, q11, q12], EX("Explain why 0.0507 rounded to 2 significant figures is 0.051 and not 0.05.", [("the first significant figure is the 5 (not the zeros at the start)", ["first significant|first non.?zero|leading zeros|zeros.*don't count|zeros.*do not count"]), ("the 2nd significant figure is 0, and the next digit 7 rounds it up to 1", ["7.*round|round.*up|0 becomes 1|next digit"])], "Leading zeros are not significant, so the first significant figure is 5 and the second is 0. The next digit is 7, so the 0 rounds up to 1: 0.051.", o="O2"), adv=[qa, q3, q11],
+      deep=[y21, y22])
 
 U.mindmap(("× and ÷ by 0.1 and 0.01", "× 0.1 = ÷ 10 • ÷ 0.01 = × 100", "O1", "3.1"), ("Rounding", "d.p. counts after the point • s.f. starts at the first non-zero digit", "O2", "3.2"))

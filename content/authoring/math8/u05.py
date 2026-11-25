@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 8 Mathematics · Unit 5 Angles and constructions (5.1 Parallel lines, 5.2 The exterior angle of a triangle,
-5.3 Constructions). Written by the Atomic teaching team."""
+5.3 Constructions). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 
 U = Unit(5, "Angles and Constructions", "Geometry and measure",
@@ -23,6 +25,9 @@ s.idea("Angles on parallel lines", ["When a line crosses two **parallel** lines 
        "Angles on a straight line add up to 180°, so co-interior angles (a C shape) add up to 180°."], fig={"kind": "parallel", "labels": {"a": "a", "b": "b", "c": "c", "d": "d", "e": "e", "f": "f", "g": "g", "h": "h"}})
 s.example("Finding angles", "On the diagram, a = 70°. Find c, e and f.", [("c = 70°", "vertically opposite a"), ("e = 70°", "corresponding to a"), ("f = 180° − 70° = 110°", "on a straight line with e")], "c = 70°, e = 70°, f = 110°")
 s.check(N("Two parallel lines are crossed by a transversal. One angle is 65°. An alternate angle to it is x. Find x.", 65, "°", units=["°"], o="O1", fig={"kind": "parallel", "labels": {"c": "65°", "e": "x"}}))
+s.idea("Why corresponding angles are equal", ["A transversal crosses two parallel lines at the same slope, so the 'picture' at each crossing is identical: the angle in the same position at each crossing (corresponding angles) must be equal.",
+       "Alternate angles (a Z shape) are equal because each one is vertically opposite or corresponding to the same angle."])
+s.check(MC("Before you read on: two lines are NOT parallel. Are corresponding angles still equal?", "No", [("Yes", "The rules only work when the lines are parallel."), ("Only alternate angles are", "None of the rules work without parallel lines.")], o="O1"))
 s.mistake("Equal or 180?", ["Only angles in matching positions (F, Z or X shapes) are equal. Angles in a C shape add to 180°."])
 
 
@@ -65,7 +70,16 @@ def a10(r):
     return N(f"A ladder leans against a wall. The top and bottom of the wall are parallel lines; the ladder makes an angle of {v}° with the ground. What angle does it make with the top line, on the alternate side?", v, "°", units=["°"], o="O1", d="H", reason="Alternate angles are equal.")
 
 
-s.std([a1, a4, a2, a3, a5, a7, a8, a6, a9, a10], EX("Explain how you know that alternate angles on parallel lines are equal.", [("an alternate angle is vertically opposite / on a line with a corresponding angle", ["vertically opposite|corresponding|straight line"]), ("so both equal the same angle", ["equal|same|both"])], "Each alternate angle is vertically opposite the corresponding angle of the other. Corresponding angles are equal and vertically opposite angles are equal, so alternate angles are equal.", o="O1"))
+def a51(r):   # name the reason
+    rows = r.sample([("angles in an F shape", "Corresponding angles"), ("angles in a Z shape", "Alternate angles"), ("angles in a C (or U) shape", "Co-interior angles add to 180°"), ("angles opposite at a crossing", "Vertically opposite angles")], 4)
+    return GD("Name the angle fact for each picture shape.", "Fact", rows, o="O1", d="H", extra=["Angles at a point"], reason="F → corresponding (equal), Z → alternate (equal), C → co-interior (add to 180°), X → vertically opposite (equal).")
+def a52(r):   # co-interior
+    a = r.randint(55, 125)
+    return N(f"Two parallel lines are crossed by a transversal. One co-interior angle is {a}°. Find the other.", 180 - a, "°", units=["°"], o="O1", d="H", reason=f"Co-interior angles add to 180°: 180 − {a} = {180 - a}°.")
+
+
+s.std([a1, a4, a2, a3, a5, a7, a8, a6, a9, a10], EX("Explain how you know that alternate angles on parallel lines are equal.", [("an alternate angle is vertically opposite / on a line with a corresponding angle", ["vertically opposite|corresponding|straight line"]), ("so both equal the same angle", ["equal|same|both"])], "Each alternate angle is vertically opposite the corresponding angle of the other. Corresponding angles are equal and vertically opposite angles are equal, so alternate angles are equal.", o="O1"),
+      deep=[a51, a52])
 
 # ================================================================== 5.2
 s = U.section("5.2", "The exterior angle of a triangle", ["O2"])
@@ -73,6 +87,9 @@ s.idea("Exterior angle", ["Extend one side of a triangle. The angle outside the 
        "**The exterior angle equals the sum of the two interior opposite angles.** It also makes 180° with the interior angle next to it."], fig={"kind": "shape", "pts": [[0, 0], [7, 0], [2, 5]], "ang": ["50°", "", "70°"]})
 s.example("Using the rule", "Two interior angles of a triangle are 48° and 67°. Find the exterior angle at the third vertex.", [("exterior = 48° + 67°", "sum of the two interior opposite angles"), ("= 115°", "")], "115°")
 s.check(N("A triangle has interior angles 35° and 80°. Find the exterior angle at the third vertex.", 115, "°", units=["°"], o="O2"))
+s.idea("Why the exterior angle is the sum of the two far angles", ["The interior angle c and the exterior angle are on a straight line, so exterior = 180° − c. The three interior angles also make 180°, so a + b = 180° − c.",
+       "Both equal 180° − c, so exterior angle = a + b."])
+s.check(MC("Before you read on: a triangle has angles 50° and 60° at two corners. What is the exterior angle at the third corner?", "110°", [("70°", "That is the interior angle at the third corner."), ("130°", "Add the two opposite interior angles.")], o="O2"))
 s.mistake("Which angles?", ["Use the two interior angles that are NOT next to the exterior angle."])
 
 
@@ -109,7 +126,13 @@ def e10(r):
     return N(f"The exterior angle of a triangle is (3x + {c})°. The interior opposite angles are 2x° and ({x + c})°. Find x.", x, o="O2", d="VH", reason=f"3x + {c} = 2x + {x + c} → x = {x}.")
 
 
-s.std([e1, e6, e2, e3, e7, e8, e4, e5, e9, e10], EX("Explain why the exterior angle of a triangle equals the sum of the two interior opposite angles.", [("interior angles add up to 180°", ["180.*triangle|triangle.*180|interior.*180"]), ("the exterior angle and the third interior angle also add to 180°, so they are equal", ["straight line|also.*180|same.*180"])], "The three interior angles add to 180°. The exterior angle and the third interior angle are on a straight line, so they also add to 180°. So the exterior angle equals the other two interior angles added together.", o="O2"))
+def a53(r):   # work backwards
+    a, ext = r.randint(30, 70), r.randint(100, 150)
+    return N(f"An exterior angle of a triangle is {ext}°. One of the opposite interior angles is {a}°. Find the other opposite interior angle.", ext - a, "°", units=["°"], o="O2", d="H", reason=f"{ext} = {a} + x, so x = {ext - a}°.")
+
+
+s.std([e1, e6, e2, e3, e7, e8, e4, e5, e9, e10], EX("Explain why the exterior angle of a triangle equals the sum of the two interior opposite angles.", [("interior angles add up to 180°", ["180.*triangle|triangle.*180|interior.*180"]), ("the exterior angle and the third interior angle also add to 180°, so they are equal", ["straight line|also.*180|same.*180"])], "The three interior angles add to 180°. The exterior angle and the third interior angle are on a straight line, so they also add to 180°. So the exterior angle equals the other two interior angles added together.", o="O2"),
+      deep=[a53])
 
 # ================================================================== 5.3
 s = U.section("5.3", "Constructions", ["O3"])
@@ -117,6 +140,8 @@ s.idea("Ruler and compasses", ["A **perpendicular bisector** cuts a line in half
        "An **angle bisector** cuts an angle in half. Draw an arc from the vertex across both arms, then equal arcs from those two points; join the vertex to where they cross."])
 s.method("Triangle from three sides (SSS)", ["Draw one side with a ruler. Set the compasses to the second length and draw an arc from one end; set them to the third length and draw an arc from the other end. Join the crossing point to both ends."])
 s.check(N("A line AB is 10 cm long. Its perpendicular bisector crosses AB at M. How long is AM?", 5, "cm", units=["cm"], o="O3"))
+s.idea("Why the bisector constructions work", ["Arcs drawn with the same compass setting from A and B meet at points that are equally far from A and B. Joining those points gives the perpendicular bisector.",
+       "Every point on the perpendicular bisector is the same distance from A and from B."])
 s.mistake("Keep the arcs", ["Leave your construction arcs on the diagram: they show your method."])
 
 
@@ -157,7 +182,13 @@ def c11(r):
     return N(f"A triangle has sides {a} cm and {b} cm. What is the largest whole number of centimetres the third side can be?", a + b - 1, "cm", units=["cm"], o="O3", d="VH", reason=f"The third side must be less than {a} + {b} = {a + b} cm, so at most {a + b - 1} cm.")
 
 
-s.std([c6, c8, c1, c2, c3, c4, c5, c7, c9, c10, c11], EX("Explain why the compasses must stay the same width when drawing the two arcs of a perpendicular bisector.", [("the crossing points must be the same distance from both ends", ["same distance|equal distance|equidistant"]), ("so the line is exactly in the middle / symmetrical", ["middle|half|symmetr|bisect"])], "The two arcs must be the same radius so that the crossing points are the same distance from both ends. The line through them is then exactly halfway, at right angles.", o="O3"))
+def a54(r):   # property
+    return MC("A point P is on the perpendicular bisector of AB. Which must be true?", "PA = PB", [("PA is perpendicular to AB", "Only the bisector line is perpendicular to AB."), ("P is the midpoint of AB", "P can be anywhere on the bisector.")], o="O3", d="H",
+              reason="Every point on the perpendicular bisector is equidistant from A and B.")
+
+
+s.std([c6, c8, c1, c2, c3, c4, c5, c7, c9, c10, c11], EX("Explain why the compasses must stay the same width when drawing the two arcs of a perpendicular bisector.", [("the crossing points must be the same distance from both ends", ["same distance|equal distance|equidistant"]), ("so the line is exactly in the middle / symmetrical", ["middle|half|symmetr|bisect"])], "The two arcs must be the same radius so that the crossing points are the same distance from both ends. The line through them is then exactly halfway, at right angles.", o="O3"),
+      deep=[a54])
 
 U.mindmap(("Parallel lines", "Corresponding (F) and alternate (Z) are equal • co-interior (C) add to 180°", "O1", "5.1"),
           ("Exterior angle", "Exterior = sum of the two interior opposite angles", "O2", "5.2"),

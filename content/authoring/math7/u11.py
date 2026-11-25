@@ -132,7 +132,7 @@ def h3(r):
 def h4(r):
     k = nz(r, -5, 5)
     if k in (3, -2): k = 4
-    return MS(f"Select ALL the points that lie on x = {k}.", [f"({k}, 3)", f"({k}, −2)"], [f"(3, {k})", f"({k + 1}, {k})"], o="O3")
+    return MS(f"Select ALL the points that lie on x = {k}.", [f"({k}, 3)", f"({k}, −2)"], [f"(3, {k})", f"({k + 5}, {k})"], o="O3")
 def h5(r):
     rows = [("x = 4", "Vertical"), ("y = −1", "Horizontal"), ("x = −3", "Vertical"), ("y = 6", "Horizontal"), ("x = 0 (the y-axis)", "Vertical")]
     return GD("Is each line vertical or horizontal?", "Direction", r.sample(rows, 4), o="O3")

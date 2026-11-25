@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 8 Mathematics · Unit 2 Expressions, formulae and equations. Written by the Atomic teaching team."""
+"""Stage 8 Mathematics · Unit 2 Expressions, formulae and equations. Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from math import gcd
 from kit import *
 
@@ -21,6 +23,9 @@ s.example("From words", "Write an expression for 'six less than double a number 
 s.check(X("Write an expression for 'four more than the square of k'. Use k.", "k^2+4", vars="k", o="O1"))
 s.idea("Like terms", ["**Like terms** have exactly the same letters and powers: 3x and −5x are like terms; 3x and 3x² are not. Collect like terms by adding their numbers."])
 s.check(X("Simplify 5a + 3b − 2a + b.", "3a+4b", vars="ab", o="O1", mustNot=["\\("]))
+s.idea("An expression is a recipe for any value", ["4(n + 3) and 4n + 12 look different but give the same value for every n: they are equivalent. Test with n = 1 (16 and 16) and n = 5 (32 and 32).",
+       "One test value can show two expressions are NOT equivalent; to show they ARE, you need algebra (or a reason that works for every n)."])
+s.check(MC("Before you read on: are 2n + 3 and 3 + 2n equivalent?", "Yes", [("No", "Adding can be done in either order."), ("Only when n = 0", "They are equal for every n.")], o="O1"))
 s.mistake("Order matters", ["'5 less than n' is n − 5, not 5 − n."])
 WORDS = [("three more than x", "x+3", "x"), ("five less than y", "y-5", "y"), ("double n, then add 7", "2n+7", "n"), ("n multiplied by itself", "n^2", "n"), ("a divided by 4", "a/4", "a"),
          ("the sum of p and q, then multiplied by 3", "3(p+q)", "pq"), ("eight less than three times m", "3m-8", "m"), ("half of t", "t/2", "t"), ("the product of a and b", "ab", "ab"), ("ten take away twice k", "10-2k", "k")]
@@ -59,7 +64,14 @@ def c9(r):
     return X("Write a simplified expression for the perimeter of this triangle.", f"{3 * a}x+{2 * b}", o="O1", mustNot=["\\("], fig={"kind": "shape", "pts": [[0, 0], [8, 0], [4, 6]], "s": [f"{a}x", f"{a}x + {b}", f"{a}x + {b}"]}, reason=f"{a}x + 2({a}x + {b}) = {3 * a}x + {2 * b}.")
 
 
-s.std([c6, c9, c1, c2, c3, c4, c8, c5, c7], EX("Explain why 3x + 2y cannot be simplified.", [("3x and 2y are not like terms", ["not like|different letters|different variables|unlike"]), ("you can only add like terms", ["only.*like|same letter|cannot add|can't add"])], "3x and 2y have different letters, so they are not like terms. Only like terms can be added together.", o="O1"))
+def w12(r):   # match words to expressions (decision)
+    a = r.randint(2, 6)
+    return MC(f"Which expression means 'multiply n by {a}, then subtract 1'?", f"{a}n − 1", [(f"{a}(n − 1)", "That subtracts first, then multiplies."), (f"n − {a}", "There is no multiplying here."), (f"1 − {a}n", "The order of subtraction is reversed.")], o="O1", d="H",
+              reason=f"Multiply first: {a}n; then subtract 1: {a}n − 1.")
+
+
+s.std([c6, c9, c1, c2, c3, c4, c8, c5, c7], EX("Explain why 3x + 2y cannot be simplified.", [("3x and 2y are not like terms", ["not like|different letters|different variables|unlike"]), ("you can only add like terms", ["only.*like|same letter|cannot add|can't add"])], "3x and 2y have different letters, so they are not like terms. Only like terms can be added together.", o="O1"),
+      deep=[w12])
 
 # ================================================================== 2.2
 s = U.section("2.2", "Using expressions and formulae", ["O2"])
@@ -70,6 +82,9 @@ s.check(N("Find the value of 3x − 2y when x = 5 and y = −4.", 23, o="O2", re
 s.idea("Changing the subject", ["The **subject** is the letter on its own. To make another letter the subject, undo the operations, doing the same to both sides.",
        "From P = 4s: s = P/4. From y = x + 7: x = y − 7."])
 s.check(X("Make x the subject of y = 3x − 5.", "(y+5)/3", vars="xy", lhs="x", o="O2", d="H"))
+s.idea("Rearranging is solving with letters", ["To make u the subject of v = u + at, undo what happens to u: here a·t is added, so subtract at from both sides: u = v − at.",
+       "Each step is the same move you would make with numbers."])
+s.check(MC("Before you read on: make x the subject of y = x + 7.", "x = y − 7", [("x = y + 7", "Undo + 7 by subtracting 7."), ("x = 7 − y", "Subtract 7 from y, not y from 7.")], o="O2"))
 s.mistake("Negative squares", ["When x = −5, x² = 25, but −x² = −25. Always put negative numbers in brackets before squaring."])
 
 
@@ -108,7 +123,17 @@ def u10(r):
     return TB(f"Complete the table of values for y = {a}x {'+' if b >= 0 else '−'} {abs(b)}.", ["x", "y"], [[str(x), B(a * x + b)] for x in sorted(xs)], o="O2", reason="Substitute each x value.")
 
 
-s.std([u4, u10, u1, u2, u3, u5, u7, u8, u6, u9], EX("Explain why 2x² and (2x)² have different values when x = 3.", [("2x² = 2 × 9 = 18", ["18"]), ("(2x)² = 6² = 36: the 2 is squared too", ["36|6²|6 ?× ?6"])], "In 2x² only x is squared: 2 × 3² = 18. In (2x)² the whole bracket is squared: 6² = 36.", o="O2"))
+def w21(r):   # substitute negatives decision
+    x = -r.randint(2, 6)
+    return MC(f"When x = {x}, which expression has the largest value?", "x²", [("2x", f"2 × ({x}) = {2 * x}."), ("x³", f"({x})³ = {x ** 3}, negative."), ("x + 10", f"{x} + 10 = {x + 10}.")] if x * x > x + 10 else [("2x", f"2 × ({x}) = {2 * x}."), ("x³", f"({x})³ = {x ** 3}.")], o="O2", d="H",
+              reason=f"x² = {x * x}, 2x = {2 * x}, x³ = {x ** 3}, x + 10 = {x + 10}.")
+def w22(r):   # subject of formula
+    return MC("Make w the subject of P = 2l + 2w.", "w = (P − 2l)/2", [("w = P − 2l", "Remember to divide by 2 at the end."), ("w = P/2 − l/2", "Only the 2l term is subtracted before halving: (P − 2l)/2 = P/2 − l.")], o="O2", d="H",
+              reason="Subtract 2l from both sides, then divide by 2.")
+
+
+s.std([u4, u10, u1, u2, u3, u5, u7, u8, u6, u9], EX("Explain why 2x² and (2x)² have different values when x = 3.", [("2x² = 2 × 9 = 18", ["18"]), ("(2x)² = 6² = 36: the 2 is squared too", ["36|6²|6 ?× ?6"])], "In 2x² only x is squared: 2 × 3² = 18. In (2x)² the whole bracket is squared: 6² = 36.", o="O2"),
+      deep=[w21, w22])
 
 # ================================================================== 2.3
 s = U.section("2.3", "Expanding brackets", ["O3"])
@@ -117,6 +142,10 @@ s.idea("Expanding", ["To **expand** a bracket, multiply **every** term inside by
 s.example("Expand and simplify", "Expand and simplify 3(2x + 4) − 2(x − 5).", [("6x + 12 − 2x + 10", "−2 × −5 = +10"), ("4x + 22", "collect like terms")], "4x + 22")
 s.check(X("Expand 5(3y − 2).", "15y-10", vars="y", o="O3", mustNot=["\\("]))
 s.idea("Letters outside", ["x(x + 4) = x² + 4x. Multiply x by x to get x²."])
+s.idea("Why expanding is the area of a rectangle", ["Picture a rectangle 3 wide and (x + 4) long. Split it into a 3 by x part and a 3 by 4 part: the areas are 3x and 12, so 3(x + 4) = 3x + 12.",
+       "With two brackets, (x + 2)(x + 3) is a rectangle split into four parts: x², 3x, 2x and 6. Collect: x² + 5x + 6."],
+       table={"head": ["×", "x", "+3"], "rows": [["x", "x²", "3x"], ["+2", "2x", "6"]]})
+s.check(MC("Before you read on: is (x + 3)² equal to x² + 9?", "No: x² + 6x + 9", [("Yes", "Test x = 1: (1 + 3)² = 16, but 1 + 9 = 10."), ("No: x² + 3x + 9", "There are two 3x parts.")], o="O3", hint="Draw the grid for (x + 3)(x + 3)."))
 s.mistake("Every term", ["3(x + 4) is NOT 3x + 4. The 3 multiplies the 4 as well: 3x + 12."])
 s.check(X("Expand x(x − 7).", "x^2-7x", o="O3", mustNot=["\\("]))
 
@@ -152,7 +181,17 @@ def e9(r):
     return GD("Is each expansion true or false?", "True or false", r.sample(rows, 4), o="O3")
 
 
-s.std([e8, e9, e1, e2, e3, e5, e7, e4, e6], EX("Explain the mistake in −2(x − 3) = −2x − 6.", [("−2 × −3 should be +6", ["\\+ ?6|positive 6|plus 6|−2 ?× ?−3|-2 ?\\* ?-3"]), ("negative × negative = positive", ["negative.*positive|two negatives|minus times minus"])], "−2 × −3 = +6, because a negative multiplied by a negative is positive. The answer should be −2x + 6.", o="O3"))
+def w31(r):   # spot the error
+    a = r.randint(2, 7)
+    return MC(f"Sam writes (x + {a})² = x² + {a * a}. Which test value shows he is wrong?", f"x = 1: ({1 + a})² = {(1 + a) ** 2} but 1 + {a * a} = {1 + a * a}", [(f"x = 0: both give {a * a}", "x = 0 makes them equal, so it does not show the mistake.")], o="O3", d="H",
+              reason=f"(x + {a})² = x² + {2 * a}x + {a * a}. Any x except 0 shows the difference.")
+def w32(r):   # missing term
+    a, b = r.randint(2, 6), r.randint(2, 6)
+    return N(f"(x + {a})(x + {b}) = x² + ☐x + {a * b}. What is the missing number?", a + b, o="O3", d="H", reason=f"The two middle parts are {a}x and {b}x: {a + b}x.")
+
+
+s.std([e8, e9, e1, e2, e3, e5, e7, e4, e6], EX("Explain the mistake in −2(x − 3) = −2x − 6.", [("−2 × −3 should be +6", ["\\+ ?6|positive 6|plus 6|−2 ?× ?−3|-2 ?\\* ?-3"]), ("negative × negative = positive", ["negative.*positive|two negatives|minus times minus"])], "−2 × −3 = +6, because a negative multiplied by a negative is positive. The answer should be −2x + 6.", o="O3"),
+      deep=[w31, w32])
 
 # ================================================================== 2.4
 s = U.section("2.4", "Factorising", ["O4"])
@@ -160,6 +199,9 @@ s.idea("Factorising", ["**Factorising** is the reverse of expanding. Find the **
        "12x + 18 = 6(2x + 3), because 6 is the HCF of 12 and 18. Check by expanding."])
 s.example("Letters too", "Factorise fully 8x² − 12x.", [("HCF of 8 and 12 is 4; both terms contain x", ""), ("8x² − 12x = 4x(2x − 3)", "check: 4x × 2x = 8x², 4x × 3 = 12x")], "4x(2x − 3)")
 s.check(X("Factorise fully 10a + 15.", "5(2a+3)", vars="a", must=["\\("], o="O4"))
+s.idea("Factorising undoes expanding", ["Expanding 6(x + 2) gives 6x + 12. Factorising goes back: find the biggest number (and letter) that divides every term, write it outside, and write what is left inside.",
+       "Always check by expanding your answer."])
+s.check(MC("Before you read on: is 4x + 6 fully factorised as 2(2x + 3)?", "Yes", [("No: 4(x + 6)", "Expand it: 4x + 24, not 4x + 6."), ("No: it cannot be factorised", "2 divides both terms.")], o="O4"))
 s.mistake("Factorise fully", ["4x + 8 = 2(2x + 4) is not fully factorised: 2x + 4 still has a common factor 2. The full answer is 4(x + 2)."])
 
 
@@ -201,7 +243,17 @@ def g10(r):
     return X(f"A rectangle has area ({k * a}x + {k * 2 * a + k}) cm² and width {k} cm. Write an expression for its length.", f"{a}x+{2 * a + 1}", o="O4", d="H", mustNot=["\\("], fig={"kind": "shape", "pts": [[0, 0], [9, 0], [9, 4], [0, 4]], "s": ["?", f"{k} cm", "", ""]}, reason=f"{k * a}x + {k * (2 * a + 1)} = {k}({a}x + {2 * a + 1}).")
 
 
-s.std([g9, g10, g1, g2, g3, g5, g6, g4, g7, g8], EX("Explain how to check that 6x + 9 = 3(2x + 3) is correct.", [("expand the bracket", ["expand|multiply out|multiply.*bracket"]), ("3 × 2x = 6x and 3 × 3 = 9", ["6x|= ?9|3 ?× ?3"])], "Expand the bracket: 3 × 2x = 6x and 3 × 3 = 9, which gives 6x + 9, the original expression.", o="O4"))
+def w41(r):   # fully or partly
+    rows = r.sample([("12x + 18 = 2(6x + 9)", "Partly"), ("12x + 18 = 6(2x + 3)", "Fully"), ("8x + 4 = 4(2x + 1)", "Fully"), ("10x + 20 = 5(2x + 4)", "Partly"), ("9x + 6 = 3(3x + 2)", "Fully")], 4)
+    return GD("Is each expression factorised fully or only partly?", "Factorised", rows, o="O4", d="H", extra=["Fully", "Partly", "Wrong"], reason="If the bracket still has a common factor (6x + 9 has 3), it is only partly factorised.")
+def w42(r):   # spot error
+    a, b = r.randint(2, 5), r.randint(2, 9)
+    return MC(f"Ann factorises {a}x + {a * b} as {a}(x + {a * b}). What is wrong?", f"It should be {a}(x + {b})", [("Nothing", f"Expand: {a}(x + {a * b}) = {a}x + {a * a * b}."), (f"It should be x({a} + {a * b})", "x is not a factor of the number term.")], o="O4", d="H",
+              reason=f"Divide each term by {a}: x and {b}.")
+
+
+s.std([g9, g10, g1, g2, g3, g5, g6, g4, g7, g8], EX("Explain how to check that 6x + 9 = 3(2x + 3) is correct.", [("expand the bracket", ["expand|multiply out|multiply.*bracket"]), ("3 × 2x = 6x and 3 × 3 = 9", ["6x|= ?9|3 ?× ?3"])], "Expand the bracket: 3 × 2x = 6x and 3 × 3 = 9, which gives 6x + 9, the original expression.", o="O4"),
+      deep=[w41, w42])
 
 # ================================================================== 2.5
 s = U.section("2.5", "Constructing and solving equations", ["O5"])
@@ -210,6 +262,9 @@ s.idea("Solving equations", ["An **equation** has an equals sign and an unknown.
 s.example("With brackets", "Solve 4(x − 2) = 2x + 6.", [("4x − 8 = 2x + 6", "expand"), ("2x − 8 = 6", "subtract 2x"), ("2x = 14", "add 8"), ("x = 7", "divide by 2")], "x = 7")
 s.check(N("Solve 3x + 7 = 31.", 8, "×", o="O5", reason="3x = 24, x = 8."))
 s.idea("Constructing", ["Write an equation from the information, then solve it. Check your answer in the original problem."])
+s.idea("Why we do the same to both sides", ["An equation is a balance: both sides are equal. Adding, subtracting, multiplying or dividing BOTH sides by the same number keeps them equal.",
+       "With unknowns on both sides, first remove the smaller unknown term from both sides: 5x + 2 = 3x + 10 → 2x + 2 = 10."])
+s.check(MC("Before you read on: what is the best first step for 7x − 3 = 4x + 9?", "Subtract 4x from both sides", [("Add 3 to one side only", "Whatever you do, do it to both sides."), ("Divide by 7", "That leaves fractions on both sides.")], o="O5"))
 s.mistake("Same to both sides", ["If you subtract 5 from the left, subtract 5 from the right too."])
 
 
@@ -244,7 +299,18 @@ def q9(r):
     return N(f"Solve {a}(x + {b}) − {c} = {rhs}.", x, o="O5", reason=f"{a}x + {a * b - c} = {rhs} → x = {x}.")
 
 
-s.std([q7, q8, q1, q2, q4, q9, q3, q6], EX("Explain why the equation x + 5 = x + 7 has no solution.", [("subtracting x leaves 5 = 7", ["5 ?= ?7|subtract x|take away x"]), ("which is never true", ["never|false|not true|impossible"])], "Subtracting x from both sides gives 5 = 7, which is never true, so no value of x works.", o="O5"))
+def w51(r):   # check a solution
+    a, b, c = r.randint(3, 7), r.randint(1, 9), r.randint(1, 2); x = r.randint(2, 9); d = a * x + b - c * x
+    wrong = x + 1
+    return MC(f"Max says x = {wrong} solves {a}x + {b} = {c if c > 1 else ''}x + {d}. Is he right?", f"No – x = {x}", [("Yes", f"Substitute: {a} × {wrong} + {b} = {a * wrong + b}, but {c} × {wrong} + {d} = {c * wrong + d}."), (f"No – x = {wrong + 1}", "Solve it, then check by substituting.")], o="O5", d="H",
+              reason=f"{a - c}x = {d - b}, so x = {x}. Check: both sides give {a * x + b}.")
+def w52(r):   # perimeter equation
+    x = r.randint(3, 9); a = r.randint(1, 5)
+    return N(f"A rectangle has length (2x + {a}) cm and width x cm. Its perimeter is {2 * (3 * x + a)} cm. Find x.", x, o="O5", d="H", reason=f"2(2x + {a}) + 2x = 6x + {2 * a} = {2 * (3 * x + a)}, so 6x = {6 * x} and x = {x}.")
+
+
+s.std([q7, q8, q1, q2, q4, q9, q3, q6], EX("Explain why the equation x + 5 = x + 7 has no solution.", [("subtracting x leaves 5 = 7", ["5 ?= ?7|subtract x|take away x"]), ("which is never true", ["never|false|not true|impossible"])], "Subtracting x from both sides gives 5 = 7, which is never true, so no value of x works.", o="O5"),
+      deep=[w51, w52])
 
 # ================================================================== 2.6
 s = U.section("2.6", "Inequalities", ["O6"])
@@ -253,6 +319,9 @@ s.idea("Inequality signs", ["**<** less than, **>** greater than, **≤** less t
        fig={"kind": "numline", "min": -3, "max": 6, "from": {"v": -1, "closed": True}, "to": {"v": 4, "closed": False}})
 s.check(N("x is an integer and −1 ≤ x < 4. How many possible values of x are there?", 5, o="O6", reason="−1, 0, 1, 2, 3: five integers."))
 s.idea("Solving inequalities", ["Solve like an equation: 3x + 2 > 14 → 3x > 12 → x > 4."])
+s.idea("Why the sign flips when you multiply by a negative", ["3 < 5 is true. Multiply both sides by −1: −3 and −5. But −3 > −5, so the sign must turn round.",
+       "Adding, subtracting, or multiplying and dividing by a POSITIVE number keeps the sign the same."])
+s.check(MC("Before you read on: solve −2x < 8.", "x > −4", [("x < −4", "Dividing by −2 turns the sign round."), ("x < 4", "Divide 8 by −2, not 2.")], o="O6"))
 s.mistake("Open or closed?", ["x < 3 does NOT include 3, so its circle is open."])
 
 
@@ -283,7 +352,17 @@ def n7(r):
     return GD("Which circle would you draw on a number line?", "Circle", rows, o="O6")
 
 
-s.std([n3, n7, n1, n2, n4, n5, n6], EX("Explain the difference between x < 5 and x ≤ 5.", [("x < 5 does not include 5", ["not include|less than 5|excludes|not 5"]), ("x ≤ 5 includes 5", ["includes 5|can be 5|or equal|equal to 5"])], "x < 5 means x is less than 5, so 5 is not included (open circle). x ≤ 5 means less than or equal to 5, so 5 is included (filled circle).", o="O6"))
+def w61(r):   # integers satisfying two inequalities
+    lo, hi = r.randint(-3, 2), r.randint(4, 8)
+    vals = list(range(lo + 1, hi + 1))
+    return N(f"How many integers n satisfy {lo} < n ≤ {hi}?", len(vals), o="O6", d="H", reason=f"They are {', '.join(map(str, vals))}.")
+def w62(r):   # spot error
+    a, b = r.randint(2, 6), r.randint(2, 9)
+    return MC(f"Tia solves −{a}x > {a * b} and writes x > −{b}. What is right?", f"x < −{b}", [(f"x > −{b}", "Dividing by a negative turns the sign round."), (f"x < {b}", f"{a * b} ÷ (−{a}) = −{b}.")], o="O6", d="H", reason=f"Divide by −{a} and turn the sign: x < −{b}.")
+
+
+s.std([n3, n7, n1, n2, n4, n5, n6], EX("Explain the difference between x < 5 and x ≤ 5.", [("x < 5 does not include 5", ["not include|less than 5|excludes|not 5"]), ("x ≤ 5 includes 5", ["includes 5|can be 5|or equal|equal to 5"])], "x < 5 means x is less than 5, so 5 is not included (open circle). x ≤ 5 means less than or equal to 5, so 5 is included (filled circle).", o="O6"),
+      deep=[w61, w62])
 
 U.mindmap(("Expressions", "No equals sign • collect like terms • 2n − 6", "O1", "2.1"), ("Formulae", "Substitute with brackets for negatives • change the subject", "O2", "2.2"),
           ("Expanding", "Multiply every term • −(−) = +", "O3", "2.3"), ("Factorising", "Take out the HCF • check by expanding", "O4", "2.4"),

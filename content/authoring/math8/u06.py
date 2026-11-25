@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Stage 8 Mathematics · Unit 6 Collecting data (6.1 Data collection, 6.2 Sampling). Written by the Atomic teaching team."""
+"""Stage 8 Mathematics · Unit 6 Collecting data (6.1 Data collection, 6.2 Sampling). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 
 U = Unit(6, "Collecting Data", "Statistics and probability",
@@ -14,6 +16,8 @@ s.idea("Types of data", ["**Categorical** data are words or groups (favourite fr
 s.method("Good questionnaire questions", ["Ask one thing at a time, in clear, neutral words.", "Give a time frame ('in the last week').", "Use response boxes that do not overlap and cover every possible answer."])
 s.example("Fixing response boxes", "What is wrong with these boxes for 'How many hours of TV did you watch yesterday?': 0–1, 1–2, 2–3?", [("1 and 2 are in two boxes", "overlapping"), ("there is no box for more than 3 hours", "not every answer is covered")], "Use 0 to less than 1, 1 to less than 2, 2 to less than 3, 3 or more.")
 s.check(MC("Which type of data is 'time taken to run 100 m'?", "continuous", [("discrete", "Time is measured, not counted."), ("categorical", ""), ("secondary", "")], o="O1"))
+s.idea("Primary or secondary data?", ["Primary data you collect yourself (a survey, an experiment): you control how it is collected. Secondary data comes from someone else (a website, a report): it is quick to get but you must check its source and date.",
+       "Choose the method that answers your question reliably."])
 s.mistake("Leading questions", ["'Don't you agree that homework is boring?' pushes people towards one answer. Ask 'What do you think about homework?' instead."])
 
 
@@ -76,7 +80,13 @@ def d16(r):
     return N(f"Heights (cm) collected in a survey: {', '.join(map(str, vals))}. What is the range of the heights?", max(vals) - min(vals), "cm", units=["cm"], o="O1", reason=f"{max(vals)} − {min(vals)} = {max(vals) - min(vals)}.")
 
 
-s.std([d1, d5, d2, d3, d4, d6, d9, d7, d8, d10, d11, d12, d13, d14, d15, d16], EX("Explain why the response boxes 0–5, 5–10, 10–15 are badly designed.", [("5 and 10 appear in two boxes / overlap", ["overlap|two boxes|both boxes|5 and 10"]), ("no box for more than 15", ["more than 15|over 15|above 15|not every|missing"])], "The boxes overlap: 5 and 10 are each in two boxes. Also there is no box for answers above 15.", o="O1"))
+def b61(r):
+    rows = r.sample([("measuring the heights of students in your class", "Primary"), ("population figures from a government website", "Secondary"), ("a survey you hand out at school", "Primary"), ("weather records from a newspaper", "Secondary")], 4)
+    return GD("Is each source primary or secondary data?", "Type", rows, o="O1", d="H", extra=["Primary", "Secondary"], reason="Primary: you collect it. Secondary: someone else collected it.")
+
+
+s.std([d1, d5, d2, d3, d4, d6, d9, d7, d8, d10, d11, d12, d13, d14, d15, d16], EX("Explain why the response boxes 0–5, 5–10, 10–15 are badly designed.", [("5 and 10 appear in two boxes / overlap", ["overlap|two boxes|both boxes|5 and 10"]), ("no box for more than 15", ["more than 15|over 15|above 15|not every|missing"])], "The boxes overlap: 5 and 10 are each in two boxes. Also there is no box for answers above 15.", o="O1"),
+      deep=[b61])
 
 # ================================================================== 6.2
 s = U.section("6.2", "Sampling", ["O2"])
@@ -84,6 +94,8 @@ s.idea("Population and sample", ["The **population** is the whole group you want
        "A **random sample** gives everyone the same chance of being picked. A bigger sample usually gives more **reliable** results, but takes longer and costs more."])
 s.example("A biased sample", "To find out how students get to school, Mia asks 20 students at the bus stop. Why is this biased?", [("everyone at the bus stop is likely to take the bus", ""), ("the sample does not represent all students", "")], "Biased towards bus users")
 s.check(N("A school has 800 students. Ali surveys 10% of them. How many students is that?", 80, "students", units=["students"], o="O2"))
+s.idea("Why sample size matters", ["A small sample can be unrepresentative just by chance. A bigger random sample gives results that are more likely to be close to the whole population.",
+       "But a biased method stays biased however big the sample is."])
 s.mistake("Too small", ["Asking 3 people cannot tell you what a whole school thinks."])
 
 
@@ -138,6 +150,12 @@ def g15(r):
     return N(f"Every {k}th name on a list of {pop} names is chosen. How many names are chosen?", pop // k, "names", units=["names"], o="O2", reason=f"{pop} ÷ {k} = {pop // k}.")
 
 
-s.std([g3, g7, g1, g2, g4, g5, g6, g8, g9, g10, g11, g12, g13, g14, g15], EX("Explain why a random sample is less likely to be biased than asking your friends.", [("everyone has the same chance of being chosen", ["same chance|equal chance|anyone"]), ("friends are likely to be similar to you / not representative", ["similar|like you|same opinions|represent"])], "In a random sample everyone has the same chance of being chosen. Your friends are likely to be similar to you, so they do not represent the whole population.", o="O2"))
+def b62(r):
+    pop, n, k = pick(r, [(800, 40, 6), (1200, 60, 9), (500, 50, 12)])
+    return N(f"A random sample of {n} students from a school of {pop} finds that {k} play chess. Estimate how many students in the school play chess.", k * pop // n, "students", units=["students"], o="O2", d="H", reason=f"{k}/{n} of {pop} = {k * pop // n}.")
+
+
+s.std([g3, g7, g1, g2, g4, g5, g6, g8, g9, g10, g11, g12, g13, g14, g15], EX("Explain why a random sample is less likely to be biased than asking your friends.", [("everyone has the same chance of being chosen", ["same chance|equal chance|anyone"]), ("friends are likely to be similar to you / not representative", ["similar|like you|same opinions|represent"])], "In a random sample everyone has the same chance of being chosen. Your friends are likely to be similar to you, so they do not represent the whole population.", o="O2"),
+      deep=[b62])
 
 U.mindmap(("Types of data", "Categorical • discrete (count) • continuous (measure) • primary/secondary", "O1", "6.1"), ("Sampling", "Population vs sample • random • bigger is more reliable • bias", "O2", "6.2"))

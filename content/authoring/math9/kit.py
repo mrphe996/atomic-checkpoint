@@ -354,6 +354,8 @@ class Section:
         # routine kinds first, then the reasoning kinds; every further variant goes to More practice
         self.capped("p", [1] * (len(T) + len(deep)), list(T) + list(deep))
         src = list(adv or deep); self.capped("a", [-(-n_adv // len(src))] * len(src), src)
+        if len(self.pools["a"]) < n_adv and not adv:   # too few reasoning variants: top up with the harder routine kinds
+            self.capped("a", [2] * len(T), list(T)[::-1])
         self.pools["a"] = self.pools["a"][:n_adv]
         self.capped("m", [2] * len(T) + [2] * len(deep), list(T) + list(deep))
         return self

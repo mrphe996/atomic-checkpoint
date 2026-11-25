@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 8 Mathematics · Unit 14 Position and transformation (14.1 Bearings, 14.2 The midpoint of a line segment,
-14.3 Translating, 14.4 Reflecting, 14.5 Rotating and 14.6 Enlarging 2D shapes). Written by the Atomic teaching team."""
+14.3 Translating, 14.4 Reflecting, 14.5 Rotating and 14.6 Enlarging 2D shapes). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 
 U = Unit(14, "Position and Transformation", "Geometry and measure",
@@ -26,6 +28,9 @@ s.idea("Three-figure bearings", ["A **bearing** gives a direction as an angle me
        "The bearing of A from B is measured at B."], fig={"kind": "bearing", "bearing": 65, "from": "A", "to": "B"})
 s.check(N("What is the bearing of south-west? (Write the number of degrees.)", 225, "°", units=["°"], o="O1"))
 s.idea("Back bearings", ["If the bearing of B from A is θ, the bearing of A from B is θ + 180° (or θ − 180° if θ is 180° or more)."])
+s.idea("Why bearings use three figures", ["A bearing is measured clockwise from north, always with three figures: east is 090°, south is 180°, west is 270°. Three figures stop 90 and 900 being confused.",
+       "The back bearing (from B back to A) differs by 180°."])
+s.check(MC("Before you read on: the bearing of B from A is 070°. What is the bearing of A from B?", "250°", [("070°", "Going back is the opposite direction."), ("290°", "Add 180°: 070 + 180 = 250.")], o="O1"))
 s.mistake("Three figures", ["Write 45° as a bearing of 045°."])
 
 
@@ -55,13 +60,21 @@ def b8(r):
     return N("The diagram shows a bearing measured clockwise from north. Write the bearing in degrees.", v, "°", units=["°"], o="O1", fig={"kind": "bearing", "bearing": v, "from": "A", "to": "B"})
 
 
-s.std([b4, b8, b1, b2, b3, b5, b6, b7], EX("Explain why the bearing of A from B is 180° more than the bearing of B from A when the first bearing is less than 180°.", [("the two directions are opposite", ["opposite|reverse|back"]), ("opposite directions differ by 180°", ["180"])], "Going from B back to A is the exact opposite direction, and opposite directions differ by 180°. So you add 180° (or subtract it if the bearing is 180° or more).", o="O1"))
+def k141(r):
+    b = r.randint(10, 340)
+    return N(f"The bearing of Q from P is {b:03d}°. What is the bearing of P from Q?", (b + 180) % 360, "°", units=["°"], o="O1", d="H", reason=f"{b} {'+' if b < 180 else '−'} 180 = {(b + 180) % 360:03d}°.")
+
+
+s.std([b4, b8, b1, b2, b3, b5, b6, b7], EX("Explain why the bearing of A from B is 180° more than the bearing of B from A when the first bearing is less than 180°.", [("the two directions are opposite", ["opposite|reverse|back"]), ("opposite directions differ by 180°", ["180"])], "Going from B back to A is the exact opposite direction, and opposite directions differ by 180°. So you add 180° (or subtract it if the bearing is 180° or more).", o="O1"),
+      deep=[k141])
 
 # ================================================================== 14.2
 s = U.section("14.2", "The midpoint of a line segment", ["O2"])
 s.idea("Midpoint", ["The **midpoint** is halfway along a line segment. Find the **mean of the x-coordinates** and the **mean of the y-coordinates**.",
        "The midpoint of (2, 3) and (8, 11) is ((2 + 8) ÷ 2, (3 + 11) ÷ 2) = (5, 7)."], fig={"kind": "coord", "x": [0, 9], "y": [0, 12], "segs": [[2, 3, 8, 11]], "points": [{"x": 2, "y": 3, "l": "A"}, {"x": 8, "y": 11, "l": "B"}, {"x": 5, "y": 7, "l": "M"}]})
 s.check(S("Find the midpoint of (−2, 4) and (6, 0).", PACC((2, 2)), o="O2"))
+s.idea("Why the midpoint is an average", ["Halfway between x = 2 and x = 8 is 5, the mean of 2 and 8. The midpoint of a line segment takes the mean of the x-coordinates and the mean of the y-coordinates.",
+       "Midpoint of (x₁, y₁) and (x₂, y₂) = ((x₁ + x₂)/2, (y₁ + y₂)/2)."])
 s.mistake("Add, then halve", ["Add the x-coordinates (do not subtract), then divide by 2."])
 
 
@@ -95,7 +108,14 @@ def m7(r):
     return S(f"Find the midpoint of {pt(a)} and {pt(b)}. (Use decimals if needed.)", [f"({fmt(m[0])}, {fmt(m[1])})", f"({fmt(m[0])},{fmt(m[1])})", f"{fmt(m[0])}, {fmt(m[1])}"], o="O2", d="H")
 
 
-s.std([m3, m4, m5, m1, m2, m6, m7], EX("Explain how to find the midpoint of (1, 2) and (7, 10).", [("add the x-coordinates and halve: (1 + 7) ÷ 2 = 4", ["\\b4\\b|1 ?\\+ ?7"]), ("add the y-coordinates and halve: (2 + 10) ÷ 2 = 6", ["\\b6\\b|2 ?\\+ ?10"])], "Find the mean of each coordinate: (1 + 7) ÷ 2 = 4 and (2 + 10) ÷ 2 = 6. The midpoint is (4, 6).", o="O2"))
+def k142(r):
+    mx, my, x1, y1 = r.randint(-3, 5), r.randint(-3, 5), r.randint(-6, 2), r.randint(-6, 2)
+    return MC(f"M({mx}, {my}) is the midpoint of A({x1}, {y1}) and B. Where is B?", f"({2 * mx - x1}, {2 * my - y1})", [(f"({(mx + x1) / 2:g}, {(my + y1) / 2:g})", "That is the midpoint of A and M."), (f"({mx - x1}, {my - y1})", "B is as far beyond M as A is before it.")], o="O2", d="VH",
+              reason=f"From A to M: ({mx - x1}, {my - y1}); add again: B = ({2 * mx - x1}, {2 * my - y1}).") if (mx, my) != (x1, y1) else None
+
+
+s.std([m3, m4, m5, m1, m2, m6, m7], EX("Explain how to find the midpoint of (1, 2) and (7, 10).", [("add the x-coordinates and halve: (1 + 7) ÷ 2 = 4", ["\\b4\\b|1 ?\\+ ?7"]), ("add the y-coordinates and halve: (2 + 10) ÷ 2 = 6", ["\\b6\\b|2 ?\\+ ?10"])], "Find the mean of each coordinate: (1 + 7) ÷ 2 = 4 and (2 + 10) ÷ 2 = 6. The midpoint is (4, 6).", o="O2"),
+      deep=[k142])
 
 # ================================================================== 14.3
 s = U.section("14.3", "Translating 2D shapes", ["O3"])
@@ -206,6 +226,7 @@ s = U.section("14.6", "Enlarging shapes", ["O6"])
 s.idea("Enlargement", ["An **enlargement** changes the size of a shape. Every length is multiplied by the **scale factor**; angles do not change.",
        "From a **centre of enlargement**, each image point is (scale factor) times as far from the centre as the object point."], fig={"kind": "coord", "x": [0, 10], "y": [0, 8], "polys": [{"pts": [[1, 1], [3, 1], [1, 2]], "l": "A"}, {"pts": [[1, 1], [7, 1], [1, 4]], "l": "B"}]})
 s.check(N("A rectangle 2 cm by 5 cm is enlarged by scale factor 3. What is the length of the longer side of the image?", 15, "cm", units=["cm"], o="O6"))
+s.check(MC("Before you read on: a shape is enlarged by scale factor 1/2. Is the image bigger or smaller?", "Smaller", [("Bigger", "Every length is halved."), ("The same", "Only scale factor 1 keeps the size.")], o="O6"))
 s.mistake("Area is not × scale factor", ["Scale factor 2 doubles every length, but the area becomes 4 times as big."])
 
 
@@ -233,7 +254,13 @@ def n7(r):
     return N("Shape A is enlarged to shape B with centre the origin. What is the scale factor?", k, o="O6", fig={"kind": "coord", "x": [0, 10], "y": [0, 10], "polys": [{"pts": T, "l": "A"}, {"pts": I, "l": "B"}]})
 
 
-s.std([n1, n7, n2, n3, n4, n5, n6], EX("Explain why enlarging a shape by scale factor 2 does not double its area.", [("both the length and the width double", ["both|length and width|each length|every length"]), ("so the area is 2 × 2 = 4 times bigger", ["4|four|2 ?× ?2"])], "Every length doubles, so a rectangle's length and width both double. The area becomes 2 × 2 = 4 times as big.", o="O6"))
+def k146(r):
+    k = pick(r, [2, 3, 0.5]); a = r.randint(2, 8) * 2
+    return N(f"A rectangle {a} cm by 4 cm is enlarged by scale factor {k:g}. What is the new perimeter?", round(2 * (a + 4) * k, 2), "cm", units=["cm"], o="O6", d="H", reason=f"Old perimeter {2 * (a + 4)} cm; every length × {k:g}, so the perimeter × {k:g}.")
+
+
+s.std([n1, n7, n2, n3, n4, n5, n6], EX("Explain why enlarging a shape by scale factor 2 does not double its area.", [("both the length and the width double", ["both|length and width|each length|every length"]), ("so the area is 2 × 2 = 4 times bigger", ["4|four|2 ?× ?2"])], "Every length doubles, so a rectangle's length and width both double. The area becomes 2 × 2 = 4 times as big.", o="O6"),
+      deep=[k146])
 
 U.mindmap(("Bearings", "Clockwise from north • three figures • back bearing ±180°", "O1", "14.1"), ("Midpoint", "Mean of the x's, mean of the y's", "O2", "14.2"),
           ("Translation", "Column vector (right/left over up/down)", "O3", "14.3"), ("Reflection", "x-axis (x, −y) • y-axis (−x, y) • y = x (y, x)", "O4", "14.4"),

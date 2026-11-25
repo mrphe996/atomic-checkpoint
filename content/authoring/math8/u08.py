@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 8 Mathematics · Unit 8 Shapes and symmetry (8.1 Quadrilaterals and polygons, 8.2 The circumference of a circle,
-8.3 3D shapes). Written by the Atomic teaching team."""
+8.3 3D shapes). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from math import pi
 from kit import *
 
@@ -22,6 +24,9 @@ s.idea("Quadrilaterals", ["Square, rectangle, rhombus, parallelogram, kite and t
 s.check(N("How many lines of symmetry does a rhombus have?", 2, o="O1"))
 s.idea("Regular polygons", ["A **regular** polygon has all sides equal and all angles equal. A regular n-sided polygon has **n lines of symmetry** and **rotational symmetry of order n**."], fig={"kind": "shape", "pts": [[1, 0], [3, 0], [4, 1.7], [3, 3.4], [1, 3.4], [0, 1.7]]})
 s.check(N("A regular octagon has how many lines of symmetry?", 8, o="O1"))
+s.idea("Why the interior angles of a polygon add to (n − 2) × 180°", ["From one corner of an n-sided polygon you can draw diagonals that split it into n − 2 triangles. Each triangle gives 180°.",
+       "A pentagon splits into 3 triangles: 3 × 180° = 540°."])
+s.check(MC("Before you read on: what do the interior angles of a hexagon add up to?", "720°", [("1080°", "A hexagon splits into 4 triangles, not 6."), ("360°", "That is a quadrilateral.")], o="O1"))
 s.mistake("Diagonals are not always lines of symmetry", ["A rectangle's diagonals are NOT lines of symmetry: folding along one does not match the halves."])
 
 
@@ -63,7 +68,14 @@ def q11(r):
     return N(f"A kite has two equal angles of {b}°, and its other angles are {a}° and x°. Find x.", c, "°", units=["°"], o="O1", d="H", fig={"kind": "shape", "pts": [[0, 0], [3, -2], [9, 0], [3, 2]], "ang": [f"{a}°", f"{b}°", "x", f"{b}°"]}, reason=f"360° − {a}° − 2 × {b}° = {c}°.")
 
 
-s.std([q2, q8, q1, q3, q4, q5, q6, q7, q9, q10, q11], EX("Explain why a parallelogram has rotational symmetry but no lines of symmetry.", [("a half turn about its centre fits it onto itself", ["half turn|180|order 2|turn"]), ("folding along any line does not match the two halves", ["fold|mirror|does not match|doesn't match|not symmetr"])], "Turning a parallelogram through 180° about its centre makes it fit exactly onto itself, so it has rotational symmetry of order 2. But no fold line makes the two halves match, so it has no lines of symmetry.", o="O1"))
+def d81(r):
+    n = r.randint(5, 12)
+    return N(f"What is each interior angle of a regular polygon with {n} sides?" + ("" if (n - 2) * 180 % n == 0 else " Give your answer to 1 decimal place."), round((n - 2) * 180 / n, 1), "°", units=["°"], o="O1", d="H", tol=0.05,
+             reason=f"Total ({n} − 2) × 180 = {(n - 2) * 180}°; ÷ {n} = {(n - 2) * 180 / n:.1f}°.")
+
+
+s.std([q2, q8, q1, q3, q4, q5, q6, q7, q9, q10, q11], EX("Explain why a parallelogram has rotational symmetry but no lines of symmetry.", [("a half turn about its centre fits it onto itself", ["half turn|180|order 2|turn"]), ("folding along any line does not match the two halves", ["fold|mirror|does not match|doesn't match|not symmetr"])], "Turning a parallelogram through 180° about its centre makes it fit exactly onto itself, so it has rotational symmetry of order 2. But no fold line makes the two halves match, so it has no lines of symmetry.", o="O1"),
+      deep=[d81])
 
 # ================================================================== 8.2
 s = U.section("8.2", "The circumference of a circle", ["O2"])
@@ -71,6 +83,9 @@ s.idea("Circle words and π", ["The **circumference** is the distance round a ci
        "For every circle, circumference ÷ diameter is the same number, **π** (pi) ≈ 3.14159…  So **C = πd = 2πr**."], fig={"kind": "circle", "d": "d"})
 s.example("Using the formula", "Find the circumference of a circle with radius 6 cm, to 1 decimal place.", [("C = 2πr = 2 × π × 6", ""), ("= 12π = 37.699…", "")], "37.7 cm")
 s.check(N("Find the circumference of a circle with diameter 10 cm, to 1 d.p.", r1(pi * 10), "cm", units=["cm"], tol=0.06, o="O2"))
+s.idea("Why π appears", ["For every circle, the circumference divided by the diameter is the same number, about 3.14. We call it π. So C = πd, or C = 2πr.",
+       "Try it: a lid with diameter 10 cm has a circumference of about 31.4 cm – a bit more than 3 diameters."])
+s.check(MC("Before you read on: a wheel has diameter 50 cm. About how far does it roll in one turn?", "About 157 cm", [("About 50 cm", "One turn rolls the whole circumference, not the diameter."), ("About 314 cm", "That uses 2πd; use πd.")], o="O2"))
 s.mistake("Radius or diameter?", ["If you are given the radius, double it (or use 2πr). Using πr gives half the circumference."])
 
 
@@ -111,7 +126,14 @@ def c11(r):
     return N(f"A running track has two straight sides of {l} m and two semicircular ends of diameter {d} m. Find the length of one lap, to the nearest metre.", round(2 * l + pi * d), "m", units=["m"], tol=0.5, o="O2", d="H", reason=f"2 × {l} + π × {d} ≈ {round(2 * l + pi * d)} m.")
 
 
-s.std([c1, c6, c2, c3, c4, c7, c9, c5, c8, c10, c11], EX("Explain why the circumference of a circle is a bit more than 3 times its diameter.", [("C = πd", ["πd|pi ?× ?d|π ?×"]), ("π is about 3.14, a bit more than 3", ["3\\.14|more than 3|about 3"])], "C = π × d and π ≈ 3.14, which is a bit more than 3. So the circumference is a bit more than 3 diameters.", o="O2"))
+def d82(r):
+    d = r.randint(4, 30)
+    return MC(f"A circle has radius {d} cm. Jo says its circumference is π × {d} cm. What is right?", f"2π × {d} = {2 * d}π cm", [(f"π × {d} cm", "That uses the radius in C = πd; the diameter is twice the radius."), (f"π × {d * d} cm", "That squares the radius (area uses r²).")], o="O2", d="H",
+              reason=f"d = 2 × {d} = {2 * d} cm, so C = {2 * d}π ≈ {2 * d * 3.14159:.1f} cm.")
+
+
+s.std([c1, c6, c2, c3, c4, c7, c9, c5, c8, c10, c11], EX("Explain why the circumference of a circle is a bit more than 3 times its diameter.", [("C = πd", ["πd|pi ?× ?d|π ?×"]), ("π is about 3.14, a bit more than 3", ["3\\.14|more than 3|about 3"])], "C = π × d and π ≈ 3.14, which is a bit more than 3. So the circumference is a bit more than 3 diameters.", o="O2"),
+      deep=[d82])
 
 # ================================================================== 8.3
 s = U.section("8.3", "3D shapes", ["O3"])
@@ -120,6 +142,7 @@ s.idea("Faces, edges and vertices", ["A cuboid has 6 faces, 12 edges and 8 verti
 s.idea("Plans and elevations", ["A **plan** is the view from above. A **front elevation** is the view from the front and a **side elevation** is the view from the side.",
        "A cylinder's plan is a circle; its front elevation is a rectangle."])
 s.check(N("How many edges does a cuboid have?", 12, o="O3"))
+s.check(MC("Before you read on: a solid has 5 faces, 6 vertices and 9 edges. What could it be?", "A triangular prism", [("A square-based pyramid", "That has 5 vertices and 8 edges."), ("A cube", "A cube has 6 faces.")], o="O3"))
 s.mistake("Count carefully", ["Hidden edges and faces still count. Use Euler's rule to check: F + V − E = 2."])
 SOL = [("cube", 6, 12, 8), ("cuboid", 6, 12, 8), ("triangular prism", 5, 9, 6), ("square-based pyramid", 5, 8, 5), ("triangular pyramid", 4, 6, 4), ("pentagonal prism", 7, 15, 10), ("hexagonal prism", 8, 18, 12)]
 
@@ -160,7 +183,13 @@ def d11(r):
     return N(f"A pyramid has a base with {n} sides. How many edges does it have?", 2 * n, o="O3", d="H", reason=f"{n} round the base + {n} up to the top = {2 * n}.")
 
 
-s.std([d2, d7, d1, d3, d4, d5, d6, d8, d9, d10, d11], EX("Explain how Euler's rule can check that a triangular prism has 9 edges.", [("faces 5 and vertices 6", ["5.*6|6.*5|faces.*vertices"]), ("F + V − E = 2: 5 + 6 − 9 = 2", ["5 ?\\+ ?6|11 ?− ?9|11 ?- ?9|= ?2"])], "A triangular prism has 5 faces and 6 vertices. F + V − E = 5 + 6 − 9 = 2, which fits Euler's rule, so 9 edges is correct.", o="O3"))
+def d83(r):
+    F, V = pick(r, [(6, 8), (5, 6), (5, 5), (7, 10), (8, 12), (4, 4)])
+    return N(f"A solid has {F} faces and {V} vertices. How many edges does it have?", F + V - 2, o="O3", d="H", reason=f"F + V − E = 2, so E = {F} + {V} − 2 = {F + V - 2}.")
+
+
+s.std([d2, d7, d1, d3, d4, d5, d6, d8, d9, d10, d11], EX("Explain how Euler's rule can check that a triangular prism has 9 edges.", [("faces 5 and vertices 6", ["5.*6|6.*5|faces.*vertices"]), ("F + V − E = 2: 5 + 6 − 9 = 2", ["5 ?\\+ ?6|11 ?− ?9|11 ?- ?9|= ?2"])], "A triangular prism has 5 faces and 6 vertices. F + V − E = 5 + 6 − 9 = 2, which fits Euler's rule, so 9 edges is correct.", o="O3"),
+      deep=[d83])
 
 U.mindmap(("Quadrilaterals and polygons", "Sides, angles, diagonals, symmetry • regular n-gon: n lines, order n", "O1", "8.1"),
           ("Circumference", "C = πd = 2πr • π ≈ 3.14", "O2", "8.2"), ("3D shapes", "Faces, edges, vertices • F + V − E = 2 • plans and elevations", "O3", "8.3"))

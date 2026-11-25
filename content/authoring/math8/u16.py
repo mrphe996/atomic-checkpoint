@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Stage 8 Mathematics · Unit 16 Interpreting and discussing results (16.1 Frequency diagrams, 16.2 Time series graphs,
-16.3 Stem-and-leaf diagrams, 16.4 Pie charts, 16.5 Representing data, 16.6 Using statistics). Written by the Atomic teaching team."""
+16.3 Stem-and-leaf diagrams, 16.4 Pie charts, 16.5 Representing data, 16.6 Using statistics). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
+and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
+Written by the Atomic teaching team."""
 from kit import *
 
 U = Unit(16, "Interpreting and Discussing Results", "Statistics and probability",
@@ -112,6 +114,8 @@ s = U.section("16.3", "Stem-and-leaf diagrams", ["O3"])
 s.idea("Ordered data", ["A **stem-and-leaf diagram** keeps every value. The **stem** is the tens digit and the **leaf** is the units digit. Leaves are written in order, and a **key** explains how to read it.",
        "Because the data is in order, it is easy to find the median, mode and range."], fig={"kind": "stemleaf", "stems": [1, 2, 3, 4], "right": [[2, 5, 8], [0, 3, 3, 7], [1, 4, 9], [2]], "key": "Key: 2 | 3 means 23"})
 s.check(N("From the diagram above, what is the largest value?", 42, o="O3"))
+s.idea("Why a stem-and-leaf diagram is useful", ["It sorts the data AND keeps every value, so you can read off the median and range straight away, and see the shape like a bar chart turned on its side.",
+       "Always include a key, such as 3 | 4 means 34."])
 s.mistake("Use the key", ["2 | 3 might mean 23, 2.3 or 230. Always read the key."])
 
 
@@ -144,7 +148,13 @@ def l7(r):
     return S(f"Write the stem and leaf for {v[4]}. Type it like 3 | 5.", [f"{v[4] // 10} | {v[4] % 10}", f"{v[4] // 10}|{v[4] % 10}", f"{v[4] // 10} {v[4] % 10}"], o="O3")
 
 
-s.std([l1, l6, l2, l3, l4, l5, l7], EX("Explain one advantage of a stem-and-leaf diagram over a bar chart of grouped data.", [("it shows every individual value", ["every value|all the values|each value|raw data|individual"]), ("so you can find the median, mode and range exactly", ["median|mode|range|exact"])], "A stem-and-leaf diagram keeps every individual value in order, so you can still find the median, mode and range exactly; grouping loses the exact values.", o="O3"))
+def n163(r):
+    vals = sorted(r.sample(range(20, 60), 9))
+    return N("Here are 9 values in order: " + ", ".join(map(str, vals)) + ". In a stem-and-leaf diagram, what would the median be?", vals[4], o="O3", d="H", reason=f"The 5th value of 9 is the middle one: {vals[4]}.")
+
+
+s.std([l1, l6, l2, l3, l4, l5, l7], EX("Explain one advantage of a stem-and-leaf diagram over a bar chart of grouped data.", [("it shows every individual value", ["every value|all the values|each value|raw data|individual"]), ("so you can find the median, mode and range exactly", ["median|mode|range|exact"])], "A stem-and-leaf diagram keeps every individual value in order, so you can still find the median, mode and range exactly; grouping loses the exact values.", o="O3"),
+      deep=[n163])
 
 # ================================================================== 16.4
 s = U.section("16.4", "Pie charts", ["O4"])
@@ -225,6 +235,7 @@ s.idea("Averages and range", ["**Mean** = total ÷ number of values. **Median** 
        "To compare two sets of data, compare an **average** (which is bigger?) and the **range** (which is more consistent?)."])
 s.example("Comparing", "Team A: mean 24 points, range 6. Team B: mean 27 points, range 15. Compare them.", [("B scored more on average", "higher mean"), ("A was more consistent", "smaller range")], "B higher on average; A more consistent")
 s.check(N("Find the mean of 4, 7, 8, 9 and 12.", 8, o="O6"))
+s.check(MC("Before you read on: house prices in a street are $200k, $210k, $220k, $230k and $2m. Which average best describes a typical house?", "The median", [("The mean", "The $2m house pulls the mean far above most houses."), ("The range", "The range is a spread, not an average.")], o="O6"))
 s.mistake("Outliers", ["One very large or small value changes the mean a lot but hardly changes the median."])
 
 
@@ -259,7 +270,14 @@ def u8(r):
     return N("The table shows the number of goals scored in matches. Find the mean number of goals per match, to 1 d.p.", round(sum(a * b for a, b in zip(x, f)) / sum(f), 1), "goals", units=["goals"], o="O6", d="H", tol=0.05, data={"head": ["Goals", *map(str, x)], "rows": [["Matches", *map(str, f)]]})
 
 
-s.std([u5, u8, u1, u2, u3, u4, u6, u7], EX("Explain why the median can be a better average than the mean.", [("the mean is affected by extreme values / outliers", ["extreme|outlier|very large|very small|affected"]), ("the median is the middle value so it is not pulled", ["middle|not affected|not pulled|isn't affected"])], "The mean uses every value, so one extreme value can pull it a long way. The median is the middle value, so it is hardly affected by an outlier.", o="O6"))
+def n166(r):
+    v = r.sample(range(2, 20), 5); m = sum(v) / 5
+    return MC("Each value in a set is increased by 3. What happens to the mean and the range?", "The mean increases by 3; the range stays the same", [("Both increase by 3", "The gap between biggest and smallest does not change."), ("Neither changes", "Every value is bigger, so the mean is bigger.")], o="O6", d="H",
+              reason="Adding the same amount shifts every value: the centre moves, the spread does not.")
+
+
+s.std([u5, u8, u1, u2, u3, u4, u6, u7], EX("Explain why the median can be a better average than the mean.", [("the mean is affected by extreme values / outliers", ["extreme|outlier|very large|very small|affected"]), ("the median is the middle value so it is not pulled", ["middle|not affected|not pulled|isn't affected"])], "The mean uses every value, so one extreme value can pull it a long way. The median is the middle value, so it is hardly affected by an outlier.", o="O6"),
+      deep=[n166])
 
 U.mindmap(("Frequency diagrams", "Equal classes • bars touch • modal class", "O1", "16.1"), ("Time series", "Time across • describe the trend", "O2", "16.2"),
           ("Stem-and-leaf", "Ordered • key • median, mode, range", "O3", "16.3"), ("Pie charts", "Angle = f ÷ total × 360", "O4", "16.4"),
