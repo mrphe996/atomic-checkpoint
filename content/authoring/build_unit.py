@@ -47,6 +47,7 @@ def build(n, g=7):
             "objectives": U.OBJECTIVES, "sections": secs, "segments": segs, "sources": getattr(U, 'SOURCES', []),
             "tests": {"A": T.TEST_A, "B": T.TEST_B, "pass": 0.7}, "mindmap": U.MINDMAP}
     out = os.path.join(HERE, '..', 'src', f'stage{g}-unit{n:02d}.json')
+    from science_v2.apply import apply as _v2; data = _v2(g, n, data)   # v2 reasoning questions
     json.dump(data, open(out, 'w', encoding='utf-8'), ensure_ascii=False)
     if os.path.exists(os.path.join(HERE, 'revise', f's{g}u{n:02d}.py')):   # the 2026 revision (videos, Practice, Unit Tests)
         from revise.kit import apply_key; apply_key(f's{g}u{n:02d}', quiet=True)

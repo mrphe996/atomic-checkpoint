@@ -1,0 +1,10 @@
+from science_v2.k import Unit
+U = Unit("s7u06")
+
+U.q("R", "6.1", "O2", "Why can a gas be squashed into a smaller space but a solid cannot?", ("Gas particles have large spaces between them", "The particles can be pushed closer together."), [("Gas particles are smaller", "Particle size does not change; spacing does."), ("Gas particles stop moving when squashed", "They keep moving.")])
+U.q("P", "6.2", "O3", "Ice at −10 °C is heated steadily. What happens to its temperature while it is melting?", ("It stays at 0 °C until all the ice has melted", "The energy is used to change state, not to raise the temperature."), [("It keeps rising steadily", "During melting the temperature stays the same."), ("It falls", "Heating does not make it colder.")])
+U.q("E", "6.3", "O4", "Ola says oxygen gas (O₂) is a compound because its molecules have two atoms. Is she right?", ("No – both atoms are oxygen, so it is an element", "A compound has atoms of different elements joined together."), [("Yes", "Two atoms of the same element make a molecule of an element."), ("No – it is a mixture", "The atoms are joined in molecules.")])
+U.q("R", "6.4", "O5", "Elements in the same group of the Periodic Table usually…", ("have similar chemical properties", "That is why they are grouped together."), [("have the same mass", "Masses increase down a group."), ("are all gases", "Groups contain solids, liquids and gases.")])
+U.q("E", "6.5", "O6", "Sodium is a reactive metal and chlorine is a poisonous gas. Sam says sodium chloride must be dangerous to eat. What is wrong?", ("A compound has different properties from the elements it is made from", "Sodium chloride is table salt."), [("Nothing – it is dangerous", "Table salt is safe in normal amounts."), ("Sodium chloride is a mixture", "It is a compound: the elements are chemically joined.")])
+U.q("F", "6.6", "O7", "Which method separates sand from salt water so that you keep the sand?", ("Filtration", "The sand stays in the filter paper; the salt water passes through."), [("Evaporation only", "That would leave sand and salt mixed together."), ("Using a magnet", "Neither sand nor salt is magnetic.")])
+V2 = U.V2

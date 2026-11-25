@@ -1,0 +1,10 @@
+from science_v2.k import Unit
+U = Unit("s9u03")
+
+U.q("R", "3.1", "O1", "Put in order from largest to smallest: gene, chromosome, nucleus.", ("Nucleus → chromosome → gene", "Chromosomes are in the nucleus, and genes are sections of chromosomes."), [("Gene → chromosome → nucleus", "That is smallest to largest."), ("Chromosome → nucleus → gene", "The nucleus contains the chromosomes.")])
+U.q("E", "3.2", "O2", "Joe says a baby gets all its genes from its mother because it grows inside her. What is wrong?", ("Half the chromosomes come from each parent", "The sperm and egg each carry half."), [("Nothing", "Both parents pass on genes."), ("All genes come from the father", "Both parents contribute.")])
+U.q("P", "3.2", "O3", "Which could harm a developing fetus?", ("The mother smoking", "Chemicals in smoke reach the fetus through the placenta."), [("The mother eating a balanced diet", "That helps the fetus."), ("The mother drinking water", "That is healthy.")])
+U.asn("3.3", "O4", "Is each statement about variation always, sometimes or never true?", [("Identical twins look exactly the same all their lives", "Sometimes true"), ("Blood group is affected by diet", "Never true"), ("Height depends on genes and environment", "Always true")], "Environment can make identical twins differ; blood group is controlled only by genes; height depends on genes and things like diet.")
+U.q("R", "3.4", "O5", "Rabbits with thicker fur survive cold winters better. What happens over many generations?", ("More rabbits have thick fur, as survivors pass on their genes", "That is natural selection."), [("The rabbits grow thicker fur because they want to", "Individuals cannot choose their genes."), ("Nothing changes", "Survival affects which genes are passed on.")])
+U.q("P", "3.5", "O6", "A new disease kills most of a plant species' pollinating insects. What is likely to happen to the plant population?", ("It falls, because fewer seeds are produced", "Plants depend on pollinators."), [("It rises", "Fewer pollinators means fewer seeds."), ("No change", "The plant depends on pollination.")])
+V2 = U.V2

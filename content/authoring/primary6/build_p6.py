@@ -15,6 +15,7 @@ def build(n):
             src = os.path.join(VID, f'u{n}_s{k}{ext}'); dst = os.path.join(MEDIA, f'u{n}_s{k}{ext}')
             if os.path.exists(src) and (not os.path.exists(dst) or os.path.getmtime(src) > os.path.getmtime(dst)): shutil.copy2(src, dst)
     data = U.export(metas, (T.TEST_A, T.TEST_B), TITLES)
+    sys.path.insert(0, os.path.join(HERE, '..')); from science_v2.apply import apply as _v2; data = _v2(6, n, data)   # v2 reasoning questions
     out = os.path.join(HERE, '..', '..', 'src', f'stage6-unit{n:02d}.json'); json.dump(data, open(out, 'w', encoding='utf-8'), ensure_ascii=False)
     print(n, [(s['id'], len(s['req']), len(s['prac']), len(s['adv']), len(s['stops']), len(s['vocab'])) for s in data['sections']])
 

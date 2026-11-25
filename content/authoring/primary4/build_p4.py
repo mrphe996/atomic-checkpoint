@@ -35,6 +35,7 @@ def build(n, dry=False):
             if os.path.exists(src) and (not os.path.exists(dst) or os.path.getmtime(src) > os.path.getmtime(dst)): shutil.copy2(src, dst)
     data = U.export(metas, (T.TEST_A, T.TEST_B) if T else ([], []), kit4.TITLES)
     if not dry or SAVE:
+        sys.path.insert(0, os.path.join(HERE, '..')); from science_v2.apply import apply as _v2; data = _v2(STAGE, n, data)   # v2 reasoning questions
         out = os.path.join(HERE, '..', '..', 'src', f'stage{STAGE}-unit{n:02d}.json'); json.dump(data, open(out, 'w', encoding='utf-8'), ensure_ascii=False)
     print(n, [(s['id'], len(s['req']), len(s['prac']), len(s['adv']), len(s['stops']), len(s['vocab'])) for s in data['sections']], 'tests' if T else 'NO TESTS')
     return data

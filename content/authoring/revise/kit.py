@@ -73,6 +73,7 @@ def apply_key(key, quiet=False):
         A, B_ = T
         for t in (A, B_): assert sum(x['pts'] for x in t) == 30, (key, sum(x['pts'] for x in t))
         d['tests'] = {"A": A, "B": B_, "pass": d.get('tests', {}).get('pass', 0.7)}
+    from science_v2.apply import apply as _v2; d = _v2(int(key[1]), int(key[3:5]), d)   # v2 reasoning questions
     json.dump(d, open(path, 'w', encoding='utf-8'), ensure_ascii=False)
     if not quiet:
         print(key, [(s['id'], len(s['req']), len(s['prac']), len(s['adv']), len(s['stops']), len(s.get('retired', []))) for s in d['sections']], 'video' if vid else 'no video yet')

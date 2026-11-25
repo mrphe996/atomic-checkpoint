@@ -1,0 +1,10 @@
+from science_v2.k import Unit
+U = Unit("s7u03")
+
+U.q("E", "3.1", "O4", "A microscope has a ×10 eyepiece and a ×40 objective. Lin says the magnification is ×50. What is it?", ("×400", "Total magnification = eyepiece × objective = 10 × 40."), [("×50", "The magnifications multiply, not add."), ("×4", "That divides.")])
+U.asn("3.1", "O3", "Is each statement about cells always, sometimes or never true?", [("A living thing is made of cells", "Always true"), ("A living thing is made of only one cell", "Sometimes true"), ("New cells come from nothing", "Never true")], "Cell theory: all living things are made of cells (one or many), and new cells come from existing cells.")
+U.q("P", "3.2", "O5", "A cell has a cell wall and chloroplasts. What kind of cell is it most likely to be?", ("A plant cell, such as a leaf cell", "Cell walls and chloroplasts are found in plant cells."), [("An animal cell", "Animal cells have no cell wall or chloroplasts."), ("A red blood cell", "Red blood cells are animal cells with no nucleus.")])
+U.q("E", "3.2", "O6", "Ana says root cells contain chloroplasts because all plant cells do. Is she right?", ("No – root cells are underground and have no chloroplasts", "Chloroplasts are only needed where there is light for photosynthesis."), [("Yes", "Not every plant cell has chloroplasts."), ("No – plant cells never have chloroplasts", "Leaf cells have many chloroplasts.")])
+U.q("R", "3.3", "O8", "Why does a root hair cell have a long, thin extension?", ("It increases the surface area for absorbing water", "More surface touching the soil means faster absorption."), [("It helps the root grow upwards", "Roots grow down; the extension is for absorbing."), ("It stores food", "Storage is not its main job.")])
+U.q("R", "3.4", "O9", "Put in order from smallest to largest: organ, cell, organism, tissue, organ system. Which comes second?", ("Tissue", "Cell → tissue → organ → organ system → organism."), [("Organ", "Organs are made of tissues, so tissue comes first."), ("Organ system", "That is fourth.")])
+V2 = U.V2
