@@ -140,7 +140,8 @@
     const ya = y - 22, a = o.a, b = o.b;
     if (b != null) s += `<line x1="${sx(a)}" y1="${ya}" x2="${sx(b)}" y2="${ya}" stroke="#D62F4B" stroke-width="5"/>`;
     else s += `<line x1="${sx(a)}" y1="${ya}" x2="${o.dir === 'left' ? x0 - 10 : x1 + 10}" y2="${ya}" stroke="#D62F4B" stroke-width="5" marker-end="url(#iqa)"/>`;
-    [a, b].filter(v => v != null).forEach(v => { s += `<circle cx="${sx(v)}" cy="${ya}" r="7" fill="#fff" stroke="#D62F4B" stroke-width="3"/>`; });
+    // o.ca / o.cb: closed (filled) circle at a / b for ≤ and ≥
+    [[a, o.ca], [b, o.cb]].filter(([v]) => v != null).forEach(([v, c]) => { s += `<circle cx="${sx(v)}" cy="${ya}" r="7" fill="${c ? '#D62F4B' : '#fff'}" stroke="#D62F4B" stroke-width="3"/>`; });
     return { svg: W(s).replace('viewBox="0 0 480 320"', 'viewBox="0 0 480 110"'), a: {} };
   };
 })();

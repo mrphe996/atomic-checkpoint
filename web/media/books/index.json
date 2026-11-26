@@ -516,5 +516,43 @@
     22
    ]
   }
+ },
+ "c8u02": {
+  "title": "Camday Maths Stage 8 · Unit 2: Expressions, Formulae and Equations",
+  "pages": 33,
+  "dir": "media/books/c8u02/",
+  "ext": "webp",
+  "pdf": "media/books/c8u02.pdf?v=a714e731f0",
+  "v": "a714e731f0",
+  "secs": {
+   "2.1": [
+    2,
+    6
+   ],
+   "2.2": [
+    7,
+    11
+   ],
+   "2.3": [
+    12,
+    16
+   ],
+   "2.4": [
+    17,
+    20
+   ],
+   "2.5": [
+    21,
+    25
+   ],
+   "2.6": [
+    26,
+    31
+   ],
+   "answers": [
+    32,
+    33
+   ]
+  }
  }
 }
