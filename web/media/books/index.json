@@ -486,5 +486,35 @@
     31
    ]
   }
+ },
+ "c8u01": {
+  "title": "Camday Maths Stage 8 · Unit 1: Integers",
+  "pages": 22,
+  "dir": "media/books/c8u01/",
+  "ext": "webp",
+  "pdf": "media/books/c8u01.pdf?v=5a830928b5",
+  "v": "5a830928b5",
+  "secs": {
+   "1.1": [
+    2,
+    6
+   ],
+   "1.2": [
+    7,
+    11
+   ],
+   "1.3": [
+    12,
+    16
+   ],
+   "1.4": [
+    17,
+    20
+   ],
+   "answers": [
+    21,
+    22
+   ]
+  }
  }
 }
