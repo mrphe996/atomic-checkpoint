@@ -324,5 +324,31 @@
     25
    ]
   }
+ },
+ "c7u12": {
+  "title": "Camday Maths Stage 7 · Unit 12: Ratio and Proportion",
+  "pages": 16,
+  "dir": "media/books/c7u12/",
+  "ext": "webp",
+  "pdf": "media/books/c7u12.pdf?v=1748994c56",
+  "v": "1748994c56",
+  "secs": {
+   "12.1": [
+    2,
+    6
+   ],
+   "12.2": [
+    7,
+    11
+   ],
+   "12.3": [
+    12,
+    15
+   ],
+   "answers": [
+    16,
+    16
+   ]
+  }
  }
 }
