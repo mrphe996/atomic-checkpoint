@@ -1336,7 +1336,7 @@
       try { for (const k of keys) await Core.enrol(k, amount); await Core.ensureOwnStage(); C = Core.C; st = Core.cur(); confetti(); toast(`You are enrolled in Stage ${lv}.`); go('home'); }
       catch (x) { btn.disabled = false; btn.classList.remove('busy'); e.textContent = x.code === 'payments_closed' ? 'Payments are not open yet.' : errText(x); } };
     const sec = el('section', { class: 'card narrow', id: 'plans' }, el('h2', {}, 'Choose your plan'));
-    if (todo.length >= 2) { const b = el('button', { class: 'btn gold', type: 'button', id: 'buyBundle', onclick: () => buy(todo, `Stage ${lv} bundle ${BUNDLE()}`, b) }, `Whole Stage ${lv} · ${BUNDLE()}`);
+    if (todo.length >= 2) { const b = el('button', { class: 'btn gold', type: 'button', id: 'buyBundle', onclick: () => buy(todo, `Stage ${lv} · ${todo.length} subjects ${priceFor(todo.length)}`, b) }, `${todo.length === avail.length ? 'Whole Stage ' + lv : 'All ' + todo.length + ' subjects'} · ${priceFor(todo.length)}`);
       sec.append(el('div', { class: 'ordrow' }, el('span', {}, `⭐ Every subject of Stage ${lv}: ${todo.map(SUBJ_NAME).join(', ')}`), b)); }
     todo.forEach(k => { const b = el('button', { class: 'btn', type: 'button', 'data-course': k, onclick: () => buy([k], PRICE, b) }, `${PRICE}`);
       sec.append(el('div', { class: 'ordrow' }, el('span', {}, `${SUBJ_ICON(k)} ${SUBJ_NAME(k)} · Stage ${lv}`), b)); });
@@ -2347,7 +2347,11 @@
   // ---- sign-up (B2C): account → about you and your school → choose ONE stage → choose a plan (one subject or the whole stage) ----
   const SCHOOL_YEARS = [['Year 1 / Kindergarten', 1], ['Year 2 / Grade 1', 2], ['Year 3 / Grade 2', 3], ['Year 4 / Grade 3', 4], ['Year 5 / Grade 4', 5], ['Year 6 / Grade 5', 6], ['Year 7 / Grade 6', 7], ['Year 8 / Grade 7', 8], ['Year 9 / Grade 8', 9], ['Year 10 / Grade 9', 9], ['Other', 0]];
   const SUBJ_NAME = k => (k >= 20 ? 'English (ESL)' : k >= 10 ? 'Mathematics' : 'Science'), SUBJ_ICON = k => (k >= 20 ? '🗣' : k >= 10 ? '📐' : '🔬');
+  const priceNum = s => Number(String(s).replace(/[^\d.]/g, '')) || 0;
+  const money = (n, like) => { const m = String(like).match(/^(\D*)[\d.,]+(.*)$/) || ['', '', '']; return m[1] + n.toLocaleString('en-GB') + m[2]; };
   const BUNDLE = () => (window.ATOMIC_CONFIG || {}).bundlePrice || 'US$119';
+  const PAIR = () => (window.ATOMIC_CONFIG || {}).pairPrice || 'US$95';
+  const priceFor = n => (n <= 0 ? '–' : n === 1 ? PRICE : n === 2 ? PAIR() : BUNDLE());   // 1 subject, 2 subjects, 3 subjects (whole stage)
   const lvName = lv => (lv <= 6 ? 'Cambridge Primary' : 'Cambridge Lower Secondary');
   function viewSignup() {
     const m = $main(); const e = errBox(); const F = UI.su = UI.su || { step: 1 };
@@ -2404,32 +2408,56 @@
             el('button', { class: 'btn primary', type: 'button', id: 'suNext3', onclick: () => { if (!F.stage) { e.textContent = 'Please choose your stage.'; return; } next(); } }, 'Next', el('span', { class: 'arr' }, ' →')))));
       } else {
         const lv = F.stage, keys = Core.subjectKeys(lv), avail = open(lv), bundleOk = avail.length >= 2;
-        F.plan = F.plan || (bundleOk ? 'bundle' : String(avail[0]));
-        const total = el('b', { id: 'suTotal' }); const terms = el('input', { type: 'checkbox', id: 'suTerms' });
-        const chosen = () => (F.plan === 'bundle' ? avail.slice() : [Number(F.plan)]);
-        const opts = el('div', { class: 'su-plans', role: 'radiogroup', 'aria-label': 'Plan' });
-        const refresh = () => { opts.querySelectorAll('.su-plan').forEach(b => { const on = b.dataset.plan === F.plan; b.classList.toggle('on', on); b.setAttribute('aria-checked', String(on)); }); total.textContent = F.plan === 'bundle' ? BUNDLE() : PRICE; };
-        const plan = (id, icon, title, sub, price, ok) => el('button', { type: 'button', class: 'su-plan' + (ok ? '' : ' off') + (id === 'bundle' ? ' bundle' : ''), role: 'radio', 'data-plan': id, disabled: !ok, onclick: () => { F.plan = id; refresh(); } },
-          el('span', { class: 'su-pi', 'aria-hidden': 'true' }, icon), el('span', { class: 'su-pt' }, el('b', {}, title), el('small', {}, sub)), el('b', { class: 'su-pp' }, ok ? price : 'Soon'));
-        if (avail.length >= 2) opts.append(plan('bundle', '⭐', `Whole Stage ${lv}`, `All ${avail.length} subjects: ${avail.map(SUBJ_NAME).join(', ')}`, BUNDLE(), true));
-        keys.forEach(k => opts.append(plan(String(k), SUBJ_ICON(k), `${SUBJ_NAME(k)} · Stage ${lv}`, `${lvName(lv)} ${SUBJ_NAME(k)} – one subject`, PRICE, avail.includes(k))));
+        // parents drag the subjects their child will study into the plan (or tap them): 1 subject, 2 subjects or the whole stage
+        if (!Array.isArray(F.pick) || F.pickStage !== lv) { F.pick = []; F.pickStage = lv; }
+        const isAll = () => avail.length > 1 && avail.every(k => F.pick.includes(k));
+        const total = el('b', { id: 'suTotal' }), totalNote = el('small', { class: 'muted', id: 'suTotalNote' }); const terms = el('input', { type: 'checkbox', id: 'suTerms' });
+        const chosen = () => avail.filter(k => F.pick.includes(k));
+        const opts = el('div', { class: 'su-plans', role: 'group', 'aria-label': 'Subjects' });
+        const basket = el('div', { class: 'su-basket', id: 'suBasket', 'aria-live': 'polite' });
+        const set = (k, on) => { F.pick = on ? (F.pick.includes(k) ? F.pick : F.pick.concat(k)) : F.pick.filter(x => x !== k); refresh(); };
+        const refresh = () => {
+          opts.querySelectorAll('.su-plan').forEach(b => { const id = b.dataset.plan, on = id === 'bundle' ? isAll() : F.pick.includes(Number(id)); b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); });
+          const ch = chosen(), n = ch.length;
+          basket.textContent = '';
+          basket.append(el('b', { class: 'su-bh' }, `🎒 Your child’s Stage ${lv} plan`),
+            n ? el('div', { class: 'su-chips' }, ...ch.map(k => el('span', { class: 'su-chip', draggable: 'true', 'data-k': k, ondragstart: ev => { ev.dataTransfer.setData('text/plain', 'out:' + k); } },
+              SUBJ_ICON(k) + ' ' + SUBJ_NAME(k), el('button', { type: 'button', class: 'su-x', 'aria-label': `Remove ${SUBJ_NAME(k)}`, onclick: () => set(k, false) }, '×'))))
+              : el('p', { class: 'muted su-empty' }, 'Drag subjects here, or tap them.'));
+          total.textContent = priceFor(n);
+          totalNote.textContent = !n ? 'Choose at least one subject.' : `${n} subject${n > 1 ? 's' : ''}${isAll() && n > 2 ? ' · whole stage' : ''}${n > 1 ? ` (instead of ${money(priceNum(PRICE) * n, PRICE)})` : ''}`;
+        };
+        basket.addEventListener('dragover', ev => { ev.preventDefault(); basket.classList.add('over'); });
+        basket.addEventListener('dragleave', () => basket.classList.remove('over'));
+        basket.addEventListener('drop', ev => { ev.preventDefault(); basket.classList.remove('over'); const d = ev.dataTransfer.getData('text/plain');
+          if (d === 'bundle') { F.pick = avail.slice(); refresh(); } else if (/^\d+$/.test(d) && avail.includes(Number(d))) set(Number(d), true); });
+        opts.addEventListener('dragover', ev => ev.preventDefault());
+        opts.addEventListener('drop', ev => { ev.preventDefault(); const d = ev.dataTransfer.getData('text/plain'); if (/^out:\d+$/.test(d)) set(Number(d.slice(4)), false); });
+        const toggle = id => { if (id === 'bundle') F.pick = isAll() ? [] : avail.slice(); else { const k = Number(id); F.pick = F.pick.includes(k) ? F.pick.filter(x => x !== k) : F.pick.concat(k); } refresh(); };
+        const plan = (id, icon, title, sub, price, ok) => el('button', { type: 'button', class: 'su-plan' + (ok ? '' : ' off') + (id === 'bundle' ? ' bundle' : ' subj'), 'aria-pressed': 'false', 'data-plan': id, disabled: !ok, draggable: ok ? 'true' : 'false',
+            ondragstart: ev => { ev.dataTransfer.setData('text/plain', id); ev.dataTransfer.effectAllowed = 'copy'; }, onclick: () => toggle(id) },
+          el('span', { class: 'su-grip', 'aria-hidden': 'true' }, '⠿'), el('span', { class: 'su-pi', 'aria-hidden': 'true' }, icon), el('span', { class: 'su-pt' }, el('b', {}, title), el('small', {}, sub)), el('b', { class: 'su-pp' }, ok ? price : 'Soon'), el('span', { class: 'su-tick', 'aria-hidden': 'true' }, '✓'));
+        keys.forEach(k => opts.append(plan(String(k), SUBJ_ICON(k), `${SUBJ_NAME(k)} · Stage ${lv}`, `${lvName(lv)} ${SUBJ_NAME(k)}`, PRICE, avail.includes(k))));
+        if (avail.length > 1) opts.append(plan('bundle', '⭐', `All ${avail.length} subjects`, avail.map(SUBJ_NAME).join(' + '), priceFor(avail.length), true));
+        const priceList = el('p', { class: 'muted su-prices' }, `1 subject ${PRICE} · 2 subjects ${PAIR()}` + (Core.subjectKeys(lv).length > 2 ? ` · all 3 subjects ${BUNDLE()}` : ''));
         const b = el('button', { class: 'btn gold', type: 'button', id: 'suBtn', onclick: async () => {
           e.textContent = '';
+          if (!chosen().length) { e.textContent = 'Please choose at least one subject.'; return; }
           if (!terms.checked) { e.textContent = 'Please agree to the Terms and the Privacy notice.'; return; }
           b.disabled = true; b.classList.add('busy'); setTimeout(() => b.classList.remove('busy'), 20000);
-          const courses = chosen(), amount = F.plan === 'bundle' ? `Stage ${lv} bundle ${BUNDLE()}` : PRICE;
+          const courses = chosen(), all = isAll(), amount = courses.length > 1 ? `Stage ${lv} · ${courses.length} subjects ${priceFor(courses.length)}` : PRICE;
           try {
             await Backend.signUp({ name: F.name, email: F.email, password: F.password, birthYear: F.birthYear, grade: F.grade, stage: lv, country: 'XX', schoolId: null,
               schoolOther: [F.school, F.town].filter(Boolean).join(', ').slice(0, 120), parentEmail: F.parentEmail || null });
             const hadGuest = isGuest(); UI.su = null; await Core.boot(C); st = Core.cur();
             let paid = true; try { for (const k of courses) await Core.enrol(k, amount); } catch (x) { paid = false; }
             if (paid) { try { await Core.ensureOwnStage(); } catch (x) { } C = Core.C; st = Core.cur(); }
-            toast(paid ? `Welcome to Atomic! You are enrolled in ${F.plan === 'bundle' ? 'the whole of Stage ' + lv : SUBJ_NAME(courses[0]) + ' Stage ' + lv}.` : (hadGuest ? 'Account created – your guest progress is saved! ' : 'Account created! ') + 'Enrol in your course to start.');
+            toast(paid ? `Welcome to Atomic! You are enrolled in ${all ? 'the whole of Stage ' + lv : courses.map(SUBJ_NAME).join(' and ') + ' Stage ' + lv}.` : (hadGuest ? 'Account created – your guest progress is saved! ' : 'Account created! ') + 'Enrol in your course to start.');
             confetti(); go(paid ? 'home' : 'checkout-' + courses[0]);
           } catch (x) { e.textContent = errText(x); b.disabled = false; if (x && x.code === 'email_taken') { F.step = 1; draw(); } }
         } }, 'Create my account and enrol');
-        card.append(dots(), el('h1', {}, `Stage ${lv}: choose your plan`), el('p', { class: 'muted' }, 'Buy one subject, or the whole stage with every subject. You can add another subject of this stage later.'),
-          el('div', { class: 'form' }, opts, el('div', { class: 'ordrow su-total' }, el('span', {}, 'Total'), total),
+        card.append(dots(), el('h1', {}, `Stage ${lv}: choose your plan`), el('p', { class: 'muted' }, 'Drag the subjects your child will study into the plan, or tap them. The more subjects, the lower the price per subject. You can add another subject later.'),
+          el('div', { class: 'form su-form4' }, priceList, el('div', { class: 'su-dnd' }, opts, basket), el('div', { class: 'ordrow su-total' }, el('span', {}, 'Total', el('br'), totalNote), total),
             el('div', { class: 'banner info' }, el('b', {}, 'Test checkout. '), 'This is the test server: no money is taken. The real payment page replaces this before launch.'),
             el('label', { class: 'check' }, terms, el('span', {}, 'I agree to the ', el('a', { href: '#terms', target: '_blank' }, 'Terms'), ' and have read the ', el('a', { href: '#privacy', target: '_blank' }, 'Privacy notice'), ' (', el('a', { href: '#privacy-kids', target: '_blank' }, 'short version'), ').')), e,
             el('div', { class: 'btnrow between' }, el('button', { class: 'btn ghost', type: 'button', onclick: back }, '← Back'), b)));

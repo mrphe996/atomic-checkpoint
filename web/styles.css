@@ -1813,3 +1813,24 @@ body.tiny .lessonbody .qfig svg{max-height:320px}
 @media (max-width:820px){.roadmap{grid-template-columns:1fr}}
 .adrm{display:flex;flex-direction:column;gap:6px;border-top:1px solid #E3EAF3;padding:10px 0}.adrm.new{border-top:0}
 .adrm input,.adrm textarea,.adrm select{font:inherit}
+/* sign-up step 4: subjects are ticked, any combination */
+.su-plan .su-tick{width:24px;height:24px;flex:0 0 24px;border:2px solid var(--line2,#D6DEE9);border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:transparent;background:#fff}
+.su-plan.on .su-tick{background:var(--blue,#0149AF);border-color:var(--blue,#0149AF);color:#fff}
+.su-total small{font-weight:600}
+/* sign-up step 4: drag subjects into the plan */
+.su-dnd{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:14px;align-items:start}
+.su-plan[draggable=true]{cursor:grab}.su-plan[draggable=true]:active{cursor:grabbing}
+.su-grip{color:#9AA8BA;font-size:18px;line-height:1}
+.su-basket{min-height:180px;border:2px dashed #9DB6DB;border-radius:16px;padding:14px;background:#F6F9FE;display:flex;flex-direction:column;gap:10px;transition:background .15s,border-color .15s}
+.su-basket.over{background:#EAF1FC;border-color:var(--blue,#0149AF)}
+.su-bh{font-size:15px}.su-empty{margin:auto 0;text-align:center}
+.su-chips{display:flex;flex-direction:column;gap:8px}
+.su-chip{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#fff;border:1.5px solid var(--blue,#0149AF);border-radius:12px;padding:8px 10px;font-weight:700;cursor:grab}
+.su-x{border:0;background:transparent;font-size:20px;line-height:1;cursor:pointer;color:#44546A;padding:0 4px}
+.su-prices{margin:0;font-weight:600}
+@media (max-width:720px){.su-dnd{grid-template-columns:1fr}.su-basket{min-height:0}}
+.su-plan .su-pt{min-width:0;flex:1 1 auto}.su-plan .su-pt small{overflow-wrap:anywhere}
+@media (max-width:720px){.su-grip{display:none}.su-plan{gap:8px;padding:10px}.su-plan .su-tick{width:20px;height:20px;flex-basis:20px}}
+@media (hover:none){.su-grip{display:none}}
+.form.su-form4{max-width:820px}
+.card.narrow.signup:has(.su-form4){max-width:900px}

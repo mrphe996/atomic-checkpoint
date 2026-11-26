@@ -8,7 +8,12 @@ def signup(pg):
     pg.evaluate("location.hash='signup'"); pg.wait_for_timeout(300)
     pg.fill('#suName', 'Uma Interface'); pg.fill('#suEmail', 'ui@example.com'); pg.fill('#suPw', 'password123'); pg.click('#suNext1'); pg.wait_for_selector('#suYear')
     pg.select_option('#suYear', index=3); pg.select_option('#suGrade', 'Year 7 / Grade 6'); pg.fill('#suSchool', 'Test School'); pg.click('#suNext2'); pg.wait_for_selector('.su-stage')
-    pg.click('.su-stage[data-stage="7"]'); pg.click('#suNext3'); pg.wait_for_selector('.su-plan'); pg.click('.su-plan[data-plan="7"]'); pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home'")
+    pg.click('.su-stage[data-stage="7"]'); pg.click('#suNext3'); pg.wait_for_selector('.su-plan'); pg.click('.su-plan[data-plan="7"]'); pg.click('.su-plan[data-plan="17"]')
+    ok(pg.inner_text('#suTotal').strip() == 'US$95' and pg.query_selector_all('#suBasket .su-chip').__len__() == 2, 'U27 Two subjects (Science + Mathematics, no ESL) cost US$95')
+    pg.click('.su-plan[data-plan="27"]'); ok(pg.inner_text('#suTotal').strip() == 'US$119', 'U28 Ticking all three subjects gives the whole-stage price')
+    pg.click('#suBasket .su-chip[data-k="27"] .su-x'); ok(pg.inner_text('#suTotal').strip() == 'US$95', 'U30 Removing a subject from the plan updates the price')
+    pg.check('#suTerms'); pg.click('#suBtn'); pg.wait_for_function("location.hash==='#home'")
+    ok(pg.evaluate("Core.enrolled(7) && Core.enrolled(17) && !Core.enrolled(27)"), 'U29 Sign-up enrols in exactly the ticked subjects')
 with sync_playwright() as p:
     b = p.chromium.launch(executable_path='/usr/bin/google-chrome'); pg = b.new_page(reduced_motion='reduce', viewport={'width': 1300, 'height': 900}); errs = []
     pg.on('pageerror', lambda e: errs.append(str(e)))
@@ -80,7 +85,7 @@ with sync_playwright() as p:
     pg.evaluate("Core.S.enrolments=[7,8,9,3,4,5].map(s=>({stage:s,status:'active'}))"); pg.evaluate("location.hash='home'"); pg.wait_for_timeout(500)
     pg.evaluate("location.hash='u-1'"); pg.wait_for_selector('#tocCourse'); pg.wait_for_timeout(400); pg.click('#tocCourse'); pg.wait_for_timeout(300)
     shown = pg.eval_on_selector_all('.tcoursebox .tmenu > a.it:not(.tadd)', "els=>els.filter(e=>e.offsetParent).map(e=>e.getAttribute('href'))")
-    ok(one <= 2 and len(shown) == 4 and shown[0] == '#stage-8' and shown[-1] == '#courses' and pg.query_selector('.tshowall') is not None and pg.query_selector('.tnext') is None,
+    ok(one <= 3 and len(shown) == 4 and shown[0] == '#stage-8' and shown[-1] == '#courses' and pg.query_selector('.tshowall') is not None and pg.query_selector('.tnext') is None,
        'U24 The sidebar course menu shows only the learner\'s own courses (3 + "Show all"), no suggestion before finishing')
     pg.evaluate("Core.S.enrolments=[]")
     ok(not errs, 'U22 No page errors ' + '; '.join(errs[:3])); b.close()
