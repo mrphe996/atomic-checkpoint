@@ -1018,5 +1018,61 @@
     27
    ]
   }
+ },
+ "c9u03": {
+  "title": "Camday Maths Stage 9 · Unit 3: Decimals, Percentages and Rounding",
+  "pages": 18,
+  "dir": "media/books/c9u03/",
+  "ext": "webp",
+  "pdf": "media/books/c9u03.pdf?v=c62533f289",
+  "v": "c62533f289",
+  "secs": {
+   "3.1": [
+    2,
+    5
+   ],
+   "3.2": [
+    6,
+    9
+   ],
+   "3.3": [
+    10,
+    13
+   ],
+   "3.4": [
+    14,
+    17
+   ],
+   "answers": [
+    18,
+    18
+   ]
+  }
+ },
+ "c9u04": {
+  "title": "Camday Maths Stage 9 · Unit 4: Equations and Inequalities",
+  "pages": 15,
+  "dir": "media/books/c9u04/",
+  "ext": "webp",
+  "pdf": "media/books/c9u04.pdf?v=d52028c62d",
+  "v": "d52028c62d",
+  "secs": {
+   "4.1": [
+    2,
+    6
+   ],
+   "4.2": [
+    7,
+    10
+   ],
+   "4.3": [
+    11,
+    14
+   ],
+   "answers": [
+    15,
+    15
+   ]
+  }
  }
 }
