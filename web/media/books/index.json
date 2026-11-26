@@ -160,5 +160,31 @@
     28
    ]
   }
+ },
+ "c7u05": {
+  "title": "Camday Maths Stage 7 · Unit 5: Angles and Constructions",
+  "pages": 19,
+  "dir": "media/books/c7u05/",
+  "ext": "webp",
+  "pdf": "media/books/c7u05.pdf?v=b1467b1afa",
+  "v": "b1467b1afa",
+  "secs": {
+   "5.1": [
+    2,
+    6
+   ],
+   "5.2": [
+    7,
+    12
+   ],
+   "5.3": [
+    13,
+    18
+   ],
+   "answers": [
+    19,
+    19
+   ]
+  }
  }
 }
