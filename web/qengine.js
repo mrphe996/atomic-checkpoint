@@ -143,9 +143,10 @@
         draw(); W.append(ol); break;
       }
       case 'match': {
-        resp = resp || {}; const rights = shuffle(q.pairs.map(p => p.r), seed);
+        // Unit Test papers reach the browser without their keys: they carry lefts / rights instead of pairs
+        resp = resp || {}; const lefts = q.pairs ? q.pairs.map(p => ({ l: p.l })) : (q.lefts || []).map(l => ({ l })); const rights = q.pairs ? shuffle(q.pairs.map(p => p.r), seed) : (q.rights || []).slice();
         const tb = el('div', { class: 'match' });
-        q.pairs.forEach(p => { const s = el('select', { 'aria-label': p.l }, el('option', { value: '' }, '— choose —'), ...rights.map(r => el('option', { value: r }, r))); s.value = resp[p.l] || ''; s.onchange = () => { resp[p.l] = s.value; changed(); }; tb.append(el('div', { class: 'mrow' }, el('b', {}, p.l), s)); });
+        lefts.forEach(p => { const s = el('select', { 'aria-label': p.l }, el('option', { value: '' }, '— choose —'), ...rights.map(r => el('option', { value: r }, r))); s.value = resp[p.l] || ''; s.onchange = () => { resp[p.l] = s.value; changed(); }; tb.append(el('div', { class: 'mrow' }, el('b', {}, p.l), s)); });
         W.append(tb); break;
       }
       case 'short': {
