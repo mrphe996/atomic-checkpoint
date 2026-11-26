@@ -97,3 +97,27 @@ def L(*blocks, stops=None, at=None, pdf=None, practice=None):
     at = placement of the old check questions (if stops is None); pdf = [{book, p0, p1, label, note, look}];
     practice = {"req": [...], "prac": [...], "adv": [...], "more": [...]} replaces those lists (keeps any list not given)"""
     return {"blocks": list(blocks), "stops": stops, "at": list(at) if at else None, "pdf": pdf, "practice": practice, "v": 4}
+
+
+def grid(id, prompt, cols, rows, hint, reason, diff="M", obj="O1", skill="Data", **kw):
+    """sort each row into one column. rows = [(label, column)]"""
+    q = {"id": id, "type": "grid", "prompt": prompt, "diff": diff, "obj": obj, "skill": skill, "cols": list(cols),
+         "rows": [{"l": l, "a": [c]} for l, c in rows], "mode": "classify", "hint": hint, "reason": reason}
+    q.update(kw); return q
+
+
+def expr(id, prompt, answer, hint, reason, vars="xy", lhs="y", errs_fb=None, diff="M", obj="O1", skill="Application", **kw):
+    """an expression or formula to type; any equivalent form is accepted (the site compares values)"""
+    q = {"id": id, "type": "expr", "prompt": prompt, "diff": diff, "obj": obj, "skill": skill, "expr": answer, "vars": vars, "show": answer, "hint": hint, "reason": reason}
+    if lhs: q["lhs"] = lhs
+    q.update(kw); return q
+
+
+def tiles(*patterns, rows=None, gap=1):
+    """a 'cells' diagram of growing patterns drawn side by side. patterns = lists of (col, row) cells, each from 0"""
+    cells, x = [], 0
+    R = rows or (max(r for p in patterns for _, r in p) + 1)
+    for p in patterns:
+        w = max(c for c, _ in p) + 1
+        cells += [[x + c, r] for c, r in p]; x += w + gap
+    return {"kind": "cells", "cells": cells, "cols": x - gap, "rows": R}
