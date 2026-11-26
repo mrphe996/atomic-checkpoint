@@ -376,5 +376,43 @@
     17
    ]
   }
+ },
+ "c7u14": {
+  "title": "Camday Maths Stage 7 · Unit 14: Position and Transformation",
+  "pages": 32,
+  "dir": "media/books/c7u14/",
+  "ext": "webp",
+  "pdf": "media/books/c7u14.pdf?v=7356dbdaf7",
+  "v": "7356dbdaf7",
+  "secs": {
+   "14.1": [
+    2,
+    5
+   ],
+   "14.2": [
+    6,
+    10
+   ],
+   "14.3": [
+    11,
+    15
+   ],
+   "14.4": [
+    16,
+    20
+   ],
+   "14.5": [
+    21,
+    25
+   ],
+   "14.6": [
+    26,
+    30
+   ],
+   "answers": [
+    31,
+    32
+   ]
+  }
  }
 }
