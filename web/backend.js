@@ -359,7 +359,7 @@
       async loadProgress(lid, unit) { const r = await rest(`progress?learner_id=eq.${lid}&unit=eq.${unit}&select=state`); return r[0] ? r[0].state : null; },
       async allDays(lid) { const r = await rest(`progress?learner_id=eq.${lid}&select=days:state->days`); return [].concat(...r.map(x => x.days || [])); },
       async allStates(lid) { const r = await rest(`progress?learner_id=eq.${lid}&select=unit,state`); return Object.fromEntries(r.filter(x => !/-final$/.test(x.unit)).map(x => [x.unit, x.state])); },
-      async enrolments(lid) { return rest(`enrolments?learner_id=eq.${lid}&select=stage,method,status,created_at,expired_at`); },
+      async enrolments(lid) { return rest(`enrolments?learner_id=eq.${lid}&select=*`); },
       async checkAccess(lid) { return rpc('check_access', { p_learner: lid }); },
       // one-time purchase. BILLING=paddle: the server checks the order (prepare_checkout), Paddle takes the payment, the webhook opens the courses.
       // Otherwise (test server): the test checkout, no money taken.
