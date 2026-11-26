@@ -1395,8 +1395,7 @@
         return b; }));
     requestAnimationFrame(() => { const on = strip.querySelector('.bunit.on'); if (on) strip.scrollLeft = Math.max(0, on.offsetLeft - strip.offsetLeft - 12); });
     const s0 = C.sections[0];
-    m.append(el('div', {}, el('span', { class: 'eyebrow' }, `UNIT ${Core.UNO} · ${C.unit.title.toUpperCase()}`), el('h2', { style: 'margin:0;font-size:30px' }, `Unit ${Core.UNO} questions`),
-      el('p', { class: 'muted', style: 'margin:4px 0 0' }, `${allQs().length} practice questions (${s0 ? s0.req.length + s0.prac.length + s0.adv.length : 30} per section: ${s0 ? s0.req.length : 8} Core, ${s0 ? s0.prac.length : 18} Practice, ${s0 ? s0.adv.length : 4} Advanced) plus ${C.sections.reduce((a, s) => a + s.stops.length, 0)} ${s0 && s0.lesson ? 'check' : 'pause'} questions. Practising here never changes your Core progress or test scores.`)));
+    const sumBox = el('section', { class: 'card qbsum', id: 'bankSummary' }); m.append(sumBox);
 
     // ---- what each filter means ----
     st.marks = st.marks || {};
@@ -1419,12 +1418,24 @@
     const DORD = { M: 1, H: 2, VH: 3 };
     const SORT = { id: null, easy: (a, b) => (DORD[a.diff] || 0) - (DORD[b.diff] || 0), hard: (a, b) => (DORD[b.diff] || 0) - (DORD[a.diff] || 0), todo: (a, b) => (STATUS.done(a) ? 1 : 0) - (STATUS.done(b) ? 1 : 0), wrong: (a, b) => (STATUS.wrong(b) ? 1 : 0) - (STATUS.wrong(a) ? 1 : 0) };
 
+    // ---- unit summary: how much is done, and one-tap sets ----
+    const nDone = ALL.filter(STATUS.done).length, nWrong = ALL.filter(STATUS.wrong).length, nMark = ALL.filter(STATUS.mark).length, pctU = ALL.length ? Math.round(nDone / ALL.length * 100) : 0;
+    const quick = (id, n, label, sub, v) => el('button', { type: 'button', class: 'qbquick', id, 'data-v': v, onclick: () => { F.status = F.status === v ? 'all' : v; F.n = 40; update(); } }, el('b', {}, String(n)), el('span', {}, label), el('small', {}, sub));
+    sumBox.append(el('div', { class: 'qbsum-l' }, el('span', { class: 'hl' }, `Unit ${Core.UNO}`), el('h2', {}, C.unit.title),
+        el('p', {}, `${ALL.length} questions. Practising here never changes your Core progress or test scores.`),
+        el('div', { class: 'qbsum-bar' }, el('div', { class: 'pbar' + (pctU === 100 ? ' ok' : '') }, el('i', { style: `width:${pctU}%` })), el('b', {}, `${nDone} of ${ALL.length} done`))),
+      el('div', { class: 'qbquicks' }, quick('qkTodo', ALL.length - nDone, 'Not done yet', 'Start with these', 'todo'), quick('qkWrong', nWrong, 'Got wrong before', 'Worth another try', 'wrong'), quick('qkMark', nMark, 'Bookmarked', 'Saved by you', 'mark')));
+    // section and set as tabs (the same filters as the menus below)
+    const tabRow = (k, label) => { const d = DIMS.find(x => x.k === k); return el('div', { class: 'qbtabs', 'data-k': k, role: 'group', 'aria-label': label }, el('span', { class: 'qbtabl' }, label),
+      ...d.opts.map(([v, tx]) => el('button', { type: 'button', class: 'chip', 'data-v': v, onclick: () => { F[k] = v; F.n = 40; update(); } }, k === 'sec' && v !== 'all' ? v : tx.replace('* ', '')))); };
+    const tabs = el('div', { class: 'qbtabwrap', id: 'bankTabs' }, tabRow('sec', 'Topic'), tabRow('tier', 'Set'));
+
     // ---- the filter panel ----
     const selects = {};
     const grid = el('div', { class: 'qbgrid' }, ...DIMS.map(d => { const id = 'bf-' + d.k;
       const sel = el('select', { id, onchange: () => { F[d.k] = sel.value; F.n = 40; update(); } }); selects[d.k] = sel;
       return el('div', { class: 'qbsel', 'data-k': d.k }, el('label', { for: id }, d.label), sel); }));
-    const sIn = el('input', { type: 'search', id: 'bankSearch', placeholder: 'Search words in the question, or its id', value: F.q || '', 'aria-label': 'Search the questions', autocomplete: 'off' });
+    const sIn = el('input', { type: 'search', id: 'bankSearch', placeholder: 'Search words in the question', value: F.q || '', 'aria-label': 'Search the questions', autocomplete: 'off' });
     const sX = el('button', { type: 'button', class: 'qbx', 'aria-label': 'Clear the search', hidden: !F.q, onclick: () => { sIn.value = ''; F.q = ''; sX.hidden = true; update(); sIn.focus(); } }, '×');
     let sT = null; const runSearch = () => { clearTimeout(sT); const v = sIn.value.trim(); sX.hidden = !v; if (v === (F.q || '')) return; F.q = v; F.n = 40; update(); };
     sIn.addEventListener('input', () => { clearTimeout(sT); sT = setTimeout(runSearch, 180); }); sIn.addEventListener('keydown', e => { if (e.key === 'Enter') runSearch(); }); sIn.addEventListener('search', runSearch);
@@ -1433,7 +1444,7 @@
     const panel = el('section', { class: 'card qbf' + (UI.bankFold ? ' closed' : ''), id: 'bankFilters', 'aria-label': 'Filters' },
       el('div', { class: 'qbf-top' }, el('b', { class: 'lex', style: 'font-size:18px' }, 'Filters'), search,
         el('button', { type: 'button', class: 'btn small ghost qbfold', 'aria-expanded': String(!UI.bankFold), onclick: e => { UI.bankFold = !UI.bankFold; panel.classList.toggle('closed', UI.bankFold); e.currentTarget.setAttribute('aria-expanded', String(!UI.bankFold)); e.currentTarget.textContent = UI.bankFold ? 'Show filters' : 'Hide filters'; } }, UI.bankFold ? 'Show filters' : 'Hide filters')),
-      grid, active);
+      tabs, grid, active);
     m.append(panel);
 
     // ---- results bar: count, sort, selection, practise ----
@@ -1458,11 +1469,11 @@
       const line = el('div', { class: 'lbrow' + (F.sel[q.id] ? ' picked' : ''), 'data-q': q.id });
       cb.addEventListener('change', () => { F.sel[q.id] = cb.checked; line.classList.toggle('picked', cb.checked); bar(); });
       const mk = el('button', { type: 'button', class: 'chip' + (st.marks[q.id] ? ' on' : ''), 'aria-pressed': String(!!st.marks[q.id]), 'aria-label': 'Bookmark ' + q.id, style: 'min-height:44px;min-width:44px;padding:0 10px', onclick: e => { e.stopPropagation(); st.marks[q.id] = !st.marks[q.id]; Core.persist(); mk.classList.toggle('on'); mk.setAttribute('aria-pressed', String(!!st.marks[q.id])); } },AtomicIcons.ic('star'));
-      line.append(el('span', {}, cb), el('code', { class: 'c-id', style: 'font-size:13px;color:#52627A' }, q.id),
-        el('span', { style: 'min-width:0' }, el('span', { class: 'qbq' }, q.prompt.replace(/^\* Advanced\.\s*/, '')), el('small', { class: 'muted' }, `${SEC[q.id]} · ${QE.TYPE_VI[q.type]} · `, dots(q.diff), ` ${QE.DIFF[q.diff] || ''} · ${q.obj || ''}`)),
+      line.append(el('span', {}, cb), el('span', { class: 'c-id qbnum', title: q.id }, String(ALL.indexOf(q) + 1)),
+        el('span', { style: 'min-width:0' }, el('span', { class: 'qbq' }, q.prompt.replace(/^\* Advanced\.\s*/, '')), el('small', { class: 'qbmeta' }, el('span', { class: 'qbm' }, `Topic ${SEC[q.id]}`), el('span', { class: 'qbm' }, QE.TYPE_VI[q.type]), el('span', { class: 'qbm' }, dots(q.diff), ` ${QE.DIFF[q.diff] || ''}`))),
         el('span', { class: 'c-set' }, el('span', { class: 'tag ' + (t === 'adv' ? 'adv' : t === 'req' ? 'd-M' : '') }, t === 'req' ? 'Core' : t === 'adv' ? '* Advanced' : t === 'ext' ? 'Extreme' : 'Practice')),
         el('span', { class: 'c-st' }, r.done ? el('span', { class: 'status done' }, r.ok ? (r.tries === 1 ? 'Right 1st try' : 'Correct') : 'Completed') : r.tries ? el('span', { class: 'tag d-VH' }, 'In progress') : el('span', { class: 'status todo' }, 'Not done')),
-        el('span', { class: 'qbacts' }, mk, el('button', { type: 'button', class: 'btn small', style: 'padding:0 14px', onclick: () => startDrill(`Question ${q.id}`, [q], 'bank') }, 'Open')));
+        el('span', { class: 'qbacts' }, mk, el('button', { type: 'button', class: 'btn small' + (r.done ? '' : ' primary'), style: 'padding:0 14px', onclick: () => startDrill(`Question ${ALL.indexOf(q) + 1}`, [q], 'bank') }, r.done ? 'Redo' : 'Answer')));
       return line;
     }
     function bar() {
@@ -1480,6 +1491,8 @@
       DIMS.forEach(d => { const sel = selects[d.k], base = ALL.filter(q => okExcept(q, d.k)); sel.textContent = '';
         d.opts.forEach(([v, t]) => { const n = v === 'all' ? base.length : base.filter(q => d.test(q, v)).length; sel.append(el('option', { value: v, selected: F[d.k] === v, disabled: !n && F[d.k] !== v && v !== 'all' }, `${t} (${n})`)); });
         sel.value = F[d.k]; sel.closest('.qbsel').classList.toggle('set', F[d.k] !== 'all'); });
+      tabs.querySelectorAll('.qbtabs').forEach(g => g.querySelectorAll('.chip').forEach(c => { const onn = F[g.dataset.k] === c.dataset.v; c.classList.toggle('on', onn); c.setAttribute('aria-pressed', String(onn)); }));
+      sumBox.querySelectorAll('.qbquick').forEach(b => { const onn = F.status === b.dataset.v; b.classList.toggle('on', onn); b.setAttribute('aria-pressed', String(onn)); });
       active.textContent = '';
       const on = DIMS.filter(d => F[d.k] !== 'all');
       on.forEach(d => { const o = d.opts.find(x => x[0] === F[d.k]); active.append(el('span', { class: 'qbpill' }, `${d.label}: ${o ? o[1] : F[d.k]}`, el('button', { type: 'button', 'aria-label': `Remove the ${d.label} filter`, onclick: () => { F[d.k] = 'all'; F.n = 40; update(); } }, '×'))); });
@@ -1488,7 +1501,7 @@
       else active.append(el('span', { class: 'qbhint' }, 'Tip: each choice shows how many questions it leaves. Combine filters to find exactly what you need.'));
       list = ALL.filter(q => okExcept(q, null)); if (SORT[F.sort]) list = list.slice().sort(SORT[F.sort]);
       tbl.textContent = '';
-      tbl.append(el('div', { class: 'lbrow h' }, el('span', {}, allBox), el('span', { class: 'c-id' }, 'ID'), el('span', {}, 'QUESTION'), el('span', { class: 'c-set' }, 'SET'), el('span', { class: 'c-st' }, 'STATUS'), el('span', {}, '')));
+      tbl.append(el('div', { class: 'lbrow h' }, el('span', {}, allBox), el('span', { class: 'c-id' }, 'NO.'), el('span', {}, 'QUESTION'), el('span', { class: 'c-set' }, 'SET'), el('span', { class: 'c-st' }, 'STATUS'), el('span', {}, '')));
       list.slice(0, F.n).forEach(q => tbl.append(row(q)));
       if (!list.length) tbl.append(el('div', { class: 'qbempty' }, el('b', { class: 'lex', style: 'font-size:18px' }, 'No questions match these filters'), el('span', { class: 'muted' }, 'Remove a filter or clear them all to see more.'),
         el('button', { type: 'button', class: 'btn small', onclick: () => { Object.assign(F, DEF, { q: '', n: 40 }); sIn.value = ''; sX.hidden = true; update(); } }, 'Clear all filters')));

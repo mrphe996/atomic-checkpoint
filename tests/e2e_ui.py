@@ -50,7 +50,7 @@ with sync_playwright() as p:
     pg.select_option('#bf-diff', 'H'); pg.wait_for_timeout(250); n1 = int(pg.inner_text('#bankCount').split()[0])
     lab = pg.evaluate("[...document.querySelectorAll('#bf-diff option')].find(o=>o.value==='H').textContent")
     ok(0 < n1 < n0 and f'({n1})' in lab, f'U12 Difficulty filter narrows the list and shows its count ({n0} → {n1}, “{lab}”)')
-    pg.select_option('#bf-tier', 'req'); pg.wait_for_timeout(250); n2 = int(pg.inner_text('#bankCount').split()[0])
+    pg.click('.qbtabs[data-k="tier"] .chip[data-v="req"]'); pg.wait_for_timeout(250); n2 = int(pg.inner_text('#bankCount').split()[0])
     ok(n2 <= n1 and len(pg.query_selector_all('.qbpill')) == 2, 'U13 Filters combine and each shows as a removable pill')
     pg.click('.qbpill:has-text("Difficulty") button'); pg.wait_for_timeout(250)
     ok(len(pg.query_selector_all('.qbpill')) == 1 and pg.eval_on_selector('#bf-diff', 'e=>e.value') == 'all', 'U14 Removing a pill clears that filter')

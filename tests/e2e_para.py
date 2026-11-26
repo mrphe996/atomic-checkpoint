@@ -36,7 +36,7 @@ with sync_playwright() as p:
     # Question Bank: Extreme set filter
     go(pg, 'bank'); pg.wait_for_timeout(600)
     if pg.query_selector('#leaveAnyway'): pg.click('#leaveAnyway'); pg.wait_for_timeout(500); go(pg, 'bank')
-    pg.select_option('#bf-tier', 'ext'); pg.wait_for_timeout(250)
+    pg.click('.qbtabs[data-k="tier"] .chip[data-v="ext"]'); pg.wait_for_timeout(250)
     ok(int(pg.inner_text('#bankCount').split()[0]) == 8, 'X9 The Question Bank filters the 8 Extreme questions')
     # Unit Test: the 6-mark paragraph question is written in a large box
     go(pg, 'test'); pg.wait_for_selector('#startTest'); pg.click('#startTest'); pg.wait_for_timeout(500)

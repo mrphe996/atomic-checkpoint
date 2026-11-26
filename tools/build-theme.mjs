@@ -128,6 +128,8 @@ footer.foot::before{display:none}
 .tsum,.lbtop{background:#E3E9FB}
 .lb-example .lbtop{background:#FFF7CC}.lb-method .lbtop{background:#F5E9F2}.lb-tip .lbtop{background:#E8F9E8}.lb-mistake .lbtop{background:#FDE3E3}
 .tready .pbar.mini{flex:none;height:8px;width:160px}
+.qbsum{background:#E3E9FB;border:0}
+.qbt .lbrow.picked{background:#FFF7CC}
 html.theme-oak #splash{background:#fff}
 html.theme-oak #splash .sp-in{color:#222}
 html.theme-oak #splash .sp-bar{background:#F2F2F2}
