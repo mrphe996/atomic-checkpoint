@@ -2,7 +2,7 @@
 """Stage 5 Mathematics (Primary) · Unit 5 Addition and subtraction (1) (5.1 Addition and subtraction including decimal numbers,
 5.2 Addition and subtraction of positive and negative numbers). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 from h import *
 

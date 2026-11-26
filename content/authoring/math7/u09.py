@@ -2,7 +2,7 @@
 """Stage 7 Mathematics · Unit 9 Sequences and functions (9.1 Generating sequences (1), 9.2 Generating sequences (2),
 9.3 Using the nth term, 9.4 Representing simple functions). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 
 U = Unit(9, "Sequences and Functions", "Algebra",

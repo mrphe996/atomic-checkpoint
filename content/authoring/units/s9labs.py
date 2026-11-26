@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 9 experiment practice: short investigations with a diagram or results table, added to the
 practice pools of each section. Each investigation has three linked questions that share the context.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from c_paper import Paper, B

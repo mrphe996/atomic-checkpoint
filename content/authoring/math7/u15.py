@@ -3,7 +3,7 @@
 15.3 The area of a triangle, 15.4 Volume of cubes and cuboids, 15.5 Surface area of cubes and cuboids).
 Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 
 U = Unit(15, "Shapes, Area and Volume", "Geometry and measure",

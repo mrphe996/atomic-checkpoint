@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 7 Unit 2 Measurements — 2026 revision (written by the Atomic teaching team).
+"""Stage 7 Unit 2 Measurements — 2026 revision (written by the Camday teaching team).
 Practice: repeated unit-conversion and recall questions out; scale readings, data tables, graphs and
 practical-method questions in. Challenge: ideas adapted from outside sources (named under the question)."""
 from c_kit import *

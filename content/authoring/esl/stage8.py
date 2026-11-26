@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Atomic ESL Stage 8 (ages 12–13). Original texts and questions written by the Atomic teaching team."""
+"""Camday ESL Stage 8 (ages 12–13). Original texts and questions written by the Camday teaching team."""
 
 UNITS = [
 ("Suspense and Tension", "Narrative reading and writing", "How writers build suspense, sentence length and structure, past modal verbs and a suspense story.", """

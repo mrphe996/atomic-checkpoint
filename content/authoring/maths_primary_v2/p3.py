@@ -1,4 +1,4 @@
-# Primary Maths Stage 3 – v2 blocks (why it works, worked example, method). Written by the Atomic teaching team.
+# Primary Maths Stage 3 – v2 blocks (why it works, worked example, method). Written by the Camday teaching team.
 W = {
 1: {
 "1.1": ("Why the place matters", "We only use ten digits, 0 to 9. The place of a digit tells us its size: each place to the left is worth 10 times more.\nSo the 3 in 300 is worth 10 times the 3 in 30.",

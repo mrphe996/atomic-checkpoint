@@ -2,7 +2,7 @@
 """Stage 8 Mathematics · Unit 14 Position and transformation (14.1 Bearings, 14.2 The midpoint of a line segment,
 14.3 Translating, 14.4 Reflecting, 14.5 Rotating and 14.6 Enlarging 2D shapes). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 
 U = Unit(14, "Position and Transformation", "Geometry and measure",

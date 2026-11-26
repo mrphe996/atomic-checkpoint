@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Build Stages 1-2 Science (course keys 1, 2) and Mathematics (11, 12) into content/src. Written by the Atomic teaching team."""
+"""Build Stages 1-2 Science (course keys 1, 2) and Mathematics (11, 12) into content/src. Written by the Camday teaching team."""
 import os, sys, json
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import science, maths

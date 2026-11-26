@@ -2,7 +2,7 @@
 """Stage 7 Mathematics · Unit 7 Fractions (7.1 Ordering fractions, 7.2 Adding mixed numbers, 7.3 Multiplying fractions,
 7.4 Dividing fractions, 7.5 Making fraction calculations easier). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 

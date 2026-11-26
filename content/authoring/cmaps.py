@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Concept maps for Stage 7 (Atomic's own wording and layout). Written by the Atomic teaching team.
+"""Concept maps for Stage 7 (Camday's own wording and layout). Written by the Camday teaching team.
 Each map: nodes on a 5-column grid (col 0-4, row 0..), links with a short linking phrase.
 k: root (the unit idea) | key (main branch) | node (concept) | info (short explanation, bullet lines in d)
 s: the section the node is taught in – tapping a node opens that section's video clip and questions."""

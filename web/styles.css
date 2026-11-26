@@ -1,4 +1,4 @@
-/* Atomic Cambridge Science — Design System v3 (Atomic blue · navy · spark gold · science colours) */
+/* Camday Cambridge Science — Design System v3 (Camday blue · navy · spark gold · science colours) */
 :root{--blue:#0149AF;--blue7:#013A8C;--blue5:#2F6FD6;--blue3:#A9C6F2;--blue1:#DCE8FA;--blue05:#F3F7FD;--navy:#0B2545;--gold:#F3BF69;--goldd:#C48A2C;--goldt:#935A00;--ink:#1C2A3A;--muted:#556377;--line:#D3E0F4;--line2:#E6EEF8;--ok:#1E8E4E;--okt:#1E7A45;--okbg:#E5F6EC;--bad:#C93A3A;--badt:#B42318;--badbg:#FDECEC;--warnbg:#FFF6E0;--cream:#FFF4D6}
 *{box-sizing:border-box}
 html,body{margin:0}
@@ -1961,3 +1961,7 @@ a.pt-row:hover{background:#FFF7CC}
 /* header: never break a menu word */
 .mainnav a,.mainnav button{white-space:nowrap}
 @media (max-width:1280px){.mainnav a,.mainnav button{padding:8px 5px!important;font-size:14px}.topright{gap:6px}.topright .pill.streak{display:none}}
+/* Camday logo */
+.brand img{height:38px;width:auto}
+@media (max-width:640px){.brand img{height:30px}}
+@media (max-width:480px){.brand img,.top.guest .brand img{width:32px;height:32px;object-fit:cover;object-position:left center}}

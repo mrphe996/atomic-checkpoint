@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-"""Atomic Mathematics Stage 9 authoring kit.
+"""Camday Mathematics Stage 9 authoring kit.
 A unit file builds Sections. Each Section has a reading lesson (ideas, methods, worked examples, common mistakes),
 check questions placed after lesson blocks, and question pools: 8 Core, a large Practice pool and * Advanced.
 Most questions come from templates that take random parameters, so every question is different and its
 answer and worked solution are calculated, never typed by hand.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 import random, math, re
 from fractions import Fraction as Fr
 
@@ -402,7 +402,7 @@ class Unit:
             for o in s["objs"]: segs.setdefault(o, [s["id"], 0.0, s["video"]["dur"], s["title"]])
         st = self.stage; prim = st <= 6
         lvl = "Primary" if prim else "Lower Secondary"; fw = f"Cambridge {lvl} Mathematics ({'0096' if prim else '0862'}), Stage {st}"
-        return {"course": {"id": f"s{10 + st}", "title": f"Atomic – Cambridge {lvl} Mathematics — Stage {st}", "units": [{"n": i + 1, "t": t} for i, t in enumerate(titles)]},
+        return {"course": {"id": f"s{10 + st}", "title": f"Camday – Cambridge {lvl} Mathematics — Stage {st}", "units": [{"n": i + 1, "t": t} for i, t in enumerate(titles)]},
                 "unit": {"n": self.n, "stage": 10 + st, "title": self.title, "strandShort": self.strand, "blurb": self.blurb, "strand": self.strand,
                          "framework": fw, "lesson": True, "subject": "maths", "read": f"media/read/m{st}u{self.n:02d}.pdf"},
                 "objectives": self.objectives, "sections": secs, "segments": segs, "sources": [],

@@ -8,7 +8,7 @@ with sync_playwright() as p:
     b = p.chromium.launch(executable_path='/usr/bin/google-chrome'); ctx = b.new_context(viewport={'width': 1280, 'height': 900}, reduced_motion='reduce'); pg = ctx.new_page(); errs = []
     pg.on('pageerror', lambda e: errs.append(str(e)))
     pg.goto(BASE + '?reset=1#home'); pg.wait_for_timeout(800)
-    pg.evaluate("""(async()=>{ await Backend.signUp({email:'esl@example.com',password:'password123',name:'Eli English',birthYear:2016,grade:'Year 3',country:'VN',schoolOther:'Atomic',tester:true}); await Core.boot(Core.C); await Core.switchStage(22); await Core.switchUnit(1); location.hash='u-1'; })()""")
+    pg.evaluate("""(async()=>{ await Backend.signUp({email:'esl@example.com',password:'password123',name:'Eli English',birthYear:2016,grade:'Year 3',country:'VN',schoolOther:'Camday',tester:true}); await Core.boot(Core.C); await Core.switchStage(22); await Core.switchUnit(1); location.hash='u-1'; })()""")
     pg.wait_for_timeout(3000)
     ok(all(k in pg.evaluate('Core.STAGES') for k in KEYS) and len(KEYS) >= 1, f'E1 ESL courses on the platform: keys {KEYS}')
     ok(pg.evaluate('Core.IS_ESL') and pg.evaluate('Core.stageLabel()') == 'Stage 2 English (ESL)', 'E2 Stage 2 ESL is open and named correctly')

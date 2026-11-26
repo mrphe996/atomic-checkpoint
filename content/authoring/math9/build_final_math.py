@@ -2,7 +2,7 @@
 Each paper: one 3-mark block per unit (1-mark Medium question + 2-mark Hard question, from different sections) = 45,
 plus a 2-mark Very Hard problem and a 3-mark written explanation = 50. Questions are drawn from the practice and
 advanced pools of the 15 built units; no question is used twice across the 10 papers.
-Usage: python3 build_final_math.py   (git-ignored output; answer keys stay private). Written by the Atomic teaching team."""
+Usage: python3 build_final_math.py   (git-ignored output; answer keys stay private). Written by the Camday teaching team."""
 import json, os, random, copy, re, sys
 H = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(H, "..", "..", "src")

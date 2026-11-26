@@ -7,7 +7,7 @@
 Questions come from the unit's own question templates (each template used at most once per paper, a fresh question that is
 never word-for-word a practice question) plus the explanations written for the tests only (U.texp). Paper B is a parallel
 paper: the same skills with different numbers and, where the template has them, different contexts.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 import os, random, re
 from kit import finish, prettify
 # the papers are drawn with a private salt, so the public templates cannot reproduce them

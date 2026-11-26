@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Atomic ESL Stage 3 (ages 7–8). Original texts and questions written by the Atomic teaching team."""
+"""Camday ESL Stage 3 (ages 7–8). Original texts and questions written by the Camday teaching team."""
 
 UNITS = [
 ("Friends and Feelings", "Listening and speaking", "Feelings words, the present simple for routines, ‘because’, and a story about making a new friend.", """

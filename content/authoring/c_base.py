@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Helpers + unit meta for Atomic Education Stage 7 Unit 3 (Cells)."""
+"""Helpers + unit meta for Camday Stage 7 Unit 3 (Cells)."""
 
 def O(t, ok=False, fb=""):
     return {"t": t, "ok": ok, "fb": fb}

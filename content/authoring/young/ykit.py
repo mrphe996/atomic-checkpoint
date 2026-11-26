@@ -5,7 +5,7 @@ Builds on math9/kit.py (lessons, check questions, Core / Practice / More practic
   * a word bank per lesson (used by the word games and the lesson word drawer)
   * tap-only Unit Tests (no typing at this age): 2 papers × 15 questions × 2 marks
   * course metadata for Science (keys 1, 2) and Mathematics (keys 11, 12)
-Every question is tap-only: mcq / multi / grid / match / order. Written by the Atomic teaching team."""
+Every question is tap-only: mcq / multi / grid / match / order. Written by the Camday teaching team."""
 import os, sys, random, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "math9"))
@@ -156,11 +156,11 @@ class YUnit(kit.Unit):
             for o in s["objs"]: segs.setdefault(o, [s["id"], 0.0, s["video"]["dur"], s["title"]])
         st = self.stage
         if self.subj == "science":
-            course = {"id": f"s{st}", "title": f"Atomic – Cambridge Primary Science — Stage {st}", "units": [{"n": i + 1, "t": t} for i, t in enumerate(titles)]}
+            course = {"id": f"s{st}", "title": f"Camday – Cambridge Primary Science — Stage {st}", "units": [{"n": i + 1, "t": t} for i, t in enumerate(titles)]}
             unit = {"n": self.n, "stage": st, "title": self.title, "strandShort": self.strand, "blurb": self.blurb, "strand": f"{self.strand}",
                     "framework": f"Cambridge Primary Science (0097), Stage {st}", "lesson": True, "subject": "science", "young": True, "tiny": True}
         else:
-            course = {"id": f"s{10 + st}", "title": f"Atomic – Cambridge Primary Mathematics — Stage {st}", "units": [{"n": i + 1, "t": t} for i, t in enumerate(titles)]}
+            course = {"id": f"s{10 + st}", "title": f"Camday – Cambridge Primary Mathematics — Stage {st}", "units": [{"n": i + 1, "t": t} for i, t in enumerate(titles)]}
             unit = {"n": self.n, "stage": 10 + st, "title": self.title, "strandShort": self.strand, "blurb": self.blurb, "strand": self.strand,
                     "framework": f"Cambridge Primary Mathematics (0096), Stage {st}", "lesson": True, "subject": "maths", "young": True, "tiny": True}
         return {"course": course, "unit": unit, "objectives": self.objectives, "sections": secs, "segments": segs, "sources": [],

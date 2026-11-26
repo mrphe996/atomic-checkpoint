@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Build content/src/stage1N-unitUU.json for Mathematics Stage N (3-8) from mathN/uUU.py + private/mathN_tx.py.
 Usage: python3 build_maths.py 8 [1 2 …]   (no unit numbers: every unit that exists)
-Unit Tests: 2026 format, assembled by math9/mtest.py. Written by the Atomic teaching team."""
+Unit Tests: 2026 format, assembled by math9/mtest.py. Written by the Camday teaching team."""
 import json, os, sys, importlib
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)

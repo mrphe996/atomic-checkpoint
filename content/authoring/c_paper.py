@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Atomic authoring kit for exam-style papers (Unit Tests, Checkpoint papers, end-of-year exams).
+"""Camday authoring kit for exam-style papers (Unit Tests, Checkpoint papers, end-of-year exams).
 Questions are written the way Checkpoint papers are: a numbered question opens with a shared context
 (an investigation, a diagram drawn by figures2.js, a results table) and has parts (a), (b), (c) ...
 Each part is its own auto-marked item; students choose answers or type them – no teacher marking.
@@ -10,7 +10,7 @@ Each part is its own auto-marked item; students choose answers or type them – 
     p.sa(1, "O1", "Name the gas in the bubbles.", ["oxygen"])
     p.nm(2, "O1", "Calculate the mean ...", 12.5, "bubbles per minute")
     TEST_A = p.done(30)
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from c_kit import mc as _mc, ms as _ms, nm as _nm, od as _od, mt as _mt, ex as _ex, gd as _gd, tb as _tb, gr as _gr, P, B
 from c_base import q as _q
 

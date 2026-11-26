@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-/* Atomic content build.
+/* Camday content build.
    content/src/<unit>.json  (authoring source, full keys)
      → web/content/<unit>.json            public: practice + pause questions (keys kept for instant feedback),
                                            Unit Test papers WITHOUT keys
      → server/private/<unit>.tests.json   test papers WITH keys (read only by api/submit-test.js)
-   Also validates the Atomic content rules; exits 1 on any error.
+   Also validates the Camday content rules; exits 1 on any error.
    Usage: node tools/build-content.mjs [--check]                                   */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -55,7 +55,7 @@ export function validate(c) {
         if (!q.model) errs.push(`${at}: para needs a model answer`);
         if (!(q.need >= 1 && q.need <= (q.rubric || []).length)) errs.push(`${at}: para needs "need" (points for full marks)`);
         if (!Array.isArray(q.sentences) || !(q.sentences[0] >= 1)) errs.push(`${at}: para needs a sentence range [min, max]`);
-        if (q.tier === 'ext' && !q.source) errs.push(`${at}: Extreme questions need a source ("Atomic original" or "Adapted from: …")`);
+        if (q.tier === 'ext' && !q.source) errs.push(`${at}: Extreme questions need a source ("Camday original" or "Adapted from: …")`);
         if (!Array.isArray(q.partial) || q.partial.length < 2) warn.push(`${at}: para should carry 2+ part-mark examples`);
         (q.partial || []).forEach((x, i) => { const st = G.paraStats(x.text); if (st.sentences < q.sentences[0] || st.words < (q.minWords || 0)) errs.push(`${at}: part-mark example ${i + 1} is shorter than the length rule`); if (!(x.score >= 0 && x.score < q.rubric.length) || !x.why) errs.push(`${at}: part-mark example ${i + 1} needs a score below full marks and a reason`); });
         if (q.model) { const st = G.paraStats(q.model); if (st.sentences < q.sentences[0] || st.words < (q.minWords || 0)) errs.push(`${at}: the model answer is shorter than the length rule (${st.sentences} sentences, ${st.words} words)`); }

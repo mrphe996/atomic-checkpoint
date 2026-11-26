@@ -2,7 +2,7 @@
 """Stage 6 Mathematics (Primary) · Unit 11 3D shapes (11.1 Shapes and nets, 11.2 Capacity and volume).
 Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 
 U = Unit(11, "3D Shapes", "Geometry and measure",

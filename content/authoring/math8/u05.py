@@ -2,7 +2,7 @@
 """Stage 8 Mathematics · Unit 5 Angles and constructions (5.1 Parallel lines, 5.2 The exterior angle of a triangle,
 5.3 Constructions). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 
 U = Unit(5, "Angles and Constructions", "Geometry and measure",

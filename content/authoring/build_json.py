@@ -12,7 +12,7 @@ from tests_stage7_unit03 import TEST_A, TEST_B  # answer keys: content/private (
 POOLS = {"3.1": (S31_REQ, S31_PRAC, S31_ADV), "3.2": (S32_REQ, S32_PRAC, S32_ADV),
          "3.3": (S33_REQ, S33_PRAC, S33_ADV), "3.4": (S34_REQ, S34_PRAC, S34_ADV)}
 
-# Atomic concept map (independent design). links → sections / objectives
+# Camday concept map (independent design). links → sections / objectives
 MINDMAP = {
  "id": "root", "t": "Cells", "sec": None,
  "kids": [
@@ -77,7 +77,7 @@ def main(out):
     ids = [x["id"] for x in allq + TEST_A + TEST_B]
     assert len(ids) == len(set(ids)), "dup ids"
     data = {
-        "course": {"id": "s7", "title": "Atomic Checkpoint Secondary Cambridge Science — Stage 7",
+        "course": {"id": "s7", "title": "Camday Checkpoint Secondary Cambridge Science — Stage 7",
                    "units": [{"n": i + 1, "t": t} for i, t in enumerate([
                        "Introducing Science", "Measurements", "Cells", "Classifying Living Things",
                        "Food Chains and Food Webs", "Materials and Their Structure", "Properties of Materials",

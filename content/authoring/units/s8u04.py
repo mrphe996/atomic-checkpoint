@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 8 Unit 4 – The Structure of an Atom. Written by the Atomic teaching team."""
+"""Stage 8 Unit 4 – The Structure of an Atom. Written by the Camday teaching team."""
 from c_kit2 import Unit, B
 
 STRAND = "Chemistry"
@@ -19,7 +19,7 @@ u = Unit(8, 4)
 # ---------------------------------------------------------------- 4.1
 u.sec("4.1", "O1")
 u.gd("r", "What is the charge on each particle?", "Charge", [("Proton", "Positive"), ("Neutron", "No charge"), ("Electron", "Negative")])
-u.tb("r", "Complete the table for atoms (atomic number = protons = electrons).", ["Element", "Atomic number", "Protons", "Electrons"], [["Carbon", "6", B(6), B(6)], ["Oxygen", "8", B(8), B(8)]], o="O3")
+u.tb("r", "Complete the table for atoms (atomic number = protons = electrons).", ["Element", "Camday number", "Protons", "Electrons"], [["Carbon", "6", B(6), B(6)], ["Oxygen", "8", B(8), B(8)]], o="O3")
 u.mc("r", "Where are the protons and neutrons in an atom?", "In the nucleus at the centre", [("Orbiting in shells", "That is electrons."), ("Spread evenly through the atom", "That was an old model."), ("Outside the atom", "No.")])
 u.mc("r", "Why is an atom neutral overall?", "It has equal numbers of protons and electrons", [("It has no particles", "No."), ("Neutrons cancel all charges", "Neutrons have no charge."), ("Electrons are positive", "No.")], o="O2")
 u.ex("r", "Explain what stops the electrons flying away from the nucleus.", [("protons positive, electrons negative", ["positive|negative|opposite"]), ("opposite charges attract", ["attract"]), ("electrostatic force", ["electrostatic"])],
@@ -105,7 +105,7 @@ MINDMAP = {"id": "root", "t": "The atom", "sec": None, "kids": [
     {"id": "pt", "t": "Particles", "d": "Proton + • Neutron 0 • Electron − • Nucleus in the centre", "obj": "O1", "sec": "4.1"},
     {"id": "ef", "t": "Electrostatic force", "d": "Opposite charges attract • Holds electrons in the atom • Balloon and can", "obj": "O2", "sec": "4.1"},
     {"id": "sh", "t": "Shells", "d": "First shell 2 • Next shells 8 • Full outer shell = stable", "obj": "O3", "sec": "4.1"},
-    {"id": "an", "t": "Atomic number", "d": "Number of protons = number of electrons • Decides the element • Symbols C, Cl, He", "obj": "O3", "sec": "4.1"},
+    {"id": "an", "t": "Camday number", "d": "Number of protons = number of electrons • Decides the element • Symbols C, Cl, He", "obj": "O3", "sec": "4.1"},
     {"id": "md", "t": "Models of the atom", "d": "Dalton • Thomson • Rutherford • Bohr • Schrödinger • Chadwick", "obj": "O4", "sec": "4.2"},
     {"id": "gf", "t": "Gold foil experiment", "d": "Most pass through – empty space • Some bounce back – dense nucleus", "obj": "O4", "sec": "4.2"},
 ]}

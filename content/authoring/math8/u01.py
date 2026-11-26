@@ -2,7 +2,7 @@
 """Stage 8 Mathematics · Unit 1 Integers (1.1 Factors, multiples and primes, 1.2 Multiplying and dividing integers,
 1.3 Square roots and cube roots, 1.4 Indices). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from math import gcd, isqrt
 from kit import *
 import kit as _kit

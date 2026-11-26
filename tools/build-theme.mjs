@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Builds web/styles-oak.css from web/styles.css: same rules and layout, colours and corner radii mapped by web/theme.js to
-// Atomic "Design system B" (Atomic Science design file), Lexend type, plus the component rules of that system.
+// Camday "Design system B" (Camday Science design file), Lexend type, plus the component rules of that system.
 import fs from 'node:fs'; import path from 'node:path'; import { createRequire } from 'node:module'; import { fileURLToPath } from 'node:url';
 const require = createRequire(import.meta.url);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');

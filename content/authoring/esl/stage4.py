@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Atomic ESL Stage 4 (ages 8–9). Original texts and questions written by the Atomic teaching team."""
+"""Camday ESL Stage 4 (ages 8–9). Original texts and questions written by the Camday teaching team."""
 
 UNITS = [
 ("Stories and Characters", "Reading fiction", "Characters and settings, the past continuous, speech marks, and the opening of an adventure story.", """

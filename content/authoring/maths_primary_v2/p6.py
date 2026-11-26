@@ -1,5 +1,5 @@
 # Primary Maths Stage 6 – v2 blocks (why it works, worked example, method). Sections that already have a "Why" idea keep it
-# (apply.py skips the why block there). Written by the Atomic teaching team.
+# (apply.py skips the why block there). Written by the Camday teaching team.
 W = {
 1: {
 "1.1": (None, "", ("×10 and ÷10 with decimals", "Work out 3.47 × 100 and 52.6 ÷ 10.", [("3.47 × 100 = 347", "digits move 2 places left"), ("52.6 ÷ 10 = 5.26", "digits move 1 place right")], "347 and 5.26"),

@@ -1,5 +1,5 @@
-/* Atomic Education — experiment figure library, part 2 (SVG, viewBox 480×320).
-   Every drawing is original Atomic artwork, made from parameters so one figure kind serves many questions.
+/* Camday — experiment figure library, part 2 (SVG, viewBox 480×320).
+   Every drawing is original Camday artwork, made from parameters so one figure kind serves many questions.
    Use in a question as fig: { kind: 'pondweed', dist: 10, ... }. Each returns { svg, a } like figures.js. */
 (function () {
   const AF = window.AtomicFig; if (!AF) return;

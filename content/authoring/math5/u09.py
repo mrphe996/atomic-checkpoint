@@ -2,7 +2,7 @@
 """Stage 5 Mathematics (Primary) · Unit 9 Addition and subtraction of fractions (9.1 Adding fractions, 9.2 Subtracting fractions).
 Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 from h import *

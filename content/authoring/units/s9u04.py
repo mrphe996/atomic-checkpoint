@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Unit 4 – The Structure of the Atom and the Periodic Table. Written by the Atomic teaching team."""
+"""Stage 9 Unit 4 – The Structure of the Atom and the Periodic Table. Written by the Camday teaching team."""
 from c_kit2 import Unit, B
 
 STRAND = "Chemistry"
@@ -23,7 +23,7 @@ def mcs(kind, rows):
 
 # ---------------------------------------------------------------- 4.1
 u.sec("4.1", "O1")
-u.tb("r", "Complete the table for each atom.", ["Element", "Atomic number", "Mass number", "Protons", "Neutrons", "Electrons"], [["Carbon", "6", "12", "6", B(6), B(6)], ["Sodium", "11", "23", B(11), B(12), B(11)]])
+u.tb("r", "Complete the table for each atom.", ["Element", "Camday number", "Mass number", "Protons", "Neutrons", "Electrons"], [["Carbon", "6", "12", "6", B(6), B(6)], ["Sodium", "11", "23", B(11), B(12), B(11)]])
 u.gd("r", "Where is each particle and what is its charge?", "Charge", [("Proton (in nucleus)", "Positive"), ("Neutron (in nucleus)", "Neutral"), ("Electron (in shells)", "Negative")])
 u.gd("r", "Electronic structures.", "Structure", [("Carbon (6 electrons)", "2, 4"), ("Nitrogen (7 electrons)", "2, 5"), ("Magnesium (12 electrons)", "2, 8, 2"), ("Phosphorus (15 electrons)", "2, 8, 5")], o="O2")
 u.ex("r", "Explain what Rutherford's gold foil experiment showed about atoms.", [("most alpha particles passed through – mostly empty space", ["most|empty space|through"]), ("some bounced back", ["bounce|back|deflect"]), ("tiny dense (positive) nucleus", ["nucleus|dense"])],
@@ -106,7 +106,7 @@ SECTIONS, POOLS, STOPS = u.export(SECTIONS)
 
 MINDMAP = {"id": "root", "t": "The atom and the Periodic Table", "sec": None, "kids": [
     {"id": "md", "t": "Model of the atom", "d": "Plum pudding → Rutherford's nucleus • Mostly empty space", "obj": "O1", "sec": "4.1"},
-    {"id": "pt", "t": "Particles", "d": "Protons +, neutrons 0, electrons − • Atomic number • Mass number", "obj": "O1", "sec": "4.1"},
+    {"id": "pt", "t": "Particles", "d": "Protons +, neutrons 0, electrons − • Camday number • Mass number", "obj": "O1", "sec": "4.1"},
     {"id": "es", "t": "Electron shells", "d": "2, then 8, then 8 • e.g. Mg 2, 8, 2", "obj": "O2", "sec": "4.1"},
     {"id": "gp", "t": "Groups and periods", "d": "Same group = same outer electrons • Similar properties", "obj": "O3", "sec": "4.2"},
     {"id": "g1", "t": "Group 1", "d": "Metal + water → hydroxide + hydrogen • More reactive down • Lower melting points", "obj": "O4", "sec": "4.2"},

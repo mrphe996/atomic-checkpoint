@@ -1,6 +1,6 @@
-/* Atomic — theme switch. Loaded in <head> before the stylesheet.
-   oak (default) = Atomic "Design system B" from the Atomic Science design file: Lexend, ink on white, mint / lemon / lavender bands.
-   classic = the earlier Atomic blue design (styles.css). styles-oak.css is generated from styles.css by tools/build-theme.mjs,
+/* Camday — theme switch. Loaded in <head> before the stylesheet.
+   oak (default) = Camday "Design system B" from the Camday Science design file: Lexend, ink on white, mint / lemon / lavender bands.
+   classic = the earlier Camday blue design (styles.css). styles-oak.css is generated from styles.css by tools/build-theme.mjs,
    so the layout is the same. Switch with ?theme=classic or ?theme=oak (remembered), or ATOMIC_CONFIG.theme. */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
@@ -18,7 +18,7 @@
     const [r, g, b] = h < 60 ? [c, x, 0] : h < 120 ? [x, c, 0] : h < 180 ? [0, c, x] : h < 240 ? [0, x, c] : h < 300 ? [x, 0, c] : [c, 0, x];
     return '#' + hex2((r + m) * 255) + hex2((g + m) * 255) + hex2((b + m) * 255);
   }
-  /* Atomic "Design system B" (the Atomic Science design file): Lexend, ink #222 on white, pastel bands, 4–6 px corners.
+  /* Camday "Design system B" (the Camday Science design file): Lexend, ink #222 on white, pastel bands, 4–6 px corners.
      Named tokens map exactly; any other colour keeps its lightness so every contrast pair still works. */
   const FIX = { '#0149AF': '#222222', '#013A8C': '#000000', '#013C90': '#000000', '#0A58CA': '#000000', '#00306F': '#000000', '#2F6FD6': '#575757',
     '#A9C6F2': '#CACACA', '#BFD3F0': '#CACACA', '#DCE8FA': '#F2F2F2', '#EAF1FC': '#F2F2F2', '#F3F7FD': '#F9F9F9', '#F3F8FF': '#FFF7CC', '#F2F7FF': '#F2F2F2',

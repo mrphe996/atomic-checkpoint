@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 7 Unit 4 Classifying Living Things — 2026 revision (written by the Atomic teaching team).
+"""Stage 7 Unit 4 Classifying Living Things — 2026 revision (written by the Camday teaching team).
 Practice: same-reasoning recall out; data, graph, key and experiment questions in. Challenge: outside ideas, sources named."""
 from c_kit import *
 

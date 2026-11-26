@@ -1,4 +1,4 @@
-/* Atomic Education — question engine.
+/* Camday — question engine.
    Renders every question type, collects a response, grades it and gives
    misconception-specific feedback. Content lives in content/unit3.json. */
 (function () {

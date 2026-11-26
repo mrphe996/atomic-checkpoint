@@ -1,4 +1,4 @@
-/* Atomic Education — figure library (SVG, viewBox 480×320).
+/* Camday — figure library (SVG, viewBox 480×320).
    Each figure returns {svg, a} where a = {anchorId: [x, y]} for labelling questions. */
 (function () {
   const C = { navy: '#0B2545', blue: '#0149AF', gold: '#F3BF69', green: '#3FA34D', dgreen: '#1F6F2B', lgreen: '#CDEFD0',

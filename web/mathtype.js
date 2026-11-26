@@ -1,9 +1,9 @@
-/* Atomic Education — maths typesetting and maths input for the Mathematics courses (rendered with KaTeX, MIT licence, web/vendor/katex).
+/* Camday — maths typesetting and maths input for the Mathematics courses (rendered with KaTeX, MIT licence, web/vendor/katex).
    1. AtomicMath.tex(expr)      plain or Unicode maths ("3x^2 − 2x", "(y+5)/3", "√50", "x²") → TeX, or null if it does not parse
    2. AtomicMath.typeset(root)  finds the maths inside text (prompts, options, lessons, tables) and renders it like a textbook
    3. AtomicMath.input(opts)    a maths answer box with a live typeset preview and an on-screen maths keypad
    4. AtomicMath.field(opts)    a maths answer box you type straight into: fractions, powers and roots build as you type (like a textbook)
-   Answers typed by learners are never changed: they are only shown typeset. Written by the Atomic teaching team. */
+   Answers typed by learners are never changed: they are only shown typeset. Written by the Camday teaching team. */
 (function () {
   const SUP = '⁰¹²³⁴⁵⁶⁷⁸⁹⁻', SUPN = '0123456789-';
   const UNITS = new Set(['mm', 'cm', 'km', 'kg', 'ml', 'cl', 'mg', 'm', 'g', 'l', 'h', 's', 'min', 'ha', 'mph', 'kmh']);

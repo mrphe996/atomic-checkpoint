@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 7 Unit 3 (Cells) — revision v2 (Nov 2026). Atomic originals; harder questions marked with `src` were
+"""Stage 7 Unit 3 (Cells) — revision v2 (Nov 2026). Camday originals; harder questions marked with `src` were
 adapted from an outside source (named under the question). Applied on top of content/src/stage7-unit03.json:
   python3 -m revise.s7u03            (from content/authoring)
 - new video data (captions, chapters, stops) from build/video run_s7u03.py → revise/s7u03_video.json

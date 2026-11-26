@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Atomic ESL Stage 5 (ages 9–10). Original texts and questions written by the Atomic teaching team."""
+"""Camday ESL Stage 5 (ages 9–10). Original texts and questions written by the Camday teaching team."""
 
 UNITS = [
 ("Mystery Stories", "Reading fiction", "Clues and suspects, relative clauses with who / which / where, modal verbs of possibility and a short detective story.", """

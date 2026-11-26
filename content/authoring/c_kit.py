@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Short-hand authoring helpers for Stage 7 units (written by the Atomic teaching team).
+"""Short-hand authoring helpers for Stage 7 units (written by the Camday teaching team).
 Every question uses the same JSON shape as c_base (mcq, multi, num, order, match, explain, grid, table, graph)."""
 import hashlib
 from c_base import O, mcq, multi, num, order, match, explain, grid, table, graph, B

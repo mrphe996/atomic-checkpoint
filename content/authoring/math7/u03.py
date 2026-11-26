@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 7 Mathematics · Unit 3 Place value and rounding (3.1 Multiplying and dividing by powers of 10, 3.2 Rounding).
 Upgraded lesson (v2): why digits move, paired examples, prediction checks, and Practice built from decisions
-(work backwards, find all, spot the error, bounds) rather than repeated routines. Written by the Atomic teaching team."""
+(work backwards, find all, spot the error, bounds) rather than repeated routines. Written by the Camday teaching team."""
 from kit import *
 
 U = Unit(3, "Place Value and Rounding", "Number",

@@ -1,4 +1,4 @@
-# Primary Maths Stage 5 – v2 blocks (why it works, worked example, method). Written by the Atomic teaching team.
+# Primary Maths Stage 5 – v2 blocks (why it works, worked example, method). Written by the Camday teaching team.
 W = {
 1: {
 "1.1": ("Why tenths and hundredths continue the pattern", "Each place is 10 times the place to its right. Going right past the ones, the places are tenths (÷10) and hundredths (÷100).",

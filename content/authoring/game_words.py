@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Word bank for the Atomic word games (Stages 1-6, all subjects). Written by the Atomic teaching team.
+"""Word bank for the Camday word games (Stages 1-6, all subjects). Written by the Camday teaching team.
 Science Stages 3-6 come from the lesson word banks (with recorded audio); everything else is authored here.
 Usage: python3 game_words.py  -> web/content/game-words.json"""
 import json, glob, os, re
@@ -384,7 +384,7 @@ def main():
         seen.add(k); out.append(x)
     for i, x in enumerate(out): x['id'] = f"{x['subj'][0]}{x['stage']}-{slug(x['w'])}"
     assert len({x['id'] for x in out}) == len(out)
-    json.dump({'words': out, 'note': 'Atomic word games – written by the Atomic teaching team'}, open(os.path.join(ROOT, 'web/content/game-words.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
+    json.dump({'words': out, 'note': 'Camday word games – written by the Camday teaching team'}, open(os.path.join(ROOT, 'web/content/game-words.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
     from collections import Counter
     print(len(out), 'words'); print(sorted(Counter((x['subj'], x['stage']) for x in out).items()))
 

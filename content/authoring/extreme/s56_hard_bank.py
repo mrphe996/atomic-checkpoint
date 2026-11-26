@@ -1,4 +1,4 @@
-"""Stage 5 and Stage 6 Science (Primary) — extra Hard (* Advanced) questions written by Atomic (original contexts and numbers).
+"""Stage 5 and Stage 6 Science (Primary) — extra Hard (* Advanced) questions written by Camday (original contexts and numbers).
 Edits content/src/stage5-unitNN.json and stage6-unitNN.json in place; safe to run again. Then: node tools/build-content.mjs"""
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

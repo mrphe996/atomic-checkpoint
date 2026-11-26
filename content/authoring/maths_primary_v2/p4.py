@@ -1,4 +1,4 @@
-# Primary Maths Stage 4 – v2 blocks (why it works, worked example, method). Written by the Atomic teaching team.
+# Primary Maths Stage 4 – v2 blocks (why it works, worked example, method). Written by the Camday teaching team.
 W = {
 1: {
 "1.1": ("Why a sequence has a rule", "A linear sequence changes by the same amount each time. Finding that step lets us continue the sequence forwards or backwards.",

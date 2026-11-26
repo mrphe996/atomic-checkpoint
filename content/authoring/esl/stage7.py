@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Atomic ESL Stage 7 (ages 11–12). Original texts and questions written by the Atomic teaching team."""
+"""Camday ESL Stage 7 (ages 11–12). Original texts and questions written by the Camday teaching team."""
 
 UNITS = [
 ("Journeys", "Narrative reading and writing", "Narrative tenses, first-person narration, describing a setting and a journey story.", """

@@ -2,7 +2,7 @@
 """Stage 3 Mathematics (Primary) · Unit 10 More multiplication and division (10.1 Revisiting multiplication and division,
 10.2 Playing with multiplication and division, 10.3 Extending multiplication and division). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 from h import *
 

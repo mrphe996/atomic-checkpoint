@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 8 Unit 8 – Forces and Motion. Written by the Atomic teaching team."""
+"""Stage 8 Unit 8 – Forces and Motion. Written by the Camday teaching team."""
 from c_kit2 import Unit, B
 
 STRAND = "Physics"

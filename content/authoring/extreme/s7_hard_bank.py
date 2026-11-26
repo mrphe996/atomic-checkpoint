@@ -1,4 +1,4 @@
-"""Stage 7 Science — extra Hard (* Advanced) questions written by Atomic (original contexts, numbers and wording).
+"""Stage 7 Science — extra Hard (* Advanced) questions written by Camday (original contexts, numbers and wording).
 Edits content/src/stage7-unitNN.json in place; safe to run again. Then: node tools/build-content.mjs"""
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

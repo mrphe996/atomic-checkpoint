@@ -62,7 +62,7 @@ with sync_playwright() as p:
     t = txt(pg)
     ok('Try the whole course' in t and 'No sign-up' in t and pg.query_selector('.lp-step') is not None and len(pg.query_selector_all('.lp-unit')) == 14 and 'not affiliated with or endorsed by Cambridge' in t, '1a Landing page: designed hero, 4-step demo boxes, 14 unit boxes, disclaimer')
     ok("Learner's Book" not in t and "LET'S MAP" not in t and not re.search(r'\bp\.\s?\d', t), '1b No textbook names or page numbers on the landing page')
-    ok('Compiled by' not in t and 'Written by the Atomic teaching team' in t, '1b2 Footer credits the Atomic teaching team only')
+    ok('Compiled by' not in t and 'Written by the Camday teaching team' in t, '1b2 Footer credits the Camday teaching team only')
     pg.screenshot(path=f'{SHOTS}/01_landing.png')
     for r in ['pricing', 'help', 'privacy', 'terms', 'cookies', 'verify']:
         go(pg, r)
@@ -147,7 +147,7 @@ with sync_playwright() as p:
     pub = pg.evaluate("JSON.stringify(Core.C.tests)")
     ok('"ok":true' not in pub and '"answer"' not in pub and '"model"' not in pub, '5d Public content has no Unit Test answer keys')
     if a['status'] == 'pending':
-        ok('Awaiting marking' in txt(pg), '5e Result says the written answer awaits an Atomic marker')
+        ok('Awaiting marking' in txt(pg), '5e Result says the written answer awaits an Camday marker')
         go(pg, 'staff'); pg.click('#becomeStaff'); pg.wait_for_timeout(800)
         ok(pg.query_selector('.numin') is not None, '5f Staff marking queue lists the pending written answer')
         for el_ in pg.query_selector_all('.numin'): el_.fill('0')

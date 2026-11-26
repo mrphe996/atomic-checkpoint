@@ -2,7 +2,7 @@
 """Stage 3 Mathematics (Primary) · Unit 3 Multiplication and division (3.1 Exploring multiplication and division,
 3.2 Connecting 2×, 4× and 8×, 3.3 Connecting 3×, 6× and 9×). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 from h import *
 

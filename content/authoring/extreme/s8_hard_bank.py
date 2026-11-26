@@ -1,6 +1,6 @@
-"""Stage 8 Science — extra Hard (* Advanced) questions written by Atomic.
+"""Stage 8 Science — extra Hard (* Advanced) questions written by Camday.
 Coverage follows the challenge-level skills of the Stage 8 curriculum (data handling, planning, evaluating, multi-step
-calculations); every context, number and wording here is Atomic's own. Charts are drawn by the Atomic figure library.
+calculations); every context, number and wording here is Camday's own. Charts are drawn by the Camday figure library.
 Edits content/src/stage8-unitNN.json in place; safe to run again. Then: node tools/build-content.mjs"""
 import json, os
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -10,7 +10,7 @@ F8 = 'The data show … For example … This is because … The results are / ar
 PLAN = 'I will change … I will measure … I will keep … the same. I will repeat … I expect …'
 
 def base(id, typ, obj, prompt, skill, diff='VH'):
-    return {'id': id, 'type': typ, 'prompt': ADV + prompt, 'diff': diff, 'obj': obj, 'skill': skill, 'hint': '', 'reason': '', 'adv': True, 'source': 'Atomic original'}
+    return {'id': id, 'type': typ, 'prompt': ADV + prompt, 'diff': diff, 'obj': obj, 'skill': skill, 'hint': '', 'reason': '', 'adv': True, 'source': 'Camday original'}
 def tbl(q, data):
     if data: q['data'] = {'head': data[0], 'rows': data[1:]}
     return q

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Page map of the Atomic reading packs (web/media/read/*.pdf): which PDF pages hold each lesson section.
+"""Page map of the Camday reading packs (web/media/read/*.pdf): which PDF pages hold each lesson section.
 Section headings are found on the page text ("2.3 Collecting like terms"). → web/media/read/index.json
 Usage: python3 read_index.py"""
 import json, os, re, subprocess

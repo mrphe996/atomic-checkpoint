@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 8 Unit 9 – Pressure and Diffusion. Written by the Atomic teaching team."""
+"""Stage 8 Unit 9 – Pressure and Diffusion. Written by the Camday teaching team."""
 from c_kit2 import Unit, B
 
 STRAND = "Physics"

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Atomic ESL Stage 9 (ages 13–14). Original texts and questions written by the Atomic teaching team."""
+"""Camday ESL Stage 9 (ages 13–14). Original texts and questions written by the Camday teaching team."""
 
 UNITS = [
 ("Narrative Voice", "Narrative reading and writing", "First- and third-person narrators, unreliable narrators, narrative tenses and reported speech.", """

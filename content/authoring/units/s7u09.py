@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 7 Unit 9 – Chemical Reactions. Written by the Atomic teaching team."""
+"""Stage 7 Unit 9 – Chemical Reactions. Written by the Camday teaching team."""
 from c_kit import *
 
 STRAND = "Chemistry"

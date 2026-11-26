@@ -2,7 +2,7 @@
 """Stage 7 Mathematics · Unit 11 Graphs (11.1 Functions, 11.2 Graphs of functions, 11.3 Lines parallel to the axes,
 11.4 Interpreting graphs). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 
 U = Unit(11, "Graphs", "Algebra",

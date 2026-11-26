@@ -2,7 +2,7 @@
 """Stage 6 Mathematics (Primary) · Unit 17 Transformations (17.1 Coordinates, 17.2 Reflections, 17.3 Rotations).
 Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 
 U = Unit(17, "Transformations", "Geometry and measure",

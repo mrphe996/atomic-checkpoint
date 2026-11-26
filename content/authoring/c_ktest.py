@@ -1,7 +1,7 @@
 """Unit Test, 2026 format, built from the shared question kit (kit.py / kit6 / kit34): used for Primary Stages 3-6.
 25+ separately numbered questions in sections A-D, 30 marks. No (a)/(b) parts: a context may be shared by the next n questions,
 but every question stands on its own.   p = KTest('p3u01v3A'); p.sec('A'); p.q(ctx, fig=, data=, n=2); p.a(pts, PM(...)); TEST_A = p.done()
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, 'math9'))
 import kit as K

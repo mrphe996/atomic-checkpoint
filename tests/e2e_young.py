@@ -8,7 +8,7 @@ with sync_playwright() as p:
     b = p.chromium.launch(executable_path='/usr/bin/google-chrome'); ctx = b.new_context(viewport={'width': 1280, 'height': 900}, reduced_motion='reduce'); pg = ctx.new_page(); errs = []
     pg.on('pageerror', lambda e: errs.append(str(e)))
     pg.goto(BASE + '?reset=1#home'); pg.wait_for_timeout(800)
-    pg.evaluate("""(async()=>{ await Backend.signUp({email:'yy@example.com',password:'password123',name:'Yen Young',birthYear:2019,grade:'Year 1',country:'VN',schoolOther:'Atomic',tester:true}); await Core.boot(Core.C); await Core.switchStage(1); await Core.switchUnit(1); location.hash='u-1'; })()""")
+    pg.evaluate("""(async()=>{ await Backend.signUp({email:'yy@example.com',password:'password123',name:'Yen Young',birthYear:2019,grade:'Year 1',country:'VN',schoolOther:'Camday',tester:true}); await Core.boot(Core.C); await Core.switchStage(1); await Core.switchUnit(1); location.hash='u-1'; })()""")
     pg.wait_for_timeout(3000)
     ok(all(g in pg.evaluate('Core.STAGES') for g in (1, 2, 11, 12)), 'Y1 Science Stages 1–2 and Mathematics Stages 1–2 are courses on the platform')
     ok(pg.evaluate("document.body.classList.contains('tiny')") and '1 Read the lesson' in pg.inner_text('.u4steps'), 'Y2 A Stage 1 unit uses the picture-lesson path: read, practise, word games, Unit Test')

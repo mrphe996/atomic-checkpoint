@@ -1,6 +1,6 @@
 """Primary Maths v2 overlay (Stages 3-6): adds a "Why it works" idea, a worked example and a method box to each section
 that lacks them. Blocks carry "v2p": True so re-applying is idempotent. Data: p3.py … p6.py, dict W[unit][section] =
-(why_title, why_text, (ex_title, question, [(step, note), …], answer), (method_title, [step, …])).  Written by the Atomic teaching team."""
+(why_title, why_text, (ex_title, question, [(step, note), …], answer), (method_title, [step, …])).  Written by the Camday teaching team."""
 import importlib, json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, '..'))
 SRC = os.path.join(HERE, '..', '..', 'src')

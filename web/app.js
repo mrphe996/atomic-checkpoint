@@ -1,5 +1,5 @@
-/* Atomic Education — Science Stage 7. Views and routing (v3: student accounts, guest mode, server marking).
-   Visual language: Atomic Cambridge Science Design System v3. */
+/* Camday — Science Stage 7. Views and routing (v3: student accounts, guest mode, server marking).
+   Visual language: Camday Cambridge Science Design System v3. */
 (function () {
   const { el, esc } = QE;
   let C, st;
@@ -139,7 +139,7 @@
     nav.push(navMode());
     const header = el('header', { class: 'top' + (st && isGuest() || !st && !me ? ' guest' : '') }, el('div', { class: 'top-in' },
       el('button', { class: 'menu-btn', type: 'button', 'aria-label': 'Menu', onclick: () => document.body.classList.toggle('menu-open') }, '☰'),
-      el('a', { href: '#home', class: 'brand' }, el('img', { src: 'atomic_logo.png', alt: 'Atomic — home' })),
+      el('a', { href: '#home', class: 'brand' }, el('img', { src: 'camday_logo.svg', width: 162, height: 38, alt: 'Camday — home' })),
       el('nav', { class: 'mainnav', 'aria-label': 'Main' }, ...nav), right));
     const ENV = (window.ATOMIC_CONFIG || {}).env;
     const demoBar = Backend.mode === 'demo' ? el('div', { class: 'demobar', role: 'note' }, 'Preview mode: accounts, payments and marking are simulated and stored only in this browser.')
@@ -152,12 +152,12 @@
     const foot = el('footer', { class: 'foot' }, el('div', { class: 'in' },
       el('div', { class: 'fcols footnav' },
         fcol('Learners', [['All courses', '#courses'], [Core.BILLING_OFF ? 'Free test' : 'Pricing', '#pricing'], ['Verify a certificate', '#verify'], [me ? 'My progress' : 'Log in', me ? '#profile' : '#signin']]),
-        fcol('Atomic', [['Home', '#home'], ['News & roadmap', '#news'], ['Help & contact', '#help']]),
+        fcol('Camday', [['Home', '#home'], ['News & roadmap', '#news'], ['Help & contact', '#help']]),
         fcol('Legal', [['Terms & conditions', '#terms'], ['Privacy policy', '#privacy'], ['Privacy for learners', '#privacy-kids'], ['Cookie policy', '#cookies']]),
-        el('div', { class: 'fbrand' }, el('img', { src: 'atomic_logo.png', alt: 'Atomic — Quality Learning, Brighter Future.' }), el('span', { class: 'tag2' }, 'Quality Learning, Brighter Future.'))),
+        el('div', { class: 'fbrand' }, el('img', { src: 'camday_logo.svg', alt: 'Camday — Quality Learning, Brighter Future.' }), el('span', { class: 'tag2' }, 'Quality Learning, Brighter Future.'))),
       el('div', { class: 'fbase' },
-        el('p', { class: 'muted disclaimer' }, 'Atomic courses are written by Atomic Education and aligned to Cambridge curriculum frameworks (Primary Science 0097, Lower Secondary Science 0893, Primary Mathematics 0096, Lower Secondary Mathematics 0862). Checkpoint-format papers are written by Atomic – they are not Cambridge papers. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.'),
-        el('p', { class: 'fcopy' }, el('b', {}, `© Atomic Education ${new Date().getFullYear()}`), el('br'), 'Written by the Atomic teaching team'))));
+        el('p', { class: 'muted disclaimer' }, 'Camday courses and lesson videos are produced by Atomic Education and aligned to Cambridge curriculum frameworks (Primary Science 0097, Lower Secondary Science 0893, Primary Mathematics 0096, Lower Secondary Mathematics 0862). Checkpoint-format papers are written by Camday – they are not Cambridge papers. Camday is not affiliated with or endorsed by Cambridge University Press & Assessment.'),
+        el('p', { class: 'fcopy' }, el('b', {}, `© Atomic Education ${new Date().getFullYear()}`), el('br'), 'Written by the Camday teaching team · Camday is made by Atomic Education'))));
     app.append(...[demoBar, header, sub, wrap, foot].filter(Boolean));
     lastXp = null;
   }
@@ -276,7 +276,7 @@
   const stageShort = g => (g >= 10 ? `Stage ${Core.stageNo(g)}` : `Stage ${g}`);
   function stageSoon(g) {
     const m = $main();
-    pageHero(g >= 20 ? (g <= 26 ? 'CAMBRIDGE PRIMARY ESL' : 'CAMBRIDGE LOWER SECONDARY ESL') : g >= 10 ? (g <= 16 ? 'CAMBRIDGE PRIMARY MATHEMATICS' : 'CAMBRIDGE LOWER SECONDARY MATHEMATICS') : g <= 6 ? 'PRIMARY' : 'LOWER SECONDARY', `Cambridge ${Core.stageLabel(g)}`, 'This course is being reviewed by the Atomic teaching team and is not open yet.');
+    pageHero(g >= 20 ? (g <= 26 ? 'CAMBRIDGE PRIMARY ESL' : 'CAMBRIDGE LOWER SECONDARY ESL') : g >= 10 ? (g <= 16 ? 'CAMBRIDGE PRIMARY MATHEMATICS' : 'CAMBRIDGE LOWER SECONDARY MATHEMATICS') : g <= 6 ? 'PRIMARY' : 'LOWER SECONDARY', `Cambridge ${Core.stageLabel(g)}`, 'This course is being reviewed by the Camday teaching team and is not open yet.');
     m.append(crumbs(`Cambridge ${Core.stageName(g)}`), el('section', { class: 'card lockcard', id: 'stageSoon' }, el('h2', {}, `🔒 Cambridge ${Core.stageLabel(g)} – coming soon`),
       el('p', {}, 'Lessons, practice, Unit Tests and Checkpoint papers for this course open here once the review is finished. Your Science courses stay open as usual.'),
       el('div', { class: 'btnrow' }, el('a', { class: 'btn primary small', href: `#stage-${Core.STAGE}` }, `Back to Cambridge ${Core.stageLabel()}`, el('span', { class: 'arr' }, ' →')))));
@@ -387,7 +387,7 @@
     // ---- dotted hero (Design 02) ----
     document.getElementById('wrap').before(el('section', { class: 'dhero dots' }, el('div', { class: 'dhero-in' },
       el('div', { class: 'dhero-txt' }, el('span', { class: 'eyebrow' }, isGuest() ? 'GUEST · TOPIC 3.1 IS OPEN' : dateTxt),
-        el('h1', {}, isGuest() ? 'Welcome to Atomic ' : `${greet}, ${st.alias} `, el('span', { class: 'wobble', style: 'display:inline-block;color:var(--gold)' }, '✦')),
+        el('h1', {}, isGuest() ? 'Welcome to Camday ' : `${greet}, ${st.alias} `, el('span', { class: 'wobble', style: 'display:inline-block;color:var(--gold)' }, '✦')),
         el('p', {}, started ? `You are on ${cur.id} ${cur.title} — next: ${nx.label.charAt(0).toLowerCase() + nx.label.slice(1)}.` : `Start with Unit ${Core.UNO}: ${C.unit.title} – topic ${C.sections[0] ? C.sections[0].id : '3.1'}. ${C.sections[0] && C.sections[0].lesson ? 'Read the lesson' : 'Watch the lesson'}, then practise.`)),
       el('div', { class: 'dstats' },
         el('a', { class: 'card dstat', href: '#profile', id: 'streakCard' }, el('span', { class: 'bob', html: AtomicIcons.html('flame', { filled: true, size: 34, color: '#E8590C' }) }),
@@ -1023,7 +1023,7 @@
     };
     const aside = el('aside', { class: 'aside' }, solTabs, solBody,
       el('div', { class: 'card', style: 'padding:18px 20px' }, el('b', { class: 'lex' }, 'Learning objective'), el('p', { style: 'margin:4px 0 0;font-size:15px' }, `${q.obj}: ${C.objectives[q.obj].t}`)),
-      el('div', { class: 'goal' }, el('span', { class: 'gi' }, svgI(I.bulb, 16, '#1C2A3A', 2)), el('span', {}, tab === 'req' ? 'Right first time: 1 mark · second try: ½ mark. Two wrong tries: you get guided reasoning and a similar question.' : tab === 'adv' ? '* Advanced – optional. Written by Atomic from the real source named on each question.' : tab === 'ext' ? 'Extreme – optional and very hard: new situations, several steps and written paragraphs. Each one you finish earns a badge.' : 'Practice – optional for unlocking, but it makes you stronger before the Unit Test.')));
+      el('div', { class: 'goal' }, el('span', { class: 'gi' }, svgI(I.bulb, 16, '#1C2A3A', 2)), el('span', {}, tab === 'req' ? 'Right first time: 1 mark · second try: ½ mark. Two wrong tries: you get guided reasoning and a similar question.' : tab === 'adv' ? '* Advanced – optional. Written by Camday from the real source named on each question.' : tab === 'ext' ? 'Extreme – optional and very hard: new situations, several steps and written paragraphs. Each one you finish earns a badge.' : 'Practice – optional for unlocking, but it makes you stronger before the Unit Test.')));
     m.append(...[bar(`Unit ${Core.UNO} › ${s.id} › ${tabName} › question ${idx + 1}`), tocBtn(), doneBanner, tab === 'req' && window.Primary ? Primary.wordBank(s) : null, tabs, chips, el('div', { class: 'exgrid' }, el('div', { class: 'q' }, card), aside)].filter(Boolean));
     if (s.lab) tabs.append(el('a', { class: 'chip', href: '#lab-' + R(sid), id: 'labLink' }, '🧪 Experiment'));
     showBanner(); drawSol();
@@ -1065,16 +1065,16 @@
     const qs = s.vocab ? s.prac.filter(q => q.type !== 'say' && !q.audio).slice(0, 14) : s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
     const mins = Math.max(15, Math.ceil(qs.length * 2.5 / 5) * 5);
     const out = el('div', { class: 'ws', id: 'wsPages' }); let pno = 0; const pages = [];
-    const foot = last => el('div', { class: 'pfoot' }, el('div', {}, `© Atomic Education ${info.date.getFullYear()} · ${doc} · Copy #${info.serial} · ${info.code}`, el('br'), `Printed for ${info.name} (${info.lid}) on ${info.when}. Not for sharing or resale.`), el('b', {}, last ? 'End of worksheet' : '[Turn over'));
+    const foot = last => el('div', { class: 'pfoot' }, el('div', {}, `© Camday ${info.date.getFullYear()} · ${doc} · Copy #${info.serial} · ${info.code}`, el('br'), `Printed for ${info.name} (${info.lid}) on ${info.when}. Not for sharing or resale.`), el('b', {}, last ? 'End of worksheet' : '[Turn over'));
     const page = (...kids) => { pno++; const pg = el('div', { class: 'a4 paper4', html: Paper.frame() + Paper.watermark(info) }); pg.append(el('div', { class: 'pbody' }, ...kids)); pages.push(pg); return pg; };
     const runHead = () => el('div', { class: 'prun' }, el('span', {}, el('b', {}, 'Cambridge'), ` ${Core.stageLabel()} · Unit ${Core.UNO} · ${s.id} ${s.title}`), el('b', {}, String(pno + 1)));
     const boxes = (txt, n) => el('span', { class: 'pboxes' }, ...Array.from({ length: n }, (_, i) => el('i', {}, txt[i] || '')));
     const d = info.date, dd = String(d.getDate()).padStart(2, '0') + String(d.getMonth() + 1).padStart(2, '0') + d.getFullYear();
     // cover
     const cover = page(
-      el('div', { class: 'pcv-h' }, el('img', { src: 'atomic_logo.png', alt: '' }), el('div', {}, el('div', { class: 'nm' }, 'ATOMIC EDUCATION'), el('div', { class: 'tg' }, el('b', {}, 'Cambridge'), ` ${Core.levelName(Core.STAGE)} ${Core.subjectOf(Core.STAGE)}` + (Core.IS_PRIMARY ? '' : ' · Checkpoint preparation')))),
+      el('div', { class: 'pcv-h' }, el('img', { src: 'camday_logo.png', alt: '' }), el('div', {}, el('div', { class: 'nm' }, 'CAMDAY'), el('div', { class: 'tg' }, el('b', {}, 'Cambridge'), ` ${Core.levelName(Core.STAGE)} ${Core.subjectOf(Core.STAGE)}` + (Core.IS_PRIMARY ? '' : ' · Checkpoint preparation')))),
       el('div', { html: Paper.waves() }),
-      el('div', { class: 'pcv-meta' }, 'Written by the Atomic teaching team · Videos, practice and Unit Tests online at Atomic'),
+      el('div', { class: 'pcv-meta' }, 'Written by the Camday teaching team · Videos, practice and Unit Tests online at Camday'),
       el('div', { class: 'pcv-ttl' }, el('span', {}, 'PRACTICE WORKSHEET'), el('span', {}, `SCORE: ______ / ${qs.length}`)),
       el('table', { class: 'pgrid' }, el('tbody', {}, el('tr', {}, el('td', { class: 'k' }, 'LEARNER NAME'), el('td', { colspan: '3', class: 'pre' }, info.name)),
         el('tr', {}, el('td', { class: 'k' }, 'LEARNER ID'), el('td', {}, boxes(info.lid.replace(/-/g, ''), 8)), el('td', { class: 'k', style: 'width:22mm' }, 'DATE'), el('td', {}, boxes(dd, 8))))),
@@ -1082,9 +1082,9 @@
         el('div', {}, el('div', { class: 'camline' }, el('b', {}, 'CAMBRIDGE'), ` ${Core.stageLabel(Core.STAGE).toUpperCase()}`), el('div', {}, `Unit ${Core.UNO} · ${C.unit.title}`, el('br'), `${s.id} ${s.title}`)),
         el('div', { style: 'text-align:right' }, el('div', { class: 'code' }, doc), el('div', {}, `${mins} minutes`), el('small', {}, `${qs.length} questions`))),
       el('p', { style: 'margin:5mm 0 0' }, 'You must answer on this worksheet.'),
-      el('div', { class: 'psec' }, 'INSTRUCTIONS'), el('ul', {}, el('li', {}, 'Answer ', el('b', {}, 'all'), ' questions. Questions 1–8 are Core; 9–14 are extra practice.'), el('li', {}, 'Use a black or dark blue pen. You may use an HB pencil for diagrams.'), el('li', {}, 'Write your answer to each question in the space provided. Show your working.'), el('li', {}, `When you finish, open topic ${s.id} on Atomic and check your answers with the worked solutions.`)),
+      el('div', { class: 'psec' }, 'INSTRUCTIONS'), el('ul', {}, el('li', {}, 'Answer ', el('b', {}, 'all'), ' questions. Questions 1–8 are Core; 9–14 are extra practice.'), el('li', {}, 'Use a black or dark blue pen. You may use an HB pencil for diagrams.'), el('li', {}, 'Write your answer to each question in the space provided. Show your working.'), el('li', {}, `When you finish, open topic ${s.id} on Camday and check your answers with the worked solutions.`)),
       el('div', { class: 'psec' }, 'INFORMATION'), el('ul', {}, el('li', {}, `This worksheet has ${qs.length} questions.`), el('li', {}, 'Every printed copy carries the learner’s name, ID, date and a copy number.')),
-      el('div', { class: 'pverify' }, el('span', { html: Paper.seal(info.code) }), el('div', {}, 'Verification code', el('br'), el('b', {}, info.code), el('br'), `Tied to this learner, this worksheet and copy #${info.serial}. Atomic keeps a record of every printed copy.`)));
+      el('div', { class: 'pverify' }, el('span', { html: Paper.seal(info.code) }), el('div', {}, 'Verification code', el('br'), el('b', {}, info.code), el('br'), `Tied to this learner, this worksheet and copy #${info.serial}. Camday keeps a record of every printed copy.`)));
     cover.querySelector('.pbody').append(foot(false)); out.append(cover); if (mount) mount.append(out);
     // question pages: filled by measuring, so nothing is ever cut off at the bottom of a page
     let p = page(runHead()); let pb = p.querySelector('.pbody'); let ft = foot(false); pb.append(ft); out.append(p); let onPage = 0;
@@ -1100,7 +1100,7 @@
   function wsAnswers(s, info, mount) {
     const qs = s.vocab ? s.prac.filter(q => q.type !== 'say' && !q.audio).slice(0, 14) : s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
     const out = el('div', { class: 'ws', id: 'wsAns' }); mount.append(out);
-    const foot = last => el('div', { class: 'pfoot' }, el('div', {}, `© Atomic Education ${info.date.getFullYear()} · ${doc} · ANSWERS · ${info.code}`, el('br'), `Opened by ${info.name} (${info.lid}) on ${info.when}. For self-marking only.`), el('b', {}, last ? 'End of answers' : '[Turn over'));
+    const foot = last => el('div', { class: 'pfoot' }, el('div', {}, `© Camday ${info.date.getFullYear()} · ${doc} · ANSWERS · ${info.code}`, el('br'), `Opened by ${info.name} (${info.lid}) on ${info.when}. For self-marking only.`), el('b', {}, last ? 'End of answers' : '[Turn over'));
     const page = () => { const pg = el('div', { class: 'a4 paper4', html: Paper.frame() + Paper.watermark(info) }); const pb = el('div', { class: 'pbody' }, el('div', { class: 'prun' }, el('span', {}, el('b', {}, 'ANSWERS'), ` · Cambridge ${Core.stageLabel()} · Unit ${Core.UNO} · ${s.id} ${s.title}`), el('b', {}, 'Mark scheme'))); pg.append(pb); out.append(pg); return pb; };
     let pb = page(); let ft = foot(false); pb.append(ft); let list = el('ol', { class: 'ans' }); pb.insertBefore(list, ft);
     qs.forEach((q, i) => {
@@ -1186,7 +1186,7 @@
   }
 
   /* ---------- leaderboard ---------- */
-  // Stage certificate (A4 landscape). Atomic design: navy frame, gold rule, seal and the learner's achievements.
+  // Stage certificate (A4 landscape). Camday design: navy frame, gold rule, seal and the learner's achievements.
   function drawCert(c, preview) {
     const W = 1754, H = 1240, cv = document.createElement('canvas'); cv.width = W; cv.height = H; const g = cv.getContext('2d');
     const NAVY = '#0B2545', BLUE = '#0149AF', GOLD = '#C9962E', GOLD2 = '#F3BF69';
@@ -1199,7 +1199,7 @@
     [[80, 80, 0], [W - 80, 80, 1], [W - 80, H - 80, 2], [80, H - 80, 3]].forEach(([x, y, k]) => { g.save(); g.translate(x, y); g.rotate(k * Math.PI / 2); g.strokeStyle = GOLD; g.lineWidth = 3;
       g.beginPath(); g.arc(0, 0, 70, 0, Math.PI / 2); g.stroke(); g.beginPath(); g.arc(0, 0, 52, 0, Math.PI / 2); g.stroke(); g.fillStyle = GOLD2; g.beginPath(); g.arc(24, 24, 7, 0, 7); g.fill(); g.restore(); });
     const center = (t, y, font, color, spacing) => { g.font = font; g.fillStyle = color; g.textAlign = 'center'; if (spacing) { g.letterSpacing = spacing + 'px'; } g.fillText(t, W / 2, y); g.letterSpacing = '0px'; };
-    return new Promise(res => { const img = new Image(); img.onload = done; img.onerror = done; img.src = 'atomic_logo.png';
+    return new Promise(res => { const img = new Image(); img.onload = done; img.onerror = done; img.src = 'camday_logo.png';
       function done() {
         if (img.width) { const h = 120, w = img.width / img.height * h; g.drawImage(img, W / 2 - w / 2, 120, w, h); }
         center('CERTIFICATE OF ACHIEVEMENT', 320, '600 34px Outfit, Figtree, Arial', GOLD, 8);
@@ -1208,7 +1208,7 @@
         center('This is to certify that', 545, 'italic 32px Georgia, serif', '#3A4B63');
         center(c.name, 640, 'italic 700 96px Georgia, serif', BLUE);
         g.strokeStyle = GOLD; g.lineWidth = 2; g.beginPath(); g.moveTo(W / 2 - 420, 668); g.lineTo(W / 2 + 420, 668); g.stroke();
-        center(`has completed the Atomic course for Cambridge ${Core.stageLabel()}:`, 718, '30px Figtree, Arial', NAVY); center(`all ${Core.unitCount()} units, every Unit Test and an end-of-year exam.`, 756, '30px Figtree, Arial', NAVY);
+        center(`has completed the Camday course for Cambridge ${Core.stageLabel()}:`, 718, '30px Figtree, Arial', NAVY); center(`all ${Core.unitCount()} units, every Unit Test and an end-of-year exam.`, 756, '30px Figtree, Arial', NAVY);
         // achievements row
         const stats = [[c.units || `${Core.unitCount()} / ${Core.unitCount()}`, 'units passed'], [c.avg || '—', 'Unit Test average'], [c.final || '—', 'end-of-year exam'], [c.hours || '—', 'hours of study'], [c.level || '—', 'level reached']];
         const bw = 250, gap = 22, x0 = W / 2 - (stats.length * bw + (stats.length - 1) * gap) / 2;
@@ -1217,14 +1217,14 @@
         // seal
         const sx = 300, sy = 1010; g.fillStyle = GOLD2; g.beginPath(); for (let i = 0; i < 48; i++) { const r = i % 2 ? 92 : 104, a = i / 48 * Math.PI * 2; g.lineTo(sx + r * Math.cos(a), sy + r * Math.sin(a)); } g.closePath(); g.fill();
         g.fillStyle = GOLD; g.beginPath(); g.arc(sx, sy, 80, 0, 7); g.fill(); g.strokeStyle = '#FFF4D6'; g.lineWidth = 3; g.beginPath(); g.arc(sx, sy, 68, 0, 7); g.stroke();
-        g.fillStyle = '#FFFFFF'; g.textAlign = 'center'; g.font = '700 26px Outfit, Figtree, Arial'; g.fillText('ATOMIC', sx, sy - 8); g.font = '600 20px Figtree, Arial'; g.fillText(`CAMBRIDGE ${Core.stageName(Core.STAGE).toUpperCase()}`, sx, sy + 22); g.font = '22px Figtree'; g.fillText('★ ★ ★', sx, sy + 50);
+        g.fillStyle = '#FFFFFF'; g.textAlign = 'center'; g.font = '700 26px Outfit, Figtree, Arial'; g.fillText('CAMDAY', sx, sy - 8); g.font = '600 20px Figtree, Arial'; g.fillText(`CAMBRIDGE ${Core.stageName(Core.STAGE).toUpperCase()}`, sx, sy + 22); g.font = '22px Figtree'; g.fillText('★ ★ ★', sx, sy + 50);
         // signature + date + code
         g.strokeStyle = NAVY; g.lineWidth = 2; g.beginPath(); g.moveTo(W - 560, 1010); g.lineTo(W - 190, 1010); g.stroke();
-        g.textAlign = 'center'; g.fillStyle = NAVY; g.font = 'italic 40px Georgia, serif'; g.fillText('The Atomic teaching team', W - 375, 995);
-        g.font = '24px Figtree, Arial'; g.fillStyle = '#52627A'; g.fillText('Atomic Education', W - 375, 1045);
+        g.textAlign = 'center'; g.fillStyle = NAVY; g.font = 'italic 40px Georgia, serif'; g.fillText('The Camday teaching team', W - 375, 995);
+        g.font = '24px Figtree, Arial'; g.fillStyle = '#52627A'; g.fillText('Camday', W - 375, 1045);
         g.textAlign = 'center'; g.fillStyle = NAVY; g.font = '600 24px Figtree, Arial'; g.fillText(`Awarded ${c.date}`, W / 2 - 60, 985); g.fillText(`Code ${c.code}`, W / 2 - 60, 1022);
-        g.font = '20px Figtree, Arial'; g.fillStyle = '#6B7A90'; g.fillText('Check it at Atomic → “Verify a certificate”.', W / 2 - 60, 1060);
-        g.fillText(`Atomic courses follow the Cambridge ${Core.levelName(Core.STAGE)} ${Core.IS_ESL ? 'English as a Second Language' : Core.IS_MATHS ? 'Mathematics' : 'Science'} framework. This is an Atomic certificate, not a Cambridge qualification.`, W / 2, 1120);
+        g.font = '20px Figtree, Arial'; g.fillStyle = '#6B7A90'; g.fillText('Check it at Camday → “Verify a certificate”.', W / 2 - 60, 1060);
+        g.fillText(`Camday courses follow the Cambridge ${Core.levelName(Core.STAGE)} ${Core.IS_ESL ? 'English as a Second Language' : Core.IS_MATHS ? 'Mathematics' : 'Science'} framework. This is an Camday certificate, not a Cambridge qualification.`, W / 2, 1120);
         if (preview) { g.save(); g.translate(W / 2, H / 2); g.rotate(-0.35); g.font = '800 190px Outfit, Figtree, Arial'; g.fillStyle = 'rgba(201,58,58,0.13)'; g.textAlign = 'center'; g.fillText('PREVIEW', 0, 60); g.restore(); }
         res(cv);
       } });
@@ -1279,7 +1279,7 @@
   async function viewCourses(subject) {
     const m = $main(); const K = await loadCatalog(); if (!K) { m.append(el('p', {}, 'Could not load the courses.')); return; }
     subject = subject || 'science'; const S0 = K.subjects.find(x => x.id === subject) || K.subjects[0];
-    pageHero('ATOMIC COURSES', 'Subjects and levels', 'Choose a subject, then a level – from Cambridge Lower Secondary (Checkpoint) to IGCSE and AS & A Level. Each stage or course is enrolled separately.');
+    pageHero('CAMDAY COURSES', 'Subjects and levels', 'Choose a subject, then a level – from Cambridge Lower Secondary (Checkpoint) to IGCSE and AS & A Level. Each stage or course is enrolled separately.');
     m.append(el('nav', { class: 'subjtabs', role: 'tablist', 'aria-label': 'Subjects' }, ...K.subjects.map(x => el('a', { role: 'tab', class: 'subjtab' + (x.id === S0.id ? ' on' : ''), 'aria-selected': String(x.id === S0.id), href: '#courses-' + x.id, style: `--sc:${x.color}` }, x.icon + ' ' + x.name,
       el('small', {}, K.courses.some(c => c.subject === x.id && c.status !== 'soon' && !(c.stage && Core.stageLocked(c.stage))) ? 'open now' : 'coming soon')))));
     K.levels.forEach(L => {
@@ -1296,7 +1296,7 @@
     pageHero(`${S0.name.toUpperCase()} · ${L.short.toUpperCase()} · SYLLABUS ${c.code}`, c.title, c.about || `${L.name} ${S0.name}.`);
     m.append(el('nav', { class: 'crumb2' }, el('a', { href: '#courses-' + S0.id }, S0.name), ' › ', L.short, ' › ', c.title));
     const box = el('section', { class: 'card', style: 'display:flex;flex-direction:column;gap:14px' }, el('div', { class: 'cphead' }, subjTag(S0), el('span', { class: 'status todo' }, 'Coming soon')),
-      el('p', { style: 'margin:0' }, `This course is being written by the Atomic teaching team. It will work like Cambridge ${Core.stageLabel()}: short lesson videos with pause questions, practice for every topic, print-only worksheets, timed Unit Tests in the exam room and a certificate.`));
+      el('p', { style: 'margin:0' }, `This course is being written by the Camday teaching team. It will work like Cambridge ${Core.stageLabel()}: short lesson videos with pause questions, practice for every topic, print-only worksheets, timed Unit Tests in the exam room and a certificate.`));
     if (c.strands) box.append(el('div', {}, el('b', {}, 'Curriculum strands'), el('div', { class: 'chips' }, ...c.strands.map(x => el('span', { class: 'chip' }, x)))));
     if (c.exams) box.append(el('div', {}, el('b', {}, 'Checkpoint exam room (practice papers in this format)'), el('ul', { style: 'margin:6px 0 0' }, ...c.exams.map(e => el('li', {}, el('b', {}, `${S0.name} ${e.code}`), ` · ${e.name} · ${e.minutes} minutes · ${e.marks} marks · ${e.note}`)))));
     const msg = el('span', { class: 'muted' });
@@ -1370,7 +1370,7 @@
     if (isGuest()) { m.append(guestWall('Create a free account first')); return; }
     const msg = errBox();
     m.append(el('section', { class: 'card narrow', id: 'checkout' }, el('h2', {}, 'Order summary'),
-      el('div', { class: 'ordrow' }, el('span', {}, `Cambridge ${Core.levelName(g)} ${Core.subjectOf(g)} · Cambridge ${Core.stageName(g)} (Atomic course)`), el('b', {}, PRICE)),
+      el('div', { class: 'ordrow' }, el('span', {}, `Cambridge ${Core.levelName(g)} ${Core.subjectOf(g)} · Cambridge ${Core.stageName(g)} (Camday course)`), el('b', {}, PRICE)),
       el('div', { class: 'ordrow' }, el('span', {}, 'Learner'), el('b', {}, st.name)),
       el('div', { class: 'banner info' }, el('b', {}, 'Test checkout. '), 'This is the test server: pressing Pay enrols you straight away and no money is taken. The real payment page (Paddle) replaces this before launch.'),
       msg, el('button', { class: 'btn gold big', type: 'button', id: 'payBtn', onclick: async ev => { const pb = ev.currentTarget; pb.disabled = true; pb.classList.add('busy'); msg.textContent = '';
@@ -1589,7 +1589,7 @@
     clearInterval(timer); timer = setInterval(tick, 1000); tick();
     const saved = el('span', { class: 'muted', 'aria-live': 'polite' });
     const card = el('section', { class: 'card qcard', style: 'flex:999 1 600px;min-width:0' },
-      el('div', { class: 'btnrow between', style: 'margin:0' }, el('span', { class: 'lex', style: 'font-weight:700;color:#556377' }, `Question ${i + 1} of ${qs.length} · ${q.pts} mark${q.pts > 1 ? 's' : ''}${q.teacher ? (q.type === 'para' ? ' · written paragraph: checked against the mark scheme, a teacher marks it if needed' : ' · marked by an Atomic marker') : ''}`),
+      el('div', { class: 'btnrow between', style: 'margin:0' }, el('span', { class: 'lex', style: 'font-weight:700;color:#556377' }, `Question ${i + 1} of ${qs.length} · ${q.pts} mark${q.pts > 1 ? 's' : ''}${q.teacher ? (q.type === 'para' ? ' · written paragraph: checked against the mark scheme, a teacher marks it if needed' : ' · marked by an Camday marker') : ''}`),
         el('button', { class: 'chip' + (UI.flags[q.id] ? ' on' : ''), type: 'button', 'aria-pressed': String(!!UI.flags[q.id]), onclick: () => { UI.flags[q.id] = !UI.flags[q.id]; render(); } }, svgI(I.flag, 14), UI.flags[q.id] ? 'Flagged' : 'Flag')),
       el('h2', { class: 'qp', style: 'font-size:24px' }, q.prompt));
     if (q.sec) card.insertBefore(el('div', { class: 'examsec', id: 'examSec' }, el('b', {}, `Section ${q.sec.split(' · ')[0]}`), ' · ' + (q.sec.split(' · ')[1] || '')), card.firstChild);
@@ -1645,7 +1645,7 @@
     if (ts.state === 'guest') { m.append(bar(where), guestWall('Sign up free to take the Unit Test')); return; }
     if (ts.state === 'paywall') { m.append(bar(where), lockScreen(`Unit Test ${Core.UNO} needs a Cambridge ${Core.stageName(Core.STAGE)} plan`, 'Unit Tests, marking and the certificate are part of the full course.', [{ what: `a Cambridge ${Core.stageName(Core.STAGE)} plan (7-day free trial)`, route: 'pricing' }])); return; }
     if (ts.state === 'locked') { m.append(bar(where), lockScreen(`Unit Test ${Core.UNO} is locked`, `The Unit Test opens when you have ${C.sections[0] && C.sections[0].lesson ? 'read every lesson' : 'watched every video'} and finished all ${totalCore} Core questions in this unit.`, ts.miss)); return; }
-    if (ts.state === 'pending') { m.append(bar(where), el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, `Attempt ${ts.last.n} (Paper ${ts.last.form}) has a written answer for an Atomic marker to mark. We will notify you when it is done.`), el('a', { class: 'btn primary small', href: '#result' }, 'Results & history'))); return; }
+    if (ts.state === 'pending') { m.append(bar(where), el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, `Attempt ${ts.last.n} (Paper ${ts.last.form}) has a written answer for an Camday marker to mark. We will notify you when it is done.`), el('a', { class: 'btn primary small', href: '#result' }, 'Results & history'))); return; }
     if (ts.state === 'remediate') { m.append(bar(where), lockScreen('You can\'t retake yet', 'Finish the review questions set for your weaker objectives before you take the equivalent paper.', [{ what: `${ts.left.length} review questions`, route: 'remedial' }])); return; }
     if (ts.state === 'passed') { m.append(bar(where), el('section', { class: 'card done' }, el('h2', {}, `✓ You have passed Unit Test ${Core.UNO}`), el('a', { class: 'btn primary small', href: '#result' }, 'See results'), el('a', { class: 'btn small', href: '#tests' }, 'All tests & exams'))); return; }
     const qs = C.tests[form];
@@ -1702,7 +1702,7 @@
       el('a', { class: 'btn ' + (ok ? 'gold shine' : ''), href: '#final' }, ok ? 'Choose a paper' : 'See the papers', el('span', { class: 'arr' }, ' →')));
   }
 
-  /* ---------- Checkpoint exam room: Atomic papers in the format of Cambridge Lower Secondary Checkpoint ---------- */
+  /* ---------- Checkpoint exam room: Camday papers in the format of Cambridge Lower Secondary Checkpoint ---------- */
   const CP_STRAND = { BIO: 'Biology', CHE: 'Chemistry', PHY: 'Physics', ESS: 'Earth and space', TWS: 'Thinking and working scientifically' };
   const cpTitle = (P, k) => { const mt = (P.meta || {})[k] || {}; return { subj: Core.IS_MATHS ? 'Mathematics' : 'Science', code: mt.format || (Core.IS_MATHS ? '0862' : '0893'), paper: mt.paper || 1, set: mt.set || k[0] }; };
   function checkpointCard(P) {
@@ -1723,7 +1723,7 @@
     const mine = el('section', { class: 'card cpsubj' }, head(isM));
     Object.entries(sets).forEach(([set, ks]) => {
       mine.append(el('div', { class: 'cpset' }, el('b', { class: 'lex' }, 'Set ' + set), ...ks.map(k => { const t = cpTitle(P, k); const a = (Core.S.cpAttempts || []).find(x => x.form === k); const d = fdLoad('cp' + k); const mt = (P.meta || {})[k] || {};
-        return el('div', { class: 'cprow' }, el('span', { class: 'cpcode' }, t.code), el('span', {}, el('b', {}, `${subj} · Paper ${t.paper}`), el('br'), el('small', { class: 'muted' }, `Atomic paper · Set ${set}${isM ? (mt.calculator ? ' · calculator allowed' : ' · no calculator') : ''}${mt.level === 'harder' ? (isM ? ' · harder' : ' · harder, investigation-based') : ''} · ${P.minutes} min · ${P.max} marks`)),
+        return el('div', { class: 'cprow' }, el('span', { class: 'cpcode' }, t.code), el('span', {}, el('b', {}, `${subj} · Paper ${t.paper}`), el('br'), el('small', { class: 'muted' }, `Camday paper · Set ${set}${isM ? (mt.calculator ? ' · calculator allowed' : ' · no calculator') : ''}${mt.level === 'harder' ? (isM ? ' · harder' : ' · harder, investigation-based') : ''} · ${P.minutes} min · ${P.max} marks`)),
           a ? el('span', { class: 'status ' + (a.status === 'pending' ? 'cur' : 'done') }, a.status === 'pending' ? '⏳ Awaiting marking' : `${+a.score.toFixed(1)}/${P.max} · ${a.pct.toFixed(0)}%`) : d && d.deadline ? el('span', { class: 'status cur' }, 'In progress') : el('span', { class: 'status todo' }, 'Not taken'),
           a ? el('a', { class: 'btn small', href: '#cpr-' + k }, 'Results') : el('a', { class: 'btn small primary', href: '#cpx-' + k, id: 'cpOpen-' + k }, d && d.deadline ? 'Continue' : 'Enter', el('span', { class: 'arr' }, ' →'))); })));
     });
@@ -1742,7 +1742,7 @@
     if (!UI.testOn || UI.examKey !== 'C' + k) {
       UI.testOn = false;
       m.append(examIntro({ title, n: qs.length, max: P.max, minutes: P.minutes, passTxt: 'Score', resume: !!draft.deadline,
-        extra: [`An Atomic practice paper in the format of the Cambridge Lower Secondary Checkpoint ${t.subj} test.${Core.IS_MATHS ? (((P.meta || {})[k] || {}).calculator ? ' A calculator is allowed.' : ' Do not use a calculator.') : ''} One attempt per paper.`, 'Every answer, chosen or typed, is marked automatically; your results show your marks for each part of science.'],
+        extra: [`An Camday practice paper in the format of the Cambridge Lower Secondary Checkpoint ${t.subj} test.${Core.IS_MATHS ? (((P.meta || {})[k] || {}).calculator ? ' A calculator is allowed.' : ' Do not use a calculator.') : ''} One attempt per paper.`, 'Every answer, chosen or typed, is marked automatically; your results show your marks for each part of science.'],
         start: async ev => { ev.currentTarget.disabled = true; try { const c = await Core.startClock(`stage${Core.STAGE}-cp`, k); draft.deadline = c.deadline; save(); UI.testOn = true; UI.examKey = 'C' + k; UI.testIdx = 0; render(); } catch (x) { ev.currentTarget.disabled = false; modal('Could not open the paper', errText(x), [{ t: 'OK', cls: 'primary' }]); } } }));
       return;
     }
@@ -1753,7 +1753,7 @@
     const m = $main(); const P = await Core.loadCp(); await Core.refreshCp().catch(() => { });
     const a = (Core.S.cpAttempts || []).find(x => x.form === k); if (!a) return go('cpx-' + k); const t = cpTitle(P, k);
     m.append(el('nav', { class: 'crumb2' }, el('a', { href: '#tests' }, 'Tests & exams'), ' › ', el('a', { href: '#checkpoint' }, 'Checkpoint exam room'), ` › ${t.subj} ${t.code} · Set ${t.set}`));
-    if (a.status === 'pending') { m.append(el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, 'A written answer is waiting for an Atomic marker. You will get a notification.'), leavesNote(a))); return; }
+    if (a.status === 'pending') { m.append(el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, 'A written answer is waiting for an Camday marker. You will get a notification.'), leavesNote(a))); return; }
     m.append(el('section', { class: 'card' }, el('div', { class: 'resultbig' }, ring(a.pct, a.pct >= 50), el('div', {}, el('span', { class: 'eyebrow' }, `SCIENCE · PAPER ${t.paper} (${t.code} FORMAT) · SET ${t.set}`), el('h2', { style: 'margin:0' }, `${+a.score.toFixed(2)}/${P.max} (${a.pct.toFixed(1)}%)`),
       el('p', { style: 'margin:4px 0' }, a.duration != null ? `Time taken: ${Math.floor(a.duration / 60)} min ${a.duration % 60} s of ${P.minutes} min${a.overtime ? ' (after the time limit)' : ''}` : ''), leavesNote(a)))));
     const byS = Object.entries(a.byObj || {});
@@ -1801,7 +1801,7 @@
     const host = el('div', { style: 'padding:8px 0 30px' }); m.append(host); await Games.play(host, gameCtx(), id);
   }
 
-  /* ---------- Maths Challenge: problem-solving competition papers (Atomic originals, keys on the server) ---------- */
+  /* ---------- Maths Challenge: problem-solving competition papers (Camday originals, keys on the server) ---------- */
   const CH = [
     { id: 'primary', icon: '🦉', color: '#1F9D5C' }, { id: 'junior', icon: '🦊', color: '#0149AF' }, { id: 'inter', icon: '🐺', color: '#7A4BD1' },
     { id: 'kangaroo', icon: '🦘', color: '#D9722A' }, { id: 'olympiad', icon: '🏆', color: '#B9842B' }];
@@ -1839,7 +1839,7 @@
         el('div', {}, el('b', {}, '⏱ Sit the paper'), el('p', {}, 'Full screen, against the clock, like the real competition. Your score and award appear straight away, with a worked solution to every question.')),
         el('div', {}, el('b', {}, '🧩 Practise question by question'), el('p', {}, 'No clock. Answer one question, check it at once and read the full solution. A paper you practise cannot then be sat as a timed paper – so try the timed paper first if you want an award.')),
         el('div', {}, el('b', {}, '📈 Which level?'), el('p', {}, 'Primary for Stages 5–6, Junior for Stages 7–8, Intermediate for Stage 9 and IGCSE. The Kangaroo and Olympiad rounds are the next step for anyone who scores Gold.'))),
-      el('p', { class: 'muted', style: 'margin:16px 0 0;font-size:14px' }, 'Every problem is an original written by the Atomic teaching team in the style of national maths challenges. These are not UKMT papers.')));
+      el('p', { class: 'muted', style: 'margin:16px 0 0;font-size:14px' }, 'Every problem is an original written by the Camday teaching team in the style of national maths challenges. These are not UKMT papers.')));
     if (!chSigned()) m.append(el('div', { class: 'banner info' }, 'You can look at every paper. ', el('a', { href: '#signup' }, 'Sign up free'), ' to sit papers, practise and keep your awards.'));
   }
   async function viewChList(id) {
@@ -2007,7 +2007,7 @@
     const m = $main(); const F = await Core.loadFinal(); await Core.refreshFinal().catch(() => { });
     const a = (Core.S.finalAttempts || []).find(x => x.form === k); if (!a) return go('fx-' + k);
     m.append(el('nav', { class: 'crumb2' }, el('a', { href: '#tests' }, 'Tests & exams'), ' › ', el('a', { href: '#final' }, 'End-of-year exams'), ` › Paper ${k}`));
-    if (a.status === 'pending') { m.append(el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, 'A written answer is waiting for an Atomic marker.'))); return; }
+    if (a.status === 'pending') { m.append(el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, 'A written answer is waiting for an Camday marker.'))); return; }
     m.append(el('section', { class: 'card ' + (a.passed ? 'done' : 'bad') }, el('div', { class: 'resultbig' }, ring(a.pct, a.passed), el('div', {}, el('span', { class: 'eyebrow' }, a.passed ? 'PASSED' : `NOT PASSED · YOU NEED ABOVE ${Math.round(F.pass * 100)}%`), el('h2', { style: 'margin:0' }, `${+a.score.toFixed(2)}/${F.max} (${a.pct.toFixed(1)}%)`),
       el('p', { style: 'margin:4px 0' }, a.duration != null ? `Time taken: ${Math.floor(a.duration / 60)} min ${a.duration % 60} s${a.overtime ? ' (after the time limit)' : ''}` : ''),
       leavesNote(a),
@@ -2032,7 +2032,7 @@
     if (!at.length) { m.append(el('section', { class: 'card' }, el('h2', {}, 'No tests taken yet'), el('a', { class: 'btn primary small', href: '#test' }, 'Go to the Unit Test'))); return; }
     const a = at[at.length - 1];
     if (a.leaves) m.append(el('div', { class: 'banner info' }, leavesNote(a)));
-    if (a.status === 'pending') m.append(el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, 'Your written answer is waiting for an Atomic marker. Pass/not passed is decided only when the final mark is in – you will get a notification.')));
+    if (a.status === 'pending') m.append(el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, 'Your written answer is waiting for an Camday marker. Pass/not passed is decided only when the final mark is in – you will get a notification.')));
     else if (a.passed) m.append(el('section', { class: 'card done' }, el('div', { class: 'resultbig' }, ring(a.pct, true), el('div', {}, el('span', { class: 'eyebrow' }, 'PASSED'), el('h2', { style: 'margin:0' }, `${+a.score.toFixed(2)}/30 (${a.pct.toFixed(1)}%)`), el('p', { style: 'margin:4px 0' }, `Unit ${Core.UNO} complete in ${hrs(Core.unitSeconds(Core.UNO))} of study. Your ranking score for this unit = your first-pass %: ` + ((st.results || {})[Core.UNIT] ? st.results[Core.UNIT].pct.toFixed(1) : a.pct.toFixed(1)) + '%.' + (a.duration != null ? ` Time in the exam room: ${Math.floor(a.duration / 60)} min.` : '')))),
       el('div', { class: 'btnrow' }, LEADERBOARD ? el('a', { class: 'btn primary small', href: '#board' }, '🏆 Leaderboard') : null, el('a', { class: 'btn small', href: '#cert' }, '🎓 Certificate'))));
     else {
@@ -2052,7 +2052,7 @@
     });
   }
 
-  /* ---------- concept map (Atomic's own maps for every unit): tap a concept → its video and questions ---------- */
+  /* ---------- concept map (Camday's own maps for every unit): tap a concept → its video and questions ---------- */
   function cmapLayout(cm) {
     const COLW = 220, X0 = 110, W = { root: 210, key: 196, node: 184, info: 196 }, CH = { root: 22, key: 26, node: 27, info: 29 };
     const wrap = (t, n) => { const out = []; let line = ''; String(t).split(' ').forEach(w => { if ((line + ' ' + w).trim().length > n) { if (line) out.push(line); line = w; } else line = (line + ' ' + w).trim(); }); if (line) out.push(line); return out; };
@@ -2187,7 +2187,7 @@
         el('div', {}, el('b', {}, rs ? rs.score.toFixed(1) + '%' : '–'), el('span', { class: 'muted' }, 'average first-pass score')),
         el('div', { class: 'btnrow', style: 'margin:0' }, el('a', { class: 'btn small', href: '#result' }, 'Results & history'), el('a', { class: 'btn small primary', href: '#test' }, 'Unit Test', el('span', { class: 'arr' }, ' →'))))));
     const tt = testerTools(); if (tt) m.append(tt);
-    m.append(el('p', { class: 'muted' }, el('a', { href: '#privacy-kids' }, 'How Atomic looks after your data'), ' – the short version for learners.'));
+    m.append(el('p', { class: 'muted' }, el('a', { href: '#privacy-kids' }, 'How Camday looks after your data'), ' – the short version for learners.'));
   }
 
   /* ---------- leaderboard ---------- */
@@ -2217,8 +2217,8 @@
      ACCOUNT, PLANS, HELP, LEGAL  (P0 / P1 screens)
      ===================================================================== */
   const ERR = { practised: 'You have practised this paper, so it can no longer be sat as a timed paper.', not_taken: 'Sit this paper first to see all its solutions.', wrong_question: 'That question is not on this paper.', locked: 'This course is not open yet.', bad_email: 'Please enter a valid email address.', weak_password: 'Use at least 8 characters for your password.', email_taken: 'An account with this email already exists – sign in instead.',
-    bad_credentials: 'That email and password do not match.', account_disabled: 'This account has been switched off by Atomic. Please contact us via Help & contact.', user_banned: 'This account has been switched off by Atomic. Please contact us via Help & contact.', admin_only: 'Only administrators can do this.', own_admin: 'You cannot remove your own administrator role.', own_account: 'You cannot switch off your own account.', sign_in: 'Please sign in again.', parental_consent: 'Please tick the parental consent box.', bad_nickname: 'Use a nickname of 2–24 characters.',
-    subscription_required: 'This needs an Atomic course plan.', locked: 'Finish every lesson or video and every Core question first.', awaiting_marking: 'Your last test is still being marked.', review_first: 'Finish your review questions first.',
+    bad_credentials: 'That email and password do not match.', account_disabled: 'This account has been switched off by Camday. Please contact us via Help & contact.', user_banned: 'This account has been switched off by Camday. Please contact us via Help & contact.', admin_only: 'Only administrators can do this.', own_admin: 'You cannot remove your own administrator role.', own_account: 'You cannot switch off your own account.', sign_in: 'Please sign in again.', parental_consent: 'Please tick the parental consent box.', bad_nickname: 'Use a nickname of 2–24 characters.',
+    subscription_required: 'This needs an Camday course plan.', locked: 'Finish every lesson or video and every Core question first.', awaiting_marking: 'Your last test is still being marked.', review_first: 'Finish your review questions first.',
     already_passed: 'You have already passed this test.', wrong_paper: 'Please reload the page and try again.', confirm: 'Type the confirmation exactly as shown.', staff_only: 'Staff only.', message: 'Please write a short message.' };
   const errText = e => ERR[e && e.code] || (e && e.detail) || 'Something went wrong. Please try again.';
   const COUNTRIES = [['GB', 'United Kingdom'], ['SG', 'Singapore'], ['MY', 'Malaysia'], ['TH', 'Thailand'], ['VN', 'Vietnam'], ['ID', 'Indonesia'], ['PH', 'Philippines'], ['XX', 'Another country']];
@@ -2378,10 +2378,10 @@
     m.append(faq());
   }
   function faq() {
-    const qa = [['Who is Atomic for?', 'Learners aged about 7–14 following Cambridge Primary or Lower Secondary Science (Stages 3 to 9) or Mathematics (Stages 3 to 9), at an international or bilingual school or studying at home.'],
+    const qa = [['Who is Camday for?', 'Learners aged about 7–14 following Cambridge Primary or Lower Secondary Science (Stages 3 to 9) or Mathematics (Stages 3 to 9), at an international or bilingual school or studying at home.'],
       ['Do I need an account?', 'Not to try it: topic 3.1 is open to guests. Create a free account to save your progress, unlock every topic and take the Unit Test.'],
       ['Will my parents know how I am doing?', 'If you add a parent’s email when you sign up (it is optional), we send them a short email when you finish a unit. You can add or remove it any time in Settings.'],
-      ['How are Unit Tests marked?', 'Multiple-choice, diagram and data questions are marked automatically. Written answers are marked by the Atomic teaching team; you get a notification when it is done.'],
+      ['How are Unit Tests marked?', 'Multiple-choice, diagram and data questions are marked automatically. Written answers are marked by the Camday teaching team; you get a notification when it is done.'],
       ['Can I delete my data?', 'Yes. In Settings you can download everything we hold about you or delete your account, which removes all your learning records.']];
     return el('section', { class: 'card' }, el('h2', {}, 'Questions'), ...qa.map(([q, a]) => el('details', { class: 'faq' }, el('summary', {}, q), el('p', {}, a))));
   }
@@ -2390,14 +2390,14 @@
   // ---- News: announcements + the roadmap of coming features (admins edit both in Admin → News & roadmap) ----
   async function viewNews() {
     const m = $main();
-    pageHero('NEWS', 'What’s new and what’s coming', 'Announcements from the Atomic team and the features we are building next. Dates are our current plan and may move.');
+    pageHero('NEWS', 'What’s new and what’s coming', 'Announcements from the Camday team and the features we are building next. Dates are our current plan and may move.');
     const [ann, road] = await Promise.all([Backend.announcements().catch(() => []), (Backend.roadmap ? Backend.roadmap() : Promise.resolve([])).catch(() => [])]);
     const when = d => { try { return new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return ''; } };
     m.append(el('section', { class: 'card', id: 'newsList' }, el('h2', {}, 'Latest news'),
       ann.length ? el('div', { class: 'newslist' }, ...ann.map(a => el('article', { class: 'newsit' + (a.level === 'warn' ? ' warn' : '') }, el('small', { class: 'muted' }, when(a.created_at)), el('h3', {}, a.title), a.body ? el('p', {}, a.body) : null)))
         : el('p', { class: 'muted' }, 'No news right now – check back soon.')));
     // a timeline: what is live, what we are building now, what comes next
-    const COLS = [['released', 'Released', 'Already on Atomic'], ['building', 'Being built', 'What we are working on now'], ['planned', 'Planned', 'What comes next']];
+    const COLS = [['released', 'Released', 'Already on Camday'], ['building', 'Being built', 'What we are working on now'], ['planned', 'Planned', 'What comes next']];
     const tl = el('div', { class: 'roadmap tline', id: 'roadmap' }, ...COLS.map(([k, h, sub]) => { const items = road.filter(x => x.status === k);
       return el('section', { class: 'rmcol rm-' + k }, el('span', { class: 'rmdot', 'aria-hidden': 'true' }), el('span', { class: 'rmlab' }, h), el('h3', {}, sub),
         ...(items.length ? items.map(x => el('article', { class: 'rmit' }, el('b', {}, x.title), el('div', { class: 'rmmeta' }, x.target ? el('span', { class: 'rmwhen' }, x.target) : null, x.tag ? el('span', { class: 'rmtag' }, x.tag) : null), x.body ? el('p', {}, x.body) : null))
@@ -2512,7 +2512,7 @@
             const hadGuest = isGuest(); UI.su = null; await Core.boot(C); st = Core.cur();
             let paid = true; try { for (const k of courses) await Core.enrol(k, amount); } catch (x) { paid = false; }
             if (paid) { try { await Core.ensureOwnStage(); } catch (x) { } C = Core.C; st = Core.cur(); }
-            toast(paid ? `Welcome to Atomic! You are enrolled in ${all ? 'the whole of Stage ' + lv : courses.map(SUBJ_NAME).join(' and ') + ' Stage ' + lv}.` : (hadGuest ? 'Account created – your guest progress is saved! ' : 'Account created! ') + 'Enrol in your course to start.');
+            toast(paid ? `Welcome to Camday! You are enrolled in ${all ? 'the whole of Stage ' + lv : courses.map(SUBJ_NAME).join(' and ') + ' Stage ' + lv}.` : (hadGuest ? 'Account created – your guest progress is saved! ' : 'Account created! ') + 'Enrol in your course to start.');
             confetti(); go(paid ? 'home' : 'checkout-' + courses[0]);
           } catch (x) { e.textContent = errText(x); b.disabled = false; if (x && x.code === 'email_taken') { F.step = 1; draw(); } }
         } }, 'Create my account and enrol');
@@ -2558,7 +2558,7 @@
         await Core.refreshAccount(); const nl = Core.S.learners.find(x => x.id === l.id); if (nl) { st.learner = nl; st.alias = nl.nickname; st.name = nl.certificate_name || nl.nickname; } QE.setTxt(msg, 'Saved ✓'); } catch (x) { e.textContent = errText(x); }
     } }, 'Save changes');
     const lb = el('input', { type: 'checkbox', id: 'setBoard' }); lb.checked = !!l.leaderboard_opt_in;
-    lb.onchange = () => { if (lb.checked) modal('Show me on the leaderboard?', 'Your nickname and ranking score will be visible to other Atomic learners. Nothing else is shown. You can switch this off at any time.', [{ t: 'Keep me hidden', cls: 'ghost', on: () => { lb.checked = false; } }, { t: 'Show my nickname', cls: 'primary', on: async () => { await Backend.updateLearner(l.id, { leaderboard_opt_in: true }); await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); } }]); else Backend.updateLearner(l.id, { leaderboard_opt_in: false }).then(async () => { await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); }); };
+    lb.onchange = () => { if (lb.checked) modal('Show me on the leaderboard?', 'Your nickname and ranking score will be visible to other Camday learners. Nothing else is shown. You can switch this off at any time.', [{ t: 'Keep me hidden', cls: 'ghost', on: () => { lb.checked = false; } }, { t: 'Show my nickname', cls: 'primary', on: async () => { await Backend.updateLearner(l.id, { leaderboard_opt_in: true }); await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); } }]); else Backend.updateLearner(l.id, { leaderboard_opt_in: false }).then(async () => { await Core.refreshAccount(); st.learner = Core.S.learners.find(x => x.id === l.id); }); };
     pageHero('ACCOUNT', 'Settings', `Signed in as ${Core.S.me.user.email}`, statCard(initialChip(44), st.alias, l.grade || `Cambridge ${Core.stageLabel()} learner`));
     m.append(
       el('section', { class: 'card' }, el('h2', {}, 'Profile'), el('div', { class: 'form' }, field('Nickname', nick, LEADERBOARD ? 'Shown in the app and, if you switch it on, on the leaderboard.' : 'Shown in the app.'), field('Full name for the certificate', full), field('School year', gr), field('Your school', school))),
@@ -2589,14 +2589,14 @@
     } }, active ? 'Your plan is active' : 'Start 7-day free trial');
     m.append(el('div', { style: 'text-align:center' }, el('span', { class: 'eyebrow' }, 'PLANS'), el('h1', { style: 'margin:4px 0' }, `One plan, the whole of Cambridge ${Core.stageLabel()}`), el('p', { class: 'muted' }, 'Cancel any time.')),
       el('div', { class: 'plans' }, plan('free', 'Free', '£0', ['First topic of every unit', 'Lesson videos with pause questions', '30 practice questions for that topic', 'Learning streak and progress report'], me ? el('a', { class: 'btn', href: '#home' }, 'Keep learning free') : el('a', { class: 'btn', href: '#signup' }, 'Start free')),
-        plan('monthly', `Cambridge ${Core.stageLabel()} – monthly`, L.monthly, ['Every topic of every unit', 'Unit Tests marked by Atomic', 'A4 worksheets and concept maps', 'Cambridge Stage 7 certificate'], buy('monthly')),
+        plan('monthly', `Cambridge ${Core.stageLabel()} – monthly`, L.monthly, ['Every topic of every unit', 'Unit Tests marked by Camday', 'A4 worksheets and concept maps', 'Cambridge Stage 7 certificate'], buy('monthly')),
         plan('yearly', `Cambridge ${Core.stageLabel()} – yearly`, L.yearly, ['Everything in monthly', 'About 2 months free', 'Price fixed for the year'], buy('yearly'), true)),
       el('p', { class: 'muted', style: 'text-align:center' }, 'Prices shown in GBP for guidance. At checkout Paddle, our reseller, shows the price in your currency including VAT/GST where it applies (UK VAT, Singapore GST, Malaysia SST, Thailand VAT, Vietnam, Indonesia and Philippines taxes).'), faq());
   }
 
   function viewBeta() {
     const m = $main(); const me = Core.S.me;
-    m.append(narrow(el('span', { class: 'eyebrow' }, 'TEST PHASE'), el('h1', {}, 'Free while we test'), el('p', {}, 'Atomic is in a small private test. Every learner gets the whole Cambridge Stage 7 course – videos, practice, Unit Tests and the certificate – free of charge. No card is needed.'),
+    m.append(narrow(el('span', { class: 'eyebrow' }, 'TEST PHASE'), el('h1', {}, 'Free while we test'), el('p', {}, 'Camday is in a small private test. Every learner gets the whole Cambridge Stage 7 course – videos, practice, Unit Tests and the certificate – free of charge. No card is needed.'),
       el('p', { class: 'muted', id: 'betaNote' }, 'Paid plans will be introduced later. We will tell you by email before anything changes, and nothing will be charged without your agreement.'),
       el('div', { class: 'btnrow' }, me ? el('a', { class: 'btn primary', href: '#home' }, 'Go to learning') : el('a', { class: 'btn primary', href: '#signup' }, 'Sign up free'), el('a', { class: 'btn', href: '#help' }, 'Send feedback'))), faq());
   }
@@ -2621,8 +2621,8 @@
   /* ---------- certificate verification (public) ---------- */
   function viewVerify() {
     const m = $main(); const code = el('input', { type: 'text', id: 'vfCode', placeholder: 'AE-S7-2026-XXXXXXXX' }); const out = el('div', { 'aria-live': 'polite' });
-    m.append(narrow(el('h1', {}, 'Verify a certificate'), el('p', { class: 'muted' }, 'Enter the code printed on an Atomic certificate.'), el('div', { class: 'form' }, field('Certificate code', code),
-      el('button', { class: 'btn primary', type: 'button', id: 'vfBtn', onclick: async () => { const r = await Backend.verifyCertificate(code.value); out.innerHTML = ''; out.append(r ? el('div', { class: 'banner ok' }, `✓ Genuine: ${r.name_on_certificate} completed the Atomic Education course for Cambridge Stage ${r.stage} Science on ${String(r.issued_at).slice(0, 10)}.`) : el('div', { class: 'banner adv' }, 'No certificate has this code.')); } }, 'Check'), out)));
+    m.append(narrow(el('h1', {}, 'Verify a certificate'), el('p', { class: 'muted' }, 'Enter the code printed on an Camday certificate.'), el('div', { class: 'form' }, field('Certificate code', code),
+      el('button', { class: 'btn primary', type: 'button', id: 'vfBtn', onclick: async () => { const r = await Backend.verifyCertificate(code.value); out.innerHTML = ''; out.append(r ? el('div', { class: 'banner ok' }, `✓ Genuine: ${r.name_on_certificate} completed the Camday course for Cambridge Stage ${r.stage} Science on ${String(r.issued_at).slice(0, 10)}.`) : el('div', { class: 'banner adv' }, 'No certificate has this code.')); } }, 'Check'), out)));
   }
 
   /* ---------- legal (drafts – to be reviewed by a lawyer before launch) ---------- */
@@ -2637,8 +2637,8 @@
       el('h1', {}, title), ...sections.flatMap(([h, ...ps]) => [el('h2', {}, h), ...ps.map(p => Array.isArray(p) ? el('ul', {}, ...li(p)) : el('p', {}, p))])));
   }
   const viewPrivacy = () => legal('Privacy notice', [
-    ['Who we are', 'Atomic Education (“Atomic”, “we”) runs the Atomic Checkpoint courses. Contact: ' + (((window.ATOMIC_CONFIG || {}).supportEmail) || 'support@example.com') + '.'],
-    ['Who this notice is for', 'Learners who use Atomic and their parents or guardians.', ['A short version written for learners (see ', ['a', 'privacy-kids', 'For learners'], ').']],
+    ['Who we are', 'Camday (“Camday”, “we”) runs the Camday Checkpoint courses. Contact: ' + (((window.ATOMIC_CONFIG || {}).supportEmail) || 'support@example.com') + '.'],
+    ['Who this notice is for', 'Learners who use Camday and their parents or guardians.', ['A short version written for learners (see ', ['a', 'privacy-kids', 'For learners'], ').']],
     ['What we collect and why', ['Guests: nothing is sent to us. A guest’s progress is kept only in their own browser until they create an account.',
       'Account: name, email, password (stored hashed by our authentication provider), year of birth, school year, country and school – to run the account, check the course suits you and apply the right law.',
       'Optional parent or guardian email: used only to send one short email when the learner finishes a unit. It can be changed or removed at any time in Settings.',
@@ -2647,11 +2647,11 @@
     ['High privacy by default', 'We follow the UK Age Appropriate Design Code (Children’s code): we collect the minimum, there is no advertising and no profiling for advertising, no geolocation and no public profile.'],
     ['Where data is stored', 'Our database and authentication run on Supabase; the website runs on Vercel; emails will be sent by an email provider such as Resend. Data may be processed outside your country; we use contractual safeguards for international transfers.'],
     ['How long we keep data', 'While the account is open. When you delete the account, all your data is deleted at once; backups are overwritten within 30 days.'],
-    ['Children and consent', 'Several of our markets require a parent’s or guardian’s consent before a child’s personal data is used (for example Singapore under 13, Vietnam under 16, Malaysia, Indonesia and the Philippines under 18, Thailand for younger minors). During the test phase learners sign up themselves; before Atomic is offered commercially we will add the parental-consent step each country requires. If you are a parent and want your child’s account removed, contact us and we will delete it.'],
+    ['Children and consent', 'Several of our markets require a parent’s or guardian’s consent before a child’s personal data is used (for example Singapore under 13, Vietnam under 16, Malaysia, Indonesia and the Philippines under 18, Thailand for younger minors). During the test phase learners sign up themselves; before Camday is offered commercially we will add the parental-consent step each country requires. If you are a parent and want your child’s account removed, contact us and we will delete it.'],
     ['Your rights', 'Download a copy of your data or delete your account at any time from Settings. You can also ask us to correct data, object to or restrict processing, or complain to your data protection authority (UK: ICO; Singapore: PDPC; Vietnam: the Ministry of Public Security’s data protection authority).']]);
   function viewKidsPrivacy() {
     const m = $main(); const row = (i, t, d) => el('div', { class: 'card', style: 'display:flex;gap:14px;align-items:flex-start' }, el('span', { style: 'font-size:28px' }, i), el('div', {}, el('b', { class: 'lex' }, t), el('p', { style: 'margin:4px 0 0' }, d)));
-    m.append(el('div', { style: 'max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px' }, el('span', { class: 'eyebrow' }, 'FOR LEARNERS'), el('h1', { style: 'margin:0' }, 'Your data at Atomic – the short version'),
+    m.append(el('div', { style: 'max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px' }, el('span', { class: 'eyebrow' }, 'FOR LEARNERS'), el('h1', { style: 'margin:0' }, 'Your data at Camday – the short version'),
       row('🙂', 'We only ask for what we need', 'Your name, email, age, school year and school. We never ask for your address, photo or where you are.'),
       row('📝', 'We keep your answers to help you learn', 'Your answers, scores and progress let us give you hints, mark your tests and show you how you are doing.'),
       row('📧', 'Your parent’s email is up to you', 'If you add it, we only send them a short message when you finish a unit.'),
@@ -2662,12 +2662,12 @@
       el('p', { class: 'muted' }, 'This is a short summary of our ', el('a', { href: '#privacy' }, 'Privacy notice'), '.')));
   }
   const viewTerms = () => legal('Terms of use', [
-    ['The service', 'Atomic provides online courses for Cambridge Primary and Lower Secondary learners: Science Stages 3 to 9 and Mathematics Stages 3 to 9. Courses are written by Atomic and aligned to the Cambridge Primary Science (0097), Lower Secondary Science (0893), Primary Mathematics (0096) and Lower Secondary Mathematics (0862) curriculum frameworks. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.'],
+    ['The service', 'Camday provides online courses for Cambridge Primary and Lower Secondary learners: Science Stages 3 to 9 and Mathematics Stages 3 to 9. Courses are written by Camday and aligned to the Cambridge Primary Science (0097), Lower Secondary Science (0893), Primary Mathematics (0096) and Lower Secondary Mathematics (0862) curriculum frameworks. Camday is not affiliated with or endorsed by Cambridge University Press & Assessment.'],
     ['Who the course is for', 'The courses are designed for learners aged about 11 to 14. Anyone can try topic 3.1 of Science Stage 7 as a guest. Learners create their own free account to save progress; each course is a separate enrolment.'],
     ['Accounts', 'One account per learner. Keep your password private. If you are under the age of digital consent where you live, ask a parent or guardian before you sign up.'],
     ['Plans, trials and refunds', 'Plans renew automatically until cancelled. A free trial converts to a paid plan unless cancelled before it ends. Our order process is conducted by our online reseller Paddle.com, the Merchant of Record for all orders; Paddle provides customer service enquiries and handles returns.'],
     ['Fair use', 'Course content is for your own personal learning. Do not copy, share or resell videos, questions, tests or worksheets.'],
-    ['Tests and certificates', 'Unit Tests and exams are marked automatically, including typed answers. A certificate confirms completion of an Atomic course; it is not a Cambridge qualification.'],
+    ['Tests and certificates', 'Unit Tests and exams are marked automatically, including typed answers. A certificate confirms completion of an Camday course; it is not a Cambridge qualification.'],
     ['Changes and contact', 'We will tell you about important changes by email. Questions: ' + (((window.ATOMIC_CONFIG || {}).supportEmail) || 'support@example.com') + '.']]);
   const viewCookies = () => legal('Cookies and local storage', [
     ['What we use', 'Only what the site needs to work: keeping you signed in, and keeping a guest’s progress on this device until they sign up. We do not use advertising or third-party tracking cookies, so we do not show a cookie banner.'],
@@ -2676,7 +2676,7 @@
   /* ---------- staff: marking, reports, item statistics ---------- */
   async function viewStaff() {
     const m = $main(); const role = Core.S.me && Core.S.me.profile.role;
-    if (!['marker', 'admin'].includes(role)) { m.append(narrow(el('h1', {}, 'Staff area'), el('p', {}, 'This area is for Atomic markers and administrators.'), Backend.demo ? el('button', { class: 'btn small', type: 'button', id: 'becomeStaff', onclick: () => { Backend.demo.setRole('admin'); Core.refreshAccount().then(render); } }, 'Preview: make this account an administrator') : null)); return; }
+    if (!['marker', 'admin'].includes(role)) { m.append(narrow(el('h1', {}, 'Staff area'), el('p', {}, 'This area is for Camday markers and administrators.'), Backend.demo ? el('button', { class: 'btn small', type: 'button', id: 'becomeStaff', onclick: () => { Backend.demo.setRole('admin'); Core.refreshAccount().then(render); } }, 'Preview: make this account an administrator') : null)); return; }
     const tab = UI.staffTab || 'marking';
     m.append(el('h1', { style: 'margin:0' }, 'Staff'), el('div', { class: 'btnrow', role: 'tablist' }, ...[['marking', 'Marking queue'], ['reports', 'Question reports'], ['items', 'Question statistics']].map(([k, t]) => el('button', { class: 'chip' + (tab === k ? ' on' : ''), type: 'button', role: 'tab', onclick: () => { UI.staffTab = k; render(); } }, t))));
     if (tab === 'marking') {
@@ -2771,7 +2771,7 @@
     clearTimeout(skT); mo.disconnect(); if (skel) { skel.remove(); skel = null; }
     if (seq !== renderSeq) return;
     if (st && !isGuest() && (/^stage-\d+$/.test(r) || ['home', 'bank', 'tests', 'checkpoint', 'final', 'profile', 'board'].includes(r)) && !document.getElementById('stageSwitch') && !m.querySelector('.lockcard#stageSoon')) m.prepend(stageSwitcher());
-    if (r === 'admin') document.title = 'Atomic – Admin'; else if (r === 'staff') document.title = 'Atomic – Staff'; else document.title = `Atomic – Cambridge ${Core.stageLabel()}`;
+    if (r === 'admin') document.title = 'Camday – Admin'; else if (r === 'staff') document.title = 'Camday – Staff'; else document.title = `Camday – Cambridge ${Core.stageLabel()}`;
     m.focus({ preventScroll: true }); window.scrollTo(0, 0);
   }
   window.addEventListener('hashchange', render);

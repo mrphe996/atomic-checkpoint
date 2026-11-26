@@ -1,4 +1,4 @@
-/* Atomic — test rules shared by the server (api/) and the demo backend.
+/* Camday — test rules shared by the server (api/) and the demo backend.
    - pass: score / 30 strictly above 70 % on the raw score (21/30 is not a pass)
    - weak objectives: below 70 % of the marks available for that objective
    - remediation: up to 3 Core/Practice questions per weak objective, wrong-before first

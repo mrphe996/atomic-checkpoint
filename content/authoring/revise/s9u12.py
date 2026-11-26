@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Unit 12 Electrical Circuits — 2026 revision (written by the Atomic teaching team)."""
+"""Stage 9 Unit 12 Electrical Circuits — 2026 revision (written by the Camday teaching team)."""
 from c_kit import *
 
 SOURCES = [

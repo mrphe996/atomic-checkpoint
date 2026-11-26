@@ -29,10 +29,10 @@ export async function handle(req, f = fetch, now = Date.now()) {
       const att = await db(`attempts?learner_id=eq.${k.id}&select=form,status,pct,passed,created_at`, {}, f);
       parts.push(summary(k, prog, att, since));
     }
-    const text = `Hello ${p.display_name || ''},\n\nHere is this week's Atomic summary:\n\n${parts.join('\n\n')}\n\nYou can switch these emails off in Parent area → Settings.\n— Atomic Education`;
+    const text = `Hello ${p.display_name || ''},\n\nHere is this week's Camday summary:\n\n${parts.join('\n\n')}\n\nYou can switch these emails off in Parent area → Settings.\n— Camday`;
     if (env('RESEND_API_KEY')) {
       await f('https://api.resend.com/emails', { method: 'POST', headers: { Authorization: `Bearer ${env('RESEND_API_KEY')}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ from: env('MAIL_FROM', 'Atomic <hello@example.com>'), to: [email], subject: 'Your weekly Atomic summary', text }) });
+        body: JSON.stringify({ from: env('MAIL_FROM', 'Camday <hello@example.com>'), to: [email], subject: 'Your weekly Camday summary', text }) });
     }
     out.push({ to: email, text });
   }

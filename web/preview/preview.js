@@ -1,4 +1,4 @@
-/* Atomic design sample v4 — secure print-only worksheet viewer (demo data, no backend). */
+/* Camday design sample v4 — secure print-only worksheet viewer (demo data, no backend). */
 (function () {
   'use strict';
   var DOC = { id: 'S7-U03-W32', unit: 'Unit 3 · Cells', sec: '3.2 Inside plant and animal cells', mins: 25, marks: 16, pages: 3 };
@@ -22,8 +22,8 @@
       '<text x="0" y="12" font-family="Figtree,Arial" font-size="3.4" font-weight="700" fill="#0149AF" fill-opacity=".11">' + line + '</text>' +
       '<text x="52" y="34" font-family="Figtree,Arial" font-size="3.4" font-weight="700" fill="#0149AF" fill-opacity=".11">' + line + '</text></pattern></defs>' +
       '<rect width="210" height="297" fill="url(#wp' + info.k + ')"/>' +
-      // faint "ATOMIC EDUCATION" on every page, cover included
-      '<text x="105" y="160" text-anchor="middle" transform="rotate(-38 105 150)" font-family="Outfit,Arial" font-weight="800" font-size="15" fill="#0E1B3D" fill-opacity=".05" letter-spacing="2">ATOMIC EDUCATION</text>' +
+      // faint "CAMDAY" on every page, cover included
+      '<text x="105" y="160" text-anchor="middle" transform="rotate(-38 105 150)" font-family="Outfit,Arial" font-weight="800" font-size="15" fill="#0E1B3D" fill-opacity=".05" letter-spacing="2">CAMDAY</text>' +
       '</svg></div>';
   }
 
@@ -38,7 +38,7 @@
       }
       paths += '<polyline points="' + pts.join(' ') + '" fill="none" stroke="' + cols[k] + '" stroke-width=".4" stroke-opacity=".85"/>';
     }
-    return '<svg class="seal" viewBox="0 0 100 100">' + paths + '<circle cx="50" cy="50" r="22" fill="#fff" stroke="#0E1B3D" stroke-width=".5"/><text x="50" y="49" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="9" fill="#0E1B3D">ATOMIC</text><text x="50" y="58" text-anchor="middle" font-family="Figtree" font-weight="700" font-size="5.5" fill="#0149AF">VERIFIED</text></svg>';
+    return '<svg class="seal" viewBox="0 0 100 100">' + paths + '<circle cx="50" cy="50" r="22" fill="#fff" stroke="#0E1B3D" stroke-width=".5"/><text x="50" y="49" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="9" fill="#0E1B3D">CAMDAY</text><text x="50" y="58" text-anchor="middle" font-family="Figtree" font-weight="700" font-size="5.5" fill="#0149AF">VERIFIED</text></svg>';
   }
 
   function waves() {
@@ -54,7 +54,7 @@
   // ---------- page parts ----------
   function boxes(txt, n) { var o = '<span class="boxes">'; for (var i = 0; i < n; i++) o += '<i>' + esc(txt[i] || '') + '</i>'; return o + '</span>'; }
   function foot(info, n, last) {
-    return '<div class="pfoot"><div>© Atomic Education 2026 · ' + DOC.id + ' · Copy #' + info.serial + ' · ' + esc(info.code) + '<br>Printed for ' + esc(info.name) + ' (' + LEARNER.id + ') on ' + info.when + '. Not for sharing or resale.</div>' +
+    return '<div class="pfoot"><div>© Camday 2026 · ' + DOC.id + ' · Copy #' + info.serial + ' · ' + esc(info.code) + '<br>Printed for ' + esc(info.name) + ' (' + LEARNER.id + ') on ' + info.when + '. Not for sharing or resale.</div>' +
       '<div class="to">' + (last ? 'End of worksheet' : '[Turn over') + '</div></div>';
   }
   function head(info, n) { return '<div class="qhead"><span><b>Cambridge</b> Stage 7 Science · ' + DOC.unit + ' · ' + DOC.sec + '</span><b>' + n + '</b></div>'; }
@@ -65,8 +65,8 @@
   function cover(info) {
     var d = info.date, dd = ('0' + d.getDate()).slice(-2) + ('0' + (d.getMonth() + 1)).slice(-2) + d.getFullYear();
     return page(info, 1,
-      '<div class="cv-h"><img src="../atomic_logo.png" alt="" style="height:17mm"><div><div class="nm">ATOMIC EDUCATION</div><div class="tg"><b>Cambridge</b> Lower Secondary Science · Checkpoint preparation</div></div></div>' + waves() +
-      '<div class="cv-meta">Written by the Atomic teaching team · Videos, practice and Unit Tests online at Atomic<br>Learner account: ' + esc(LEARNER.email) + '</div>' +
+      '<div class="cv-h"><img src="../camday_logo.png" alt="" style="height:17mm"><div><div class="nm">CAMDAY</div><div class="tg"><b>Cambridge</b> Lower Secondary Science · Checkpoint preparation</div></div></div>' + waves() +
+      '<div class="cv-meta">Written by the Camday teaching team · Videos, practice and Unit Tests online at Camday<br>Learner account: ' + esc(LEARNER.email) + '</div>' +
       '<div class="cv-ttl"><span>PRACTICE WORKSHEET</span><span class="sc">SCORE: ______ / ' + DOC.marks + '</span></div>' +
       '<table class="grid"><tr><td class="k">LEARNER NAME</td><td colspan="3" class="pre">' + esc(info.name) + '</td></tr>' +
       '<tr><td class="k">LEARNER ID</td><td>' + boxes(LEARNER.id.replace(/-/g, ''), 7) + '</td><td class="k" style="width:22mm">DATE</td><td>' + boxes(dd, 8) + '</td></tr></table>' +
@@ -75,9 +75,9 @@
       '<div><div class="code">' + DOC.id + '</div><div style="margin-top:1mm">' + DOC.mins + ' minutes</div><div style="font-size:9pt;color:#3E4558">' + DOC.marks + ' marks</div></div></div>' +
       '<p style="margin:5mm 0 0">You must answer on this worksheet.</p>' +
       '<div class="sec">YOU WILL NEED</div><ul><li>A pen and a ruler. No other materials are needed.</li></ul>' +
-      '<div class="sec">INSTRUCTIONS</div><ul><li>Answer <b>all</b> questions.</li><li>Use a black or dark blue pen. You may use an HB pencil for diagrams.</li><li>Write your answer to each question in the space provided.</li><li>When you finish, open Unit 3 on Atomic and check your answers with the worked solutions.</li></ul>' +
+      '<div class="sec">INSTRUCTIONS</div><ul><li>Answer <b>all</b> questions.</li><li>Use a black or dark blue pen. You may use an HB pencil for diagrams.</li><li>Write your answer to each question in the space provided.</li><li>When you finish, open Unit 3 on Camday and check your answers with the worked solutions.</li></ul>' +
       '<div class="sec">INFORMATION</div><ul><li>The total mark for this worksheet is <b>' + DOC.marks + '</b>.</li><li>The number of marks for each question or part question is shown in brackets [ ].</li></ul>' +
-      '<div class="verify">' + seal(info.code) + '<div>Verification code<br><b>' + info.code + '</b><br>Check this copy at <b style="font-size:9pt;letter-spacing:0">atomic › Verify a document</b>. The code is tied to this learner, this worksheet and copy #' + info.serial + '. A copy whose code does not match was not printed by Atomic.</div></div>' +
+      '<div class="verify">' + seal(info.code) + '<div>Verification code<br><b>' + info.code + '</b><br>Check this copy at <b style="font-size:9pt;letter-spacing:0">atomic › Verify a document</b>. The code is tied to this learner, this worksheet and copy #' + info.serial + '. A copy whose code does not match was not printed by Camday.</div></div>' +
       '<p style="text-align:center;font-size:9pt;margin:3mm 0 0">This worksheet has <b>' + DOC.pages + '</b> pages.</p>' + foot(info, 1));
   }
 

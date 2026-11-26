@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Shared helpers for Stage 5 Mathematics units. Written by the Atomic teaching team."""
+"""Shared helpers for Stage 5 Mathematics units. Written by the Camday teaching team."""
 from fractions import Fraction as Fr
 from kit import N, frac
 

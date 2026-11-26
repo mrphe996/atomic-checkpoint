@@ -3,7 +3,7 @@
 formulae, 2.3 Collecting like terms, 2.4 Expanding brackets, 2.5 Constructing and solving equations, 2.6 Inequalities).
 Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (find all, test a claim, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 
 U = Unit(2, "Expressions, Formulae and Equations", "Algebra",

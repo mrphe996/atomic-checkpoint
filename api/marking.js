@@ -1,4 +1,4 @@
-// Atomic markers (role marker/admin) mark written test answers.
+// Camday markers (role marker/admin) mark written test answers.
 // GET  /api/marking               → queue of pending attempts with the mark scheme and an automatic suggestion
 // POST /api/marking { attemptId, grades: { itemId: marks } } → final mark; the database trigger records the first pass
 import { send, readJson, getUser, db, loadUnit, loadPack, role, Rules, rowToAttempt } from './_lib/supa.js';

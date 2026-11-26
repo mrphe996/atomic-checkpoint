@@ -2,7 +2,7 @@
 """Stage 4 Mathematics (Primary) · Unit 3 Addition and subtraction of whole numbers (3.1 Using a symbol to represent a missing number
 or operation, 3.2 Addition and subtraction of whole numbers, 3.3 Generalising with odd and even numbers). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 from h import *
 

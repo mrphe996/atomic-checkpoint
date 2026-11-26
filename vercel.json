@@ -43,7 +43,7 @@
       ]
     },
     {
-      "source": "/atomic_logo.png",
+      "source": "/camday_logo.png",
       "headers": [
         {
           "key": "Cache-Control",

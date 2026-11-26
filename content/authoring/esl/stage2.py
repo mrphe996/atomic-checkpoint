@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Atomic ESL Stage 2 (ages 6–7). Original texts and questions written by the Atomic teaching team."""
+"""Camday ESL Stage 2 (ages 6–7). Original texts and questions written by the Camday teaching team."""
 from ekit import parse
 
 UNITS = [

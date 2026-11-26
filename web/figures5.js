@@ -1,4 +1,4 @@
-/* Atomic Education — mathematics figures, part 2 (SVG, viewBox 480×320): pie charts and more. Original Atomic artwork drawn from parameters.
+/* Camday — mathematics figures, part 2 (SVG, viewBox 480×320): pie charts and more. Original Camday artwork drawn from parameters.
    Use in a question as fig: { kind: 'pie', labels: [...], values: [...] }. Each returns { svg, a } like figures.js. */
 (function () {
   const AF = window.AtomicFig; if (!AF) return;

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Build Atomic ESL Stage N (course key 20 + N):  python3 build_esl.py 2 [3 …]
+"""Build Camday ESL Stage N (course key 20 + N):  python3 build_esl.py 2 [3 …]
 Writes content/src/stage2N-unitUU.json and the video scripts /home/claude/build/esl/sN/scripts.json.
 Video timings (src, captions, pause times) are read from /home/claude/build/esl/sN/timing.json when present."""
 import os, sys, json, importlib

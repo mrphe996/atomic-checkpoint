@@ -5,8 +5,8 @@ L = "(1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 22, 23, 24,
 src = open(os.path.join(ROOT, "supabase/migrations/20261128000100_young_stages.sql")).read()
 old = "(1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19)"
 head = src.split("insert into public.stage_units")[0].replace(old, L)
-head = head.replace("-- Cambridge Primary Stages 1 and 2 (Atomic picture courses for ages 5–7): Science course keys 1, 2; Mathematics course keys 11, 12.",
-                    "-- Atomic English as a Second Language, Stages 2–9: course keys 22–29.")
+head = head.replace("-- Cambridge Primary Stages 1 and 2 (Camday picture courses for ages 5–7): Science course keys 1, 2; Mathematics course keys 11, 12.",
+                    "-- Camday English as a Second Language, Stages 2–9: course keys 22–29.")
 head = head.replace("case when p_stage >= 10 then 'You are enrolled in Stage ' || (p_stage - 10) || ' Mathematics'",
                     "case when p_stage >= 20 then 'You are enrolled in Stage ' || (p_stage - 20) || ' English (ESL)' when p_stage >= 10 then 'You are enrolled in Stage ' || (p_stage - 10) || ' Mathematics'")
 rows = []

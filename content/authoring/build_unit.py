@@ -42,7 +42,7 @@ def build(n, g=7):
     for s in secs:
         for o in s['objs']: segs.setdefault(o, [s['id'], 0.0, s['video']['dur'], s['title']])
     for t in (T.TEST_A, T.TEST_B): assert sum(x['pts'] for x in t) == 30, sum(x['pts'] for x in t)
-    data = {"course": {"id": f"s{g}", "title": f"Atomic – Cambridge Lower Secondary Science — Stage {g}", "units": [{"n": i + 1, "t": t} for i, t in enumerate(TITLES)]},
+    data = {"course": {"id": f"s{g}", "title": f"Camday – Cambridge Lower Secondary Science — Stage {g}", "units": [{"n": i + 1, "t": t} for i, t in enumerate(TITLES)]},
             "unit": {"n": n, "stage": g, "title": TITLES[n - 1], "strandShort": U.STRAND, "blurb": U.BLURB, "strand": U.STRAND, "framework": f"Cambridge Lower Secondary Science (0893), Stage {g}"},
             "objectives": U.OBJECTIVES, "sections": secs, "segments": segs, "sources": getattr(U, 'SOURCES', []),
             "tests": {"A": T.TEST_A, "B": T.TEST_B, "pass": 0.7}, "mindmap": U.MINDMAP}

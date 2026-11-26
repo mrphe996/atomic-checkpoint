@@ -2,7 +2,7 @@
 """Stage 4 Mathematics (Primary) · Unit 18 Position, direction and movement (18.1 Position and movement, 18.2 Reflecting 2D shapes).
 Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 from h import *
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cambridge Primary Mathematics Stages 1 and 2 (ages 5-7) – Atomic picture lessons and tap-only practice.
+"""Cambridge Primary Mathematics Stages 1 and 2 (ages 5-7) – Camday picture lessons and tap-only practice.
 Topics follow the Cambridge Primary Mathematics curriculum framework (0096) for Stages 1 and 2; every lesson, picture,
-question and explanation is an Atomic original. Written by the Atomic teaching team."""
+question and explanation is an Camday original. Written by the Camday teaching team."""
 from qbank import *
 from science import build_sec, EM
 

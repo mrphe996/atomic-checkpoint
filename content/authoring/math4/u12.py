@@ -2,7 +2,7 @@
 """Stage 4 Mathematics (Primary) · Unit 12 Investigating 3D shapes and nets (12.1 The properties of 3D shapes, 12.2 Nets of 3D shapes).
 Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 from h import *
 

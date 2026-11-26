@@ -2,7 +2,7 @@
 """Stage 8 Mathematics · Unit 12 Ratio and proportion (12.1 Simplifying ratios, 12.2 Sharing in a ratio,
 12.3 Ratio and direct proportion). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from math import gcd
 from kit import *
 

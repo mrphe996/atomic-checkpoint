@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 7 Unit 4 – Classifying Living Things. Written by the Atomic teaching team."""
+"""Stage 7 Unit 4 – Classifying Living Things. Written by the Camday teaching team."""
 from c_kit import *
 
 STRAND = "Biology"

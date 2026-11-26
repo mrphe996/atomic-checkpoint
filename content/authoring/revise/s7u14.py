@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 7 Unit 14 Earth and Beyond — 2026 revision (written by the Atomic teaching team)."""
+"""Stage 7 Unit 14 Earth and Beyond — 2026 revision (written by the Camday teaching team)."""
 from c_kit import *
 
 SOURCES = [

@@ -1,5 +1,5 @@
 # Primary Maths reasoning Practice for the sections that had none (Stages 3-6). Two per section:
-# evaluate a claim / spot the error (MCQ) and always-sometimes-never (grid). Written by the Atomic teaching team.
+# evaluate a claim / spot the error (MCQ) and always-sometimes-never (grid). Written by the Camday teaching team.
 from science_v2.k import Unit
 
 def _u(key):

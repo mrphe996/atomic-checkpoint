@@ -2,7 +2,7 @@
 """Stage 4 Mathematics (Primary) · Unit 1 Numbers and the number system (1.1 Counting and sequences, 1.2 Negative numbers,
 1.3 Understanding place value). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 from h import *
 

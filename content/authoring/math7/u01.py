@@ -3,7 +3,7 @@
 1.3 Lowest common multiples, 1.4 Highest common factors, 1.5 Tests for divisibility, 1.6 Square roots and cube roots).
 Upgraded lesson (v2): why each rule works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from math import gcd
 from kit import *
 import kit as _kit

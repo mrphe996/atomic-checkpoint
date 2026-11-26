@@ -1,4 +1,4 @@
-/* Atomic Design System v4 — sample. Flat, airy, pill buttons, deep-navy ink. */
+/* Camday Design System v4 — sample. Flat, airy, pill buttons, deep-navy ink. */
 :root{--ink:#0E1B3D;--blue:#0149AF;--sky:#4F7CE8;--gold:#F3BF69;--goldd:#B9842B;--slate:#3E4558;--muted:#6B7385;--band:#F6F7FB;--line:#E3E7F0;--ok:#1F9D5C;--bad:#D64545;
   --h:'Outfit',system-ui,sans-serif;--b:'Figtree',system-ui,Segoe UI,Arial,sans-serif;--r:16px;--sh:0 10px 30px rgba(14,27,61,.08)}
 *{box-sizing:border-box}

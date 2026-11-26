@@ -1,4 +1,4 @@
-"""Stage 9 Science — extra Hard (* Advanced) questions written by Atomic (original contexts, numbers and wording).
+"""Stage 9 Science — extra Hard (* Advanced) questions written by Camday (original contexts, numbers and wording).
 Edits content/src/stage9-unitNN.json in place; safe to run again. Then: node tools/build-content.mjs"""
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -70,7 +70,7 @@ add(4, '4.1', mcq('s9u04s1h01', 'O1', 'Moving from left to right along a period,
 add(4, '4.2',
   mcq('s9u04s2h01', 'O4', 'Use the data for Group 1. Rubidium is the next element below potassium. Predict its melting point.', 'about 39 °C',
       [('about 180 °C', 'Melting points fall going down the group.'), ('about 98 °C', 'That is the value for sodium.'), ('about −60 °C', 'The fall from sodium to potassium is 35 °C, so a fall of over 120 °C is too big.')],
-      data=[['Element', 'Atomic number', 'Melting point in °C'], ['lithium', '3', '180'], ['sodium', '11', '98'], ['potassium', '19', '63']], skill='Data'),
+      data=[['Element', 'Camday number', 'Melting point in °C'], ['lithium', '3', '180'], ['sodium', '11', '98'], ['potassium', '19', '63']], skill='Data'),
   mcq('s9u04s2h02', 'O3', 'Going down Group 7, the boiling points are: fluorine −188 °C, chlorine −34 °C, bromine 59 °C. Iodine is next. What state is iodine at 20 °C, and why?',
       'Solid: boiling and melting points rise down the group, so iodine melts well above 20 °C.',
       [('Gas: all Group 7 elements are gases.', 'Bromine is a liquid at 20 °C.'), ('Liquid: it must be the same as bromine.', 'The trend continues upwards.'), ('It cannot be predicted from a trend.', 'Trends in groups are used to make predictions.')]))

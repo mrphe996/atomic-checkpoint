@@ -1,4 +1,4 @@
-/* Atomic Education — mathematics figure library (SVG, viewBox 480×320). Original Atomic artwork drawn from parameters.
+/* Camday — mathematics figure library (SVG, viewBox 480×320). Original Camday artwork drawn from parameters.
    Use in a question as fig: { kind: 'shape', ... }. Each returns { svg, a } like figures.js. */
 (function () {
   const AF = window.AtomicFig; if (!AF) return;

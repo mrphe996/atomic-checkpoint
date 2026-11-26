@@ -40,7 +40,7 @@
     const t = setTimeout(() => { doc.body.appendChild(o); requestAnimationFrame(() => o.classList.add('in')); }, 120);
     return Promise.resolve(p).finally(() => { clearTimeout(t); o.classList.remove('in'); setTimeout(() => o.remove(), 220); });
   }
-  // the Atomic atom: three orbits and an electron on each
+  // the Camday atom: three orbits and an electron on each
   function atom(size) {
     return `<svg class="atomspin" width="${size}" height="${size}" viewBox="0 0 64 64" aria-hidden="true">
       <circle cx="32" cy="32" r="5" fill="#F3BF69"/>

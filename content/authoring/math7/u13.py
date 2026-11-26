@@ -2,7 +2,7 @@
 """Stage 7 Mathematics · Unit 13 Probability (13.1 The probability scale, 13.2 Mutually exclusive outcomes,
 13.3 Experimental probabilities). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Compact authoring kit for Stage 8 and 9 units (written by the Atomic teaching team).
+"""Compact authoring kit for Stage 8 and 9 units (written by the Camday teaching team).
 Ids are generated: s{stage}u{unit}s{section}{kind}{n}. Kinds: r = Core, p = practice, a = advanced, v = video stop.
 
     u = Unit(8, 1)

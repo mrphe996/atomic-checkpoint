@@ -2,7 +2,7 @@
 """Stage 6 Mathematics (Primary) · Unit 14 Multiplication and division (2) (14.1 Multiplying decimals,
 14.2 Multiplying and dividing fractions, 14.3 Dividing decimals). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 

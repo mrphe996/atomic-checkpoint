@@ -1,4 +1,4 @@
-/* Atomic Education — admin console (#admin). Role 'admin' only; every change goes through Backend.admin and is written to the audit log.
+/* Camday — admin console (#admin). Role 'admin' only; every change goes through Backend.admin and is written to the audit log.
    Tabs: Overview · Users · Content · Exams · Reports · Announcements · Settings · Audit log. */
 (function () {
   const { el } = QE;
@@ -21,12 +21,12 @@
     async function view() {
       const m = $main(); const me = Core.S.me;
       if (!me || me.profile.role !== 'admin') {
-        m.append(el('section', { class: 'card narrow' }, el('h1', {}, 'Admin console'), el('p', {}, 'This area is for Atomic administrators.'),
+        m.append(el('section', { class: 'card narrow' }, el('h1', {}, 'Admin console'), el('p', {}, 'This area is for Camday administrators.'),
           Backend.demo ? el('button', { class: 'btn small', type: 'button', id: 'becomeAdmin', onclick: () => { Backend.demo.setRole('admin'); Core.S.me.profile.role = 'admin'; render(); } }, 'Make this preview account an administrator') : null));
         return;
       }
       const tabs = [['overview', 'Overview'], ['users', 'Users'], ['content', 'Content'], ['exams', 'Exams'], ['reports', 'Reports'], ['news', 'News & roadmap'], ['settings', 'Settings'], ['errors', 'Page errors'], ['audit', 'Audit log']];
-      m.append(el('div', { class: 'adhead' }, el('div', {}, el('span', { class: 'eyebrow' }, 'ATOMIC EDUCATION'), el('h1', { style: 'margin:0' }, 'Admin console')),
+      m.append(el('div', { class: 'adhead' }, el('div', {}, el('span', { class: 'eyebrow' }, 'CAMDAY'), el('h1', { style: 'margin:0' }, 'Admin console')),
         el('a', { class: 'btn small', href: '#staff' }, 'Marking queue →')),
         el('div', { class: 'btnrow adtabs', role: 'tablist' }, ...tabs.map(([k, t]) => el('button', { class: 'chip' + (A.tab === k ? ' on' : ''), type: 'button', role: 'tab', id: 'adTab-' + k, 'aria-selected': String(A.tab === k), onclick: () => { A.tab = k; render(); } }, t))));
       const box = el('div', { class: 'adbody', id: 'adBody' }); m.append(box);

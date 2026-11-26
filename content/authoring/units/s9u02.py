@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 9 Unit 2 – Excretion. Written by the Atomic teaching team."""
+"""Stage 9 Unit 2 – Excretion. Written by the Camday teaching team."""
 from c_kit2 import Unit, B
 
 STRAND = "Biology"

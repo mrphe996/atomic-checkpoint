@@ -2,7 +2,7 @@
 """Stage 8 Mathematics · Unit 4 Decimals (4.1 Ordering decimals, 4.2 Multiplying decimals, 4.3 Dividing by decimals,
 4.4 Making decimal calculations easier). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 
 U = Unit(4, "Decimals", "Number",

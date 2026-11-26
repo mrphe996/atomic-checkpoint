@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 6 Mathematics (Primary) · Unit 3 Averages (3.1 Mode, median, mean and range). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 
 U = Unit(3, "Averages", "Statistics and probability",

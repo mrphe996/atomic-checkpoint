@@ -7,6 +7,6 @@ def para(id, obj, prompt, rubric, need, model, partial, data=None, adv=False, ex
          'model': model, 'partial': [{'text': t, 'score': s, 'why': w} for t, s, w in partial], 'hint': '', 'reason': ''}
     if data: q['data'] = {'head': data[0], 'rows': data[1:]}
     if adv: q['adv'] = True
-    if ext: q['source'] = 'Atomic original'
+    if ext: q['source'] = 'Camday original'
     if teacher: q['teacher'] = True; q['pts'] = pts
     return q

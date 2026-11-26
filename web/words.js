@@ -1,6 +1,6 @@
-/* Atomic — My word book: words a learner saves from lessons (or adds), with their own notes, and a no-typing practice game.
+/* Camday — My word book: words a learner saves from lessons (or adds), with their own notes, and a no-typing practice game.
    Saved words live in the learner's progress (st.words), so they follow the learner to any device.
-   Written by the Atomic teaching team. */
+   Written by the Camday teaching team. */
 (function () {
   'use strict';
   const el = (...a) => window.QE.el(...a);

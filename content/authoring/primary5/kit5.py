@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 5 uses the Primary kit with stage 5 settings (media/s5, ids p5uNN). Written by the Atomic teaching team."""
+"""Stage 5 uses the Primary kit with stage 5 settings (media/s5, ids p5uNN). Written by the Camday teaching team."""
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(HERE, '..', 'primary6')); sys.path.append(os.path.join(HERE, '..', '..', '..', '..', 'build', 'p5'))

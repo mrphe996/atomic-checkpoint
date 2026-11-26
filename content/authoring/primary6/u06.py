@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cambridge Primary Science Stage 6 · Unit 6 Light and the Solar System. Written by the Atomic teaching team."""
+"""Cambridge Primary Science Stage 6 · Unit 6 Light and the Solar System. Written by the Camday teaching team."""
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from kit6 import *

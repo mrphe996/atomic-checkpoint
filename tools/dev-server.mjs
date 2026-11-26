@@ -24,4 +24,4 @@ http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': type, 'Accept-Ranges': 'bytes', 'Content-Length': size });
     fs.createReadStream(file).pipe(res);
   }
-}).listen(PORT, () => console.log(`Atomic preview on http://localhost:${PORT} (demo mode – data stays in your browser)`));
+}).listen(PORT, () => console.log(`Camday preview on http://localhost:${PORT} (demo mode – data stays in your browser)`));

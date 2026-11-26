@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Atomic Primary Science (Stage 6) authoring kit. Reuses the question builders of the Mathematics kit,
+"""Camday Primary Science (Stage 6) authoring kit. Reuses the question builders of the Mathematics kit,
 without its number tidy-up. Each section has an animated video with pause questions, 8 Core questions
 (4 listening + 4 say-the-word: these unlock the next lesson), Practice, * Advanced, a word bank and an experiment room.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 import os, sys, json, random, re
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.append(os.path.join(HERE, '..', 'math9'))
 import kit as K
@@ -155,7 +155,7 @@ class Unit:
         segs = {}
         for s in secs:
             for o in s['objs']: segs.setdefault(o, [s['id'], 0.0, s['video']['dur'], s['title']])
-        return {'course': {'id': f's{STAGE}', 'title': f'Atomic – Cambridge Primary Science — Stage {STAGE}', 'units': [{'n': i + 1, 't': t} for i, t in enumerate(titles)]},
+        return {'course': {'id': f's{STAGE}', 'title': f'Camday – Cambridge Primary Science — Stage {STAGE}', 'units': [{'n': i + 1, 't': t} for i, t in enumerate(titles)]},
                 'unit': {'n': self.n, 'stage': STAGE, 'title': self.title, 'strandShort': self.strand.split(':')[0], 'blurb': self.blurb, 'strand': self.strand,
                          'framework': f'Cambridge Primary Science (0097), Stage {STAGE}', 'primary': True},
                 'objectives': self.objectives, 'sections': secs, 'segments': segs, 'sources': [],

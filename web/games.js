@@ -1,7 +1,7 @@
-/* Atomic word games — five games that help learners remember key words (Stages 1–6, Science, Maths and English).
+/* Camday word games — five games that help learners remember key words (Stages 1–6, Science, Maths and English).
    One player level for all games, with no top limit: every level makes the games faster and the words harder.
    Sound effects and music are made in the browser (Web Audio); words are read aloud from the lesson recordings
-   or by the browser's English voice. Written by the Atomic teaching team. */
+   or by the browser's English voice. Written by the Camday teaching team. */
 window.Games = (function () {
   'use strict';
   const GAMES = [

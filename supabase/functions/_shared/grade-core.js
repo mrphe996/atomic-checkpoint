@@ -1,4 +1,4 @@
-/* Atomic — shared grading core (browser + Node). One source of truth for marking.
+/* Camday — shared grading core (browser + Node). One source of truth for marking.
    Used by: web/qengine.js (practice feedback, demo mode), api/submit-test.js (server-side marking),
    tools/build-content.mjs (strips answer keys from the public content). */
 (function (root, factory) {

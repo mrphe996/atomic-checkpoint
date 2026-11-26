@@ -1,4 +1,4 @@
-"""Helpers for the Atomic Hard-question banks (s7_hard_bank.py, s9_hard_bank.py …). All questions are Atomic originals."""
+"""Helpers for the Camday Hard-question banks (s7_hard_bank.py, s9_hard_bank.py …). All questions are Camday originals."""
 import json, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, '..', '..', 'src')
@@ -7,7 +7,7 @@ F8 = 'The data show … For example … This is because … The results are / ar
 PLAN = 'I will change … I will measure … I will keep … the same. I will repeat … I expect …'
 
 def base(id, typ, obj, prompt, skill, diff='VH'):
-    return {'id': id, 'type': typ, 'prompt': ADV + prompt, 'diff': diff, 'obj': obj, 'skill': skill, 'hint': '', 'reason': '', 'adv': True, 'source': 'Atomic original'}
+    return {'id': id, 'type': typ, 'prompt': ADV + prompt, 'diff': diff, 'obj': obj, 'skill': skill, 'hint': '', 'reason': '', 'adv': True, 'source': 'Camday original'}
 def tbl(q, data):
     if data: q['data'] = {'head': data[0], 'rows': data[1:]}
     return q

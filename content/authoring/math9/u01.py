@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Stage 9 Mathematics · Unit 1 Number and calculation (1.1 Irrational numbers, 1.2 Standard form, 1.3 Indices). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 import math
 from fractions import Fraction as Fr
 from kit import *

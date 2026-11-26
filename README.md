@@ -1,4 +1,4 @@
-# Atomic Checkpoint – Science Stage 7
+# Camday Checkpoint – Science Stage 7
 
 Self-study course for Cambridge Lower Secondary Science (Stage 7), sold to families in the UK and South-East Asia.
 

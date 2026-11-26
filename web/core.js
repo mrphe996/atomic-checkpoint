@@ -1,4 +1,4 @@
-/* Atomic Education — learner state, course rules and access.
+/* Camday — learner state, course rules and access.
    The learner's progress lives in the backend (Backend.saveProgress); marking happens on the server
    (Backend.submitTest) – this file only mirrors results for the screens. */
 (function () {
@@ -270,7 +270,7 @@
   }
 
   /* ---------- end-of-year exam ---------- */
-  // Checkpoint-format practice papers (Atomic papers in the format of Cambridge 0893/01 and 0893/02)
+  // Checkpoint-format practice papers (Camday papers in the format of Cambridge 0893/01 and 0893/02)
   async function loadCp() { if (INDEX && !INDEX.cp) return null; if (!CP) { const r = await fetch(`content/stage${STAGE}-cp.json`); CP = r.ok ? await withOv(`stage${STAGE}-cp`, await r.json()) : null; } return CP; }
   async function refreshCp() { const st = cur(); if (!st || S.guest) { S.cpAttempts = []; return []; } S.cpAttempts = await Backend.attempts(st.id, `stage${STAGE}-cp`); return S.cpAttempts; }
   async function submitCp(form, answers, clientKey, meta) {

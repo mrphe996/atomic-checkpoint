@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Atomic Primary Science for the youngest learners (Stages 3 and 4, ages 7–9).
+"""Camday Primary Science for the youngest learners (Stages 3 and 4, ages 7–9).
 Uses the Primary kit, with these rules: no typing anywhere (they cannot type words yet), most questions are
 multiple choice with big picture cards, everyday-life questions, and labs where results are tapped, not typed.
 Core (8): listen and tap the picture (4), read the meaning and tap the picture (2), listen to a sentence and tap the
-missing word's picture (2).  Written by the Atomic teaching team."""
+missing word's picture (2).  Written by the Camday teaching team."""
 import os, sys, random
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(HERE, '..', 'primary6'))

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Question kinds for Stages 1-2, built from simple data. All tap-only. Written by the Atomic teaching team."""
+"""Question kinds for Stages 1-2, built from simple data. All tap-only. Written by the Camday teaching team."""
 from ykit import *
 
 

@@ -4,7 +4,7 @@ always/sometimes/never, read the data) added to every Science section of Stages 
 science_v2/sGuNN.py defines V2 = {section id: [questions]} written with the c_kit helpers.
 apply(stage, unit, d) is called by the unit builders just before they write content/src; running
 this file applies the overlay to every existing content/src unit. Applying twice gives the same result.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 import importlib, json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, '..'))

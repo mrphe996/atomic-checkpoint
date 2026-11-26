@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Helpers for the Science v2 reasoning questions (written by the Atomic teaching team).
-Every question is an Atomic original; feedback explains why each wrong idea is wrong."""
+"""Helpers for the Science v2 reasoning questions (written by the Camday teaching team).
+Every question is an Camday original; feedback explains why each wrong idea is wrong."""
 from c_kit import mc, gd
 ASN = ["Always true", "Sometimes true", "Never true"]
 SKILL = {"P": "Prediction", "E": "Evaluation", "F": "Enquiry", "D": "Data", "R": "Reasoning"}

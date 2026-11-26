@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Atomic ESL Stage 6 (ages 10–11). Original texts and questions written by the Atomic teaching team."""
+"""Camday ESL Stage 6 (ages 10–11). Original texts and questions written by the Camday teaching team."""
 
 UNITS = [
 ("Adventure Fiction", "Reading fiction", "Building tension, the second conditional, complex sentences with although and while, and an adventure story.", """

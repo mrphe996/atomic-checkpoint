@@ -2,7 +2,7 @@
   "name": "atomic-checkpoint",
   "private": true,
   "type": "module",
-  "description": "Atomic Checkpoint \u2013 Cambridge Lower Secondary Science self-study platform (static web app on Vercel + Supabase database, auth and edge functions).",
+  "description": "Camday Checkpoint \u2013 Cambridge Lower Secondary Science self-study platform (static web app on Vercel + Supabase database, auth and edge functions).",
   "engines": {
     "node": ">=20"
   },

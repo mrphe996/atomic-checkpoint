@@ -2,7 +2,7 @@
 """Stage 6 Mathematics (Primary) · Unit 2 Numbers and sequences (2.1 Counting and sequences, 2.2 Special numbers,
 2.3 Common multiples and factors). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from math import gcd
 from kit import *
 

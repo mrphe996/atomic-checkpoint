@@ -1,5 +1,5 @@
-/* Atomic Primary (Stage 6): listening, read-aloud checks, the word bank and the experiment room.
-   Written by the Atomic teaching team. */
+/* Camday Primary (Stage 6): listening, read-aloud checks, the word bank and the experiment room.
+   Written by the Camday teaching team. */
 (function () {
   'use strict';
   const el = (...a) => window.QE.el(...a);
@@ -39,7 +39,7 @@
     const mic = el('button', { type: 'button', class: 'micbtn', 'aria-label': 'Tap and say the word' }, el('span', { class: 'mi', 'aria-hidden': 'true' }, '🎤'), el('span', { class: 'ml' }, 'Tap, then say the word'));
     const tries = el('div', { class: 'saytries', 'aria-hidden': 'true' });
     const fb = el('div', { class: 'fb', 'aria-live': 'polite' }); const typed = el('div');
-    const note = el('p', { class: 'muted small' }, 'Your browser listens to check your word. Atomic does not record or keep your voice.');
+    const note = el('p', { class: 'muted small' }, 'Your browser listens to check your word. Camday does not record or keep your voice.');
     host.append(card, hear, el('div', { class: 'sayrow' }, mic, tries), typed, fb, note);
     const drawTries = () => { tries.innerHTML = ''; for (let i = 0; i < MAX; i++) tries.append(el('i', { class: i < rec.tries ? (rec.ok && i === rec.tries - 1 ? 'ok' : 'bad') : '' })); };
     const finish = () => { mic.disabled = true; mic.classList.remove('on'); o.save(rec); o.onDone && o.onDone(rec); };

@@ -1,4 +1,4 @@
-"""Stage 3 and Stage 4 Science (young Primary) — extra Hard (* Advanced) questions written by Atomic.
+"""Stage 3 and Stage 4 Science (young Primary) — extra Hard (* Advanced) questions written by Camday.
 Learners aged 7–9 do not type: every answer is tapped (picture choices, sorting, matching, ordering).
 Edits content/src/stage3-unitNN.json and stage4-unitNN.json in place; safe to run again."""
 import os, sys

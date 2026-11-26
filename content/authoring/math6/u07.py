@@ -2,7 +2,7 @@
 """Stage 6 Mathematics (Primary) · Unit 7 Exploring measures (7.1 Rectangles and triangles, 7.2 Time).
 Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from kit import *
 
 U = Unit(7, "Exploring Measures", "Geometry and measure",

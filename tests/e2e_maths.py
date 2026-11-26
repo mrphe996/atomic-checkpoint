@@ -8,7 +8,7 @@ with sync_playwright() as p:
     b = p.chromium.launch(executable_path='/usr/bin/google-chrome'); ctx = b.new_context(viewport={'width': 1280, 'height': 900}, reduced_motion='reduce'); pg = ctx.new_page(); errs = []
     pg.on('pageerror', lambda e: errs.append(str(e)))
     pg.goto(BASE + '?reset=1#home'); pg.wait_for_timeout(800)
-    pg.evaluate("""(async()=>{ await Backend.signUp({email:'mx@example.com',password:'password123',name:'Max Maths',birthYear:2013,grade:'Year 7',country:'VN',schoolOther:'Atomic',tester:true}); await Core.boot(Core.C); await Core.switchStage(17); await Core.switchUnit(2); location.hash='profile'; })()""")
+    pg.evaluate("""(async()=>{ await Backend.signUp({email:'mx@example.com',password:'password123',name:'Max Maths',birthYear:2013,grade:'Year 7',country:'VN',schoolOther:'Camday',tester:true}); await Core.boot(Core.C); await Core.switchStage(17); await Core.switchUnit(2); location.hash='profile'; })()""")
     pg.wait_for_timeout(3500); pg.click('#simAll'); pg.wait_for_timeout(800)
     sec = pg.evaluate("(()=>{ const s=Core.sec('2.3'); return { kinds: s.lesson.map(b=>b.k), figs: s.lesson.filter(b=>b.fig).map(b=>b.fig.kind), checks: s.stops.length, prac: s.prac.map(q=>q.prompt), more: (s.more||[]).length } })()")
     ok('example' in sec['kinds'] and 'method' in sec['kinds'] and 'tiles' in sec['figs'] and sec['checks'] >= 2, f"M1 Lesson 2.3 explains with tiles, a worked contrast example, a method and {sec['checks']} prediction checks")

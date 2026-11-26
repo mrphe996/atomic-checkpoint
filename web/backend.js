@@ -1,4 +1,4 @@
-/* Atomic — data layer. One interface, two implementations:
+/* Camday — data layer. One interface, two implementations:
    - DemoBackend: everything in this browser (localStorage). For previews and design reviews; no server needed.
    - LiveBackend: Supabase Auth + PostgREST (row-level security) + Vercel functions (/api/*) for marking,
      payments, data export and deletion. No SDK: plain fetch, so the page has no build step.
@@ -33,7 +33,7 @@
         const first = !D.results[lid][unit + ':notified']; D.results[lid][unit + ':notified'] = true;
         const un = Number(unit.slice(-2)), ut = (((window.Core && Core.INDEX) || { units: [] }).units.find(u => u.n === un) || {}).t || ''; const uname = `Unit ${un}${ut ? ': ' + ut : ''}`;
         note(a, lid, 'test_passed', `You passed ${uname}!`, `Score ${at.pct.toFixed(1)}%`);
-        if (first && l.parent_email) (D.outbox = D.outbox || []).push({ to_email: l.parent_email, kind: 'unit_complete', subject: `${l.nickname} has finished ${uname} on Atomic`, created_at: new Date().toISOString(), status: 'queued' });
+        if (first && l.parent_email) (D.outbox = D.outbox || []).push({ to_email: l.parent_email, kind: 'unit_complete', subject: `${l.nickname} has finished ${uname} on Camday`, created_at: new Date().toISOString(), status: 'queued' });
       } else if (at.status === 'final') note(a, lid, 'test_marked', 'Your Unit Test has been marked', `Score ${at.pct.toFixed(1)}%`);
     }
     const roadmapAll = () => { if (!D.roadmap) { D.roadmap = [['One stage per learner, with subject plans', 'Choose your stage when you sign up, then one subject or the whole stage. The next stage opens when 80% of your lessons and Unit Tests are done.', 'released', 'November 2026', 'Account'],

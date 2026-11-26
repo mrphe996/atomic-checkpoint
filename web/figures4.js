@@ -1,4 +1,4 @@
-/* Atomic Education — figure library, part 4: cells (SVG, viewBox 480×320). Original Atomic artwork.
+/* Camday — figure library, part 4: cells (SVG, viewBox 480×320). Original Camday artwork.
    Use in a question as fig: 'leafsection' or fig: { kind: 'plantAB' }. Each returns { svg, a } like figures.js. */
 (function () {
   const AF = window.AtomicFig; if (!AF) return;

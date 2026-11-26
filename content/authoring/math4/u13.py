@@ -2,7 +2,7 @@
 """Stage 4 Mathematics (Primary) · Unit 13 Addition and subtraction (13.1 Adding and subtracting efficiently,
 13.2 Adding and subtracting fractions with the same denominator). Upgraded lesson (v2): why each method works, paired examples that differ in one condition, prediction checks before the reveal,
 and Practice built from decisions (test a claim, find all, spot the error, work backwards) rather than repeated routines.
-Written by the Atomic teaching team."""
+Written by the Camday teaching team."""
 from fractions import Fraction as Fr
 from kit import *
 from h import *

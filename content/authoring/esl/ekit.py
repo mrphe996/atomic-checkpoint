@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Authoring kit for the Atomic ESL courses, Stages 2–9 (course keys 22–29).
+"""Authoring kit for the Camday ESL courses, Stages 2–9 (course keys 22–29).
 A lesson is written in a compact text format (see parse) and becomes: a lesson video script, two pause questions,
 Core / Practice / Advanced / More practice pools, a word bank (word games, Stages 2–5) and Unit Test templates.
-Every text, word list and question is an Atomic original. Written by the Atomic teaching team."""
+Every text, word list and question is an Camday original. Written by the Camday teaching team."""
 import os, sys, re, json, random
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "young"))
@@ -197,7 +197,7 @@ class EUnit(YUnit):
             for o in s["objs"]: segs.setdefault(o, [s["id"], 0.0, s["video"]["dur"], s["title"]])
         lvl = "Primary" if prim else "Lower Secondary"
         fw = f"Cambridge {lvl} English as a Second Language ({'0057' if prim else '0876'}), Stage {st}"
-        return {"course": {"id": f"s{20 + st}", "title": f"Atomic – Cambridge {lvl} English as a Second Language — Stage {st}", "units": [{"n": i + 1, "t": t} for i, t in enumerate(titles)]},
+        return {"course": {"id": f"s{20 + st}", "title": f"Camday – Cambridge {lvl} English as a Second Language — Stage {st}", "units": [{"n": i + 1, "t": t} for i, t in enumerate(titles)]},
                 "unit": {"n": self.n, "stage": 20 + st, "title": self.title, "strandShort": self.strand, "blurb": self.blurb, "strand": self.strand,
                          "framework": fw, "subject": "esl", "esl": True, "young": st <= 4},
                 "objectives": self.objectives, "sections": secs, "segments": segs, "sources": [],
@@ -238,7 +238,7 @@ def script(L, stage, unit_title):
     """scenes: [{k, say:[sentences], ...display}] – the narration of one lesson video"""
     W = L["W"]; G = L["G"]; T = L["T"]
     sc = [{"k": "title", "head": L["title"], "sub": f"Stage {stage} English · {unit_title}", "obj": L["obj"], "words": [[w, e] for w, _, e in W],
-           "say": [f"Hello, and welcome to Atomic English, Stage {stage}.", f"In this lesson: {_end(L['title'])}", _end(L['obj'])]}]
+           "say": [f"Hello, and welcome to Camday English, Stage {stage}.", f"In this lesson: {_end(L['title'])}", _end(L['obj'])]}]
     for i in range(0, len(W), 3):
         grp = W[i:i + 3]
         say = ["Here are some new words." if i == 0 else "And some more words."]

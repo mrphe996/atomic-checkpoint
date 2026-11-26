@@ -13,19 +13,19 @@ def para(id, obj, prompt, rubric, need, model, partial, data=None, adv=False, ex
          'model': model, 'partial': [{'text': t, 'score': s, 'why': w} for t, s, w in partial], 'hint': '', 'reason': ''}
     if data: q['data'] = {'head': data[0], 'rows': data[1:]}
     if adv: q['adv'] = True
-    if ext: q['source'] = 'Atomic original'
+    if ext: q['source'] = 'Camday original'
     if teacher: q['teacher'] = True; q['pts'] = pts
     return q
 
 def mcq(id, obj, prompt, opts, data=None):
     q = {'id': id, 'type': 'mcq', 'prompt': prompt, 'diff': 'VH', 'obj': obj, 'skill': 'Reasoning',
-         'options': [{'t': t, 'ok': ok, 'fb': fb} for t, ok, fb in opts], 'hint': '', 'reason': '', 'source': 'Atomic original'}
+         'options': [{'t': t, 'ok': ok, 'fb': fb} for t, ok, fb in opts], 'hint': '', 'reason': '', 'source': 'Camday original'}
     if data: q['data'] = {'head': data[0], 'rows': data[1:]}
     return q
 
 def num(id, obj, prompt, answer, unit, units, reason, hint=''):
     return {'id': id, 'type': 'num', 'prompt': prompt, 'diff': 'VH', 'obj': obj, 'skill': 'Application', 'answer': answer, 'unit': unit, 'tol': 0.0,
-            'units': units, 'errs': [], 'unitFb': '', 'hint': hint, 'reason': reason, 'source': 'Atomic original'}
+            'units': units, 'errs': [], 'unitFb': '', 'hint': hint, 'reason': reason, 'source': 'Camday original'}
 
 # ---------------- Lesson 7.1 Exothermic changes ----------------
 H1 = [

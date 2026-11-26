@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cambridge Primary Science Stage 4 · Unit 6 Electricity. Written by the Atomic teaching team."""
+"""Cambridge Primary Science Stage 4 · Unit 6 Electricity. Written by the Camday teaching team."""
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from kit4 import *

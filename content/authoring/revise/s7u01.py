@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Stage 7 Unit 1 Introducing Science — 2026 revision (written by the Atomic teaching team).
+"""Stage 7 Unit 1 Introducing Science — 2026 revision (written by the Camday teaching team).
 Practice: same-reasoning recall questions out; data, graph, apparatus and experiment questions in.
 Challenge: one question per section adapted from an outside source (named under the question)."""
 from c_kit import *
