@@ -511,10 +511,10 @@ details.faq{border-top:1px solid var(--l-E4E4E4,#E4E4E4);padding:10px 0}details.
 .usermenu b{padding:8px 12px;font-family:Lexend,system-ui,sans-serif;color:var(--t-222222,#222222);border-bottom:1px solid var(--l-F2F2F2,#F2F2F2);margin-bottom:4px}
 .usermenu a,.usermenu button{display:block;text-align:left;padding:10px 12px;border-radius:6px;color:var(--t-222222,#222222);text-decoration:none;font:600 15px Lexend,sans-serif;border:0;background:none;cursor:pointer;min-height:44px}
 .usermenu a:hover,.usermenu button:hover{background:var(--b-F2F2F2,#F2F2F2)}
-.steps{display:flex;gap:8px;margin-bottom:6px}
-.steps span{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font:700 14px Lexend,system-ui,sans-serif;background:var(--b-F2F2F2,#F2F2F2);color:var(--t-7E7E7E,#7E7E7E)}
-.steps span.on{background:var(--b-222222,#222222);color:#FFFFFF}
-.steps span.done{background:#287C34;color:#FFFFFF}
+div.steps{display:flex;gap:8px;margin-bottom:6px}
+.steps>span{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font:700 14px Lexend,system-ui,sans-serif;background:var(--b-F2F2F2,#F2F2F2);color:var(--t-7E7E7E,#7E7E7E)}
+.steps>span.on{background:var(--b-222222,#222222);color:#FFFFFF}
+.steps>span.done{background:#287C34;color:#FFFFFF}
 @media print{.toast,.confetti,.usermenu{display:none!important}}
 
 /* ---------- v3: landing page from the "Main" design (try the course in small boxes) ---------- */
@@ -2043,6 +2043,14 @@ a.stm-pill:hover{box-shadow:inset 0 0 0 2px var(--l-222222,#222222);background-c
 @media (min-width:900px){.bkimg{width:auto;max-width:100%}}
 .qp{white-space:pre-line}
 @media (max-width:600px){.bkover .rdttl{display:none}.bkover .rdbar{gap:4px;padding:6px 8px;flex-wrap:wrap}.bkover .rdbar .btn{padding:4px 9px;min-height:32px}.bkover .bkguide{font-size:13px;max-height:76px;overflow:auto;padding:6px 10px}.bkover .bkbody{padding:4px}}
+/* lesson document on top + tidy v4 lessons */
+.docpanel{padding:16px 18px}.dochead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}.dochead h2{margin:2px 0 0;font-size:20px}
+.docnote{margin:8px 0 2px;color:var(--t-222222,#222222)}.docnav{display:flex;align-items:center;justify-content:center;gap:12px;margin:10px 0 8px}.docpg{font-weight:600;color:var(--t-222222,#222222);min-width:110px;text-align:center}
+.docview{background:var(--b-F2F2F2,#F2F2F2);border-radius:6px;padding:10px;text-align:center}.docimg{display:block;width:100%;max-width:860px;margin:0 auto;height:auto;background:var(--b-FFFFFF,#FFFFFF);box-shadow:0 1px 8px rgba(92,92,92,.18);border-radius:4px}
+.ltoc{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 4px}.ltoc .eyebrow{margin-right:6px}
+.lessonbody.v4 .lblock h2{font-size:21px;margin-bottom:6px}.lessonbody.v4 .lblock .lp{font-size:17px;line-height:1.55;margin:5px 0}
+.lessonbody.v4 .lblock{margin-bottom:12px}.lessonbody.v4 .lsteps li{margin:4px 0}.lessonbody.v4 .table,.lessonbody.v4 table{font-size:15px}
+@media (max-width:600px){.docview{padding:4px}.dochead h2{font-size:17px}.lessonbody.v4 .lblock h2{font-size:19px}.lessonbody.v4 .lblock .lp{font-size:16px}}
 
 /* ---------- Design system B (generated: edit tools/build-theme.mjs) ---------- */
 :root{--band:#F4F4F1;--sh:0 1px 2px rgba(34,34,34,.10),0 10px 24px rgba(34,34,34,.12);--bd:1px solid #D6D6D2}

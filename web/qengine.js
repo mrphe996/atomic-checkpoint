@@ -269,7 +269,7 @@
     const t = String(text || '').trim(); if (!t) return null;
     const parts = t.split(/(?<=[.!?])\s+(?=[A-Z0-9(“"'])/).map(x => x.trim()).filter(Boolean);
     if (parts.length < 2 || parts.length > 8) return el('p', { class: 'reason' }, t);
-    return el('ol', { class: 'steps' }, ...parts.map(p => el('li', {}, p)));
+    return el('ol', { class: 'steps' }, ...parts.map(p => el('li', {}, el('div', { class: 'stx' }, p))));   // one box per step: maths typeset inside it stays in the text
   }
   function fbHead(kind, title, sub) { return el('div', { class: 'fbh' }, el('span', { class: 'fbi ' + kind, 'aria-hidden': 'true' }, { ok: '✓', bad: '✗', guide: '💡', warn: '!' }[kind] || '•'), el('div', {}, el('b', {}, title), sub ? el('small', {}, sub) : null)); }
   function practice(q, host, o) {

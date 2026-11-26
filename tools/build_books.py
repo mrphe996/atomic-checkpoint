@@ -16,7 +16,7 @@ WEB = os.path.join(ROOT, "web")
 SCRIPTS = ["figures.js", "figures2.js", "figures3.js", "figures4.js", "figures5.js"]
 CSS = """
 @page { size: A4; margin: 14mm 14mm 16mm; }
-body { font-family: 'Lexend', 'Inter', Arial, sans-serif; color: #14213D; font-size: 11pt; line-height: 1.5; margin: 0; }
+body { font-family: 'Lexend', 'Inter', Arial, sans-serif; color: #0B1730; font-size: 11.5pt; line-height: 1.5; margin: 0; }
 .band { background: #0B2545; color: #fff; padding: 10px 14px; border-radius: 6px; display: flex; justify-content: space-between; align-items: baseline; }
 .band b { font-size: 15pt; } .band span { font-size: 9pt; letter-spacing: .06em; }
 h1 { font-size: 22pt; margin: 12px 0 4px; } .goal { background: #FFF4C2; padding: 6px 10px; border-radius: 4px; font-size: 10pt; margin: 6px 0 10px; }
@@ -120,10 +120,15 @@ def build(stage, units):
             pdf_out = os.path.join(out_dir, key + ".pdf"); w.write(pdf_out)
             img_dir = os.path.join(out_dir, key); os.makedirs(img_dir, exist_ok=True)
             for old in glob.glob(os.path.join(img_dir, "*")): os.remove(old)
-            subprocess.run(["pdftoppm", "-r", "150", "-png", pdf_out, os.path.join(tmp, "pg")], check=True)
+            subprocess.run(["pdftoppm", "-r", "220", "-png", pdf_out, os.path.join(tmp, "pg")], check=True)
             pngs = sorted(glob.glob(os.path.join(tmp, "pg-*.png")))
             for i, png in enumerate(pngs, 1):
-                Image.open(png).convert("RGB").save(os.path.join(img_dir, f"p{i:04d}.webp"), "WEBP", quality=82)
+                im = Image.open(png).convert("RGB"); W_, H_ = im.size
+                # on screen, a half-empty A4 page wastes space: cut the blank area below the content (the running footer is dropped)
+                body = im.crop((0, 0, W_, int(H_ * 0.93))); gray = body.convert("L").point(lambda v: 0 if v > 245 else 255)
+                box = gray.getbbox()
+                if box: im = im.crop((0, 0, W_, min(H_, box[3] + int(W_ * 0.06))))
+                im.save(os.path.join(img_dir, f"p{i:04d}.webp"), "WEBP", quality=90)
             idx[key] = {"title": title, "pages": len(pngs), "dir": f"media/books/{key}/", "ext": "webp", "pdf": f"media/books/{key}.pdf",
                         "secs": {k: list(v) for k, v in pages.items() if k not in ("cover",)}}
             for s in secs:

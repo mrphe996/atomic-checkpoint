@@ -822,19 +822,50 @@
     const guide = el('div', { class: 'bkguide' }, el('b', {}, `Read ${ref.label}. `), ref.note ? rich(ref.note) : null, ...(ref.look || []).map(t => el('p', { class: 'bklook' }, '👀 ', ...rich(t))));
     ov.append(bar, guide, wrap); document.body.append(ov); document.addEventListener('keydown', keys); setZoom(zoom); show(ref.p0);
   }
-  function pdfCard(s) {
-    const vs = Core.vstate(st, s.id);
-    return el('section', { class: 'card lblock lb-pdf', id: 'readPdf' }, el('div', { class: 'lbtop' }, el('span', { class: 'lbkind' }, 'Read the PDF'), vs.pdf ? el('span', { class: 'lbcount' }, '✓ opened') : null),
-      el('h2', {}, 'Now read the book'),
-      ...s.pdf.map((r, i) => el('div', { class: 'pdfref' }, el('p', { class: 'lp' }, el('b', {}, r.title || 'Course book', ', ', r.label), r.note ? el('span', {}, ' – ', ...rich(r.note)) : null),
-        ...(r.look || []).map(t => el('p', { class: 'bklook' }, '👀 ', ...rich(t))),
-        el('button', { class: 'btn', type: 'button', id: 'openPdf' + i, onclick: () => openBook(s, r) }, '📄 Open the book at ', r.label))),
-      el('div', { class: 'btnrow', style: 'margin-top:12px' }, el('button', { class: 'btn gold shine', type: 'button', id: 'startPractice', onclick: () => {
-        if (Core.stopsLeft(st, s).length) { toast('Answer the check questions in the lesson first.'); return; }
-        if (!vs.completed) { vs.completed = true; vs.pos = s.video.dur; Core.persist(); Backend.track('lesson_done', { learner: st.id, unit: Core.UNIT, sec: s.id }); }
-        go('ex-' + R(s.id)); } }, 'Start practice', el('span', { class: 'arr' }, ' →'))),
-      el('p', { class: 'muted', style: 'margin:8px 0 0' }, 'You can read the whole book in the viewer. In Practice, “Review the PDF” opens these pages again and keeps your answers.'));
+  // the lesson document at the top of the lesson: its pages one at a time, sharp on every screen; full screen opens the whole book
+  function docPanel(s) {
+    const ref = s.pdf[0], vs = Core.vstate(st, s.id); let page = ref.p0, bk = null;
+    const n = ref.p1 - ref.p0 + 1, img = el('img', { class: 'docimg', id: 'docImg', alt: '' }), cnt = el('span', { class: 'docpg', id: 'docPg' });
+    const prev = el('button', { type: 'button', class: 'btn small ghost', id: 'docPrev', 'aria-label': 'Previous page', onclick: () => show(page - 1) }, '← Previous');
+    const next = el('button', { type: 'button', class: 'btn small ghost', id: 'docNext', 'aria-label': 'Next page', onclick: () => show(page + 1) }, 'Next →');
+    const view = el('div', { class: 'docview' }, img);
+    const tog = el('button', { type: 'button', class: 'btn small ghost', id: 'docToggle', 'aria-expanded': 'true' }, 'Hide');
+    const nav = el('div', { class: 'docnav' }, prev, cnt, next);
+    const box = el('section', { class: 'card docpanel', id: 'docPanel' },
+      el('div', { class: 'dochead' }, el('div', {}, el('span', { class: 'eyebrow' }, 'LESSON DOCUMENT'), el('h2', {}, `${ref.title || 'Camday Maths'}, ${ref.label}`)),
+        el('div', { class: 'btnrow' }, el('button', { type: 'button', class: 'btn small', id: 'docFull', onclick: () => openBook(s, Object.assign({}, ref, { p0: page })) }, '⛶ Full screen · whole book'), tog)),
+      ref.note ? el('p', { class: 'docnote' }, ...rich(ref.note)) : null,
+      ...(ref.look || []).map(t => el('p', { class: 'bklook' }, '👀 ', ...rich(t))), nav, view);
+    const setOpen = o => { view.hidden = !o; nav.hidden = !o; tog.textContent = o ? 'Hide' : 'Show the document'; tog.setAttribute('aria-expanded', String(o)); vs.docShut = !o; Core.persist(); };
+    tog.onclick = () => setOpen(view.hidden);
+    function show(k) { if (!bk) return; page = Math.max(ref.p0, Math.min(ref.p1, k)); img.src = bookPage(bk, page); img.alt = `${ref.title}, page ${page}`;
+      cnt.textContent = `Page ${page - ref.p0 + 1} of ${n}`; prev.disabled = page === ref.p0; next.disabled = page === ref.p1;
+      if (page !== ref.p0 && !vs.pdf) { vs.pdf = true; Core.persist(); } }
+    bookIndex().then(idx => { bk = idx[ref.book]; if (!bk) { box.remove(); return; } show(ref.p0); if (vs.docShut) setOpen(false); });
+    return box;
   }
+  // "On this page": the parts of a v4 lesson in groups, to jump to
+  function lessonToc(s) {
+    const G = [['hook', 'Start'], ['recall', 'Remember'], ['idea', 'Ideas'], ['method', 'Method'], ['example', 'Examples'], ['try', 'Your turn'], ['error', 'Spot the mistake'], ['mistake', 'Tips'], ['tip', 'Tips'], ['summary', 'Key points']];
+    const seen = {}, items = [];
+    s.lesson.forEach((b, i) => { const g = (G.find(x => x[0] === b.k) || [b.k, 'Ideas'])[1]; if (seen[g] == null) { seen[g] = items.length; items.push({ g, i, n: 0 }); } items[seen[g]].n++; });
+    return el('nav', { class: 'ltoc', 'aria-label': 'Parts of this lesson' }, el('span', { class: 'eyebrow' }, 'ON THIS PAGE'),
+      ...items.map(x => el('button', { type: 'button', class: 'chip', onclick: () => { const t = document.getElementById('lb-' + x.i); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }, x.g + (x.n > 1 ? ` · ${x.n}` : ''))));
+  }
+  function pdfCard(s) {
+    const vs = Core.vstate(st, s.id), r = s.pdf[0];
+    return el('section', { class: 'card lblock lb-pdf', id: 'readPdf' }, el('div', { class: 'lbtop' }, el('span', { class: 'lbkind' }, 'Next steps'), vs.pdf ? el('span', { class: 'lbcount' }, '✓ document read') : null),
+      el('h2', {}, 'Read the document, then practise'),
+      el('p', { class: 'lp' }, 'Read ', el('b', {}, r.label), ' of the lesson document at the top of this page (or full screen), and try its practice on paper.'),
+      el('div', { class: 'btnrow', style: 'margin-top:8px' },
+        el('button', { class: 'btn', type: 'button', id: 'openPdf0', onclick: () => openBook(s, r) }, '📄 Open the document'),
+        el('button', { class: 'btn gold shine', type: 'button', id: 'startPractice', onclick: () => {
+          if (Core.stopsLeft(st, s).length) { toast('Answer the check questions in the lesson first.'); return; }
+          if (!vs.completed) { vs.completed = true; vs.pos = s.video.dur; Core.persist(); Backend.track('lesson_done', { learner: st.id, unit: Core.UNIT, sec: s.id }); }
+          go('ex-' + R(s.id)); } }, 'Start practice', el('span', { class: 'arr' }, ' →'))),
+      el('p', { class: 'muted', style: 'margin:8px 0 0' }, 'In Practice, “Review the PDF” opens the document again and keeps your answers.'));
+  }
+
   function noteBlock(b) {
     const kind = b.k || 'idea';
     const card = el('div', { class: 'lblock lb-' + kind }, el('h3', {}, el('span', { class: 'lbi', 'aria-hidden': 'true' }, LB_ICON[kind] || '💡'), ' ', (['example', 'mistake', 'method', 'tip', 'hook', 'recall', 'try', 'error', 'summary'].includes(kind) ? LB_KIND[kind] + ': ' : '') + b.t));
@@ -892,7 +923,10 @@
       el('div', { class: 'lmeta' }, el('span', {}, `About ${mins} minutes`), el('span', {}, `${nIdeas} part${nIdeas === 1 ? '' : 's'}`), el('span', {}, `${s.stops.length} check question${s.stops.length === 1 ? '' : 's'}`)),
       el('div', { class: 'lgoalbox' }, el('span', { class: 'hl' }, 'In this lesson you will learn to'), el('ul', { class: 'lgoals' }, ...s.objs.map(o => el('li', {}, (C.objectives[o] || {}).t || o)))), lprog);
     m.append(head);
-    const body = el('div', { class: 'lessonbody' }); m.append(body);
+    const v4 = s.notes === 'v4';
+    if (s.pdf && s.pdf.length) m.append(docPanel(s));   // the lesson document comes first: easy to find and read
+    if (v4) m.append(lessonToc(s));
+    const body = el('div', { class: 'lessonbody' + (v4 ? ' v4' : '') }); m.append(body);
     const status = el('div'); m.append(status);
     const drawStatus = () => { drawProg(); status.innerHTML = ''; const left = Core.stopsLeft(st, s).length;
       if (vs.completed && !left) { const i = C.sections.indexOf(s), nxt = C.sections[i + 1];
@@ -927,7 +961,7 @@
       body.append(card);
       (stopFor[bi] || []).forEach(addStop);
     });
-    if (s.pdf && s.pdf.length) body.append(pdfCard(s));
+    if (s.pdf && s.pdf.length) body.append(pdfCard(s));   // at the end: back to the document, then Start practice
     drawStatus();
   }
 
