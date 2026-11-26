@@ -196,7 +196,9 @@ def build(stage, units):
                     foot = im.crop((0, int(H_ * 0.92), W_, H_)); top = im.crop((0, 0, W_, box[3] + int(W_ * 0.04)))
                     im = Image.new("RGB", (W_, top.size[1] + foot.size[1]), "white"); im.paste(top, (0, 0)); im.paste(foot, (0, top.size[1]))
                 im.save(os.path.join(img_dir, f"p{i:04d}.webp"), "WEBP", quality=90)
-            idx[key] = {"title": title, "pages": len(pngs), "dir": f"media/books/{key}/", "ext": "webp", "pdf": f"media/books/{key}.pdf",
+            import hashlib
+            ver = hashlib.sha1(open(pdf_out, "rb").read()).hexdigest()[:10]
+            idx[key] = {"title": title, "pages": len(pngs), "dir": f"media/books/{key}/", "ext": "webp", "pdf": f"media/books/{key}.pdf?v={ver}", "v": ver,
                         "secs": {k: list(v) for k, v in pages.items() if k not in ("cover",)}}
             for s in secs:
                 a, b = pages[s["id"]]; bk = s.pop("book")

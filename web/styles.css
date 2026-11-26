@@ -2039,7 +2039,7 @@ a.stm-pill:hover{box-shadow:inset 0 0 0 2px #222;background-color:inherit}
 .bkimg{width:100%;max-width:none;height:auto;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.35)}
 .bkpg{width:64px;padding:4px 6px;border:1px solid #CBD3DE;border-radius:8px;font:inherit}
 .bkwhere{font-size:13px;padding:3px 8px;border-radius:99px;background:#EEF0F4;color:#5A6577}.bkwhere.on{background:#E6F7F1;color:#1F7A55;font-weight:600}
-@media (min-width:900px){.bkimg{width:auto;max-width:100%}}
+
 .qp{white-space:pre-line}
 @media (max-width:600px){.bkover .rdttl{display:none}.bkover .rdbar{gap:4px;padding:6px 8px;flex-wrap:wrap}.bkover .rdbar .btn{padding:4px 9px;min-height:32px}.bkover .bkguide{font-size:13px;max-height:76px;overflow:auto;padding:6px 10px}.bkover .bkbody{padding:4px}}
 /* lesson document on top + tidy v4 lessons */
@@ -2050,3 +2050,5 @@ a.stm-pill:hover{box-shadow:inset 0 0 0 2px #222;background-color:inherit}
 .lessonbody.v4 .lblock h2{font-size:21px;margin-bottom:6px}.lessonbody.v4 .lblock .lp{font-size:17px;line-height:1.55;margin:5px 0}
 .lessonbody.v4 .lblock{margin-bottom:12px}.lessonbody.v4 .lsteps li{margin:4px 0}.lessonbody.v4 .table,.lessonbody.v4 table{font-size:15px}
 @media (max-width:600px){.docview{padding:4px}.dochead h2{font-size:17px}.lessonbody.v4 .lblock h2{font-size:19px}.lessonbody.v4 .lblock .lp{font-size:16px}}
+
+.bkimg{display:block;margin:0 auto;max-width:none}

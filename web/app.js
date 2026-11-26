@@ -792,8 +792,8 @@
      s.pdf = [{book, p0, p1, label, note, look:[…]}]; p0–p1 are pages of the book file (the printed page numbers are in the label).
      The viewer opens at the lesson's pages; the whole book can be read; zoom and full screen; an overlay, so Practice answers stay. ---------- */
   let BOOKS = null;
-  async function bookIndex() { if (!BOOKS) { try { BOOKS = await (await fetch('media/books/index.json')).json(); } catch (e) { BOOKS = {}; } } return BOOKS; }
-  const bookPage = (bk, n) => `${bk.dir}p${String(n).padStart(4, '0')}.${bk.ext || 'webp'}`;
+  async function bookIndex() { if (!BOOKS) { try { BOOKS = await (await fetch('media/books/index.json', { cache: 'no-cache' })).json(); } catch (e) { BOOKS = {}; } } return BOOKS; }
+  const bookPage = (bk, n) => `${bk.dir}p${String(n).padStart(4, '0')}.${bk.ext || 'webp'}${bk.v ? '?v=' + bk.v : ''}`;   // v changes with every rebuild, so browsers never show old pages
   async function openBook(s, ref) {
     ref = ref || s.pdf[0]; const idx = await bookIndex(), bk = idx[ref.book];
     if (!bk) { toast('This book is not available yet.'); return; }
@@ -807,7 +807,7 @@
     const where = el('span', { class: 'bkwhere', id: 'bookWhere' });
     const close = () => { try { if (document.fullscreenElement) document.exitFullscreen(); } catch (e) { } ov.remove(); document.removeEventListener('keydown', keys); };
     const keys = e => { if (e.key === 'Escape') close(); else if (e.key === 'ArrowRight') show(page + 1); else if (e.key === 'ArrowLeft') show(page - 1); };
-    const setZoom = z => { zoom = Math.max(1, Math.min(3, z)); img.style.width = (zoom * 100) + '%'; save(); };
+    const setZoom = z => { zoom = Math.max(1, Math.min(3, z)); img.style.width = `min(${zoom * 100}%, ${Math.round(980 * zoom)}px)`; save(); };   // never wider than the page was drawn for, so it stays sharp
     function save() { try { localStorage.setItem(key, JSON.stringify({ page, zoom })); } catch (e) { } }
     function show(n) { page = Math.max(1, Math.min(bk.pages, n || 1)); img.src = bookPage(bk, page); img.alt = `${bk.title}, page ${page} of the file`; pg.value = page;
       where.textContent = inLesson(page) ? `Lesson pages (${ref.label})` : 'Outside this lesson\'s pages'; where.className = 'bkwhere' + (inLesson(page) ? ' on' : ''); wrap.scrollTop = 0; save();
@@ -841,7 +841,8 @@
     function show(k) { if (!bk) return; page = Math.max(ref.p0, Math.min(ref.p1, k)); img.src = bookPage(bk, page); img.alt = `${ref.title}, page ${page}`;
       cnt.textContent = `Page ${page - ref.p0 + 1} of ${n}`; prev.disabled = page === ref.p0; next.disabled = page === ref.p1;
       if (page !== ref.p0 && !vs.pdf) { vs.pdf = true; Core.persist(); } }
-    bookIndex().then(idx => { bk = idx[ref.book]; if (!bk) { box.remove(); return; } show(ref.p0); if (vs.docShut) setOpen(false); });
+    bookIndex().then(idx => { bk = idx[ref.book]; if (!bk) { box.remove(); return; } show(ref.p0); if (vs.docShut) setOpen(false);
+      if (bk.pdf) box.querySelector('.dochead .btnrow').prepend(el('a', { class: 'btn small', id: 'docPdf', href: bk.pdf + '#page=' + ref.p0, target: '_blank', rel: 'noopener' }, '⬇ PDF (print quality)')); });
     return box;
   }
   // "On this page": the parts of a v4 lesson in groups, to jump to
