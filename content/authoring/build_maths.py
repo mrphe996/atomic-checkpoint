@@ -34,6 +34,7 @@ def main(st, ns):
         data = U.export(tests, TITLES)
         if st <= 6:   # Primary v2 blocks: why it works, worked example, method
             from maths_primary_v2.apply import apply as _v2p; data = _v2p(st, n, data)
+        from maths_notes_v3.apply import apply as _v3; data, _ = _v3(st, n, data)   # full lesson notes v3 (revision-notes style)
         json.dump(data, open(os.path.join(HERE, "..", "src", f"stage{10 + st}-unit{n:02d}.json"), "w", encoding="utf-8"), ensure_ascii=False)
         print(st, n, len(U.tpl), [(s["id"], len(s["req"]), len(s["prac"]), len(s["adv"]), len(s["stops"])) for s in data["sections"]])
 

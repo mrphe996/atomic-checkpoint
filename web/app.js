@@ -756,7 +756,7 @@
   function noteBlock(b) {
     const kind = b.k || 'idea', icon = { idea: '💡', example: '✏️', tip: '✅', mistake: '⚠️', method: '🧭' }[kind] || '💡';
     const para = t => el('p', { class: 'lp' }, ...String(t).split(/(\*\*[^*]+\*\*)/).map(part => /^\*\*.*\*\*$/.test(part) ? el('b', {}, part.slice(2, -2)) : part));
-    const card = el('div', { class: 'lblock lb-' + kind }, el('h3', {}, el('span', { class: 'lbi', 'aria-hidden': 'true' }, icon), ' ', (kind === 'example' ? 'Worked example: ' : kind === 'mistake' ? 'Common mistake: ' : kind === 'method' ? 'Method: ' : '') + b.t));
+    const card = el('div', { class: 'lblock lb-' + kind }, el('h3', {}, el('span', { class: 'lbi', 'aria-hidden': 'true' }, icon), ' ', (kind === 'example' ? 'Worked example: ' : kind === 'mistake' ? 'Common mistake: ' : kind === 'method' ? 'Method: ' : kind === 'tip' ? 'Exam tip: ' : '') + b.t));
     (b.p || []).forEach(t => card.append(para(t)));
     if (b.fig) { const f = window.AtomicFig && window.AtomicFig.get ? window.AtomicFig.get(b.fig.kind, b.fig) : null; if (f) card.append(el('div', { class: 'qfig', html: f.svg })); }
     if (b.table) card.append(QE.dataTable ? QE.dataTable(b.table) : el('div'));
@@ -832,7 +832,7 @@
     const para = t => el('p', { class: 'lp' }, ...String(t).split(/(\*\*[^*]+\*\*)/).map(part => /^\*\*.*\*\*$/.test(part) ? el('b', {}, part.slice(2, -2)) : part));
     s.lesson.forEach((b, bi) => {
       const kind = b.k || 'idea', icon = { idea: '💡', example: '✏️', tip: '✅', mistake: '⚠️', method: '🧭' }[kind] || '💡';
-      const KIND = { idea: 'Key idea', example: 'Worked example', tip: 'Tip', mistake: 'Common mistake', method: 'Method' };
+      const KIND = { idea: 'Key idea', example: 'Worked example', tip: 'Exam tip', mistake: 'Common mistake', method: 'Method' };
       const card = el('section', { class: 'card lblock lb-' + kind, id: 'lb-' + bi }, el('div', { class: 'lbtop' }, el('span', { class: 'lbkind' }, KIND[kind] || 'Key idea'), el('span', { class: 'lbcount' }, `Part ${bi + 1} of ${s.lesson.length}`)), el('h2', {}, b.t));
       (b.p || []).forEach(t => card.append(para(t)));
       if (C.unit.tiny && ('speechSynthesis' in window)) card.append(el('button', { type: 'button', class: 'btn small ghost readq', onclick: () => QE.speak([b.t].concat(b.p || [], b.q ? [b.q] : [], b.a ? [b.a] : []).join('. ')) }, '🔊 Read to me'));
