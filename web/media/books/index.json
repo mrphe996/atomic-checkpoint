@@ -186,5 +186,27 @@
     19
    ]
   }
+ },
+ "c7u06": {
+  "title": "Camday Maths Stage 7 · Unit 6: Collecting Data",
+  "pages": 12,
+  "dir": "media/books/c7u06/",
+  "ext": "webp",
+  "pdf": "media/books/c7u06.pdf?v=0809517200",
+  "v": "0809517200",
+  "secs": {
+   "6.1": [
+    2,
+    6
+   ],
+   "6.2": [
+    7,
+    11
+   ],
+   "answers": [
+    12,
+    12
+   ]
+  }
  }
 }
