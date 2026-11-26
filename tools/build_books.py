@@ -14,29 +14,42 @@ from PIL import Image
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 WEB = os.path.join(ROOT, "web")
 SCRIPTS = ["figures.js", "figures2.js", "figures3.js", "figures4.js", "figures5.js"]
+import base64
+LOGO = "data:image/svg+xml;base64," + base64.b64encode(open(os.path.join(WEB, "camday_logo.svg"), "rb").read()).decode()
+ICON = "data:image/svg+xml;base64," + base64.b64encode(open(os.path.join(WEB, "camday_icon.svg"), "rb").read()).decode()
+KIND = {"hook": "Start here", "recall": "Remember", "idea": "Key idea", "method": "Method", "example": "Worked example", "try": "Try it",
+        "error": "Spot the mistake", "mistake": "Common mistake", "tip": "Exam tip", "summary": "Key points"}
 CSS = """
-@page { size: A4; margin: 14mm 14mm 16mm; }
-body { font-family: 'Lexend', 'Inter', Arial, sans-serif; color: #0B1730; font-size: 11.5pt; line-height: 1.5; margin: 0; }
-.band { background: #0B2545; color: #fff; padding: 10px 14px; border-radius: 6px; display: flex; justify-content: space-between; align-items: baseline; }
-.band b { font-size: 15pt; } .band span { font-size: 9pt; letter-spacing: .06em; }
-h1 { font-size: 22pt; margin: 12px 0 4px; } .goal { background: #FFF4C2; padding: 6px 10px; border-radius: 4px; font-size: 10pt; margin: 6px 0 10px; }
-.cols { display: grid; grid-template-columns: 1fr 52mm; gap: 12px; align-items: start; }
-.keys { border: 2px solid #0149AF; border-radius: 8px; padding: 6px 10px; font-size: 9.5pt; } .keys h3 { margin: 0 0 4px; color: #0149AF; font-size: 10.5pt; }
-.keys p { margin: 3px 0; } .keys b { color: #0B2545; }
-p { margin: 5px 0; } .fig svg { width: 100%; max-height: 62mm; } .fig { margin: 6px 0; text-align: center; }
-.we { border: 2px solid #E3B505; border-radius: 8px; margin: 10px 0; break-inside: avoid; }
-.we h3 { background: #FFF1B8; margin: 0; padding: 5px 10px; font-size: 11pt; border-radius: 6px 6px 0 0; } .we .q { padding: 6px 10px 2px; font-weight: 600; }
-.we table { width: 100%; border-collapse: collapse; font-size: 10pt; } .we td { padding: 4px 10px; vertical-align: top; border-top: 1px dotted #E3D18A; }
-.we td:first-child { width: 52%; font-weight: 600; } .we td:last-child { color: #3B4A5E; }
-.ex h2 { break-after: avoid; page-break-after: avoid; font-size: 14pt; border-bottom: 3px solid #0B2545; margin: 14px 0 6px; padding-bottom: 2px; }
-.qq { break-inside: avoid; margin: 8px 0; display: grid; grid-template-columns: 22px 1fr; gap: 4px; } .qq .n { font-weight: 700; }
+@page { size: A4; margin: 14mm 14mm 18mm; }
+body { font-family: 'Lexend', 'Inter', Arial, sans-serif; color: #1B1B1B; font-size: 11.5pt; line-height: 1.5; margin: 0; }
+.top { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #222; padding-bottom: 6px; }
+.top img { height: 26px; } .top span { font-size: 9pt; letter-spacing: .06em; font-weight: 700; color: #444; text-transform: uppercase; }
+.title { margin: 12px 0 8px; } .title .chip { display: inline-block; background: #FFE555; font-weight: 800; padding: 2px 10px; border-radius: 6px; font-size: 11pt; }
+.title h1 { font-size: 24pt; margin: 6px 0 0; line-height: 1.15; }
+.goal { background: #F4F4F4; border-left: 5px solid #222; padding: 6px 12px; font-size: 10.5pt; margin: 8px 0 10px; } .goal p { margin: 2px 0; }
+.keys { border: 2px solid #222; border-radius: 10px; padding: 6px 12px; font-size: 10pt; margin: 8px 0 12px; columns: 2; column-gap: 18px; }
+.keys h3 { column-span: all; margin: 0 0 4px; font-size: 11pt; } .keys p { margin: 2px 0; break-inside: avoid; } .keys b { background: linear-gradient(transparent 60%, #FFE555 60%); }
+.blk { border: 1.5px solid #D8D8D8; border-radius: 10px; margin: 10px 0; break-inside: avoid; overflow: hidden; }
+.blk .k { font-size: 8.5pt; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 4px 12px; background: #F2F2F2; }
+.blk .in { padding: 6px 12px 8px; } .blk h3 { margin: 2px 0 4px; font-size: 13pt; } .blk p { margin: 4px 0; }
+.k-hook .k { background: #DDEEFF; } .k-example .k { background: #FFF1B8; } .k-method .k { background: #F1E6F7; } .k-try .k, .k-error .k { background: #DFF4EA; }
+.k-mistake .k { background: #FDE2E2; } .k-tip .k { background: #E4F6E4; } .k-summary .k { background: #FFE555; } .k-summary { border-color: #222; }
+table { border-collapse: collapse; margin: 6px 0; font-size: 10pt; } td, th { border: 1px solid #BDBDBD; padding: 3px 8px; text-align: left; } th { background: #F2F2F2; }
+.steps { width: 100%; } .steps td { border: 0; border-top: 1px dotted #D8C77A; vertical-align: top; } .steps td:first-child { font-weight: 700; width: 50%; } .steps td:last-child { color: #555; }
+dl { display: grid; grid-template-columns: max-content 1fr; gap: 1px 10px; margin: 4px 0; font-size: 10pt; } dt { font-weight: 700; } dd { margin: 0; }
+.ans { background: #EEF8EE; border-radius: 6px; padding: 3px 8px; display: inline-block; font-weight: 600; } .chk { color: #1E6B35; font-size: 10pt; }
+.lines { counter-reset: ln; padding: 0; list-style: none; } .lines li { counter-increment: ln; padding: 2px 0; } .lines li:before { content: 'Line ' counter(ln) '   '; font-weight: 700; color: #8A5A2B; }
+.fig { margin: 6px 0; text-align: center; } .fig svg { width: 80%; max-height: 60mm; }
+ul.sum { margin: 2px 0 2px 18px; padding: 0; }
+.ex h2 { break-after: avoid; font-size: 15pt; border-bottom: 3px solid #222; margin: 16px 0 6px; padding-bottom: 2px; }
+.qq { break-inside: avoid; margin: 8px 0; display: grid; grid-template-columns: 22px 1fr; gap: 4px; } .qq .n { font-weight: 800; }
 .qq ol { list-style: lower-alpha; margin: 3px 0 0 16px; padding: 0; } .qq li { margin: 2px 0; }
-.think { border: 2px dashed #7A4BD1; border-radius: 8px; padding: 6px 8px; } .think .tag { color: #7A4BD1; font-weight: 700; font-size: 9pt; letter-spacing: .05em; }
-.tip { background: #E9F7EC; border-left: 4px solid #1E8E4E; padding: 3px 8px; font-size: 9.5pt; margin-top: 4px; }
-.check { border: 2px solid #1E8E4E; border-radius: 8px; padding: 6px 10px; margin-top: 12px; break-inside: avoid; } .check h3 { margin: 0 0 4px; color: #1E8E4E; font-size: 11pt; }
-.check p:before { content: '☐  '; }
-.sec { page-break-after: always; } .ans h2 { font-size: 14pt; } .ans h3 { font-size: 11pt; margin: 8px 0 2px; } .ans p { margin: 1px 0; font-size: 9.5pt; }
-.cover { text-align: center; padding-top: 70mm; page-break-after: always; } .cover h1 { font-size: 30pt; } .cover p { color: #3B4A5E; }
+.think { border: 2px dashed #222; border-radius: 8px; padding: 6px 8px; } .think .tag { font-weight: 800; font-size: 8.5pt; letter-spacing: .06em; background: #FFE555; padding: 1px 6px; border-radius: 4px; }
+.tip { background: #F4F4F4; border-left: 4px solid #222; padding: 3px 8px; font-size: 9.5pt; margin-top: 4px; }
+.check { border: 2px solid #222; border-radius: 10px; padding: 6px 12px; margin-top: 12px; break-inside: avoid; } .check h3 { margin: 0 0 4px; font-size: 12pt; } .check p:before { content: '☐  '; }
+.anshead h2 { font-size: 15pt; } .anshead h3 { font-size: 11pt; margin: 10px 0 2px; } .anshead p { margin: 1px 0; font-size: 9.5pt; }
+.cover { text-align: center; padding-top: 55mm; } .cover img { height: 46px; } .cover h1 { font-size: 30pt; margin: 18mm 0 4mm; } .cover .st { font-size: 12pt; letter-spacing: .1em; font-weight: 700; }
+.cover ol { text-align: left; display: inline-block; font-size: 12pt; margin-top: 10mm; } .cover .bar { height: 10px; background: #FFE555; margin: 14mm 30mm 0; border-radius: 6px; }
 """
 
 
@@ -48,34 +61,82 @@ def fig(f):
     return f"<div class='fig' data-fig='{html.escape(json.dumps(f))}'></div>"
 
 
-def section(stage, unit, s, objectives):
-    b = s["book"]
-    goals = "".join(f"<p>• {md((objectives.get(o) or {}).get('t', ''))}</p>" for o in s.get("objs", []))
+def table(t):
+    return "<table><tr>" + "".join(f"<th>{md(h)}</th>" for h in t["head"]) + "</tr>" + "".join("<tr>" + "".join(f"<td>{md(c)}</td>" for c in r) + "</tr>" for r in t["rows"]) + "</table>"
+
+
+def qtext(q):
+    if q.get("type") == "table":
+        rows = [[("☐" if isinstance(c, dict) else c) for c in r] for r in q["rows"]]
+        return md(q["prompt"]) + table({"head": q["head"], "rows": rows})
+    if q.get("type") in ("mcq", "multi"):
+        return md(q["prompt"]) + "<br>" + "   ".join(f"({'ABCDEF'[i]}) {md(o['t'])}" for i, o in enumerate(q["options"]))
+    return md(q.get("prompt", ""))
+
+
+def qanswer(q):
+    t = q.get("type")
+    if t == "num": return str(q.get("answer")).replace("-", "−")
+    if t in ("mcq", "multi"): return "; ".join(o["t"] for o in q["options"] if o.get("ok"))
+    if t == "table": return ", ".join(str(c["ans"]).replace("-", "−") for r in q["rows"] for c in r if isinstance(c, dict))
+    if t == "short": return str((q.get("accept") or [""])[0])
+    if t == "expr": return q.get("show") or q.get("expr", "")
+    return q.get("model") or q.get("reason") or ""
+
+
+def block(b, tries):
+    k = b.get("k", "idea"); h = [f"<div class='blk k-{k}'><div class='k'>{KIND.get(k, 'Key idea')}</div><div class='in'><h3>{md(b['t'])}</h3>"]
+    if k == "summary": h.append("<ul class='sum'>" + "".join(f"<li>{md(p)}</li>" for p in b.get("p", [])) + "</ul>")
+    else: h += [f"<p>{md(p)}</p>" for p in b.get("p", [])]
+    if b.get("fig"): h.append(fig(b["fig"]))
+    if b.get("table"): h.append(table(b["table"]))
+    h += [f"<p>{md(p)}</p>" for p in b.get("p2", [])]
+    if b.get("q"): h.append(f"<p><b>{'Problem' if k == 'error' else 'Question'}:</b> {md(b['q'])}</p>")
+    gf = [(n, b.get(f)) for n, f in (("What we know", "given"), ("What we need", "find"), ("Plan", "plan")) if b.get(f)]
+    if gf: h.append("<dl>" + "".join(f"<dt>{n}</dt><dd>{md(v)}</dd>" for n, v in gf) + "</dl>")
+    if b.get("steps"): h.append("<table class='steps'>" + "".join(f"<tr><td>{md(x[0])}</td><td>{md(x[1]) if len(x) > 1 else ''}</td></tr>" for x in b["steps"]) + "</table>")
+    if b.get("a"): h.append(f"<p><span class='ans'>Answer: {md(b['a'])}</span></p>")
+    if b.get("check"): h.append(f"<p class='chk'><b>Check:</b> {md(b['check'])}</p>")
+    if k == "error" and b.get("lines"):
+        tries.append(("Spot the mistake: " + b["t"], f"Line {b['bad'] + 1} is the first wrong line. {b.get('why', '')} " + " ".join(f[0] for f in b.get("fix", []))))
+        h.append("<ol class='lines'>" + "".join(f"<li>{md(l)}</li>" for l in b["lines"]) + "</ol><p><i>Which line is the first one that is wrong? Decide, then check the answers at the back.</i></p>")
+    if b.get("qq"):
+        tries.append((b["t"], qanswer(b["qq"]) + (". " + b["qq"]["reason"] if b["qq"].get("reason") and b["qq"].get("type") != "explain" else "")))
+        h.append(f"<p><b>Try it ({len(tries)}):</b> {qtext(b['qq'])}</p>")
+    return "".join(h) + "</div></div>"
+
+
+def head(stage, unit_title, unit, s):
+    return (f"<div class='top'><img src='{LOGO}' alt='Camday'><span>Stage {stage} Mathematics · Unit {unit} {md(unit_title)}</span></div>"
+            f"<div class='title'><span class='chip'>Lesson {s['id']}</span><h1>{md(s['title'])}</h1></div>")
+
+
+def section(stage, unit, s, d):
+    b = s["book"]; tries = []
+    goals = "".join(f"<p>• {md((d['objectives'].get(o) or {}).get('t', ''))}</p>" for o in s.get("objs", []))
     keys = "".join(f"<p><b>{md(k)}</b> – {md(v)}</p>" for k, v in b["keys"])
-    intro = "".join(fig(p["fig"]) if isinstance(p, dict) and p.get("fig") else f"<p>{md(p)}</p>" for p in b["intro"])
-    ex = []
-    for e in b["examples"]:
-        rows = "".join(f"<tr><td>{md(r[0])}</td><td>{md(r[1]) if len(r) > 1 else ''}</td></tr>" for r in e["rows"])
-        ex.append(f"<div class='we'><h3>{md(e['t'])}</h3><p class='q'>{md(e['q'])}</p><table><tr><td><i>Working</i></td><td><i>Reason</i></td></tr>{rows}</table></div>")
+    body = "".join(block(x, tries) for x in s.get("lesson", []))
     qs = []
     for i, e in enumerate(b["exercise"], 1):
         parts = "".join(f"<li>{md(p['t'])}</li>" for p in e["parts"])
-        body = f"{md(e['q'])}{fig(e['fig']) if e.get('fig') else ''}{'<ol>' + parts + '</ol>' if parts else ''}{'<div class=tip><b>Hint</b> ' + md(e['tip']) + '</div>' if e.get('tip') else ''}"
-        if e.get("think"): body = f"<div class='think'><div class='tag'>REASON IT OUT</div>{body}</div>"
-        qs.append(f"<div class='qq'><span class='n'>{i}</span><div>{body}</div></div>")
+        q = f"{md(e['q'])}{fig(e['fig']) if e.get('fig') else ''}{'<ol>' + parts + '</ol>' if parts else ''}{'<div class=tip><b>Hint</b> ' + md(e['tip']) + '</div>' if e.get('tip') else ''}"
+        if e.get("think"): q = f"<div class='think'><span class='tag'>REASON IT OUT</span><br>{q}</div>"
+        qs.append(f"<div class='qq'><span class='n'>{i}</span><div>{q}</div></div>")
     check = "".join(f"<p>{md(c)}</p>" for c in b["check"])
-    return (f"<div class='sec' data-sid='{s['id']}'><div class='band'><b>{s['id']} {md(s['title'])}</b><span>CAMDAY MATHS · STAGE {stage} · UNIT {unit}</span></div>"
-            f"<div class='goal'><b>By the end of these pages you can …</b>{goals}</div>"
-            f"<div class='cols'><div>{intro}</div><div class='keys'><h3>Words to know</h3>{keys}</div></div>{''.join(ex)}"
-            f"<div class='ex'><h2>Practice on paper {s['id']}</h2>{''.join(qs)}</div><div class='check'><h3>Can I …?</h3>{check}</div></div>")
+    s["_tries"] = tries
+    return (f"<div class='sec'>{head(stage, d['unit']['title'], unit, s)}<div class='goal'><b>In this lesson you will learn to</b>{goals}</div>"
+            f"<div class='keys'><h3>Words to know</h3>{keys}</div>{body}"
+            f"<div class='ex'><h2>Practice on paper · Lesson {s['id']}</h2>{''.join(qs)}</div><div class='check'><h3>Can I …?</h3>{check}</div></div>")
 
 
-def answers(secs):
-    out = ["<div class='ans'><h2>Answers</h2>"]
+def answers(stage, d, secs):
+    out = [f"<div class='top'><img src='{LOGO}' alt='Camday'><span>Stage {stage} Mathematics · Unit {d['unit']['n']} {md(d['unit']['title'])}</span></div><div class='anshead'><h2>Answers</h2>"]
+    letters = "abcdefghij"
     for s in secs:
-        out.append(f"<h3>Practice on paper {s['id']}</h3>")
+        out.append(f"<h3>Lesson {s['id']} {md(s['title'])} – Try it</h3>")
+        out += [f"<p><b>{i}</b> {md(t)}: {md(a)}</p>" for i, (t, a) in enumerate(s.get("_tries", []), 1)]
+        out.append(f"<h3>Lesson {s['id']} – Practice on paper</h3>")
         for i, e in enumerate(s["book"]["exercise"], 1):
-            letters = "abcdefghij"
             a = "; ".join(f"({letters[k]}) {md(p['a'])}" for k, p in enumerate(e["parts"]) if p.get("a"))
             if e.get("a"): a = (a + " " if a else "") + md(e["a"])
             out.append(f"<p><b>{i}</b> {a}</p>")
@@ -103,14 +164,18 @@ def build(stage, units):
             if not secs: continue
             key = f"c{stage}u{n:02d}"; tmp = tempfile.mkdtemp(); parts = []
             title = f"Camday Maths Stage {stage} · Unit {n}: {d['unit']['title']}"
-            chunks = [("cover", f"<div class='cover'><p>CAMDAY MATHS · STAGE {stage}</p><h1>Unit {n}<br>{md(d['unit']['title'])}</h1><p>Camday's own pages: read them after the lesson, then try the exercise on paper.</p></div>")]
-            chunks += [(s["id"], section(stage, n, s, d["objectives"])) for s in secs] + [("answers", answers(secs))]
-            for name, body in chunks:
+            cover = (f"<div class='cover'><img src='{LOGO}' alt='Camday'><p class='st'>STAGE {stage} MATHEMATICS</p><h1>Unit {n}<br>{md(d['unit']['title'])}</h1>"
+                     f"<p>Lesson notes and practice on paper</p><ol>" + "".join(f"<li>Lesson {s['id']} · {md(s['title'])}</li>" for s in secs) + "</ol><div class='bar'></div></div>")
+            chunks = [("cover", cover, title)] + [(s["id"], section(stage, n, s, d), f"Lesson {s['id']} · {s['title']}") for s in secs]
+            chunks.append(("answers", answers(stage, d, secs), "Answers"))
+            for name, body, label in chunks:
                 hp = os.path.join(tmp, f"{len(parts):02d}.html"); open(hp, "w", encoding="utf-8").write(page_html(body))
                 pg.goto("file://" + hp); pg.wait_for_timeout(150)
                 pp = os.path.join(tmp, f"{len(parts):02d}.pdf")
                 pg.pdf(path=pp, format="A4", print_background=True, display_header_footer=True, header_template="<span></span>",
-                       footer_template=f"<div style='font-size:8px;width:100%;text-align:center;color:#666'>{html.escape(title)}</div>",
+                       footer_template=(f"<div style='font-size:8px;width:100%;padding:0 14mm;display:flex;justify-content:space-between;align-items:center;color:#555;font-family:Arial'>"
+                                        f"<span><img src='{ICON}' style='height:10px;vertical-align:middle'> <b>Camday</b> · Stage {stage} Mathematics · {html.escape(label)}</span>"
+                                        f"<span>page <span class='pageNumber'></span></span></div>"),
                        margin={"top": "14mm", "bottom": "16mm", "left": "14mm", "right": "14mm"})
                 parts.append((name, pp))
             w = PdfWriter(); pages = {}; at = 1
@@ -124,16 +189,19 @@ def build(stage, units):
             pngs = sorted(glob.glob(os.path.join(tmp, "pg-*.png")))
             for i, png in enumerate(pngs, 1):
                 im = Image.open(png).convert("RGB"); W_, H_ = im.size
-                # on screen, a half-empty A4 page wastes space: cut the blank area below the content (the running footer is dropped)
-                body = im.crop((0, 0, W_, int(H_ * 0.93))); gray = body.convert("L").point(lambda v: 0 if v > 245 else 255)
+                # on screen, a half-empty A4 page wastes space: cut the blank area between the content and the footer
+                body = im.crop((0, 0, W_, int(H_ * 0.92))); gray = body.convert("L").point(lambda v: 0 if v > 245 else 255)
                 box = gray.getbbox()
-                if box: im = im.crop((0, 0, W_, min(H_, box[3] + int(W_ * 0.06))))
+                if box and box[3] < int(H_ * 0.85):   # keep the branded footer: content + a small gap + footer strip
+                    foot = im.crop((0, int(H_ * 0.92), W_, H_)); top = im.crop((0, 0, W_, box[3] + int(W_ * 0.04)))
+                    im = Image.new("RGB", (W_, top.size[1] + foot.size[1]), "white"); im.paste(top, (0, 0)); im.paste(foot, (0, top.size[1]))
                 im.save(os.path.join(img_dir, f"p{i:04d}.webp"), "WEBP", quality=90)
             idx[key] = {"title": title, "pages": len(pngs), "dir": f"media/books/{key}/", "ext": "webp", "pdf": f"media/books/{key}.pdf",
                         "secs": {k: list(v) for k, v in pages.items() if k not in ("cover",)}}
             for s in secs:
                 a, b = pages[s["id"]]; bk = s.pop("book")
-                s["pdf"] = [{"book": key, "p0": a, "p1": b, "label": f"pages {a}–{b}" if b > a else f"page {a}", "title": f"Camday Maths {stage} · Unit {n}",
+                s.pop("_tries", None)
+                s["pdf"] = [{"book": key, "p0": a, "p1": b, "label": f"pages {a}–{b}" if b > a else f"page {a}", "title": f"Lesson {s['id']} notes · {s['title']}",
                              "note": bk.get("note") or "", "look": bk.get("look") or []}]
             json.dump(d, open(f, "w", encoding="utf-8"), ensure_ascii=False)
             print(key, len(pngs), "pages", {k: v for k, v in pages.items()})

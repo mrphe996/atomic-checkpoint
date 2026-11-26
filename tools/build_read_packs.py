@@ -3,10 +3,12 @@
 The PDF holds the same notes as the on-screen reader: key ideas, methods, worked examples, common mistakes, exam tips and the
 check questions as "Try it". Printed with headless Chromium (Playwright). Afterwards run content/authoring/read_index.py.
 Usage: python3 tools/build_read_packs.py 6 [units …]"""
-import glob, html, json, os, re, sys
+import base64, glob, html, json, os, re, sys
 from playwright.sync_api import sync_playwright
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+LOGO = "data:image/svg+xml;base64," + base64.b64encode(open(os.path.join(ROOT, "web", "camday_logo.svg"), "rb").read()).decode()
+ICON = "data:image/svg+xml;base64," + base64.b64encode(open(os.path.join(ROOT, "web", "camday_icon.svg"), "rb").read()).decode()
 KIND = {"idea": "", "method": "Method · ", "example": "Worked example · ", "mistake": "Common mistake · ", "tip": "Exam tip · ",
         "hook": "Start here · ", "recall": "Remember · ", "try": "Your turn · ", "error": "Spot the mistake · ", "summary": ""}
 CSS = """
@@ -72,7 +74,7 @@ def block(b):
 
 def page(d, stage):
     u = d["unit"]; secs = d["sections"]
-    h = [f"<html><head><meta charset='utf-8'><style>{CSS}</style></head><body><div class='cover'>",
+    h = [f"<html><head><meta charset='utf-8'><style>{CSS}</style></head><body><div class='cover'><img src='{LOGO}' alt='Camday' style='height:34px;margin-bottom:14px'>",
          f"<p class='eyebrow'>STAGE {stage} MATHEMATICS · UNIT {u['n']} · READ BEFORE THE LESSON</p><h1>{md(u['title'])}</h1>",
          f"<p>{md(u.get('blurb', ''))}</p><h2>What you will learn</h2><ul>"]
     seen = []
@@ -103,7 +105,8 @@ def main(stage, units):
             if units and n not in units: continue
             if not any(s.get("notes") in ("v3", "v4") for s in d["sections"]): continue
             pg.set_content(page(d, stage)); pg.wait_for_timeout(100)
-            foot = f"<div style='font-size:8px;width:100%;text-align:center;color:#555'>Camday · Stage {stage} Mathematics Unit {n} · page <span class='pageNumber'></span> of <span class='totalPages'></span></div>"
+            foot = (f"<div style='font-size:8px;width:100%;padding:0 15mm;display:flex;justify-content:space-between;color:#555;font-family:Arial'><span><img src='{ICON}' style='height:10px;vertical-align:middle'> "
+                    f"<b>Camday</b> · Stage {stage} Mathematics · Unit {n} {html.escape(d['unit']['title'])}</span><span>page <span class='pageNumber'></span> of <span class='totalPages'></span></span></div>")
             out = os.path.join(ROOT, "web", "media", "read", f"m{stage}u{n:02d}.pdf")
             pg.pdf(path=out, format="A4", print_background=True, display_header_footer=True, header_template="<div></div>", footer_template=foot, margin={"top": "16mm", "bottom": "18mm", "left": "15mm", "right": "15mm"})
             print(os.path.basename(out))

@@ -38,8 +38,8 @@ N[(9, "9.1")]["book"] = BK(
            ans="Answers will vary. Three terms usually fix a simple rule; two terms do not.", think=True),
     ],
     check=["Can I find and use a term-to-term rule, including a two-step rule?", "Can I tell a finite sequence from an infinite one?", "Can I work backwards to an earlier term?"],
-    look=["Example 2 shows that terms do not have to be whole numbers.", "In Question 4, decide first which way you are moving: right with the rule, left with its inverse."],
-    note="Read the words to know and both examples, then do the practice on paper.")
+    look=["Look at how each new term starts from the term just found.", "In Practice on paper, Question 4: decide first which way you are moving – right with the rule, left with its inverse."],
+    note="The whole lesson as a document you can print, then Practice on paper with answers at the back.")
 
 N[(9, "9.2")]["book"] = BK(
     keys=[("pattern", "a picture made of shapes, dots or sticks"), ("sequence of patterns", "patterns that grow by the same rule"), ("term-to-term rule", "how the count changes from one pattern to the next")],
@@ -63,8 +63,8 @@ N[(9, "9.2")]["book"] = BK(
         Ex("Design your own growing pattern from a shape you choose. Draw the first four patterns, write the sequence, and find the number of shapes in Pattern 15.", ans="Answers will vary."),
     ],
     check=["Can I write the sequence for a growing pattern?", "Can I explain the rule using the picture?", "Can I find a pattern far along without drawing every one?"],
-    look=["In the example, notice WHY only 3 matchsticks are added each time.", "Questions 5 and 6 can be solved by counting steps – no drawing needed."],
-    note="Read the canteen example and the matchstick example, then do the practice on paper.")
+    look=["Look at how the picture explains the rule: what is added each time, and why?", "Practice on paper, Questions 5 and 6 can be solved by counting steps – no drawing needed."],
+    note="The whole lesson as a document you can print, then Practice on paper with answers at the back.")
 
 N[(9, "9.3")]["book"] = BK(
     keys=[("position number", "where a term is in the sequence: 1st, 2nd, 3rd, …"), ("nth term", "the term in position n"), ("nth term rule", "a rule that gives any term from its position")],
@@ -88,8 +88,8 @@ N[(9, "9.3")]["book"] = BK(
         Ex("Kai writes the nth term of 30, 31, 32, 33, … as 30n. Show that he is wrong and write the correct rule.", ans="30n gives 30, 60, 90 – it goes up in 30s. Each term is 29 more than its position, so the rule is n + 29.", think=True),
     ],
     check=["Can I find the nth term rule of a sequence like 7, 14, 21, … or 9, 10, 11, …?", "Can I use an nth term rule to find any term?", "Can I find the position of a term?"],
-    look=["Compare Examples 1 and 2: which one is a times table, and which one goes up by 1?", "Question 5: think about what every term of 11n has in common."],
-    note="Read the two examples, then do the practice on paper.")
+    look=["Look at the difference between a times-table rule (7n) and an add rule (n + 3).", "Practice on paper, Question 5: what do all the terms of 11n have in common?"],
+    note="The whole lesson as a document you can print, then Practice on paper with answers at the back.")
 
 N[(9, "9.4")]["book"] = BK(
     keys=[("function", "a rule that links inputs to outputs"), ("function machine", "a diagram of the rule in a box"), ("input / output", "the number that goes in / comes out"),
@@ -114,5 +114,5 @@ N[(9, "9.4")]["book"] = BK(
         Ex("A bakery packs buns by the dozen: dozens → × 12 → buns.", ("How many buns are in 6 dozen?", "72"), ("How many dozen is 84 buns?", "7")),
     ],
     check=["Can I find outputs of a function machine?", "Can I find inputs using the inverse operation?", "Can I read and draw a mapping diagram?", "Can I find a one-step function from inputs and outputs?"],
-    look=["In Example 2, notice that one inverse machine is used for all three outputs.", "Question 5: why is one pair not enough?"],
-    note="Read the pancake example and both examples, then do the practice on paper.")
+    look=["Look at how the inverse machine runs backwards.", "Practice on paper, Question 5: why is one input–output pair not enough?"],
+    note="The whole lesson as a document you can print, then Practice on paper with answers at the back.")
