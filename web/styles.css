@@ -2041,3 +2041,4 @@ a.stm-pill:hover{box-shadow:inset 0 0 0 2px #222;background-color:inherit}
 .bkwhere{font-size:13px;padding:3px 8px;border-radius:99px;background:#EEF0F4;color:#5A6577}.bkwhere.on{background:#E6F7F1;color:#1F7A55;font-weight:600}
 @media (min-width:900px){.bkimg{width:auto;max-width:100%}}
 .qp{white-space:pre-line}
+@media (max-width:600px){.bkover .rdttl{display:none}.bkover .rdbar{gap:4px;padding:6px 8px;flex-wrap:wrap}.bkover .rdbar .btn{padding:4px 9px;min-height:32px}.bkover .bkguide{font-size:13px;max-height:76px;overflow:auto;padding:6px 10px}.bkover .bkbody{padding:4px}}

@@ -799,7 +799,7 @@
     if (!bk) { toast('This book is not available yet.'); return; }
     const vs = Core.vstate(st, s.id); vs.pdf = true; Core.persist();
     const key = `atomic.book.${st ? st.id : 'guest'}.${ref.book}`; let saved = null; try { saved = JSON.parse(localStorage.getItem(key) || 'null'); } catch (e) { }
-    let page = ref.p0, zoom = (saved && saved.zoom) || 1;
+    let page = ref.p0, zoom = (saved && saved.zoom) || (window.innerWidth < 600 ? 1.6 : 1);   // phones open zoomed in, so the text is readable
     const img = el('img', { class: 'bkimg', alt: '', id: 'bookImg' }), wrap = el('div', { class: 'bkbody', id: 'bookBody' }, img);
     const ov = el('div', { class: 'rdover bkover', role: 'dialog', 'aria-modal': 'true', 'aria-label': bk.title, id: 'book' });
     const pg = el('input', { type: 'number', min: 1, max: bk.pages, class: 'bkpg', id: 'bookPage', 'aria-label': 'Page of the book file', onchange: () => show(+pg.value) });

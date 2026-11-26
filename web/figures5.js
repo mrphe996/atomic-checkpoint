@@ -118,4 +118,14 @@
     s += `<line x1="${cx}" y1="${cy}" x2="${cx + 78 * Math.sin(am)}" y2="${cy - 78 * Math.cos(am)}" stroke="#3B7DD8" stroke-width="5" stroke-linecap="round"/><circle cx="${cx}" cy="${cy}" r="7" fill="#1F2A37"/>`;
     return { svg: W(s), a: {} };
   };
+  // mapping diagram: two number lines (input above, output below) and an arrow from each input to its output.
+  // o.min, o.max (default 0–10); o.pairs [[in, out], …]
+  F.mapping = (o) => {
+    const mn = o.min != null ? o.min : 0, mx = o.max != null ? o.max : 10, x0 = 70, x1 = 450, sx = v => x0 + (v - mn) / (mx - mn) * (x1 - x0), y1 = 50, y2 = 170;
+    let s = `<defs><marker id="mpa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3B7DD8"/></marker></defs>`;
+    [[y1, 'input'], [y2, 'output']].forEach(([y, lb]) => { s += `<line x1="${x0 - 8}" y1="${y}" x2="${x1 + 8}" y2="${y}" stroke="${INK}" stroke-width="2"/>` + T(34, y, lb, { size: 13, bold: true });
+      for (let v = mn; v <= mx; v++) s += `<line x1="${sx(v)}" y1="${y - 6}" x2="${sx(v)}" y2="${y + 6}" stroke="${INK}" stroke-width="1.5"/>` + T(sx(v), y === y1 ? y - 18 : y + 20, v < 0 ? '−' + (-v) : v, { size: 12 }); });
+    (o.pairs || []).forEach(([a, b]) => { s += `<line x1="${sx(a)}" y1="${y1 + 4}" x2="${sx(b)}" y2="${y2 - 6}" stroke="#3B7DD8" stroke-width="2.4" marker-end="url(#mpa)"/>`; });
+    return { svg: W(s).replace('viewBox="0 0 480 320"', 'viewBox="0 0 480 210"'), a: {} };
+  };
 })();

@@ -2042,6 +2042,7 @@ a.stm-pill:hover{box-shadow:inset 0 0 0 2px var(--l-222222,#222222);background-c
 .bkwhere{font-size:13px;padding:3px 8px;border-radius:99px;background:var(--b-F1F1F1,#F1F1F1);color:var(--t-222222,#222222)}.bkwhere.on{background:var(--b-E6F7F1,#E6F7F1);color:var(--t-1F7A55,#1F7A55);font-weight:600}
 @media (min-width:900px){.bkimg{width:auto;max-width:100%}}
 .qp{white-space:pre-line}
+@media (max-width:600px){.bkover .rdttl{display:none}.bkover .rdbar{gap:4px;padding:6px 8px;flex-wrap:wrap}.bkover .rdbar .btn{padding:4px 9px;min-height:32px}.bkover .bkguide{font-size:13px;max-height:76px;overflow:auto;padding:6px 10px}.bkover .bkbody{padding:4px}}
 
 /* ---------- Design system B (generated: edit tools/build-theme.mjs) ---------- */
 :root{--band:#F4F4F1;--sh:0 1px 2px rgba(34,34,34,.10),0 10px 24px rgba(34,34,34,.12);--bd:1px solid #D6D6D2}

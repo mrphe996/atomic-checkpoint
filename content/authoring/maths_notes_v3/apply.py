@@ -77,9 +77,10 @@ def apply(stage, unit, data):
         for i, b in enumerate(s["lesson"]):
             if b.get("k") == "error" and not b.get("id"): b["id"] = f"{s['id']}-e{i}"
         if v.get("v") != 4: carry(s["lesson"], figs, old, v.get("figs"))
-        if v.get("stops") is not None: s["stops"] = [stop(s["id"], i + 1, a, q) for i, (a, q) in enumerate(v["stops"])]
+        if v.get("stops") is not None: s["stops"] = [stop(s["id"], i + 1, min(a, len(s["lesson"]) - 1), q) for i, (a, q) in enumerate(v["stops"])]
         else: place(s.get("stops") or [], old, len(s["lesson"]), v.get("at"), s["lesson"])
         if v.get("pdf"): s["pdf"] = v["pdf"]
+        if v.get("book"): s["book"] = v["book"]   # Camday book pages (tools/build_books.py turns them into the Read the PDF pages)
         for k, lst in (v.get("practice") or {}).items(): s[k] = lst
         if s.get("stops"): s["stops"].sort(key=lambda x: x["after"])   # numbered in reading order
         tries = sum(1 for b in s["lesson"] if b.get("qq") or b.get("k") == "error")

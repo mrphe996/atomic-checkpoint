@@ -92,11 +92,11 @@ def explain(id, prompt, rubric, need, model, hint, diff="H", obj="O1", skill="Re
     q.update(kw); return q
 
 
-def L(*blocks, stops=None, at=None, pdf=None, practice=None):
+def L(*blocks, stops=None, at=None, pdf=None, practice=None, book=None):
     """one v4 lesson. stops = new check questions [(after_block_index, question)] (replace the old ones);
     at = placement of the old check questions (if stops is None); pdf = [{book, p0, p1, label, note, look}];
     practice = {"req": [...], "prac": [...], "adv": [...], "more": [...]} replaces those lists (keeps any list not given)"""
-    return {"blocks": list(blocks), "stops": stops, "at": list(at) if at else None, "pdf": pdf, "practice": practice, "v": 4}
+    return {"blocks": list(blocks), "stops": stops, "at": list(at) if at else None, "pdf": pdf, "practice": practice, "book": book, "v": 4}
 
 
 def grid(id, prompt, cols, rows, hint, reason, diff="M", obj="O1", skill="Data", **kw):
@@ -130,3 +130,23 @@ def machine(*ops, inp="input", out="output", back=False):
     nodes = [{"x": round(x), "y": 40, "t": t, **({"c": "#FFF6D6"} if 0 < i < n - 1 else {})} for i, (x, t) in enumerate(zip(xs, labels))]
     edges = [[i + 1, i] if back else [i, i + 1] for i in range(n - 1)]
     return {"kind": "flow", "nodes": nodes, "edges": edges, "w": 84, "vb": "0 0 480 80"}
+
+
+# ---- Camday book pages (the 'Read the PDF' step): Camday's own textbook-style pages for a lesson ----
+def Ex(q, *parts, tip=None, fig=None, think=False, ans=None):
+    """one exercise question. parts = (text, answer) pairs, or plain strings for a one-part question (answer in ans)"""
+    pp = [{"t": p[0], "a": p[1]} if isinstance(p, (list, tuple)) else {"t": p, "a": ""} for p in parts]
+    e = {"q": q, "parts": pp}
+    if ans: e["a"] = ans
+    if tip: e["tip"] = tip
+    if fig: e["fig"] = fig
+    if think: e["think"] = True
+    return e
+
+
+def BK(keys, intro, examples, exercise, check, look=(), note=None):
+    """keys = [(word, meaning)]; intro = paragraphs (may contain {"table": …} or {"fig": …} dicts);
+    examples = worked examples [(title, question, [(answer line, explanation)])]; exercise = [Ex(...)];
+    check = 'I can …' lines; look = what to notice when reading (shown in the lesson); note = one line for the lesson"""
+    return {"keys": [list(k) for k in keys], "intro": list(intro), "examples": [{"t": t, "q": q, "rows": [list(r) for r in rows]} for t, q, rows in examples],
+            "exercise": list(exercise), "check": list(check), "look": list(look), "note": note}
