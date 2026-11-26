@@ -1834,3 +1834,42 @@ body.tiny .lessonbody .qfig svg{max-height:320px}
 @media (hover:none){.su-grip{display:none}}
 .form.su-form4{max-width:820px}
 .card.narrow.signup:has(.su-form4){max-width:900px}
+/* ---- site footer in columns ---- */
+footer.foot .in{display:block;padding:56px 24px 28px}
+.fcols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:32px 48px;align-items:start}
+.fcol h3{margin:0 0 14px;font-size:18px}
+.fcol ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.fcol a{font-weight:400;font-size:16px;text-decoration:none;color:inherit}.fcol a:hover{text-decoration:underline}
+.fbrand{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.fbase{display:flex;justify-content:space-between;gap:32px;align-items:flex-end;margin-top:44px;padding-top:20px;border-top:1px solid var(--line)}
+.fbase .disclaimer{max-width:760px;flex-basis:auto}
+.fcopy{margin:0;font-size:13.5px;text-align:right;white-space:nowrap}
+@media (max-width:820px){.fcols{grid-template-columns:1fr 1fr}.fbrand{align-items:flex-start;grid-column:1/-1}.fbase{flex-direction:column;align-items:flex-start}.fcopy{text-align:left;white-space:normal}}
+/* ---- unit page: unit navigation, and the topic list in a framed container with a tab ---- */
+.unav{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.path4{position:relative;margin-top:44px;padding:12px;border-radius:16px;background:#BEF2BD}
+.pathtab{position:absolute;left:0;top:-44px;height:56px;padding:12px 24px 0;border-radius:16px 16px 0 0;background:#BEF2BD;font-size:18px}
+.path4 .u4topic{box-shadow:none;border:0}
+/* ---- roadmap as a timeline ---- */
+.roadmap.tline{display:block;margin:8px 0 0 10px;padding:0}
+.tline .rmcol{position:relative;background:none!important;border-radius:0;padding:0 0 40px 40px;border-left:4px solid #BEF2BD;gap:12px}
+.tline .rmcol.rm-planned{border-left-style:dashed;padding-bottom:8px}
+.tline .rmdot{position:absolute;left:-16px;top:0;width:28px;height:28px;border-radius:50%;background:#BEF2BD;border:2px solid #9FDC9D}
+.rmlab{align-self:flex-start;display:inline-block;background:#BEF2BD;padding:2px 8px;font-weight:700;font-size:16px}
+.rmlab.big{font-size:22px;margin-bottom:6px}
+.tline .rmcol h3{font-size:24px;margin:0 0 4px}
+.tline .rmit{max-width:760px}
+.rmcard h2{font-size:34px;margin:0 0 28px}
+/* ---- landing hero: course picker ---- */
+.lp-picklab{font-size:18px}
+.lp-pick{position:relative;display:flex;align-items:center;gap:0;background:#fff;border:3px solid #222;border-radius:6px;padding:10px;margin-top:18px}
+.lp-picktag{position:absolute;left:10px;top:-22px;background:#FFE555;padding:2px 10px;font-weight:700;font-size:17px;transform:rotate(-1.5deg)}
+.lp-pf{flex:1 1 0;min-width:0;display:flex;flex-direction:column;padding:4px 14px;border-right:2px solid #E4E4E4}
+.lp-pf:nth-of-type(2){border-right:0}
+.lp-pf span{font-weight:700;font-size:16px}
+.lp-pf select{border:0!important;background:transparent;padding:2px 0;font:inherit;min-height:32px;cursor:pointer}
+.lp-feats{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
+.lp-feat{display:flex;align-items:center;gap:10px;flex:1 1 150px}
+.lp-feat i{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.6);flex:none}
+.lp-feat b{font-size:16px;line-height:1.25}
+@media (max-width:560px){.lp-pick{flex-wrap:wrap}.lp-pf{flex-basis:45%}.lp-pick .btn{flex:1 1 100%;margin-top:8px}}

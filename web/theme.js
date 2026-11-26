@@ -54,8 +54,8 @@
      Roles: t = text (color, fill, stroke) · b = background · l = lines (border, outline, box-shadow). ---- */
   const ROLE = p => (/^(color|fill|stroke|caret-color|text-decoration-color|-webkit-text-fill-color)$/.test(p) ? 't' : /^background/.test(p) ? 'b' : /^(border|outline|box-shadow|column-rule)/.test(p) ? 'l' : null);
   // light mode, softened so long study sessions are easier on the eyes (no pure white, calmer mint)
-  const LIGHT = { b: { '#FFFFFF': '#FBFAF6', '#F4F4F1': '#E9E7E0', '#F9F9F9': '#F3F1EB', '#F2F2F2': '#ECEAE3', '#BEF2BD': '#CBE8C8', '#E8F9E8': '#E3F1E0', '#FFF7CC': '#F8EFC4', '#FFE555': '#F5DA4C' },
-    l: { '#E4E4E4': '#D9D7CF', '#CACACA': '#C2C0B8', '#D6D6D2': '#CFCDC5' }, t: {} };
+  const LIGHT = { b: {},
+    l: {}, t: {} };   // true white pages and the full-strength pastels
   const DARK = { b: { '#FFFFFF': '#1F2329', '#F4F4F1': '#14171B', '#F9F9F9': '#252A31', '#F2F2F2': '#2B3038', '#E4E4E4': '#323840', '#CACACA': '#3B424B', '#222222': '#39404A', '#000000': '#4A525E', '#575757': '#4A525E', '#808080': '#5B6470',
       '#BEF2BD': '#1F3B2A', '#E8F9E8': '#1B3024', '#FFF7CC': '#3A3417', '#FFE555': '#544A16', '#0149AF': '#2F6FD6', '#013A8C': '#3B7BE2', '#FDECEC': '#3D2026', '#FFF8F8': '#332025' },
     t: { '#222222': '#ECEBE7', '#000000': '#FFFFFF', '#575757': '#B7BBC2', '#808080': '#8F959E', '#0149AF': '#8DB6FF', '#013A8C': '#B1CDFF', '#287C34': '#7FD88D', '#DD0035': '#FF8094' },

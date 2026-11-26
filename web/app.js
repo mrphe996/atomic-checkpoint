@@ -148,10 +148,16 @@
     const side = el('aside', { class: 'toc', 'aria-label': 'Course contents' }); if (st && opts.toc) side.append(toc());
     const main = el('div', { class: 'content', id: 'main', tabindex: '-1' });
     const wrap = el('div', { class: 'wrap' + (opts.toc && st ? '' : ' nosidebar'), id: 'wrap' }, el('div', { class: 'layout' }, side, main));
-    const foot = el('footer', { class: 'foot' }, el('div', { class: 'in' }, el('img', { src: 'atomic_logo.png', alt: 'Atomic — Quality Learning, Brighter Future.' }),
-      el('nav', { class: 'footnav', 'aria-label': 'Legal and help' }, el('a', { href: '#privacy' }, 'Privacy'), el('a', { href: '#terms' }, 'Terms'), el('a', { href: '#cookies' }, 'Cookies'), el('a', { href: '#help' }, 'Help & contact'), el('a', { href: '#news' }, 'News & roadmap'), el('a', { href: '#verify' }, 'Verify a certificate')),
-      el('span', { class: 'tag2' }, el('b', {}, 'ATOMIC EDUCATION'), ' ✦ Quality Learning, Brighter Future. · Written by the Atomic teaching team'),
-      el('p', { class: 'muted disclaimer' }, 'Atomic courses are written by Atomic Education and aligned to Cambridge curriculum frameworks (Primary Science 0097, Lower Secondary Science 0893, Primary Mathematics 0096, Lower Secondary Mathematics 0862). Checkpoint-format papers are written by Atomic – they are not Cambridge papers. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.')));
+    const fcol = (h, links) => el('nav', { class: 'fcol', 'aria-label': h }, el('h3', {}, h), el('ul', {}, ...links.map(([l, href]) => el('li', {}, el('a', { href }, l)))));
+    const foot = el('footer', { class: 'foot' }, el('div', { class: 'in' },
+      el('div', { class: 'fcols footnav' },
+        fcol('Learners', [['All courses', '#courses'], [Core.BILLING_OFF ? 'Free test' : 'Pricing', '#pricing'], ['Verify a certificate', '#verify'], [me ? 'My progress' : 'Log in', me ? '#profile' : '#signin']]),
+        fcol('Atomic', [['Home', '#home'], ['News & roadmap', '#news'], ['Help & contact', '#help']]),
+        fcol('Legal', [['Terms & conditions', '#terms'], ['Privacy policy', '#privacy'], ['Privacy for learners', '#privacy-kids'], ['Cookie policy', '#cookies']]),
+        el('div', { class: 'fbrand' }, el('img', { src: 'atomic_logo.png', alt: 'Atomic — Quality Learning, Brighter Future.' }), el('span', { class: 'tag2' }, 'Quality Learning, Brighter Future.'))),
+      el('div', { class: 'fbase' },
+        el('p', { class: 'muted disclaimer' }, 'Atomic courses are written by Atomic Education and aligned to Cambridge curriculum frameworks (Primary Science 0097, Lower Secondary Science 0893, Primary Mathematics 0096, Lower Secondary Mathematics 0862). Checkpoint-format papers are written by Atomic – they are not Cambridge papers. Atomic is not affiliated with or endorsed by Cambridge University Press & Assessment.'),
+        el('p', { class: 'fcopy' }, el('b', {}, `© Atomic Education ${new Date().getFullYear()}`), el('br'), 'Written by the Atomic teaching team'))));
     app.append(...[demoBar, header, sub, wrap, foot].filter(Boolean));
     lastXp = null;
   }
@@ -479,7 +485,7 @@
   }
   const minTxt = m => m >= 60 ? `${Math.floor(m / 60)} h${m % 60 ? ' ' + (m % 60) + ' min' : ''}` : `${m} min`;
   function learningPath() {
-    const box = el('div', { class: 'path4', style: 'display:flex;flex-direction:column;gap:16px' });
+    const box = el('div', { class: 'path4', style: 'display:flex;flex-direction:column;gap:16px' }); box.append(el('span', { class: 'pathtab' }, el('b', {}, String(C.sections.length)), ` topic${C.sections.length === 1 ? '' : 's'} in unit`));
     C.sections.forEach(s => {
       const lock = Core.secLock(st, s), done = Core.secDone(st, s), vd = Core.videoDone(st, s), vs = Core.vstate(st, s.id);
       const reqDone = 8 - Core.reqLeft(st, s).length;
@@ -539,6 +545,10 @@
           el('div', {}, el('b', {}, `${sec} / ${nobj}`), el('span', {}, 'objectives secure'))),
         el('div', { class: 'u4prog' }, el('div', { class: 'top2' }, el('span', {}, 'Unit progress'), el('span', {}, pct + '%')), el('div', { class: 'pbar' + (pct === 100 ? ' ok' : '') }, el('i', { style: `width:${pct}%` }))),
         el('div', { class: 'btnrow' }, el('button', { class: 'btn navy', type: 'button', onclick: () => goNext(nx) }, '▶ ' + nx.label), el('a', { class: 'btn', href: '#map' }, 'Open the concept map')),
+        el('nav', { class: 'unav', 'aria-label': 'Units' },
+          Core.UNO > 1 ? el('a', { class: 'btn small', href: '#u-' + (Core.UNO - 1), id: 'prevUnit' }, '← Previous unit') : null,
+          Core.UNO < Core.unitCount() ? el('a', { class: 'btn small', href: '#u-' + (Core.UNO + 1), id: 'nextUnit' }, 'Next unit →') : null,
+          el('a', { class: 'btn small', href: '#stage-' + Core.STAGE, id: 'allUnits' }, 'View all units')),
         Core.unitOpen(Core.UNIT) ? el('span', { class: 'opentag', style: 'margin-top:10px;display:inline-block' }, 'All topics open (test phase)') : null),
       el('div', { class: 'u4art', 'aria-hidden': 'true' }, el('div', { class: 'lens2', html: `<svg viewBox="0 0 380 380">${art.svg}</svg>` }), el('span', { class: 'tag' }, art.tag),
         el('div', { class: 'float' }, el('i', {}, Core.passed(st) ? '🏆' : '▶'), el('div', {}, el('b', {}, Core.passed(st) ? 'Unit passed' : 'Next up'), nx.label)))));
@@ -2197,17 +2207,27 @@
     const level = (badge, t, d, tag, open, on) => el(open ? 'button' : 'div', { class: 'card lift lp-level' + (open ? '' : ' off'), type: open ? 'button' : null, onclick: on || null },
       el('span', { class: 'pop lp-badge' + (open ? ' on' : '') }, badge), el('span', { class: 'lp-lt' }, el('b', {}, t), el('br'), el('small', {}, d)), el('span', { class: 'lp-tag' + (open ? ' open' : '') }, tag));
     const scrollTry = () => document.getElementById('try').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('wrap').before(el('div', { class: 'newsstrip' }, el('span', {}, 'New: choose one, two or all three subjects for your stage'), el('a', { href: '#news' }, 'See what is new  ›')));
     document.getElementById('wrap').before(el('section', { class: 'lp-hero dots' }, el('div', { class: 'lp-hero-in' },
       el('div', { class: 'lp-hero-txt' },
-        el('span', { class: 'lp-pill' }, el('span', { class: 'lp-ping' }, el('i'), el('i')), 'Atomic · Science and Mathematics · Lower Secondary'),
+        el('span', { class: 'lp-pill' }, el('span', { class: 'lp-ping' }, el('i'), el('i')), 'Science · Mathematics · English · Stages 1 to 9'),
         el('h1', {}, 'Try the whole course.', el('br'), el('span', {}, 'Right here, right now.')),
         el('p', {}, 'No sign-up. Watch a lesson, answer questions, sit a mini test and see your progress — all on this page.'),
         el('div', { class: 'btnrow' }, el('button', { class: 'btn primary big shine', type: 'button', id: 'heroStart', onclick: scrollTry }, 'Start the tour ', el('span', { class: 'arr' }, '↓')),
           el('button', { class: 'btn big', type: 'button', id: 'heroGuest', onclick: startGuest }, 'Open topic 3.1'))),
-      el('div', { class: 'lp-levels' }, el('span', { class: 'lp-eyebrow' }, 'OUR LEVELS'),
-        level('7–9', 'Lower Secondary', 'Checkpoint · Stages 7, 8 and 9', 'Open now', true, startGuest),
-        level('IG', 'Cambridge IGCSE', 'Biology · Chemistry · Physics', 'Coming soon'),
-        level('A', 'AS & A Level', 'Biology · Chemistry · Physics', 'Coming soon')))));
+      (() => { // course picker: subject + stage → the course page
+        const subj = el('select', { id: 'pickSubj', 'aria-label': 'Subject' }, el('option', { value: '0' }, 'Science'), el('option', { value: '10' }, 'Mathematics'), el('option', { value: '20' }, 'English (ESL)'));
+        const stg = el('select', { id: 'pickStage', 'aria-label': 'Stage' }, ...[1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => el('option', { value: n, selected: n === 7 ? '' : null }, `Stage ${n}`)));
+        const view = () => { const g = Number(subj.value) + Number(stg.value); go(Core.subjectKeys(Number(stg.value)).includes(g) && !Core.stageLocked(g) ? 'stage-' + g : 'courses'); };
+        const feat = (svg, t) => el('span', { class: 'lp-feat' }, el('i', { 'aria-hidden': 'true', html: svg }), el('b', {}, t));
+        const ic = d => `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+        return el('div', { class: 'lp-levels' },
+          el('b', { class: 'lp-picklab' }, 'Explore the courses for Cambridge Stages 1 to 9'),
+          el('div', { class: 'lp-pick', id: 'coursePick' }, el('span', { class: 'lp-picktag' }, 'Choose a course'),
+            el('label', { class: 'lp-pf' }, el('span', {}, 'Subject'), subj), el('label', { class: 'lp-pf' }, el('span', {}, 'Stage'), stg),
+            el('button', { class: 'btn primary', type: 'button', id: 'pickView', onclick: view }, 'View ', el('span', { class: 'arr' }, '→'))),
+          el('div', { class: 'lp-feats' }, feat(ic('<path d="M8 5v14l11-7z"/>'), 'Lessons that ask questions'), feat(ic('<path d="M4 20h16M6 16l10-10 3 3-10 10H6z"/>'), 'Practice for every topic'), feat(ic('<circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/>'), 'Unit Tests and a certificate')));
+      })())));
 
     // ---- the four-box demo ----
     const panel = el('div', { class: 'lp-panel' }), nav = el('nav', { class: 'lp-steps', 'aria-label': 'Demo steps' }), badge = el('span', { class: 'lp-count' });
@@ -2334,15 +2354,16 @@
     pageHero('NEWS', 'What’s new and what’s coming', 'Announcements from the Atomic team and the features we are building next. Dates are our current plan and may move.');
     const [ann, road] = await Promise.all([Backend.announcements().catch(() => []), (Backend.roadmap ? Backend.roadmap() : Promise.resolve([])).catch(() => [])]);
     const when = d => { try { return new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return ''; } };
-    m.append(el('section', { class: 'card', id: 'newsList' }, el('h2', {}, '📣 Latest news'),
+    m.append(el('section', { class: 'card', id: 'newsList' }, el('h2', {}, 'Latest news'),
       ann.length ? el('div', { class: 'newslist' }, ...ann.map(a => el('article', { class: 'newsit' + (a.level === 'warn' ? ' warn' : '') }, el('small', { class: 'muted' }, when(a.created_at)), el('h3', {}, a.title), a.body ? el('p', {}, a.body) : null)))
         : el('p', { class: 'muted' }, 'No news right now – check back soon.')));
-    const COLS = [['building', '🛠 Being built', 'We are working on these now.'], ['planned', '🗓 Planned', 'Coming next, in this order.'], ['released', '✅ Released', 'Recently added to Atomic.']];
-    const tl = el('div', { class: 'roadmap', id: 'roadmap' }, ...COLS.map(([k, h, sub]) => { const items = road.filter(x => x.status === k);
-      return el('section', { class: 'rmcol rm-' + k }, el('h3', {}, h), el('small', { class: 'muted' }, sub),
-        ...(items.length ? items.map((x, i) => el('article', { class: 'rmit rise', style: `animation-delay:${i * 0.06}s` }, el('div', { class: 'rmmeta' }, x.target ? el('span', { class: 'rmwhen' }, x.target) : null, x.tag ? el('span', { class: 'rmtag' }, x.tag) : null), el('b', {}, x.title), x.body ? el('p', {}, x.body) : null))
+    // a timeline: what is live, what we are building now, what comes next
+    const COLS = [['released', 'Released', 'Already on Atomic'], ['building', 'Being built', 'What we are working on now'], ['planned', 'Planned', 'What comes next']];
+    const tl = el('div', { class: 'roadmap tline', id: 'roadmap' }, ...COLS.map(([k, h, sub]) => { const items = road.filter(x => x.status === k);
+      return el('section', { class: 'rmcol rm-' + k }, el('span', { class: 'rmdot', 'aria-hidden': 'true' }), el('span', { class: 'rmlab' }, h), el('h3', {}, sub),
+        ...(items.length ? items.map(x => el('article', { class: 'rmit' }, el('b', {}, x.title), el('div', { class: 'rmmeta' }, x.target ? el('span', { class: 'rmwhen' }, x.target) : null, x.tag ? el('span', { class: 'rmtag' }, x.tag) : null), x.body ? el('p', {}, x.body) : null))
           : [el('p', { class: 'muted' }, 'Nothing here yet.')])); }));
-    m.append(el('section', { class: 'card' }, el('h2', {}, '🧭 Roadmap'), tl));
+    m.append(el('section', { class: 'card rmcard' }, el('span', { class: 'rmlab big' }, 'Roadmap'), el('h2', {}, 'What is live, and what comes next'), tl));
   }
   // ---- sign-up (B2C): account → about you and your school → choose ONE stage → choose a plan (one subject or the whole stage) ----
   const SCHOOL_YEARS = [['Year 1 / Kindergarten', 1], ['Year 2 / Grade 1', 2], ['Year 3 / Grade 2', 3], ['Year 4 / Grade 3', 4], ['Year 5 / Grade 4', 5], ['Year 6 / Grade 5', 6], ['Year 7 / Grade 6', 7], ['Year 8 / Grade 7', 8], ['Year 9 / Grade 8', 9], ['Year 10 / Grade 9', 9], ['Other', 0]];
@@ -2420,7 +2441,7 @@
           opts.querySelectorAll('.su-plan').forEach(b => { const id = b.dataset.plan, on = id === 'bundle' ? isAll() : F.pick.includes(Number(id)); b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); });
           const ch = chosen(), n = ch.length;
           basket.textContent = '';
-          basket.append(el('b', { class: 'su-bh' }, `🎒 Your child’s Stage ${lv} plan`),
+          basket.append(el('b', { class: 'su-bh' }, `Your child’s Stage ${lv} plan`),
             n ? el('div', { class: 'su-chips' }, ...ch.map(k => el('span', { class: 'su-chip', draggable: 'true', 'data-k': k, ondragstart: ev => { ev.dataTransfer.setData('text/plain', 'out:' + k); } },
               SUBJ_ICON(k) + ' ' + SUBJ_NAME(k), el('button', { type: 'button', class: 'su-x', 'aria-label': `Remove ${SUBJ_NAME(k)}`, onclick: () => set(k, false) }, '×'))))
               : el('p', { class: 'muted su-empty' }, 'Drag subjects here, or tap them.'));

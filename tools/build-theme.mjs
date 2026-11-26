@@ -88,6 +88,43 @@ input[type=checkbox],input[type=radio]{accent-color:#222}
 .xpg-step{background:#F2F2F2;border-color:#CACACA}
 .xpg-step.goal{background:#FFF7CC;border-color:#222}
 .modal{border-radius:6px;box-shadow:0 20px 50px rgba(34,34,34,.3)}
+/* ---- 26/11/2026 review against the reference design system: white pages, ink buttons, flat cards, pastel bands ---- */
+body{background:#FFFFFF}
+:root{--band:#F2F2F2}
+[tabindex="-1"]:focus,[tabindex="-1"]:focus-visible,#main:focus-visible{outline:none!important;box-shadow:none!important}
+.btn{border:2px solid #222;color:#222;background:#fff;font-weight:600;min-height:48px}
+.btn:hover{background:#F2F2F2;box-shadow:none;transform:none;text-decoration:underline}
+.btn.primary,.btn.navy,.btn.sel{background:#222;color:#fff;border:2px solid #222}
+.btn.primary:hover,.btn.navy:hover{background:#575757;border-color:#575757;box-shadow:none}
+.btn.ghost{background:#fff;color:#222;border:2px solid #222}
+.btn.gold:hover{box-shadow:none}
+.btn.small{min-height:40px}
+.card{box-shadow:none;border:1px solid #CACACA}
+.u4topic,.stsw{box-shadow:none}
+.u4topic.cur{border:2px solid #222}.u4topic.cur .u4num{background:#222;border-color:#222}
+.u4hero{background:#F5E9F2}
+.u4hero .lens2{background:#DEB7D5}
+.phero{background:#E3E9FB}
+.sw{background:#E3E9FB;border:1px solid #A0B6F2;border-radius:6px;min-height:52px}
+.sw:hover{background:#C6D1EF;box-shadow:none;transform:none}
+.sw.on{background:#222;border-color:#222}
+.stsw .sgrow{background:none;gap:10px;padding:0}
+.sw .swn{background:transparent;border:0}
+footer.foot{border-top:3px solid #222;margin-top:64px}
+footer.foot::before{display:none}
+.fcol a{color:#222}
+.rmit{box-shadow:none}
+.su-basket{background:#E3E9FB;border-color:#A0B6F2}
+.su-plan.on{background:#E3E9FB;border-color:#222;box-shadow:none}
+.su-plan.on .su-tick,.su-chip{border-color:#222}
+.su-plan.on .su-tick{background:#222}
+/* media in a heavy ink frame, light body copy, announcement strip */
+.player,.lp-video,.dthumb,.vthumb,video{border:4px solid #222;border-radius:0}
+.lp-hero p,.phero p,.dhero p,.u4hero .lead,.hero p{font-weight:300;font-size:20px}
+.lp-hero h1{font-weight:600;font-size:56px}.lp-hero h1 span{color:#222}
+.lp-pill{border-radius:4px;border:0;background:#fff}
+.newsstrip{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;background:#B0E2DE;border-bottom:2px solid #222;padding:12px 20px;font-size:17px;font-weight:300}
+.newsstrip a{font-weight:700;color:#222;text-decoration:none}.newsstrip a:hover{text-decoration:underline}
 html.theme-oak #splash{background:#fff}
 html.theme-oak #splash .sp-in{color:#222}
 html.theme-oak #splash .sp-bar{background:#F2F2F2}
