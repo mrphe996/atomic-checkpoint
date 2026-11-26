@@ -126,5 +126,39 @@
     12
    ]
   }
+ },
+ "c7u04": {
+  "title": "Camday Maths Stage 7 · Unit 4: Decimals",
+  "pages": 28,
+  "dir": "media/books/c7u04/",
+  "ext": "webp",
+  "pdf": "media/books/c7u04.pdf?v=8e4cde27b2",
+  "v": "8e4cde27b2",
+  "secs": {
+   "4.1": [
+    2,
+    6
+   ],
+   "4.2": [
+    7,
+    11
+   ],
+   "4.3": [
+    12,
+    16
+   ],
+   "4.4": [
+    17,
+    21
+   ],
+   "4.5": [
+    22,
+    26
+   ],
+   "answers": [
+    27,
+    28
+   ]
+  }
  }
 }
