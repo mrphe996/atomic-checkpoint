@@ -21,6 +21,7 @@ def main(st, ns):
         assert U.stage == st, (n, U.stage)
         U.texp(*TX.EXP[n])
         for sid, f in getattr(TX, "TPL", {}).get(n, []): U.ttpl(sid, f)
+        import school; school.apply(U)   # the school revision sets: extra Practice / Worksheet questions and Unit Test kinds
         # the Unit Test must not reuse any practice question; if a unit's templates have too few variants,
         # trim its "More practice" pool until two fresh papers fit
         while True:

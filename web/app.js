@@ -1163,7 +1163,7 @@
   // print-only worksheet (Design v4 paper): personal watermark on every page, microprint frame, copy code — no PDF download
   function wsLearner() { return { name: st.name || st.alias || 'Learner', lid: 'L-' + String(st.id || 'guest').replace(/-/g, '').slice(0, 7).toUpperCase() }; }
   function worksheetPages(s, info, mount) {
-    const qs = s.vocab ? s.prac.filter(q => q.type !== 'say' && !q.audio).slice(0, 14) : s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
+    const qs = s.vocab ? s.prac.filter(q => q.type !== 'say' && !q.audio).slice(0, 14) : s.req.concat(s.prac.slice(0, 6), s.prac.slice(6).filter(q => q.ws).slice(0, 20)); /* + the school revision set */ const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
     const mins = Math.max(15, Math.ceil(qs.length * 2.5 / 5) * 5);
     const out = el('div', { class: 'ws', id: 'wsPages' }); let pno = 0; const pages = [];
     const foot = last => el('div', { class: 'pfoot' }, el('div', {}, `© Camday ${info.date.getFullYear()} · ${doc} · Copy #${info.serial} · ${info.code}`, el('br'), `Printed for ${info.name} (${info.lid}) on ${info.when}. Not for sharing or resale.`), el('b', {}, last ? 'End of worksheet' : '[Turn over'));
@@ -1199,7 +1199,7 @@
     return out;
   }
   function wsAnswers(s, info, mount) {
-    const qs = s.vocab ? s.prac.filter(q => q.type !== 'say' && !q.audio).slice(0, 14) : s.req.concat(s.prac.slice(0, 6)); const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
+    const qs = s.vocab ? s.prac.filter(q => q.type !== 'say' && !q.audio).slice(0, 14) : s.req.concat(s.prac.slice(0, 6), s.prac.slice(6).filter(q => q.ws).slice(0, 20)); /* + the school revision set */ const doc = `S${Core.STAGE}-U${String(Core.UNO).padStart(2, '0')}-W${s.id.replace('.', '')}`;
     const out = el('div', { class: 'ws', id: 'wsAns' }); mount.append(out);
     const foot = last => el('div', { class: 'pfoot' }, el('div', {}, `© Camday ${info.date.getFullYear()} · ${doc} · ANSWERS · ${info.code}`, el('br'), `Opened by ${info.name} (${info.lid}) on ${info.when}. For self-marking only.`), el('b', {}, last ? 'End of answers' : '[Turn over'));
     const page = () => { const pg = el('div', { class: 'a4 paper4', html: Paper.frame() + Paper.watermark(info) }); const pb = el('div', { class: 'pbody' }, el('div', { class: 'prun' }, el('span', {}, el('b', {}, 'ANSWERS'), ` · Cambridge ${Core.stageLabel()} · Unit ${Core.UNO} · ${s.id} ${s.title}`), el('b', {}, 'Mark scheme'))); pg.append(pb); out.append(pg); return pb; };

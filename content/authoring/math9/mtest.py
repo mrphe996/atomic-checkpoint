@@ -94,7 +94,9 @@ def assemble(U):
                             if pool: break
                         if pool: break
                 if not pool: raise AssertionError(f"{U.pre}{P}: ran out of templates ({len(chosen)} chosen, {len(cands)} candidates)")
-                pool.sort(key=lambda c: cnt[c["sid"]])
+                # question kinds from the school revision sets come first (at most 12 in a paper), then the least-used section
+                ns = sum(1 for x in chosen if getattr(x.get("t"), "school", False))
+                pool.sort(key=lambda c: (0 if ns < 12 and getattr(c.get("t"), "school", False) else 1, cnt[c["sid"]]))
                 c = pool[0]; chosen.append(c); got.append(c)
             return got
 

@@ -11,6 +11,7 @@ def build(n):
     U = importlib.import_module(f"u{n:02d}").U
     import math9_tx as TX, mtest
     U.texp(*TX.EXP[n]); U.ttpl and [U.ttpl(sid, f) for sid, f in TX.TPL.get(n, [])]
+    sys.path.insert(0, os.path.join(HERE, "..")); import school; school.apply(U)   # the school revision sets
     while True:   # trim "More practice" if the Unit Test needs fresh variants (tests never reuse practice questions)
         try: tests = mtest.assemble(U); break
         except AssertionError:
