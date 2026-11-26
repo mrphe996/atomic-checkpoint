@@ -2046,7 +2046,7 @@ a.stm-pill:hover{box-shadow:inset 0 0 0 2px var(--l-222222,#222222);background-c
 /* lesson document on top + tidy v4 lessons */
 .docpanel{padding:16px 18px}.dochead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}.dochead h2{margin:2px 0 0;font-size:20px}
 .docnote{margin:8px 0 2px;color:var(--t-222222,#222222)}.docnav{display:flex;align-items:center;justify-content:center;gap:12px;margin:10px 0 8px}.docpg{font-weight:600;color:var(--t-222222,#222222);min-width:110px;text-align:center}
-.docview{background:var(--b-F2F2F2,#F2F2F2);border-radius:6px;padding:10px;text-align:center}.docimg{display:block;width:100%;max-width:860px;margin:0 auto;height:auto;background:var(--b-FFFFFF,#FFFFFF);box-shadow:0 1px 8px rgba(92,92,92,.18);border-radius:4px}
+.docview{background:var(--b-F2F2F2,#F2F2F2);border-radius:6px;padding:6px;text-align:center}.docimg{display:block;width:100%;max-width:1000px;margin:0 auto;height:auto;background:var(--b-FFFFFF,#FFFFFF);box-shadow:0 1px 8px rgba(92,92,92,.18);border-radius:4px}
 .ltoc{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 4px}.ltoc .eyebrow{margin-right:6px}
 .lessonbody.v4 .lblock h2{font-size:21px;margin-bottom:6px}.lessonbody.v4 .lblock .lp{font-size:17px;line-height:1.55;margin:5px 0}
 .lessonbody.v4 .lblock{margin-bottom:12px}.lessonbody.v4 .lsteps li{margin:4px 0}.lessonbody.v4 .table,.lessonbody.v4 table{font-size:15px}

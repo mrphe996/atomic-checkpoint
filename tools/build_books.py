@@ -20,8 +20,8 @@ ICON = "data:image/svg+xml;base64," + base64.b64encode(open(os.path.join(WEB, "c
 KIND = {"hook": "Start here", "recall": "Remember", "idea": "Key idea", "method": "Method", "example": "Worked example", "try": "Try it",
         "error": "Spot the mistake", "mistake": "Common mistake", "tip": "Exam tip", "summary": "Key points"}
 CSS = """
-@page { size: A4; margin: 14mm 14mm 18mm; }
-body { font-family: 'Lexend', 'Inter', Arial, sans-serif; color: #1B1B1B; font-size: 11.5pt; line-height: 1.5; margin: 0; }
+@page { size: A4; margin: 12mm 11mm 18mm; }
+body { font-family: 'Lexend', 'Inter', Arial, sans-serif; color: #1B1B1B; font-size: 12.5pt; line-height: 1.5; margin: 0; }
 .top { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #222; padding-bottom: 6px; }
 .top img { height: 26px; } .top span { font-size: 9pt; letter-spacing: .06em; font-weight: 700; color: #444; text-transform: uppercase; }
 .title { margin: 12px 0 8px; } .title .chip { display: inline-block; background: #FFE555; font-weight: 800; padding: 2px 10px; border-radius: 6px; font-size: 11pt; }
@@ -70,7 +70,7 @@ def qtext(q):
         rows = [[("☐" if isinstance(c, dict) else c) for c in r] for r in q["rows"]]
         return md(q["prompt"]) + table({"head": q["head"], "rows": rows})
     if q.get("type") in ("mcq", "multi"):
-        return md(q["prompt"]) + "<br>" + "   ".join(f"({'ABCDEF'[i]}) {md(o['t'])}" for i, o in enumerate(q["options"]))
+        return md(q["prompt"]) + "<span style='display:block;margin:4px 0 0 10px'>" + "<br>".join(f"<b>{'ABCDEF'[i]}</b>  {md(o['t'])}" for i, o in enumerate(q["options"])) + "</span>"
     return md(q.get("prompt", ""))
 
 
@@ -173,10 +173,10 @@ def build(stage, units):
                 pg.goto("file://" + hp); pg.wait_for_timeout(150)
                 pp = os.path.join(tmp, f"{len(parts):02d}.pdf")
                 pg.pdf(path=pp, format="A4", print_background=True, display_header_footer=True, header_template="<span></span>",
-                       footer_template=(f"<div style='font-size:8px;width:100%;padding:0 14mm;display:flex;justify-content:space-between;align-items:center;color:#555;font-family:Arial'>"
+                       footer_template=(f"<div style='font-size:8px;width:100%;padding:0 10mm;display:flex;justify-content:space-between;align-items:center;color:#555;font-family:Arial'>"
                                         f"<span><img src='{ICON}' style='height:10px;vertical-align:middle'> <b>Camday</b> · Stage {stage} Mathematics · {html.escape(label)}</span>"
                                         f"<span>page <span class='pageNumber'></span></span></div>"),
-                       margin={"top": "14mm", "bottom": "16mm", "left": "14mm", "right": "14mm"})
+                       margin={"top": "12mm", "bottom": "16mm", "left": "10mm", "right": "10mm"})
                 parts.append((name, pp))
             w = PdfWriter(); pages = {}; at = 1
             for name, pp in parts:
@@ -195,6 +195,10 @@ def build(stage, units):
                 if box and box[3] < int(H_ * 0.85):   # keep the branded footer: content + a small gap + footer strip
                     foot = im.crop((0, int(H_ * 0.92), W_, H_)); top = im.crop((0, 0, W_, box[3] + int(W_ * 0.04)))
                     im = Image.new("RGB", (W_, top.size[1] + foot.size[1]), "white"); im.paste(top, (0, 0)); im.paste(foot, (0, top.size[1]))
+                # on screen the A4 side margins only make the text smaller: keep a thin margin round the content
+                g2 = im.convert("L").point(lambda v: 0 if v > 245 else 255).getbbox()
+                if g2:
+                    pad = int(im.size[0] * 0.025); im = im.crop((max(0, g2[0] - pad), 0, min(im.size[0], g2[2] + pad), im.size[1]))
                 im.save(os.path.join(img_dir, f"p{i:04d}.webp"), "WEBP", quality=90)
             import hashlib
             ver = hashlib.sha1(open(pdf_out, "rb").read()).hexdigest()[:10]

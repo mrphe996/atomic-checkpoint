@@ -1,31 +1,31 @@
 {
  "c7u09": {
   "title": "Camday Maths Stage 7 · Unit 9: Sequences and Functions",
-  "pages": 33,
+  "pages": 34,
   "dir": "media/books/c7u09/",
   "ext": "webp",
-  "pdf": "media/books/c7u09.pdf?v=a68aeeb35a",
-  "v": "a68aeeb35a",
+  "pdf": "media/books/c7u09.pdf?v=eeab1084d5",
+  "v": "eeab1084d5",
   "secs": {
    "9.1": [
     2,
-    9
+    10
    ],
    "9.2": [
-    10,
-    17
+    11,
+    18
    ],
    "9.3": [
-    18,
-    23
+    19,
+    24
    ],
    "9.4": [
-    24,
-    31
+    25,
+    32
    ],
    "answers": [
-    32,
-    33
+    33,
+    34
    ]
   }
  }
