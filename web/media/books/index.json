@@ -294,5 +294,35 @@
     12
    ]
   }
+ },
+ "c7u11": {
+  "title": "Camday Maths Stage 7 · Unit 11: Graphs",
+  "pages": 25,
+  "dir": "media/books/c7u11/",
+  "ext": "webp",
+  "pdf": "media/books/c7u11.pdf?v=bc62107bb9",
+  "v": "bc62107bb9",
+  "secs": {
+   "11.1": [
+    2,
+    6
+   ],
+   "11.2": [
+    7,
+    12
+   ],
+   "11.3": [
+    13,
+    18
+   ],
+   "11.4": [
+    19,
+    23
+   ],
+   "answers": [
+    24,
+    25
+   ]
+  }
  }
 }
