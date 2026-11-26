@@ -272,5 +272,27 @@
     26
    ]
   }
+ },
+ "c7u10": {
+  "title": "Camday Maths Stage 7 · Unit 10: Percentages",
+  "pages": 12,
+  "dir": "media/books/c7u10/",
+  "ext": "webp",
+  "pdf": "media/books/c7u10.pdf?v=2e89ae1b1c",
+  "v": "2e89ae1b1c",
+  "secs": {
+   "10.1": [
+    2,
+    6
+   ],
+   "10.2": [
+    7,
+    11
+   ],
+   "answers": [
+    12,
+    12
+   ]
+  }
  }
 }
