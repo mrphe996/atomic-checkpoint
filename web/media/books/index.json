@@ -414,5 +414,39 @@
     32
    ]
   }
+ },
+ "c7u15": {
+  "title": "Camday Maths Stage 7 · Unit 15: Shapes, Area and Volume",
+  "pages": 26,
+  "dir": "media/books/c7u15/",
+  "ext": "webp",
+  "pdf": "media/books/c7u15.pdf?v=1757a42fd2",
+  "v": "1757a42fd2",
+  "secs": {
+   "15.1": [
+    2,
+    5
+   ],
+   "15.2": [
+    6,
+    9
+   ],
+   "15.3": [
+    10,
+    14
+   ],
+   "15.4": [
+    15,
+    19
+   ],
+   "15.5": [
+    20,
+    24
+   ],
+   "answers": [
+    25,
+    26
+   ]
+  }
  }
 }
