@@ -301,7 +301,7 @@ NOTES[(16, "16.2")] = S(
 NOTES[(16, "16.3")] = S(
     Q("What does a pie chart show?",
       "A **pie chart** shows how a whole is split into parts. Each **sector** is a fraction of the whole circle, so a fraction of the data.",
-      "In the pie chart above, Walk is half (50%), Bus a quarter (25%), Car 15% and Bike 10%."),
+      "In the pie chart below, Walk is half (50%), Bus a quarter (25%), Car 15% and Bike 10%."),
     Q("How are angles calculated?",
       "The whole circle is **360°**. Each item gets **360° ÷ total**.",
       "If 30 people were asked, each person is 360 ÷ 30 = **12°**; 7 people → 84°.",
