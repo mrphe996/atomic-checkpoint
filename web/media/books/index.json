@@ -692,5 +692,83 @@
     29
    ]
   }
+ },
+ "c8u08": {
+  "title": "Camday Maths Stage 8 · Unit 8: Shapes and Symmetry",
+  "pages": 17,
+  "dir": "media/books/c8u08/",
+  "ext": "webp",
+  "pdf": "media/books/c8u08.pdf?v=bb45197116",
+  "v": "bb45197116",
+  "secs": {
+   "8.1": [
+    2,
+    6
+   ],
+   "8.2": [
+    7,
+    11
+   ],
+   "8.3": [
+    12,
+    16
+   ],
+   "answers": [
+    17,
+    17
+   ]
+  }
+ },
+ "c8u09": {
+  "title": "Camday Maths Stage 8 · Unit 9: Sequences and Functions",
+  "pages": 20,
+  "dir": "media/books/c8u09/",
+  "ext": "webp",
+  "pdf": "media/books/c8u09.pdf?v=37f91ee3d0",
+  "v": "37f91ee3d0",
+  "secs": {
+   "9.1": [
+    2,
+    5
+   ],
+   "9.2": [
+    6,
+    9
+   ],
+   "9.3": [
+    10,
+    13
+   ],
+   "9.4": [
+    14,
+    18
+   ],
+   "answers": [
+    19,
+    20
+   ]
+  }
+ },
+ "c8u10": {
+  "title": "Camday Maths Stage 8 · Unit 10: Percentages",
+  "pages": 10,
+  "dir": "media/books/c8u10/",
+  "ext": "webp",
+  "pdf": "media/books/c8u10.pdf?v=98185f057f",
+  "v": "98185f057f",
+  "secs": {
+   "10.1": [
+    2,
+    5
+   ],
+   "10.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
