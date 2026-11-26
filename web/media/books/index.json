@@ -448,5 +448,43 @@
     26
    ]
   }
+ },
+ "c7u16": {
+  "title": "Camday Maths Stage 7 · Unit 16: Interpreting and Discussing Results",
+  "pages": 31,
+  "dir": "media/books/c7u16/",
+  "ext": "webp",
+  "pdf": "media/books/c7u16.pdf?v=504e24f715",
+  "v": "504e24f715",
+  "secs": {
+   "16.1": [
+    2,
+    6
+   ],
+   "16.2": [
+    7,
+    11
+   ],
+   "16.3": [
+    12,
+    16
+   ],
+   "16.4": [
+    17,
+    20
+   ],
+   "16.5": [
+    21,
+    25
+   ],
+   "16.6": [
+    26,
+    29
+   ],
+   "answers": [
+    30,
+    31
+   ]
+  }
  }
 }
