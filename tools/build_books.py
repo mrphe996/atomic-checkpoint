@@ -56,24 +56,24 @@ def section(stage, unit, s, objectives):
     ex = []
     for e in b["examples"]:
         rows = "".join(f"<tr><td>{md(r[0])}</td><td>{md(r[1]) if len(r) > 1 else ''}</td></tr>" for r in e["rows"])
-        ex.append(f"<div class='we'><h3>{md(e['t'])}</h3><p class='q'>{md(e['q'])}</p><table><tr><td><i>Answer</i></td><td><i>Why</i></td></tr>{rows}</table></div>")
+        ex.append(f"<div class='we'><h3>{md(e['t'])}</h3><p class='q'>{md(e['q'])}</p><table><tr><td><i>Working</i></td><td><i>Reason</i></td></tr>{rows}</table></div>")
     qs = []
     for i, e in enumerate(b["exercise"], 1):
         parts = "".join(f"<li>{md(p['t'])}</li>" for p in e["parts"])
-        body = f"{md(e['q'])}{fig(e['fig']) if e.get('fig') else ''}{'<ol>' + parts + '</ol>' if parts else ''}{'<div class=tip><b>Tip</b> ' + md(e['tip']) + '</div>' if e.get('tip') else ''}"
-        if e.get("think"): body = f"<div class='think'><div class='tag'>THINK LIKE A MATHEMATICIAN</div>{body}</div>"
+        body = f"{md(e['q'])}{fig(e['fig']) if e.get('fig') else ''}{'<ol>' + parts + '</ol>' if parts else ''}{'<div class=tip><b>Hint</b> ' + md(e['tip']) + '</div>' if e.get('tip') else ''}"
+        if e.get("think"): body = f"<div class='think'><div class='tag'>REASON IT OUT</div>{body}</div>"
         qs.append(f"<div class='qq'><span class='n'>{i}</span><div>{body}</div></div>")
     check = "".join(f"<p>{md(c)}</p>" for c in b["check"])
     return (f"<div class='sec' data-sid='{s['id']}'><div class='band'><b>{s['id']} {md(s['title'])}</b><span>CAMDAY MATHS · STAGE {stage} · UNIT {unit}</span></div>"
-            f"<div class='goal'><b>In this section you will …</b>{goals}</div>"
-            f"<div class='cols'><div>{intro}</div><div class='keys'><h3>Key words</h3>{keys}</div></div>{''.join(ex)}"
-            f"<div class='ex'><h2>Exercise {s['id']}</h2>{''.join(qs)}</div><div class='check'><h3>Summary checklist</h3>{check}</div></div>")
+            f"<div class='goal'><b>By the end of these pages you can …</b>{goals}</div>"
+            f"<div class='cols'><div>{intro}</div><div class='keys'><h3>Words to know</h3>{keys}</div></div>{''.join(ex)}"
+            f"<div class='ex'><h2>Practice on paper {s['id']}</h2>{''.join(qs)}</div><div class='check'><h3>Can I …?</h3>{check}</div></div>")
 
 
 def answers(secs):
     out = ["<div class='ans'><h2>Answers</h2>"]
     for s in secs:
-        out.append(f"<h3>Exercise {s['id']}</h3>")
+        out.append(f"<h3>Practice on paper {s['id']}</h3>")
         for i, e in enumerate(s["book"]["exercise"], 1):
             letters = "abcdefghij"
             a = "; ".join(f"({letters[k]}) {md(p['a'])}" for k, p in enumerate(e["parts"]) if p.get("a"))
