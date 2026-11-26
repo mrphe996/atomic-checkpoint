@@ -770,5 +770,83 @@
     10
    ]
   }
+ },
+ "c8u11": {
+  "title": "Camday Maths Stage 8 · Unit 11: Graphs",
+  "pages": 22,
+  "dir": "media/books/c8u11/",
+  "ext": "webp",
+  "pdf": "media/books/c8u11.pdf?v=d5e90d18b7",
+  "v": "d5e90d18b7",
+  "secs": {
+   "11.1": [
+    2,
+    5
+   ],
+   "11.2": [
+    6,
+    11
+   ],
+   "11.3": [
+    12,
+    16
+   ],
+   "11.4": [
+    17,
+    21
+   ],
+   "answers": [
+    22,
+    22
+   ]
+  }
+ },
+ "c8u12": {
+  "title": "Camday Maths Stage 8 · Unit 12: Ratio and Proportion",
+  "pages": 14,
+  "dir": "media/books/c8u12/",
+  "ext": "webp",
+  "pdf": "media/books/c8u12.pdf?v=2de36b8f64",
+  "v": "2de36b8f64",
+  "secs": {
+   "12.1": [
+    2,
+    5
+   ],
+   "12.2": [
+    6,
+    9
+   ],
+   "12.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
+ },
+ "c8u13": {
+  "title": "Camday Maths Stage 8 · Unit 13: Probability",
+  "pages": 11,
+  "dir": "media/books/c8u13/",
+  "ext": "webp",
+  "pdf": "media/books/c8u13.pdf?v=bbf57b42d3",
+  "v": "bbf57b42d3",
+  "secs": {
+   "13.1": [
+    2,
+    6
+   ],
+   "13.2": [
+    7,
+    10
+   ],
+   "answers": [
+    11,
+    11
+   ]
+  }
  }
 }
