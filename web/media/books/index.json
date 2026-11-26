@@ -606,5 +606,31 @@
     19
    ]
   }
+ },
+ "c8u05": {
+  "title": "Camday Maths Stage 8 · Unit 5: Angles and Constructions",
+  "pages": 17,
+  "dir": "media/books/c8u05/",
+  "ext": "webp",
+  "pdf": "media/books/c8u05.pdf?v=3e216ab8cd",
+  "v": "3e216ab8cd",
+  "secs": {
+   "5.1": [
+    2,
+    6
+   ],
+   "5.2": [
+    7,
+    11
+   ],
+   "5.3": [
+    12,
+    16
+   ],
+   "answers": [
+    17,
+    17
+   ]
+  }
  }
 }
