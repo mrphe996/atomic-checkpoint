@@ -121,3 +121,12 @@ def tiles(*patterns, rows=None, gap=1):
         w = max(c for c, _ in p) + 1
         cells += [[x + c, r] for c, r in p]; x += w + gap
     return {"kind": "cells", "cells": cells, "cols": x - gap, "rows": R}
+
+
+def machine(*ops, inp="input", out="output", back=False):
+    """a function machine diagram: input → op → op → output (back=True draws it right to left, for the inverse)"""
+    labels = [inp] + list(ops) + [out]
+    n = len(labels); xs = [50 + i * (380 / (n - 1)) for i in range(n)]
+    nodes = [{"x": round(x), "y": 40, "t": t, **({"c": "#FFF6D6"} if 0 < i < n - 1 else {})} for i, (x, t) in enumerate(zip(xs, labels))]
+    edges = [[i + 1, i] if back else [i, i + 1] for i in range(n - 1)]
+    return {"kind": "flow", "nodes": nodes, "edges": edges, "w": 84, "vb": "0 0 480 80"}

@@ -409,7 +409,7 @@
       const kx = Math.abs(dx) * bh > Math.abs(dy) * bw ? (bw / 2) / Math.abs(dx) * d : (bh / 2) / Math.abs(dy || 1) * d; const k = Math.min(kx, d / 2 - 4) + 4;
       s += L(A.x + dx / d * k, A.y + dy / d * k, Bn.x - dx / d * k, Bn.y - dy / d * k, { w: 2, m: id }) + (lb ? T((A.x + Bn.x) / 2 + 6, (A.y + Bn.y) / 2 - 6, lb, { size: 11, fill: C.blue, anchor: 'start' }) : ''); });
     N.forEach((n) => { s += `<rect x="${n.x - bw / 2}" y="${n.y - bh / 2}" width="${bw}" height="${bh}" rx="8" fill="${n.c || '#EAF3FF'}" stroke="${C.ink}" stroke-width="1.6"/>` + T(n.x, n.y + 4.5, n.t, { size: 12, bold: true }); });
-    return { svg: W(s), a: {} };
+    return { svg: W(s, o.vb), a: {} };   // o.vb: a shorter viewBox for one-row machines
   };
   // particle diagrams in boxes; boxes: [{state: solid|liquid|gas|mixture, label}]
   F.particles = (o) => {
