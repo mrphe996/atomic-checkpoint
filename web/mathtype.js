@@ -56,19 +56,21 @@
     }
     function unary() { if (eat('-')) return '-' + unary(); if (eat('+')) return '+' + unary(); if (eat('±')) return '\\pm ' + unary(); return power(); }
     function term() {
-      let out = unary();
+      // explicit × and ÷ split the term into factors; / takes only the factor just before it (2/3 × 3/4 is two fractions),
+      // while numbers and letters written side by side stay together (2x/3 is one fraction)
+      let pre = '', last = unary();
       for (;;) {
-        const x = peek(); if (!x) return out;
-        if (x.k === '*' || x.k === '·' || x.k === '×') { p++; out += ' \\times ' + unary(); continue; }
-        if (x.k === '÷') { p++; out += ' \\div ' + unary(); continue; }
-        if (x.k === '/') { p++; out = `\\frac{${bare(out)}}{${bare(unary())}}`; continue; }
+        const x = peek(); if (!x) return pre + last;
+        if (x.k === '*' || x.k === '·' || x.k === '×') { p++; pre += last + ' \\times '; last = unary(); continue; }
+        if (x.k === '÷') { p++; pre += last + ' \\div '; last = unary(); continue; }
+        if (x.k === '/') { p++; last = `\\frac{${bare(last)}}{${bare(unary())}}`; continue; }
         if (x.k === 'n' || x.k === 'v' || x.k === '(' || x.k === '√' || x.k === '∛' || x.k === 'π') {
           const prev = t[p - 1];
           // two numbers side by side: a mixed number 2 1/2, otherwise not maths
-          if (x.k === 'n' && prev && prev.k === 'n') { if (t[p + 1] && t[p + 1].k === '/' && t[p + 2] && t[p + 2].k === 'n') { p++; p++; const d = t[p++]; out += `\\tfrac{${x.v}}{${d.v}}`; continue; } throw 0; }
-          out += (x.k === 'n' ? ' \\times ' : x.k === 'v' && prev && prev.k === 'v' ? '\\,' : '') + power(); continue;
+          if (x.k === 'n' && prev && prev.k === 'n') { if (t[p + 1] && t[p + 1].k === '/' && t[p + 2] && t[p + 2].k === 'n') { p++; p++; const d = t[p++]; last += `\\tfrac{${x.v}}{${d.v}}`; continue; } throw 0; }
+          last += (x.k === 'n' ? ' \\times ' : x.k === 'v' && prev && prev.k === 'v' ? '\\,' : '') + power(); continue;
         }
-        return out;
+        return pre + last;
       }
     }
     function sum() { let out = term(); for (;;) { if (eat('+')) out += ' + ' + term(); else if (eat('-')) out += ' - ' + term(); else if (eat('±')) out += ' \\pm ' + term(); else return out; } }

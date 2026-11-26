@@ -145,9 +145,15 @@ def answers(stage, d, secs):
 
 def page_html(body):
     scripts = "".join(f"<script src='file://{os.path.join(WEB, x)}'></script>" for x in SCRIPTS)
-    return (f"<html><head><meta charset='utf-8'><style>{CSS}</style></head><body>{body}"
-            f"<script>window.AtomicTheme=null;</script>{scripts}<script>document.querySelectorAll('[data-fig]').forEach(d=>{{const f=JSON.parse(d.dataset.fig);"
-            f"const g=window.AtomicFig&&window.AtomicFig.get(f.kind,f);if(g)d.innerHTML=g.svg;}});</script></body></html>")
+    kx = os.path.join(WEB, "vendor/katex")
+    # maths is typeset exactly as in the app (KaTeX via mathtype.js): fractions, powers, equations
+    return (f"<!DOCTYPE html><html><head><meta charset='utf-8'><link rel='stylesheet' href='file://{kx}/katex.min.css'><style>{CSS}"
+            f" .lblock .katex{{font-size:1.08em}} .lblock .katex .mfrac{{font-size:1.06em}}</style></head><body><div class='lblock'>{body}</div>"
+            f"<script>window.AtomicTheme=null;window.Core={{IS_MATHS:true}};</script>{scripts}<script src='file://{kx}/katex.min.js'></script>"
+            f"<script src='file://{os.path.join(WEB, 'mathtype.js')}'></script>"
+            f"<script>document.querySelectorAll('[data-fig]').forEach(d=>{{const f=JSON.parse(d.dataset.fig);"
+            f"const g=window.AtomicFig&&window.AtomicFig.get(f.kind,f);if(g)d.innerHTML=g.svg;}});"
+            f"try{{AtomicMath.typeset(document.body)}}catch(e){{}}</script></body></html>")
 
 
 def build(stage, units):
@@ -170,7 +176,7 @@ def build(stage, units):
             chunks.append(("answers", answers(stage, d, secs), "Answers"))
             for name, body, label in chunks:
                 hp = os.path.join(tmp, f"{len(parts):02d}.html"); open(hp, "w", encoding="utf-8").write(page_html(body))
-                pg.goto("file://" + hp); pg.wait_for_timeout(150)
+                pg.goto("file://" + hp); pg.wait_for_timeout(350)
                 pp = os.path.join(tmp, f"{len(parts):02d}.pdf")
                 pg.pdf(path=pp, format="A4", print_background=True, display_header_footer=True, header_template="<span></span>",
                        footer_template=(f"<div style='font-size:8px;width:100%;padding:0 10mm;display:flex;justify-content:space-between;align-items:center;color:#555;font-family:Arial'>"

@@ -4,8 +4,8 @@
   "pages": 34,
   "dir": "media/books/c7u09/",
   "ext": "webp",
-  "pdf": "media/books/c7u09.pdf?v=eeab1084d5",
-  "v": "eeab1084d5",
+  "pdf": "media/books/c7u09.pdf?v=3cfd61882d",
+  "v": "3cfd61882d",
   "secs": {
    "9.1": [
     2,
@@ -34,8 +34,8 @@
   "pages": 34,
   "dir": "media/books/c7u01/",
   "ext": "webp",
-  "pdf": "media/books/c7u01.pdf?v=51af89040f",
-  "v": "51af89040f",
+  "pdf": "media/books/c7u01.pdf?v=e265a9da8d",
+  "v": "e265a9da8d",
   "secs": {
    "1.1": [
     2,
@@ -72,8 +72,8 @@
   "pages": 35,
   "dir": "media/books/c7u02/",
   "ext": "webp",
-  "pdf": "media/books/c7u02.pdf?v=484306a086",
-  "v": "484306a086",
+  "pdf": "media/books/c7u02.pdf?v=f211fefa06",
+  "v": "f211fefa06",
   "secs": {
    "2.1": [
     2,
@@ -110,8 +110,8 @@
   "pages": 12,
   "dir": "media/books/c7u03/",
   "ext": "webp",
-  "pdf": "media/books/c7u03.pdf?v=2d239703cc",
-  "v": "2d239703cc",
+  "pdf": "media/books/c7u03.pdf?v=50aeeaa551",
+  "v": "50aeeaa551",
   "secs": {
    "3.1": [
     2,
@@ -132,8 +132,8 @@
   "pages": 28,
   "dir": "media/books/c7u04/",
   "ext": "webp",
-  "pdf": "media/books/c7u04.pdf?v=8e4cde27b2",
-  "v": "8e4cde27b2",
+  "pdf": "media/books/c7u04.pdf?v=15b125031d",
+  "v": "15b125031d",
   "secs": {
    "4.1": [
     2,
@@ -166,8 +166,8 @@
   "pages": 19,
   "dir": "media/books/c7u05/",
   "ext": "webp",
-  "pdf": "media/books/c7u05.pdf?v=b1467b1afa",
-  "v": "b1467b1afa",
+  "pdf": "media/books/c7u05.pdf?v=62f685b1bc",
+  "v": "62f685b1bc",
   "secs": {
    "5.1": [
     2,
@@ -189,11 +189,11 @@
  },
  "c7u06": {
   "title": "Camday Maths Stage 7 · Unit 6: Collecting Data",
-  "pages": 12,
+  "pages": 13,
   "dir": "media/books/c7u06/",
   "ext": "webp",
-  "pdf": "media/books/c7u06.pdf?v=0809517200",
-  "v": "0809517200",
+  "pdf": "media/books/c7u06.pdf?v=d298b0bc37",
+  "v": "d298b0bc37",
   "secs": {
    "6.1": [
     2,
@@ -201,11 +201,45 @@
    ],
    "6.2": [
     7,
-    11
+    12
    ],
    "answers": [
+    13,
+    13
+   ]
+  }
+ },
+ "c7u07": {
+  "title": "Camday Maths Stage 7 · Unit 7: Fractions",
+  "pages": 27,
+  "dir": "media/books/c7u07/",
+  "ext": "webp",
+  "pdf": "media/books/c7u07.pdf?v=335ae5a4de",
+  "v": "335ae5a4de",
+  "secs": {
+   "7.1": [
+    2,
+    6
+   ],
+   "7.2": [
+    7,
+    11
+   ],
+   "7.3": [
     12,
-    12
+    16
+   ],
+   "7.4": [
+    17,
+    21
+   ],
+   "7.5": [
+    22,
+    25
+   ],
+   "answers": [
+    26,
+    27
    ]
   }
  }
