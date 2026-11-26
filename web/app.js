@@ -101,7 +101,7 @@
   function shell(opts) {
     const r = location.hash.slice(1) || 'home'; const app = document.getElementById('app'); app.innerHTML = '';
     const me = Core.S.me;
-    const area = r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || /^stage-\d+$/.test(r) || /^checkout-\d+$/.test(r) || r === 'map' || r === 'level' ? 'course' : r === 'bank' || r === 'topic' || r === 'drill' ? 'bank' : r === 'test' || r === 'tests' || r === 'result' || r === 'remedial' || r === 'final' || /^f(x|res)-\d+$/.test(r) ? 'test' : r === 'profile' || r === 'cert' ? 'profile' : r === 'board' ? 'board' : r === 'home' ? 'home' : r === 'challenge' || /^ch[lxpr]-/.test(r) ? 'challenge' : r === 'games' || /^game-/.test(r) ? 'games' : r;
+    const area = r.startsWith('v-') || r.startsWith('sp-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || /^stage-\d+$/.test(r) || /^checkout-\d+$/.test(r) || r === 'map' || r === 'level' ? 'course' : r === 'bank' || r === 'topic' || r === 'drill' ? 'bank' : r === 'test' || r === 'tests' || r === 'result' || r === 'remedial' || r === 'final' || /^f(x|res)-\d+$/.test(r) ? 'test' : r === 'profile' || r === 'cert' ? 'profile' : r === 'board' ? 'board' : r === 'home' ? 'home' : r === 'challenge' || /^ch[lxpr]-/.test(r) ? 'challenge' : r === 'games' || /^game-/.test(r) ? 'games' : r;
     const right = el('span', { class: 'topright' });
     let nav;
     if (st) {
@@ -510,6 +510,7 @@
         tile(reqDone === 8 ? 'ok' : reqDone || pracDone ? 'go' : '', reqDone === 8 ? '✓' : s.vocab ? (C.unit.young ? '🎧' : '🎤') : '✎', s.vocab ? (C.unit.young ? 'Listen & practise' : 'Listen, say & practise') : 'Practise', `${pracDone}/${s.prac.length} · ${reqDone}/8 Core`, '#ex-' + R(s.id), !!lock || !vd, reqDone && reqDone < 8 ? el('span', { class: 'u4mini' }, el('i', { style: `width:${reqDone / 8 * 100}%` })) : null),
         s.lab ? (() => { const L = (st.labs || {})[s.id] || {}; const vdn = !!(L.v || {}).done, hdn = !!(L.h || {}).done; return tile(vdn && hdn ? 'ok' : vdn || hdn ? 'go' : '', '🧪', 'Experiment', vdn && hdn ? 'Lab + home ✓' : vdn ? 'Lab ✓ · try it at home' : 'Virtual lab + at home', '#lab-' + R(s.id), !!lock); })()
           : tile(st.ws.includes(s.id) ? 'ok' : '', '🖨', 'Worksheet', st.ws.includes(s.id) ? 'Printed' : 'Print only', '#ws-' + R(s.id), !!lock),
+        Core.IS_ESL ? (() => { const sp = (st.speak || {})[s.id]; return tile(sp ? 'ok' : '', '🎤', 'Speaking', sp ? `${sp.n} talk${sp.n === 1 ? '' : 's'} · best ${'★'.repeat(sp.best)}` : 'Talk with the tutor', '#sp-' + R(s.id), !!lock); })() : null,
         secGameWords(s).length ? (() => { const gg = (st.games || {})[s.id]; return tile(gg ? 'ok' : '', '🎮', 'Word games', gg ? `${gg.n} played · best ${gg.best}` : `5 games · ${secGameWords(s).length} words`, '#gm-' + R(s.id), !!lock); })() : null);
       const pill = { lock: ['lock', '🔒 Locked'], done: ['ok', 'Completed'], go: ['go', 'In progress'], new: ['no', 'Not started'] }[state];
       const btn = lock ? (lock.paywall ? el('a', { class: 'btn small gold', href: '#' + lock.route }, lock.guest ? 'Sign up free' : 'See plans') : null)
@@ -847,6 +848,96 @@
       });
     });
     drawStatus();
+  }
+
+  /* ---------- Speaking room (ESL): a spoken conversation with the Camday tutor about the lesson topic ----------
+     The browser turns speech into text (Web Speech API) and reads the tutor's reply aloud; typing always works too.
+     Replies come from the AI tutor (api/speak.js) when the learner is signed in; otherwise a scripted partner built from the lesson's words answers. */
+  const SPEAK_TURNS = 6;
+  function viewSpeak(sid) {
+    const s = Core.sec(sid), m = $main(); if (!s || !Core.IS_ESL) return go('u-' + Core.UNO);
+    const lock = Core.secLock(st, s);
+    subbar('', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}: ${C.unit.title}`), el('span', { class: 'sep' }), el('span', { class: 'ttl' }, `Speaking ${s.id} · ${s.title}`));
+    if (lock) { m.append(bar(`Section ${s.id} · Speaking`), lockScreen(`Section ${s.id} is locked`, lock.reason, [lock])); return; }
+    st.last = { route: 'sp-' + R(sid) }; st.speak = st.speak || {}; Core.persist();
+    const lv = Core.stageNo(Core.STAGE), goal = s.objs.map(o => (C.objectives[o] || {}).t || '').filter(Boolean).join(' '), words = (s.vocab || []).map(v => v.w).slice(0, 10);
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const T = { hist: [], used: {}, fixes: [], n: 0, busy: false, over: false, ai: false, lens: [] };
+    const norm = x => String(x).toLowerCase().replace(/[^a-z' ]+/g, ' ');
+    const markUsed = text => { const a = ' ' + norm(text) + ' '; words.forEach(w => { const k = norm(w).trim(); if (k && (a.includes(' ' + k + ' ') || a.includes(' ' + k + 's '))) T.used[w] = true; }); };
+    // the scripted partner: asks about the topic, then asks for the lesson's words one by one
+    const left = () => words.filter(w => !T.used[w]);
+    const script = last => {
+      if (!T.hist.length) return { reply: `Hello! Let us talk about ${s.title.toLowerCase()}. Tell me one thing about it.` };
+      const short = last.trim().split(/\s+/).length < (lv <= 3 ? 2 : 4), w = left()[0];
+      const praise = short ? 'Good start. Try a longer answer next time.' : ['Well done.', 'Good answer.', 'Nice sentence.', 'Great.'][T.n % 4];
+      const ask = T.n === SPEAK_TURNS - 1 ? 'Last one: what is the best thing you learned in this lesson?' : w ? `Can you say a sentence with the word “${w}”?` : T.n % 2 ? `Tell me more about ${s.title.toLowerCase()}.` : 'Now ask me a question about it.';
+      return { reply: praise + ' ' + ask };
+    };
+    const ask = async end => { let r = null;
+      if (Backend.speak && me && !isGuest()) r = await Backend.speak({ stage: lv, topic: `${C.unit.title}: ${s.title}`, goal, words, history: T.hist, end: !!end });
+      if (r && r.via === 'ai') { T.ai = true; return r; }
+      return null; };
+
+    const wordsBox = el('div', { class: 'spwords' }), turnsBox = el('span', { class: 'spturn', id: 'spTurn' });
+    const drawHead = () => { wordsBox.textContent = ''; words.forEach(w => wordsBox.append(el('span', { class: 'spw' + (T.used[w] ? ' on' : '') }, T.used[w] ? '✓ ' : '', w))); turnsBox.textContent = T.over ? 'Finished' : `Turn ${Math.min(T.n + 1, SPEAK_TURNS)} of ${SPEAK_TURNS}`; };
+    m.append(el('section', { class: 'card sphead' }, el('p', { class: 'eyebrow', style: 'margin:0' }, `${Core.stageLabel()} · Unit ${Core.UNO} · Speaking ${s.id}`), el('h1', { style: 'margin:4px 0 10px' }, `Talk about: ${s.title}`),
+      el('div', { class: 'lmeta' }, el('span', {}, `${SPEAK_TURNS} turns`), el('span', {}, 'About 5 minutes'), turnsBox),
+      el('div', { class: 'lgoalbox' }, el('span', { class: 'hl' }, 'Try to use these words'), words.length ? wordsBox : el('p', { class: 'muted', style: 'margin:4px 0 0' }, goal))));
+    const chat = el('div', { class: 'spchat', id: 'spChat', 'aria-live': 'polite' });
+    const input = el('input', { type: 'text', id: 'spInput', maxlength: 300, autocomplete: 'off', placeholder: SR ? 'Tap the microphone and speak, or type here' : 'Type your answer here', 'aria-label': 'Your answer' });
+    const send = el('button', { class: 'btn primary', type: 'button', id: 'spSend' }, 'Send', el('span', { class: 'arr' }, ' →'));
+    const mic = SR ? el('button', { class: 'spmic', type: 'button', id: 'spMic', 'aria-label': 'Speak your answer', 'aria-pressed': 'false', html: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>' }) : null;
+    const status = el('p', { class: 'spstatus muted', id: 'spStatus' }, SR ? 'Tap the microphone, speak, then stop. You can also type.' : 'This browser cannot listen. Type your answers, or open Camday in Chrome to speak.');
+    const row = el('div', { class: 'sprow' }, mic, input, send);
+    const room = el('section', { class: 'card sproom' }, chat, row, status,
+      el('p', { class: 'muted small', style: 'margin:6px 0 0' }, 'Your browser turns your voice into text. Camday does not record or keep your voice. Do not share your full name, address or school.'));
+    m.append(room);
+    const bubble = (who, text, fix) => { const b = el('div', { class: 'spb ' + who }, el('small', {}, who === 'a' ? 'Camday tutor' : st.alias || 'You'), el('p', {}, text),
+      who === 'a' ? el('button', { type: 'button', class: 'sphear', 'aria-label': 'Hear it again', onclick: () => QE.speak(text) }, 'Hear again') : null);
+      chat.append(b); if (fix) chat.append(el('div', { class: 'spfix' }, el('b', {}, 'A better way to say it: '), fix.better)); chat.scrollTop = chat.scrollHeight; return b; };
+    const typing = () => { const t = el('div', { class: 'spb a wait' }, el('small', {}, 'Camday tutor'), el('p', {}, '…')); chat.append(t); chat.scrollTop = chat.scrollHeight; return t; };
+    const setBusy = on => { T.busy = on; send.disabled = on; input.disabled = on; if (mic) mic.disabled = on; };
+    const tutorSay = (r) => { T.hist.push({ r: 'a', t: r.reply }); bubble('a', r.reply); try { QE.speak(r.reply); } catch (e) { } };
+    async function finish() {
+      T.over = true; drawHead(); row.hidden = true; status.hidden = true; const w = typing();
+      const r = await ask(true); w.remove();
+      const usedN = Object.keys(T.used).length, avg = T.lens.length ? T.lens.reduce((a, b) => a + b, 0) / T.lens.length : 0;
+      const stars = r ? r.stars : (usedN >= Math.min(3, words.length) && avg >= (lv <= 3 ? 3 : 5) ? 3 : usedN >= 1 || avg >= 3 ? 2 : 1);
+      const fixes = (r && r.fixes && r.fixes.length ? r.fixes : T.fixes).slice(0, 3);
+      const prev = st.speak[s.id] || { n: 0, best: 0 }; st.speak[s.id] = { n: prev.n + 1, best: Math.max(prev.best, stars), at: Date.now() }; Core.persist();
+      Backend.track('speak_done', { learner: st.id, unit: Core.UNIT, sec: sid, stars, ai: T.ai });
+      room.append(el('div', { class: 'spsum', id: 'spSummary' }, el('span', { class: 'hl' }, 'Conversation finished'), el('h2', {}, '★'.repeat(stars) + '☆'.repeat(3 - stars) + (stars === 3 ? '  Excellent speaking' : stars === 2 ? '  Good speaking' : '  A good start')),
+        el('p', {}, r && r.summary ? r.summary : `You answered ${T.lens.length} times and used ${usedN} of the ${words.length} lesson words.`),
+        (r && r.good && r.good.length) ? el('ul', { class: 'spgood' }, ...r.good.map(x => el('li', {}, x))) : null,
+        fixes.length ? el('div', { class: 'spfixes' }, el('b', {}, 'Say it better next time'), ...fixes.map(x => el('p', {}, el('s', {}, x.said), ' → ', el('b', {}, x.better)))) : null,
+        left().length ? el('p', { class: 'muted' }, 'Words to try next time: ' + left().join(', ')) : null,
+        el('div', { class: 'btnrow' }, el('button', { class: 'btn primary', type: 'button', id: 'spAgain', onclick: () => render() }, 'Talk again'), el('a', { class: 'btn', href: '#u-' + Core.UNO }, 'Back to the unit'))));
+      confetti && stars === 3 && confetti();
+    }
+    async function say(text) {
+      text = String(text || '').trim().slice(0, 300); if (!text || T.busy || T.over) return;
+      input.value = ''; setBusy(true); markUsed(text); T.lens.push(text.split(/\s+/).length); T.n++;
+      const mine = bubble('u', text); T.hist.push({ r: 'u', t: text }); drawHead();
+      if (T.n >= SPEAK_TURNS) { setBusy(false); return finish(); }
+      const w = typing(); const r = (await ask(false)) || script(text); w.remove();
+      if (r.fix) { T.fixes.push(r.fix); mine.after(el('div', { class: 'spfix' }, el('b', {}, 'A better way to say it: '), r.fix.better)); }
+      tutorSay(r); setBusy(false); input.focus();
+    }
+    send.addEventListener('click', () => say(input.value)); input.addEventListener('keydown', e => { if (e.key === 'Enter') say(input.value); });
+    if (mic) { let rec = null, on = false;
+      const stop = () => { on = false; mic.classList.remove('on'); mic.setAttribute('aria-pressed', 'false'); try { rec && rec.stop(); } catch (e) { } };
+      mic.addEventListener('click', () => { if (on) return stop();
+        try { window.speechSynthesis && window.speechSynthesis.cancel(); rec = new SR(); rec.lang = 'en-GB'; rec.interimResults = true; rec.maxAlternatives = 1;
+          let fin = '';
+          rec.onresult = ev => { let txt = ''; for (let i = 0; i < ev.results.length; i++) { txt += ev.results[i][0].transcript; if (ev.results[i].isFinal) fin = txt; } input.value = txt; };
+          rec.onerror = ev => { status.textContent = ev.error === 'not-allowed' ? 'The microphone is blocked. Allow it in your browser, or type your answer.' : 'I could not hear you. Try again, or type your answer.'; stop(); };
+          rec.onend = () => { const v = (fin || input.value).trim(); stop(); if (v) say(v); };
+          rec.start(); on = true; mic.classList.add('on'); mic.setAttribute('aria-pressed', 'true'); status.textContent = 'Listening… speak now, then tap the microphone to stop.';
+        } catch (e) { status.textContent = 'The microphone did not start. Type your answer instead.'; } });
+      window.addEventListener('hashchange', stop, { once: true }); }
+    drawHead(); setBusy(true); const w0 = typing();
+    ask(false).then(r => { w0.remove(); tutorSay(r || script('')); setBusy(false); });
   }
 
   /* ---------- exercises (question card + solution panel) ---------- */
@@ -2710,7 +2801,7 @@
   }
 
   /* ---------- router ---------- */
-  const TOC_ROUTES = r => r.startsWith('v-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || ['map', 'result', 'remedial', 'topic', 'drill', 'cert', 'unit', 'words'].includes(r);
+  const TOC_ROUTES = r => r.startsWith('v-') || r.startsWith('sp-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || ['map', 'result', 'remedial', 'topic', 'drill', 'cert', 'unit', 'words'].includes(r);
   const PUBLIC = { news: viewNews, home: () => viewHome(), signin: viewSignin, signup: viewSignup, forgot: viewForgot, pricing: viewPricing, help: viewHelp, privacy: viewPrivacy, 'privacy-kids': viewKidsPrivacy, terms: viewTerms, cookies: viewCookies, verify: viewVerify, challenge: viewChallenge, games: viewGames };
   const viewAdmin = window.AtomicAdmin ? window.AtomicAdmin({ modal, toast, errText: e => errText(e), $main, render: () => render() }) : null;
   const ACCOUNT = { staff: viewStaff, teacher: viewStaff, admin: () => viewAdmin && viewAdmin() };
@@ -2768,7 +2859,7 @@
     const mo = new MutationObserver(recs => { if (skel && recs.some(x => [...x.addedNodes].some(n => n !== skel))) { skel.remove(); skel = null; mo.disconnect(); } }); mo.observe(m, { childList: true });
     try {
       const pm = r.match(/^(stage|checkout|fx|fres)-(\d+)$/); const cpm = r.match(/^(cpx|cpr)-([A-Z]{1,2}\d)$/); const chm = r.match(/^chl-([a-z]+)$/) ? ['', 'chl', r.slice(4)] : r.match(/^(chx|chp|chr)-([a-z]+)-(\d{2})$/);
-      if (r.startsWith('gm-')) await viewSecGames(secFromRoute(r)); else if (r.startsWith('v-')) viewVideo(secFromRoute(r)); else if (r.startsWith('ex-')) viewExercises(secFromRoute(r)); else if (r.startsWith('ws-')) viewWorksheet(secFromRoute(r)); else if (r.startsWith('lab-')) viewLab(secFromRoute(r));
+      if (r.startsWith('gm-')) await viewSecGames(secFromRoute(r)); else if (r.startsWith('v-')) viewVideo(secFromRoute(r)); else if (r.startsWith('sp-')) viewSpeak(secFromRoute(r)); else if (r.startsWith('ex-')) viewExercises(secFromRoute(r)); else if (r.startsWith('ws-')) viewWorksheet(secFromRoute(r)); else if (r.startsWith('lab-')) viewLab(secFromRoute(r));
       else if (/^courses(-\w+)?$/.test(r)) await viewCourses(r.split('-')[1]);
       else if (/^course-[a-z0-9-]+$/.test(r)) await viewCourse(r.slice(7));
       else if (cpm && st) { if (cpm[1] === 'cpx') await viewCpExam(cpm[2]); else await viewCpResult(cpm[2]); }

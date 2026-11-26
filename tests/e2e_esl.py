@@ -30,6 +30,15 @@ with sync_playwright() as p:
     ok(keys[1] == 0 and keys[0] >= 6, f'E9 {keys[0]} ESL units load and their Unit Test answers stay on the server')
     pg.evaluate("location.hash='home'"); pg.wait_for_timeout(1500)
     ok(pg.query_selector('#stageSwitch [data-stage="22"]') is not None, 'E10 The course switcher lists ESL Stage 2')
+    # Speaking room: a six-turn conversation with the tutor (scripted partner in the preview), lesson words ticked, summary saved
+    pg.evaluate("(async()=>{ if (Core.STAGE !== 22) await Core.switchStage(22); location.hash='u-1'; })()"); pg.wait_for_timeout(1800)
+    ok(pg.query_selector('a.u4tile[href="#sp-1-1"]') is not None, 'E12 ESL topics have a Speaking activity')
+    pg.evaluate("location.hash='sp-1-1'"); pg.wait_for_selector('#spInput'); pg.wait_for_timeout(900)
+    first = pg.inner_text('#spChat')
+    for a in ['I have a mother and a father', 'My sister is nine', 'This is my brother', 'My baby brother is small', 'My grandma is kind', 'I learned family words']:
+        pg.fill('#spInput', a); pg.click('#spSend'); pg.wait_for_timeout(600)
+    pg.wait_for_selector('#spSummary')
+    ok('CAMDAY TUTOR' in first.upper() and pg.eval_on_selector_all('.spw.on', 'e=>e.length') >= 5 and pg.evaluate("(Core.cur().speak['1.1']||{}).best") == 3, 'E13 The tutor starts the talk, used words are ticked and the result is saved')
     ok(not errs, 'E11 No page errors' + (': ' + errs[0] if errs else ''))
     b.close()
 fails = [l for l in LOG if l.startswith('FAIL')]

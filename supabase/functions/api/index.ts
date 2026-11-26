@@ -1,13 +1,18 @@
-// One Edge Function, three routes: /api/submit-test, /api/marking, /api/account  (+ /api/health self-check)
-// Shared code is imported from the commit-pinned public repo; answer keys come from ./units.js (deployed only, never in git).
-import { handle as submitTest } from 'https://cdn.jsdelivr.net/gh/mrphe996/atomic-checkpoint@fac6b63827a9061ee02c820367672237df0c0f0b/supabase/functions/_shared/submit-test.js';
-import { handle as marking } from 'https://cdn.jsdelivr.net/gh/mrphe996/atomic-checkpoint@fac6b63827a9061ee02c820367672237df0c0f0b/supabase/functions/_shared/marking.js';
-import { handle as account } from 'https://cdn.jsdelivr.net/gh/mrphe996/atomic-checkpoint@fac6b63827a9061ee02c820367672237df0c0f0b/supabase/functions/_shared/account.js';
-import { G, setUnits } from 'https://cdn.jsdelivr.net/gh/mrphe996/atomic-checkpoint@fac6b63827a9061ee02c820367672237df0c0f0b/supabase/functions/_shared/supa.js';
-import { UNITS } from './sealed.js';
+// One Edge Function: /api/submit-test, /api/start-test, /api/marking, /api/account, /api/admin, /api/challenge  (+ /api/health self-check)
+// Shared code is imported from the commit-pinned public repo; answer keys come from ./units.js locally, or are unsealed at cold start (sealed.js) when built with EDGE_SEALED=1.
+import { handle as submitTest } from '../_shared/submit-test.js';
+import { handle as marking } from '../_shared/marking.js';
+import { handle as startTest } from '../_shared/start-test.js';
+import { handle as account } from '../_shared/account.js';
+import { handle as admin } from '../_shared/admin.js';
+import { handle as aiMark } from '../_shared/ai-mark.js';
+import { handle as challenge } from '../_shared/challenge.js';
+import { handle as speak } from '../_shared/speak.js';
+import { G, setUnits } from '../_shared/supa.js';
+import { UNITS } from './units.js';
 setUnits(UNITS);
 
-const ROUTES: Record<string, (req: unknown) => Promise<[number, unknown, Record<string, string>?]>> = { 'submit-test': submitTest, marking, account };
+const ROUTES: Record<string, (req: unknown) => Promise<[number, unknown, Record<string, string>?]>> = { 'submit-test': submitTest, 'start-test': startTest, marking, account, admin, 'ai-mark': aiMark, challenge, speak };
 const ORIGINS = (Deno.env.get('ALLOWED_ORIGINS') || '*').split(',').map((s) => s.trim());
 
 function cors(origin: string | null) {
@@ -45,7 +50,7 @@ async function health() {
     const answers: Record<string, unknown> = {};
     for (const q of paper) answers[q.id] = right(q);
     const r = G.scoreTest(paper, answers);
-    papers[u + ':' + f] = { auto: r.auto, pending: r.pending.length, expectedAuto: paper.filter((q) => !q.teacher).reduce((s, q) => s + q.pts, 0) };
+    papers[u + ':' + f] = { auto: r.auto, pending: r.pending.length, expectedAuto: paper.filter((q) => !q.teacher && q.type !== 'para').reduce((s, q) => s + q.pts, 0) };
   }
   return { ok: true, sha256: sha, papers };
 }
@@ -58,10 +63,13 @@ function right(q: any): unknown {
     case 'label': return { ...q.spots };
     case 'order': return q.items.slice();
     case 'match': return Object.fromEntries(q.pairs.map((p: any) => [p.l, p.r]));
-    case 'explain': return q.model;
+    case 'explain': case 'para': return q.model;
     case 'grid': return q.rows.map((r: any) => r.a.slice());
     case 'table': { const o: Record<string, Record<string, string>> = {}; q.rows.forEach((row: any[], ri: number) => row.forEach((c: any, ci: number) => { if (c && typeof c === 'object') (o[ri] = o[ri] || {})[ci] = String(c.ans); })); return o; }
-    case 'graph': return { pts: q.pts.map((p: number[]) => p.slice()), f: q.follow ? q.follow.options.findIndex((o: any) => o.ok) : null };
+    case 'short': return G.answerText(q);
+    case 'expr': return q.expr;
+    case 'cloze': return q.blanks.map((b: string[]) => b.find((a) => !(a[0] === '/' && a.lastIndexOf('/') > 0)) || '');
+    case 'graph': return { pts: (q.plot || q.pts).map((p: number[]) => p.slice()), f: q.follow ? q.follow.options.findIndex((o: any) => o.ok) : null };
   }
   return null;
 }

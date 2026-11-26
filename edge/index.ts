@@ -7,11 +7,12 @@ import { handle as account } from '__LIB__/account.js';
 import { handle as admin } from '__LIB__/admin.js';
 import { handle as aiMark } from '__LIB__/ai-mark.js';
 import { handle as challenge } from '__LIB__/challenge.js';
+import { handle as speak } from '__LIB__/speak.js';
 import { G, setUnits } from '__LIB__/supa.js';
 import { UNITS } from '__UNITS__';
 setUnits(UNITS);
 
-const ROUTES: Record<string, (req: unknown) => Promise<[number, unknown, Record<string, string>?]>> = { 'submit-test': submitTest, 'start-test': startTest, marking, account, admin, 'ai-mark': aiMark, challenge };
+const ROUTES: Record<string, (req: unknown) => Promise<[number, unknown, Record<string, string>?]>> = { 'submit-test': submitTest, 'start-test': startTest, marking, account, admin, 'ai-mark': aiMark, challenge, speak };
 const ORIGINS = (Deno.env.get('ALLOWED_ORIGINS') || '*').split(',').map((s) => s.trim());
 
 function cors(origin: string | null) {
