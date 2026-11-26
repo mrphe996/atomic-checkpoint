@@ -37,6 +37,7 @@ def T(t, *p):
     return {"k": "tip", "t": t, "p": list(p)}
 
 
-def S(*blocks, at=None):
-    """one section's notes. at = block index after which each check question is shown (default: spread through the notes)"""
-    return {"blocks": list(blocks), "at": list(at) if at else None}
+def S(*blocks, at=None, figs=None):
+    """one section's notes. at = block index after which each check question is shown (default: spread through the notes).
+    figs = {old block index: new block index} for the diagrams of the old notes (default: placed automatically)"""
+    return {"blocks": list(blocks), "at": list(at) if at else None, "figs": figs}

@@ -785,6 +785,7 @@
     body.append(el('header', { class: 'rdhead' }, el('p', { class: 'eyebrow' }, `${Core.stageLabel()} · Unit ${Core.UNO}`), el('h1', {}, C.unit.title), C.unit.blurb ? el('p', { class: 'muted' }, C.unit.blurb) : null));
     C.sections.forEach(s => {
       const sec = el('section', { class: 'rdsec', id: 'rd-' + R(s.id), 'data-sid': s.id }, el('h2', {}, `${s.id} ${s.title}`, pages[s.id] ? el('small', { class: 'rdpg' }, `PDF pages ${pages[s.id][0]}–${pages[s.id][1]}`) : null));
+      (s.stops || []).filter(x => x.after === -1).forEach(x => sec.append(el('div', { class: 'rdtry' }, el('b', {}, 'Try it: '), x.q.prompt)));
       (s.lesson || []).forEach((b, bi) => { sec.append(noteBlock(b)); (s.stops || []).filter(x => x.after === bi).forEach(x => sec.append(el('div', { class: 'rdtry' }, el('b', {}, 'Try it: '), x.q.prompt))); });
       body.append(sec);
     });
@@ -830,6 +831,14 @@
         el('button', { class: 'btn primary', type: 'button', id: 'lessonDone', disabled: !!left, onclick: () => { vs.completed = true; vs.pos = s.video.dur; Core.persist(); Backend.track('lesson_done', { learner: st.id, unit: Core.UNIT, sec: sid }); xpTick(); toast('Lesson finished – well done!'); drawStatus(); } }, 'I have finished this lesson ✓'))); };
     const stopFor = {}; s.stops.forEach(x => { (stopFor[x.after] = stopFor[x.after] || []).push(x); });
     const para = t => el('p', { class: 'lp' }, ...String(t).split(/(\*\*[^*]+\*\*)/).map(part => /^\*\*.*\*\*$/.test(part) ? el('b', {}, part.slice(2, -2)) : part));
+    const addStop = x => {
+        const i = s.stops.indexOf(x); const rec = (vs.stops[x.id] = vs.stops[x.id] || { tries: 0 });
+        const box = el('section', { class: 'card stop lcheck' }, el('div', { class: 'stopbar' }, el('span', { class: 'eyebrow' }, `CHECK QUESTION ${i + 1} OF ${s.stops.length}`), rec.done ? el('span', { class: 'chip on' }, '✓ done') : null));
+        const qh = el('div'); box.append(qh); body.append(box);
+        QE.practice(x.q, qh, { rec, seed: st.id, save: () => { Core.persist(); }, onCheck: onCheck(box, x.q, rec),
+          onDone: () => { rec.done = true; if (rec.everWrong) st.stopsWrong[x.q.id] = true; Core.persist(); xpTick(); drawStatus(); } });
+      };
+    (stopFor[-1] || []).forEach(addStop);   // "before you read on" questions that come before the first part
     s.lesson.forEach((b, bi) => {
       const kind = b.k || 'idea', icon = { idea: '💡', example: '✏️', tip: '✅', mistake: '⚠️', method: '🧭' }[kind] || '💡';
       const KIND = { idea: 'Key idea', example: 'Worked example', tip: 'Exam tip', mistake: 'Common mistake', method: 'Method' };
@@ -842,13 +851,7 @@
       if (b.steps) { const ol = el('ol', { class: 'lsteps' }); b.steps.forEach(([work, why]) => ol.append(el('li', {}, el('code', { class: 'mwork' }, work), why ? el('span', { class: 'why' }, ' ' + why) : null))); card.append(ol); }
       if (b.a) card.append(el('p', { class: 'lans' }, el('b', {}, 'Answer: '), b.a));
       body.append(card);
-      (stopFor[bi] || []).forEach(x => {
-        const i = s.stops.indexOf(x); const rec = (vs.stops[x.id] = vs.stops[x.id] || { tries: 0 });
-        const box = el('section', { class: 'card stop lcheck' }, el('div', { class: 'stopbar' }, el('span', { class: 'eyebrow' }, `CHECK QUESTION ${i + 1} OF ${s.stops.length}`), rec.done ? el('span', { class: 'chip on' }, '✓ done') : null));
-        const qh = el('div'); box.append(qh); body.append(box);
-        QE.practice(x.q, qh, { rec, seed: st.id, save: () => { Core.persist(); }, onCheck: onCheck(box, x.q, rec),
-          onDone: () => { rec.done = true; if (rec.everWrong) st.stopsWrong[x.q.id] = true; Core.persist(); xpTick(); drawStatus(); } });
-      });
+      (stopFor[bi] || []).forEach(addStop);
     });
     drawStatus();
   }

@@ -57,6 +57,8 @@ def page(d, stage):
     h.append("<p>How to use this pack: read each section, try the <b>Try it</b> questions without looking back, then check your answers in the lesson on Camday.</p></div>")
     for s in secs:
         h.append(f"<div class='sec'><h2>{s['id']} {md(s['title'])}</h2>")
+        for x in s.get("stops") or []:
+            if x.get("after") == -1: h.append(f"<div class='try'><b>TRY IT</b><br>{md(x['q'].get('prompt', ''))}</div>")
         for i, b in enumerate(s.get("lesson") or []):
             h.append(block(b))
             for x in s.get("stops") or []:
