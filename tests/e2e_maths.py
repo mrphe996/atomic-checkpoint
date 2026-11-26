@@ -39,10 +39,10 @@ with sync_playwright() as p:
     pg.click('#readerClose')
     # practice: a typed answer survives opening the notes
     pg.evaluate("location.hash='ex-2-3'"); pg.wait_for_timeout(1500)
-    pg.click('button[role=tab]:has-text("Practice ·")'); pg.wait_for_timeout(500)
-    ok(pg.query_selector('button[role=tab]:has-text("More practice")') is not None, 'M12 Maths practice has a More practice tab')
+    pg.click('#lv-prac'); pg.wait_for_timeout(500)   # Maths practises in the full-screen practice room
+    ok(pg.query_selector('#lv-more') is not None, 'M12 Maths practice room has a More practice level')
     i = pg.evaluate("Core.sec('2.3').prac.findIndex(q => q.type === 'expr')")
-    for _ in range(i): pg.click('#nextQ'); pg.wait_for_timeout(250)
+    pg.locator('.fqs .fq').nth(i).click(); pg.wait_for_timeout(400)
     pg.click('.qcard .mqf'); pg.keyboard.type('4a'); pg.wait_for_timeout(200)
     before = pg.inner_text('.qcard .mqf')
     pg.click('#reviewNotes'); pg.wait_for_timeout(700); pg.click('#readerClose'); pg.wait_for_timeout(300)

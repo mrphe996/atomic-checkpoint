@@ -1098,7 +1098,7 @@
     // full-screen practice room: choose Easy (Core), Medium (Practice) or Hard (Challenge) and any question, like a worksheet task.
     // The room closes only when the Core questions are done (then "Exit task" opens).
     const route = 'ex-' + R(s.id); UI.fl = UI.fl || {}; const key = `${Core.STAGE}:${Core.UNO}:${route}`;
-    const LV = [['req', 'Easy', '🟢', 'Core'], ['prac', 'Medium', '🟡', 'Practice'], ['adv', 'Hard', '🔴', 'Challenge'], ['ext', 'Extreme', '⚫', 'Extreme']].filter(([k]) => s[k] && s[k].length);
+    const LV = [['req', 'Easy', '🟢', 'Core'], ['prac', 'Medium', '🟡', 'Practice'], ['adv', 'Hard', '🔴', 'Challenge'], ['ext', 'Extreme', '⚫', 'Extreme'], ['more', 'Extra', '🔵', 'More practice']].filter(([k]) => s[k] && s[k].length);
     const notDone = q => !(st.items[q.id] || {}).done;
     let P = UI.fl[key]; if (!P) { const k0 = Core.reqLeft(st, s).length ? 'req' : (s.prac.some(notDone) ? 'prac' : 'req'); P = UI.fl[key] = { tab: k0, i: Math.max(0, s[k0].findIndex(notDone)) }; }
     const coreLeft = () => Core.reqLeft(st, s).length;
@@ -1112,6 +1112,7 @@
       F.head.append(wbtn); F.head.after(drawer);
     }
     if (hasNotes()) F.head.append(el('button', { type: 'button', class: 'btn small fwbtn', id: 'reviewNotes', onclick: () => openReader(s.id) }, '📖 Notes'));
+    if (s.pdf && s.pdf.length) F.head.append(el('button', { type: 'button', class: 'btn small fwbtn', id: 'reviewPdf', onclick: () => openBook(s) }, '📄 Review the PDF'));
     const repBtn = el('button', { type: 'button', class: 'btn small ghost fexit', id: 'reportQ', title: 'Report a problem with this question', 'aria-label': 'Report a problem with this question' }, '⚑');
     F.head.append(repBtn, leaveBtn);
     const levels = el('div', { class: 'flevels', role: 'tablist' }); const strip = el('div', { class: 'fstrip' });
@@ -1201,7 +1202,7 @@
       subbar('blue', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}: ${C.unit.title}`), el('span', { class: 'ttl' }, `${s.id} ${s.title} · Practice`));
       m.append(bar(`Section ${s.id} · Practice`), lock ? lockScreen(`Practice for section ${s.id} is locked`, lock.reason, [lock]) : lockScreen(`Practice for section ${s.id} is locked`, s.lesson ? 'Read the lesson and answer its check questions before you start the practice.' : 'Watch the whole video and answer its pause questions before you start the practice.', [Core.firstMissingIn(st, s)])); return;
     }
-    if (Core.IS_PRIMARY || !Core.IS_MATHS) return viewFocusPractice(s);   // Science learners (Stages 3–9) practise inside the full-screen room
+    return viewFocusPractice(s);   // every course practises inside the full-screen practice room (Maths too, from 27/11/2026)
     let tab = UI.tab[route] || 'req'; if (!(s[tab] || []).length) tab = 'req'; const list = s[tab]; let idx = Math.min(UI.idx[route + tab] || 0, list.length - 1);
     st.last = { route, tab, idx }; Core.persist();
     const q = list[idx]; const go2 = i => { UI.idx[route + tab] = i; render(); };
