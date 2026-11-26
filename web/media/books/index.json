@@ -848,5 +848,111 @@
     11
    ]
   }
+ },
+ "c8u14": {
+  "title": "Camday Maths Stage 8 · Unit 14: Position and Transformation",
+  "pages": 30,
+  "dir": "media/books/c8u14/",
+  "ext": "webp",
+  "pdf": "media/books/c8u14.pdf?v=569129e549",
+  "v": "569129e549",
+  "secs": {
+   "14.1": [
+    2,
+    6
+   ],
+   "14.2": [
+    7,
+    10
+   ],
+   "14.3": [
+    11,
+    14
+   ],
+   "14.4": [
+    15,
+    18
+   ],
+   "14.5": [
+    19,
+    23
+   ],
+   "14.6": [
+    24,
+    28
+   ],
+   "answers": [
+    29,
+    30
+   ]
+  }
+ },
+ "c8u15": {
+  "title": "Camday Maths Stage 8 · Unit 15: Distance, Area and Volume",
+  "pages": 20,
+  "dir": "media/books/c8u15/",
+  "ext": "webp",
+  "pdf": "media/books/c8u15.pdf?v=472e8502d4",
+  "v": "472e8502d4",
+  "secs": {
+   "15.1": [
+    2,
+    5
+   ],
+   "15.2": [
+    6,
+    10
+   ],
+   "15.3": [
+    11,
+    15
+   ],
+   "15.4": [
+    16,
+    19
+   ],
+   "answers": [
+    20,
+    20
+   ]
+  }
+ },
+ "c8u16": {
+  "title": "Camday Maths Stage 8 · Unit 16: Interpreting and Discussing Results",
+  "pages": 28,
+  "dir": "media/books/c8u16/",
+  "ext": "webp",
+  "pdf": "media/books/c8u16.pdf?v=5650acae1b",
+  "v": "5650acae1b",
+  "secs": {
+   "16.1": [
+    2,
+    6
+   ],
+   "16.2": [
+    7,
+    10
+   ],
+   "16.3": [
+    11,
+    14
+   ],
+   "16.4": [
+    15,
+    18
+   ],
+   "16.5": [
+    19,
+    22
+   ],
+   "16.6": [
+    23,
+    26
+   ],
+   "answers": [
+    27,
+    28
+   ]
+  }
  }
 }
