@@ -1,5 +1,5 @@
 """Loading feedback, the course switcher, the Mathematics Stage 9 lock and the Question Bank filters.
-Run with the default config (Mathematics Stage 9 locked): `node tools/write-config.mjs`."""
+Mathematics Stage 9 is locked by the test itself (config.js is patched with lockedStages = [19])."""
 import os, sys
 from playwright.sync_api import sync_playwright
 BASE = os.environ.get('BASE', 'http://localhost:8765/'); LOG = []
@@ -17,6 +17,10 @@ def signup(pg):
 with sync_playwright() as p:
     b = p.chromium.launch(executable_path='/usr/bin/google-chrome'); pg = b.new_page(reduced_motion='reduce', viewport={'width': 1300, 'height': 900}); errs = []
     pg.on('pageerror', lambda e: errs.append(str(e)))
+    # these checks need Mathematics Stage 9 locked (LOCKED_STAGES=19); the default config opens every course since 26/11/2026
+    def lock19(route):
+        r = route.fetch(); route.fulfill(response=r, body=r.text() + '\nwindow.ATOMIC_CONFIG.lockedStages = [19];\n')
+    pg.route('**/config.js', lock19)
     # a returning visitor who last studied Mathematics Stage 9 lands on Science while it is locked
     pg.goto(BASE + '?reset=1'); pg.wait_for_selector('#heroStart')
     pg.evaluate("localStorage.setItem('atomic.stage','19')"); pg.reload(); pg.wait_for_selector('#heroStart')

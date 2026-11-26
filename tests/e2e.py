@@ -67,7 +67,7 @@ with sync_playwright() as p:
     for r in ['pricing', 'help', 'privacy', 'terms', 'cookies', 'verify']:
         go(pg, r)
     go(pg, 'pricing'); t = txt(pg)
-    ok('£9.99 / month' in t and 'VAT' in t and 'Paddle' in t, '1c Pricing shows plans, VAT/GST note and Paddle as reseller')
+    ok('Pay once' in t and 'US$49' in t and 'US$119' in t and 'VAT' in t and 'Paddle' in t, '1c Pricing shows the one-time plans, VAT/GST note and Paddle as reseller')
     go(pg, 'privacy'); t = txt(pg)
     ok('Draft for legal review' in t and "Children’s code" in t and 'parent or guardian email' in t, '1d Privacy notice covers the Children’s code and the optional parent email')
     go(pg, 'parent'); ok(h(pg) == '#home', '1e Old parent-area link goes to the home page')
@@ -120,17 +120,17 @@ with sync_playwright() as p:
     ok(pg.evaluate('Core.streak(Core.cur())') >= 1 and pg.query_selector('.pill.streak') is not None, '2k Streak pill in the header')
     pg.screenshot(path=f'{SHOTS}/04_dashboard.png', full_page=True)
 
-    # ---------- 3. free plan and paywall ----------
-    go(pg, 'home'); ok(pg.query_selector('#freeBanner') is not None, '3a Dashboard shows the free-plan banner')
-    go(pg, 'profile'); pg.click('#sim3-1'); pg.wait_for_timeout(800)
-    ok(pg.evaluate("!!Core.secLock(Core.cur(), Core.sec('3.2')) && Core.secLock(Core.cur(), Core.sec('3.2')).paywall"), '3b Section 3.2 is behind the paywall after finishing 3.1 on the free plan')
-    go(pg, 'ex-3-2'); ok('part of the full Cambridge Stage 7 course' in txt(pg), '3c Practice 3.2 shows the paywall lock screen')
-    go(pg, 'test'); ok('needs a Cambridge Stage 7 plan' in txt(pg), '3d Unit Test needs a plan')
-    r = pg.evaluate("Backend.submitTest({learnerId: Core.cur().id, unit: Core.UNIT, form:'A', answers:{}, clientKey:'x'}).then(()=> 'ok', e => e.code)")
-    ok(r == 'subscription_required', '3e Backend refuses a test submission without a plan (402)')
-    go(pg, 'pricing'); pg.click('#buy-yearly'); pg.wait_for_timeout(300); pg.click('.modal .btn.primary'); pg.wait_for_timeout(1000)
-    ok(pg.evaluate('Core.S.sub.active') and pg.evaluate('Core.S.sub.status') == 'trialing', '3f Demo checkout starts a 7-day trial')
-    ok(not pg.evaluate("Core.secLock(Core.cur(), Core.sec('3.2'))"), '3g Section 3.2 unlocks with the trial')
+    # ---------- 3. free plan and paywall (course bought once; it expires after a year without study) ----------
+    lid = pg.evaluate('Core.cur().id'); ok(not pg.evaluate('Core.freeMode()') and pg.query_selector('#freeBanner') is None, '3a A bought course shows no free-plan banner')
+    pg.evaluate(f"Backend.devIdle('{lid}', 400)"); pg.reload(); pg.wait_for_timeout(1500); go(pg, 'home')
+    ok(pg.evaluate('Core.freeMode()') and pg.query_selector('#freeBanner') is not None and 'Your course has expired' in txt(pg), '3b A year without study: course expired, free-plan banner')
+    pg.evaluate('Core.switchUnit(3)'); pg.wait_for_timeout(500)
+    ok(pg.evaluate("Core.C.sections.every(s => Core.canOpen(s.id) && s.req.length === 8 && s.prac.length === 0 && s.adv.length === 0)"), '3c Free plan: Unit 3 videos and the 8 Core questions only')
+    go(pg, 'test'); ok('needs the Cambridge Stage 7 course' in txt(pg), '3d Unit Test needs the course')
+    go(pg, 'plans'); pg.wait_for_selector('#plans [data-course="7"]'); pg.click('#plans [data-course="7"]'); pg.wait_for_function("location.hash==='#home'"); pg.wait_for_timeout(600)
+    ok(not pg.evaluate('Core.freeMode()') and pg.evaluate('Core.C.sections[0].prac.length') > 0, '3e Buying again opens everything')
+    ok(not pg.evaluate("Core.secLock(Core.cur(), Core.sec('3.2')) && Core.secLock(Core.cur(), Core.sec('3.2')).paywall"), '3f No paywall on a bought course')
+    go(pg, 'profile'); pg.click('#sim3-1'); pg.wait_for_timeout(800)   # tester tool: section 3.1 watched and done (the next steps practise in it)
 
     # ---------- 4. report a problem ----------
     go(pg, 'ex-3-1'); pg.click('#reportQ'); pg.fill('.modal textarea', 'The diagram label looks wrong'); pg.click('.modal .btn.primary'); pg.wait_for_timeout(500)
