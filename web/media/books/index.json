@@ -954,5 +954,69 @@
     28
    ]
   }
+ },
+ "c9u01": {
+  "title": "Camday Maths Stage 9 · Unit 1: Number and Calculation",
+  "pages": 15,
+  "dir": "media/books/c9u01/",
+  "ext": "webp",
+  "pdf": "media/books/c9u01.pdf?v=75b0be325d",
+  "v": "75b0be325d",
+  "secs": {
+   "1.1": [
+    2,
+    6
+   ],
+   "1.2": [
+    7,
+    10
+   ],
+   "1.3": [
+    11,
+    14
+   ],
+   "answers": [
+    15,
+    15
+   ]
+  }
+ },
+ "c9u02": {
+  "title": "Camday Maths Stage 9 · Unit 2: Expressions and Formulae",
+  "pages": 27,
+  "dir": "media/books/c9u02/",
+  "ext": "webp",
+  "pdf": "media/books/c9u02.pdf?v=91e61a7b8e",
+  "v": "91e61a7b8e",
+  "secs": {
+   "2.1": [
+    2,
+    5
+   ],
+   "2.2": [
+    6,
+    9
+   ],
+   "2.3": [
+    10,
+    13
+   ],
+   "2.4": [
+    14,
+    17
+   ],
+   "2.5": [
+    18,
+    21
+   ],
+   "2.6": [
+    22,
+    25
+   ],
+   "answers": [
+    26,
+    27
+   ]
+  }
  }
 }
