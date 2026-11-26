@@ -120,7 +120,7 @@
       while (r.toks.length && (r.toks[r.toks.length - 1].k === 'sp' || /^[=+−\-×÷<>≤≥≠±(√∛\/^]$/.test(r.toks[r.toks.length - 1].s))) r.toks.pop();
       while (r.toks.length && (r.toks[0].k === 'sp' || /^[=+×÷<>≤≥≠)\/^]$/.test(r.toks[0].s))) { r.a += r.toks[0].s.length; r.toks.shift(); }
       const s = r.toks.map(x => x.s).join(''); return { a: r.a, b: r.a + s.length, s }; })
-      .filter(r => r.s.trim() && CUE.test(r.s) && !/^[\d\s]+$/.test(r.s));
+      .filter(r => r.s.trim() && CUE.test(r.s) && !/^[\d\s]+$/.test(r.s) && !/^\d+(st|nd|rd|th)$/.test(r.s.trim()));   // 1st, 2nd, 3rd are words, not maths
   }
   function unitsIn(s) {   // "5 cm²" → mark cm as a unit so it is not set in italics
     return s.replace(/(\d)(\s+)(mm|cm|km|kg|ml|mg|ha|m|g|l)(?![A-Za-z])/g, '$1$2⟦$3⟧');

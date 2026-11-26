@@ -7,12 +7,27 @@ WPM = 110   # reading speed of a 9–14 year old on maths notes (words per minut
 
 
 def words(blocks):
-    return len(" ".join(json.dumps(b, ensure_ascii=False) for b in blocks).split())
+    """words a learner reads (text, tables, steps, the prompts of the questions inside the notes)"""
+    out = []
+    for b in blocks:
+        out += [b.get("t") or "", b.get("q") or "", b.get("a") or "", b.get("check") or "", b.get("given") or "", b.get("find") or "", b.get("plan") or "", b.get("why") or ""]
+        out += list(b.get("p", [])) + list(b.get("p2", [])) + [" ".join(map(str, s[:2])) for s in b.get("steps", []) + b.get("fix", [])] + list(b.get("lines", []))
+        out += [" ".join(map(str, r)) for r in ((b.get("table") or {}).get("rows") or [])]
+        if b.get("qq"): out.append(b["qq"].get("prompt", ""))
+    return len(" ".join(out).split())
 
 
 def notes_for(stage):
-    try: return importlib.import_module(f"maths_notes_v3.s{stage}").NOTES
-    except ModuleNotFoundError: return {}
+    """v3 notes, with the v4 lessons (maths_notes_v4/s{stage}.py) on top where they exist"""
+    out = {}
+    for pkg in ("maths_notes_v3", "maths_notes_v4"):
+        try: out.update(importlib.import_module(f"{pkg}.s{stage}").NOTES)
+        except ModuleNotFoundError: pass
+    return out
+
+
+def stop(sid, n, after, q):
+    return {"id": f"{sid}-k{n}", "t": n, "after": after, "review": [0, 0], "note": "", "q": q}
 
 
 NUM = re.compile(r"\d+(?:\.\d+)?(?:/\d+)?")
@@ -58,10 +73,16 @@ def apply(stage, unit, data):
         v = N.get((unit, s["id"]))
         if not v or not s.get("lesson"): continue
         old = len(s["lesson"]); figs = [(i, b["fig"]) for i, b in enumerate(s["lesson"]) if b.get("fig")]
-        s["lesson"] = [dict(b) for b in v["blocks"]]; s["notes"] = "v3"
-        carry(s["lesson"], figs, old, v.get("figs"))
-        place(s.get("stops") or [], old, len(s["lesson"]), v.get("at"), s["lesson"])
+        s["lesson"] = [dict(b) for b in v["blocks"]]; s["notes"] = "v4" if v.get("v") == 4 else "v3"
+        for i, b in enumerate(s["lesson"]):
+            if b.get("k") == "error" and not b.get("id"): b["id"] = f"{s['id']}-e{i}"
+        if v.get("v") != 4: carry(s["lesson"], figs, old, v.get("figs"))
+        if v.get("stops") is not None: s["stops"] = [stop(s["id"], i + 1, a, q) for i, (a, q) in enumerate(v["stops"])]
+        else: place(s.get("stops") or [], old, len(s["lesson"]), v.get("at"), s["lesson"])
+        if v.get("pdf"): s["pdf"] = v["pdf"]
+        for k, lst in (v.get("practice") or {}).items(): s[k] = lst
         if s.get("stops"): s["stops"].sort(key=lambda x: x["after"])   # numbered in reading order
-        if s.get("video"): s["video"]["dur"] = max(300, round(words(s["lesson"]) / WPM * 60 / 60) * 60 + 60 * len(s.get("stops") or []))
+        tries = sum(1 for b in s["lesson"] if b.get("qq") or b.get("k") == "error")
+        if s.get("video"): s["video"]["dur"] = max(300, round(words(s["lesson"]) / WPM * 60 / 60) * 60 + 60 * (len(s.get("stops") or []) + tries))
         n += 1
     return data, n

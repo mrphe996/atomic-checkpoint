@@ -753,17 +753,92 @@
   let READIDX = null;
   async function readIndex() { if (!READIDX) { try { READIDX = await (await fetch('media/read/index.json')).json(); } catch (e) { READIDX = {}; } } return READIDX; }
   const hasNotes = () => !!(C && C.sections && C.sections.some(s => (s.lesson || []).length));
-  function noteBlock(b) {
-    const kind = b.k || 'idea', icon = { idea: '💡', example: '✏️', tip: '✅', mistake: '⚠️', method: '🧭' }[kind] || '💡';
-    const para = t => el('p', { class: 'lp' }, ...String(t).split(/(\*\*[^*]+\*\*)/).map(part => /^\*\*.*\*\*$/.test(part) ? el('b', {}, part.slice(2, -2)) : part));
-    const card = el('div', { class: 'lblock lb-' + kind }, el('h3', {}, el('span', { class: 'lbi', 'aria-hidden': 'true' }, icon), ' ', (kind === 'example' ? 'Worked example: ' : kind === 'mistake' ? 'Common mistake: ' : kind === 'method' ? 'Method: ' : kind === 'tip' ? 'Exam tip: ' : '') + b.t));
-    (b.p || []).forEach(t => card.append(para(t)));
-    if (b.fig) { const f = window.AtomicFig && window.AtomicFig.get ? window.AtomicFig.get(b.fig.kind, b.fig) : null; if (f) card.append(el('div', { class: 'qfig', html: f.svg })); }
+  /* lesson blocks (Maths notes v3 + v4). v4 adds: hook (Start here), recall (Remember), try (Your turn, a live question),
+     error (Spot the mistake: a wrong solution, find the first wrong line), summary (Key points); worked examples can say
+     what we know / what we need / the plan, put a diagram next to a step, and end with a check. */
+  const LB_KIND = { idea: 'Key idea', example: 'Worked example', tip: 'Exam tip', mistake: 'Common mistake', method: 'Method', hook: 'Start here', recall: 'Remember', try: 'Your turn', error: 'Spot the mistake', summary: 'Key points' };
+  const LB_ICON = { idea: '💡', example: '✏️', tip: '✅', mistake: '⚠️', method: '🧭', hook: '🚀', recall: '🔁', try: '🖊️', error: '🔍', summary: '📌' };
+  const rich = t => String(t).split(/(\*\*[^*]+\*\*)/).map(part => /^\*\*.*\*\*$/.test(part) ? el('b', {}, part.slice(2, -2)) : part);
+  const figEl = f => { const g = f && window.AtomicFig && window.AtomicFig.get ? window.AtomicFig.get(f.kind, f) : null; return g ? el('div', { class: 'qfig', html: g.svg }) : null; };
+  // the "Spot the mistake" question: which line is the first wrong one?
+  const errQ = (b, id) => ({ id, type: 'mcq', fixed: true, prompt: 'Which line is the first one that is wrong?', hint: b.hint || 'Check each line in turn. Does it follow from the line before it?',
+    options: b.lines.map((_, i) => ({ t: 'Line ' + (i + 1), ok: i === b.bad, fb: i < b.bad ? `Line ${i + 1} is correct. Read on.` : i > b.bad ? 'This line is wrong, but the mistake starts earlier.' : '' })), reason: b.why });
+  // fill a lesson card. live(q, host, after) shows a question the learner can answer (lesson page); without it the answer is printed (notes reader).
+  function fillBlock(card, b, live) {
+    if (b.k === 'summary') card.append(el('ul', { class: 'lsum' }, ...(b.p || []).map(t => el('li', {}, ...rich(t)))));
+    else (b.p || []).forEach(t => card.append(el('p', { class: 'lp' }, ...rich(t))));
+    if (b.fig) { const f = figEl(b.fig); if (f) card.append(f); }
     if (b.table) card.append(QE.dataTable ? QE.dataTable(b.table) : el('div'));
-    if (b.q) card.append(el('p', { class: 'lq' }, el('b', {}, 'Question: '), b.q));
-    if (b.steps) { const ol = el('ol', { class: 'lsteps' }); b.steps.forEach(([work, why]) => ol.append(el('li', {}, el('code', { class: 'mwork' }, work), why ? el('span', { class: 'why' }, ' ' + why) : null))); card.append(ol); }
-    if (b.a) card.append(el('p', { class: 'lans' }, el('b', {}, 'Answer: '), b.a));
+    (b.p2 || []).forEach(t => card.append(el('p', { class: 'lp' }, ...rich(t))));   // text that comes after the table or diagram
+    if (b.q) card.append(el('p', { class: 'lq' }, el('b', {}, b.k === 'error' ? 'Problem: ' : 'Question: '), ...rich(b.q)));
+    if (b.given || b.find || b.plan) card.append(el('dl', { class: 'lgf' }, ...[['What we know', b.given], ['What we need', b.find], ['Plan', b.plan]].filter(x => x[1]).flatMap(([k, v]) => [el('dt', {}, k), el('dd', {}, ...rich(v))])));
+    if (b.steps) { const ol = el('ol', { class: 'lsteps' }); b.steps.forEach(([work, why, fig]) => ol.append(el('li', {}, el('code', { class: 'mwork' }, work), why ? el('span', { class: 'why' }, ' ', ...rich(why)) : null, fig ? figEl(fig) : null))); card.append(ol); }
+    if (b.a) card.append(el('p', { class: 'lans' }, el('b', {}, 'Answer: '), ...rich(b.a)));
+    if (b.check) card.append(el('p', { class: 'lchk' }, el('b', {}, '✓ Check: '), ...rich(b.check)));
+    if (b.k === 'error' && b.lines) {
+      card.append(el('ol', { class: 'lerrlines' }, ...b.lines.map((t, i) => el('li', {}, el('span', { class: 'ln' }, 'Line ' + (i + 1)), el('code', { class: 'mwork' }, t)))));
+      const fix = el('div', { class: 'lfix' }, el('b', {}, 'Why it is wrong: '), ...rich(b.why || ''),
+        b.fix ? el('ol', { class: 'lsteps' }, ...b.fix.map(([w, y]) => el('li', {}, el('code', { class: 'mwork' }, w), y ? el('span', { class: 'why' }, ' ', ...rich(y)) : null))) : null);
+      if (live) { const host = el('div', { class: 'ltry' }); card.append(host); fix.hidden = true; card.append(fix); live(errQ(b, b.id), host, () => { fix.hidden = false; }); }
+      else card.append(el('p', { class: 'lp' }, el('b', {}, 'The first wrong line: '), 'Line ' + (b.bad + 1)), fix);
+    }
+    if (b.qq) {
+      if (live) { const host = el('div', { class: 'ltry' }); card.append(host); live(b.qq, host); }
+      else card.append(el('div', { class: 'rdtry' }, el('b', {}, 'Try it: '), ...rich(b.qq.prompt), el('details', {}, el('summary', {}, 'Answer'), el('p', {}, QE.answerText ? QE.answerText(b.qq) : ''), b.qq.reason ? el('p', { class: 'muted' }, b.qq.reason) : null)));
+    }
     return card;
+  }
+  /* ---------- Read the PDF: the course book pages for a lesson, shown on Camday (page images, so they are sharp on phones).
+     s.pdf = [{book, p0, p1, label, note, look:[…]}]; p0–p1 are pages of the book file (the printed page numbers are in the label).
+     The viewer opens at the lesson's pages; the whole book can be read; zoom and full screen; an overlay, so Practice answers stay. ---------- */
+  let BOOKS = null;
+  async function bookIndex() { if (!BOOKS) { try { BOOKS = await (await fetch('media/books/index.json')).json(); } catch (e) { BOOKS = {}; } } return BOOKS; }
+  const bookPage = (bk, n) => `${bk.dir}p${String(n).padStart(4, '0')}.${bk.ext || 'webp'}`;
+  async function openBook(s, ref) {
+    ref = ref || s.pdf[0]; const idx = await bookIndex(), bk = idx[ref.book];
+    if (!bk) { toast('This book is not available yet.'); return; }
+    const vs = Core.vstate(st, s.id); vs.pdf = true; Core.persist();
+    const key = `atomic.book.${st ? st.id : 'guest'}.${ref.book}`; let saved = null; try { saved = JSON.parse(localStorage.getItem(key) || 'null'); } catch (e) { }
+    let page = ref.p0, zoom = (saved && saved.zoom) || 1;
+    const img = el('img', { class: 'bkimg', alt: '', id: 'bookImg' }), wrap = el('div', { class: 'bkbody', id: 'bookBody' }, img);
+    const ov = el('div', { class: 'rdover bkover', role: 'dialog', 'aria-modal': 'true', 'aria-label': bk.title, id: 'book' });
+    const pg = el('input', { type: 'number', min: 1, max: bk.pages, class: 'bkpg', id: 'bookPage', 'aria-label': 'Page of the book file', onchange: () => show(+pg.value) });
+    const inLesson = n => n >= ref.p0 && n <= ref.p1;
+    const where = el('span', { class: 'bkwhere', id: 'bookWhere' });
+    const close = () => { try { if (document.fullscreenElement) document.exitFullscreen(); } catch (e) { } ov.remove(); document.removeEventListener('keydown', keys); };
+    const keys = e => { if (e.key === 'Escape') close(); else if (e.key === 'ArrowRight') show(page + 1); else if (e.key === 'ArrowLeft') show(page - 1); };
+    const setZoom = z => { zoom = Math.max(1, Math.min(3, z)); img.style.width = (zoom * 100) + '%'; save(); };
+    function save() { try { localStorage.setItem(key, JSON.stringify({ page, zoom })); } catch (e) { } }
+    function show(n) { page = Math.max(1, Math.min(bk.pages, n || 1)); img.src = bookPage(bk, page); img.alt = `${bk.title}, page ${page} of the file`; pg.value = page;
+      where.textContent = inLesson(page) ? `Lesson pages (${ref.label})` : 'Outside this lesson\'s pages'; where.className = 'bkwhere' + (inLesson(page) ? ' on' : ''); wrap.scrollTop = 0; save();
+      if (page < bk.pages) { const pre = new Image(); pre.src = bookPage(bk, page + 1); } }
+    const bar = el('div', { class: 'rdbar' }, el('b', { class: 'rdttl' }, '📄 ' + bk.title),
+      el('button', { type: 'button', class: 'btn small ghost', id: 'bookPrev', 'aria-label': 'Previous page', onclick: () => show(page - 1) }, '←'), pg, el('span', { class: 'muted' }, `/ ${bk.pages}`),
+      el('button', { type: 'button', class: 'btn small ghost', id: 'bookNext', 'aria-label': 'Next page', onclick: () => show(page + 1) }, '→'),
+      el('button', { type: 'button', class: 'btn small ghost', id: 'bookLesson', onclick: () => show(ref.p0) }, 'Lesson pages'), where,
+      el('span', { class: 'rdz' }, el('button', { type: 'button', class: 'btn small ghost', 'aria-label': 'Zoom out', id: 'bookSmall', onclick: () => setZoom(zoom - 0.25) }, '−'), el('button', { type: 'button', class: 'btn small ghost', 'aria-label': 'Zoom in', id: 'bookBig', onclick: () => setZoom(zoom + 0.25) }, '+')),
+      el('button', { type: 'button', class: 'btn small ghost', id: 'bookFull', onclick: () => { try { document.fullscreenElement ? document.exitFullscreen() : ov.requestFullscreen(); } catch (e) { } } }, '⛶ Full screen'),
+      el('button', { type: 'button', class: 'btn small primary', id: 'bookClose', onclick: close }, '✕ Close'));
+    const guide = el('div', { class: 'bkguide' }, el('b', {}, `Read ${ref.label}. `), ref.note ? rich(ref.note) : null, ...(ref.look || []).map(t => el('p', { class: 'bklook' }, '👀 ', ...rich(t))));
+    ov.append(bar, guide, wrap); document.body.append(ov); document.addEventListener('keydown', keys); setZoom(zoom); show(ref.p0);
+  }
+  function pdfCard(s) {
+    const vs = Core.vstate(st, s.id);
+    return el('section', { class: 'card lblock lb-pdf', id: 'readPdf' }, el('div', { class: 'lbtop' }, el('span', { class: 'lbkind' }, 'Read the PDF'), vs.pdf ? el('span', { class: 'lbcount' }, '✓ opened') : null),
+      el('h2', {}, 'Now read the book'),
+      ...s.pdf.map((r, i) => el('div', { class: 'pdfref' }, el('p', { class: 'lp' }, el('b', {}, r.title || 'Course book', ', ', r.label), r.note ? el('span', {}, ' – ', ...rich(r.note)) : null),
+        ...(r.look || []).map(t => el('p', { class: 'bklook' }, '👀 ', ...rich(t))),
+        el('button', { class: 'btn', type: 'button', id: 'openPdf' + i, onclick: () => openBook(s, r) }, '📄 Open the book at ', r.label))),
+      el('div', { class: 'btnrow', style: 'margin-top:12px' }, el('button', { class: 'btn gold shine', type: 'button', id: 'startPractice', onclick: () => {
+        if (Core.stopsLeft(st, s).length) { toast('Answer the check questions in the lesson first.'); return; }
+        if (!vs.completed) { vs.completed = true; vs.pos = s.video.dur; Core.persist(); Backend.track('lesson_done', { learner: st.id, unit: Core.UNIT, sec: s.id }); }
+        go('ex-' + R(s.id)); } }, 'Start practice', el('span', { class: 'arr' }, ' →'))),
+      el('p', { class: 'muted', style: 'margin:8px 0 0' }, 'You can read the whole book in the viewer. In Practice, “Review the PDF” opens these pages again and keeps your answers.'));
+  }
+  function noteBlock(b) {
+    const kind = b.k || 'idea';
+    const card = el('div', { class: 'lblock lb-' + kind }, el('h3', {}, el('span', { class: 'lbi', 'aria-hidden': 'true' }, LB_ICON[kind] || '💡'), ' ', (['example', 'mistake', 'method', 'tip', 'hook', 'recall', 'try', 'error', 'summary'].includes(kind) ? LB_KIND[kind] + ': ' : '') + b.t));
+    return fillBlock(card, b);
   }
   async function openReader(sid) {
     if (!hasNotes()) return;
@@ -811,7 +886,7 @@
     const lprog = el('div', { class: 'lprog', id: 'lessonProg' });
     const drawProg = () => { const left = Core.stopsLeft(st, s).length, got = s.stops.length - left, fin = vs.completed && !left; lprog.innerHTML = '';
       const step = (n, label, state) => el('span', { class: 'lstep ' + state }, el('i', {}, state === 'done' ? '✓' : String(n)), label);
-      lprog.append(el('div', { class: 'lsteprow' }, step(1, 'Read the lesson', fin || got ? 'done' : 'cur'), step(2, `Check questions ${got}/${s.stops.length}`, !left ? 'done' : got ? 'cur' : ''), step(3, `Practise ${s.id}`, fin ? 'cur' : '')),
+      lprog.append(el('div', { class: 'lsteprow' }, step(1, 'Read the lesson', fin || got ? 'done' : 'cur'), step(2, `Check questions ${got}/${s.stops.length}`, !left ? 'done' : got ? 'cur' : ''), s.pdf && s.pdf.length ? step(3, 'Read the PDF', vs.pdf ? 'done' : !left ? 'cur' : '') : null, step(s.pdf && s.pdf.length ? 4 : 3, `Practise ${s.id}`, fin ? 'cur' : '')),
         el('div', { class: 'pbar' + (!left ? ' ok' : '') }, el('i', { style: `width:${s.stops.length ? Math.round(got / s.stops.length * 100) : 100}%` }))); };
     const head = el('section', { class: 'card lessonhead' }, el('p', { class: 'eyebrow', style: 'margin:0' }, `${Core.stageLabel()} · Unit ${Core.UNO} · Lesson ${s.id}`), el('h1', { style: 'margin:4px 0 10px' }, s.title),
       el('div', { class: 'lmeta' }, el('span', {}, `About ${mins} minutes`), el('span', {}, `${nIdeas} part${nIdeas === 1 ? '' : 's'}`), el('span', {}, `${s.stops.length} check question${s.stops.length === 1 ? '' : 's'}`)),
@@ -839,20 +914,20 @@
           onDone: () => { rec.done = true; if (rec.everWrong) st.stopsWrong[x.q.id] = true; Core.persist(); xpTick(); drawStatus(); } });
       };
     (stopFor[-1] || []).forEach(addStop);   // "before you read on" questions that come before the first part
+    // "Your turn" and "Spot the mistake" questions inside the notes: answers and tries are kept, they do not give XP or count as check questions
+    vs.tries = vs.tries || {};
+    const live = (q, host, after) => { const rec = (vs.tries[q.id] = vs.tries[q.id] || { tries: 0 });
+      QE.practice(q, host, { rec, seed: st.id, nested: true, free: true, save: () => Core.persist(), onDone: () => { Core.persist(); after && after(); } });
+      if (rec.done && after) after(); };
     s.lesson.forEach((b, bi) => {
-      const kind = b.k || 'idea', icon = { idea: '💡', example: '✏️', tip: '✅', mistake: '⚠️', method: '🧭' }[kind] || '💡';
-      const KIND = { idea: 'Key idea', example: 'Worked example', tip: 'Exam tip', mistake: 'Common mistake', method: 'Method' };
-      const card = el('section', { class: 'card lblock lb-' + kind, id: 'lb-' + bi }, el('div', { class: 'lbtop' }, el('span', { class: 'lbkind' }, KIND[kind] || 'Key idea'), el('span', { class: 'lbcount' }, `Part ${bi + 1} of ${s.lesson.length}`)), el('h2', {}, b.t));
-      (b.p || []).forEach(t => card.append(para(t)));
+      const kind = b.k || 'idea';
+      const card = el('section', { class: 'card lblock lb-' + kind, id: 'lb-' + bi }, el('div', { class: 'lbtop' }, el('span', { class: 'lbkind' }, LB_KIND[kind] || 'Key idea'), el('span', { class: 'lbcount' }, `Part ${bi + 1} of ${s.lesson.length}`)), el('h2', {}, b.t));
       if (C.unit.tiny && ('speechSynthesis' in window)) card.append(el('button', { type: 'button', class: 'btn small ghost readq', onclick: () => QE.speak([b.t].concat(b.p || [], b.q ? [b.q] : [], b.a ? [b.a] : []).join('. ')) }, '🔊 Read to me'));
-      if (b.fig) { const f = window.AtomicFig && window.AtomicFig.get ? window.AtomicFig.get(b.fig.kind, b.fig) : null; if (f) card.append(el('div', { class: 'qfig', html: f.svg })); }
-      if (b.table) card.append(QE.dataTable ? QE.dataTable(b.table) : el('div'));
-      if (b.q) card.append(el('p', { class: 'lq' }, el('b', {}, 'Question: '), b.q));
-      if (b.steps) { const ol = el('ol', { class: 'lsteps' }); b.steps.forEach(([work, why]) => ol.append(el('li', {}, el('code', { class: 'mwork' }, work), why ? el('span', { class: 'why' }, ' ' + why) : null))); card.append(ol); }
-      if (b.a) card.append(el('p', { class: 'lans' }, el('b', {}, 'Answer: '), b.a));
+      fillBlock(card, b, live);
       body.append(card);
       (stopFor[bi] || []).forEach(addStop);
     });
+    if (s.pdf && s.pdf.length) body.append(pdfCard(s));
     drawStatus();
   }
 
@@ -1105,6 +1180,7 @@
     st.marks = st.marks || {};
     const mk = el('button', { type: 'button', class: 'chip' + (st.marks[q.id] ? ' on' : ''), 'aria-pressed': String(!!st.marks[q.id]), style: 'margin-left:auto', onclick: () => { st.marks[q.id] = !st.marks[q.id]; Core.persist(); mk.classList.toggle('on'); mk.setAttribute('aria-pressed', String(!!st.marks[q.id])); } }, '★ Bookmark');
     tabs.append(mk); if (hasNotes()) tabs.append(el('button', { type: 'button', class: 'chip', id: 'reviewNotes', onclick: () => openReader(s.id) }, '📖 Review the notes'));
+    if (s.pdf && s.pdf.length) tabs.append(el('button', { type: 'button', class: 'chip', id: 'reviewPdf', onclick: () => openBook(s) }, '📄 Review the PDF'));
     const chips = el('div', { class: 'qnav' }, ...list.map((x, i) => { const r = st.items[x.id] || {}; return el('button', { class: 'qc' + (i === idx ? ' on' : '') + (r.done ? (r.ok ? ' ok' : ' half') : r.tries ? ' bad' : ''), type: 'button', 'aria-label': `Question ${i + 1}${r.done ? ', done' : ''}`, onclick: () => go2(i) }, String(i + 1)); }));
     const card = el('section', { class: 'card qcard' });
     const doneBanner = el('div');
