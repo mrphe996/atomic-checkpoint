@@ -409,7 +409,10 @@
         el('a', { class: 'card dstat', href: `#stage-${Core.STAGE}`, id: 'hoursCard' }, el('span', { class: 'bob', style: 'font-size:30px' }, '⏱'),
           el('span', {}, el('b', {}, hrs(Core.totalSeconds())), el('br'), el('small', {}, `studied of ≈ ${estH(Core.INDEX.est || 0)} course`)))))));
     if (isGuest()) m.append(el('div', { class: 'banner info', id: 'guestBanner' }, el('b', {}, 'You are learning as a guest. '), 'Your progress is kept on this device only and topic 3.1 is open. Sign up free to save it and unlock every topic.', el('a', { class: 'btn small gold', href: '#signup' }, 'Sign up free')));
-    else if (!Core.S.sub.active) m.append(el('div', { class: 'banner info', id: 'freeBanner' }, el('b', {}, 'Free plan: '), `the first topic of every unit is open. A Cambridge ${Core.stageName(Core.STAGE)} plan unlocks all topics and the Unit Test.`, el('a', { class: 'btn small gold', href: '#pricing' }, 'See plans')));
+    else if (Core.freeMode()) m.append(el('div', { class: 'banner info', id: 'freeBanner' }, el('b', {}, Core.expiredCourses().length ? 'Your course has expired. ' : 'Free plan: '),
+      Core.expiredCourses().length ? 'You did not study for a year, so the course closed. Buy it again to carry on – your free Unit 3 lessons stay open.'
+        : `every lesson video of Unit ${Core.FREE_UNIT} and its Core questions (8 per section) are open. Buy Cambridge ${Core.stageName(Core.STAGE)} once to open every unit, all practice and the Unit Tests.`,
+      el('a', { class: 'btn small gold', href: '#plans' }, 'See plans')));
     if (Backend.mode === 'demo' && !isGuest()) m.append(el('div', { class: 'banner adv' }, el('b', {}, 'Trying the preview? '), 'Use the tester tools on the Progress page to unlock sections instantly.', el('a', { class: 'btn small', href: '#profile' }, 'Open tester tools')));
     const left = el('div', { class: 'dmain' }), aside = el('aside', { class: 'daside' });
     m.append(el('div', { class: 'dgrid' }, left, aside));
@@ -529,7 +532,7 @@
     const res = (st.results || {})[Core.UNIT], pct = res ? Math.round(res.first_pass_pct || res.pct || 0) : null;
     const fact = (b, t) => el('div', {}, el('b', {}, b), el('span', {}, t));
     const btn = ts.state === 'guest' ? el('a', { class: 'btn gold', href: '#signup' }, 'Sign up free to take the test')
-      : ts.state === 'paywall' ? el('a', { class: 'btn gold', href: '#pricing' }, `Unlock with a Cambridge ${Core.stageName(Core.STAGE)} plan`)
+      : ts.state === 'paywall' ? el('a', { class: 'btn gold', href: '#plans' }, `Buy Cambridge ${Core.stageName(Core.STAGE)} to take the test`)
         : el('a', { class: 'btn gold', href: ts.state === 'passed' ? '#result' : '#test' }, ts.state === 'locked' ? 'See what\'s missing' : ts.state === 'passed' ? 'See results' : 'Enter the exam room');
     const passed = ts.state === 'passed';
     return el('section', { class: 'u4exam', id: 'unitTestCard' },
@@ -1358,6 +1361,9 @@
 
   /* ---------- Lower Secondary → Stage → Unit (every level of the breadcrumb is a page) ---------- */
   const PRICE = (window.ATOMIC_CONFIG || {}).stagePrice || 'US$49';
+  const PAID = ((window.ATOMIC_CONFIG || {}).billing || 'off') === 'paddle';   // real Paddle checkout (one-time prices)
+  const buyErr = x => ({ payments_closed: 'Payments are not open yet.', checkout_closed: 'The payment window was closed – nothing was charged.', payment_pending: 'Payment received – your course opens in a minute. Reload the page if it does not.',
+    stage_locked: 'This stage opens after 80 % of your current stage.', already_enrolled: 'You already have this course.', payments_unavailable: 'The payment page could not load. Check your connection and try again.' }[x && x.code] || errText(x));
   const crumbs = (...tail) => el('nav', { class: 'crumb', 'aria-label': 'Breadcrumb' }, el('a', { href: '#home' }, 'Dashboard'), ' › ', el('a', { href: '#level' }, Core.levelName(Core.STAGE)), ...tail.flatMap(t => [' › ', t]));
   // ---- course catalogue: subjects × levels (Science and Mathematics, Lower Secondary → IGCSE → AS & A Level) ----
   let CATALOG = null;
@@ -1451,14 +1457,15 @@
     pageHero('YOUR PLAN', `Cambridge Stage ${lv}`, Core.myCourses().length ? 'Add another subject of your stage.' : 'Choose what you want to study in your stage.');
     if (!todo.length) { m.append(el('section', { class: 'card done' }, el('h2', {}, `✓ You have every subject of Stage ${lv}`), el('a', { class: 'btn primary small', href: '#home' }, 'Go to my dashboard'))); return; }
     const buy = async (keys, amount, btn) => { e.textContent = ''; btn.disabled = true; btn.classList.add('busy');
-      try { for (const k of keys) await Core.enrol(k, amount); await Core.ensureOwnStage(); C = Core.C; st = Core.cur(); confetti(); toast(`You are enrolled in Stage ${lv}.`); go('home'); }
-      catch (x) { btn.disabled = false; btn.classList.remove('busy'); e.textContent = x.code === 'payments_closed' ? 'Payments are not open yet.' : errText(x); } };
+      try { await Core.buy(keys, amount); await Core.ensureOwnStage(); C = Core.C; st = Core.cur(); confetti(); toast(`You are enrolled in Stage ${lv}.`); go('home'); }
+      catch (x) { btn.disabled = false; btn.classList.remove('busy'); e.textContent = buyErr(x); } };
     const sec = el('section', { class: 'card narrow', id: 'plans' }, el('h2', {}, 'Choose your plan'));
     if (todo.length >= 2) { const b = el('button', { class: 'btn gold', type: 'button', id: 'buyBundle', onclick: () => buy(todo, `Stage ${lv} · ${todo.length} subjects ${priceFor(todo.length)}`, b) }, `${todo.length === avail.length ? 'Whole Stage ' + lv : 'All ' + todo.length + ' subjects'} · ${priceFor(todo.length)}`);
       sec.append(el('div', { class: 'ordrow' }, el('span', {}, `⭐ Every subject of Stage ${lv}: ${todo.map(SUBJ_NAME).join(', ')}`), b)); }
     todo.forEach(k => { const b = el('button', { class: 'btn', type: 'button', 'data-course': k, onclick: () => buy([k], PRICE, b) }, `${PRICE}`);
       sec.append(el('div', { class: 'ordrow' }, el('span', {}, `${SUBJ_ICON(k)} ${SUBJ_NAME(k)} · Stage ${lv}`), b)); });
-    sec.append(el('div', { class: 'banner info' }, el('b', {}, 'Test checkout. '), 'No money is taken on the test server.'), e);
+    sec.append(el('p', { class: 'muted', id: 'oneTimeNote' }, 'Pay once – no subscription. Your course stays open as long as you study at least once a year; after 365 days without study it closes and must be bought again.'),
+      PAID ? el('div', {}) : el('div', { class: 'banner info' }, el('b', {}, 'Test checkout. '), 'No money is taken on the test server.'), e);
     m.append(sec);
   }
   async function viewCheckout(g) {
@@ -1473,9 +1480,10 @@
     m.append(el('section', { class: 'card narrow', id: 'checkout' }, el('h2', {}, 'Order summary'),
       el('div', { class: 'ordrow' }, el('span', {}, `Cambridge ${Core.levelName(g)} ${Core.subjectOf(g)} · Cambridge ${Core.stageName(g)} (Camday course)`), el('b', {}, PRICE)),
       el('div', { class: 'ordrow' }, el('span', {}, 'Learner'), el('b', {}, st.name)),
-      el('div', { class: 'banner info' }, el('b', {}, 'Test checkout. '), 'This is the test server: pressing Pay enrols you straight away and no money is taken. The real payment page (Paddle) replaces this before launch.'),
+      el('p', { class: 'muted' }, 'Pay once – no subscription. The course stays open as long as you study at least once a year.'),
+      PAID ? el('div', {}) : el('div', { class: 'banner info' }, el('b', {}, 'Test checkout. '), 'This is the test server: pressing Pay enrols you straight away and no money is taken.'),
       msg, el('button', { class: 'btn gold big', type: 'button', id: 'payBtn', onclick: async ev => { const pb = ev.currentTarget; pb.disabled = true; pb.classList.add('busy'); msg.textContent = '';
-        try { await Core.enrol(g, PRICE); pb.classList.remove('busy'); confetti(); toast(`You are enrolled in Cambridge ${Core.stageName(g)}.`); go('stage-' + g); } catch (x) { pb.disabled = false; pb.classList.remove('busy'); msg.textContent = x.code === 'payments_closed' ? 'Enrolment is not open yet on this server.' : errText(x); } } }, `Pay ${PRICE} (test)`)));
+        try { await Core.buy([g], PRICE); pb.classList.remove('busy'); confetti(); toast(`You are enrolled in Cambridge ${Core.stageName(g)}.`); go('stage-' + g); } catch (x) { pb.disabled = false; pb.classList.remove('busy'); msg.textContent = buyErr(x); } } }, PAID ? `Pay ${PRICE}` : `Pay ${PRICE} (test)`)));
   }
 
   /* ---------- question bank ---------- */
@@ -1744,7 +1752,7 @@
     const where = `Unit ${Core.UNO} › Unit Test`;
     const totalCore = C.sections.reduce((a, s) => a + s.req.length, 0);
     if (ts.state === 'guest') { m.append(bar(where), guestWall('Sign up free to take the Unit Test')); return; }
-    if (ts.state === 'paywall') { m.append(bar(where), lockScreen(`Unit Test ${Core.UNO} needs a Cambridge ${Core.stageName(Core.STAGE)} plan`, 'Unit Tests, marking and the certificate are part of the full course.', [{ what: `a Cambridge ${Core.stageName(Core.STAGE)} plan (7-day free trial)`, route: 'pricing' }])); return; }
+    if (ts.state === 'paywall') { m.append(bar(where), lockScreen(`Unit Test ${Core.UNO} needs the Cambridge ${Core.stageName(Core.STAGE)} course`, 'Unit Tests, marking and the certificate are part of the full course. You buy it once.', [{ what: `the Cambridge ${Core.stageName(Core.STAGE)} course`, route: 'plans' }])); return; }
     if (ts.state === 'locked') { m.append(bar(where), lockScreen(`Unit Test ${Core.UNO} is locked`, `The Unit Test opens when you have ${C.sections[0] && C.sections[0].lesson ? 'read every lesson' : 'watched every video'} and finished all ${totalCore} Core questions in this unit.`, ts.miss)); return; }
     if (ts.state === 'pending') { m.append(bar(where), el('section', { class: 'card' }, el('h2', {}, '⏳ Awaiting marking'), el('p', {}, `Attempt ${ts.last.n} (Paper ${ts.last.form}) has a written answer for an Camday marker to mark. We will notify you when it is done.`), el('a', { class: 'btn primary small', href: '#result' }, 'Results & history'))); return; }
     if (ts.state === 'remediate') { m.append(bar(where), lockScreen('You can\'t retake yet', 'Finish the review questions set for your weaker objectives before you take the equivalent paper.', [{ what: `${ts.left.length} review questions`, route: 'remedial' }])); return; }
@@ -2480,7 +2488,8 @@
   }
   function faq() {
     const qa = [['Who is Camday for?', 'Learners aged about 7–14 following Cambridge Primary or Lower Secondary Science (Stages 3 to 9) or Mathematics (Stages 3 to 9), at an international or bilingual school or studying at home.'],
-      ['Do I need an account?', 'Not to try it: topic 3.1 is open to guests. Create a free account to save your progress, unlock every topic and take the Unit Test.'],
+      ['Do I need an account?', 'Not to try it: topic 3.1 is open to guests. A free account opens every lesson video of Unit 3 and its Core questions and saves your progress.'],
+      ['Is it a subscription?', 'No. You pay once for a subject or a whole stage. The course stays open as long as you study at least once a year. After 365 days without any study it closes, and you can buy it again.'],
       ['Will my parents know how I am doing?', 'If you add a parent’s email when you sign up (it is optional), we send them a short email when you finish a unit. You can add or remove it any time in Settings.'],
       ['How are Unit Tests marked?', 'Multiple-choice, diagram and data questions are marked automatically. Written answers are marked by the Camday teaching team; you get a notification when it is done.'],
       ['Can I delete my data?', 'Yes. In Settings you can download everything we hold about you or delete your account, which removes all your learning records.']];
@@ -2611,15 +2620,17 @@
             await Backend.signUp({ name: F.name, email: F.email, password: F.password, birthYear: F.birthYear, grade: F.grade, stage: lv, country: 'XX', schoolId: null,
               schoolOther: [F.school, F.town].filter(Boolean).join(', ').slice(0, 120), parentEmail: F.parentEmail || null });
             const hadGuest = isGuest(); UI.su = null; await Core.boot(C); st = Core.cur();
-            let paid = true; try { for (const k of courses) await Core.enrol(k, amount); } catch (x) { paid = false; }
+            let paid = true; try { await Core.buy(courses, amount); } catch (x) { paid = false; }
             if (paid) { try { await Core.ensureOwnStage(); } catch (x) { } C = Core.C; st = Core.cur(); }
-            toast(paid ? `Welcome to Camday! You are enrolled in ${all ? 'the whole of Stage ' + lv : courses.map(SUBJ_NAME).join(' and ') + ' Stage ' + lv}.` : (hadGuest ? 'Account created – your guest progress is saved! ' : 'Account created! ') + 'Enrol in your course to start.');
-            confetti(); go(paid ? 'home' : 'checkout-' + courses[0]);
+            if (!paid) { try { await Core.ensureOwnStage(true); } catch (x) { } C = Core.C; st = Core.cur(); }
+            toast(paid ? `Welcome to Camday! You are enrolled in ${all ? 'the whole of Stage ' + lv : courses.map(SUBJ_NAME).join(' and ') + ' Stage ' + lv}.` : (hadGuest ? 'Account created – your guest progress is saved! ' : 'Account created! ') + `You are on the free plan: Unit ${Core.FREE_UNIT} is open.`);
+            confetti(); go('home');
           } catch (x) { e.textContent = errText(x); b.disabled = false; if (x && x.code === 'email_taken') { F.step = 1; draw(); } }
         } }, 'Create my account and enrol');
         card.append(dots(), el('h1', {}, `Stage ${lv}: choose your plan`), el('p', { class: 'muted' }, 'Drag the subjects your child will study into the plan, or tap them. The more subjects, the lower the price per subject. You can add another subject later.'),
           el('div', { class: 'form su-form4' }, priceList, el('div', { class: 'su-dnd' }, opts, basket), el('div', { class: 'ordrow su-total' }, el('span', {}, 'Total', el('br'), totalNote), total),
-            el('div', { class: 'banner info' }, el('b', {}, 'Test checkout. '), 'This is the test server: no money is taken. The real payment page replaces this before launch.'),
+            el('p', { class: 'muted' }, `Pay once – no subscription. Closing the payment window keeps you on the free plan (Unit ${Core.FREE_UNIT} lessons and Core questions).`),
+            PAID ? el('div', {}) : el('div', { class: 'banner info' }, el('b', {}, 'Test checkout. '), 'This is the test server: no money is taken.'),
             el('label', { class: 'check' }, terms, el('span', {}, 'I agree to the ', el('a', { href: '#terms', target: '_blank' }, 'Terms'), ' and have read the ', el('a', { href: '#privacy', target: '_blank' }, 'Privacy notice'), ' (', el('a', { href: '#privacy-kids', target: '_blank' }, 'short version'), ').')), e,
             el('div', { class: 'btnrow between' }, el('button', { class: 'btn ghost', type: 'button', onclick: back }, '← Back'), b)));
         refresh();
@@ -2678,21 +2689,18 @@
   }
 
   /* ---------- plans & checkout ---------- */
+  // plans: bought once (no subscription). A course closes after 365 days without study and must then be bought again.
   function viewPricing() {
-    if (Core.BILLING_OFF) return viewBeta();
-    const m = $main(); const L = (window.ATOMIC_CONFIG || {}).priceLabels || { monthly: '£9.99 / month', yearly: '£79 / year' }; const me = Core.S.me; const active = Core.S.sub.active;
-    const plan = (id, name, price, pts, cta, hl) => el('div', { class: 'card plan' + (hl ? ' cur' : '') }, hl ? el('span', { class: 'tag adv' }, 'Best value') : null, el('h3', {}, name), el('div', { class: 'price' }, price), el('ul', {}, ...pts.map(p => el('li', {}, p))), cta);
-    const buy = p => el('button', { class: 'btn ' + (p === 'yearly' ? 'gold' : 'primary'), type: 'button', id: 'buy-' + p, disabled: active, onclick: async () => {
-      if (!me) { go('signup'); return; }
-      if (Backend.mode === 'demo') modal('Checkout (preview)', el('div', {}, el('p', {}, `In the live site this opens Paddle checkout for the ${p} plan with a 7-day free trial. Paddle shows the local price and adds the right VAT/GST.`), el('p', { class: 'muted' }, 'Nothing is charged in this preview.')),
-        [{ t: 'Cancel', cls: 'ghost' }, { t: 'Start free trial (preview)', cls: 'primary', on: async () => { await Backend.checkout(p); await Core.refreshAccount(); toast('Trial started – Cambridge Stage 7 unlocked'); go('u-' + Core.UNO); } }]);
-      else await Backend.checkout(p);
-    } }, active ? 'Your plan is active' : 'Start 7-day free trial');
-    m.append(el('div', { style: 'text-align:center' }, el('span', { class: 'eyebrow' }, 'PLANS'), el('h1', { style: 'margin:4px 0' }, `One plan, the whole of Cambridge ${Core.stageLabel()}`), el('p', { class: 'muted' }, 'Cancel any time.')),
-      el('div', { class: 'plans' }, plan('free', 'Free', '£0', ['First topic of every unit', 'Lesson videos with pause questions', '30 practice questions for that topic', 'Learning streak and progress report'], me ? el('a', { class: 'btn', href: '#home' }, 'Keep learning free') : el('a', { class: 'btn', href: '#signup' }, 'Start free')),
-        plan('monthly', `Cambridge ${Core.stageLabel()} – monthly`, L.monthly, ['Every topic of every unit', 'Unit Tests marked by Camday', 'A4 worksheets and concept maps', 'Cambridge Stage 7 certificate'], buy('monthly')),
-        plan('yearly', `Cambridge ${Core.stageLabel()} – yearly`, L.yearly, ['Everything in monthly', 'About 2 months free', 'Price fixed for the year'], buy('yearly'), true)),
-      el('p', { class: 'muted', style: 'text-align:center' }, 'Prices shown in GBP for guidance. At checkout Paddle, our reseller, shows the price in your currency including VAT/GST where it applies (UK VAT, Singapore GST, Malaysia SST, Thailand VAT, Vietnam, Indonesia and Philippines taxes).'), faq());
+    const m = $main(); const me = Core.S.me;
+    const plan = (name, price, pts, cta, hl) => el('div', { class: 'card plan' + (hl ? ' cur' : '') }, hl ? el('span', { class: 'tag adv' }, 'Best value') : null, el('h3', {}, name), el('div', { class: 'price' }, price), el('ul', {}, ...pts.map(p => el('li', {}, p))), cta);
+    const cta = (t, cls) => me ? el('a', { class: 'btn ' + cls, href: '#plans' }, t) : el('a', { class: 'btn ' + cls, href: '#signup' }, t);
+    m.append(el('div', { style: 'text-align:center' }, el('span', { class: 'eyebrow' }, 'PLANS'), el('h1', { style: 'margin:4px 0' }, 'Pay once. Keep learning.'),
+      el('p', { class: 'muted', id: 'oneTimeNote' }, 'No subscription. A course stays yours as long as you study at least once a year; after 365 days without study it closes and must be bought again.')),
+      el('div', { class: 'plans' },
+        plan('Free', '$0', [`Unit ${Core.FREE_UNIT} of your stage`, 'Every lesson video of that unit, with pause questions', '8 Core questions in each section', 'Learning streak and progress'], me ? el('a', { class: 'btn', href: '#home' }, 'Keep learning free') : el('a', { class: 'btn', href: '#signup' }, 'Start free')),
+        plan('One subject', PRICE, ['One subject of your stage (Science, Mathematics or ESL)', 'Every unit, all practice and * Advanced questions', 'Unit Tests marked by Camday', 'Certificate'], cta('Choose a subject', 'primary')),
+        plan('Whole stage', BUNDLE(), ['Every subject of your stage', `Two subjects: ${PAIR()}`, 'Everything in One subject', 'Move on to the next stage at 80 %'], cta('Choose the whole stage', 'gold'), true)),
+      el('p', { class: 'muted', style: 'text-align:center' }, 'Prices in US dollars. At checkout Paddle, our reseller, shows the price in your currency including VAT/GST where it applies.'), faq());
   }
 
   function viewBeta() {
@@ -2851,7 +2859,7 @@
     if (me && (r === 'signin' || r === 'signup')) { location.replace('#home'); return; }
     // one stage per learner: a student studies only the courses they bought
     const plainStudent = me && st && !isGuest() && !['marker', 'admin'].includes(me.profile.role) && !Core.S.tester;
-    if (plainStudent && !Core.myCourses().length && r !== 'plans' && !/^checkout-\d+$/.test(r) && !['settings', 'courses', 'terms', 'privacy', 'privacy-kids', 'help', 'verify'].includes(r) && !/^courses-/.test(r)) { location.replace('#plans'); return; }
+    if (plainStudent && !Core.myCourses().length && Core.levelOf(Core.STAGE) !== Core.learnerStage()) { await Core.ensureOwnStage(); C = Core.C; st = Core.cur(); }   // free plan: the learner's own stage
     if (plainStudent && Core.myCourses().length && !Core.enrolled(Core.STAGE)) { await Core.ensureOwnStage(); C = Core.C; st = Core.cur(); }
     shell({ toc: TOC_ROUTES(r) }); const m = $main();
     // a placeholder in the shape of the page if it takes a moment (removed as soon as real content arrives)

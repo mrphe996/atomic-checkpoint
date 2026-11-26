@@ -9,7 +9,7 @@ with sync_playwright() as p:
     pg.goto(BASE + '?reset=1'); pg.wait_for_selector('#heroStart')
     ok('No sign-up' in pg.inner_text('body') and 'Free test' in pg.inner_text('header'), 'B1 Landing and menu say the course is free while testing')
     pg.evaluate("location.hash='pricing'"); pg.wait_for_timeout(400)
-    ok(pg.query_selector('#betaNote') is not None and pg.query_selector('#buy-monthly') is None, 'B2 Plans page replaced by the free test page (no buy buttons)')
+    ok(pg.query_selector('#oneTimeNote') is not None and pg.query_selector('#buy-monthly') is None, 'B2 Plans page shows the one-time plans (no monthly plan)')
     pg.evaluate("location.hash='signup'"); pg.wait_for_timeout(300)
     pg.fill('#suName', 'Zed Tester'); pg.fill('#suEmail', 't@example.com'); pg.fill('#suPw', 'password123'); pg.click('#suNext1'); pg.wait_for_selector('#suYear')
     pg.select_option('#suYear', index=3); pg.select_option('#suGrade', 'Year 7 / Grade 6'); pg.fill('#suSchool', 'Test School'); pg.click('#suNext2'); pg.wait_for_selector('.su-stage')

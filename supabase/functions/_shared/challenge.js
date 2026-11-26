@@ -37,9 +37,9 @@ export async function handle(req, f = fetch) {
     return [200, { solutions: Object.fromEntries(pack.papers[form].map(q => [q.id, sol(q)])) }];
   }
   if (action !== 'check') return [400, { error: 'bad_request' }];
-  if (billingOn()) {
-    const sub = await db('rpc/has_subscription', { method: 'POST', body: { p_parent: user.id } }, f);
-    if (sub !== true) return [402, { error: 'subscription_required' }];
+  if (billingOn()) {   // courses are bought once: the Maths Challenge needs at least one open course
+    const e = await db(`enrolments?learner_id=eq.${learnerId}&status=eq.active&select=stage&limit=1`, {}, f);
+    if (!e || !e.length) return [402, { error: 'not_enrolled' }];
   }
   const hit = byId[qid]; if (!hit || hit.form !== form) return [400, { error: 'wrong_question' }];
   if (answer == null || JSON.stringify(answer).length > 500) return [400, { error: 'bad_request' }];

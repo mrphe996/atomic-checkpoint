@@ -76,20 +76,29 @@ npm run test:sql     # schema + RLS on local Postgres  npm run test:e2e    # 61 
 1. Lawyer review of `#privacy`, `#terms`, `#cookies` (marked “Draft”).
 2. Vercel Pro (Hobby is for non-commercial use only) and Supabase Pro (no pausing, daily backups).
 3. Mail sender (e.g. Resend) + Supabase custom SMTP, then `DIRECT_SIGNUP=off`.
-4. Paddle account and prices (below), then `BILLING=paddle`.
+4. Paddle account and the three one-time prices (below), then `BILLING=paddle`.
 5. Make this GitHub repository **private** – it holds all course questions. (Edge deploys then use the Supabase CLI.)
 
-## Prices (suggested, tax-inclusive; Paddle collects VAT/GST/SST)
+## Prices – bought once (26/11/2026)
 
-| Market | Monthly | Yearly |
+No subscription. Paddle one-time prices (tax-inclusive; Paddle collects VAT/GST/SST):
+
+| Plan | Price | Paddle env var (price id) |
 | --- | --- | --- |
-| United Kingdom | £9.99 | £79 |
-| Singapore | S$14.90 | S$119 |
-| Malaysia | RM29 | RM229 |
-| Thailand | ฿249 | ฿1,990 |
-| Vietnam | ₫149,000 | ₫1,190,000 |
-| Indonesia | Rp99,000 | Rp790,000 |
-| Philippines | ₱299 | ₱2,390 |
+| One subject of a stage | US$49 | `PADDLE_PRICE_COURSE` |
+| Two subjects of a stage | US$95 | `PADDLE_PRICE_PAIR` |
+| Whole stage (every subject) | US$119 | `PADDLE_PRICE_BUNDLE` |
+
+* **Free plan:** Unit 3 of the learner's own stage – every lesson video and the 8 Core questions of each section. No Practice / * Advanced, no Unit Test.
+* **One year without study:** bought courses expire (`enrolments.status = 'expired'`) and must be bought again. Study = saving progress or sitting a test
+  (`learners.last_active_at`, triggers on `progress` / `attempts`). Checked when a learner is opened (`check_access`), by the API before a Unit Test,
+  and daily by pg_cron (`expire-idle-learners`). Admin grants and testers never expire.
+* **Checkout:** `prepare_checkout` (level rule) → Paddle overlay with `custom_data { learner_id, stages }` → webhook `/functions/v1/api/paddle-webhook`
+  (`transaction.completed` → `grant_purchase`; approved refund → `revoke_purchase`). The price decides how many courses open; a mismatch is stored in
+  `purchases` as `needs_review` and nothing opens.
+* **To go live:** Paddle account approved → create the 3 one-time prices + a notification destination for `transaction.completed` and
+  `adjustment.updated` pointing at the webhook → set Edge secrets `PADDLE_WEBHOOK_SECRET`, `PADDLE_PRICE_COURSE/PAIR/BUNDLE` and Vercel env
+  `BILLING=paddle`, `PADDLE_ENV=production`, `PADDLE_CLIENT_TOKEN`, `PADDLE_PRICE_COURSE/PAIR/BUNDLE`.
 
 ## Rules worth knowing
 

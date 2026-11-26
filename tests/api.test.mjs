@@ -15,7 +15,6 @@ const submit = await import(base + 'submit-test.js');
 const challenge = await import(base + 'challenge.js');
 const start = await import(base + 'start-test.js');
 const marking = await import(base + 'marking.js');
-const paddle = await import('../api/paddle-webhook.js');
 const account = await import(base + 'account.js');
 const signup = await import(base + 'signup.js');
 const weekly = await import('../api/weekly-report.js');
@@ -74,8 +73,8 @@ test('submit-test: auth, ownership, subscription and unlock rules', async () => 
   const body = { learnerId: KID, unit: 'stage7-unit04', form: 'A', answers: {}, clientKey: 'k1' };
   assert.equal((await submit.handle(req('POST', null, body), f))[0], 401);
   assert.equal((await submit.handle(req('POST', 'tB', body), f))[0], 403, 'another parent cannot submit for this child');
-  assert.equal((await submit.handle(req('POST', 'tA', body), f))[0], 402, 'no subscription → payment required');
-  T.subscriptions.push({ parent_id: PARENT, status: 'active', provider_subscription_id: 'sub_1' });
+  assert.equal((await submit.handle(req('POST', 'tA', body), f))[0], 402, 'no course bought → payment required');
+  T.enrolments.push({ learner_id: KID, stage: 7, status: 'active' });
   const [s, b] = await submit.handle(req('POST', 'tA', body), f);
   assert.equal(s, 409); assert.equal(b.error, 'locked'); assert.ok(b.missing.length > 30, 'every unfinished activity is listed');
 });
@@ -90,7 +89,7 @@ test('submit-test: test phase (BILLING=off) needs no subscription', async () => 
 
 test('submit-test: server marks 15/30, keeps both attempts, idempotent, first pass then locked', async () => {
   const { T, f } = fakeSupabase();
-  T.subscriptions.push({ parent_id: PARENT, status: 'active', provider_subscription_id: 'sub_1' });
+  T.enrolments.push({ learner_id: KID, stage: 7, status: 'active' });
   T.progress.push({ learner_id: KID, unit: 'stage7-unit03', state: fullState() });
   // answer parts worth exactly 15 marks correctly; get every multiple-choice part wrong and leave the rest blank
   const ansA = {}; let got = 0;
@@ -130,18 +129,7 @@ test('public content never contains test answer keys', () => {
   assert.equal(G.stripKeys(keys.A.find(q => q.type === 'mcq')).options[0].ok, undefined);
 });
 
-test('paddle webhook: signature checked, subscription mirrored', async () => {
-  const { T, f } = fakeSupabase(); const now = Date.now(); const ts = Math.floor(now / 1000);
-  const raw = JSON.stringify({ event_type: 'subscription.created', data: { id: 'sub_9', status: 'trialing', custom_data: { parent_id: PARENT }, items: [{ price: { id: 'pri_yearly' } }], current_billing_period: { ends_at: '2027-11-20T00:00:00Z' } } });
-  assert.equal((await paddle.handle({ method: 'POST', headers: { 'paddle-signature': `ts=${ts};h1=deadbeef` }, body: raw }, f, now))[0], 401);
-  const ok = await paddle.handle({ method: 'POST', headers: { 'paddle-signature': `ts=${ts};h1=${hmac('whsec', `${ts}:${raw}`)}` }, body: raw }, f, now);
-  assert.equal(ok[0], 200); assert.equal(T.subscriptions[0].plan, 'stage7_yearly'); assert.equal(T.subscriptions[0].status, 'trialing');
-  const raw2 = raw.replace('trialing', 'canceled');
-  await paddle.handle({ method: 'POST', headers: { 'paddle-signature': `ts=${ts};h1=${hmac('whsec', `${ts}:${raw2}`)}` }, body: raw2 }, f, now);
-  assert.equal(T.subscriptions.length, 1); assert.equal(T.subscriptions[0].status, 'canceled');
-  const old = await paddle.handle({ method: 'POST', headers: { 'paddle-signature': `ts=${ts - 3600};h1=${hmac('whsec', `${ts - 3600}:${raw}`)}` }, body: raw }, f, now);
-  assert.equal(old[0], 401, 'replayed (old) notifications are refused');
-});
+// the Paddle webhook (one-time purchases) is tested in tests/purchase.test.mjs
 
 test('account: export and delete need the parent, delete needs the exact confirmation', async () => {
   const { T, f } = fakeSupabase();
@@ -329,7 +317,7 @@ test('ai-mark + paragraph questions: AI marks against the mark scheme, keywords 
 
 test('challenge: practice marks one question with its solution, keeps the first answer, then locks the timed paper', async () => {
   const { T, f } = fakeSupabase(); T.challenge_practice = []; T.testers = [];
-  T.subscriptions.push({ parent_id: PARENT, status: 'active', provider_subscription_id: 'sub_1' });
+  T.enrolments.push({ learner_id: KID, stage: 7, status: 'active' });
   const ck = JSON.parse(fs.readFileSync(new URL('../server/private/ch-junior.tests.json', import.meta.url))).papers;
   const q = ck['02'][0], good = q.options.findIndex(o => o.ok), bad = q.options.findIndex(o => !o.ok);
   const call = (b, tok = 'tA') => challenge.handle(req('POST', tok, { learnerId: KID, unit: 'ch-junior', ...b }), f);

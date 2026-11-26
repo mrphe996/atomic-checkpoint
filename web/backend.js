@@ -90,9 +90,14 @@
       devMultiStage(lid) { (D.multiStage = D.multiStage || {})[lid] = true; save(); },   // preview only: lets automated tests buy courses of several stages (no other rule changes)
       devTester(lid) { D.admin = D.admin || { overrides: {}, units: {}, ann: [], audit: [], settings: { mock_payments: 'on' } }; (D.admin.testers = D.admin.testers || {})[lid] = true; save(); },   // preview only: lets the automated tests study several stages
       async enrolments(lid) { mine(lid); return ((D.enrol || {})[lid] || []).slice(); },
+      // same rule as expire_if_idle(): 365 days without study closes bought courses (admin grants and testers never expire)
+      async checkAccess(lid) { mine(lid); const last = Date.parse(((D.active || {})[lid]) || 0) || Date.now(); if (((D.admin || {}).testers || {})[lid] || Date.now() - last < 365 * 864e5) return 0;
+        let n = 0; ((D.enrol || {})[lid] || []).forEach(e => { if (e.status === 'active' && e.method !== 'admin') { e.status = 'expired'; e.expired_at = new Date().toISOString(); n++; } });
+        if (n) { note(need(), lid, 'billing', 'Your courses have expired', 'You did not study for a year, so your courses were closed. Buy a course again to continue.'); save(); } return n; },
+      devIdle(lid, days) { (D.active = D.active || {})[lid] = new Date(Date.now() - days * 864e5).toISOString(); save(); },   // preview only: pretend the learner last studied `days` ago
       async enrol(lid, stage, amount) { const lr = mine(lid); D.enrol = D.enrol || {}; const l = (D.enrol[lid] = D.enrol[lid] || []);
         // one stage per learner (same rule as enrol_stage): another level only after 80 % of the current level's Unit Tests are passed
-        const lv = stage % 10, cur = lr.stage || 7, own = l.filter(e => e.status !== 'canceled');
+        const lv = stage % 10, cur = lr.stage || 7, own = l.filter(e => e.status === 'active');
         if (own.length && lv !== cur && !((D.admin || {}).testers || {})[lid] && !(D.multiStage || {})[lid]) {   // testers (staff) may open any stage
           let need = 0, have = 0;
           for (const k of own.map(e => e.stage).filter(k => k % 10 === cur)) {
@@ -101,12 +106,14 @@
           }
           if (!need || have < Math.ceil(need * 0.8)) throw err('stage_locked', { have, need });
         }
-        lr.stage = lv;
-        if (!l.some(e => e.stage === stage)) l.push({ stage, method: 'test', amount: amount || null, status: 'active', created_at: new Date().toISOString() });
+        lr.stage = lv; (D.active = D.active || {})[lid] = new Date().toISOString();   // the year starts at the purchase
+        const old = l.find(e => e.stage === stage);
+        if (old) Object.assign(old, { method: 'test', amount: amount || null, status: 'active', expired_at: null });
+        else l.push({ stage, method: 'test', amount: amount || null, status: 'active', created_at: new Date().toISOString() });
         note(need(), lid, 'billing', `You are enrolled in Cambridge Stage ${stage}`, 'Test checkout – no money was taken.'); save(); return 'ok'; },
       async startTest({ learnerId, unit, form }) { mine(learnerId); D.starts = D.starts || {}; const k = `${learnerId}|${unit}|${form}`; D.starts[k] = D.starts[k] || new Date().toISOString(); save();
         const minutes = /^ch-/.test(unit) ? ({ 'ch-primary': 45, 'ch-olympiad': 90 }[unit] || 60) : /-final$/.test(unit) ? 60 : /-cp$/.test(unit) ? 45 : TestRules.UNIT_MINUTES; return { startedAt: D.starts[k], minutes, deadline: new Date(Date.parse(D.starts[k]) + minutes * 60000).toISOString(), now: new Date().toISOString() }; },
-      async saveProgress(lid, unit, state) { mine(lid); (D.progress[lid] = D.progress[lid] || {})[unit] = JSON.parse(JSON.stringify(state)); save(); },
+      async saveProgress(lid, unit, state) { mine(lid); await this.checkAccess(lid); (D.active = D.active || {})[lid] = new Date().toISOString(); (D.progress[lid] = D.progress[lid] || {})[unit] = JSON.parse(JSON.stringify(state)); save(); },
       // Maths Challenge practice (same rules as api/challenge.js): first answer kept, full solution returned
       async challenge({ action, learnerId, unit, form, qid, answer }) { need(); mine(learnerId); if (!/^ch-[a-z]+$/.test(String(unit))) throw err('unknown_unit');
         const keys = keyedDemo(unit, await (await fetch(`content/demo/${unit}.tests.json`)).json()); const byId = {}; for (const [k, p] of Object.entries(keys.papers)) for (const q of p) byId[q.id] = { q, form: k };
@@ -352,7 +359,27 @@
       async loadProgress(lid, unit) { const r = await rest(`progress?learner_id=eq.${lid}&unit=eq.${unit}&select=state`); return r[0] ? r[0].state : null; },
       async allDays(lid) { const r = await rest(`progress?learner_id=eq.${lid}&select=days:state->days`); return [].concat(...r.map(x => x.days || [])); },
       async allStates(lid) { const r = await rest(`progress?learner_id=eq.${lid}&select=unit,state`); return Object.fromEntries(r.filter(x => !/-final$/.test(x.unit)).map(x => [x.unit, x.state])); },
-      async enrolments(lid) { return rest(`enrolments?learner_id=eq.${lid}&select=stage,method,status,created_at`); },
+      async enrolments(lid) { return rest(`enrolments?learner_id=eq.${lid}&select=stage,method,status,created_at,expired_at`); },
+      async checkAccess(lid) { return rpc('check_access', { p_learner: lid }); },
+      // one-time purchase. BILLING=paddle: the server checks the order (prepare_checkout), Paddle takes the payment, the webhook opens the courses.
+      // Otherwise (test server): the test checkout, no money taken.
+      async buyCourses(lid, stages, amount) {
+        if ((CFG.billing || 'off') !== 'paddle') { for (const k of stages) await this.enrol(lid, k, amount); return 'ok'; }
+        const P = CFG.paddle || {}; const price = { 1: P.prices && P.prices.course, 2: P.prices && P.prices.pair, 3: P.prices && P.prices.bundle }[stages.length];
+        if (!P.token || !price) throw err('payments_closed');
+        try { await rpc('prepare_checkout', { p_learner: lid, p_stages: stages }); }
+        catch (e) { throw err(/stage locked/.test(e.detail || '') ? 'stage_locked' : /already enrolled/.test(e.detail || '') ? 'already_enrolled' : 'enrol_failed', { detail: e.detail }); }
+        if (!window.Paddle) await new Promise((ok, no) => { const s = document.createElement('script'); s.src = 'https://cdn.paddle.com/paddle/v2/paddle.js'; s.onload = ok; s.onerror = () => no(err('payments_unavailable')); document.head.append(s); });
+        if (P.env === 'sandbox') Paddle.Environment.set('sandbox');
+        // Paddle.Initialize may run once per page: later checkouts swap the handler
+        const done = new Promise((ok, no) => { window.__paddleOn = ev => { if (ev.name === 'checkout.completed') ok(ev); else if (ev.name === 'checkout.closed') no(err('checkout_closed')); }; });
+        if (!window.__paddleReady) { Paddle.Initialize({ token: P.token, eventCallback: ev => window.__paddleOn && window.__paddleOn(ev) }); window.__paddleReady = true; }
+        Paddle.Checkout.open({ items: [{ priceId: price, quantity: 1 }], customer: { email: S.user.email }, customData: { learner_id: lid, stages } });
+        await done;
+        // the webhook opens the courses a few seconds after the payment
+        for (let i = 0; i < 20; i++) { const rows = await this.enrolments(lid); if (stages.every(k => rows.some(r => r.stage === k && r.status === 'active'))) { try { Paddle.Checkout.close(); } catch (e) { } return 'ok'; } await new Promise(r => setTimeout(r, 1500)); }
+        throw err('payment_pending');
+      },
       async isTester(lid) { const r = await rest(`testers?learner_id=eq.${lid}&select=learner_id`); return Array.isArray(r) && r.length > 0; },
       async enrol(lid, stage, amount) { try { return await rpc('enrol_stage', { p_learner: lid, p_stage: stage, p_amount: amount || null }); } catch (e) { throw err(/not open/.test(e.detail || '') ? 'payments_closed' : /stage locked/.test(e.detail || '') ? 'stage_locked' : 'enrol_failed', { detail: e.detail }); } },
       async startTest(b) { return api('start-test', { method: 'POST', body: b }); },

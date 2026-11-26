@@ -1,4 +1,4 @@
-// One Edge Function: /api/submit-test, /api/start-test, /api/marking, /api/account, /api/admin, /api/challenge  (+ /api/health self-check)
+// One Edge Function: /api/paddle-webhook, /api/submit-test, /api/start-test, /api/marking, /api/account, /api/admin, /api/challenge  (+ /api/health self-check)
 // Shared code is imported from the commit-pinned public repo; answer keys come from ./units.js locally, or are unsealed at cold start (sealed.js) when built with EDGE_SEALED=1.
 import { handle as submitTest } from '__LIB__/submit-test.js';
 import { handle as marking } from '__LIB__/marking.js';
@@ -8,11 +8,12 @@ import { handle as admin } from '__LIB__/admin.js';
 import { handle as aiMark } from '__LIB__/ai-mark.js';
 import { handle as challenge } from '__LIB__/challenge.js';
 import { handle as speak } from '__LIB__/speak.js';
+import { handle as paddleWebhook } from '__LIB__/paddle-webhook.js';
 import { G, setUnits } from '__LIB__/supa.js';
 import { UNITS } from '__UNITS__';
 setUnits(UNITS);
 
-const ROUTES: Record<string, (req: unknown) => Promise<[number, unknown, Record<string, string>?]>> = { 'submit-test': submitTest, 'start-test': startTest, marking, account, admin, 'ai-mark': aiMark, challenge, speak };
+const ROUTES: Record<string, (req: unknown) => Promise<[number, unknown, Record<string, string>?]>> = { 'submit-test': submitTest, 'start-test': startTest, marking, account, admin, 'ai-mark': aiMark, challenge, speak, 'paddle-webhook': paddleWebhook };
 const ORIGINS = (Deno.env.get('ALLOWED_ORIGINS') || '*').split(',').map((s) => s.trim());
 
 function cors(origin: string | null) {
@@ -29,8 +30,11 @@ Deno.serve(async (req: Request) => {
   if (name === 'health') return Response.json(await health(), { headers: h });
   if (!route) return Response.json({ error: 'not_found' }, { status: 404, headers: h });
   let body: unknown = {};
-  if (req.method === 'POST') { try { body = await req.json(); } catch { body = {}; } }
-  const r = { method: req.method, headers: { authorization: req.headers.get('authorization') || '' }, body, query: Object.fromEntries(url.searchParams) };
+  const hook = name === 'paddle-webhook';   // the webhook needs the raw body and the Paddle-Signature header
+  if (req.method === 'POST') { if (hook) body = await req.text(); else { try { body = await req.json(); } catch { body = {}; } } }
+  const headers: Record<string, string> = { authorization: req.headers.get('authorization') || '' };
+  if (hook) headers['paddle-signature'] = req.headers.get('paddle-signature') || '';
+  const r = { method: req.method, headers, body, query: Object.fromEntries(url.searchParams) };
   try {
     const [status, out, extra] = await route(r);
     return new Response(JSON.stringify(out), { status, headers: { ...h, ...(extra || {}), 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' } });

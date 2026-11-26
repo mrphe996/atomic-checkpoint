@@ -26,10 +26,20 @@
   let UNO = 3;                       // the unit on screen
   let C = null, INDEX = null;        // C = that unit's content; INDEX = list of the stage's units
   const CACHE = {};
-  const FREE_SECTIONS = { includes: id => /\.1$/.test(id) };   // the first topic of every unit is free
+  const FREE_SECTIONS = { includes: id => /\.1$/.test(id) };   // guests: the first topic of every unit
+  // free plan (signed-in learner who has not bought this course): Unit 3 only – every lesson video + the 8 Core questions of each section
+  const FREE_UNIT = 3;
+  const FREE_VIEW = new WeakMap();
+  function view(pack) {
+    if (!pack || !freeMode()) return pack;
+    if (!FREE_VIEW.has(pack)) FREE_VIEW.set(pack, Object.assign({}, pack, { freeTaster: true, sections: pack.sections.map(s => Object.assign({}, s, { prac: [], adv: [], ext: [], more: [] })) }));
+    return FREE_VIEW.get(pack);
+  }
+  const refreshView = () => { if (CACHE[UNO]) C = view(CACHE[UNO]); };
   const BILLING_OFF = ((window.ATOMIC_CONFIG || {}).billing || 'off') === 'off';
   const BETA = { active: true, status: 'beta', plan: 'beta' };
-  const getSub = () => (BILLING_OFF ? Promise.resolve(BETA) : Backend.subscription());
+  // no subscriptions any more: courses are bought once, access = the learner's active enrolments (S.enrolments) or the free plan
+  const getSub = () => Promise.resolve(BETA);
   const S = { profiles: {}, current: null, me: null, learners: [], sub: { active: false, status: 'none' }, notes: [], states: {}, enrolments: [], final: null, finalAttempts: [] };
 
   const fresh = l => ({ id: l.id, name: l.certificate_name || l.nickname, alias: l.nickname, created: Date.parse(l.created_at) || Date.now(), ts: Date.now(),
@@ -57,7 +67,7 @@
   }
   async function loadUnit(n) {
     await fetchUnit(n);
-    UNO = n; C = CACHE[n]; try { sessionStorage.setItem('atomic.unit', String(n)); } catch (e) { }
+    UNO = n; C = view(CACHE[n]); try { sessionStorage.setItem('atomic.unit', String(n)); } catch (e) { }
     return C;
   }
   async function peekUnit(n) { return fetchUnit(n); }
@@ -100,7 +110,7 @@
     const own = S.learners.find(l => l.user_id === S.me.user.id) || S.learners[0];
     let wantL = null; try { wantL = sessionStorage.getItem('atomic.learner'); } catch (e) { }
     const pick = (wantL && S.learners.find(l => l.id === wantL)) || own;
-    if (pick) { await selectLearner(pick.id); await adoptGuest(); await ensureOwnStage(); }
+    if (pick) { await selectLearner(pick.id); await adoptGuest(); await ensureOwnStage(true); }
     return S;
   }
 
@@ -138,10 +148,12 @@
     if (Backend.allDays) { try { st.days = Array.from(new Set([...(st.days || []), ...(await Backend.allDays(id))])); } catch (e) { } }  // the streak counts every unit
     st.cert = await Backend.certificate(id, STAGE);
     try { S.states = (Backend.allStates ? await Backend.allStates(id) : {}) || {}; } catch (e) { S.states = {}; }
+    try { if (Backend.checkAccess) await Backend.checkAccess(id); } catch (e) { }   // a year without study closes bought courses
     try { S.enrolments = Backend.enrolments ? await Backend.enrolments(id) : []; } catch (e) { S.enrolments = []; }
     try { S.tester = Backend.isTester ? await Backend.isTester(id) : false; } catch (e) { S.tester = false; }
     S.multiStage = !!(Backend.isMultiStage && Backend.isMultiStage(id));   // preview only (automated tests)
     S.profiles = { [id]: st }; S.current = id; S.states[UNIT()] = strip(st); lastXp = xpNow();
+    refreshView();   // free plan: hide what the learner has not bought
     try { sessionStorage.setItem('atomic.learner', id); } catch (e) { }
     return st;
   }
@@ -180,7 +192,7 @@
   window.addEventListener('pagehide', flush);
 
   /* ---------- access ---------- */
-  const canOpen = secId => FREE_SECTIONS.includes(secId) || (!S.guest && !!S.sub.active);
+  const canOpen = secId => (S.guest ? FREE_SECTIONS.includes(secId) : freeMode() ? UNO === FREE_UNIT : !!S.sub.active);
 
   /* ---------- progress rules ---------- */
   const secs = () => C.sections;
@@ -194,7 +206,8 @@
   const secIndex = sid => C.sections.findIndex(s => s.id === sid);
   function secLock(st, s) {
     if (!canOpen(s.id)) return S.guest ? { reason: `Guests can try the first topic of every unit. Create a free account to unlock topic ${s.id} and save your progress.`, what: 'a free account', route: 'signup', paywall: true, guest: true }
-      : { reason: `This topic is part of the full Cambridge ${stageName(STAGE)} course.`, what: `a Cambridge ${stageName(STAGE)} plan (7-day free trial)`, route: 'pricing', paywall: true };
+      : freeMode() ? { reason: `The free plan opens Unit ${FREE_UNIT} only. Buy Cambridge ${stageName(STAGE)} once to open every unit.`, what: `the Cambridge ${stageName(STAGE)} course`, route: 'plans', paywall: true }
+      : { reason: `This topic is part of the full Cambridge ${stageName(STAGE)} course.`, what: `the Cambridge ${stageName(STAGE)} course`, route: 'plans', paywall: true };
     return seqLock(C, st, s, UNIT());
   }
   const unitOpen = unit => !!S.tester || TestRules.OPEN_UNITS.includes(unit);
@@ -228,9 +241,17 @@
   const levelOf = g => g % 10;
   const subjectKeys = lv => [lv, 10 + lv, 20 + lv].filter(k => STAGES.includes(k));
   const learnerStage = () => { const st = cur(); return (st && st.learner && st.learner.stage) || 7; };
-  const myCourses = () => (S.enrolments || []).filter(e => e.status !== 'canceled').map(e => e.stage);
+  const myCourses = () => (S.enrolments || []).filter(e => (e.status || 'active') === 'active').map(e => e.stage);   // bought and still open (not expired / refunded)
+  const expiredCourses = () => (S.enrolments || []).filter(e => e.status === 'expired').map(e => e.stage);
+  // free plan: a signed-in learner studying a course they have not bought (staff and testers see everything)
+  function freeMode() { return !!(S.current && !S.guest && !isAdminMe(S.me) && !S.tester && !myCourses().includes(STAGE)); }
   const enrolled = stage => stageLocked(stage) ? false : S.guest ? stage === 7 : isAdminMe(S.me) ? true : myCourses().includes(stage);   // admins can open every course
-  async function enrol(stage, amount) { const st = cur(); await Backend.enrol(st.id, stage, amount); S.enrolments = await Backend.enrolments(st.id);
+  async function enrol(stage, amount) { const st = cur(); await Backend.enrol(st.id, stage, amount); await afterPurchase(); return true; }
+  // one checkout for one or more courses of the same stage (Paddle when billing is on, the test checkout otherwise)
+  async function buy(stages, amount) { const st = cur();
+    if (Backend.buyCourses) await Backend.buyCourses(st.id, stages, amount); else for (const k of stages) await Backend.enrol(st.id, k, amount);
+    await afterPurchase(); return true; }
+  async function afterPurchase() { const st = cur(); S.enrolments = await Backend.enrolments(st.id); refreshView();
     const L = await Backend.learners().catch(() => null); const l = L && L.find(x => x.id === st.id); if (l) { st.learner = l; S.learners = L; } return true; }
   // progress of one course (key g) or of the learner's whole level: % of lessons finished and % of Unit Tests passed
   const IDX = {};
@@ -255,9 +276,13 @@
   // may the learner buy course g? the same level: always; another level: only when the current level is MOVE_ON % done
   async function canBuy(g) { if (S.guest) return false; if (S.tester || S.multiStage || isAdminMe(S.me)) return true; if (stageLocked(g)) return false; if (!myCourses().length) return true; if (levelOf(g) === learnerStage()) return true; return (await levelProgress()).ready; }
   // after signing in, open one of the learner's own courses
-  async function ensureOwnStage() {
+  async function ensureOwnStage(atBoot) {
     if (S.guest || !cur() || isAdminMe(S.me) || S.tester) return;
-    const mine = myCourses().filter(k => STAGES.includes(k) && !stageLocked(k)); if (!mine.length || mine.includes(STAGE)) return;
+    const mine = myCourses().filter(k => STAGES.includes(k) && !stageLocked(k));
+    if (!mine.length) {   // free plan: the learner's own Science stage, opened at the free unit
+      const lv = learnerStage(); try { if (levelOf(STAGE) !== lv && STAGES.includes(lv) && !stageLocked(lv)) await switchStage(lv); if (atBoot && UNO !== FREE_UNIT && unitReady(FREE_UNIT)) await switchUnit(FREE_UNIT); } catch (e) { }
+      return; }
+    if (mine.includes(STAGE)) return;
     const lv = learnerStage(); const best = mine.find(k => k === lv) || mine.find(k => levelOf(k) === lv) || mine[0];
     try { await switchStage(best); } catch (e) { }
   }
@@ -294,7 +319,7 @@
   const remLeft = (st, a) => (a.remed || []).filter(id => !((st.rem[remKey(a, id)] || {}).done));
   function testState(st) {
     if (S.guest) return { state: 'guest' };
-    if (!S.sub.active) return { state: 'paywall' };
+    if (!S.sub.active || freeMode()) return { state: 'paywall', free: freeMode() };
     const miss = missingForTest(st); if (miss.length) return { state: 'locked', miss };
     const la = lastAttempt(st);
     if (passed(st)) return { state: 'passed', last: la };
@@ -408,7 +433,7 @@
   window.Core = {
     get UNIT() { return UNIT(); }, get UNO() { return UNO; }, get INDEX() { return INDEX; }, STAGE_UNITS, FREE_SECTIONS, BILLING_OFF, get S() { return S; }, get C() { return C; }, get STAGE() { return STAGE; }, STAGES, switchStage, stageLocked, LOCKED, PRIMARY, levelName, get IS_PRIMARY() { return PRIMARY(STAGE); }, MATHS, stageNo, subjectOf, stageLabel, stageName, unitCount, get IS_MATHS() { return MATHS(STAGE); }, ESL, get IS_ESL() { return ESL(STAGE); },
     unitId, unitReady, switchUnit, loadIndex, peekUnit, cached, loadFinal, get FINAL() { return FINAL; },
-    xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, MOVE_ON, levelOf, subjectKeys, myCourses, courseProgress, levelProgress, canBuy, ensureOwnStage, startClock, refreshFinal, finalPassed, submitFinal, loadCp, refreshCp, dropCache, withOv, submitCp, activity,
+    xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, buy, freeMode, FREE_UNIT, expiredCourses, MOVE_ON, levelOf, subjectKeys, myCourses, courseProgress, levelProgress, canBuy, ensureOwnStage, startClock, refreshFinal, finalPassed, submitFinal, loadCp, refreshCp, dropCache, withOv, submitCp, activity,
     boot, selectLearner, leaveLearner, refreshAccount, cur, persist, flush, canOpen,
     sec, secs, vstate, stopDone, stopsLeft, videoDone, reqLeft, secDone, secLock, firstMissingIn, missingForTest,
     attempts, lastAttempt, passed, isPass, nextForm, remKey, remLeft, testState, submitTest, refreshAttempts, refreshResults,
