@@ -350,5 +350,31 @@
     16
    ]
   }
+ },
+ "c7u13": {
+  "title": "Camday Maths Stage 7 · Unit 13: Probability",
+  "pages": 17,
+  "dir": "media/books/c7u13/",
+  "ext": "webp",
+  "pdf": "media/books/c7u13.pdf?v=84b5ec8ab0",
+  "v": "84b5ec8ab0",
+  "secs": {
+   "13.1": [
+    2,
+    6
+   ],
+   "13.2": [
+    7,
+    11
+   ],
+   "13.3": [
+    12,
+    16
+   ],
+   "answers": [
+    17,
+    17
+   ]
+  }
  }
 }
