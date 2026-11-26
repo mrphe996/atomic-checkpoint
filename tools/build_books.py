@@ -70,7 +70,7 @@ def qtext(q):
         rows = [[("☐" if isinstance(c, dict) else c) for c in r] for r in q["rows"]]
         return md(q["prompt"]) + table({"head": q["head"], "rows": rows})
     if q.get("type") in ("mcq", "multi"):
-        return md(q["prompt"]) + "<span style='display:block;margin:4px 0 0 10px'>" + "<br>".join(f"<b>{'ABCDEF'[i]}</b>  {md(o['t'])}" for i, o in enumerate(q["options"])) + "</span>"
+        return md(q["prompt"]) + "<span style='display:block;margin:4px 0 0 10px;line-height:2.1'>" + "<br>".join(f"<b>{'ABCDEF'[i]}</b>  {md(o['t'])}" for i, o in enumerate(q["options"])) + "</span>"
     return md(q.get("prompt", ""))
 
 

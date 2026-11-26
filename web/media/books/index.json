@@ -492,8 +492,8 @@
   "pages": 22,
   "dir": "media/books/c8u01/",
   "ext": "webp",
-  "pdf": "media/books/c8u01.pdf?v=5a830928b5",
-  "v": "5a830928b5",
+  "pdf": "media/books/c8u01.pdf?v=e6fb763015",
+  "v": "e6fb763015",
   "secs": {
    "1.1": [
     2,
@@ -522,8 +522,8 @@
   "pages": 33,
   "dir": "media/books/c8u02/",
   "ext": "webp",
-  "pdf": "media/books/c8u02.pdf?v=a714e731f0",
-  "v": "a714e731f0",
+  "pdf": "media/books/c8u02.pdf?v=a8f68c7588",
+  "v": "a8f68c7588",
   "secs": {
    "2.1": [
     2,
@@ -582,8 +582,8 @@
   "pages": 19,
   "dir": "media/books/c8u04/",
   "ext": "webp",
-  "pdf": "media/books/c8u04.pdf?v=720ab5d0c1",
-  "v": "720ab5d0c1",
+  "pdf": "media/books/c8u04.pdf?v=59d57fd9d1",
+  "v": "59d57fd9d1",
   "secs": {
    "4.1": [
     2,
@@ -612,8 +612,8 @@
   "pages": 17,
   "dir": "media/books/c8u05/",
   "ext": "webp",
-  "pdf": "media/books/c8u05.pdf?v=3e216ab8cd",
-  "v": "3e216ab8cd",
+  "pdf": "media/books/c8u05.pdf?v=3b78a40992",
+  "v": "3b78a40992",
   "secs": {
    "5.1": [
     2,
@@ -630,6 +630,66 @@
    "answers": [
     17,
     17
+   ]
+  }
+ },
+ "c8u06": {
+  "title": "Camday Maths Stage 8 · Unit 6: Collecting Data",
+  "pages": 12,
+  "dir": "media/books/c8u06/",
+  "ext": "webp",
+  "pdf": "media/books/c8u06.pdf?v=96201a39a6",
+  "v": "96201a39a6",
+  "secs": {
+   "6.1": [
+    2,
+    6
+   ],
+   "6.2": [
+    7,
+    11
+   ],
+   "answers": [
+    12,
+    12
+   ]
+  }
+ },
+ "c8u07": {
+  "title": "Camday Maths Stage 8 · Unit 7: Fractions",
+  "pages": 29,
+  "dir": "media/books/c8u07/",
+  "ext": "webp",
+  "pdf": "media/books/c8u07.pdf?v=c2effe8c9e",
+  "v": "c2effe8c9e",
+  "secs": {
+   "7.1": [
+    2,
+    6
+   ],
+   "7.2": [
+    7,
+    10
+   ],
+   "7.3": [
+    11,
+    15
+   ],
+   "7.4": [
+    16,
+    19
+   ],
+   "7.5": [
+    20,
+    23
+   ],
+   "7.6": [
+    24,
+    27
+   ],
+   "answers": [
+    28,
+    29
    ]
   }
  }
