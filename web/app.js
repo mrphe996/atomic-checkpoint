@@ -792,13 +792,19 @@
     if (lock) { m.append(bar(`Section ${s.id} · Lesson`), lockScreen(`Section ${s.id} is locked`, lock.reason, [lock])); return; }
     st.last = { route: 'v-' + R(sid) }; Core.persist();
     const vs = Core.vstate(st, sid); const xp0 = Core.xp(st);
-    const head = el('section', { class: 'card lessonhead' }, el('p', { class: 'eyebrow', style: 'margin:0' }, `${Core.stageLabel()} · Unit ${Core.UNO} · Lesson ${s.id}`), el('h1', { style: 'margin:4px 0 6px' }, s.title),
-      el('p', { class: 'muted', style: 'margin:0' }, `Read each idea and worked example, then answer the ${s.stops.length} check questions. About ${Math.max(5, Math.round(s.video.dur / 60))} minutes.`),
-      el('ul', { class: 'lgoals' }, ...s.objs.map(o => el('li', {}, (C.objectives[o] || {}).t || o))));
+    const mins = Math.max(5, Math.round(s.video.dur / 60)), nIdeas = s.lesson.length;
+    const lprog = el('div', { class: 'lprog', id: 'lessonProg' });
+    const drawProg = () => { const left = Core.stopsLeft(st, s).length, got = s.stops.length - left, fin = vs.completed && !left; lprog.innerHTML = '';
+      const step = (n, label, state) => el('span', { class: 'lstep ' + state }, el('i', {}, state === 'done' ? '✓' : String(n)), label);
+      lprog.append(el('div', { class: 'lsteprow' }, step(1, 'Read the lesson', fin || got ? 'done' : 'cur'), step(2, `Check questions ${got}/${s.stops.length}`, !left ? 'done' : got ? 'cur' : ''), step(3, `Practise ${s.id}`, fin ? 'cur' : '')),
+        el('div', { class: 'pbar' + (!left ? ' ok' : '') }, el('i', { style: `width:${s.stops.length ? Math.round(got / s.stops.length * 100) : 100}%` }))); };
+    const head = el('section', { class: 'card lessonhead' }, el('p', { class: 'eyebrow', style: 'margin:0' }, `${Core.stageLabel()} · Unit ${Core.UNO} · Lesson ${s.id}`), el('h1', { style: 'margin:4px 0 10px' }, s.title),
+      el('div', { class: 'lmeta' }, el('span', {}, `About ${mins} minutes`), el('span', {}, `${nIdeas} part${nIdeas === 1 ? '' : 's'}`), el('span', {}, `${s.stops.length} check question${s.stops.length === 1 ? '' : 's'}`)),
+      el('div', { class: 'lgoalbox' }, el('span', { class: 'hl' }, 'In this lesson you will learn to'), el('ul', { class: 'lgoals' }, ...s.objs.map(o => el('li', {}, (C.objectives[o] || {}).t || o)))), lprog);
     m.append(head);
     const body = el('div', { class: 'lessonbody' }); m.append(body);
     const status = el('div'); m.append(status);
-    const drawStatus = () => { status.innerHTML = ''; const left = Core.stopsLeft(st, s).length;
+    const drawStatus = () => { drawProg(); status.innerHTML = ''; const left = Core.stopsLeft(st, s).length;
       if (vs.completed && !left) { const i = C.sections.indexOf(s), nxt = C.sections[i + 1];
         status.append(el('section', { class: 'card lchoose', id: 'lessonChoose' }, el('b', {}, `✓ Lesson ${s.id} finished. What next? You choose the order.`),
           el('div', { class: 'lchoices' },
@@ -812,7 +818,8 @@
     const para = t => el('p', { class: 'lp' }, ...String(t).split(/(\*\*[^*]+\*\*)/).map(part => /^\*\*.*\*\*$/.test(part) ? el('b', {}, part.slice(2, -2)) : part));
     s.lesson.forEach((b, bi) => {
       const kind = b.k || 'idea', icon = { idea: '💡', example: '✏️', tip: '✅', mistake: '⚠️', method: '🧭' }[kind] || '💡';
-      const card = el('section', { class: 'card lblock lb-' + kind, id: 'lb-' + bi }, el('h2', {}, el('span', { class: 'lbi', 'aria-hidden': 'true' }, icon), ' ', (kind === 'example' ? 'Worked example: ' : kind === 'mistake' ? 'Common mistake: ' : '') + b.t));
+      const KIND = { idea: 'Key idea', example: 'Worked example', tip: 'Tip', mistake: 'Common mistake', method: 'Method' };
+      const card = el('section', { class: 'card lblock lb-' + kind, id: 'lb-' + bi }, el('div', { class: 'lbtop' }, el('span', { class: 'lbkind' }, KIND[kind] || 'Key idea'), el('span', { class: 'lbcount' }, `Part ${bi + 1} of ${s.lesson.length}`)), el('h2', {}, b.t));
       (b.p || []).forEach(t => card.append(para(t)));
       if (C.unit.tiny && ('speechSynthesis' in window)) card.append(el('button', { type: 'button', class: 'btn small ghost readq', onclick: () => QE.speak([b.t].concat(b.p || [], b.q ? [b.q] : [], b.a ? [b.a] : []).join('. ')) }, '🔊 Read to me'));
       if (b.fig) { const f = window.AtomicFig && window.AtomicFig.get ? window.AtomicFig.get(b.fig.kind, b.fig) : null; if (f) card.append(el('div', { class: 'qfig', html: f.svg })); }
@@ -1652,12 +1659,17 @@
       const res = (st.results || {})[u.id]; const state = Core.S.states[u.id] || {}; const core = u.sections ? u.sections.length * 8 : 32;
       const coreDone = Object.entries(state.items || {}).filter(([k, v]) => v && v.done && /r\d+$/.test(k)).length;
       const open = Core.unitOpen(u.id); const ready = open || coreDone >= core;
-      const status = res ? el('span', { class: 'status done' }, `✓ Passed · ${res.pct.toFixed(1)}%`) : ready ? el('span', { class: 'status cur' }, 'Ready to take') : el('span', { class: 'status todo' }, `${Math.min(coreDone, core)}/${core} Core done`);
-      return el('div', { class: 'lbrow trow' }, el('span', {}, unitIcon(u.n)), el('span', {}, el('b', {}, `Unit Test ${u.n}`), el('br'), el('small', { class: 'muted' }, u.t)),
-        el('span', { class: 'muted' }, `${TestRules.UNIT_MINUTES} min · 30 marks`), el('span', {}, status),
-        el('button', { class: 'btn small ' + (res ? '' : 'primary'), type: 'button', 'data-unit': u.n, onclick: () => Core.switchUnit(u.n).then(() => go(res ? 'result' : 'test')) }, res ? 'Results' : 'Open', el('span', { class: 'arr' }, ' →')));
+      const pctCore = Math.round(Math.min(coreDone, core) / core * 100);
+      const status = res ? el('span', { class: 'status done' }, `✓ Passed · ${res.pct.toFixed(1)}%`) : ready ? el('span', { class: 'status cur' }, 'Ready to take') : el('span', { class: 'tready' }, el('span', { class: 'pbar mini' }, el('i', { style: `width:${pctCore}%` })), el('small', {}, `${Math.min(coreDone, core)}/${core} Core questions`));
+      return el('div', { class: 'lbrow trow' + (res ? ' passed' : '') }, el('span', {}, unitIcon(u.n)), el('span', {}, el('b', {}, `Unit Test ${u.n}`), el('br'), el('small', { class: 'muted' }, u.t)),
+        el('span', { class: 'tmeta' }, el('b', {}, `${TestRules.UNIT_MINUTES} min`), el('small', { class: 'muted' }, '30 marks · pass above 70%')), el('span', {}, status),
+        el('button', { class: 'btn small ' + (res ? '' : ready ? 'primary' : ''), type: 'button', 'data-unit': u.n, onclick: () => Core.switchUnit(u.n).then(() => go(res ? 'result' : 'test')) }, res ? 'Results' : ready ? 'Start' : 'Preview', el('span', { class: 'arr' }, ' →')));
     });
-    m.append(el('section', { class: 'card lbtable', id: 'testsTable' }, el('div', { class: 'lbrow h trow' }, el('span', {}, ''), el('span', {}, 'UNIT TEST'), el('span', {}, 'TIME'), el('span', {}, 'STATUS'), el('span', {}, '')), ...rows));
+    const passedN = Object.keys(st.results || {}).filter(k => k.startsWith(`stage${Core.STAGE}-unit`)).length, need = Math.ceil(Core.unitCount() * Core.MOVE_ON / 100);
+    m.append(el('section', { class: 'card tsum', id: 'testsSummary' },
+      el('div', {}, el('span', { class: 'hl' }, 'How Unit Tests work'), el('h2', {}, 'Finish the Core questions, then sit the test')),
+      el('ol', { class: 'tsteps' }, el('li', {}, el('b', {}, 'Get ready'), el('span', {}, 'Finish every lesson and Core question of the unit.')), el('li', {}, el('b', {}, 'Sit the test'), el('span', {}, `${TestRules.UNIT_MINUTES} minutes in the exam room. The clock keeps running.`)), el('li', {}, el('b', {}, 'Pass above 70%'), el('span', {}, `Pass ${need} of ${Core.unitCount()} tests for your certificate – you have ${passedN}.`)))));
+    m.append(el('section', { class: 'card lbtable', id: 'testsTable' }, el('div', { class: 'lbrow h trow' }, el('span', {}, ''), el('span', {}, 'UNIT TEST'), el('span', {}, 'TIME'), el('span', {}, 'READINESS'), el('span', {}, '')), ...rows));
     if (F) m.append(finalCard(F, li));
     const P = await Core.loadCp(); if (P) { await Core.refreshCp().catch(() => { }); m.append(checkpointCard(P)); }
     if (Core.IS_MATHS) m.append(challengeCard());
@@ -2141,13 +2153,27 @@
     m.append(el('div', { class: 'tiles' },
       tile('▶', 'Continue learning', nx.label, () => { location.hash = 'home'; setTimeout(() => document.getElementById('resumeBtn') && document.getElementById('resumeBtn').click(), 0); }, 'tileResume'),
       tile('↺', 'Redo wrong answers', `${wl.length} question${wl.length === 1 ? '' : 's'}`, () => startDrill('Redo wrong answers', wl, 'wrong'), 'tileWrong'),
-      tile('🧩', 'Revise by topic', '9 objectives O1–O9', () => go('topic'), 'tileTopic'),
+      tile('🧩', 'Revise by topic', `${Object.keys(C.objectives).length} learning objectives`, () => go('topic'), 'tileTopic'),
       tile('📄', 'Worksheets opened', st.ws.length ? st.ws.map(x => 'Section ' + x).join(', ') : 'none opened yet', () => go(st.ws.length ? 'ws-' + R(st.ws[st.ws.length - 1]) : 'ws-3-1'), 'tileWs')));
     if (st.ws.length) m.append(el('div', { class: 'btnrow' }, ...st.ws.map(x => el('a', { class: 'chip', href: '#ws-' + R(x) }, '📄 Worksheet ' + x))));
-    m.append(el('section', { class: 'card' }, el('h2', {}, `Unit ${Core.UNO} progress`), ...C.sections.map(s => el('div', { style: 'margin:10px 0' }, el('div', { class: 'prow', style: 'display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px;font-size:14px;font-weight:600' }, el('span', {}, `${s.id} ${s.title}`), el('span', { class: 'muted' }, `${s.lesson ? 'lesson' : 'video'} ${Core.videoDone(st, s) ? '✓' : '…'} · Core ${8 - Core.reqLeft(st, s).length}/8 · practice ${s.prac.filter(q => (st.items[q.id] || {}).done).length}/${s.prac.length} · advanced ${s.adv.filter(q => (st.items[q.id] || {}).done).length}/${s.adv.length}`)), el('div', { class: 'pbar' + (Core.secDone(st, s) ? ' ok' : '') }, el('i', { style: `width:${secPct(s)}%` })))),
-      el('p', {}, `Unit Test: ${Core.attempts(st).length} attempt(s) · ${Core.passed(st) ? 'Passed' : 'not passed yet'} · Ranking score: ` + (rs ? rs.score.toFixed(2) + '% (' + rs.units + (rs.units === 1 ? ' unit)' : ' units)') : 'none yet')),
-      el('div', { class: 'btnrow' }, el('a', { class: 'btn small', href: '#result' }, 'Results & history'), el('a', { class: 'btn small', href: '#cert' }, '🎓 Certificate'), LEADERBOARD ? el('a', { class: 'btn small', href: '#board' }, '🏆 Leaderboard') : null)));
-    m.append(testerTools());
+    // certificate progress for the whole stage (80 % of lessons and 80 % of Unit Tests)
+    const certBox = el('section', { class: 'card pcert', id: 'certProgress' }); m.append(certBox);
+    if (!isGuest()) Core.levelProgress().then(p => { const row = (label, v) => el('div', { class: 'pc-row' }, el('span', {}, label), el('div', { class: 'pbar goal' + (v >= Core.MOVE_ON ? ' ok' : '') }, el('i', { style: `width:${Math.min(100, v)}%` }), el('em', { style: `left:${Core.MOVE_ON}%`, 'aria-hidden': 'true' })), el('b', {}, `${v}%`));
+      certBox.append(el('div', { class: 'pc-head' }, el('div', {}, el('span', { class: 'hl' }, `Stage ${Core.learnerStage()} certificate`), el('h2', {}, p.ready ? 'You have earned your certificate' : `Reach ${Core.MOVE_ON}% in both to earn your certificate`)), el('a', { class: 'btn small', href: '#cert' }, p.ready ? 'Open my certificate' : 'About the certificate', el('span', { class: 'arr' }, ' →'))),
+        row('Lessons finished', p.lessons), row('Unit Tests passed', p.tests)); }).catch(() => certBox.remove()); else certBox.remove();
+    const cell = (done, total) => el('span', { class: 'pt-cell' }, el('b', {}, `${done}/${total}`), el('span', { class: 'pbar mini' + (total && done >= total ? ' ok' : '') }, el('i', { style: `width:${total ? Math.round(done / total * 100) : 0}%` })));
+    const rowsP = C.sections.map(s => { const vd = Core.videoDone(st, s), core = 8 - Core.reqLeft(st, s).length, pr = s.prac.filter(q => (st.items[q.id] || {}).done).length, ad = s.adv.filter(q => (st.items[q.id] || {}).done).length, done = Core.secDone(st, s), started = vd || core || pr || ad;
+      return el('a', { class: 'pt-row', href: '#v-' + R(s.id) }, el('span', { class: 'pt-topic' }, el('span', { class: 'pt-num' }, s.id), el('b', {}, s.title)),
+        el('span', { class: 'pt-cell' }, vd ? el('span', { class: 'status done' }, '✓ Done') : el('span', { class: 'status todo' }, 'Not yet')), cell(core, 8), cell(pr, s.prac.length), cell(ad, s.adv.length),
+        el('span', {}, done ? el('span', { class: 'status done' }, '✓ Complete') : started ? el('span', { class: 'status cur' }, 'In progress') : el('span', { class: 'status todo' }, 'Not started'))); });
+    const att = Core.attempts(st).length;
+    m.append(el('section', { class: 'card ptable', id: 'unitProgress' }, el('div', { class: 'pc-head' }, el('div', {}, el('span', { class: 'hl' }, `Unit ${Core.UNO}`), el('h2', {}, C.unit.title)), el('a', { class: 'btn small', href: '#u-' + Core.UNO }, 'Open the unit', el('span', { class: 'arr' }, ' →'))),
+      el('div', { class: 'pt-row h' }, el('span', {}, 'TOPIC'), el('span', {}, C.sections[0] && C.sections[0].lesson ? 'LESSON' : 'VIDEO'), el('span', {}, 'CORE'), el('span', {}, 'PRACTICE'), el('span', {}, 'ADVANCED'), el('span', {}, 'STATUS')), ...rowsP,
+      el('div', { class: 'pt-test' }, el('div', {}, el('b', {}, `Unit Test ${Core.UNO}`), el('span', { class: 'muted' }, Core.passed(st) ? 'Passed' : att ? 'Not passed yet' : 'Not taken yet')),
+        el('div', {}, el('b', {}, String(att)), el('span', { class: 'muted' }, att === 1 ? 'attempt' : 'attempts')),
+        el('div', {}, el('b', {}, rs ? rs.score.toFixed(1) + '%' : '–'), el('span', { class: 'muted' }, 'average first-pass score')),
+        el('div', { class: 'btnrow', style: 'margin:0' }, el('a', { class: 'btn small', href: '#result' }, 'Results & history'), el('a', { class: 'btn small primary', href: '#test' }, 'Unit Test', el('span', { class: 'arr' }, ' →'))))));
+    const tt = testerTools(); if (tt) m.append(tt);
     m.append(el('p', { class: 'muted' }, el('a', { href: '#privacy-kids' }, 'How Atomic looks after your data'), ' – the short version for learners.'));
   }
 

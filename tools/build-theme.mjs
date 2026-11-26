@@ -125,6 +125,9 @@ footer.foot::before{display:none}
 .lp-pill{border-radius:4px;border:0;background:#fff}
 .newsstrip{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;background:#B0E2DE;border-bottom:2px solid #222;padding:12px 20px;font-size:17px;font-weight:300}
 .newsstrip a{font-weight:700;color:#222;text-decoration:none}.newsstrip a:hover{text-decoration:underline}
+.tsum,.lbtop{background:#E3E9FB}
+.lb-example .lbtop{background:#FFF7CC}.lb-method .lbtop{background:#F5E9F2}.lb-tip .lbtop{background:#E8F9E8}.lb-mistake .lbtop{background:#FDE3E3}
+.tready .pbar.mini{flex:none;height:8px;width:160px}
 html.theme-oak #splash{background:#fff}
 html.theme-oak #splash .sp-in{color:#222}
 html.theme-oak #splash .sp-bar{background:#F2F2F2}
