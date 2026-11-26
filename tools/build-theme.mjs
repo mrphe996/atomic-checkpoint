@@ -130,6 +130,9 @@ footer.foot::before{display:none}
 .tready .pbar.mini{flex:none;height:8px;width:160px}
 .qbsum{background:#E3E9FB;border:0}
 .qbt .lbrow.picked{background:#FFF7CC}
+.stm-pill,.mainnav .stmenu a.stm-pill{background:#E3E9FB;border-color:#A0B6F2}
+.stm-pill.math,.mainnav .stmenu a.stm-pill.math{background:#F5E9F2;border-color:#DEB7D5}.stm-pill.esl,.mainnav .stmenu a.stm-pill.esl{background:#E8F9E8;border-color:#9FDC9D}
+.mainnav .stmenu a.stm-pill.on,.stm-pill.on{background:#222;border-color:#222;color:#fff}
 html.theme-oak #splash{background:#fff}
 html.theme-oak #splash .sp-in{color:#222}
 html.theme-oak #splash .sp-bar{background:#F2F2F2}

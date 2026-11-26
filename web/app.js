@@ -123,16 +123,16 @@
         document.addEventListener('click', () => { menu.hidden = true; }, { once: true });
         right.append(s, lv, bell(), el('span', { class: 'userwrap' }, av, menu));
       }
-      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), navLink('profile', 'Progress', area === 'profile'), navLink('news', 'News', area === 'news'), LEADERBOARD ? navLink('board', 'Leaderboard', area === 'board') : null].filter(Boolean);
+      nav = [navLink('home', 'Dashboard', area === 'home'), navLink('u-' + Core.UNO, 'Course', area === 'course'), navLink('bank', 'Question Bank', area === 'bank'), navLink('tests', 'Tests & exams', area === 'test'), LEADERBOARD ? navLink('board', 'Leaderboard', area === 'board') : null].filter(Boolean);
       if (Core.IS_PRIMARY) { nav.splice(2, 0, navLink('words', '📒 My words', area === 'words')); nav[3].textContent = 'Questions'; nav[4].textContent = 'Tests'; }
     } else if (me) {
       right.append(modeBtn(), bell(), el('button', { class: 'btn small', type: 'button', id: 'signOut', onclick: async () => { await Backend.signOut(); await Core.boot(C); go('home'); } }, 'Sign out'));
-      nav = [navLink('home', 'Home', area === 'home'), navLink('news', 'News', area === 'news'), navLink('help', 'Help', area === 'help')];
+      nav = [navLink('home', 'Home', area === 'home'), navLink('help', 'Help', area === 'help')];
       if (['marker', 'admin'].includes(me.profile.role)) nav.push(navLink('staff', 'Staff', area === 'staff'));
       if (me.profile.role === 'admin') nav.push(navLink('admin', 'Admin', area === 'admin'));
     } else {
       right.append(modeBtn(), el('a', { class: 'btn small ghost', href: '#signin', id: 'signInLink' }, 'Log in'), el('a', { class: 'btn small gold', href: '#signup', id: 'signUpLink' }, 'Sign up free'));
-      nav = [navLink('home', 'Home', area === 'home'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('news', 'News', area === 'news'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
+      nav = [navLink('home', 'Home', area === 'home'), navLink('pricing', Core.BILLING_OFF ? 'Free test' : 'Pricing', area === 'pricing'), navLink('help', 'Help', area === 'help'), navLink('verify', 'Verify a certificate', area === 'verify')];
     }
     if (st || !me) nav.splice(1, 0, stagesMenu());
     if (!st && !me || st && isGuest()) nav.push(el('a', { class: 'navlogin', href: '#signin' }, 'Log in'));
@@ -154,7 +154,7 @@
         fcol('Learners', [['All courses', '#courses'], [Core.BILLING_OFF ? 'Free test' : 'Pricing', '#pricing'], ['Verify a certificate', '#verify'], [me ? 'My progress' : 'Log in', me ? '#profile' : '#signin']]),
         fcol('Camday', [['Home', '#home'], ['News & roadmap', '#news'], ['Help & contact', '#help']]),
         fcol('Legal', [['Terms & conditions', '#terms'], ['Privacy policy', '#privacy'], ['Privacy for learners', '#privacy-kids'], ['Cookie policy', '#cookies']]),
-        el('div', { class: 'fbrand' }, el('img', { src: 'camday_logo.svg', alt: 'Camday — Quality Learning, Brighter Future.' }), el('span', { class: 'tag2' }, 'Quality Learning, Brighter Future.'))),
+        el('div', { class: 'fbrand' }, el('img', { src: 'camday_logo.svg', alt: 'Camday — Daily practice for Cambridge learners' }), el('span', { class: 'tag2' }, 'Daily practice for Cambridge learners'))),
       el('div', { class: 'fbase' },
         el('p', { class: 'muted disclaimer' }, 'Camday courses and lesson videos are produced by Atomic Education and aligned to Cambridge curriculum frameworks (Primary Science 0097, Lower Secondary Science 0893, Primary Mathematics 0096, Lower Secondary Mathematics 0862). Checkpoint-format papers are written by Camday – they are not Cambridge papers. Camday is not affiliated with or endorsed by Cambridge University Press & Assessment.'),
         el('p', { class: 'fcopy' }, el('b', {}, `© Atomic Education ${new Date().getFullYear()}`), el('br'), 'Written by the Camday teaching team · Camday is made by Atomic Education'))));
@@ -294,16 +294,26 @@
   // top menu: every stage, with Science, Mathematics and ESL listed separately under it
   function stagesMenu() {
     const panel = el('div', { class: 'stmenu', id: 'stagesMenu', hidden: true, role: 'menu' });
-    const item = (g, icon, name) => {
-      if (!Core.STAGES.includes(g)) return el('span', { class: 'stm-it soon', 'aria-disabled': 'true' }, el('span', {}, icon + ' ' + name), el('small', {}, 'Soon'));
-      const lk = g !== Core.STAGE && Core.stageLocked(g), cur = st && g === Core.STAGE;
-      return el('a', { class: 'stm-it' + (cur ? ' on' : '') + (lk ? ' soon' : ''), href: '#stage-' + g, role: 'menuitem', 'data-stage': g,
-        onclick: ev => { panel.hidden = true; if (st && !isGuest() && Core.enrolled(g) && !lk) { ev.preventDefault(); pickStage(g); } } },
-        el('span', {}, icon + ' ' + name), lk || cur ? el('small', {}, lk ? 'Soon' : 'Now') : null);
-    };
-    const col = n => el('div', { class: 'stm-col' }, el('b', {}, `Stage ${n}`), item(n, '🔬', 'Science'), item(10 + n, '📐', 'Mathematics'), item(20 + n, '🗣', 'ESL'));
-    panel.append(el('div', { class: 'stm-lv' }, el('span', { class: 'stm-h' }, 'Lower Secondary'), el('div', { class: 'stm-row' }, ...[7, 8, 9].map(col))),
-      el('div', { class: 'stm-lv' }, el('span', { class: 'stm-h' }, 'Primary'), el('div', { class: 'stm-row' }, ...[1, 2, 3, 4, 5, 6].map(col))));
+    const ic = d => `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+    const SUB = [[0, 'Science', 'sci', ic('<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/>')],
+      [10, 'Mathematics', 'math', ic('<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 12h2M12 12h0M16 12h0M8 16h2M12 16h0M16 16h0"/>')],
+      [20, 'English (ESL)', 'esl', ic('<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/>')]];
+    let sel = Core.levelOf ? Core.levelOf(Core.STAGE) : 7; if (!(sel >= 1 && sel <= 9)) sel = 7;
+    const side = el('div', { class: 'stm-side', role: 'tablist', 'aria-label': 'Stage' }), pills = el('div', { class: 'stm-pills' }), head = el('div', { class: 'stm-head' });
+    const pill = (n, [off, name, cls, svg]) => { const g = off + n;
+      if (!Core.STAGES.includes(g)) return el('span', { class: 'stm-it stm-pill soon ' + cls, 'aria-disabled': 'true' }, el('i', { html: svg }), el('span', {}, el('b', {}, name), el('small', {}, 'Coming soon')));
+      const lk = g !== Core.STAGE && Core.stageLocked(g), cur = st && g === Core.STAGE, mine = st && !isGuest() && Core.enrolled(g);
+      return el('a', { class: 'stm-it stm-pill ' + cls + (cur ? ' on' : '') + (lk ? ' soon' : ''), href: '#stage-' + g, role: 'menuitem', 'data-stage': g,
+        onclick: ev => { panel.hidden = true; if (mine && !lk) { ev.preventDefault(); pickStage(g); } } },
+        el('i', { html: svg }), el('span', {}, el('b', {}, name), el('small', {}, lk ? 'Coming soon' : cur ? 'Studying now' : mine ? 'In your plan' : `Stage ${n}`))); };
+    const draw = () => {
+      side.querySelectorAll('.stm-tab').forEach(b => { const on = Number(b.dataset.n) === sel; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+      head.textContent = ''; head.append(el('span', { class: 'hl' }, sel <= 6 ? 'Cambridge Primary' : 'Cambridge Lower Secondary'), el('b', {}, `Stage ${sel}`));
+      pills.textContent = ''; pills.append(...SUB.map(s => pill(sel, s))); };
+    const tab = n => el('button', { type: 'button', class: 'stm-tab', role: 'tab', 'data-n': n, onclick: () => { sel = n; draw(); }, onmouseenter: () => { if (window.matchMedia('(hover:hover) and (min-width:901px)').matches) { sel = n; draw(); } } }, `Stage ${n}`, el('span', { 'aria-hidden': 'true' }, '›'));
+    side.append(el('span', { class: 'stm-h' }, 'Primary'), ...[1, 2, 3, 4, 5, 6].map(tab), el('span', { class: 'stm-h' }, 'Lower Secondary'), ...[7, 8, 9].map(tab));
+    panel.append(side, el('div', { class: 'stm-main' }, head, pills, el('a', { class: 'stm-all', href: '#courses', onclick: () => { panel.hidden = true; } }, 'See all courses  →')));
+    draw();
     const b = el('button', { type: 'button', class: 'stm-btn', id: 'stagesBtn', 'aria-haspopup': 'true', 'aria-expanded': 'false',
       onclick: ev => { ev.stopPropagation(); panel.hidden = !panel.hidden; b.setAttribute('aria-expanded', String(!panel.hidden)); if (!panel.hidden) document.addEventListener('click', () => { panel.hidden = true; b.setAttribute('aria-expanded', 'false'); }, { once: true }); } }, 'Stages ▾');
     panel.addEventListener('click', ev => ev.stopPropagation());
