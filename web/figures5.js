@@ -83,7 +83,10 @@
     let s = `<polygon points="240,290 222,316 258,316" fill="#8A94A6"/><line x1="240" y1="120" x2="240" y2="292" stroke="#5B6478" stroke-width="6"/>`;
     s += `<line x1="40" y1="120" x2="440" y2="120" stroke="#1F2A37" stroke-width="6" stroke-linecap="round"/><circle cx="240" cy="120" r="8" fill="#1F2A37"/>`;
     [['left', 120], ['right', 360]].forEach(([k, cx]) => { s += `<line x1="${cx - 70}" y1="120" x2="${cx - 90}" y2="230" stroke="#8A94A6" stroke-width="2"/><line x1="${cx + 70}" y1="120" x2="${cx + 90}" y2="230" stroke="#8A94A6" stroke-width="2"/><path d="M${cx - 100} 230 Q${cx} 270 ${cx + 100} 230 Z" fill="#DCE8FA" stroke="#1F2A37" stroke-width="2"/>`;
-      const g = o[k] || []; const w = g.reduce((a, [kk, n]) => a + n * 22, 0); const r = tileRow([g], cx - w / 2, 178); s += r.s; if (o[k + 'Label']) s += T(cx, 292, o[k + 'Label'], { bold: true, size: 15 }); });
+      const flat = []; (o[k] || []).forEach(([kk, n]) => { for (let i = 0; i < n; i++) flat.push(kk); }); if (flat.length > 8) flat.sort((a, b) => (a === 'x' || a === 'y') - (b === 'x' || b === 'y'));
+      const rows = []; for (let i = 0; i < flat.length; i += 8) rows.push(flat.slice(i, i + 8));
+      rows.forEach((row, ri) => { const g = []; row.forEach(kk => { const l = g[g.length - 1]; if (l && l[0] === kk) l[1]++; else g.push([kk, 1]); });
+        const w = row.length * 22; s += tileRow([g], cx - w / 2, 178 - ri * 30).s; }); if (o[k + 'Label']) s += T(cx, 292, o[k + 'Label'], { bold: true, size: 15 }); });
     return { svg: W(s), a: {} };
   };
 
@@ -127,5 +130,17 @@
       for (let v = mn; v <= mx; v++) s += `<line x1="${sx(v)}" y1="${y - 6}" x2="${sx(v)}" y2="${y + 6}" stroke="${INK}" stroke-width="1.5"/>` + T(sx(v), y === y1 ? y - 18 : y + 20, v < 0 ? '−' + (-v) : v, { size: 12 }); });
     (o.pairs || []).forEach(([a, b]) => { s += `<line x1="${sx(a)}" y1="${y1 + 4}" x2="${sx(b)}" y2="${y2 - 6}" stroke="#3B7DD8" stroke-width="2.4" marker-end="url(#mpa)"/>`; });
     return { svg: W(s).replace('viewBox="0 0 480 320"', 'viewBox="0 0 480 210"'), a: {} };
+  };
+  // inequality on a number line: open circles at o.a (and o.b), a thick line to the right/left (o.dir) or between them
+  F.ineq = (o) => {
+    const mn = o.min != null ? o.min : -5, mx = o.max != null ? o.max : 5, x0 = 40, x1 = 440, sx = v => x0 + (v - mn) / (mx - mn) * (x1 - x0), y = 70;
+    let s = `<defs><marker id="iqa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#D62F4B"/></marker></defs>`;
+    s += `<line x1="${x0 - 14}" y1="${y}" x2="${x1 + 14}" y2="${y}" stroke="${INK}" stroke-width="2"/>`;
+    for (let v = mn; v <= mx; v++) s += `<line x1="${sx(v)}" y1="${y - 6}" x2="${sx(v)}" y2="${y + 6}" stroke="${INK}" stroke-width="1.5"/>` + T(sx(v), y + 24, v < 0 ? '−' + (-v) : v, { size: 12 });
+    const ya = y - 22, a = o.a, b = o.b;
+    if (b != null) s += `<line x1="${sx(a)}" y1="${ya}" x2="${sx(b)}" y2="${ya}" stroke="#D62F4B" stroke-width="5"/>`;
+    else s += `<line x1="${sx(a)}" y1="${ya}" x2="${o.dir === 'left' ? x0 - 10 : x1 + 10}" y2="${ya}" stroke="#D62F4B" stroke-width="5" marker-end="url(#iqa)"/>`;
+    [a, b].filter(v => v != null).forEach(v => { s += `<circle cx="${sx(v)}" cy="${ya}" r="7" fill="#fff" stroke="#D62F4B" stroke-width="3"/>`; });
+    return { svg: W(s).replace('viewBox="0 0 480 320"', 'viewBox="0 0 480 110"'), a: {} };
   };
 })();

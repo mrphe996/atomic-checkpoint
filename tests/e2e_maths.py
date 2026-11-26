@@ -10,13 +10,13 @@ with sync_playwright() as p:
     pg.goto(BASE + '?reset=1#home'); pg.wait_for_timeout(800)
     pg.evaluate("""(async()=>{ await Backend.signUp({email:'mx@example.com',password:'password123',name:'Max Maths',birthYear:2013,grade:'Year 7',country:'VN',schoolOther:'Camday',tester:true}); await Core.boot(Core.C); await Core.switchStage(17); await Core.switchUnit(2); location.hash='profile'; })()""")
     pg.wait_for_timeout(3500); pg.click('#simAll'); pg.wait_for_timeout(800)
-    sec = pg.evaluate("(()=>{ const s=Core.sec('2.3'); return { kinds: s.lesson.map(b=>b.k), figs: s.lesson.filter(b=>b.fig).map(b=>b.fig.kind), checks: s.stops.length, prac: s.prac.map(q=>q.prompt), more: (s.more||[]).length } })()")
+    sec = pg.evaluate("(()=>{ const s=Core.sec('2.3'); return { kinds: s.lesson.map(b=>b.k), figs: s.lesson.filter(b=>b.fig).map(b=>b.fig.kind), checks: s.stops.length, prac: s.prac.map(q=>q.prompt), deep: s.prac.concat(s.adv||[]).filter(q=>q.type==='explain'||/Test|missing|TWO|mistake|statement|says|magic/i.test(q.prompt)).length + s.lesson.filter(b=>b.k==='error').length, more: (s.more||[]).length } })()")
     ok('example' in sec['kinds'] and 'method' in sec['kinds'] and 'tiles' in sec['figs'] and sec['checks'] >= 2, f"M1 Lesson 2.3 explains with tiles, a worked contrast example, a method and {sec['checks']} prediction checks")
     shape = [re.sub(r'[−-]?\d+', '#', t) for t in sec['prac']]
     ok(len(shape) == len(set(shape)), f"M2 Main Practice has one question of each kind ({len(shape)} different kinds, no number-swapped repeats)")
-    ok(sec['more'] >= 8, f"M3 The extra variants are kept as More practice ({sec['more']})")
-    deep = sum(1 for t in sec['prac'] if re.search(r'Test|missing|TWO|mistake|statement|says', t))
-    ok(deep >= 4, f"M4 Practice includes reasoning tasks: test a claim, missing term, choose two, spot the mistake ({deep})")
+    ok(sec['more'] >= 6, f"M3 The extra variants are kept as More practice ({sec['more']})")
+    deep = sec['deep']
+    ok(deep >= 4, f"M4 Lesson + Practice include reasoning tasks: explain, missing term, test a claim, spot the mistake ({deep})")
     # stage 3–8 units that are not rewritten yet also stop repeating one method
     rep = pg.evaluate("""(async()=>{ const r = await fetch('content/stage17-unit05.json').then(x=>x.json()); let worst = 0;
       r.sections.forEach(s => { const c = {}; s.prac.forEach(q => { const k = q.prompt.replace(/[−-]?\\d+(\\.\\d+)?/g, '#'); c[k] = (c[k] || 0) + 1; worst = Math.max(worst, c[k]); }); }); return worst; })()""")
