@@ -242,5 +242,35 @@
     27
    ]
   }
+ },
+ "c7u08": {
+  "title": "Camday Maths Stage 7 · Unit 8: Shapes and Symmetry",
+  "pages": 26,
+  "dir": "media/books/c7u08/",
+  "ext": "webp",
+  "pdf": "media/books/c7u08.pdf?v=13df335e71",
+  "v": "13df335e71",
+  "secs": {
+   "8.1": [
+    2,
+    8
+   ],
+   "8.2": [
+    9,
+    13
+   ],
+   "8.3": [
+    14,
+    18
+   ],
+   "8.4": [
+    19,
+    24
+   ],
+   "answers": [
+    25,
+    26
+   ]
+  }
  }
 }
