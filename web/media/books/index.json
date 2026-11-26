@@ -554,5 +554,57 @@
     33
    ]
   }
+ },
+ "c8u03": {
+  "title": "Camday Maths Stage 8 · Unit 3: Place Value and Rounding",
+  "pages": 11,
+  "dir": "media/books/c8u03/",
+  "ext": "webp",
+  "pdf": "media/books/c8u03.pdf?v=de5d5d6a41",
+  "v": "de5d5d6a41",
+  "secs": {
+   "3.1": [
+    2,
+    5
+   ],
+   "3.2": [
+    6,
+    10
+   ],
+   "answers": [
+    11,
+    11
+   ]
+  }
+ },
+ "c8u04": {
+  "title": "Camday Maths Stage 8 · Unit 4: Decimals",
+  "pages": 19,
+  "dir": "media/books/c8u04/",
+  "ext": "webp",
+  "pdf": "media/books/c8u04.pdf?v=720ab5d0c1",
+  "v": "720ab5d0c1",
+  "secs": {
+   "4.1": [
+    2,
+    5
+   ],
+   "4.2": [
+    6,
+    9
+   ],
+   "4.3": [
+    10,
+    13
+   ],
+   "4.4": [
+    14,
+    17
+   ],
+   "answers": [
+    18,
+    19
+   ]
+  }
  }
 }
