@@ -1,0 +1,267 @@
+1
+00:00:06,740 --> 00:00:10,470
+A builder has a plank 5 and 1 quarter metres long.
+
+2
+00:00:10,520 --> 00:00:13,660
+She cuts off 2 and 2 thirds metres.
+
+3
+00:00:13,710 --> 00:00:17,170
+The fraction 1 quarter is smaller than 2 thirds.
+
+4
+00:00:17,220 --> 00:00:19,630
+How do you deal with that?
+
+5
+00:00:19,680 --> 00:00:21,170
+How much plank is left?
+
+6
+00:00:21,220 --> 00:00:24,720
+Pause the video and work it out.
+
+7
+00:00:24,770 --> 00:00:27,680
+One way is to use improper fractions.
+
+8
+00:00:27,730 --> 00:00:30,160
+5 and 1 quarter is 21 quarters.
+
+9
+00:00:30,210 --> 00:00:32,870
+2 and 2 thirds is 8 thirds.
+
+10
+00:00:32,920 --> 00:00:39,590
+With a common denominator of 12: 63 twelfths minus 32 twelfths is 31 twelfths.
+
+11
+00:00:39,640 --> 00:00:42,890
+That is 2 and 7 twelfths metres.
+
+12
+00:00:42,940 --> 00:00:47,410
+Remember: to subtract fractions, use a common denominator.
+
+13
+00:00:47,460 --> 00:00:54,040
+5 sixths minus 1 quarter is 10 twelfths minus 3 twelfths, which is 7 twelfths.
+
+14
+00:00:54,090 --> 00:00:58,380
+Another way: subtract the wholes and the fractions separately.
+
+15
+00:00:58,430 --> 00:01:03,630
+If the first fraction is too small, exchange 1 whole for fractions.
+
+16
+00:01:03,680 --> 00:01:06,950
+5 and 3 twelfths minus 2 and 8 twelfths.
+
+17
+00:01:07,000 --> 00:01:13,740
+3 twelfths is too small, so change 5 and 3 twelfths into 4 and 15 twelfths.
+
+18
+00:01:13,790 --> 00:01:19,240
+Now 4 minus 2 is 2, and 15 twelfths minus 8 twelfths is 7 twelfths.
+
+19
+00:01:19,290 --> 00:01:22,830
+The answer is 2 and 7 twelfths again.
+
+20
+00:01:22,880 --> 00:01:23,590
+Your turn.
+
+21
+00:01:23,640 --> 00:01:27,310
+Work out 3 and 3 quarters, minus 1 and 1 quarter.
+
+22
+00:01:27,360 --> 00:01:30,760
+Pause the video and try it.
+
+23
+00:01:30,810 --> 00:01:31,960
+3 minus 1 is 2.
+
+24
+00:01:32,010 --> 00:01:36,570
+3 quarters minus 1 quarter is 2 quarters, which is a half.
+
+25
+00:01:36,620 --> 00:01:39,270
+The answer is 2 and a half.
+
+26
+00:01:39,320 --> 00:01:40,660
+Here is the method.
+
+27
+00:01:40,710 --> 00:01:43,850
+Step 1: estimate with whole numbers.
+
+28
+00:01:43,900 --> 00:01:50,990
+Step 2: either change both to improper fractions, or keep the wholes and fractions separate.
+
+29
+00:01:51,040 --> 00:01:53,380
+Step 3: use a common denominator.
+
+30
+00:01:53,430 --> 00:01:57,610
+If the first fraction is smaller, exchange 1 whole.
+
+31
+00:01:57,660 --> 00:02:01,380
+Step 4: simplify, then check by adding back.
+
+32
+00:02:01,430 --> 00:02:04,790
+Work out 7 and 1 fifth, minus 3 and 1 half.
+
+33
+00:02:04,840 --> 00:02:09,960
+With tenths, that is 7 and 2 tenths, minus 3 and 5 tenths.
+
+34
+00:02:10,010 --> 00:02:16,580
+2 tenths is too small, so exchange 1 whole: 6 and 12 tenths, minus 3 and 5 tenths.
+
+35
+00:02:16,630 --> 00:02:18,980
+That is 3 and 7 tenths.
+
+36
+00:02:19,030 --> 00:02:19,750
+Your turn.
+
+37
+00:02:19,800 --> 00:02:23,030
+Work out 6 and 1 sixth, minus 2 and 1 half.
+
+38
+00:02:23,080 --> 00:02:26,110
+Pause and work it out.
+
+39
+00:02:26,160 --> 00:02:29,860
+In sixths: 6 and 1 sixth minus 2 and 3 sixths.
+
+40
+00:02:29,910 --> 00:02:34,250
+Exchange 1 whole: 5 and 7 sixths minus 2 and 3 sixths.
+
+41
+00:02:34,300 --> 00:02:39,610
+That is 3 and 4 sixths, which simplifies to 3 and 2 thirds.
+
+42
+00:02:39,660 --> 00:02:42,400
+Work out 5 minus 1 and 5 eighths.
+
+43
+00:02:42,450 --> 00:02:44,690
+Write 5 as 4 and 8 eighths.
+
+44
+00:02:44,740 --> 00:02:50,660
+Then 4 minus 1 is 3, and 8 eighths minus 5 eighths is 3 eighths.
+
+45
+00:02:50,710 --> 00:02:54,430
+Leo works out 3 and 1 fifth, minus 1 and 3 fifths.
+
+46
+00:02:54,480 --> 00:02:57,100
+Which line goes wrong first?
+
+47
+00:02:57,150 --> 00:02:58,270
+Line 2 is wrong.
+
+48
+00:02:58,320 --> 00:03:01,780
+He subtracted the fractions the wrong way round.
+
+49
+00:03:01,830 --> 00:03:05,730
+It must be 1 fifth minus 3 fifths, which is too small.
+
+50
+00:03:05,780 --> 00:03:07,740
+So exchange 1 whole.
+
+51
+00:03:07,790 --> 00:03:13,040
+2 and 6 fifths minus 1 and 3 fifths is 1 and 3 fifths.
+
+52
+00:03:13,090 --> 00:03:16,580
+Rain gauges in some countries measure in inches.
+
+53
+00:03:16,630 --> 00:03:20,180
+One week there was 3 and 1 eighth inches of rain.
+
+54
+00:03:20,230 --> 00:03:24,270
+The next week there was 1 and 3 quarters inches.
+
+55
+00:03:24,320 --> 00:03:28,730
+The difference is 3 and 1 eighth minus 1 and 6 eighths.
+
+56
+00:03:28,780 --> 00:03:36,490
+Exchange 1 whole: 2 and 9 eighths minus 1 and 6 eighths, which is 1 and 3 eighths inches.
+
+57
+00:03:36,540 --> 00:03:37,820
+One last question.
+
+58
+00:03:37,870 --> 00:03:39,810
+What is 2 minus 3 sevenths?
+
+59
+00:03:39,860 --> 00:03:43,200
+Pause the video and answer.
+
+60
+00:03:43,250 --> 00:03:45,500
+Write 2 as 1 and 7 sevenths.
+
+61
+00:03:45,550 --> 00:03:48,960
+7 sevenths minus 3 sevenths is 4 sevenths.
+
+62
+00:03:49,010 --> 00:03:52,060
+The answer is 1 and 4 sevenths.
+
+63
+00:03:52,110 --> 00:03:56,250
+To remember: use improper fractions, or regrouping.
+
+64
+00:03:56,300 --> 00:03:59,030
+Find a common denominator first.
+
+65
+00:03:59,080 --> 00:04:03,330
+Exchange 1 whole when the first fraction is smaller.
+
+66
+00:04:03,380 --> 00:04:06,270
+Estimate, and check by adding back.
+
+67
+00:04:06,320 --> 00:04:11,470
+Great work! Now practise lesson 7.3 on Camday.

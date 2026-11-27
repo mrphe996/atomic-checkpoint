@@ -1,0 +1,247 @@
+1
+00:00:07,370 --> 00:00:08,860
+A party has 6 pizzas.
+
+2
+00:00:08,910 --> 00:00:12,130
+Each guest gets 3 eighths of a pizza.
+
+3
+00:00:12,180 --> 00:00:14,160
+How many guests can be served?
+
+4
+00:00:14,210 --> 00:00:17,730
+Pause the video and work it out.
+
+5
+00:00:17,780 --> 00:00:20,240
+Cut every pizza into 8 slices.
+
+6
+00:00:20,290 --> 00:00:22,890
+6 pizzas make 48 eighths.
+
+7
+00:00:22,940 --> 00:00:25,180
+Each guest takes 3 slices.
+
+8
+00:00:25,230 --> 00:00:27,130
+48 divided by 3 is 16.
+
+9
+00:00:27,180 --> 00:00:30,060
+So 16 guests can be served.
+
+10
+00:00:30,110 --> 00:00:34,530
+Remember: 3 divided by a half asks how many halves are in 3.
+
+11
+00:00:34,580 --> 00:00:37,460
+There are 2 in each whole, so 6.
+
+12
+00:00:37,510 --> 00:00:42,700
+Dividing by a unit fraction, 1 over d, is the same as multiplying by d.
+
+13
+00:00:42,750 --> 00:00:45,130
+There are d pieces in each whole.
+
+14
+00:00:45,180 --> 00:00:47,750
+6 divided by 1 eighth is 48.
+
+15
+00:00:47,800 --> 00:00:48,490
+Your turn.
+
+16
+00:00:48,540 --> 00:00:50,710
+Work out 4 divided by 1 third.
+
+17
+00:00:50,760 --> 00:00:54,110
+Pause the video and try it.
+
+18
+00:00:54,160 --> 00:00:59,140
+There are 3 thirds in each whole, so 4 times 3 is 12.
+
+19
+00:00:59,190 --> 00:01:04,230
+For 6 divided by 3 eighths, we found 48 eighths, then divided by 3.
+
+20
+00:01:04,280 --> 00:01:07,570
+That is the same as multiplying by 8 thirds.
+
+21
+00:01:07,620 --> 00:01:10,620
+8 thirds is the reciprocal of 3 eighths.
+
+22
+00:01:10,670 --> 00:01:13,750
+You turn the fraction upside down.
+
+23
+00:01:13,800 --> 00:01:18,850
+Dividing by a fraction less than 1 always gives a bigger answer.
+
+24
+00:01:18,900 --> 00:01:20,200
+Here is the method.
+
+25
+00:01:20,250 --> 00:01:23,420
+Step 1: write the reciprocal of the fraction.
+
+26
+00:01:23,470 --> 00:01:25,400
+Turn it upside down.
+
+27
+00:01:25,450 --> 00:01:29,690
+Step 2: multiply the whole number by the reciprocal.
+
+28
+00:01:29,740 --> 00:01:34,420
+Step 3: simplify, and write it as a mixed number if needed.
+
+29
+00:01:34,470 --> 00:01:35,430
+Step 4: check.
+
+30
+00:01:35,480 --> 00:01:39,750
+Dividing by a proper fraction gives a bigger answer.
+
+31
+00:01:39,800 --> 00:01:42,620
+Work out 10 divided by 4 sevenths.
+
+32
+00:01:42,670 --> 00:01:45,910
+Multiply by the reciprocal, 7 quarters.
+
+33
+00:01:45,960 --> 00:01:51,430
+10 times 7 quarters is 70 quarters, which is 17 and a half.
+
+34
+00:01:51,480 --> 00:01:52,150
+Your turn.
+
+35
+00:01:52,200 --> 00:01:54,400
+Work out 6 divided by 2 thirds.
+
+36
+00:01:54,450 --> 00:01:57,390
+Pause and work it out.
+
+37
+00:01:57,440 --> 00:02:00,600
+The reciprocal of 2 thirds is 3 halves.
+
+38
+00:02:00,650 --> 00:02:04,610
+6 times 3 halves is 18 halves, which is 9.
+
+39
+00:02:04,660 --> 00:02:09,050
+A 5 litre tub fills bottles that hold 2 thirds of a litre.
+
+40
+00:02:09,100 --> 00:02:10,740
+How many full bottles?
+
+41
+00:02:10,790 --> 00:02:15,350
+5 times 3 halves is 15 halves, which is 7 and a half.
+
+42
+00:02:15,400 --> 00:02:17,290
+The half bottle is not full.
+
+43
+00:02:17,340 --> 00:02:20,070
+So the answer is 7 full bottles.
+
+44
+00:02:20,120 --> 00:02:22,780
+Sam works out 8 divided by 2 fifths.
+
+45
+00:02:22,830 --> 00:02:25,430
+Which line goes wrong first?
+
+46
+00:02:25,480 --> 00:02:26,590
+Line 1 is wrong.
+
+47
+00:02:26,640 --> 00:02:31,380
+You turn over the fraction you are dividing by, which is 2 fifths.
+
+48
+00:02:31,430 --> 00:02:32,650
+Not the 8.
+
+49
+00:02:32,700 --> 00:02:37,200
+8 times 5 halves is 40 halves, which is 20.
+
+50
+00:02:37,250 --> 00:02:43,030
+A plumber has a 9 metre pipe and needs pieces 3 quarters of a metre long.
+
+51
+00:02:43,080 --> 00:02:46,560
+9 times 4 thirds is 36 thirds, which is 12.
+
+52
+00:02:46,610 --> 00:02:50,550
+She can cut 12 pieces with nothing wasted.
+
+53
+00:02:50,600 --> 00:02:51,850
+One last question.
+
+54
+00:02:51,900 --> 00:02:54,360
+What is the reciprocal of 7 ninths?
+
+55
+00:02:54,410 --> 00:02:57,700
+Pause the video and choose.
+
+56
+00:02:57,750 --> 00:02:59,210
+Turn it upside down.
+
+57
+00:02:59,260 --> 00:03:02,850
+The reciprocal of 7 ninths is 9 sevenths.
+
+58
+00:03:02,900 --> 00:03:08,020
+To remember: dividing by 1 over d is the same as multiplying by d.
+
+59
+00:03:08,070 --> 00:03:13,250
+Dividing by a fraction is the same as multiplying by its reciprocal.
+
+60
+00:03:13,300 --> 00:03:17,490
+The answer is bigger than the number you started with.
+
+61
+00:03:17,540 --> 00:03:20,960
+Think about remainders in real problems.
+
+62
+00:03:21,010 --> 00:03:26,150
+Great work! Now practise lesson 7.5 on Camday.

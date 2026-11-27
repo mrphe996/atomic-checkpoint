@@ -1,0 +1,283 @@
+1
+00:00:07,790 --> 00:00:11,020
+A recipe needs 2 and 3 quarters cups of flour.
+
+2
+00:00:11,070 --> 00:00:14,710
+You are making it 6 times for a school fair.
+
+3
+00:00:14,760 --> 00:00:16,470
+How many cups do you need?
+
+4
+00:00:16,520 --> 00:00:20,040
+Pause the video and work it out.
+
+5
+00:00:20,090 --> 00:00:24,930
+Split 2 and 3 quarters into its parts: 2, and 3 quarters.
+
+6
+00:00:24,980 --> 00:00:26,300
+6 times 2 is 12.
+
+7
+00:00:26,350 --> 00:00:31,730
+6 times 3 quarters is 18 quarters, which is 4 and a half.
+
+8
+00:00:31,780 --> 00:00:34,560
+Add them: 16 and a half cups.
+
+9
+00:00:34,610 --> 00:00:38,300
+Remember: 6 times 3 quarters is 18 quarters.
+
+10
+00:00:38,350 --> 00:00:43,530
+18 quarters is 4 and 2 quarters, which is 4 and a half.
+
+11
+00:00:43,580 --> 00:00:45,330
+Method 1 is partitioning.
+
+12
+00:00:45,380 --> 00:00:50,480
+Multiply the whole number part, then the fraction part, and add.
+
+13
+00:00:50,530 --> 00:00:51,710
+Estimate first.
+
+14
+00:00:51,760 --> 00:00:53,010
+6 times 3 is 18.
+
+15
+00:00:53,060 --> 00:01:00,190
+The answer should be a bit less than 18, because 2 and 3 quarters is less than 3.
+
+16
+00:01:00,240 --> 00:01:00,950
+Your turn.
+
+17
+00:01:01,000 --> 00:01:03,310
+Work out 2 times 1 and 1 third.
+
+18
+00:01:03,360 --> 00:01:06,760
+Pause the video and try it.
+
+19
+00:01:06,810 --> 00:01:08,030
+2 times 1 is 2.
+
+20
+00:01:08,080 --> 00:01:10,410
+2 times 1 third is 2 thirds.
+
+21
+00:01:10,460 --> 00:01:13,420
+The answer is 2 and 2 thirds.
+
+22
+00:01:13,470 --> 00:01:18,090
+Method 2: change the mixed number to an improper fraction.
+
+23
+00:01:18,140 --> 00:01:22,500
+6 times 2 and 3 quarters is 6 times 11 quarters.
+
+24
+00:01:22,550 --> 00:01:24,750
+Cancel before you multiply.
+
+25
+00:01:24,800 --> 00:01:27,070
+6 and 4 share a factor of 2.
+
+26
+00:01:27,120 --> 00:01:33,200
+That gives 3 times 11 halves, which is 33 halves, or 16 and a half.
+
+27
+00:01:33,250 --> 00:01:34,530
+Here is the method.
+
+28
+00:01:34,580 --> 00:01:38,370
+Step 1: estimate, by rounding the mixed number.
+
+29
+00:01:38,420 --> 00:01:39,650
+Step 2: partition.
+
+30
+00:01:39,700 --> 00:01:43,610
+Multiply the whole part, then the fraction part.
+
+31
+00:01:43,660 --> 00:01:48,710
+Step 3: or change to an improper fraction, cancel, and multiply.
+
+32
+00:01:48,760 --> 00:01:56,040
+Step 4: give the answer as a mixed number in its simplest form, and compare it with your estimate.
+
+33
+00:01:56,090 --> 00:01:58,930
+Work out 8 times 4 and 3 tenths.
+
+34
+00:01:58,980 --> 00:02:00,380
+8 times 4 is 32.
+
+35
+00:02:00,430 --> 00:02:05,900
+8 times 3 tenths is 24 tenths, which is 2 and 2 fifths.
+
+36
+00:02:05,950 --> 00:02:08,810
+Add them: 34 and 2 fifths.
+
+37
+00:02:08,860 --> 00:02:09,580
+Your turn.
+
+38
+00:02:09,630 --> 00:02:12,120
+Work out 4 times 2 and 5 eighths.
+
+39
+00:02:12,170 --> 00:02:15,220
+Pause and work it out.
+
+40
+00:02:15,270 --> 00:02:16,500
+4 times 2 is 8.
+
+41
+00:02:16,550 --> 00:02:21,210
+4 times 5 eighths is 20 eighths, which is 2 and a half.
+
+42
+00:02:21,260 --> 00:02:24,930
+8 plus 2 and a half is 10 and a half.
+
+43
+00:02:24,980 --> 00:02:28,480
+A train journey takes 1 and 2 thirds hours.
+
+44
+00:02:28,530 --> 00:02:30,790
+How long do 5 journeys take?
+
+45
+00:02:30,840 --> 00:02:32,030
+5 times 1 is 5.
+
+46
+00:02:32,080 --> 00:02:37,030
+5 times 2 thirds is 10 thirds, which is 3 and 1 third.
+
+47
+00:02:37,080 --> 00:02:39,280
+That is 8 and 1 third hours.
+
+48
+00:02:39,330 --> 00:02:44,800
+1 third of an hour is 20 minutes, so it is 8 hours 20 minutes.
+
+49
+00:02:44,850 --> 00:02:47,690
+Ivy works out 3 times 2 and 1 quarter.
+
+50
+00:02:47,740 --> 00:02:49,760
+Which line is wrong?
+
+51
+00:02:49,810 --> 00:02:50,960
+Line 2 is wrong.
+
+52
+00:02:51,010 --> 00:02:53,960
+She forgot to multiply the fraction too.
+
+53
+00:02:54,010 --> 00:02:56,900
+3 times 1 quarter is 3 quarters.
+
+54
+00:02:56,950 --> 00:02:59,950
+The answer is 6 and 3 quarters.
+
+55
+00:03:00,000 --> 00:03:04,300
+One coat of paint for a fence needs 1 and 3 quarters litres.
+
+56
+00:03:04,350 --> 00:03:06,600
+The fence needs 3 coats.
+
+57
+00:03:06,650 --> 00:03:12,980
+3 times 1 is 3, and 3 times 3 quarters is 9 quarters, which is 2 and 1 quarter.
+
+58
+00:03:13,030 --> 00:03:15,810
+Altogether, 5 and 1 quarter litres.
+
+59
+00:03:15,860 --> 00:03:18,870
+So two 3 litre tins are needed.
+
+60
+00:03:18,920 --> 00:03:20,200
+One last question.
+
+61
+00:03:20,250 --> 00:03:24,730
+Work out 7 times 3 and 9 tenths, to the nearest whole number.
+
+62
+00:03:24,780 --> 00:03:28,130
+Pause the video and answer.
+
+63
+00:03:28,180 --> 00:03:29,720
+7 times 3 is 21.
+
+64
+00:03:29,770 --> 00:03:32,110
+7 times 9 tenths is 6.3.
+
+65
+00:03:32,160 --> 00:03:38,030
+21 plus 6.3 is 27.3, which is 27 to the nearest whole.
+
+66
+00:03:38,080 --> 00:03:39,630
+To remember: partition.
+
+67
+00:03:39,680 --> 00:03:44,070
+Multiply the whole part and the fraction part, then add.
+
+68
+00:03:44,120 --> 00:03:47,780
+Or use an improper fraction, and cancel first.
+
+69
+00:03:47,830 --> 00:03:50,140
+Always estimate first.
+
+70
+00:03:50,190 --> 00:03:54,380
+Give answers as mixed numbers in their simplest form.
+
+71
+00:03:54,430 --> 00:03:59,590
+Great work! Now practise lesson 7.4 on Camday.

@@ -374,7 +374,7 @@ NOTES[(7, "7.4")] = L(
         (0, fr("m8u07s4k01", "Before you read on: 6 × 2 3/4 = ?", 33, 2, "", "16 1/2.")),
         (4, fr("m8u07s4k02", "Work out 2 × 1 1/3.", 8, 3, "", "2 2/3.")),
         (9, fr("m8u07s4k03", "Work out 4 × 2 5/8.", 21, 2, "", "10 1/2.")),
-        (14, num("m8u07s4k04", "Quick check: estimate 7 × 3 9/10 to the nearest whole.", 27, "7 × 4 − a little.", "27.3 → 27.")),
+        (14, num("m8u07s4k04", "Quick check: work out 7 × 3 9/10 to the nearest whole.", 27, "7 × 4 − a little.", "27.3 → 27.")),
     ],
     practice={
         "req": [
