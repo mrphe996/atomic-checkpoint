@@ -35,8 +35,8 @@ VIDEOS["14.1"] = [
         PAUSE("14.1-k2", "Your turn. What is the bearing of due west? Write three figures. Pause the video and try it.", "Bearing of due west?"),
     ]),
     dict(kind="idea", title="Back bearings", steps=[
-        dict(say="Due west is 2 7 0 degrees. Now, the bearing back. The bearing of A from B differs by 180 degrees. If B is 0 7 0 from A, then A is 70 plus 180, which is 2 5 0 from B.",
-             do=[MATH("west = 270°", x=80, y=170, color=GREEN), TBL(["B from A", "A from B"], [["070°", "070° + 180° = 250°"], ["300°", "300° − 180° = 120°"]], y=260), ROW(0, 5)]),
+        dict(say="Due west is 2 7 0 degrees. Now, the bearing back. The bearing of A from B differs by 180 degrees. If B is 0 4 0 from A, then A is 40 plus 180, which is 2 2 0 from B.",
+             do=[MATH("west = 270°", x=80, y=170, color=GREEN), TBL(["B from A", "A from B"], [["040°", "040° + 180° = 220°"], ["300°", "300° − 180° = 120°"]], y=260), ROW(0, 5)]),
         dict(say="If the bearing is more than 180, subtract 180 instead. 3 0 0 becomes 1 2 0.", do=[ROW(1, 0.3)]),
     ]),
     dict(kind="method", title="How do I find or use a bearing?", steps=[

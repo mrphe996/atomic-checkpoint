@@ -35217,7 +35217,7 @@
     "8.3-k3": 151.72,
     "8.3-k4": 205.41
    },
-   "up": false
+   "up": true
   },
   "7.6": {
    "src": "media/mv/s8/7-6.mp4",
@@ -36712,7 +36712,7 @@
     "10.2-k3": 139.76,
     "10.2-k4": 222.12
    },
-   "up": false
+   "up": true
   },
   "10.1": {
    "src": "media/mv/s8/10-1.mp4",
@@ -36994,6 +36994,919 @@
     "10.1-k2": 56.29,
     "10.1-k3": 129.3,
     "10.1-k4": 212.45
+   },
+   "up": true
+  },
+  "11.1": {
+   "src": "media/mv/s8/11-1.mp4",
+   "poster": "media/mv/s8/11-1_poster.jpg",
+   "srt": "media/mv/s8/11-1.srt",
+   "dur": 250.56,
+   "captions": [
+    [
+     5.94,
+     "A community hall charges a 15 dollar booking fee, plus 40 dollars per hour."
+    ],
+    [
+     12.23,
+     "What does a 3 hour party cost?"
+    ],
+    [
+     14.34,
+     "Pause the video and work it out."
+    ],
+    [
+     17.98,
+     "3 hours at 40 dollars is 120 dollars."
+    ],
+    [
+     21.56,
+     "Add the 15 dollar fee: 135 dollars."
+    ],
+    [
+     25.5,
+     "For h hours, the cost C is 40 h plus 15."
+    ],
+    [
+     28.59,
+     "And if someone paid 255 dollars, how long did they hire the hall?"
+    ],
+    [
+     33.62,
+     "We will find out."
+    ],
+    [
+     35.49,
+     "Remember: to use a formula, substitute the value."
+    ],
+    [
+     39.27,
+     "If y equals 4 x minus 1, and x is 3, then y is 12 minus 1, which is 11."
+    ],
+    [
+     45.3,
+     "A function is a rule where every input gives exactly one output."
+    ],
+    [
+     49.5,
+     "For the hall, the input is h hours, and the output is C dollars."
+    ],
+    [
+     54.25,
+     "The fixed part is 15."
+    ],
+    [
+     55.83,
+     "The rate is 40 per hour."
+    ],
+    [
+     57.64,
+     "Output equals rate times input, plus the fixed part."
+    ],
+    [
+     62.1,
+     "Your turn."
+    ],
+    [
+     62.86,
+     "Using C equals 40 h plus 15, what is the cost for 5 hours?"
+    ],
+    [
+     67.27,
+     "Pause the video and try it."
+    ],
+    [
+     70.72,
+     "40 times 5 is 200."
+    ],
+    [
+     73.04,
+     "200 plus 15 is 215 dollars."
+    ],
+    [
+     77.07,
+     "To find the input from an output, solve the equation."
+    ],
+    [
+     81.9,
+     "40 h plus 15 equals 255."
+    ],
+    [
+     84.09,
+     "Subtract 15: 40 h equals 240."
+    ],
+    [
+     86.74,
+     "Divide by 40: h equals 6 hours."
+    ],
+    [
+     90.12,
+     "A function can be written in words, as a machine, a table, a graph or an equation."
+    ],
+    [
+     95.5,
+     "They all describe the same rule."
+    ],
+    [
+     98.15,
+     "Here is the method."
+    ],
+    [
+     99.47,
+     "Step 1: find the fixed part, and the rate per unit."
+    ],
+    [
+     103.59,
+     "Step 2: write the equation: output equals rate times input, plus the fixed part."
+    ],
+    [
+     109.75,
+     "Step 3: substitute to find outputs."
+    ],
+    [
+     112.3,
+     "Solve to find inputs."
+    ],
+    [
+     114.38,
+     "Step 4: check your answer in the real situation."
+    ],
+    [
+     118.4,
+     "A plumber charges a 30 dollar call-out fee, and 25 dollars per hour."
+    ],
+    [
+     124.02,
+     "The rate is 25, and the fixed part is 30."
+    ],
+    [
+     127.41,
+     "So C equals 25 h plus 30."
+    ],
+    [
+     130.03,
+     "Your turn."
+    ],
+    [
+     130.76,
+     "A taxi charges a 10 dollar fee, plus 3 dollars per kilometre."
+    ],
+    [
+     135.2,
+     "Write y in terms of x kilometres."
+    ],
+    [
+     137.61,
+     "Pause and work it out."
+    ],
+    [
+     140.61,
+     "The rate is 3 per kilometre, and the fixed fee is 10."
+    ],
+    [
+     144.85,
+     "So y equals 3 x plus 10."
+    ],
+    [
+     147.32,
+     "A table shows x equals 0, 1, 2, 3, and y equals 5, 8, 11, 14."
+    ],
+    [
+     152.33,
+     "y goes up by 3 each time, so the rate is 3."
+    ],
+    [
+     155.86,
+     "When x is 0, y is 5."
+    ],
+    [
+     157.5,
+     "So y equals 3 x plus 5."
+    ],
+    [
+     159.94,
+     "A rule takes x to a number whose square is x."
+    ],
+    [
+     163.03,
+     "Is it a function?"
+    ],
+    [
+     164.19,
+     "If x is 9, the output could be 3, or negative 3."
+    ],
+    [
+     167.49,
+     "That is two outputs, so it is not a function."
+    ],
+    [
+     171.13,
+     "C equals 25 h plus 30, and C is 130."
+    ],
+    [
+     174.2,
+     "Ali finds h."
+    ],
+    [
+     175.22,
+     "Which line goes wrong first?"
+    ],
+    [
+     178.16,
+     "Line 1 is wrong."
+    ],
+    [
+     179.42,
+     "Undo the operations in reverse order."
+    ],
+    [
+     182.33,
+     "Undo plus 30 first, then divide by 25."
+    ],
+    [
+     185.87,
+     "130 minus 30 is 100."
+    ],
+    [
+     188.33,
+     "100 divided by 25 is 4 hours."
+    ],
+    [
+     192.45,
+     "Phone companies describe plans with functions."
+    ],
+    [
+     196.11,
+     "A plan might cost 12 dollars a month, plus 5 cents per text: C equals 0.05 t plus 12."
+    ],
+    [
+     203.43,
+     "Writing the plans as functions makes it easy to compare them, and find which is cheaper for you."
+    ],
+    [
+     210.42,
+     "One last question."
+    ],
+    [
+     211.63,
+     "Is x goes to x squared a function?"
+    ],
+    [
+     213.92,
+     "Pause the video and choose."
+    ],
+    [
+     217.14,
+     "Yes."
+    ],
+    [
+     217.43,
+     "Each input has exactly one square."
+    ],
+    [
+     219.9,
+     "Two inputs can give the same output, like 3 and negative 3 both giving 9."
+    ],
+    [
+     225.22,
+     "That is allowed."
+    ],
+    [
+     226.93,
+     "To remember: a function gives exactly one output for each input."
+    ],
+    [
+     231.87,
+     "Output equals rate times input, plus the fixed amount."
+    ],
+    [
+     236.11,
+     "Substitute to find outputs."
+    ],
+    [
+     238.0,
+     "Solve to find inputs."
+    ],
+    [
+     240.03,
+     "The same rule can be words, a machine, a table, a graph or an equation."
+    ],
+    [
+     245.18,
+     "Great work! Now practise lesson 11.1 on Camday."
+    ]
+   ],
+   "times": {
+    "11.1-k1": 16.93,
+    "11.1-k2": 69.67,
+    "11.1-k3": 139.56,
+    "11.1-k4": 216.09
+   },
+   "up": true
+  },
+  "9.3": {
+   "src": "media/mv/s8/9-3.mp4",
+   "poster": "media/mv/s8/9-3_poster.jpg",
+   "srt": "media/mv/s8/9-3.srt",
+   "dur": 259.2,
+   "captions": [
+    [
+     6.28,
+     "Row 1 of a cinema has 12 seats."
+    ],
+    [
+     8.53,
+     "Each row has 3 more seats than the row in front."
+    ],
+    [
+     12.55,
+     "How many seats are there in row 25?"
+    ],
+    [
+     15.1,
+     "Pause the video and work it out."
+    ],
+    [
+     18.84,
+     "The difference is 3, so start with 3 n."
+    ],
+    [
+     22.04,
+     "3 times 1 is 3, but row 1 has 12, so add 9."
+    ],
+    [
+     25.58,
+     "The rule is 3 n plus 9."
+    ],
+    [
+     28.02,
+     "For row 25: 3 times 25 is 75, plus 9 is 84 seats."
+    ],
+    [
+     33.69,
+     "Remember: a position-to-term rule gives a term from its position."
+    ],
+    [
+     38.79,
+     "Term equals 3 times the position plus 9 gives 12, 15, 18, and so on."
+    ],
+    [
+     44.67,
+     "The n-th term is the position-to-term rule written in algebra."
+    ],
+    [
+     49.78,
+     "For 12, 15, 18, 21, the n-th term is 3 n plus 9."
+    ],
+    [
+     54.3,
+     "It lets you find any term."
+    ],
+    [
+     56.5,
+     "And it lets you find the position of a term."
+    ],
+    [
+     60.24,
+     "Which row has 105 seats?"
+    ],
+    [
+     62.28,
+     "3 n plus 9 equals 105."
+    ],
+    [
+     64.15,
+     "3 n equals 96, so n equals 32."
+    ],
+    [
+     66.7,
+     "Row 32."
+    ],
+    [
+     67.85,
+     "Your turn."
+    ],
+    [
+     68.65,
+     "Find the n-th term of 2, 9, 16, 23."
+    ],
+    [
+     71.48,
+     "Pause the video and try it."
+    ],
+    [
+     75.06,
+     "The difference is 7, so 7 n."
+    ],
+    [
+     77.26,
+     "7 times 1 is 7, and the first term is 2, so subtract 5."
+    ],
+    [
+     81.59,
+     "The n-th term is 7 n minus 5."
+    ],
+    [
+     84.42,
+     "To find the first term above a value, solve an inequality."
+    ],
+    [
+     89.18,
+     "Which is the first row with more than 100 seats?"
+    ],
+    [
+     93.12,
+     "3 n plus 9 is greater than 100, so n is greater than 30.33."
+    ],
+    [
+     97.96,
+     "That is row 31, with 102 seats."
+    ],
+    [
+     101.05,
+     "Here is the method."
+    ],
+    [
+     102.4,
+     "Step 1: find the common difference, d."
+    ],
+    [
+     105.65,
+     "Step 2: write d n, then add or subtract to match the first term."
+    ],
+    [
+     110.58,
+     "Step 3: substitute n to find terms."
+    ],
+    [
+     113.1,
+     "Solve an equation to find a position."
+    ],
+    [
+     116.31,
+     "Step 4: check with a term you know."
+    ],
+    [
+     119.38,
+     "Find the n-th term of negative 8, negative 3, 2, 7."
+    ],
+    [
+     123.64,
+     "The difference is 5, so 5 n."
+    ],
+    [
+     125.99,
+     "5 times 1 is 5."
+    ],
+    [
+     127.24,
+     "To get negative 8, subtract 13."
+    ],
+    [
+     129.83,
+     "The n-th term is 5 n minus 13."
+    ],
+    [
+     132.89,
+     "Which term is 132?"
+    ],
+    [
+     134.72,
+     "5 n minus 13 equals 132."
+    ],
+    [
+     137.16,
+     "5 n equals 145, so n equals 29."
+    ],
+    [
+     140.32,
+     "It is the 29th term."
+    ],
+    [
+     142.9,
+     "Your turn."
+    ],
+    [
+     143.69,
+     "Which term of 3 n plus 9 is 90?"
+    ],
+    [
+     146.13,
+     "Pause and work it out."
+    ],
+    [
+     149.26,
+     "3 n plus 9 equals 90."
+    ],
+    [
+     151.08,
+     "Subtract 9: 3 n equals 81."
+    ],
+    [
+     153.34,
+     "Divide by 3: n equals 27."
+    ],
+    [
+     155.51,
+     "It is the 27th term, just like the cinema row."
+    ],
+    [
+     160.06,
+     "Find the n-th term of 50, 46, 42, 38, and its 15th term."
+    ],
+    [
+     165.0,
+     "The difference is negative 4."
+    ],
+    [
+     167.55,
+     "50 minus negative 4 is 54, so the n-th term is 54 minus 4 n."
+    ],
+    [
+     173.39,
+     "The 15th term is 54 minus 60, which is negative 6."
+    ],
+    [
+     178.58,
+     "Eva finds the n-th term of 9, 14, 19, 24."
+    ],
+    [
+     182.07,
+     "Which line goes wrong first?"
+    ],
+    [
+     185.01,
+     "Line 2 is wrong."
+    ],
+    [
+     186.27,
+     "5 n plus 9 gives 14 when n is 1, not 9."
+    ],
+    [
+     189.35,
+     "She added the first term instead of comparing."
+    ],
+    [
+     193.52,
+     "5 times 1 is 5."
+    ],
+    [
+     194.81,
+     "To get 9, add 4."
+    ],
+    [
+     196.18,
+     "The n-th term is 5 n plus 4."
+    ],
+    [
+     199.14,
+     "Some taxi fares are a sequence."
+    ],
+    [
+     201.4,
+     "A ride starts at 4 dollars, and each kilometre adds 2 dollars."
+    ],
+    [
+     205.93,
+     "After n kilometres, the fare is 2 n plus 4 dollars."
+    ],
+    [
+     210.2,
+     "How far can you go for 30 dollars?"
+    ],
+    [
+     213.08,
+     "2 n plus 4 equals 30 gives n equals 13 kilometres."
+    ],
+    [
+     217.85,
+     "One last question."
+    ],
+    [
+     219.32,
+     "What is the 20th term of 100 minus 3 n?"
+    ],
+    [
+     222.51,
+     "Pause the video and answer."
+    ],
+    [
+     226.11,
+     "Put n equals 20."
+    ],
+    [
+     227.93,
+     "3 times 20 is 60, and 100 minus 60 is 40."
+    ],
+    [
+     233.15,
+     "To remember: the n-th term of a linear sequence is d n plus c, where c is the first term minus d."
+    ],
+    [
+     240.01,
+     "Substitute to find terms."
+    ],
+    [
+     242.58,
+     "Solve the n-th term equal to a value to find its position."
+    ],
+    [
+     246.47,
+     "A whole number n means it is in the sequence."
+    ],
+    [
+     250.03,
+     "Use inequalities to find the first term over a value."
+    ],
+    [
+     254.11,
+     "Great work! Now practise lesson 9.3 on Camday."
+    ]
+   ],
+   "times": {
+    "9.3-k1": 17.79,
+    "9.3-k2": 74.01,
+    "9.3-k3": 148.21,
+    "9.3-k4": 225.06
+   },
+   "up": false
+  },
+  "11.2": {
+   "src": "media/mv/s8/11-2.mp4",
+   "poster": "media/mv/s8/11-2_poster.jpg",
+   "srt": "media/mv/s8/11-2.srt",
+   "dur": 212.0,
+   "captions": [
+    [
+     6.5,
+     "Two savings plans are described by y equals 2 x plus 1, and y equals 6 minus x."
+    ],
+    [
+     11.99,
+     "x is in months, and y is in tens of dollars."
+    ],
+    [
+     15.6,
+     "If we plot both lines, they cross."
+    ],
+    [
+     17.93,
+     "What does the crossing point mean?"
+    ],
+    [
+     20.81,
+     "What does the crossing point of the two lines mean?"
+    ],
+    [
+     24.31,
+     "Pause the video and choose."
+    ],
+    [
+     27.56,
+     "At the crossing point, both lines have the same x and the same y."
+    ],
+    [
+     31.85,
+     "So the plans give the same value there."
+    ],
+    [
+     34.97,
+     "They cross at x equals 5 thirds, which is about 1.7 months."
+    ],
+    [
+     40.1,
+     "Remember: to make a table, substitute each x."
+    ],
+    [
+     43.58,
+     "For y equals 2 x plus 1: x equals 0, 1, 2 gives y equals 1, 3, 5."
+    ],
+    [
+     49.15,
+     "Make a table, plot the points, then join them with a ruler."
+    ],
+    [
+     53.06,
+     "Extend the line across the grid, and label it."
+    ],
+    [
+     56.65,
+     "Your turn."
+    ],
+    [
+     57.35,
+     "For y equals 2 x plus 1, what is y when x is negative 1?"
+    ],
+    [
+     61.31,
+     "Pause the video and try it."
+    ],
+    [
+     64.62,
+     "2 times negative 1 is negative 2, plus 1 is negative 1."
+    ],
+    [
+     68.62,
+     "Now some special lines."
+    ],
+    [
+     70.29,
+     "x equals a number is a vertical line."
+    ],
+    [
+     72.98,
+     "y equals a number is a horizontal line."
+    ],
+    [
+     76.37,
+     "y equals x goes through the origin, at 45 degrees."
+    ],
+    [
+     79.92,
+     "Every point on it has equal coordinates."
+    ],
+    [
+     83.31,
+     "Here is the method."
+    ],
+    [
+     84.71,
+     "Step 1: choose at least 3 x values."
+    ],
+    [
+     87.28,
+     "Include negatives if the axes allow."
+    ],
+    [
+     90.47,
+     "Step 2: work out y for each one."
+    ],
+    [
+     92.73,
+     "Check the pattern is steady."
+    ],
+    [
+     95.26,
+     "Step 3: plot carefully."
+    ],
+    [
+     96.88,
+     "Join with a ruler, extend, and label the line."
+    ],
+    [
+     100.67,
+     "Step 4: if a point is not on the line, check that point's calculation."
+    ],
+    [
+     106.03,
+     "Plot y equals negative 2 x plus 3, for x from negative 1 to 3."
+    ],
+    [
+     110.94,
+     "The y values are 5, 3, 1, negative 1, negative 3."
+    ],
+    [
+     114.82,
+     "The line slopes down."
+    ],
+    [
+     117.03,
+     "Your turn."
+    ],
+    [
+     117.75,
+     "Is the line y equals negative 3 horizontal or vertical?"
+    ],
+    [
+     121.7,
+     "Pause and choose."
+    ],
+    [
+     124.32,
+     "Every point has y equal to negative 3, whatever x is."
+    ],
+    [
+     127.97,
+     "So it is a horizontal line."
+    ],
+    [
+     130.39,
+     "Plot x plus y equals 5."
+    ],
+    [
+     132.07,
+     "First make y the subject: y equals 5 minus x."
+    ],
+    [
+     135.37,
+     "When x is 0, y is 5."
+    ],
+    [
+     136.84,
+     "When x is 5, y is 0."
+    ],
+    [
+     138.31,
+     "Join those two points."
+    ],
+    [
+     140.47,
+     "Ruby makes a table for y equals 4 minus 2 x, for x equals negative 1, 0, 1, 2."
+    ],
+    [
+     146.46,
+     "Which line is wrong?"
+    ],
+    [
+     148.54,
+     "Line 1 is wrong at x equals negative 1."
+    ],
+    [
+     151.54,
+     "4 minus 2 times negative 1 is 4 plus 2, which is 6."
+    ],
+    [
+     155.46,
+     "Subtracting a negative adds."
+    ],
+    [
+     158.17,
+     "The values are 6, 4, 2, 0."
+    ],
+    [
+     161.12,
+     "Businesses plot cost and income on the same graph."
+    ],
+    [
+     164.53,
+     "Where the two lines cross, income equals cost."
+    ],
+    [
+     167.67,
+     "That is called the break-even point."
+    ],
+    [
+     170.68,
+     "To the right of it, the business makes a profit."
+    ],
+    [
+     173.83,
+     "To the left, it makes a loss."
+    ],
+    [
+     176.28,
+     "One last question."
+    ],
+    [
+     177.55,
+     "Where do y equals x and y equals 4 cross?"
+    ],
+    [
+     180.43,
+     "Pause the video and choose."
+    ],
+    [
+     183.73,
+     "On y equals 4, y is 4."
+    ],
+    [
+     185.31,
+     "On y equals x, x equals y, so x is 4 too."
+    ],
+    [
+     188.26,
+     "They cross at 4, 4."
+    ],
+    [
+     190.17,
+     "To remember: make a table, plot, use a ruler, extend and label."
+    ],
+    [
+     194.89,
+     "Rearrange to y equals something first."
+    ],
+    [
+     198.11,
+     "x equals a number is vertical."
+    ],
+    [
+     200.15,
+     "y equals a number is horizontal."
+    ],
+    [
+     202.88,
+     "Where two lines cross, they have the same value."
+    ],
+    [
+     206.6,
+     "Great work! Now practise lesson 11.2 on Camday."
+    ]
+   ],
+   "times": {
+    "11.2-k1": 26.51,
+    "11.2-k2": 63.57,
+    "11.2-k3": 123.27,
+    "11.2-k4": 182.68
    },
    "up": false
   }

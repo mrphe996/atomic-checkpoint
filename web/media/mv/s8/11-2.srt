@@ -1,0 +1,263 @@
+1
+00:00:06,500 --> 00:00:11,940
+Two savings plans are described by y equals 2 x plus 1, and y equals 6 minus x.
+
+2
+00:00:11,990 --> 00:00:15,550
+x is in months, and y is in tens of dollars.
+
+3
+00:00:15,600 --> 00:00:17,880
+If we plot both lines, they cross.
+
+4
+00:00:17,930 --> 00:00:20,760
+What does the crossing point mean?
+
+5
+00:00:20,810 --> 00:00:24,260
+What does the crossing point of the two lines mean?
+
+6
+00:00:24,310 --> 00:00:27,510
+Pause the video and choose.
+
+7
+00:00:27,560 --> 00:00:31,800
+At the crossing point, both lines have the same x and the same y.
+
+8
+00:00:31,850 --> 00:00:34,920
+So the plans give the same value there.
+
+9
+00:00:34,970 --> 00:00:40,050
+They cross at x equals 5 thirds, which is about 1.7 months.
+
+10
+00:00:40,100 --> 00:00:43,530
+Remember: to make a table, substitute each x.
+
+11
+00:00:43,580 --> 00:00:49,100
+For y equals 2 x plus 1: x equals 0, 1, 2 gives y equals 1, 3, 5.
+
+12
+00:00:49,150 --> 00:00:53,010
+Make a table, plot the points, then join them with a ruler.
+
+13
+00:00:53,060 --> 00:00:56,600
+Extend the line across the grid, and label it.
+
+14
+00:00:56,650 --> 00:00:57,300
+Your turn.
+
+15
+00:00:57,350 --> 00:01:01,260
+For y equals 2 x plus 1, what is y when x is negative 1?
+
+16
+00:01:01,310 --> 00:01:04,570
+Pause the video and try it.
+
+17
+00:01:04,620 --> 00:01:08,570
+2 times negative 1 is negative 2, plus 1 is negative 1.
+
+18
+00:01:08,620 --> 00:01:10,240
+Now some special lines.
+
+19
+00:01:10,290 --> 00:01:12,930
+x equals a number is a vertical line.
+
+20
+00:01:12,980 --> 00:01:16,320
+y equals a number is a horizontal line.
+
+21
+00:01:16,370 --> 00:01:19,870
+y equals x goes through the origin, at 45 degrees.
+
+22
+00:01:19,920 --> 00:01:23,260
+Every point on it has equal coordinates.
+
+23
+00:01:23,310 --> 00:01:24,660
+Here is the method.
+
+24
+00:01:24,710 --> 00:01:27,230
+Step 1: choose at least 3 x values.
+
+25
+00:01:27,280 --> 00:01:30,420
+Include negatives if the axes allow.
+
+26
+00:01:30,470 --> 00:01:32,680
+Step 2: work out y for each one.
+
+27
+00:01:32,730 --> 00:01:35,210
+Check the pattern is steady.
+
+28
+00:01:35,260 --> 00:01:36,830
+Step 3: plot carefully.
+
+29
+00:01:36,880 --> 00:01:40,620
+Join with a ruler, extend, and label the line.
+
+30
+00:01:40,670 --> 00:01:45,980
+Step 4: if a point is not on the line, check that point's calculation.
+
+31
+00:01:46,030 --> 00:01:50,890
+Plot y equals negative 2 x plus 3, for x from negative 1 to 3.
+
+32
+00:01:50,940 --> 00:01:54,770
+The y values are 5, 3, 1, negative 1, negative 3.
+
+33
+00:01:54,820 --> 00:01:56,980
+The line slopes down.
+
+34
+00:01:57,030 --> 00:01:57,700
+Your turn.
+
+35
+00:01:57,750 --> 00:02:01,650
+Is the line y equals negative 3 horizontal or vertical?
+
+36
+00:02:01,700 --> 00:02:04,270
+Pause and choose.
+
+37
+00:02:04,320 --> 00:02:07,920
+Every point has y equal to negative 3, whatever x is.
+
+38
+00:02:07,970 --> 00:02:10,340
+So it is a horizontal line.
+
+39
+00:02:10,390 --> 00:02:12,020
+Plot x plus y equals 5.
+
+40
+00:02:12,070 --> 00:02:15,320
+First make y the subject: y equals 5 minus x.
+
+41
+00:02:15,370 --> 00:02:16,790
+When x is 0, y is 5.
+
+42
+00:02:16,840 --> 00:02:18,260
+When x is 5, y is 0.
+
+43
+00:02:18,310 --> 00:02:20,420
+Join those two points.
+
+44
+00:02:20,470 --> 00:02:26,410
+Ruby makes a table for y equals 4 minus 2 x, for x equals negative 1, 0, 1, 2.
+
+45
+00:02:26,460 --> 00:02:28,490
+Which line is wrong?
+
+46
+00:02:28,540 --> 00:02:31,490
+Line 1 is wrong at x equals negative 1.
+
+47
+00:02:31,540 --> 00:02:35,410
+4 minus 2 times negative 1 is 4 plus 2, which is 6.
+
+48
+00:02:35,460 --> 00:02:38,120
+Subtracting a negative adds.
+
+49
+00:02:38,170 --> 00:02:41,070
+The values are 6, 4, 2, 0.
+
+50
+00:02:41,120 --> 00:02:44,480
+Businesses plot cost and income on the same graph.
+
+51
+00:02:44,530 --> 00:02:47,620
+Where the two lines cross, income equals cost.
+
+52
+00:02:47,670 --> 00:02:50,630
+That is called the break-even point.
+
+53
+00:02:50,680 --> 00:02:53,780
+To the right of it, the business makes a profit.
+
+54
+00:02:53,830 --> 00:02:56,230
+To the left, it makes a loss.
+
+55
+00:02:56,280 --> 00:02:57,500
+One last question.
+
+56
+00:02:57,550 --> 00:03:00,380
+Where do y equals x and y equals 4 cross?
+
+57
+00:03:00,430 --> 00:03:03,680
+Pause the video and choose.
+
+58
+00:03:03,730 --> 00:03:05,260
+On y equals 4, y is 4.
+
+59
+00:03:05,310 --> 00:03:08,210
+On y equals x, x equals y, so x is 4 too.
+
+60
+00:03:08,260 --> 00:03:10,120
+They cross at 4, 4.
+
+61
+00:03:10,170 --> 00:03:14,840
+To remember: make a table, plot, use a ruler, extend and label.
+
+62
+00:03:14,890 --> 00:03:18,060
+Rearrange to y equals something first.
+
+63
+00:03:18,110 --> 00:03:20,100
+x equals a number is vertical.
+
+64
+00:03:20,150 --> 00:03:22,830
+y equals a number is horizontal.
+
+65
+00:03:22,880 --> 00:03:26,550
+Where two lines cross, they have the same value.
+
+66
+00:03:26,600 --> 00:03:31,950
+Great work! Now practise lesson 11.2 on Camday.

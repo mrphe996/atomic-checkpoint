@@ -1,0 +1,311 @@
+1
+00:00:06,280 --> 00:00:08,480
+Row 1 of a cinema has 12 seats.
+
+2
+00:00:08,530 --> 00:00:12,500
+Each row has 3 more seats than the row in front.
+
+3
+00:00:12,550 --> 00:00:15,050
+How many seats are there in row 25?
+
+4
+00:00:15,100 --> 00:00:18,790
+Pause the video and work it out.
+
+5
+00:00:18,840 --> 00:00:21,990
+The difference is 3, so start with 3 n.
+
+6
+00:00:22,040 --> 00:00:25,530
+3 times 1 is 3, but row 1 has 12, so add 9.
+
+7
+00:00:25,580 --> 00:00:27,970
+The rule is 3 n plus 9.
+
+8
+00:00:28,020 --> 00:00:33,640
+For row 25: 3 times 25 is 75, plus 9 is 84 seats.
+
+9
+00:00:33,690 --> 00:00:38,740
+Remember: a position-to-term rule gives a term from its position.
+
+10
+00:00:38,790 --> 00:00:44,620
+Term equals 3 times the position plus 9 gives 12, 15, 18, and so on.
+
+11
+00:00:44,670 --> 00:00:49,730
+The n-th term is the position-to-term rule written in algebra.
+
+12
+00:00:49,780 --> 00:00:54,250
+For 12, 15, 18, 21, the n-th term is 3 n plus 9.
+
+13
+00:00:54,300 --> 00:00:56,450
+It lets you find any term.
+
+14
+00:00:56,500 --> 00:01:00,190
+And it lets you find the position of a term.
+
+15
+00:01:00,240 --> 00:01:02,230
+Which row has 105 seats?
+
+16
+00:01:02,280 --> 00:01:04,100
+3 n plus 9 equals 105.
+
+17
+00:01:04,150 --> 00:01:06,650
+3 n equals 96, so n equals 32.
+
+18
+00:01:06,700 --> 00:01:07,800
+Row 32.
+
+19
+00:01:07,850 --> 00:01:08,600
+Your turn.
+
+20
+00:01:08,650 --> 00:01:11,430
+Find the n-th term of 2, 9, 16, 23.
+
+21
+00:01:11,480 --> 00:01:15,010
+Pause the video and try it.
+
+22
+00:01:15,060 --> 00:01:17,210
+The difference is 7, so 7 n.
+
+23
+00:01:17,260 --> 00:01:21,540
+7 times 1 is 7, and the first term is 2, so subtract 5.
+
+24
+00:01:21,590 --> 00:01:24,370
+The n-th term is 7 n minus 5.
+
+25
+00:01:24,420 --> 00:01:29,130
+To find the first term above a value, solve an inequality.
+
+26
+00:01:29,180 --> 00:01:33,070
+Which is the first row with more than 100 seats?
+
+27
+00:01:33,120 --> 00:01:37,910
+3 n plus 9 is greater than 100, so n is greater than 30.33.
+
+28
+00:01:37,960 --> 00:01:41,000
+That is row 31, with 102 seats.
+
+29
+00:01:41,050 --> 00:01:42,350
+Here is the method.
+
+30
+00:01:42,400 --> 00:01:45,600
+Step 1: find the common difference, d.
+
+31
+00:01:45,650 --> 00:01:50,530
+Step 2: write d n, then add or subtract to match the first term.
+
+32
+00:01:50,580 --> 00:01:53,050
+Step 3: substitute n to find terms.
+
+33
+00:01:53,100 --> 00:01:56,260
+Solve an equation to find a position.
+
+34
+00:01:56,310 --> 00:01:59,330
+Step 4: check with a term you know.
+
+35
+00:01:59,380 --> 00:02:03,590
+Find the n-th term of negative 8, negative 3, 2, 7.
+
+36
+00:02:03,640 --> 00:02:05,940
+The difference is 5, so 5 n.
+
+37
+00:02:05,990 --> 00:02:07,190
+5 times 1 is 5.
+
+38
+00:02:07,240 --> 00:02:09,780
+To get negative 8, subtract 13.
+
+39
+00:02:09,830 --> 00:02:12,840
+The n-th term is 5 n minus 13.
+
+40
+00:02:12,890 --> 00:02:14,670
+Which term is 132?
+
+41
+00:02:14,720 --> 00:02:17,110
+5 n minus 13 equals 132.
+
+42
+00:02:17,160 --> 00:02:20,270
+5 n equals 145, so n equals 29.
+
+43
+00:02:20,320 --> 00:02:22,850
+It is the 29th term.
+
+44
+00:02:22,900 --> 00:02:23,640
+Your turn.
+
+45
+00:02:23,690 --> 00:02:26,080
+Which term of 3 n plus 9 is 90?
+
+46
+00:02:26,130 --> 00:02:29,210
+Pause and work it out.
+
+47
+00:02:29,260 --> 00:02:31,030
+3 n plus 9 equals 90.
+
+48
+00:02:31,080 --> 00:02:33,290
+Subtract 9: 3 n equals 81.
+
+49
+00:02:33,340 --> 00:02:35,460
+Divide by 3: n equals 27.
+
+50
+00:02:35,510 --> 00:02:40,010
+It is the 27th term, just like the cinema row.
+
+51
+00:02:40,060 --> 00:02:44,950
+Find the n-th term of 50, 46, 42, 38, and its 15th term.
+
+52
+00:02:45,000 --> 00:02:47,500
+The difference is negative 4.
+
+53
+00:02:47,550 --> 00:02:53,340
+50 minus negative 4 is 54, so the n-th term is 54 minus 4 n.
+
+54
+00:02:53,390 --> 00:02:58,530
+The 15th term is 54 minus 60, which is negative 6.
+
+55
+00:02:58,580 --> 00:03:02,020
+Eva finds the n-th term of 9, 14, 19, 24.
+
+56
+00:03:02,070 --> 00:03:04,960
+Which line goes wrong first?
+
+57
+00:03:05,010 --> 00:03:06,220
+Line 2 is wrong.
+
+58
+00:03:06,270 --> 00:03:09,300
+5 n plus 9 gives 14 when n is 1, not 9.
+
+59
+00:03:09,350 --> 00:03:13,470
+She added the first term instead of comparing.
+
+60
+00:03:13,520 --> 00:03:14,760
+5 times 1 is 5.
+
+61
+00:03:14,810 --> 00:03:16,130
+To get 9, add 4.
+
+62
+00:03:16,180 --> 00:03:19,090
+The n-th term is 5 n plus 4.
+
+63
+00:03:19,140 --> 00:03:21,350
+Some taxi fares are a sequence.
+
+64
+00:03:21,400 --> 00:03:25,880
+A ride starts at 4 dollars, and each kilometre adds 2 dollars.
+
+65
+00:03:25,930 --> 00:03:30,150
+After n kilometres, the fare is 2 n plus 4 dollars.
+
+66
+00:03:30,200 --> 00:03:33,030
+How far can you go for 30 dollars?
+
+67
+00:03:33,080 --> 00:03:37,800
+2 n plus 4 equals 30 gives n equals 13 kilometres.
+
+68
+00:03:37,850 --> 00:03:39,270
+One last question.
+
+69
+00:03:39,320 --> 00:03:42,460
+What is the 20th term of 100 minus 3 n?
+
+70
+00:03:42,510 --> 00:03:46,060
+Pause the video and answer.
+
+71
+00:03:46,110 --> 00:03:47,880
+Put n equals 20.
+
+72
+00:03:47,930 --> 00:03:53,100
+3 times 20 is 60, and 100 minus 60 is 40.
+
+73
+00:03:53,150 --> 00:03:59,960
+To remember: the n-th term of a linear sequence is d n plus c, where c is the first term minus d.
+
+74
+00:04:00,010 --> 00:04:02,530
+Substitute to find terms.
+
+75
+00:04:02,580 --> 00:04:06,420
+Solve the n-th term equal to a value to find its position.
+
+76
+00:04:06,470 --> 00:04:09,980
+A whole number n means it is in the sequence.
+
+77
+00:04:10,030 --> 00:04:14,060
+Use inequalities to find the first term over a value.
+
+78
+00:04:14,110 --> 00:04:19,150
+Great work! Now practise lesson 9.3 on Camday.
