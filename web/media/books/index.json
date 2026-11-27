@@ -2182,5 +2182,31 @@
     10
    ]
   }
+ },
+ "c4u01": {
+  "title": "Camday Maths Stage 4 · Unit 1: Numbers and the Number System",
+  "pages": 14,
+  "dir": "media/books/c4u01/",
+  "ext": "webp",
+  "pdf": "media/books/c4u01.pdf?v=03176e19d5",
+  "v": "03176e19d5",
+  "secs": {
+   "1.1": [
+    2,
+    5
+   ],
+   "1.2": [
+    6,
+    9
+   ],
+   "1.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
  }
 }

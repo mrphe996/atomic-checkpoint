@@ -91,6 +91,7 @@
     const mi = o.minor || (mx - mn <= 2 && !o.ticks ? 10 : 0);
     if (mi > 1) for (let v = mn; v < mx; v++) for (let k = 1; k < mi; k++) s += L(sx(v + k / mi), y - 4, sx(v + k / mi), y + 4, { w: 1 });
     (o.ticks || []).forEach(([v, lb]) => { s += L(sx(v), y - 7, sx(v), y + 7, { w: 1.5 }) + T(sx(v), y + 24, lb, { size: 13 }); });
+    (o.marks || []).forEach(v => { s += `<circle cx="${sx(v)}" cy="${y}" r="7" fill="${BLUE}"/>`; });
     if (o.mark != null) { const xm = sx(o.mark), idm = id + 'm'; s += arrow(idm, BLUE) + L(xm, y - 70, xm, y - 10, { c: BLUE, w: 3, m: idm }); }
     const a = o.from, b = o.to, yy = y - 34;
     if (a || b) { const xa = a ? sx(a.v) : x0 - 20, xb = b ? sx(b.v) : x1 + 20; s += L(xa, yy, xb, yy, { c: BLUE, w: 4 }) + (!a ? `<path d="M${x0 - 14} ${yy - 6} l-10 6 l10 6" fill="${BLUE}"/>` : '') + (!b ? `<path d="M${x1 + 14} ${yy - 6} l10 6 l-10 6" fill="${BLUE}"/>` : '');
