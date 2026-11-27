@@ -2764,5 +2764,27 @@
     10
    ]
   }
+ },
+ "c3u08": {
+  "title": "Camday Maths Stage 3 · Unit 8: Time",
+  "pages": 10,
+  "dir": "media/books/c3u08/",
+  "ext": "webp",
+  "pdf": "media/books/c3u08.pdf?v=f6b4fd5522",
+  "v": "f6b4fd5522",
+  "secs": {
+   "8.1": [
+    2,
+    5
+   ],
+   "8.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
