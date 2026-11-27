@@ -23,3 +23,15 @@ def ex(id, prompt, ans, hint, reason, v="x", lhs=None, **kw):
 
 
 NB = ["^[^()]*$"]
+
+
+def pt(id, prompt, x, y, hint, reason, **kw):
+    """a coordinate answer such as (3, −2)"""
+    xs, ys = str(x).replace("-", "[-−]"), str(y).replace("-", "[-−]")
+    rx = rf"/^\s*\(?\s*{xs}\s*[,;]\s*{ys}\s*\)?\s*$/"
+    return short(id, prompt, [f"({x}, {y})", rx], hint, reason, skill="Application", **kw)
+
+
+def bg(id, prompt, deg, hint, reason, **kw):
+    """a three-figure bearing"""
+    return short(id, prompt + " Write three figures, e.g. 045.", [f"{deg:03d}", f"{deg:03d}°"], hint, reason, **kw)

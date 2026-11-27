@@ -1298,5 +1298,61 @@
     18
    ]
   }
+ },
+ "c9u13": {
+  "title": "Camday Maths Stage 9 · Unit 13: Position and transformation",
+  "pages": 20,
+  "dir": "media/books/c9u13/",
+  "ext": "webp",
+  "pdf": "media/books/c9u13.pdf?v=245471dbfb",
+  "v": "245471dbfb",
+  "secs": {
+   "13.1": [
+    2,
+    6
+   ],
+   "13.2": [
+    7,
+    11
+   ],
+   "13.3": [
+    12,
+    15
+   ],
+   "13.4": [
+    16,
+    19
+   ],
+   "answers": [
+    20,
+    20
+   ]
+  }
+ },
+ "c9u14": {
+  "title": "Camday Maths Stage 9 · Unit 14: Volume, surface area and symmetry",
+  "pages": 16,
+  "dir": "media/books/c9u14/",
+  "ext": "webp",
+  "pdf": "media/books/c9u14.pdf?v=3a745f5b8c",
+  "v": "3a745f5b8c",
+  "secs": {
+   "14.1": [
+    2,
+    6
+   ],
+   "14.2": [
+    7,
+    11
+   ],
+   "14.3": [
+    12,
+    15
+   ],
+   "answers": [
+    16,
+    16
+   ]
+  }
  }
 }
