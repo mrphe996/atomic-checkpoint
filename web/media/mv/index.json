@@ -25790,5 +25790,4582 @@
    },
    "up": true
   }
+ },
+ "8": {
+  "1.2": {
+   "src": "media/mv/s8/1-2.mp4",
+   "poster": "media/mv/s8/1-2_poster.jpg",
+   "srt": "media/mv/s8/1-2.srt",
+   "dur": 331.24,
+   "captions": [
+    [
+     7.44,
+     "Overnight, the temperature on a mountain falls by 3 degrees every hour, for 6 hours."
+    ],
+    [
+     13.59,
+     "A scientist writes this as 6 times negative 3."
+    ],
+    [
+     17.5,
+     "What is 6 times negative 3?"
+    ],
+    [
+     19.49,
+     "Pause the video and work it out."
+    ],
+    [
+     23.26,
+     "Six drops of 3 degrees is a drop of 18 degrees."
+    ],
+    [
+     27.17,
+     "So 6 times negative 3 is negative 18."
+    ],
+    [
+     30.79,
+     "But what could negative 3 times negative 6 mean?"
+    ],
+    [
+     34.23,
+     "Can a negative times a negative ever be positive?"
+    ],
+    [
+     37.73,
+     "Let's find out."
+    ],
+    [
+     39.36,
+     "Remember: 4 times negative 5 means four lots of negative 5."
+    ],
+    [
+     44.13,
+     "That is negative 20."
+    ],
+    [
+     46.3,
+     "And negative 7 times 6 is negative 42."
+    ],
+    [
+     49.22,
+     "A positive and a negative always give a negative answer."
+    ],
+    [
+     54.07,
+     "Look at this pattern."
+    ],
+    [
+     55.52,
+     "Each time, the first number goes down by 1."
+    ],
+    [
+     59.06,
+     "The answers go up by 4 each time."
+    ],
+    [
+     61.76,
+     "Negative 12, negative 8, negative 4, then 0."
+    ],
+    [
+     65.92,
+     "Keep the pattern going."
+    ],
+    [
+     67.7,
+     "Negative 1 times negative 4 is 4."
+    ],
+    [
+     70.25,
+     "Negative 2 times negative 4 is 8."
+    ],
+    [
+     72.8,
+     "A negative times a negative is positive."
+    ],
+    [
+     76.44,
+     "Your turn."
+    ],
+    [
+     77.18,
+     "What is negative 9 times negative 4?"
+    ],
+    [
+     79.86,
+     "Pause the video and try it."
+    ],
+    [
+     83.28,
+     "9 times 4 is 36."
+    ],
+    [
+     84.59,
+     "The signs are the same, so the answer is positive."
+    ],
+    [
+     88.68,
+     "Negative 9 times negative 4 is 36."
+    ],
+    [
+     92.01,
+     "The same sign rules work for dividing."
+    ],
+    [
+     94.64,
+     "Same signs give a positive answer."
+    ],
+    [
+     96.98,
+     "Different signs give a negative answer."
+    ],
+    [
+     100.23,
+     "For longer calculations, the order of operations stays the same: brackets first, then indices, or powers, then times and divide, then add and subtract."
+    ],
+    [
+     111.07,
+     "Here is the method."
+    ],
+    [
+     112.39,
+     "Step 1: work out the size of the answer, ignoring the signs."
+    ],
+    [
+     117.08,
+     "Step 2: same signs give a positive answer."
+    ],
+    [
+     120.12,
+     "Different signs give a negative answer."
+    ],
+    [
+     123.49,
+     "Step 3: for longer calculations, follow the order of operations."
+    ],
+    [
+     128.64,
+     "Step 4: when you multiply several numbers, count the negatives."
+    ],
+    [
+     133.1,
+     "An even number of negatives gives a positive answer."
+    ],
+    [
+     136.78,
+     "An odd number gives a negative."
+    ],
+    [
+     139.52,
+     "Work out negative 56 divided by negative 8, and 56 divided by negative 8."
+    ],
+    [
+     146.02,
+     "56 divided by 8 is 7."
+    ],
+    [
+     147.64,
+     "In the first one, the signs are the same, so the answer is 7."
+    ],
+    [
+     152.9,
+     "In the second one, the signs are different, so the answer is negative 7."
+    ],
+    [
+     158.37,
+     "Work out negative 2, times negative 3, times negative 5."
+    ],
+    [
+     163.25,
+     "Negative 2 times negative 3 is 6."
+    ],
+    [
+     166.1,
+     "Then 6 times negative 5 is negative 30."
+    ],
+    [
+     170.01,
+     "Check by counting: there are 3 negatives."
+    ],
+    [
+     173.01,
+     "3 is odd, so the answer is negative."
+    ],
+    [
+     176.18,
+     "Work out 4, minus 3 times negative 2 squared."
+    ],
+    [
+     179.75,
+     "Indices come first."
+    ],
+    [
+     181.25,
+     "Negative 2 squared is negative 2 times negative 2, which is 4."
+    ],
+    [
+     186.71,
+     "Then multiply."
+    ],
+    [
+     188.01,
+     "3 times 4 is 12."
+    ],
+    [
+     189.49,
+     "Finally, 4 minus 12 is negative 8."
+    ],
+    [
+     193.18,
+     "Your turn."
+    ],
+    [
+     193.9,
+     "What is negative 2 cubed?"
+    ],
+    [
+     195.71,
+     "Pause and work it out."
+    ],
+    [
+     198.7,
+     "Negative 2 cubed is negative 2, times negative 2, times negative 2."
+    ],
+    [
+     203.74,
+     "That is 4 times negative 2, which is negative 8."
+    ],
+    [
+     207.35,
+     "Three negatives give a negative."
+    ],
+    [
+     210.3,
+     "Find the value of 2 A squared, minus 3 B, when A is negative 4 and B is negative 5."
+    ],
+    [
+     217.04,
+     "A squared is negative 4 squared, which is 16."
+    ],
+    [
+     221.16,
+     "2 times 16 is 32."
+    ],
+    [
+     223.26,
+     "3 B is 3 times negative 5, which is negative 15."
+    ],
+    [
+     227.84,
+     "Then 32 minus negative 15 is 32 plus 15, which is 47."
+    ],
+    [
+     233.45,
+     "Omar works out negative 5 squared, written without brackets, and negative 5 in brackets, squared."
+    ],
+    [
+     240.48,
+     "Which line is wrong?"
+    ],
+    [
+     242.48,
+     "Line 1 is wrong."
+    ],
+    [
+     243.66,
+     "Without brackets, only the 5 is squared."
+    ],
+    [
+     246.59,
+     "The minus sign stays outside."
+    ],
+    [
+     249.27,
+     "So negative 5 squared, without brackets, is negative 25."
+    ],
+    [
+     253.8,
+     "With brackets, it is 25."
+    ],
+    [
+     256.29,
+     "Negative numbers describe heights below sea level."
+    ],
+    [
+     260.11,
+     "The shore of the Dead Sea is about 430 metres below sea level."
+    ],
+    [
+     264.85,
+     "We can write that as negative 430 metres."
+    ],
+    [
+     268.53,
+     "A diver who goes down 12 metres a minute for 5 minutes changes depth by 5 times negative 12, which is negative 60 metres."
+    ],
+    [
+     278.74,
+     "One last question."
+    ],
+    [
+     280.12,
+     "What is 20 divided by negative 4, minus negative 3?"
+    ],
+    [
+     284.04,
+     "Pause the video and answer."
+    ],
+    [
+     287.51,
+     "Divide first."
+    ],
+    [
+     288.58,
+     "20 divided by negative 4 is negative 5."
+    ],
+    [
+     291.76,
+     "Then negative 5 minus negative 3 is negative 5 plus 3, which is negative 2."
+    ],
+    [
+     298.45,
+     "To remember: when you multiply or divide, same signs give a positive answer, and different signs give a negative answer."
+    ],
+    [
+     307.22,
+     "The pattern explains why a negative times a negative is positive."
+    ],
+    [
+     312.27,
+     "Use the order of operations: brackets, indices, times and divide, add and subtract."
+    ],
+    [
+     318.53,
+     "Negative 5 in brackets, squared, is positive."
+    ],
+    [
+     321.85,
+     "Negative 5 squared, without brackets, is negative."
+    ],
+    [
+     326.09,
+     "Great work! Now practise lesson 1.2 on Camday."
+    ]
+   ],
+   "times": {
+    "1.2-k1": 22.21,
+    "1.2-k2": 82.23,
+    "1.2-k3": 197.65,
+    "1.2-k4": 286.46
+   },
+   "up": true
+  },
+  "1.1": {
+   "src": "media/mv/s8/1-1.mp4",
+   "poster": "media/mv/s8/1-1_poster.jpg",
+   "srt": "media/mv/s8/1-1.srt",
+   "dur": 386.92,
+   "captions": [
+    [
+     7.1,
+     "When you pay for something online, your card details are locked with a secret code."
+    ],
+    [
+     12.72,
+     "The lock is built from two very large prime numbers."
+    ],
+    [
+     16.78,
+     "Multiplying the two primes is easy for a computer."
+    ],
+    [
+     20.24,
+     "But going backwards, and finding the two primes from the answer, is extremely hard."
+    ],
+    [
+     25.97,
+     "That keeps the code safe."
+    ],
+    [
+     28.25,
+     "Let's try a small one."
+    ],
+    [
+     29.86,
+     "91 is made by multiplying two primes."
+    ],
+    [
+     33.13,
+     "Which two primes multiply to make 91?"
+    ],
+    [
+     35.86,
+     "Pause the video and work it out."
+    ],
+    [
+     39.62,
+     "Try the primes in order."
+    ],
+    [
+     41.52,
+     "91 is odd, so 2 does not work."
+    ],
+    [
+     43.9,
+     "9 plus 1 is 10, so 3 does not work."
+    ],
+    [
+     46.68,
+     "It does not end in 0 or 5, so 5 does not work."
+    ],
+    [
+     50.88,
+     "7 works."
+    ],
+    [
+     51.67,
+     "91 divided by 7 is 13."
+    ],
+    [
+     53.83,
+     "So 91 equals 7 times 13."
+    ],
+    [
+     56.19,
+     "Both are prime."
+    ],
+    [
+     58.22,
+     "Remember: a prime number has exactly two factors, 1 and itself."
+    ],
+    [
+     63.18,
+     "2, 3, 5, 7, 11 and 13 are prime."
+    ],
+    [
+     65.7,
+     "1 is not prime, because it has only one factor."
+    ],
+    [
+     69.96,
+     "The highest common factor, or H C F, is the biggest number that divides into both numbers."
+    ],
+    [
+     76.03,
+     "The lowest common multiple, or L C M, is the smallest number that both divide into."
+    ],
+    [
+     82.17,
+     "Every whole number bigger than 1 is either prime, or it can be written as primes multiplied together."
+    ],
+    [
+     88.59,
+     "And there is only one way to do it."
+    ],
+    [
+     91.37,
+     "A factor tree finds them."
+    ],
+    [
+     93.41,
+     "Take 252."
+    ],
+    [
+     94.15,
+     "Split it into any factor pair, say 4 times 63."
+    ],
+    [
+     98.46,
+     "Keep splitting until every branch ends in a prime."
+    ],
+    [
+     102.54,
+     "4 is 2 times 2."
+    ],
+    [
+     103.77,
+     "63 is 7 times 9, and 9 is 3 times 3."
+    ],
+    [
+     106.71,
+     "The primes are circled."
+    ],
+    [
+     109.14,
+     "Multiply them together and write it in index form."
+    ],
+    [
+     113.16,
+     "252 equals 2 squared, times 3 squared, times 7."
+    ],
+    [
+     117.49,
+     "Your turn."
+    ],
+    [
+     118.23,
+     "Write 100 as a product of primes, in index form."
+    ],
+    [
+     121.8,
+     "Pause the video and try it."
+    ],
+    [
+     125.21,
+     "100 is 10 times 10, and each 10 is 2 times 5."
+    ],
+    [
+     129.56,
+     "That makes two 2s and two 5s."
+    ],
+    [
+     132.36,
+     "So 100 equals 2 squared, times 5 squared."
+    ],
+    [
+     136.86,
+     "Prime factors make H C F and L C M quick."
+    ],
+    [
+     140.39,
+     "Look at 84 and 90."
+    ],
+    [
+     141.94,
+     "84 is 2 squared, times 3, times 7."
+    ],
+    [
+     144.87,
+     "90 is 2, times 3 squared, times 5."
+    ],
+    [
+     148.34,
+     "For the H C F, take only the primes in both numbers, using the lower power."
+    ],
+    [
+     153.65,
+     "They share a 2 and a 3."
+    ],
+    [
+     155.27,
+     "So the H C F is 2 times 3, which is 6."
+    ],
+    [
+     158.51,
+     "For the L C M, take every prime, using the higher power."
+    ],
+    [
+     162.97,
+     "2 squared, times 3 squared, times 5, times 7, is 1,260."
+    ],
+    [
+     167.89,
+     "Here is the method."
+    ],
+    [
+     169.22,
+     "Step 1: write each number as a product of prime factors."
+    ],
+    [
+     173.69,
+     "Step 2: for the H C F, multiply the primes they share, using the lower power of each."
+    ],
+    [
+     179.97,
+     "Step 3: for the L C M, multiply every prime that appears, using the higher power of each."
+    ],
+    [
+     186.63,
+     "Step 4: check."
+    ],
+    [
+     187.59,
+     "The H C F times the L C M equals the two numbers multiplied together."
+    ],
+    [
+     192.86,
+     "Find the H C F and L C M of 60 and 126."
+    ],
+    [
+     196.48,
+     "60 is 2 squared, times 3, times 5."
+    ],
+    [
+     199.64,
+     "126 is 2, times 3 squared, times 7."
+    ],
+    [
+     203.44,
+     "They share 2 and 3."
+    ],
+    [
+     204.94,
+     "The lower powers give 2 times 3."
+    ],
+    [
+     207.47,
+     "The H C F is 6."
+    ],
+    [
+     209.21,
+     "Every prime with the higher power: 2 squared, times 3 squared, times 5, times 7."
+    ],
+    [
+     215.64,
+     "The L C M is 1,260."
+    ],
+    [
+     217.72,
+     "Sometimes the numbers are already in index form."
+    ],
+    [
+     221.39,
+     "A is 2 cubed, times 5 squared, times 7."
+    ],
+    [
+     224.37,
+     "B is 2, times 5 cubed, times 11."
+    ],
+    [
+     226.82,
+     "Find the H C F."
+    ],
+    [
+     228.51,
+     "The shared primes are 2 and 5."
+    ],
+    [
+     231.04,
+     "The lower powers are 2 to the power 1, and 5 squared."
+    ],
+    [
+     235.52,
+     "2 times 25 is 50."
+    ],
+    [
+     237.5,
+     "Your turn."
+    ],
+    [
+     238.26,
+     "Find the H C F of 2 squared, times 3, times 7, and 2, times 3 squared, times 7."
+    ],
+    [
+     244.23,
+     "Pause and work it out."
+    ],
+    [
+     247.3,
+     "All three primes are shared: 2, 3 and 7."
+    ],
+    [
+     250.75,
+     "The lower powers are 2, 3 and 7."
+    ],
+    [
+     253.51,
+     "2 times 3 times 7 is 42."
+    ],
+    [
+     256.13,
+     "One lighthouse flashes every 18 seconds."
+    ],
+    [
+     259.19,
+     "Another flashes every 24 seconds."
+    ],
+    [
+     261.72,
+     "They flash together at midnight."
+    ],
+    [
+     264.18,
+     "When do they next flash together?"
+    ],
+    [
+     267.26,
+     "We need the L C M of 18 and 24."
+    ],
+    [
+     270.2,
+     "18 is 2 times 3 squared."
+    ],
+    [
+     272.47,
+     "24 is 2 cubed times 3."
+    ],
+    [
+     275.1,
+     "The higher powers give 2 cubed times 3 squared, which is 72."
+    ],
+    [
+     279.87,
+     "They flash together again after 72 seconds."
+    ],
+    [
+     283.84,
+     "Zara finds the H C F of 2 cubed, times 3, times 5 squared, and 2 squared, times 3 cubed."
+    ],
+    [
+     290.36,
+     "Which line goes wrong first?"
+    ],
+    [
+     292.98,
+     "Line 2 is wrong."
+    ],
+    [
+     294.05,
+     "For the H C F, use the lower power of each shared prime."
+    ],
+    [
+     297.81,
+     "The higher powers are for the L C M."
+    ],
+    [
+     300.77,
+     "The lower powers are 2 squared and 3."
+    ],
+    [
+     303.72,
+     "So the H C F is 4 times 3, which is 12."
+    ],
+    [
+     307.37,
+     "Some cicadas in North America live underground for years, then all come out together."
+    ],
+    [
+     313.65,
+     "One kind comes out every 13 years, another every 17 years."
+    ],
+    [
+     318.49,
+     "13 and 17 are both prime, so their L C M is 13 times 17, which is 221."
+    ],
+    [
+     324.45,
+     "The two kinds come out in the same year only once every 221 years."
+    ],
+    [
+     330.62,
+     "Scientists think prime cycles help the cicadas avoid predators that come and go in shorter cycles."
+    ],
+    [
+     338.07,
+     "One last question."
+    ],
+    [
+     339.4,
+     "What is the H C F times the L C M of 12 and 18?"
+    ],
+    [
+     342.88,
+     "Pause the video and answer."
+    ],
+    [
+     346.28,
+     "The H C F times the L C M always equals the two numbers multiplied."
+    ],
+    [
+     351.94,
+     "12 times 18 is 216."
+    ],
+    [
+     353.54,
+     "Check: the H C F is 6, the L C M is 36, and 6 times 36 is 216."
+    ],
+    [
+     359.32,
+     "To remember: every whole number bigger than 1 has just one product of prime factors."
+    ],
+    [
+     365.73,
+     "Use a factor tree, and write the answer in index form."
+    ],
+    [
+     369.81,
+     "H C F: the shared primes, with the lower powers."
+    ],
+    [
+     372.97,
+     "L C M: all the primes, with the higher powers."
+    ],
+    [
+     376.54,
+     "And the H C F times the L C M equals the two numbers multiplied together."
+    ],
+    [
+     381.79,
+     "Great work! Now practise lesson 1.1 on Camday."
+    ]
+   ],
+   "times": {
+    "1.1-k1": 38.57,
+    "1.1-k2": 124.16,
+    "1.1-k3": 246.25,
+    "1.1-k4": 345.23
+   },
+   "up": true
+  },
+  "1.4": {
+   "src": "media/mv/s8/1-4.mp4",
+   "poster": "media/mv/s8/1-4_poster.jpg",
+   "srt": "media/mv/s8/1-4.srt",
+   "dur": 290.24,
+   "captions": [
+    [
+     5.53,
+     "A colony of bacteria doubles every hour."
+    ],
+    [
+     8.6,
+     "It starts with 1 cell."
+    ],
+    [
+     10.28,
+     "After 1 hour there are 2 cells, after 2 hours 4, after 3 hours 8."
+    ],
+    [
+     15.82,
+     "After 10 hours, there are 2 to the power 10 cells."
+    ],
+    [
+     20.63,
+     "What is 2 to the power 10?"
+    ],
+    [
+     22.61,
+     "Pause the video and work it out."
+    ],
+    [
+     26.45,
+     "Keep doubling: 16, 32, 64, 128, 256, 512, and 1,024."
+    ],
+    [
+     33.14,
+     "2 to the power 10 is 1,024."
+    ],
+    [
+     37.17,
+     "After 5 more hours, the cells double another 5 times."
+    ],
+    [
+     41.25,
+     "That is 2 to the power 10, times 2 to the power 5."
+    ],
+    [
+     45.1,
+     "Can we write it as one power of 2?"
+    ],
+    [
+     48.27,
+     "Remember: 3 to the power 4 means 3 times 3 times 3 times 3."
+    ],
+    [
+     52.86,
+     "That is 81."
+    ],
+    [
+     53.71,
+     "The small raised number is called the index, or the power."
+    ],
+    [
+     58.77,
+     "2 to the power 5 is 2 times 2 times 2 times 2 times 2, which is 32."
+    ],
+    [
+     65.33,
+     "5 cubed times 5 squared is three 5s times two 5s."
+    ],
+    [
+     69.21,
+     "That is five 5s, so 5 to the power 5."
+    ],
+    [
+     72.15,
+     "When you multiply, the indices add."
+    ],
+    [
+     74.92,
+     "So for the bacteria, 2 to the power 10, times 2 to the power 5, is 2 to the power 15."
+    ],
+    [
+     82.21,
+     "5 to the power 6, divided by 5 squared."
+    ],
+    [
+     85.11,
+     "Two of the six 5s cancel, which leaves four."
+    ],
+    [
+     88.39,
+     "So the answer is 5 to the power 4."
+    ],
+    [
+     90.92,
+     "When you divide, the indices subtract."
+    ],
+    [
+     94.3,
+     "Your turn."
+    ],
+    [
+     95.1,
+     "Simplify 10 to the power 4, times 10 cubed."
+    ],
+    [
+     98.52,
+     "Pause the video and try it."
+    ],
+    [
+     102.07,
+     "Multiplying, so add the indices."
+    ],
+    [
+     104.68,
+     "4 plus 3 is 7."
+    ],
+    [
+     105.82,
+     "The answer is 10 to the power 7, which is 10 million."
+    ],
+    [
+     110.7,
+     "Look at this pattern."
+    ],
+    [
+     112.54,
+     "5 cubed is 125."
+    ],
+    [
+     113.85,
+     "5 squared is 25."
+    ],
+    [
+     115.25,
+     "5 to the power 1 is 5."
+    ],
+    [
+     117.17,
+     "Each time, we divide by 5."
+    ],
+    [
+     120.0,
+     "One more step: 5 divided by 5 is 1."
+    ],
+    [
+     122.83,
+     "So 5 to the power 0 is 1."
+    ],
+    [
+     125.4,
+     "Another way to see it: 5 cubed divided by 5 cubed is 5 to the power 0."
+    ],
+    [
+     130.63,
+     "And any number divided by itself is 1."
+    ],
+    [
+     133.46,
+     "So any number, except 0, to the power 0 is 1."
+    ],
+    [
+     137.37,
+     "Here is the method."
+    ],
+    [
+     138.7,
+     "Step 1: check that the bases are the same."
+    ],
+    [
+     141.62,
+     "The rules only work for the same base."
+    ],
+    [
+     144.82,
+     "Step 2: when you multiply, add the indices."
+    ],
+    [
+     147.87,
+     "When you divide, subtract them."
+    ],
+    [
+     150.61,
+     "Step 3: anything, except 0, to the power 0 is 1."
+    ],
+    [
+     154.99,
+     "Step 4: check by writing out a small case in full."
+    ],
+    [
+     159.09,
+     "Simplify 3 to the power 4, times 3 to the power 5, divided by 3 to the power 6."
+    ],
+    [
+     165.93,
+     "Multiply first: 4 plus 5 is 9, so 3 to the power 9."
+    ],
+    [
+     170.17,
+     "Then divide: 9 minus 6 is 3, so 3 cubed."
+    ],
+    [
+     174.04,
+     "3 cubed is 27."
+    ],
+    [
+     176.56,
+     "Work out 7 to the power 0, plus 2 cubed."
+    ],
+    [
+     180.04,
+     "7 to the power 0 is 1."
+    ],
+    [
+     181.95,
+     "2 cubed is 8."
+    ],
+    [
+     183.08,
+     "1 plus 8 is 9."
+    ],
+    [
+     184.85,
+     "Your turn."
+    ],
+    [
+     185.65,
+     "What is 123 to the power 0?"
+    ],
+    [
+     187.81,
+     "Pause and work it out."
+    ],
+    [
+     190.96,
+     "Any number, except 0, to the power 0 is 1."
+    ],
+    [
+     194.41,
+     "So 123 to the power 0 is 1."
+    ],
+    [
+     197.17,
+     "The rules work with letters too."
+    ],
+    [
+     199.39,
+     "Simplify x to the power 5, times x squared, divided by x to the power 4."
+    ],
+    [
+     204.94,
+     "5 plus 2 is 7, so x to the power 7."
+    ],
+    [
+     207.81,
+     "Then 7 minus 4 is 3."
+    ],
+    [
+     209.45,
+     "The answer is x cubed."
+    ],
+    [
+     211.8,
+     "Lily simplifies 2 cubed times 2 to the power 4."
+    ],
+    [
+     215.4,
+     "Which line goes wrong first?"
+    ],
+    [
+     218.09,
+     "Line 1 is wrong."
+    ],
+    [
+     219.19,
+     "When you multiply powers of the same base, you add the indices."
+    ],
+    [
+     223.54,
+     "You do not multiply them."
+    ],
+    [
+     225.82,
+     "Three 2s times four 2s is seven 2s."
+    ],
+    [
+     228.48,
+     "So the answer is 2 to the power 7."
+    ],
+    [
+     231.62,
+     "Computers count in powers of 2."
+    ],
+    [
+     234.44,
+     "2 to the power 10 is 1,024, which is very close to 1,000."
+    ],
+    [
+     240.18,
+     "That is why memory sizes are often powers of 2, like 8, 16, 32, 64, 128 and 256 gigabytes."
+    ],
+    [
+     249.4,
+     "One last question."
+    ],
+    [
+     250.67,
+     "Simplify y to the power 9, divided by y to the power 9."
+    ],
+    [
+     254.53,
+     "Pause the video and answer."
+    ],
+    [
+     257.82,
+     "9 minus 9 is 0, so the answer is y to the power 0."
+    ],
+    [
+     261.67,
+     "And anything divided by itself is 1."
+    ],
+    [
+     264.43,
+     "So y to the power 0 equals 1."
+    ],
+    [
+     267.21,
+     "To remember: when you multiply powers of the same base, add the indices."
+    ],
+    [
+     272.66,
+     "When you divide powers of the same base, subtract the indices."
+    ],
+    [
+     277.22,
+     "Any number, except 0, to the power 0 is 1."
+    ],
+    [
+     281.1,
+     "And the rules only work when the bases are the same."
+    ],
+    [
+     285.06,
+     "Great work! Now practise lesson 1.4 on Camday."
+    ]
+   ],
+   "times": {
+    "1.4-k1": 25.4,
+    "1.4-k2": 101.02,
+    "1.4-k3": 189.91,
+    "1.4-k4": 256.77
+   },
+   "up": true
+  },
+  "2.1": {
+   "src": "media/mv/s8/2-1.mp4",
+   "poster": "media/mv/s8/2-1_poster.jpg",
+   "srt": "media/mv/s8/2-1.srt",
+   "dur": 314.6,
+   "captions": [
+    [
+     6.93,
+     "A phone contract costs 15 dollars a month."
+    ],
+    [
+     9.86,
+     "If you use more data than your allowance, you pay 2 dollars for every extra gigabyte."
+    ],
+    [
+     16.34,
+     "Suppose you go over by g gigabytes in one month."
+    ],
+    [
+     19.47,
+     "We do not know g yet, so we use a letter."
+    ],
+    [
+     22.7,
+     "Write an expression for one month's bill."
+    ],
+    [
+     25.49,
+     "Pause the video and try it."
+    ],
+    [
+     28.73,
+     "The fixed part is 15."
+    ],
+    [
+     30.35,
+     "Each extra gigabyte adds 2, so g gigabytes add 2 g."
+    ],
+    [
+     34.3,
+     "One month's bill is 15 plus 2 g dollars."
+    ],
+    [
+     37.94,
+     "For a whole year, the whole monthly bill is multiplied by 12."
+    ],
+    [
+     42.6,
+     "A bracket shows that: 12 times, open bracket, 15 plus 2 g, close bracket."
+    ],
+    [
+     48.74,
+     "Remember the order: brackets, then indices, then times and divide, then add and subtract."
+    ],
+    [
+     55.48,
+     "2 plus 3 times 4 squared is 2 plus 3 times 16, which is 50."
+    ],
+    [
+     60.75,
+     "But with a bracket, 2 plus 3, times 4 squared, is 5 times 16, which is 80."
+    ],
+    [
+     67.92,
+     "Use a letter for each unknown."
+    ],
+    [
+     69.93,
+     "The order of the words gives the order of the operations."
+    ],
+    [
+     74.31,
+     "Square n then add 4 is n squared plus 4."
+    ],
+    [
+     77.22,
+     "But add 4 first, then square, needs a bracket: n plus 4, all squared."
+    ],
+    [
+     82.79,
+     "In the same way, subtract 1 from n, then multiply by 3, is 3 times, bracket, n minus 1."
+    ],
+    [
+     89.7,
+     "Your turn."
+    ],
+    [
+     90.41,
+     "Write: add 3 to n, then multiply by 7."
+    ],
+    [
+     93.13,
+     "Pause the video and try it."
+    ],
+    [
+     96.46,
+     "The adding happens first, so it goes in a bracket."
+    ],
+    [
+     100.02,
+     "Then the whole bracket is multiplied by 7."
+    ],
+    [
+     103.02,
+     "The answer is 7, bracket, n plus 3."
+    ],
+    [
+     106.06,
+     "Look at 5 x squared, minus 3 x, plus 7."
+    ],
+    [
+     109.03,
+     "It has three terms: 5 x squared, negative 3 x, and 7."
+    ],
+    [
+     113.61,
+     "The number in front of a letter is its coefficient."
+    ],
+    [
+     117.21,
+     "The coefficient of x squared is 5."
+    ],
+    [
+     119.62,
+     "The coefficient of x is negative 3, because the minus sign belongs to the term."
+    ],
+    [
+     125.21,
+     "7 is the constant."
+    ],
+    [
+     127.03,
+     "A linear expression has no power higher than 1, like 4 x plus 1."
+    ],
+    [
+     131.71,
+     "Two expressions are equivalent if they are equal for every value, like 2, bracket, x plus 3, and 2 x plus 6."
+    ],
+    [
+     140.16,
+     "Here is the method."
+    ],
+    [
+     141.46,
+     "Step 1: choose a letter for each unknown, and say what it stands for."
+    ],
+    [
+     146.75,
+     "Step 2: find the fixed amounts, and the amounts for each unit."
+    ],
+    [
+     151.63,
+     "Step 3: build the expression in the right order."
+    ],
+    [
+     155.03,
+     "Use a bracket for the result of a calculation."
+    ],
+    [
+     158.84,
+     "Step 4: test it with a simple number to check it makes sense."
+    ],
+    [
+     163.65,
+     "Pencils cost p cents."
+    ],
+    [
+     165.19,
+     "Pens cost 3 cents more than pencils."
+    ],
+    [
+     167.83,
+     "Write an expression for the cost of 4 pencils and 2 pens."
+    ],
+    [
+     172.57,
+     "A pen costs p plus 3."
+    ],
+    [
+     174.12,
+     "So the total is 4 p, plus 2 times, bracket, p plus 3."
+    ],
+    [
+     178.58,
+     "Expand and simplify: 4 p plus 2 p plus 6, which is 6 p plus 6 cents."
+    ],
+    [
+     184.41,
+     "A rectangle's length is 3 more than twice its width, w."
+    ],
+    [
+     188.2,
+     "Write an expression for its perimeter."
+    ],
+    [
+     191.37,
+     "The perimeter is two lengths and two widths: 2 times, bracket, 2 w plus 3, plus 2 w."
+    ],
+    [
+     197.94,
+     "That is 4 w plus 6 plus 2 w, which is 6 w plus 6."
+    ],
+    [
+     202.38,
+     "Your turn."
+    ],
+    [
+     203.09,
+     "In 4 y squared, minus 9 y, plus 2, what is the coefficient of y?"
+    ],
+    [
+     207.59,
+     "Pause and work it out."
+    ],
+    [
+     210.54,
+     "The y term is negative 9 y."
+    ],
+    [
+     212.43,
+     "The minus sign belongs to the term, so the coefficient of y is negative 9."
+    ],
+    [
+     218.15,
+     "Are 3, bracket, n plus 2, minus n, and 2 n plus 6 equivalent?"
+    ],
+    [
+     222.66,
+     "Expand and simplify the first one."
+    ],
+    [
+     225.73,
+     "3 n plus 6 minus n is 2 n plus 6."
+    ],
+    [
+     228.2,
+     "It is the same expression, so yes, they are equivalent."
+    ],
+    [
+     232.86,
+     "Sam writes: double n, then square the result."
+    ],
+    [
+     235.95,
+     "Which line is wrong?"
+    ],
+    [
+     237.87,
+     "Line 2 is wrong."
+    ],
+    [
+     239.01,
+     "2 n squared squares only the n."
+    ],
+    [
+     241.21,
+     "The whole of 2 n must be squared, so it needs a bracket."
+    ],
+    [
+     245.74,
+     "Double n, then square, is 2 n in a bracket, squared."
+    ],
+    [
+     249.46,
+     "That equals 4 n squared."
+    ],
+    [
+     251.72,
+     "Taxi meters use an expression."
+    ],
+    [
+     253.74,
+     "In many cities, a taxi charges a fixed starting fare, then a fixed amount for each kilometre."
+    ],
+    [
+     260.56,
+     "If the start is 3 dollars and each kilometre is 1 dollar 50, a trip of k kilometres costs 3 plus 1.5 k dollars."
+    ],
+    [
+     269.37,
+     "For a 10 kilometre trip, that is 18 dollars."
+    ],
+    [
+     273.4,
+     "One last question."
+    ],
+    [
+     274.75,
+     "Is 5 minus 2 x a linear expression?"
+    ],
+    [
+     277.36,
+     "Pause the video and answer."
+    ],
+    [
+     280.78,
+     "Yes."
+    ],
+    [
+     281.06,
+     "The highest power of x is 1, so 5 minus 2 x is linear."
+    ],
+    [
+     285.43,
+     "To remember: letters stand for unknown numbers."
+    ],
+    [
+     288.67,
+     "Say what each letter means."
+    ],
+    [
+     291.09,
+     "The order of the words gives the order of the operations."
+    ],
+    [
+     295.0,
+     "Brackets show the result of a calculation."
+    ],
+    [
+     298.43,
+     "Terms, coefficients and constants."
+    ],
+    [
+     300.93,
+     "A linear expression has no power above 1."
+    ],
+    [
+     304.5,
+     "Equivalent expressions are equal for every value of the letter."
+    ],
+    [
+     309.43,
+     "Great work! Now practise lesson 2.1 on Camday."
+    ]
+   ],
+   "times": {
+    "2.1-k1": 27.68,
+    "2.1-k2": 95.41,
+    "2.1-k3": 209.49,
+    "2.1-k4": 279.73
+   },
+   "up": true
+  },
+  "1.3": {
+   "src": "media/mv/s8/1-3.mp4",
+   "poster": "media/mv/s8/1-3_poster.jpg",
+   "srt": "media/mv/s8/1-3.srt",
+   "dur": 326.04,
+   "captions": [
+    [
+     6.94,
+     "A square vegetable patch has an area of 50 square metres."
+    ],
+    [
+     10.91,
+     "The gardener wants to put a fence along one side."
+    ],
+    [
+     14.32,
+     "How long is one side?"
+    ],
+    [
+     16.33,
+     "Is it 7 metres?"
+    ],
+    [
+     17.5,
+     "8 metres?"
+    ],
+    [
+     18.21,
+     "Or somewhere in between?"
+    ],
+    [
+     20.63,
+     "How long is the side of a 50 square metre square?"
+    ],
+    [
+     24.19,
+     "Pause the video and decide."
+    ],
+    [
+     27.56,
+     "A 7 metre square has an area of 49."
+    ],
+    [
+     30.33,
+     "An 8 metre square has an area of 64."
+    ],
+    [
+     33.17,
+     "50 is between them, so the side is between 7 metres and 8 metres."
+    ],
+    [
+     38.86,
+     "50 is very close to 49, so the side is just over 7 metres."
+    ],
+    [
+     43.55,
+     "In fact it is about 7.1 metres."
+    ],
+    [
+     46.61,
+     "Remember: 5 squared is 5 times 5, which is 25."
+    ],
+    [
+     50.6,
+     "4 cubed is 4 times 4 times 4, which is 64."
+    ],
+    [
+     54.79,
+     "A square root undoes squaring."
+    ],
+    [
+     57.13,
+     "The square root of 25 is 5."
+    ],
+    [
+     59.24,
+     "A cube root undoes cubing."
+    ],
+    [
+     61.27,
+     "The cube root of 64 is 4."
+    ],
+    [
+     63.77,
+     "5 squared is 25."
+    ],
+    [
+     65.12,
+     "But negative 5 squared is also 25."
+    ],
+    [
+     68.01,
+     "So 25 has two square roots: 5 and negative 5."
+    ],
+    [
+     71.83,
+     "We write plus or minus 5."
+    ],
+    [
+     74.5,
+     "The square root symbol on its own means the positive root."
+    ],
+    [
+     78.65,
+     "The square root of 25 is just 5."
+    ],
+    [
+     80.94,
+     "For a length, only the positive root makes sense."
+    ],
+    [
+     85.0,
+     "A cube root is different."
+    ],
+    [
+     86.89,
+     "Every number has exactly one cube root."
+    ],
+    [
+     89.84,
+     "Negative 3 cubed is negative 27, so the cube root of negative 27 is negative 3."
+    ],
+    [
+     96.35,
+     "Your turn."
+    ],
+    [
+     97.12,
+     "Write down the square roots of 144."
+    ],
+    [
+     99.8,
+     "Pause the video and try it."
+    ],
+    [
+     103.26,
+     "12 squared is 144, and negative 12 squared is also 144."
+    ],
+    [
+     108.5,
+     "So the square roots of 144 are plus or minus 12."
+    ],
+    [
+     113.63,
+     "To estimate a square root, find the square numbers either side."
+    ],
+    [
+     118.81,
+     "For the square root of 90: 81 is less than 90, and 90 is less than 100."
+    ],
+    [
+     125.2,
+     "So the square root of 90 is between 9 and 10."
+    ],
+    [
+     129.62,
+     "Numbers come in sets."
+    ],
+    [
+     131.14,
+     "Natural numbers are 1, 2, 3 and so on."
+    ],
+    [
+     133.91,
+     "Integers also include 0 and the negatives."
+    ],
+    [
+     136.97,
+     "Rational numbers are any numbers that can be written as a fraction."
+    ],
+    [
+     142.39,
+     "Here is the method."
+    ],
+    [
+     143.86,
+     "Step 1: know your squares up to 15 squared, and your cubes up to 5 cubed, and 10 cubed."
+    ],
+    [
+     151.11,
+     "Step 2: x squared equals a number has two roots, plus and minus."
+    ],
+    [
+     155.41,
+     "x cubed equals a number has one root, with the same sign."
+    ],
+    [
+     159.79,
+     "Step 3: to estimate, find the square numbers either side, then decide which one it is closer to."
+    ],
+    [
+     167.04,
+     "Step 4: check by squaring, or cubing, your answer."
+    ],
+    [
+     171.16,
+     "Find the cube root of negative 125."
+    ],
+    [
+     174.45,
+     "5 cubed is 125."
+    ],
+    [
+     175.85,
+     "So negative 5 cubed is negative 125."
+    ],
+    [
+     179.78,
+     "The cube root of negative 125 is negative 5."
+    ],
+    [
+     184.16,
+     "Your turn."
+    ],
+    [
+     184.86,
+     "What is the cube root of negative 8?"
+    ],
+    [
+     187.38,
+     "Pause and work it out."
+    ],
+    [
+     190.33,
+     "2 cubed is 8, so negative 2 cubed is negative 8."
+    ],
+    [
+     194.1,
+     "The cube root of negative 8 is negative 2."
+    ],
+    [
+     197.95,
+     "Estimate the square root of 90, to 1 decimal place."
+    ],
+    [
+     202.08,
+     "We know it is between 9 and 10."
+    ],
+    [
+     205.14,
+     "Try 9.5."
+    ],
+    [
+     205.95,
+     "9.5 squared is 90.25."
+    ],
+    [
+     208.1,
+     "That is just above 90."
+    ],
+    [
+     210.34,
+     "Now try 9.4."
+    ],
+    [
+     211.56,
+     "9.4 squared is 88.36, which is below."
+    ],
+    [
+     215.89,
+     "90 is much closer to 90.25."
+    ],
+    [
+     218.42,
+     "So the square root of 90 is about 9.5."
+    ],
+    [
+     222.54,
+     "Solve x squared plus 7 equals 56."
+    ],
+    [
+     225.33,
+     "Subtract 7 from both sides."
+    ],
+    [
+     227.62,
+     "x squared equals 49."
+    ],
+    [
+     229.86,
+     "There are two square roots."
+    ],
+    [
+     231.84,
+     "x equals 7, or x equals negative 7."
+    ],
+    [
+     234.96,
+     "Ben solves x squared equals 36."
+    ],
+    [
+     237.3,
+     "Which line is wrong?"
+    ],
+    [
+     239.36,
+     "Line 2 is not finished."
+    ],
+    [
+     241.14,
+     "Negative 6 squared is 36 as well, so there are two solutions."
+    ],
+    [
+     246.4,
+     "x equals 6, or x equals negative 6."
+    ],
+    [
+     249.69,
+     "Square roots are used to measure screens."
+    ],
+    [
+     252.52,
+     "A television's size is the length of its diagonal, across from corner to corner."
+    ],
+    [
+     258.59,
+     "The diagonal is found by adding the squares of the width and the height, then taking the square root."
+    ],
+    [
+     266.1,
+     "A screen 48 inches wide and 27 inches high has a diagonal of about 55 inches."
+    ],
+    [
+     272.38,
+     "One last question."
+    ],
+    [
+     273.86,
+     "Which is closest to the square root of 70: 8.4, 8.9, or 35?"
+    ],
+    [
+     278.69,
+     "Pause the video and answer."
+    ],
+    [
+     282.31,
+     "64 is less than 70, and 70 is less than 81, so the root is between 8 and 9."
+    ],
+    [
+     289.38,
+     "8.4 squared is 70.56, very close to 70."
+    ],
+    [
+     293.06,
+     "The answer is 8.4."
+    ],
+    [
+     295.31,
+     "To remember: a positive number has two square roots, plus and minus."
+    ],
+    [
+     299.94,
+     "The square root symbol alone means the positive one."
+    ],
+    [
+     304.02,
+     "Every number has exactly one cube root."
+    ],
+    [
+     306.63,
+     "The cube root of a negative number is negative."
+    ],
+    [
+     310.32,
+     "Estimate a root using the squares, or cubes, either side."
+    ],
+    [
+     314.69,
+     "Natural numbers, integers and rational numbers are sets of numbers, each one inside the next."
+    ],
+    [
+     320.87,
+     "Great work! Now practise lesson 1.3 on Camday."
+    ]
+   ],
+   "times": {
+    "1.3-k1": 26.51,
+    "1.3-k2": 102.21,
+    "1.3-k3": 189.28,
+    "1.3-k4": 281.26
+   },
+   "up": true
+  },
+  "2.6": {
+   "src": "media/mv/s8/2-6.mp4",
+   "poster": "media/mv/s8/2-6_poster.jpg",
+   "srt": "media/mv/s8/2-6.srt",
+   "dur": 273.52,
+   "captions": [
+    [
+     6.0,
+     "A sign in a lift says: maximum 8 people."
+    ],
+    [
+     9.34,
+     "Can exactly 8 people use the lift?"
+    ],
+    [
+     11.7,
+     "Think about how you would write the rule with p for the number of people."
+    ],
+    [
+     17.33,
+     "Which inequality means maximum 8 people?"
+    ],
+    [
+     20.23,
+     "Pause the video and choose."
+    ],
+    [
+     23.6,
+     "Maximum 8 means 8 is allowed, but 9 is not."
+    ],
+    [
+     26.74,
+     "So p is less than or equal to 8."
+    ],
+    [
+     29.63,
+     "A ride at a fair says: riders must be at least 140 centimetres, and under 195 centimetres."
+    ],
+    [
+     37.41,
+     "Is exactly 140 allowed?"
+    ],
+    [
+     39.4,
+     "Is exactly 195?"
+    ],
+    [
+     41.24,
+     "Remember: x is greater than 3 means x is more than 3, but 3 itself is not included."
+    ],
+    [
+     47.17,
+     "On a number line, it has an open circle at 3."
+    ],
+    [
+     50.94,
+     "This sign means less than or equal to."
+    ],
+    [
+     53.5,
+     "This one means greater than or equal to."
+    ],
+    [
+     56.2,
+     "The boundary is included, so we draw a closed, filled circle."
+    ],
+    [
+     60.86,
+     "Here is x greater than or equal to 2."
+    ],
+    [
+     63.57,
+     "The closed circle shows 2 is included."
+    ],
+    [
+     66.89,
+     "Your turn."
+    ],
+    [
+     67.59,
+     "How is x greater than or equal to 3 shown on a number line?"
+    ],
+    [
+     71.7,
+     "Pause the video and choose."
+    ],
+    [
+     74.97,
+     "3 is included, so it is a closed circle at 3, with an arrow to the right."
+    ],
+    [
+     80.55,
+     "Two conditions together make an interval."
+    ],
+    [
+     83.9,
+     "The ride rule is: 140 is less than or equal to h, and h is less than 195."
+    ],
+    [
+     89.87,
+     "Closed circle at 140, open circle at 195."
+    ],
+    [
+     93.78,
+     "This line shows negative 2 is less than or equal to x, which is less than 3."
+    ],
+    [
+     99.56,
+     "The integers in it are negative 2, negative 1, 0, 1 and 2."
+    ],
+    [
+     103.98,
+     "3 is not included."
+    ],
+    [
+     105.9,
+     "Here is the method."
+    ],
+    [
+     107.2,
+     "Step 1: decide if each boundary is included, with a closed circle, or not, with an open circle."
+    ],
+    [
+     114.26,
+     "Step 2: for an interval, write it in order, with the smallest number on the left."
+    ],
+    [
+     120.43,
+     "Step 3: solve an inequality like an equation, doing the same to both sides."
+    ],
+    [
+     126.19,
+     "Step 4: when you list integers, check each boundary carefully."
+    ],
+    [
+     131.22,
+     "A number line shows an open circle at negative 1, and a closed circle at 4, joined together."
+    ],
+    [
+     137.73,
+     "Write the inequality."
+    ],
+    [
+     139.77,
+     "Open at negative 1, so negative 1 is less than x."
+    ],
+    [
+     143.27,
+     "Closed at 4, so x is less than or equal to 4."
+    ],
+    [
+     147.03,
+     "Your turn."
+    ],
+    [
+     147.75,
+     "What is the largest integer with x less than 4.5?"
+    ],
+    [
+     151.31,
+     "Pause and work it out."
+    ],
+    [
+     154.31,
+     "The integers less than 4.5 are 4, 3, 2 and so on."
+    ],
+    [
+     158.25,
+     "The largest is 4."
+    ],
+    [
+     160.17,
+     "Solve 5 x minus 3 is greater than 2 x plus 9."
+    ],
+    [
+     163.79,
+     "Subtract 2 x from both sides: 3 x minus 3 is greater than 9."
+    ],
+    [
+     169.18,
+     "Add 3: 3 x is greater than 12."
+    ],
+    [
+     171.64,
+     "Divide by 3: x is greater than 4."
+    ],
+    [
+     174.89,
+     "Find the integers n where 7 is less than or equal to 2 n plus 1, which is less than 15."
+    ],
+    [
+     181.54,
+     "Subtract 1 from every part: 6 is less than or equal to 2 n, which is less than 14."
+    ],
+    [
+     188.35,
+     "Divide every part by 2: 3 is less than or equal to n, which is less than 7."
+    ],
+    [
+     194.06,
+     "So n is 3, 4, 5 or 6."
+    ],
+    [
+     196.2,
+     "Mo shows x is at least negative 2 on a number line."
+    ],
+    [
+     199.77,
+     "Which line is wrong?"
+    ],
+    [
+     201.71,
+     "Line 1 is wrong."
+    ],
+    [
+     202.91,
+     "At least negative 2 includes negative 2."
+    ],
+    [
+     205.89,
+     "So x is greater than or equal to negative 2."
+    ],
+    [
+     209.73,
+     "The circle at negative 2 must be closed."
+    ],
+    [
+     213.11,
+     "Food safety rules use inequalities."
+    ],
+    [
+     215.6,
+     "A fridge should keep food at 5 degrees Celsius or colder."
+    ],
+    [
+     219.66,
+     "That is t less than or equal to 5."
+    ],
+    [
+     222.63,
+     "A freezer should be at negative 18 degrees or colder."
+    ],
+    [
+     226.62,
+     "That is t less than or equal to negative 18."
+    ],
+    [
+     230.48,
+     "One last question."
+    ],
+    [
+     231.81,
+     "Solve 2 x minus 1 is greater than or equal to 9."
+    ],
+    [
+     235.36,
+     "Pause the video and choose."
+    ],
+    [
+     238.76,
+     "Add 1: 2 x is greater than or equal to 10."
+    ],
+    [
+     241.93,
+     "Divide by 2: x is greater than or equal to 5."
+    ],
+    [
+     245.88,
+     "To remember: less than or equal to, and greater than or equal to, include the boundary."
+    ],
+    [
+     251.71,
+     "Use a closed circle."
+    ],
+    [
+     253.6,
+     "Less than and greater than do not include it."
+    ],
+    [
+     256.66,
+     "Use an open circle."
+    ],
+    [
+     258.5,
+     "Write intervals with the smallest number on the left."
+    ],
+    [
+     262.78,
+     "Solve them like equations, and list integers carefully at each boundary."
+    ],
+    [
+     268.32,
+     "Great work! Now practise lesson 2.6 on Camday."
+    ]
+   ],
+   "times": {
+    "2.6-k1": 22.55,
+    "2.6-k2": 73.92,
+    "2.6-k3": 153.26,
+    "2.6-k4": 237.71
+   },
+   "up": true
+  },
+  "2.4": {
+   "src": "media/mv/s8/2-4.mp4",
+   "poster": "media/mv/s8/2-4_poster.jpg",
+   "srt": "media/mv/s8/2-4.srt",
+   "dur": 286.6,
+   "captions": [
+    [
+     5.96,
+     "Expanding unpacks a bracket."
+    ],
+    [
+     8.09,
+     "4, bracket, x plus 3, becomes 4 x plus 12."
+    ],
+    [
+     11.29,
+     "Factorising does the opposite."
+    ],
+    [
+     13.57,
+     "It packs the bracket back up."
+    ],
+    [
+     16.33,
+     "Can you write 6 y plus 15 with a bracket?"
+    ],
+    [
+     19.43,
+     "Pause the video and try it."
+    ],
+    [
+     22.87,
+     "Find a number that divides both terms."
+    ],
+    [
+     26.04,
+     "6 and 15 are both in the 3 times table."
+    ],
+    [
+     29.29,
+     "6 y divided by 3 is 2 y."
+    ],
+    [
+     31.29,
+     "15 divided by 3 is 5."
+    ],
+    [
+     33.59,
+     "So 6 y plus 15 equals 3, bracket, 2 y plus 5."
+    ],
+    [
+     37.49,
+     "Check by expanding: 3 times 2 y is 6 y, and 3 times 5 is 15."
+    ],
+    [
+     43.25,
+     "Remember: the highest common factor of two numbers is the biggest number that divides into both."
+    ],
+    [
+     50.37,
+     "The H C F of 12 and 18 is 6."
+    ],
+    [
+     53.0,
+     "The H C F of 20 and 35 is 5."
+    ],
+    [
+     56.26,
+     "To factorise, find the highest common factor of all the terms."
+    ],
+    [
+     60.53,
+     "Write it outside the bracket."
+    ],
+    [
+     62.52,
+     "Inside goes each term divided by it."
+    ],
+    [
+     65.55,
+     "The common factor can be a letter."
+    ],
+    [
+     67.94,
+     "x squared and 4 x both contain x."
+    ],
+    [
+     70.26,
+     "So x squared plus 4 x is x, bracket, x plus 4."
+    ],
+    [
+     74.05,
+     "Or a number and a letter together."
+    ],
+    [
+     76.82,
+     "10 A and 15 A B share 5 A."
+    ],
+    [
+     79.49,
+     "Your turn."
+    ],
+    [
+     80.19,
+     "Factorise x squared plus 4 x."
+    ],
+    [
+     82.23,
+     "Pause the video and try it."
+    ],
+    [
+     85.53,
+     "Both terms contain x."
+    ],
+    [
+     87.0,
+     "x squared divided by x is x."
+    ],
+    [
+     88.97,
+     "4 x divided by x is 4."
+    ],
+    [
+     90.52,
+     "The answer is x, bracket, x plus 4."
+    ],
+    [
+     93.52,
+     "Always use the highest common factor."
+    ],
+    [
+     96.44,
+     "12 x plus 18 equals 2, bracket, 6 x plus 9."
+    ],
+    [
+     99.82,
+     "That is factorised, but not fully, because 6 x and 9 still share a 3."
+    ],
+    [
+     105.81,
+     "The H C F of 12 and 18 is 6."
+    ],
+    [
+     108.13,
+     "Fully factorised, it is 6, bracket, 2 x plus 3."
+    ],
+    [
+     112.59,
+     "If one term is the H C F itself, a 1 is left inside."
+    ],
+    [
+     116.35,
+     "5 x plus 5 is 5, bracket, x plus 1."
+    ],
+    [
+     119.42,
+     "Here is the method."
+    ],
+    [
+     120.72,
+     "Step 1: find the H C F of the numbers."
+    ],
+    [
+     123.86,
+     "Step 2: find the letters that are in every term, with their lowest power."
+    ],
+    [
+     129.55,
+     "Step 3: write the H C F outside."
+    ],
+    [
+     131.76,
+     "Divide each term by it to fill the bracket."
+    ],
+    [
+     135.28,
+     "Step 4: check by expanding, and check that nothing else is common inside the bracket."
+    ],
+    [
+     141.78,
+     "Factorise 18 m minus 24."
+    ],
+    [
+     144.11,
+     "The H C F of 18 and 24 is 6."
+    ],
+    [
+     146.83,
+     "18 m divided by 6 is 3 m."
+    ],
+    [
+     149.26,
+     "24 divided by 6 is 4."
+    ],
+    [
+     151.85,
+     "The answer is 6, bracket, 3 m minus 4."
+    ],
+    [
+     155.41,
+     "Your turn."
+    ],
+    [
+     156.18,
+     "Factorise 9 A minus 9."
+    ],
+    [
+     157.87,
+     "Pause and work it out."
+    ],
+    [
+     160.96,
+     "The H C F is 9."
+    ],
+    [
+     162.14,
+     "9 A divided by 9 is A, and 9 divided by 9 is 1."
+    ],
+    [
+     165.81,
+     "So it is 9, bracket, A minus 1."
+    ],
+    [
+     168.24,
+     "Don't forget the 1."
+    ],
+    [
+     170.27,
+     "Factorise 14 A B plus 21 A squared."
+    ],
+    [
+     173.11,
+     "The H C F of 14 and 21 is 7, and both terms contain A."
+    ],
+    [
+     177.48,
+     "So the H C F is 7 A."
+    ],
+    [
+     179.65,
+     "14 A B divided by 7 A is 2 B."
+    ],
+    [
+     182.05,
+     "21 A squared divided by 7 A is 3 A."
+    ],
+    [
+     184.95,
+     "The answer is 7 A, bracket, 2 B plus 3 A."
+    ],
+    [
+     188.89,
+     "Factorise 6 x squared plus 9 x minus 3."
+    ],
+    [
+     191.81,
+     "The H C F is 3."
+    ],
+    [
+     192.93,
+     "It is not 3 x, because the last term, 3, has no x."
+    ],
+    [
+     197.22,
+     "The answer is 3, bracket, 2 x squared plus 3 x minus 1."
+    ],
+    [
+     202.03,
+     "Ava factorises 16 x minus 24 fully."
+    ],
+    [
+     204.92,
+     "Which line goes wrong first?"
+    ],
+    [
+     207.78,
+     "Line 1 is wrong."
+    ],
+    [
+     209.09,
+     "4 is a common factor, but not the highest."
+    ],
+    [
+     212.53,
+     "4 x and 6 still share a 2."
+    ],
+    [
+     214.66,
+     "The H C F of 16 and 24 is 8."
+    ],
+    [
+     217.5,
+     "Fully factorised, 16 x minus 24 is 8, bracket, 2 x minus 3."
+    ],
+    [
+     223.28,
+     "Factorising can save work."
+    ],
+    [
+     225.23,
+     "A path is made of two rectangles, both 3 metres wide."
+    ],
+    [
+     229.21,
+     "One is 17 metres long and the other is 13 metres long."
+    ],
+    [
+     233.82,
+     "Instead of two calculations, take out the 3."
+    ],
+    [
+     237.56,
+     "3, bracket, 17 plus 13, is 3 times 30, which is 90 square metres."
+    ],
+    [
+     243.64,
+     "One last question."
+    ],
+    [
+     245.02,
+     "Factorise 12 P Q plus 8 P fully."
+    ],
+    [
+     247.47,
+     "Pause the video and answer."
+    ],
+    [
+     250.95,
+     "The H C F of 12 and 8 is 4, and both terms contain P."
+    ],
+    [
+     255.1,
+     "So the H C F is 4 P."
+    ],
+    [
+     256.67,
+     "12 P Q divided by 4 P is 3 Q."
+    ],
+    [
+     258.95,
+     "8 P divided by 4 P is 2."
+    ],
+    [
+     260.83,
+     "The answer is 4 P, bracket, 3 Q plus 2."
+    ],
+    [
+     264.44,
+     "To remember: factorising is the reverse of expanding."
+    ],
+    [
+     268.63,
+     "Take out the highest common factor, numbers and letters."
+    ],
+    [
+     273.12,
+     "Divide each term by the H C F to fill the bracket."
+    ],
+    [
+     276.83,
+     "Check by expanding, and check that nothing else is common."
+    ],
+    [
+     281.4,
+     "Great work! Now practise lesson 2.4 on Camday."
+    ]
+   ],
+   "times": {
+    "2.4-k1": 21.82,
+    "2.4-k2": 84.48,
+    "2.4-k3": 159.91,
+    "2.4-k4": 249.9
+   },
+   "up": true
+  },
+  "4.2": {
+   "src": "media/mv/s8/4-2.mp4",
+   "poster": "media/mv/s8/4-2_poster.jpg",
+   "srt": "media/mv/s8/4-2.srt",
+   "dur": 279.32,
+   "captions": [
+    [
+     6.55,
+     "A rug costs 18 dollars 75 per square metre."
+    ],
+    [
+     10.19,
+     "A room is 3.6 metres by 2.5 metres."
+    ],
+    [
+     13.7,
+     "Before working it out exactly, estimate."
+    ],
+    [
+     16.59,
+     "The price is about 20 dollars, and the area is about 9 square metres."
+    ],
+    [
+     22.14,
+     "Estimate the cost: 20 times 9."
+    ],
+    [
+     24.45,
+     "Pause the video and work it out."
+    ],
+    [
+     28.32,
+     "20 times 9 is 180."
+    ],
+    [
+     30.14,
+     "The rug will cost about 180 dollars."
+    ],
+    [
+     34.33,
+     "To be exact, we need 3.6 times 2.5."
+    ],
+    [
+     37.09,
+     "How do we multiply two decimals?"
+    ],
+    [
+     40.17,
+     "Remember: for 2.4 times 3, work out 24 times 3, which is 72."
+    ],
+    [
+     45.03,
+     "There is one decimal place in the question, so the answer is 7.2."
+    ],
+    [
+     50.85,
+     "Multiply without the decimal points."
+    ],
+    [
+     53.35,
+     "Then count the total number of decimal places in the question."
+    ],
+    [
+     57.67,
+     "The answer has that many."
+    ],
+    [
+     59.96,
+     "36 times 25 is 900."
+    ],
+    [
+     61.65,
+     "There are 2 decimal places, so the answer is 9.00, which is 9."
+    ],
+    [
+     67.14,
+     "The room is exactly 9 square metres."
+    ],
+    [
+     70.89,
+     "Why does it work?"
+    ],
+    [
+     72.44,
+     "3.6 is 36 divided by 10, and 2.5 is 25 divided by 10."
+    ],
+    [
+     77.28,
+     "So the answer is 36 times 25, divided by 100."
+    ],
+    [
+     81.39,
+     "Two divisions by 10 give two decimal places."
+    ],
+    [
+     85.95,
+     "For 0.4 times 0.03: 4 times 3 is 12."
+    ],
+    [
+     89.45,
+     "There are 3 decimal places, so the answer is 0.012."
+    ],
+    [
+     94.95,
+     "Your turn."
+    ],
+    [
+     95.73,
+     "Work out 0.9 times 0.7."
+    ],
+    [
+     97.54,
+     "Pause the video and try it."
+    ],
+    [
+     101.05,
+     "9 times 7 is 63."
+    ],
+    [
+     102.29,
+     "There are 2 decimal places, so the answer is 0.63."
+    ],
+    [
+     106.16,
+     "It is smaller than both numbers, because both are less than 1."
+    ],
+    [
+     111.5,
+     "Here is the method."
+    ],
+    [
+     112.9,
+     "Step 1: estimate, by rounding to 1 significant figure."
+    ],
+    [
+     117.42,
+     "Step 2: multiply the numbers as whole numbers."
+    ],
+    [
+     121.34,
+     "Step 3: count the total decimal places in both numbers, and place the point."
+    ],
+    [
+     127.24,
+     "Step 4: compare the answer with your estimate."
+    ],
+    [
+     131.23,
+     "Work out 4.73 times 2.6."
+    ],
+    [
+     133.58,
+     "Estimate first: 5 times 3 is 15."
+    ],
+    [
+     137.25,
+     "Now 473 times 26."
+    ],
+    [
+     139.45,
+     "473 times 20 is 9,460."
+    ],
+    [
+     142.3,
+     "473 times 6 is 2,838."
+    ],
+    [
+     145.01,
+     "Together they make 12,298."
+    ],
+    [
+     148.92,
+     "There are 2 plus 1, which is 3 decimal places."
+    ],
+    [
+     152.88,
+     "The answer is 12.298."
+    ],
+    [
+     154.68,
+     "That is close to the estimate of 15."
+    ],
+    [
+     158.33,
+     "Work out 0.05 times 0.008."
+    ],
+    [
+     160.83,
+     "5 times 8 is 40."
+    ],
+    [
+     162.37,
+     "There are 2 plus 3, which is 5 decimal places."
+    ],
+    [
+     167.35,
+     "Count back 5 places from 40."
+    ],
+    [
+     170.4,
+     "The answer is 0.00040, which is 0.0004."
+    ],
+    [
+     175.21,
+     "Your turn."
+    ],
+    [
+     176.02,
+     "Work out 2.5 times 1.2."
+    ],
+    [
+     177.89,
+     "Pause and work it out."
+    ],
+    [
+     181.08,
+     "25 times 12 is 300."
+    ],
+    [
+     182.88,
+     "There are 2 decimal places, so the answer is 3.00, which is 3."
+    ],
+    [
+     189.3,
+     "You are told that 37 times 54 is 1,998."
+    ],
+    [
+     193.31,
+     "Use this to find 3.7 times 0.054."
+    ],
+    [
+     197.26,
+     "There are 1 plus 3, which is 4 decimal places."
+    ],
+    [
+     201.36,
+     "So the answer is 0.1998."
+    ],
+    [
+     204.04,
+     "Jo works out 0.3 times 0.2."
+    ],
+    [
+     206.29,
+     "Which line goes wrong first?"
+    ],
+    [
+     209.17,
+     "Line 1 is wrong."
+    ],
+    [
+     210.36,
+     "You do not line up the points when you multiply."
+    ],
+    [
+     213.92,
+     "3 times 2 is 6, and there are 2 decimal places."
+    ],
+    [
+     217.95,
+     "0.3 times 0.2 is 0.06."
+    ],
+    [
+     221.26,
+     "Petrol costs 1 dollar 42 per litre."
+    ],
+    [
+     224.42,
+     "A car's tank takes 38.5 litres."
+    ],
+    [
+     227.23,
+     "Estimate: 1.4 times 40 is 56 dollars."
+    ],
+    [
+     231.13,
+     "142 times 385 is 54,670."
+    ],
+    [
+     233.76,
+     "There are 3 decimal places, so the cost is 54.670."
+    ],
+    [
+     239.24,
+     "That is 54 dollars 67."
+    ],
+    [
+     242.2,
+     "One last question."
+    ],
+    [
+     243.68,
+     "What is 0.2 times 0.02?"
+    ],
+    [
+     245.56,
+     "Pause the video and answer."
+    ],
+    [
+     249.17,
+     "2 times 2 is 4."
+    ],
+    [
+     250.51,
+     "There are 1 plus 2, which is 3 decimal places."
+    ],
+    [
+     254.65,
+     "The answer is 0.004."
+    ],
+    [
+     257.0,
+     "To remember: multiply as whole numbers, then count the total decimal places."
+    ],
+    [
+     262.85,
+     "Estimate to check your answer."
+    ],
+    [
+     265.4,
+     "Multiplying by a number between 0 and 1 makes the answer smaller."
+    ],
+    [
+     270.68,
+     "Use known facts, and move the decimal point."
+    ],
+    [
+     274.22,
+     "Great work! Now practise lesson 4.2 on Camday."
+    ]
+   ],
+   "times": {
+    "4.2-k1": 27.27,
+    "4.2-k2": 100.0,
+    "4.2-k3": 180.03,
+    "4.2-k4": 248.12
+   },
+   "up": true
+  },
+  "2.2": {
+   "src": "media/mv/s8/2-2.mp4",
+   "poster": "media/mv/s8/2-2_poster.jpg",
+   "srt": "media/mv/s8/2-2.srt",
+   "dur": 298.2,
+   "captions": [
+    [
+     7.26,
+     "Scientists use a formula for a dropped ball."
+    ],
+    [
+     10.31,
+     "The distance d metres that it falls in t seconds is d equals 5 t squared."
+    ],
+    [
+     15.37,
+     "This ignores air."
+    ],
+    [
+     17.1,
+     "How far does the ball fall in 3 seconds?"
+    ],
+    [
+     19.84,
+     "Pause the video and work it out."
+    ],
+    [
+     23.43,
+     "Put t equals 3 into the formula."
+    ],
+    [
+     26.05,
+     "Square first: 3 squared is 9."
+    ],
+    [
+     28.43,
+     "Then multiply: 5 times 9 is 45."
+    ],
+    [
+     30.97,
+     "The ball falls 45 metres."
+    ],
+    [
+     33.57,
+     "And if it falls 80 metres, how long did it take?"
+    ],
+    [
+     37.03,
+     "We will answer that later."
+    ],
+    [
+     39.45,
+     "Remember: if b is negative 3, then 4 b minus 7 is 4 times negative 3, minus 7."
+    ],
+    [
+     45.88,
+     "That is negative 12 minus 7, which is negative 19."
+    ],
+    [
+     50.55,
+     "Put a negative number in brackets when you substitute."
+    ],
+    [
+     54.31,
+     "It stops sign mistakes."
+    ],
+    [
+     56.46,
+     "A formula is a rule that links variables, with an equals sign."
+    ],
+    [
+     60.63,
+     "In d equals 5 t squared, the letter on its own, d, is called the subject."
+    ],
+    [
+     66.09,
+     "With negatives, use brackets."
+    ],
+    [
+     68.2,
+     "If y equals x squared, minus 2 x, and x is negative 1, then y is negative 1 squared, minus 2 times negative 1."
+    ],
+    [
+     76.73,
+     "Your turn."
+    ],
+    [
+     77.42,
+     "Finish it: find y when x is negative 1."
+    ],
+    [
+     80.13,
+     "Pause the video and try it."
+    ],
+    [
+     83.4,
+     "Negative 1 squared is 1."
+    ],
+    [
+     85.34,
+     "2 times negative 1 is negative 2, and subtracting negative 2 means adding 2."
+    ],
+    [
+     91.47,
+     "So y equals 1 plus 2, which is 3."
+    ],
+    [
+     94.69,
+     "To find t when d is known, rearrange the formula so that t is the subject."
+    ],
+    [
+     99.73,
+     "Undo the operations in reverse order, just like solving an equation."
+    ],
+    [
+     104.91,
+     "Start with d equals 5 t squared."
+    ],
+    [
+     107.47,
+     "Divide both sides by 5: d over 5 equals t squared."
+    ],
+    [
+     111.47,
+     "Then take the square root."
+    ],
+    [
+     113.55,
+     "For the 80 metre fall, 80 over 5 is 16, and the square root of 16 is 4."
+    ],
+    [
+     119.23,
+     "It took 4 seconds."
+    ],
+    [
+     121.22,
+     "Here is the method."
+    ],
+    [
+     122.54,
+     "Step 1: to substitute, replace each letter with its value, in brackets."
+    ],
+    [
+     127.5,
+     "Then follow the order of operations."
+    ],
+    [
+     130.57,
+     "Step 2: to rearrange, decide what has been done to the new subject, and in what order."
+    ],
+    [
+     136.96,
+     "Step 3: undo those operations in reverse order, doing the same to both sides."
+    ],
+    [
+     142.95,
+     "Step 4: check with numbers."
+    ],
+    [
+     145.48,
+     "P equals 2 A squared, minus 3 B."
+    ],
+    [
+     147.84,
+     "Find P when A is negative 3 and B is negative 4."
+    ],
+    [
+     151.94,
+     "A squared is 9, and 2 times 9 is 18."
+    ],
+    [
+     155.11,
+     "3 B is 3 times negative 4, which is negative 12."
+    ],
+    [
+     159.9,
+     "18 minus negative 12 is 18 plus 12."
+    ],
+    [
+     163.54,
+     "So P equals 30."
+    ],
+    [
+     165.65,
+     "Make x the subject of y equals 3 x minus 4."
+    ],
+    [
+     168.79,
+     "To get y, x was multiplied by 3, then 4 was subtracted."
+    ],
+    [
+     173.35,
+     "Undo in reverse order."
+    ],
+    [
+     174.97,
+     "First add 4 to both sides: y plus 4 equals 3 x."
+    ],
+    [
+     178.44,
+     "Then divide both sides by 3."
+    ],
+    [
+     181.05,
+     "Your turn."
+    ],
+    [
+     181.76,
+     "Make A the subject of B equals A minus 9."
+    ],
+    [
+     184.66,
+     "Pause and choose."
+    ],
+    [
+     187.26,
+     "9 was subtracted from A."
+    ],
+    [
+     189.03,
+     "Undo it by adding 9 to both sides."
+    ],
+    [
+     191.53,
+     "A equals B plus 9."
+    ],
+    [
+     193.4,
+     "To change Celsius to Fahrenheit, F equals 1.8 C plus 32."
+    ],
+    [
+     197.8,
+     "Make C the subject, then convert 77 degrees Fahrenheit."
+    ],
+    [
+     202.68,
+     "Subtract 32: F minus 32 equals 1.8 C."
+    ],
+    [
+     206.03,
+     "Divide by 1.8: C equals F minus 32, all divided by 1.8."
+    ],
+    [
+     211.56,
+     "77 minus 32 is 45."
+    ],
+    [
+     213.44,
+     "45 divided by 1.8 is 25."
+    ],
+    [
+     215.94,
+     "So 77 degrees Fahrenheit is 25 degrees Celsius."
+    ],
+    [
+     221.39,
+     "Ella makes x the subject of y equals 2 x plus 6."
+    ],
+    [
+     224.84,
+     "Which line goes wrong first?"
+    ],
+    [
+     227.4,
+     "Line 1 is wrong."
+    ],
+    [
+     228.55,
+     "She divided only y by 2, not the whole of the other side."
+    ],
+    [
+     232.66,
+     "Undo the plus 6 first."
+    ],
+    [
+     234.79,
+     "y minus 6 equals 2 x."
+    ],
+    [
+     236.42,
+     "So x equals y minus 6, all divided by 2."
+    ],
+    [
+     240.08,
+     "Driving instructors use a formula too."
+    ],
+    [
+     242.71,
+     "A car's braking distance grows with the square of its speed."
+    ],
+    [
+     247.42,
+     "So doubling the speed makes the braking distance about 4 times as long, because 2 squared is 4."
+    ],
+    [
+     254.32,
+     "That is why speed limits near schools are low."
+    ],
+    [
+     258.21,
+     "One last question."
+    ],
+    [
+     259.51,
+     "Using d equals 5 t squared, how many seconds does it take to fall 20 metres?"
+    ],
+    [
+     265.01,
+     "Pause the video and answer."
+    ],
+    [
+     268.36,
+     "20 equals 5 t squared."
+    ],
+    [
+     270.1,
+     "Divide by 5: t squared equals 4."
+    ],
+    [
+     272.62,
+     "The time is positive, so t equals 2 seconds."
+    ],
+    [
+     276.63,
+     "To remember: a formula links variables."
+    ],
+    [
+     279.34,
+     "The subject is the letter on its own."
+    ],
+    [
+     282.46,
+     "Substitute with brackets around negative numbers."
+    ],
+    [
+     285.8,
+     "Change the subject by undoing the operations in reverse order."
+    ],
+    [
+     290.7,
+     "And check with numbers."
+    ],
+    [
+     293.01,
+     "Great work! Now practise lesson 2.2 on Camday."
+    ]
+   ],
+   "times": {
+    "2.2-k1": 22.38,
+    "2.2-k2": 82.35,
+    "2.2-k3": 186.21,
+    "2.2-k4": 267.31
+   },
+   "up": true
+  },
+  "3.1": {
+   "src": "media/mv/s8/3-1.mp4",
+   "poster": "media/mv/s8/3-1_poster.jpg",
+   "srt": "media/mv/s8/3-1.srt",
+   "dur": 285.52,
+   "captions": [
+    [
+     8.64,
+     "A shop takes 0.1 of the price off in a sale."
+    ],
+    [
+     12.2,
+     "A jacket costs 85 dollars."
+    ],
+    [
+     14.31,
+     "A phone app works out 85 times 0.1."
+    ],
+    [
+     17.69,
+     "Will the answer be bigger or smaller than 85?"
+    ],
+    [
+     21.63,
+     "What is 85 times 0.1?"
+    ],
+    [
+     23.32,
+     "Pause the video and work it out."
+    ],
+    [
+     27.31,
+     "0.1 is one tenth."
+    ],
+    [
+     28.91,
+     "So 85 times 0.1 means one tenth of 85."
+    ],
+    [
+     32.51,
+     "That is 85 divided by 10, which is 8.5."
+    ],
+    [
+     36.74,
+     "The discount is 8 dollars 50."
+    ],
+    [
+     39.15,
+     "Multiplying by 0.1 made the answer smaller."
+    ],
+    [
+     43.27,
+     "Remember: when you multiply by 10, the digits move one place to the left."
+    ],
+    [
+     48.73,
+     "When you divide by 100, they move two places to the right."
+    ],
+    [
+     53.61,
+     "So 3.6 divided by 100 is 0.036."
+    ],
+    [
+     58.03,
+     "0.1 is one tenth."
+    ],
+    [
+     59.46,
+     "So multiplying by 0.1 is the same as dividing by 10."
+    ],
+    [
+     64.38,
+     "0.01 is one hundredth."
+    ],
+    [
+     66.38,
+     "So multiplying by 0.01 is the same as dividing by 100."
+    ],
+    [
+     71.83,
+     "For example, 46 times 0.1 is 4.6."
+    ],
+    [
+     75.51,
+     "And 46 times 0.01 is 0.46."
+    ],
+    [
+     78.96,
+     "Your turn."
+    ],
+    [
+     79.77,
+     "Work out 7 times 0.01."
+    ],
+    [
+     81.55,
+     "Pause the video and try it."
+    ],
+    [
+     85.14,
+     "Times 0.01 is the same as divide by 100."
+    ],
+    [
+     89.34,
+     "7 divided by 100 is 0.07."
+    ],
+    [
+     92.51,
+     "Now dividing."
+    ],
+    [
+     93.56,
+     "How many tenths are there in 3?"
+    ],
+    [
+     96.06,
+     "There are 10 in each whole, so 30."
+    ],
+    [
+     98.81,
+     "So dividing by 0.1 is the same as multiplying by 10."
+    ],
+    [
+     103.56,
+     "How many hundredths are there in 3?"
+    ],
+    [
+     106.67,
+     "300."
+    ],
+    [
+     107.02,
+     "So dividing by 0.01 is the same as multiplying by 100."
+    ],
+    [
+     112.37,
+     "Dividing by a number between 0 and 1 makes the answer bigger."
+    ],
+    [
+     117.36,
+     "Here is the method."
+    ],
+    [
+     119.12,
+     "Step 1: times 0.1 means divide by 10."
+    ],
+    [
+     122.55,
+     "Times 0.01 means divide by 100."
+    ],
+    [
+     125.98,
+     "Step 2: divide by 0.1 means times 10."
+    ],
+    [
+     129.64,
+     "Divide by 0.01 means times 100."
+    ],
+    [
+     133.27,
+     "Step 3: move the digits the right way."
+    ],
+    [
+     136.54,
+     "Step 4: check."
+    ],
+    [
+     137.54,
+     "Multiplying by a number less than 1 gives a smaller answer."
+    ],
+    [
+     141.74,
+     "Dividing by it gives a bigger answer."
+    ],
+    [
+     144.92,
+     "Work out 0.45 divided by 0.1."
+    ],
+    [
+     148.0,
+     "Divide by 0.1 is times 10."
+    ],
+    [
+     150.76,
+     "0.45 times 10 is 4.5."
+    ],
+    [
+     153.54,
+     "Your turn."
+    ],
+    [
+     154.33,
+     "Work out 2.3 divided by 0.1."
+    ],
+    [
+     156.56,
+     "Pause and work it out."
+    ],
+    [
+     159.71,
+     "Divide by 0.1 is times 10."
+    ],
+    [
+     162.35,
+     "2.3 times 10 is 23."
+    ],
+    [
+     164.29,
+     "There are 23 tenths in 2.3."
+    ],
+    [
+     167.59,
+     "Work out 7.2 times 0.01, divided by 0.1."
+    ],
+    [
+     171.71,
+     "Times 0.01 is divide by 100: that gives 0.072."
+    ],
+    [
+     177.01,
+     "Then divide by 0.1, which is times 10."
+    ],
+    [
+     181.09,
+     "0.072 times 10 is 0.72."
+    ],
+    [
+     184.11,
+     "Find the missing number."
+    ],
+    [
+     186.1,
+     "53 times what is 0.53?"
+    ],
+    [
+     187.92,
+     "The digits moved two places to the right."
+    ],
+    [
+     191.33,
+     "That is divide by 100, which is the same as times 0.01."
+    ],
+    [
+     196.45,
+     "Raj works out 6 divided by 0.1."
+    ],
+    [
+     198.86,
+     "Which line goes wrong first?"
+    ],
+    [
+     201.59,
+     "Line 1 is wrong."
+    ],
+    [
+     202.91,
+     "There are 10 tenths in every whole, so there are 60 tenths in 6."
+    ],
+    [
+     208.21,
+     "Divide by 0.1 is the same as times 10."
+    ],
+    [
+     211.91,
+     "6 divided by 0.1 is 60."
+    ],
+    [
+     214.98,
+     "1 cent is 0.01 of a dollar."
+    ],
+    [
+     217.21,
+     "So to change cents into dollars, multiply by 0.01."
+    ],
+    [
+     221.89,
+     "A jar holds 4,750 cents."
+    ],
+    [
+     224.67,
+     "4,750 times 0.01 is 47.5."
+    ],
+    [
+     227.57,
+     "That is 47 dollars 50."
+    ],
+    [
+     230.67,
+     "One last question."
+    ],
+    [
+     232.17,
+     "Which gives the biggest answer: 5 divided by 0.01, 5 times 0.01, or 5 divided by 0.1?"
+    ],
+    [
+     239.27,
+     "Pause the video and choose."
+    ],
+    [
+     242.92,
+     "5 divided by 0.01 is 500."
+    ],
+    [
+     245.68,
+     "5 times 0.01 is 0.05."
+    ],
+    [
+     248.0,
+     "5 divided by 0.1 is 50."
+    ],
+    [
+     250.54,
+     "The biggest is 5 divided by 0.01."
+    ],
+    [
+     254.73,
+     "To remember: times 0.1 is the same as divide by 10."
+    ],
+    [
+     259.2,
+     "Times 0.01 is the same as divide by 100."
+    ],
+    [
+     263.25,
+     "Divide by 0.1 is the same as times 10."
+    ],
+    [
+     266.65,
+     "Divide by 0.01 is the same as times 100."
+    ],
+    [
+     270.78,
+     "Multiplying by a number less than 1 makes the answer smaller."
+    ],
+    [
+     275.75,
+     "Dividing by a number less than 1 makes the answer bigger."
+    ],
+    [
+     280.35,
+     "Great work! Now practise lesson 3.1 on Camday."
+    ]
+   ],
+   "times": {
+    "3.1-k1": 26.26,
+    "3.1-k2": 84.09,
+    "3.1-k3": 158.66,
+    "3.1-k4": 241.87
+   },
+   "up": true
+  },
+  "2.5": {
+   "src": "media/mv/s8/2-5.mp4",
+   "poster": "media/mv/s8/2-5_poster.jpg",
+   "srt": "media/mv/s8/2-5.srt",
+   "dur": 257.24,
+   "captions": [
+    [
+     7.59,
+     "Plan A costs 20 dollars a month, plus 3 dollars per gigabyte."
+    ],
+    [
+     12.19,
+     "Plan B costs 8 dollars a month, plus 5 dollars per gigabyte."
+    ],
+    [
+     17.26,
+     "For g gigabytes, the plans cost the same when 20 plus 3 g equals 8 plus 5 g."
+    ],
+    [
+     23.69,
+     "Find g."
+    ],
+    [
+     24.18,
+     "Pause the video and work it out."
+    ],
+    [
+     27.8,
+     "The unknown is on both sides."
+    ],
+    [
+     29.94,
+     "Take away the smaller amount, 3 g, from both sides."
+    ],
+    [
+     33.71,
+     "That leaves 20 equals 8 plus 2 g."
+    ],
+    [
+     36.7,
+     "Subtract 8: 12 equals 2 g."
+    ],
+    [
+     38.84,
+     "Divide by 2: g equals 6."
+    ],
+    [
+     40.81,
+     "Both plans cost the same for 6 gigabytes."
+    ],
+    [
+     44.73,
+     "Remember: to solve 3 x plus 5 equals 26, undo the operations."
+    ],
+    [
+     49.86,
+     "Subtract 5: 3 x equals 21."
+    ],
+    [
+     52.05,
+     "Divide by 3: x equals 7."
+    ],
+    [
+     54.62,
+     "Do the same thing to both sides at every step, like keeping a balance level."
+    ],
+    [
+     60.21,
+     "When the unknown is on both sides, remove it from one side first."
+    ],
+    [
+     64.66,
+     "Usually take away the term with the smaller coefficient."
+    ],
+    [
+     69.05,
+     "Your turn."
+    ],
+    [
+     69.84,
+     "Solve 9 x equals 4 x plus 35."
+    ],
+    [
+     72.12,
+     "Pause the video and try it."
+    ],
+    [
+     75.64,
+     "Subtract 4 x from both sides: 5 x equals 35."
+    ],
+    [
+     79.3,
+     "Divide by 5: x equals 7."
+    ],
+    [
+     81.84,
+     "If there are brackets, expand them first."
+    ],
+    [
+     85.13,
+     "4, bracket, x minus 3, equals 2, bracket, x plus 5, becomes 4 x minus 12 equals 2 x plus 10."
+    ],
+    [
+     93.08,
+     "Subtract 2 x: 2 x minus 12 equals 10."
+    ],
+    [
+     96.75,
+     "Add 12: 2 x equals 22."
+    ],
+    [
+     98.94,
+     "So x equals 11."
+    ],
+    [
+     100.98,
+     "Here is the method."
+    ],
+    [
+     102.37,
+     "Step 1: expand any brackets."
+    ],
+    [
+     104.96,
+     "Step 2: collect the unknowns on one side, by subtracting the smaller x term from both sides."
+    ],
+    [
+     111.79,
+     "Step 3: collect the numbers on the other side."
+    ],
+    [
+     115.55,
+     "Step 4: divide to find x, then check it in the original equation."
+    ],
+    [
+     120.63,
+     "Solve 2 x plus 11 equals 5 x plus 26."
+    ],
+    [
+     123.98,
+     "Subtract 2 x from both sides: 11 equals 3 x plus 26."
+    ],
+    [
+     129.25,
+     "Subtract 26: negative 15 equals 3 x."
+    ],
+    [
+     132.24,
+     "Divide by 3: x equals negative 5."
+    ],
+    [
+     134.99,
+     "Negative answers are fine."
+    ],
+    [
+     137.7,
+     "Solve 2, bracket, x plus 6, equals 30."
+    ],
+    [
+     140.97,
+     "One way is to expand: 2 x plus 12 equals 30."
+    ],
+    [
+     145.31,
+     "Your turn."
+    ],
+    [
+     145.97,
+     "Finish it: what is x?"
+    ],
+    [
+     147.38,
+     "Pause and work it out."
+    ],
+    [
+     150.25,
+     "Subtract 12: 2 x equals 18."
+    ],
+    [
+     152.88,
+     "Divide by 2: x equals 9."
+    ],
+    [
+     155.22,
+     "Check: 9 plus 6 is 15, and 2 times 15 is 30."
+    ],
+    [
+     160.06,
+     "The angles of a triangle are x, 2 x plus 10, and 3 x minus 10 degrees."
+    ],
+    [
+     165.92,
+     "They add up to 180."
+    ],
+    [
+     168.06,
+     "The 10s cancel out, so 6 x equals 180, and x equals 30."
+    ],
+    [
+     173.18,
+     "The angles are 30, 70 and 80 degrees."
+    ],
+    [
+     177.17,
+     "Kai solves 6 x minus 5 equals 2 x plus 15."
+    ],
+    [
+     180.53,
+     "Which line goes wrong first?"
+    ],
+    [
+     183.33,
+     "Line 1 is wrong."
+    ],
+    [
+     184.61,
+     "Subtracting 2 x from both sides gives 6 x minus 2 x."
+    ],
+    [
+     188.77,
+     "Adding 5 to both sides gives 15 plus 5."
+    ],
+    [
+     192.44,
+     "So 4 x equals 20, and x equals 5."
+    ],
+    [
+     195.78,
+     "Businesses solve this kind of equation all the time."
+    ],
+    [
+     199.58,
+     "A school club makes T-shirts."
+    ],
+    [
+     201.71,
+     "It pays 60 dollars for the printing screen, plus 4 dollars for each shirt, and sells each shirt for 10 dollars."
+    ],
+    [
+     210.39,
+     "It breaks even when 60 plus 4 N equals 10 N."
+    ],
+    [
+     213.96,
+     "That gives 6 N equals 60, so N equals 10 shirts."
+    ],
+    [
+     217.85,
+     "After that, every shirt makes a profit."
+    ],
+    [
+     221.57,
+     "One last question."
+    ],
+    [
+     222.95,
+     "Solve x plus 13 equals 4 x plus 1."
+    ],
+    [
+     225.56,
+     "Pause the video and answer."
+    ],
+    [
+     229.04,
+     "Subtract x from both sides: 13 equals 3 x plus 1."
+    ],
+    [
+     233.28,
+     "Subtract 1: 12 equals 3 x."
+    ],
+    [
+     235.53,
+     "So x equals 4."
+    ],
+    [
+     237.29,
+     "To remember: expand any brackets first."
+    ],
+    [
+     240.54,
+     "Get the unknown on one side by subtracting the smaller term."
+    ],
+    [
+     245.18,
+     "Do the same to both sides at every step."
+    ],
+    [
+     248.43,
+     "And check the answer in the original equation."
+    ],
+    [
+     252.11,
+     "Great work! Now practise lesson 2.5 on Camday."
+    ]
+   ],
+   "times": {
+    "2.5-k1": 26.75,
+    "2.5-k2": 74.59,
+    "2.5-k3": 149.2,
+    "2.5-k4": 227.99
+   },
+   "up": false
+  },
+  "4.1": {
+   "src": "media/mv/s8/4-1.mp4",
+   "poster": "media/mv/s8/4-1_poster.jpg",
+   "srt": "media/mv/s8/4-1.srt",
+   "dur": 282.2,
+   "captions": [
+    [
+     6.3,
+     "Here are the overnight temperatures in four cities: negative 2.45, negative 2.5, negative 2.405 and negative 2.054 degrees Celsius."
+    ],
+    [
+     18.48,
+     "Which city was the coldest?"
+    ],
+    [
+     21.01,
+     "Type the coldest temperature."
+    ],
+    [
+     23.06,
+     "Pause the video and work it out."
+    ],
+    [
+     26.73,
+     "The coldest is the smallest number."
+    ],
+    [
+     29.21,
+     "That is the one furthest below zero."
+    ],
+    [
+     31.77,
+     "Negative 2.5 is the furthest from zero, so it is the coldest."
+    ],
+    [
+     36.66,
+     "The warmest is negative 2.054, because it is closest to zero."
+    ],
+    [
+     42.06,
+     "Remember: to compare decimals, look at the whole numbers first, then the tenths, then the hundredths."
+    ],
+    [
+     49.53,
+     "8.518 and 8.56: the whole numbers and the tenths are the same."
+    ],
+    [
+     55.18,
+     "In the hundredths, 1 is less than 6."
+    ],
+    [
+     58.46,
+     "So 8.518 is less than 8.56."
+    ],
+    [
+     61.47,
+     "On a number line, numbers further to the left are smaller."
+    ],
+    [
+     65.35,
+     "For negative numbers, the one with the bigger size is further from zero, so it is smaller."
+    ],
+    [
+     71.92,
+     "3.4 is bigger than 3.04."
+    ],
+    [
+     74.09,
+     "So negative 3.4 is further left, and negative 3.4 is less than negative 3.04."
+    ],
+    [
+     81.6,
+     "Your turn."
+    ],
+    [
+     82.4,
+     "Which is smaller: negative 3.9, or negative 3.85?"
+    ],
+    [
+     86.33,
+     "Pause the video and choose."
+    ],
+    [
+     89.89,
+     "3.9 is the same as 3.90, which is bigger than 3.85."
+    ],
+    [
+     94.36,
+     "So negative 3.9 is further from zero."
+    ],
+    [
+     97.61,
+     "Negative 3.9 is smaller."
+    ],
+    [
+     100.26,
+     "Zeros at the end of a decimal do not change its value."
+    ],
+    [
+     104.48,
+     "0.50 equals 0.5."
+    ],
+    [
+     106.28,
+     "But a sign does."
+    ],
+    [
+     107.49,
+     "Negative 0.5 is not equal to 0.5."
+    ],
+    [
+     109.99,
+     "This sign means not equal to."
+    ],
+    [
+     112.74,
+     "In a mixed list, all the negatives come before zero, and all the positives come after."
+    ],
+    [
+     119.03,
+     "Here is the method."
+    ],
+    [
+     120.37,
+     "Step 1: split the numbers into negatives, zero and positives."
+    ],
+    [
+     125.23,
+     "Step 2: for positives, compare place by place."
+    ],
+    [
+     128.44,
+     "Fill with zeros so they have the same length."
+    ],
+    [
+     132.14,
+     "Step 3: for negatives, compare the sizes."
+    ],
+    [
+     135.06,
+     "The biggest size is the smallest number."
+    ],
+    [
+     138.47,
+     "Step 4: if you are not sure, sketch a number line."
+    ],
+    [
+     142.53,
+     "Put these in order, smallest first: 0.3, negative 0.32, negative 0.302, and 0.03."
+    ],
+    [
+     150.83,
+     "The negatives first."
+    ],
+    [
+     152.81,
+     "0.320 is bigger than 0.302, so negative 0.32 is smaller than negative 0.302."
+    ],
+    [
+     160.92,
+     "Then the positives: 0.03 is less than 0.3."
+    ],
+    [
+     165.14,
+     "The order is negative 0.32, negative 0.302, 0.03, 0.3."
+    ],
+    [
+     171.12,
+     "Is negative 2.30 equal to negative 2.3?"
+    ],
+    [
+     174.23,
+     "The zero at the end makes no difference."
+    ],
+    [
+     177.97,
+     "Your turn."
+    ],
+    [
+     178.66,
+     "Equal, or not equal?"
+    ],
+    [
+     180.06,
+     "Pause and choose."
+    ],
+    [
+     182.64,
+     "They are the same number, so they are equal."
+    ],
+    [
+     186.1,
+     "Negative 2.30 equals negative 2.3."
+    ],
+    [
+     189.33,
+     "Now compare negative 4.12 and negative 4.2."
+    ],
+    [
+     193.33,
+     "4.12 is less than 4.20, so negative 4.12 is closer to zero."
+    ],
+    [
+     198.83,
+     "Negative 4.12 is greater than negative 4.2."
+    ],
+    [
+     203.39,
+     "Finn wants to know which is smaller: negative 0.8 or negative 0.75."
+    ],
+    [
+     208.66,
+     "Which line is wrong?"
+    ],
+    [
+     210.79,
+     "Line 2 is wrong."
+    ],
+    [
+     211.92,
+     "For negatives, the bigger size is further from zero."
+    ],
+    [
+     215.58,
+     "So the inequality turns round."
+    ],
+    [
+     218.25,
+     "Negative 0.8 is less than negative 0.75."
+    ],
+    [
+     222.57,
+     "In golf, scores are often given compared with par, and the lowest score wins."
+    ],
+    [
+     228.54,
+     "Three players have average scores of negative 3.5, negative 2.75 and negative 3.25."
+    ],
+    [
+     235.53,
+     "The smallest number is negative 3.5, so that player is winning."
+    ],
+    [
+     240.71,
+     "One last question."
+    ],
+    [
+     242.08,
+     "Write a number halfway between negative 0.4 and negative 0.5."
+    ],
+    [
+     246.69,
+     "Pause the video and answer."
+    ],
+    [
+     250.14,
+     "Halfway between 0.4 and 0.5 is 0.45."
+    ],
+    [
+     253.54,
+     "So halfway between negative 0.4 and negative 0.5 is negative 0.45."
+    ],
+    [
+     260.34,
+     "To remember: compare decimals place by place."
+    ],
+    [
+     264.01,
+     "For negatives, the bigger size is the smaller number."
+    ],
+    [
+     268.21,
+     "Use the signs for equal, not equal, less than and greater than carefully."
+    ],
+    [
+     273.65,
+     "Sketch a number line if you are not sure."
+    ],
+    [
+     276.99,
+     "Great work! Now practise lesson 4.1 on Camday."
+    ]
+   ],
+   "times": {
+    "4.1-k1": 25.68,
+    "4.1-k2": 88.84,
+    "4.1-k3": 181.59,
+    "4.1-k4": 249.09
+   },
+   "up": false
+  },
+  "5.1": {
+   "src": "media/mv/s8/5-1.mp4",
+   "poster": "media/mv/s8/5-1_poster.jpg",
+   "srt": "media/mv/s8/5-1.srt",
+   "dur": 285.92,
+   "captions": [
+    [
+     5.98,
+     "Two straight rails are parallel."
+    ],
+    [
+     8.28,
+     "A road crosses them at an angle."
+    ],
+    [
+     10.57,
+     "It makes an angle of 58 degrees with the first rail."
+    ],
+    [
+     14.85,
+     "What is the matching angle at the second rail?"
+    ],
+    [
+     18.0,
+     "Pause the video and work it out."
+    ],
+    [
+     21.6,
+     "The road crosses both rails in the same direction."
+    ],
+    [
+     25.15,
+     "So the angle in the matching position at the second rail is also 58 degrees."
+    ],
+    [
+     31.11,
+     "These are called corresponding angles."
+    ],
+    [
+     33.78,
+     "Let's see all the angle facts for parallel lines."
+    ],
+    [
+     37.76,
+     "Remember: when two lines cross, vertically opposite angles are equal."
+    ],
+    [
+     42.89,
+     "And angles on a straight line add up to 180 degrees."
+    ],
+    [
+     47.3,
+     "So if one angle is 58 degrees, the angle next to it is 180 minus 58, which is 122 degrees."
+    ],
+    [
+     55.69,
+     "A transversal crosses two parallel lines and makes 8 angles."
+    ],
+    [
+     59.88,
+     "Angles in matching positions are corresponding angles."
+    ],
+    [
+     63.65,
+     "They are equal."
+    ],
+    [
+     64.69,
+     "Look for an F shape."
+    ],
+    [
+     66.64,
+     "Alternate angles are between the parallel lines, on opposite sides of the transversal."
+    ],
+    [
+     72.53,
+     "They are equal too."
+    ],
+    [
+     73.83,
+     "Look for a Z shape."
+    ],
+    [
+     75.68,
+     "Co-interior angles are between the lines, on the same side."
+    ],
+    [
+     79.94,
+     "They are not equal."
+    ],
+    [
+     81.31,
+     "They add up to 180 degrees."
+    ],
+    [
+     83.26,
+     "Look for a C shape."
+    ],
+    [
+     85.18,
+     "Your turn."
+    ],
+    [
+     85.87,
+     "What does a Z shape show?"
+    ],
+    [
+     87.59,
+     "Pause the video and choose."
+    ],
+    [
+     90.84,
+     "A Z shape shows alternate angles."
+    ],
+    [
+     93.0,
+     "They are equal."
+    ],
+    [
+     94.53,
+     "The facts also work backwards."
+    ],
+    [
+     96.61,
+     "If corresponding or alternate angles are equal, then the lines are parallel."
+    ],
+    [
+     101.89,
+     "Always give a reason for each angle."
+    ],
+    [
+     104.93,
+     "Here is the method."
+    ],
+    [
+     106.29,
+     "Step 1: mark the parallel lines and the transversal."
+    ],
+    [
+     110.56,
+     "Step 2: start from a known angle."
+    ],
+    [
+     112.8,
+     "Look for an F, Z or C shape that links it to the angle you want."
+    ],
+    [
+     117.7,
+     "Step 3: corresponding and alternate angles are equal."
+    ],
+    [
+     121.87,
+     "Co-interior angles add up to 180."
+    ],
+    [
+     125.02,
+     "Step 4: write a reason next to every angle."
+    ],
+    [
+     128.68,
+     "Parallel lines are cut by a transversal."
+    ],
+    [
+     131.62,
+     "One angle is 58 degrees."
+    ],
+    [
+     133.39,
+     "Find its co-interior angle."
+    ],
+    [
+     135.92,
+     "Co-interior angles add up to 180 degrees."
+    ],
+    [
+     140.06,
+     "180 minus 58 is 122 degrees."
+    ],
+    [
+     143.43,
+     "Two alternate angles are 3 x plus 15, and 5 x minus 25."
+    ],
+    [
+     148.14,
+     "Find x."
+    ],
+    [
+     149.29,
+     "Alternate angles are equal."
+    ],
+    [
+     151.7,
+     "So 3 x plus 15 equals 5 x minus 25."
+    ],
+    [
+     154.83,
+     "Subtract 3 x, and add 25: 40 equals 2 x."
+    ],
+    [
+     158.4,
+     "So x equals 20."
+    ],
+    [
+     160.29,
+     "Check: 3 times 20 plus 15 is 75, and 5 times 20 minus 25 is 75."
+    ],
+    [
+     166.53,
+     "Both angles are 75 degrees."
+    ],
+    [
+     169.75,
+     "Your turn."
+    ],
+    [
+     170.55,
+     "Alternate angles are 2 x plus 10, and 70 degrees."
+    ],
+    [
+     174.46,
+     "Find x."
+    ],
+    [
+     175.02,
+     "Pause and work it out."
+    ],
+    [
+     178.17,
+     "Alternate angles are equal."
+    ],
+    [
+     180.69,
+     "2 x plus 10 equals 70."
+    ],
+    [
+     182.73,
+     "Subtract 10: 2 x equals 60."
+    ],
+    [
+     185.25,
+     "So x equals 30."
+    ],
+    [
+     187.2,
+     "Two lines are cut by a transversal."
+    ],
+    [
+     189.91,
+     "The corresponding angles are 72 degrees and 74 degrees."
+    ],
+    [
+     194.16,
+     "Are the lines parallel?"
+    ],
+    [
+     196.49,
+     "For parallel lines, corresponding angles must be equal."
+    ],
+    [
+     200.62,
+     "72 is not equal to 74, so the lines are not parallel."
+    ],
+    [
+     204.59,
+     "They will meet somewhere."
+    ],
+    [
+     207.01,
+     "Parallel lines have an angle of 110 degrees, and its co-interior partner, y."
+    ],
+    [
+     212.59,
+     "Here is Eli's working."
+    ],
+    [
+     214.21,
+     "Which line goes wrong first?"
+    ],
+    [
+     216.81,
+     "Line 1 is wrong."
+    ],
+    [
+     218.04,
+     "Co-interior angles add up to 180 degrees."
+    ],
+    [
+     221.19,
+     "Only corresponding and alternate angles are equal."
+    ],
+    [
+     225.58,
+     "y equals 180 minus 110, which is 70 degrees."
+    ],
+    [
+     230.63,
+     "Car parks often paint bays at an angle, not straight across."
+    ],
+    [
+     234.63,
+     "The lines of the bays are all parallel."
+    ],
+    [
+     237.78,
+     "If every bay meets the kerb at 60 degrees, the painters only need to set the angle once."
+    ],
+    [
+     243.88,
+     "Corresponding angles do the rest."
+    ],
+    [
+     246.71,
+     "One last question."
+    ],
+    [
+     248.03,
+     "What is the co-interior angle to 95 degrees?"
+    ],
+    [
+     251.26,
+     "Pause the video and answer."
+    ],
+    [
+     254.64,
+     "Co-interior angles add up to 180."
+    ],
+    [
+     257.87,
+     "180 minus 95 is 85 degrees."
+    ],
+    [
+     261.07,
+     "To remember: corresponding angles, in an F shape, are equal."
+    ],
+    [
+     265.62,
+     "Alternate angles, in a Z shape, are equal."
+    ],
+    [
+     268.95,
+     "Co-interior angles, in a C shape, add up to 180 degrees."
+    ],
+    [
+     273.81,
+     "Equal corresponding or alternate angles prove that lines are parallel."
+    ],
+    [
+     278.78,
+     "Always give reasons."
+    ],
+    [
+     280.76,
+     "Great work! Now practise lesson 5.1 on Camday."
+    ]
+   ],
+   "times": {
+    "5.1-k1": 20.55,
+    "5.1-k2": 89.79,
+    "5.1-k3": 177.12,
+    "5.1-k4": 253.59
+   },
+   "up": false
+  }
  }
 }

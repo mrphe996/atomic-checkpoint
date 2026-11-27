@@ -1,0 +1,351 @@
+1
+00:00:07,440 --> 00:00:13,540
+Overnight, the temperature on a mountain falls by 3 degrees every hour, for 6 hours.
+
+2
+00:00:13,590 --> 00:00:17,450
+A scientist writes this as 6 times negative 3.
+
+3
+00:00:17,500 --> 00:00:19,440
+What is 6 times negative 3?
+
+4
+00:00:19,490 --> 00:00:23,210
+Pause the video and work it out.
+
+5
+00:00:23,260 --> 00:00:27,120
+Six drops of 3 degrees is a drop of 18 degrees.
+
+6
+00:00:27,170 --> 00:00:30,740
+So 6 times negative 3 is negative 18.
+
+7
+00:00:30,790 --> 00:00:34,180
+But what could negative 3 times negative 6 mean?
+
+8
+00:00:34,230 --> 00:00:37,680
+Can a negative times a negative ever be positive?
+
+9
+00:00:37,730 --> 00:00:39,310
+Let's find out.
+
+10
+00:00:39,360 --> 00:00:44,080
+Remember: 4 times negative 5 means four lots of negative 5.
+
+11
+00:00:44,130 --> 00:00:46,250
+That is negative 20.
+
+12
+00:00:46,300 --> 00:00:49,170
+And negative 7 times 6 is negative 42.
+
+13
+00:00:49,220 --> 00:00:54,020
+A positive and a negative always give a negative answer.
+
+14
+00:00:54,070 --> 00:00:55,470
+Look at this pattern.
+
+15
+00:00:55,520 --> 00:00:59,010
+Each time, the first number goes down by 1.
+
+16
+00:00:59,060 --> 00:01:01,710
+The answers go up by 4 each time.
+
+17
+00:01:01,760 --> 00:01:05,870
+Negative 12, negative 8, negative 4, then 0.
+
+18
+00:01:05,920 --> 00:01:07,650
+Keep the pattern going.
+
+19
+00:01:07,700 --> 00:01:10,200
+Negative 1 times negative 4 is 4.
+
+20
+00:01:10,250 --> 00:01:12,750
+Negative 2 times negative 4 is 8.
+
+21
+00:01:12,800 --> 00:01:16,390
+A negative times a negative is positive.
+
+22
+00:01:16,440 --> 00:01:17,130
+Your turn.
+
+23
+00:01:17,180 --> 00:01:19,810
+What is negative 9 times negative 4?
+
+24
+00:01:19,860 --> 00:01:23,230
+Pause the video and try it.
+
+25
+00:01:23,280 --> 00:01:24,540
+9 times 4 is 36.
+
+26
+00:01:24,590 --> 00:01:28,630
+The signs are the same, so the answer is positive.
+
+27
+00:01:28,680 --> 00:01:31,960
+Negative 9 times negative 4 is 36.
+
+28
+00:01:32,010 --> 00:01:34,590
+The same sign rules work for dividing.
+
+29
+00:01:34,640 --> 00:01:36,930
+Same signs give a positive answer.
+
+30
+00:01:36,980 --> 00:01:40,180
+Different signs give a negative answer.
+
+31
+00:01:40,230 --> 00:01:51,020
+For longer calculations, the order of operations stays the same: brackets first, then indices, or powers, then times and divide, then add and subtract.
+
+32
+00:01:51,070 --> 00:01:52,340
+Here is the method.
+
+33
+00:01:52,390 --> 00:01:57,030
+Step 1: work out the size of the answer, ignoring the signs.
+
+34
+00:01:57,080 --> 00:02:00,070
+Step 2: same signs give a positive answer.
+
+35
+00:02:00,120 --> 00:02:03,440
+Different signs give a negative answer.
+
+36
+00:02:03,490 --> 00:02:08,590
+Step 3: for longer calculations, follow the order of operations.
+
+37
+00:02:08,640 --> 00:02:13,050
+Step 4: when you multiply several numbers, count the negatives.
+
+38
+00:02:13,100 --> 00:02:16,730
+An even number of negatives gives a positive answer.
+
+39
+00:02:16,780 --> 00:02:19,470
+An odd number gives a negative.
+
+40
+00:02:19,520 --> 00:02:25,970
+Work out negative 56 divided by negative 8, and 56 divided by negative 8.
+
+41
+00:02:26,020 --> 00:02:27,590
+56 divided by 8 is 7.
+
+42
+00:02:27,640 --> 00:02:32,850
+In the first one, the signs are the same, so the answer is 7.
+
+43
+00:02:32,900 --> 00:02:38,320
+In the second one, the signs are different, so the answer is negative 7.
+
+44
+00:02:38,370 --> 00:02:43,200
+Work out negative 2, times negative 3, times negative 5.
+
+45
+00:02:43,250 --> 00:02:46,050
+Negative 2 times negative 3 is 6.
+
+46
+00:02:46,100 --> 00:02:49,960
+Then 6 times negative 5 is negative 30.
+
+47
+00:02:50,010 --> 00:02:52,960
+Check by counting: there are 3 negatives.
+
+48
+00:02:53,010 --> 00:02:56,130
+3 is odd, so the answer is negative.
+
+49
+00:02:56,180 --> 00:02:59,700
+Work out 4, minus 3 times negative 2 squared.
+
+50
+00:02:59,750 --> 00:03:01,200
+Indices come first.
+
+51
+00:03:01,250 --> 00:03:06,660
+Negative 2 squared is negative 2 times negative 2, which is 4.
+
+52
+00:03:06,710 --> 00:03:07,960
+Then multiply.
+
+53
+00:03:08,010 --> 00:03:09,440
+3 times 4 is 12.
+
+54
+00:03:09,490 --> 00:03:13,130
+Finally, 4 minus 12 is negative 8.
+
+55
+00:03:13,180 --> 00:03:13,850
+Your turn.
+
+56
+00:03:13,900 --> 00:03:15,660
+What is negative 2 cubed?
+
+57
+00:03:15,710 --> 00:03:18,650
+Pause and work it out.
+
+58
+00:03:18,700 --> 00:03:23,690
+Negative 2 cubed is negative 2, times negative 2, times negative 2.
+
+59
+00:03:23,740 --> 00:03:27,300
+That is 4 times negative 2, which is negative 8.
+
+60
+00:03:27,350 --> 00:03:30,250
+Three negatives give a negative.
+
+61
+00:03:30,300 --> 00:03:36,990
+Find the value of 2 A squared, minus 3 B, when A is negative 4 and B is negative 5.
+
+62
+00:03:37,040 --> 00:03:41,110
+A squared is negative 4 squared, which is 16.
+
+63
+00:03:41,160 --> 00:03:43,210
+2 times 16 is 32.
+
+64
+00:03:43,260 --> 00:03:47,790
+3 B is 3 times negative 5, which is negative 15.
+
+65
+00:03:47,840 --> 00:03:53,400
+Then 32 minus negative 15 is 32 plus 15, which is 47.
+
+66
+00:03:53,450 --> 00:04:00,430
+Omar works out negative 5 squared, written without brackets, and negative 5 in brackets, squared.
+
+67
+00:04:00,480 --> 00:04:02,430
+Which line is wrong?
+
+68
+00:04:02,480 --> 00:04:03,610
+Line 1 is wrong.
+
+69
+00:04:03,660 --> 00:04:06,540
+Without brackets, only the 5 is squared.
+
+70
+00:04:06,590 --> 00:04:09,220
+The minus sign stays outside.
+
+71
+00:04:09,270 --> 00:04:13,750
+So negative 5 squared, without brackets, is negative 25.
+
+72
+00:04:13,800 --> 00:04:16,240
+With brackets, it is 25.
+
+73
+00:04:16,290 --> 00:04:20,060
+Negative numbers describe heights below sea level.
+
+74
+00:04:20,110 --> 00:04:24,800
+The shore of the Dead Sea is about 430 metres below sea level.
+
+75
+00:04:24,850 --> 00:04:28,480
+We can write that as negative 430 metres.
+
+76
+00:04:28,530 --> 00:04:38,690
+A diver who goes down 12 metres a minute for 5 minutes changes depth by 5 times negative 12, which is negative 60 metres.
+
+77
+00:04:38,740 --> 00:04:40,070
+One last question.
+
+78
+00:04:40,120 --> 00:04:43,990
+What is 20 divided by negative 4, minus negative 3?
+
+79
+00:04:44,040 --> 00:04:47,460
+Pause the video and answer.
+
+80
+00:04:47,510 --> 00:04:48,530
+Divide first.
+
+81
+00:04:48,580 --> 00:04:51,710
+20 divided by negative 4 is negative 5.
+
+82
+00:04:51,760 --> 00:04:58,400
+Then negative 5 minus negative 3 is negative 5 plus 3, which is negative 2.
+
+83
+00:04:58,450 --> 00:05:07,170
+To remember: when you multiply or divide, same signs give a positive answer, and different signs give a negative answer.
+
+84
+00:05:07,220 --> 00:05:12,220
+The pattern explains why a negative times a negative is positive.
+
+85
+00:05:12,270 --> 00:05:18,480
+Use the order of operations: brackets, indices, times and divide, add and subtract.
+
+86
+00:05:18,530 --> 00:05:21,800
+Negative 5 in brackets, squared, is positive.
+
+87
+00:05:21,850 --> 00:05:26,040
+Negative 5 squared, without brackets, is negative.
+
+88
+00:05:26,090 --> 00:05:31,190
+Great work! Now practise lesson 1.2 on Camday.

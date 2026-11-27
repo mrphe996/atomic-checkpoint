@@ -35,7 +35,7 @@ VIDEOS["5.1"] = [
     ]),
     dict(kind="idea", title="Corresponding, alternate, co-interior", steps=[
         dict(say="A transversal crosses two parallel lines and makes 8 angles. Angles in matching positions are corresponding angles. They are equal. Look for an F shape.",
-             do=[PAR({"a": "a", "b": "b", "c": "c", "d": "d", "e": "e", "f": "f", "g": "g", "h": "h"}),
+             do=[PAR({"a": "a", "b": "b", "c": "c", "d": "d", "e": "e", "f": "f", "g": "g", "h": "h"}, x=800, w=460),
                  TBL(["Pair", "Shape", "Fact"], [["corresponding (a, e)", "F", "equal"], ["alternate (c, e)", "Z", "equal"], ["co-interior (c, f)", "C", "add to 180°"]], y=180), ROW(0, 0.5)]),
         dict(say="Alternate angles are between the parallel lines, on opposite sides of the transversal. They are equal too. Look for a Z shape.", do=[ROW(1, 0.4)]),
         dict(say="Co-interior angles are between the lines, on the same side. They are not equal. They add up to 180 degrees. Look for a C shape.", do=[ROW(2, 0.4)]),

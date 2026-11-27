@@ -1,0 +1,347 @@
+1
+00:00:05,980 --> 00:00:08,230
+Two straight rails are parallel.
+
+2
+00:00:08,280 --> 00:00:10,520
+A road crosses them at an angle.
+
+3
+00:00:10,570 --> 00:00:14,800
+It makes an angle of 58 degrees with the first rail.
+
+4
+00:00:14,850 --> 00:00:17,950
+What is the matching angle at the second rail?
+
+5
+00:00:18,000 --> 00:00:21,550
+Pause the video and work it out.
+
+6
+00:00:21,600 --> 00:00:25,100
+The road crosses both rails in the same direction.
+
+7
+00:00:25,150 --> 00:00:31,060
+So the angle in the matching position at the second rail is also 58 degrees.
+
+8
+00:00:31,110 --> 00:00:33,730
+These are called corresponding angles.
+
+9
+00:00:33,780 --> 00:00:37,710
+Let's see all the angle facts for parallel lines.
+
+10
+00:00:37,760 --> 00:00:42,840
+Remember: when two lines cross, vertically opposite angles are equal.
+
+11
+00:00:42,890 --> 00:00:47,250
+And angles on a straight line add up to 180 degrees.
+
+12
+00:00:47,300 --> 00:00:55,640
+So if one angle is 58 degrees, the angle next to it is 180 minus 58, which is 122 degrees.
+
+13
+00:00:55,690 --> 00:00:59,830
+A transversal crosses two parallel lines and makes 8 angles.
+
+14
+00:00:59,880 --> 00:01:03,600
+Angles in matching positions are corresponding angles.
+
+15
+00:01:03,650 --> 00:01:04,640
+They are equal.
+
+16
+00:01:04,690 --> 00:01:06,590
+Look for an F shape.
+
+17
+00:01:06,640 --> 00:01:12,480
+Alternate angles are between the parallel lines, on opposite sides of the transversal.
+
+18
+00:01:12,530 --> 00:01:13,780
+They are equal too.
+
+19
+00:01:13,830 --> 00:01:15,630
+Look for a Z shape.
+
+20
+00:01:15,680 --> 00:01:19,890
+Co-interior angles are between the lines, on the same side.
+
+21
+00:01:19,940 --> 00:01:21,260
+They are not equal.
+
+22
+00:01:21,310 --> 00:01:23,210
+They add up to 180 degrees.
+
+23
+00:01:23,260 --> 00:01:25,130
+Look for a C shape.
+
+24
+00:01:25,180 --> 00:01:25,820
+Your turn.
+
+25
+00:01:25,870 --> 00:01:27,540
+What does a Z shape show?
+
+26
+00:01:27,590 --> 00:01:30,790
+Pause the video and choose.
+
+27
+00:01:30,840 --> 00:01:32,950
+A Z shape shows alternate angles.
+
+28
+00:01:33,000 --> 00:01:34,480
+They are equal.
+
+29
+00:01:34,530 --> 00:01:36,560
+The facts also work backwards.
+
+30
+00:01:36,610 --> 00:01:41,840
+If corresponding or alternate angles are equal, then the lines are parallel.
+
+31
+00:01:41,890 --> 00:01:44,880
+Always give a reason for each angle.
+
+32
+00:01:44,930 --> 00:01:46,240
+Here is the method.
+
+33
+00:01:46,290 --> 00:01:50,510
+Step 1: mark the parallel lines and the transversal.
+
+34
+00:01:50,560 --> 00:01:52,750
+Step 2: start from a known angle.
+
+35
+00:01:52,800 --> 00:01:57,650
+Look for an F, Z or C shape that links it to the angle you want.
+
+36
+00:01:57,700 --> 00:02:01,820
+Step 3: corresponding and alternate angles are equal.
+
+37
+00:02:01,870 --> 00:02:04,970
+Co-interior angles add up to 180.
+
+38
+00:02:05,020 --> 00:02:08,630
+Step 4: write a reason next to every angle.
+
+39
+00:02:08,680 --> 00:02:11,570
+Parallel lines are cut by a transversal.
+
+40
+00:02:11,620 --> 00:02:13,340
+One angle is 58 degrees.
+
+41
+00:02:13,390 --> 00:02:15,870
+Find its co-interior angle.
+
+42
+00:02:15,920 --> 00:02:20,010
+Co-interior angles add up to 180 degrees.
+
+43
+00:02:20,060 --> 00:02:23,380
+180 minus 58 is 122 degrees.
+
+44
+00:02:23,430 --> 00:02:28,090
+Two alternate angles are 3 x plus 15, and 5 x minus 25.
+
+45
+00:02:28,140 --> 00:02:29,240
+Find x.
+
+46
+00:02:29,290 --> 00:02:31,650
+Alternate angles are equal.
+
+47
+00:02:31,700 --> 00:02:34,780
+So 3 x plus 15 equals 5 x minus 25.
+
+48
+00:02:34,830 --> 00:02:38,350
+Subtract 3 x, and add 25: 40 equals 2 x.
+
+49
+00:02:38,400 --> 00:02:40,240
+So x equals 20.
+
+50
+00:02:40,290 --> 00:02:46,480
+Check: 3 times 20 plus 15 is 75, and 5 times 20 minus 25 is 75.
+
+51
+00:02:46,530 --> 00:02:49,700
+Both angles are 75 degrees.
+
+52
+00:02:49,750 --> 00:02:50,500
+Your turn.
+
+53
+00:02:50,550 --> 00:02:54,410
+Alternate angles are 2 x plus 10, and 70 degrees.
+
+54
+00:02:54,460 --> 00:02:54,970
+Find x.
+
+55
+00:02:55,020 --> 00:02:58,120
+Pause and work it out.
+
+56
+00:02:58,170 --> 00:03:00,640
+Alternate angles are equal.
+
+57
+00:03:00,690 --> 00:03:02,680
+2 x plus 10 equals 70.
+
+58
+00:03:02,730 --> 00:03:05,200
+Subtract 10: 2 x equals 60.
+
+59
+00:03:05,250 --> 00:03:07,150
+So x equals 30.
+
+60
+00:03:07,200 --> 00:03:09,860
+Two lines are cut by a transversal.
+
+61
+00:03:09,910 --> 00:03:14,110
+The corresponding angles are 72 degrees and 74 degrees.
+
+62
+00:03:14,160 --> 00:03:16,440
+Are the lines parallel?
+
+63
+00:03:16,490 --> 00:03:20,570
+For parallel lines, corresponding angles must be equal.
+
+64
+00:03:20,620 --> 00:03:24,540
+72 is not equal to 74, so the lines are not parallel.
+
+65
+00:03:24,590 --> 00:03:26,960
+They will meet somewhere.
+
+66
+00:03:27,010 --> 00:03:32,540
+Parallel lines have an angle of 110 degrees, and its co-interior partner, y.
+
+67
+00:03:32,590 --> 00:03:34,160
+Here is Eli's working.
+
+68
+00:03:34,210 --> 00:03:36,760
+Which line goes wrong first?
+
+69
+00:03:36,810 --> 00:03:37,990
+Line 1 is wrong.
+
+70
+00:03:38,040 --> 00:03:41,140
+Co-interior angles add up to 180 degrees.
+
+71
+00:03:41,190 --> 00:03:45,530
+Only corresponding and alternate angles are equal.
+
+72
+00:03:45,580 --> 00:03:50,580
+y equals 180 minus 110, which is 70 degrees.
+
+73
+00:03:50,630 --> 00:03:54,580
+Car parks often paint bays at an angle, not straight across.
+
+74
+00:03:54,630 --> 00:03:57,730
+The lines of the bays are all parallel.
+
+75
+00:03:57,780 --> 00:04:03,830
+If every bay meets the kerb at 60 degrees, the painters only need to set the angle once.
+
+76
+00:04:03,880 --> 00:04:06,660
+Corresponding angles do the rest.
+
+77
+00:04:06,710 --> 00:04:07,980
+One last question.
+
+78
+00:04:08,030 --> 00:04:11,210
+What is the co-interior angle to 95 degrees?
+
+79
+00:04:11,260 --> 00:04:14,590
+Pause the video and answer.
+
+80
+00:04:14,640 --> 00:04:17,820
+Co-interior angles add up to 180.
+
+81
+00:04:17,870 --> 00:04:21,020
+180 minus 95 is 85 degrees.
+
+82
+00:04:21,070 --> 00:04:25,570
+To remember: corresponding angles, in an F shape, are equal.
+
+83
+00:04:25,620 --> 00:04:28,900
+Alternate angles, in a Z shape, are equal.
+
+84
+00:04:28,950 --> 00:04:33,760
+Co-interior angles, in a C shape, add up to 180 degrees.
+
+85
+00:04:33,810 --> 00:04:38,730
+Equal corresponding or alternate angles prove that lines are parallel.
+
+86
+00:04:38,780 --> 00:04:40,710
+Always give reasons.
+
+87
+00:04:40,760 --> 00:04:45,870
+Great work! Now practise lesson 5.1 on Camday.

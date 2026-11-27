@@ -1,0 +1,323 @@
+1
+00:00:06,550 --> 00:00:10,140
+A rug costs 18 dollars 75 per square metre.
+
+2
+00:00:10,190 --> 00:00:13,650
+A room is 3.6 metres by 2.5 metres.
+
+3
+00:00:13,700 --> 00:00:16,540
+Before working it out exactly, estimate.
+
+4
+00:00:16,590 --> 00:00:22,090
+The price is about 20 dollars, and the area is about 9 square metres.
+
+5
+00:00:22,140 --> 00:00:24,400
+Estimate the cost: 20 times 9.
+
+6
+00:00:24,450 --> 00:00:28,270
+Pause the video and work it out.
+
+7
+00:00:28,320 --> 00:00:30,090
+20 times 9 is 180.
+
+8
+00:00:30,140 --> 00:00:34,280
+The rug will cost about 180 dollars.
+
+9
+00:00:34,330 --> 00:00:37,040
+To be exact, we need 3.6 times 2.5.
+
+10
+00:00:37,090 --> 00:00:40,120
+How do we multiply two decimals?
+
+11
+00:00:40,170 --> 00:00:44,980
+Remember: for 2.4 times 3, work out 24 times 3, which is 72.
+
+12
+00:00:45,030 --> 00:00:50,800
+There is one decimal place in the question, so the answer is 7.2.
+
+13
+00:00:50,850 --> 00:00:53,300
+Multiply without the decimal points.
+
+14
+00:00:53,350 --> 00:00:57,620
+Then count the total number of decimal places in the question.
+
+15
+00:00:57,670 --> 00:00:59,910
+The answer has that many.
+
+16
+00:00:59,960 --> 00:01:01,600
+36 times 25 is 900.
+
+17
+00:01:01,650 --> 00:01:07,090
+There are 2 decimal places, so the answer is 9.00, which is 9.
+
+18
+00:01:07,140 --> 00:01:10,840
+The room is exactly 9 square metres.
+
+19
+00:01:10,890 --> 00:01:12,390
+Why does it work?
+
+20
+00:01:12,440 --> 00:01:17,230
+3.6 is 36 divided by 10, and 2.5 is 25 divided by 10.
+
+21
+00:01:17,280 --> 00:01:21,340
+So the answer is 36 times 25, divided by 100.
+
+22
+00:01:21,390 --> 00:01:25,900
+Two divisions by 10 give two decimal places.
+
+23
+00:01:25,950 --> 00:01:29,400
+For 0.4 times 0.03: 4 times 3 is 12.
+
+24
+00:01:29,450 --> 00:01:34,900
+There are 3 decimal places, so the answer is 0.012.
+
+25
+00:01:34,950 --> 00:01:35,680
+Your turn.
+
+26
+00:01:35,730 --> 00:01:37,490
+Work out 0.9 times 0.7.
+
+27
+00:01:37,540 --> 00:01:41,000
+Pause the video and try it.
+
+28
+00:01:41,050 --> 00:01:42,240
+9 times 7 is 63.
+
+29
+00:01:42,290 --> 00:01:46,110
+There are 2 decimal places, so the answer is 0.63.
+
+30
+00:01:46,160 --> 00:01:51,450
+It is smaller than both numbers, because both are less than 1.
+
+31
+00:01:51,500 --> 00:01:52,850
+Here is the method.
+
+32
+00:01:52,900 --> 00:01:57,370
+Step 1: estimate, by rounding to 1 significant figure.
+
+33
+00:01:57,420 --> 00:02:01,290
+Step 2: multiply the numbers as whole numbers.
+
+34
+00:02:01,340 --> 00:02:07,190
+Step 3: count the total decimal places in both numbers, and place the point.
+
+35
+00:02:07,240 --> 00:02:11,180
+Step 4: compare the answer with your estimate.
+
+36
+00:02:11,230 --> 00:02:13,530
+Work out 4.73 times 2.6.
+
+37
+00:02:13,580 --> 00:02:17,200
+Estimate first: 5 times 3 is 15.
+
+38
+00:02:17,250 --> 00:02:19,400
+Now 473 times 26.
+
+39
+00:02:19,450 --> 00:02:22,250
+473 times 20 is 9,460.
+
+40
+00:02:22,300 --> 00:02:24,960
+473 times 6 is 2,838.
+
+41
+00:02:25,010 --> 00:02:28,870
+Together they make 12,298.
+
+42
+00:02:28,920 --> 00:02:32,830
+There are 2 plus 1, which is 3 decimal places.
+
+43
+00:02:32,880 --> 00:02:34,630
+The answer is 12.298.
+
+44
+00:02:34,680 --> 00:02:38,280
+That is close to the estimate of 15.
+
+45
+00:02:38,330 --> 00:02:40,780
+Work out 0.05 times 0.008.
+
+46
+00:02:40,830 --> 00:02:42,320
+5 times 8 is 40.
+
+47
+00:02:42,370 --> 00:02:47,300
+There are 2 plus 3, which is 5 decimal places.
+
+48
+00:02:47,350 --> 00:02:50,350
+Count back 5 places from 40.
+
+49
+00:02:50,400 --> 00:02:55,160
+The answer is 0.00040, which is 0.0004.
+
+50
+00:02:55,210 --> 00:02:55,970
+Your turn.
+
+51
+00:02:56,020 --> 00:02:57,840
+Work out 2.5 times 1.2.
+
+52
+00:02:57,890 --> 00:03:01,030
+Pause and work it out.
+
+53
+00:03:01,080 --> 00:03:02,830
+25 times 12 is 300.
+
+54
+00:03:02,880 --> 00:03:09,250
+There are 2 decimal places, so the answer is 3.00, which is 3.
+
+55
+00:03:09,300 --> 00:03:13,260
+You are told that 37 times 54 is 1,998.
+
+56
+00:03:13,310 --> 00:03:17,210
+Use this to find 3.7 times 0.054.
+
+57
+00:03:17,260 --> 00:03:21,310
+There are 1 plus 3, which is 4 decimal places.
+
+58
+00:03:21,360 --> 00:03:23,990
+So the answer is 0.1998.
+
+59
+00:03:24,040 --> 00:03:26,240
+Jo works out 0.3 times 0.2.
+
+60
+00:03:26,290 --> 00:03:29,120
+Which line goes wrong first?
+
+61
+00:03:29,170 --> 00:03:30,310
+Line 1 is wrong.
+
+62
+00:03:30,360 --> 00:03:33,870
+You do not line up the points when you multiply.
+
+63
+00:03:33,920 --> 00:03:37,900
+3 times 2 is 6, and there are 2 decimal places.
+
+64
+00:03:37,950 --> 00:03:41,210
+0.3 times 0.2 is 0.06.
+
+65
+00:03:41,260 --> 00:03:44,370
+Petrol costs 1 dollar 42 per litre.
+
+66
+00:03:44,420 --> 00:03:47,180
+A car's tank takes 38.5 litres.
+
+67
+00:03:47,230 --> 00:03:51,080
+Estimate: 1.4 times 40 is 56 dollars.
+
+68
+00:03:51,130 --> 00:03:53,710
+142 times 385 is 54,670.
+
+69
+00:03:53,760 --> 00:03:59,190
+There are 3 decimal places, so the cost is 54.670.
+
+70
+00:03:59,240 --> 00:04:02,150
+That is 54 dollars 67.
+
+71
+00:04:02,200 --> 00:04:03,630
+One last question.
+
+72
+00:04:03,680 --> 00:04:05,510
+What is 0.2 times 0.02?
+
+73
+00:04:05,560 --> 00:04:09,120
+Pause the video and answer.
+
+74
+00:04:09,170 --> 00:04:10,460
+2 times 2 is 4.
+
+75
+00:04:10,510 --> 00:04:14,600
+There are 1 plus 2, which is 3 decimal places.
+
+76
+00:04:14,650 --> 00:04:16,950
+The answer is 0.004.
+
+77
+00:04:17,000 --> 00:04:22,800
+To remember: multiply as whole numbers, then count the total decimal places.
+
+78
+00:04:22,850 --> 00:04:25,350
+Estimate to check your answer.
+
+79
+00:04:25,400 --> 00:04:30,630
+Multiplying by a number between 0 and 1 makes the answer smaller.
+
+80
+00:04:30,680 --> 00:04:34,170
+Use known facts, and move the decimal point.
+
+81
+00:04:34,220 --> 00:04:39,270
+Great work! Now practise lesson 4.2 on Camday.

@@ -17,8 +17,8 @@ VIDEOS["4.1"] = [
     ]),
     dict(kind="hook", title="The coldest", steps=[
         dict(say="The coldest is the smallest number. That is the one furthest below zero. Negative 2.5 is the furthest from zero, so it is the coldest.",
-             do=[NL(-2.6, -2.0, [(-2.5, "−2.5"), (-2.45, "−2.45"), (-2.405, ""), (-2.054, "−2.054"), (-2.0, "−2")], marks=[-2.5, -2.45, -2.405, -2.054], x=80, y=170, w=900), B("coldest: −2.5 °C", x=80, y=460, color=GREEN, at=4)]),
-        dict(say="The warmest is negative 2.054, because it is closest to zero.", do=[T("warmest: **−2.054 °C** (closest to zero)", x=80, y=550)]),
+             do=[NL(-2.6, -2.0, [(-2.5, "−2.5"), (-2.45, "−2.45"), (-2.405, ""), (-2.054, "−2.054"), (-2.0, "−2")], marks=[-2.5, -2.45, -2.405, -2.054], x=80, y=200, w=900), B("coldest: −2.5 °C", x=80, y=170, color=GREEN, at=4)]),
+        dict(say="The warmest is negative 2.054, because it is closest to zero.", do=[T("warmest: **−2.054 °C** (closest to zero)", x=80, y=260)]),
     ]),
     dict(kind="recall", title="Comparing positive decimals", steps=[
         dict(say="Remember: to compare decimals, look at the whole numbers first, then the tenths, then the hundredths.", do=[T("whole numbers → tenths → hundredths …", x=80, y=170)]),
@@ -28,7 +28,7 @@ VIDEOS["4.1"] = [
         dict(say="On a number line, numbers further to the left are smaller. For negative numbers, the one with the bigger size is further from zero, so it is smaller.",
              do=[B("negatives: bigger size → **smaller** number", x=80, y=160, color=BLUE)]),
         dict(say="3.4 is bigger than 3.04. So negative 3.4 is further left, and negative 3.4 is less than negative 3.04.",
-             do=[NL(-3.6, -2.9, [(-3.4, "−3.4"), (-3.04, "−3.04")], marks=[-3.4, -3.04], x=80, y=250, w=900), MATH("−3.4 < −3.04", x=80, y=520, color=GREEN, at=4)]),
+             do=[NL(-3.6, -2.9, [(-3.4, "−3.4"), (-3.04, "−3.04")], marks=[-3.4, -3.04], x=80, y=250, w=900), MATH("−3.4 < −3.04", x=80, y=260, color=GREEN, at=4)]),
         PAUSE("4.1-k2", "Your turn. Which is smaller: negative 3.9, or negative 3.85? Pause the video and choose.", "Which is smaller: −3.9 or −3.85?"),
     ]),
     dict(kind="idea", title="Check: −3.9 or −3.85", steps=[
@@ -73,7 +73,7 @@ VIDEOS["4.1"] = [
     dict(kind="pause", title="Quick check", steps=[
         PAUSE("4.1-k4", "One last question. Write a number halfway between negative 0.4 and negative 0.5. Pause the video and answer.", "Write a number halfway between −0.4 and −0.5."),
         dict(say="Halfway between 0.4 and 0.5 is 0.45. So halfway between negative 0.4 and negative 0.5 is negative 0.45.",
-             do=[NL(-0.5, -0.4, [(-0.5, "−0.5"), (-0.45, "−0.45"), (-0.4, "−0.4")], marks=[-0.45], x=80, y=170, w=900), B("−0.45", x=80, y=460, color=GREEN, at=3)]),
+             do=[NL(-0.5, -0.4, [(-0.5, "−0.5"), (-0.45, "−0.45"), (-0.4, "−0.4")], marks=[-0.45], x=80, y=200, w=900), B("−0.45", x=80, y=170, color=GREEN, at=3)]),
     ]),
     dict(kind="summary", title="What to remember", steps=[
         dict(say="To remember: compare decimals place by place.", do=[T("• Compare **place by place**", x=80, y=170)]),

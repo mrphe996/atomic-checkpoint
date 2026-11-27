@@ -1,0 +1,367 @@
+1
+00:00:06,940 --> 00:00:10,860
+A square vegetable patch has an area of 50 square metres.
+
+2
+00:00:10,910 --> 00:00:14,270
+The gardener wants to put a fence along one side.
+
+3
+00:00:14,320 --> 00:00:16,280
+How long is one side?
+
+4
+00:00:16,330 --> 00:00:17,450
+Is it 7 metres?
+
+5
+00:00:17,500 --> 00:00:18,160
+8 metres?
+
+6
+00:00:18,210 --> 00:00:20,580
+Or somewhere in between?
+
+7
+00:00:20,630 --> 00:00:24,140
+How long is the side of a 50 square metre square?
+
+8
+00:00:24,190 --> 00:00:27,510
+Pause the video and decide.
+
+9
+00:00:27,560 --> 00:00:30,280
+A 7 metre square has an area of 49.
+
+10
+00:00:30,330 --> 00:00:33,120
+An 8 metre square has an area of 64.
+
+11
+00:00:33,170 --> 00:00:38,810
+50 is between them, so the side is between 7 metres and 8 metres.
+
+12
+00:00:38,860 --> 00:00:43,500
+50 is very close to 49, so the side is just over 7 metres.
+
+13
+00:00:43,550 --> 00:00:46,560
+In fact it is about 7.1 metres.
+
+14
+00:00:46,610 --> 00:00:50,550
+Remember: 5 squared is 5 times 5, which is 25.
+
+15
+00:00:50,600 --> 00:00:54,740
+4 cubed is 4 times 4 times 4, which is 64.
+
+16
+00:00:54,790 --> 00:00:57,080
+A square root undoes squaring.
+
+17
+00:00:57,130 --> 00:00:59,190
+The square root of 25 is 5.
+
+18
+00:00:59,240 --> 00:01:01,220
+A cube root undoes cubing.
+
+19
+00:01:01,270 --> 00:01:03,720
+The cube root of 64 is 4.
+
+20
+00:01:03,770 --> 00:01:05,070
+5 squared is 25.
+
+21
+00:01:05,120 --> 00:01:07,960
+But negative 5 squared is also 25.
+
+22
+00:01:08,010 --> 00:01:11,780
+So 25 has two square roots: 5 and negative 5.
+
+23
+00:01:11,830 --> 00:01:14,450
+We write plus or minus 5.
+
+24
+00:01:14,500 --> 00:01:18,600
+The square root symbol on its own means the positive root.
+
+25
+00:01:18,650 --> 00:01:20,890
+The square root of 25 is just 5.
+
+26
+00:01:20,940 --> 00:01:24,950
+For a length, only the positive root makes sense.
+
+27
+00:01:25,000 --> 00:01:26,840
+A cube root is different.
+
+28
+00:01:26,890 --> 00:01:29,790
+Every number has exactly one cube root.
+
+29
+00:01:29,840 --> 00:01:36,300
+Negative 3 cubed is negative 27, so the cube root of negative 27 is negative 3.
+
+30
+00:01:36,350 --> 00:01:37,070
+Your turn.
+
+31
+00:01:37,120 --> 00:01:39,750
+Write down the square roots of 144.
+
+32
+00:01:39,800 --> 00:01:43,210
+Pause the video and try it.
+
+33
+00:01:43,260 --> 00:01:48,450
+12 squared is 144, and negative 12 squared is also 144.
+
+34
+00:01:48,500 --> 00:01:53,580
+So the square roots of 144 are plus or minus 12.
+
+35
+00:01:53,630 --> 00:01:58,760
+To estimate a square root, find the square numbers either side.
+
+36
+00:01:58,810 --> 00:02:05,150
+For the square root of 90: 81 is less than 90, and 90 is less than 100.
+
+37
+00:02:05,200 --> 00:02:09,570
+So the square root of 90 is between 9 and 10.
+
+38
+00:02:09,620 --> 00:02:11,090
+Numbers come in sets.
+
+39
+00:02:11,140 --> 00:02:13,860
+Natural numbers are 1, 2, 3 and so on.
+
+40
+00:02:13,910 --> 00:02:16,920
+Integers also include 0 and the negatives.
+
+41
+00:02:16,970 --> 00:02:22,340
+Rational numbers are any numbers that can be written as a fraction.
+
+42
+00:02:22,390 --> 00:02:23,810
+Here is the method.
+
+43
+00:02:23,860 --> 00:02:31,060
+Step 1: know your squares up to 15 squared, and your cubes up to 5 cubed, and 10 cubed.
+
+44
+00:02:31,110 --> 00:02:35,360
+Step 2: x squared equals a number has two roots, plus and minus.
+
+45
+00:02:35,410 --> 00:02:39,740
+x cubed equals a number has one root, with the same sign.
+
+46
+00:02:39,790 --> 00:02:46,990
+Step 3: to estimate, find the square numbers either side, then decide which one it is closer to.
+
+47
+00:02:47,040 --> 00:02:51,110
+Step 4: check by squaring, or cubing, your answer.
+
+48
+00:02:51,160 --> 00:02:54,400
+Find the cube root of negative 125.
+
+49
+00:02:54,450 --> 00:02:55,800
+5 cubed is 125.
+
+50
+00:02:55,850 --> 00:02:59,730
+So negative 5 cubed is negative 125.
+
+51
+00:02:59,780 --> 00:03:04,110
+The cube root of negative 125 is negative 5.
+
+52
+00:03:04,160 --> 00:03:04,810
+Your turn.
+
+53
+00:03:04,860 --> 00:03:07,330
+What is the cube root of negative 8?
+
+54
+00:03:07,380 --> 00:03:10,280
+Pause and work it out.
+
+55
+00:03:10,330 --> 00:03:14,050
+2 cubed is 8, so negative 2 cubed is negative 8.
+
+56
+00:03:14,100 --> 00:03:17,900
+The cube root of negative 8 is negative 2.
+
+57
+00:03:17,950 --> 00:03:22,030
+Estimate the square root of 90, to 1 decimal place.
+
+58
+00:03:22,080 --> 00:03:25,090
+We know it is between 9 and 10.
+
+59
+00:03:25,140 --> 00:03:25,900
+Try 9.5.
+
+60
+00:03:25,950 --> 00:03:28,050
+9.5 squared is 90.25.
+
+61
+00:03:28,100 --> 00:03:30,290
+That is just above 90.
+
+62
+00:03:30,340 --> 00:03:31,510
+Now try 9.4.
+
+63
+00:03:31,560 --> 00:03:35,840
+9.4 squared is 88.36, which is below.
+
+64
+00:03:35,890 --> 00:03:38,370
+90 is much closer to 90.25.
+
+65
+00:03:38,420 --> 00:03:42,490
+So the square root of 90 is about 9.5.
+
+66
+00:03:42,540 --> 00:03:45,280
+Solve x squared plus 7 equals 56.
+
+67
+00:03:45,330 --> 00:03:47,570
+Subtract 7 from both sides.
+
+68
+00:03:47,620 --> 00:03:49,810
+x squared equals 49.
+
+69
+00:03:49,860 --> 00:03:51,790
+There are two square roots.
+
+70
+00:03:51,840 --> 00:03:54,910
+x equals 7, or x equals negative 7.
+
+71
+00:03:54,960 --> 00:03:57,250
+Ben solves x squared equals 36.
+
+72
+00:03:57,300 --> 00:03:59,310
+Which line is wrong?
+
+73
+00:03:59,360 --> 00:04:01,090
+Line 2 is not finished.
+
+74
+00:04:01,140 --> 00:04:06,350
+Negative 6 squared is 36 as well, so there are two solutions.
+
+75
+00:04:06,400 --> 00:04:09,640
+x equals 6, or x equals negative 6.
+
+76
+00:04:09,690 --> 00:04:12,470
+Square roots are used to measure screens.
+
+77
+00:04:12,520 --> 00:04:18,540
+A television's size is the length of its diagonal, across from corner to corner.
+
+78
+00:04:18,590 --> 00:04:26,050
+The diagonal is found by adding the squares of the width and the height, then taking the square root.
+
+79
+00:04:26,100 --> 00:04:32,330
+A screen 48 inches wide and 27 inches high has a diagonal of about 55 inches.
+
+80
+00:04:32,380 --> 00:04:33,810
+One last question.
+
+81
+00:04:33,860 --> 00:04:38,640
+Which is closest to the square root of 70: 8.4, 8.9, or 35?
+
+82
+00:04:38,690 --> 00:04:42,260
+Pause the video and answer.
+
+83
+00:04:42,310 --> 00:04:49,330
+64 is less than 70, and 70 is less than 81, so the root is between 8 and 9.
+
+84
+00:04:49,380 --> 00:04:53,010
+8.4 squared is 70.56, very close to 70.
+
+85
+00:04:53,060 --> 00:04:55,260
+The answer is 8.4.
+
+86
+00:04:55,310 --> 00:04:59,890
+To remember: a positive number has two square roots, plus and minus.
+
+87
+00:04:59,940 --> 00:05:03,970
+The square root symbol alone means the positive one.
+
+88
+00:05:04,020 --> 00:05:06,580
+Every number has exactly one cube root.
+
+89
+00:05:06,630 --> 00:05:10,270
+The cube root of a negative number is negative.
+
+90
+00:05:10,320 --> 00:05:14,640
+Estimate a root using the squares, or cubes, either side.
+
+91
+00:05:14,690 --> 00:05:20,820
+Natural numbers, integers and rational numbers are sets of numbers, each one inside the next.
+
+92
+00:05:20,870 --> 00:05:25,990
+Great work! Now practise lesson 1.3 on Camday.

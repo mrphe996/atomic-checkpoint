@@ -1,0 +1,339 @@
+1
+00:00:07,260 --> 00:00:10,260
+Scientists use a formula for a dropped ball.
+
+2
+00:00:10,310 --> 00:00:15,320
+The distance d metres that it falls in t seconds is d equals 5 t squared.
+
+3
+00:00:15,370 --> 00:00:17,050
+This ignores air.
+
+4
+00:00:17,100 --> 00:00:19,790
+How far does the ball fall in 3 seconds?
+
+5
+00:00:19,840 --> 00:00:23,380
+Pause the video and work it out.
+
+6
+00:00:23,430 --> 00:00:26,000
+Put t equals 3 into the formula.
+
+7
+00:00:26,050 --> 00:00:28,380
+Square first: 3 squared is 9.
+
+8
+00:00:28,430 --> 00:00:30,920
+Then multiply: 5 times 9 is 45.
+
+9
+00:00:30,970 --> 00:00:33,520
+The ball falls 45 metres.
+
+10
+00:00:33,570 --> 00:00:36,980
+And if it falls 80 metres, how long did it take?
+
+11
+00:00:37,030 --> 00:00:39,400
+We will answer that later.
+
+12
+00:00:39,450 --> 00:00:45,830
+Remember: if b is negative 3, then 4 b minus 7 is 4 times negative 3, minus 7.
+
+13
+00:00:45,880 --> 00:00:50,500
+That is negative 12 minus 7, which is negative 19.
+
+14
+00:00:50,550 --> 00:00:54,260
+Put a negative number in brackets when you substitute.
+
+15
+00:00:54,310 --> 00:00:56,410
+It stops sign mistakes.
+
+16
+00:00:56,460 --> 00:01:00,580
+A formula is a rule that links variables, with an equals sign.
+
+17
+00:01:00,630 --> 00:01:06,040
+In d equals 5 t squared, the letter on its own, d, is called the subject.
+
+18
+00:01:06,090 --> 00:01:08,150
+With negatives, use brackets.
+
+19
+00:01:08,200 --> 00:01:16,680
+If y equals x squared, minus 2 x, and x is negative 1, then y is negative 1 squared, minus 2 times negative 1.
+
+20
+00:01:16,730 --> 00:01:17,370
+Your turn.
+
+21
+00:01:17,420 --> 00:01:20,080
+Finish it: find y when x is negative 1.
+
+22
+00:01:20,130 --> 00:01:23,350
+Pause the video and try it.
+
+23
+00:01:23,400 --> 00:01:25,290
+Negative 1 squared is 1.
+
+24
+00:01:25,340 --> 00:01:31,420
+2 times negative 1 is negative 2, and subtracting negative 2 means adding 2.
+
+25
+00:01:31,470 --> 00:01:34,640
+So y equals 1 plus 2, which is 3.
+
+26
+00:01:34,690 --> 00:01:39,680
+To find t when d is known, rearrange the formula so that t is the subject.
+
+27
+00:01:39,730 --> 00:01:44,860
+Undo the operations in reverse order, just like solving an equation.
+
+28
+00:01:44,910 --> 00:01:47,420
+Start with d equals 5 t squared.
+
+29
+00:01:47,470 --> 00:01:51,420
+Divide both sides by 5: d over 5 equals t squared.
+
+30
+00:01:51,470 --> 00:01:53,500
+Then take the square root.
+
+31
+00:01:53,550 --> 00:01:59,180
+For the 80 metre fall, 80 over 5 is 16, and the square root of 16 is 4.
+
+32
+00:01:59,230 --> 00:02:01,170
+It took 4 seconds.
+
+33
+00:02:01,220 --> 00:02:02,490
+Here is the method.
+
+34
+00:02:02,540 --> 00:02:07,450
+Step 1: to substitute, replace each letter with its value, in brackets.
+
+35
+00:02:07,500 --> 00:02:10,520
+Then follow the order of operations.
+
+36
+00:02:10,570 --> 00:02:16,910
+Step 2: to rearrange, decide what has been done to the new subject, and in what order.
+
+37
+00:02:16,960 --> 00:02:22,900
+Step 3: undo those operations in reverse order, doing the same to both sides.
+
+38
+00:02:22,950 --> 00:02:25,430
+Step 4: check with numbers.
+
+39
+00:02:25,480 --> 00:02:27,790
+P equals 2 A squared, minus 3 B.
+
+40
+00:02:27,840 --> 00:02:31,890
+Find P when A is negative 3 and B is negative 4.
+
+41
+00:02:31,940 --> 00:02:35,060
+A squared is 9, and 2 times 9 is 18.
+
+42
+00:02:35,110 --> 00:02:39,850
+3 B is 3 times negative 4, which is negative 12.
+
+43
+00:02:39,900 --> 00:02:43,490
+18 minus negative 12 is 18 plus 12.
+
+44
+00:02:43,540 --> 00:02:45,600
+So P equals 30.
+
+45
+00:02:45,650 --> 00:02:48,740
+Make x the subject of y equals 3 x minus 4.
+
+46
+00:02:48,790 --> 00:02:53,300
+To get y, x was multiplied by 3, then 4 was subtracted.
+
+47
+00:02:53,350 --> 00:02:54,920
+Undo in reverse order.
+
+48
+00:02:54,970 --> 00:02:58,390
+First add 4 to both sides: y plus 4 equals 3 x.
+
+49
+00:02:58,440 --> 00:03:01,000
+Then divide both sides by 3.
+
+50
+00:03:01,050 --> 00:03:01,710
+Your turn.
+
+51
+00:03:01,760 --> 00:03:04,610
+Make A the subject of B equals A minus 9.
+
+52
+00:03:04,660 --> 00:03:07,210
+Pause and choose.
+
+53
+00:03:07,260 --> 00:03:08,980
+9 was subtracted from A.
+
+54
+00:03:09,030 --> 00:03:11,480
+Undo it by adding 9 to both sides.
+
+55
+00:03:11,530 --> 00:03:13,350
+A equals B plus 9.
+
+56
+00:03:13,400 --> 00:03:17,750
+To change Celsius to Fahrenheit, F equals 1.8 C plus 32.
+
+57
+00:03:17,800 --> 00:03:22,630
+Make C the subject, then convert 77 degrees Fahrenheit.
+
+58
+00:03:22,680 --> 00:03:25,980
+Subtract 32: F minus 32 equals 1.8 C.
+
+59
+00:03:26,030 --> 00:03:31,510
+Divide by 1.8: C equals F minus 32, all divided by 1.8.
+
+60
+00:03:31,560 --> 00:03:33,390
+77 minus 32 is 45.
+
+61
+00:03:33,440 --> 00:03:35,890
+45 divided by 1.8 is 25.
+
+62
+00:03:35,940 --> 00:03:41,340
+So 77 degrees Fahrenheit is 25 degrees Celsius.
+
+63
+00:03:41,390 --> 00:03:44,790
+Ella makes x the subject of y equals 2 x plus 6.
+
+64
+00:03:44,840 --> 00:03:47,350
+Which line goes wrong first?
+
+65
+00:03:47,400 --> 00:03:48,500
+Line 1 is wrong.
+
+66
+00:03:48,550 --> 00:03:52,610
+She divided only y by 2, not the whole of the other side.
+
+67
+00:03:52,660 --> 00:03:54,740
+Undo the plus 6 first.
+
+68
+00:03:54,790 --> 00:03:56,370
+y minus 6 equals 2 x.
+
+69
+00:03:56,420 --> 00:04:00,030
+So x equals y minus 6, all divided by 2.
+
+70
+00:04:00,080 --> 00:04:02,660
+Driving instructors use a formula too.
+
+71
+00:04:02,710 --> 00:04:07,370
+A car's braking distance grows with the square of its speed.
+
+72
+00:04:07,420 --> 00:04:14,270
+So doubling the speed makes the braking distance about 4 times as long, because 2 squared is 4.
+
+73
+00:04:14,320 --> 00:04:18,160
+That is why speed limits near schools are low.
+
+74
+00:04:18,210 --> 00:04:19,460
+One last question.
+
+75
+00:04:19,510 --> 00:04:24,960
+Using d equals 5 t squared, how many seconds does it take to fall 20 metres?
+
+76
+00:04:25,010 --> 00:04:28,310
+Pause the video and answer.
+
+77
+00:04:28,360 --> 00:04:30,050
+20 equals 5 t squared.
+
+78
+00:04:30,100 --> 00:04:32,570
+Divide by 5: t squared equals 4.
+
+79
+00:04:32,620 --> 00:04:36,580
+The time is positive, so t equals 2 seconds.
+
+80
+00:04:36,630 --> 00:04:39,290
+To remember: a formula links variables.
+
+81
+00:04:39,340 --> 00:04:42,410
+The subject is the letter on its own.
+
+82
+00:04:42,460 --> 00:04:45,750
+Substitute with brackets around negative numbers.
+
+83
+00:04:45,800 --> 00:04:50,650
+Change the subject by undoing the operations in reverse order.
+
+84
+00:04:50,700 --> 00:04:52,960
+And check with numbers.
+
+85
+00:04:53,010 --> 00:04:58,150
+Great work! Now practise lesson 2.2 on Camday.

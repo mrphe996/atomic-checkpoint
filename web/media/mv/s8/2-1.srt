@@ -1,0 +1,327 @@
+1
+00:00:06,930 --> 00:00:09,810
+A phone contract costs 15 dollars a month.
+
+2
+00:00:09,860 --> 00:00:16,290
+If you use more data than your allowance, you pay 2 dollars for every extra gigabyte.
+
+3
+00:00:16,340 --> 00:00:19,420
+Suppose you go over by g gigabytes in one month.
+
+4
+00:00:19,470 --> 00:00:22,650
+We do not know g yet, so we use a letter.
+
+5
+00:00:22,700 --> 00:00:25,440
+Write an expression for one month's bill.
+
+6
+00:00:25,490 --> 00:00:28,680
+Pause the video and try it.
+
+7
+00:00:28,730 --> 00:00:30,300
+The fixed part is 15.
+
+8
+00:00:30,350 --> 00:00:34,250
+Each extra gigabyte adds 2, so g gigabytes add 2 g.
+
+9
+00:00:34,300 --> 00:00:37,890
+One month's bill is 15 plus 2 g dollars.
+
+10
+00:00:37,940 --> 00:00:42,550
+For a whole year, the whole monthly bill is multiplied by 12.
+
+11
+00:00:42,600 --> 00:00:48,690
+A bracket shows that: 12 times, open bracket, 15 plus 2 g, close bracket.
+
+12
+00:00:48,740 --> 00:00:55,430
+Remember the order: brackets, then indices, then times and divide, then add and subtract.
+
+13
+00:00:55,480 --> 00:01:00,700
+2 plus 3 times 4 squared is 2 plus 3 times 16, which is 50.
+
+14
+00:01:00,750 --> 00:01:07,870
+But with a bracket, 2 plus 3, times 4 squared, is 5 times 16, which is 80.
+
+15
+00:01:07,920 --> 00:01:09,880
+Use a letter for each unknown.
+
+16
+00:01:09,930 --> 00:01:14,260
+The order of the words gives the order of the operations.
+
+17
+00:01:14,310 --> 00:01:17,170
+Square n then add 4 is n squared plus 4.
+
+18
+00:01:17,220 --> 00:01:22,740
+But add 4 first, then square, needs a bracket: n plus 4, all squared.
+
+19
+00:01:22,790 --> 00:01:29,650
+In the same way, subtract 1 from n, then multiply by 3, is 3 times, bracket, n minus 1.
+
+20
+00:01:29,700 --> 00:01:30,360
+Your turn.
+
+21
+00:01:30,410 --> 00:01:33,080
+Write: add 3 to n, then multiply by 7.
+
+22
+00:01:33,130 --> 00:01:36,410
+Pause the video and try it.
+
+23
+00:01:36,460 --> 00:01:39,970
+The adding happens first, so it goes in a bracket.
+
+24
+00:01:40,020 --> 00:01:42,970
+Then the whole bracket is multiplied by 7.
+
+25
+00:01:43,020 --> 00:01:46,010
+The answer is 7, bracket, n plus 3.
+
+26
+00:01:46,060 --> 00:01:48,980
+Look at 5 x squared, minus 3 x, plus 7.
+
+27
+00:01:49,030 --> 00:01:53,560
+It has three terms: 5 x squared, negative 3 x, and 7.
+
+28
+00:01:53,610 --> 00:01:57,160
+The number in front of a letter is its coefficient.
+
+29
+00:01:57,210 --> 00:01:59,570
+The coefficient of x squared is 5.
+
+30
+00:01:59,620 --> 00:02:05,160
+The coefficient of x is negative 3, because the minus sign belongs to the term.
+
+31
+00:02:05,210 --> 00:02:06,980
+7 is the constant.
+
+32
+00:02:07,030 --> 00:02:11,660
+A linear expression has no power higher than 1, like 4 x plus 1.
+
+33
+00:02:11,710 --> 00:02:20,110
+Two expressions are equivalent if they are equal for every value, like 2, bracket, x plus 3, and 2 x plus 6.
+
+34
+00:02:20,160 --> 00:02:21,410
+Here is the method.
+
+35
+00:02:21,460 --> 00:02:26,700
+Step 1: choose a letter for each unknown, and say what it stands for.
+
+36
+00:02:26,750 --> 00:02:31,580
+Step 2: find the fixed amounts, and the amounts for each unit.
+
+37
+00:02:31,630 --> 00:02:34,980
+Step 3: build the expression in the right order.
+
+38
+00:02:35,030 --> 00:02:38,790
+Use a bracket for the result of a calculation.
+
+39
+00:02:38,840 --> 00:02:43,600
+Step 4: test it with a simple number to check it makes sense.
+
+40
+00:02:43,650 --> 00:02:45,140
+Pencils cost p cents.
+
+41
+00:02:45,190 --> 00:02:47,780
+Pens cost 3 cents more than pencils.
+
+42
+00:02:47,830 --> 00:02:52,520
+Write an expression for the cost of 4 pencils and 2 pens.
+
+43
+00:02:52,570 --> 00:02:54,070
+A pen costs p plus 3.
+
+44
+00:02:54,120 --> 00:02:58,530
+So the total is 4 p, plus 2 times, bracket, p plus 3.
+
+45
+00:02:58,580 --> 00:03:04,360
+Expand and simplify: 4 p plus 2 p plus 6, which is 6 p plus 6 cents.
+
+46
+00:03:04,410 --> 00:03:08,150
+A rectangle's length is 3 more than twice its width, w.
+
+47
+00:03:08,200 --> 00:03:11,320
+Write an expression for its perimeter.
+
+48
+00:03:11,370 --> 00:03:17,890
+The perimeter is two lengths and two widths: 2 times, bracket, 2 w plus 3, plus 2 w.
+
+49
+00:03:17,940 --> 00:03:22,330
+That is 4 w plus 6 plus 2 w, which is 6 w plus 6.
+
+50
+00:03:22,380 --> 00:03:23,040
+Your turn.
+
+51
+00:03:23,090 --> 00:03:27,540
+In 4 y squared, minus 9 y, plus 2, what is the coefficient of y?
+
+52
+00:03:27,590 --> 00:03:30,490
+Pause and work it out.
+
+53
+00:03:30,540 --> 00:03:32,380
+The y term is negative 9 y.
+
+54
+00:03:32,430 --> 00:03:38,100
+The minus sign belongs to the term, so the coefficient of y is negative 9.
+
+55
+00:03:38,150 --> 00:03:42,610
+Are 3, bracket, n plus 2, minus n, and 2 n plus 6 equivalent?
+
+56
+00:03:42,660 --> 00:03:45,680
+Expand and simplify the first one.
+
+57
+00:03:45,730 --> 00:03:48,150
+3 n plus 6 minus n is 2 n plus 6.
+
+58
+00:03:48,200 --> 00:03:52,810
+It is the same expression, so yes, they are equivalent.
+
+59
+00:03:52,860 --> 00:03:55,900
+Sam writes: double n, then square the result.
+
+60
+00:03:55,950 --> 00:03:57,820
+Which line is wrong?
+
+61
+00:03:57,870 --> 00:03:58,960
+Line 2 is wrong.
+
+62
+00:03:59,010 --> 00:04:01,160
+2 n squared squares only the n.
+
+63
+00:04:01,210 --> 00:04:05,690
+The whole of 2 n must be squared, so it needs a bracket.
+
+64
+00:04:05,740 --> 00:04:09,410
+Double n, then square, is 2 n in a bracket, squared.
+
+65
+00:04:09,460 --> 00:04:11,670
+That equals 4 n squared.
+
+66
+00:04:11,720 --> 00:04:13,690
+Taxi meters use an expression.
+
+67
+00:04:13,740 --> 00:04:20,510
+In many cities, a taxi charges a fixed starting fare, then a fixed amount for each kilometre.
+
+68
+00:04:20,560 --> 00:04:29,320
+If the start is 3 dollars and each kilometre is 1 dollar 50, a trip of k kilometres costs 3 plus 1.5 k dollars.
+
+69
+00:04:29,370 --> 00:04:33,350
+For a 10 kilometre trip, that is 18 dollars.
+
+70
+00:04:33,400 --> 00:04:34,700
+One last question.
+
+71
+00:04:34,750 --> 00:04:37,310
+Is 5 minus 2 x a linear expression?
+
+72
+00:04:37,360 --> 00:04:40,730
+Pause the video and answer.
+
+73
+00:04:40,780 --> 00:04:41,010
+Yes.
+
+74
+00:04:41,060 --> 00:04:45,380
+The highest power of x is 1, so 5 minus 2 x is linear.
+
+75
+00:04:45,430 --> 00:04:48,620
+To remember: letters stand for unknown numbers.
+
+76
+00:04:48,670 --> 00:04:51,040
+Say what each letter means.
+
+77
+00:04:51,090 --> 00:04:54,950
+The order of the words gives the order of the operations.
+
+78
+00:04:55,000 --> 00:04:58,380
+Brackets show the result of a calculation.
+
+79
+00:04:58,430 --> 00:05:00,880
+Terms, coefficients and constants.
+
+80
+00:05:00,930 --> 00:05:04,450
+A linear expression has no power above 1.
+
+81
+00:05:04,500 --> 00:05:09,380
+Equivalent expressions are equal for every value of the letter.
+
+82
+00:05:09,430 --> 00:05:14,550
+Great work! Now practise lesson 2.1 on Camday.

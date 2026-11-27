@@ -1,0 +1,287 @@
+1
+00:00:06,000 --> 00:00:09,290
+A sign in a lift says: maximum 8 people.
+
+2
+00:00:09,340 --> 00:00:11,650
+Can exactly 8 people use the lift?
+
+3
+00:00:11,700 --> 00:00:17,280
+Think about how you would write the rule with p for the number of people.
+
+4
+00:00:17,330 --> 00:00:20,180
+Which inequality means maximum 8 people?
+
+5
+00:00:20,230 --> 00:00:23,550
+Pause the video and choose.
+
+6
+00:00:23,600 --> 00:00:26,690
+Maximum 8 means 8 is allowed, but 9 is not.
+
+7
+00:00:26,740 --> 00:00:29,580
+So p is less than or equal to 8.
+
+8
+00:00:29,630 --> 00:00:37,360
+A ride at a fair says: riders must be at least 140 centimetres, and under 195 centimetres.
+
+9
+00:00:37,410 --> 00:00:39,350
+Is exactly 140 allowed?
+
+10
+00:00:39,400 --> 00:00:41,190
+Is exactly 195?
+
+11
+00:00:41,240 --> 00:00:47,120
+Remember: x is greater than 3 means x is more than 3, but 3 itself is not included.
+
+12
+00:00:47,170 --> 00:00:50,890
+On a number line, it has an open circle at 3.
+
+13
+00:00:50,940 --> 00:00:53,450
+This sign means less than or equal to.
+
+14
+00:00:53,500 --> 00:00:56,150
+This one means greater than or equal to.
+
+15
+00:00:56,200 --> 00:01:00,810
+The boundary is included, so we draw a closed, filled circle.
+
+16
+00:01:00,860 --> 00:01:03,520
+Here is x greater than or equal to 2.
+
+17
+00:01:03,570 --> 00:01:06,840
+The closed circle shows 2 is included.
+
+18
+00:01:06,890 --> 00:01:07,540
+Your turn.
+
+19
+00:01:07,590 --> 00:01:11,650
+How is x greater than or equal to 3 shown on a number line?
+
+20
+00:01:11,700 --> 00:01:14,920
+Pause the video and choose.
+
+21
+00:01:14,970 --> 00:01:20,500
+3 is included, so it is a closed circle at 3, with an arrow to the right.
+
+22
+00:01:20,550 --> 00:01:23,850
+Two conditions together make an interval.
+
+23
+00:01:23,900 --> 00:01:29,820
+The ride rule is: 140 is less than or equal to h, and h is less than 195.
+
+24
+00:01:29,870 --> 00:01:33,730
+Closed circle at 140, open circle at 195.
+
+25
+00:01:33,780 --> 00:01:39,510
+This line shows negative 2 is less than or equal to x, which is less than 3.
+
+26
+00:01:39,560 --> 00:01:43,930
+The integers in it are negative 2, negative 1, 0, 1 and 2.
+
+27
+00:01:43,980 --> 00:01:45,850
+3 is not included.
+
+28
+00:01:45,900 --> 00:01:47,150
+Here is the method.
+
+29
+00:01:47,200 --> 00:01:54,210
+Step 1: decide if each boundary is included, with a closed circle, or not, with an open circle.
+
+30
+00:01:54,260 --> 00:02:00,380
+Step 2: for an interval, write it in order, with the smallest number on the left.
+
+31
+00:02:00,430 --> 00:02:06,140
+Step 3: solve an inequality like an equation, doing the same to both sides.
+
+32
+00:02:06,190 --> 00:02:11,170
+Step 4: when you list integers, check each boundary carefully.
+
+33
+00:02:11,220 --> 00:02:17,680
+A number line shows an open circle at negative 1, and a closed circle at 4, joined together.
+
+34
+00:02:17,730 --> 00:02:19,720
+Write the inequality.
+
+35
+00:02:19,770 --> 00:02:23,220
+Open at negative 1, so negative 1 is less than x.
+
+36
+00:02:23,270 --> 00:02:26,980
+Closed at 4, so x is less than or equal to 4.
+
+37
+00:02:27,030 --> 00:02:27,700
+Your turn.
+
+38
+00:02:27,750 --> 00:02:31,260
+What is the largest integer with x less than 4.5?
+
+39
+00:02:31,310 --> 00:02:34,260
+Pause and work it out.
+
+40
+00:02:34,310 --> 00:02:38,200
+The integers less than 4.5 are 4, 3, 2 and so on.
+
+41
+00:02:38,250 --> 00:02:40,120
+The largest is 4.
+
+42
+00:02:40,170 --> 00:02:43,740
+Solve 5 x minus 3 is greater than 2 x plus 9.
+
+43
+00:02:43,790 --> 00:02:49,130
+Subtract 2 x from both sides: 3 x minus 3 is greater than 9.
+
+44
+00:02:49,180 --> 00:02:51,590
+Add 3: 3 x is greater than 12.
+
+45
+00:02:51,640 --> 00:02:54,840
+Divide by 3: x is greater than 4.
+
+46
+00:02:54,890 --> 00:03:01,490
+Find the integers n where 7 is less than or equal to 2 n plus 1, which is less than 15.
+
+47
+00:03:01,540 --> 00:03:08,300
+Subtract 1 from every part: 6 is less than or equal to 2 n, which is less than 14.
+
+48
+00:03:08,350 --> 00:03:14,010
+Divide every part by 2: 3 is less than or equal to n, which is less than 7.
+
+49
+00:03:14,060 --> 00:03:16,150
+So n is 3, 4, 5 or 6.
+
+50
+00:03:16,200 --> 00:03:19,720
+Mo shows x is at least negative 2 on a number line.
+
+51
+00:03:19,770 --> 00:03:21,660
+Which line is wrong?
+
+52
+00:03:21,710 --> 00:03:22,860
+Line 1 is wrong.
+
+53
+00:03:22,910 --> 00:03:25,840
+At least negative 2 includes negative 2.
+
+54
+00:03:25,890 --> 00:03:29,680
+So x is greater than or equal to negative 2.
+
+55
+00:03:29,730 --> 00:03:33,060
+The circle at negative 2 must be closed.
+
+56
+00:03:33,110 --> 00:03:35,550
+Food safety rules use inequalities.
+
+57
+00:03:35,600 --> 00:03:39,610
+A fridge should keep food at 5 degrees Celsius or colder.
+
+58
+00:03:39,660 --> 00:03:42,580
+That is t less than or equal to 5.
+
+59
+00:03:42,630 --> 00:03:46,570
+A freezer should be at negative 18 degrees or colder.
+
+60
+00:03:46,620 --> 00:03:50,430
+That is t less than or equal to negative 18.
+
+61
+00:03:50,480 --> 00:03:51,760
+One last question.
+
+62
+00:03:51,810 --> 00:03:55,310
+Solve 2 x minus 1 is greater than or equal to 9.
+
+63
+00:03:55,360 --> 00:03:58,710
+Pause the video and choose.
+
+64
+00:03:58,760 --> 00:04:01,880
+Add 1: 2 x is greater than or equal to 10.
+
+65
+00:04:01,930 --> 00:04:05,830
+Divide by 2: x is greater than or equal to 5.
+
+66
+00:04:05,880 --> 00:04:11,660
+To remember: less than or equal to, and greater than or equal to, include the boundary.
+
+67
+00:04:11,710 --> 00:04:13,550
+Use a closed circle.
+
+68
+00:04:13,600 --> 00:04:16,610
+Less than and greater than do not include it.
+
+69
+00:04:16,660 --> 00:04:18,450
+Use an open circle.
+
+70
+00:04:18,500 --> 00:04:22,730
+Write intervals with the smallest number on the left.
+
+71
+00:04:22,780 --> 00:04:28,270
+Solve them like equations, and list integers carefully at each boundary.
+
+72
+00:04:28,320 --> 00:04:33,470
+Great work! Now practise lesson 2.6 on Camday.

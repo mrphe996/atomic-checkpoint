@@ -1,0 +1,339 @@
+1
+00:00:05,530 --> 00:00:08,550
+A colony of bacteria doubles every hour.
+
+2
+00:00:08,600 --> 00:00:10,230
+It starts with 1 cell.
+
+3
+00:00:10,280 --> 00:00:15,770
+After 1 hour there are 2 cells, after 2 hours 4, after 3 hours 8.
+
+4
+00:00:15,820 --> 00:00:20,580
+After 10 hours, there are 2 to the power 10 cells.
+
+5
+00:00:20,630 --> 00:00:22,560
+What is 2 to the power 10?
+
+6
+00:00:22,610 --> 00:00:26,400
+Pause the video and work it out.
+
+7
+00:00:26,450 --> 00:00:33,090
+Keep doubling: 16, 32, 64, 128, 256, 512, and 1,024.
+
+8
+00:00:33,140 --> 00:00:37,120
+2 to the power 10 is 1,024.
+
+9
+00:00:37,170 --> 00:00:41,200
+After 5 more hours, the cells double another 5 times.
+
+10
+00:00:41,250 --> 00:00:45,050
+That is 2 to the power 10, times 2 to the power 5.
+
+11
+00:00:45,100 --> 00:00:48,220
+Can we write it as one power of 2?
+
+12
+00:00:48,270 --> 00:00:52,810
+Remember: 3 to the power 4 means 3 times 3 times 3 times 3.
+
+13
+00:00:52,860 --> 00:00:53,660
+That is 81.
+
+14
+00:00:53,710 --> 00:00:58,720
+The small raised number is called the index, or the power.
+
+15
+00:00:58,770 --> 00:01:05,280
+2 to the power 5 is 2 times 2 times 2 times 2 times 2, which is 32.
+
+16
+00:01:05,330 --> 00:01:09,160
+5 cubed times 5 squared is three 5s times two 5s.
+
+17
+00:01:09,210 --> 00:01:12,100
+That is five 5s, so 5 to the power 5.
+
+18
+00:01:12,150 --> 00:01:14,870
+When you multiply, the indices add.
+
+19
+00:01:14,920 --> 00:01:22,160
+So for the bacteria, 2 to the power 10, times 2 to the power 5, is 2 to the power 15.
+
+20
+00:01:22,210 --> 00:01:25,060
+5 to the power 6, divided by 5 squared.
+
+21
+00:01:25,110 --> 00:01:28,340
+Two of the six 5s cancel, which leaves four.
+
+22
+00:01:28,390 --> 00:01:30,870
+So the answer is 5 to the power 4.
+
+23
+00:01:30,920 --> 00:01:34,250
+When you divide, the indices subtract.
+
+24
+00:01:34,300 --> 00:01:35,050
+Your turn.
+
+25
+00:01:35,100 --> 00:01:38,470
+Simplify 10 to the power 4, times 10 cubed.
+
+26
+00:01:38,520 --> 00:01:42,020
+Pause the video and try it.
+
+27
+00:01:42,070 --> 00:01:44,630
+Multiplying, so add the indices.
+
+28
+00:01:44,680 --> 00:01:45,770
+4 plus 3 is 7.
+
+29
+00:01:45,820 --> 00:01:50,650
+The answer is 10 to the power 7, which is 10 million.
+
+30
+00:01:50,700 --> 00:01:52,490
+Look at this pattern.
+
+31
+00:01:52,540 --> 00:01:53,800
+5 cubed is 125.
+
+32
+00:01:53,850 --> 00:01:55,200
+5 squared is 25.
+
+33
+00:01:55,250 --> 00:01:57,120
+5 to the power 1 is 5.
+
+34
+00:01:57,170 --> 00:01:59,950
+Each time, we divide by 5.
+
+35
+00:02:00,000 --> 00:02:02,780
+One more step: 5 divided by 5 is 1.
+
+36
+00:02:02,830 --> 00:02:05,350
+So 5 to the power 0 is 1.
+
+37
+00:02:05,400 --> 00:02:10,580
+Another way to see it: 5 cubed divided by 5 cubed is 5 to the power 0.
+
+38
+00:02:10,630 --> 00:02:13,410
+And any number divided by itself is 1.
+
+39
+00:02:13,460 --> 00:02:17,320
+So any number, except 0, to the power 0 is 1.
+
+40
+00:02:17,370 --> 00:02:18,650
+Here is the method.
+
+41
+00:02:18,700 --> 00:02:21,570
+Step 1: check that the bases are the same.
+
+42
+00:02:21,620 --> 00:02:24,770
+The rules only work for the same base.
+
+43
+00:02:24,820 --> 00:02:27,820
+Step 2: when you multiply, add the indices.
+
+44
+00:02:27,870 --> 00:02:30,560
+When you divide, subtract them.
+
+45
+00:02:30,610 --> 00:02:34,940
+Step 3: anything, except 0, to the power 0 is 1.
+
+46
+00:02:34,990 --> 00:02:39,040
+Step 4: check by writing out a small case in full.
+
+47
+00:02:39,090 --> 00:02:45,880
+Simplify 3 to the power 4, times 3 to the power 5, divided by 3 to the power 6.
+
+48
+00:02:45,930 --> 00:02:50,120
+Multiply first: 4 plus 5 is 9, so 3 to the power 9.
+
+49
+00:02:50,170 --> 00:02:53,990
+Then divide: 9 minus 6 is 3, so 3 cubed.
+
+50
+00:02:54,040 --> 00:02:56,510
+3 cubed is 27.
+
+51
+00:02:56,560 --> 00:02:59,990
+Work out 7 to the power 0, plus 2 cubed.
+
+52
+00:03:00,040 --> 00:03:01,900
+7 to the power 0 is 1.
+
+53
+00:03:01,950 --> 00:03:03,030
+2 cubed is 8.
+
+54
+00:03:03,080 --> 00:03:04,800
+1 plus 8 is 9.
+
+55
+00:03:04,850 --> 00:03:05,600
+Your turn.
+
+56
+00:03:05,650 --> 00:03:07,760
+What is 123 to the power 0?
+
+57
+00:03:07,810 --> 00:03:10,910
+Pause and work it out.
+
+58
+00:03:10,960 --> 00:03:14,360
+Any number, except 0, to the power 0 is 1.
+
+59
+00:03:14,410 --> 00:03:17,120
+So 123 to the power 0 is 1.
+
+60
+00:03:17,170 --> 00:03:19,340
+The rules work with letters too.
+
+61
+00:03:19,390 --> 00:03:24,890
+Simplify x to the power 5, times x squared, divided by x to the power 4.
+
+62
+00:03:24,940 --> 00:03:27,760
+5 plus 2 is 7, so x to the power 7.
+
+63
+00:03:27,810 --> 00:03:29,400
+Then 7 minus 4 is 3.
+
+64
+00:03:29,450 --> 00:03:31,750
+The answer is x cubed.
+
+65
+00:03:31,800 --> 00:03:35,350
+Lily simplifies 2 cubed times 2 to the power 4.
+
+66
+00:03:35,400 --> 00:03:38,040
+Which line goes wrong first?
+
+67
+00:03:38,090 --> 00:03:39,140
+Line 1 is wrong.
+
+68
+00:03:39,190 --> 00:03:43,490
+When you multiply powers of the same base, you add the indices.
+
+69
+00:03:43,540 --> 00:03:45,770
+You do not multiply them.
+
+70
+00:03:45,820 --> 00:03:48,430
+Three 2s times four 2s is seven 2s.
+
+71
+00:03:48,480 --> 00:03:51,570
+So the answer is 2 to the power 7.
+
+72
+00:03:51,620 --> 00:03:54,390
+Computers count in powers of 2.
+
+73
+00:03:54,440 --> 00:04:00,130
+2 to the power 10 is 1,024, which is very close to 1,000.
+
+74
+00:04:00,180 --> 00:04:09,350
+That is why memory sizes are often powers of 2, like 8, 16, 32, 64, 128 and 256 gigabytes.
+
+75
+00:04:09,400 --> 00:04:10,620
+One last question.
+
+76
+00:04:10,670 --> 00:04:14,480
+Simplify y to the power 9, divided by y to the power 9.
+
+77
+00:04:14,530 --> 00:04:17,770
+Pause the video and answer.
+
+78
+00:04:17,820 --> 00:04:21,620
+9 minus 9 is 0, so the answer is y to the power 0.
+
+79
+00:04:21,670 --> 00:04:24,380
+And anything divided by itself is 1.
+
+80
+00:04:24,430 --> 00:04:27,160
+So y to the power 0 equals 1.
+
+81
+00:04:27,210 --> 00:04:32,610
+To remember: when you multiply powers of the same base, add the indices.
+
+82
+00:04:32,660 --> 00:04:37,170
+When you divide powers of the same base, subtract the indices.
+
+83
+00:04:37,220 --> 00:04:41,050
+Any number, except 0, to the power 0 is 1.
+
+84
+00:04:41,100 --> 00:04:45,010
+And the rules only work when the bases are the same.
+
+85
+00:04:45,060 --> 00:04:50,190
+Great work! Now practise lesson 1.4 on Camday.

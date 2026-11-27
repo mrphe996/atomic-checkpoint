@@ -103,8 +103,8 @@ VIDEOS["7.2"] = [
     dict(kind="idea", title="Negative fractions", steps=[
         dict(say="Order positive fractions using a common denominator, or decimals. For negative fractions, the one with the bigger size is further left, so it is smaller.",
              do=[B("negatives: bigger size → **smaller**", x=80, y=170, color=BLUE)]),
-        dict(say="For example, 1 quarter is bigger than 2 ninths. So negative 1 quarter is smaller than negative 2 ninths.",
-             do=[MATH(f"{F(1, 4)} > {F(2, 9)}", x=80, y=270), MATH(f"−{F(1, 4)} < −{F(2, 9)}", x=80, y=370, at=4)]),
+        dict(say="For example, 3 fifths is bigger than 1 half. So negative 3 fifths is smaller than negative 1 half.",
+             do=[MATH(f"{F(3, 5)} > {F(1, 2)}", x=80, y=270), MATH(f"−{F(3, 5)} < −{F(1, 2)}", x=80, y=370, at=4)]),
         PAUSE("7.2-k2", "Your turn. Which is larger: negative 2 ninths, or negative 1 quarter? Pause the video and choose.", "Larger: −2/9 or −1/4?"),
     ]),
     dict(kind="idea", title="Check: −2/9 or −1/4", steps=[

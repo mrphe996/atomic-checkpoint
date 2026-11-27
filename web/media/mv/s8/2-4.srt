@@ -1,0 +1,359 @@
+1
+00:00:05,960 --> 00:00:08,040
+Expanding unpacks a bracket.
+
+2
+00:00:08,090 --> 00:00:11,240
+4, bracket, x plus 3, becomes 4 x plus 12.
+
+3
+00:00:11,290 --> 00:00:13,520
+Factorising does the opposite.
+
+4
+00:00:13,570 --> 00:00:16,280
+It packs the bracket back up.
+
+5
+00:00:16,330 --> 00:00:19,380
+Can you write 6 y plus 15 with a bracket?
+
+6
+00:00:19,430 --> 00:00:22,820
+Pause the video and try it.
+
+7
+00:00:22,870 --> 00:00:25,990
+Find a number that divides both terms.
+
+8
+00:00:26,040 --> 00:00:29,240
+6 and 15 are both in the 3 times table.
+
+9
+00:00:29,290 --> 00:00:31,240
+6 y divided by 3 is 2 y.
+
+10
+00:00:31,290 --> 00:00:33,540
+15 divided by 3 is 5.
+
+11
+00:00:33,590 --> 00:00:37,440
+So 6 y plus 15 equals 3, bracket, 2 y plus 5.
+
+12
+00:00:37,490 --> 00:00:43,200
+Check by expanding: 3 times 2 y is 6 y, and 3 times 5 is 15.
+
+13
+00:00:43,250 --> 00:00:50,320
+Remember: the highest common factor of two numbers is the biggest number that divides into both.
+
+14
+00:00:50,370 --> 00:00:52,950
+The H C F of 12 and 18 is 6.
+
+15
+00:00:53,000 --> 00:00:56,210
+The H C F of 20 and 35 is 5.
+
+16
+00:00:56,260 --> 00:01:00,480
+To factorise, find the highest common factor of all the terms.
+
+17
+00:01:00,530 --> 00:01:02,470
+Write it outside the bracket.
+
+18
+00:01:02,520 --> 00:01:05,500
+Inside goes each term divided by it.
+
+19
+00:01:05,550 --> 00:01:07,890
+The common factor can be a letter.
+
+20
+00:01:07,940 --> 00:01:10,210
+x squared and 4 x both contain x.
+
+21
+00:01:10,260 --> 00:01:14,000
+So x squared plus 4 x is x, bracket, x plus 4.
+
+22
+00:01:14,050 --> 00:01:16,770
+Or a number and a letter together.
+
+23
+00:01:16,820 --> 00:01:19,440
+10 A and 15 A B share 5 A.
+
+24
+00:01:19,490 --> 00:01:20,140
+Your turn.
+
+25
+00:01:20,190 --> 00:01:22,180
+Factorise x squared plus 4 x.
+
+26
+00:01:22,230 --> 00:01:25,480
+Pause the video and try it.
+
+27
+00:01:25,530 --> 00:01:26,950
+Both terms contain x.
+
+28
+00:01:27,000 --> 00:01:28,920
+x squared divided by x is x.
+
+29
+00:01:28,970 --> 00:01:30,470
+4 x divided by x is 4.
+
+30
+00:01:30,520 --> 00:01:33,470
+The answer is x, bracket, x plus 4.
+
+31
+00:01:33,520 --> 00:01:36,390
+Always use the highest common factor.
+
+32
+00:01:36,440 --> 00:01:39,770
+12 x plus 18 equals 2, bracket, 6 x plus 9.
+
+33
+00:01:39,820 --> 00:01:45,760
+That is factorised, but not fully, because 6 x and 9 still share a 3.
+
+34
+00:01:45,810 --> 00:01:48,080
+The H C F of 12 and 18 is 6.
+
+35
+00:01:48,130 --> 00:01:52,540
+Fully factorised, it is 6, bracket, 2 x plus 3.
+
+36
+00:01:52,590 --> 00:01:56,300
+If one term is the H C F itself, a 1 is left inside.
+
+37
+00:01:56,350 --> 00:01:59,370
+5 x plus 5 is 5, bracket, x plus 1.
+
+38
+00:01:59,420 --> 00:02:00,670
+Here is the method.
+
+39
+00:02:00,720 --> 00:02:03,810
+Step 1: find the H C F of the numbers.
+
+40
+00:02:03,860 --> 00:02:09,500
+Step 2: find the letters that are in every term, with their lowest power.
+
+41
+00:02:09,550 --> 00:02:11,710
+Step 3: write the H C F outside.
+
+42
+00:02:11,760 --> 00:02:15,230
+Divide each term by it to fill the bracket.
+
+43
+00:02:15,280 --> 00:02:21,730
+Step 4: check by expanding, and check that nothing else is common inside the bracket.
+
+44
+00:02:21,780 --> 00:02:24,060
+Factorise 18 m minus 24.
+
+45
+00:02:24,110 --> 00:02:26,780
+The H C F of 18 and 24 is 6.
+
+46
+00:02:26,830 --> 00:02:29,210
+18 m divided by 6 is 3 m.
+
+47
+00:02:29,260 --> 00:02:31,800
+24 divided by 6 is 4.
+
+48
+00:02:31,850 --> 00:02:35,360
+The answer is 6, bracket, 3 m minus 4.
+
+49
+00:02:35,410 --> 00:02:36,130
+Your turn.
+
+50
+00:02:36,180 --> 00:02:37,820
+Factorise 9 A minus 9.
+
+51
+00:02:37,870 --> 00:02:40,910
+Pause and work it out.
+
+52
+00:02:40,960 --> 00:02:42,090
+The H C F is 9.
+
+53
+00:02:42,140 --> 00:02:45,760
+9 A divided by 9 is A, and 9 divided by 9 is 1.
+
+54
+00:02:45,810 --> 00:02:48,190
+So it is 9, bracket, A minus 1.
+
+55
+00:02:48,240 --> 00:02:50,220
+Don't forget the 1.
+
+56
+00:02:50,270 --> 00:02:53,060
+Factorise 14 A B plus 21 A squared.
+
+57
+00:02:53,110 --> 00:02:57,430
+The H C F of 14 and 21 is 7, and both terms contain A.
+
+58
+00:02:57,480 --> 00:02:59,600
+So the H C F is 7 A.
+
+59
+00:02:59,650 --> 00:03:02,000
+14 A B divided by 7 A is 2 B.
+
+60
+00:03:02,050 --> 00:03:04,900
+21 A squared divided by 7 A is 3 A.
+
+61
+00:03:04,950 --> 00:03:08,840
+The answer is 7 A, bracket, 2 B plus 3 A.
+
+62
+00:03:08,890 --> 00:03:11,760
+Factorise 6 x squared plus 9 x minus 3.
+
+63
+00:03:11,810 --> 00:03:12,880
+The H C F is 3.
+
+64
+00:03:12,930 --> 00:03:17,170
+It is not 3 x, because the last term, 3, has no x.
+
+65
+00:03:17,220 --> 00:03:21,980
+The answer is 3, bracket, 2 x squared plus 3 x minus 1.
+
+66
+00:03:22,030 --> 00:03:24,870
+Ava factorises 16 x minus 24 fully.
+
+67
+00:03:24,920 --> 00:03:27,730
+Which line goes wrong first?
+
+68
+00:03:27,780 --> 00:03:29,040
+Line 1 is wrong.
+
+69
+00:03:29,090 --> 00:03:32,480
+4 is a common factor, but not the highest.
+
+70
+00:03:32,530 --> 00:03:34,610
+4 x and 6 still share a 2.
+
+71
+00:03:34,660 --> 00:03:37,450
+The H C F of 16 and 24 is 8.
+
+72
+00:03:37,500 --> 00:03:43,230
+Fully factorised, 16 x minus 24 is 8, bracket, 2 x minus 3.
+
+73
+00:03:43,280 --> 00:03:45,180
+Factorising can save work.
+
+74
+00:03:45,230 --> 00:03:49,160
+A path is made of two rectangles, both 3 metres wide.
+
+75
+00:03:49,210 --> 00:03:53,770
+One is 17 metres long and the other is 13 metres long.
+
+76
+00:03:53,820 --> 00:03:57,510
+Instead of two calculations, take out the 3.
+
+77
+00:03:57,560 --> 00:04:03,590
+3, bracket, 17 plus 13, is 3 times 30, which is 90 square metres.
+
+78
+00:04:03,640 --> 00:04:04,970
+One last question.
+
+79
+00:04:05,020 --> 00:04:07,420
+Factorise 12 P Q plus 8 P fully.
+
+80
+00:04:07,470 --> 00:04:10,900
+Pause the video and answer.
+
+81
+00:04:10,950 --> 00:04:15,050
+The H C F of 12 and 8 is 4, and both terms contain P.
+
+82
+00:04:15,100 --> 00:04:16,620
+So the H C F is 4 P.
+
+83
+00:04:16,670 --> 00:04:18,900
+12 P Q divided by 4 P is 3 Q.
+
+84
+00:04:18,950 --> 00:04:20,780
+8 P divided by 4 P is 2.
+
+85
+00:04:20,830 --> 00:04:24,390
+The answer is 4 P, bracket, 3 Q plus 2.
+
+86
+00:04:24,440 --> 00:04:28,580
+To remember: factorising is the reverse of expanding.
+
+87
+00:04:28,630 --> 00:04:33,070
+Take out the highest common factor, numbers and letters.
+
+88
+00:04:33,120 --> 00:04:36,780
+Divide each term by the H C F to fill the bracket.
+
+89
+00:04:36,830 --> 00:04:41,350
+Check by expanding, and check that nothing else is common.
+
+90
+00:04:41,400 --> 00:04:46,550
+Great work! Now practise lesson 2.4 on Camday.
