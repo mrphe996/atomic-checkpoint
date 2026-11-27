@@ -1,0 +1,311 @@
+1
+00:00:07,420 --> 00:00:11,140
+Three friends share a 10 dollar bill.
+
+2
+00:00:11,190 --> 00:00:17,180
+A calculator shows 10 divided by 3 equals 3.333333333.
+
+3
+00:00:17,230 --> 00:00:19,240
+The screen runs out of space.
+
+4
+00:00:19,290 --> 00:00:21,560
+But does the 3 ever stop?
+
+5
+00:00:21,610 --> 00:00:23,870
+Do the 3s stop, or go on forever?
+
+6
+00:00:23,920 --> 00:00:27,170
+Pause the video and decide.
+
+7
+00:00:27,220 --> 00:00:28,920
+Divide 10 by 3 by hand.
+
+8
+00:00:28,970 --> 00:00:33,960
+Every step leaves a remainder of 1, so the next digit is always 3.
+
+9
+00:00:34,010 --> 00:00:36,120
+The 3s go on forever.
+
+10
+00:00:36,170 --> 00:00:42,740
+Remember: to change a fraction to a decimal, divide the numerator by the denominator.
+
+11
+00:00:42,790 --> 00:00:46,720
+3 eighths is 3 divided by 8, which is 0.375.
+
+12
+00:00:46,770 --> 00:00:50,240
+A terminating decimal ends, like 0.375.
+
+13
+00:00:50,290 --> 00:00:53,490
+A recurring decimal repeats forever.
+
+14
+00:00:53,540 --> 00:00:56,020
+1 third is 0.333, and so on.
+
+15
+00:00:56,070 --> 00:00:59,730
+2 elevenths is 0.181818, and so on.
+
+16
+00:00:59,780 --> 00:01:02,390
+We show the repeating digits with dots.
+
+17
+00:01:02,440 --> 00:01:04,560
+One dot means one digit repeats.
+
+18
+00:01:04,610 --> 00:01:09,340
+Dots on the first and last digit mean the whole block repeats.
+
+19
+00:01:09,390 --> 00:01:10,190
+Your turn.
+
+20
+00:01:10,240 --> 00:01:13,960
+How is 0.272727 and so on written with dots?
+
+21
+00:01:14,010 --> 00:01:17,670
+Pause the video and choose.
+
+22
+00:01:17,720 --> 00:01:19,280
+The pair 2 7 repeats.
+
+23
+00:01:19,330 --> 00:01:22,820
+So put a dot over the 2 and over the 7.
+
+24
+00:01:22,870 --> 00:01:25,630
+Write the fraction in its simplest form.
+
+25
+00:01:25,680 --> 00:01:31,330
+If the only prime factors of the denominator are 2 and 5, the decimal terminates.
+
+26
+00:01:31,380 --> 00:01:36,880
+That is because it can be made into tenths, hundredths, or thousandths.
+
+27
+00:01:36,930 --> 00:01:41,830
+Any other prime factor, like 3, 7 or 11, makes it recur.
+
+28
+00:01:41,880 --> 00:01:43,220
+Here is the method.
+
+29
+00:01:43,270 --> 00:01:46,410
+Step 1: simplify the fraction first.
+
+30
+00:01:46,460 --> 00:01:50,200
+Step 2: find the prime factors of the denominator.
+
+31
+00:01:50,250 --> 00:01:53,410
+Only 2s and 5s means it terminates.
+
+32
+00:01:53,460 --> 00:02:00,190
+Step 3: divide the numerator by the denominator, using short division and adding zeros.
+
+33
+00:02:00,240 --> 00:02:04,220
+Step 4: if a remainder comes back, the digits will repeat.
+
+34
+00:02:04,270 --> 00:02:06,160
+Mark them with dots.
+
+35
+00:02:06,210 --> 00:02:09,160
+Write 4 sevenths as a decimal.
+
+36
+00:02:09,210 --> 00:02:11,260
+Divide 4.000000 by 7.
+
+37
+00:02:11,310 --> 00:02:15,010
+The digits are 5, 7, 1, 4, 2, 8.
+
+38
+00:02:15,060 --> 00:02:18,560
+The remainders are 5, 1, 3, 2, 6, then 4 again.
+
+39
+00:02:18,610 --> 00:02:22,960
+We are back to the start, so the six digits repeat.
+
+40
+00:02:23,010 --> 00:02:29,750
+4 sevenths is 0.571428 recurring, with dots on the 5 and the 8.
+
+41
+00:02:29,800 --> 00:02:32,250
+Will 9 seventy-fifths terminate?
+
+42
+00:02:32,300 --> 00:02:33,420
+Simplify first.
+
+43
+00:02:33,470 --> 00:02:36,790
+9 seventy-fifths is 3 twenty-fifths.
+
+44
+00:02:36,840 --> 00:02:38,260
+25 is 5 squared.
+
+45
+00:02:38,310 --> 00:02:40,660
+Only 5s, so it terminates.
+
+46
+00:02:40,710 --> 00:02:43,420
+3 twenty-fifths is 0.12.
+
+47
+00:02:43,470 --> 00:02:44,200
+Your turn.
+
+48
+00:02:44,250 --> 00:02:46,470
+Does 11 eightieths terminate?
+
+49
+00:02:46,520 --> 00:02:49,200
+Pause and choose.
+
+50
+00:02:49,250 --> 00:02:53,190
+11 eightieths is already in its simplest form.
+
+51
+00:02:53,240 --> 00:02:55,960
+80 is 2 to the power 4, times 5.
+
+52
+00:02:56,010 --> 00:02:59,250
+Only 2s and 5s, so yes, it terminates.
+
+53
+00:02:59,300 --> 00:03:00,930
+It is 0.1375.
+
+54
+00:03:00,980 --> 00:03:04,520
+Which is larger: 5 ninths, or 0.55?
+
+55
+00:03:04,570 --> 00:03:07,610
+5 ninths is 0.5555, and so on.
+
+56
+00:03:07,660 --> 00:03:10,380
+Compare 0.5555 with 0.5500.
+
+57
+00:03:10,430 --> 00:03:12,880
+5 ninths is larger.
+
+58
+00:03:12,930 --> 00:03:16,530
+Nia asks: does 3 twelfths give a recurring decimal?
+
+59
+00:03:16,580 --> 00:03:19,080
+Which line goes wrong first?
+
+60
+00:03:19,130 --> 00:03:20,340
+Line 1 is wrong.
+
+61
+00:03:20,390 --> 00:03:22,460
+She did not simplify first.
+
+62
+00:03:22,510 --> 00:03:26,470
+3 twelfths is 1 quarter, and 4 is 2 squared.
+
+63
+00:03:26,520 --> 00:03:28,060
+So it terminates.
+
+64
+00:03:28,110 --> 00:03:30,290
+1 quarter is 0.25.
+
+65
+00:03:30,340 --> 00:03:35,840
+Money uses hundredths, so it cannot split 10 dollars exactly into three.
+
+66
+00:03:35,890 --> 00:03:40,620
+Each friend pays 3 dollars 33, and 1 cent is left over.
+
+67
+00:03:40,670 --> 00:03:47,210
+Because 3 is not a factor of 10, a third can never be written exactly as a decimal.
+
+68
+00:03:47,260 --> 00:03:48,520
+One last question.
+
+69
+00:03:48,570 --> 00:03:52,070
+Write 2 ninths as a decimal, to 3 decimal places.
+
+70
+00:03:52,120 --> 00:03:55,430
+Pause the video and answer.
+
+71
+00:03:55,480 --> 00:03:58,990
+2 divided by 9 is 0.2222, and so on.
+
+72
+00:03:59,040 --> 00:04:03,000
+To 3 decimal places, that is 0.222.
+
+73
+00:04:03,050 --> 00:04:05,770
+To remember: terminating decimals end.
+
+74
+00:04:05,820 --> 00:04:08,220
+Recurring decimals repeat.
+
+75
+00:04:08,270 --> 00:04:10,960
+Dots mark the repeating digits.
+
+76
+00:04:11,010 --> 00:04:17,420
+In simplest form, a denominator with only 2s and 5s gives a terminating decimal.
+
+77
+00:04:17,470 --> 00:04:22,220
+Use short division, and watch for a remainder that comes back.
+
+78
+00:04:22,270 --> 00:04:27,430
+Great work! Now practise lesson 7.1 on Camday.

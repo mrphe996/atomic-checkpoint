@@ -31909,6 +31909,1218 @@
     "4.3-k4": 221.56
    },
    "up": true
+  },
+  "6.2": {
+   "src": "media/mv/s8/6-2.mp4",
+   "poster": "media/mv/s8/6-2_poster.jpg",
+   "srt": "media/mv/s8/6-2.srt",
+   "dur": 296.68,
+   "captions": [
+    [
+     5.55,
+     "A school has 1,200 students."
+    ],
+    [
+     7.69,
+     "The council has one week to find out what students think of the canteen."
+    ],
+    [
+     13.73,
+     "Should they ask every student?"
+    ],
+    [
+     16.34,
+     "Is asking all 1,200 students in one week a good plan?"
+    ],
+    [
+     20.39,
+     "Pause the video and choose."
+    ],
+    [
+     23.86,
+     "It is possible, but very slow."
+    ],
+    [
+     25.87,
+     "It is more practical to ask a smaller group, called a sample."
+    ],
+    [
+     29.97,
+     "The question is how to choose it fairly."
+    ],
+    [
+     33.21,
+     "Remember: the population is everyone you are interested in."
+    ],
+    [
+     37.57,
+     "Here it is all 1,200 students."
+    ],
+    [
+     39.78,
+     "The sample is the group you actually ask."
+    ],
+    [
+     43.36,
+     "In a simple random sample, every member has an equal chance of being chosen, for example using random numbers."
+    ],
+    [
+     51.41,
+     "In a systematic sample, you choose every k-th name on a list, like every 12th name."
+    ],
+    [
+     57.88,
+     "In a stratified sample, each group, like each year group, is included in proportion to its size."
+    ],
+    [
+     64.88,
+     "A convenience sample just asks whoever is easy to ask, like your friends."
+    ],
+    [
+     69.72,
+     "It is quick, but it is often biased."
+    ],
+    [
+     72.65,
+     "Your turn."
+    ],
+    [
+     73.35,
+     "Asking your friends is which kind of sampling?"
+    ],
+    [
+     76.54,
+     "Pause the video and choose."
+    ],
+    [
+     79.81,
+     "Asking your friends is convenience sampling."
+    ],
+    [
+     82.71,
+     "Your friends may think alike, so the results may not represent everyone."
+    ],
+    [
+     88.02,
+     "A sample is biased if some groups are more likely to be included than others."
+    ],
+    [
+     93.22,
+     "Asking only students in the lunch queue misses everyone who brings a packed lunch."
+    ],
+    [
+     99.3,
+     "A larger sample usually gives more reliable results, but it takes more time and costs more."
+    ],
+    [
+     106.02,
+     "Here is the method."
+    ],
+    [
+     107.42,
+     "Step 1: define the population clearly."
+    ],
+    [
+     110.78,
+     "Step 2: choose a sample size that balances reliability with time and cost."
+    ],
+    [
+     116.63,
+     "Step 3: choose a method that gives everyone a fair chance: random, systematic or stratified."
+    ],
+    [
+     123.74,
+     "Step 4: check for bias."
+    ],
+    [
+     125.38,
+     "Ask yourself: who might be left out?"
+    ],
+    [
+     128.5,
+     "Years 7, 8 and 9 have 400, 500 and 300 students."
+    ],
+    [
+     133.36,
+     "Take a stratified sample of 60."
+    ],
+    [
+     137.05,
+     "60 out of 1,200 is 1 in 20."
+    ],
+    [
+     140.19,
+     "So divide each year by 20."
+    ],
+    [
+     143.21,
+     "400 divided by 20 is 20."
+    ],
+    [
+     146.0,
+     "500 divided by 20 is 25."
+    ],
+    [
+     148.79,
+     "300 divided by 20 is 15."
+    ],
+    [
+     152.13,
+     "Check: 20 plus 25 plus 15 is 60."
+    ],
+    [
+     156.39,
+     "Your turn."
+    ],
+    [
+     157.22,
+     "Take a stratified sample of 30 from 200 boys and 100 girls."
+    ],
+    [
+     162.13,
+     "How many boys?"
+    ],
+    [
+     163.29,
+     "Pause and work it out."
+    ],
+    [
+     166.52,
+     "There are 300 students."
+    ],
+    [
+     169.02,
+     "30 out of 300 is 1 in 10."
+    ],
+    [
+     171.73,
+     "200 divided by 10 is 20 boys, and 100 divided by 10 is 10 girls."
+    ],
+    [
+     179.23,
+     "Choose a systematic sample of 50 from a list of 1,200 names."
+    ],
+    [
+     184.96,
+     "1,200 divided by 50 is 24, so choose every 24th name."
+    ],
+    [
+     190.57,
+     "Pick a random starting point between 1 and 24, say 7."
+    ],
+    [
+     195.07,
+     "Then take names 7, 31, 55, and so on."
+    ],
+    [
+     198.77,
+     "To find out how much exercise adults do, a student asks people leaving a gym."
+    ],
+    [
+     204.0,
+     "What is wrong?"
+    ],
+    [
+     205.5,
+     "Gym users exercise more than most people, and people who never exercise are missed."
+    ],
+    [
+     211.2,
+     "The sample is biased, and the results will be too high."
+    ],
+    [
+     215.53,
+     "Amir wants to find the favourite sport of students in his school."
+    ],
+    [
+     219.96,
+     "Here is his plan."
+    ],
+    [
+     221.12,
+     "Which line is wrong?"
+    ],
+    [
+     223.03,
+     "Line 2 is wrong."
+    ],
+    [
+     224.18,
+     "Football club members are much more likely to choose football."
+    ],
+    [
+     228.63,
+     "The sample is biased."
+    ],
+    [
+     230.69,
+     "A fairer plan is a random or stratified sample from the whole school register."
+    ],
+    [
+     236.59,
+     "Before an election, polling companies ask about 1,000 to 2,000 people, not millions."
+    ],
+    [
+     243.03,
+     "They choose them carefully, so that ages, regions and other groups are in proportion."
+    ],
+    [
+     250.1,
+     "A well-chosen sample can be surprisingly accurate."
+    ],
+    [
+     253.5,
+     "A badly chosen one, even a huge one, can be very wrong."
+    ],
+    [
+     257.79,
+     "One last question."
+    ],
+    [
+     259.06,
+     "Is a sample of 8 students likely to be reliable?"
+    ],
+    [
+     262.45,
+     "Pause the video and choose."
+    ],
+    [
+     265.76,
+     "A sample of 8 is too small."
+    ],
+    [
+     267.61,
+     "It is likely to be unreliable, because a few unusual answers change the results a lot."
+    ],
+    [
+     274.06,
+     "To remember: samples can be random, systematic, stratified or convenience."
+    ],
+    [
+     279.81,
+     "In a stratified sample, each group is in proportion."
+    ],
+    [
+     283.97,
+     "A biased sample leaves groups out."
+    ],
+    [
+     286.9,
+     "Bigger samples are more reliable, but they cost more time."
+    ],
+    [
+     291.43,
+     "Great work! Now practise lesson 6.2 on Camday."
+    ]
+   ],
+   "times": {
+    "6.2-k1": 22.81,
+    "6.2-k2": 78.76,
+    "6.2-k3": 165.47,
+    "6.2-k4": 264.71
+   },
+   "up": true
+  },
+  "7.2": {
+   "src": "media/mv/s8/7-2.mp4",
+   "poster": "media/mv/s8/7-2_poster.jpg",
+   "srt": "media/mv/s8/7-2.srt",
+   "dur": 262.2,
+   "captions": [
+    [
+     6.42,
+     "Three divers are below the surface."
+    ],
+    [
+     9.11,
+     "Their depths are negative 2 and 3 quarters metres, negative 2 and 5 sevenths metres, and negative 2.7 metres."
+    ],
+    [
+     18.02,
+     "Who is deepest?"
+    ],
+    [
+     19.06,
+     "Type the depth as a decimal."
+    ],
+    [
+     20.99,
+     "Pause the video and work it out."
+    ],
+    [
+     24.6,
+     "Change them to decimals."
+    ],
+    [
+     26.84,
+     "3 quarters is 0.75."
+    ],
+    [
+     28.62,
+     "5 sevenths is about 0.714."
+    ],
+    [
+     31.06,
+     "So the depths are negative 2.75, about negative 2.714, and negative 2.7."
+    ],
+    [
+     38.34,
+     "The deepest is the furthest below zero: negative 2.75 metres."
+    ],
+    [
+     43.62,
+     "Remember: to compare 3 quarters and 5 sevenths, use a common denominator of 28."
+    ],
+    [
+     50.02,
+     "3 quarters is 21 twenty-eighths, and 5 sevenths is 20 twenty-eighths."
+    ],
+    [
+     55.61,
+     "So 3 quarters is larger."
+    ],
+    [
+     58.1,
+     "Order positive fractions using a common denominator, or decimals."
+    ],
+    [
+     62.59,
+     "For negative fractions, the one with the bigger size is further left, so it is smaller."
+    ],
+    [
+     69.14,
+     "For example, 3 fifths is bigger than 1 half."
+    ],
+    [
+     72.5,
+     "So negative 3 fifths is smaller than negative 1 half."
+    ],
+    [
+     77.1,
+     "Your turn."
+    ],
+    [
+     77.83,
+     "Which is larger: negative 2 ninths, or negative 1 quarter?"
+    ],
+    [
+     82.08,
+     "Pause the video and choose."
+    ],
+    [
+     85.47,
+     "Negative 2 ninths is closer to zero, so it is larger."
+    ],
+    [
+     90.0,
+     "2 ninths is about 0.222, and 1 quarter is 0.25."
+    ],
+    [
+     94.56,
+     "Choose your method."
+    ],
+    [
+     95.89,
+     "A common denominator is exact."
+    ],
+    [
+     97.98,
+     "Decimals are quick."
+    ],
+    [
+     99.3,
+     "And comparing with a half gives a fast first sort."
+    ],
+    [
+     103.33,
+     "Here is the method."
+    ],
+    [
+     104.71,
+     "Step 1: split into negatives and positives."
+    ],
+    [
+     107.84,
+     "Change improper fractions to mixed numbers."
+    ],
+    [
+     111.52,
+     "Step 2: compare the whole number parts first."
+    ],
+    [
+     115.34,
+     "Step 3: compare the fraction parts, with a common denominator or decimals."
+    ],
+    [
+     121.23,
+     "Step 4: for negatives, remember that the order turns round."
+    ],
+    [
+     126.12,
+     "Order 5 sixths, 7 ninths and 3 quarters, smallest first."
+    ],
+    [
+     130.64,
+     "The lowest common multiple of 6, 9 and 4 is 36."
+    ],
+    [
+     134.99,
+     "That gives 30, 28 and 27 thirty-sixths."
+    ],
+    [
+     138.41,
+     "So the order is 3 quarters, 7 ninths, 5 sixths."
+    ],
+    [
+     143.09,
+     "Which is larger: 19 sevenths, or 2 and 3 quarters?"
+    ],
+    [
+     147.37,
+     "19 sevenths is 2 and 5 sevenths."
+    ],
+    [
+     150.66,
+     "Your turn."
+    ],
+    [
+     151.36,
+     "So which is larger?"
+    ],
+    [
+     152.68,
+     "Pause and choose."
+    ],
+    [
+     155.26,
+     "The whole numbers are both 2."
+    ],
+    [
+     157.44,
+     "Then 3 quarters is larger than 5 sevenths, as we found before."
+    ],
+    [
+     162.1,
+     "So 2 and 3 quarters is larger."
+    ],
+    [
+     164.9,
+     "Find a fraction between negative 2 thirds and negative 3 fifths."
+    ],
+    [
+     170.11,
+     "As decimals, they are negative 0.666 and negative 0.6."
+    ],
+    [
+     175.06,
+     "Negative 0.63 is between them."
+    ],
+    [
+     177.63,
+     "That is negative 63 hundredths."
+    ],
+    [
+     180.84,
+     "Zoe asks: which is smaller, negative 1 quarter or negative 1 third?"
+    ],
+    [
+     185.73,
+     "Which line is wrong?"
+    ],
+    [
+     187.74,
+     "Line 2 is wrong."
+    ],
+    [
+     188.89,
+     "For negatives, the inequality turns round."
+    ],
+    [
+     191.92,
+     "Negative 1 third is further from zero."
+    ],
+    [
+     195.2,
+     "So negative 1 third is smaller than negative 1 quarter."
+    ],
+    [
+     200.02,
+     "Some tools are sized in fractions of an inch."
+    ],
+    [
+     203.37,
+     "A mechanic must choose between spanners of 5 eighths, 9 sixteenths and 11 sixteenths of an inch."
+    ],
+    [
+     211.06,
+     "Using sixteenths: 5 eighths is 10 sixteenths."
+    ],
+    [
+     214.78,
+     "So the order is 9, 10, 11 sixteenths."
+    ],
+    [
+     217.83,
+     "The 5 eighths spanner is in the middle."
+    ],
+    [
+     221.6,
+     "One last question."
+    ],
+    [
+     222.92,
+     "Which sign goes between negative 0.6 and negative 2 thirds?"
+    ],
+    [
+     227.25,
+     "Pause the video and choose."
+    ],
+    [
+     230.63,
+     "2 thirds is 0.666, which is bigger than 0.6."
+    ],
+    [
+     234.38,
+     "So negative 2 thirds is further left."
+    ],
+    [
+     237.54,
+     "Negative 0.6 is greater than negative 2 thirds."
+    ],
+    [
+     242.11,
+     "To remember: use common denominators or decimals."
+    ],
+    [
+     246.06,
+     "Change improper fractions to mixed numbers."
+    ],
+    [
+     249.59,
+     "For negatives, the bigger size is the smaller number."
+    ],
+    [
+     253.7,
+     "Choose the method that suits the numbers."
+    ],
+    [
+     257.09,
+     "Great work! Now practise lesson 7.2 on Camday."
+    ]
+   ],
+   "times": {
+    "7.2-k1": 23.55,
+    "7.2-k2": 84.42,
+    "7.2-k3": 154.21,
+    "7.2-k4": 229.58
+   },
+   "up": true
+  },
+  "6.1": {
+   "src": "media/mv/s8/6-1.mp4",
+   "poster": "media/mv/s8/6-1_poster.jpg",
+   "srt": "media/mv/s8/6-1.srt",
+   "dur": 256.08,
+   "captions": [
+    [
+     6.17,
+     "The student council wants to know two things."
+    ],
+    [
+     9.29,
+     "Do students eat enough fruit and vegetables at lunch?"
+    ],
+    [
+     12.96,
+     "And is it different in different year groups?"
+    ],
+    [
+     16.63,
+     "Which data would help to answer the question?"
+    ],
+    [
+     19.74,
+     "Pause the video and choose."
+    ],
+    [
+     23.01,
+     "We need two things for each student: how many portions they eat, and their year group."
+    ],
+    [
+     28.89,
+     "The canteen menu alone would not tell us what students actually eat."
+    ],
+    [
+     34.1,
+     "Remember the types of data."
+    ],
+    [
+     35.96,
+     "Categorical data is words, like a favourite fruit."
+    ],
+    [
+     39.42,
+     "Discrete data is counted, like the number of portions."
+    ],
+    [
+     43.15,
+     "Continuous data is measured, like a mass."
+    ],
+    [
+     46.54,
+     "A big question usually splits into smaller linked questions."
+    ],
+    [
+     50.45,
+     "Each one needs its own data."
+    ],
+    [
+     52.83,
+     "Data you collect yourself is primary data."
+    ],
+    [
+     55.72,
+     "Data that someone else has already collected, like a website or a report, is secondary data."
+    ],
+    [
+     62.6,
+     "Your turn."
+    ],
+    [
+     63.29,
+     "Data that you collect yourself is called what?"
+    ],
+    [
+     66.5,
+     "Pause the video and choose."
+    ],
+    [
+     69.78,
+     "Data you collect yourself is primary data."
+    ],
+    [
+     72.81,
+     "Rainfall over 30 years, from a weather service, is secondary data."
+    ],
+    [
+     78.13,
+     "A good question is clear, and it is not personal."
+    ],
+    [
+     81.46,
+     "It must not be leading."
+    ],
+    [
+     83.03,
+     "A leading question pushes people towards an answer, like: don't you agree that vegetables are boring?"
+    ],
+    [
+     90.45,
+     "Response boxes must cover every possible answer, without overlapping."
+    ],
+    [
+     95.85,
+     "Here is the method."
+    ],
+    [
+     97.2,
+     "Step 1: split the main question into linked questions."
+    ],
+    [
+     101.59,
+     "Step 2: for each one, decide the data, its type, and whether it is primary or secondary."
+    ],
+    [
+     108.13,
+     "Step 3: choose a method: a questionnaire, an observation, an experiment or a search of records."
+    ],
+    [
+     115.32,
+     "Step 4: test your questionnaire on a few people first."
+    ],
+    [
+     119.11,
+     "This is called a pilot."
+    ],
+    [
+     121.28,
+     "Improve this question: most people think our library is too small."
+    ],
+    [
+     125.78,
+     "Do you agree?"
+    ],
+    [
+     127.21,
+     "It is leading, because it tells you what other people think."
+    ],
+    [
+     131.33,
+     "A better question is neutral, with boxes for every view."
+    ],
+    [
+     135.73,
+     "Here is another question: do you eat a lot of fruit?"
+    ],
+    [
+     139.71,
+     "Your turn."
+    ],
+    [
+     140.41,
+     "What is the problem with this question?"
+    ],
+    [
+     143.16,
+     "Pause and choose."
+    ],
+    [
+     145.76,
+     "A lot is vague."
+    ],
+    [
+     146.77,
+     "It means different things to different people."
+    ],
+    [
+     149.88,
+     "Ask for a number, over a fixed time: how many portions of fruit did you eat yesterday?"
+    ],
+    [
+     156.24,
+     "Plates have between 0 and about 300 grams of food waste."
+    ],
+    [
+     160.6,
+     "Choose groups for the mass, m."
+    ],
+    [
+     163.49,
+     "Use equal widths with no gaps and no overlaps: 0 is less than or equal to m, which is less than 50."
+    ],
+    [
+     171.38,
+     "Then 50 to 100, and so on, up to 300."
+    ],
+    [
+     174.33,
+     "That makes 6 groups."
+    ],
+    [
+     176.48,
+     "Leo writes response boxes for the question: how old are you?"
+    ],
+    [
+     180.62,
+     "Which line goes wrong first?"
+    ],
+    [
+     183.1,
+     "Line 1 is wrong."
+    ],
+    [
+     184.31,
+     "A 12 year old could tick two boxes, and a 17 year old has no box to tick."
+    ],
+    [
+     190.39,
+     "Better boxes do not overlap, and cover everyone."
+    ],
+    [
+     194.25,
+     "Many countries run a census about every 10 years."
+    ],
+    [
+     197.78,
+     "Every household answers the same questions, about who lives there and how they live."
+    ],
+    [
+     204.4,
+     "Before the real census, officials test the questions on a small group first, to find confusing questions."
+    ],
+    [
+     211.65,
+     "That is a pilot, just like the one in step 4."
+    ],
+    [
+     215.3,
+     "One last question."
+    ],
+    [
+     216.53,
+     "Testing a questionnaire on a few people first is called what?"
+    ],
+    [
+     220.69,
+     "Pause the video and choose."
+    ],
+    [
+     223.94,
+     "It is called a pilot."
+    ],
+    [
+     225.38,
+     "It helps you fix unclear questions and missing boxes before the real survey."
+    ],
+    [
+     231.17,
+     "To remember: break a big question into linked questions."
+    ],
+    [
+     235.59,
+     "Decide the type of data, and whether it is primary or secondary."
+    ],
+    [
+     240.45,
+     "Questions must be clear, and not leading."
+    ],
+    [
+     243.74,
+     "Response boxes must cover every answer, with no overlaps."
+    ],
+    [
+     247.79,
+     "And pilot your questionnaire first."
+    ],
+    [
+     250.83,
+     "Great work! Now practise lesson 6.1 on Camday."
+    ]
+   ],
+   "times": {
+    "6.1-k1": 21.96,
+    "6.1-k2": 68.73,
+    "6.1-k3": 144.71,
+    "6.1-k4": 222.89
+   },
+   "up": true
+  },
+  "7.1": {
+   "src": "media/mv/s8/7-1.mp4",
+   "poster": "media/mv/s8/7-1_poster.jpg",
+   "srt": "media/mv/s8/7-1.srt",
+   "dur": 267.48,
+   "captions": [
+    [
+     7.42,
+     "Three friends share a 10 dollar bill."
+    ],
+    [
+     11.19,
+     "A calculator shows 10 divided by 3 equals 3.333333333."
+    ],
+    [
+     17.23,
+     "The screen runs out of space."
+    ],
+    [
+     19.29,
+     "But does the 3 ever stop?"
+    ],
+    [
+     21.61,
+     "Do the 3s stop, or go on forever?"
+    ],
+    [
+     23.92,
+     "Pause the video and decide."
+    ],
+    [
+     27.22,
+     "Divide 10 by 3 by hand."
+    ],
+    [
+     28.97,
+     "Every step leaves a remainder of 1, so the next digit is always 3."
+    ],
+    [
+     34.01,
+     "The 3s go on forever."
+    ],
+    [
+     36.17,
+     "Remember: to change a fraction to a decimal, divide the numerator by the denominator."
+    ],
+    [
+     42.79,
+     "3 eighths is 3 divided by 8, which is 0.375."
+    ],
+    [
+     46.77,
+     "A terminating decimal ends, like 0.375."
+    ],
+    [
+     50.29,
+     "A recurring decimal repeats forever."
+    ],
+    [
+     53.54,
+     "1 third is 0.333, and so on."
+    ],
+    [
+     56.07,
+     "2 elevenths is 0.181818, and so on."
+    ],
+    [
+     59.78,
+     "We show the repeating digits with dots."
+    ],
+    [
+     62.44,
+     "One dot means one digit repeats."
+    ],
+    [
+     64.61,
+     "Dots on the first and last digit mean the whole block repeats."
+    ],
+    [
+     69.39,
+     "Your turn."
+    ],
+    [
+     70.24,
+     "How is 0.272727 and so on written with dots?"
+    ],
+    [
+     74.01,
+     "Pause the video and choose."
+    ],
+    [
+     77.72,
+     "The pair 2 7 repeats."
+    ],
+    [
+     79.33,
+     "So put a dot over the 2 and over the 7."
+    ],
+    [
+     82.87,
+     "Write the fraction in its simplest form."
+    ],
+    [
+     85.68,
+     "If the only prime factors of the denominator are 2 and 5, the decimal terminates."
+    ],
+    [
+     91.38,
+     "That is because it can be made into tenths, hundredths, or thousandths."
+    ],
+    [
+     96.93,
+     "Any other prime factor, like 3, 7 or 11, makes it recur."
+    ],
+    [
+     101.88,
+     "Here is the method."
+    ],
+    [
+     103.27,
+     "Step 1: simplify the fraction first."
+    ],
+    [
+     106.46,
+     "Step 2: find the prime factors of the denominator."
+    ],
+    [
+     110.25,
+     "Only 2s and 5s means it terminates."
+    ],
+    [
+     113.46,
+     "Step 3: divide the numerator by the denominator, using short division and adding zeros."
+    ],
+    [
+     120.24,
+     "Step 4: if a remainder comes back, the digits will repeat."
+    ],
+    [
+     124.27,
+     "Mark them with dots."
+    ],
+    [
+     126.21,
+     "Write 4 sevenths as a decimal."
+    ],
+    [
+     129.21,
+     "Divide 4.000000 by 7."
+    ],
+    [
+     131.31,
+     "The digits are 5, 7, 1, 4, 2, 8."
+    ],
+    [
+     135.06,
+     "The remainders are 5, 1, 3, 2, 6, then 4 again."
+    ],
+    [
+     138.61,
+     "We are back to the start, so the six digits repeat."
+    ],
+    [
+     143.01,
+     "4 sevenths is 0.571428 recurring, with dots on the 5 and the 8."
+    ],
+    [
+     149.8,
+     "Will 9 seventy-fifths terminate?"
+    ],
+    [
+     152.3,
+     "Simplify first."
+    ],
+    [
+     153.47,
+     "9 seventy-fifths is 3 twenty-fifths."
+    ],
+    [
+     156.84,
+     "25 is 5 squared."
+    ],
+    [
+     158.31,
+     "Only 5s, so it terminates."
+    ],
+    [
+     160.71,
+     "3 twenty-fifths is 0.12."
+    ],
+    [
+     163.47,
+     "Your turn."
+    ],
+    [
+     164.25,
+     "Does 11 eightieths terminate?"
+    ],
+    [
+     166.52,
+     "Pause and choose."
+    ],
+    [
+     169.25,
+     "11 eightieths is already in its simplest form."
+    ],
+    [
+     173.24,
+     "80 is 2 to the power 4, times 5."
+    ],
+    [
+     176.01,
+     "Only 2s and 5s, so yes, it terminates."
+    ],
+    [
+     179.3,
+     "It is 0.1375."
+    ],
+    [
+     180.98,
+     "Which is larger: 5 ninths, or 0.55?"
+    ],
+    [
+     184.57,
+     "5 ninths is 0.5555, and so on."
+    ],
+    [
+     187.66,
+     "Compare 0.5555 with 0.5500."
+    ],
+    [
+     190.43,
+     "5 ninths is larger."
+    ],
+    [
+     192.93,
+     "Nia asks: does 3 twelfths give a recurring decimal?"
+    ],
+    [
+     196.58,
+     "Which line goes wrong first?"
+    ],
+    [
+     199.13,
+     "Line 1 is wrong."
+    ],
+    [
+     200.39,
+     "She did not simplify first."
+    ],
+    [
+     202.51,
+     "3 twelfths is 1 quarter, and 4 is 2 squared."
+    ],
+    [
+     206.52,
+     "So it terminates."
+    ],
+    [
+     208.11,
+     "1 quarter is 0.25."
+    ],
+    [
+     210.34,
+     "Money uses hundredths, so it cannot split 10 dollars exactly into three."
+    ],
+    [
+     215.89,
+     "Each friend pays 3 dollars 33, and 1 cent is left over."
+    ],
+    [
+     220.67,
+     "Because 3 is not a factor of 10, a third can never be written exactly as a decimal."
+    ],
+    [
+     227.26,
+     "One last question."
+    ],
+    [
+     228.57,
+     "Write 2 ninths as a decimal, to 3 decimal places."
+    ],
+    [
+     232.12,
+     "Pause the video and answer."
+    ],
+    [
+     235.48,
+     "2 divided by 9 is 0.2222, and so on."
+    ],
+    [
+     239.04,
+     "To 3 decimal places, that is 0.222."
+    ],
+    [
+     243.05,
+     "To remember: terminating decimals end."
+    ],
+    [
+     245.82,
+     "Recurring decimals repeat."
+    ],
+    [
+     248.27,
+     "Dots mark the repeating digits."
+    ],
+    [
+     251.01,
+     "In simplest form, a denominator with only 2s and 5s gives a terminating decimal."
+    ],
+    [
+     257.47,
+     "Use short division, and watch for a remainder that comes back."
+    ],
+    [
+     262.27,
+     "Great work! Now practise lesson 7.1 on Camday."
+    ]
+   ],
+   "times": {
+    "7.1-k1": 26.17,
+    "7.1-k2": 76.67,
+    "7.1-k3": 168.2,
+    "7.1-k4": 234.43
+   },
+   "up": true
   }
  }
 }

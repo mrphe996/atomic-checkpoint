@@ -371,7 +371,7 @@ VIDEOS["7.6"] = [
     dict(kind="idea", title="Strategies", steps=[
         dict(say="Here are some ways to make fraction calculations easier. Take out a common factor, like the quiz question.",
              do=[TBL(["Strategy", "Example"], [["take out a common factor", "3/4 × 17 + 3/4 × 3 = 3/4 × 20 = 15"], ["cancel before multiplying", "14/15 × 25/28 = 1/3 × 5/2 = 5/6"], ["whole minus a part", "7/8 of 48 = 48 − 6 = 42"]], y=170), ROW(0, 0.3)]),
-        dict(say="Cancel before multiplying. 14 and 28 share 14. 25 and 15 share 5. That leaves 1 third times 5 halves, which is 5 sixths.", do=[ROW(1, 0.3)]),
+        dict(say="Cancel before multiplying, as in 14 fifteenths times 25 twenty-eighths. 14 and 28 share 14. 25 and 15 share 5. That leaves 1 third times 5 halves, which is 5 sixths.", do=[ROW(1, 0.3)]),
         dict(say="And use whole minus a part. 7 eighths of 48 is the whole 48, minus 1 eighth of 48. That is 48 minus 6, which is 42.", do=[ROW(2, 0.3)]),
         PAUSE("7.6-k2", "Your turn. Find 9 tenths of 250. Pause the video and try it.", "Find 9/10 of 250."),
     ]),

@@ -128,7 +128,7 @@ VIDEOS["8.2"] = [
         dict(say="Step 4: check with an estimate. The circumference is just over 3 times the diameter.", do=[T("4. **Check**: just over 3 × d", x=80, y=440), E("✅", 1100, 410, 90, at=0.8)]),
     ]),
     dict(kind="example", title="From the radius", steps=[
-        dict(say="Find the circumference when the radius is 8 centimetres. C equals 2 times pi times 8, which is 50.26, or 50.3 centimetres to 1 decimal place.",
+        dict(say="Find the circumference when the radius is 8 centimetres. C equals 2 times pi times 8, which is 50.27, or 50.3 centimetres to 1 decimal place.",
              do=[CIRC(r="8 cm"), MATH(f"C = 2 × {PI} × 8", x=80, y=190), B("≈ 50.3 cm", x=80, y=300, color=GREEN, at=5)]),
         PAUSE("8.2-k3", "Your turn. Find the circumference when the diameter is 20 centimetres, to 1 decimal place. Pause and work it out.", "C for d = 20 cm (1 d.p.)?"),
     ]),
