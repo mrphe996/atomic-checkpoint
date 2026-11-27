@@ -49,6 +49,15 @@
     return { svg: W(s), a: {} };
   };
   // squares on a grid (nets, patterns): o.cells [[col,row]...], o.cols, o.rows, o.grid (faint background grid), o.mirror {x|y: line position}
+  // Venn diagram: o.sets [labelA, labelB], o.a (only A), o.ab (both), o.b (only B), o.out (neither) – arrays of short strings
+  F.venn = (o) => {
+    const [la, lb] = o.sets || ['A', 'B'], put = (arr, cx) => (arr || []).map((t, i) => `<text x="${cx}" y="${150 + (i - ((arr || []).length - 1) / 2) * 22}" font-size="15" text-anchor="middle" fill="#1F2A37">${t}</text>`).join('');
+    let s = `<rect x="20" y="20" width="440" height="270" fill="none" stroke="#1F2A37" stroke-width="2" rx="6"/>`;
+    s += `<circle cx="185" cy="155" r="105" fill="#DCE8FB" fill-opacity="0.7" stroke="#1F4FA0" stroke-width="2.4"/><circle cx="295" cy="155" r="105" fill="#FDE2C8" fill-opacity="0.6" stroke="#C0661B" stroke-width="2.4"/>`;
+    s += `<text x="130" y="42" font-size="15" font-weight="700" text-anchor="middle" fill="#1F4FA0">${la}</text><text x="350" y="42" font-size="15" font-weight="700" text-anchor="middle" fill="#C0661B">${lb}</text>`;
+    s += put(o.a, 130) + put(o.ab, 240) + put(o.b, 350) + (o.out || []).map((t, i) => `<text x="${50 + i * 30}" y="278" font-size="14" text-anchor="middle" fill="#1F2A37">${t}</text>`).join('');
+    return { svg: W(s), a: {} };
+  };
   F.cells = (o) => {
     const cs = o.cells || [], C = o.cols || Math.max(...cs.map(c => c[0]), 0) + 1, R = o.rows || Math.max(...cs.map(c => c[1]), 0) + 1;
     const sz = Math.min(400 / C, 280 / R, 60), x0 = 240 - C * sz / 2, y0 = 160 - R * sz / 2; let s = '';
