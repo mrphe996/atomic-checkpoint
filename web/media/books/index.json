@@ -2550,5 +2550,27 @@
     10
    ]
   }
+ },
+ "c4u17": {
+  "title": "Camday Maths Stage 4 · Unit 17: Multiplication and Division",
+  "pages": 10,
+  "dir": "media/books/c4u17/",
+  "ext": "webp",
+  "pdf": "media/books/c4u17.pdf?v=c4704bf370",
+  "v": "c4704bf370",
+  "secs": {
+   "17.1": [
+    2,
+    5
+   ],
+   "17.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
