@@ -2208,5 +2208,27 @@
     14
    ]
   }
+ },
+ "c4u02": {
+  "title": "Camday Maths Stage 4 · Unit 2: Time and Timetables",
+  "pages": 10,
+  "dir": "media/books/c4u02/",
+  "ext": "webp",
+  "pdf": "media/books/c4u02.pdf?v=34300e7cd2",
+  "v": "34300e7cd2",
+  "secs": {
+   "2.1": [
+    2,
+    5
+   ],
+   "2.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
