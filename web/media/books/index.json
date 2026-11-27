@@ -4,8 +4,8 @@
   "pages": 34,
   "dir": "media/books/c7u09/",
   "ext": "webp",
-  "pdf": "media/books/c7u09.pdf?v=3cfd61882d",
-  "v": "3cfd61882d",
+  "pdf": "media/books/c7u09.pdf?v=6413f9bbb9",
+  "v": "6413f9bbb9",
   "secs": {
    "9.1": [
     2,
@@ -34,8 +34,8 @@
   "pages": 34,
   "dir": "media/books/c7u01/",
   "ext": "webp",
-  "pdf": "media/books/c7u01.pdf?v=e265a9da8d",
-  "v": "e265a9da8d",
+  "pdf": "media/books/c7u01.pdf?v=eb9ec8d80d",
+  "v": "eb9ec8d80d",
   "secs": {
    "1.1": [
     2,
@@ -72,8 +72,8 @@
   "pages": 35,
   "dir": "media/books/c7u02/",
   "ext": "webp",
-  "pdf": "media/books/c7u02.pdf?v=f211fefa06",
-  "v": "f211fefa06",
+  "pdf": "media/books/c7u02.pdf?v=7c6a38cc12",
+  "v": "7c6a38cc12",
   "secs": {
    "2.1": [
     2,
@@ -107,11 +107,11 @@
  },
  "c7u03": {
   "title": "Camday Maths Stage 7 · Unit 3: Place Value and Rounding",
-  "pages": 12,
+  "pages": 13,
   "dir": "media/books/c7u03/",
   "ext": "webp",
-  "pdf": "media/books/c7u03.pdf?v=50aeeaa551",
-  "v": "50aeeaa551",
+  "pdf": "media/books/c7u03.pdf?v=2d89e9981b",
+  "v": "2d89e9981b",
   "secs": {
    "3.1": [
     2,
@@ -119,11 +119,11 @@
    ],
    "3.2": [
     7,
-    11
+    12
    ],
    "answers": [
-    12,
-    12
+    13,
+    13
    ]
   }
  },
@@ -132,8 +132,8 @@
   "pages": 28,
   "dir": "media/books/c7u04/",
   "ext": "webp",
-  "pdf": "media/books/c7u04.pdf?v=15b125031d",
-  "v": "15b125031d",
+  "pdf": "media/books/c7u04.pdf?v=7d9c7b18b8",
+  "v": "7d9c7b18b8",
   "secs": {
    "4.1": [
     2,
@@ -166,8 +166,8 @@
   "pages": 19,
   "dir": "media/books/c7u05/",
   "ext": "webp",
-  "pdf": "media/books/c7u05.pdf?v=62f685b1bc",
-  "v": "62f685b1bc",
+  "pdf": "media/books/c7u05.pdf?v=241e71c2af",
+  "v": "241e71c2af",
   "secs": {
    "5.1": [
     2,
@@ -189,23 +189,23 @@
  },
  "c7u06": {
   "title": "Camday Maths Stage 7 · Unit 6: Collecting Data",
-  "pages": 13,
+  "pages": 14,
   "dir": "media/books/c7u06/",
   "ext": "webp",
-  "pdf": "media/books/c7u06.pdf?v=d298b0bc37",
-  "v": "d298b0bc37",
+  "pdf": "media/books/c7u06.pdf?v=98bcf3fb87",
+  "v": "98bcf3fb87",
   "secs": {
    "6.1": [
     2,
-    6
+    7
    ],
    "6.2": [
-    7,
-    12
+    8,
+    13
    ],
    "answers": [
-    13,
-    13
+    14,
+    14
    ]
   }
  },
@@ -214,8 +214,8 @@
   "pages": 27,
   "dir": "media/books/c7u07/",
   "ext": "webp",
-  "pdf": "media/books/c7u07.pdf?v=335ae5a4de",
-  "v": "335ae5a4de",
+  "pdf": "media/books/c7u07.pdf?v=6dacaed5c4",
+  "v": "6dacaed5c4",
   "secs": {
    "7.1": [
     2,
@@ -248,8 +248,8 @@
   "pages": 26,
   "dir": "media/books/c7u08/",
   "ext": "webp",
-  "pdf": "media/books/c7u08.pdf?v=13df335e71",
-  "v": "13df335e71",
+  "pdf": "media/books/c7u08.pdf?v=2c636e90c1",
+  "v": "2c636e90c1",
   "secs": {
    "8.1": [
     2,
@@ -278,8 +278,8 @@
   "pages": 12,
   "dir": "media/books/c7u10/",
   "ext": "webp",
-  "pdf": "media/books/c7u10.pdf?v=2e89ae1b1c",
-  "v": "2e89ae1b1c",
+  "pdf": "media/books/c7u10.pdf?v=1ad26460c2",
+  "v": "1ad26460c2",
   "secs": {
    "10.1": [
     2,
@@ -300,8 +300,8 @@
   "pages": 25,
   "dir": "media/books/c7u11/",
   "ext": "webp",
-  "pdf": "media/books/c7u11.pdf?v=bc62107bb9",
-  "v": "bc62107bb9",
+  "pdf": "media/books/c7u11.pdf?v=5b8f0b6c89",
+  "v": "5b8f0b6c89",
   "secs": {
    "11.1": [
     2,
@@ -330,8 +330,8 @@
   "pages": 16,
   "dir": "media/books/c7u12/",
   "ext": "webp",
-  "pdf": "media/books/c7u12.pdf?v=1748994c56",
-  "v": "1748994c56",
+  "pdf": "media/books/c7u12.pdf?v=1fa13db10e",
+  "v": "1fa13db10e",
   "secs": {
    "12.1": [
     2,
@@ -356,8 +356,8 @@
   "pages": 17,
   "dir": "media/books/c7u13/",
   "ext": "webp",
-  "pdf": "media/books/c7u13.pdf?v=84b5ec8ab0",
-  "v": "84b5ec8ab0",
+  "pdf": "media/books/c7u13.pdf?v=6dfe87653a",
+  "v": "6dfe87653a",
   "secs": {
    "13.1": [
     2,
@@ -382,8 +382,8 @@
   "pages": 32,
   "dir": "media/books/c7u14/",
   "ext": "webp",
-  "pdf": "media/books/c7u14.pdf?v=7356dbdaf7",
-  "v": "7356dbdaf7",
+  "pdf": "media/books/c7u14.pdf?v=8a645e086f",
+  "v": "8a645e086f",
   "secs": {
    "14.1": [
     2,
@@ -454,8 +454,8 @@
   "pages": 31,
   "dir": "media/books/c7u16/",
   "ext": "webp",
-  "pdf": "media/books/c7u16.pdf?v=504e24f715",
-  "v": "504e24f715",
+  "pdf": "media/books/c7u16.pdf?v=4c02de322b",
+  "v": "4c02de322b",
   "secs": {
    "16.1": [
     2,
