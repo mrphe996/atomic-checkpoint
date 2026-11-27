@@ -2436,5 +2436,27 @@
     10
    ]
   }
+ },
+ "c4u12": {
+  "title": "Camday Maths Stage 4 · Unit 12: Investigating 3D Shapes and Nets",
+  "pages": 10,
+  "dir": "media/books/c4u12/",
+  "ext": "webp",
+  "pdf": "media/books/c4u12.pdf?v=f23cca5985",
+  "v": "f23cca5985",
+  "secs": {
+   "12.1": [
+    2,
+    5
+   ],
+   "12.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
