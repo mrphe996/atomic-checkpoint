@@ -146,12 +146,12 @@ VIDEOS["10.3"] = [
     ]),
     dict(kind="idea", title="Check: −1.5", steps=[
         dict(say="Y equals 4 minus 1.5 X. The gradient is negative 1.5, and the Y intercept is 4.", do=[B("y = 4 − 1.5x → m = −1.5", x=80, y=190, color=GREEN)]),
-        dict(say="From two points: the gradient is the change in Y divided by the change in X. Through 1, 3 and 5, 11: 8 divided by 4 is 2. Then 3 equals 2 plus C, so C is 1.",
+        dict(say="From two points: the gradient is the change in Y divided by the change in X. Through 1, 3 and 5, 11: 8 divided by 4 is 2. So the line is Y equals 2 X plus C. Substitute a point to find C.",
              do=[MATH("(11 − 3) ÷ (5 − 1) = 2 → y = 2x + c", x=80, y=300)]),
         PAUSE("10.3-k3", "Your turn. The line is Y equals 2 X plus 1. What is the Y intercept? Pause and answer.", "Intercept of y = 2x + 1?"),
     ]),
     dict(kind="idea", title="Check: 1", steps=[
-        dict(say="The Y intercept is 1. The line crosses the Y axis at 0, 1.", do=[B("c = 1", x=80, y=190, color=GREEN)]),
+        dict(say="The Y intercept is 1. Check with the point 1, 3: 2 plus 1 is 3. The line crosses the Y axis at 0, 1.", do=[B("c = 1", x=80, y=190, color=GREEN)]),
         dict(say="Parallel lines have the same gradient. Y equals 2 X plus 1 and Y equals 2 X minus 7 are parallel.", do=[T("**parallel** ↔ the same gradient", x=80, y=300, color=BLUE)]),
     ]),
     dict(kind="method", title="How do I find m and c?", steps=[

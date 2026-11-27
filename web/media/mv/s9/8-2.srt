@@ -1,0 +1,227 @@
+1
+00:00:07,650 --> 00:00:10,980
+A cake recipe needs 1 and 3 quarter cups of flour.
+
+2
+00:00:11,030 --> 00:00:17,550
+You make it 2 and a half times, and then use another 2 thirds of a cup to dust the table.
+
+3
+00:00:17,600 --> 00:00:20,670
+How much flour do you use altogether, in cups?
+
+4
+00:00:20,720 --> 00:00:24,200
+Give your answer as a fraction in its simplest form.
+
+5
+00:00:24,250 --> 00:00:27,780
+Pause the video and work it out.
+
+6
+00:00:27,830 --> 00:00:30,860
+Multiply first, then add the 2 thirds.
+
+7
+00:00:30,910 --> 00:00:35,880
+The total is 121 over 24, which is 5 and 1 twenty-fourth cups.
+
+8
+00:00:35,930 --> 00:00:37,570
+Let's see how.
+
+9
+00:00:37,620 --> 00:00:44,460
+Remember the order: brackets, then indices, then multiply and divide, then add and subtract.
+
+10
+00:00:44,510 --> 00:00:47,490
+Fractions follow exactly the same order.
+
+11
+00:00:47,540 --> 00:00:51,370
+Change mixed numbers into improper fractions first.
+
+12
+00:00:51,420 --> 00:00:53,720
+1 and 3 quarters is 7 quarters.
+
+13
+00:00:53,770 --> 00:00:56,170
+2 and a half is 5 halves.
+
+14
+00:00:56,220 --> 00:00:56,880
+Your turn.
+
+15
+00:00:56,930 --> 00:00:59,370
+Work out 7 quarters times 5 halves.
+
+16
+00:00:59,420 --> 00:01:03,080
+Give your answer as a fraction in its simplest form.
+
+17
+00:01:03,130 --> 00:01:06,400
+Pause the video and try it.
+
+18
+00:01:06,450 --> 00:01:10,850
+Multiply the tops and the bottoms: 35 eighths.
+
+19
+00:01:10,900 --> 00:01:17,600
+Then add 2 thirds: 105 over 24, plus 16 over 24, is 121 over 24.
+
+20
+00:01:17,650 --> 00:01:19,920
+Indices work with fractions too.
+
+21
+00:01:19,970 --> 00:01:22,170
+2 thirds, squared, is 4 ninths.
+
+22
+00:01:22,220 --> 00:01:24,900
+Square the top and the bottom.
+
+23
+00:01:24,950 --> 00:01:26,280
+Here is the method.
+
+24
+00:01:26,330 --> 00:01:30,530
+Step 1: change mixed numbers to improper fractions.
+
+25
+00:01:30,580 --> 00:01:33,950
+Step 2: work out brackets, then indices.
+
+26
+00:01:34,000 --> 00:01:38,200
+Step 3: multiply and divide, then add and subtract.
+
+27
+00:01:38,250 --> 00:01:41,990
+Step 4: simplify, and check with an estimate.
+
+28
+00:01:42,040 --> 00:01:46,370
+Work out 2 and a half, minus 1 and a third, all times 6.
+
+29
+00:01:46,420 --> 00:01:50,760
+The bracket first: 15 sixths minus 8 sixths is 7 sixths.
+
+30
+00:01:50,810 --> 00:01:52,330
+Times 6 is 7.
+
+31
+00:01:52,380 --> 00:01:53,030
+Your turn.
+
+32
+00:01:53,080 --> 00:01:56,830
+Work out 2 thirds plus 1 sixth, all divided by a half.
+
+33
+00:01:56,880 --> 00:02:00,490
+Give your answer as a fraction in its simplest form.
+
+34
+00:02:00,540 --> 00:02:03,440
+Pause and work it out.
+
+35
+00:02:03,490 --> 00:02:07,120
+The bracket: 4 sixths plus 1 sixth is 5 sixths.
+
+36
+00:02:07,170 --> 00:02:13,070
+Dividing by a half is multiplying by 2: 10 sixths, which is 5 thirds.
+
+37
+00:02:13,120 --> 00:02:22,830
+To estimate 4 and 7 eighths, times 2 and 1 tenth, minus 3 and a third: round to 5 times 2 minus 3, which is about 7.
+
+38
+00:02:22,880 --> 00:02:25,920
+Ali works out a half, plus a half times a half.
+
+39
+00:02:25,970 --> 00:02:27,780
+Which line is wrong?
+
+40
+00:02:27,830 --> 00:02:28,910
+Line 1 is wrong.
+
+41
+00:02:28,960 --> 00:02:30,610
+He worked left to right.
+
+42
+00:02:30,660 --> 00:02:32,220
+Multiply first.
+
+43
+00:02:32,270 --> 00:02:34,470
+A half times a half is a quarter.
+
+44
+00:02:34,520 --> 00:02:37,480
+A half plus a quarter is 3 quarters.
+
+45
+00:02:37,530 --> 00:02:42,100
+Spreadsheets and calculators follow the same order of operations.
+
+46
+00:02:42,150 --> 00:02:48,050
+If you type a formula without brackets, the computer still multiplies first.
+
+47
+00:02:48,100 --> 00:02:49,300
+One last question.
+
+48
+00:02:49,350 --> 00:02:51,870
+Work out 1 minus a half times a half.
+
+49
+00:02:51,920 --> 00:02:54,020
+Give your answer as a fraction.
+
+50
+00:02:54,070 --> 00:02:57,300
+Pause the video and answer.
+
+51
+00:02:57,350 --> 00:03:00,840
+Multiply first: a half times a half is a quarter.
+
+52
+00:03:00,890 --> 00:03:03,700
+1 minus a quarter is 3 quarters.
+
+53
+00:03:03,750 --> 00:03:08,450
+To remember: fractions follow the same order of operations.
+
+54
+00:03:08,500 --> 00:03:12,110
+Change mixed numbers to improper fractions.
+
+55
+00:03:12,160 --> 00:03:14,700
+Do not just work left to right.
+
+56
+00:03:14,750 --> 00:03:16,900
+Estimate to check.
+
+57
+00:03:16,950 --> 00:03:22,110
+Great work! Now practise lesson 8.2 on Camday.

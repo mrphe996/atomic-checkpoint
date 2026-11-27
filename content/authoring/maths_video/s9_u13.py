@@ -8,8 +8,8 @@ VIDEOS = {}
 
 VIDEOS["13.1"] = [
     dict(kind="hook", title="A rescue", steps=[
-        dict(say="A lifeboat station gets a call. A yacht is 12 kilometres away, on a bearing of 140 degrees. A helicopter base is 8 kilometres due east of the station.",
-             do=[E("🚁", 90, 170, 100), T("yacht: **12 km** on **140°** · base: **8 km** due east", x=230, y=200)]),
+        dict(say="A lifeboat station gets a call. A yacht is 12 kilometres away, on a bearing of 130 degrees. A helicopter base is 8 kilometres due east of the station.",
+             do=[E("🚁", 90, 170, 100), T("yacht: **12 km** on **130°** · base: **8 km** due east", x=230, y=200)]),
         PAUSE("13.1-k1", "What does a scale drawing let you do: measure distances and bearings you cannot measure directly, or avoid using a protractor? Pause the video and choose.", "A scale drawing lets you …"),
     ]),
     dict(kind="hook", title="Measure it", steps=[
@@ -25,12 +25,12 @@ VIDEOS["13.1"] = [
         PAUSE("13.1-k2", "Your turn. At 1 to 200,000, how many centimetres on the map is 12 kilometres? Pause the video and try it.", "1 : 200 000. 12 km = ? cm on the map"),
     ]),
     dict(kind="idea", title="Check: 6 cm", steps=[
-        dict(say="12 divided by 2 is 6 centimetres. Draw the station, then the yacht 6 centimetres away on 140 degrees, and the base 4 centimetres due east.", do=[B("12 ÷ 2 = 6 cm", x=80, y=190, color=GREEN)]),
+        dict(say="12 divided by 2 is 6 centimetres. Draw the station, then the yacht 6 centimetres away on 130 degrees, and the base 4 centimetres due east.", do=[B("12 ÷ 2 = 6 cm", x=80, y=190, color=GREEN)]),
         dict(say="Then measure from the base to the yacht with a ruler. Draw a north line at the base, and measure the bearing clockwise.", do=[T("ruler for the **distance** · north line + protractor for the **bearing**", x=80, y=300)]),
-        PAUSE("13.1-k3", "Your turn. Base to yacht measures 4 centimetres on the map. How many kilometres is that? Pause and work it out.", "BY = 4 cm at 1 : 200 000. Real km?"),
+        PAUSE("13.1-k3", "Your turn. Base to yacht measures about 4 centimetres on the map. How many kilometres is that? Pause and work it out.", "BY = 4 cm at 1 : 200 000. Real km?"),
     ]),
     dict(kind="idea", title="Check: 8 km", steps=[
-        dict(say="4 times 2 is 8 kilometres. The bearing measures about 197 degrees. Measure carefully: 1 millimetre on this map is 200 metres.", do=[B("4 × 2 = 8 km, about 197°", x=80, y=190, color=GREEN)]),
+        dict(say="4 times 2 is about 8 kilometres. The bearing measures about 171 degrees. Measure carefully: 1 millimetre on this map is 200 metres.", do=[B("4 × 2 = 8 km, about 171°", x=80, y=190, color=GREEN)]),
     ]),
     dict(kind="method", title="How do I use scale drawings?", steps=[
         dict(say="Here is the method. Step 1: choose a scale, and convert the real distances.", do=[T("1. **Scale**: convert distances", x=80, y=170)]),
@@ -41,7 +41,7 @@ VIDEOS["13.1"] = [
     dict(kind="example", title="Examples", steps=[
         dict(say="4.5 kilometres on a 1 to 25,000 map. 4.5 kilometres is 450,000 centimetres. Divide by 25,000: 18 centimetres.", do=[MATH("450 000 ÷ 25 000 = 18 cm", x=80, y=180)]),
         dict(say="5 centimetres represents 1 kilometre. 1 kilometre is 100,000 centimetres, so 1 centimetre is 20,000. The scale is 1 to 20,000.", do=[MATH("1 : 20 000", x=80, y=280)]),
-        dict(say="The bearing of the yacht from the station is 140. The back bearing is 140 plus 180, which is 320 degrees.", do=[MATH("140 + 180 = 320°", x=80, y=380)]),
+        dict(say="The bearing of the yacht from the station is 130. The back bearing is 130 plus 180, which is 310 degrees.", do=[MATH("130 + 180 = 310°", x=80, y=380)]),
     ]),
     dict(kind="error", title="Spot the mistake", steps=[
         dict(say="1 centimetre represents 5 kilometres. Ella writes this as a ratio. Which line is wrong?", do=LINES("Ella", "1 cm represents 5 km, as a ratio", ["1 : 5"])),

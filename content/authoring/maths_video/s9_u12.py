@@ -80,7 +80,7 @@ VIDEOS["12.2"] = [
         dict(say="Remember: for a fair coin, the probability of a head is a half.", do=[MATH("P(head) = ½", x=80, y=190)]),
     ]),
     dict(kind="idea", title="Independent events", steps=[
-        dict(say="Two events are independent if one happening does not change the probability of the other. A coin and a dice, or two spins of a spinner, are independent.",
+        dict(say="Two events are independent if one happening does not change the probability of the other. Two spins of a spinner, or two tosses of a coin, are independent.",
              do=[T("**independent**: one doesn't change the other", x=80, y=170)]),
         dict(say="Believing that tails is due is called the gambler's fallacy.", do=[T("'tails is due' = the **gambler's fallacy**", x=80, y=270)]),
         PAUSE("12.2-k2", "Your turn. Taking a counter and putting it back before the next pick. Does that make the events independent, or dependent? Pause the video and choose.", "Picking with replacement makes events …"),
@@ -99,7 +99,7 @@ VIDEOS["12.2"] = [
     ]),
     dict(kind="method", title="How do I decide?", steps=[
         dict(say="Here is the method. Step 1: does the first result change what can happen next?", do=[T("1. Does the first **change** the next?", x=80, y=170)]),
-        dict(say="Step 2: with replacement, or separate objects like a coin and a dice: independent.", do=[T("2. Replaced, or separate → **independent**", x=80, y=260)]),
+        dict(say="Step 2: with replacement: independent.", do=[T("2. Replaced → **independent**", x=80, y=260)]),
         dict(say="Step 3: without replacement: dependent. Recount what is left.", do=[T("3. Not replaced → **dependent**; recount", x=80, y=350)]),
         dict(say="Step 4: in real life, think about whether one event really affects the other.", do=[T("4. Real life: **think** it through", x=80, y=440), E("✅", 1100, 410, 90, at=0.8)]),
     ]),

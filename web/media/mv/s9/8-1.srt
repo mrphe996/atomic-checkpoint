@@ -1,0 +1,263 @@
+1
+00:00:07,280 --> 00:00:12,850
+10 dollars shared between 8 friends is exactly 1.25 dollars each.
+
+2
+00:00:12,900 --> 00:00:17,260
+But 10 dollars shared between 6 is 1.666 and so on.
+
+3
+00:00:17,310 --> 00:00:20,400
+The calculator never finishes.
+
+4
+00:00:20,450 --> 00:00:26,510
+Why does 10 divided by 6 recur: because 6 has a factor 3, or because 6 is even?
+
+5
+00:00:26,560 --> 00:00:30,000
+Pause the video and choose.
+
+6
+00:00:30,050 --> 00:00:32,430
+Because 6 has a factor of 3.
+
+7
+00:00:32,480 --> 00:00:36,420
+8 is 2 times 2 times 2, so it fits into 1,000.
+
+8
+00:00:36,470 --> 00:00:39,750
+But no power of 10 divides by 3.
+
+9
+00:00:39,800 --> 00:00:42,690
+Remember: a fraction is a division.
+
+10
+00:00:42,740 --> 00:00:46,940
+3 eighths is 3 divided by 8, which is 0.375.
+
+11
+00:00:46,990 --> 00:00:49,830
+Write the fraction in its simplest form.
+
+12
+00:00:49,880 --> 00:00:55,460
+If the denominator's prime factors are only 2s and 5s, the decimal terminates.
+
+13
+00:00:55,510 --> 00:00:57,530
+Otherwise, it recurs.
+
+14
+00:00:57,580 --> 00:00:58,240
+Your turn.
+
+15
+00:00:58,290 --> 00:01:00,810
+Does 1 fortieth terminate, or recur?
+
+16
+00:01:00,860 --> 00:01:04,130
+Pause the video and choose.
+
+17
+00:01:04,180 --> 00:01:07,200
+40 is 2 times 2 times 2 times 5.
+
+18
+00:01:07,250 --> 00:01:10,370
+Only 2s and 5s, so it terminates.
+
+19
+00:01:10,420 --> 00:01:12,830
+1 fortieth is 0.025.
+
+20
+00:01:12,880 --> 00:01:16,920
+To turn a recurring decimal into a fraction, call it X.
+
+21
+00:01:16,970 --> 00:01:19,670
+If one digit repeats, multiply by 10.
+
+22
+00:01:19,720 --> 00:01:23,050
+If two digits repeat, multiply by 100.
+
+23
+00:01:23,100 --> 00:01:27,490
+Then subtract, so the repeating part cancels, and solve.
+
+24
+00:01:27,540 --> 00:01:28,870
+Here is the method.
+
+25
+00:01:28,920 --> 00:01:31,390
+Step 1: call the decimal X.
+
+26
+00:01:31,440 --> 00:01:37,870
+Step 2: multiply by 10, 100 or 1,000, to line up the repeats.
+
+27
+00:01:37,920 --> 00:01:41,030
+Step 3: subtract, then solve for X.
+
+28
+00:01:41,080 --> 00:01:44,780
+Step 4: simplify, and check on a calculator.
+
+29
+00:01:44,830 --> 00:01:47,840
+Write 0.7 recurring as a fraction.
+
+30
+00:01:47,890 --> 00:01:49,730
+X is 0.777 and so on.
+
+31
+00:01:49,780 --> 00:01:51,890
+10 X is 7.777 and so on.
+
+32
+00:01:51,940 --> 00:01:55,770
+Subtract: 9 X is 7, so X is 7 ninths.
+
+33
+00:01:55,820 --> 00:01:59,530
+Write 0.3 6, recurring, as a fraction.
+
+34
+00:01:59,580 --> 00:02:01,210
+100 X is 36.3636.
+
+35
+00:02:01,260 --> 00:02:03,480
+Subtract X: 99 X is 36.
+
+36
+00:02:03,530 --> 00:02:08,080
+So X is 36 over 99, which is 4 elevenths.
+
+37
+00:02:08,130 --> 00:02:08,890
+Your turn.
+
+38
+00:02:08,940 --> 00:02:15,050
+Write 0.4 5 recurring, 0.4545 and so on, as a fraction in its simplest form.
+
+39
+00:02:15,100 --> 00:02:18,230
+Pause and work it out.
+
+40
+00:02:18,280 --> 00:02:20,730
+100 X minus X: 99 X is 45.
+
+41
+00:02:20,780 --> 00:02:25,980
+X is 45 over 99, which simplifies to 5 elevenths.
+
+42
+00:02:26,030 --> 00:02:28,320
+Does 21 over 56 terminate?
+
+43
+00:02:28,370 --> 00:02:31,200
+Simplify first: it is 3 eighths.
+
+44
+00:02:31,250 --> 00:02:33,090
+8 is only 2s, so yes.
+
+45
+00:02:33,140 --> 00:02:34,720
+It is 0.375.
+
+46
+00:02:34,770 --> 00:02:38,010
+Does 6 fifteenths give a terminating decimal?
+
+47
+00:02:38,060 --> 00:02:38,960
+Lucy answers.
+
+48
+00:02:39,010 --> 00:02:40,970
+Which line is wrong?
+
+49
+00:02:41,020 --> 00:02:42,170
+Line 1 is wrong.
+
+50
+00:02:42,220 --> 00:02:44,740
+She did not simplify first.
+
+51
+00:02:44,790 --> 00:02:47,900
+6 fifteenths is 2 fifths, which is 0.4.
+
+52
+00:02:47,950 --> 00:02:49,590
+It terminates.
+
+53
+00:02:49,640 --> 00:02:52,100
+Computers store numbers in base 2.
+
+54
+00:02:52,150 --> 00:02:56,380
+Even 0.1 recurs in base 2, so tiny rounding errors appear.
+
+55
+00:02:56,430 --> 00:02:59,880
+Banks use special methods to avoid them.
+
+56
+00:02:59,930 --> 00:03:01,170
+One last question.
+
+57
+00:03:01,220 --> 00:03:03,670
+Does 1 twelfth recur, or terminate?
+
+58
+00:03:03,720 --> 00:03:07,010
+Pause the video and choose.
+
+59
+00:03:07,060 --> 00:03:09,270
+12 is 2 times 2 times 3.
+
+60
+00:03:09,320 --> 00:03:14,910
+It has a factor of 3, so it recurs: 0.08333 and so on.
+
+61
+00:03:14,960 --> 00:03:17,570
+To remember: simplify first.
+
+62
+00:03:17,620 --> 00:03:21,210
+Only 2s and 5s in the denominator: it terminates.
+
+63
+00:03:21,260 --> 00:03:23,250
+Otherwise it recurs.
+
+64
+00:03:23,300 --> 00:03:27,290
+For recurring decimals: multiply, subtract, solve.
+
+65
+00:03:27,340 --> 00:03:29,760
+Check with a calculator.
+
+66
+00:03:29,810 --> 00:03:34,990
+Great work! Now practise lesson 8.1 on Camday.

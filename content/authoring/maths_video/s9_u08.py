@@ -155,7 +155,7 @@ VIDEOS["8.3"] = [
     ]),
     dict(kind="example", title="Mixed numbers", steps=[
         dict(say="Work out 3 and 3 quarters, times 2 and 2 fifths. That is 15 quarters times 12 fifths. Cancel 15 and 5, and 12 and 4: 3 times 3 is 9.",
-             do=[MATH(f"{F(15, 4)} × {F(12, 5)} = 3 × 3", x=80, y=180), B("= 9", x=80, y=290, color=GREEN, at=9)]),
+             do=[MATH(f"{F(15, 4)} × {F(12, 5)} = 3 × 3", x=80, y=180), B("= 9", x=80, y=320, color=GREEN, at=9)]),
         PAUSE("8.3-k3", "Your turn. Work out 2 and 2 thirds, times 1 and 1 eighth. Pause and work it out.", "2⅔ × 1⅛?"),
     ]),
     dict(kind="example", title="Check: 3", steps=[
@@ -211,7 +211,7 @@ VIDEOS["8.4"] = [
     ]),
     dict(kind="example", title="Mixed numbers", steps=[
         dict(say="Work out 3 and a third, divided by 1 and a quarter. That is 10 thirds times 4 fifths, which is 8 thirds, or 2 and 2 thirds.",
-             do=[MATH(f"{F(10, 3)} × {F(4, 5)} = {F(8, 3)}", x=80, y=180), B(f"= {M(2, 2, 3)}", x=80, y=290, color=GREEN, at=8)]),
+             do=[MATH(f"{F(10, 3)} × {F(4, 5)} = {F(8, 3)}", x=80, y=180), B(f"= {M(2, 2, 3)}", x=80, y=320, color=GREEN, at=8)]),
         PAUSE("8.4-k3", "Your turn. Work out 4 fifths divided by 6. Give your answer as a fraction in its simplest form. Pause and work it out.", "4/5 ÷ 6?"),
     ]),
     dict(kind="example", title="Check: 2/15", steps=[
@@ -258,7 +258,7 @@ VIDEOS["8.5"] = [
     ]),
     dict(kind="idea", title="Check: 8", steps=[
         dict(say="1 eighth of 64 is 8.", do=[B(f"{F(1, 8)} × 64 = 8", x=80, y=190, color=GREEN)]),
-        dict(say="Choose the method that fits the numbers. If there is no shortcut, use a written method or a calculator.", do=[T("choose what **fits** the numbers", x=80, y=300)]),
+        dict(say="Choose the method that fits the numbers. If there is no shortcut, use a written method or a calculator.", do=[T("choose what **fits** the numbers", x=80, y=340)]),
     ]),
     dict(kind="method", title="How do I make it easier?", steps=[
         dict(say="Here is the method. Step 1: look for pairs that make 1, 10 or 100.", do=[T("1. Pairs that make **1, 10, 100**", x=80, y=170)]),

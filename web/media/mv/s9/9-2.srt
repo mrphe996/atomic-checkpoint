@@ -1,0 +1,243 @@
+1
+00:00:06,250 --> 00:00:12,060
+In a cinema, row 1 has 18 seats, row 2 has 22, row 3 has 26, and so on.
+
+2
+00:00:12,110 --> 00:00:15,820
+Listing 40 rows would take a long time.
+
+3
+00:00:15,870 --> 00:00:17,970
+How many seats are in row 40?
+
+4
+00:00:18,020 --> 00:00:21,730
+Pause the video and work it out.
+
+5
+00:00:21,780 --> 00:00:26,010
+From row 1 to row 40 there are 39 steps of 4.
+
+6
+00:00:26,060 --> 00:00:31,150
+18 plus 39 times 4 is 18 plus 156, which is 174 seats.
+
+7
+00:00:31,200 --> 00:00:34,450
+A formula makes this quicker.
+
+8
+00:00:34,500 --> 00:00:38,620
+Remember: the Nth term gives any term from its position.
+
+9
+00:00:38,670 --> 00:00:41,930
+3 N minus 1 gives 2, 5, 8, and so on.
+
+10
+00:00:41,980 --> 00:00:44,840
+The difference tells you the multiple of N.
+
+11
+00:00:44,890 --> 00:00:48,290
+Then compare with the sequence, and adjust.
+
+12
+00:00:48,340 --> 00:00:50,220
+For example: 7, 10, 13.
+
+13
+00:00:50,270 --> 00:00:54,240
+The difference is 3, so start with 3 N: 3, 6, 9.
+
+14
+00:00:54,290 --> 00:00:55,910
+Each term is 4 more.
+
+15
+00:00:55,960 --> 00:00:58,970
+So the Nth term is 3 N plus 4.
+
+16
+00:00:59,020 --> 00:00:59,810
+Your turn.
+
+17
+00:00:59,860 --> 00:01:02,490
+Find the Nth term of 18, 22, 26.
+
+18
+00:01:02,540 --> 00:01:06,140
+Pause the video and try it.
+
+19
+00:01:06,190 --> 00:01:09,910
+The difference is 4, so 4 N: 4, 8, 12.
+
+20
+00:01:09,960 --> 00:01:11,990
+Each term is 14 more.
+
+21
+00:01:12,040 --> 00:01:14,770
+The Nth term is 4 N plus 14.
+
+22
+00:01:14,820 --> 00:01:18,000
+Row 40: 160 plus 14 is 174.
+
+23
+00:01:18,050 --> 00:01:23,030
+Some sequences are based on N squared: 1, 4, 9, 16, 25.
+
+24
+00:01:23,080 --> 00:01:27,610
+For example, 2 N squared gives 2, 8, 18, 32.
+
+25
+00:01:27,660 --> 00:01:28,940
+Here is the method.
+
+26
+00:01:28,990 --> 00:01:31,100
+Step 1: find the difference, D.
+
+27
+00:01:31,150 --> 00:01:32,690
+Start with D N.
+
+28
+00:01:32,740 --> 00:01:37,460
+Step 2: compare D N with the sequence, and add or subtract.
+
+29
+00:01:37,510 --> 00:01:41,730
+Step 3: if it looks quadratic, compare with N squared.
+
+30
+00:01:41,780 --> 00:01:44,410
+Step 4: check with a term.
+
+31
+00:01:44,460 --> 00:01:47,620
+Find the Nth term of 40, 37, 34, 31.
+
+32
+00:01:47,670 --> 00:01:53,600
+The difference is minus 3, so minus 3 N: minus 3, minus 6, minus 9.
+
+33
+00:01:53,650 --> 00:01:55,480
+Each term is 43 more.
+
+34
+00:01:55,530 --> 00:01:57,460
+So 43 minus 3 N.
+
+35
+00:01:57,510 --> 00:01:58,160
+Your turn.
+
+36
+00:01:58,210 --> 00:02:01,480
+Write the first four terms of N squared plus 3.
+
+37
+00:02:01,530 --> 00:02:04,440
+Pause and work it out.
+
+38
+00:02:04,490 --> 00:02:10,910
+1 plus 3, 4 plus 3, 9 plus 3, 16 plus 3: 4, 7, 12, 19.
+
+39
+00:02:10,960 --> 00:02:14,110
+Is 100 in the sequence 4 N plus 14?
+
+40
+00:02:14,160 --> 00:02:18,030
+4 N plus 14 equals 100 gives N equals 21.5.
+
+41
+00:02:18,080 --> 00:02:21,690
+That is not a whole number, so no.
+
+42
+00:02:21,740 --> 00:02:25,050
+Finn finds the Nth term of 5, 8, 11, 14.
+
+43
+00:02:25,100 --> 00:02:27,280
+Which line is wrong?
+
+44
+00:02:27,330 --> 00:02:28,430
+Line 2 is wrong.
+
+45
+00:02:28,480 --> 00:02:32,930
+The difference is the multiple of N, so start with 3 N.
+
+46
+00:02:32,980 --> 00:02:34,520
+3 N gives 3, 6, 9.
+
+47
+00:02:34,570 --> 00:02:35,050
+Add 2.
+
+48
+00:02:35,100 --> 00:02:37,980
+The Nth term is 3 N plus 2.
+
+49
+00:02:38,030 --> 00:02:44,780
+If you have 50 dollars and save 12 dollars a week, after N weeks you have 12 N plus 50.
+
+50
+00:02:44,830 --> 00:02:48,920
+Planners use Nth terms like this all the time.
+
+51
+00:02:48,970 --> 00:02:50,340
+One last question.
+
+52
+00:02:50,390 --> 00:02:52,780
+Which term of 2 N plus 1 is 41?
+
+53
+00:02:52,830 --> 00:02:56,300
+Pause the video and answer.
+
+54
+00:02:56,350 --> 00:02:58,360
+2 N plus 1 equals 41.
+
+55
+00:02:58,410 --> 00:03:00,510
+2 N is 40, so N is 20.
+
+56
+00:03:00,560 --> 00:03:03,020
+It is the 20th term.
+
+57
+00:03:03,070 --> 00:03:06,700
+To remember: linear Nth term: D N, then adjust.
+
+58
+00:03:06,750 --> 00:03:09,260
+Check with the first term.
+
+59
+00:03:09,310 --> 00:03:12,220
+Quadratic: compare with N squared.
+
+60
+00:03:12,270 --> 00:03:16,500
+Solve an equation to test if a number is in the sequence.
+
+61
+00:03:16,550 --> 00:03:21,710
+Great work! Now practise lesson 9.2 on Camday.

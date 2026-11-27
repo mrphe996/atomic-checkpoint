@@ -51096,7 +51096,7 @@
     "8.2-k3": 122.44,
     "8.2-k4": 176.3
    },
-   "up": false
+   "up": true
   },
   "8.1": {
    "src": "media/mv/s9/8-1.mp4",
@@ -51374,6 +51374,2707 @@
     "8.1-k2": 63.13,
     "8.1-k3": 137.23,
     "8.1-k4": 186.01
+   },
+   "up": true
+  },
+  "8.3": {
+   "src": "media/mv/s9/8-3.mp4",
+   "poster": "media/mv/s9/8-3_poster.jpg",
+   "srt": "media/mv/s9/8-3.srt",
+   "dur": 196.28,
+   "captions": [
+    [
+     6.72,
+     "A garden is 15 sixteenths of an acre."
+    ],
+    [
+     9.45,
+     "8 ninths of it is lawn, and 3 tenths of the lawn is reseeded."
+    ],
+    [
+     14.51,
+     "What fraction of an acre is reseeded?"
+    ],
+    [
+     16.98,
+     "Give your answer as a fraction in its simplest form."
+    ],
+    [
+     20.45,
+     "Pause the video and work it out."
+    ],
+    [
+     23.98,
+     "Cancel before you multiply."
+    ],
+    [
+     26.29,
+     "3 and 9, 8 and 16, 15 and 10."
+    ],
+    [
+     28.78,
+     "Everything cancels to 1 over 4."
+    ],
+    [
+     31.44,
+     "A quarter of an acre."
+    ],
+    [
+     33.79,
+     "Remember: to multiply fractions, multiply the tops, and multiply the bottoms."
+    ],
+    [
+     39.47,
+     "2 thirds times 4 fifths is 8 fifteenths."
+    ],
+    [
+     42.96,
+     "Before multiplying, cancel any top number with any bottom number that share a factor."
+    ],
+    [
+     48.82,
+     "The numbers stay small, and the answer is already simplified."
+    ],
+    [
+     53.57,
+     "A whole number N is N over 1."
+    ],
+    [
+     56.2,
+     "Your turn."
+    ],
+    [
+     56.93,
+     "Work out 18 times 5 twelfths."
+    ],
+    [
+     59.05,
+     "Give your answer as a fraction in its simplest form."
+    ],
+    [
+     62.84,
+     "Pause the video and try it."
+    ],
+    [
+     66.21,
+     "Cancel 18 and 12 by 6: 3 times 5 halves is 15 halves, or 7 and a half."
+    ],
+    [
+     73.2,
+     "For mixed numbers, change them to improper fractions first."
+    ],
+    [
+     77.87,
+     "Here is the method."
+    ],
+    [
+     79.24,
+     "Step 1: change mixed numbers and integers into fractions."
+    ],
+    [
+     83.9,
+     "Step 2: cancel common factors, top with bottom."
+    ],
+    [
+     87.95,
+     "Step 3: multiply the tops and the bottoms."
+    ],
+    [
+     91.58,
+     "Step 4: change back to a mixed number if you need to, and estimate."
+    ],
+    [
+     96.72,
+     "Work out 3 and 3 quarters, times 2 and 2 fifths."
+    ],
+    [
+     101.09,
+     "That is 15 quarters times 12 fifths."
+    ],
+    [
+     104.36,
+     "Cancel 15 and 5, and 12 and 4: 3 times 3 is 9."
+    ],
+    [
+     109.09,
+     "Your turn."
+    ],
+    [
+     109.84,
+     "Work out 2 and 2 thirds, times 1 and 1 eighth."
+    ],
+    [
+     113.29,
+     "Pause and work it out."
+    ],
+    [
+     116.33,
+     "8 thirds times 9 eighths."
+    ],
+    [
+     118.4,
+     "Cancel the 8s, and 9 with 3."
+    ],
+    [
+     120.72,
+     "The answer is 3."
+    ],
+    [
+     122.05,
+     "Estimate: about 3 times 1."
+    ],
+    [
+     124.75,
+     "5 eighths of 2 and 2 fifths kilograms: 5 eighths times 12 fifths is 3 halves."
+    ],
+    [
+     131.07,
+     "That is 1 and a half kilograms."
+    ],
+    [
+     134.16,
+     "Leo works out 2 thirds plus 3 quarters."
+    ],
+    [
+     137.05,
+     "Which line is wrong?"
+    ],
+    [
+     139.08,
+     "Line 1 is wrong."
+    ],
+    [
+     140.19,
+     "You can only cancel when you multiply, not when you add."
+    ],
+    [
+     144.59,
+     "Use a common denominator: 8 twelfths plus 9 twelfths is 17 twelfths."
+    ],
+    [
+     150.64,
+     "Chefs scale recipes by multiplying every amount by the same fraction."
+    ],
+    [
+     155.6,
+     "To make 3 quarters of a recipe, multiply each amount by 3 quarters."
+    ],
+    [
+     160.98,
+     "One last question."
+    ],
+    [
+     162.27,
+     "Work out 6 sevenths times 7 twelfths."
+    ],
+    [
+     164.93,
+     "Give your answer as a fraction in its simplest form."
+    ],
+    [
+     168.66,
+     "Pause the video and answer."
+    ],
+    [
+     172.0,
+     "Cancel the 7s, and 6 with 12."
+    ],
+    [
+     174.38,
+     "The answer is a half."
+    ],
+    [
+     176.66,
+     "To remember: cancel top with bottom before multiplying."
+    ],
+    [
+     181.14,
+     "Integers are over 1."
+    ],
+    [
+     182.61,
+     "Mixed numbers become improper fractions."
+    ],
+    [
+     186.1,
+     "Only cancel when multiplying."
+    ],
+    [
+     188.64,
+     "Estimate to check."
+    ],
+    [
+     191.06,
+     "Great work! Now practise lesson 8.3 on Camday."
+    ]
+   ],
+   "times": {
+    "8.3-k1": 22.93,
+    "8.3-k2": 65.16,
+    "8.3-k3": 115.28,
+    "8.3-k4": 170.95
+   },
+   "up": true
+  },
+  "8.4": {
+   "src": "media/mv/s9/8-4.mp4",
+   "poster": "media/mv/s9/8-4_poster.jpg",
+   "srt": "media/mv/s9/8-4.srt",
+   "dur": 181.48,
+   "captions": [
+    [
+     6.43,
+     "A craft shop has 7 and a half metres of ribbon."
+    ],
+    [
+     9.73,
+     "Each bow needs 5 eighths of a metre."
+    ],
+    [
+     12.81,
+     "How many bows can be made?"
+    ],
+    [
+     14.54,
+     "Pause the video and work it out."
+    ],
+    [
+     18.06,
+     "12 bows, because 12 lots of 5 eighths make 60 eighths, which is 7 and a half."
+    ],
+    [
+     23.86,
+     "Let's see how to divide by a fraction."
+    ],
+    [
+     27.27,
+     "Remember: the reciprocal of a fraction is the fraction flipped over."
+    ],
+    [
+     32.2,
+     "The reciprocal of 3 quarters is 4 thirds."
+    ],
+    [
+     35.18,
+     "The reciprocal of 5 is a fifth."
+    ],
+    [
+     37.98,
+     "To divide by a fraction, multiply by its reciprocal."
+    ],
+    [
+     41.56,
+     "Keep the first fraction, change divide to multiply, and flip the second."
+    ],
+    [
+     47.08,
+     "Your turn."
+    ],
+    [
+     47.79,
+     "To divide by 5 eighths, do you multiply by 8 fifths, or by 5 eighths?"
+    ],
+    [
+     52.7,
+     "Pause the video and choose."
+    ],
+    [
+     56.03,
+     "Multiply by 8 fifths, the reciprocal."
+    ],
+    [
+     59.21,
+     "15 halves times 8 fifths is 12."
+    ],
+    [
+     62.43,
+     "Why does it work?"
+    ],
+    [
+     63.64,
+     "Dividing by a half asks: how many halves fit?"
+    ],
+    [
+     66.86,
+     "2 in every 1."
+    ],
+    [
+     67.79,
+     "So dividing by a half is the same as multiplying by 2."
+    ],
+    [
+     72.2,
+     "Here is the method."
+    ],
+    [
+     73.58,
+     "Step 1: change mixed numbers and integers to fractions."
+    ],
+    [
+     78.11,
+     "Step 2: flip the second fraction, the divisor."
+    ],
+    [
+     82.03,
+     "Step 3: multiply, cancelling first."
+    ],
+    [
+     85.32,
+     "Step 4: simplify, and check that the size makes sense."
+    ],
+    [
+     89.71,
+     "Work out 3 and a third, divided by 1 and a quarter."
+    ],
+    [
+     93.69,
+     "That is 10 thirds times 4 fifths, which is 8 thirds, or 2 and 2 thirds."
+    ],
+    [
+     99.78,
+     "Your turn."
+    ],
+    [
+     100.5,
+     "Work out 4 fifths divided by 6."
+    ],
+    [
+     102.72,
+     "Give your answer as a fraction in its simplest form."
+    ],
+    [
+     106.45,
+     "Pause and work it out."
+    ],
+    [
+     109.43,
+     "Dividing by 6 is multiplying by 1 sixth."
+    ],
+    [
+     112.59,
+     "4 fifths times 1 sixth is 4 thirtieths, which is 2 fifteenths."
+    ],
+    [
+     118.04,
+     "A 2 and a quarter litre jug fills glasses of 3 eighths of a litre."
+    ],
+    [
+     123.07,
+     "9 quarters times 8 thirds is 6."
+    ],
+    [
+     125.44,
+     "So 6 glasses."
+    ],
+    [
+     126.98,
+     "Ivy works out 2 thirds divided by 4 fifths."
+    ],
+    [
+     130.11,
+     "Which line is wrong?"
+    ],
+    [
+     132.12,
+     "Line 1 is wrong."
+    ],
+    [
+     133.24,
+     "She flipped the first fraction."
+    ],
+    [
+     135.4,
+     "Flip the second one, the divisor."
+    ],
+    [
+     138.25,
+     "2 thirds times 5 quarters is 10 twelfths, which is 5 sixths."
+    ],
+    [
+     143.78,
+     "Carpenters divide lengths by fractions to see how many pieces they can cut from one plank."
+    ],
+    [
+     150.52,
+     "One last question."
+    ],
+    [
+     151.87,
+     "Work out 9 divided by 3 quarters."
+    ],
+    [
+     154.33,
+     "Pause the video and answer."
+    ],
+    [
+     157.75,
+     "9 times 4 thirds is 12."
+    ],
+    [
+     160.65,
+     "To remember: to divide by a fraction, multiply by its reciprocal."
+    ],
+    [
+     165.63,
+     "Flip the second fraction, not the first."
+    ],
+    [
+     168.95,
+     "Change mixed numbers first."
+    ],
+    [
+     171.62,
+     "Dividing by a fraction less than 1 makes the answer bigger."
+    ],
+    [
+     176.32,
+     "Great work! Now practise lesson 8.4 on Camday."
+    ]
+   ],
+   "times": {
+    "8.4-k1": 17.01,
+    "8.4-k2": 54.98,
+    "8.4-k3": 108.38,
+    "8.4-k4": 156.7
+   },
+   "up": false
+  },
+  "8.5": {
+   "src": "media/mv/s9/8-5.mp4",
+   "poster": "media/mv/s9/8-5_poster.jpg",
+   "srt": "media/mv/s9/8-5.srt",
+   "dur": 184.28,
+   "captions": [
+    [
+     6.99,
+     "Two friends race."
+    ],
+    [
+     8.29,
+     "One uses a calculator."
+    ],
+    [
+     9.98,
+     "The other looks for shortcuts."
+    ],
+    [
+     12.28,
+     "The first question is 4.7 times 9, plus 4.7."
+    ],
+    [
+     16.21,
+     "Can you find a shortcut?"
+    ],
+    [
+     18.1,
+     "Work out 4.7 times 9, plus 4.7."
+    ],
+    [
+     20.54,
+     "Pause the video and try it."
+    ],
+    [
+     24.06,
+     "4.7 times 9, plus 4.7 times 1, is 4.7 times 10."
+    ],
+    [
+     28.57,
+     "That is 47."
+    ],
+    [
+     29.63,
+     "No calculator needed."
+    ],
+    [
+     32.19,
+     "Remember: you can multiply in any order."
+    ],
+    [
+     34.76,
+     "And A times B plus C is A B plus A C."
+    ],
+    [
+     37.69,
+     "Reorder: 0.25 times 36 times 4 is 0.25 times 4, which is 1, times 36."
+    ],
+    [
+     44.86,
+     "So 36."
+    ],
+    [
+     46.04,
+     "Take out a common factor, like 4.7."
+    ],
+    [
+     48.57,
+     "Change a decimal into a fraction."
+    ],
+    [
+     50.97,
+     "Or round, then adjust."
+    ],
+    [
+     52.56,
+     "This is called compensating."
+    ],
+    [
+     55.14,
+     "Your turn."
+    ],
+    [
+     56.04,
+     "0.125 is 1 eighth."
+    ],
+    [
+     57.67,
+     "Use this to work out 0.125 times 64."
+    ],
+    [
+     60.93,
+     "Pause the video and try it."
+    ],
+    [
+     64.77,
+     "1 eighth of 64 is 8."
+    ],
+    [
+     67.48,
+     "Choose the method that fits the numbers."
+    ],
+    [
+     70.22,
+     "If there is no shortcut, use a written method or a calculator."
+    ],
+    [
+     75.01,
+     "Here is the method."
+    ],
+    [
+     76.66,
+     "Step 1: look for pairs that make 1, 10 or 100."
+    ],
+    [
+     81.22,
+     "Step 2: look for a common factor."
+    ],
+    [
+     84.21,
+     "Step 3: change decimals to fractions, or round and adjust."
+    ],
+    [
+     88.97,
+     "Step 4: check with an estimate."
+    ],
+    [
+     91.9,
+     "Work out 19.8 times 5."
+    ],
+    [
+     94.07,
+     "20 times 5 is 100."
+    ],
+    [
+     95.84,
+     "Then take away 0.2 times 5, which is 1."
+    ],
+    [
+     99.68,
+     "The answer is 99."
+    ],
+    [
+     101.91,
+     "Your turn."
+    ],
+    [
+     102.74,
+     "Work out 3.99 times 6."
+    ],
+    [
+     104.57,
+     "Pause and work it out."
+    ],
+    [
+     107.79,
+     "4 times 6 is 24."
+    ],
+    [
+     109.49,
+     "Take away 0.01 times 6, which is 0.06."
+    ],
+    [
+     113.5,
+     "The answer is 23.94."
+    ],
+    [
+     116.17,
+     "0.75 times 2.8 is 3 quarters of 2.8, which is 2.1."
+    ],
+    [
+     120.94,
+     "And 3 fifths times 17, plus 3 fifths times 3, is 3 fifths of 20, which is 12."
+    ],
+    [
+     128.84,
+     "Owen works out 6 times 2.5, plus 4 times 2.5."
+    ],
+    [
+     132.64,
+     "Which line is wrong?"
+    ],
+    [
+     134.87,
+     "Line 1 is wrong."
+    ],
+    [
+     136.07,
+     "Take out the common factor 2.5, and add the others."
+    ],
+    [
+     140.45,
+     "6 plus 4 is 10."
+    ],
+    [
+     142.31,
+     "10 times 2.5 is 25."
+    ],
+    [
+     145.22,
+     "Shoppers use compensation all the time."
+    ],
+    [
+     148.63,
+     "3 items at 4.99 dollars is 3 times 5, minus 3 cents: 14.97 dollars."
+    ],
+    [
+     155.04,
+     "One last question."
+    ],
+    [
+     156.44,
+     "Work out 0.5 times 88."
+    ],
+    [
+     158.16,
+     "Pause the video and answer."
+    ],
+    [
+     161.67,
+     "0.5 is a half."
+    ],
+    [
+     163.05,
+     "Half of 88 is 44."
+    ],
+    [
+     165.28,
+     "To remember: reorder to make easy pairs."
+    ],
+    [
+     168.58,
+     "Take out a common factor."
+    ],
+    [
+     171.07,
+     "Use fractions for decimals like 0.25, 0.5 and 0.125."
+    ],
+    [
+     176.71,
+     "Round, then adjust."
+    ],
+    [
+     179.09,
+     "Great work! Now practise lesson 8.5 on Camday."
+    ]
+   ],
+   "times": {
+    "8.5-k1": 23.01,
+    "8.5-k2": 63.72,
+    "8.5-k3": 106.74,
+    "8.5-k4": 160.62
+   },
+   "up": false
+  },
+  "9.3": {
+   "src": "media/mv/s9/9-3.mp4",
+   "poster": "media/mv/s9/9-3_poster.jpg",
+   "srt": "media/mv/s9/9-3.srt",
+   "dur": 172.0,
+   "captions": [
+    [
+     6.78,
+     "A tiling app takes the side of a square tile, X centimetres."
+    ],
+    [
+     11.11,
+     "It squares it, then adds 4 square centimetres for the grout."
+    ],
+    [
+     15.43,
+     "The output is 85."
+    ],
+    [
+     17.21,
+     "What was the input?"
+    ],
+    [
+     18.52,
+     "Give the positive answer."
+    ],
+    [
+     20.24,
+     "Pause the video and work it out."
+    ],
+    [
+     23.84,
+     "Work backwards."
+    ],
+    [
+     25.19,
+     "85 minus 4 is 81."
+    ],
+    [
+     26.71,
+     "The square root of 81 is 9."
+    ],
+    [
+     29.14,
+     "So the input was 9."
+    ],
+    [
+     31.4,
+     "Remember: X, times 3, add 1, gives Y."
+    ],
+    [
+     34.22,
+     "So Y equals 3 X plus 1."
+    ],
+    [
+     36.52,
+     "A function machine can include powers."
+    ],
+    [
+     39.26,
+     "X, square, add 4, gives Y equals X squared plus 4."
+    ],
+    [
+     43.42,
+     "Your turn."
+    ],
+    [
+     44.12,
+     "Find Y when X is negative 3."
+    ],
+    [
+     46.08,
+     "Pause the video and try it."
+    ],
+    [
+     49.37,
+     "Negative 3 squared is 9."
+    ],
+    [
+     51.47,
+     "9 plus 4 is 13."
+    ],
+    [
+     52.77,
+     "So X equals 3 and X equals negative 3 both give 13."
+    ],
+    [
+     57.77,
+     "Order matters."
+    ],
+    [
+     58.8,
+     "Square, then times 2, gives Y equals 2 X squared."
+    ],
+    [
+     62.95,
+     "Your turn."
+    ],
+    [
+     63.67,
+     "What about times 2, then square: is it Y equals 4 X squared, or Y equals 2 X squared?"
+    ],
+    [
+     69.75,
+     "Pause the video and choose."
+    ],
+    [
+     73.08,
+     "Times 2 then square is 2 X, all squared."
+    ],
+    [
+     76.06,
+     "That is 4 X squared."
+    ],
+    [
+     77.55,
+     "Brackets keep the order."
+    ],
+    [
+     79.89,
+     "Here is the method."
+    ],
+    [
+     81.21,
+     "Step 1: follow the steps in order to make a table of values."
+    ],
+    [
+     85.92,
+     "Step 2: write the equation, using brackets to keep the order."
+    ],
+    [
+     90.81,
+     "Step 3: draw a mapping diagram if you need one."
+    ],
+    [
+     94.72,
+     "Step 4: to find an input, use inverse operations in reverse order."
+    ],
+    [
+     99.9,
+     "X, add 1, then square, gives Y equals X plus 1, all squared."
+    ],
+    [
+     104.7,
+     "Y equals X cubed minus 5."
+    ],
+    [
+     106.91,
+     "The output is 59."
+    ],
+    [
+     108.4,
+     "Add 5: 64."
+    ],
+    [
+     109.29,
+     "The cube root of 64 is 4."
+    ],
+    [
+     112.04,
+     "Halve X, then square, gives Y equals X squared over 4."
+    ],
+    [
+     116.43,
+     "Jay writes X, add 3, then square, as an equation."
+    ],
+    [
+     119.79,
+     "Which line is wrong?"
+    ],
+    [
+     121.71,
+     "Line 1 is wrong."
+    ],
+    [
+     122.85,
+     "The square must apply to the whole of X plus 3."
+    ],
+    [
+     126.76,
+     "Y equals X plus 3, all squared."
+    ],
+    [
+     129.55,
+     "A spreadsheet formula is a function machine."
+    ],
+    [
+     132.52,
+     "Type a value in one cell, and the formula turns it into an output in another."
+    ],
+    [
+     138.27,
+     "One last question."
+    ],
+    [
+     139.54,
+     "Y equals X cubed."
+    ],
+    [
+     140.74,
+     "Find Y when X is negative 2."
+    ],
+    [
+     142.71,
+     "Pause the video and answer."
+    ],
+    [
+     146.01,
+     "Negative 2 times negative 2 times negative 2 is negative 8."
+    ],
+    [
+     151.35,
+     "To remember: follow the steps in order."
+    ],
+    [
+     154.55,
+     "Use brackets to show the order in an equation."
+    ],
+    [
+     158.25,
+     "Work backwards with inverse operations, in reverse order."
+    ],
+    [
+     162.86,
+     "With squares, two inputs can give the same output."
+    ],
+    [
+     166.83,
+     "Great work! Now practise lesson 9.3 on Camday."
+    ]
+   ],
+   "times": {
+    "9.3-k1": 22.79,
+    "9.3-k2": 48.32,
+    "9.3-k3": 72.03,
+    "9.3-k4": 144.96
+   },
+   "up": true
+  },
+  "9.1": {
+   "src": "media/mv/s9/9-1.mp4",
+   "poster": "media/mv/s9/9-1_poster.jpg",
+   "srt": "media/mv/s9/9-1.srt",
+   "dur": 209.88,
+   "captions": [
+    [
+     6.43,
+     "Bowling pins are set out in a triangle."
+    ],
+    [
+     9.47,
+     "The front row has 1 pin, the next row 2, then 3, and so on."
+    ],
+    [
+     14.07,
+     "The running totals are 1, 3, 6, 10, 15."
+    ],
+    [
+     17.65,
+     "What are the next two totals?"
+    ],
+    [
+     19.56,
+     "Pause the video and work them out."
+    ],
+    [
+     23.19,
+     "The totals grow by 2, then 3, then 4, then 5."
+    ],
+    [
+     27.09,
+     "So next we add 6, then 7: 21 and 28."
+    ],
+    [
+     30.75,
+     "Remember: a term-to-term rule tells you how to get from one term to the next."
+    ],
+    [
+     36.7,
+     "5, 9, 13, 17: add 4 each time."
+    ],
+    [
+     39.57,
+     "In a linear sequence, the terms change by the same amount each time."
+    ],
+    [
+     44.07,
+     "In a non-linear sequence, the change is different each time."
+    ],
+    [
+     48.58,
+     "Look at the differences."
+    ],
+    [
+     50.51,
+     "For 1, 3, 6, 10, 15, the first differences are 2, 3, 4, 5."
+    ],
+    [
+     55.17,
+     "The second differences are all 1."
+    ],
+    [
+     57.81,
+     "Constant second differences mean the sequence is quadratic."
+    ],
+    [
+     63.1,
+     "Your turn."
+    ],
+    [
+     63.84,
+     "1 and a half, 4, 6 and a half, 9."
+    ],
+    [
+     66.27,
+     "Is this sequence linear, or non-linear?"
+    ],
+    [
+     69.14,
+     "Pause the video and choose."
+    ],
+    [
+     72.52,
+     "It is linear."
+    ],
+    [
+     73.42,
+     "It goes up by 2 and a half every time."
+    ],
+    [
+     76.6,
+     "Rules can multiply too."
+    ],
+    [
+     78.5,
+     "Multiply by 3 from 2 gives 2, 6, 18, 54."
+    ],
+    [
+     81.8,
+     "Always use the previous term each time."
+    ],
+    [
+     85.58,
+     "Here is the method."
+    ],
+    [
+     86.96,
+     "Step 1: find the differences between terms."
+    ],
+    [
+     90.64,
+     "Step 2: the same difference means linear."
+    ],
+    [
+     93.67,
+     "Changing differences mean non-linear."
+    ],
+    [
+     96.95,
+     "Step 3: for non-linear, look at second differences, or a multiplying rule."
+    ],
+    [
+     102.78,
+     "Step 4: use the pattern, and check one more step."
+    ],
+    [
+     106.84,
+     "The first term is 3, and the rule is add 3 quarters."
+    ],
+    [
+     110.72,
+     "The terms are 3, 3 and 3 quarters, 4 and a half, 5 and a quarter."
+    ],
+    [
+     116.12,
+     "Next term of 50, 41, 33, 26, 20?"
+    ],
+    [
+     119.01,
+     "The differences are minus 9, minus 8, minus 7, minus 6."
+    ],
+    [
+     123.97,
+     "They go down by 1 each time."
+    ],
+    [
+     127.05,
+     "Your turn."
+    ],
+    [
+     127.95,
+     "What is the next term of 50, 41, 33, 26, 20?"
+    ],
+    [
+     131.94,
+     "Pause and work it out."
+    ],
+    [
+     135.34,
+     "The next difference is minus 5."
+    ],
+    [
+     138.07,
+     "20 minus 5 is 15."
+    ],
+    [
+     140.13,
+     "A two-step rule: start at 1, double, then add 3."
+    ],
+    [
+     144.37,
+     "1, 5, 13, 29."
+    ],
+    [
+     146.06,
+     "The first term is 2, and the rule is square the term."
+    ],
+    [
+     149.78,
+     "Rosa writes the sequence."
+    ],
+    [
+     151.53,
+     "Which line is wrong?"
+    ],
+    [
+     153.48,
+     "Line 1 is wrong."
+    ],
+    [
+     154.61,
+     "She squared the first term every time."
+    ],
+    [
+     157.29,
+     "Each term comes from the previous term."
+    ],
+    [
+     160.6,
+     "2, 4, 16, 256."
+    ],
+    [
+     163.45,
+     "Bacteria can split in two every 20 minutes."
+    ],
+    [
+     166.96,
+     "1, 2, 4, 8, 16: a non-linear sequence that grows very fast."
+    ],
+    [
+     172.33,
+     "One last question."
+    ],
+    [
+     173.79,
+     "3, 6, 12, 24."
+    ],
+    [
+     174.85,
+     "Is it non-linear, times 2, or linear?"
+    ],
+    [
+     177.87,
+     "Pause the video and choose."
+    ],
+    [
+     181.47,
+     "The differences are 3, 6, 12."
+    ],
+    [
+     183.72,
+     "They change, so it is non-linear."
+    ],
+    [
+     186.28,
+     "The rule is times 2."
+    ],
+    [
+     188.38,
+     "To remember: linear sequences have a constant difference."
+    ],
+    [
+     193.04,
+     "Non-linear sequences have changing differences, or a multiplying rule."
+    ],
+    [
+     198.52,
+     "Constant second differences mean quadratic."
+    ],
+    [
+     202.13,
+     "Rules act on the previous term."
+    ],
+    [
+     204.69,
+     "Great work! Now practise lesson 9.1 on Camday."
+    ]
+   ],
+   "times": {
+    "9.1-k1": 22.14,
+    "9.1-k2": 71.47,
+    "9.1-k3": 134.29,
+    "9.1-k4": 180.42
+   },
+   "up": true
+  },
+  "10.2": {
+   "src": "media/mv/s9/10-2.mp4",
+   "poster": "media/mv/s9/10-2_poster.jpg",
+   "srt": "media/mv/s9/10-2.srt",
+   "dur": 190.36,
+   "captions": [
+    [
+     6.37,
+     "A ball is dropped."
+    ],
+    [
+     7.61,
+     "A sensor records how far it falls."
+    ],
+    [
+     9.94,
+     "After T seconds, it has fallen about 5 T squared metres."
+    ],
+    [
+     14.34,
+     "Would the graph of distance against time be a straight line?"
+    ],
+    [
+     18.34,
+     "Pause the video and choose: no, a curve, or yes."
+    ],
+    [
+     22.94,
+     "No, it is a curve."
+    ],
+    [
+     24.11,
+     "The ball falls faster and faster, so the distance does not go up by the same amount each second."
+    ],
+    [
+     30.92,
+     "Remember: for Y equals 2 X plus 3, X equals negative 1 gives 1, 0 gives 3, and 1 gives 5."
+    ],
+    [
+     38.75,
+     "Linear functions give straight lines."
+    ],
+    [
+     41.26,
+     "Choose X values, find Y, plot the points and join them with a ruler."
+    ],
+    [
+     46.43,
+     "For 2 X plus 3 Y equals 12, the quickest points are where the line crosses the axes."
+    ],
+    [
+     52.81,
+     "Put X equals 0, then Y equals 0."
+    ],
+    [
+     55.79,
+     "Your turn."
+    ],
+    [
+     56.55,
+     "In 2 X plus 3 Y equals 12, what is Y when X is 0?"
+    ],
+    [
+     60.26,
+     "Pause the video and try it."
+    ],
+    [
+     63.7,
+     "3 Y equals 12, so Y is 4."
+    ],
+    [
+     65.71,
+     "And when Y is 0, X is 6."
+    ],
+    [
+     67.64,
+     "Plot 0, 4 and 6, 0, and join."
+    ],
+    [
+     69.97,
+     "A third point checks it: X equals 3 gives Y equals 2."
+    ],
+    [
+     74.79,
+     "Functions with X squared give curves."
+    ],
+    [
+     77.32,
+     "Plot more points, and join them with a smooth curve, not straight lines."
+    ],
+    [
+     82.79,
+     "Here is the method."
+    ],
+    [
+     84.15,
+     "Step 1: make a table of values."
+    ],
+    [
+     86.92,
+     "Step 2: choose scales, and plot the points."
+    ],
+    [
+     90.6,
+     "Step 3: straight line for linear, smooth curve for X squared."
+    ],
+    [
+     95.46,
+     "Step 4: check with an extra point."
+    ],
+    [
+     98.51,
+     "Where does 5 X plus 2 Y equals 10 cross the axes?"
+    ],
+    [
+     102.22,
+     "X equals 0 gives Y equals 5."
+    ],
+    [
+     104.34,
+     "Y equals 0 gives X equals 2."
+    ],
+    [
+     107.02,
+     "Y equals X squared minus 3, for X from negative 2 to 2: 1, negative 2, negative 3, negative 2, 1."
+    ],
+    [
+     115.33,
+     "Your turn."
+    ],
+    [
+     116.05,
+     "For the ball, D equals 5 T squared."
+    ],
+    [
+     118.59,
+     "Find D when T is 1.5."
+    ],
+    [
+     120.12,
+     "Pause and work it out."
+    ],
+    [
+     123.11,
+     "1.5 squared is 2.25."
+    ],
+    [
+     125.42,
+     "5 times 2.25 is 11.25 metres."
+    ],
+    [
+     129.32,
+     "Is 4, 1 on the line 2 X plus 3 Y equals 12?"
+    ],
+    [
+     133.35,
+     "8 plus 3 is 11, not 12."
+    ],
+    [
+     135.51,
+     "So no."
+    ],
+    [
+     136.62,
+     "Tom plots Y equals X squared, for X from negative 2 to 2."
+    ],
+    [
+     140.66,
+     "Which line is wrong?"
+    ],
+    [
+     142.63,
+     "Line 2 is wrong."
+    ],
+    [
+     143.74,
+     "Y equals X squared is a curve."
+    ],
+    [
+     146.38,
+     "Join the points with a smooth curve."
+    ],
+    [
+     149.42,
+     "Engineers plot stopping distances against speed."
+    ],
+    [
+     152.73,
+     "It is a curve: double the speed, and the braking distance is about four times as long."
+    ],
+    [
+     159.2,
+     "One last question."
+    ],
+    [
+     160.48,
+     "Is Y equals 3 X minus 1 a straight line, or a curve?"
+    ],
+    [
+     164.18,
+     "Pause the video and choose."
+    ],
+    [
+     167.5,
+     "A straight line."
+    ],
+    [
+     168.57,
+     "It is linear: there is no X squared."
+    ],
+    [
+     171.51,
+     "To remember: table, plot, join."
+    ],
+    [
+     174.23,
+     "For A X plus B Y equals C, use where it crosses the axes."
+    ],
+    [
+     178.45,
+     "Linear gives a straight line."
+    ],
+    [
+     180.1,
+     "X squared gives a smooth curve."
+    ],
+    [
+     182.42,
+     "Check with an extra point."
+    ],
+    [
+     184.9,
+     "Great work! Now practise lesson 10.2 on Camday."
+    ]
+   ],
+   "times": {
+    "10.2-k1": 21.89,
+    "10.2-k2": 62.65,
+    "10.2-k3": 122.06,
+    "10.2-k4": 166.45
+   },
+   "up": false
+  },
+  "9.2": {
+   "src": "media/mv/s9/9-2.mp4",
+   "poster": "media/mv/s9/9-2_poster.jpg",
+   "srt": "media/mv/s9/9-2.srt",
+   "dur": 201.76,
+   "captions": [
+    [
+     6.25,
+     "In a cinema, row 1 has 18 seats, row 2 has 22, row 3 has 26, and so on."
+    ],
+    [
+     12.11,
+     "Listing 40 rows would take a long time."
+    ],
+    [
+     15.87,
+     "How many seats are in row 40?"
+    ],
+    [
+     18.02,
+     "Pause the video and work it out."
+    ],
+    [
+     21.78,
+     "From row 1 to row 40 there are 39 steps of 4."
+    ],
+    [
+     26.06,
+     "18 plus 39 times 4 is 18 plus 156, which is 174 seats."
+    ],
+    [
+     31.2,
+     "A formula makes this quicker."
+    ],
+    [
+     34.5,
+     "Remember: the Nth term gives any term from its position."
+    ],
+    [
+     38.67,
+     "3 N minus 1 gives 2, 5, 8, and so on."
+    ],
+    [
+     41.98,
+     "The difference tells you the multiple of N."
+    ],
+    [
+     44.89,
+     "Then compare with the sequence, and adjust."
+    ],
+    [
+     48.34,
+     "For example: 7, 10, 13."
+    ],
+    [
+     50.27,
+     "The difference is 3, so start with 3 N: 3, 6, 9."
+    ],
+    [
+     54.29,
+     "Each term is 4 more."
+    ],
+    [
+     55.96,
+     "So the Nth term is 3 N plus 4."
+    ],
+    [
+     59.02,
+     "Your turn."
+    ],
+    [
+     59.86,
+     "Find the Nth term of 18, 22, 26."
+    ],
+    [
+     62.54,
+     "Pause the video and try it."
+    ],
+    [
+     66.19,
+     "The difference is 4, so 4 N: 4, 8, 12."
+    ],
+    [
+     69.96,
+     "Each term is 14 more."
+    ],
+    [
+     72.04,
+     "The Nth term is 4 N plus 14."
+    ],
+    [
+     74.82,
+     "Row 40: 160 plus 14 is 174."
+    ],
+    [
+     78.05,
+     "Some sequences are based on N squared: 1, 4, 9, 16, 25."
+    ],
+    [
+     83.08,
+     "For example, 2 N squared gives 2, 8, 18, 32."
+    ],
+    [
+     87.66,
+     "Here is the method."
+    ],
+    [
+     88.99,
+     "Step 1: find the difference, D."
+    ],
+    [
+     91.15,
+     "Start with D N."
+    ],
+    [
+     92.74,
+     "Step 2: compare D N with the sequence, and add or subtract."
+    ],
+    [
+     97.51,
+     "Step 3: if it looks quadratic, compare with N squared."
+    ],
+    [
+     101.78,
+     "Step 4: check with a term."
+    ],
+    [
+     104.46,
+     "Find the Nth term of 40, 37, 34, 31."
+    ],
+    [
+     107.67,
+     "The difference is minus 3, so minus 3 N: minus 3, minus 6, minus 9."
+    ],
+    [
+     113.65,
+     "Each term is 43 more."
+    ],
+    [
+     115.53,
+     "So 43 minus 3 N."
+    ],
+    [
+     117.51,
+     "Your turn."
+    ],
+    [
+     118.21,
+     "Write the first four terms of N squared plus 3."
+    ],
+    [
+     121.53,
+     "Pause and work it out."
+    ],
+    [
+     124.49,
+     "1 plus 3, 4 plus 3, 9 plus 3, 16 plus 3: 4, 7, 12, 19."
+    ],
+    [
+     130.96,
+     "Is 100 in the sequence 4 N plus 14?"
+    ],
+    [
+     134.16,
+     "4 N plus 14 equals 100 gives N equals 21.5."
+    ],
+    [
+     138.08,
+     "That is not a whole number, so no."
+    ],
+    [
+     141.74,
+     "Finn finds the Nth term of 5, 8, 11, 14."
+    ],
+    [
+     145.1,
+     "Which line is wrong?"
+    ],
+    [
+     147.33,
+     "Line 2 is wrong."
+    ],
+    [
+     148.48,
+     "The difference is the multiple of N, so start with 3 N."
+    ],
+    [
+     152.98,
+     "3 N gives 3, 6, 9."
+    ],
+    [
+     154.57,
+     "Add 2."
+    ],
+    [
+     155.1,
+     "The Nth term is 3 N plus 2."
+    ],
+    [
+     158.03,
+     "If you have 50 dollars and save 12 dollars a week, after N weeks you have 12 N plus 50."
+    ],
+    [
+     164.83,
+     "Planners use Nth terms like this all the time."
+    ],
+    [
+     168.97,
+     "One last question."
+    ],
+    [
+     170.39,
+     "Which term of 2 N plus 1 is 41?"
+    ],
+    [
+     172.83,
+     "Pause the video and answer."
+    ],
+    [
+     176.35,
+     "2 N plus 1 equals 41."
+    ],
+    [
+     178.41,
+     "2 N is 40, so N is 20."
+    ],
+    [
+     180.56,
+     "It is the 20th term."
+    ],
+    [
+     183.07,
+     "To remember: linear Nth term: D N, then adjust."
+    ],
+    [
+     186.75,
+     "Check with the first term."
+    ],
+    [
+     189.31,
+     "Quadratic: compare with N squared."
+    ],
+    [
+     192.27,
+     "Solve an equation to test if a number is in the sequence."
+    ],
+    [
+     196.55,
+     "Great work! Now practise lesson 9.2 on Camday."
+    ]
+   ],
+   "times": {
+    "9.2-k1": 20.73,
+    "9.2-k2": 65.14,
+    "9.2-k3": 123.44,
+    "9.2-k4": 175.3
+   },
+   "up": true
+  },
+  "11.1": {
+   "src": "media/mv/s9/11-1.mp4",
+   "poster": "media/mv/s9/11-1_poster.jpg",
+   "srt": "media/mv/s9/11-1.srt",
+   "dur": 195.84,
+   "captions": [
+    [
+     6.14,
+     "Three friends share prize money in the ratio 3 to 4 to 8, based on the hours each one worked."
+    ],
+    [
+     13.08,
+     "The smallest share is 45 dollars."
+    ],
+    [
+     16.09,
+     "What was the total prize, in dollars?"
+    ],
+    [
+     18.58,
+     "Pause the video and work it out."
+    ],
+    [
+     22.14,
+     "The smallest share is 3 parts."
+    ],
+    [
+     24.86,
+     "So 1 part is 45 divided by 3, which is 15 dollars."
+    ],
+    [
+     29.39,
+     "There are 15 parts altogether."
+    ],
+    [
+     32.11,
+     "15 times 15 is 225 dollars."
+    ],
+    [
+     35.1,
+     "Remember: to share 120 dollars in the ratio 4 to 5 to 6, add the parts: 15."
+    ],
+    [
+     41.81,
+     "1 part is 8 dollars."
+    ],
+    [
+     43.59,
+     "The shares are 32, 40 and 48 dollars."
+    ],
+    [
+     47.45,
+     "Whatever you are given, a share, the total, or a difference, first find the value of one part."
+    ],
+    [
+     54.1,
+     "Your turn."
+    ],
+    [
+     54.79,
+     "B has 4 parts."
+    ],
+    [
+     55.76,
+     "What is B's share, in dollars?"
+    ],
+    [
+     57.84,
+     "Pause the video and try it."
+    ],
+    [
+     61.11,
+     "4 times 15 is 60 dollars."
+    ],
+    [
+     64.02,
+     "Check: 45 plus 60 plus 120 is 225."
+    ],
+    [
+     68.54,
+     "Ratios link to fractions."
+    ],
+    [
+     70.39,
+     "In 3 to 4 to 8, A gets 3 fifteenths, which is a fifth of the total."
+    ],
+    [
+     75.9,
+     "Here is the method."
+    ],
+    [
+     77.27,
+     "Step 1: add the parts."
+    ],
+    [
+     79.4,
+     "Step 2: match what you know, a share, the total or a difference, to its number of parts."
+    ],
+    [
+     85.75,
+     "Step 3: find one part, then multiply."
+    ],
+    [
+     88.96,
+     "Step 4: check that the shares add up to the total."
+    ],
+    [
+     93.03,
+     "In a club of 40, boys to girls is 3 to 5."
+    ],
+    [
+     96.61,
+     "That is 15 boys and 25 girls."
+    ],
+    [
+     99.13,
+     "4 more boys join."
+    ],
+    [
+     100.61,
+     "The new ratio is 19 to 25."
+    ],
+    [
+     103.43,
+     "A map has a scale of 1 to 25,000."
+    ],
+    [
+     106.46,
+     "6.4 centimetres on the map is 160,000 centimetres, which is 1.6 kilometres."
+    ],
+    [
+     113.91,
+     "Your turn."
+    ],
+    [
+     114.65,
+     "Two shares are in the ratio 5 to 2."
+    ],
+    [
+     117.23,
+     "The difference between them is 27."
+    ],
+    [
+     119.75,
+     "What is the total?"
+    ],
+    [
+     121.08,
+     "Pause and work it out."
+    ],
+    [
+     124.1,
+     "The difference is 3 parts."
+    ],
+    [
+     126.33,
+     "1 part is 27 divided by 3, which is 9."
+    ],
+    [
+     129.58,
+     "The total is 7 parts: 63."
+    ],
+    [
+     132.27,
+     "Ratio 3 to 4 to 8."
+    ],
+    [
+     133.68,
+     "A's share, 3 parts, is 45 dollars."
+    ],
+    [
+     136.36,
+     "Nia finds the total."
+    ],
+    [
+     137.93,
+     "Which line is wrong?"
+    ],
+    [
+     140.06,
+     "Line 1 is wrong."
+    ],
+    [
+     141.35,
+     "45 dollars is 3 parts, not the total."
+    ],
+    [
+     144.9,
+     "1 part is 45 divided by 3, which is 15."
+    ],
+    [
+     148.51,
+     "The total is 225 dollars."
+    ],
+    [
+     151.37,
+     "Business partners often share profits in the ratio of the money each one invested."
+    ],
+    [
+     157.6,
+     "One last question."
+    ],
+    [
+     158.93,
+     "Concrete is cement, sand and gravel in the ratio 1 to 2 to 5."
+    ],
+    [
+     163.44,
+     "What fraction is gravel: 5 eighths, or 5 sevenths?"
+    ],
+    [
+     167.13,
+     "Pause the video and choose."
+    ],
+    [
+     170.53,
+     "There are 8 parts altogether."
+    ],
+    [
+     172.78,
+     "Gravel is 5 of them: 5 eighths."
+    ],
+    [
+     175.74,
+     "To remember: find the value of one part first."
+    ],
+    [
+     179.47,
+     "You can start from a share, the total, or a difference."
+    ],
+    [
+     183.65,
+     "When a ratio changes, work with the real amounts."
+    ],
+    [
+     187.47,
+     "A ratio gives fractions of the total."
+    ],
+    [
+     190.45,
+     "Great work! Now practise lesson 11.1 on Camday."
+    ]
+   ],
+   "times": {
+    "11.1-k1": 21.09,
+    "11.1-k2": 60.06,
+    "11.1-k3": 123.05,
+    "11.1-k4": 169.48
+   },
+   "up": false
+  },
+  "10.1": {
+   "src": "media/mv/s9/10-1.mp4",
+   "poster": "media/mv/s9/10-1_poster.jpg",
+   "srt": "media/mv/s9/10-1.srt",
+   "dur": 193.44,
+   "captions": [
+    [
+     6.1,
+     "Pencils cost 2 dollars and pens cost 6 dollars."
+    ],
+    [
+     9.72,
+     "Kofi spends exactly 30 dollars on pencils and pens."
+    ],
+    [
+     14.2,
+     "How many possible answers are there: several, or exactly one?"
+    ],
+    [
+     18.36,
+     "Pause the video and choose."
+    ],
+    [
+     21.6,
+     "Several."
+    ],
+    [
+     22.25,
+     "For example, 15 pencils and no pens, or 12 pencils and 1 pen."
+    ],
+    [
+     27.78,
+     "Remember: X plus Y equals 10 has many solutions, like 3 and 7, or 4.5 and 5.5."
+    ],
+    [
+     34.98,
+     "A function can link two quantities."
+    ],
+    [
+     37.57,
+     "If Kofi buys C pencils and K pens, then 2 C plus 6 K equals 30."
+    ],
+    [
+     42.77,
+     "Each pair that works is a solution."
+    ],
+    [
+     45.11,
+     "Here, C and K must be whole numbers."
+    ],
+    [
+     48.06,
+     "Your turn."
+    ],
+    [
+     48.75,
+     "If K is 2, what is C?"
+    ],
+    [
+     50.18,
+     "Pause the video and try it."
+    ],
+    [
+     53.43,
+     "2 C plus 12 equals 30."
+    ],
+    [
+     55.72,
+     "2 C is 18, so C is 9."
+    ],
+    [
+     58.45,
+     "This is a linear function."
+    ],
+    [
+     60.26,
+     "When one quantity goes up by 1, the other changes by a fixed amount."
+    ],
+    [
+     65.55,
+     "X times Y equals 24 is an inverse function."
+    ],
+    [
+     68.91,
+     "As one goes up, the other goes down, but not at a fixed rate: 1 and 24, 2 and 12, 4 and 6."
+    ],
+    [
+     76.5,
+     "Here is the method."
+    ],
+    [
+     77.87,
+     "Step 1: choose letters, and write the function."
+    ],
+    [
+     81.79,
+     "Step 2: substitute the value you know."
+    ],
+    [
+     85.19,
+     "Step 3: solve for the other one."
+    ],
+    [
+     88.04,
+     "Step 4: check the answer makes sense, like a whole number of tickets."
+    ],
+    [
+     93.52,
+     "Adult tickets cost 8 dollars, and child tickets 5 dollars."
+    ],
+    [
+     98.45,
+     "The total is 100 dollars."
+    ],
+    [
+     100.58,
+     "So 8 A plus 5 C equals 100."
+    ],
+    [
+     103.42,
+     "If A is 5: 40 plus 5 C equals 100."
+    ],
+    [
+     106.9,
+     "5 C is 60, so C is 12."
+    ],
+    [
+     109.71,
+     "A 120 kilometre trip: speed times time is 120."
+    ],
+    [
+     113.83,
+     "At 80 kilometres per hour, the time is 120 divided by 80, which is 1.5 hours."
+    ],
+    [
+     121.29,
+     "Your turn."
+    ],
+    [
+     122.03,
+     "X Y equals 24, and X is 3."
+    ],
+    [
+     123.97,
+     "What is Y?"
+    ],
+    [
+     124.71,
+     "Pause and work it out."
+    ],
+    [
+     127.75,
+     "3 Y equals 24, so Y is 8."
+    ],
+    [
+     130.62,
+     "Words to symbols: Y is 5 less than three times X."
+    ],
+    [
+     134.24,
+     "Y equals 3 X minus 5."
+    ],
+    [
+     136.33,
+     "Pia solves 2 C plus 6 K equals 30."
+    ],
+    [
+     139.13,
+     "Which line is wrong?"
+    ],
+    [
+     141.32,
+     "Line 1 is wrong."
+    ],
+    [
+     142.48,
+     "One equation with two unknowns usually has many solutions."
+    ],
+    [
+     147.24,
+     "12 and 1, 9 and 2, 6 and 3, 3 and 4, and 0 and 5 all work too."
+    ],
+    [
+     153.66,
+     "Any budget is a function of two variables: 30 dollars to spend on two kinds of snack gives many possible mixes."
+    ],
+    [
+     162.06,
+     "One last question."
+    ],
+    [
+     163.37,
+     "X Y equals 24."
+    ],
+    [
+     164.39,
+     "Is it inverse, or linear?"
+    ],
+    [
+     166.2,
+     "Pause the video and choose."
+    ],
+    [
+     169.57,
+     "It is inverse."
+    ],
+    [
+     170.51,
+     "When X doubles, Y halves."
+    ],
+    [
+     172.74,
+     "To remember: a function can link two variables, like 2 C plus 6 K equals 30."
+    ],
+    [
+     179.1,
+     "Many pairs can be solutions."
+    ],
+    [
+     181.7,
+     "Linear: a fixed rate."
+    ],
+    [
+     183.12,
+     "Inverse: X Y is a constant."
+    ],
+    [
+     185.5,
+     "Check answers make sense."
+    ],
+    [
+     188.03,
+     "Great work! Now practise lesson 10.1 on Camday."
+    ]
+   ],
+   "times": {
+    "10.1-k1": 20.55,
+    "10.1-k2": 52.38,
+    "10.1-k3": 126.7,
+    "10.1-k4": 168.52
+   },
+   "up": true
+  },
+  "10.4": {
+   "src": "media/mv/s9/10-4.mp4",
+   "poster": "media/mv/s9/10-4_poster.jpg",
+   "srt": "media/mv/s9/10-4.srt",
+   "dur": 199.6,
+   "captions": [
+    [
+     6.85,
+     "Amara's fitness watch draws a graph of her bike ride."
+    ],
+    [
+     10.44,
+     "A steep section, then a flat section, then a less steep section back home."
+    ],
+    [
+     15.99,
+     "What does the flat section mean: she stopped, or she was fastest?"
+    ],
+    [
+     20.43,
+     "Pause the video and choose."
+    ],
+    [
+     23.67,
+     "She stopped."
+    ],
+    [
+     24.49,
+     "Time goes on, but her distance from home does not change."
+    ],
+    [
+     28.95,
+     "Remember: speed equals distance divided by time."
+    ],
+    [
+     32.86,
+     "On a distance-time graph, the gradient is the speed."
+    ],
+    [
+     36.45,
+     "Steeper means faster."
+    ],
+    [
+     37.9,
+     "Sloping down means coming back."
+    ],
+    [
+     40.6,
+     "Out: 10 kilometres in 20 minutes."
+    ],
+    [
+     43.46,
+     "20 minutes is a third of an hour, so 10 times 3 is 30 kilometres per hour."
+    ],
+    [
+     50.44,
+     "Your turn."
+    ],
+    [
+     51.12,
+     "Find her speed on the way back, in kilometres per hour."
+    ],
+    [
+     54.87,
+     "Pause the video and try it."
+    ],
+    [
+     58.12,
+     "Back: 10 kilometres in 30 minutes, which is half an hour."
+    ],
+    [
+     62.75,
+     "10 divided by a half is 20 kilometres per hour."
+    ],
+    [
+     67.12,
+     "A straight line through the origin gives an equation."
+    ],
+    [
+     71.42,
+     "A runner covers 240 metres in 100 seconds, so D equals 2.4 T."
+    ],
+    [
+     76.93,
+     "On a cost graph, the gradient is the price for each item."
+    ],
+    [
+     80.72,
+     "On a tank graph, it is litres per minute."
+    ],
+    [
+     83.99,
+     "Here is the method."
+    ],
+    [
+     85.35,
+     "Step 1: read the axes and the units."
+    ],
+    [
+     88.47,
+     "Step 2: describe each section: up, flat, or down."
+    ],
+    [
+     92.53,
+     "Step 3: gradient equals change up over change across."
+    ],
+    [
+     96.37,
+     "That is the rate."
+    ],
+    [
+     98.15,
+     "Step 4: check the units, like minutes or hours."
+    ],
+    [
+     102.06,
+     "Three sections: 4 kilometres in 10 minutes, 6 in 20 minutes, 3 in 5 minutes."
+    ],
+    [
+     108.75,
+     "Per minute: 0.4, 0.3, 0.6."
+    ],
+    [
+     111.04,
+     "The third is fastest."
+    ],
+    [
+     113.44,
+     "A taxi graph goes through 0, 3 and 10, 23."
+    ],
+    [
+     117.15,
+     "The gradient is 20 over 10, which is 2."
+    ],
+    [
+     120.6,
+     "So C equals 2 D plus 3."
+    ],
+    [
+     123.19,
+     "Your turn."
+    ],
+    [
+     123.98,
+     "D equals 2.4 T."
+    ],
+    [
+     125.16,
+     "Find D when T is 900 seconds."
+    ],
+    [
+     127.46,
+     "Pause and work it out."
+    ],
+    [
+     130.6,
+     "2.4 times 900 is 2,160 metres, if she keeps the same speed."
+    ],
+    [
+     136.83,
+     "At the flat section, Amara is 10 kilometres from home."
+    ],
+    [
+     140.62,
+     "Leo reads the graph."
+    ],
+    [
+     142.03,
+     "Which line is wrong?"
+    ],
+    [
+     143.98,
+     "Line 1 is wrong."
+    ],
+    [
+     145.13,
+     "The height is the distance."
+    ],
+    [
+     147.08,
+     "The speed is the gradient."
+    ],
+    [
+     149.5,
+     "Flat means a speed of 0."
+    ],
+    [
+     151.23,
+     "She has stopped."
+    ],
+    [
+     152.93,
+     "Delivery apps and smart energy meters show graphs where the gradient is a rate: kilometres per hour, or kilowatt hours per day."
+    ],
+    [
+     162.15,
+     "One last question."
+    ],
+    [
+     163.5,
+     "A tank fills from 30 litres to 90 litres in 4 minutes."
+    ],
+    [
+     167.54,
+     "What is the rate, in litres per minute?"
+    ],
+    [
+     170.46,
+     "Pause the video and answer."
+    ],
+    [
+     173.89,
+     "60 litres in 4 minutes is 15 litres per minute."
+    ],
+    [
+     178.61,
+     "To remember: the gradient is the rate."
+    ],
+    [
+     181.17,
+     "On a distance-time graph, it is the speed."
+    ],
+    [
+     184.54,
+     "Flat means no change."
+    ],
+    [
+     186.05,
+     "Steeper means faster."
+    ],
+    [
+     188.11,
+     "Check the units."
+    ],
+    [
+     190.34,
+     "Straight lines give equations for predictions."
+    ],
+    [
+     194.19,
+     "Great work! Now practise lesson 10.4 on Camday."
+    ]
+   ],
+   "times": {
+    "10.4-k1": 22.62,
+    "10.4-k2": 57.07,
+    "10.4-k3": 129.55,
+    "10.4-k4": 172.84
+   },
+   "up": false
+  },
+  "12.3": {
+   "src": "media/mv/s9/12-3.mp4",
+   "poster": "media/mv/s9/12-3_poster.jpg",
+   "srt": "media/mv/s9/12-3.srt",
+   "dur": 182.04,
+   "captions": [
+    [
+     6.42,
+     "On the way to school, Lin passes two sets of traffic lights."
+    ],
+    [
+     10.68,
+     "They work independently."
+    ],
+    [
+     12.38,
+     "The chance each one is green when she arrives is 0.4."
+    ],
+    [
+     16.7,
+     "What is the probability that both are green?"
+    ],
+    [
+     19.66,
+     "Pause the video and work it out."
+    ],
+    [
+     23.21,
+     "0.4 times 0.4 is 0.16."
+    ],
+    [
+     26.57,
+     "Remember: independent events do not affect each other."
+    ],
+    [
+     30.87,
+     "For independent events, the probability of A and B is P of A times P of B."
+    ],
+    [
+     35.82,
+     "A head and more than 2 on a dice: a half times 2 thirds is a third."
+    ],
+    [
+     40.85,
+     "A tree diagram shows every outcome."
+    ],
+    [
+     43.31,
+     "Each light is green, G, or not green, N."
+    ],
+    [
+     46.12,
+     "Not green has probability 0.6."
+    ],
+    [
+     48.78,
+     "Your turn."
+    ],
+    [
+     49.42,
+     "The first light is green, and the second is not."
+    ],
+    [
+     52.51,
+     "What is P of G N?"
+    ],
+    [
+     53.61,
+     "Pause the video and try it."
+    ],
+    [
+     56.75,
+     "0.4 times 0.6 is 0.24."
+    ],
+    [
+     58.67,
+     "Multiply along the branches."
+    ],
+    [
+     61.11,
+     "The four outcomes add up to 1."
+    ],
+    [
+     64.28,
+     "To combine different routes, add."
+    ],
+    [
+     67.18,
+     "Here is the method."
+    ],
+    [
+     68.52,
+     "Step 1: draw a tree diagram with all the outcomes."
+    ],
+    [
+     72.62,
+     "Step 2: branches from one point add up to 1."
+    ],
+    [
+     76.54,
+     "Step 3: multiply along each route."
+    ],
+    [
+     79.62,
+     "Step 4: add the routes you want."
+    ],
+    [
+     82.54,
+     "A spinner has a probability of winning of a fifth."
+    ],
+    [
+     86.04,
+     "It is spun twice."
+    ],
+    [
+     87.23,
+     "The chance of winning both is 1 twenty-fifth."
+    ],
+    [
+     90.93,
+     "The bus is late with probability 0.2, and it rains with probability 0.3."
+    ],
+    [
+     96.77,
+     "They are independent."
+    ],
+    [
+     98.47,
+     "The chance of neither is 0.8 times 0.7, which is 0.56."
+    ],
+    [
+     103.39,
+     "Your turn."
+    ],
+    [
+     104.08,
+     "What is the probability that exactly one light is green?"
+    ],
+    [
+     107.91,
+     "Pause and work it out."
+    ],
+    [
+     110.81,
+     "Two routes: G N and N G."
+    ],
+    [
+     113.23,
+     "0.24 plus 0.24 is 0.48."
+    ],
+    [
+     116.1,
+     "Over 50 school days, both lights are green on about 0.16 times 50, which is 8 days."
+    ],
+    [
+     123.69,
+     "Each light is green with probability 0.4."
+    ],
+    [
+     126.62,
+     "Emma finds the probability both are green."
+    ],
+    [
+     129.62,
+     "Which line is wrong?"
+    ],
+    [
+     131.59,
+     "Line 1 is wrong."
+    ],
+    [
+     132.74,
+     "For and, with independent events, multiply."
+    ],
+    [
+     136.37,
+     "0.4 times 0.4 is 0.16."
+    ],
+    [
+     139.73,
+     "Engineers multiply the chances that independent parts fail, to work out how reliable a whole machine is."
+    ],
+    [
+     147.47,
+     "One last question."
+    ],
+    [
+     148.71,
+     "What is the probability that at least one light is green?"
+    ],
+    [
+     152.63,
+     "Pause the video and answer."
+    ],
+    [
+     155.9,
+     "At least one is everything except none."
+    ],
+    [
+     159.41,
+     "1 minus 0.36 is 0.64."
+    ],
+    [
+     161.86,
+     "To remember: for independent events, and means multiply."
+    ],
+    [
+     166.33,
+     "Tree diagrams: multiply along, add between routes."
+    ],
+    [
+     170.47,
+     "Branches from one point add up to 1."
+    ],
+    [
+     173.64,
+     "At least one is 1 minus P of none."
+    ],
+    [
+     176.56,
+     "Great work! Now practise lesson 12.3 on Camday."
+    ]
+   ],
+   "times": {
+    "12.3-k1": 22.16,
+    "12.3-k2": 55.7,
+    "12.3-k3": 109.76,
+    "12.3-k4": 154.85
    },
    "up": false
   }

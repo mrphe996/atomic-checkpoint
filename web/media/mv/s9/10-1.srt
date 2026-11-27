@@ -1,0 +1,227 @@
+1
+00:00:06,100 --> 00:00:09,670
+Pencils cost 2 dollars and pens cost 6 dollars.
+
+2
+00:00:09,720 --> 00:00:14,150
+Kofi spends exactly 30 dollars on pencils and pens.
+
+3
+00:00:14,200 --> 00:00:18,310
+How many possible answers are there: several, or exactly one?
+
+4
+00:00:18,360 --> 00:00:21,550
+Pause the video and choose.
+
+5
+00:00:21,600 --> 00:00:22,200
+Several.
+
+6
+00:00:22,250 --> 00:00:27,730
+For example, 15 pencils and no pens, or 12 pencils and 1 pen.
+
+7
+00:00:27,780 --> 00:00:34,930
+Remember: X plus Y equals 10 has many solutions, like 3 and 7, or 4.5 and 5.5.
+
+8
+00:00:34,980 --> 00:00:37,520
+A function can link two quantities.
+
+9
+00:00:37,570 --> 00:00:42,720
+If Kofi buys C pencils and K pens, then 2 C plus 6 K equals 30.
+
+10
+00:00:42,770 --> 00:00:45,060
+Each pair that works is a solution.
+
+11
+00:00:45,110 --> 00:00:48,010
+Here, C and K must be whole numbers.
+
+12
+00:00:48,060 --> 00:00:48,700
+Your turn.
+
+13
+00:00:48,750 --> 00:00:50,130
+If K is 2, what is C?
+
+14
+00:00:50,180 --> 00:00:53,380
+Pause the video and try it.
+
+15
+00:00:53,430 --> 00:00:55,670
+2 C plus 12 equals 30.
+
+16
+00:00:55,720 --> 00:00:58,400
+2 C is 18, so C is 9.
+
+17
+00:00:58,450 --> 00:01:00,210
+This is a linear function.
+
+18
+00:01:00,260 --> 00:01:05,500
+When one quantity goes up by 1, the other changes by a fixed amount.
+
+19
+00:01:05,550 --> 00:01:08,860
+X times Y equals 24 is an inverse function.
+
+20
+00:01:08,910 --> 00:01:16,450
+As one goes up, the other goes down, but not at a fixed rate: 1 and 24, 2 and 12, 4 and 6.
+
+21
+00:01:16,500 --> 00:01:17,820
+Here is the method.
+
+22
+00:01:17,870 --> 00:01:21,740
+Step 1: choose letters, and write the function.
+
+23
+00:01:21,790 --> 00:01:25,140
+Step 2: substitute the value you know.
+
+24
+00:01:25,190 --> 00:01:27,990
+Step 3: solve for the other one.
+
+25
+00:01:28,040 --> 00:01:33,470
+Step 4: check the answer makes sense, like a whole number of tickets.
+
+26
+00:01:33,520 --> 00:01:38,400
+Adult tickets cost 8 dollars, and child tickets 5 dollars.
+
+27
+00:01:38,450 --> 00:01:40,530
+The total is 100 dollars.
+
+28
+00:01:40,580 --> 00:01:43,370
+So 8 A plus 5 C equals 100.
+
+29
+00:01:43,420 --> 00:01:46,850
+If A is 5: 40 plus 5 C equals 100.
+
+30
+00:01:46,900 --> 00:01:49,660
+5 C is 60, so C is 12.
+
+31
+00:01:49,710 --> 00:01:53,780
+A 120 kilometre trip: speed times time is 120.
+
+32
+00:01:53,830 --> 00:02:01,240
+At 80 kilometres per hour, the time is 120 divided by 80, which is 1.5 hours.
+
+33
+00:02:01,290 --> 00:02:01,980
+Your turn.
+
+34
+00:02:02,030 --> 00:02:03,920
+X Y equals 24, and X is 3.
+
+35
+00:02:03,970 --> 00:02:04,660
+What is Y?
+
+36
+00:02:04,710 --> 00:02:07,700
+Pause and work it out.
+
+37
+00:02:07,750 --> 00:02:10,570
+3 Y equals 24, so Y is 8.
+
+38
+00:02:10,620 --> 00:02:14,190
+Words to symbols: Y is 5 less than three times X.
+
+39
+00:02:14,240 --> 00:02:16,280
+Y equals 3 X minus 5.
+
+40
+00:02:16,330 --> 00:02:19,080
+Pia solves 2 C plus 6 K equals 30.
+
+41
+00:02:19,130 --> 00:02:21,270
+Which line is wrong?
+
+42
+00:02:21,320 --> 00:02:22,430
+Line 1 is wrong.
+
+43
+00:02:22,480 --> 00:02:27,190
+One equation with two unknowns usually has many solutions.
+
+44
+00:02:27,240 --> 00:02:33,610
+12 and 1, 9 and 2, 6 and 3, 3 and 4, and 0 and 5 all work too.
+
+45
+00:02:33,660 --> 00:02:42,010
+Any budget is a function of two variables: 30 dollars to spend on two kinds of snack gives many possible mixes.
+
+46
+00:02:42,060 --> 00:02:43,320
+One last question.
+
+47
+00:02:43,370 --> 00:02:44,340
+X Y equals 24.
+
+48
+00:02:44,390 --> 00:02:46,150
+Is it inverse, or linear?
+
+49
+00:02:46,200 --> 00:02:49,520
+Pause the video and choose.
+
+50
+00:02:49,570 --> 00:02:50,460
+It is inverse.
+
+51
+00:02:50,510 --> 00:02:52,690
+When X doubles, Y halves.
+
+52
+00:02:52,740 --> 00:02:59,050
+To remember: a function can link two variables, like 2 C plus 6 K equals 30.
+
+53
+00:02:59,100 --> 00:03:01,650
+Many pairs can be solutions.
+
+54
+00:03:01,700 --> 00:03:03,070
+Linear: a fixed rate.
+
+55
+00:03:03,120 --> 00:03:05,450
+Inverse: X Y is a constant.
+
+56
+00:03:05,500 --> 00:03:07,980
+Check answers make sense.
+
+57
+00:03:08,030 --> 00:03:13,390
+Great work! Now practise lesson 10.1 on Camday.

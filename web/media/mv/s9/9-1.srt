@@ -1,0 +1,251 @@
+1
+00:00:06,430 --> 00:00:09,420
+Bowling pins are set out in a triangle.
+
+2
+00:00:09,470 --> 00:00:14,020
+The front row has 1 pin, the next row 2, then 3, and so on.
+
+3
+00:00:14,070 --> 00:00:17,600
+The running totals are 1, 3, 6, 10, 15.
+
+4
+00:00:17,650 --> 00:00:19,510
+What are the next two totals?
+
+5
+00:00:19,560 --> 00:00:23,140
+Pause the video and work them out.
+
+6
+00:00:23,190 --> 00:00:27,040
+The totals grow by 2, then 3, then 4, then 5.
+
+7
+00:00:27,090 --> 00:00:30,700
+So next we add 6, then 7: 21 and 28.
+
+8
+00:00:30,750 --> 00:00:36,650
+Remember: a term-to-term rule tells you how to get from one term to the next.
+
+9
+00:00:36,700 --> 00:00:39,520
+5, 9, 13, 17: add 4 each time.
+
+10
+00:00:39,570 --> 00:00:44,020
+In a linear sequence, the terms change by the same amount each time.
+
+11
+00:00:44,070 --> 00:00:48,530
+In a non-linear sequence, the change is different each time.
+
+12
+00:00:48,580 --> 00:00:50,460
+Look at the differences.
+
+13
+00:00:50,510 --> 00:00:55,120
+For 1, 3, 6, 10, 15, the first differences are 2, 3, 4, 5.
+
+14
+00:00:55,170 --> 00:00:57,760
+The second differences are all 1.
+
+15
+00:00:57,810 --> 00:01:03,050
+Constant second differences mean the sequence is quadratic.
+
+16
+00:01:03,100 --> 00:01:03,790
+Your turn.
+
+17
+00:01:03,840 --> 00:01:06,220
+1 and a half, 4, 6 and a half, 9.
+
+18
+00:01:06,270 --> 00:01:09,090
+Is this sequence linear, or non-linear?
+
+19
+00:01:09,140 --> 00:01:12,470
+Pause the video and choose.
+
+20
+00:01:12,520 --> 00:01:13,370
+It is linear.
+
+21
+00:01:13,420 --> 00:01:16,550
+It goes up by 2 and a half every time.
+
+22
+00:01:16,600 --> 00:01:18,450
+Rules can multiply too.
+
+23
+00:01:18,500 --> 00:01:21,750
+Multiply by 3 from 2 gives 2, 6, 18, 54.
+
+24
+00:01:21,800 --> 00:01:25,530
+Always use the previous term each time.
+
+25
+00:01:25,580 --> 00:01:26,910
+Here is the method.
+
+26
+00:01:26,960 --> 00:01:30,590
+Step 1: find the differences between terms.
+
+27
+00:01:30,640 --> 00:01:33,620
+Step 2: the same difference means linear.
+
+28
+00:01:33,670 --> 00:01:36,900
+Changing differences mean non-linear.
+
+29
+00:01:36,950 --> 00:01:42,730
+Step 3: for non-linear, look at second differences, or a multiplying rule.
+
+30
+00:01:42,780 --> 00:01:46,790
+Step 4: use the pattern, and check one more step.
+
+31
+00:01:46,840 --> 00:01:50,670
+The first term is 3, and the rule is add 3 quarters.
+
+32
+00:01:50,720 --> 00:01:56,070
+The terms are 3, 3 and 3 quarters, 4 and a half, 5 and a quarter.
+
+33
+00:01:56,120 --> 00:01:58,960
+Next term of 50, 41, 33, 26, 20?
+
+34
+00:01:59,010 --> 00:02:03,920
+The differences are minus 9, minus 8, minus 7, minus 6.
+
+35
+00:02:03,970 --> 00:02:07,000
+They go down by 1 each time.
+
+36
+00:02:07,050 --> 00:02:07,900
+Your turn.
+
+37
+00:02:07,950 --> 00:02:11,890
+What is the next term of 50, 41, 33, 26, 20?
+
+38
+00:02:11,940 --> 00:02:15,290
+Pause and work it out.
+
+39
+00:02:15,340 --> 00:02:18,020
+The next difference is minus 5.
+
+40
+00:02:18,070 --> 00:02:20,080
+20 minus 5 is 15.
+
+41
+00:02:20,130 --> 00:02:24,320
+A two-step rule: start at 1, double, then add 3.
+
+42
+00:02:24,370 --> 00:02:26,010
+1, 5, 13, 29.
+
+43
+00:02:26,060 --> 00:02:29,730
+The first term is 2, and the rule is square the term.
+
+44
+00:02:29,780 --> 00:02:31,480
+Rosa writes the sequence.
+
+45
+00:02:31,530 --> 00:02:33,430
+Which line is wrong?
+
+46
+00:02:33,480 --> 00:02:34,560
+Line 1 is wrong.
+
+47
+00:02:34,610 --> 00:02:37,240
+She squared the first term every time.
+
+48
+00:02:37,290 --> 00:02:40,550
+Each term comes from the previous term.
+
+49
+00:02:40,600 --> 00:02:43,400
+2, 4, 16, 256.
+
+50
+00:02:43,450 --> 00:02:46,910
+Bacteria can split in two every 20 minutes.
+
+51
+00:02:46,960 --> 00:02:52,280
+1, 2, 4, 8, 16: a non-linear sequence that grows very fast.
+
+52
+00:02:52,330 --> 00:02:53,740
+One last question.
+
+53
+00:02:53,790 --> 00:02:54,800
+3, 6, 12, 24.
+
+54
+00:02:54,850 --> 00:02:57,820
+Is it non-linear, times 2, or linear?
+
+55
+00:02:57,870 --> 00:03:01,420
+Pause the video and choose.
+
+56
+00:03:01,470 --> 00:03:03,670
+The differences are 3, 6, 12.
+
+57
+00:03:03,720 --> 00:03:06,230
+They change, so it is non-linear.
+
+58
+00:03:06,280 --> 00:03:08,330
+The rule is times 2.
+
+59
+00:03:08,380 --> 00:03:12,990
+To remember: linear sequences have a constant difference.
+
+60
+00:03:13,040 --> 00:03:18,470
+Non-linear sequences have changing differences, or a multiplying rule.
+
+61
+00:03:18,520 --> 00:03:22,080
+Constant second differences mean quadratic.
+
+62
+00:03:22,130 --> 00:03:24,640
+Rules act on the previous term.
+
+63
+00:03:24,690 --> 00:03:29,830
+Great work! Now practise lesson 9.1 on Camday.

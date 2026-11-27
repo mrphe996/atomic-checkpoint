@@ -1,0 +1,223 @@
+1
+00:00:06,780 --> 00:00:11,060
+A tiling app takes the side of a square tile, X centimetres.
+
+2
+00:00:11,110 --> 00:00:15,380
+It squares it, then adds 4 square centimetres for the grout.
+
+3
+00:00:15,430 --> 00:00:17,160
+The output is 85.
+
+4
+00:00:17,210 --> 00:00:18,470
+What was the input?
+
+5
+00:00:18,520 --> 00:00:20,190
+Give the positive answer.
+
+6
+00:00:20,240 --> 00:00:23,790
+Pause the video and work it out.
+
+7
+00:00:23,840 --> 00:00:25,140
+Work backwards.
+
+8
+00:00:25,190 --> 00:00:26,660
+85 minus 4 is 81.
+
+9
+00:00:26,710 --> 00:00:29,090
+The square root of 81 is 9.
+
+10
+00:00:29,140 --> 00:00:31,350
+So the input was 9.
+
+11
+00:00:31,400 --> 00:00:34,170
+Remember: X, times 3, add 1, gives Y.
+
+12
+00:00:34,220 --> 00:00:36,470
+So Y equals 3 X plus 1.
+
+13
+00:00:36,520 --> 00:00:39,210
+A function machine can include powers.
+
+14
+00:00:39,260 --> 00:00:43,370
+X, square, add 4, gives Y equals X squared plus 4.
+
+15
+00:00:43,420 --> 00:00:44,070
+Your turn.
+
+16
+00:00:44,120 --> 00:00:46,030
+Find Y when X is negative 3.
+
+17
+00:00:46,080 --> 00:00:49,320
+Pause the video and try it.
+
+18
+00:00:49,370 --> 00:00:51,420
+Negative 3 squared is 9.
+
+19
+00:00:51,470 --> 00:00:52,720
+9 plus 4 is 13.
+
+20
+00:00:52,770 --> 00:00:57,720
+So X equals 3 and X equals negative 3 both give 13.
+
+21
+00:00:57,770 --> 00:00:58,750
+Order matters.
+
+22
+00:00:58,800 --> 00:01:02,900
+Square, then times 2, gives Y equals 2 X squared.
+
+23
+00:01:02,950 --> 00:01:03,620
+Your turn.
+
+24
+00:01:03,670 --> 00:01:09,700
+What about times 2, then square: is it Y equals 4 X squared, or Y equals 2 X squared?
+
+25
+00:01:09,750 --> 00:01:13,030
+Pause the video and choose.
+
+26
+00:01:13,080 --> 00:01:16,010
+Times 2 then square is 2 X, all squared.
+
+27
+00:01:16,060 --> 00:01:17,500
+That is 4 X squared.
+
+28
+00:01:17,550 --> 00:01:19,840
+Brackets keep the order.
+
+29
+00:01:19,890 --> 00:01:21,160
+Here is the method.
+
+30
+00:01:21,210 --> 00:01:25,870
+Step 1: follow the steps in order to make a table of values.
+
+31
+00:01:25,920 --> 00:01:30,760
+Step 2: write the equation, using brackets to keep the order.
+
+32
+00:01:30,810 --> 00:01:34,670
+Step 3: draw a mapping diagram if you need one.
+
+33
+00:01:34,720 --> 00:01:39,850
+Step 4: to find an input, use inverse operations in reverse order.
+
+34
+00:01:39,900 --> 00:01:44,650
+X, add 1, then square, gives Y equals X plus 1, all squared.
+
+35
+00:01:44,700 --> 00:01:46,860
+Y equals X cubed minus 5.
+
+36
+00:01:46,910 --> 00:01:48,350
+The output is 59.
+
+37
+00:01:48,400 --> 00:01:49,240
+Add 5: 64.
+
+38
+00:01:49,290 --> 00:01:51,990
+The cube root of 64 is 4.
+
+39
+00:01:52,040 --> 00:01:56,380
+Halve X, then square, gives Y equals X squared over 4.
+
+40
+00:01:56,430 --> 00:01:59,740
+Jay writes X, add 3, then square, as an equation.
+
+41
+00:01:59,790 --> 00:02:01,660
+Which line is wrong?
+
+42
+00:02:01,710 --> 00:02:02,800
+Line 1 is wrong.
+
+43
+00:02:02,850 --> 00:02:06,710
+The square must apply to the whole of X plus 3.
+
+44
+00:02:06,760 --> 00:02:09,500
+Y equals X plus 3, all squared.
+
+45
+00:02:09,550 --> 00:02:12,470
+A spreadsheet formula is a function machine.
+
+46
+00:02:12,520 --> 00:02:18,220
+Type a value in one cell, and the formula turns it into an output in another.
+
+47
+00:02:18,270 --> 00:02:19,490
+One last question.
+
+48
+00:02:19,540 --> 00:02:20,690
+Y equals X cubed.
+
+49
+00:02:20,740 --> 00:02:22,660
+Find Y when X is negative 2.
+
+50
+00:02:22,710 --> 00:02:25,960
+Pause the video and answer.
+
+51
+00:02:26,010 --> 00:02:31,300
+Negative 2 times negative 2 times negative 2 is negative 8.
+
+52
+00:02:31,350 --> 00:02:34,500
+To remember: follow the steps in order.
+
+53
+00:02:34,550 --> 00:02:38,200
+Use brackets to show the order in an equation.
+
+54
+00:02:38,250 --> 00:02:42,810
+Work backwards with inverse operations, in reverse order.
+
+55
+00:02:42,860 --> 00:02:46,780
+With squares, two inputs can give the same output.
+
+56
+00:02:46,830 --> 00:02:51,950
+Great work! Now practise lesson 9.3 on Camday.

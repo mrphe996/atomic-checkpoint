@@ -164,7 +164,7 @@ VIDEOS["15.3"] = [
     ]),
     dict(kind="example", title="Check: 43", steps=[
         dict(say="The 6th and 7th values are 42 and 44. The median is 43.", do=[B("(42 + 44) ÷ 2 = 43", x=80, y=190, color=GREEN)]),
-        dict(say="The Hawks scored more on average. The Owls were a little more consistent, with a smaller range.", do=[T("Hawks: higher median · Owls: smaller range", x=80, y=300)]),
+        dict(say="Now compare the medians and the ranges. The Owls were a little more consistent, with a smaller range: 28, against 30.", do=[T("compare **medians** and **ranges** · Owls: smaller range", x=80, y=300)]),
     ]),
     dict(kind="error", title="Spot the mistake", steps=[
         dict(say="On the Owls' side, stem 3 shows the leaves 9, 6, 2, with 2 next to the stem. Dev reads it. Which line is wrong?", do=LINES("Dev", "Owls, stem 3: 9 6 2 (2 next to the stem)", ["the smallest value is 39"])),
