@@ -2978,5 +2978,27 @@
     10
    ]
   }
+ },
+ "c3u17": {
+  "title": "Camday Maths Stage 3 · Unit 17: Pattern and Symmetry",
+  "pages": 11,
+  "dir": "media/books/c3u17/",
+  "ext": "webp",
+  "pdf": "media/books/c3u17.pdf?v=a566d0a3e8",
+  "v": "a566d0a3e8",
+  "secs": {
+   "17.1": [
+    2,
+    6
+   ],
+   "17.2": [
+    7,
+    10
+   ],
+   "answers": [
+    11,
+    11
+   ]
+  }
  }
 }
