@@ -2620,5 +2620,31 @@
     14
    ]
   }
+ },
+ "c3u02": {
+  "title": "Camday Maths Stage 3 · Unit 2: Addition, Subtraction and Money",
+  "pages": 14,
+  "dir": "media/books/c3u02/",
+  "ext": "webp",
+  "pdf": "media/books/c3u02.pdf?v=31c945b5ac",
+  "v": "31c945b5ac",
+  "secs": {
+   "2.1": [
+    2,
+    5
+   ],
+   "2.2": [
+    6,
+    9
+   ],
+   "2.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
  }
 }
