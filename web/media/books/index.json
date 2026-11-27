@@ -2694,5 +2694,31 @@
     10
    ]
   }
+ },
+ "c3u05": {
+  "title": "Camday Maths Stage 3 · Unit 5: Measurement, Area and Perimeter",
+  "pages": 14,
+  "dir": "media/books/c3u05/",
+  "ext": "webp",
+  "pdf": "media/books/c3u05.pdf?v=696c2a9a33",
+  "v": "696c2a9a33",
+  "secs": {
+   "5.1": [
+    2,
+    5
+   ],
+   "5.2": [
+    6,
+    9
+   ],
+   "5.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
  }
 }
