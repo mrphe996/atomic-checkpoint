@@ -2414,5 +2414,27 @@
     11
    ]
   }
+ },
+ "c4u11": {
+  "title": "Camday Maths Stage 4 · Unit 11: Fractions and Percentages",
+  "pages": 10,
+  "dir": "media/books/c4u11/",
+  "ext": "webp",
+  "pdf": "media/books/c4u11.pdf?v=1bb37ef8af",
+  "v": "1bb37ef8af",
+  "secs": {
+   "11.1": [
+    2,
+    5
+   ],
+   "11.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
