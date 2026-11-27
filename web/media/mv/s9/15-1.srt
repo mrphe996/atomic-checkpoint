@@ -1,0 +1,191 @@
+1
+00:00:06,770 --> 00:00:11,240
+Two classes record how many minutes their journey to school takes.
+
+2
+00:00:11,290 --> 00:00:15,080
+Two bar charts side by side are hard to compare.
+
+3
+00:00:15,130 --> 00:00:21,020
+What is a clearer way: two frequency polygons on one graph, or two pie charts far apart?
+
+4
+00:00:21,070 --> 00:00:24,240
+Pause the video and choose.
+
+5
+00:00:24,290 --> 00:00:26,660
+Two frequency polygons on one graph.
+
+6
+00:00:26,710 --> 00:00:29,430
+You can compare them at a glance.
+
+7
+00:00:29,480 --> 00:00:35,090
+Remember: the midpoint of the class from 10 up to 20 is 15.
+
+8
+00:00:35,140 --> 00:00:42,000
+A frequency polygon plots each class's frequency, then joins the points with straight lines.
+
+9
+00:00:42,050 --> 00:00:42,690
+Your turn.
+
+10
+00:00:42,740 --> 00:00:47,360
+Are the points plotted at the midpoints, or at the lower boundaries?
+
+11
+00:00:47,410 --> 00:00:50,620
+Pause the video and choose.
+
+12
+00:00:50,670 --> 00:00:53,680
+At the midpoints: 5, 15, 25 and 35.
+
+13
+00:00:53,730 --> 00:00:56,050
+Class 9A is the solid line.
+
+14
+00:00:56,100 --> 00:00:58,260
+Class 9B is dashed.
+
+15
+00:00:58,310 --> 00:01:01,530
+Compare the shapes: where is each polygon higher?
+
+16
+00:01:01,580 --> 00:01:04,530
+Higher on the left means more short journeys.
+
+17
+00:01:04,580 --> 00:01:07,620
+Do not join the ends down to the axis.
+
+18
+00:01:07,670 --> 00:01:08,950
+Here is the method.
+
+19
+00:01:09,000 --> 00:01:11,820
+Step 1: find each class midpoint.
+
+20
+00:01:11,870 --> 00:01:15,570
+Step 2: plot each frequency at its midpoint.
+
+21
+00:01:15,620 --> 00:01:19,290
+Step 3: join the points with straight lines.
+
+22
+00:01:19,340 --> 00:01:23,390
+Step 4: for two groups, use the same axes, and a key.
+
+23
+00:01:23,440 --> 00:01:25,630
+How many pupils are in 9A?
+
+24
+00:01:25,680 --> 00:01:30,570
+Add the frequencies: 4 plus 12 plus 9 plus 3 is 28.
+
+25
+00:01:30,620 --> 00:01:34,470
+Who has more pupils taking 30 minutes or more?
+
+26
+00:01:34,520 --> 00:01:36,420
+9A has 3, and 9B has 2.
+
+27
+00:01:36,470 --> 00:01:37,480
+So 9A.
+
+28
+00:01:37,530 --> 00:01:38,200
+Your turn.
+
+29
+00:01:38,250 --> 00:01:40,070
+How many pupils are in 9B?
+
+30
+00:01:40,120 --> 00:01:43,050
+Pause and work it out.
+
+31
+00:01:43,100 --> 00:01:47,200
+9 plus 11 plus 6 plus 2 is also 28.
+
+32
+00:01:47,250 --> 00:01:55,420
+For discrete data, like goals in a match grouped 0 to 2, 3 to 5 and 6 to 8, plot at 1, 4 and 7.
+
+33
+00:01:55,470 --> 00:01:59,020
+Rob plots the class 10 up to 20, frequency 12.
+
+34
+00:01:59,070 --> 00:02:01,130
+Which line is wrong?
+
+35
+00:02:01,180 --> 00:02:02,300
+Line 1 is wrong.
+
+36
+00:02:02,350 --> 00:02:04,820
+He used the class boundary.
+
+37
+00:02:04,870 --> 00:02:08,100
+Plot at the midpoint: 15, 12.
+
+38
+00:02:08,150 --> 00:02:16,200
+Health services compare the ages of patients in two years, or two towns, with frequency polygons on one graph.
+
+39
+00:02:16,250 --> 00:02:17,520
+One last question.
+
+40
+00:02:17,570 --> 00:02:21,330
+Which class has shorter journeys overall: 9B, or 9A?
+
+41
+00:02:21,380 --> 00:02:24,700
+Pause the video and choose.
+
+42
+00:02:24,750 --> 00:02:24,910
+9B.
+
+43
+00:02:24,960 --> 00:02:29,680
+Its polygon is higher on the left, where the times are short.
+
+44
+00:02:29,730 --> 00:02:34,000
+To remember: plot the frequency at the class midpoint.
+
+45
+00:02:34,050 --> 00:02:36,480
+Join with straight lines.
+
+46
+00:02:36,530 --> 00:02:39,270
+Great for comparing two groups.
+
+47
+00:02:39,320 --> 00:02:41,870
+Use the same axes, and a key.
+
+48
+00:02:41,920 --> 00:02:47,270
+Great work! Now practise lesson 15.1 on Camday.

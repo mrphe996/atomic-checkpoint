@@ -1,0 +1,231 @@
+1
+00:00:06,490 --> 00:00:09,720
+In a puzzle app, you must move a tile into a slot.
+
+2
+00:00:09,770 --> 00:00:14,660
+You may only reflect, rotate or translate it, maybe more than once.
+
+3
+00:00:14,710 --> 00:00:16,740
+Does the tile ever change size?
+
+4
+00:00:16,790 --> 00:00:22,090
+Pause the video and choose: no, it stays congruent, or yes.
+
+5
+00:00:22,140 --> 00:00:22,300
+No.
+
+6
+00:00:22,350 --> 00:00:27,270
+Reflections, rotations and translations never change the size or shape.
+
+7
+00:00:27,320 --> 00:00:29,430
+The image is congruent.
+
+8
+00:00:29,480 --> 00:00:32,380
+Remember: a reflection needs a mirror line.
+
+9
+00:00:32,430 --> 00:00:35,940
+A rotation needs an angle, a direction and a centre.
+
+10
+00:00:35,990 --> 00:00:38,480
+A translation needs a vector.
+
+11
+00:00:38,530 --> 00:00:44,840
+To combine transformations, do the first one, then apply the second one to the image.
+
+12
+00:00:44,890 --> 00:00:48,760
+Triangle A has corners 1, 1, then 3, 1, and 1, 4.
+
+13
+00:00:48,810 --> 00:00:55,800
+Reflect it in the Y axis to get B: negative 1, 1, then negative 3, 1, and negative 1, 4.
+
+14
+00:00:55,850 --> 00:01:00,510
+Then rotate B 180 degrees about the origin to get C.
+
+15
+00:01:00,560 --> 00:01:01,200
+Your turn.
+
+16
+00:01:01,250 --> 00:01:03,900
+Where does A's corner 3, 1 end up in C?
+
+17
+00:01:03,950 --> 00:01:07,170
+Pause the video and try it.
+
+18
+00:01:07,220 --> 00:01:09,480
+B's corner is negative 3, 1.
+
+19
+00:01:09,530 --> 00:01:14,640
+A 180 degree rotation changes both signs: 3, negative 1.
+
+20
+00:01:14,690 --> 00:01:18,960
+C is 1, negative 1, then 3, negative 1, and 1, negative 4.
+
+21
+00:01:19,010 --> 00:01:21,860
+That is just A reflected in the X axis.
+
+22
+00:01:21,910 --> 00:01:25,310
+One transformation does the job of two.
+
+23
+00:01:25,360 --> 00:01:30,660
+Two reflections in perpendicular lines make a 180 degree rotation.
+
+24
+00:01:30,710 --> 00:01:31,390
+Your turn.
+
+25
+00:01:31,440 --> 00:01:37,190
+Two reflections in parallel lines make: a translation, or a 90 degree rotation?
+
+26
+00:01:37,240 --> 00:01:39,840
+Pause and choose.
+
+27
+00:01:39,890 --> 00:01:40,830
+A translation.
+
+28
+00:01:40,880 --> 00:01:46,160
+Reflect in X equals 1, then in X equals 4: everything moves 6 to the right.
+
+29
+00:01:46,210 --> 00:01:49,560
+That is twice the gap between the lines.
+
+30
+00:01:49,610 --> 00:01:50,940
+Here is the method.
+
+31
+00:01:50,990 --> 00:01:54,110
+Step 1: do the first transformation.
+
+32
+00:01:54,160 --> 00:01:57,450
+Step 2: apply the second to the image.
+
+33
+00:01:57,500 --> 00:02:01,410
+Step 3: compare the final image with the start.
+
+34
+00:02:01,460 --> 00:02:05,460
+Step 4: describe a single transformation fully.
+
+35
+00:02:05,510 --> 00:02:09,410
+Translate by 2, negative 1, then by negative 5, 4.
+
+36
+00:02:09,460 --> 00:02:11,860
+Add the vectors: negative 3, 3.
+
+37
+00:02:11,910 --> 00:02:13,670
+One translation.
+
+38
+00:02:13,720 --> 00:02:17,780
+1, 2 goes to negative 2, 1, and 3, 0 goes to 0, 3.
+
+39
+00:02:17,830 --> 00:02:23,590
+That is a rotation of 90 degrees anticlockwise about the origin.
+
+40
+00:02:23,640 --> 00:02:24,740
+Order can matter.
+
+41
+00:02:24,790 --> 00:02:30,130
+Doing the same two moves the other way round may give a different image.
+
+42
+00:02:30,180 --> 00:02:35,400
+Describe the single transformation that moves X, Y to X plus 4, Y minus 2.
+
+43
+00:02:35,450 --> 00:02:36,250
+Ben answers.
+
+44
+00:02:36,300 --> 00:02:38,230
+Which line is wrong?
+
+45
+00:02:38,280 --> 00:02:39,890
+Line 1 is not complete.
+
+46
+00:02:39,940 --> 00:02:42,690
+A translation needs its vector.
+
+47
+00:02:42,740 --> 00:02:46,420
+A translation by the vector 4, negative 2.
+
+48
+00:02:46,470 --> 00:02:54,920
+Game engines and robot arms combine rotations and translations many times every second, to move objects into place.
+
+49
+00:02:54,970 --> 00:02:56,200
+One last question.
+
+50
+00:02:56,250 --> 00:03:02,320
+Images after reflections, rotations and translations are always: congruent, or bigger?
+
+51
+00:03:02,370 --> 00:03:05,640
+Pause the video and choose.
+
+52
+00:03:05,690 --> 00:03:06,350
+Congruent.
+
+53
+00:03:06,400 --> 00:03:08,460
+Same size, same shape.
+
+54
+00:03:08,510 --> 00:03:13,060
+To remember: apply the second transformation to the image.
+
+55
+00:03:13,110 --> 00:03:16,090
+Two transformations can equal one.
+
+56
+00:03:16,140 --> 00:03:17,960
+Order can matter.
+
+57
+00:03:18,010 --> 00:03:20,510
+The images stay congruent.
+
+58
+00:03:20,560 --> 00:03:25,870
+Great work! Now practise lesson 13.3 on Camday.

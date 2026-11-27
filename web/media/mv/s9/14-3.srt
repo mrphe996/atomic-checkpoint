@@ -1,0 +1,203 @@
+1
+00:00:07,160 --> 00:00:10,280
+A rectangular cake is a cuboid, but not a cube.
+
+2
+00:00:10,330 --> 00:00:12,710
+Its edges are all different lengths.
+
+3
+00:00:12,760 --> 00:00:18,860
+It must be cut by one straight slice, into two halves that are exact mirror images.
+
+4
+00:00:18,910 --> 00:00:21,450
+How many different ways can you do it?
+
+5
+00:00:21,500 --> 00:00:25,040
+Pause the video and work it out.
+
+6
+00:00:25,090 --> 00:00:32,240
+3 ways: across the length, across the width, or across the height, each time through the middle.
+
+7
+00:00:32,290 --> 00:00:37,500
+Remember: a rectangle has 2 lines of symmetry, and a square has 4.
+
+8
+00:00:37,550 --> 00:00:44,650
+A plane of symmetry is a flat cut that splits a solid into two congruent halves that are mirror images.
+
+9
+00:00:44,700 --> 00:00:48,600
+A cuboid with three different edge lengths has 3.
+
+10
+00:00:48,650 --> 00:00:49,270
+Your turn.
+
+11
+00:00:49,320 --> 00:00:54,680
+How many planes of symmetry does a square-based cuboid have, if it is not a cube?
+
+12
+00:00:54,730 --> 00:00:57,890
+Pause the video and try it.
+
+13
+00:00:57,940 --> 00:00:58,040
+5.
+
+14
+00:00:58,090 --> 00:01:03,620
+The square end has 4 lines of symmetry, giving 4 planes along the length.
+
+15
+00:01:03,670 --> 00:01:06,230
+Plus 1 plane halfway along.
+
+16
+00:01:06,280 --> 00:01:11,210
+A cube has 9: 3 parallel to the faces, and 6 through opposite edges.
+
+17
+00:01:11,260 --> 00:01:14,030
+A cylinder has infinitely many.
+
+18
+00:01:14,080 --> 00:01:15,330
+Here is the method.
+
+19
+00:01:15,380 --> 00:01:20,170
+Step 1: look at the end shape, and count its lines of symmetry.
+
+20
+00:01:20,220 --> 00:01:24,290
+Step 2: each line gives a plane along the length.
+
+21
+00:01:24,340 --> 00:01:28,630
+Step 3: if the ends match, add a plane halfway along.
+
+22
+00:01:28,680 --> 00:01:32,600
+Step 4: imagine a mirror on each plane, to check.
+
+23
+00:01:32,650 --> 00:01:36,580
+A prism with isosceles triangle ends, not equilateral.
+
+24
+00:01:36,630 --> 00:01:39,240
+The triangle has 1 line of symmetry.
+
+25
+00:01:39,290 --> 00:01:42,080
+Plus 1 halfway along: 2 planes.
+
+26
+00:01:42,130 --> 00:01:46,310
+A prism with equilateral triangle ends: 3 lines, plus 1.
+
+27
+00:01:46,360 --> 00:01:47,840
+That makes 4.
+
+28
+00:01:47,890 --> 00:01:48,530
+Your turn.
+
+29
+00:01:48,580 --> 00:01:52,940
+How many planes of symmetry does a regular hexagonal prism have?
+
+30
+00:01:52,990 --> 00:01:55,850
+Pause and work it out.
+
+31
+00:01:55,900 --> 00:01:59,090
+A regular hexagon has 6 lines of symmetry.
+
+32
+00:01:59,140 --> 00:02:01,490
+Plus 1 halfway along: 7.
+
+33
+00:02:01,540 --> 00:02:07,300
+A cone has infinitely many: any plane through its point and the centre of its base.
+
+34
+00:02:07,350 --> 00:02:11,200
+Find the planes of symmetry of a 2 by 2 by 5 cuboid.
+
+35
+00:02:11,250 --> 00:02:12,100
+Kit answers.
+
+36
+00:02:12,150 --> 00:02:14,140
+Which line is wrong?
+
+37
+00:02:14,190 --> 00:02:15,280
+Line 2 is wrong.
+
+38
+00:02:15,330 --> 00:02:19,040
+He forgot the plane halfway along the length.
+
+39
+00:02:19,090 --> 00:02:21,690
+4 plus 1 is 5 planes.
+
+40
+00:02:21,740 --> 00:02:25,390
+Most cars have one plane of symmetry, down the middle.
+
+41
+00:02:25,440 --> 00:02:29,230
+Designers often model one half, then reflect it.
+
+42
+00:02:29,280 --> 00:02:30,480
+One last question.
+
+43
+00:02:30,530 --> 00:02:35,060
+Does a sphere have infinitely many planes of symmetry, or 1 plane?
+
+44
+00:02:35,110 --> 00:02:38,330
+Pause the video and choose.
+
+45
+00:02:38,380 --> 00:02:39,450
+Infinitely many.
+
+46
+00:02:39,500 --> 00:02:44,610
+Any plane through the centre cuts it into two mirror-image halves.
+
+47
+00:02:44,660 --> 00:02:50,050
+To remember: a plane of symmetry cuts a solid into mirror-image halves.
+
+48
+00:02:50,100 --> 00:02:53,940
+Cuboid 3, square-based cuboid 5, cube 9.
+
+49
+00:02:53,990 --> 00:02:57,060
+Prism: the end shape's lines, plus 1.
+
+50
+00:02:57,110 --> 00:03:00,900
+Cylinders, cones and spheres: infinitely many.
+
+51
+00:03:00,950 --> 00:03:06,390
+Great work! Now practise lesson 14.3 on Camday.

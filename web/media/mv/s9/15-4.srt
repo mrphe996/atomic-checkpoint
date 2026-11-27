@@ -1,0 +1,207 @@
+1
+00:00:07,260 --> 00:00:12,920
+A reviewer tests 40 phones, and groups their battery life in hours into classes.
+
+2
+00:00:12,970 --> 00:00:16,040
+She has lost the individual results.
+
+3
+00:00:16,090 --> 00:00:18,060
+Can she still find an average?
+
+4
+00:00:18,110 --> 00:00:22,960
+Pause the video and choose: yes, an estimate, or no.
+
+5
+00:00:23,010 --> 00:00:27,660
+Yes, but only an estimate, because the exact values are lost.
+
+6
+00:00:27,710 --> 00:00:35,910
+Remember: the mean from a frequency table is the total of value times frequency, divided by the total frequency.
+
+7
+00:00:35,960 --> 00:00:40,550
+Use each class midpoint as an estimate of the values in that class.
+
+8
+00:00:40,600 --> 00:00:43,870
+Multiply each midpoint by its frequency.
+
+9
+00:00:43,920 --> 00:00:44,540
+Your turn.
+
+10
+00:00:44,590 --> 00:00:46,820
+Find the estimated mean, in hours.
+
+11
+00:00:46,870 --> 00:00:50,030
+Pause the video and try it.
+
+12
+00:00:50,080 --> 00:00:52,730
+810 divided by 40 is 20.25 hours.
+
+13
+00:00:52,780 --> 00:00:59,680
+It is only an estimate, because we do not know the exact values in each class.
+
+14
+00:00:59,730 --> 00:01:04,090
+The modal class is the class with the highest frequency.
+
+15
+00:01:04,140 --> 00:01:04,960
+Your turn.
+
+16
+00:01:05,010 --> 00:01:09,160
+Which is the modal class: 15 to 20, or 20 to 25?
+
+17
+00:01:09,210 --> 00:01:12,040
+Pause and choose.
+
+18
+00:01:12,090 --> 00:01:15,830
+15 to 20 hours, with 14 phones.
+
+19
+00:01:15,880 --> 00:01:20,530
+For the median, use running totals: 6, 20, 32, 40.
+
+20
+00:01:20,580 --> 00:01:26,080
+The 20th value is in 15 to 20, and the 21st is in 20 to 25.
+
+21
+00:01:26,130 --> 00:01:29,070
+So the median is about 20.
+
+22
+00:01:29,120 --> 00:01:30,430
+Here is the method.
+
+23
+00:01:30,480 --> 00:01:33,340
+Step 1: find each class midpoint.
+
+24
+00:01:33,390 --> 00:01:37,980
+Step 2: multiply each midpoint by its frequency, and add.
+
+25
+00:01:38,030 --> 00:01:41,310
+Step 3: divide by the total frequency.
+
+26
+00:01:41,360 --> 00:01:46,850
+Step 4: find the modal class, and the median class from running totals.
+
+27
+00:01:46,900 --> 00:01:50,640
+Masses in kilograms: 0 to 10, 4 items.
+
+28
+00:01:50,690 --> 00:01:52,530
+10 to 20, 10 items.
+
+29
+00:01:52,580 --> 00:01:54,330
+20 to 30, 6 items.
+
+30
+00:01:54,380 --> 00:01:59,510
+4 times 5, plus 10 times 15, plus 6 times 25 is 320.
+
+31
+00:01:59,560 --> 00:02:04,850
+Divide by 20: an estimated mean of 16 kilograms.
+
+32
+00:02:04,900 --> 00:02:08,320
+Brand A has an estimated mean of 20.25 hours.
+
+33
+00:02:08,370 --> 00:02:12,940
+Brand B has 18.9 hours, but its results are closer together.
+
+34
+00:02:12,990 --> 00:02:14,940
+A lasts longer on average.
+
+35
+00:02:14,990 --> 00:02:17,110
+B is more consistent.
+
+36
+00:02:17,160 --> 00:02:20,480
+Max finds the estimated mean of the battery data.
+
+37
+00:02:20,530 --> 00:02:22,400
+Which line is wrong?
+
+38
+00:02:22,450 --> 00:02:23,520
+Line 1 is wrong.
+
+39
+00:02:23,570 --> 00:02:26,040
+He divided by the number of classes.
+
+40
+00:02:26,090 --> 00:02:28,760
+Divide by the number of phones.
+
+41
+00:02:28,810 --> 00:02:33,240
+810 divided by 40 is 20.25 hours.
+
+42
+00:02:33,290 --> 00:02:37,720
+Census data, like ages and incomes, is often published in groups.
+
+43
+00:02:37,770 --> 00:02:41,580
+Statisticians estimate the mean using midpoints.
+
+44
+00:02:41,630 --> 00:02:42,830
+One last question.
+
+45
+00:02:42,880 --> 00:02:49,860
+Estimate the range of the battery data: the largest possible value minus the smallest possible value.
+
+46
+00:02:49,910 --> 00:02:53,140
+Pause the video and answer.
+
+47
+00:02:53,190 --> 00:02:56,480
+30 minus 10 is 20 hours.
+
+48
+00:02:56,530 --> 00:02:59,760
+To remember: use midpoints to estimate.
+
+49
+00:02:59,810 --> 00:03:05,400
+The estimated mean is the total of f times X, divided by the total frequency.
+
+50
+00:03:05,450 --> 00:03:08,830
+The modal class has the highest frequency.
+
+51
+00:03:08,880 --> 00:03:12,360
+Find the median class from running totals.
+
+52
+00:03:12,410 --> 00:03:17,750
+Great work! Now practise lesson 15.4 on Camday.

@@ -1,0 +1,219 @@
+1
+00:00:06,380 --> 00:00:12,870
+A beach kiosk records the temperature at noon, and the number of ice creams sold, on 10 days.
+
+2
+00:00:12,920 --> 00:00:15,610
+Do hotter days mean more sales?
+
+3
+00:00:15,660 --> 00:00:19,150
+Which graph is best: a scatter graph, or a pie chart?
+
+4
+00:00:19,200 --> 00:00:22,360
+Pause the video and choose.
+
+5
+00:00:22,410 --> 00:00:23,430
+A scatter graph.
+
+6
+00:00:23,480 --> 00:00:28,960
+It plots one point for each day: the temperature across, and the sales up.
+
+7
+00:00:29,010 --> 00:00:34,440
+Remember: plot each pair, X across and Y up, on axes with sensible scales.
+
+8
+00:00:34,490 --> 00:00:37,410
+The pattern of the points shows correlation.
+
+9
+00:00:37,460 --> 00:00:40,380
+Positive: as one goes up, so does the other.
+
+10
+00:00:40,430 --> 00:00:43,480
+Negative: as one goes up, the other goes down.
+
+11
+00:00:43,530 --> 00:00:45,580
+None: no clear pattern.
+
+12
+00:00:45,630 --> 00:00:46,290
+Your turn.
+
+13
+00:00:46,340 --> 00:00:51,640
+Do temperature and sales show positive correlation, or negative correlation?
+
+14
+00:00:51,690 --> 00:00:54,940
+Pause the video and choose.
+
+15
+00:00:54,990 --> 00:00:56,480
+Positive correlation.
+
+16
+00:00:56,530 --> 00:00:59,220
+Hotter days have higher sales.
+
+17
+00:00:59,270 --> 00:01:07,930
+Draw a line of best fit: a straight line through the middle of the points, with about the same number on each side.
+
+18
+00:01:07,980 --> 00:01:11,110
+It does not have to go through the origin.
+
+19
+00:01:11,160 --> 00:01:14,760
+This one goes through 16, 12 and 34, 106.
+
+20
+00:01:14,810 --> 00:01:15,490
+Your turn.
+
+21
+00:01:15,540 --> 00:01:19,020
+Use the line to estimate the sales at 26 degrees.
+
+22
+00:01:19,070 --> 00:01:22,010
+Pause and work it out.
+
+23
+00:01:22,060 --> 00:01:25,100
+Go up from 26 to the line, then across.
+
+24
+00:01:25,150 --> 00:01:27,230
+About 64 ice creams.
+
+25
+00:01:27,280 --> 00:01:30,300
+Only estimate inside the range of the data.
+
+26
+00:01:30,350 --> 00:01:34,420
+At 45 degrees, the estimate would not be reliable.
+
+27
+00:01:34,470 --> 00:01:35,820
+Here is the method.
+
+28
+00:01:35,870 --> 00:01:38,130
+Step 1: plot the points.
+
+29
+00:01:38,180 --> 00:01:44,170
+Step 2: describe the correlation: positive, negative or none, strong or weak.
+
+30
+00:01:44,220 --> 00:01:48,160
+Step 3: draw a line of best fit through the middle.
+
+31
+00:01:48,210 --> 00:01:52,010
+Step 4: estimate inside the data range only.
+
+32
+00:01:52,060 --> 00:01:58,410
+Points rise steeply from left to right, close to a line: strong positive correlation.
+
+33
+00:01:58,460 --> 00:02:03,470
+One hot day, only 20 ice creams were sold, because the kiosk shut early.
+
+34
+00:02:03,520 --> 00:02:05,230
+That point is an outlier.
+
+35
+00:02:05,280 --> 00:02:08,090
+Ignore it when you draw the line.
+
+36
+00:02:08,140 --> 00:02:11,790
+Ice cream sales and sunburn are positively correlated.
+
+37
+00:02:11,840 --> 00:02:14,330
+But ice cream does not cause sunburn.
+
+38
+00:02:14,380 --> 00:02:16,940
+Hot sunny weather causes both.
+
+39
+00:02:16,990 --> 00:02:20,450
+Lena draws a line of best fit for the ice cream data.
+
+40
+00:02:20,500 --> 00:02:22,320
+Which line is wrong?
+
+41
+00:02:22,370 --> 00:02:23,440
+Line 1 is wrong.
+
+42
+00:02:23,490 --> 00:02:26,080
+A line of best fit follows the points.
+
+43
+00:02:26,130 --> 00:02:29,560
+It does not have to go through the origin.
+
+44
+00:02:29,610 --> 00:02:32,950
+Draw it through the middle of the points.
+
+45
+00:02:33,000 --> 00:02:40,070
+Businesses plot advertising spending against sales, to see whether their adverts seem to work.
+
+46
+00:02:40,120 --> 00:02:41,310
+One last question.
+
+47
+00:02:41,360 --> 00:02:45,090
+Does correlation prove that one thing causes the other?
+
+48
+00:02:45,140 --> 00:02:49,160
+Pause the video and choose: no, or yes.
+
+49
+00:02:49,210 --> 00:02:49,360
+No.
+
+50
+00:02:49,410 --> 00:02:52,440
+Correlation shows a link, not a cause.
+
+51
+00:02:52,490 --> 00:02:57,090
+To remember: correlation can be positive, negative, or none.
+
+52
+00:02:57,140 --> 00:03:01,530
+Draw the line of best fit through the middle of the points.
+
+53
+00:03:01,580 --> 00:03:04,470
+Estimate inside the data range only.
+
+54
+00:03:04,520 --> 00:03:07,100
+Correlation is not causation.
+
+55
+00:03:07,150 --> 00:03:12,550
+Great work! Now practise lesson 15.2 on Camday.

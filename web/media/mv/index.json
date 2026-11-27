@@ -55335,7 +55335,7 @@
     "13.3-k3": 98.84,
     "13.3-k4": 184.64
    },
-   "up": false
+   "up": true
   },
   "12.1": {
    "src": "media/mv/s9/12-1.mp4",
@@ -56271,7 +56271,7 @@
     "14.3-k3": 114.85,
     "14.3-k4": 157.33
    },
-   "up": false
+   "up": true
   },
   "15.2": {
    "src": "media/mv/s9/15-2.mp4",
@@ -56506,7 +56506,7 @@
     "15.2-k3": 81.01,
     "15.2-k4": 168.16
    },
-   "up": false
+   "up": true
   },
   "15.4": {
    "src": "media/mv/s9/15-4.mp4",
@@ -56729,7 +56729,1341 @@
     "15.4-k3": 71.04,
     "15.4-k4": 172.14
    },
-   "up": false
+   "up": true
+  },
+  "14.2": {
+   "src": "media/mv/s9/14-2.mp4",
+   "poster": "media/mv/s9/14-2_poster.jpg",
+   "srt": "media/mv/s9/14-2.srt",
+   "dur": 188.44,
+   "captions": [
+    [
+     6.22,
+     "A food company makes a tin 8 centimetres tall, with radius 3 centimetres."
+    ],
+    [
+     11.34,
+     "It needs a paper label all round the side, and metal for the top and bottom."
+    ],
+    [
+     17.22,
+     "When you unroll the label, what shape is it: a rectangle, or a circle?"
+    ],
+    [
+     21.89,
+     "Pause the video and choose."
+    ],
+    [
+     25.09,
+     "A rectangle."
+    ],
+    [
+     26.78,
+     "Remember: a net folds into a 3D shape."
+    ],
+    [
+     29.5,
+     "The surface area is the total area of the net."
+    ],
+    [
+     33.33,
+     "The rectangle's height is the tin's height."
+    ],
+    [
+     36.3,
+     "Its length goes all the way round: the circumference, 2 pi R."
+    ],
+    [
+     41.07,
+     "Your turn."
+    ],
+    [
+     41.76,
+     "Find the area of the label, to 1 decimal place."
+    ],
+    [
+     45.0,
+     "Pause the video and try it."
+    ],
+    [
+     48.26,
+     "2 times pi times 3 times 8 is about 150.8 square centimetres."
+    ],
+    [
+     54.18,
+     "The top and bottom are two circles, each pi R squared."
+    ],
+    [
+     58.36,
+     "Your turn."
+    ],
+    [
+     59.06,
+     "Find the total surface area of the tin, to 1 decimal place."
+    ],
+    [
+     63.19,
+     "Pause and work it out."
+    ],
+    [
+     66.13,
+     "The two circles: 2 times pi times 9, about 56.5."
+    ],
+    [
+     70.3,
+     "Add the label: about 207.3 square centimetres."
+    ],
+    [
+     74.83,
+     "A triangular prism has 2 triangles and 3 rectangles."
+    ],
+    [
+     78.57,
+     "A pyramid has a base and triangles."
+    ],
+    [
+     81.08,
+     "Sketch the net and list each face."
+    ],
+    [
+     84.07,
+     "Here is the method."
+    ],
+    [
+     85.46,
+     "Step 1: sketch the net."
+    ],
+    [
+     87.7,
+     "Step 2: find the area of each face."
+    ],
+    [
+     90.72,
+     "Step 3: check for open faces, like a cup with no lid."
+    ],
+    [
+     94.87,
+     "Step 4: add them up, and give the units."
+    ],
+    [
+     98.25,
+     "A cup with no lid: radius 4, height 9."
+    ],
+    [
+     101.46,
+     "One circle, 16 pi, plus the side, 72 pi."
+    ],
+    [
+     104.83,
+     "That is 88 pi, about 276.5 square centimetres."
+    ],
+    [
+     109.26,
+     "A square-based pyramid: base 10, slant height 13."
+    ],
+    [
+     113.97,
+     "The base is 100."
+    ],
+    [
+     115.51,
+     "Each triangle is a half times 10 times 13, which is 65."
+    ],
+    [
+     120.8,
+     "100 plus 4 times 65 is 360."
+    ],
+    [
+     123.94,
+     "Amy finds the label for a tin with radius 3 and height 8."
+    ],
+    [
+     127.97,
+     "Which line is wrong?"
+    ],
+    [
+     129.93,
+     "Line 1 is wrong."
+    ],
+    [
+     131.07,
+     "The label wraps all the way round."
+    ],
+    [
+     133.5,
+     "Its length is the circumference."
+    ],
+    [
+     136.34,
+     "2 pi times 3 is about 18.85."
+    ],
+    [
+     139.36,
+     "Times 8 is about 150.8."
+    ],
+    [
+     142.38,
+     "Can makers choose the radius and height carefully, to hold the same amount using as little metal as possible."
+    ],
+    [
+     150.4,
+     "One last question."
+    ],
+    [
+     151.83,
+     "A cylinder has radius 5 and height 6."
+    ],
+    [
+     154.78,
+     "Is its surface area 110 pi, or 80 pi?"
+    ],
+    [
+     157.73,
+     "Pause the video and choose."
+    ],
+    [
+     161.29,
+     "2 pi R squared is 50 pi."
+    ],
+    [
+     163.55,
+     "2 pi R H is 60 pi."
+    ],
+    [
+     165.25,
+     "Together, 110 pi."
+    ],
+    [
+     167.41,
+     "To remember: a cylinder's surface is 2 pi R squared plus 2 pi R H."
+    ],
+    [
+     172.66,
+     "The curved surface is 2 pi R H."
+    ],
+    [
+     175.39,
+     "Prisms: two ends plus rectangles."
+    ],
+    [
+     177.73,
+     "Pyramids: a base plus triangles."
+    ],
+    [
+     180.55,
+     "Check for open faces."
+    ],
+    [
+     183.06,
+     "Great work! Now practise lesson 14.2 on Camday."
+    ]
+   ],
+   "times": {
+    "14.2-k1": 24.04,
+    "14.2-k2": 47.21,
+    "14.2-k3": 65.08,
+    "14.2-k4": 160.24
+   },
+   "up": true
+  },
+  "15.3": {
+   "src": "media/mv/s9/15-3.mp4",
+   "poster": "media/mv/s9/15-3_poster.jpg",
+   "srt": "media/mv/s9/15-3.srt",
+   "dur": 183.44,
+   "captions": [
+    [
+     7.91,
+     "A basketball coach records the points scored by two teams in 12 matches each: the Hawks and the Owls."
+    ],
+    [
+     14.95,
+     "She wants one diagram that shows both, in order."
+    ],
+    [
+     18.85,
+     "Which diagram can show two sets of data: a back-to-back stem-and-leaf diagram, or a pie chart?"
+    ],
+    [
+     25.22,
+     "Pause the video and choose."
+    ],
+    [
+     28.45,
+     "A back-to-back stem-and-leaf diagram."
+    ],
+    [
+     31.51,
+     "Remember: in a stem-and-leaf diagram, the stems are the tens and the leaves are the units, in order, with a key."
+    ],
+    [
+     39.43,
+     "Both teams share one column of stems."
+    ],
+    [
+     41.9,
+     "The Hawks' leaves go to the right."
+    ],
+    [
+     44.18,
+     "The Owls' leaves go to the left."
+    ],
+    [
+     46.32,
+     "Each side is in order, going outwards from the stem."
+    ],
+    [
+     50.35,
+     "Your turn."
+    ],
+    [
+     51.03,
+     "What was the Hawks' lowest score?"
+    ],
+    [
+     53.28,
+     "Pause the video and try it."
+    ],
+    [
+     56.51,
+     "Stem 3, leaf 4: 34."
+    ],
+    [
+     59.15,
+     "The Hawks' median is the mean of the 6th and 7th values, 46 and 49."
+    ],
+    [
+     65.15,
+     "That is 47.5."
+    ],
+    [
+     66.32,
+     "Their range is 64 minus 34, which is 30."
+    ],
+    [
+     70.45,
+     "Here is the method."
+    ],
+    [
+     71.83,
+     "Step 1: write one column of stems."
+    ],
+    [
+     74.85,
+     "Step 2: put one set on the right, and one on the left, in order outwards."
+    ],
+    [
+     80.34,
+     "Step 3: add a key for each side."
+    ],
+    [
+     83.19,
+     "Step 4: compare the medians and ranges."
+    ],
+    [
+     86.56,
+     "On the left, read stem then leaf."
+    ],
+    [
+     89.96,
+     "The Owls' scores are 32, 36, 39, then 40, 41, 42, 44, 47, then 53, 55, 58 and 60."
+    ],
+    [
+     98.85,
+     "5 Owls scores were in the forties."
+    ],
+    [
+     101.76,
+     "Their range is 60 minus 32, which is 28."
+    ],
+    [
+     105.74,
+     "Your turn."
+    ],
+    [
+     106.42,
+     "What is the Owls' median?"
+    ],
+    [
+     108.13,
+     "Pause and work it out."
+    ],
+    [
+     111.03,
+     "The 6th and 7th values are 42 and 44."
+    ],
+    [
+     114.51,
+     "The median is 43."
+    ],
+    [
+     116.66,
+     "Now compare the medians and the ranges."
+    ],
+    [
+     119.41,
+     "The Owls were a little more consistent, with a smaller range: 28, against 30."
+    ],
+    [
+     125.41,
+     "On the Owls' side, stem 3 shows the leaves 9, 6, 2, with 2 next to the stem."
+    ],
+    [
+     130.92,
+     "Dev reads it."
+    ],
+    [
+     131.86,
+     "Which line is wrong?"
+    ],
+    [
+     133.86,
+     "Line 1 is wrong."
+    ],
+    [
+     134.96,
+     "Left leaves get bigger going outwards from the stem."
+    ],
+    [
+     139.1,
+     "The values are 32, 36 and 39."
+    ],
+    [
+     141.97,
+     "The smallest is 32."
+    ],
+    [
+     144.4,
+     "Doctors and sports scientists use back-to-back diagrams to compare two groups, like results before and after training."
+    ],
+    [
+     153.18,
+     "One last question."
+    ],
+    [
+     154.38,
+     "Which team has the higher median: the Hawks, or the Owls?"
+    ],
+    [
+     158.19,
+     "Pause the video and choose."
+    ],
+    [
+     161.39,
+     "The Hawks, with 47.5, compared with 43."
+    ],
+    [
+     165.52,
+     "To remember: one column of stems, with leaves on both sides."
+    ],
+    [
+     170.11,
+     "Order the leaves outwards from the stem."
+    ],
+    [
+     173.11,
+     "Give a key for each side."
+    ],
+    [
+     175.47,
+     "Compare medians and ranges."
+    ],
+    [
+     177.98,
+     "Great work! Now practise lesson 15.3 on Camday."
+    ]
+   ],
+   "times": {
+    "15.3-k1": 27.4,
+    "15.3-k2": 55.46,
+    "15.3-k3": 109.98,
+    "15.3-k4": 160.34
+   },
+   "up": true
+  },
+  "15.5": {
+   "src": "media/mv/s9/15-5.mp4",
+   "poster": "media/mv/s9/15-5_poster.jpg",
+   "srt": "media/mv/s9/15-5.srt",
+   "dur": 199.12,
+   "captions": [
+    [
+     6.54,
+     "A school nurse has five sets of data: favourite sports, students' heights, height against arm span, reaction times for two year groups, and sick days each month."
+    ],
+    [
+     17.44,
+     "She must choose a chart for each."
+    ],
+    [
+     20.22,
+     "Height against arm span: a scatter graph, or a Venn diagram?"
+    ],
+    [
+     24.32,
+     "Pause the video and choose."
+    ],
+    [
+     27.57,
+     "A scatter graph, because each student gives two measurements, and we want to see if they are related."
+    ],
+    [
+     35.0,
+     "Remember the charts you know: bar, pie, line, frequency diagrams and polygons, scatter graphs, stem-and-leaf, Venn and Carroll diagrams."
+    ],
+    [
+     44.86,
+     "Match the chart to the data and the question."
+    ],
+    [
+     47.98,
+     "Continuous data for one group: a frequency diagram."
+    ],
+    [
+     51.51,
+     "Comparing two groups: frequency polygons, or back-to-back stem-and-leaf."
+    ],
+    [
+     56.51,
+     "Change over time: a time series graph."
+    ],
+    [
+     59.69,
+     "Your turn."
+    ],
+    [
+     60.37,
+     "Favourite sports: a bar or pie chart, or a scatter graph?"
+    ],
+    [
+     64.23,
+     "Pause the video and choose."
+    ],
+    [
+     67.46,
+     "A bar chart or a pie chart."
+    ],
+    [
+     69.27,
+     "Sports are categories."
+    ],
+    [
+     71.29,
+     "Justify your choice."
+    ],
+    [
+     72.65,
+     "For example: a time series graph, because I want to show how sick days change from month to month."
+    ],
+    [
+     79.85,
+     "Here is the method."
+    ],
+    [
+     81.16,
+     "Step 1: what type of data is it: categories, numbers, or pairs?"
+    ],
+    [
+     86.04,
+     "Step 2: what is the question: proportion, trend, relationship, or comparison?"
+    ],
+    [
+     92.09,
+     "Step 3: choose the chart, and justify it."
+    ],
+    [
+     95.56,
+     "Step 4: check it is clear and honest: labels, scales, a key."
+    ],
+    [
+     100.27,
+     "A pie chart of hours of sleep uses the groups 6 or more, 7 or more, 8 or more and 9 or more."
+    ],
+    [
+     106.72,
+     "The groups overlap, so one person is counted in several slices."
+    ],
+    [
+     111.69,
+     "Your turn."
+    ],
+    [
+     112.38,
+     "Overlapping categories in a pie chart are: misleading, or fine?"
+    ],
+    [
+     116.79,
+     "Pause and choose."
+    ],
+    [
+     119.38,
+     "Misleading."
+    ],
+    [
+     120.15,
+     "The slices must not overlap."
+    ],
+    [
+     122.13,
+     "Use separate groups, and a bar chart or frequency diagram."
+    ],
+    [
+     126.77,
+     "A bar chart of attendance whose axis starts at 90 makes 92 and 95 percent look very different."
+    ],
+    [
+     134.13,
+     "Start at 0, or show a break."
+    ],
+    [
+     136.87,
+     "The nurse wants to show how sick days changed each month."
+    ],
+    [
+     140.78,
+     "Ana chooses a chart."
+    ],
+    [
+     142.15,
+     "Which line is wrong?"
+    ],
+    [
+     144.07,
+     "Line 1 is wrong."
+    ],
+    [
+     145.21,
+     "A pie chart hides the order of the months."
+    ],
+    [
+     148.76,
+     "Use a time series graph to show the trend."
+    ],
+    [
+     152.12,
+     "Public health posters, news graphics and company reports all depend on clear, honest charts."
+    ],
+    [
+     159.09,
+     "One last question."
+    ],
+    [
+     160.31,
+     "To compare two classes' marks and keep the exact values: back-to-back stem-and-leaf, or pie charts?"
+    ],
+    [
+     166.99,
+     "Pause the video and choose."
+    ],
+    [
+     170.21,
+     "A back-to-back stem-and-leaf diagram."
+    ],
+    [
+     172.71,
+     "It keeps every value, and puts the two classes side by side."
+    ],
+    [
+     177.32,
+     "To remember: match the chart to the data and the question."
+    ],
+    [
+     181.78,
+     "Scatter for relationships, time series for trends, polygons or back-to-back for comparing."
+    ],
+    [
+     188.69,
+     "Justify your choice."
+    ],
+    [
+     191.07,
+     "Spot misleading features."
+    ],
+    [
+     193.69,
+     "Great work! Now practise lesson 15.5 on Camday."
+    ]
+   ],
+   "times": {
+    "15.5-k1": 26.52,
+    "15.5-k2": 66.41,
+    "15.5-k3": 118.33,
+    "15.5-k4": 169.16
+   },
+   "up": true
+  },
+  "14.1": {
+   "src": "media/mv/s9/14-1.mp4",
+   "poster": "media/mv/s9/14-1_poster.jpg",
+   "srt": "media/mv/s9/14-1.srt",
+   "dur": 218.56,
+   "captions": [
+    [
+     6.48,
+     "A farm has a cylinder-shaped water tank, 1.2 metres across and 1.5 metres tall."
+    ],
+    [
+     12.28,
+     "It also has a trough shaped like a trapezium prism."
+    ],
+    [
+     16.57,
+     "What is a cylinder: like a prism with a circular cross-section, or a pyramid?"
+    ],
+    [
+     21.77,
+     "Pause the video and choose."
+    ],
+    [
+     25.0,
+     "It is like a prism with a circular cross-section."
+    ],
+    [
+     28.29,
+     "The circle is the same all the way up."
+    ],
+    [
+     31.39,
+     "Remember: the volume of a prism is the area of the cross-section, times the length."
+    ],
+    [
+     37.61,
+     "A prism has the same cross-section all along its length: a triangle, a trapezium, a hexagon."
+    ],
+    [
+     44.21,
+     "The trough's cross-section is a trapezium with parallel sides 0.5 and 0.3 metres, and height 0.4 metres."
+    ],
+    [
+     51.67,
+     "It is 2 metres long."
+    ],
+    [
+     53.66,
+     "The area is a half times 0.5 plus 0.3, times 0.4."
+    ],
+    [
+     58.11,
+     "That is 0.16 square metres."
+    ],
+    [
+     60.56,
+     "1 cubic metre is 1,000 litres."
+    ],
+    [
+     63.83,
+     "Your turn."
+    ],
+    [
+     64.51,
+     "What is the volume of the trough, in litres?"
+    ],
+    [
+     67.49,
+     "Pause the video and try it."
+    ],
+    [
+     70.73,
+     "0.16 times 2 is 0.32 cubic metres, which is 320 litres."
+    ],
+    [
+     76.94,
+     "For a cylinder, the cross-section is a circle, so the volume is pi R squared, times the height."
+    ],
+    [
+     83.75,
+     "The tank is 1.2 metres across, so its radius is 0.6 metres."
+    ],
+    [
+     88.48,
+     "The height is 1.5 metres."
+    ],
+    [
+     91.03,
+     "Your turn."
+    ],
+    [
+     91.73,
+     "Find the volume of the tank, in cubic metres, to 1 decimal place."
+    ],
+    [
+     96.25,
+     "Pause and work it out."
+    ],
+    [
+     99.18,
+     "Pi times 0.36 times 1.5 is about 1.696 cubic metres."
+    ],
+    [
+     104.26,
+     "That is about 1.7, or nearly 1,700 litres."
+    ],
+    [
+     108.92,
+     "Here is the method."
+    ],
+    [
+     110.27,
+     "Step 1: find the cross-section."
+    ],
+    [
+     113.03,
+     "Step 2: work out its area."
+    ],
+    [
+     114.86,
+     "For a circle, halve the diameter first."
+    ],
+    [
+     118.16,
+     "Step 3: multiply by the length or height."
+    ],
+    [
+     121.64,
+     "Step 4: give units, and convert to litres if needed."
+    ],
+    [
+     125.88,
+     "A triangular prism: the triangle has base 6 and height 4 centimetres, so its area is 12."
+    ],
+    [
+     132.77,
+     "The length is 9."
+    ],
+    [
+     134.02,
+     "The volume is 108 cubic centimetres."
+    ],
+    [
+     137.39,
+     "A can has diameter 8 and height 12 centimetres."
+    ],
+    [
+     141.56,
+     "Pi times 16 times 12 is about 603 cubic centimetres, which is 603 millilitres."
+    ],
+    [
+     149.04,
+     "A cylinder has volume 500 and radius 5."
+    ],
+    [
+     152.46,
+     "The height is 500 divided by 25 pi, which is about 6.4 centimetres."
+    ],
+    [
+     158.88,
+     "A cylinder has diameter 10 centimetres and height 4."
+    ],
+    [
+     162.83,
+     "Ravi finds the volume."
+    ],
+    [
+     164.5,
+     "Which line is wrong?"
+    ],
+    [
+     166.57,
+     "Line 1 is wrong."
+    ],
+    [
+     167.67,
+     "He used the diameter."
+    ],
+    [
+     169.1,
+     "The radius is 5."
+    ],
+    [
+     170.74,
+     "Pi times 25 times 4 is about 314.2 cubic centimetres."
+    ],
+    [
+     176.34,
+     "Engineers use prism and cylinder volumes to size water tanks, pipes and drink cans."
+    ],
+    [
+     182.54,
+     "One last question."
+    ],
+    [
+     183.81,
+     "A cylinder has radius 1 and height 1."
+    ],
+    [
+     186.42,
+     "What is its volume, to 1 decimal place?"
+    ],
+    [
+     189.16,
+     "Pause the video and answer."
+    ],
+    [
+     192.46,
+     "Pi times 1 times 1 is pi, about 3.1."
+    ],
+    [
+     196.12,
+     "To remember: prism volume is the cross-section area times the length."
+    ],
+    [
+     201.49,
+     "Cylinder: pi R squared H."
+    ],
+    [
+     204.04,
+     "1 cubic metre is 1,000 litres."
+    ],
+    [
+     206.88,
+     "1,000 cubic centimetres is 1 litre."
+    ],
+    [
+     210.76,
+     "Halve the diameter."
+    ],
+    [
+     213.1,
+     "Great work! Now practise lesson 14.1 on Camday."
+    ]
+   ],
+   "times": {
+    "14.1-k1": 23.95,
+    "14.1-k2": 69.68,
+    "14.1-k3": 98.13,
+    "14.1-k4": 191.41
+   },
+   "up": true
+  },
+  "15.1": {
+   "src": "media/mv/s9/15-1.mp4",
+   "poster": "media/mv/s9/15-1_poster.jpg",
+   "srt": "media/mv/s9/15-1.srt",
+   "dur": 167.32,
+   "captions": [
+    [
+     6.77,
+     "Two classes record how many minutes their journey to school takes."
+    ],
+    [
+     11.29,
+     "Two bar charts side by side are hard to compare."
+    ],
+    [
+     15.13,
+     "What is a clearer way: two frequency polygons on one graph, or two pie charts far apart?"
+    ],
+    [
+     21.07,
+     "Pause the video and choose."
+    ],
+    [
+     24.29,
+     "Two frequency polygons on one graph."
+    ],
+    [
+     26.71,
+     "You can compare them at a glance."
+    ],
+    [
+     29.48,
+     "Remember: the midpoint of the class from 10 up to 20 is 15."
+    ],
+    [
+     35.14,
+     "A frequency polygon plots each class's frequency, then joins the points with straight lines."
+    ],
+    [
+     42.05,
+     "Your turn."
+    ],
+    [
+     42.74,
+     "Are the points plotted at the midpoints, or at the lower boundaries?"
+    ],
+    [
+     47.41,
+     "Pause the video and choose."
+    ],
+    [
+     50.67,
+     "At the midpoints: 5, 15, 25 and 35."
+    ],
+    [
+     53.73,
+     "Class 9A is the solid line."
+    ],
+    [
+     56.1,
+     "Class 9B is dashed."
+    ],
+    [
+     58.31,
+     "Compare the shapes: where is each polygon higher?"
+    ],
+    [
+     61.58,
+     "Higher on the left means more short journeys."
+    ],
+    [
+     64.58,
+     "Do not join the ends down to the axis."
+    ],
+    [
+     67.67,
+     "Here is the method."
+    ],
+    [
+     69.0,
+     "Step 1: find each class midpoint."
+    ],
+    [
+     71.87,
+     "Step 2: plot each frequency at its midpoint."
+    ],
+    [
+     75.62,
+     "Step 3: join the points with straight lines."
+    ],
+    [
+     79.34,
+     "Step 4: for two groups, use the same axes, and a key."
+    ],
+    [
+     83.44,
+     "How many pupils are in 9A?"
+    ],
+    [
+     85.68,
+     "Add the frequencies: 4 plus 12 plus 9 plus 3 is 28."
+    ],
+    [
+     90.62,
+     "Who has more pupils taking 30 minutes or more?"
+    ],
+    [
+     94.52,
+     "9A has 3, and 9B has 2."
+    ],
+    [
+     96.47,
+     "So 9A."
+    ],
+    [
+     97.53,
+     "Your turn."
+    ],
+    [
+     98.25,
+     "How many pupils are in 9B?"
+    ],
+    [
+     100.12,
+     "Pause and work it out."
+    ],
+    [
+     103.1,
+     "9 plus 11 plus 6 plus 2 is also 28."
+    ],
+    [
+     107.25,
+     "For discrete data, like goals in a match grouped 0 to 2, 3 to 5 and 6 to 8, plot at 1, 4 and 7."
+    ],
+    [
+     115.47,
+     "Rob plots the class 10 up to 20, frequency 12."
+    ],
+    [
+     119.07,
+     "Which line is wrong?"
+    ],
+    [
+     121.18,
+     "Line 1 is wrong."
+    ],
+    [
+     122.35,
+     "He used the class boundary."
+    ],
+    [
+     124.87,
+     "Plot at the midpoint: 15, 12."
+    ],
+    [
+     128.15,
+     "Health services compare the ages of patients in two years, or two towns, with frequency polygons on one graph."
+    ],
+    [
+     136.25,
+     "One last question."
+    ],
+    [
+     137.57,
+     "Which class has shorter journeys overall: 9B, or 9A?"
+    ],
+    [
+     141.38,
+     "Pause the video and choose."
+    ],
+    [
+     144.75,
+     "9B."
+    ],
+    [
+     144.96,
+     "Its polygon is higher on the left, where the times are short."
+    ],
+    [
+     149.73,
+     "To remember: plot the frequency at the class midpoint."
+    ],
+    [
+     154.05,
+     "Join with straight lines."
+    ],
+    [
+     156.53,
+     "Great for comparing two groups."
+    ],
+    [
+     159.32,
+     "Use the same axes, and a key."
+    ],
+    [
+     161.92,
+     "Great work! Now practise lesson 15.1 on Camday."
+    ]
+   ],
+   "times": {
+    "15.1-k1": 23.24,
+    "15.1-k2": 49.62,
+    "15.1-k3": 102.05,
+    "15.1-k4": 143.7
+   },
+   "up": true
+  },
+  "13.4": {
+   "src": "media/mv/s9/13-4.mp4",
+   "poster": "media/mv/s9/13-4_poster.jpg",
+   "srt": "media/mv/s9/13-4.srt",
+   "dur": 183.64,
+   "captions": [
+    [
+     6.61,
+     "A photo is 10 centimetres by 15 centimetres."
+    ],
+    [
+     10.07,
+     "It is enlarged by scale factor 3 to make a poster."
+    ],
+    [
+     14.55,
+     "How does the area change: 9 times bigger, or 3 times bigger?"
+    ],
+    [
+     18.91,
+     "Pause the video and choose."
+    ],
+    [
+     22.27,
+     "9 times bigger."
+    ],
+    [
+     23.44,
+     "Both the length and the width are multiplied by 3, and 3 times 3 is 9."
+    ],
+    [
+     29.43,
+     "Remember: in an enlargement, every length is multiplied by the scale factor."
+    ],
+    [
+     34.67,
+     "The angles stay the same."
+    ],
+    [
+     36.95,
+     "When lengths are multiplied by K, the perimeter is multiplied by K, but the area is multiplied by K squared."
+    ],
+    [
+     44.82,
+     "Your turn."
+    ],
+    [
+     45.49,
+     "What is the area of the poster, in square centimetres?"
+    ],
+    [
+     49.12,
+     "Pause the video and try it."
+    ],
+    [
+     52.34,
+     "30 times 45 is 1,350."
+    ],
+    [
+     55.18,
+     "Or 150 times 9 is 1,350."
+    ],
+    [
+     58.98,
+     "The scale factor is the image length divided by the object length."
+    ],
+    [
+     63.51,
+     "To find the centre, draw lines through matching corners, and extend them."
+    ],
+    [
+     68.53,
+     "They meet at the centre."
+    ],
+    [
+     70.73,
+     "Here is the method."
+    ],
+    [
+     72.1,
+     "Step 1: find the scale factor."
+    ],
+    [
+     74.81,
+     "Step 2: from the centre, multiply each distance by K."
+    ],
+    [
+     79.12,
+     "Step 3: lengths and perimeter times K; area times K squared."
+    ],
+    [
+     83.95,
+     "Step 4: check the angles are the same."
+    ],
+    [
+     87.29,
+     "Enlarge the point 5, 3 by scale factor 2, with centre 1, 1."
+    ],
+    [
+     91.92,
+     "From the centre, the point is 4 across and 2 up."
+    ],
+    [
+     95.68,
+     "Double it: 8 across and 4 up."
+    ],
+    [
+     97.96,
+     "The image is 9, 5."
+    ],
+    [
+     99.92,
+     "Your turn."
+    ],
+    [
+     100.69,
+     "Enlarge the point 4, 2 by scale factor 3, with centre 1, 1."
+    ],
+    [
+     105.24,
+     "Pause and work it out."
+    ],
+    [
+     108.34,
+     "From the centre: 3 across and 1 up."
+    ],
+    [
+     111.27,
+     "Times 3: 9 across and 3 up."
+    ],
+    [
+     113.53,
+     "The image is 10, 4."
+    ],
+    [
+     115.67,
+     "A 4 by 6 rectangle is enlarged by scale factor 2.5."
+    ],
+    [
+     120.11,
+     "The area 24 is multiplied by 6.25: 150 square centimetres."
+    ],
+    [
+     125.71,
+     "A 3 by 5 rectangle is enlarged by scale factor 2."
+    ],
+    [
+     129.33,
+     "Zoe finds the new area."
+    ],
+    [
+     131.03,
+     "Which line is wrong?"
+    ],
+    [
+     133.06,
+     "Line 1 is wrong."
+    ],
+    [
+     134.23,
+     "Both lengths double, so the area is multiplied by 4."
+    ],
+    [
+     138.59,
+     "6 times 10 is 60 square centimetres."
+    ],
+    [
+     142.64,
+     "Doubling the width and height of a printed photo uses about four times as much ink."
+    ],
+    [
+     148.8,
+     "One last question."
+    ],
+    [
+     150.2,
+     "Two similar shapes have areas of 12 and 108."
+    ],
+    [
+     153.62,
+     "What is the scale factor?"
+    ],
+    [
+     155.57,
+     "Pause the video and answer."
+    ],
+    [
+     159.07,
+     "108 divided by 12 is 9."
+    ],
+    [
+     161.15,
+     "That is K squared, so K is 3."
+    ],
+    [
+     164.32,
+     "To remember: lengths and perimeter are multiplied by K."
+    ],
+    [
+     168.72,
+     "Area is multiplied by K squared."
+    ],
+    [
+     171.53,
+     "K is the image length divided by the object length."
+    ],
+    [
+     175.57,
+     "Ray lines meet at the centre."
+    ],
+    [
+     178.19,
+     "Great work! Now practise lesson 13.4 on Camday."
+    ]
+   ],
+   "times": {
+    "13.4-k1": 21.22,
+    "13.4-k2": 51.29,
+    "13.4-k3": 107.29,
+    "13.4-k4": 158.02
+   },
+   "up": true
   }
  }
 }

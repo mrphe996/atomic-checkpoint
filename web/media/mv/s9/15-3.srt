@@ -1,0 +1,199 @@
+1
+00:00:07,910 --> 00:00:14,900
+A basketball coach records the points scored by two teams in 12 matches each: the Hawks and the Owls.
+
+2
+00:00:14,950 --> 00:00:18,800
+She wants one diagram that shows both, in order.
+
+3
+00:00:18,850 --> 00:00:25,170
+Which diagram can show two sets of data: a back-to-back stem-and-leaf diagram, or a pie chart?
+
+4
+00:00:25,220 --> 00:00:28,400
+Pause the video and choose.
+
+5
+00:00:28,450 --> 00:00:31,460
+A back-to-back stem-and-leaf diagram.
+
+6
+00:00:31,510 --> 00:00:39,380
+Remember: in a stem-and-leaf diagram, the stems are the tens and the leaves are the units, in order, with a key.
+
+7
+00:00:39,430 --> 00:00:41,850
+Both teams share one column of stems.
+
+8
+00:00:41,900 --> 00:00:44,130
+The Hawks' leaves go to the right.
+
+9
+00:00:44,180 --> 00:00:46,270
+The Owls' leaves go to the left.
+
+10
+00:00:46,320 --> 00:00:50,300
+Each side is in order, going outwards from the stem.
+
+11
+00:00:50,350 --> 00:00:50,980
+Your turn.
+
+12
+00:00:51,030 --> 00:00:53,230
+What was the Hawks' lowest score?
+
+13
+00:00:53,280 --> 00:00:56,460
+Pause the video and try it.
+
+14
+00:00:56,510 --> 00:00:59,100
+Stem 3, leaf 4: 34.
+
+15
+00:00:59,150 --> 00:01:05,100
+The Hawks' median is the mean of the 6th and 7th values, 46 and 49.
+
+16
+00:01:05,150 --> 00:01:06,270
+That is 47.5.
+
+17
+00:01:06,320 --> 00:01:10,400
+Their range is 64 minus 34, which is 30.
+
+18
+00:01:10,450 --> 00:01:11,780
+Here is the method.
+
+19
+00:01:11,830 --> 00:01:14,800
+Step 1: write one column of stems.
+
+20
+00:01:14,850 --> 00:01:20,290
+Step 2: put one set on the right, and one on the left, in order outwards.
+
+21
+00:01:20,340 --> 00:01:23,140
+Step 3: add a key for each side.
+
+22
+00:01:23,190 --> 00:01:26,510
+Step 4: compare the medians and ranges.
+
+23
+00:01:26,560 --> 00:01:29,910
+On the left, read stem then leaf.
+
+24
+00:01:29,960 --> 00:01:38,800
+The Owls' scores are 32, 36, 39, then 40, 41, 42, 44, 47, then 53, 55, 58 and 60.
+
+25
+00:01:38,850 --> 00:01:41,710
+5 Owls scores were in the forties.
+
+26
+00:01:41,760 --> 00:01:45,690
+Their range is 60 minus 32, which is 28.
+
+27
+00:01:45,740 --> 00:01:46,370
+Your turn.
+
+28
+00:01:46,420 --> 00:01:48,080
+What is the Owls' median?
+
+29
+00:01:48,130 --> 00:01:50,980
+Pause and work it out.
+
+30
+00:01:51,030 --> 00:01:54,460
+The 6th and 7th values are 42 and 44.
+
+31
+00:01:54,510 --> 00:01:56,610
+The median is 43.
+
+32
+00:01:56,660 --> 00:01:59,360
+Now compare the medians and the ranges.
+
+33
+00:01:59,410 --> 00:02:05,360
+The Owls were a little more consistent, with a smaller range: 28, against 30.
+
+34
+00:02:05,410 --> 00:02:10,870
+On the Owls' side, stem 3 shows the leaves 9, 6, 2, with 2 next to the stem.
+
+35
+00:02:10,920 --> 00:02:11,810
+Dev reads it.
+
+36
+00:02:11,860 --> 00:02:13,810
+Which line is wrong?
+
+37
+00:02:13,860 --> 00:02:14,910
+Line 1 is wrong.
+
+38
+00:02:14,960 --> 00:02:19,050
+Left leaves get bigger going outwards from the stem.
+
+39
+00:02:19,100 --> 00:02:21,920
+The values are 32, 36 and 39.
+
+40
+00:02:21,970 --> 00:02:24,350
+The smallest is 32.
+
+41
+00:02:24,400 --> 00:02:33,130
+Doctors and sports scientists use back-to-back diagrams to compare two groups, like results before and after training.
+
+42
+00:02:33,180 --> 00:02:34,330
+One last question.
+
+43
+00:02:34,380 --> 00:02:38,140
+Which team has the higher median: the Hawks, or the Owls?
+
+44
+00:02:38,190 --> 00:02:41,340
+Pause the video and choose.
+
+45
+00:02:41,390 --> 00:02:45,470
+The Hawks, with 47.5, compared with 43.
+
+46
+00:02:45,520 --> 00:02:50,060
+To remember: one column of stems, with leaves on both sides.
+
+47
+00:02:50,110 --> 00:02:53,060
+Order the leaves outwards from the stem.
+
+48
+00:02:53,110 --> 00:02:55,420
+Give a key for each side.
+
+49
+00:02:55,470 --> 00:02:57,930
+Compare medians and ranges.
+
+50
+00:02:57,980 --> 00:03:03,390
+Great work! Now practise lesson 15.3 on Camday.

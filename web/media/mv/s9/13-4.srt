@@ -1,0 +1,207 @@
+1
+00:00:06,610 --> 00:00:10,020
+A photo is 10 centimetres by 15 centimetres.
+
+2
+00:00:10,070 --> 00:00:14,500
+It is enlarged by scale factor 3 to make a poster.
+
+3
+00:00:14,550 --> 00:00:18,860
+How does the area change: 9 times bigger, or 3 times bigger?
+
+4
+00:00:18,910 --> 00:00:22,220
+Pause the video and choose.
+
+5
+00:00:22,270 --> 00:00:23,390
+9 times bigger.
+
+6
+00:00:23,440 --> 00:00:29,380
+Both the length and the width are multiplied by 3, and 3 times 3 is 9.
+
+7
+00:00:29,430 --> 00:00:34,620
+Remember: in an enlargement, every length is multiplied by the scale factor.
+
+8
+00:00:34,670 --> 00:00:36,900
+The angles stay the same.
+
+9
+00:00:36,950 --> 00:00:44,770
+When lengths are multiplied by K, the perimeter is multiplied by K, but the area is multiplied by K squared.
+
+10
+00:00:44,820 --> 00:00:45,440
+Your turn.
+
+11
+00:00:45,490 --> 00:00:49,070
+What is the area of the poster, in square centimetres?
+
+12
+00:00:49,120 --> 00:00:52,290
+Pause the video and try it.
+
+13
+00:00:52,340 --> 00:00:55,130
+30 times 45 is 1,350.
+
+14
+00:00:55,180 --> 00:00:58,930
+Or 150 times 9 is 1,350.
+
+15
+00:00:58,980 --> 00:01:03,460
+The scale factor is the image length divided by the object length.
+
+16
+00:01:03,510 --> 00:01:08,480
+To find the centre, draw lines through matching corners, and extend them.
+
+17
+00:01:08,530 --> 00:01:10,680
+They meet at the centre.
+
+18
+00:01:10,730 --> 00:01:12,050
+Here is the method.
+
+19
+00:01:12,100 --> 00:01:14,760
+Step 1: find the scale factor.
+
+20
+00:01:14,810 --> 00:01:19,070
+Step 2: from the centre, multiply each distance by K.
+
+21
+00:01:19,120 --> 00:01:23,900
+Step 3: lengths and perimeter times K; area times K squared.
+
+22
+00:01:23,950 --> 00:01:27,240
+Step 4: check the angles are the same.
+
+23
+00:01:27,290 --> 00:01:31,870
+Enlarge the point 5, 3 by scale factor 2, with centre 1, 1.
+
+24
+00:01:31,920 --> 00:01:35,630
+From the centre, the point is 4 across and 2 up.
+
+25
+00:01:35,680 --> 00:01:37,910
+Double it: 8 across and 4 up.
+
+26
+00:01:37,960 --> 00:01:39,870
+The image is 9, 5.
+
+27
+00:01:39,920 --> 00:01:40,640
+Your turn.
+
+28
+00:01:40,690 --> 00:01:45,190
+Enlarge the point 4, 2 by scale factor 3, with centre 1, 1.
+
+29
+00:01:45,240 --> 00:01:48,290
+Pause and work it out.
+
+30
+00:01:48,340 --> 00:01:51,220
+From the centre: 3 across and 1 up.
+
+31
+00:01:51,270 --> 00:01:53,480
+Times 3: 9 across and 3 up.
+
+32
+00:01:53,530 --> 00:01:55,620
+The image is 10, 4.
+
+33
+00:01:55,670 --> 00:02:00,060
+A 4 by 6 rectangle is enlarged by scale factor 2.5.
+
+34
+00:02:00,110 --> 00:02:05,660
+The area 24 is multiplied by 6.25: 150 square centimetres.
+
+35
+00:02:05,710 --> 00:02:09,280
+A 3 by 5 rectangle is enlarged by scale factor 2.
+
+36
+00:02:09,330 --> 00:02:10,980
+Zoe finds the new area.
+
+37
+00:02:11,030 --> 00:02:13,010
+Which line is wrong?
+
+38
+00:02:13,060 --> 00:02:14,180
+Line 1 is wrong.
+
+39
+00:02:14,230 --> 00:02:18,540
+Both lengths double, so the area is multiplied by 4.
+
+40
+00:02:18,590 --> 00:02:22,590
+6 times 10 is 60 square centimetres.
+
+41
+00:02:22,640 --> 00:02:28,750
+Doubling the width and height of a printed photo uses about four times as much ink.
+
+42
+00:02:28,800 --> 00:02:30,150
+One last question.
+
+43
+00:02:30,200 --> 00:02:33,570
+Two similar shapes have areas of 12 and 108.
+
+44
+00:02:33,620 --> 00:02:35,520
+What is the scale factor?
+
+45
+00:02:35,570 --> 00:02:39,020
+Pause the video and answer.
+
+46
+00:02:39,070 --> 00:02:41,100
+108 divided by 12 is 9.
+
+47
+00:02:41,150 --> 00:02:44,270
+That is K squared, so K is 3.
+
+48
+00:02:44,320 --> 00:02:48,670
+To remember: lengths and perimeter are multiplied by K.
+
+49
+00:02:48,720 --> 00:02:51,480
+Area is multiplied by K squared.
+
+50
+00:02:51,530 --> 00:02:55,520
+K is the image length divided by the object length.
+
+51
+00:02:55,570 --> 00:02:58,140
+Ray lines meet at the centre.
+
+52
+00:02:58,190 --> 00:03:03,590
+Great work! Now practise lesson 13.4 on Camday.

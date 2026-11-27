@@ -1,0 +1,227 @@
+1
+00:00:06,480 --> 00:00:12,230
+A farm has a cylinder-shaped water tank, 1.2 metres across and 1.5 metres tall.
+
+2
+00:00:12,280 --> 00:00:16,520
+It also has a trough shaped like a trapezium prism.
+
+3
+00:00:16,570 --> 00:00:21,720
+What is a cylinder: like a prism with a circular cross-section, or a pyramid?
+
+4
+00:00:21,770 --> 00:00:24,950
+Pause the video and choose.
+
+5
+00:00:25,000 --> 00:00:28,240
+It is like a prism with a circular cross-section.
+
+6
+00:00:28,290 --> 00:00:31,340
+The circle is the same all the way up.
+
+7
+00:00:31,390 --> 00:00:37,560
+Remember: the volume of a prism is the area of the cross-section, times the length.
+
+8
+00:00:37,610 --> 00:00:44,160
+A prism has the same cross-section all along its length: a triangle, a trapezium, a hexagon.
+
+9
+00:00:44,210 --> 00:00:51,620
+The trough's cross-section is a trapezium with parallel sides 0.5 and 0.3 metres, and height 0.4 metres.
+
+10
+00:00:51,670 --> 00:00:53,610
+It is 2 metres long.
+
+11
+00:00:53,660 --> 00:00:58,060
+The area is a half times 0.5 plus 0.3, times 0.4.
+
+12
+00:00:58,110 --> 00:01:00,510
+That is 0.16 square metres.
+
+13
+00:01:00,560 --> 00:01:03,780
+1 cubic metre is 1,000 litres.
+
+14
+00:01:03,830 --> 00:01:04,460
+Your turn.
+
+15
+00:01:04,510 --> 00:01:07,440
+What is the volume of the trough, in litres?
+
+16
+00:01:07,490 --> 00:01:10,680
+Pause the video and try it.
+
+17
+00:01:10,730 --> 00:01:16,890
+0.16 times 2 is 0.32 cubic metres, which is 320 litres.
+
+18
+00:01:16,940 --> 00:01:23,700
+For a cylinder, the cross-section is a circle, so the volume is pi R squared, times the height.
+
+19
+00:01:23,750 --> 00:01:28,430
+The tank is 1.2 metres across, so its radius is 0.6 metres.
+
+20
+00:01:28,480 --> 00:01:30,980
+The height is 1.5 metres.
+
+21
+00:01:31,030 --> 00:01:31,680
+Your turn.
+
+22
+00:01:31,730 --> 00:01:36,200
+Find the volume of the tank, in cubic metres, to 1 decimal place.
+
+23
+00:01:36,250 --> 00:01:39,130
+Pause and work it out.
+
+24
+00:01:39,180 --> 00:01:44,210
+Pi times 0.36 times 1.5 is about 1.696 cubic metres.
+
+25
+00:01:44,260 --> 00:01:48,870
+That is about 1.7, or nearly 1,700 litres.
+
+26
+00:01:48,920 --> 00:01:50,220
+Here is the method.
+
+27
+00:01:50,270 --> 00:01:52,980
+Step 1: find the cross-section.
+
+28
+00:01:53,030 --> 00:01:54,810
+Step 2: work out its area.
+
+29
+00:01:54,860 --> 00:01:58,110
+For a circle, halve the diameter first.
+
+30
+00:01:58,160 --> 00:02:01,590
+Step 3: multiply by the length or height.
+
+31
+00:02:01,640 --> 00:02:05,830
+Step 4: give units, and convert to litres if needed.
+
+32
+00:02:05,880 --> 00:02:12,720
+A triangular prism: the triangle has base 6 and height 4 centimetres, so its area is 12.
+
+33
+00:02:12,770 --> 00:02:13,970
+The length is 9.
+
+34
+00:02:14,020 --> 00:02:17,340
+The volume is 108 cubic centimetres.
+
+35
+00:02:17,390 --> 00:02:21,510
+A can has diameter 8 and height 12 centimetres.
+
+36
+00:02:21,560 --> 00:02:28,990
+Pi times 16 times 12 is about 603 cubic centimetres, which is 603 millilitres.
+
+37
+00:02:29,040 --> 00:02:32,410
+A cylinder has volume 500 and radius 5.
+
+38
+00:02:32,460 --> 00:02:38,830
+The height is 500 divided by 25 pi, which is about 6.4 centimetres.
+
+39
+00:02:38,880 --> 00:02:42,780
+A cylinder has diameter 10 centimetres and height 4.
+
+40
+00:02:42,830 --> 00:02:44,450
+Ravi finds the volume.
+
+41
+00:02:44,500 --> 00:02:46,520
+Which line is wrong?
+
+42
+00:02:46,570 --> 00:02:47,620
+Line 1 is wrong.
+
+43
+00:02:47,670 --> 00:02:49,050
+He used the diameter.
+
+44
+00:02:49,100 --> 00:02:50,690
+The radius is 5.
+
+45
+00:02:50,740 --> 00:02:56,290
+Pi times 25 times 4 is about 314.2 cubic centimetres.
+
+46
+00:02:56,340 --> 00:03:02,490
+Engineers use prism and cylinder volumes to size water tanks, pipes and drink cans.
+
+47
+00:03:02,540 --> 00:03:03,760
+One last question.
+
+48
+00:03:03,810 --> 00:03:06,370
+A cylinder has radius 1 and height 1.
+
+49
+00:03:06,420 --> 00:03:09,110
+What is its volume, to 1 decimal place?
+
+50
+00:03:09,160 --> 00:03:12,410
+Pause the video and answer.
+
+51
+00:03:12,460 --> 00:03:16,070
+Pi times 1 times 1 is pi, about 3.1.
+
+52
+00:03:16,120 --> 00:03:21,440
+To remember: prism volume is the cross-section area times the length.
+
+53
+00:03:21,490 --> 00:03:23,990
+Cylinder: pi R squared H.
+
+54
+00:03:24,040 --> 00:03:26,830
+1 cubic metre is 1,000 litres.
+
+55
+00:03:26,880 --> 00:03:30,710
+1,000 cubic centimetres is 1 litre.
+
+56
+00:03:30,760 --> 00:03:33,050
+Halve the diameter.
+
+57
+00:03:33,100 --> 00:03:38,510
+Great work! Now practise lesson 14.1 on Camday.
