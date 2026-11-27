@@ -49582,7 +49582,7 @@
     "6.1-k3": 150.11,
     "6.1-k4": 216.52
    },
-   "up": false
+   "up": true
   },
   "5.5": {
    "src": "media/mv/s9/5-5.mp4",
@@ -49837,7 +49837,7 @@
     "5.5-k3": 117.86,
     "5.5-k4": 177.76
    },
-   "up": false
+   "up": true
   },
   "7.2": {
    "src": "media/mv/s9/7-2.mp4",
@@ -50092,7 +50092,7 @@
     "7.2-k3": 136.32,
     "7.2-k4": 193.06
    },
-   "up": false
+   "up": true
   },
   "7.1": {
    "src": "media/mv/s9/7-1.mp4",
@@ -50343,7 +50343,7 @@
     "7.1-k3": 129.92,
     "7.1-k4": 181.45
    },
-   "up": false
+   "up": true
   },
   "6.2": {
    "src": "media/mv/s9/6-2.mp4",
@@ -50598,7 +50598,7 @@
     "6.2-k3": 134.04,
     "6.2-k4": 182.15
    },
-   "up": false
+   "up": true
   },
   "7.3": {
    "src": "media/mv/s9/7-3.mp4",
@@ -50852,6 +50852,528 @@
     "7.3-k2": 66.22,
     "7.3-k3": 128.05,
     "7.3-k4": 179.04
+   },
+   "up": true
+  },
+  "8.2": {
+   "src": "media/mv/s9/8-2.mp4",
+   "poster": "media/mv/s9/8-2_poster.jpg",
+   "srt": "media/mv/s9/8-2.srt",
+   "dur": 202.16,
+   "captions": [
+    [
+     7.65,
+     "A cake recipe needs 1 and 3 quarter cups of flour."
+    ],
+    [
+     11.03,
+     "You make it 2 and a half times, and then use another 2 thirds of a cup to dust the table."
+    ],
+    [
+     17.6,
+     "How much flour do you use altogether, in cups?"
+    ],
+    [
+     20.72,
+     "Give your answer as a fraction in its simplest form."
+    ],
+    [
+     24.25,
+     "Pause the video and work it out."
+    ],
+    [
+     27.83,
+     "Multiply first, then add the 2 thirds."
+    ],
+    [
+     30.91,
+     "The total is 121 over 24, which is 5 and 1 twenty-fourth cups."
+    ],
+    [
+     35.93,
+     "Let's see how."
+    ],
+    [
+     37.62,
+     "Remember the order: brackets, then indices, then multiply and divide, then add and subtract."
+    ],
+    [
+     44.51,
+     "Fractions follow exactly the same order."
+    ],
+    [
+     47.54,
+     "Change mixed numbers into improper fractions first."
+    ],
+    [
+     51.42,
+     "1 and 3 quarters is 7 quarters."
+    ],
+    [
+     53.77,
+     "2 and a half is 5 halves."
+    ],
+    [
+     56.22,
+     "Your turn."
+    ],
+    [
+     56.93,
+     "Work out 7 quarters times 5 halves."
+    ],
+    [
+     59.42,
+     "Give your answer as a fraction in its simplest form."
+    ],
+    [
+     63.13,
+     "Pause the video and try it."
+    ],
+    [
+     66.45,
+     "Multiply the tops and the bottoms: 35 eighths."
+    ],
+    [
+     70.9,
+     "Then add 2 thirds: 105 over 24, plus 16 over 24, is 121 over 24."
+    ],
+    [
+     77.65,
+     "Indices work with fractions too."
+    ],
+    [
+     79.97,
+     "2 thirds, squared, is 4 ninths."
+    ],
+    [
+     82.22,
+     "Square the top and the bottom."
+    ],
+    [
+     84.95,
+     "Here is the method."
+    ],
+    [
+     86.33,
+     "Step 1: change mixed numbers to improper fractions."
+    ],
+    [
+     90.58,
+     "Step 2: work out brackets, then indices."
+    ],
+    [
+     94.0,
+     "Step 3: multiply and divide, then add and subtract."
+    ],
+    [
+     98.25,
+     "Step 4: simplify, and check with an estimate."
+    ],
+    [
+     102.04,
+     "Work out 2 and a half, minus 1 and a third, all times 6."
+    ],
+    [
+     106.42,
+     "The bracket first: 15 sixths minus 8 sixths is 7 sixths."
+    ],
+    [
+     110.81,
+     "Times 6 is 7."
+    ],
+    [
+     112.38,
+     "Your turn."
+    ],
+    [
+     113.08,
+     "Work out 2 thirds plus 1 sixth, all divided by a half."
+    ],
+    [
+     116.88,
+     "Give your answer as a fraction in its simplest form."
+    ],
+    [
+     120.54,
+     "Pause and work it out."
+    ],
+    [
+     123.49,
+     "The bracket: 4 sixths plus 1 sixth is 5 sixths."
+    ],
+    [
+     127.17,
+     "Dividing by a half is multiplying by 2: 10 sixths, which is 5 thirds."
+    ],
+    [
+     133.12,
+     "To estimate 4 and 7 eighths, times 2 and 1 tenth, minus 3 and a third: round to 5 times 2 minus 3, which is about 7."
+    ],
+    [
+     142.88,
+     "Ali works out a half, plus a half times a half."
+    ],
+    [
+     145.97,
+     "Which line is wrong?"
+    ],
+    [
+     147.83,
+     "Line 1 is wrong."
+    ],
+    [
+     148.96,
+     "He worked left to right."
+    ],
+    [
+     150.66,
+     "Multiply first."
+    ],
+    [
+     152.27,
+     "A half times a half is a quarter."
+    ],
+    [
+     154.52,
+     "A half plus a quarter is 3 quarters."
+    ],
+    [
+     157.53,
+     "Spreadsheets and calculators follow the same order of operations."
+    ],
+    [
+     162.15,
+     "If you type a formula without brackets, the computer still multiplies first."
+    ],
+    [
+     168.1,
+     "One last question."
+    ],
+    [
+     169.35,
+     "Work out 1 minus a half times a half."
+    ],
+    [
+     171.92,
+     "Give your answer as a fraction."
+    ],
+    [
+     174.07,
+     "Pause the video and answer."
+    ],
+    [
+     177.35,
+     "Multiply first: a half times a half is a quarter."
+    ],
+    [
+     180.89,
+     "1 minus a quarter is 3 quarters."
+    ],
+    [
+     183.75,
+     "To remember: fractions follow the same order of operations."
+    ],
+    [
+     188.5,
+     "Change mixed numbers to improper fractions."
+    ],
+    [
+     192.16,
+     "Do not just work left to right."
+    ],
+    [
+     194.75,
+     "Estimate to check."
+    ],
+    [
+     196.95,
+     "Great work! Now practise lesson 8.2 on Camday."
+    ]
+   ],
+   "times": {
+    "8.2-k1": 26.78,
+    "8.2-k2": 65.4,
+    "8.2-k3": 122.44,
+    "8.2-k4": 176.3
+   },
+   "up": false
+  },
+  "8.1": {
+   "src": "media/mv/s9/8-1.mp4",
+   "poster": "media/mv/s9/8-1_poster.jpg",
+   "srt": "media/mv/s9/8-1.srt",
+   "dur": 215.04,
+   "captions": [
+    [
+     7.28,
+     "10 dollars shared between 8 friends is exactly 1.25 dollars each."
+    ],
+    [
+     12.9,
+     "But 10 dollars shared between 6 is 1.666 and so on."
+    ],
+    [
+     17.31,
+     "The calculator never finishes."
+    ],
+    [
+     20.45,
+     "Why does 10 divided by 6 recur: because 6 has a factor 3, or because 6 is even?"
+    ],
+    [
+     26.56,
+     "Pause the video and choose."
+    ],
+    [
+     30.05,
+     "Because 6 has a factor of 3."
+    ],
+    [
+     32.48,
+     "8 is 2 times 2 times 2, so it fits into 1,000."
+    ],
+    [
+     36.47,
+     "But no power of 10 divides by 3."
+    ],
+    [
+     39.8,
+     "Remember: a fraction is a division."
+    ],
+    [
+     42.74,
+     "3 eighths is 3 divided by 8, which is 0.375."
+    ],
+    [
+     46.99,
+     "Write the fraction in its simplest form."
+    ],
+    [
+     49.88,
+     "If the denominator's prime factors are only 2s and 5s, the decimal terminates."
+    ],
+    [
+     55.51,
+     "Otherwise, it recurs."
+    ],
+    [
+     57.58,
+     "Your turn."
+    ],
+    [
+     58.29,
+     "Does 1 fortieth terminate, or recur?"
+    ],
+    [
+     60.86,
+     "Pause the video and choose."
+    ],
+    [
+     64.18,
+     "40 is 2 times 2 times 2 times 5."
+    ],
+    [
+     67.25,
+     "Only 2s and 5s, so it terminates."
+    ],
+    [
+     70.42,
+     "1 fortieth is 0.025."
+    ],
+    [
+     72.88,
+     "To turn a recurring decimal into a fraction, call it X."
+    ],
+    [
+     76.97,
+     "If one digit repeats, multiply by 10."
+    ],
+    [
+     79.72,
+     "If two digits repeat, multiply by 100."
+    ],
+    [
+     83.1,
+     "Then subtract, so the repeating part cancels, and solve."
+    ],
+    [
+     87.54,
+     "Here is the method."
+    ],
+    [
+     88.92,
+     "Step 1: call the decimal X."
+    ],
+    [
+     91.44,
+     "Step 2: multiply by 10, 100 or 1,000, to line up the repeats."
+    ],
+    [
+     97.92,
+     "Step 3: subtract, then solve for X."
+    ],
+    [
+     101.08,
+     "Step 4: simplify, and check on a calculator."
+    ],
+    [
+     104.83,
+     "Write 0.7 recurring as a fraction."
+    ],
+    [
+     107.89,
+     "X is 0.777 and so on."
+    ],
+    [
+     109.78,
+     "10 X is 7.777 and so on."
+    ],
+    [
+     111.94,
+     "Subtract: 9 X is 7, so X is 7 ninths."
+    ],
+    [
+     115.82,
+     "Write 0.3 6, recurring, as a fraction."
+    ],
+    [
+     119.58,
+     "100 X is 36.3636."
+    ],
+    [
+     121.26,
+     "Subtract X: 99 X is 36."
+    ],
+    [
+     123.53,
+     "So X is 36 over 99, which is 4 elevenths."
+    ],
+    [
+     128.13,
+     "Your turn."
+    ],
+    [
+     128.94,
+     "Write 0.4 5 recurring, 0.4545 and so on, as a fraction in its simplest form."
+    ],
+    [
+     135.1,
+     "Pause and work it out."
+    ],
+    [
+     138.28,
+     "100 X minus X: 99 X is 45."
+    ],
+    [
+     140.78,
+     "X is 45 over 99, which simplifies to 5 elevenths."
+    ],
+    [
+     146.03,
+     "Does 21 over 56 terminate?"
+    ],
+    [
+     148.37,
+     "Simplify first: it is 3 eighths."
+    ],
+    [
+     151.25,
+     "8 is only 2s, so yes."
+    ],
+    [
+     153.14,
+     "It is 0.375."
+    ],
+    [
+     154.77,
+     "Does 6 fifteenths give a terminating decimal?"
+    ],
+    [
+     158.06,
+     "Lucy answers."
+    ],
+    [
+     159.01,
+     "Which line is wrong?"
+    ],
+    [
+     161.02,
+     "Line 1 is wrong."
+    ],
+    [
+     162.22,
+     "She did not simplify first."
+    ],
+    [
+     164.79,
+     "6 fifteenths is 2 fifths, which is 0.4."
+    ],
+    [
+     167.95,
+     "It terminates."
+    ],
+    [
+     169.64,
+     "Computers store numbers in base 2."
+    ],
+    [
+     172.15,
+     "Even 0.1 recurs in base 2, so tiny rounding errors appear."
+    ],
+    [
+     176.43,
+     "Banks use special methods to avoid them."
+    ],
+    [
+     179.93,
+     "One last question."
+    ],
+    [
+     181.22,
+     "Does 1 twelfth recur, or terminate?"
+    ],
+    [
+     183.72,
+     "Pause the video and choose."
+    ],
+    [
+     187.06,
+     "12 is 2 times 2 times 3."
+    ],
+    [
+     189.32,
+     "It has a factor of 3, so it recurs: 0.08333 and so on."
+    ],
+    [
+     194.96,
+     "To remember: simplify first."
+    ],
+    [
+     197.62,
+     "Only 2s and 5s in the denominator: it terminates."
+    ],
+    [
+     201.26,
+     "Otherwise it recurs."
+    ],
+    [
+     203.3,
+     "For recurring decimals: multiply, subtract, solve."
+    ],
+    [
+     207.34,
+     "Check with a calculator."
+    ],
+    [
+     209.81,
+     "Great work! Now practise lesson 8.1 on Camday."
+    ]
+   ],
+   "times": {
+    "8.1-k1": 29.0,
+    "8.1-k2": 63.13,
+    "8.1-k3": 137.23,
+    "8.1-k4": 186.01
    },
    "up": false
   }

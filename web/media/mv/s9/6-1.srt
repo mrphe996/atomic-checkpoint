@@ -1,0 +1,251 @@
+1
+00:00:07,050 --> 00:00:09,060
+A school has 1,200 students.
+
+2
+00:00:09,110 --> 00:00:14,950
+The head wants to know: do students who use phones and screens more, sleep less?
+
+3
+00:00:15,000 --> 00:00:18,440
+Asking everyone would take far too long.
+
+4
+00:00:18,490 --> 00:00:24,520
+What is the best first step: write a clear question and predictions, or ask your friends?
+
+5
+00:00:24,570 --> 00:00:27,760
+Pause the video and choose.
+
+6
+00:00:27,810 --> 00:00:30,920
+Write a clear question and predictions first.
+
+7
+00:00:30,970 --> 00:00:34,340
+Then you know exactly what data you need.
+
+8
+00:00:34,390 --> 00:00:37,950
+Remember: primary data is data you collect yourself.
+
+9
+00:00:38,000 --> 00:00:44,200
+Secondary data was collected by someone else, like data from a government website.
+
+10
+00:00:44,250 --> 00:00:48,900
+First, write a statistical question, and a prediction you can test.
+
+11
+00:00:48,950 --> 00:00:55,330
+For example: students with more than 3 hours of screen time sleep less than 8 hours.
+
+12
+00:00:55,380 --> 00:00:58,850
+Then decide what data to collect, how, and how much.
+
+13
+00:00:58,900 --> 00:01:04,620
+Collect it, show it, analyse it, and say whether it supports your prediction.
+
+14
+00:01:04,670 --> 00:01:05,300
+Your turn.
+
+15
+00:01:05,350 --> 00:01:09,770
+A prediction you can test: is it called a hypothesis, or a sample?
+
+16
+00:01:09,820 --> 00:01:13,000
+Pause the video and choose.
+
+17
+00:01:13,050 --> 00:01:15,310
+It is a hypothesis.
+
+18
+00:01:15,360 --> 00:01:18,680
+The population is everyone you want to know about.
+
+19
+00:01:18,730 --> 00:01:21,250
+A sample is the part you actually ask.
+
+20
+00:01:21,300 --> 00:01:24,370
+Here are four ways to choose a sample.
+
+21
+00:01:24,420 --> 00:01:30,360
+Stratified sampling takes each group, like each year group, in proportion to its size.
+
+22
+00:01:30,410 --> 00:01:36,060
+Convenience sampling, like asking your friends, is quick but often unfair.
+
+23
+00:01:36,110 --> 00:01:40,880
+A bigger sample is usually more reliable, but takes longer.
+
+24
+00:01:40,930 --> 00:01:45,350
+For 1,200 students, about 60 to 120 is sensible.
+
+25
+00:01:45,400 --> 00:01:46,710
+Here is the method.
+
+26
+00:01:46,760 --> 00:01:50,700
+Step 1: write the question and your predictions.
+
+27
+00:01:50,750 --> 00:01:55,140
+Step 2: decide what data to collect, from whom, and how.
+
+28
+00:01:55,190 --> 00:01:59,750
+Step 3: choose a fair sampling method and a sensible size.
+
+29
+00:01:59,800 --> 00:02:04,820
+Step 4: plan how to show and analyse the data, then interpret it.
+
+30
+00:02:04,870 --> 00:02:11,430
+A school has 400 students in Year 7, 300 in Year 8 and 500 in Year 9.
+
+31
+00:02:11,480 --> 00:02:15,460
+They choose a sample of 60, in proportion.
+
+32
+00:02:15,510 --> 00:02:17,470
+How many from Year 9?
+
+33
+00:02:17,520 --> 00:02:21,280
+500 out of 1,200, times 60, is 25.
+
+34
+00:02:21,330 --> 00:02:22,010
+Your turn.
+
+35
+00:02:22,060 --> 00:02:28,470
+Choosing every 20th name on a list: is that systematic sampling, or stratified sampling?
+
+36
+00:02:28,520 --> 00:02:31,110
+Pause and choose.
+
+37
+00:02:31,160 --> 00:02:33,480
+It is systematic sampling.
+
+38
+00:02:33,530 --> 00:02:38,840
+To choose 50 from 1,200, divide: 1,200 divided by 50 is 24.
+
+39
+00:02:38,890 --> 00:02:43,650
+Pick a random start, then take every 24th name.
+
+40
+00:02:43,700 --> 00:02:45,420
+Good questions are clear.
+
+41
+00:02:45,470 --> 00:02:47,750
+Not: how much do you use screens?
+
+42
+00:02:47,800 --> 00:02:51,700
+But: yesterday, how many hours did you spend on screens?
+
+43
+00:02:51,750 --> 00:02:55,710
+With answer boxes like 0 to 1, 1 to 2, and so on.
+
+44
+00:02:55,760 --> 00:02:59,820
+Ben wants the favourite sport of all 1,200 students.
+
+45
+00:02:59,870 --> 00:03:01,960
+Which line is wrong?
+
+46
+00:03:02,010 --> 00:03:03,040
+Line 1 is wrong.
+
+47
+00:03:03,090 --> 00:03:08,350
+The sample is far too small, and it is biased: they all play football.
+
+48
+00:03:08,400 --> 00:03:15,090
+Use a larger random or stratified sample, like 100 students from the whole school.
+
+49
+00:03:15,140 --> 00:03:21,370
+Opinion polls often ask about 1,000 people to estimate what millions of people think.
+
+50
+00:03:21,420 --> 00:03:25,830
+It works because the sample is chosen very carefully.
+
+51
+00:03:25,880 --> 00:03:27,210
+One last question.
+
+52
+00:03:27,260 --> 00:03:29,360
+A school has 1,200 students.
+
+53
+00:03:29,410 --> 00:03:31,280
+The sample is 10 percent.
+
+54
+00:03:31,330 --> 00:03:34,050
+How many students are in the sample?
+
+55
+00:03:34,100 --> 00:03:37,520
+Pause the video and answer.
+
+56
+00:03:37,570 --> 00:03:41,640
+10 percent of 1,200 is 120.
+
+57
+00:03:41,690 --> 00:03:46,570
+To remember: question, predictions, data, analysis, conclusion.
+
+58
+00:03:46,620 --> 00:03:48,450
+The population is everyone.
+
+59
+00:03:48,500 --> 00:03:50,800
+The sample is who you ask.
+
+60
+00:03:50,850 --> 00:03:54,080
+Use random, systematic or stratified samples.
+
+61
+00:03:54,130 --> 00:03:55,940
+Avoid convenience.
+
+62
+00:03:55,990 --> 00:03:59,360
+Bigger samples are usually more reliable.
+
+63
+00:03:59,410 --> 00:04:04,550
+Great work! Now practise lesson 6.1 on Camday.

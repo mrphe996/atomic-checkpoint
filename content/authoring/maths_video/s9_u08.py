@@ -46,7 +46,7 @@ VIDEOS["8.1"] = [
     ]),
     dict(kind="example", title="Check: 5/11", steps=[
         dict(say="100 X minus X: 99 X is 45. X is 45 over 99, which simplifies to 5 elevenths.", do=[B(f"{F(45, 99)} = {F(5, 11)}", x=80, y=190, color=GREEN)]),
-        dict(say="Does 21 over 56 terminate? Simplify first: it is 3 eighths. 8 is only 2s, so yes. It is 0.375.", do=[MATH(f"{F(21, 56)} = {F(3, 8)} = 0.375 ✓", x=80, y=300)]),
+        dict(say="Does 21 over 56 terminate? Simplify first: it is 3 eighths. 8 is only 2s, so yes. It is 0.375.", do=[MATH(f"{F(21, 56)} = {F(3, 8)} = 0.375 ✓", x=80, y=330)]),
     ]),
     dict(kind="error", title="Spot the mistake", steps=[
         dict(say="Does 6 fifteenths give a terminating decimal? Lucy answers. Which line is wrong?", do=LINES("Lucy", "does 6/15 terminate?", ["15 = 3 × 5 has a 3", "so it recurs"])),
@@ -87,8 +87,8 @@ VIDEOS["8.2"] = [
         PAUSE("8.2-k2", "Your turn. Work out 7 quarters times 5 halves. Give your answer as a fraction in its simplest form. Pause the video and try it.", "7/4 × 5/2?"),
     ]),
     dict(kind="idea", title="Check: 35/8", steps=[
-        dict(say="Multiply the tops and the bottoms: 35 eighths. Then add 2 thirds: 105 over 24, plus 16 over 24, is 121 over 24.", do=[B(f"{F(7, 4)} × {F(5, 2)} = {F(35, 8)}", x=80, y=190, color=GREEN), MATH(f"{F(105, 24)} + {F(16, 24)} = {F(121, 24)}", x=80, y=300, at=5)]),
-        dict(say="Indices work with fractions too. 2 thirds, squared, is 4 ninths. Square the top and the bottom.", do=[MATH(f"({F(2, 3)})² = {F(4, 9)}", x=80, y=310)]),
+        dict(say="Multiply the tops and the bottoms: 35 eighths. Then add 2 thirds: 105 over 24, plus 16 over 24, is 121 over 24.", do=[B(f"{F(7, 4)} × {F(5, 2)} = {F(35, 8)}", x=80, y=190, color=GREEN), MATH(f"{F(105, 24)} + {F(16, 24)} = {F(121, 24)}", x=80, y=320, at=5)]),
+        dict(say="Indices work with fractions too. 2 thirds, squared, is 4 ninths. Square the top and the bottom.", do=[MATH(f"({F(2, 3)})² = {F(4, 9)}", x=80, y=460)]),
     ]),
     dict(kind="method", title="How do I calculate in order?", steps=[
         dict(say="Here is the method. Step 1: change mixed numbers to improper fractions.", do=[T("1. Mixed → **improper**", x=80, y=170)]),
@@ -103,7 +103,7 @@ VIDEOS["8.2"] = [
     ]),
     dict(kind="example", title="Check", steps=[
         dict(say="The bracket: 4 sixths plus 1 sixth is 5 sixths. Dividing by a half is multiplying by 2: 10 sixths, which is 5 thirds.", do=[B(f"{F(5, 6)} × 2 = {F(5, 3)}", x=80, y=190, color=GREEN)]),
-        dict(say="To estimate 4 and 7 eighths, times 2 and 1 tenth, minus 3 and a third: round to 5 times 2 minus 3, which is about 7.", do=[MATH("≈ 5 × 2 − 3 = 7", x=80, y=300)]),
+        dict(say="To estimate 4 and 7 eighths, times 2 and 1 tenth, minus 3 and a third: round to 5 times 2 minus 3, which is about 7.", do=[MATH("≈ 5 × 2 − 3 = 7", x=80, y=340)]),
     ]),
     dict(kind="error", title="Spot the mistake", steps=[
         dict(say="Ali works out a half, plus a half times a half. Which line is wrong?", do=LINES("Ali", "1/2 + 1/2 × 1/2", ["1/2 + 1/2 = 1", "1 × 1/2 = 1/2"])),
@@ -145,7 +145,7 @@ VIDEOS["8.3"] = [
     ]),
     dict(kind="idea", title="Check: 15/2", steps=[
         dict(say="Cancel 18 and 12 by 6: 3 times 5 halves is 15 halves, or 7 and a half.", do=[B(f"{F(15, 2)} = {M(7, 1, 2)}", x=80, y=190, color=GREEN)]),
-        dict(say="For mixed numbers, change them to improper fractions first.", do=[T("mixed → **improper** first", x=80, y=300)]),
+        dict(say="For mixed numbers, change them to improper fractions first.", do=[T("mixed → **improper** first", x=80, y=330)]),
     ]),
     dict(kind="method", title="How do I multiply efficiently?", steps=[
         dict(say="Here is the method. Step 1: change mixed numbers and integers into fractions.", do=[T("1. Everything as a **fraction**", x=80, y=170)]),
@@ -160,7 +160,7 @@ VIDEOS["8.3"] = [
     ]),
     dict(kind="example", title="Check: 3", steps=[
         dict(say="8 thirds times 9 eighths. Cancel the 8s, and 9 with 3. The answer is 3. Estimate: about 3 times 1.", do=[B(f"{F(8, 3)} × {F(9, 8)} = 3", x=80, y=190, color=GREEN)]),
-        dict(say="5 eighths of 2 and 2 fifths kilograms: 5 eighths times 12 fifths is 3 halves. That is 1 and a half kilograms.", do=[MATH(f"{F(5, 8)} × {F(12, 5)} = {F(3, 2)} = {M(1, 1, 2)} kg", x=80, y=300)]),
+        dict(say="5 eighths of 2 and 2 fifths kilograms: 5 eighths times 12 fifths is 3 halves. That is 1 and a half kilograms.", do=[MATH(f"{F(5, 8)} × {F(12, 5)} = {F(3, 2)} = {M(1, 1, 2)} kg", x=80, y=330)]),
     ]),
     dict(kind="error", title="Spot the mistake", steps=[
         dict(say="Leo works out 2 thirds plus 3 quarters. Which line is wrong?", do=LINES("Leo", "2/3 + 3/4", ["cancel the 3s: 2/1 + 1/4 = 2¼"])),
@@ -201,7 +201,7 @@ VIDEOS["8.4"] = [
     ]),
     dict(kind="idea", title="Check: 8/5", steps=[
         dict(say="Multiply by 8 fifths, the reciprocal. 15 halves times 8 fifths is 12.", do=[B(f"× {F(8, 5)}", x=80, y=190, color=GREEN), MATH(f"{F(15, 2)} × {F(8, 5)} = 12", x=360, y=190, at=4)]),
-        dict(say="Why does it work? Dividing by a half asks: how many halves fit? 2 in every 1. So dividing by a half is the same as multiplying by 2.", do=[MATH(f"÷ {F(1, 2)} = × 2", x=80, y=300)]),
+        dict(say="Why does it work? Dividing by a half asks: how many halves fit? 2 in every 1. So dividing by a half is the same as multiplying by 2.", do=[MATH(f"÷ {F(1, 2)} = × 2", x=80, y=330)]),
     ]),
     dict(kind="method", title="How do I divide fractions?", steps=[
         dict(say="Here is the method. Step 1: change mixed numbers and integers to fractions.", do=[T("1. Everything as a **fraction**", x=80, y=170)]),
@@ -216,7 +216,7 @@ VIDEOS["8.4"] = [
     ]),
     dict(kind="example", title="Check: 2/15", steps=[
         dict(say="Dividing by 6 is multiplying by 1 sixth. 4 fifths times 1 sixth is 4 thirtieths, which is 2 fifteenths.", do=[B(f"{F(4, 30)} = {F(2, 15)}", x=80, y=190, color=GREEN)]),
-        dict(say="A 2 and a quarter litre jug fills glasses of 3 eighths of a litre. 9 quarters times 8 thirds is 6. So 6 glasses.", do=[MATH(f"{F(9, 4)} × {F(8, 3)} = 6 glasses", x=80, y=300)]),
+        dict(say="A 2 and a quarter litre jug fills glasses of 3 eighths of a litre. 9 quarters times 8 thirds is 6. So 6 glasses.", do=[MATH(f"{F(9, 4)} × {F(8, 3)} = 6 glasses", x=80, y=330)]),
     ]),
     dict(kind="error", title="Spot the mistake", steps=[
         dict(say="Ivy works out 2 thirds divided by 4 fifths. Which line is wrong?", do=LINES("Ivy", "2/3 ÷ 4/5", ["3/2 × 4/5 = 12/10 = 6/5"])),
@@ -273,7 +273,7 @@ VIDEOS["8.5"] = [
     ]),
     dict(kind="example", title="Check: 23.94", steps=[
         dict(say="4 times 6 is 24. Take away 0.01 times 6, which is 0.06. The answer is 23.94.", do=[B("24 − 0.06 = 23.94", x=80, y=190, color=GREEN)]),
-        dict(say="0.75 times 2.8 is 3 quarters of 2.8, which is 2.1. And 3 fifths times 17, plus 3 fifths times 3, is 3 fifths of 20, which is 12.", do=[MATH(f"{F(3, 4)} × 2.8 = 2.1 · {F(3, 5)} × 20 = 12", x=80, y=300)]),
+        dict(say="0.75 times 2.8 is 3 quarters of 2.8, which is 2.1. And 3 fifths times 17, plus 3 fifths times 3, is 3 fifths of 20, which is 12.", do=[MATH(f"{F(3, 4)} × 2.8 = 2.1 · {F(3, 5)} × 20 = 12", x=80, y=330)]),
     ]),
     dict(kind="error", title="Spot the mistake", steps=[
         dict(say="Owen works out 6 times 2.5, plus 4 times 2.5. Which line is wrong?", do=LINES("Owen", "6 × 2.5 + 4 × 2.5", ["= (6 × 4) × 2.5 = 60"])),

@@ -1,0 +1,239 @@
+1
+00:00:06,510 --> 00:00:09,100
+A laptop stores 512 gigabytes.
+
+2
+00:00:09,150 --> 00:00:13,420
+A grain of pollen is about 25 micrometres across.
+
+3
+00:00:13,470 --> 00:00:17,140
+A cruise ship weighs 100,000 tonnes.
+
+4
+00:00:17,190 --> 00:00:20,700
+What does micro mean: one millionth, or one million?
+
+5
+00:00:20,750 --> 00:00:23,940
+Pause the video and choose.
+
+6
+00:00:23,990 --> 00:00:25,720
+Micro means one millionth.
+
+7
+00:00:25,770 --> 00:00:29,080
+A micrometre is one millionth of a metre.
+
+8
+00:00:29,130 --> 00:00:32,870
+Remember: 1 kilometre is 1,000 metres.
+
+9
+00:00:32,920 --> 00:00:37,760
+1 metre is 100 centimetres, or 1,000 millimetres.
+
+10
+00:00:37,810 --> 00:00:40,910
+1 kilogram is 1,000 grams.
+
+11
+00:00:40,960 --> 00:00:44,400
+A prefix multiplies the unit by a power of 10.
+
+12
+00:00:44,450 --> 00:00:47,440
+Mega means a million, 10 to the power 6.
+
+13
+00:00:47,490 --> 00:00:49,660
+Kilo means a thousand.
+
+14
+00:00:49,710 --> 00:00:51,390
+Centi is one hundredth.
+
+15
+00:00:51,440 --> 00:00:53,200
+Milli is one thousandth.
+
+16
+00:00:53,250 --> 00:00:57,370
+Micro is one millionth, 10 to the power minus 6.
+
+17
+00:00:57,420 --> 00:00:58,140
+Your turn.
+
+18
+00:00:58,190 --> 00:01:00,060
+Giga is bigger than mega.
+
+19
+00:01:00,110 --> 00:01:03,750
+Is giga 10 to the power 9, or 10 to the power 6?
+
+20
+00:01:03,800 --> 00:01:07,220
+Pause the video and choose.
+
+21
+00:01:07,270 --> 00:01:11,480
+Giga is 10 to the power 9, a thousand million.
+
+22
+00:01:11,530 --> 00:01:16,200
+512 gigabytes is 512 times 10 to the 9 bytes.
+
+23
+00:01:16,250 --> 00:01:19,940
+Also: 1 tonne is 1,000 kilograms.
+
+24
+00:01:19,990 --> 00:01:22,130
+Big unit to small unit: multiply.
+
+25
+00:01:22,180 --> 00:01:24,730
+Small unit to big unit: divide.
+
+26
+00:01:24,780 --> 00:01:26,190
+Here is the method.
+
+27
+00:01:26,240 --> 00:01:29,970
+Step 1: write the prefix as a power of 10.
+
+28
+00:01:30,020 --> 00:01:34,380
+Step 2: convert to the base unit, like metres or grams.
+
+29
+00:01:34,430 --> 00:01:37,620
+Step 3: convert to the unit you want.
+
+30
+00:01:37,670 --> 00:01:41,820
+Step 4: check: a smaller unit means a bigger number.
+
+31
+00:01:41,870 --> 00:01:44,590
+A lorry carries 12.4 tonnes.
+
+32
+00:01:44,640 --> 00:01:51,660
+In kilograms, that is 12.4 times 1,000, which is 12,400 kilograms.
+
+33
+00:01:51,710 --> 00:01:54,530
+A bacterium is 3 micrometres long.
+
+34
+00:01:54,580 --> 00:02:00,880
+That is 3 times 10 to the minus 6 metres, which is 0.003 millimetres.
+
+35
+00:02:00,930 --> 00:02:01,620
+Your turn.
+
+36
+00:02:01,670 --> 00:02:03,900
+A hair is 80 micrometres thick.
+
+37
+00:02:03,950 --> 00:02:06,030
+How many millimetres is that?
+
+38
+00:02:06,080 --> 00:02:09,050
+Pause and work it out.
+
+39
+00:02:09,100 --> 00:02:12,870
+1,000 micrometres make 1 millimetre.
+
+40
+00:02:12,920 --> 00:02:17,670
+80 divided by 1,000 is 0.08 millimetres.
+
+41
+00:02:17,720 --> 00:02:21,120
+A 6 gigabyte film is 6,000 megabytes.
+
+42
+00:02:21,170 --> 00:02:26,520
+And 250 microlitres of medicine is 0.25 millilitres.
+
+43
+00:02:26,570 --> 00:02:29,470
+Max converts 350 milligrams to grams.
+
+44
+00:02:29,520 --> 00:02:31,610
+Which line is wrong?
+
+45
+00:02:31,660 --> 00:02:32,730
+Line 1 is wrong.
+
+46
+00:02:32,780 --> 00:02:37,290
+Grams are bigger than milligrams, so the number must get smaller.
+
+47
+00:02:37,340 --> 00:02:38,340
+Divide.
+
+48
+00:02:38,390 --> 00:02:43,230
+350 divided by 1,000 is 0.35 grams.
+
+49
+00:02:43,280 --> 00:02:49,850
+The tiny parts inside computer chips are measured in nanometres, which are billionths of a metre.
+
+50
+00:02:49,900 --> 00:02:52,860
+That is why so many fit on one chip.
+
+51
+00:02:52,910 --> 00:02:54,160
+One last question.
+
+52
+00:02:54,210 --> 00:02:56,690
+How many kilograms are in 2 tonnes?
+
+53
+00:02:56,740 --> 00:03:00,040
+Pause the video and answer.
+
+54
+00:03:00,090 --> 00:03:04,350
+2 times 1,000 is 2,000 kilograms.
+
+55
+00:03:04,400 --> 00:03:10,910
+To remember: giga is 10 to the 9, mega 10 to the 6, kilo 10 to the 3.
+
+56
+00:03:10,960 --> 00:03:16,460
+Milli is 10 to the minus 3, and micro is 10 to the minus 6.
+
+57
+00:03:16,510 --> 00:03:19,730
+1 tonne is 1,000 kilograms.
+
+58
+00:03:19,780 --> 00:03:21,420
+To a bigger unit, divide.
+
+59
+00:03:21,470 --> 00:03:23,870
+To a smaller unit, multiply.
+
+60
+00:03:23,920 --> 00:03:29,110
+Great work! Now practise lesson 7.3 on Camday.

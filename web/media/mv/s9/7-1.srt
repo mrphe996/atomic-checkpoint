@@ -1,0 +1,235 @@
+1
+00:00:07,440 --> 00:00:19,150
+A café sells one large pancake with a diameter of 30 centimetres for 8 dollars, or two small pancakes with diameters of 20 centimetres for 9 dollars.
+
+2
+00:00:19,200 --> 00:00:24,220
+Which gives more pancake: one 30 centimetre, or two 20 centimetre?
+
+3
+00:00:24,270 --> 00:00:27,690
+Pause the video and choose.
+
+4
+00:00:27,740 --> 00:00:30,650
+The one 30 centimetre pancake gives more.
+
+5
+00:00:30,700 --> 00:00:34,150
+Let's see why, with the area of a circle.
+
+6
+00:00:34,200 --> 00:00:37,350
+Remember: the diameter is twice the radius.
+
+7
+00:00:37,400 --> 00:00:41,540
+A diameter of 18 centimetres means a radius of 9.
+
+8
+00:00:41,590 --> 00:00:45,210
+The circumference is pi times the diameter, or 2 pi R.
+
+9
+00:00:45,260 --> 00:00:48,070
+Use the pi key on your calculator.
+
+10
+00:00:48,120 --> 00:00:51,060
+The area of a circle is pi R squared.
+
+11
+00:00:51,110 --> 00:00:51,730
+Your turn.
+
+12
+00:00:51,780 --> 00:00:55,180
+The area of a circle uses: pi R squared, or 2 pi R?
+
+13
+00:00:55,230 --> 00:00:58,410
+Pause the video and choose.
+
+14
+00:00:58,460 --> 00:00:59,350
+Pi R squared.
+
+15
+00:00:59,400 --> 00:01:01,930
+2 pi R is the circumference.
+
+16
+00:01:01,980 --> 00:01:04,420
+The big pancake has radius 15.
+
+17
+00:01:04,470 --> 00:01:07,810
+Its area is about 707 square centimetres.
+
+18
+00:01:07,860 --> 00:01:13,740
+Each small one has radius 10, so the two together have about 628.
+
+19
+00:01:13,790 --> 00:01:15,710
+To work backwards, rearrange.
+
+20
+00:01:15,760 --> 00:01:18,690
+From the area: R squared is A divided by pi.
+
+21
+00:01:18,740 --> 00:01:22,290
+From the circumference: D is C divided by pi.
+
+22
+00:01:22,340 --> 00:01:24,740
+For an exact answer, leave pi in.
+
+23
+00:01:24,790 --> 00:01:28,040
+A radius of 7 gives an area of 49 pi.
+
+24
+00:01:28,090 --> 00:01:29,380
+Here is the method.
+
+25
+00:01:29,430 --> 00:01:32,480
+Step 1: find the radius or diameter.
+
+26
+00:01:32,530 --> 00:01:36,700
+Step 2: choose the formula: circumference or area.
+
+27
+00:01:36,750 --> 00:01:40,750
+Step 3: work it out with the pi key, or leave pi in.
+
+28
+00:01:40,800 --> 00:01:43,720
+Step 4: round, and give the units.
+
+29
+00:01:43,770 --> 00:01:47,420
+A bike wheel has a diameter of 64 centimetres.
+
+30
+00:01:47,470 --> 00:01:53,500
+In one turn it travels pi times 64, which is about 201.1 centimetres.
+
+31
+00:01:53,550 --> 00:01:57,210
+A round rug has an area of 2.5 square metres.
+
+32
+00:01:57,260 --> 00:02:00,840
+R squared is 2.5 divided by pi, about 0.796.
+
+33
+00:02:00,890 --> 00:02:03,540
+So R is about 0.89 metres.
+
+34
+00:02:03,590 --> 00:02:04,220
+Your turn.
+
+35
+00:02:04,270 --> 00:02:05,740
+A circle has radius 5.
+
+36
+00:02:05,790 --> 00:02:08,010
+What is its area, in terms of pi?
+
+37
+00:02:08,060 --> 00:02:10,920
+Pause and work it out.
+
+38
+00:02:10,970 --> 00:02:14,920
+5 squared is 25, so the area is 25 pi.
+
+39
+00:02:14,970 --> 00:02:20,900
+A semicircle with diameter 10: the curve is half of 10 pi, about 15.7.
+
+40
+00:02:20,950 --> 00:02:23,120
+Add the straight edge, 10.
+
+41
+00:02:23,170 --> 00:02:27,090
+The perimeter is about 25.7 centimetres.
+
+42
+00:02:27,140 --> 00:02:29,680
+A circle has diameter 8 centimetres.
+
+43
+00:02:29,730 --> 00:02:31,050
+Kai finds the area.
+
+44
+00:02:31,100 --> 00:02:33,040
+Which line is wrong?
+
+45
+00:02:33,090 --> 00:02:34,200
+Line 1 is wrong.
+
+46
+00:02:34,250 --> 00:02:38,030
+The area formula uses the radius, which is 4.
+
+47
+00:02:38,080 --> 00:02:43,760
+Pi times 4 squared is 16 pi, about 50.3 square centimetres.
+
+48
+00:02:43,810 --> 00:02:47,440
+A bike computer counts how many times the wheel turns.
+
+49
+00:02:47,490 --> 00:02:52,840
+It multiplies by the circumference to work out how far you have ridden.
+
+50
+00:02:52,890 --> 00:02:54,130
+One last question.
+
+51
+00:02:54,180 --> 00:02:59,100
+Find the circumference of a circle with radius 3, to 1 decimal place.
+
+52
+00:02:59,150 --> 00:03:02,450
+Pause the video and answer.
+
+53
+00:03:02,500 --> 00:03:07,250
+2 times pi times 3 is 6 pi, which is about 18.8.
+
+54
+00:03:07,300 --> 00:03:11,280
+To remember: the circumference is pi D, or 2 pi R.
+
+55
+00:03:11,330 --> 00:03:12,930
+The area is pi R squared.
+
+56
+00:03:12,980 --> 00:03:14,470
+Use the radius.
+
+57
+00:03:14,520 --> 00:03:17,090
+Rearrange to work backwards.
+
+58
+00:03:17,140 --> 00:03:19,700
+For exact answers, leave pi in.
+
+59
+00:03:19,750 --> 00:03:24,950
+Great work! Now practise lesson 7.1 on Camday.

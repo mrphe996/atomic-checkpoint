@@ -1,0 +1,239 @@
+1
+00:00:06,430 --> 00:00:09,120
+A 5 metre ladder leans against a wall.
+
+2
+00:00:09,170 --> 00:00:11,790
+Its foot is 1.4 metres from the wall.
+
+3
+00:00:11,840 --> 00:00:15,440
+The wall and the ground make a right angle.
+
+4
+00:00:15,490 --> 00:00:18,360
+How high up the wall does the ladder reach?
+
+5
+00:00:18,410 --> 00:00:21,930
+Pause the video and work it out.
+
+6
+00:00:21,980 --> 00:00:26,340
+Height squared is 5 squared minus 1.4 squared.
+
+7
+00:00:26,390 --> 00:00:29,980
+That is 25 minus 1.96, which is 23.04.
+
+8
+00:00:30,030 --> 00:00:34,260
+The square root of 23.04 is 4.8 metres.
+
+9
+00:00:34,310 --> 00:00:36,970
+This uses Pythagoras' theorem.
+
+10
+00:00:37,020 --> 00:00:42,520
+Remember: 6 squared is 36, and the square root of 49 is 7.
+
+11
+00:00:42,570 --> 00:00:46,900
+In a right-angled triangle, the longest side is the hypotenuse, C.
+
+12
+00:00:46,950 --> 00:00:49,370
+Call the other sides A and B.
+
+13
+00:00:49,420 --> 00:00:54,930
+Pythagoras' theorem says: A squared plus B squared equals C squared.
+
+14
+00:00:54,980 --> 00:00:58,670
+Check with 3, 4 and 5: 9 plus 16 is 25.
+
+15
+00:00:58,720 --> 00:00:59,350
+Your turn.
+
+16
+00:00:59,400 --> 00:01:04,650
+Where is the hypotenuse: opposite the right angle, or is it the shortest side?
+
+17
+00:01:04,700 --> 00:01:07,880
+Pause the video and choose.
+
+18
+00:01:07,930 --> 00:01:10,890
+The hypotenuse is opposite the right angle.
+
+19
+00:01:10,940 --> 00:01:13,530
+It is always the longest side.
+
+20
+00:01:13,580 --> 00:01:19,370
+To find a shorter side, rearrange: A squared equals C squared minus B squared.
+
+21
+00:01:19,420 --> 00:01:20,710
+Here is the method.
+
+22
+00:01:20,760 --> 00:01:25,720
+Step 1: find the hypotenuse: the side opposite the right angle.
+
+23
+00:01:25,770 --> 00:01:28,810
+Step 2: square the sides you know.
+
+24
+00:01:28,860 --> 00:01:31,100
+Step 3: for the hypotenuse, add.
+
+25
+00:01:31,150 --> 00:01:33,740
+For a shorter side, subtract.
+
+26
+00:01:33,790 --> 00:01:39,210
+Step 4: take the square root, and check the hypotenuse is the longest.
+
+27
+00:01:39,260 --> 00:01:44,670
+A right-angled triangle has sides of 5 and 12 centimetres.
+
+28
+00:01:44,720 --> 00:01:46,460
+25 plus 144 is 169.
+
+29
+00:01:46,510 --> 00:01:50,860
+The square root of 169 is 13 centimetres.
+
+30
+00:01:50,910 --> 00:01:51,620
+Your turn.
+
+31
+00:01:51,670 --> 00:01:54,270
+The two shorter sides are 9 and 12.
+
+32
+00:01:54,320 --> 00:01:55,790
+Find the hypotenuse.
+
+33
+00:01:55,840 --> 00:01:58,860
+Pause and work it out.
+
+34
+00:01:58,910 --> 00:02:01,110
+81 plus 144 is 225.
+
+35
+00:02:01,160 --> 00:02:05,100
+The square root of 225 is 15.
+
+36
+00:02:05,150 --> 00:02:09,950
+The hypotenuse is 17 metres, and one side is 8 metres.
+
+37
+00:02:10,000 --> 00:02:12,640
+Subtract: 289 minus 64 is 225.
+
+38
+00:02:12,690 --> 00:02:15,790
+The square root is 15 metres.
+
+39
+00:02:15,840 --> 00:02:20,580
+The hypotenuse is 13 centimetres, and one side is 5 centimetres.
+
+40
+00:02:20,630 --> 00:02:22,520
+Lily finds the other side.
+
+41
+00:02:22,570 --> 00:02:24,560
+Which line is wrong?
+
+42
+00:02:24,610 --> 00:02:25,690
+Line 1 is wrong.
+
+43
+00:02:25,740 --> 00:02:27,730
+For a shorter side, subtract.
+
+44
+00:02:27,780 --> 00:02:32,640
+Her answer is longer than the hypotenuse, which is impossible.
+
+45
+00:02:32,690 --> 00:02:34,740
+169 minus 25 is 144.
+
+46
+00:02:34,790 --> 00:02:38,870
+The square root is 12 centimetres.
+
+47
+00:02:38,920 --> 00:02:40,920
+Builders use the 3 4 5 rule.
+
+48
+00:02:40,970 --> 00:02:50,400
+If a corner has sides of 3 metres and 4 metres, and the diagonal is exactly 5 metres, the corner is a perfect right angle.
+
+49
+00:02:50,450 --> 00:02:51,730
+One last question.
+
+50
+00:02:51,780 --> 00:02:55,360
+Is a triangle with sides 5, 6 and 8 right-angled?
+
+51
+00:02:55,410 --> 00:02:58,760
+Pause the video and choose.
+
+52
+00:02:58,810 --> 00:03:00,250
+25 plus 36 is 61.
+
+53
+00:03:00,300 --> 00:03:02,000
+But 8 squared is 64.
+
+54
+00:03:02,050 --> 00:03:06,580
+They are not equal, so it is not right-angled.
+
+55
+00:03:06,630 --> 00:03:12,780
+To remember: A squared plus B squared equals C squared, where C is the hypotenuse.
+
+56
+00:03:12,830 --> 00:03:14,440
+For the hypotenuse, add.
+
+57
+00:03:14,490 --> 00:03:17,000
+For a shorter side, subtract.
+
+58
+00:03:17,050 --> 00:03:19,950
+The hypotenuse is the longest side.
+
+59
+00:03:20,000 --> 00:03:25,590
+If A squared plus B squared equals C squared, the angle is 90 degrees.
+
+60
+00:03:25,640 --> 00:03:30,830
+Great work! Now practise lesson 5.5 on Camday.
