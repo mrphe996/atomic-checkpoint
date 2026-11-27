@@ -2786,5 +2786,31 @@
     10
    ]
   }
+ },
+ "c3u09": {
+  "title": "Camday Maths Stage 3 · Unit 9: More Addition and Subtraction",
+  "pages": 14,
+  "dir": "media/books/c3u09/",
+  "ext": "webp",
+  "pdf": "media/books/c3u09.pdf?v=1125f44045",
+  "v": "1125f44045",
+  "secs": {
+   "9.1": [
+    2,
+    5
+   ],
+   "9.2": [
+    6,
+    9
+   ],
+   "9.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
  }
 }
