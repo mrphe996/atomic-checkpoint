@@ -2322,5 +2322,27 @@
     11
    ]
   }
+ },
+ "c4u07": {
+  "title": "Camday Maths Stage 4 · Unit 7: Fractions",
+  "pages": 10,
+  "dir": "media/books/c4u07/",
+  "ext": "webp",
+  "pdf": "media/books/c4u07.pdf?v=0ed97dba86",
+  "v": "0ed97dba86",
+  "secs": {
+   "7.1": [
+    2,
+    5
+   ],
+   "7.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
