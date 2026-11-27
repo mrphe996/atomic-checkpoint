@@ -2278,5 +2278,27 @@
     10
    ]
   }
+ },
+ "c4u05": {
+  "title": "Camday Maths Stage 4 · Unit 5: Multiplication, Multiples and Factors",
+  "pages": 10,
+  "dir": "media/books/c4u05/",
+  "ext": "webp",
+  "pdf": "media/books/c4u05.pdf?v=317f761344",
+  "v": "317f761344",
+  "secs": {
+   "5.1": [
+    2,
+    5
+   ],
+   "5.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
