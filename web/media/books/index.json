@@ -1660,5 +1660,119 @@
     10
    ]
   }
+ },
+ "c6u13": {
+  "title": "Camday Maths Stage 6 · Unit 13: Angles",
+  "pages": 11,
+  "dir": "media/books/c6u13/",
+  "ext": "webp",
+  "pdf": "media/books/c6u13.pdf?v=1892d6395b",
+  "v": "1892d6395b",
+  "secs": {
+   "13.1": [
+    2,
+    6
+   ],
+   "13.2": [
+    7,
+    10
+   ],
+   "answers": [
+    11,
+    11
+   ]
+  }
+ },
+ "c6u14": {
+  "title": "Camday Maths Stage 6 · Unit 14: Multiplication and Division (2)",
+  "pages": 14,
+  "dir": "media/books/c6u14/",
+  "ext": "webp",
+  "pdf": "media/books/c6u14.pdf?v=411d9ffec8",
+  "v": "411d9ffec8",
+  "secs": {
+   "14.1": [
+    2,
+    5
+   ],
+   "14.2": [
+    6,
+    9
+   ],
+   "14.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
+ },
+ "c6u15": {
+  "title": "Camday Maths Stage 6 · Unit 15: Data",
+  "pages": 11,
+  "dir": "media/books/c6u15/",
+  "ext": "webp",
+  "pdf": "media/books/c6u15.pdf?v=687f37ac5a",
+  "v": "687f37ac5a",
+  "secs": {
+   "15.1": [
+    2,
+    6
+   ],
+   "15.2": [
+    7,
+    10
+   ],
+   "answers": [
+    11,
+    11
+   ]
+  }
+ },
+ "c6u16": {
+  "title": "Camday Maths Stage 6 · Unit 16: The Laws of Arithmetic",
+  "pages": 6,
+  "dir": "media/books/c6u16/",
+  "ext": "webp",
+  "pdf": "media/books/c6u16.pdf?v=54fc6f2c94",
+  "v": "54fc6f2c94",
+  "secs": {
+   "16.1": [
+    2,
+    5
+   ],
+   "answers": [
+    6,
+    6
+   ]
+  }
+ },
+ "c6u17": {
+  "title": "Camday Maths Stage 6 · Unit 17: Transformations",
+  "pages": 15,
+  "dir": "media/books/c6u17/",
+  "ext": "webp",
+  "pdf": "media/books/c6u17.pdf?v=ed34347ad9",
+  "v": "ed34347ad9",
+  "secs": {
+   "17.1": [
+    2,
+    5
+   ],
+   "17.2": [
+    6,
+    9
+   ],
+   "17.3": [
+    10,
+    14
+   ],
+   "answers": [
+    15,
+    15
+   ]
+  }
  }
 }

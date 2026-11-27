@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 """Cambridge Primary Mathematics Stage 6 – v4 lessons (complete self-study lessons)."""
 NOTES = {}
-for _m in ("s6_u01", "s6_u01_book", "s6_u02", "s6_u02_book", "s6_u03", "s6_u03_book", "s6_u04", "s6_u04_book", "s6_u05", "s6_u05_book", "s6_u06", "s6_u06_book", "s6_u07", "s6_u07_book", "s6_u08", "s6_u08_book", "s6_u09", "s6_u09_book", "s6_u10", "s6_u10_book", "s6_u11", "s6_u11_book", "s6_u12", "s6_u12_book"):
+for _m in ("s6_u01", "s6_u01_book", "s6_u02", "s6_u02_book", "s6_u03", "s6_u03_book", "s6_u04", "s6_u04_book", "s6_u05", "s6_u05_book", "s6_u06", "s6_u06_book", "s6_u07", "s6_u07_book", "s6_u08", "s6_u08_book", "s6_u09", "s6_u09_book", "s6_u10", "s6_u10_book", "s6_u11", "s6_u11_book", "s6_u12", "s6_u12_book", "s6_u13", "s6_u13_book", "s6_u14", "s6_u14_book", "s6_u15", "s6_u15_book", "s6_u16", "s6_u16_book", "s6_u17", "s6_u17_book"):
     NOTES.update(__import__(f"maths_notes_v4.{_m}", fromlist=["NOTES"]).NOTES)
