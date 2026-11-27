@@ -2502,5 +2502,31 @@
     10
    ]
   }
+ },
+ "c4u15": {
+  "title": "Camday Maths Stage 4 · Unit 15: Special Numbers",
+  "pages": 14,
+  "dir": "media/books/c4u15/",
+  "ext": "webp",
+  "pdf": "media/books/c4u15.pdf?v=dce40e0933",
+  "v": "dce40e0933",
+  "secs": {
+   "15.1": [
+    2,
+    5
+   ],
+   "15.2": [
+    6,
+    9
+   ],
+   "15.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
  }
 }
