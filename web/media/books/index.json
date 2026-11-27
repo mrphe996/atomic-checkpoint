@@ -2742,5 +2742,27 @@
     10
    ]
   }
+ },
+ "c3u07": {
+  "title": "Camday Maths Stage 3 · Unit 7: Statistics: Tally Charts and Frequency Tables",
+  "pages": 10,
+  "dir": "media/books/c3u07/",
+  "ext": "webp",
+  "pdf": "media/books/c3u07.pdf?v=dd5d55b700",
+  "v": "dd5d55b700",
+  "secs": {
+   "7.1": [
+    2,
+    5
+   ],
+   "7.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
