@@ -1,0 +1,371 @@
+1
+00:00:07,120 --> 00:00:09,280
+Some cities are built on a grid.
+
+2
+00:00:09,330 --> 00:00:15,260
+Every house on Avenue 3 has an x coordinate of 3, whatever its y coordinate is.
+
+3
+00:00:15,310 --> 00:00:17,410
+Here are 3 houses: 3, 1.
+
+4
+00:00:17,460 --> 00:00:18,210
+And 3, 4.
+
+5
+00:00:18,260 --> 00:00:20,380
+And 3, negative 2.
+
+6
+00:00:20,430 --> 00:00:25,570
+What kind of line do these 3 points make: vertical, horizontal, or sloping?
+
+7
+00:00:25,620 --> 00:00:28,840
+Pause the video and decide.
+
+8
+00:00:28,890 --> 00:00:29,970
+Plot the points.
+
+9
+00:00:30,020 --> 00:00:33,700
+They are all 3 across, so they sit one above another.
+
+10
+00:00:33,750 --> 00:00:36,080
+They make a vertical line.
+
+11
+00:00:36,130 --> 00:00:37,560
+Remember: x is across.
+
+12
+00:00:37,610 --> 00:00:39,310
+Negative x is to the left.
+
+13
+00:00:39,360 --> 00:00:40,110
+And y is up.
+
+14
+00:00:40,160 --> 00:00:41,940
+Negative y is down.
+
+15
+00:00:41,990 --> 00:00:46,350
+The point negative 2, 3 is 2 to the left, and 3 up.
+
+16
+00:00:46,400 --> 00:00:50,260
+Every point on a vertical line has the same x coordinate.
+
+17
+00:00:50,310 --> 00:00:52,660
+So we name the line by that number.
+
+18
+00:00:52,710 --> 00:00:55,130
+This is the line x equals 3.
+
+19
+00:00:55,180 --> 00:00:56,960
+Now think about the y axis.
+
+20
+00:00:57,010 --> 00:00:58,720
+It is a vertical line too.
+
+21
+00:00:58,770 --> 00:01:02,640
+Is the y axis the line x equals 0, or the line y equals 0?
+
+22
+00:01:02,690 --> 00:01:05,860
+Pause the video and decide.
+
+23
+00:01:05,910 --> 00:01:08,520
+Every point on the y axis is 0 across.
+
+24
+00:01:08,570 --> 00:01:11,660
+So the y axis is the line x equals 0.
+
+25
+00:01:11,710 --> 00:01:15,640
+Every point on a horizontal line has the same y coordinate.
+
+26
+00:01:15,690 --> 00:01:19,030
+These points all have y equals negative 2.
+
+27
+00:01:19,080 --> 00:01:21,820
+So this is the line y equals negative 2.
+
+28
+00:01:21,870 --> 00:01:25,020
+And the x axis is the line y equals 0.
+
+29
+00:01:25,070 --> 00:01:25,770
+Be careful.
+
+30
+00:01:25,820 --> 00:01:28,400
+The line x equals a number is vertical.
+
+31
+00:01:28,450 --> 00:01:31,440
+It crosses the x axis at that number.
+
+32
+00:01:31,490 --> 00:01:32,780
+Here is the method.
+
+33
+00:01:32,830 --> 00:01:34,690
+Step 1: look at the points.
+
+34
+00:01:34,740 --> 00:01:37,500
+Which coordinate stays the same?
+
+35
+00:01:37,550 --> 00:01:41,730
+Step 2: the same x means a vertical line, x equals that value.
+
+36
+00:01:41,780 --> 00:01:46,100
+The same y means a horizontal line, y equals that value.
+
+37
+00:01:46,150 --> 00:01:52,710
+Step 3: to draw x equals a, find a on the x axis, and draw straight up and down through it.
+
+38
+00:01:52,760 --> 00:01:57,810
+Step 4: the lines x equals a and y equals b cross at the point a, b.
+
+39
+00:01:57,860 --> 00:02:02,750
+A line passes through negative 4, 6, and negative 4, negative 2.
+
+40
+00:02:02,800 --> 00:02:04,920
+What is its equation?
+
+41
+00:02:04,970 --> 00:02:07,850
+The x coordinate is negative 4 both times.
+
+42
+00:02:07,900 --> 00:02:10,150
+So it is a vertical line.
+
+43
+00:02:10,200 --> 00:02:13,300
+Its equation is x equals negative 4.
+
+44
+00:02:13,350 --> 00:02:18,220
+Where do the lines x equals 4 and y equals negative 1 cross?
+
+45
+00:02:18,270 --> 00:02:21,480
+On the first line, every point has x equals 4.
+
+46
+00:02:21,530 --> 00:02:25,100
+On the second, every point has y equals negative 1.
+
+47
+00:02:25,150 --> 00:02:27,630
+The crossing point has both.
+
+48
+00:02:27,680 --> 00:02:30,650
+So they cross at 4, negative 1.
+
+49
+00:02:30,700 --> 00:02:31,340
+Your turn.
+
+50
+00:02:31,390 --> 00:02:35,470
+Where do the lines x equals negative 1 and y equals 6 cross?
+
+51
+00:02:35,520 --> 00:02:38,730
+Pause the video and try it.
+
+52
+00:02:38,780 --> 00:02:42,930
+The point must have x equals negative 1, and y equals 6.
+
+53
+00:02:42,980 --> 00:02:43,970
+x comes first.
+
+54
+00:02:44,020 --> 00:02:46,620
+They cross at negative 1, 6.
+
+55
+00:02:46,670 --> 00:02:52,310
+The lines x equals 2, x equals 7, y equals 1 and y equals 4 make a rectangle.
+
+56
+00:02:52,360 --> 00:02:53,900
+Find its area.
+
+57
+00:02:53,950 --> 00:02:56,730
+The width is 7 minus 2, which is 5.
+
+58
+00:02:56,780 --> 00:03:00,190
+The height is 4 minus 1, which is 3.
+
+59
+00:03:00,240 --> 00:03:04,630
+The area is 5 times 3, which is 15 square units.
+
+60
+00:03:04,680 --> 00:03:09,250
+Which of these points are on the line y equals negative 3?
+
+61
+00:03:09,300 --> 00:03:10,360
+Negative 3, 2.
+
+62
+00:03:10,410 --> 00:03:11,880
+Then 5, negative 3.
+
+63
+00:03:11,930 --> 00:03:13,940
+Then 0, negative 3.
+
+64
+00:03:13,990 --> 00:03:16,460
+The y coordinate must be negative 3.
+
+65
+00:03:16,510 --> 00:03:20,180
+In the first point, y is 2, so it is not on the line.
+
+66
+00:03:20,230 --> 00:03:23,180
+The other 2 points are on the line.
+
+67
+00:03:23,230 --> 00:03:24,920
+Draw the line x equals 2.
+
+68
+00:03:24,970 --> 00:03:26,460
+Here is Ivy's working.
+
+69
+00:03:26,510 --> 00:03:28,960
+Which line goes wrong first?
+
+70
+00:03:29,010 --> 00:03:30,160
+Line 1 is wrong.
+
+71
+00:03:30,210 --> 00:03:33,250
+x equals 2 means every point is 2 across.
+
+72
+00:03:33,300 --> 00:03:35,600
+So find 2 on the x axis.
+
+73
+00:03:35,650 --> 00:03:38,230
+Then draw a vertical line through it.
+
+74
+00:03:38,280 --> 00:03:41,610
+Ivy drew the line y equals 2 by mistake.
+
+75
+00:03:41,660 --> 00:03:44,410
+Much of Manhattan, in New York, is a grid.
+
+76
+00:03:44,460 --> 00:03:47,930
+Avenues run one way, and numbered streets cross them.
+
+77
+00:03:47,980 --> 00:03:51,210
+An address is like a pair of coordinates.
+
+78
+00:03:51,260 --> 00:03:55,200
+On a globe, the equator is the line of latitude 0 degrees.
+
+79
+00:03:55,250 --> 00:03:57,880
+It is like the line y equals 0.
+
+80
+00:03:57,930 --> 00:04:00,980
+And on a chessboard, each column has a letter.
+
+81
+00:04:01,030 --> 00:04:04,840
+All the squares in column e make a vertical line.
+
+82
+00:04:04,890 --> 00:04:06,100
+One last question.
+
+83
+00:04:06,150 --> 00:04:09,410
+Is the line y equals 5 horizontal, or vertical?
+
+84
+00:04:09,460 --> 00:04:12,700
+Pause the video and answer.
+
+85
+00:04:12,750 --> 00:04:13,890
+It is horizontal.
+
+86
+00:04:13,940 --> 00:04:18,220
+Every point is 5 up, so the line runs straight across.
+
+87
+00:04:18,270 --> 00:04:21,160
+To remember: x equals a is a vertical line.
+
+88
+00:04:21,210 --> 00:04:23,830
+Every point has x coordinate a.
+
+89
+00:04:23,880 --> 00:04:25,980
+y equals b is a horizontal line.
+
+90
+00:04:26,030 --> 00:04:28,610
+Every point has y coordinate b.
+
+91
+00:04:28,660 --> 00:04:32,970
+The y axis is x equals 0, and the x axis is y equals 0.
+
+92
+00:04:33,020 --> 00:04:37,330
+The lines x equals a and y equals b cross at the point a, b.
+
+93
+00:04:37,380 --> 00:04:42,750
+Great work! Now practise lesson 11.3 on Camday.

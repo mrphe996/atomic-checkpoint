@@ -1,0 +1,355 @@
+1
+00:00:07,320 --> 00:00:09,510
+Zane rolls a dice 60 times.
+
+2
+00:00:09,560 --> 00:00:11,970
+He gets a six 18 times.
+
+3
+00:00:12,020 --> 00:00:16,400
+How many sixes would you expect from a fair dice, in 60 rolls?
+
+4
+00:00:16,450 --> 00:00:20,080
+Pause the video and work it out.
+
+5
+00:00:20,130 --> 00:00:24,260
+On a fair dice, the probability of a six is 1 sixth.
+
+6
+00:00:24,310 --> 00:00:25,870
+1 sixth of 60 is 10.
+
+7
+00:00:25,920 --> 00:00:28,990
+You would expect about 10 sixes.
+
+8
+00:00:29,040 --> 00:00:29,950
+Zane got 18.
+
+9
+00:00:30,000 --> 00:00:32,100
+That is a lot more than 10.
+
+10
+00:00:32,150 --> 00:00:34,960
+Perhaps his dice is not fair.
+
+11
+00:00:35,010 --> 00:00:40,680
+Remember: to find a fraction of an amount, divide by the denominator.
+
+12
+00:00:40,730 --> 00:00:45,210
+1 fifth of 150 is 150 divided by 5, which is 30.
+
+13
+00:00:45,260 --> 00:00:50,700
+Sometimes we cannot work out a probability by counting equally likely outcomes.
+
+14
+00:00:50,750 --> 00:00:52,440
+Then we do an experiment.
+
+15
+00:00:52,490 --> 00:00:54,800
+Each go is called a trial.
+
+16
+00:00:54,850 --> 00:01:02,120
+The experimental probability is the number of times the event happens, divided by the number of trials.
+
+17
+00:01:02,170 --> 00:01:05,810
+For Zane's dice: 18 sixes in 60 rolls.
+
+18
+00:01:05,860 --> 00:01:08,700
+18 divided by 60 is 0.3.
+
+19
+00:01:08,750 --> 00:01:09,430
+Your turn.
+
+20
+00:01:09,480 --> 00:01:12,830
+A spinner lands on green 12 times in 40 spins.
+
+21
+00:01:12,880 --> 00:01:17,250
+What is the experimental probability of green, as a decimal?
+
+22
+00:01:17,300 --> 00:01:20,640
+Pause the video and try it.
+
+23
+00:01:20,690 --> 00:01:22,800
+12 divided by 40 is 0.3.
+
+24
+00:01:22,850 --> 00:01:27,400
+The experimental probability of green is 0.3.
+
+25
+00:01:27,450 --> 00:01:33,090
+The expected number is the probability, multiplied by the number of trials.
+
+26
+00:01:33,140 --> 00:01:34,830
+Results vary by chance.
+
+27
+00:01:34,880 --> 00:01:41,000
+From a fair dice, 8 sixes or 12 sixes in 60 rolls would not be a surprise.
+
+28
+00:01:41,050 --> 00:01:42,640
+But 18 is far from 10.
+
+29
+00:01:42,690 --> 00:01:48,890
+Over many trials, a result far from the expected number suggests the dice is biased.
+
+30
+00:01:48,940 --> 00:01:51,070
+Biased means not fair.
+
+31
+00:01:51,120 --> 00:01:51,830
+Your turn.
+
+32
+00:01:51,880 --> 00:01:54,110
+The probability of red is 0.2.
+
+33
+00:01:54,160 --> 00:01:57,540
+How many reds would you expect in 150 trials?
+
+34
+00:01:57,590 --> 00:02:00,990
+Pause the video and try it.
+
+35
+00:02:01,040 --> 00:02:03,030
+0.2 times 150 is 30.
+
+36
+00:02:03,080 --> 00:02:06,750
+You would expect about 30 reds.
+
+37
+00:02:06,800 --> 00:02:10,100
+With only a few trials, chance has a big effect.
+
+38
+00:02:10,150 --> 00:02:14,420
+Toss a coin 4 times, and you might easily get 3 heads.
+
+39
+00:02:14,470 --> 00:02:20,380
+With many trials, the experimental probability settles close to the true probability.
+
+40
+00:02:20,430 --> 00:02:24,090
+So more trials give a more reliable estimate.
+
+41
+00:02:24,140 --> 00:02:25,410
+Here is the method.
+
+42
+00:02:25,460 --> 00:02:29,980
+Step 1: do many trials, and record the results in a table.
+
+43
+00:02:30,030 --> 00:02:35,890
+Step 2: divide the number of times the event happens by the number of trials.
+
+44
+00:02:35,940 --> 00:02:41,290
+Step 3: to predict, multiply the probability by the number of trials.
+
+45
+00:02:41,340 --> 00:02:45,510
+Step 4: compare the results with what you expected.
+
+46
+00:02:45,560 --> 00:02:50,080
+A coin is tossed 120 times, and it lands on heads 66 times.
+
+47
+00:02:50,130 --> 00:02:53,960
+Find the experimental probability of heads.
+
+48
+00:02:54,010 --> 00:02:56,410
+66 divided by 120 is 0.55.
+
+49
+00:02:56,460 --> 00:03:00,440
+That is the experimental probability.
+
+50
+00:03:00,490 --> 00:03:05,920
+For a fair coin, you would expect 0.5 times 120, which is 60 heads.
+
+51
+00:03:05,970 --> 00:03:08,200
+66 is a little more than 60.
+
+52
+00:03:08,250 --> 00:03:12,430
+That is not enough to say the coin is biased.
+
+53
+00:03:12,480 --> 00:03:14,640
+A factory tests its phones.
+
+54
+00:03:14,690 --> 00:03:17,020
+4 in every 250 fail the test.
+
+55
+00:03:17,070 --> 00:03:22,150
+How many would you expect to fail, out of 10,000 phones?
+
+56
+00:03:22,200 --> 00:03:28,600
+The experimental probability is 4 divided by 250, which is 0.016.
+
+57
+00:03:28,650 --> 00:03:31,490
+0.016 times 10,000 is 160.
+
+58
+00:03:31,540 --> 00:03:36,690
+You would expect about 160 phones to fail.
+
+59
+00:03:36,740 --> 00:03:38,720
+2 groups test a spinner.
+
+60
+00:03:38,770 --> 00:03:41,500
+Group A gets 14 reds in 40 spins.
+
+61
+00:03:41,550 --> 00:03:44,370
+Group B gets 78 reds in 200 spins.
+
+62
+00:03:44,420 --> 00:03:47,040
+Which estimate is better?
+
+63
+00:03:47,090 --> 00:03:49,150
+Group A's estimate is 0.35.
+
+64
+00:03:49,200 --> 00:03:50,560
+Group B's is 0.39.
+
+65
+00:03:50,610 --> 00:03:55,650
+Group B did more trials, so its estimate is more reliable.
+
+66
+00:03:55,700 --> 00:03:58,080
+Better still, combine them.
+
+67
+00:03:58,130 --> 00:04:02,050
+92 reds in 240 spins gives about 0.38.
+
+68
+00:04:02,100 --> 00:04:06,410
+A coin is tossed 20 times, and it lands on heads 13 times.
+
+69
+00:04:06,460 --> 00:04:08,130
+Here is Remi's working.
+
+70
+00:04:08,180 --> 00:04:10,780
+Which line goes wrong first?
+
+71
+00:04:10,830 --> 00:04:11,980
+Line 2 is wrong.
+
+72
+00:04:12,030 --> 00:04:16,310
+Results vary by chance, especially with only a few trials.
+
+73
+00:04:16,360 --> 00:04:20,890
+13 heads in 20 tosses is quite normal for a fair coin.
+
+74
+00:04:20,940 --> 00:04:25,200
+To decide if a coin is biased, you need many more trials.
+
+75
+00:04:25,250 --> 00:04:27,850
+About 1 person in 10 is left-handed.
+
+76
+00:04:27,900 --> 00:04:34,150
+That probability comes from counting people, not from equally likely outcomes.
+
+77
+00:04:34,200 --> 00:04:40,660
+So in a school of 900 students, you would expect about 90 to be left-handed.
+
+78
+00:04:40,710 --> 00:04:43,340
+Weather forecasts work in the same way.
+
+79
+00:04:43,390 --> 00:04:50,650
+Forecasters look at thousands of past days with similar conditions, and count how often it rained.
+
+80
+00:04:50,700 --> 00:04:52,030
+One last question.
+
+81
+00:04:52,080 --> 00:04:57,850
+Which estimate is more reliable: one from 500 trials, or one from 20 trials?
+
+82
+00:04:57,900 --> 00:05:01,320
+Pause the video and decide.
+
+83
+00:05:01,370 --> 00:05:03,580
+The estimate from 500 trials.
+
+84
+00:05:03,630 --> 00:05:07,320
+With more trials, chance has less effect.
+
+85
+00:05:07,370 --> 00:05:15,530
+To remember: experimental probability is the number of times the event happens, divided by the number of trials.
+
+86
+00:05:15,580 --> 00:05:20,630
+The expected number is the probability times the number of trials.
+
+87
+00:05:20,680 --> 00:05:24,080
+More trials give a more reliable estimate.
+
+88
+00:05:24,130 --> 00:05:29,290
+Over many trials, results far from the expected number suggest bias.
+
+89
+00:05:29,340 --> 00:05:34,750
+Great work! Now practise lesson 13.3 on Camday.

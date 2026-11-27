@@ -1,0 +1,327 @@
+1
+00:00:07,400 --> 00:00:12,970
+A bag holds 5 red balls, 3 green balls and 2 yellow balls, all the same size.
+
+2
+00:00:13,020 --> 00:00:15,490
+You take 1 without looking.
+
+3
+00:00:15,540 --> 00:00:18,610
+What is the probability that the ball is green?
+
+4
+00:00:18,660 --> 00:00:22,140
+Pause the video and work it out.
+
+5
+00:00:22,190 --> 00:00:26,490
+There are 10 balls altogether, and 3 of them are green.
+
+6
+00:00:26,540 --> 00:00:31,240
+So the probability of green is 3 out of 10: 3 tenths.
+
+7
+00:00:31,290 --> 00:00:33,530
+The other 7 balls are not green.
+
+8
+00:00:33,580 --> 00:00:37,240
+So the probability of not green is 7 tenths.
+
+9
+00:00:37,290 --> 00:00:41,450
+Remember: 6 out of 15, as a fraction, is 6 over 15.
+
+10
+00:00:41,500 --> 00:00:44,310
+That simplifies to 2 fifths.
+
+11
+00:00:44,360 --> 00:00:47,010
+The outcomes are the possible results.
+
+12
+00:00:47,060 --> 00:00:48,640
+Each ball is 1 outcome.
+
+13
+00:00:48,690 --> 00:00:53,810
+They are all equally likely, because the balls are the same size.
+
+14
+00:00:53,860 --> 00:01:03,710
+When outcomes are equally likely, the probability of an event is the number of outcomes you want, divided by the total number of outcomes.
+
+15
+00:01:03,760 --> 00:01:07,410
+For red: 5 out of 10, which is one half.
+
+16
+00:01:07,460 --> 00:01:08,100
+Your turn.
+
+17
+00:01:08,150 --> 00:01:09,560
+You roll a fair dice.
+
+18
+00:01:09,610 --> 00:01:11,720
+What is the probability of a 6?
+
+19
+00:01:11,770 --> 00:01:15,000
+Pause the video and try it.
+
+20
+00:01:15,050 --> 00:01:19,830
+A dice has 6 equally likely outcomes, and only 1 of them is a 6.
+
+21
+00:01:19,880 --> 00:01:22,420
+The probability is 1 sixth.
+
+22
+00:01:22,470 --> 00:01:27,290
+Outcomes are mutually exclusive if they cannot happen at the same time.
+
+23
+00:01:27,340 --> 00:01:30,580
+A ball cannot be red and green together.
+
+24
+00:01:30,630 --> 00:01:36,640
+Add the probabilities of all the outcomes: 5 tenths, plus 3 tenths, plus 2 tenths.
+
+25
+00:01:36,690 --> 00:01:38,300
+The total is 1.
+
+26
+00:01:38,350 --> 00:01:39,720
+This always happens.
+
+27
+00:01:39,770 --> 00:01:46,970
+So the probability of something not happening is 1, minus the probability that it does happen.
+
+28
+00:01:47,020 --> 00:01:47,710
+Your turn.
+
+29
+00:01:47,760 --> 00:01:50,820
+The probability of winning a game is 0.07.
+
+30
+00:01:50,870 --> 00:01:53,700
+What is the probability of not winning?
+
+31
+00:01:53,750 --> 00:01:57,100
+Pause the video and try it.
+
+32
+00:01:57,150 --> 00:01:59,160
+1 minus 0.07 is 0.93.
+
+33
+00:01:59,210 --> 00:02:03,530
+The probability of not winning is 0.93.
+
+34
+00:02:03,580 --> 00:02:04,880
+Here is the method.
+
+35
+00:02:04,930 --> 00:02:09,760
+Step 1: list all the equally likely outcomes, and count them.
+
+36
+00:02:09,810 --> 00:02:12,960
+Step 2: count the outcomes you want.
+
+37
+00:02:13,010 --> 00:02:16,660
+Step 3: divide, and simplify the fraction.
+
+38
+00:02:16,710 --> 00:02:20,400
+Step 4: for the word not, subtract from 1.
+
+39
+00:02:20,450 --> 00:02:25,230
+A fair spinner has 10 equal sections: 3 red, 5 white and 2 black.
+
+40
+00:02:25,280 --> 00:02:30,530
+Find the probability of white, and the probability of not black.
+
+41
+00:02:30,580 --> 00:02:34,230
+White is 5 out of 10, which is one half.
+
+42
+00:02:34,280 --> 00:02:35,920
+Black is 2 out of 10.
+
+43
+00:02:35,970 --> 00:02:41,710
+So not black is 1 minus 2 tenths, which is 8 tenths, or 4 fifths.
+
+44
+00:02:41,760 --> 00:02:45,000
+A bag has only red, blue and green counters.
+
+45
+00:02:45,050 --> 00:02:47,320
+The probability of red is 0.45.
+
+46
+00:02:47,370 --> 00:02:49,640
+The probability of blue is 0.3.
+
+47
+00:02:49,690 --> 00:02:52,430
+Find the probability of green.
+
+48
+00:02:52,480 --> 00:02:58,380
+The 3 colours are mutually exclusive, so their probabilities add up to 1.
+
+49
+00:02:58,430 --> 00:03:01,420
+1 minus 0.45 minus 0.3 is 0.25.
+
+50
+00:03:01,470 --> 00:03:05,210
+The probability of green is 0.25.
+
+51
+00:03:05,260 --> 00:03:08,930
+A letter is picked at random from the word MATHEMATICS.
+
+52
+00:03:08,980 --> 00:03:11,990
+Find the probability that it is an M.
+
+53
+00:03:12,040 --> 00:03:15,570
+The word has 11 letters, and 2 of them are M.
+
+54
+00:03:15,620 --> 00:03:18,670
+So the probability is 2 over 11.
+
+55
+00:03:18,720 --> 00:03:19,810
+You roll a dice.
+
+56
+00:03:19,860 --> 00:03:24,340
+Are the events odd, and less than 4, mutually exclusive?
+
+57
+00:03:24,390 --> 00:03:26,930
+The odd numbers are 1, 3 and 5.
+
+58
+00:03:26,980 --> 00:03:30,730
+The numbers less than 4 are 1, 2 and 3.
+
+59
+00:03:30,780 --> 00:03:32,550
+1 and 3 are in both lists.
+
+60
+00:03:32,600 --> 00:03:35,000
+So both events can happen together.
+
+61
+00:03:35,050 --> 00:03:37,790
+They are not mutually exclusive.
+
+62
+00:03:37,840 --> 00:03:40,620
+A box has 3 white pens and 9 black pens.
+
+63
+00:03:40,670 --> 00:03:43,720
+Find the probability of picking a white pen.
+
+64
+00:03:43,770 --> 00:03:45,280
+Here is Nia's working.
+
+65
+00:03:45,330 --> 00:03:47,800
+Which line goes wrong first?
+
+66
+00:03:47,850 --> 00:03:49,110
+Line 2 is wrong.
+
+67
+00:03:49,160 --> 00:03:53,650
+The total is all the pens: 3 plus 9 is 12, not 9.
+
+68
+00:03:53,700 --> 00:03:58,820
+The probability of white is 3 over 12, which is 1 quarter.
+
+69
+00:03:58,870 --> 00:04:03,840
+A standard pack has 52 playing cards, and 13 of them are hearts.
+
+70
+00:04:03,890 --> 00:04:10,040
+So the probability of picking a heart is 13 over 52, which is 1 quarter.
+
+71
+00:04:10,090 --> 00:04:14,130
+In a raffle, 200 tickets are sold, and you buy 5.
+
+72
+00:04:14,180 --> 00:04:20,520
+Your probability of winning the prize is 5 over 200, which is 1 in 40.
+
+73
+00:04:20,570 --> 00:04:21,780
+One last question.
+
+74
+00:04:21,830 --> 00:04:27,090
+On 1 roll of a dice, are the events odd, and a 2, mutually exclusive or not?
+
+75
+00:04:27,140 --> 00:04:30,380
+Pause the video and decide.
+
+76
+00:04:30,430 --> 00:04:32,360
+They are mutually exclusive.
+
+77
+00:04:32,410 --> 00:04:38,490
+2 is an even number, so you cannot roll an odd number and a 2 at the same time.
+
+78
+00:04:38,540 --> 00:04:45,930
+To remember: for equally likely outcomes, probability is the outcomes you want, divided by the total.
+
+79
+00:04:45,980 --> 00:04:50,220
+Mutually exclusive outcomes cannot happen together.
+
+80
+00:04:50,270 --> 00:04:54,240
+The probabilities of all the outcomes add up to 1.
+
+81
+00:04:54,290 --> 00:04:58,870
+The probability of not A is 1 minus the probability of A.
+
+82
+00:04:58,920 --> 00:05:04,350
+Great work! Now practise lesson 13.2 on Camday.

@@ -1,0 +1,467 @@
+1
+00:00:07,280 --> 00:00:10,420
+Lena puts 6 dollars in a money box in week 1.
+
+2
+00:00:10,470 --> 00:00:13,950
+Every week after that, she adds 5 dollars.
+
+3
+00:00:14,000 --> 00:00:16,950
+How much is in the box at the end of week 4?
+
+4
+00:00:17,000 --> 00:00:20,530
+Pause the video and work it out.
+
+5
+00:00:20,580 --> 00:00:22,420
+Week 1: 6 dollars.
+
+6
+00:00:22,470 --> 00:00:24,840
+Week 2: 6 plus 5 is 11.
+
+7
+00:00:24,890 --> 00:00:27,360
+Week 3: 11 plus 5 is 16.
+
+8
+00:00:27,410 --> 00:00:30,430
+Week 4: 16 plus 5 is 21.
+
+9
+00:00:30,480 --> 00:00:34,920
+At the end of week 4, there are 21 dollars in the box.
+
+10
+00:00:34,970 --> 00:00:38,910
+Remember: every operation has an inverse, which undoes it.
+
+11
+00:00:38,960 --> 00:00:41,730
+Add and subtract undo each other.
+
+12
+00:00:41,780 --> 00:00:45,100
+Multiply and divide undo each other too.
+
+13
+00:00:45,150 --> 00:00:48,410
+Lena's amounts make a list: 6, 11, 16, 21.
+
+14
+00:00:48,460 --> 00:00:53,210
+A list of numbers in a set order is called a sequence.
+
+15
+00:00:53,260 --> 00:00:55,510
+Each number in the list is a term.
+
+16
+00:00:55,560 --> 00:00:59,850
+Every term has a position: first, second, third, fourth.
+
+17
+00:00:59,900 --> 00:01:02,820
+The position tells you where the term is.
+
+18
+00:01:02,870 --> 00:01:05,060
+The value is the number itself.
+
+19
+00:01:05,110 --> 00:01:07,780
+The 3rd term has the value 16.
+
+20
+00:01:07,830 --> 00:01:09,310
+Now think about this.
+
+21
+00:01:09,360 --> 00:01:10,990
+A sequence starts 2, 4.
+
+22
+00:01:11,040 --> 00:01:12,590
+What is the next term?
+
+23
+00:01:12,640 --> 00:01:15,950
+Pause the video and decide.
+
+24
+00:01:16,000 --> 00:01:18,290
+You cannot tell from two terms.
+
+25
+00:01:18,340 --> 00:01:22,230
+The rule could be add 2, which gives 2, 4, 6.
+
+26
+00:01:22,280 --> 00:01:26,310
+Or the rule could be multiply by 2, which gives 2, 4, 8.
+
+27
+00:01:26,360 --> 00:01:27,950
+Both rules fit.
+
+28
+00:01:28,000 --> 00:01:32,210
+With 3 or more terms, you can test a rule, and be sure.
+
+29
+00:01:32,260 --> 00:01:37,510
+A term-to-term rule tells you how to get from one term to the next term.
+
+30
+00:01:37,560 --> 00:01:42,690
+To build a sequence, you need 2 things: the first term, and the rule.
+
+31
+00:01:42,740 --> 00:01:45,360
+First term 9, rule add 6.
+
+32
+00:01:45,410 --> 00:01:46,970
+9 plus 6 is 15.
+
+33
+00:01:47,020 --> 00:01:48,680
+15 plus 6 is 21.
+
+34
+00:01:48,730 --> 00:01:50,950
+21 plus 6 is 27.
+
+35
+00:01:51,000 --> 00:01:51,670
+Your turn.
+
+36
+00:01:51,720 --> 00:01:54,990
+A sequence starts at 5, and the rule is add 4.
+
+37
+00:01:55,040 --> 00:01:56,500
+What is the 4th term?
+
+38
+00:01:56,550 --> 00:01:59,850
+Pause the video and try it.
+
+39
+00:01:59,900 --> 00:02:02,620
+5, then 9, then 13, then 17.
+
+40
+00:02:02,670 --> 00:02:05,050
+The 4th term is 17.
+
+41
+00:02:05,100 --> 00:02:07,280
+A rule is not always add.
+
+42
+00:02:07,330 --> 00:02:10,580
+Each of these sequences starts at 60.
+
+43
+00:02:10,630 --> 00:02:13,980
+Subtract 8 gives 60, 52, 44, 36.
+
+44
+00:02:14,030 --> 00:02:18,440
+Divide by 2 gives 60, 30, 15, 7.5.
+
+45
+00:02:18,490 --> 00:02:24,070
+And multiply by 2 gives 60, 120, 240, 480.
+
+46
+00:02:24,120 --> 00:02:25,390
+Here is the method.
+
+47
+00:02:25,440 --> 00:02:29,550
+Step 1: find the rule, or read it from the question.
+
+48
+00:02:29,600 --> 00:02:33,250
+Step 2: find a term you know, next to the gap.
+
+49
+00:02:33,300 --> 00:02:36,810
+Step 3: to move right, to a later term, use the rule.
+
+50
+00:02:36,860 --> 00:02:40,710
+To move left, to an earlier term, use the inverse.
+
+51
+00:02:40,760 --> 00:02:45,500
+Step 4: check by running the rule along the whole sequence.
+
+52
+00:02:45,550 --> 00:02:46,970
+The first term is 5.
+
+53
+00:02:47,020 --> 00:02:48,890
+The rule is multiply by 3.
+
+54
+00:02:48,940 --> 00:02:51,220
+Write the first 4 terms.
+
+55
+00:02:51,270 --> 00:02:53,200
+5 times 3 is 15.
+
+56
+00:02:53,250 --> 00:02:55,300
+15 times 3 is 45.
+
+57
+00:02:55,350 --> 00:02:58,080
+45 times 3 is 135.
+
+58
+00:02:58,130 --> 00:03:00,760
+The sequence is 5, 15, 45, 135.
+
+59
+00:03:00,810 --> 00:03:05,360
+Multiplying makes a sequence grow very quickly.
+
+60
+00:03:05,410 --> 00:03:06,870
+The first term is 2.
+
+61
+00:03:06,920 --> 00:03:10,170
+The rule is: multiply by 3, then subtract 1.
+
+62
+00:03:10,220 --> 00:03:12,520
+Write the first 4 terms.
+
+63
+00:03:12,570 --> 00:03:16,100
+2 times 3 is 6, subtract 1 is 5.
+
+64
+00:03:16,150 --> 00:03:19,640
+5 times 3 is 15, subtract 1 is 14.
+
+65
+00:03:19,690 --> 00:03:24,250
+And 14 times 3 is 42, subtract 1 is 41.
+
+66
+00:03:24,300 --> 00:03:27,740
+The sequence is 2, 5, 14, 41.
+
+67
+00:03:27,790 --> 00:03:29,640
+The rule is subtract 6.
+
+68
+00:03:29,690 --> 00:03:31,210
+The 3rd term is 10.
+
+69
+00:03:31,260 --> 00:03:33,120
+Find the first 4 terms.
+
+70
+00:03:33,170 --> 00:03:36,480
+First, put 10 in the 3rd position.
+
+71
+00:03:36,530 --> 00:03:38,810
+To move right, use the rule.
+
+72
+00:03:38,860 --> 00:03:40,150
+10 minus 6 is 4.
+
+73
+00:03:40,200 --> 00:03:42,200
+The 4th term is 4.
+
+74
+00:03:42,250 --> 00:03:45,660
+To move left, use the inverse: add 6.
+
+75
+00:03:45,710 --> 00:03:49,670
+10 plus 6 is 16, and 16 plus 6 is 22.
+
+76
+00:03:49,720 --> 00:03:52,330
+The sequence is 22, 16, 10, 4.
+
+77
+00:03:52,380 --> 00:03:55,980
+Check: it goes down by 6 each time.
+
+78
+00:03:56,030 --> 00:03:59,470
+Find the missing terms: 14, blank, blank, 38.
+
+79
+00:03:59,520 --> 00:04:01,960
+The rule is add a number.
+
+80
+00:04:02,010 --> 00:04:04,530
+From 14 to 38 there are 3 steps.
+
+81
+00:04:04,580 --> 00:04:07,490
+Count the gaps, not the boxes.
+
+82
+00:04:07,540 --> 00:04:09,290
+38 minus 14 is 24.
+
+83
+00:04:09,340 --> 00:04:11,380
+24 divided by 3 is 8.
+
+84
+00:04:11,430 --> 00:04:14,030
+So the rule is add 8.
+
+85
+00:04:14,080 --> 00:04:18,170
+14 plus 8 is 22, and 22 plus 8 is 30.
+
+86
+00:04:18,220 --> 00:04:21,290
+Check: 30 plus 8 is 38.
+
+87
+00:04:21,340 --> 00:04:23,020
+The rule is subtract 5.
+
+88
+00:04:23,070 --> 00:04:24,360
+The 3rd term is 9.
+
+89
+00:04:24,410 --> 00:04:25,710
+Find the 2nd term.
+
+90
+00:04:25,760 --> 00:04:27,360
+Here is Dan's working.
+
+91
+00:04:27,410 --> 00:04:30,010
+Which line goes wrong first?
+
+92
+00:04:30,060 --> 00:04:31,140
+Line 2 is wrong.
+
+93
+00:04:31,190 --> 00:04:36,290
+Going back means moving left, so you must use the inverse: add 5.
+
+94
+00:04:36,340 --> 00:04:37,700
+9 plus 5 is 14.
+
+95
+00:04:37,750 --> 00:04:39,490
+The 2nd term is 14.
+
+96
+00:04:39,540 --> 00:04:42,220
+Check: 14 minus 5 is 9.
+
+97
+00:04:42,270 --> 00:04:44,630
+Sequences are everywhere.
+
+98
+00:04:44,680 --> 00:04:50,030
+Leap years usually come every 4 years: 2024, 2028, 2032.
+
+99
+00:04:50,080 --> 00:04:52,320
+The rule is add 4.
+
+100
+00:04:52,370 --> 00:04:56,620
+Some bacteria can split in two about every 20 minutes.
+
+101
+00:04:56,670 --> 00:04:58,850
+1 becomes 2, then 4, then 8.
+
+102
+00:04:58,900 --> 00:05:01,470
+The rule is multiply by 2.
+
+103
+00:05:01,520 --> 00:05:07,840
+After only 7 hours of doubling, 1 bacterium could become more than 2 million.
+
+104
+00:05:07,890 --> 00:05:09,210
+One last question.
+
+105
+00:05:09,260 --> 00:05:10,590
+The rule is add 3.
+
+106
+00:05:10,640 --> 00:05:12,040
+The 4th term is 20.
+
+107
+00:05:12,090 --> 00:05:13,640
+What is the 1st term?
+
+108
+00:05:13,690 --> 00:05:17,490
+Pause the video and work it out.
+
+109
+00:05:17,540 --> 00:05:20,880
+Move left, so subtract 3 each time.
+
+110
+00:05:20,930 --> 00:05:22,330
+20, 17, 14, 11.
+
+111
+00:05:22,380 --> 00:05:24,720
+The 1st term is 11.
+
+112
+00:05:24,770 --> 00:05:28,200
+To remember: a sequence is a list of terms in order.
+
+113
+00:05:28,250 --> 00:05:32,970
+The position says where a term is, and the value is the number.
+
+114
+00:05:33,020 --> 00:05:37,250
+A term-to-term rule takes you from one term to the next.
+
+115
+00:05:37,300 --> 00:05:40,450
+To go back, use the inverse operation.
+
+116
+00:05:40,500 --> 00:05:44,070
+And use 3 or more terms to be sure of a rule.
+
+117
+00:05:44,120 --> 00:05:49,270
+Great work! Now practise lesson 9.1 on Camday.

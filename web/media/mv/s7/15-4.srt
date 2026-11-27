@@ -1,0 +1,327 @@
+1
+00:00:08,450 --> 00:00:14,800
+A delivery box is 30 centimetres long, 20 centimetres wide and 10 centimetres high.
+
+2
+00:00:14,850 --> 00:00:17,660
+You want to fill it with sugar cubes.
+
+3
+00:00:17,710 --> 00:00:21,520
+Each cube is 1 centimetre along every edge.
+
+4
+00:00:21,570 --> 00:00:23,930
+How many sugar cubes fit in the box?
+
+5
+00:00:23,980 --> 00:00:27,480
+Pause the video and work it out.
+
+6
+00:00:27,530 --> 00:00:29,910
+Fill the bottom layer first.
+
+7
+00:00:29,960 --> 00:00:32,260
+It has 30 rows of 20 cubes.
+
+8
+00:00:32,310 --> 00:00:34,370
+That is 600 cubes.
+
+9
+00:00:34,420 --> 00:00:39,580
+The box is 10 centimetres high, so there are 10 layers.
+
+10
+00:00:39,630 --> 00:00:42,780
+600 times 10 is 6,000 cubes.
+
+11
+00:00:42,830 --> 00:00:47,730
+Remember: the area of a rectangle is the length times the width.
+
+12
+00:00:47,780 --> 00:00:52,690
+12 centimetres by 5 centimetres is 60 square centimetres.
+
+13
+00:00:52,740 --> 00:00:56,510
+Volume is the amount of space that a 3D shape takes up.
+
+14
+00:00:56,560 --> 00:01:00,950
+We measure it in cubic units, such as cubic centimetres.
+
+15
+00:01:01,000 --> 00:01:05,530
+For a cuboid, multiply the length, the width and the height.
+
+16
+00:01:05,580 --> 00:01:07,240
+A cube has 3 equal edges.
+
+17
+00:01:07,290 --> 00:01:11,750
+So its volume is the side, times the side, times the side.
+
+18
+00:01:11,800 --> 00:01:12,450
+Your turn.
+
+19
+00:01:12,500 --> 00:01:16,440
+What is the volume of a cube with sides of 5 centimetres?
+
+20
+00:01:16,490 --> 00:01:19,730
+Pause the video and try it.
+
+21
+00:01:19,780 --> 00:01:21,370
+5 times 5 is 25.
+
+22
+00:01:21,420 --> 00:01:23,620
+And 25 times 5 is 125.
+
+23
+00:01:23,670 --> 00:01:27,850
+The volume is 125 cubic centimetres.
+
+24
+00:01:27,900 --> 00:01:30,960
+Capacity is how much a container holds.
+
+25
+00:01:31,010 --> 00:01:33,990
+1 cubic centimetre holds 1 millilitre.
+
+26
+00:01:34,040 --> 00:01:37,730
+So 1,000 cubic centimetres hold 1 litre.
+
+27
+00:01:37,780 --> 00:01:42,210
+Our delivery box has a volume of 6,000 cubic centimetres.
+
+28
+00:01:42,260 --> 00:01:45,510
+So it could hold 6 litres of water.
+
+29
+00:01:45,560 --> 00:01:46,310
+Your turn.
+
+30
+00:01:46,360 --> 00:01:49,720
+How many litres is 4,500 cubic centimetres?
+
+31
+00:01:49,770 --> 00:01:53,260
+Pause the video and try it.
+
+32
+00:01:53,310 --> 00:01:55,120
+Divide by 1,000.
+
+33
+00:01:55,170 --> 00:01:59,980
+4,500 divided by 1,000 is 4.5 litres.
+
+34
+00:02:00,030 --> 00:02:01,330
+Here is the method.
+
+35
+00:02:01,380 --> 00:02:05,810
+Step 1: check that all 3 lengths are in the same units.
+
+36
+00:02:05,860 --> 00:02:10,980
+Step 2: multiply the length, the width and the height, in any order.
+
+37
+00:02:11,030 --> 00:02:14,410
+Step 3: give the answer in cubic units.
+
+38
+00:02:14,460 --> 00:02:20,930
+Step 4: for capacity, remember that 1,000 cubic centimetres is 1 litre.
+
+39
+00:02:20,980 --> 00:02:27,830
+Find the volume of a cuboid that is 9 centimetres by 4 centimetres by 5 centimetres.
+
+40
+00:02:27,880 --> 00:02:29,450
+9 times 4 is 36.
+
+41
+00:02:29,500 --> 00:02:31,680
+And 36 times 5 is 180.
+
+42
+00:02:31,730 --> 00:02:35,890
+The volume is 180 cubic centimetres.
+
+43
+00:02:35,940 --> 00:02:41,930
+A fish tank is 1.5 metres long, 40 centimetres wide and 30 centimetres high.
+
+44
+00:02:41,980 --> 00:02:44,780
+How many litres does it hold?
+
+45
+00:02:44,830 --> 00:02:46,780
+Use the same units.
+
+46
+00:02:46,830 --> 00:02:49,920
+1.5 metres is 150 centimetres.
+
+47
+00:02:49,970 --> 00:02:55,820
+150 times 40 times 30 is 180,000 cubic centimetres.
+
+48
+00:02:55,870 --> 00:02:57,420
+Divide by 1,000.
+
+49
+00:02:57,470 --> 00:03:00,570
+The tank holds 180 litres.
+
+50
+00:03:00,620 --> 00:03:04,310
+A cuboid has a volume of 420 cubic centimetres.
+
+51
+00:03:04,360 --> 00:03:07,810
+Its base is 10 centimetres by 7 centimetres.
+
+52
+00:03:07,860 --> 00:03:09,640
+Find its height.
+
+53
+00:03:09,690 --> 00:03:14,250
+The area of the base is 10 times 7, which is 70.
+
+54
+00:03:14,300 --> 00:03:17,720
+Divide the volume by the area of the base.
+
+55
+00:03:17,770 --> 00:03:19,620
+420 divided by 70 is 6.
+
+56
+00:03:19,670 --> 00:03:22,480
+The height is 6 centimetres.
+
+57
+00:03:22,530 --> 00:03:31,670
+How many cubes, each with sides of 3 centimetres, fit in a box 12 centimetres by 9 centimetres by 6 centimetres?
+
+58
+00:03:31,720 --> 00:03:33,510
+Divide each length by 3.
+
+59
+00:03:33,560 --> 00:03:36,960
+4 cubes fit along, 3 across, and 2 up.
+
+60
+00:03:37,010 --> 00:03:40,350
+4 times 3 times 2 is 24 cubes.
+
+61
+00:03:40,400 --> 00:03:46,000
+Find the volume of a cuboid, 6 centimetres by 5 centimetres by 2 centimetres.
+
+62
+00:03:46,050 --> 00:03:47,680
+Here is Enzo's working.
+
+63
+00:03:47,730 --> 00:03:50,280
+Which line goes wrong first?
+
+64
+00:03:50,330 --> 00:03:51,390
+Line 1 is wrong.
+
+65
+00:03:51,440 --> 00:03:53,730
+Adding the lengths gives a length.
+
+66
+00:03:53,780 --> 00:03:56,490
+For a volume, you must multiply.
+
+67
+00:03:56,540 --> 00:04:00,880
+6 times 5 times 2 is 60 cubic centimetres.
+
+68
+00:04:00,930 --> 00:04:04,020
+An Olympic swimming pool is a giant cuboid.
+
+69
+00:04:04,070 --> 00:04:09,320
+It is 50 metres long, 25 metres wide, and at least 2 metres deep.
+
+70
+00:04:09,370 --> 00:04:14,450
+50 times 25 times 2 is 2,500 cubic metres.
+
+71
+00:04:14,500 --> 00:04:17,000
+1 cubic metre holds 1,000 litres.
+
+72
+00:04:17,050 --> 00:04:21,800
+So the pool holds 2 and a half million litres of water.
+
+73
+00:04:21,850 --> 00:04:23,170
+One last question.
+
+74
+00:04:23,220 --> 00:04:29,260
+What is the volume of a cuboid 2 centimetres by 3 centimetres by 10 centimetres?
+
+75
+00:04:29,310 --> 00:04:32,710
+Pause the video and answer.
+
+76
+00:04:32,760 --> 00:04:36,130
+2 times 3 is 6, and 6 times 10 is 60.
+
+77
+00:04:36,180 --> 00:04:39,920
+The volume is 60 cubic centimetres.
+
+78
+00:04:39,970 --> 00:04:46,150
+To remember: the volume of a cuboid is the length, times the width, times the height.
+
+79
+00:04:46,200 --> 00:04:50,960
+The volume of a cube is the side, times the side, times the side.
+
+80
+00:04:51,010 --> 00:04:55,210
+Use the same units, and give the answer in cubic units.
+
+81
+00:04:55,260 --> 00:04:59,150
+1,000 cubic centimetres is 1 litre.
+
+82
+00:04:59,200 --> 00:05:04,510
+Great work! Now practise lesson 15.4 on Camday.

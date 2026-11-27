@@ -1,0 +1,355 @@
+1
+00:00:06,720 --> 00:00:09,550
+A sailmaker is making a triangular sail.
+
+2
+00:00:09,600 --> 00:00:13,620
+Its base is 4 metres, and its height is 6 metres.
+
+3
+00:00:13,670 --> 00:00:15,380
+How much fabric is needed?
+
+4
+00:00:15,430 --> 00:00:19,990
+Here is a hint: think about the rectangle that fits around the sail.
+
+5
+00:00:20,040 --> 00:00:23,570
+Pause the video and work it out.
+
+6
+00:00:23,620 --> 00:00:26,050
+Draw a rectangle around the sail.
+
+7
+00:00:26,100 --> 00:00:31,120
+It is 4 metres by 6 metres, so its area is 24 square metres.
+
+8
+00:00:31,170 --> 00:00:34,940
+The triangle fills exactly half of the rectangle.
+
+9
+00:00:34,990 --> 00:00:36,260
+Half of 24 is 12.
+
+10
+00:00:36,310 --> 00:00:40,090
+The sail needs 12 square metres of fabric.
+
+11
+00:00:40,140 --> 00:00:45,040
+Remember: the area of a rectangle is the length times the width.
+
+12
+00:00:45,090 --> 00:00:50,210
+Any triangle fits inside a rectangle with the same base and the same height.
+
+13
+00:00:50,260 --> 00:00:53,620
+And it always takes up exactly half of it.
+
+14
+00:00:53,670 --> 00:00:58,750
+So the area of a triangle is a half, times the base, times the height.
+
+15
+00:00:58,800 --> 00:01:04,270
+The answer is in square units, like square centimetres or square metres.
+
+16
+00:01:04,320 --> 00:01:04,970
+Your turn.
+
+17
+00:01:05,020 --> 00:01:09,820
+A triangle has a base of 9 centimetres and a height of 4 centimetres.
+
+18
+00:01:09,870 --> 00:01:11,020
+What is its area?
+
+19
+00:01:11,070 --> 00:01:14,320
+Pause the video and try it.
+
+20
+00:01:14,370 --> 00:01:15,850
+9 times 4 is 36.
+
+21
+00:01:15,900 --> 00:01:17,470
+Half of 36 is 18.
+
+22
+00:01:17,520 --> 00:01:21,270
+The area is 18 square centimetres.
+
+23
+00:01:21,320 --> 00:01:24,310
+The height must be perpendicular to the base.
+
+24
+00:01:24,360 --> 00:01:27,420
+That means it meets the base at a right angle.
+
+25
+00:01:27,470 --> 00:01:29,650
+It is not a slanted side.
+
+26
+00:01:29,700 --> 00:01:35,020
+Any side can be the base, as long as you use the height that goes with it.
+
+27
+00:01:35,070 --> 00:01:38,880
+In some triangles, the height falls outside the triangle.
+
+28
+00:01:38,930 --> 00:01:42,620
+You still use a half, times base, times height.
+
+29
+00:01:42,670 --> 00:01:43,980
+Here is the method.
+
+30
+00:01:44,030 --> 00:01:46,110
+Step 1: choose a base.
+
+31
+00:01:46,160 --> 00:01:50,350
+Step 2: find the perpendicular height to that base.
+
+32
+00:01:50,400 --> 00:01:54,460
+Step 3: work out a half, times base, times height.
+
+33
+00:01:54,510 --> 00:01:58,880
+Step 4: ignore any slanted side that is not the height.
+
+34
+00:01:58,930 --> 00:02:04,510
+A right-angled triangle has shorter sides of 9 centimetres and 6 centimetres.
+
+35
+00:02:04,560 --> 00:02:06,080
+Find its area.
+
+36
+00:02:06,130 --> 00:02:08,980
+The 2 shorter sides meet at a right angle.
+
+37
+00:02:09,030 --> 00:02:12,840
+So one is the base, and the other is the height.
+
+38
+00:02:12,890 --> 00:02:17,410
+A half times 9 times 6 is 27 square centimetres.
+
+39
+00:02:17,460 --> 00:02:26,310
+A triangle has a base of 14 centimetres, a slanted side of 11 centimetres, and a perpendicular height of 9 centimetres.
+
+40
+00:02:26,360 --> 00:02:27,910
+Find its area.
+
+41
+00:02:27,960 --> 00:02:30,530
+Use the base, 14, and the height, 9.
+
+42
+00:02:30,580 --> 00:02:33,110
+Do not use the slanted side.
+
+43
+00:02:33,160 --> 00:02:37,910
+A half times 14 times 9 is 63 square centimetres.
+
+44
+00:02:37,960 --> 00:02:43,580
+A triangle has an area of 36 square centimetres, and a base of 9 centimetres.
+
+45
+00:02:43,630 --> 00:02:45,300
+Find its height.
+
+46
+00:02:45,350 --> 00:02:47,410
+Half of the base is 4.5.
+
+47
+00:02:47,460 --> 00:02:50,590
+So 4.5 times the height is 36.
+
+48
+00:02:50,640 --> 00:02:52,670
+36 divided by 4.5 is 8.
+
+49
+00:02:52,720 --> 00:02:55,750
+The height is 8 centimetres.
+
+50
+00:02:55,800 --> 00:02:56,490
+Your turn.
+
+51
+00:02:56,540 --> 00:03:02,240
+A triangle has an area of 40 square centimetres, and a base of 16 centimetres.
+
+52
+00:03:02,290 --> 00:03:03,640
+What is its height?
+
+53
+00:03:03,690 --> 00:03:07,040
+Pause the video and try it.
+
+54
+00:03:07,090 --> 00:03:08,410
+Half of 16 is 8.
+
+55
+00:03:08,460 --> 00:03:10,810
+So 8 times the height is 40.
+
+56
+00:03:10,860 --> 00:03:15,980
+The height is 40 divided by 8, which is 5 centimetres.
+
+57
+00:03:16,030 --> 00:03:18,230
+A sign has the shape of a house.
+
+58
+00:03:18,280 --> 00:03:22,720
+It is a rectangle, 8 metres by 5 metres, with a triangle on top.
+
+59
+00:03:22,770 --> 00:03:27,550
+The triangle has a base of 8 metres and a height of 3 metres.
+
+60
+00:03:27,600 --> 00:03:31,760
+The rectangle is 8 times 5, which is 40 square metres.
+
+61
+00:03:31,810 --> 00:03:37,460
+The triangle is a half times 8 times 3, which is 12 square metres.
+
+62
+00:03:37,510 --> 00:03:38,160
+Add them.
+
+63
+00:03:38,210 --> 00:03:41,430
+The total area is 52 square metres.
+
+64
+00:03:41,480 --> 00:03:49,170
+A triangle has a base of 12 centimetres, a sloping side of 15 centimetres, and a height of 9 centimetres.
+
+65
+00:03:49,220 --> 00:03:50,200
+Find its area.
+
+66
+00:03:50,250 --> 00:03:51,830
+Here is Ana's working.
+
+67
+00:03:51,880 --> 00:03:53,260
+Is it right?
+
+68
+00:03:53,310 --> 00:03:54,470
+Line 1 is wrong.
+
+69
+00:03:54,520 --> 00:03:57,120
+15 centimetres is the sloping side.
+
+70
+00:03:57,170 --> 00:04:00,310
+It is not the perpendicular height.
+
+71
+00:04:00,360 --> 00:04:01,860
+Use the height, 9.
+
+72
+00:04:01,910 --> 00:04:06,630
+A half times 12 times 9 is 54 square centimetres.
+
+73
+00:04:06,680 --> 00:04:11,130
+Each face of the Great Pyramid in Egypt is a huge triangle.
+
+74
+00:04:11,180 --> 00:04:13,350
+Its base is about 230 metres.
+
+75
+00:04:13,400 --> 00:04:18,090
+Its height, measured up the slope, is about 186 metres.
+
+76
+00:04:18,140 --> 00:04:24,690
+A half times 230 times 186 is about 21,400 square metres.
+
+77
+00:04:24,740 --> 00:04:29,040
+That is more than 2 hectares of stone, on just 1 face.
+
+78
+00:04:29,090 --> 00:04:30,340
+One last question.
+
+79
+00:04:30,390 --> 00:04:34,150
+A right-angled triangle has shorter sides of 6 and 7.
+
+80
+00:04:34,200 --> 00:04:35,370
+What is its area?
+
+81
+00:04:35,420 --> 00:04:38,710
+Pause the video and answer.
+
+82
+00:04:38,760 --> 00:04:40,280
+6 times 7 is 42.
+
+83
+00:04:40,330 --> 00:04:41,950
+Half of 42 is 21.
+
+84
+00:04:42,000 --> 00:04:45,240
+The area is 21 square units.
+
+85
+00:04:45,290 --> 00:04:52,140
+To remember: the area of a triangle is a half, times the base, times the perpendicular height.
+
+86
+00:04:52,190 --> 00:04:55,380
+The height is at right angles to the base.
+
+87
+00:04:55,430 --> 00:04:59,340
+Any side can be the base, with its matching height.
+
+88
+00:04:59,390 --> 00:05:03,180
+Work backwards to find a missing base or height.
+
+89
+00:05:03,230 --> 00:05:08,630
+Great work! Now practise lesson 15.3 on Camday.

@@ -15008,7 +15008,7 @@
     "11.3-k3": 157.73,
     "11.3-k4": 251.7
    },
-   "up": false
+   "up": true
   },
   "9.1": {
    "src": "media/mv/s7/9-1.mp4",
@@ -15491,7 +15491,7 @@
     "9.1-k3": 118.85,
     "9.1-k4": 316.49
    },
-   "up": false
+   "up": true
   },
   "13.3": {
    "src": "media/mv/s7/13-3.mp4",
@@ -15861,6 +15861,5324 @@
     "13.3-k2": 79.64,
     "13.3-k3": 119.99,
     "13.3-k4": 300.32
+   },
+   "up": true
+  },
+  "14.3": {
+   "src": "media/mv/s7/14-3.mp4",
+   "poster": "media/mv/s7/14-3_poster.jpg",
+   "srt": "media/mv/s7/14-3.srt",
+   "dur": 309.44,
+   "captions": [
+    [
+     6.94,
+     "In a room planning app, you drag a sofa 4 squares right, and 2 squares down."
+    ],
+    [
+     12.14,
+     "It does not turn, and it does not change size."
+    ],
+    [
+     15.28,
+     "It just slides."
+    ],
+    [
+     16.86,
+     "One corner of the sofa starts at 1, 3."
+    ],
+    [
+     20.16,
+     "Where is that corner now?"
+    ],
+    [
+     21.86,
+     "Pause the video and work it out."
+    ],
+    [
+     25.44,
+     "Moving 4 right adds 4 to the x coordinate: 1 plus 4 is 5."
+    ],
+    [
+     30.07,
+     "Moving 2 down subtracts 2 from the y coordinate: 3 minus 2 is 1."
+    ],
+    [
+     35.81,
+     "The corner is now at 5, 1."
+    ],
+    [
+     38.5,
+     "Remember: moving right or left changes x."
+    ],
+    [
+     41.3,
+     "Moving up or down changes y."
+    ],
+    [
+     43.77,
+     "A translation slides a shape, without turning it or flipping it."
+    ],
+    [
+     48.1,
+     "Every point moves the same distance, in the same direction."
+    ],
+    [
+     52.65,
+     "The starting shape is called the object."
+    ],
+    [
+     55.39,
+     "The new shape is called the image."
+    ],
+    [
+     57.71,
+     "Here, triangle A is the object, and triangle B is its image."
+    ],
+    [
+     62.37,
+     "A translation does not change the lengths or the angles."
+    ],
+    [
+     66.69,
+     "So, is the image of a translation congruent to the object, or bigger than the object?"
+    ],
+    [
+     72.44,
+     "Pause the video and decide."
+    ],
+    [
+     75.66,
+     "It is congruent to the object."
+    ],
+    [
+     77.69,
+     "It has exactly the same shape and the same size."
+    ],
+    [
+     81.49,
+     "To describe a translation, say how far left or right, then how far up or down."
+    ],
+    [
+     86.78,
+     "Pick 1 corner of the object, and the matching corner of the image."
+    ],
+    [
+     91.81,
+     "The corner at 1, 1 moves to 5, negative 2."
+    ],
+    [
+     95.16,
+     "That is 4 squares right, and 3 squares down."
+    ],
+    [
+     99.22,
+     "With coordinates: right adds to x, and left subtracts."
+    ],
+    [
+     102.88,
+     "Up adds to y, and down subtracts."
+    ],
+    [
+     105.66,
+     "Your turn."
+    ],
+    [
+     106.44,
+     "A point moves from 0, 0 to negative 3, 4."
+    ],
+    [
+     109.61,
+     "Is that 3 left and 4 up, or 3 right and 4 down?"
+    ],
+    [
+     113.24,
+     "Pause the video and decide."
+    ],
+    [
+     116.73,
+     "x goes from 0 to negative 3: that is 3 left."
+    ],
+    [
+     120.18,
+     "y goes from 0 to 4: that is 4 up."
+    ],
+    [
+     123.31,
+     "Here is the method."
+    ],
+    [
+     124.65,
+     "Step 1: read the translation."
+    ],
+    [
+     126.69,
+     "How far left or right?"
+    ],
+    [
+     128.24,
+     "How far up or down?"
+    ],
+    [
+     130.12,
+     "Step 2: move each corner of the shape that many squares."
+    ],
+    [
+     134.7,
+     "Step 3: join the new corners in the same order."
+    ],
+    [
+     138.56,
+     "Step 4: check that the image is the same shape and size, and the same way up."
+    ],
+    [
+     144.38,
+     "Translate the triangle with corners 2, 1."
+    ],
+    [
+     147.85,
+     "Then 5, 1."
+    ],
+    [
+     148.7,
+     "And 2, 3."
+    ],
+    [
+     149.46,
+     "Move it 3 left and 2 up."
+    ],
+    [
+     152.04,
+     "Subtract 3 from every x coordinate, and add 2 to every y coordinate."
+    ],
+    [
+     157.42,
+     "2, 1 goes to negative 1, 3."
+    ],
+    [
+     160.11,
+     "5, 1 goes to 2, 3."
+    ],
+    [
+     161.81,
+     "And 2, 3 goes to negative 1, 5."
+    ],
+    [
+     165.28,
+     "A corner of a square moves from negative 2, 4 to 3, 1."
+    ],
+    [
+     169.42,
+     "Describe the translation."
+    ],
+    [
+     171.89,
+     "x goes from negative 2 to 3."
+    ],
+    [
+     174.03,
+     "That is a change of plus 5: 5 right."
+    ],
+    [
+     177.32,
+     "y goes from 4 to 1."
+    ],
+    [
+     178.8,
+     "That is a change of negative 3: 3 down."
+    ],
+    [
+     181.84,
+     "The translation is 5 right and 3 down."
+    ],
+    [
+     185.35,
+     "Shape B is shape A, translated 5 right and 3 down."
+    ],
+    [
+     188.94,
+     "Describe the translation from B back to A."
+    ],
+    [
+     192.51,
+     "To go back, reverse each direction."
+    ],
+    [
+     194.88,
+     "Right becomes left, and down becomes up."
+    ],
+    [
+     198.15,
+     "So the translation from B to A is 5 left and 3 up."
+    ],
+    [
+     202.37,
+     "A point is translated 2 right and 6 up."
+    ],
+    [
+     205.24,
+     "Then it is translated 5 left and 2 down."
+    ],
+    [
+     208.19,
+     "Describe the single translation that does the same job."
+    ],
+    [
+     212.79,
+     "For x: plus 2, then minus 5, makes negative 3."
+    ],
+    [
+     216.37,
+     "That is 3 left."
+    ],
+    [
+     218.09,
+     "For y: plus 6, then minus 2, makes plus 4."
+    ],
+    [
+     221.34,
+     "That is 4 up."
+    ],
+    [
+     222.35,
+     "The single translation is 3 left and 4 up."
+    ],
+    [
+     226.15,
+     "Triangle A has a corner at 2, 1."
+    ],
+    [
+     228.5,
+     "Triangle B has the matching corner at 8, 1."
+    ],
+    [
+     231.67,
+     "Describe the translation."
+    ],
+    [
+     233.51,
+     "Here is Suki's working."
+    ],
+    [
+     235.2,
+     "Which line goes wrong first?"
+    ],
+    [
+     237.81,
+     "Line 1 is wrong."
+    ],
+    [
+     238.89,
+     "Do not measure the gap between the shapes."
+    ],
+    [
+     241.7,
+     "Count from a corner to the matching corner."
+    ],
+    [
+     245.13,
+     "From 2 to 8 is 6."
+    ],
+    [
+     246.49,
+     "The translation is 6 right."
+    ],
+    [
+     249.19,
+     "In a video game, when a character runs across the screen, its picture is translated: a few pixels right, in every frame."
+    ],
+    [
+     257.81,
+     "Wallpaper and floor tiles repeat a pattern by translation."
+    ],
+    [
+     261.56,
+     "The same shape slides across, again and again."
+    ],
+    [
+     265.09,
+     "And a lift is a translation too: straight up, or straight down, with no turning."
+    ],
+    [
+     270.94,
+     "One last question."
+    ],
+    [
+     272.25,
+     "A shape moves 2 right, then 2 left."
+    ],
+    [
+     274.78,
+     "Does that give no movement, or 4 right?"
+    ],
+    [
+     277.61,
+     "Pause the video and answer."
+    ],
+    [
+     280.96,
+     "No movement."
+    ],
+    [
+     281.86,
+     "Plus 2, then minus 2, is 0."
+    ],
+    [
+     283.88,
+     "The shape is back where it started."
+    ],
+    [
+     287.04,
+     "To remember: a translation slides a shape."
+    ],
+    [
+     289.96,
+     "No turning, no flipping, and the same size."
+    ],
+    [
+     293.49,
+     "Describe it as left or right, then up or down."
+    ],
+    [
+     297.07,
+     "Right and left change x."
+    ],
+    [
+     298.71,
+     "Up and down change y."
+    ],
+    [
+     300.69,
+     "Always count between matching corners."
+    ],
+    [
+     304.01,
+     "Great work! Now practise lesson 14.3 on Camday."
+    ]
+   ],
+   "times": {
+    "14.3-k1": 24.39,
+    "14.3-k2": 74.61,
+    "14.3-k3": 115.68,
+    "14.3-k4": 279.91
+   },
+   "up": true
+  },
+  "12.1": {
+   "src": "media/mv/s7/12-1.mp4",
+   "poster": "media/mv/s7/12-1_poster.jpg",
+   "srt": "media/mv/s7/12-1.srt",
+   "dur": 283.52,
+   "captions": [
+    [
+     6.47,
+     "To make a shade of green, a decorator mixes 6 tins of yellow paint with 4 tins of blue paint."
+    ],
+    [
+     13.3,
+     "For a small job, she wants the same shade of green, but with fewer tins."
+    ],
+    [
+     18.66,
+     "What is the simplest ratio of yellow to blue?"
+    ],
+    [
+     21.69,
+     "Pause the video and work it out."
+    ],
+    [
+     25.24,
+     "Split the tins into 2 equal groups."
+    ],
+    [
+     27.91,
+     "Each group has 3 yellow and 2 blue."
+    ],
+    [
+     31.13,
+     "So 3 tins of yellow with 2 tins of blue makes the same shade."
+    ],
+    [
+     35.77,
+     "The ratio 6 to 4 is the same as 3 to 2."
+    ],
+    [
+     39.28,
+     "Remember: the highest common factor of 2 numbers is the biggest number that divides both of them."
+    ],
+    [
+     46.69,
+     "The highest common factor of 18 and 24 is 6."
+    ],
+    [
+     50.94,
+     "A ratio compares quantities."
+    ],
+    [
+     52.95,
+     "Yellow to blue is 6 to 4."
+    ],
+    [
+     54.76,
+     "We write it with a colon."
+    ],
+    [
+     57.11,
+     "The order matters."
+    ],
+    [
+     58.49,
+     "Blue to yellow is 4 to 6."
+    ],
+    [
+     60.95,
+     "To simplify a ratio, divide every part by the same number."
+    ],
+    [
+     64.87,
+     "It is best to divide by the highest common factor."
+    ],
+    [
+     68.8,
+     "Your turn."
+    ],
+    [
+     69.61,
+     "Simplify the ratio 14 to 35."
+    ],
+    [
+     71.88,
+     "Pause the video and try it."
+    ],
+    [
+     75.46,
+     "The highest common factor of 14 and 35 is 7."
+    ],
+    [
+     79.52,
+     "14 divided by 7 is 2."
+    ],
+    [
+     81.46,
+     "35 divided by 7 is 5."
+    ],
+    [
+     83.4,
+     "The answer is 2 to 5."
+    ],
+    [
+     85.89,
+     "Before you simplify, both parts must be in the same units."
+    ],
+    [
+     90.62,
+     "50 centimetres to 2 metres is 50 centimetres to 200 centimetres."
+    ],
+    [
+     95.84,
+     "That simplifies to 1 to 4."
+    ],
+    [
+     98.51,
+     "A ratio can have 3 parts."
+    ],
+    [
+     100.77,
+     "12 to 18 to 30."
+    ],
+    [
+     102.12,
+     "Divide every part by 6, to get 2 to 3 to 5."
+    ],
+    [
+     106.56,
+     "Your turn."
+    ],
+    [
+     107.35,
+     "Simplify 6 to 9 to 12."
+    ],
+    [
+     109.09,
+     "Pause the video and try it."
+    ],
+    [
+     112.62,
+     "The highest common factor of 6, 9 and 12 is 3."
+    ],
+    [
+     116.46,
+     "Divide every part by 3."
+    ],
+    [
+     118.38,
+     "The answer is 2 to 3 to 4."
+    ],
+    [
+     121.1,
+     "A ratio also tells you fractions of the total."
+    ],
+    [
+     124.4,
+     "In the paint, yellow to blue is 3 to 2."
+    ],
+    [
+     127.2,
+     "That makes 5 parts altogether."
+    ],
+    [
+     129.91,
+     "So 3 fifths of the mixture is yellow, and 2 fifths is blue."
+    ],
+    [
+     134.73,
+     "Here is the method."
+    ],
+    [
+     136.05,
+     "Step 1: put all the parts in the same units."
+    ],
+    [
+     139.11,
+     "If there are decimals, multiply to make whole numbers."
+    ],
+    [
+     143.42,
+     "Step 2: find the highest common factor of all the parts."
+    ],
+    [
+     147.92,
+     "Step 3: divide every part by it."
+    ],
+    [
+     150.76,
+     "Step 4: check."
+    ],
+    [
+     151.82,
+     "The only common factor left should be 1."
+    ],
+    [
+     155.39,
+     "Simplify 56 to 42."
+    ],
+    [
+     158.13,
+     "The highest common factor of 56 and 42 is 14."
+    ],
+    [
+     162.85,
+     "56 divided by 14 is 4."
+    ],
+    [
+     165.08,
+     "42 divided by 14 is 3."
+    ],
+    [
+     167.31,
+     "The answer is 4 to 3."
+    ],
+    [
+     169.99,
+     "Simplify 600 grams to 1.5 kilograms."
+    ],
+    [
+     173.97,
+     "First use the same units."
+    ],
+    [
+     176.16,
+     "1.5 kilograms is 1,500 grams."
+    ],
+    [
+     179.26,
+     "Divide both parts by 300."
+    ],
+    [
+     181.4,
+     "The answer is 2 to 5."
+    ],
+    [
+     183.75,
+     "Simplify 1.2 to 3."
+    ],
+    [
+     186.36,
+     "Multiply both parts by 10, to get whole numbers: 12 to 30."
+    ],
+    [
+     191.93,
+     "Then divide both parts by 6."
+    ],
+    [
+     194.06,
+     "The answer is 2 to 5."
+    ],
+    [
+     196.21,
+     "Simplify 36 to 48."
+    ],
+    [
+     197.66,
+     "Here is Eva's working."
+    ],
+    [
+     199.44,
+     "Which line goes wrong first?"
+    ],
+    [
+     202.26,
+     "Line 2 is wrong."
+    ],
+    [
+     203.55,
+     "The ratio is not fully simplified."
+    ],
+    [
+     206.29,
+     "18 and 24 can both still be divided by 6."
+    ],
+    [
+     210.15,
+     "Divide by the highest common factor, 12, straight away."
+    ],
+    [
+     214.85,
+     "36 to 48 is 3 to 4."
+    ],
+    [
+     217.03,
+     "You are watching this video in a ratio."
+    ],
+    [
+     220.29,
+     "A Full HD screen is 1,920 pixels wide and 1,080 pixels high."
+    ],
+    [
+     225.87,
+     "Divide both by 120, and you get 16 to 9."
+    ],
+    [
+     229.1,
+     "That is the shape of most screens today."
+    ],
+    [
+     232.89,
+     "On a bicycle, a front gear with 48 teeth drives a back gear with 16 teeth."
+    ],
+    [
+     238.4,
+     "That is a ratio of 3 to 1."
+    ],
+    [
+     240.33,
+     "One turn of the pedals turns the wheel 3 times."
+    ],
+    [
+     244.38,
+     "One last question."
+    ],
+    [
+     245.79,
+     "Simplify 80 centimetres to 1.2 metres."
+    ],
+    [
+     248.77,
+     "Pause the video and work it out."
+    ],
+    [
+     252.67,
+     "Use the same units."
+    ],
+    [
+     254.47,
+     "1.2 metres is 120 centimetres."
+    ],
+    [
+     257.31,
+     "80 to 120: divide both by 40."
+    ],
+    [
+     260.05,
+     "The answer is 2 to 3."
+    ],
+    [
+     262.59,
+     "To remember: a ratio compares quantities, in a fixed order."
+    ],
+    [
+     267.12,
+     "Simplify by dividing every part by the highest common factor."
+    ],
+    [
+     271.95,
+     "Use the same units in every part."
+    ],
+    [
+     274.67,
+     "Add the parts to find fractions of the total."
+    ],
+    [
+     278.13,
+     "Great work! Now practise lesson 12.1 on Camday."
+    ]
+   ],
+   "times": {
+    "12.1-k1": 24.19,
+    "12.1-k2": 74.41,
+    "12.1-k3": 111.57,
+    "12.1-k4": 251.62
+   },
+   "up": true
+  },
+  "8.1": {
+   "src": "media/mv/s7/8-1.mp4",
+   "poster": "media/mv/s7/8-1_poster.jpg",
+   "srt": "media/mv/s7/8-1.srt",
+   "dur": 319.32,
+   "captions": [
+    [
+     7.88,
+     "Many road signs are symmetrical."
+    ],
+    [
+     9.98,
+     "A stop sign is a regular octagon, and a warning sign is often a triangle."
+    ],
+    [
+     15.32,
+     "Here is a regular hexagon."
+    ],
+    [
+     17.19,
+     "All 6 sides are equal, and all 6 angles are equal."
+    ],
+    [
+     21.33,
+     "How many lines of symmetry does a regular hexagon have?"
+    ],
+    [
+     25.14,
+     "Pause the video and count them."
+    ],
+    [
+     28.68,
+     "A line of symmetry is a fold line."
+    ],
+    [
+     31.1,
+     "3 of them join opposite corners."
+    ],
+    [
+     33.93,
+     "3 more join the middles of opposite sides."
+    ],
+    [
+     37.01,
+     "That makes 6 lines of symmetry."
+    ],
+    [
+     39.83,
+     "Remember: in a reflection, every point and its image are the same distance from the mirror line."
+    ],
+    [
+     46.87,
+     "The capital letter A has a vertical line of symmetry."
+    ],
+    [
+     50.43,
+     "The left half is the mirror image of the right half."
+    ],
+    [
+     54.48,
+     "A shape has line symmetry if a line cuts it into two halves that are mirror images."
+    ],
+    [
+     59.98,
+     "Fold along the line, and the halves match exactly."
+    ],
+    [
+     63.85,
+     "This T shape has 1 line of symmetry."
+    ],
+    [
+     66.24,
+     "We draw it as a dashed line."
+    ],
+    [
+     68.65,
+     "A rectangle has 2 lines of symmetry: one vertical and one horizontal."
+    ],
+    [
+     74.13,
+     "Your turn."
+    ],
+    [
+     74.82,
+     "How many lines of symmetry does an equilateral triangle have?"
+    ],
+    [
+     79.04,
+     "Pause the video and try it."
+    ],
+    [
+     82.3,
+     "Each line goes from a corner to the middle of the opposite side."
+    ],
+    [
+     86.87,
+     "There are 3 corners, so there are 3 lines of symmetry."
+    ],
+    [
+     91.27,
+     "Now turn a shape about its centre."
+    ],
+    [
+     93.57,
+     "A shape has rotational symmetry if it looks exactly the same more than once during a full turn."
+    ],
+    [
+     100.54,
+     "The order of rotational symmetry is the number of times it looks the same in one full turn."
+    ],
+    [
+     107.23,
+     "Follow the red corner of this square."
+    ],
+    [
+     109.85,
+     "After each quarter turn, the square looks the same."
+    ],
+    [
+     113.47,
+     "It fits 4 times, so the order is 4."
+    ],
+    [
+     116.5,
+     "Your turn."
+    ],
+    [
+     117.19,
+     "What is the order of rotational symmetry of a rectangle?"
+    ],
+    [
+     121.06,
+     "Pause the video and think about it."
+    ],
+    [
+     124.89,
+     "After a quarter turn, the rectangle stands upright, so it does not fit."
+    ],
+    [
+     129.63,
+     "After a half turn, it fits."
+    ],
+    [
+     131.43,
+     "After a full turn, it fits again."
+    ],
+    [
+     134.19,
+     "It fits 2 times in a full turn."
+    ],
+    [
+     136.47,
+     "The order of rotational symmetry is 2."
+    ],
+    [
+     139.82,
+     "If a shape only fits once, after the full turn, its order is 1."
+    ],
+    [
+     144.13,
+     "We say it has no rotational symmetry."
+    ],
+    [
+     147.22,
+     "Here is the method."
+    ],
+    [
+     148.59,
+     "Step 1: look for fold lines."
+    ],
+    [
+     150.62,
+     "Test vertical, horizontal and diagonal lines."
+    ],
+    [
+     154.43,
+     "Step 2: turn the shape about its centre, and count how many times it fits in a full turn."
+    ],
+    [
+     161.07,
+     "Step 3: write both answers: the number of lines, and the order."
+    ],
+    [
+     166.02,
+     "A useful fact: a regular polygon with n sides has n lines of symmetry, and rotational symmetry of order n."
+    ],
+    [
+     173.71,
+     "Describe the symmetry of a parallelogram."
+    ],
+    [
+     177.17,
+     "Try folding it."
+    ],
+    [
+     178.19,
+     "No fold line works, because the slanted sides do not line up."
+    ],
+    [
+     182.33,
+     "It has no lines of symmetry."
+    ],
+    [
+     184.78,
+     "Now turn it."
+    ],
+    [
+     185.6,
+     "After a half turn, it fits onto itself."
+    ],
+    [
+     188.29,
+     "So it has rotational symmetry of order 2."
+    ],
+    [
+     191.66,
+     "Describe the symmetry of a kite."
+    ],
+    [
+     194.18,
+     "A kite has 1 line of symmetry."
+    ],
+    [
+     196.26,
+     "It goes through the two corners where the equal sides meet."
+    ],
+    [
+     200.91,
+     "No turn fits it onto itself, except a full turn."
+    ],
+    [
+     204.22,
+     "So the order is 1: no rotational symmetry."
+    ],
+    [
+     207.66,
+     "2 squares are shaded on this grid."
+    ],
+    [
+     210.07,
+     "Shade more squares, so that the pattern has 2 lines of symmetry: the vertical line and the horizontal line."
+    ],
+    [
+     218.22,
+     "First, reflect each shaded square in the vertical line."
+    ],
+    [
+     222.07,
+     "That gives 2 new squares."
+    ],
+    [
+     224.38,
+     "Then reflect all 4 squares in the horizontal line."
+    ],
+    [
+     228.08,
+     "That gives 4 more."
+    ],
+    [
+     229.41,
+     "We shaded 6 extra squares."
+    ],
+    [
+     231.88,
+     "How many lines of symmetry does a rectangle have?"
+    ],
+    [
+     235.24,
+     "Here is Sam's working."
+    ],
+    [
+     236.75,
+     "Which line goes wrong first?"
+    ],
+    [
+     239.22,
+     "Line 2 is wrong."
+    ],
+    [
+     240.32,
+     "Fold a rectangle along a diagonal, and the corners do not meet."
+    ],
+    [
+     244.64,
+     "A diagonal is not a line of symmetry."
+    ],
+    [
+     247.72,
+     "A rectangle has only 2 lines of symmetry."
+    ],
+    [
+     250.62,
+     "A square is special: it has 4."
+    ],
+    [
+     253.29,
+     "Nature is full of symmetry."
+    ],
+    [
+     255.19,
+     "A snowflake has 6 lines of symmetry, and rotational symmetry of order 6."
+    ],
+    [
+     260.81,
+     "Most starfish have 5 arms, so they have rotational symmetry of order 5."
+    ],
+    [
+     266.5,
+     "And the recycling symbol has 3 arrows."
+    ],
+    [
+     269.2,
+     "It has rotational symmetry of order 3, but no lines of symmetry at all."
+    ],
+    [
+     274.79,
+     "One last question."
+    ],
+    [
+     276.03,
+     "Which shape has rotational symmetry, but no lines of symmetry: a parallelogram, an isosceles triangle, or a square?"
+    ],
+    [
+     283.97,
+     "Pause the video and answer."
+    ],
+    [
+     287.23,
+     "It is the parallelogram."
+    ],
+    [
+     288.84,
+     "It has no fold lines, but it fits onto itself after a half turn."
+    ],
+    [
+     293.68,
+     "To remember: a line of symmetry is a fold line."
+    ],
+    [
+     296.84,
+     "The two halves match exactly."
+    ],
+    [
+     299.35,
+     "The order of rotational symmetry is the number of times a shape fits in one full turn."
+    ],
+    [
+     305.76,
+     "Order 1 means no rotational symmetry."
+    ],
+    [
+     309.05,
+     "A regular polygon with n sides has n lines of symmetry, and order n."
+    ],
+    [
+     314.11,
+     "Great work! Now practise lesson 8.1 on Camday."
+    ]
+   ],
+   "times": {
+    "8.1-k1": 27.63,
+    "8.1-k2": 81.25,
+    "8.1-k3": 123.84,
+    "8.1-k4": 286.18
+   },
+   "up": true
+  },
+  "14.4": {
+   "src": "media/mv/s7/14-4.mp4",
+   "poster": "media/mv/s7/14-4_poster.jpg",
+   "srt": "media/mv/s7/14-4.srt",
+   "dur": 311.0,
+   "captions": [
+    [
+     6.64,
+     "On a still day, a tree on the bank of a lake appears upside down in the water."
+    ],
+    [
+     11.9,
+     "The top of the tree is 8 metres above the water line."
+    ],
+    [
+     16.02,
+     "Where does the top of the tree appear in the reflection?"
+    ],
+    [
+     19.51,
+     "Pause the video and decide."
+    ],
+    [
+     22.59,
+     "It appears 8 metres below the water line."
+    ],
+    [
+     25.4,
+     "The water acts as a mirror line."
+    ],
+    [
+     27.6,
+     "The reflection is the same distance from the line, on the other side."
+    ],
+    [
+     32.88,
+     "Remember: a line such as x equals 2 is vertical."
+    ],
+    [
+     36.28,
+     "A line such as y equals 1 is horizontal."
+    ],
+    [
+     39.66,
+     "A reflection flips a shape over a mirror line."
+    ],
+    [
+     42.73,
+     "Here, triangle A is reflected in the y axis, to give triangle B."
+    ],
+    [
+     47.56,
+     "Each point of the image is the same distance from the mirror line as the object point, but on the opposite side."
+    ],
+    [
+     55.67,
+     "We measure that distance at right angles to the mirror line."
+    ],
+    [
+     59.74,
+     "The image is congruent to the object, but it is flipped."
+    ],
+    [
+     64.09,
+     "Reflections in the axes follow a simple rule."
+    ],
+    [
+     67.4,
+     "Reflect the point 3, 2 in the y axis."
+    ],
+    [
+     70.12,
+     "The x coordinate changes sign: negative 3, 2."
+    ],
+    [
+     73.98,
+     "Reflect 3, 2 in the x axis."
+    ],
+    [
+     76.03,
+     "This time the y coordinate changes sign: 3, negative 2."
+    ],
+    [
+     80.76,
+     "Your turn."
+    ],
+    [
+     81.48,
+     "Reflect the point negative 5, 1 in the y axis."
+    ],
+    [
+     84.77,
+     "Pause the video and try it."
+    ],
+    [
+     88.11,
+     "In the y axis, the x coordinate changes sign."
+    ],
+    [
+     91.52,
+     "Negative 5 becomes 5."
+    ],
+    [
+     93.12,
+     "The image is 5, 1."
+    ],
+    [
+     95.03,
+     "For any other mirror line, count squares."
+    ],
+    [
+     98.03,
+     "Reflect the point 3, 2 in the line x equals 1."
+    ],
+    [
+     101.95,
+     "The point is 2 squares to the right of the line."
+    ],
+    [
+     105.47,
+     "So the image is 2 squares to the left of the line."
+    ],
+    [
+     109.13,
+     "1 minus 2 is negative 1."
+    ],
+    [
+     111.44,
+     "The image is negative 1, 2."
+    ],
+    [
+     113.4,
+     "The y coordinate does not change."
+    ],
+    [
+     116.35,
+     "Here is the method."
+    ],
+    [
+     117.71,
+     "Step 1: find the mirror line."
+    ],
+    [
+     120.35,
+     "Step 2: for each corner, count the squares to the line, at right angles."
+    ],
+    [
+     125.81,
+     "Step 3: count the same number on the other side, and mark the image corner."
+    ],
+    [
+     131.53,
+     "Step 4: join the image corners, and check that the shape is flipped."
+    ],
+    [
+     136.82,
+     "Reflect the triangle with corners 2, 1."
+    ],
+    [
+     139.91,
+     "Then 5, 1."
+    ],
+    [
+     140.7,
+     "And 2, 4."
+    ],
+    [
+     141.41,
+     "Use the y axis as the mirror line."
+    ],
+    [
+     144.65,
+     "Change the sign of each x coordinate."
+    ],
+    [
+     147.54,
+     "The corners become negative 2, 1."
+    ],
+    [
+     150.11,
+     "Then negative 5, 1."
+    ],
+    [
+     151.59,
+     "And negative 2, 4."
+    ],
+    [
+     153.55,
+     "Reflect the point 6, 3 in the line x equals 2."
+    ],
+    [
+     157.72,
+     "6 is 4 squares to the right of the line."
+    ],
+    [
+     160.74,
+     "So go 4 squares to the left of the line: 2 minus 4 is negative 2."
+    ],
+    [
+     166.21,
+     "The image is negative 2, 3."
+    ],
+    [
+     168.96,
+     "Reflect the point 4, negative 2 in the line y equals 1."
+    ],
+    [
+     173.76,
+     "This mirror line is horizontal, so measure up and down."
+    ],
+    [
+     177.81,
+     "The point is 3 squares below the line."
+    ],
+    [
+     180.61,
+     "The image is 3 squares above: 1 plus 3 is 4."
+    ],
+    [
+     184.4,
+     "The image is 4, 4."
+    ],
+    [
+     186.78,
+     "Your turn."
+    ],
+    [
+     187.52,
+     "Reflect the point 0, 3 in the line y equals 1."
+    ],
+    [
+     190.89,
+     "Pause the video and try it."
+    ],
+    [
+     194.27,
+     "The point is 2 squares above the line."
+    ],
+    [
+     197.18,
+     "So the image is 2 squares below it: 1 minus 2 is negative 1."
+    ],
+    [
+     201.77,
+     "The image is 0, negative 1."
+    ],
+    [
+     204.39,
+     "A point at negative 2, 4 has its image at 6, 4."
+    ],
+    [
+     207.95,
+     "Find the mirror line."
+    ],
+    [
+     210.1,
+     "The mirror line is halfway between the point and its image."
+    ],
+    [
+     214.46,
+     "Halfway between negative 2 and 6 is 2."
+    ],
+    [
+     217.82,
+     "So the mirror line is the vertical line x equals 2."
+    ],
+    [
+     221.99,
+     "Reflect the point 5, 6 in the line y equals 3."
+    ],
+    [
+     225.33,
+     "Here is Kofi's working."
+    ],
+    [
+     227.0,
+     "Which line goes wrong first?"
+    ],
+    [
+     229.58,
+     "Line 1 is wrong."
+    ],
+    [
+     230.7,
+     "The line y equals 3 is horizontal."
+    ],
+    [
+     233.09,
+     "So measure up and down, not left and right."
+    ],
+    [
+     236.66,
+     "The point is 3 squares above the line."
+    ],
+    [
+     239.47,
+     "The image is 3 squares below it, at 5, 0."
+    ],
+    [
+     243.06,
+     "On the front of many ambulances, the word AMBULANCE is written back to front."
+    ],
+    [
+     248.23,
+     "A driver ahead reads it the right way round in the mirror."
+    ],
+    [
+     252.67,
+     "The Taj Mahal, in India, was built beside a long pool."
+    ],
+    [
+     256.32,
+     "The pool reflects the whole building, upside down, like a mirror line."
+    ],
+    [
+     261.59,
+     "And your face in a mirror is a reflection too."
+    ],
+    [
+     264.7,
+     "Raise your right hand, and the image raises its left."
+    ],
+    [
+     268.82,
+     "One last question."
+    ],
+    [
+     270.04,
+     "A point lies on the mirror line."
+    ],
+    [
+     272.19,
+     "When it is reflected, does it stay where it is, or move twice as far?"
+    ],
+    [
+     276.84,
+     "Pause the video and answer."
+    ],
+    [
+     280.05,
+     "It stays where it is."
+    ],
+    [
+     281.49,
+     "Its distance from the mirror line is 0, so its image is in the same place."
+    ],
+    [
+     287.08,
+     "To remember: a reflection flips a shape over a mirror line."
+    ],
+    [
+     291.65,
+     "Image points are the same distance from the line, on the other side, at right angles."
+    ],
+    [
+     297.89,
+     "In the x axis, y changes sign."
+    ],
+    [
+     299.84,
+     "In the y axis, x changes sign."
+    ],
+    [
+     302.34,
+     "Points on the mirror line do not move."
+    ],
+    [
+     305.56,
+     "Great work! Now practise lesson 14.4 on Camday."
+    ]
+   ],
+   "times": {
+    "14.4-k1": 21.54,
+    "14.4-k2": 87.06,
+    "14.4-k3": 193.22,
+    "14.4-k4": 279.0
+   },
+   "up": true
+  },
+  "15.3": {
+   "src": "media/mv/s7/15-3.mp4",
+   "poster": "media/mv/s7/15-3_poster.jpg",
+   "srt": "media/mv/s7/15-3.srt",
+   "dur": 308.68,
+   "captions": [
+    [
+     6.72,
+     "A sailmaker is making a triangular sail."
+    ],
+    [
+     9.6,
+     "Its base is 4 metres, and its height is 6 metres."
+    ],
+    [
+     13.67,
+     "How much fabric is needed?"
+    ],
+    [
+     15.43,
+     "Here is a hint: think about the rectangle that fits around the sail."
+    ],
+    [
+     20.04,
+     "Pause the video and work it out."
+    ],
+    [
+     23.62,
+     "Draw a rectangle around the sail."
+    ],
+    [
+     26.1,
+     "It is 4 metres by 6 metres, so its area is 24 square metres."
+    ],
+    [
+     31.17,
+     "The triangle fills exactly half of the rectangle."
+    ],
+    [
+     34.99,
+     "Half of 24 is 12."
+    ],
+    [
+     36.31,
+     "The sail needs 12 square metres of fabric."
+    ],
+    [
+     40.14,
+     "Remember: the area of a rectangle is the length times the width."
+    ],
+    [
+     45.09,
+     "Any triangle fits inside a rectangle with the same base and the same height."
+    ],
+    [
+     50.26,
+     "And it always takes up exactly half of it."
+    ],
+    [
+     53.67,
+     "So the area of a triangle is a half, times the base, times the height."
+    ],
+    [
+     58.8,
+     "The answer is in square units, like square centimetres or square metres."
+    ],
+    [
+     64.32,
+     "Your turn."
+    ],
+    [
+     65.02,
+     "A triangle has a base of 9 centimetres and a height of 4 centimetres."
+    ],
+    [
+     69.87,
+     "What is its area?"
+    ],
+    [
+     71.07,
+     "Pause the video and try it."
+    ],
+    [
+     74.37,
+     "9 times 4 is 36."
+    ],
+    [
+     75.9,
+     "Half of 36 is 18."
+    ],
+    [
+     77.52,
+     "The area is 18 square centimetres."
+    ],
+    [
+     81.32,
+     "The height must be perpendicular to the base."
+    ],
+    [
+     84.36,
+     "That means it meets the base at a right angle."
+    ],
+    [
+     87.47,
+     "It is not a slanted side."
+    ],
+    [
+     89.7,
+     "Any side can be the base, as long as you use the height that goes with it."
+    ],
+    [
+     95.07,
+     "In some triangles, the height falls outside the triangle."
+    ],
+    [
+     98.93,
+     "You still use a half, times base, times height."
+    ],
+    [
+     102.67,
+     "Here is the method."
+    ],
+    [
+     104.03,
+     "Step 1: choose a base."
+    ],
+    [
+     106.16,
+     "Step 2: find the perpendicular height to that base."
+    ],
+    [
+     110.4,
+     "Step 3: work out a half, times base, times height."
+    ],
+    [
+     114.51,
+     "Step 4: ignore any slanted side that is not the height."
+    ],
+    [
+     118.93,
+     "A right-angled triangle has shorter sides of 9 centimetres and 6 centimetres."
+    ],
+    [
+     124.56,
+     "Find its area."
+    ],
+    [
+     126.13,
+     "The 2 shorter sides meet at a right angle."
+    ],
+    [
+     129.03,
+     "So one is the base, and the other is the height."
+    ],
+    [
+     132.89,
+     "A half times 9 times 6 is 27 square centimetres."
+    ],
+    [
+     137.46,
+     "A triangle has a base of 14 centimetres, a slanted side of 11 centimetres, and a perpendicular height of 9 centimetres."
+    ],
+    [
+     146.36,
+     "Find its area."
+    ],
+    [
+     147.96,
+     "Use the base, 14, and the height, 9."
+    ],
+    [
+     150.58,
+     "Do not use the slanted side."
+    ],
+    [
+     153.16,
+     "A half times 14 times 9 is 63 square centimetres."
+    ],
+    [
+     157.96,
+     "A triangle has an area of 36 square centimetres, and a base of 9 centimetres."
+    ],
+    [
+     163.63,
+     "Find its height."
+    ],
+    [
+     165.35,
+     "Half of the base is 4.5."
+    ],
+    [
+     167.46,
+     "So 4.5 times the height is 36."
+    ],
+    [
+     170.64,
+     "36 divided by 4.5 is 8."
+    ],
+    [
+     172.72,
+     "The height is 8 centimetres."
+    ],
+    [
+     175.8,
+     "Your turn."
+    ],
+    [
+     176.54,
+     "A triangle has an area of 40 square centimetres, and a base of 16 centimetres."
+    ],
+    [
+     182.29,
+     "What is its height?"
+    ],
+    [
+     183.69,
+     "Pause the video and try it."
+    ],
+    [
+     187.09,
+     "Half of 16 is 8."
+    ],
+    [
+     188.46,
+     "So 8 times the height is 40."
+    ],
+    [
+     190.86,
+     "The height is 40 divided by 8, which is 5 centimetres."
+    ],
+    [
+     196.03,
+     "A sign has the shape of a house."
+    ],
+    [
+     198.28,
+     "It is a rectangle, 8 metres by 5 metres, with a triangle on top."
+    ],
+    [
+     202.77,
+     "The triangle has a base of 8 metres and a height of 3 metres."
+    ],
+    [
+     207.6,
+     "The rectangle is 8 times 5, which is 40 square metres."
+    ],
+    [
+     211.81,
+     "The triangle is a half times 8 times 3, which is 12 square metres."
+    ],
+    [
+     217.51,
+     "Add them."
+    ],
+    [
+     218.21,
+     "The total area is 52 square metres."
+    ],
+    [
+     221.48,
+     "A triangle has a base of 12 centimetres, a sloping side of 15 centimetres, and a height of 9 centimetres."
+    ],
+    [
+     229.22,
+     "Find its area."
+    ],
+    [
+     230.25,
+     "Here is Ana's working."
+    ],
+    [
+     231.88,
+     "Is it right?"
+    ],
+    [
+     233.31,
+     "Line 1 is wrong."
+    ],
+    [
+     234.52,
+     "15 centimetres is the sloping side."
+    ],
+    [
+     237.17,
+     "It is not the perpendicular height."
+    ],
+    [
+     240.36,
+     "Use the height, 9."
+    ],
+    [
+     241.91,
+     "A half times 12 times 9 is 54 square centimetres."
+    ],
+    [
+     246.68,
+     "Each face of the Great Pyramid in Egypt is a huge triangle."
+    ],
+    [
+     251.18,
+     "Its base is about 230 metres."
+    ],
+    [
+     253.4,
+     "Its height, measured up the slope, is about 186 metres."
+    ],
+    [
+     258.14,
+     "A half times 230 times 186 is about 21,400 square metres."
+    ],
+    [
+     264.74,
+     "That is more than 2 hectares of stone, on just 1 face."
+    ],
+    [
+     269.09,
+     "One last question."
+    ],
+    [
+     270.39,
+     "A right-angled triangle has shorter sides of 6 and 7."
+    ],
+    [
+     274.2,
+     "What is its area?"
+    ],
+    [
+     275.42,
+     "Pause the video and answer."
+    ],
+    [
+     278.76,
+     "6 times 7 is 42."
+    ],
+    [
+     280.33,
+     "Half of 42 is 21."
+    ],
+    [
+     282.0,
+     "The area is 21 square units."
+    ],
+    [
+     285.29,
+     "To remember: the area of a triangle is a half, times the base, times the perpendicular height."
+    ],
+    [
+     292.19,
+     "The height is at right angles to the base."
+    ],
+    [
+     295.43,
+     "Any side can be the base, with its matching height."
+    ],
+    [
+     299.39,
+     "Work backwards to find a missing base or height."
+    ],
+    [
+     303.23,
+     "Great work! Now practise lesson 15.3 on Camday."
+    ]
+   ],
+   "times": {
+    "15.3-k1": 22.57,
+    "15.3-k2": 73.32,
+    "15.3-k3": 186.04,
+    "15.3-k4": 277.71
+   },
+   "up": true
+  },
+  "15.4": {
+   "src": "media/mv/s7/15-4.mp4",
+   "poster": "media/mv/s7/15-4_poster.jpg",
+   "srt": "media/mv/s7/15-4.srt",
+   "dur": 304.56,
+   "captions": [
+    [
+     8.45,
+     "A delivery box is 30 centimetres long, 20 centimetres wide and 10 centimetres high."
+    ],
+    [
+     14.85,
+     "You want to fill it with sugar cubes."
+    ],
+    [
+     17.71,
+     "Each cube is 1 centimetre along every edge."
+    ],
+    [
+     21.57,
+     "How many sugar cubes fit in the box?"
+    ],
+    [
+     23.98,
+     "Pause the video and work it out."
+    ],
+    [
+     27.53,
+     "Fill the bottom layer first."
+    ],
+    [
+     29.96,
+     "It has 30 rows of 20 cubes."
+    ],
+    [
+     32.31,
+     "That is 600 cubes."
+    ],
+    [
+     34.42,
+     "The box is 10 centimetres high, so there are 10 layers."
+    ],
+    [
+     39.63,
+     "600 times 10 is 6,000 cubes."
+    ],
+    [
+     42.83,
+     "Remember: the area of a rectangle is the length times the width."
+    ],
+    [
+     47.78,
+     "12 centimetres by 5 centimetres is 60 square centimetres."
+    ],
+    [
+     52.74,
+     "Volume is the amount of space that a 3D shape takes up."
+    ],
+    [
+     56.56,
+     "We measure it in cubic units, such as cubic centimetres."
+    ],
+    [
+     61.0,
+     "For a cuboid, multiply the length, the width and the height."
+    ],
+    [
+     65.58,
+     "A cube has 3 equal edges."
+    ],
+    [
+     67.29,
+     "So its volume is the side, times the side, times the side."
+    ],
+    [
+     71.8,
+     "Your turn."
+    ],
+    [
+     72.5,
+     "What is the volume of a cube with sides of 5 centimetres?"
+    ],
+    [
+     76.49,
+     "Pause the video and try it."
+    ],
+    [
+     79.78,
+     "5 times 5 is 25."
+    ],
+    [
+     81.42,
+     "And 25 times 5 is 125."
+    ],
+    [
+     83.67,
+     "The volume is 125 cubic centimetres."
+    ],
+    [
+     87.9,
+     "Capacity is how much a container holds."
+    ],
+    [
+     91.01,
+     "1 cubic centimetre holds 1 millilitre."
+    ],
+    [
+     94.04,
+     "So 1,000 cubic centimetres hold 1 litre."
+    ],
+    [
+     97.78,
+     "Our delivery box has a volume of 6,000 cubic centimetres."
+    ],
+    [
+     102.26,
+     "So it could hold 6 litres of water."
+    ],
+    [
+     105.56,
+     "Your turn."
+    ],
+    [
+     106.36,
+     "How many litres is 4,500 cubic centimetres?"
+    ],
+    [
+     109.77,
+     "Pause the video and try it."
+    ],
+    [
+     113.31,
+     "Divide by 1,000."
+    ],
+    [
+     115.17,
+     "4,500 divided by 1,000 is 4.5 litres."
+    ],
+    [
+     120.03,
+     "Here is the method."
+    ],
+    [
+     121.38,
+     "Step 1: check that all 3 lengths are in the same units."
+    ],
+    [
+     125.86,
+     "Step 2: multiply the length, the width and the height, in any order."
+    ],
+    [
+     131.03,
+     "Step 3: give the answer in cubic units."
+    ],
+    [
+     134.46,
+     "Step 4: for capacity, remember that 1,000 cubic centimetres is 1 litre."
+    ],
+    [
+     140.98,
+     "Find the volume of a cuboid that is 9 centimetres by 4 centimetres by 5 centimetres."
+    ],
+    [
+     147.88,
+     "9 times 4 is 36."
+    ],
+    [
+     149.5,
+     "And 36 times 5 is 180."
+    ],
+    [
+     151.73,
+     "The volume is 180 cubic centimetres."
+    ],
+    [
+     155.94,
+     "A fish tank is 1.5 metres long, 40 centimetres wide and 30 centimetres high."
+    ],
+    [
+     161.98,
+     "How many litres does it hold?"
+    ],
+    [
+     164.83,
+     "Use the same units."
+    ],
+    [
+     166.83,
+     "1.5 metres is 150 centimetres."
+    ],
+    [
+     169.97,
+     "150 times 40 times 30 is 180,000 cubic centimetres."
+    ],
+    [
+     175.87,
+     "Divide by 1,000."
+    ],
+    [
+     177.47,
+     "The tank holds 180 litres."
+    ],
+    [
+     180.62,
+     "A cuboid has a volume of 420 cubic centimetres."
+    ],
+    [
+     184.36,
+     "Its base is 10 centimetres by 7 centimetres."
+    ],
+    [
+     187.86,
+     "Find its height."
+    ],
+    [
+     189.69,
+     "The area of the base is 10 times 7, which is 70."
+    ],
+    [
+     194.3,
+     "Divide the volume by the area of the base."
+    ],
+    [
+     197.77,
+     "420 divided by 70 is 6."
+    ],
+    [
+     199.67,
+     "The height is 6 centimetres."
+    ],
+    [
+     202.53,
+     "How many cubes, each with sides of 3 centimetres, fit in a box 12 centimetres by 9 centimetres by 6 centimetres?"
+    ],
+    [
+     211.72,
+     "Divide each length by 3."
+    ],
+    [
+     213.56,
+     "4 cubes fit along, 3 across, and 2 up."
+    ],
+    [
+     217.01,
+     "4 times 3 times 2 is 24 cubes."
+    ],
+    [
+     220.4,
+     "Find the volume of a cuboid, 6 centimetres by 5 centimetres by 2 centimetres."
+    ],
+    [
+     226.05,
+     "Here is Enzo's working."
+    ],
+    [
+     227.73,
+     "Which line goes wrong first?"
+    ],
+    [
+     230.33,
+     "Line 1 is wrong."
+    ],
+    [
+     231.44,
+     "Adding the lengths gives a length."
+    ],
+    [
+     233.78,
+     "For a volume, you must multiply."
+    ],
+    [
+     236.54,
+     "6 times 5 times 2 is 60 cubic centimetres."
+    ],
+    [
+     240.93,
+     "An Olympic swimming pool is a giant cuboid."
+    ],
+    [
+     244.07,
+     "It is 50 metres long, 25 metres wide, and at least 2 metres deep."
+    ],
+    [
+     249.37,
+     "50 times 25 times 2 is 2,500 cubic metres."
+    ],
+    [
+     254.5,
+     "1 cubic metre holds 1,000 litres."
+    ],
+    [
+     257.05,
+     "So the pool holds 2 and a half million litres of water."
+    ],
+    [
+     261.85,
+     "One last question."
+    ],
+    [
+     263.22,
+     "What is the volume of a cuboid 2 centimetres by 3 centimetres by 10 centimetres?"
+    ],
+    [
+     269.31,
+     "Pause the video and answer."
+    ],
+    [
+     272.76,
+     "2 times 3 is 6, and 6 times 10 is 60."
+    ],
+    [
+     276.18,
+     "The volume is 60 cubic centimetres."
+    ],
+    [
+     279.97,
+     "To remember: the volume of a cuboid is the length, times the width, times the height."
+    ],
+    [
+     286.2,
+     "The volume of a cube is the side, times the side, times the side."
+    ],
+    [
+     291.01,
+     "Use the same units, and give the answer in cubic units."
+    ],
+    [
+     295.26,
+     "1,000 cubic centimetres is 1 litre."
+    ],
+    [
+     299.2,
+     "Great work! Now practise lesson 15.4 on Camday."
+    ]
+   ],
+   "times": {
+    "15.4-k1": 26.48,
+    "15.4-k2": 78.73,
+    "15.4-k3": 112.26,
+    "15.4-k4": 271.71
+   },
+   "up": true
+  },
+  "13.2": {
+   "src": "media/mv/s7/13-2.mp4",
+   "poster": "media/mv/s7/13-2_poster.jpg",
+   "srt": "media/mv/s7/13-2.srt",
+   "dur": 304.4,
+   "captions": [
+    [
+     7.4,
+     "A bag holds 5 red balls, 3 green balls and 2 yellow balls, all the same size."
+    ],
+    [
+     13.02,
+     "You take 1 without looking."
+    ],
+    [
+     15.54,
+     "What is the probability that the ball is green?"
+    ],
+    [
+     18.66,
+     "Pause the video and work it out."
+    ],
+    [
+     22.19,
+     "There are 10 balls altogether, and 3 of them are green."
+    ],
+    [
+     26.54,
+     "So the probability of green is 3 out of 10: 3 tenths."
+    ],
+    [
+     31.29,
+     "The other 7 balls are not green."
+    ],
+    [
+     33.58,
+     "So the probability of not green is 7 tenths."
+    ],
+    [
+     37.29,
+     "Remember: 6 out of 15, as a fraction, is 6 over 15."
+    ],
+    [
+     41.5,
+     "That simplifies to 2 fifths."
+    ],
+    [
+     44.36,
+     "The outcomes are the possible results."
+    ],
+    [
+     47.06,
+     "Each ball is 1 outcome."
+    ],
+    [
+     48.69,
+     "They are all equally likely, because the balls are the same size."
+    ],
+    [
+     53.86,
+     "When outcomes are equally likely, the probability of an event is the number of outcomes you want, divided by the total number of outcomes."
+    ],
+    [
+     63.76,
+     "For red: 5 out of 10, which is one half."
+    ],
+    [
+     67.46,
+     "Your turn."
+    ],
+    [
+     68.15,
+     "You roll a fair dice."
+    ],
+    [
+     69.61,
+     "What is the probability of a 6?"
+    ],
+    [
+     71.77,
+     "Pause the video and try it."
+    ],
+    [
+     75.05,
+     "A dice has 6 equally likely outcomes, and only 1 of them is a 6."
+    ],
+    [
+     79.88,
+     "The probability is 1 sixth."
+    ],
+    [
+     82.47,
+     "Outcomes are mutually exclusive if they cannot happen at the same time."
+    ],
+    [
+     87.34,
+     "A ball cannot be red and green together."
+    ],
+    [
+     90.63,
+     "Add the probabilities of all the outcomes: 5 tenths, plus 3 tenths, plus 2 tenths."
+    ],
+    [
+     96.69,
+     "The total is 1."
+    ],
+    [
+     98.35,
+     "This always happens."
+    ],
+    [
+     99.77,
+     "So the probability of something not happening is 1, minus the probability that it does happen."
+    ],
+    [
+     107.02,
+     "Your turn."
+    ],
+    [
+     107.76,
+     "The probability of winning a game is 0.07."
+    ],
+    [
+     110.87,
+     "What is the probability of not winning?"
+    ],
+    [
+     113.75,
+     "Pause the video and try it."
+    ],
+    [
+     117.15,
+     "1 minus 0.07 is 0.93."
+    ],
+    [
+     119.21,
+     "The probability of not winning is 0.93."
+    ],
+    [
+     123.58,
+     "Here is the method."
+    ],
+    [
+     124.93,
+     "Step 1: list all the equally likely outcomes, and count them."
+    ],
+    [
+     129.81,
+     "Step 2: count the outcomes you want."
+    ],
+    [
+     133.01,
+     "Step 3: divide, and simplify the fraction."
+    ],
+    [
+     136.71,
+     "Step 4: for the word not, subtract from 1."
+    ],
+    [
+     140.45,
+     "A fair spinner has 10 equal sections: 3 red, 5 white and 2 black."
+    ],
+    [
+     145.28,
+     "Find the probability of white, and the probability of not black."
+    ],
+    [
+     150.58,
+     "White is 5 out of 10, which is one half."
+    ],
+    [
+     154.28,
+     "Black is 2 out of 10."
+    ],
+    [
+     155.97,
+     "So not black is 1 minus 2 tenths, which is 8 tenths, or 4 fifths."
+    ],
+    [
+     161.76,
+     "A bag has only red, blue and green counters."
+    ],
+    [
+     165.05,
+     "The probability of red is 0.45."
+    ],
+    [
+     167.37,
+     "The probability of blue is 0.3."
+    ],
+    [
+     169.69,
+     "Find the probability of green."
+    ],
+    [
+     172.48,
+     "The 3 colours are mutually exclusive, so their probabilities add up to 1."
+    ],
+    [
+     178.43,
+     "1 minus 0.45 minus 0.3 is 0.25."
+    ],
+    [
+     181.47,
+     "The probability of green is 0.25."
+    ],
+    [
+     185.26,
+     "A letter is picked at random from the word MATHEMATICS."
+    ],
+    [
+     188.98,
+     "Find the probability that it is an M."
+    ],
+    [
+     192.04,
+     "The word has 11 letters, and 2 of them are M."
+    ],
+    [
+     195.62,
+     "So the probability is 2 over 11."
+    ],
+    [
+     198.72,
+     "You roll a dice."
+    ],
+    [
+     199.86,
+     "Are the events odd, and less than 4, mutually exclusive?"
+    ],
+    [
+     204.39,
+     "The odd numbers are 1, 3 and 5."
+    ],
+    [
+     206.98,
+     "The numbers less than 4 are 1, 2 and 3."
+    ],
+    [
+     210.78,
+     "1 and 3 are in both lists."
+    ],
+    [
+     212.6,
+     "So both events can happen together."
+    ],
+    [
+     215.05,
+     "They are not mutually exclusive."
+    ],
+    [
+     217.84,
+     "A box has 3 white pens and 9 black pens."
+    ],
+    [
+     220.67,
+     "Find the probability of picking a white pen."
+    ],
+    [
+     223.77,
+     "Here is Nia's working."
+    ],
+    [
+     225.33,
+     "Which line goes wrong first?"
+    ],
+    [
+     227.85,
+     "Line 2 is wrong."
+    ],
+    [
+     229.16,
+     "The total is all the pens: 3 plus 9 is 12, not 9."
+    ],
+    [
+     233.7,
+     "The probability of white is 3 over 12, which is 1 quarter."
+    ],
+    [
+     238.87,
+     "A standard pack has 52 playing cards, and 13 of them are hearts."
+    ],
+    [
+     243.89,
+     "So the probability of picking a heart is 13 over 52, which is 1 quarter."
+    ],
+    [
+     250.09,
+     "In a raffle, 200 tickets are sold, and you buy 5."
+    ],
+    [
+     254.18,
+     "Your probability of winning the prize is 5 over 200, which is 1 in 40."
+    ],
+    [
+     260.57,
+     "One last question."
+    ],
+    [
+     261.83,
+     "On 1 roll of a dice, are the events odd, and a 2, mutually exclusive or not?"
+    ],
+    [
+     267.14,
+     "Pause the video and decide."
+    ],
+    [
+     270.43,
+     "They are mutually exclusive."
+    ],
+    [
+     272.41,
+     "2 is an even number, so you cannot roll an odd number and a 2 at the same time."
+    ],
+    [
+     278.54,
+     "To remember: for equally likely outcomes, probability is the outcomes you want, divided by the total."
+    ],
+    [
+     285.98,
+     "Mutually exclusive outcomes cannot happen together."
+    ],
+    [
+     290.27,
+     "The probabilities of all the outcomes add up to 1."
+    ],
+    [
+     294.29,
+     "The probability of not A is 1 minus the probability of A."
+    ],
+    [
+     298.92,
+     "Great work! Now practise lesson 13.2 on Camday."
+    ]
+   ],
+   "times": {
+    "13.2-k1": 21.14,
+    "13.2-k2": 74.0,
+    "13.2-k3": 116.1,
+    "13.2-k4": 269.38
+   },
+   "up": true
+  },
+  "14.1": {
+   "src": "media/mv/s7/14-1.mp4",
+   "poster": "media/mv/s7/14-1_poster.jpg",
+   "srt": "media/mv/s7/14-1.srt",
+   "dur": 324.72,
+   "captions": [
+    [
+     6.27,
+     "On a hiking map, the scale is 1 to 25,000."
+    ],
+    [
+     9.61,
+     "The path from the car park to a waterfall measures 12 centimetres on the map."
+    ],
+    [
+     16.28,
+     "How far is the real walk, in kilometres?"
+    ],
+    [
+     18.98,
+     "Pause the video and work it out."
+    ],
+    [
+     22.54,
+     "Every 1 centimetre on the map is 25,000 centimetres on the ground."
+    ],
+    [
+     29.24,
+     "12 times 25,000 is 300,000 centimetres."
+    ],
+    [
+     33.76,
+     "Divide by 100 to get metres: 3,000 metres."
+    ],
+    [
+     37.7,
+     "Divide by 1,000 to get kilometres: 3 kilometres."
+    ],
+    [
+     42.76,
+     "Remember: 100 centimetres make 1 metre, and 1,000 metres make 1 kilometre."
+    ],
+    [
+     49.94,
+     "So 100,000 centimetres make 1 kilometre."
+    ],
+    [
+     54.38,
+     "A scale tells you how distances on a map compare with real distances."
+    ],
+    [
+     59.19,
+     "You can write a scale in 2 ways."
+    ],
+    [
+     61.98,
+     "In words: 1 centimetre represents 2 kilometres."
+    ],
+    [
+     66.29,
+     "Or as a ratio: 1 to 200,000."
+    ],
+    [
+     68.72,
+     "A ratio has no units."
+    ],
+    [
+     70.55,
+     "It means 1 of any unit on the map is 200,000 of the same unit in real life."
+    ],
+    [
+     77.62,
+     "Your turn."
+    ],
+    [
+     78.38,
+     "1 centimetre represents 4 kilometres."
+    ],
+    [
+     81.22,
+     "What does 9 centimetres represent?"
+    ],
+    [
+     83.83,
+     "Pause the video and try it."
+    ],
+    [
+     87.3,
+     "Each centimetre is 4 kilometres."
+    ],
+    [
+     90.08,
+     "9 times 4 is 36 kilometres."
+    ],
+    [
+     92.97,
+     "Architects draw plans of rooms and buildings to scale."
+    ],
+    [
+     97.08,
+     "A common scale is 1 to 50."
+    ],
+    [
+     99.06,
+     "1 centimetre on the plan is 50 centimetres in real life."
+    ],
+    [
+     103.87,
+     "A room is 8 centimetres by 6 centimetres on the plan."
+    ],
+    [
+     108.33,
+     "Multiply by 50: it is 400 centimetres by 300 centimetres."
+    ],
+    [
+     113.13,
+     "That is 4 metres by 3 metres."
+    ],
+    [
+     116.12,
+     "Your turn."
+    ],
+    [
+     116.86,
+     "A plan has a scale of 1 to 100."
+    ],
+    [
+     119.16,
+     "A wall is 3.6 centimetres long on the plan."
+    ],
+    [
+     122.36,
+     "How long is the real wall, in metres?"
+    ],
+    [
+     125.11,
+     "Pause the video and try it."
+    ],
+    [
+     128.51,
+     "3.6 times 100 is 360 centimetres."
+    ],
+    [
+     131.97,
+     "That is 3.6 metres."
+    ],
+    [
+     134.51,
+     "Here is the method."
+    ],
+    [
+     135.88,
+     "Step 1: measure accurately on the map."
+    ],
+    [
+     139.15,
+     "Step 2: from the map to real life, multiply by the scale."
+    ],
+    [
+     143.07,
+     "From real life to the map, divide."
+    ],
+    [
+     145.95,
+     "Step 3: with a ratio scale, the answer is in the same units as you started with."
+    ],
+    [
+     151.47,
+     "Then convert it."
+    ],
+    [
+     153.12,
+     "Step 4: check that your answer is sensible."
+    ],
+    [
+     156.84,
+     "The scale is 1 to 40,000."
+    ],
+    [
+     158.89,
+     "A road is 9 centimetres long on the map."
+    ],
+    [
+     162.17,
+     "How long is the real road?"
+    ],
+    [
+     164.85,
+     "9 times 40,000 is 360,000 centimetres."
+    ],
+    [
+     169.77,
+     "Divide by 100,000 to change centimetres to kilometres."
+    ],
+    [
+     174.55,
+     "The road is 3.6 kilometres long."
+    ],
+    [
+     177.93,
+     "A lake is 800 metres long."
+    ],
+    [
+     180.2,
+     "How long is it on a map with a scale of 1 to 20,000?"
+    ],
+    [
+     185.28,
+     "First change to centimetres."
+    ],
+    [
+     188.01,
+     "800 metres is 80,000 centimetres."
+    ],
+    [
+     191.78,
+     "From real life to the map, divide."
+    ],
+    [
+     194.79,
+     "80,000 divided by 20,000 is 4."
+    ],
+    [
+     197.43,
+     "The lake is 4 centimetres long on the map."
+    ],
+    [
+     201.69,
+     "A road is 3 kilometres long."
+    ],
+    [
+     203.7,
+     "It measures 6 centimetres on a map."
+    ],
+    [
+     206.21,
+     "Write the scale as a ratio."
+    ],
+    [
+     208.69,
+     "Use the same units."
+    ],
+    [
+     210.61,
+     "3 kilometres is 300,000 centimetres."
+    ],
+    [
+     214.25,
+     "So the ratio is 6 to 300,000."
+    ],
+    [
+     217.72,
+     "Divide both parts by 6."
+    ],
+    [
+     219.91,
+     "The scale is 1 to 50,000."
+    ],
+    [
+     222.84,
+     "The scale is 1 to 30,000."
+    ],
+    [
+     224.77,
+     "A path is 4 centimetres on the map."
+    ],
+    [
+     227.48,
+     "Find the real distance."
+    ],
+    [
+     229.26,
+     "Here is Bea's working."
+    ],
+    [
+     230.96,
+     "Which line goes wrong first?"
+    ],
+    [
+     233.67,
+     "Line 2 is wrong."
+    ],
+    [
+     234.78,
+     "With a ratio scale, the answer is in the units you started with: centimetres, not kilometres."
+    ],
+    [
+     241.79,
+     "120,000 centimetres is 1.2 kilometres."
+    ],
+    [
+     244.99,
+     "That is a sensible length for a path."
+    ],
+    [
+     248.65,
+     "Many model railways use a scale of 1 to 87."
+    ],
+    [
+     252.02,
+     "A real locomotive, 20 metres long, becomes a model about 23 centimetres long."
+    ],
+    [
+     258.6,
+     "When you zoom in on a map on your phone, the scale changes."
+    ],
+    [
+     262.86,
+     "1 centimetre on the screen might be 5 kilometres, or only 50 metres."
+    ],
+    [
+     268.32,
+     "That is why digital maps show a small scale bar, which changes as you zoom."
+    ],
+    [
+     273.96,
+     "One last question."
+    ],
+    [
+     275.36,
+     "The scale is 1 to 50,000."
+    ],
+    [
+     277.31,
+     "A real distance is 2.5 kilometres."
+    ],
+    [
+     279.96,
+     "How many centimetres is that on the map?"
+    ],
+    [
+     283.08,
+     "Pause the video and work it out."
+    ],
+    [
+     286.98,
+     "2.5 kilometres is 250,000 centimetres."
+    ],
+    [
+     290.67,
+     "Divide by 50,000."
+    ],
+    [
+     292.33,
+     "It is 5 centimetres on the map."
+    ],
+    [
+     295.89,
+     "To remember: from the map to real life, multiply by the scale."
+    ],
+    [
+     300.0,
+     "From real life to the map, divide."
+    ],
+    [
+     302.8,
+     "A ratio scale, like 1 to 50,000, uses the same unit on both sides."
+    ],
+    [
+     308.82,
+     "100 centimetres is 1 metre, and 100,000 centimetres is 1 kilometre."
+    ],
+    [
+     315.88,
+     "Always check that your answer is sensible."
+    ],
+    [
+     319.31,
+     "Great work! Now practise lesson 14.1 on Camday."
+    ]
+   ],
+   "times": {
+    "14.1-k1": 21.49,
+    "14.1-k2": 86.25,
+    "14.1-k3": 127.46,
+    "14.1-k4": 285.93
+   },
+   "up": true
+  },
+  "15.1": {
+   "src": "media/mv/s7/15-1.mp4",
+   "poster": "media/mv/s7/15-1_poster.jpg",
+   "srt": "media/mv/s7/15-1.srt",
+   "dur": 312.0,
+   "captions": [
+    [
+     7.69,
+     "A shop sells floor tiles priced for each square metre."
+    ],
+    [
+     11.9,
+     "But your floor plan is in square centimetres."
+    ],
+    [
+     15.4,
+     "The floor is 180,000 square centimetres."
+    ],
+    [
+     19.07,
+     "How many square metres is that?"
+    ],
+    [
+     21.43,
+     "Be careful: it is not 1,800."
+    ],
+    [
+     23.57,
+     "Pause the video and work it out."
+    ],
+    [
+     27.4,
+     "1 metre is 100 centimetres."
+    ],
+    [
+     30.0,
+     "But 1 square metre is 100 centimetres by 100 centimetres."
+    ],
+    [
+     35.49,
+     "That is 10,000 square centimetres."
+    ],
+    [
+     39.31,
+     "So divide by 10,000, not by 100."
+    ],
+    [
+     43.12,
+     "180,000 divided by 10,000 is 18 square metres."
+    ],
+    [
+     49.14,
+     "Remember the length facts."
+    ],
+    [
+     51.51,
+     "1 centimetre is 10 millimetres."
+    ],
+    [
+     54.33,
+     "1 metre is 100 centimetres."
+    ],
+    [
+     56.78,
+     "1 kilometre is 1,000 metres."
+    ],
+    [
+     59.88,
+     "For an area, the length fact is used 2 times: once for the length, and once for the width."
+    ],
+    [
+     65.93,
+     "So you square the number."
+    ],
+    [
+     68.16,
+     "1 centimetre is 10 millimetres."
+    ],
+    [
+     70.78,
+     "So 1 square centimetre is 10 times 10, which is 100 square millimetres."
+    ],
+    [
+     77.33,
+     "1 square metre is 10,000 square centimetres."
+    ],
+    [
+     81.08,
+     "And 1 square kilometre is 1 million square metres."
+    ],
+    [
+     85.89,
+     "Your turn."
+    ],
+    [
+     86.61,
+     "Change 2 square metres to square centimetres."
+    ],
+    [
+     89.83,
+     "Pause the video and try it."
+    ],
+    [
+     93.17,
+     "Each square metre is 10,000 square centimetres."
+    ],
+    [
+     98.03,
+     "2 times 10,000 is 20,000 square centimetres."
+    ],
+    [
+     103.14,
+     "Going from a bigger unit to a smaller unit, you need more of them."
+    ],
+    [
+     108.35,
+     "So multiply."
+    ],
+    [
+     109.29,
+     "4.5 square metres is 45,000 square centimetres."
+    ],
+    [
+     113.55,
+     "Going from a smaller unit to a bigger unit, you need fewer."
+    ],
+    [
+     118.11,
+     "So divide."
+    ],
+    [
+     118.88,
+     "730 square millimetres is 7.3 square centimetres."
+    ],
+    [
+     123.21,
+     "Your turn."
+    ],
+    [
+     123.98,
+     "Change 850 square millimetres to square centimetres."
+    ],
+    [
+     127.96,
+     "Pause the video and try it."
+    ],
+    [
+     131.43,
+     "100 square millimetres make 1 square centimetre."
+    ],
+    [
+     135.95,
+     "850 divided by 100 is 8.5 square centimetres."
+    ],
+    [
+     140.73,
+     "Here is the method."
+    ],
+    [
+     142.19,
+     "Step 1: write the length fact."
+    ],
+    [
+     144.51,
+     "For example, 1 metre is 100 centimetres."
+    ],
+    [
+     148.15,
+     "Step 2: square it, to get the area fact."
+    ],
+    [
+     151.5,
+     "1 square metre is 10,000 square centimetres."
+    ],
+    [
+     155.74,
+     "Step 3: to a smaller unit, multiply."
+    ],
+    [
+     158.3,
+     "To a bigger unit, divide."
+    ],
+    [
+     160.63,
+     "Step 4: check that the size of your answer makes sense."
+    ],
+    [
+     165.16,
+     "Change 0.6 square metres to square centimetres."
+    ],
+    [
+     169.45,
+     "Going to a smaller unit, so multiply by 10,000."
+    ],
+    [
+     173.54,
+     "The answer is 6,000 square centimetres."
+    ],
+    [
+     177.49,
+     "A rug is 1.5 metres long and 40 centimetres wide."
+    ],
+    [
+     181.25,
+     "Find its area in square metres."
+    ],
+    [
+     184.18,
+     "Make the units the same before you multiply."
+    ],
+    [
+     187.67,
+     "40 centimetres is 0.4 metres."
+    ],
+    [
+     190.51,
+     "1.5 times 0.4 is 0.6."
+    ],
+    [
+     192.53,
+     "The area is 0.6 square metres."
+    ],
+    [
+     195.97,
+     "1 litre of paint covers 10 square metres."
+    ],
+    [
+     199.38,
+     "A wall measures 500 centimetres by 280 centimetres."
+    ],
+    [
+     203.62,
+     "How much paint is needed?"
+    ],
+    [
+     206.25,
+     "Change the lengths to metres first: 5 metres by 2.8 metres."
+    ],
+    [
+     210.92,
+     "The area is 14 square metres."
+    ],
+    [
+     213.77,
+     "14 divided by 10 is 1.4."
+    ],
+    [
+     216.1,
+     "You need 1.4 litres of paint."
+    ],
+    [
+     219.46,
+     "Change 3 square metres to square centimetres."
+    ],
+    [
+     222.71,
+     "Here is Pita's working."
+    ],
+    [
+     224.38,
+     "Which line goes wrong first?"
+    ],
+    [
+     226.96,
+     "Line 2 is wrong."
+    ],
+    [
+     228.29,
+     "100 is the fact for length."
+    ],
+    [
+     230.54,
+     "For area, you must square it: 1 square metre is 10,000 square centimetres."
+    ],
+    [
+     237.27,
+     "3 times 10,000 is 30,000 square centimetres."
+    ],
+    [
+     243.04,
+     "Paper sizes are built on area."
+    ],
+    [
+     245.16,
+     "The largest sheet, called A0, has an area of exactly 1 square metre."
+    ],
+    [
+     250.51,
+     "Fold it in half 4 times, and you get 16 sheets of A4, the paper in your printer."
+    ],
+    [
+     257.08,
+     "So 1 sheet of A4 is 10,000 divided by 16."
+    ],
+    [
+     261.12,
+     "That is about 625 square centimetres."
+    ],
+    [
+     265.31,
+     "One last question."
+    ],
+    [
+     266.67,
+     "A tile is 50 centimetres by 50 centimetres."
+    ],
+    [
+     269.91,
+     "What is its area in square metres?"
+    ],
+    [
+     272.48,
+     "Pause the video and work it out."
+    ],
+    [
+     276.29,
+     "Change to metres first."
+    ],
+    [
+     278.43,
+     "50 centimetres is 0.5 metres."
+    ],
+    [
+     281.13,
+     "0.5 times 0.5 is 0.25 square metres."
+    ],
+    [
+     285.04,
+     "To remember: 1 square centimetre is 100 square millimetres."
+    ],
+    [
+     290.25,
+     "1 square metre is 10,000 square centimetres."
+    ],
+    [
+     294.7,
+     "Square the length fact to get the area fact."
+    ],
+    [
+     298.26,
+     "To a smaller unit, multiply."
+    ],
+    [
+     300.17,
+     "To a bigger unit, divide."
+    ],
+    [
+     302.43,
+     "Make the units the same before you multiply lengths."
+    ],
+    [
+     306.59,
+     "Great work! Now practise lesson 15.1 on Camday."
+    ]
+   ],
+   "times": {
+    "15.1-k1": 26.35,
+    "15.1-k2": 92.12,
+    "15.1-k3": 130.38,
+    "15.1-k4": 275.24
+   },
+   "up": false
+  },
+  "13.1": {
+   "src": "media/mv/s7/13-1.mp4",
+   "poster": "media/mv/s7/13-1_poster.jpg",
+   "srt": "media/mv/s7/13-1.srt",
+   "dur": 303.84,
+   "captions": [
+    [
+     6.88,
+     "A weather app says there is a 70 per cent chance of rain tomorrow."
+    ],
+    [
+     12.2,
+     "Your friend says rain is likely."
+    ],
+    [
+     14.42,
+     "Your little brother says rain is certain."
+    ],
+    [
+     17.81,
+     "Who is right?"
+    ],
+    [
+     18.75,
+     "Is a 70 per cent chance likely, certain, or unlikely?"
+    ],
+    [
+     22.59,
+     "Pause the video and decide."
+    ],
+    [
+     25.94,
+     "Your friend is right."
+    ],
+    [
+     27.44,
+     "70 per cent is more than an even chance, so rain is likely."
+    ],
+    [
+     32.2,
+     "But it is not certain."
+    ],
+    [
+     33.76,
+     "There is still a 30 per cent chance that it stays dry."
+    ],
+    [
+     38.15,
+     "Remember: one half is 0.5, or 50 per cent."
+    ],
+    [
+     41.91,
+     "One quarter is 0.25, or 25 per cent."
+    ],
+    [
+     45.14,
+     "And 70 per cent is 0.7."
+    ],
+    [
+     47.75,
+     "Probability measures how likely something is to happen."
+    ],
+    [
+     51.52,
+     "Words help, but numbers are more precise."
+    ],
+    [
+     54.88,
+     "Impossible means it cannot happen."
+    ],
+    [
+     57.37,
+     "Its probability is 0."
+    ],
+    [
+     59.47,
+     "Unlikely means less than an even chance."
+    ],
+    [
+     62.26,
+     "An even chance is a probability of 0.5."
+    ],
+    [
+     64.99,
+     "Likely means more than an even chance."
+    ],
+    [
+     68.2,
+     "Your turn."
+    ],
+    [
+     68.9,
+     "What does a probability of 1 mean: certain, or an even chance?"
+    ],
+    [
+     73.25,
+     "Pause the video and decide."
+    ],
+    [
+     76.54,
+     "A probability of 1 means certain."
+    ],
+    [
+     78.97,
+     "The event must happen."
+    ],
+    [
+     81.14,
+     "All probabilities sit on a scale from 0 to 1."
+    ],
+    [
+     84.56,
+     "0 is impossible, and 1 is certain."
+    ],
+    [
+     87.69,
+     "You can write a probability as a fraction, a decimal or a percentage."
+    ],
+    [
+     92.87,
+     "But a probability is never less than 0, and never more than 1."
+    ],
+    [
+     97.96,
+     "Here is the method."
+    ],
+    [
+     99.41,
+     "Step 1: ask 3 questions."
+    ],
+    [
+     101.23,
+     "Can it never happen?"
+    ],
+    [
+     102.75,
+     "Must it happen?"
+    ],
+    [
+     103.89,
+     "Is it 50 50?"
+    ],
+    [
+     105.35,
+     "Step 2: if not, decide if it is more likely or less likely than an even chance."
+    ],
+    [
+     111.28,
+     "Step 3: if you have a number, change it to a decimal and place it on the scale."
+    ],
+    [
+     117.12,
+     "Step 4: to compare probabilities, write them all in the same form."
+    ],
+    [
+     122.31,
+     "Place 3 events on the scale."
+    ],
+    [
+     124.38,
+     "First: rolling a 7 on a normal dice."
+    ],
+    [
+     127.04,
+     "A dice only has the numbers 1 to 6, so this is impossible."
+    ],
+    [
+     131.33,
+     "The probability is 0."
+    ],
+    [
+     133.43,
+     "Second: a coin landing on heads."
+    ],
+    [
+     135.77,
+     "That is an even chance: 0.5."
+    ],
+    [
+     138.36,
+     "Third: the day after Monday being Tuesday."
+    ],
+    [
+     141.38,
+     "That is certain."
+    ],
+    [
+     142.53,
+     "The probability is 1."
+    ],
+    [
+     144.58,
+     "Which is more likely: an event with probability 7 tenths, or an event with probability 68 per cent?"
+    ],
+    [
+     152.47,
+     "Write both as decimals."
+    ],
+    [
+     154.61,
+     "7 tenths is 0.7."
+    ],
+    [
+     156.09,
+     "68 per cent is 0.68."
+    ],
+    [
+     158.5,
+     "0.7 is bigger."
+    ],
+    [
+     159.6,
+     "So 7 tenths is more likely."
+    ],
+    [
+     162.27,
+     "Your turn."
+    ],
+    [
+     163.05,
+     "Which is more likely: 0.45, or 2 fifths?"
+    ],
+    [
+     166.15,
+     "Pause the video and try it."
+    ],
+    [
+     169.65,
+     "2 fifths is 0.4."
+    ],
+    [
+     171.22,
+     "And 0.45 is bigger than 0.4."
+    ],
+    [
+     173.97,
+     "So 0.45 is more likely."
+    ],
+    [
+     176.78,
+     "Ella says the probability of her team winning is 1.3."
+    ],
+    [
+     180.68,
+     "Can she be right?"
+    ],
+    [
+     182.48,
+     "No."
+    ],
+    [
+     182.73,
+     "Probabilities are between 0 and 1."
+    ],
+    [
+     185.6,
+     "And 1.3 is more than 1."
+    ],
+    [
+     188.09,
+     "Put these events in order, from least likely to most likely."
+    ],
+    [
+     192.74,
+     "A has probability 0.55."
+    ],
+    [
+     194.53,
+     "B has probability 3 fifths."
+    ],
+    [
+     196.62,
+     "C has probability 52 per cent."
+    ],
+    [
+     199.49,
+     "Write them all as decimals: 0.55, 0.6 and 0.52."
+    ],
+    [
+     204.61,
+     "The smallest is 0.52, then 0.55, then 0.6."
+    ],
+    [
+     208.23,
+     "So the order is C, A, B."
+    ],
+    [
+     210.84,
+     "A bag has 4 red sweets and 7 blue sweets."
+    ],
+    [
+     213.7,
+     "Find the probability of picking a red one."
+    ],
+    [
+     216.63,
+     "Here is Ali's working."
+    ],
+    [
+     218.16,
+     "Which line goes wrong first?"
+    ],
+    [
+     220.66,
+     "Line 2 is wrong."
+    ],
+    [
+     221.82,
+     "7 over 4 is more than 1, so it cannot be a probability."
+    ],
+    [
+     225.8,
+     "Divide the number of red sweets by the total number of sweets."
+    ],
+    [
+     230.83,
+     "There are 11 sweets altogether."
+    ],
+    [
+     233.3,
+     "The probability of red is 4 over 11."
+    ],
+    [
+     236.72,
+     "Weather forecasters use probability every day."
+    ],
+    [
+     240.15,
+     "A 70 per cent chance of rain means: on 10 days like this one, it rains on about 7 of them."
+    ],
+    [
+     247.4,
+     "A football match starts with a coin toss, because each captain has an even chance."
+    ],
+    [
+     252.95,
+     "That makes it fair."
+    ],
+    [
+     254.79,
+     "And doctors talk about risk in the same way: a number between 0 and 1."
+    ],
+    [
+     260.31,
+     "One last question."
+    ],
+    [
+     261.68,
+     "Which of these is a valid probability: 3 quarters, 4 thirds, or 110 per cent?"
+    ],
+    [
+     267.53,
+     "Pause the video and decide."
+    ],
+    [
+     270.98,
+     "3 quarters."
+    ],
+    [
+     271.87,
+     "It is between 0 and 1."
+    ],
+    [
+     273.66,
+     "The other 2 are both more than 1."
+    ],
+    [
+     276.9,
+     "To remember: probability goes from 0, impossible, to 1, certain."
+    ],
+    [
+     281.87,
+     "0.5 is an even chance."
+    ],
+    [
+     284.13,
+     "The words are: impossible, unlikely, even chance, likely and certain."
+    ],
+    [
+     289.42,
+     "Write probabilities as fractions, decimals or percentages."
+    ],
+    [
+     294.09,
+     "A probability is never below 0, and never above 1."
+    ],
+    [
+     298.39,
+     "Great work! Now practise lesson 13.1 on Camday."
+    ]
+   ],
+   "times": {
+    "13.1-k1": 24.89,
+    "13.1-k2": 75.49,
+    "13.1-k3": 168.6,
+    "13.1-k4": 269.93
+   },
+   "up": false
+  },
+  "9.2": {
+   "src": "media/mv/s7/9-2.mp4",
+   "poster": "media/mv/s7/9-2_poster.jpg",
+   "srt": "media/mv/s7/9-2.srt",
+   "dur": 318.48,
+   "captions": [
+    [
+     7.2,
+     "Here are the first 3 patterns of a tile design."
+    ],
+    [
+     10.93,
+     "Pattern 1 has 3 tiles."
+    ],
+    [
+     12.67,
+     "Pattern 2 has 5 tiles."
+    ],
+    [
+     14.42,
+     "Pattern 3 has 7 tiles."
+    ],
+    [
+     16.71,
+     "How many tiles will Pattern 4 have?"
+    ],
+    [
+     19.19,
+     "Pause the video and work it out."
+    ],
+    [
+     22.85,
+     "Each new pattern has 1 more tile on each arm of the L."
+    ],
+    [
+     26.61,
+     "That is 2 more tiles each time."
+    ],
+    [
+     29.31,
+     "7 plus 2 is 9."
+    ],
+    [
+     30.59,
+     "Pattern 4 has 9 tiles."
+    ],
+    [
+     33.14,
+     "Remember: a quick way to see an add or subtract rule is to write the differences between the terms."
+    ],
+    [
+     40.22,
+     "7, 11, 15, 19."
+    ],
+    [
+     41.59,
+     "The differences are plus 4, plus 4, plus 4."
+    ],
+    [
+     46.34,
+     "Look at these 2 sequences."
+    ],
+    [
+     48.51,
+     "4, 7, 10, 13."
+    ],
+    [
+     49.6,
+     "And 1, 4, 9, 16."
+    ],
+    [
+     50.94,
+     "Which one goes up by the same amount every time?"
+    ],
+    [
+     54.95,
+     "Pause the video and decide."
+    ],
+    [
+     58.6,
+     "4, 7, 10, 13 goes up by 3 every time."
+    ],
+    [
+     62.15,
+     "But 1, 4, 9, 16 goes up by 3, then 5, then 7."
+    ],
+    [
+     67.02,
+     "A sequence is linear when the differences between terms next to each other are all the same."
+    ],
+    [
+     73.9,
+     "A linear sequence can go up, or it can go down."
+    ],
+    [
+     77.75,
+     "30, 26, 22, 18 is linear, with differences of negative 4."
+    ],
+    [
+     82.98,
+     "Look at the tile pattern again."
+    ],
+    [
+     85.24,
+     "Every pattern has 1 corner tile, and 2 equal arms."
+    ],
+    [
+     89.44,
+     "In Pattern 3, each arm has 3 tiles."
+    ],
+    [
+     92.45,
+     "1 plus 3 plus 3 is 7."
+    ],
+    [
+     94.82,
+     "So you can jump straight to any pattern."
+    ],
+    [
+     98.01,
+     "Pattern 6 has 1 plus 6 plus 6, which is 13 tiles."
+    ],
+    [
+     102.48,
+     "Your turn."
+    ],
+    [
+     103.2,
+     "How many tiles are in Pattern 8?"
+    ],
+    [
+     105.5,
+     "Pause the video and try it."
+    ],
+    [
+     108.85,
+     "Pattern 8 has 1 corner, and 2 arms of 8 tiles."
+    ],
+    [
+     112.88,
+     "1 plus 8 plus 8 is 17 tiles."
+    ],
+    [
+     115.89,
+     "Square numbers come from square patterns: 1, 4, 9, 16."
+    ],
+    [
+     120.07,
+     "The differences are 3, 5, 7."
+    ],
+    [
+     122.24,
+     "They are not equal, so the sequence is not linear."
+    ],
+    [
+     126.66,
+     "Triangular numbers come from triangle patterns: 1, 3, 6, 10."
+    ],
+    [
+     131.52,
+     "The differences are 2, 3, 4."
+    ],
+    [
+     133.78,
+     "This sequence is not linear either."
+    ],
+    [
+     137.16,
+     "Here is the method."
+    ],
+    [
+     138.49,
+     "Step 1: write the difference between every pair of terms that are next to each other."
+    ],
+    [
+     144.97,
+     "Step 2: if all the differences are equal, the sequence is linear."
+    ],
+    [
+     150.11,
+     "Step 3: if even one difference is different, it is not linear."
+    ],
+    [
+     154.95,
+     "Step 4: to continue a linear sequence, keep adding the same difference."
+    ],
+    [
+     160.6,
+     "Is this sequence linear?"
+    ],
+    [
+     162.96,
+     "3, 6, 11, 18."
+    ],
+    [
+     164.79,
+     "The differences are 3, 5 and 7."
+    ],
+    [
+     167.06,
+     "They are not all equal, so it is not linear."
+    ],
+    [
+     170.84,
+     "What about 52, 45, 38, 31?"
+    ],
+    [
+     174.6,
+     "The differences are all negative 7."
+    ],
+    [
+     177.11,
+     "So this sequence is linear."
+    ],
+    [
+     179.59,
+     "Pattern 1 is a square made of 4 matchsticks."
+    ],
+    [
+     182.77,
+     "Each new pattern adds 1 more square to the row, sharing a side."
+    ],
+    [
+     187.87,
+     "A new square needs only 3 new matchsticks."
+    ],
+    [
+     191.57,
+     "So the sequence is 4, 7, 10, 13, 16."
+    ],
+    [
+     194.73,
+     "Pattern 5 has 16 matchsticks."
+    ],
+    [
+     197.84,
+     "Which pattern uses 31 matchsticks?"
+    ],
+    [
+     200.92,
+     "31 minus 4 is 27, and 27 divided by 3 is 9 steps."
+    ],
+    [
+     205.35,
+     "9 steps after Pattern 1 is Pattern 10."
+    ],
+    [
+     209.35,
+     "In the L-shaped design, is there a pattern with exactly 50 tiles?"
+    ],
+    [
+     214.61,
+     "Every pattern is 1 corner plus 2 equal arms."
+    ],
+    [
+     217.86,
+     "2 equal arms make an even number, and 1 more makes an odd number."
+    ],
+    [
+     223.22,
+     "Every term is odd, but 50 is even."
+    ],
+    [
+     225.86,
+     "So no pattern has exactly 50 tiles."
+    ],
+    [
+     229.13,
+     "Is 1, 2, 4, 7, 11 a linear sequence?"
+    ],
+    [
+     231.97,
+     "Here is Kai's working."
+    ],
+    [
+     233.7,
+     "Which line goes wrong first?"
+    ],
+    [
+     236.46,
+     "Line 2 is wrong."
+    ],
+    [
+     237.65,
+     "For a linear sequence, the differences themselves must be equal."
+    ],
+    [
+     242.4,
+     "Here they are 1, 2, 3, 4, which are all different."
+    ],
+    [
+     246.67,
+     "So the sequence is not linear."
+    ],
+    [
+     249.27,
+     "In ten-pin bowling, the pins stand in a triangle: 1, then 2, then 3, then 4."
+    ],
+    [
+     255.05,
+     "That makes 10, a triangular number."
+    ],
+    [
+     258.26,
+     "A chessboard has 8 rows of 8 squares."
+    ],
+    [
+     261.29,
+     "8 times 8 is 64, a square number."
+    ],
+    [
+     264.55,
+     "And the seats in a cinema row are numbered 1, 2, 3, 4: a linear sequence."
+    ],
+    [
+     270.5,
+     "One last question."
+    ],
+    [
+     271.83,
+     "Pattern 1 uses 5 matchsticks, and each new pattern adds 4."
+    ],
+    [
+     276.09,
+     "How many matchsticks are in Pattern 7?"
+    ],
+    [
+     278.89,
+     "Pause the video and work it out."
+    ],
+    [
+     282.64,
+     "From Pattern 1 to Pattern 7 is 6 steps."
+    ],
+    [
+     286.25,
+     "6 times 4 is 24, and 5 plus 24 is 29 matchsticks."
+    ],
+    [
+     291.34,
+     "To remember: count the pieces in each pattern to make a sequence."
+    ],
+    [
+     295.77,
+     "The picture shows you why the rule works."
+    ],
+    [
+     299.12,
+     "A sequence is linear if all the differences are equal."
+    ],
+    [
+     302.59,
+     "It can go up or down."
+    ],
+    [
+     304.49,
+     "Square numbers and triangular numbers are not linear."
+    ],
+    [
+     308.71,
+     "To reach a later pattern, count the steps, not the patterns."
+    ],
+    [
+     313.32,
+     "Great work! Now practise lesson 9.2 on Camday."
+    ]
+   ],
+   "times": {
+    "9.2-k1": 21.8,
+    "9.2-k2": 57.55,
+    "9.2-k3": 107.8,
+    "9.2-k4": 281.59
+   },
+   "up": false
+  },
+  "14.5": {
+   "src": "media/mv/s7/14-5.mp4",
+   "poster": "media/mv/s7/14-5_poster.jpg",
+   "srt": "media/mv/s7/14-5.srt",
+   "dur": 325.88,
+   "captions": [
+    [
+     6.47,
+     "You turn a key a quarter turn clockwise, to unlock a door."
+    ],
+    [
+     10.34,
+     "Before you turn it, the key points straight up."
+    ],
+    [
+     14.04,
+     "Which way does the key point after the quarter turn: right, left, or down?"
+    ],
+    [
+     19.04,
+     "Pause the video and decide."
+    ],
+    [
+     22.27,
+     "Clockwise is the way the hands of a clock move."
+    ],
+    [
+     25.47,
+     "From pointing up, a quarter turn clockwise points to the right."
+    ],
+    [
+     30.3,
+     "After a half turn, the key would point straight down."
+    ],
+    [
+     34.38,
+     "Remember: a quarter turn is 90 degrees."
+    ],
+    [
+     37.67,
+     "A half turn is 180 degrees."
+    ],
+    [
+     39.96,
+     "A full turn is 360 degrees."
+    ],
+    [
+     42.79,
+     "A rotation turns a shape about a fixed point."
+    ],
+    [
+     45.85,
+     "That point is called the centre of rotation."
+    ],
+    [
+     49.39,
+     "To describe a rotation, you need 3 things: the angle, the direction, and the centre."
+    ],
+    [
+     55.58,
+     "Here, triangle A is rotated 90 degrees clockwise about the point 0, 0, to give triangle B."
+    ],
+    [
+     63.0,
+     "Think about the centre of rotation."
+    ],
+    [
+     65.37,
+     "Does it not move at all, or does it move the furthest?"
+    ],
+    [
+     69.04,
+     "Pause the video and decide."
+    ],
+    [
+     72.27,
+     "The centre does not move."
+    ],
+    [
+     73.95,
+     "Everything else turns around it, like a wheel turning around its axle."
+    ],
+    [
+     79.21,
+     "In a rotation, every point stays the same distance from the centre."
+    ],
+    [
+     83.71,
+     "So the image is congruent to the object."
+    ],
+    [
+     86.94,
+     "A half turn about 0, 0 has a simple rule."
+    ],
+    [
+     90.1,
+     "Both coordinates change sign."
+    ],
+    [
+     92.33,
+     "The point 2, 5 goes to negative 2, negative 5."
+    ],
+    [
+     96.43,
+     "For a half turn, the direction does not matter."
+    ],
+    [
+     99.7,
+     "Clockwise and anticlockwise give the same image."
+    ],
+    [
+     103.59,
+     "Your turn."
+    ],
+    [
+     104.42,
+     "Rotate the point 0, 3 through 180 degrees about 0, 0."
+    ],
+    [
+     108.79,
+     "Pause the video and try it."
+    ],
+    [
+     112.42,
+     "Both coordinates change sign."
+    ],
+    [
+     114.76,
+     "0 stays 0, and 3 becomes negative 3."
+    ],
+    [
+     117.67,
+     "The image is 0, negative 3."
+    ],
+    [
+     120.41,
+     "Here is the method."
+    ],
+    [
+     121.73,
+     "Step 1: find the centre, the angle, and the direction."
+    ],
+    [
+     126.05,
+     "Step 2: trace the shape, and mark the centre on your tracing paper."
+    ],
+    [
+     131.3,
+     "Step 3: hold the centre still with your pencil point, and turn the tracing paper through the angle."
+    ],
+    [
+     138.72,
+     "Step 4: mark the image, and check that it is the same shape and size."
+    ],
+    [
+     144.09,
+     "A rectangle has corners 0, 0."
+    ],
+    [
+     146.68,
+     "Then 3, 0."
+    ],
+    [
+     147.57,
+     "Then 3, 1."
+    ],
+    [
+     148.46,
+     "And 0, 1."
+    ],
+    [
+     149.27,
+     "Rotate it 90 degrees anticlockwise about 0, 0."
+    ],
+    [
+     153.93,
+     "The long side lies along the x axis."
+    ],
+    [
+     156.49,
+     "After a quarter turn anticlockwise, it stands up along the y axis."
+    ],
+    [
+     161.19,
+     "So 3, 0 goes to 0, 3."
+    ],
+    [
+     163.23,
+     "The corner 3, 1 goes to negative 1, 3."
+    ],
+    [
+     166.38,
+     "And 0, 1 goes to negative 1, 0."
+    ],
+    [
+     168.94,
+     "The centre, 0, 0, stays where it is."
+    ],
+    [
+     172.47,
+     "A triangle has corners 2, 1."
+    ],
+    [
+     174.97,
+     "Then 5, 1."
+    ],
+    [
+     175.87,
+     "And 2, 3."
+    ],
+    [
+     176.67,
+     "Rotate it 180 degrees about the corner 2, 1."
+    ],
+    [
+     181.15,
+     "The corner 5, 1 is 3 squares right of the centre."
+    ],
+    [
+     184.88,
+     "After a half turn, it is 3 squares left: negative 1, 1."
+    ],
+    [
+     189.62,
+     "The corner 2, 3 is 2 squares above the centre."
+    ],
+    [
+     193.15,
+     "After a half turn, it is 2 squares below: 2, negative 1."
+    ],
+    [
+     197.99,
+     "An arrow points to the right."
+    ],
+    [
+     199.93,
+     "It is turned so that it points up."
+    ],
+    [
+     202.22,
+     "Describe the rotation."
+    ],
+    [
+     204.25,
+     "From right to up is a quarter turn."
+    ],
+    [
+     206.59,
+     "It goes the opposite way to the hands of a clock."
+    ],
+    [
+     210.43,
+     "So it is a rotation of 90 degrees anticlockwise."
+    ],
+    [
+     214.64,
+     "Is a turn of 90 degrees clockwise the same as a turn of 270 degrees anticlockwise?"
+    ],
+    [
+     221.69,
+     "90 plus 270 is 360, a full turn."
+    ],
+    [
+     224.4,
+     "So going 90 degrees one way ends in the same place as going 270 degrees the other way."
+    ],
+    [
+     231.67,
+     "Yes, they are the same."
+    ],
+    [
+     234.17,
+     "A shape points up."
+    ],
+    [
+     235.41,
+     "It is turned to point left."
+    ],
+    [
+     237.27,
+     "Describe the rotation."
+    ],
+    [
+     238.79,
+     "Here is Jade's working."
+    ],
+    [
+     240.38,
+     "Which line goes wrong first?"
+    ],
+    [
+     242.86,
+     "Line 2 is wrong."
+    ],
+    [
+     243.96,
+     "The answer is not complete."
+    ],
+    [
+     245.81,
+     "A rotation needs a direction, and a centre as well."
+    ],
+    [
+     249.85,
+     "From up to left is against the clock."
+    ],
+    [
+     252.56,
+     "It is a rotation of 90 degrees anticlockwise."
+    ],
+    [
+     256.39,
+     "The minute hand of a clock makes a full turn every hour."
+    ],
+    [
+     260.75,
+     "That is 360 degrees in 60 minutes: 6 degrees every minute."
+    ],
+    [
+     265.82,
+     "The Earth rotates too."
+    ],
+    [
+     267.55,
+     "It makes 1 full turn in 24 hours."
+    ],
+    [
+     270.15,
+     "That is 15 degrees every hour."
+    ],
+    [
+     273.06,
+     "That is why the time changes by 1 hour for about every 15 degrees you travel east or west."
+    ],
+    [
+     280.12,
+     "One last question."
+    ],
+    [
+     281.52,
+     "A turn of 90 degrees anticlockwise is the same as which clockwise turn: 270 degrees, or 90 degrees?"
+    ],
+    [
+     289.2,
+     "Pause the video and answer."
+    ],
+    [
+     292.7,
+     "270 degrees clockwise."
+    ],
+    [
+     295.0,
+     "90 plus 270 makes a full turn of 360."
+    ],
+    [
+     299.42,
+     "To remember: a rotation turns a shape about a centre."
+    ],
+    [
+     303.02,
+     "Give the angle, the direction and the centre."
+    ],
+    [
+     306.63,
+     "Every point stays the same distance from the centre."
+    ],
+    [
+     310.75,
+     "Use tracing paper."
+    ],
+    [
+     311.99,
+     "A half turn is the same in both directions."
+    ],
+    [
+     315.5,
+     "A half turn about 0, 0 changes the sign of both coordinates."
+    ],
+    [
+     320.48,
+     "Great work! Now practise lesson 14.5 on Camday."
+    ]
+   ],
+   "times": {
+    "14.5-k1": 21.22,
+    "14.5-k2": 71.22,
+    "14.5-k3": 111.37,
+    "14.5-k4": 291.65
+   },
+   "up": false
+  },
+  "15.5": {
+   "src": "media/mv/s7/15-5.mp4",
+   "poster": "media/mv/s7/15-5_poster.jpg",
+   "srt": "media/mv/s7/15-5.srt",
+   "dur": 339.48,
+   "captions": [
+    [
+     8.75,
+     "A gift box is 20 centimetres long, 15 centimetres wide and 10 centimetres high."
+    ],
+    [
+     14.65,
+     "You want to cover every face with wrapping paper, with no overlaps."
+    ],
+    [
+     20.21,
+     "How much paper do you need?"
+    ],
+    [
+     22.02,
+     "Here is a hint: imagine opening the box out flat."
+    ],
+    [
+     25.32,
+     "Pause the video and work it out."
+    ],
+    [
+     28.87,
+     "A box has 6 faces, in 3 matching pairs."
+    ],
+    [
+     32.14,
+     "The top and the bottom are each 20 by 15: that is 300 square centimetres each, 600 for the pair."
+    ],
+    [
+     40.74,
+     "The front and the back are each 20 by 10: 400 for the pair."
+    ],
+    [
+     46.14,
+     "The 2 ends are each 15 by 10: 300 for the pair."
+    ],
+    [
+     50.99,
+     "600 plus 400 plus 300 is 1,300 square centimetres of paper."
+    ],
+    [
+     58.16,
+     "Remember: a net is a 3D shape opened out flat."
+    ],
+    [
+     61.51,
+     "The net of a cuboid has 6 rectangles, in 3 matching pairs."
+    ],
+    [
+     66.28,
+     "The surface area of a 3D shape is the total area of all its faces."
+    ],
+    [
+     70.79,
+     "It is the same as the area of its net."
+    ],
+    [
+     73.95,
+     "For a cuboid, find the area of the 3 different faces, add them, and double the total."
+    ],
+    [
+     80.3,
+     "Surface area is an area."
+    ],
+    [
+     81.95,
+     "So it is measured in square units, not cubic units."
+    ],
+    [
+     86.01,
+     "A cube has 6 identical square faces."
+    ],
+    [
+     88.63,
+     "So its surface area is 6 times the area of 1 face."
+    ],
+    [
+     92.82,
+     "For a cube with sides of 3 centimetres, 1 face is 3 times 3, which is 9."
+    ],
+    [
+     98.73,
+     "6 times 9 is 54 square centimetres."
+    ],
+    [
+     102.15,
+     "Your turn."
+    ],
+    [
+     102.84,
+     "What is the surface area of a cube with sides of 2 centimetres?"
+    ],
+    [
+     107.22,
+     "Pause the video and try it."
+    ],
+    [
+     110.49,
+     "1 face is 2 times 2, which is 4."
+    ],
+    [
+     113.27,
+     "There are 6 faces."
+    ],
+    [
+     114.83,
+     "6 times 4 is 24 square centimetres."
+    ],
+    [
+     118.41,
+     "Here is the method."
+    ],
+    [
+     119.74,
+     "Step 1: sketch the cuboid, and label its length, width and height."
+    ],
+    [
+     124.94,
+     "Step 2: find the area of the 3 different faces."
+    ],
+    [
+     129.03,
+     "Step 3: add them, and double the total, because opposite faces are equal."
+    ],
+    [
+     134.65,
+     "Step 4: give the answer in square units."
+    ],
+    [
+     138.03,
+     "Find the surface area of a cuboid that is 8 centimetres by 5 centimetres by 2 centimetres."
+    ],
+    [
+     145.33,
+     "The 3 different faces are 8 times 5, which is 40."
+    ],
+    [
+     149.66,
+     "Then 8 times 2, which is 16."
+    ],
+    [
+     152.14,
+     "And 5 times 2, which is 10."
+    ],
+    [
+     155.07,
+     "Add them: 66."
+    ],
+    [
+     156.24,
+     "Double it: 132 square centimetres."
+    ],
+    [
+     159.83,
+     "Your turn."
+    ],
+    [
+     160.56,
+     "A cuboid is 3 by 3 by 1."
+    ],
+    [
+     162.32,
+     "What is its surface area?"
+    ],
+    [
+     164.15,
+     "Pause the video and try it."
+    ],
+    [
+     167.52,
+     "The 3 different faces are 9, 3 and 3."
+    ],
+    [
+     170.54,
+     "They add up to 15."
+    ],
+    [
+     172.0,
+     "Double it: the surface area is 30 square units."
+    ],
+    [
+     176.38,
+     "A box with no lid is 40 centimetres long, 25 centimetres wide and 10 centimetres high."
+    ],
+    [
+     183.05,
+     "How much cardboard is needed?"
+    ],
+    [
+     185.85,
+     "There is only 1 face of 40 by 25, the bottom: 1,000 square centimetres."
+    ],
+    [
+     192.91,
+     "The front and back are 2 times 40 times 10, which is 800."
+    ],
+    [
+     198.28,
+     "The ends are 2 times 25 times 10, which is 500."
+    ],
+    [
+     203.26,
+     "The total is 2,300 square centimetres."
+    ],
+    [
+     207.23,
+     "A cube has a surface area of 216 square centimetres."
+    ],
+    [
+     211.16,
+     "Find the length of its side."
+    ],
+    [
+     213.83,
+     "A cube has 6 equal faces."
+    ],
+    [
+     216.02,
+     "216 divided by 6 is 36."
+    ],
+    [
+     218.04,
+     "So each face has an area of 36."
+    ],
+    [
+     221.31,
+     "6 times 6 is 36."
+    ],
+    [
+     222.69,
+     "So the side is 6 centimetres."
+    ],
+    [
+     225.73,
+     "A room is 5 metres long, 4 metres wide and 2.5 metres high."
+    ],
+    [
+     230.02,
+     "You paint the 4 walls, but not the floor or the ceiling."
+    ],
+    [
+     234.09,
+     "What area do you paint?"
+    ],
+    [
+     236.32,
+     "2 walls are 5 by 2.5: 2 times 12.5 is 25."
+    ],
+    [
+     240.54,
+     "The other 2 walls are 4 by 2.5: 2 times 10 is 20."
+    ],
+    [
+     246.13,
+     "25 plus 20 is 45 square metres."
+    ],
+    [
+     249.89,
+     "Find the surface area of a cuboid, 5 by 4 by 2."
+    ],
+    [
+     253.34,
+     "Here is Rosa's working."
+    ],
+    [
+     255.02,
+     "Which line goes wrong first?"
+    ],
+    [
+     257.63,
+     "Line 2 is wrong."
+    ],
+    [
+     258.79,
+     "That is only 3 faces."
+    ],
+    [
+     260.31,
+     "A cuboid has 6 faces, because each face has a matching one opposite."
+    ],
+    [
+     265.79,
+     "Double the total."
+    ],
+    [
+     267.32,
+     "2 times 38 is 76 square units."
+    ],
+    [
+     270.59,
+     "Take an ice cube with sides of 2 centimetres."
+    ],
+    [
+     274.06,
+     "Its surface area is 24 square centimetres."
+    ],
+    [
+     277.85,
+     "Now cut it into 8 small cubes, each with sides of 1 centimetre."
+    ],
+    [
+     282.54,
+     "Each has a surface area of 6."
+    ],
+    [
+     284.7,
+     "Together, that is 48 square centimetres."
+    ],
+    [
+     288.23,
+     "It is the same amount of ice, but 2 times the surface."
+    ],
+    [
+     291.95,
+     "Heat gets in faster."
+    ],
+    [
+     293.32,
+     "That is why crushed ice melts so quickly."
+    ],
+    [
+     296.69,
+     "One last question."
+    ],
+    [
+     298.0,
+     "A cube has a surface area of 150 square centimetres."
+    ],
+    [
+     301.8,
+     "How long is its side?"
+    ],
+    [
+     303.33,
+     "Pause the video and work it out."
+    ],
+    [
+     307.07,
+     "150 divided by 6 is 25."
+    ],
+    [
+     309.17,
+     "Each face has an area of 25."
+    ],
+    [
+     311.73,
+     "And 5 times 5 is 25."
+    ],
+    [
+     313.56,
+     "So the side is 5 centimetres."
+    ],
+    [
+     316.75,
+     "To remember: surface area is the total area of all the faces."
+    ],
+    [
+     320.85,
+     "It is the area of the net."
+    ],
+    [
+     323.14,
+     "For a cuboid: find the 3 different faces, add them, and double."
+    ],
+    [
+     328.08,
+     "For a cube: 6 times the area of 1 face."
+    ],
+    [
+     331.5,
+     "The units are square units."
+    ],
+    [
+     334.03,
+     "Great work! Now practise lesson 15.5 on Camday."
+    ]
+   ],
+   "times": {
+    "15.5-k1": 27.82,
+    "15.5-k2": 109.44,
+    "15.5-k3": 166.47,
+    "15.5-k4": 306.02
+   },
+   "up": false
+  },
+  "9.4": {
+   "src": "media/mv/s7/9-4.mp4",
+   "poster": "media/mv/s7/9-4_poster.jpg",
+   "srt": "media/mv/s7/9-4.srt",
+   "dur": 292.12,
+   "captions": [
+    [
+     7.23,
+     "A tourist changes dollars into another currency."
+    ],
+    [
+     10.84,
+     "The money changer's rule is simple: multiply by 4."
+    ],
+    [
+     14.59,
+     "So 5 dollars becomes 20."
+    ],
+    [
+     16.94,
+     "Someone receives 36."
+    ],
+    [
+     18.41,
+     "How many dollars did they hand in?"
+    ],
+    [
+     20.89,
+     "Pause the video and work it out."
+    ],
+    [
+     24.63,
+     "We know what came out, so we work backwards."
+    ],
+    [
+     27.71,
+     "The opposite of multiply by 4 is divide by 4."
+    ],
+    [
+     31.41,
+     "36 divided by 4 is 9."
+    ],
+    [
+     33.27,
+     "They handed in 9 dollars."
+    ],
+    [
+     36.03,
+     "Remember: every operation has an inverse that undoes it."
+    ],
+    [
+     39.99,
+     "Add undoes subtract."
+    ],
+    [
+     41.41,
+     "Multiply undoes divide."
+    ],
+    [
+     43.59,
+     "If 7 times 6 is 42, then 42 divided by 6 is 7."
+    ],
+    [
+     48.54,
+     "A function is a rule that links 2 sets of numbers."
+    ],
+    [
+     51.98,
+     "A function machine shows the rule in a box."
+    ],
+    [
+     55.49,
+     "The numbers that go in are the inputs."
+    ],
+    [
+     58.03,
+     "The numbers that come out are the outputs."
+    ],
+    [
+     61.38,
+     "Put 2 into this machine."
+    ],
+    [
+     63.31,
+     "2 plus 3 is 5."
+    ],
+    [
+     64.43,
+     "Put in 6, and out comes 9."
+    ],
+    [
+     66.51,
+     "Each input has exactly 1 output."
+    ],
+    [
+     69.63,
+     "Your turn."
+    ],
+    [
+     70.35,
+     "The input is 8, and the machine subtracts 3."
+    ],
+    [
+     73.51,
+     "What is the output?"
+    ],
+    [
+     74.88,
+     "Pause the video and try it."
+    ],
+    [
+     78.22,
+     "8 minus 3 is 5."
+    ],
+    [
+     79.52,
+     "The output is 5."
+    ],
+    [
+     81.45,
+     "A mapping diagram shows the same function with 2 number lines."
+    ],
+    [
+     85.68,
+     "An arrow goes from each input to its output."
+    ],
+    [
+     89.24,
+     "For the machine plus 3, every arrow moves 3 places to the right."
+    ],
+    [
+     93.84,
+     "The arrows are all parallel."
+    ],
+    [
+     96.4,
+     "If you know the output, run the machine backwards, using the inverse operation."
+    ],
+    [
+     102.38,
+     "The inverse machine for multiply by 4 is divide by 4."
+    ],
+    [
+     106.5,
+     "36 goes in, and 9 comes out."
+    ],
+    [
+     109.23,
+     "Your turn."
+    ],
+    [
+     109.97,
+     "A machine adds 7."
+    ],
+    [
+     111.23,
+     "The output is 12."
+    ],
+    [
+     112.49,
+     "What was the input?"
+    ],
+    [
+     113.9,
+     "Pause the video and try it."
+    ],
+    [
+     117.3,
+     "The inverse of add 7 is subtract 7."
+    ],
+    [
+     120.43,
+     "12 minus 7 is 5."
+    ],
+    [
+     121.86,
+     "The input was 5."
+    ],
+    [
+     123.29,
+     "Check: 5 plus 7 is 12."
+    ],
+    [
+     125.8,
+     "Here is the method."
+    ],
+    [
+     127.13,
+     "Step 1: to find an output, put the input through the machine."
+    ],
+    [
+     131.97,
+     "Step 2: to find an input, use the inverse operation on the output."
+    ],
+    [
+     137.13,
+     "Step 3: to find the rule, compare the inputs and outputs."
+    ],
+    [
+     141.13,
+     "Try adding, then try multiplying."
+    ],
+    [
+     143.99,
+     "Step 4: test your rule on every pair."
+    ],
+    [
+     147.2,
+     "This machine multiplies by 5."
+    ],
+    [
+     149.46,
+     "Find the missing numbers."
+    ],
+    [
+     151.41,
+     "1 goes to what?"
+    ],
+    [
+     152.58,
+     "3 goes to what?"
+    ],
+    [
+     153.75,
+     "And what goes to 40?"
+    ],
+    [
+     155.86,
+     "1 times 5 is 5."
+    ],
+    [
+     157.47,
+     "3 times 5 is 15."
+    ],
+    [
+     159.73,
+     "For the last one, work backwards."
+    ],
+    [
+     162.38,
+     "40 divided by 5 is 8."
+    ],
+    [
+     164.06,
+     "The input was 8."
+    ],
+    [
+     165.89,
+     "This machine subtracts 6."
+    ],
+    [
+     167.99,
+     "The outputs are 4, 11 and 19."
+    ],
+    [
+     170.43,
+     "Find the inputs."
+    ],
+    [
+     172.32,
+     "The inverse machine adds 6."
+    ],
+    [
+     174.93,
+     "4 plus 6 is 10."
+    ],
+    [
+     176.68,
+     "11 plus 6 is 17."
+    ],
+    [
+     178.54,
+     "19 plus 6 is 25."
+    ],
+    [
+     180.4,
+     "The inputs are 10, 17 and 25."
+    ],
+    [
+     184.33,
+     "A one-step machine maps 2 to 8, 3 to 9, and 5 to 11."
+    ],
+    [
+     188.55,
+     "What is the function?"
+    ],
+    [
+     190.81,
+     "2 goes to 8."
+    ],
+    [
+     191.71,
+     "That could be add 6, or it could be multiply by 4."
+    ],
+    [
+     195.48,
+     "One pair is not enough."
+    ],
+    [
+     197.76,
+     "Test add 6."
+    ],
+    [
+     198.78,
+     "3 plus 6 is 9, correct."
+    ],
+    [
+     200.91,
+     "5 plus 6 is 11, correct."
+    ],
+    [
+     203.69,
+     "Test multiply by 4."
+    ],
+    [
+     205.31,
+     "3 times 4 is 12, not 9."
+    ],
+    [
+     207.28,
+     "So the function is add 6."
+    ],
+    [
+     209.98,
+     "A machine divides by 4."
+    ],
+    [
+     211.64,
+     "The output is 6."
+    ],
+    [
+     212.8,
+     "Find the input."
+    ],
+    [
+     213.89,
+     "Here is Tia's working."
+    ],
+    [
+     215.48,
+     "Which line goes wrong first?"
+    ],
+    [
+     218.06,
+     "Line 2 is wrong."
+    ],
+    [
+     219.23,
+     "To go backwards, use the inverse."
+    ],
+    [
+     221.65,
+     "The inverse of divide by 4 is multiply by 4."
+    ],
+    [
+     225.42,
+     "6 times 4 is 24."
+    ],
+    [
+     227.01,
+     "The input is 24."
+    ],
+    [
+     228.59,
+     "Check: 24 divided by 4 is 6."
+    ],
+    [
+     231.92,
+     "You use function machines every day."
+    ],
+    [
+     234.66,
+     "To change inches into centimetres, multiply by 2.54."
+    ],
+    [
+     239.18,
+     "In winter, the time in Hanoi is 7 hours ahead of London."
+    ],
+    [
+     243.06,
+     "London time goes in, add 7, and Hanoi time comes out."
+    ],
+    [
+     247.27,
+     "And to go from Hanoi time back to London time, use the inverse machine: subtract 7."
+    ],
+    [
+     253.58,
+     "One last question."
+    ],
+    [
+     254.84,
+     "A machine divides by 2."
+    ],
+    [
+     256.45,
+     "The output is 9."
+    ],
+    [
+     257.57,
+     "What was the input?"
+    ],
+    [
+     258.9,
+     "Pause the video and answer."
+    ],
+    [
+     262.18,
+     "The inverse of divide by 2 is multiply by 2."
+    ],
+    [
+     265.98,
+     "9 times 2 is 18."
+    ],
+    [
+     267.37,
+     "The input was 18."
+    ],
+    [
+     269.39,
+     "To remember: a function machine turns inputs into outputs."
+    ],
+    [
+     273.54,
+     "Each input has 1 output."
+    ],
+    [
+     275.82,
+     "A mapping diagram shows a function with arrows."
+    ],
+    [
+     279.54,
+     "To find an input, use the inverse operation on the output."
+    ],
+    [
+     283.96,
+     "To find a rule, test it on every pair."
+    ],
+    [
+     286.95,
+     "Great work! Now practise lesson 9.4 on Camday."
+    ]
+   ],
+   "times": {
+    "9.4-k1": 23.58,
+    "9.4-k2": 77.17,
+    "9.4-k3": 116.25,
+    "9.4-k4": 261.13
    },
    "up": false
   }

@@ -1,0 +1,351 @@
+1
+00:00:07,880 --> 00:00:09,930
+Many road signs are symmetrical.
+
+2
+00:00:09,980 --> 00:00:15,270
+A stop sign is a regular octagon, and a warning sign is often a triangle.
+
+3
+00:00:15,320 --> 00:00:17,140
+Here is a regular hexagon.
+
+4
+00:00:17,190 --> 00:00:21,280
+All 6 sides are equal, and all 6 angles are equal.
+
+5
+00:00:21,330 --> 00:00:25,090
+How many lines of symmetry does a regular hexagon have?
+
+6
+00:00:25,140 --> 00:00:28,630
+Pause the video and count them.
+
+7
+00:00:28,680 --> 00:00:31,050
+A line of symmetry is a fold line.
+
+8
+00:00:31,100 --> 00:00:33,880
+3 of them join opposite corners.
+
+9
+00:00:33,930 --> 00:00:36,960
+3 more join the middles of opposite sides.
+
+10
+00:00:37,010 --> 00:00:39,780
+That makes 6 lines of symmetry.
+
+11
+00:00:39,830 --> 00:00:46,820
+Remember: in a reflection, every point and its image are the same distance from the mirror line.
+
+12
+00:00:46,870 --> 00:00:50,380
+The capital letter A has a vertical line of symmetry.
+
+13
+00:00:50,430 --> 00:00:54,430
+The left half is the mirror image of the right half.
+
+14
+00:00:54,480 --> 00:00:59,930
+A shape has line symmetry if a line cuts it into two halves that are mirror images.
+
+15
+00:00:59,980 --> 00:01:03,800
+Fold along the line, and the halves match exactly.
+
+16
+00:01:03,850 --> 00:01:06,190
+This T shape has 1 line of symmetry.
+
+17
+00:01:06,240 --> 00:01:08,600
+We draw it as a dashed line.
+
+18
+00:01:08,650 --> 00:01:14,080
+A rectangle has 2 lines of symmetry: one vertical and one horizontal.
+
+19
+00:01:14,130 --> 00:01:14,770
+Your turn.
+
+20
+00:01:14,820 --> 00:01:18,990
+How many lines of symmetry does an equilateral triangle have?
+
+21
+00:01:19,040 --> 00:01:22,250
+Pause the video and try it.
+
+22
+00:01:22,300 --> 00:01:26,820
+Each line goes from a corner to the middle of the opposite side.
+
+23
+00:01:26,870 --> 00:01:31,220
+There are 3 corners, so there are 3 lines of symmetry.
+
+24
+00:01:31,270 --> 00:01:33,520
+Now turn a shape about its centre.
+
+25
+00:01:33,570 --> 00:01:40,490
+A shape has rotational symmetry if it looks exactly the same more than once during a full turn.
+
+26
+00:01:40,540 --> 00:01:47,180
+The order of rotational symmetry is the number of times it looks the same in one full turn.
+
+27
+00:01:47,230 --> 00:01:49,800
+Follow the red corner of this square.
+
+28
+00:01:49,850 --> 00:01:53,420
+After each quarter turn, the square looks the same.
+
+29
+00:01:53,470 --> 00:01:56,450
+It fits 4 times, so the order is 4.
+
+30
+00:01:56,500 --> 00:01:57,140
+Your turn.
+
+31
+00:01:57,190 --> 00:02:01,010
+What is the order of rotational symmetry of a rectangle?
+
+32
+00:02:01,060 --> 00:02:04,840
+Pause the video and think about it.
+
+33
+00:02:04,890 --> 00:02:09,580
+After a quarter turn, the rectangle stands upright, so it does not fit.
+
+34
+00:02:09,630 --> 00:02:11,380
+After a half turn, it fits.
+
+35
+00:02:11,430 --> 00:02:14,140
+After a full turn, it fits again.
+
+36
+00:02:14,190 --> 00:02:16,420
+It fits 2 times in a full turn.
+
+37
+00:02:16,470 --> 00:02:19,770
+The order of rotational symmetry is 2.
+
+38
+00:02:19,820 --> 00:02:24,080
+If a shape only fits once, after the full turn, its order is 1.
+
+39
+00:02:24,130 --> 00:02:27,170
+We say it has no rotational symmetry.
+
+40
+00:02:27,220 --> 00:02:28,540
+Here is the method.
+
+41
+00:02:28,590 --> 00:02:30,570
+Step 1: look for fold lines.
+
+42
+00:02:30,620 --> 00:02:34,380
+Test vertical, horizontal and diagonal lines.
+
+43
+00:02:34,430 --> 00:02:41,020
+Step 2: turn the shape about its centre, and count how many times it fits in a full turn.
+
+44
+00:02:41,070 --> 00:02:45,970
+Step 3: write both answers: the number of lines, and the order.
+
+45
+00:02:46,020 --> 00:02:53,660
+A useful fact: a regular polygon with n sides has n lines of symmetry, and rotational symmetry of order n.
+
+46
+00:02:53,710 --> 00:02:57,120
+Describe the symmetry of a parallelogram.
+
+47
+00:02:57,170 --> 00:02:58,140
+Try folding it.
+
+48
+00:02:58,190 --> 00:03:02,280
+No fold line works, because the slanted sides do not line up.
+
+49
+00:03:02,330 --> 00:03:04,730
+It has no lines of symmetry.
+
+50
+00:03:04,780 --> 00:03:05,550
+Now turn it.
+
+51
+00:03:05,600 --> 00:03:08,240
+After a half turn, it fits onto itself.
+
+52
+00:03:08,290 --> 00:03:11,610
+So it has rotational symmetry of order 2.
+
+53
+00:03:11,660 --> 00:03:14,130
+Describe the symmetry of a kite.
+
+54
+00:03:14,180 --> 00:03:16,210
+A kite has 1 line of symmetry.
+
+55
+00:03:16,260 --> 00:03:20,860
+It goes through the two corners where the equal sides meet.
+
+56
+00:03:20,910 --> 00:03:24,170
+No turn fits it onto itself, except a full turn.
+
+57
+00:03:24,220 --> 00:03:27,610
+So the order is 1: no rotational symmetry.
+
+58
+00:03:27,660 --> 00:03:30,020
+2 squares are shaded on this grid.
+
+59
+00:03:30,070 --> 00:03:38,170
+Shade more squares, so that the pattern has 2 lines of symmetry: the vertical line and the horizontal line.
+
+60
+00:03:38,220 --> 00:03:42,020
+First, reflect each shaded square in the vertical line.
+
+61
+00:03:42,070 --> 00:03:44,330
+That gives 2 new squares.
+
+62
+00:03:44,380 --> 00:03:48,030
+Then reflect all 4 squares in the horizontal line.
+
+63
+00:03:48,080 --> 00:03:49,360
+That gives 4 more.
+
+64
+00:03:49,410 --> 00:03:51,830
+We shaded 6 extra squares.
+
+65
+00:03:51,880 --> 00:03:55,190
+How many lines of symmetry does a rectangle have?
+
+66
+00:03:55,240 --> 00:03:56,700
+Here is Sam's working.
+
+67
+00:03:56,750 --> 00:03:59,170
+Which line goes wrong first?
+
+68
+00:03:59,220 --> 00:04:00,270
+Line 2 is wrong.
+
+69
+00:04:00,320 --> 00:04:04,590
+Fold a rectangle along a diagonal, and the corners do not meet.
+
+70
+00:04:04,640 --> 00:04:07,670
+A diagonal is not a line of symmetry.
+
+71
+00:04:07,720 --> 00:04:10,570
+A rectangle has only 2 lines of symmetry.
+
+72
+00:04:10,620 --> 00:04:13,240
+A square is special: it has 4.
+
+73
+00:04:13,290 --> 00:04:15,140
+Nature is full of symmetry.
+
+74
+00:04:15,190 --> 00:04:20,760
+A snowflake has 6 lines of symmetry, and rotational symmetry of order 6.
+
+75
+00:04:20,810 --> 00:04:26,450
+Most starfish have 5 arms, so they have rotational symmetry of order 5.
+
+76
+00:04:26,500 --> 00:04:29,150
+And the recycling symbol has 3 arrows.
+
+77
+00:04:29,200 --> 00:04:34,740
+It has rotational symmetry of order 3, but no lines of symmetry at all.
+
+78
+00:04:34,790 --> 00:04:35,980
+One last question.
+
+79
+00:04:36,030 --> 00:04:43,920
+Which shape has rotational symmetry, but no lines of symmetry: a parallelogram, an isosceles triangle, or a square?
+
+80
+00:04:43,970 --> 00:04:47,180
+Pause the video and answer.
+
+81
+00:04:47,230 --> 00:04:48,790
+It is the parallelogram.
+
+82
+00:04:48,840 --> 00:04:53,630
+It has no fold lines, but it fits onto itself after a half turn.
+
+83
+00:04:53,680 --> 00:04:56,790
+To remember: a line of symmetry is a fold line.
+
+84
+00:04:56,840 --> 00:04:59,300
+The two halves match exactly.
+
+85
+00:04:59,350 --> 00:05:05,710
+The order of rotational symmetry is the number of times a shape fits in one full turn.
+
+86
+00:05:05,760 --> 00:05:09,000
+Order 1 means no rotational symmetry.
+
+87
+00:05:09,050 --> 00:05:14,060
+A regular polygon with n sides has n lines of symmetry, and order n.
+
+88
+00:05:14,110 --> 00:05:19,270
+Great work! Now practise lesson 8.1 on Camday.

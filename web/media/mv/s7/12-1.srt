@@ -1,0 +1,351 @@
+1
+00:00:06,470 --> 00:00:13,250
+To make a shade of green, a decorator mixes 6 tins of yellow paint with 4 tins of blue paint.
+
+2
+00:00:13,300 --> 00:00:18,610
+For a small job, she wants the same shade of green, but with fewer tins.
+
+3
+00:00:18,660 --> 00:00:21,640
+What is the simplest ratio of yellow to blue?
+
+4
+00:00:21,690 --> 00:00:25,190
+Pause the video and work it out.
+
+5
+00:00:25,240 --> 00:00:27,860
+Split the tins into 2 equal groups.
+
+6
+00:00:27,910 --> 00:00:31,080
+Each group has 3 yellow and 2 blue.
+
+7
+00:00:31,130 --> 00:00:35,720
+So 3 tins of yellow with 2 tins of blue makes the same shade.
+
+8
+00:00:35,770 --> 00:00:39,230
+The ratio 6 to 4 is the same as 3 to 2.
+
+9
+00:00:39,280 --> 00:00:46,640
+Remember: the highest common factor of 2 numbers is the biggest number that divides both of them.
+
+10
+00:00:46,690 --> 00:00:50,890
+The highest common factor of 18 and 24 is 6.
+
+11
+00:00:50,940 --> 00:00:52,900
+A ratio compares quantities.
+
+12
+00:00:52,950 --> 00:00:54,710
+Yellow to blue is 6 to 4.
+
+13
+00:00:54,760 --> 00:00:57,060
+We write it with a colon.
+
+14
+00:00:57,110 --> 00:00:58,440
+The order matters.
+
+15
+00:00:58,490 --> 00:01:00,900
+Blue to yellow is 4 to 6.
+
+16
+00:01:00,950 --> 00:01:04,820
+To simplify a ratio, divide every part by the same number.
+
+17
+00:01:04,870 --> 00:01:08,750
+It is best to divide by the highest common factor.
+
+18
+00:01:08,800 --> 00:01:09,560
+Your turn.
+
+19
+00:01:09,610 --> 00:01:11,830
+Simplify the ratio 14 to 35.
+
+20
+00:01:11,880 --> 00:01:15,410
+Pause the video and try it.
+
+21
+00:01:15,460 --> 00:01:19,470
+The highest common factor of 14 and 35 is 7.
+
+22
+00:01:19,520 --> 00:01:21,410
+14 divided by 7 is 2.
+
+23
+00:01:21,460 --> 00:01:23,350
+35 divided by 7 is 5.
+
+24
+00:01:23,400 --> 00:01:25,840
+The answer is 2 to 5.
+
+25
+00:01:25,890 --> 00:01:30,570
+Before you simplify, both parts must be in the same units.
+
+26
+00:01:30,620 --> 00:01:35,790
+50 centimetres to 2 metres is 50 centimetres to 200 centimetres.
+
+27
+00:01:35,840 --> 00:01:38,460
+That simplifies to 1 to 4.
+
+28
+00:01:38,510 --> 00:01:40,720
+A ratio can have 3 parts.
+
+29
+00:01:40,770 --> 00:01:42,070
+12 to 18 to 30.
+
+30
+00:01:42,120 --> 00:01:46,510
+Divide every part by 6, to get 2 to 3 to 5.
+
+31
+00:01:46,560 --> 00:01:47,300
+Your turn.
+
+32
+00:01:47,350 --> 00:01:49,040
+Simplify 6 to 9 to 12.
+
+33
+00:01:49,090 --> 00:01:52,570
+Pause the video and try it.
+
+34
+00:01:52,620 --> 00:01:56,410
+The highest common factor of 6, 9 and 12 is 3.
+
+35
+00:01:56,460 --> 00:01:58,330
+Divide every part by 3.
+
+36
+00:01:58,380 --> 00:02:01,050
+The answer is 2 to 3 to 4.
+
+37
+00:02:01,100 --> 00:02:04,350
+A ratio also tells you fractions of the total.
+
+38
+00:02:04,400 --> 00:02:07,150
+In the paint, yellow to blue is 3 to 2.
+
+39
+00:02:07,200 --> 00:02:09,860
+That makes 5 parts altogether.
+
+40
+00:02:09,910 --> 00:02:14,680
+So 3 fifths of the mixture is yellow, and 2 fifths is blue.
+
+41
+00:02:14,730 --> 00:02:16,000
+Here is the method.
+
+42
+00:02:16,050 --> 00:02:19,060
+Step 1: put all the parts in the same units.
+
+43
+00:02:19,110 --> 00:02:23,370
+If there are decimals, multiply to make whole numbers.
+
+44
+00:02:23,420 --> 00:02:27,870
+Step 2: find the highest common factor of all the parts.
+
+45
+00:02:27,920 --> 00:02:30,710
+Step 3: divide every part by it.
+
+46
+00:02:30,760 --> 00:02:31,770
+Step 4: check.
+
+47
+00:02:31,820 --> 00:02:35,340
+The only common factor left should be 1.
+
+48
+00:02:35,390 --> 00:02:38,080
+Simplify 56 to 42.
+
+49
+00:02:38,130 --> 00:02:42,800
+The highest common factor of 56 and 42 is 14.
+
+50
+00:02:42,850 --> 00:02:45,030
+56 divided by 14 is 4.
+
+51
+00:02:45,080 --> 00:02:47,260
+42 divided by 14 is 3.
+
+52
+00:02:47,310 --> 00:02:49,940
+The answer is 4 to 3.
+
+53
+00:02:49,990 --> 00:02:53,920
+Simplify 600 grams to 1.5 kilograms.
+
+54
+00:02:53,970 --> 00:02:56,110
+First use the same units.
+
+55
+00:02:56,160 --> 00:02:59,210
+1.5 kilograms is 1,500 grams.
+
+56
+00:02:59,260 --> 00:03:01,350
+Divide both parts by 300.
+
+57
+00:03:01,400 --> 00:03:03,700
+The answer is 2 to 5.
+
+58
+00:03:03,750 --> 00:03:06,310
+Simplify 1.2 to 3.
+
+59
+00:03:06,360 --> 00:03:11,880
+Multiply both parts by 10, to get whole numbers: 12 to 30.
+
+60
+00:03:11,930 --> 00:03:14,010
+Then divide both parts by 6.
+
+61
+00:03:14,060 --> 00:03:16,160
+The answer is 2 to 5.
+
+62
+00:03:16,210 --> 00:03:17,610
+Simplify 36 to 48.
+
+63
+00:03:17,660 --> 00:03:19,390
+Here is Eva's working.
+
+64
+00:03:19,440 --> 00:03:22,210
+Which line goes wrong first?
+
+65
+00:03:22,260 --> 00:03:23,500
+Line 2 is wrong.
+
+66
+00:03:23,550 --> 00:03:26,240
+The ratio is not fully simplified.
+
+67
+00:03:26,290 --> 00:03:30,100
+18 and 24 can both still be divided by 6.
+
+68
+00:03:30,150 --> 00:03:34,800
+Divide by the highest common factor, 12, straight away.
+
+69
+00:03:34,850 --> 00:03:36,980
+36 to 48 is 3 to 4.
+
+70
+00:03:37,030 --> 00:03:40,240
+You are watching this video in a ratio.
+
+71
+00:03:40,290 --> 00:03:45,820
+A Full HD screen is 1,920 pixels wide and 1,080 pixels high.
+
+72
+00:03:45,870 --> 00:03:49,050
+Divide both by 120, and you get 16 to 9.
+
+73
+00:03:49,100 --> 00:03:52,840
+That is the shape of most screens today.
+
+74
+00:03:52,890 --> 00:03:58,350
+On a bicycle, a front gear with 48 teeth drives a back gear with 16 teeth.
+
+75
+00:03:58,400 --> 00:04:00,280
+That is a ratio of 3 to 1.
+
+76
+00:04:00,330 --> 00:04:04,330
+One turn of the pedals turns the wheel 3 times.
+
+77
+00:04:04,380 --> 00:04:05,740
+One last question.
+
+78
+00:04:05,790 --> 00:04:08,720
+Simplify 80 centimetres to 1.2 metres.
+
+79
+00:04:08,770 --> 00:04:12,620
+Pause the video and work it out.
+
+80
+00:04:12,670 --> 00:04:14,420
+Use the same units.
+
+81
+00:04:14,470 --> 00:04:17,260
+1.2 metres is 120 centimetres.
+
+82
+00:04:17,310 --> 00:04:20,000
+80 to 120: divide both by 40.
+
+83
+00:04:20,050 --> 00:04:22,540
+The answer is 2 to 3.
+
+84
+00:04:22,590 --> 00:04:27,070
+To remember: a ratio compares quantities, in a fixed order.
+
+85
+00:04:27,120 --> 00:04:31,900
+Simplify by dividing every part by the highest common factor.
+
+86
+00:04:31,950 --> 00:04:34,620
+Use the same units in every part.
+
+87
+00:04:34,670 --> 00:04:38,080
+Add the parts to find fractions of the total.
+
+88
+00:04:38,130 --> 00:04:43,470
+Great work! Now practise lesson 12.1 on Camday.

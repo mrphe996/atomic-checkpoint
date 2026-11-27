@@ -1,0 +1,383 @@
+1
+00:00:06,940 --> 00:00:12,090
+In a room planning app, you drag a sofa 4 squares right, and 2 squares down.
+
+2
+00:00:12,140 --> 00:00:15,230
+It does not turn, and it does not change size.
+
+3
+00:00:15,280 --> 00:00:16,810
+It just slides.
+
+4
+00:00:16,860 --> 00:00:20,110
+One corner of the sofa starts at 1, 3.
+
+5
+00:00:20,160 --> 00:00:21,810
+Where is that corner now?
+
+6
+00:00:21,860 --> 00:00:25,390
+Pause the video and work it out.
+
+7
+00:00:25,440 --> 00:00:30,020
+Moving 4 right adds 4 to the x coordinate: 1 plus 4 is 5.
+
+8
+00:00:30,070 --> 00:00:35,760
+Moving 2 down subtracts 2 from the y coordinate: 3 minus 2 is 1.
+
+9
+00:00:35,810 --> 00:00:38,450
+The corner is now at 5, 1.
+
+10
+00:00:38,500 --> 00:00:41,250
+Remember: moving right or left changes x.
+
+11
+00:00:41,300 --> 00:00:43,720
+Moving up or down changes y.
+
+12
+00:00:43,770 --> 00:00:48,050
+A translation slides a shape, without turning it or flipping it.
+
+13
+00:00:48,100 --> 00:00:52,600
+Every point moves the same distance, in the same direction.
+
+14
+00:00:52,650 --> 00:00:55,340
+The starting shape is called the object.
+
+15
+00:00:55,390 --> 00:00:57,660
+The new shape is called the image.
+
+16
+00:00:57,710 --> 00:01:02,320
+Here, triangle A is the object, and triangle B is its image.
+
+17
+00:01:02,370 --> 00:01:06,640
+A translation does not change the lengths or the angles.
+
+18
+00:01:06,690 --> 00:01:12,390
+So, is the image of a translation congruent to the object, or bigger than the object?
+
+19
+00:01:12,440 --> 00:01:15,610
+Pause the video and decide.
+
+20
+00:01:15,660 --> 00:01:17,640
+It is congruent to the object.
+
+21
+00:01:17,690 --> 00:01:21,440
+It has exactly the same shape and the same size.
+
+22
+00:01:21,490 --> 00:01:26,730
+To describe a translation, say how far left or right, then how far up or down.
+
+23
+00:01:26,780 --> 00:01:31,760
+Pick 1 corner of the object, and the matching corner of the image.
+
+24
+00:01:31,810 --> 00:01:35,110
+The corner at 1, 1 moves to 5, negative 2.
+
+25
+00:01:35,160 --> 00:01:39,170
+That is 4 squares right, and 3 squares down.
+
+26
+00:01:39,220 --> 00:01:42,830
+With coordinates: right adds to x, and left subtracts.
+
+27
+00:01:42,880 --> 00:01:45,610
+Up adds to y, and down subtracts.
+
+28
+00:01:45,660 --> 00:01:46,390
+Your turn.
+
+29
+00:01:46,440 --> 00:01:49,560
+A point moves from 0, 0 to negative 3, 4.
+
+30
+00:01:49,610 --> 00:01:53,190
+Is that 3 left and 4 up, or 3 right and 4 down?
+
+31
+00:01:53,240 --> 00:01:56,680
+Pause the video and decide.
+
+32
+00:01:56,730 --> 00:02:00,130
+x goes from 0 to negative 3: that is 3 left.
+
+33
+00:02:00,180 --> 00:02:03,260
+y goes from 0 to 4: that is 4 up.
+
+34
+00:02:03,310 --> 00:02:04,600
+Here is the method.
+
+35
+00:02:04,650 --> 00:02:06,640
+Step 1: read the translation.
+
+36
+00:02:06,690 --> 00:02:08,190
+How far left or right?
+
+37
+00:02:08,240 --> 00:02:10,070
+How far up or down?
+
+38
+00:02:10,120 --> 00:02:14,650
+Step 2: move each corner of the shape that many squares.
+
+39
+00:02:14,700 --> 00:02:18,510
+Step 3: join the new corners in the same order.
+
+40
+00:02:18,560 --> 00:02:24,330
+Step 4: check that the image is the same shape and size, and the same way up.
+
+41
+00:02:24,380 --> 00:02:27,800
+Translate the triangle with corners 2, 1.
+
+42
+00:02:27,850 --> 00:02:28,650
+Then 5, 1.
+
+43
+00:02:28,700 --> 00:02:29,410
+And 2, 3.
+
+44
+00:02:29,460 --> 00:02:31,990
+Move it 3 left and 2 up.
+
+45
+00:02:32,040 --> 00:02:37,370
+Subtract 3 from every x coordinate, and add 2 to every y coordinate.
+
+46
+00:02:37,420 --> 00:02:40,060
+2, 1 goes to negative 1, 3.
+
+47
+00:02:40,110 --> 00:02:41,760
+5, 1 goes to 2, 3.
+
+48
+00:02:41,810 --> 00:02:45,230
+And 2, 3 goes to negative 1, 5.
+
+49
+00:02:45,280 --> 00:02:49,370
+A corner of a square moves from negative 2, 4 to 3, 1.
+
+50
+00:02:49,420 --> 00:02:51,840
+Describe the translation.
+
+51
+00:02:51,890 --> 00:02:53,980
+x goes from negative 2 to 3.
+
+52
+00:02:54,030 --> 00:02:57,270
+That is a change of plus 5: 5 right.
+
+53
+00:02:57,320 --> 00:02:58,750
+y goes from 4 to 1.
+
+54
+00:02:58,800 --> 00:03:01,790
+That is a change of negative 3: 3 down.
+
+55
+00:03:01,840 --> 00:03:05,300
+The translation is 5 right and 3 down.
+
+56
+00:03:05,350 --> 00:03:08,890
+Shape B is shape A, translated 5 right and 3 down.
+
+57
+00:03:08,940 --> 00:03:12,460
+Describe the translation from B back to A.
+
+58
+00:03:12,510 --> 00:03:14,830
+To go back, reverse each direction.
+
+59
+00:03:14,880 --> 00:03:18,100
+Right becomes left, and down becomes up.
+
+60
+00:03:18,150 --> 00:03:22,320
+So the translation from B to A is 5 left and 3 up.
+
+61
+00:03:22,370 --> 00:03:25,190
+A point is translated 2 right and 6 up.
+
+62
+00:03:25,240 --> 00:03:28,140
+Then it is translated 5 left and 2 down.
+
+63
+00:03:28,190 --> 00:03:32,740
+Describe the single translation that does the same job.
+
+64
+00:03:32,790 --> 00:03:36,320
+For x: plus 2, then minus 5, makes negative 3.
+
+65
+00:03:36,370 --> 00:03:38,040
+That is 3 left.
+
+66
+00:03:38,090 --> 00:03:41,290
+For y: plus 6, then minus 2, makes plus 4.
+
+67
+00:03:41,340 --> 00:03:42,300
+That is 4 up.
+
+68
+00:03:42,350 --> 00:03:46,100
+The single translation is 3 left and 4 up.
+
+69
+00:03:46,150 --> 00:03:48,450
+Triangle A has a corner at 2, 1.
+
+70
+00:03:48,500 --> 00:03:51,620
+Triangle B has the matching corner at 8, 1.
+
+71
+00:03:51,670 --> 00:03:53,460
+Describe the translation.
+
+72
+00:03:53,510 --> 00:03:55,150
+Here is Suki's working.
+
+73
+00:03:55,200 --> 00:03:57,760
+Which line goes wrong first?
+
+74
+00:03:57,810 --> 00:03:58,840
+Line 1 is wrong.
+
+75
+00:03:58,890 --> 00:04:01,650
+Do not measure the gap between the shapes.
+
+76
+00:04:01,700 --> 00:04:05,080
+Count from a corner to the matching corner.
+
+77
+00:04:05,130 --> 00:04:06,440
+From 2 to 8 is 6.
+
+78
+00:04:06,490 --> 00:04:09,140
+The translation is 6 right.
+
+79
+00:04:09,190 --> 00:04:17,760
+In a video game, when a character runs across the screen, its picture is translated: a few pixels right, in every frame.
+
+80
+00:04:17,810 --> 00:04:21,510
+Wallpaper and floor tiles repeat a pattern by translation.
+
+81
+00:04:21,560 --> 00:04:25,040
+The same shape slides across, again and again.
+
+82
+00:04:25,090 --> 00:04:30,890
+And a lift is a translation too: straight up, or straight down, with no turning.
+
+83
+00:04:30,940 --> 00:04:32,200
+One last question.
+
+84
+00:04:32,250 --> 00:04:34,730
+A shape moves 2 right, then 2 left.
+
+85
+00:04:34,780 --> 00:04:37,560
+Does that give no movement, or 4 right?
+
+86
+00:04:37,610 --> 00:04:40,910
+Pause the video and answer.
+
+87
+00:04:40,960 --> 00:04:41,810
+No movement.
+
+88
+00:04:41,860 --> 00:04:43,830
+Plus 2, then minus 2, is 0.
+
+89
+00:04:43,880 --> 00:04:46,990
+The shape is back where it started.
+
+90
+00:04:47,040 --> 00:04:49,910
+To remember: a translation slides a shape.
+
+91
+00:04:49,960 --> 00:04:53,440
+No turning, no flipping, and the same size.
+
+92
+00:04:53,490 --> 00:04:57,020
+Describe it as left or right, then up or down.
+
+93
+00:04:57,070 --> 00:04:58,660
+Right and left change x.
+
+94
+00:04:58,710 --> 00:05:00,640
+Up and down change y.
+
+95
+00:05:00,690 --> 00:05:03,960
+Always count between matching corners.
+
+96
+00:05:04,010 --> 00:05:09,390
+Great work! Now practise lesson 14.3 on Camday.

@@ -1,0 +1,363 @@
+1
+00:00:06,640 --> 00:00:11,850
+On a still day, a tree on the bank of a lake appears upside down in the water.
+
+2
+00:00:11,900 --> 00:00:15,970
+The top of the tree is 8 metres above the water line.
+
+3
+00:00:16,020 --> 00:00:19,460
+Where does the top of the tree appear in the reflection?
+
+4
+00:00:19,510 --> 00:00:22,540
+Pause the video and decide.
+
+5
+00:00:22,590 --> 00:00:25,350
+It appears 8 metres below the water line.
+
+6
+00:00:25,400 --> 00:00:27,550
+The water acts as a mirror line.
+
+7
+00:00:27,600 --> 00:00:32,830
+The reflection is the same distance from the line, on the other side.
+
+8
+00:00:32,880 --> 00:00:36,230
+Remember: a line such as x equals 2 is vertical.
+
+9
+00:00:36,280 --> 00:00:39,610
+A line such as y equals 1 is horizontal.
+
+10
+00:00:39,660 --> 00:00:42,680
+A reflection flips a shape over a mirror line.
+
+11
+00:00:42,730 --> 00:00:47,510
+Here, triangle A is reflected in the y axis, to give triangle B.
+
+12
+00:00:47,560 --> 00:00:55,620
+Each point of the image is the same distance from the mirror line as the object point, but on the opposite side.
+
+13
+00:00:55,670 --> 00:00:59,690
+We measure that distance at right angles to the mirror line.
+
+14
+00:00:59,740 --> 00:01:04,040
+The image is congruent to the object, but it is flipped.
+
+15
+00:01:04,090 --> 00:01:07,350
+Reflections in the axes follow a simple rule.
+
+16
+00:01:07,400 --> 00:01:10,070
+Reflect the point 3, 2 in the y axis.
+
+17
+00:01:10,120 --> 00:01:13,930
+The x coordinate changes sign: negative 3, 2.
+
+18
+00:01:13,980 --> 00:01:15,980
+Reflect 3, 2 in the x axis.
+
+19
+00:01:16,030 --> 00:01:20,710
+This time the y coordinate changes sign: 3, negative 2.
+
+20
+00:01:20,760 --> 00:01:21,430
+Your turn.
+
+21
+00:01:21,480 --> 00:01:24,720
+Reflect the point negative 5, 1 in the y axis.
+
+22
+00:01:24,770 --> 00:01:28,060
+Pause the video and try it.
+
+23
+00:01:28,110 --> 00:01:31,470
+In the y axis, the x coordinate changes sign.
+
+24
+00:01:31,520 --> 00:01:33,070
+Negative 5 becomes 5.
+
+25
+00:01:33,120 --> 00:01:34,980
+The image is 5, 1.
+
+26
+00:01:35,030 --> 00:01:37,980
+For any other mirror line, count squares.
+
+27
+00:01:38,030 --> 00:01:41,900
+Reflect the point 3, 2 in the line x equals 1.
+
+28
+00:01:41,950 --> 00:01:45,420
+The point is 2 squares to the right of the line.
+
+29
+00:01:45,470 --> 00:01:49,080
+So the image is 2 squares to the left of the line.
+
+30
+00:01:49,130 --> 00:01:51,390
+1 minus 2 is negative 1.
+
+31
+00:01:51,440 --> 00:01:53,350
+The image is negative 1, 2.
+
+32
+00:01:53,400 --> 00:01:56,300
+The y coordinate does not change.
+
+33
+00:01:56,350 --> 00:01:57,660
+Here is the method.
+
+34
+00:01:57,710 --> 00:02:00,300
+Step 1: find the mirror line.
+
+35
+00:02:00,350 --> 00:02:05,760
+Step 2: for each corner, count the squares to the line, at right angles.
+
+36
+00:02:05,810 --> 00:02:11,480
+Step 3: count the same number on the other side, and mark the image corner.
+
+37
+00:02:11,530 --> 00:02:16,770
+Step 4: join the image corners, and check that the shape is flipped.
+
+38
+00:02:16,820 --> 00:02:19,860
+Reflect the triangle with corners 2, 1.
+
+39
+00:02:19,910 --> 00:02:20,650
+Then 5, 1.
+
+40
+00:02:20,700 --> 00:02:21,360
+And 2, 4.
+
+41
+00:02:21,410 --> 00:02:24,600
+Use the y axis as the mirror line.
+
+42
+00:02:24,650 --> 00:02:27,490
+Change the sign of each x coordinate.
+
+43
+00:02:27,540 --> 00:02:30,060
+The corners become negative 2, 1.
+
+44
+00:02:30,110 --> 00:02:31,540
+Then negative 5, 1.
+
+45
+00:02:31,590 --> 00:02:33,500
+And negative 2, 4.
+
+46
+00:02:33,550 --> 00:02:37,670
+Reflect the point 6, 3 in the line x equals 2.
+
+47
+00:02:37,720 --> 00:02:40,690
+6 is 4 squares to the right of the line.
+
+48
+00:02:40,740 --> 00:02:46,160
+So go 4 squares to the left of the line: 2 minus 4 is negative 2.
+
+49
+00:02:46,210 --> 00:02:48,910
+The image is negative 2, 3.
+
+50
+00:02:48,960 --> 00:02:53,710
+Reflect the point 4, negative 2 in the line y equals 1.
+
+51
+00:02:53,760 --> 00:02:57,760
+This mirror line is horizontal, so measure up and down.
+
+52
+00:02:57,810 --> 00:03:00,560
+The point is 3 squares below the line.
+
+53
+00:03:00,610 --> 00:03:04,350
+The image is 3 squares above: 1 plus 3 is 4.
+
+54
+00:03:04,400 --> 00:03:06,730
+The image is 4, 4.
+
+55
+00:03:06,780 --> 00:03:07,470
+Your turn.
+
+56
+00:03:07,520 --> 00:03:10,840
+Reflect the point 0, 3 in the line y equals 1.
+
+57
+00:03:10,890 --> 00:03:14,220
+Pause the video and try it.
+
+58
+00:03:14,270 --> 00:03:17,130
+The point is 2 squares above the line.
+
+59
+00:03:17,180 --> 00:03:21,720
+So the image is 2 squares below it: 1 minus 2 is negative 1.
+
+60
+00:03:21,770 --> 00:03:24,340
+The image is 0, negative 1.
+
+61
+00:03:24,390 --> 00:03:27,900
+A point at negative 2, 4 has its image at 6, 4.
+
+62
+00:03:27,950 --> 00:03:30,050
+Find the mirror line.
+
+63
+00:03:30,100 --> 00:03:34,410
+The mirror line is halfway between the point and its image.
+
+64
+00:03:34,460 --> 00:03:37,770
+Halfway between negative 2 and 6 is 2.
+
+65
+00:03:37,820 --> 00:03:41,940
+So the mirror line is the vertical line x equals 2.
+
+66
+00:03:41,990 --> 00:03:45,280
+Reflect the point 5, 6 in the line y equals 3.
+
+67
+00:03:45,330 --> 00:03:46,950
+Here is Kofi's working.
+
+68
+00:03:47,000 --> 00:03:49,530
+Which line goes wrong first?
+
+69
+00:03:49,580 --> 00:03:50,650
+Line 1 is wrong.
+
+70
+00:03:50,700 --> 00:03:53,040
+The line y equals 3 is horizontal.
+
+71
+00:03:53,090 --> 00:03:56,610
+So measure up and down, not left and right.
+
+72
+00:03:56,660 --> 00:03:59,420
+The point is 3 squares above the line.
+
+73
+00:03:59,470 --> 00:04:03,010
+The image is 3 squares below it, at 5, 0.
+
+74
+00:04:03,060 --> 00:04:08,180
+On the front of many ambulances, the word AMBULANCE is written back to front.
+
+75
+00:04:08,230 --> 00:04:12,620
+A driver ahead reads it the right way round in the mirror.
+
+76
+00:04:12,670 --> 00:04:16,270
+The Taj Mahal, in India, was built beside a long pool.
+
+77
+00:04:16,320 --> 00:04:21,540
+The pool reflects the whole building, upside down, like a mirror line.
+
+78
+00:04:21,590 --> 00:04:24,650
+And your face in a mirror is a reflection too.
+
+79
+00:04:24,700 --> 00:04:28,770
+Raise your right hand, and the image raises its left.
+
+80
+00:04:28,820 --> 00:04:29,990
+One last question.
+
+81
+00:04:30,040 --> 00:04:32,140
+A point lies on the mirror line.
+
+82
+00:04:32,190 --> 00:04:36,790
+When it is reflected, does it stay where it is, or move twice as far?
+
+83
+00:04:36,840 --> 00:04:40,000
+Pause the video and answer.
+
+84
+00:04:40,050 --> 00:04:41,440
+It stays where it is.
+
+85
+00:04:41,490 --> 00:04:47,030
+Its distance from the mirror line is 0, so its image is in the same place.
+
+86
+00:04:47,080 --> 00:04:51,600
+To remember: a reflection flips a shape over a mirror line.
+
+87
+00:04:51,650 --> 00:04:57,840
+Image points are the same distance from the line, on the other side, at right angles.
+
+88
+00:04:57,890 --> 00:04:59,790
+In the x axis, y changes sign.
+
+89
+00:04:59,840 --> 00:05:02,290
+In the y axis, x changes sign.
+
+90
+00:05:02,340 --> 00:05:05,510
+Points on the mirror line do not move.
+
+91
+00:05:05,560 --> 00:05:10,950
+Great work! Now practise lesson 14.4 on Camday.
