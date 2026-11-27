@@ -2646,5 +2646,31 @@
     14
    ]
   }
+ },
+ "c3u03": {
+  "title": "Camday Maths Stage 3 · Unit 3: Multiplication and Division",
+  "pages": 14,
+  "dir": "media/books/c3u03/",
+  "ext": "webp",
+  "pdf": "media/books/c3u03.pdf?v=745f5da594",
+  "v": "745f5da594",
+  "secs": {
+   "3.1": [
+    2,
+    5
+   ],
+   "3.2": [
+    6,
+    9
+   ],
+   "3.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
  }
 }
