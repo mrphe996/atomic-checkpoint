@@ -1590,5 +1590,75 @@
     7
    ]
   }
+ },
+ "c6u10": {
+  "title": "Camday Maths Stage 6 · Unit 10: Multiplication and Division (1)",
+  "pages": 15,
+  "dir": "media/books/c6u10/",
+  "ext": "webp",
+  "pdf": "media/books/c6u10.pdf?v=34668794f2",
+  "v": "34668794f2",
+  "secs": {
+   "10.1": [
+    2,
+    6
+   ],
+   "10.2": [
+    7,
+    10
+   ],
+   "10.3": [
+    11,
+    14
+   ],
+   "answers": [
+    15,
+    15
+   ]
+  }
+ },
+ "c6u11": {
+  "title": "Camday Maths Stage 6 · Unit 11: 3D Shapes",
+  "pages": 11,
+  "dir": "media/books/c6u11/",
+  "ext": "webp",
+  "pdf": "media/books/c6u11.pdf?v=8c1b859284",
+  "v": "8c1b859284",
+  "secs": {
+   "11.1": [
+    2,
+    6
+   ],
+   "11.2": [
+    7,
+    10
+   ],
+   "answers": [
+    11,
+    11
+   ]
+  }
+ },
+ "c6u12": {
+  "title": "Camday Maths Stage 6 · Unit 12: Ratio and Proportion",
+  "pages": 10,
+  "dir": "media/books/c6u12/",
+  "ext": "webp",
+  "pdf": "media/books/c6u12.pdf?v=6392945d9b",
+  "v": "6392945d9b",
+  "secs": {
+   "12.1": [
+    2,
+    5
+   ],
+   "12.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
