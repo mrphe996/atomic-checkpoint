@@ -1774,5 +1774,97 @@
     15
    ]
   }
+ },
+ "c5u01": {
+  "title": "Camday Maths Stage 5 · Unit 1: The Number System",
+  "pages": 10,
+  "dir": "media/books/c5u01/",
+  "ext": "webp",
+  "pdf": "media/books/c5u01.pdf?v=904eaa411e",
+  "v": "904eaa411e",
+  "secs": {
+   "1.1": [
+    2,
+    5
+   ],
+   "1.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
+ },
+ "c5u02": {
+  "title": "Camday Maths Stage 5 · Unit 2: 2D Shapes",
+  "pages": 11,
+  "dir": "media/books/c5u02/",
+  "ext": "webp",
+  "pdf": "media/books/c5u02.pdf?v=abd7a01e62",
+  "v": "abd7a01e62",
+  "secs": {
+   "2.1": [
+    2,
+    6
+   ],
+   "2.2": [
+    7,
+    10
+   ],
+   "answers": [
+    11,
+    11
+   ]
+  }
+ },
+ "c5u03": {
+  "title": "Camday Maths Stage 5 · Unit 3: Numbers and Sequences",
+  "pages": 14,
+  "dir": "media/books/c5u03/",
+  "ext": "webp",
+  "pdf": "media/books/c5u03.pdf?v=5f2dd919cc",
+  "v": "5f2dd919cc",
+  "secs": {
+   "3.1": [
+    2,
+    5
+   ],
+   "3.2": [
+    6,
+    9
+   ],
+   "3.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
+ },
+ "c5u04": {
+  "title": "Camday Maths Stage 5 · Unit 4: Averages",
+  "pages": 10,
+  "dir": "media/books/c5u04/",
+  "ext": "webp",
+  "pdf": "media/books/c5u04.pdf?v=a5f42eea05",
+  "v": "a5f42eea05",
+  "secs": {
+   "4.1": [
+    2,
+    5
+   ],
+   "4.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }

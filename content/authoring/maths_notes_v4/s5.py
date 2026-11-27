@@ -1,0 +1,5 @@
+# -*- coding: utf-8 -*-
+"""Cambridge Primary Mathematics Stage 5 – v4 lessons (complete self-study lessons)."""
+NOTES = {}
+for _m in ("s5_u01", "s5_u01_book", "s5_u02", "s5_u02_book", "s5_u03", "s5_u03_book", "s5_u04", "s5_u04_book"):
+    NOTES.update(__import__(f"maths_notes_v4.{_m}", fromlist=["NOTES"]).NOTES)
