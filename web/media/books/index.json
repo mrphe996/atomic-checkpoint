@@ -2050,5 +2050,27 @@
     12
    ]
   }
+ },
+ "c5u13": {
+  "title": "Camday Maths Stage 5 · Unit 13: Ratio and Proportion",
+  "pages": 10,
+  "dir": "media/books/c5u13/",
+  "ext": "webp",
+  "pdf": "media/books/c5u13.pdf?v=83d3a0c56a",
+  "v": "83d3a0c56a",
+  "secs": {
+   "13.1": [
+    2,
+    5
+   ],
+   "13.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
