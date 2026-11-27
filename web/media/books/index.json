@@ -2344,5 +2344,31 @@
     10
    ]
   }
+ },
+ "c4u08": {
+  "title": "Camday Maths Stage 4 · Unit 8: Angles",
+  "pages": 16,
+  "dir": "media/books/c4u08/",
+  "ext": "webp",
+  "pdf": "media/books/c4u08.pdf?v=db922ee8cc",
+  "v": "db922ee8cc",
+  "secs": {
+   "8.1": [
+    2,
+    5
+   ],
+   "8.2": [
+    6,
+    10
+   ],
+   "8.3": [
+    11,
+    15
+   ],
+   "answers": [
+    16,
+    16
+   ]
+  }
  }
 }
