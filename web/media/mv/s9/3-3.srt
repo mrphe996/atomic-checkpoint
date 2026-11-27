@@ -1,0 +1,243 @@
+1
+00:00:07,400 --> 00:00:10,690
+Ravi puts 2,000 dollars in a savings account.
+
+2
+00:00:10,740 --> 00:00:15,060
+It pays 4 percent interest each year, added to the account.
+
+3
+00:00:15,110 --> 00:00:19,170
+Next year, interest is paid on the interest too.
+
+4
+00:00:19,220 --> 00:00:23,160
+After 3 years, has his money grown by exactly 12 percent?
+
+5
+00:00:23,210 --> 00:00:26,450
+Pause the video and choose.
+
+6
+00:00:26,500 --> 00:00:26,670
+No.
+
+7
+00:00:26,720 --> 00:00:29,810
+Each year's 4 percent is of a bigger amount.
+
+8
+00:00:29,860 --> 00:00:33,930
+So the total growth is a bit more than 12 percent.
+
+9
+00:00:33,980 --> 00:00:38,360
+Remember: to increase by 20 percent, multiply by 1.2.
+
+10
+00:00:38,410 --> 00:00:42,500
+To decrease by 20 percent, multiply by 0.8.
+
+11
+00:00:42,550 --> 00:00:49,800
+A compound percentage change applies the percentage again and again, each time to the new amount.
+
+12
+00:00:49,850 --> 00:00:53,510
+After 3 years Ravi has 2,249 dollars 73.
+
+13
+00:00:53,560 --> 00:00:59,710
+That is more than 2,240, which is what 12 percent would give.
+
+14
+00:00:59,760 --> 00:01:00,440
+Your turn.
+
+15
+00:01:00,490 --> 00:01:03,590
+Times 1.04, three times, is one multiplier.
+
+16
+00:01:03,640 --> 00:01:05,940
+What is it, to 3 decimal places?
+
+17
+00:01:05,990 --> 00:01:09,320
+Pause the video and try it.
+
+18
+00:01:09,370 --> 00:01:11,700
+1.04 cubed is 1.124864.
+
+19
+00:01:11,750 --> 00:01:15,330
+To 3 decimal places, that is 1.125.
+
+20
+00:01:15,380 --> 00:01:20,120
+So the money grows by about 12.5 percent.
+
+21
+00:01:20,170 --> 00:01:24,470
+Values that fall each year use a multiplier less than 1.
+
+22
+00:01:24,520 --> 00:01:32,240
+A car that loses 15 percent a year keeps 85 percent: value equals start, times 0.85 to the N.
+
+23
+00:01:32,290 --> 00:01:33,800
+Here is the method.
+
+24
+00:01:33,850 --> 00:01:36,100
+Step 1: find the multiplier.
+
+25
+00:01:36,150 --> 00:01:42,310
+1 plus R over 100 for an increase, 1 minus R over 100 for a decrease.
+
+26
+00:01:42,360 --> 00:01:46,460
+Step 2: raise it to the power of the number of years.
+
+27
+00:01:46,510 --> 00:01:49,960
+Step 3: multiply by the starting amount.
+
+28
+00:01:50,010 --> 00:01:52,710
+Step 4: round only at the end.
+
+29
+00:01:52,760 --> 00:01:55,130
+A car is worth 18,000 dollars.
+
+30
+00:01:55,180 --> 00:01:58,590
+It loses 15 percent of its value each year.
+
+31
+00:01:58,640 --> 00:02:01,640
+What is it worth after 2 years?
+
+32
+00:02:01,690 --> 00:02:02,380
+Your turn.
+
+33
+00:02:02,430 --> 00:02:06,020
+What is the multiplier for a 15 percent decrease?
+
+34
+00:02:06,070 --> 00:02:09,060
+Pause and work it out.
+
+35
+00:02:09,110 --> 00:02:14,730
+100 minus 15 is 85 percent, so the multiplier is 0.85.
+
+36
+00:02:14,780 --> 00:02:22,210
+After 2 years: 18,000 times 0.85 squared, which is 13,005 dollars.
+
+37
+00:02:22,260 --> 00:02:25,890
+1,000 dollars earns 5 percent a year.
+
+38
+00:02:25,940 --> 00:02:29,960
+When does it first go over 1,200 dollars?
+
+39
+00:02:30,010 --> 00:02:32,550
+1.05 cubed is about 1.158.
+
+40
+00:02:32,600 --> 00:02:35,430
+1.05 to the 4 is about 1.216.
+
+41
+00:02:35,480 --> 00:02:37,970
+So it takes 4 years.
+
+42
+00:02:38,020 --> 00:02:42,340
+A price rises 10 percent one year, and 10 percent the next.
+
+43
+00:02:42,390 --> 00:02:44,640
+Kai works out the total change.
+
+44
+00:02:44,690 --> 00:02:46,670
+Which line is wrong?
+
+45
+00:02:46,720 --> 00:02:47,880
+Line 1 is wrong.
+
+46
+00:02:47,930 --> 00:02:52,210
+The second 10 percent is of the new, bigger price.
+
+47
+00:02:52,260 --> 00:02:54,400
+1.1 times 1.1 is 1.21.
+
+48
+00:02:54,450 --> 00:02:57,930
+That is a 21 percent increase.
+
+49
+00:02:57,980 --> 00:03:04,170
+Banks, loans, inflation and population growth all use compound percentages.
+
+50
+00:03:04,220 --> 00:03:11,630
+A town of 25,000 that grows 2 percent a year has about 27,600 people after 5 years.
+
+51
+00:03:11,680 --> 00:03:13,000
+One last question.
+
+52
+00:03:13,050 --> 00:03:16,660
+A price rises 10 percent, then falls 10 percent.
+
+53
+00:03:16,710 --> 00:03:19,010
+What is the overall multiplier?
+
+54
+00:03:19,060 --> 00:03:22,470
+Pause the video and answer.
+
+55
+00:03:22,520 --> 00:03:24,430
+1.1 times 0.9 is 0.99.
+
+56
+00:03:24,480 --> 00:03:29,150
+That is a 1 percent decrease overall, not zero.
+
+57
+00:03:29,200 --> 00:03:34,360
+To remember: the multiplier is 1 plus or minus R over 100.
+
+58
+00:03:34,410 --> 00:03:38,230
+For N years, raise the multiplier to the power N.
+
+59
+00:03:38,280 --> 00:03:41,320
+Changes one after another multiply.
+
+60
+00:03:41,370 --> 00:03:43,610
+Round at the end.
+
+61
+00:03:43,660 --> 00:03:48,750
+Great work! Now practise lesson 3.3 on Camday.

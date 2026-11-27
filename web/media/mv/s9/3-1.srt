@@ -1,0 +1,255 @@
+1
+00:00:08,230 --> 00:00:13,960
+A computer chip has parts that are 5 times 10 to the power negative 9 metres wide.
+
+2
+00:00:14,010 --> 00:00:18,100
+An engineer works with numbers like this every day.
+
+3
+00:00:18,150 --> 00:00:24,390
+Does multiplying by 10 to the power negative 9 make a positive number smaller, or bigger?
+
+4
+00:00:24,440 --> 00:00:27,700
+Pause the video and choose.
+
+5
+00:00:27,750 --> 00:00:32,170
+10 to the power negative 9 is 1 over 1,000,000,000.
+
+6
+00:00:32,220 --> 00:00:37,000
+Multiplying by it is the same as dividing by a billion.
+
+7
+00:00:37,050 --> 00:00:40,360
+So the number gets much smaller.
+
+8
+00:00:40,410 --> 00:00:43,170
+Remember: 10 cubed is 1,000.
+
+9
+00:00:43,220 --> 00:00:45,490
+10 to the power 0 is 1.
+
+10
+00:00:45,540 --> 00:00:49,960
+And 10 to the power negative 2 is 0.01.
+
+11
+00:00:50,010 --> 00:00:56,470
+Multiplying by 10 to a positive power moves the digits to the left, so the number gets bigger.
+
+12
+00:00:56,520 --> 00:00:59,300
+Dividing moves them to the right.
+
+13
+00:00:59,350 --> 00:01:03,910
+Multiplying by 10 to a negative power is the same as dividing.
+
+14
+00:01:03,960 --> 00:01:09,370
+And dividing by 10 to a negative power is the same as multiplying.
+
+15
+00:01:09,420 --> 00:01:10,160
+Your turn.
+
+16
+00:01:10,210 --> 00:01:13,800
+Work out 4.7 times 10 to the power negative 2.
+
+17
+00:01:13,850 --> 00:01:17,340
+Pause the video and try it.
+
+18
+00:01:17,390 --> 00:01:21,610
+Times 10 to the negative 2 means divide by 100.
+
+19
+00:01:21,660 --> 00:01:26,240
+Move the digits 2 places to the right: 0.047.
+
+20
+00:01:26,290 --> 00:01:27,670
+Why does it work?
+
+21
+00:01:27,720 --> 00:01:30,670
+10 to the negative 2 is 1 hundredth.
+
+22
+00:01:30,720 --> 00:01:35,070
+Multiplying by 1 hundredth is dividing by 100.
+
+23
+00:01:35,120 --> 00:01:36,540
+Here is the method.
+
+24
+00:01:36,590 --> 00:01:38,020
+Step 1: rewrite it.
+
+25
+00:01:38,070 --> 00:01:42,280
+Times 10 to the negative N means divide by 10 to the N.
+
+26
+00:01:42,330 --> 00:01:47,570
+Divide by 10 to the negative N means multiply by 10 to the N.
+
+27
+00:01:47,620 --> 00:01:50,740
+Step 2: N tells you how many places.
+
+28
+00:01:50,790 --> 00:01:52,350
+Step 3: move the digits.
+
+29
+00:01:52,400 --> 00:01:56,200
+Left to make it bigger, right to make it smaller.
+
+30
+00:01:56,250 --> 00:01:57,830
+Step 4: check the size.
+
+31
+00:01:57,880 --> 00:02:01,150
+Should the answer be bigger or smaller?
+
+32
+00:02:01,200 --> 00:02:05,330
+Work out 0.072 divided by 10 to the negative 2.
+
+33
+00:02:05,380 --> 00:02:11,280
+Dividing by 10 to the negative 2 is the same as multiplying by 100.
+
+34
+00:02:11,330 --> 00:02:13,700
+So the answer is 7.2.
+
+35
+00:02:13,750 --> 00:02:14,530
+Your turn.
+
+36
+00:02:14,580 --> 00:02:18,350
+Work out 0.36 divided by 10 to the negative 3.
+
+37
+00:02:18,400 --> 00:02:21,580
+Pause and work it out.
+
+38
+00:02:21,630 --> 00:02:28,050
+Dividing by 10 to the negative 3 means multiplying by 1,000.
+
+39
+00:02:28,100 --> 00:02:31,190
+0.36 times 1,000 is 360.
+
+40
+00:02:31,240 --> 00:02:34,160
+250 times 10 to the N is 0.025.
+
+41
+00:02:34,210 --> 00:02:34,830
+Find N.
+
+42
+00:02:34,880 --> 00:02:40,960
+To get from 250 to 0.025, the digits move 4 places to the right.
+
+43
+00:02:41,010 --> 00:02:46,010
+That is dividing by 10,000, so N is negative 4.
+
+44
+00:02:46,060 --> 00:02:51,890
+How many 5 nanometre parts fit across a 0.003 metre strip?
+
+45
+00:02:51,940 --> 00:03:01,770
+0.003 divided by 5 times 10 to the negative 9 is 0.0006 times 10 to the 9, which is 600,000.
+
+46
+00:03:01,820 --> 00:03:05,470
+Leo works out 5.4 times 10 to the negative 1.
+
+47
+00:03:05,520 --> 00:03:07,670
+Which line is wrong?
+
+48
+00:03:07,720 --> 00:03:08,920
+Line 1 is wrong.
+
+49
+00:03:08,970 --> 00:03:12,520
+Times 10 to the negative 1 means divide by 10.
+
+50
+00:03:12,570 --> 00:03:15,250
+It makes the number smaller.
+
+51
+00:03:15,300 --> 00:03:18,880
+5.4 divided by 10 is 0.54.
+
+52
+00:03:18,930 --> 00:03:25,360
+Scientists switch between metres, micrometres and nanometres using powers of 10.
+
+53
+00:03:25,410 --> 00:03:28,850
+A nanometre is 10 to the negative 9 metres.
+
+54
+00:03:28,900 --> 00:03:33,040
+A human hair is about 80,000 nanometres wide.
+
+55
+00:03:33,090 --> 00:03:34,500
+One last question.
+
+56
+00:03:34,550 --> 00:03:37,640
+Work out 82 times 10 to the negative 1.
+
+57
+00:03:37,690 --> 00:03:41,220
+Pause the video and answer.
+
+58
+00:03:41,270 --> 00:03:45,720
+Times 10 to the negative 1 means divide by 10.
+
+59
+00:03:45,770 --> 00:03:48,610
+82 divided by 10 is 8.2.
+
+60
+00:03:48,660 --> 00:03:55,020
+To remember: times 10 to the negative N is the same as divide by 10 to the N.
+
+61
+00:03:55,070 --> 00:04:00,900
+Divide by 10 to the negative N is the same as multiply by 10 to the N.
+
+62
+00:04:00,950 --> 00:04:03,310
+Move the digits N places.
+
+63
+00:04:03,360 --> 00:04:05,970
+Check the size of the answer.
+
+64
+00:04:06,020 --> 00:04:11,070
+Great work! Now practise lesson 3.1 on Camday.

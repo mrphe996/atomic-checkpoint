@@ -1,0 +1,247 @@
+1
+00:00:07,110 --> 00:00:10,460
+A cyclist starts at a speed of U metres per second.
+
+2
+00:00:10,510 --> 00:00:13,790
+She speeds up by A metres per second every second.
+
+3
+00:00:13,840 --> 00:00:17,670
+After T seconds, her speed is V equals U plus A T.
+
+4
+00:00:17,720 --> 00:00:23,280
+Her final speed is 14, her starting speed is 2, and T is 4 seconds.
+
+5
+00:00:23,330 --> 00:00:24,990
+Find A, her acceleration.
+
+6
+00:00:25,040 --> 00:00:28,570
+Pause the video and work it out.
+
+7
+00:00:28,620 --> 00:00:30,350
+14 equals 2 plus 4 A.
+
+8
+00:00:30,400 --> 00:00:32,620
+Take away 2: 12 equals 4 A.
+
+9
+00:00:32,670 --> 00:00:37,900
+Divide by 4: A equals 3 metres per second, every second.
+
+10
+00:00:37,950 --> 00:00:43,930
+Remember: to solve an equation, do the same to both sides, to undo each operation.
+
+11
+00:00:43,980 --> 00:00:46,630
+A formula is a rule that links variables.
+
+12
+00:00:46,680 --> 00:00:49,200
+The variable on its own is the subject.
+
+13
+00:00:49,250 --> 00:00:52,450
+In V equals U plus A T, the subject is V.
+
+14
+00:00:52,500 --> 00:00:58,150
+Changing the subject means rearranging, so that a different variable is on its own.
+
+15
+00:00:58,200 --> 00:01:01,800
+Subtract U from both sides, then divide by T.
+
+16
+00:01:01,850 --> 00:01:02,450
+Your turn.
+
+17
+00:01:02,500 --> 00:01:05,230
+Make T the subject of V equals U plus A T.
+
+18
+00:01:05,280 --> 00:01:08,410
+Pause the video and try it.
+
+19
+00:01:08,460 --> 00:01:10,560
+Subtract U: V minus U equals A T.
+
+20
+00:01:10,610 --> 00:01:12,000
+This time divide by A.
+
+21
+00:01:12,050 --> 00:01:14,760
+So T equals V minus U, all over A.
+
+22
+00:01:14,810 --> 00:01:17,130
+You can write your own formula.
+
+23
+00:01:17,180 --> 00:01:22,390
+A plumber charges a 40 dollar call-out fee, plus 25 dollars per hour.
+
+24
+00:01:22,440 --> 00:01:26,600
+The cost C for H hours is C equals 40 plus 25 H.
+
+25
+00:01:26,650 --> 00:01:31,930
+Rearrange it to find the hours: H equals C minus 40, over 25.
+
+26
+00:01:31,980 --> 00:01:33,300
+Here is the method.
+
+27
+00:01:33,350 --> 00:01:36,090
+Step 1: circle the new subject.
+
+28
+00:01:36,140 --> 00:01:40,000
+Step 2: undo the operations around it, in reverse order.
+
+29
+00:01:40,050 --> 00:01:42,370
+Do the same to both sides.
+
+30
+00:01:42,420 --> 00:01:46,070
+Step 3: keep fractions and brackets clear.
+
+31
+00:01:46,120 --> 00:01:49,550
+Step 4: check by substituting numbers.
+
+32
+00:01:49,600 --> 00:01:52,440
+Make H the subject of A equals a half B H.
+
+33
+00:01:52,490 --> 00:01:55,270
+Multiply both sides by 2: 2 A equals B H.
+
+34
+00:01:55,320 --> 00:01:58,440
+Then divide by B: H equals 2 A over B.
+
+35
+00:01:58,490 --> 00:01:59,120
+Your turn.
+
+36
+00:01:59,170 --> 00:02:01,800
+Make B the subject of the same formula.
+
+37
+00:02:01,850 --> 00:02:04,710
+Pause and work it out.
+
+38
+00:02:04,760 --> 00:02:05,790
+2 A equals B H.
+
+39
+00:02:05,840 --> 00:02:07,370
+This time divide by H.
+
+40
+00:02:07,420 --> 00:02:09,580
+So B equals 2 A over H.
+
+41
+00:02:09,630 --> 00:02:12,530
+Make R the subject of A equals pi R squared.
+
+42
+00:02:12,580 --> 00:02:15,280
+Divide by pi: R squared equals A over pi.
+
+43
+00:02:15,330 --> 00:02:17,580
+Then take the square root.
+
+44
+00:02:17,630 --> 00:02:20,700
+Max makes A the subject of V equals U plus A T.
+
+45
+00:02:20,750 --> 00:02:22,570
+Which line is wrong?
+
+46
+00:02:22,620 --> 00:02:23,670
+Line 1 is wrong.
+
+47
+00:02:23,720 --> 00:02:26,480
+Adding U was done last, so undo it first.
+
+48
+00:02:26,530 --> 00:02:29,020
+Subtract U, then divide by T.
+
+49
+00:02:29,070 --> 00:02:30,380
+V minus U equals A T.
+
+50
+00:02:30,430 --> 00:02:32,870
+So A equals V minus U, over T.
+
+51
+00:02:32,920 --> 00:02:36,590
+Doctors rearrange formulae to work out medicine doses.
+
+52
+00:02:36,640 --> 00:02:42,870
+Engineers rearrange V equals U plus A T to design brakes that stop a train in time.
+
+53
+00:02:42,920 --> 00:02:44,110
+One last question.
+
+54
+00:02:44,160 --> 00:02:46,880
+Make X the subject of Y equals X over 4.
+
+55
+00:02:46,930 --> 00:02:50,150
+Pause the video and answer.
+
+56
+00:02:50,200 --> 00:02:53,760
+X was divided by 4, so multiply both sides by 4.
+
+57
+00:02:53,810 --> 00:02:55,290
+X equals 4 Y.
+
+58
+00:02:55,340 --> 00:02:59,440
+To remember: the subject is the variable on its own.
+
+59
+00:02:59,490 --> 00:03:02,770
+Use inverse operations, in reverse order.
+
+60
+00:03:02,820 --> 00:03:05,610
+A square is undone by a square root.
+
+61
+00:03:05,660 --> 00:03:07,920
+Check with numbers.
+
+62
+00:03:07,970 --> 00:03:13,150
+Great work! Now practise lesson 2.6 on Camday.

@@ -1,0 +1,239 @@
+1
+00:00:07,620 --> 00:00:11,270
+A news report says 65,000 fans watched a match.
+
+2
+00:00:11,320 --> 00:00:15,430
+The number is rounded to the nearest thousand.
+
+3
+00:00:15,480 --> 00:00:18,870
+What is the smallest the real crowd could have been?
+
+4
+00:00:18,920 --> 00:00:22,390
+Pause the video and work it out.
+
+5
+00:00:22,440 --> 00:00:27,860
+64,500 is the smallest number that rounds up to 65,000.
+
+6
+00:00:27,910 --> 00:00:32,490
+Anything less would round down to 64,000.
+
+7
+00:00:32,540 --> 00:00:40,620
+The largest crowd is 65,499, because 65,500 would round up to 66,000.
+
+8
+00:00:40,670 --> 00:00:45,110
+Remember: 4.36 to 1 decimal place is 4.4.
+
+9
+00:00:45,160 --> 00:00:49,380
+2,450 to the nearest 100 is 2,500.
+
+10
+00:00:49,430 --> 00:00:51,680
+A rounded value stands for a range.
+
+11
+00:00:51,730 --> 00:00:57,500
+Go half a unit down for the lower bound, and half a unit up for the upper bound.
+
+12
+00:00:57,550 --> 00:00:58,230
+Your turn.
+
+13
+00:00:58,280 --> 00:01:01,370
+A length is 4.7 metres, to 1 decimal place.
+
+14
+00:01:01,420 --> 00:01:03,130
+What is its upper bound?
+
+15
+00:01:03,180 --> 00:01:06,500
+Pause the video and try it.
+
+16
+00:01:06,550 --> 00:01:08,030
+The unit is 0.1.
+
+17
+00:01:08,080 --> 00:01:09,960
+Half of 0.1 is 0.05.
+
+18
+00:01:10,010 --> 00:01:13,030
+So the bounds are 4.65 and 4.75.
+
+19
+00:01:13,080 --> 00:01:16,560
+The upper bound is 4.75 metres.
+
+20
+00:01:16,610 --> 00:01:19,050
+Write the range as an inequality.
+
+21
+00:01:19,100 --> 00:01:21,160
+The lower bound is included.
+
+22
+00:01:21,210 --> 00:01:26,170
+The upper bound is not, because 4.75 would round up to 4.8.
+
+23
+00:01:26,220 --> 00:01:27,490
+Here is the method.
+
+24
+00:01:27,540 --> 00:01:31,820
+Step 1: find the accuracy: the unit it was rounded to.
+
+25
+00:01:31,870 --> 00:01:34,480
+Step 2: halve that unit.
+
+26
+00:01:34,530 --> 00:01:38,030
+Step 3: lower bound is the value minus a half unit.
+
+27
+00:01:38,080 --> 00:01:41,500
+Upper bound is the value plus a half unit.
+
+28
+00:01:41,550 --> 00:01:46,380
+Step 4: write: lower, less than or equal to X, less than upper.
+
+29
+00:01:46,430 --> 00:01:50,550
+A time is 40 seconds, to the nearest 5 seconds.
+
+30
+00:01:50,600 --> 00:01:52,060
+Half of 5 is 2.5.
+
+31
+00:01:52,110 --> 00:01:56,160
+So the bounds are 37.5 and 42.5 seconds.
+
+32
+00:01:56,210 --> 00:01:56,940
+Your turn.
+
+33
+00:01:56,990 --> 00:02:00,430
+A mass is 320 grams, to the nearest 10 grams.
+
+34
+00:02:00,480 --> 00:02:01,990
+What are its bounds?
+
+35
+00:02:02,040 --> 00:02:05,090
+Pause and work it out.
+
+36
+00:02:05,140 --> 00:02:06,530
+Half of 10 is 5.
+
+37
+00:02:06,580 --> 00:02:12,390
+So the mass is at least 315 grams, and less than 325 grams.
+
+38
+00:02:12,440 --> 00:02:16,410
+A rope is 12 metres long, to the nearest metre.
+
+39
+00:02:16,460 --> 00:02:19,060
+Could it really be 12.6 metres?
+
+40
+00:02:19,110 --> 00:02:21,540
+The bounds are 11.5 and 12.5.
+
+41
+00:02:21,590 --> 00:02:24,140
+12.6 is too long, so no.
+
+42
+00:02:24,190 --> 00:02:27,360
+A mass is 6.2 kilograms to 1 decimal place.
+
+43
+00:02:27,410 --> 00:02:29,000
+Ana writes the bounds.
+
+44
+00:02:29,050 --> 00:02:31,040
+Which line is wrong?
+
+45
+00:02:31,090 --> 00:02:32,420
+Line 1 is wrong.
+
+46
+00:02:32,470 --> 00:02:34,050
+She used half of 1.
+
+47
+00:02:34,100 --> 00:02:38,120
+The unit is 0.1, and half of 0.1 is 0.05.
+
+48
+00:02:38,170 --> 00:02:42,500
+The bounds are 6.15 and 6.25 kilograms.
+
+49
+00:02:42,550 --> 00:02:51,910
+Engineers give tolerances, like 10 millimetres, plus or minus 0.05 millimetres, so that parts always fit together.
+
+50
+00:02:51,960 --> 00:02:53,260
+One last question.
+
+51
+00:02:53,310 --> 00:02:55,820
+A number is 90, to the nearest 10.
+
+52
+00:02:55,870 --> 00:02:57,620
+What is its lower bound?
+
+53
+00:02:57,670 --> 00:03:01,060
+Pause the video and answer.
+
+54
+00:03:01,110 --> 00:03:02,830
+Half of 10 is 5.
+
+55
+00:03:02,880 --> 00:03:05,260
+90 minus 5 is 85.
+
+56
+00:03:05,310 --> 00:03:09,330
+To remember: the bounds are half a unit either side.
+
+57
+00:03:09,380 --> 00:03:13,440
+Write lower, less than or equal to X, less than upper.
+
+58
+00:03:13,490 --> 00:03:16,150
+The upper bound itself rounds up.
+
+59
+00:03:16,200 --> 00:03:18,800
+Check the accuracy carefully.
+
+60
+00:03:18,850 --> 00:03:23,910
+Great work! Now practise lesson 3.4 on Camday.

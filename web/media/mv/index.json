@@ -45762,6 +45762,1815 @@
     "2.3-k4": 176.82
    },
    "up": true
+  },
+  "2.4": {
+   "src": "media/mv/s9/2-4.mp4",
+   "poster": "media/mv/s9/2-4_poster.jpg",
+   "srt": "media/mv/s9/2-4.srt",
+   "dur": 206.6,
+   "captions": [
+    [
+     7.88,
+     "A square garden has sides of X metres."
+    ],
+    [
+     10.61,
+     "The owner makes it 3 metres longer and 2 metres wider."
+    ],
+    [
+     15.04,
+     "When X is 10, what is the new area?"
+    ],
+    [
+     17.5,
+     "Pause the video and work it out."
+    ],
+    [
+     21.15,
+     "The new sides are 13 and 12."
+    ],
+    [
+     23.73,
+     "13 times 12 is 156 square metres."
+    ],
+    [
+     26.76,
+     "It is not X squared plus 6, which would only be 106."
+    ],
+    [
+     32.09,
+     "Remember: 4, bracket, X plus 3, is 4 X plus 12."
+    ],
+    [
+     35.71,
+     "And X, bracket, X minus 5, is X squared minus 5 X."
+    ],
+    [
+     40.11,
+     "Multiply every term in the first bracket by every term in the second."
+    ],
+    [
+     44.8,
+     "A grid helps."
+    ],
+    [
+     46.24,
+     "Your turn."
+    ],
+    [
+     46.94,
+     "Use the grid to expand X plus 3, times X plus 2."
+    ],
+    [
+     50.28,
+     "Pause the video and try it."
+    ],
+    [
+     53.56,
+     "Add the four parts: X squared, plus 3 X, plus 2 X, plus 6."
+    ],
+    [
+     57.8,
+     "Collect the middle terms: X squared plus 5 X plus 6."
+    ],
+    [
+     62.15,
+     "With X equals 10: 100 plus 50 plus 6 is 156."
+    ],
+    [
+     66.48,
+     "That matches the garden."
+    ],
+    [
+     69.4,
+     "A perfect square: X plus 4, all squared, is X plus 4 times X plus 4."
+    ],
+    [
+     74.53,
+     "That gives X squared plus 8 X plus 16."
+    ],
+    [
+     77.94,
+     "The difference of two squares: X plus A, times X minus A."
+    ],
+    [
+     81.61,
+     "The middle terms cancel out, leaving X squared minus A squared."
+    ],
+    [
+     86.22,
+     "Here is the method."
+    ],
+    [
+     87.6,
+     "Step 1: draw a grid."
+    ],
+    [
+     89.61,
+     "Step 2: multiply each pair of terms, keeping the signs."
+    ],
+    [
+     94.03,
+     "Step 3: collect the like terms."
+    ],
+    [
+     96.28,
+     "Usually these are the two middle terms."
+    ],
+    [
+     99.67,
+     "Step 4: check by substituting a number."
+    ],
+    [
+     103.06,
+     "Expand X minus 6, times X minus 2."
+    ],
+    [
+     105.86,
+     "Negative 6 times negative 2 is positive 12."
+    ],
+    [
+     109.96,
+     "Collect the middle terms: X squared minus 8 X plus 12."
+    ],
+    [
+     114.71,
+     "Your turn."
+    ],
+    [
+     115.45,
+     "Expand Y plus 5, times Y minus 5."
+    ],
+    [
+     117.87,
+     "Pause and work it out."
+    ],
+    [
+     120.88,
+     "Y squared, minus 5 Y, plus 5 Y, minus 25."
+    ],
+    [
+     124.08,
+     "The middle terms cancel."
+    ],
+    [
+     125.95,
+     "The answer is Y squared minus 25."
+    ],
+    [
+     129.07,
+     "Use the difference of two squares to work out 41 times 39."
+    ],
+    [
+     134.47,
+     "That is 40 plus 1, times 40 minus 1."
+    ],
+    [
+     137.82,
+     "So it is 40 squared minus 1 squared: 1,600 minus 1, which is 1,599."
+    ],
+    [
+     144.6,
+     "Zara expands X plus 3, all squared."
+    ],
+    [
+     147.11,
+     "Which line is wrong?"
+    ],
+    [
+     149.09,
+     "Line 1 is wrong."
+    ],
+    [
+     150.21,
+     "She squared each term, and missed the middle terms."
+    ],
+    [
+     154.35,
+     "X plus 3, times X plus 3, is X squared plus 6 X plus 9."
+    ],
+    [
+     159.12,
+     "Mental maths champions use this trick."
+    ],
+    [
+     162.64,
+     "51 times 49 is 50 squared minus 1, which is 2,499."
+    ],
+    [
+     167.82,
+     "One last question."
+    ],
+    [
+     169.2,
+     "Use the difference of two squares to work out 31 times 29."
+    ],
+    [
+     173.63,
+     "Pause the video and answer."
+    ],
+    [
+     177.09,
+     "31 times 29 is 30 plus 1, times 30 minus 1."
+    ],
+    [
+     182.26,
+     "900 minus 1 is 899."
+    ],
+    [
+     185.09,
+     "To remember: multiply every term by every term."
+    ],
+    [
+     188.92,
+     "X plus A, all squared, is X squared plus 2 A X plus A squared."
+    ],
+    [
+     193.7,
+     "X plus A, times X minus A, is X squared minus A squared."
+    ],
+    [
+     197.86,
+     "Collect like terms, and check with a number."
+    ],
+    [
+     201.44,
+     "Great work! Now practise lesson 2.4 on Camday."
+    ]
+   ],
+   "times": {
+    "2.4-k1": 20.1,
+    "2.4-k2": 52.51,
+    "2.4-k3": 119.83,
+    "2.4-k4": 176.04
+   },
+   "up": true
+  },
+  "2.5": {
+   "src": "media/mv/s9/2-5.mp4",
+   "poster": "media/mv/s9/2-5_poster.jpg",
+   "srt": "media/mv/s9/2-5.srt",
+   "dur": 218.44,
+   "captions": [
+    [
+     7.43,
+     "Two friends share a pizza bill of X dollars."
+    ],
+    [
+     10.51,
+     "Ana pays X over 3, and Ben pays X over 4."
+    ],
+    [
+     13.92,
+     "What fraction of X have they paid together?"
+    ],
+    [
+     16.82,
+     "Pause the video and try it."
+    ],
+    [
+     20.03,
+     "Use a common denominator of 12."
+    ],
+    [
+     22.8,
+     "X over 3 is 4 X over 12."
+    ],
+    [
+     24.94,
+     "X over 4 is 3 X over 12."
+    ],
+    [
+     27.08,
+     "Together, 7 X over 12."
+    ],
+    [
+     29.59,
+     "Check with X equals 12: Ana pays 4 and Ben pays 3."
+    ],
+    [
+     33.76,
+     "That is 7, and 7 twelfths of 12 is 7."
+    ],
+    [
+     37.4,
+     "Remember: 1 third plus 1 quarter is 4 twelfths plus 3 twelfths, which is 7 twelfths."
+    ],
+    [
+     44.54,
+     "Algebraic fractions have letters in them."
+    ],
+    [
+     47.39,
+     "Add and subtract them just like number fractions, with a common denominator."
+    ],
+    [
+     53.23,
+     "With different letters on the bottom, multiply them to get the common denominator."
+    ],
+    [
+     59.5,
+     "Your turn."
+    ],
+    [
+     60.22,
+     "Is 2 over A, plus 3 over B, equal to 2 B plus 3 A, over A B?"
+    ],
+    [
+     64.57,
+     "Or 5 over A plus B?"
+    ],
+    [
+     65.95,
+     "Pause and choose."
+    ],
+    [
+     68.58,
+     "The common denominator is A B."
+    ],
+    [
+     70.72,
+     "2 over A becomes 2 B over A B."
+    ],
+    [
+     72.86,
+     "3 over B becomes 3 A over A B."
+    ],
+    [
+     75.01,
+     "So the answer is 2 B plus 3 A, over A B."
+    ],
+    [
+     78.42,
+     "You never add the denominators."
+    ],
+    [
+     81.09,
+     "To multiply, multiply the tops and multiply the bottoms."
+    ],
+    [
+     84.98,
+     "To divide, flip the second fraction and multiply."
+    ],
+    [
+     88.92,
+     "Cancel common factors at the end."
+    ],
+    [
+     91.85,
+     "Here is the method."
+    ],
+    [
+     93.18,
+     "Step 1: to add or subtract, use a common denominator, then combine the numerators."
+    ],
+    [
+     99.46,
+     "Step 2: to multiply, multiply the numerators and the denominators."
+    ],
+    [
+     104.82,
+     "Step 3: to divide, flip the second fraction and multiply."
+    ],
+    [
+     109.42,
+     "Step 4: cancel any common factors."
+    ],
+    [
+     112.47,
+     "Simplify 6 X squared over 9 X."
+    ],
+    [
+     114.75,
+     "Both the top and the bottom divide by 3 X."
+    ],
+    [
+     117.94,
+     "That leaves 2 X over 3."
+    ],
+    [
+     120.23,
+     "Simplify 4 Q over 9, times 3 over 2 Q."
+    ],
+    [
+     123.43,
+     "Multiply: 12 Q over 18 Q."
+    ],
+    [
+     125.53,
+     "The Q cancels, leaving 2 thirds."
+    ],
+    [
+     128.78,
+     "Your turn."
+    ],
+    [
+     129.55,
+     "Simplify 5 X squared over 10 X."
+    ],
+    [
+     131.95,
+     "Pause and work it out."
+    ],
+    [
+     135.05,
+     "Divide the top and bottom by 5 X."
+    ],
+    [
+     137.5,
+     "That leaves X over 2."
+    ],
+    [
+     139.6,
+     "Simplify X plus 1 over 3, plus X minus 2 over 2."
+    ],
+    [
+     143.45,
+     "The common denominator is 6."
+    ],
+    [
+     146.24,
+     "That gives 2, bracket, X plus 1, plus 3, bracket, X minus 2, all over 6."
+    ],
+    [
+     151.83,
+     "Expand and collect: 5 X minus 4, over 6."
+    ],
+    [
+     155.48,
+     "Kim simplifies X over 3, plus X over 5."
+    ],
+    [
+     158.4,
+     "Which line is wrong?"
+    ],
+    [
+     160.44,
+     "Line 1 is wrong."
+    ],
+    [
+     161.69,
+     "She added the denominators."
+    ],
+    [
+     163.79,
+     "Use a common denominator of 15."
+    ],
+    [
+     166.75,
+     "5 X over 15, plus 3 X over 15, is 8 X over 15."
+    ],
+    [
+     171.8,
+     "Camera lenses use a formula with algebraic fractions: 1 over F equals 1 over U, plus 1 over V."
+    ],
+    [
+     178.6,
+     "Designers combine fractions like these to focus the image."
+    ],
+    [
+     183.35,
+     "One last question."
+    ],
+    [
+     184.67,
+     "Simplify Y over 2, minus Y over 6."
+    ],
+    [
+     187.16,
+     "Pause the video and answer."
+    ],
+    [
+     190.54,
+     "Y over 2 is 3 Y over 6."
+    ],
+    [
+     192.41,
+     "3 Y over 6, minus Y over 6, is 2 Y over 6, which simplifies to Y over 3."
+    ],
+    [
+     198.81,
+     "To remember: algebraic fractions follow the same rules as number fractions."
+    ],
+    [
+     204.67,
+     "Use a common denominator to add or subtract."
+    ],
+    [
+     208.26,
+     "Flip and multiply to divide."
+    ],
+    [
+     210.86,
+     "Cancel common factors."
+    ],
+    [
+     213.21,
+     "Great work! Now practise lesson 2.5 on Camday."
+    ]
+   ],
+   "times": {
+    "2.5-k1": 18.98,
+    "2.5-k2": 67.53,
+    "2.5-k3": 134.0,
+    "2.5-k4": 189.49
+   },
+   "up": true
+  },
+  "2.6": {
+   "src": "media/mv/s9/2-6.mp4",
+   "poster": "media/mv/s9/2-6_poster.jpg",
+   "srt": "media/mv/s9/2-6.srt",
+   "dur": 193.2,
+   "captions": [
+    [
+     7.11,
+     "A cyclist starts at a speed of U metres per second."
+    ],
+    [
+     10.51,
+     "She speeds up by A metres per second every second."
+    ],
+    [
+     13.84,
+     "After T seconds, her speed is V equals U plus A T."
+    ],
+    [
+     17.72,
+     "Her final speed is 14, her starting speed is 2, and T is 4 seconds."
+    ],
+    [
+     23.33,
+     "Find A, her acceleration."
+    ],
+    [
+     25.04,
+     "Pause the video and work it out."
+    ],
+    [
+     28.62,
+     "14 equals 2 plus 4 A."
+    ],
+    [
+     30.4,
+     "Take away 2: 12 equals 4 A."
+    ],
+    [
+     32.67,
+     "Divide by 4: A equals 3 metres per second, every second."
+    ],
+    [
+     37.95,
+     "Remember: to solve an equation, do the same to both sides, to undo each operation."
+    ],
+    [
+     43.98,
+     "A formula is a rule that links variables."
+    ],
+    [
+     46.68,
+     "The variable on its own is the subject."
+    ],
+    [
+     49.25,
+     "In V equals U plus A T, the subject is V."
+    ],
+    [
+     52.5,
+     "Changing the subject means rearranging, so that a different variable is on its own."
+    ],
+    [
+     58.2,
+     "Subtract U from both sides, then divide by T."
+    ],
+    [
+     61.85,
+     "Your turn."
+    ],
+    [
+     62.5,
+     "Make T the subject of V equals U plus A T."
+    ],
+    [
+     65.28,
+     "Pause the video and try it."
+    ],
+    [
+     68.46,
+     "Subtract U: V minus U equals A T."
+    ],
+    [
+     70.61,
+     "This time divide by A."
+    ],
+    [
+     72.05,
+     "So T equals V minus U, all over A."
+    ],
+    [
+     74.81,
+     "You can write your own formula."
+    ],
+    [
+     77.18,
+     "A plumber charges a 40 dollar call-out fee, plus 25 dollars per hour."
+    ],
+    [
+     82.44,
+     "The cost C for H hours is C equals 40 plus 25 H."
+    ],
+    [
+     86.65,
+     "Rearrange it to find the hours: H equals C minus 40, over 25."
+    ],
+    [
+     91.98,
+     "Here is the method."
+    ],
+    [
+     93.35,
+     "Step 1: circle the new subject."
+    ],
+    [
+     96.14,
+     "Step 2: undo the operations around it, in reverse order."
+    ],
+    [
+     100.05,
+     "Do the same to both sides."
+    ],
+    [
+     102.42,
+     "Step 3: keep fractions and brackets clear."
+    ],
+    [
+     106.12,
+     "Step 4: check by substituting numbers."
+    ],
+    [
+     109.6,
+     "Make H the subject of A equals a half B H."
+    ],
+    [
+     112.49,
+     "Multiply both sides by 2: 2 A equals B H."
+    ],
+    [
+     115.32,
+     "Then divide by B: H equals 2 A over B."
+    ],
+    [
+     118.49,
+     "Your turn."
+    ],
+    [
+     119.17,
+     "Make B the subject of the same formula."
+    ],
+    [
+     121.85,
+     "Pause and work it out."
+    ],
+    [
+     124.76,
+     "2 A equals B H."
+    ],
+    [
+     125.84,
+     "This time divide by H."
+    ],
+    [
+     127.42,
+     "So B equals 2 A over H."
+    ],
+    [
+     129.63,
+     "Make R the subject of A equals pi R squared."
+    ],
+    [
+     132.58,
+     "Divide by pi: R squared equals A over pi."
+    ],
+    [
+     135.33,
+     "Then take the square root."
+    ],
+    [
+     137.63,
+     "Max makes A the subject of V equals U plus A T."
+    ],
+    [
+     140.75,
+     "Which line is wrong?"
+    ],
+    [
+     142.62,
+     "Line 1 is wrong."
+    ],
+    [
+     143.72,
+     "Adding U was done last, so undo it first."
+    ],
+    [
+     146.53,
+     "Subtract U, then divide by T."
+    ],
+    [
+     149.07,
+     "V minus U equals A T."
+    ],
+    [
+     150.43,
+     "So A equals V minus U, over T."
+    ],
+    [
+     152.92,
+     "Doctors rearrange formulae to work out medicine doses."
+    ],
+    [
+     156.64,
+     "Engineers rearrange V equals U plus A T to design brakes that stop a train in time."
+    ],
+    [
+     162.92,
+     "One last question."
+    ],
+    [
+     164.16,
+     "Make X the subject of Y equals X over 4."
+    ],
+    [
+     166.93,
+     "Pause the video and answer."
+    ],
+    [
+     170.2,
+     "X was divided by 4, so multiply both sides by 4."
+    ],
+    [
+     173.81,
+     "X equals 4 Y."
+    ],
+    [
+     175.34,
+     "To remember: the subject is the variable on its own."
+    ],
+    [
+     179.49,
+     "Use inverse operations, in reverse order."
+    ],
+    [
+     182.82,
+     "A square is undone by a square root."
+    ],
+    [
+     185.66,
+     "Check with numbers."
+    ],
+    [
+     187.97,
+     "Great work! Now practise lesson 2.6 on Camday."
+    ]
+   ],
+   "times": {
+    "2.6-k1": 27.57,
+    "2.6-k2": 67.41,
+    "2.6-k3": 123.71,
+    "2.6-k4": 169.15
+   },
+   "up": true
+  },
+  "3.1": {
+   "src": "media/mv/s9/3-1.mp4",
+   "poster": "media/mv/s9/3-1_poster.jpg",
+   "srt": "media/mv/s9/3-1.srt",
+   "dur": 251.12,
+   "captions": [
+    [
+     8.23,
+     "A computer chip has parts that are 5 times 10 to the power negative 9 metres wide."
+    ],
+    [
+     14.01,
+     "An engineer works with numbers like this every day."
+    ],
+    [
+     18.15,
+     "Does multiplying by 10 to the power negative 9 make a positive number smaller, or bigger?"
+    ],
+    [
+     24.44,
+     "Pause the video and choose."
+    ],
+    [
+     27.75,
+     "10 to the power negative 9 is 1 over 1,000,000,000."
+    ],
+    [
+     32.22,
+     "Multiplying by it is the same as dividing by a billion."
+    ],
+    [
+     37.05,
+     "So the number gets much smaller."
+    ],
+    [
+     40.41,
+     "Remember: 10 cubed is 1,000."
+    ],
+    [
+     43.22,
+     "10 to the power 0 is 1."
+    ],
+    [
+     45.54,
+     "And 10 to the power negative 2 is 0.01."
+    ],
+    [
+     50.01,
+     "Multiplying by 10 to a positive power moves the digits to the left, so the number gets bigger."
+    ],
+    [
+     56.52,
+     "Dividing moves them to the right."
+    ],
+    [
+     59.35,
+     "Multiplying by 10 to a negative power is the same as dividing."
+    ],
+    [
+     63.96,
+     "And dividing by 10 to a negative power is the same as multiplying."
+    ],
+    [
+     69.42,
+     "Your turn."
+    ],
+    [
+     70.21,
+     "Work out 4.7 times 10 to the power negative 2."
+    ],
+    [
+     73.85,
+     "Pause the video and try it."
+    ],
+    [
+     77.39,
+     "Times 10 to the negative 2 means divide by 100."
+    ],
+    [
+     81.66,
+     "Move the digits 2 places to the right: 0.047."
+    ],
+    [
+     86.29,
+     "Why does it work?"
+    ],
+    [
+     87.72,
+     "10 to the negative 2 is 1 hundredth."
+    ],
+    [
+     90.72,
+     "Multiplying by 1 hundredth is dividing by 100."
+    ],
+    [
+     95.12,
+     "Here is the method."
+    ],
+    [
+     96.59,
+     "Step 1: rewrite it."
+    ],
+    [
+     98.07,
+     "Times 10 to the negative N means divide by 10 to the N."
+    ],
+    [
+     102.33,
+     "Divide by 10 to the negative N means multiply by 10 to the N."
+    ],
+    [
+     107.62,
+     "Step 2: N tells you how many places."
+    ],
+    [
+     110.79,
+     "Step 3: move the digits."
+    ],
+    [
+     112.4,
+     "Left to make it bigger, right to make it smaller."
+    ],
+    [
+     116.25,
+     "Step 4: check the size."
+    ],
+    [
+     117.88,
+     "Should the answer be bigger or smaller?"
+    ],
+    [
+     121.2,
+     "Work out 0.072 divided by 10 to the negative 2."
+    ],
+    [
+     125.38,
+     "Dividing by 10 to the negative 2 is the same as multiplying by 100."
+    ],
+    [
+     131.33,
+     "So the answer is 7.2."
+    ],
+    [
+     133.75,
+     "Your turn."
+    ],
+    [
+     134.58,
+     "Work out 0.36 divided by 10 to the negative 3."
+    ],
+    [
+     138.4,
+     "Pause and work it out."
+    ],
+    [
+     141.63,
+     "Dividing by 10 to the negative 3 means multiplying by 1,000."
+    ],
+    [
+     148.1,
+     "0.36 times 1,000 is 360."
+    ],
+    [
+     151.24,
+     "250 times 10 to the N is 0.025."
+    ],
+    [
+     154.21,
+     "Find N."
+    ],
+    [
+     154.88,
+     "To get from 250 to 0.025, the digits move 4 places to the right."
+    ],
+    [
+     161.01,
+     "That is dividing by 10,000, so N is negative 4."
+    ],
+    [
+     166.06,
+     "How many 5 nanometre parts fit across a 0.003 metre strip?"
+    ],
+    [
+     171.94,
+     "0.003 divided by 5 times 10 to the negative 9 is 0.0006 times 10 to the 9, which is 600,000."
+    ],
+    [
+     181.82,
+     "Leo works out 5.4 times 10 to the negative 1."
+    ],
+    [
+     185.52,
+     "Which line is wrong?"
+    ],
+    [
+     187.72,
+     "Line 1 is wrong."
+    ],
+    [
+     188.97,
+     "Times 10 to the negative 1 means divide by 10."
+    ],
+    [
+     192.57,
+     "It makes the number smaller."
+    ],
+    [
+     195.3,
+     "5.4 divided by 10 is 0.54."
+    ],
+    [
+     198.93,
+     "Scientists switch between metres, micrometres and nanometres using powers of 10."
+    ],
+    [
+     205.41,
+     "A nanometre is 10 to the negative 9 metres."
+    ],
+    [
+     208.9,
+     "A human hair is about 80,000 nanometres wide."
+    ],
+    [
+     213.09,
+     "One last question."
+    ],
+    [
+     214.55,
+     "Work out 82 times 10 to the negative 1."
+    ],
+    [
+     217.69,
+     "Pause the video and answer."
+    ],
+    [
+     221.27,
+     "Times 10 to the negative 1 means divide by 10."
+    ],
+    [
+     225.77,
+     "82 divided by 10 is 8.2."
+    ],
+    [
+     228.66,
+     "To remember: times 10 to the negative N is the same as divide by 10 to the N."
+    ],
+    [
+     235.07,
+     "Divide by 10 to the negative N is the same as multiply by 10 to the N."
+    ],
+    [
+     240.95,
+     "Move the digits N places."
+    ],
+    [
+     243.36,
+     "Check the size of the answer."
+    ],
+    [
+     246.02,
+     "Great work! Now practise lesson 3.1 on Camday."
+    ]
+   ],
+   "times": {
+    "3.1-k1": 26.7,
+    "3.1-k2": 76.34,
+    "3.1-k3": 140.58,
+    "3.1-k4": 220.22
+   },
+   "up": true
+  },
+  "3.2": {
+   "src": "media/mv/s9/3-2.mp4",
+   "poster": "media/mv/s9/3-2_poster.jpg",
+   "srt": "media/mv/s9/3-2.srt",
+   "dur": 212.08,
+   "captions": [
+    [
+     7.48,
+     "A car has a 52 litre fuel tank."
+    ],
+    [
+     9.91,
+     "The driver fills 0.4 of the tank."
+    ],
+    [
+     13.05,
+     "Without a calculator, how many litres is 0.4 times 52?"
+    ],
+    [
+     17.11,
+     "Pause the video and work it out."
+    ],
+    [
+     20.92,
+     "Work out 4 times 52, which is 208."
+    ],
+    [
+     24.38,
+     "0.4 is 4 divided by 10, so divide 208 by 10."
+    ],
+    [
+     28.86,
+     "The answer is 20.8 litres."
+    ],
+    [
+     32.05,
+     "Estimate to check: 0.4 times 50 is 20."
+    ],
+    [
+     35.34,
+     "Close."
+    ],
+    [
+     36.41,
+     "Remember: 0.4 is 4 divided by 10."
+    ],
+    [
+     39.89,
+     "And 0.15 is 15 divided by 100."
+    ],
+    [
+     43.6,
+     "Multiply the whole numbers."
+    ],
+    [
+     45.48,
+     "Then count the decimal places in both numbers."
+    ],
+    [
+     48.7,
+     "The answer has that many decimal places."
+    ],
+    [
+     52.04,
+     "Your turn."
+    ],
+    [
+     52.88,
+     "Work out 0.3 times 0.15."
+    ],
+    [
+     54.89,
+     "Pause the video and try it."
+    ],
+    [
+     58.54,
+     "3 times 15 is 45."
+    ],
+    [
+     60.13,
+     "There are 3 decimal places altogether: one in 0.3, and two in 0.15."
+    ],
+    [
+     66.38,
+     "So the answer is 0.045."
+    ],
+    [
+     69.08,
+     "To divide by a decimal, multiply both numbers by the same power of 10, until the divisor is a whole number."
+    ],
+    [
+     76.54,
+     "The answer does not change."
+    ],
+    [
+     78.98,
+     "7.56 divided by 0.09 is the same as 756 divided by 9, which is 84."
+    ],
+    [
+     86.14,
+     "Dividing a positive number by a number between 0 and 1 makes it bigger."
+    ],
+    [
+     91.83,
+     "Here is the method."
+    ],
+    [
+     93.2,
+     "Step 1: estimate the answer."
+    ],
+    [
+     95.77,
+     "Step 2: to multiply, multiply as whole numbers, then put back the total number of decimal places."
+    ],
+    [
+     103.12,
+     "Step 3: to divide, multiply both numbers by 10, or 100, until the divisor is whole."
+    ],
+    [
+     109.69,
+     "Then divide."
+    ],
+    [
+     111.19,
+     "Step 4: compare with your estimate."
+    ],
+    [
+     114.34,
+     "Work out 1.44 divided by 0.012."
+    ],
+    [
+     117.76,
+     "Multiply both by 1,000: 1,440 divided by 12, which is 120."
+    ],
+    [
+     124.73,
+     "Your turn."
+    ],
+    [
+     125.53,
+     "Work out negative 16 divided by 0.4."
+    ],
+    [
+     128.42,
+     "Pause and work it out."
+    ],
+    [
+     131.58,
+     "Multiply both by 10: negative 160 divided by 4, which is negative 40."
+    ],
+    [
+     138.36,
+     "Work out 2.4 times 0.35."
+    ],
+    [
+     140.75,
+     "24 times 35 is 840."
+    ],
+    [
+     142.64,
+     "There are 3 decimal places, so the answer is 0.840, which is 0.84."
+    ],
+    [
+     149.19,
+     "Estimate: 2 times 0.4 is 0.8."
+    ],
+    [
+     152.08,
+     "Close."
+    ],
+    [
+     153.22,
+     "Mia works out 0.2 times 0.3."
+    ],
+    [
+     155.57,
+     "Which line is wrong?"
+    ],
+    [
+     157.8,
+     "Line 2 is wrong."
+    ],
+    [
+     159.0,
+     "There are 2 decimal places altogether, not 1."
+    ],
+    [
+     162.94,
+     "So the answer is 0.06."
+    ],
+    [
+     165.7,
+     "Cheese costs 12 dollars 40 per kilogram."
+    ],
+    [
+     169.62,
+     "0.75 of a kilogram costs 12.40 times 0.75, which is 9 dollars 30."
+    ],
+    [
+     176.54,
+     "One last question."
+    ],
+    [
+     177.94,
+     "Work out 3 divided by 0.5."
+    ],
+    [
+     179.96,
+     "Pause the video and answer."
+    ],
+    [
+     183.45,
+     "Multiply both by 10: 30 divided by 5 is 6."
+    ],
+    [
+     187.23,
+     "There are 6 halves in 3."
+    ],
+    [
+     189.93,
+     "To remember: estimate first."
+    ],
+    [
+     192.62,
+     "When multiplying, count the decimal places in both numbers."
+    ],
+    [
+     197.25,
+     "When dividing, scale both numbers to make the divisor whole."
+    ],
+    [
+     201.91,
+     "Dividing by a number less than 1 makes a positive number bigger."
+    ],
+    [
+     206.92,
+     "Great work! Now practise lesson 3.2 on Camday."
+    ]
+   ],
+   "times": {
+    "3.2-k1": 19.87,
+    "3.2-k2": 57.49,
+    "3.2-k3": 130.53,
+    "3.2-k4": 182.4
+   },
+   "up": true
+  },
+  "3.3": {
+   "src": "media/mv/s9/3-3.mp4",
+   "poster": "media/mv/s9/3-3_poster.jpg",
+   "srt": "media/mv/s9/3-3.srt",
+   "dur": 228.8,
+   "captions": [
+    [
+     7.4,
+     "Ravi puts 2,000 dollars in a savings account."
+    ],
+    [
+     10.74,
+     "It pays 4 percent interest each year, added to the account."
+    ],
+    [
+     15.11,
+     "Next year, interest is paid on the interest too."
+    ],
+    [
+     19.22,
+     "After 3 years, has his money grown by exactly 12 percent?"
+    ],
+    [
+     23.21,
+     "Pause the video and choose."
+    ],
+    [
+     26.5,
+     "No."
+    ],
+    [
+     26.72,
+     "Each year's 4 percent is of a bigger amount."
+    ],
+    [
+     29.86,
+     "So the total growth is a bit more than 12 percent."
+    ],
+    [
+     33.98,
+     "Remember: to increase by 20 percent, multiply by 1.2."
+    ],
+    [
+     38.41,
+     "To decrease by 20 percent, multiply by 0.8."
+    ],
+    [
+     42.55,
+     "A compound percentage change applies the percentage again and again, each time to the new amount."
+    ],
+    [
+     49.85,
+     "After 3 years Ravi has 2,249 dollars 73."
+    ],
+    [
+     53.56,
+     "That is more than 2,240, which is what 12 percent would give."
+    ],
+    [
+     59.76,
+     "Your turn."
+    ],
+    [
+     60.49,
+     "Times 1.04, three times, is one multiplier."
+    ],
+    [
+     63.64,
+     "What is it, to 3 decimal places?"
+    ],
+    [
+     65.99,
+     "Pause the video and try it."
+    ],
+    [
+     69.37,
+     "1.04 cubed is 1.124864."
+    ],
+    [
+     71.75,
+     "To 3 decimal places, that is 1.125."
+    ],
+    [
+     75.38,
+     "So the money grows by about 12.5 percent."
+    ],
+    [
+     80.17,
+     "Values that fall each year use a multiplier less than 1."
+    ],
+    [
+     84.52,
+     "A car that loses 15 percent a year keeps 85 percent: value equals start, times 0.85 to the N."
+    ],
+    [
+     92.29,
+     "Here is the method."
+    ],
+    [
+     93.85,
+     "Step 1: find the multiplier."
+    ],
+    [
+     96.15,
+     "1 plus R over 100 for an increase, 1 minus R over 100 for a decrease."
+    ],
+    [
+     102.36,
+     "Step 2: raise it to the power of the number of years."
+    ],
+    [
+     106.51,
+     "Step 3: multiply by the starting amount."
+    ],
+    [
+     110.01,
+     "Step 4: round only at the end."
+    ],
+    [
+     112.76,
+     "A car is worth 18,000 dollars."
+    ],
+    [
+     115.18,
+     "It loses 15 percent of its value each year."
+    ],
+    [
+     118.64,
+     "What is it worth after 2 years?"
+    ],
+    [
+     121.69,
+     "Your turn."
+    ],
+    [
+     122.43,
+     "What is the multiplier for a 15 percent decrease?"
+    ],
+    [
+     126.07,
+     "Pause and work it out."
+    ],
+    [
+     129.11,
+     "100 minus 15 is 85 percent, so the multiplier is 0.85."
+    ],
+    [
+     134.78,
+     "After 2 years: 18,000 times 0.85 squared, which is 13,005 dollars."
+    ],
+    [
+     142.26,
+     "1,000 dollars earns 5 percent a year."
+    ],
+    [
+     145.94,
+     "When does it first go over 1,200 dollars?"
+    ],
+    [
+     150.01,
+     "1.05 cubed is about 1.158."
+    ],
+    [
+     152.6,
+     "1.05 to the 4 is about 1.216."
+    ],
+    [
+     155.48,
+     "So it takes 4 years."
+    ],
+    [
+     158.02,
+     "A price rises 10 percent one year, and 10 percent the next."
+    ],
+    [
+     162.39,
+     "Kai works out the total change."
+    ],
+    [
+     164.69,
+     "Which line is wrong?"
+    ],
+    [
+     166.72,
+     "Line 1 is wrong."
+    ],
+    [
+     167.93,
+     "The second 10 percent is of the new, bigger price."
+    ],
+    [
+     172.26,
+     "1.1 times 1.1 is 1.21."
+    ],
+    [
+     174.45,
+     "That is a 21 percent increase."
+    ],
+    [
+     177.98,
+     "Banks, loans, inflation and population growth all use compound percentages."
+    ],
+    [
+     184.22,
+     "A town of 25,000 that grows 2 percent a year has about 27,600 people after 5 years."
+    ],
+    [
+     191.68,
+     "One last question."
+    ],
+    [
+     193.05,
+     "A price rises 10 percent, then falls 10 percent."
+    ],
+    [
+     196.71,
+     "What is the overall multiplier?"
+    ],
+    [
+     199.06,
+     "Pause the video and answer."
+    ],
+    [
+     202.52,
+     "1.1 times 0.9 is 0.99."
+    ],
+    [
+     204.48,
+     "That is a 1 percent decrease overall, not zero."
+    ],
+    [
+     209.2,
+     "To remember: the multiplier is 1 plus or minus R over 100."
+    ],
+    [
+     214.41,
+     "For N years, raise the multiplier to the power N."
+    ],
+    [
+     218.28,
+     "Changes one after another multiply."
+    ],
+    [
+     221.37,
+     "Round at the end."
+    ],
+    [
+     223.66,
+     "Great work! Now practise lesson 3.3 on Camday."
+    ]
+   ],
+   "times": {
+    "3.3-k1": 25.45,
+    "3.3-k2": 68.32,
+    "3.3-k3": 128.06,
+    "3.3-k4": 201.47
+   },
+   "up": true
+  },
+  "3.4": {
+   "src": "media/mv/s9/3-4.mp4",
+   "poster": "media/mv/s9/3-4_poster.jpg",
+   "srt": "media/mv/s9/3-4.srt",
+   "dur": 203.96,
+   "captions": [
+    [
+     7.62,
+     "A news report says 65,000 fans watched a match."
+    ],
+    [
+     11.32,
+     "The number is rounded to the nearest thousand."
+    ],
+    [
+     15.48,
+     "What is the smallest the real crowd could have been?"
+    ],
+    [
+     18.92,
+     "Pause the video and work it out."
+    ],
+    [
+     22.44,
+     "64,500 is the smallest number that rounds up to 65,000."
+    ],
+    [
+     27.91,
+     "Anything less would round down to 64,000."
+    ],
+    [
+     32.54,
+     "The largest crowd is 65,499, because 65,500 would round up to 66,000."
+    ],
+    [
+     40.67,
+     "Remember: 4.36 to 1 decimal place is 4.4."
+    ],
+    [
+     45.16,
+     "2,450 to the nearest 100 is 2,500."
+    ],
+    [
+     49.43,
+     "A rounded value stands for a range."
+    ],
+    [
+     51.73,
+     "Go half a unit down for the lower bound, and half a unit up for the upper bound."
+    ],
+    [
+     57.55,
+     "Your turn."
+    ],
+    [
+     58.28,
+     "A length is 4.7 metres, to 1 decimal place."
+    ],
+    [
+     61.42,
+     "What is its upper bound?"
+    ],
+    [
+     63.18,
+     "Pause the video and try it."
+    ],
+    [
+     66.55,
+     "The unit is 0.1."
+    ],
+    [
+     68.08,
+     "Half of 0.1 is 0.05."
+    ],
+    [
+     70.01,
+     "So the bounds are 4.65 and 4.75."
+    ],
+    [
+     73.08,
+     "The upper bound is 4.75 metres."
+    ],
+    [
+     76.61,
+     "Write the range as an inequality."
+    ],
+    [
+     79.1,
+     "The lower bound is included."
+    ],
+    [
+     81.21,
+     "The upper bound is not, because 4.75 would round up to 4.8."
+    ],
+    [
+     86.22,
+     "Here is the method."
+    ],
+    [
+     87.54,
+     "Step 1: find the accuracy: the unit it was rounded to."
+    ],
+    [
+     91.87,
+     "Step 2: halve that unit."
+    ],
+    [
+     94.53,
+     "Step 3: lower bound is the value minus a half unit."
+    ],
+    [
+     98.08,
+     "Upper bound is the value plus a half unit."
+    ],
+    [
+     101.55,
+     "Step 4: write: lower, less than or equal to X, less than upper."
+    ],
+    [
+     106.43,
+     "A time is 40 seconds, to the nearest 5 seconds."
+    ],
+    [
+     110.6,
+     "Half of 5 is 2.5."
+    ],
+    [
+     112.11,
+     "So the bounds are 37.5 and 42.5 seconds."
+    ],
+    [
+     116.21,
+     "Your turn."
+    ],
+    [
+     116.99,
+     "A mass is 320 grams, to the nearest 10 grams."
+    ],
+    [
+     120.48,
+     "What are its bounds?"
+    ],
+    [
+     122.04,
+     "Pause and work it out."
+    ],
+    [
+     125.14,
+     "Half of 10 is 5."
+    ],
+    [
+     126.58,
+     "So the mass is at least 315 grams, and less than 325 grams."
+    ],
+    [
+     132.44,
+     "A rope is 12 metres long, to the nearest metre."
+    ],
+    [
+     136.46,
+     "Could it really be 12.6 metres?"
+    ],
+    [
+     139.11,
+     "The bounds are 11.5 and 12.5."
+    ],
+    [
+     141.59,
+     "12.6 is too long, so no."
+    ],
+    [
+     144.19,
+     "A mass is 6.2 kilograms to 1 decimal place."
+    ],
+    [
+     147.41,
+     "Ana writes the bounds."
+    ],
+    [
+     149.05,
+     "Which line is wrong?"
+    ],
+    [
+     151.09,
+     "Line 1 is wrong."
+    ],
+    [
+     152.47,
+     "She used half of 1."
+    ],
+    [
+     154.1,
+     "The unit is 0.1, and half of 0.1 is 0.05."
+    ],
+    [
+     158.17,
+     "The bounds are 6.15 and 6.25 kilograms."
+    ],
+    [
+     162.55,
+     "Engineers give tolerances, like 10 millimetres, plus or minus 0.05 millimetres, so that parts always fit together."
+    ],
+    [
+     171.96,
+     "One last question."
+    ],
+    [
+     173.31,
+     "A number is 90, to the nearest 10."
+    ],
+    [
+     175.87,
+     "What is its lower bound?"
+    ],
+    [
+     177.67,
+     "Pause the video and answer."
+    ],
+    [
+     181.11,
+     "Half of 10 is 5."
+    ],
+    [
+     182.88,
+     "90 minus 5 is 85."
+    ],
+    [
+     185.31,
+     "To remember: the bounds are half a unit either side."
+    ],
+    [
+     189.38,
+     "Write lower, less than or equal to X, less than upper."
+    ],
+    [
+     193.49,
+     "The upper bound itself rounds up."
+    ],
+    [
+     196.2,
+     "Check the accuracy carefully."
+    ],
+    [
+     198.85,
+     "Great work! Now practise lesson 3.4 on Camday."
+    ]
+   ],
+   "times": {
+    "3.4-k1": 21.39,
+    "3.4-k2": 65.5,
+    "3.4-k3": 124.09,
+    "3.4-k4": 180.06
+   },
+   "up": true
   }
  }
 }

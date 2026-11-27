@@ -1,0 +1,255 @@
+1
+00:00:07,430 --> 00:00:10,460
+Two friends share a pizza bill of X dollars.
+
+2
+00:00:10,510 --> 00:00:13,870
+Ana pays X over 3, and Ben pays X over 4.
+
+3
+00:00:13,920 --> 00:00:16,770
+What fraction of X have they paid together?
+
+4
+00:00:16,820 --> 00:00:19,980
+Pause the video and try it.
+
+5
+00:00:20,030 --> 00:00:22,750
+Use a common denominator of 12.
+
+6
+00:00:22,800 --> 00:00:24,890
+X over 3 is 4 X over 12.
+
+7
+00:00:24,940 --> 00:00:27,030
+X over 4 is 3 X over 12.
+
+8
+00:00:27,080 --> 00:00:29,540
+Together, 7 X over 12.
+
+9
+00:00:29,590 --> 00:00:33,710
+Check with X equals 12: Ana pays 4 and Ben pays 3.
+
+10
+00:00:33,760 --> 00:00:37,350
+That is 7, and 7 twelfths of 12 is 7.
+
+11
+00:00:37,400 --> 00:00:44,490
+Remember: 1 third plus 1 quarter is 4 twelfths plus 3 twelfths, which is 7 twelfths.
+
+12
+00:00:44,540 --> 00:00:47,340
+Algebraic fractions have letters in them.
+
+13
+00:00:47,390 --> 00:00:53,180
+Add and subtract them just like number fractions, with a common denominator.
+
+14
+00:00:53,230 --> 00:00:59,450
+With different letters on the bottom, multiply them to get the common denominator.
+
+15
+00:00:59,500 --> 00:01:00,170
+Your turn.
+
+16
+00:01:00,220 --> 00:01:04,520
+Is 2 over A, plus 3 over B, equal to 2 B plus 3 A, over A B?
+
+17
+00:01:04,570 --> 00:01:05,900
+Or 5 over A plus B?
+
+18
+00:01:05,950 --> 00:01:08,530
+Pause and choose.
+
+19
+00:01:08,580 --> 00:01:10,670
+The common denominator is A B.
+
+20
+00:01:10,720 --> 00:01:12,810
+2 over A becomes 2 B over A B.
+
+21
+00:01:12,860 --> 00:01:14,960
+3 over B becomes 3 A over A B.
+
+22
+00:01:15,010 --> 00:01:18,370
+So the answer is 2 B plus 3 A, over A B.
+
+23
+00:01:18,420 --> 00:01:21,040
+You never add the denominators.
+
+24
+00:01:21,090 --> 00:01:24,930
+To multiply, multiply the tops and multiply the bottoms.
+
+25
+00:01:24,980 --> 00:01:28,870
+To divide, flip the second fraction and multiply.
+
+26
+00:01:28,920 --> 00:01:31,800
+Cancel common factors at the end.
+
+27
+00:01:31,850 --> 00:01:33,130
+Here is the method.
+
+28
+00:01:33,180 --> 00:01:39,410
+Step 1: to add or subtract, use a common denominator, then combine the numerators.
+
+29
+00:01:39,460 --> 00:01:44,770
+Step 2: to multiply, multiply the numerators and the denominators.
+
+30
+00:01:44,820 --> 00:01:49,370
+Step 3: to divide, flip the second fraction and multiply.
+
+31
+00:01:49,420 --> 00:01:52,420
+Step 4: cancel any common factors.
+
+32
+00:01:52,470 --> 00:01:54,700
+Simplify 6 X squared over 9 X.
+
+33
+00:01:54,750 --> 00:01:57,890
+Both the top and the bottom divide by 3 X.
+
+34
+00:01:57,940 --> 00:02:00,180
+That leaves 2 X over 3.
+
+35
+00:02:00,230 --> 00:02:03,380
+Simplify 4 Q over 9, times 3 over 2 Q.
+
+36
+00:02:03,430 --> 00:02:05,480
+Multiply: 12 Q over 18 Q.
+
+37
+00:02:05,530 --> 00:02:08,730
+The Q cancels, leaving 2 thirds.
+
+38
+00:02:08,780 --> 00:02:09,500
+Your turn.
+
+39
+00:02:09,550 --> 00:02:11,900
+Simplify 5 X squared over 10 X.
+
+40
+00:02:11,950 --> 00:02:15,000
+Pause and work it out.
+
+41
+00:02:15,050 --> 00:02:17,450
+Divide the top and bottom by 5 X.
+
+42
+00:02:17,500 --> 00:02:19,550
+That leaves X over 2.
+
+43
+00:02:19,600 --> 00:02:23,400
+Simplify X plus 1 over 3, plus X minus 2 over 2.
+
+44
+00:02:23,450 --> 00:02:26,190
+The common denominator is 6.
+
+45
+00:02:26,240 --> 00:02:31,780
+That gives 2, bracket, X plus 1, plus 3, bracket, X minus 2, all over 6.
+
+46
+00:02:31,830 --> 00:02:35,430
+Expand and collect: 5 X minus 4, over 6.
+
+47
+00:02:35,480 --> 00:02:38,350
+Kim simplifies X over 3, plus X over 5.
+
+48
+00:02:38,400 --> 00:02:40,390
+Which line is wrong?
+
+49
+00:02:40,440 --> 00:02:41,640
+Line 1 is wrong.
+
+50
+00:02:41,690 --> 00:02:43,740
+She added the denominators.
+
+51
+00:02:43,790 --> 00:02:46,700
+Use a common denominator of 15.
+
+52
+00:02:46,750 --> 00:02:51,750
+5 X over 15, plus 3 X over 15, is 8 X over 15.
+
+53
+00:02:51,800 --> 00:02:58,550
+Camera lenses use a formula with algebraic fractions: 1 over F equals 1 over U, plus 1 over V.
+
+54
+00:02:58,600 --> 00:03:03,300
+Designers combine fractions like these to focus the image.
+
+55
+00:03:03,350 --> 00:03:04,620
+One last question.
+
+56
+00:03:04,670 --> 00:03:07,110
+Simplify Y over 2, minus Y over 6.
+
+57
+00:03:07,160 --> 00:03:10,490
+Pause the video and answer.
+
+58
+00:03:10,540 --> 00:03:12,360
+Y over 2 is 3 Y over 6.
+
+59
+00:03:12,410 --> 00:03:18,760
+3 Y over 6, minus Y over 6, is 2 Y over 6, which simplifies to Y over 3.
+
+60
+00:03:18,810 --> 00:03:24,620
+To remember: algebraic fractions follow the same rules as number fractions.
+
+61
+00:03:24,670 --> 00:03:28,210
+Use a common denominator to add or subtract.
+
+62
+00:03:28,260 --> 00:03:30,810
+Flip and multiply to divide.
+
+63
+00:03:30,860 --> 00:03:33,160
+Cancel common factors.
+
+64
+00:03:33,210 --> 00:03:38,390
+Great work! Now practise lesson 2.5 on Camday.

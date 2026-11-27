@@ -1,0 +1,231 @@
+1
+00:00:07,480 --> 00:00:09,860
+A car has a 52 litre fuel tank.
+
+2
+00:00:09,910 --> 00:00:13,000
+The driver fills 0.4 of the tank.
+
+3
+00:00:13,050 --> 00:00:17,060
+Without a calculator, how many litres is 0.4 times 52?
+
+4
+00:00:17,110 --> 00:00:20,870
+Pause the video and work it out.
+
+5
+00:00:20,920 --> 00:00:24,330
+Work out 4 times 52, which is 208.
+
+6
+00:00:24,380 --> 00:00:28,810
+0.4 is 4 divided by 10, so divide 208 by 10.
+
+7
+00:00:28,860 --> 00:00:31,000
+The answer is 20.8 litres.
+
+8
+00:00:32,050 --> 00:00:35,290
+Estimate to check: 0.4 times 50 is 20.
+
+9
+00:00:35,340 --> 00:00:36,360
+Close.
+
+10
+00:00:36,410 --> 00:00:39,840
+Remember: 0.4 is 4 divided by 10.
+
+11
+00:00:39,890 --> 00:00:43,550
+And 0.15 is 15 divided by 100.
+
+12
+00:00:43,600 --> 00:00:45,430
+Multiply the whole numbers.
+
+13
+00:00:45,480 --> 00:00:48,650
+Then count the decimal places in both numbers.
+
+14
+00:00:48,700 --> 00:00:51,990
+The answer has that many decimal places.
+
+15
+00:00:52,040 --> 00:00:52,830
+Your turn.
+
+16
+00:00:52,880 --> 00:00:54,840
+Work out 0.3 times 0.15.
+
+17
+00:00:54,890 --> 00:00:58,490
+Pause the video and try it.
+
+18
+00:00:58,540 --> 00:01:00,080
+3 times 15 is 45.
+
+19
+00:01:00,130 --> 00:01:06,330
+There are 3 decimal places altogether: one in 0.3, and two in 0.15.
+
+20
+00:01:06,380 --> 00:01:09,030
+So the answer is 0.045.
+
+21
+00:01:09,080 --> 00:01:16,490
+To divide by a decimal, multiply both numbers by the same power of 10, until the divisor is a whole number.
+
+22
+00:01:16,540 --> 00:01:18,930
+The answer does not change.
+
+23
+00:01:18,980 --> 00:01:26,090
+7.56 divided by 0.09 is the same as 756 divided by 9, which is 84.
+
+24
+00:01:26,140 --> 00:01:31,780
+Dividing a positive number by a number between 0 and 1 makes it bigger.
+
+25
+00:01:31,830 --> 00:01:33,150
+Here is the method.
+
+26
+00:01:33,200 --> 00:01:35,720
+Step 1: estimate the answer.
+
+27
+00:01:35,770 --> 00:01:43,070
+Step 2: to multiply, multiply as whole numbers, then put back the total number of decimal places.
+
+28
+00:01:43,120 --> 00:01:49,640
+Step 3: to divide, multiply both numbers by 10, or 100, until the divisor is whole.
+
+29
+00:01:49,690 --> 00:01:51,140
+Then divide.
+
+30
+00:01:51,190 --> 00:01:54,290
+Step 4: compare with your estimate.
+
+31
+00:01:54,340 --> 00:01:57,710
+Work out 1.44 divided by 0.012.
+
+32
+00:01:57,760 --> 00:02:04,680
+Multiply both by 1,000: 1,440 divided by 12, which is 120.
+
+33
+00:02:04,730 --> 00:02:05,480
+Your turn.
+
+34
+00:02:05,530 --> 00:02:08,370
+Work out negative 16 divided by 0.4.
+
+35
+00:02:08,420 --> 00:02:11,530
+Pause and work it out.
+
+36
+00:02:11,580 --> 00:02:18,310
+Multiply both by 10: negative 160 divided by 4, which is negative 40.
+
+37
+00:02:18,360 --> 00:02:20,700
+Work out 2.4 times 0.35.
+
+38
+00:02:20,750 --> 00:02:22,590
+24 times 35 is 840.
+
+39
+00:02:22,640 --> 00:02:29,140
+There are 3 decimal places, so the answer is 0.840, which is 0.84.
+
+40
+00:02:29,190 --> 00:02:32,030
+Estimate: 2 times 0.4 is 0.8.
+
+41
+00:02:32,080 --> 00:02:33,170
+Close.
+
+42
+00:02:33,220 --> 00:02:35,520
+Mia works out 0.2 times 0.3.
+
+43
+00:02:35,570 --> 00:02:37,750
+Which line is wrong?
+
+44
+00:02:37,800 --> 00:02:38,950
+Line 2 is wrong.
+
+45
+00:02:39,000 --> 00:02:42,890
+There are 2 decimal places altogether, not 1.
+
+46
+00:02:42,940 --> 00:02:45,650
+So the answer is 0.06.
+
+47
+00:02:45,700 --> 00:02:49,570
+Cheese costs 12 dollars 40 per kilogram.
+
+48
+00:02:49,620 --> 00:02:56,490
+0.75 of a kilogram costs 12.40 times 0.75, which is 9 dollars 30.
+
+49
+00:02:56,540 --> 00:02:57,890
+One last question.
+
+50
+00:02:57,940 --> 00:02:59,910
+Work out 3 divided by 0.5.
+
+51
+00:02:59,960 --> 00:03:03,400
+Pause the video and answer.
+
+52
+00:03:03,450 --> 00:03:07,180
+Multiply both by 10: 30 divided by 5 is 6.
+
+53
+00:03:07,230 --> 00:03:09,880
+There are 6 halves in 3.
+
+54
+00:03:09,930 --> 00:03:12,570
+To remember: estimate first.
+
+55
+00:03:12,620 --> 00:03:17,200
+When multiplying, count the decimal places in both numbers.
+
+56
+00:03:17,250 --> 00:03:21,860
+When dividing, scale both numbers to make the divisor whole.
+
+57
+00:03:21,910 --> 00:03:26,870
+Dividing by a number less than 1 makes a positive number bigger.
+
+58
+00:03:26,920 --> 00:03:32,030
+Great work! Now practise lesson 3.2 on Camday.
