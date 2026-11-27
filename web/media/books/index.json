@@ -2256,5 +2256,27 @@
     14
    ]
   }
+ },
+ "c4u04": {
+  "title": "Camday Maths Stage 4 · Unit 4: Probability",
+  "pages": 10,
+  "dir": "media/books/c4u04/",
+  "ext": "webp",
+  "pdf": "media/books/c4u04.pdf?v=cf345dd2a0",
+  "v": "cf345dd2a0",
+  "secs": {
+   "4.1": [
+    2,
+    5
+   ],
+   "4.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
