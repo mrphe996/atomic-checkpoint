@@ -1130,5 +1130,65 @@
     10
    ]
   }
+ },
+ "c9u07": {
+  "title": "Camday Maths Stage 9 · Unit 7: Shapes and Measurements",
+  "pages": 14,
+  "dir": "media/books/c9u07/",
+  "ext": "webp",
+  "pdf": "media/books/c9u07.pdf?v=d2268007ac",
+  "v": "d2268007ac",
+  "secs": {
+   "7.1": [
+    2,
+    5
+   ],
+   "7.2": [
+    6,
+    9
+   ],
+   "7.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
+ },
+ "c9u08": {
+  "title": "Camday Maths Stage 9 · Unit 8: Fractions",
+  "pages": 24,
+  "dir": "media/books/c9u08/",
+  "ext": "webp",
+  "pdf": "media/books/c9u08.pdf?v=31d935606a",
+  "v": "31d935606a",
+  "secs": {
+   "8.1": [
+    2,
+    6
+   ],
+   "8.2": [
+    7,
+    10
+   ],
+   "8.3": [
+    11,
+    14
+   ],
+   "8.4": [
+    15,
+    18
+   ],
+   "8.5": [
+    19,
+    22
+   ],
+   "answers": [
+    23,
+    24
+   ]
+  }
  }
 }
