@@ -2890,5 +2890,27 @@
     14
    ]
   }
+ },
+ "c3u13": {
+  "title": "Camday Maths Stage 3 · Unit 13: Time (2)",
+  "pages": 10,
+  "dir": "media/books/c3u13/",
+  "ext": "webp",
+  "pdf": "media/books/c3u13.pdf?v=a0fd8a729e",
+  "v": "a0fd8a729e",
+  "secs": {
+   "13.1": [
+    2,
+    5
+   ],
+   "13.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
