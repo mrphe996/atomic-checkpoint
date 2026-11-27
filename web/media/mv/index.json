@@ -1248,6 +1248,1243 @@
     "1.3-k4": 285.33
    },
    "up": true
+  },
+  "1.4": {
+   "src": "media/mv/s7/1-4.mp4",
+   "poster": "media/mv/s7/1-4_poster.jpg",
+   "srt": "media/mv/s7/1-4.srt",
+   "dur": 323.92,
+   "captions": [
+    [
+     6.54,
+     "Leo is making party bags."
+    ],
+    [
+     8.56,
+     "He has 24 sweets and 36 stickers."
+    ],
+    [
+     11.77,
+     "Every bag must be exactly the same, and nothing can be left over."
+    ],
+    [
+     16.64,
+     "What is the greatest number of bags he can make?"
+    ],
+    [
+     19.88,
+     "Pause the video and work it out."
+    ],
+    [
+     23.43,
+     "The number of bags must divide 24 exactly, and it must divide 36 exactly."
+    ],
+    [
+     29.7,
+     "12 works."
+    ],
+    [
+     30.63,
+     "24 divided by 12 is 2, and 36 divided by 12 is 3."
+    ],
+    [
+     36.28,
+     "So Leo can make 12 bags, each with 2 sweets and 3 stickers."
+    ],
+    [
+     40.81,
+     "No bigger number divides both."
+    ],
+    [
+     43.66,
+     "A factor of a number divides it exactly."
+    ],
+    [
+     46.32,
+     "Factors come in pairs."
+    ],
+    [
+     48.34,
+     "24 is 1 times 24, 2 times 12, 3 times 8, and 4 times 6."
+    ],
+    [
+     54.61,
+     "So the factors of 24 are 1, 2, 3, 4, 6, 8, 12 and 24."
+    ],
+    [
+     60.7,
+     "A common factor divides both numbers."
+    ],
+    [
+     63.71,
+     "Compare the factors of 24 and 36."
+    ],
+    [
+     66.95,
+     "The common factors are 1, 2, 3, 4, 6 and 12."
+    ],
+    [
+     71.53,
+     "The biggest one is 12."
+    ],
+    [
+     73.13,
+     "We call it the highest common factor, or HCF."
+    ],
+    [
+     76.94,
+     "Here is a quicker way."
+    ],
+    [
+     78.44,
+     "Take the smaller number, and test its factors from the biggest down."
+    ],
+    [
+     83.64,
+     "Find the HCF of 18 and 45."
+    ],
+    [
+     85.85,
+     "The smaller number is 18."
+    ],
+    [
+     87.97,
+     "Its factors from the top are 18, 9, 6, and so on."
+    ],
+    [
+     92.68,
+     "Does 18 divide 45?"
+    ],
+    [
+     94.38,
+     "No."
+    ],
+    [
+     94.67,
+     "Does 9 divide 45?"
+    ],
+    [
+     96.28,
+     "Yes, 45 divided by 9 is 5."
+    ],
+    [
+     98.75,
+     "So the HCF is 9."
+    ],
+    [
+     100.81,
+     "Your turn."
+    ],
+    [
+     101.59,
+     "Find the HCF of 12 and 18."
+    ],
+    [
+     103.61,
+     "Pause the video and try it."
+    ],
+    [
+     107.11,
+     "The smaller number is 12."
+    ],
+    [
+     109.37,
+     "Does 12 divide 18?"
+    ],
+    [
+     111.0,
+     "No."
+    ],
+    [
+     111.27,
+     "Next factor, 6."
+    ],
+    [
+     112.63,
+     "18 divided by 6 is 3."
+    ],
+    [
+     114.53,
+     "So the HCF is 6."
+    ],
+    [
+     116.53,
+     "Here is the method."
+    ],
+    [
+     117.86,
+     "Step 1: list the factors of the smaller number."
+    ],
+    [
+     121.7,
+     "Step 2: start with the biggest, and test whether it divides the other number."
+    ],
+    [
+     127.64,
+     "Step 3: the first one that works is the HCF."
+    ],
+    [
+     131.3,
+     "Remember, the HCF is never bigger than the smaller number."
+    ],
+    [
+     135.4,
+     "And if only 1 works, the HCF is 1."
+    ],
+    [
+     138.35,
+     "Find the HCF of 28 and 42."
+    ],
+    [
+     141.44,
+     "Use factor pairs for 28: 1 times 28, 2 times 14, 4 times 7."
+    ],
+    [
+     147.73,
+     "Test from the biggest."
+    ],
+    [
+     149.8,
+     "28 does not divide 42."
+    ],
+    [
+     151.86,
+     "14 does: 42 divided by 14 is 3."
+    ],
+    [
+     154.77,
+     "The HCF is 14."
+    ],
+    [
+     156.63,
+     "Sometimes the only common factor is 1."
+    ],
+    [
+     159.91,
+     "For 8 and 15, none of 8, 4 or 2 divides 15."
+    ],
+    [
+     163.61,
+     "So the HCF is 1."
+    ],
+    [
+     165.54,
+     "Find the HCF of 30, 45 and 60."
+    ],
+    [
+     168.18,
+     "Work in two stages."
+    ],
+    [
+     170.41,
+     "First, 30 and 45."
+    ],
+    [
+     172.14,
+     "30 does not divide 45, but 15 does."
+    ],
+    [
+     175.71,
+     "Their HCF is 15."
+    ],
+    [
+     177.89,
+     "Now 15 and 60."
+    ],
+    [
+     179.37,
+     "60 divided by 15 is 4, so 15 divides 60 as well."
+    ],
+    [
+     185.0,
+     "The HCF of 30, 45 and 60 is 15."
+    ],
+    [
+     189.04,
+     "Your turn."
+    ],
+    [
+     189.9,
+     "Find the HCF of 20, 30 and 50."
+    ],
+    [
+     192.47,
+     "Pause and work it out."
+    ],
+    [
+     195.75,
+     "For 20 and 30: 20 does not divide 30, but 10 does."
+    ],
+    [
+     200.76,
+     "Then 50 divided by 10 is 5."
+    ],
+    [
+     203.46,
+     "So the HCF is 10."
+    ],
+    [
+     205.71,
+     "A floor is 120 centimetres by 84 centimetres."
+    ],
+    [
+     209.15,
+     "We want equal square tiles, as large as possible, with no cutting."
+    ],
+    [
+     214.75,
+     "The side of a tile must divide both 120 and 84."
+    ],
+    [
+     218.43,
+     "As large as possible means the HCF."
+    ],
+    [
+     221.71,
+     "Test the factors of 84 from the top: 84, 42, 28, 21, 14."
+    ],
+    [
+     227.61,
+     "None of them divides 120."
+    ],
+    [
+     230.24,
+     "But 12 does: 120 divided by 12 is 10."
+    ],
+    [
+     234.69,
+     "So each tile is 12 centimetres wide."
+    ],
+    [
+     237.51,
+     "The floor takes 10 tiles one way and 7 the other."
+    ],
+    [
+     241.91,
+     "Omar wants the HCF of 12 and 30."
+    ],
+    [
+     244.5,
+     "Which line goes wrong first?"
+    ],
+    [
+     247.31,
+     "Line 2 is wrong."
+    ],
+    [
+     248.63,
+     "Omar missed 6."
+    ],
+    [
+     249.78,
+     "30 divided by 6 is 5, so 6 is a common factor too."
+    ],
+    [
+     254.43,
+     "The common factors are 1, 2, 3 and 6."
+    ],
+    [
+     257.4,
+     "So the HCF is 6."
+    ],
+    [
+     259.23,
+     "This video is in Full HD."
+    ],
+    [
+     261.38,
+     "That means the picture is 1920 pixels wide and 1080 pixels high."
+    ],
+    [
+     267.44,
+     "The HCF of 1920 and 1080 is 120."
+    ],
+    [
+     270.77,
+     "Divide both numbers by it."
+    ],
+    [
+     274.02,
+     "You get 16 and 9."
+    ],
+    [
+     275.3,
+     "That is why people call this screen shape sixteen by nine."
+    ],
+    [
+     280.24,
+     "One last question."
+    ],
+    [
+     281.67,
+     "Find the HCF of 27 and 63."
+    ],
+    [
+     283.73,
+     "Pause the video and answer."
+    ],
+    [
+     287.27,
+     "The factors of 27 from the top are 27, then 9."
+    ],
+    [
+     291.41,
+     "27 does not divide 63."
+    ],
+    [
+     293.39,
+     "9 does: 63 divided by 9 is 7."
+    ],
+    [
+     296.0,
+     "So the HCF is 9."
+    ],
+    [
+     297.98,
+     "To remember: a common factor divides both numbers."
+    ],
+    [
+     301.44,
+     "The HCF is the biggest one."
+    ],
+    [
+     303.86,
+     "Test the factors of the smaller number, from the top down."
+    ],
+    [
+     308.38,
+     "The HCF is at most the smaller number, and at least 1."
+    ],
+    [
+     312.64,
+     "Problems about the largest equal groups, or the biggest equal tiles, use the HCF."
+    ],
+    [
+     318.75,
+     "Great work! Now practise lesson 1.4 on Camday."
+    ]
+   ],
+   "times": {
+    "1.4-k1": 22.38,
+    "1.4-k2": 106.06,
+    "1.4-k3": 194.7,
+    "1.4-k4": 286.22
+   },
+   "up": true
+  },
+  "1.6": {
+   "src": "media/mv/s7/1-6.mp4",
+   "poster": "media/mv/s7/1-6_poster.jpg",
+   "srt": "media/mv/s7/1-6.srt",
+   "dur": 307.52,
+   "captions": [
+    [
+     6.88,
+     "A garden is a perfect square."
+    ],
+    [
+     9.16,
+     "Its area is 169 square metres."
+    ],
+    [
+     12.07,
+     "How long is each side?"
+    ],
+    [
+     14.48,
+     "Pause the video and work it out."
+    ],
+    [
+     18.09,
+     "The area of a square is the side times the side."
+    ],
+    [
+     21.55,
+     "So we need a number that, multiplied by itself, makes 169."
+    ],
+    [
+     26.28,
+     "12 times 12 is 144."
+    ],
+    [
+     28.45,
+     "Too small."
+    ],
+    [
+     29.6,
+     "13 times 13 is 169."
+    ],
+    [
+     31.77,
+     "That's it!"
+    ],
+    [
+     33.46,
+     "Each side of the garden is 13 metres."
+    ],
+    [
+     36.77,
+     "A square number is a number times itself."
+    ],
+    [
+     40.18,
+     "7 times 7 is 49."
+    ],
+    [
+     41.5,
+     "We write 7 squared equals 49."
+    ],
+    [
+     44.46,
+     "The small 2 is called an index."
+    ],
+    [
+     47.06,
+     "A cube number is a number used three times in a multiplication."
+    ],
+    [
+     52.12,
+     "4 times 4 times 4 is 64."
+    ],
+    [
+     54.06,
+     "We write 4 cubed equals 64."
+    ],
+    [
+     56.78,
+     "Careful: 7 squared is not 7 times 2."
+    ],
+    [
+     60.2,
+     "The square root undoes squaring."
+    ],
+    [
+     63.14,
+     "13 squared is 169, so the square root of 169 is 13."
+    ],
+    [
+     68.36,
+     "It helps to know the square numbers up to 20 times 20."
+    ],
+    [
+     72.86,
+     "Here are the ones from 11 to 20."
+    ],
+    [
+     76.07,
+     "So the square root of 225 is 15, and the square root of 400 is 20."
+    ],
+    [
+     82.69,
+     "Your turn."
+    ],
+    [
+     83.46,
+     "Find the square root of 144."
+    ],
+    [
+     85.63,
+     "Pause the video and try it."
+    ],
+    [
+     89.12,
+     "12 times 12 is 144."
+    ],
+    [
+     91.23,
+     "So the square root of 144 is 12."
+    ],
+    [
+     95.34,
+     "The cube root undoes cubing."
+    ],
+    [
+     97.62,
+     "4 cubed is 64, so the cube root of 64 is 4."
+    ],
+    [
+     101.68,
+     "Learn the first five cube numbers: 1, 8, 27, 64 and 125."
+    ],
+    [
+     107.62,
+     "A cube-shaped box that holds 64 small cubes has 4 small cubes along each edge."
+    ],
+    [
+     113.97,
+     "What about the square root of 50?"
+    ],
+    [
+     116.36,
+     "50 is not a square number, so the answer is not a whole number."
+    ],
+    [
+     121.49,
+     "Find the square numbers on either side."
+    ],
+    [
+     124.72,
+     "49 is 7 squared, and 64 is 8 squared."
+    ],
+    [
+     128.33,
+     "50 is between 49 and 64."
+    ],
+    [
+     130.61,
+     "So the square root of 50 is between 7 and 8."
+    ],
+    [
+     135.34,
+     "And because 50 is very close to 49, the square root of 50 is only a little more than 7."
+    ],
+    [
+     142.95,
+     "Here is the method."
+    ],
+    [
+     144.25,
+     "Step 1: for a square root, ask which number times itself gives the number."
+    ],
+    [
+     149.32,
+     "For a cube root, ask which number cubed gives it."
+    ],
+    [
+     153.23,
+     "Step 2: if it is not a square number, find the square numbers just below and just above."
+    ],
+    [
+     159.84,
+     "Step 3: the root is between their roots."
+    ],
+    [
+     162.66,
+     "Decide which one it is closer to."
+    ],
+    [
+     165.53,
+     "Work out the square root of 81, plus the cube root of 8."
+    ],
+    [
+     170.27,
+     "9 times 9 is 81, so the square root of 81 is 9."
+    ],
+    [
+     175.04,
+     "2 times 2 times 2 is 8, so the cube root of 8 is 2."
+    ],
+    [
+     179.77,
+     "9 plus 2 is 11."
+    ],
+    [
+     182.25,
+     "Your turn."
+    ],
+    [
+     183.0,
+     "Work out the square root of 49, minus the cube root of 27."
+    ],
+    [
+     187.37,
+     "Pause and work it out."
+    ],
+    [
+     190.43,
+     "The square root of 49 is 7."
+    ],
+    [
+     192.89,
+     "The cube root of 27 is 3."
+    ],
+    [
+     195.17,
+     "7 minus 3 is 4."
+    ],
+    [
+     197.09,
+     "Between which two whole numbers is the square root of 90?"
+    ],
+    [
+     201.24,
+     "And which is it closer to?"
+    ],
+    [
+     203.68,
+     "81 is 9 squared, and 100 is 10 squared."
+    ],
+    [
+     207.27,
+     "90 is between them, so the square root of 90 is between 9 and 10."
+    ],
+    [
+     213.81,
+     "From 81 up to 90 is 9."
+    ],
+    [
+     216.14,
+     "From 90 up to 100 is 10."
+    ],
+    [
+     218.69,
+     "So 90 is slightly closer to 81."
+    ],
+    [
+     222.53,
+     "The square root of 90 is between 9 and 10, a little closer to 9."
+    ],
+    [
+     228.35,
+     "Zara is finding the square root of 64."
+    ],
+    [
+     231.22,
+     "Which line goes wrong first?"
+    ],
+    [
+     233.89,
+     "Line 1 is wrong."
+    ],
+    [
+     235.05,
+     "A square root is not a half."
+    ],
+    [
+     237.08,
+     "It is the number that multiplies by itself to make 64."
+    ],
+    [
+     241.55,
+     "8 times 8 is 64."
+    ],
+    [
+     243.04,
+     "So the square root of 64 is 8."
+    ],
+    [
+     246.39,
+     "A chessboard is a square with 64 small squares on it."
+    ],
+    [
+     250.79,
+     "How many squares are along each side?"
+    ],
+    [
+     253.62,
+     "The square root of 64 is 8."
+    ],
+    [
+     255.68,
+     "So the board is 8 squares by 8 squares."
+    ],
+    [
+     259.21,
+     "And 64 is special."
+    ],
+    [
+     260.52,
+     "It is a square number and a cube number at the same time: 8 squared and 4 cubed."
+    ],
+    [
+     266.87,
+     "One last question."
+    ],
+    [
+     268.17,
+     "Work out the cube root of 64, plus 2 squared."
+    ],
+    [
+     271.41,
+     "Pause the video and answer."
+    ],
+    [
+     274.75,
+     "The cube root of 64 is 4."
+    ],
+    [
+     277.06,
+     "2 squared is 4."
+    ],
+    [
+     278.45,
+     "4 plus 4 is 8."
+    ],
+    [
+     280.3,
+     "To remember: a number squared is the number times itself."
+    ],
+    [
+     284.23,
+     "A number cubed uses the number three times."
+    ],
+    [
+     287.75,
+     "A square root undoes squaring."
+    ],
+    [
+     289.82,
+     "A cube root undoes cubing."
+    ],
+    [
+     292.16,
+     "Learn the squares up to 20 squared and the cubes up to 5 cubed."
+    ],
+    [
+     297.37,
+     "To estimate a square root, use the square numbers on either side."
+    ],
+    [
+     302.33,
+     "Great work! Now practise lesson 1.6 on Camday."
+    ]
+   ],
+   "times": {
+    "1.6-k1": 17.04,
+    "1.6-k2": 88.07,
+    "1.6-k3": 189.38,
+    "1.6-k4": 273.7
+   },
+   "up": true
+  },
+  "1.5": {
+   "src": "media/mv/s7/1-5.mp4",
+   "poster": "media/mv/s7/1-5_poster.jpg",
+   "srt": "media/mv/s7/1-5.srt",
+   "dur": 340.6,
+   "captions": [
+    [
+     6.64,
+     "Here is something to think about."
+    ],
+    [
+     9.07,
+     "12 can be divided exactly by 3."
+    ],
+    [
+     11.36,
+     "It can also be divided exactly by 6."
+    ],
+    [
+     14.56,
+     "So here is the question."
+    ],
+    [
+     16.28,
+     "If a number is divisible by 3, is it always divisible by 6 as well?"
+    ],
+    [
+     21.63,
+     "Pause the video and decide."
+    ],
+    [
+     25.03,
+     "The answer is no."
+    ],
+    [
+     26.39,
+     "Look at 9."
+    ],
+    [
+     27.19,
+     "9 divided by 3 is 3, but 9 divided by 6 leaves a remainder."
+    ],
+    [
+     32.48,
+     "To be divisible by 6, a number must be divisible by 3, and also be even."
+    ],
+    [
+     37.5,
+     "Today you will learn quick tests like this one."
+    ],
+    [
+     41.32,
+     "A number is divisible by another if it divides with no remainder."
+    ],
+    [
+     46.35,
+     "30 is divisible by 5, because 30 divided by 5 is exactly 6."
+    ],
+    [
+     52.0,
+     "But 30 is not divisible by 4."
+    ],
+    [
+     54.65,
+     "30 divided by 4 is 7, remainder 2."
+    ],
+    [
+     58.3,
+     "Some tests only look at the end of the number."
+    ],
+    [
+     61.44,
+     "For 2, the last digit must be even."
+    ],
+    [
+     64.38,
+     "For 5, the last digit is 0 or 5."
+    ],
+    [
+     67.08,
+     "For 10, the last digit is 0."
+    ],
+    [
+     69.98,
+     "For 4, look at the last two digits."
+    ],
+    [
+     73.22,
+     "4,716 ends in 16, and 16 is a multiple of 4."
+    ],
+    [
+     77.3,
+     "So 4,716 is divisible by 4."
+    ],
+    [
+     80.35,
+     "For 8, use the last three digits."
+    ],
+    [
+     83.59,
+     "5,120 ends in 120, and 120 divided by 8 is 15."
+    ],
+    [
+     88.66,
+     "And for 25, the number must end in 0 0, 25, 50 or 75."
+    ],
+    [
+     94.49,
+     "Your turn."
+    ],
+    [
+     95.21,
+     "Which of these numbers is divisible by 4?"
+    ],
+    [
+     98.15,
+     "Pause the video and choose."
+    ],
+    [
+     101.48,
+     "The answer is 1,316."
+    ],
+    [
+     103.19,
+     "Its last two digits are 16, and 16 divided by 4 is 4."
+    ],
+    [
+     107.72,
+     "Only the last two digits matter."
+    ],
+    [
+     111.01,
+     "For 3 and 9, add up the digits."
+    ],
+    [
+     114.06,
+     "Take 4,716."
+    ],
+    [
+     115.14,
+     "4 plus 7 plus 1 plus 6 is 18."
+    ],
+    [
+     118.55,
+     "If the digit sum is a multiple of 3, the number is divisible by 3."
+    ],
+    [
+     123.56,
+     "18 is a multiple of 3."
+    ],
+    [
+     125.24,
+     "Yes."
+    ],
+    [
+     126.09,
+     "If the digit sum is a multiple of 9, the number is divisible by 9."
+    ],
+    [
+     130.99,
+     "18 is a multiple of 9."
+    ],
+    [
+     132.63,
+     "Yes again."
+    ],
+    [
+     133.92,
+     "For 6, the number must pass two tests: divisible by 2 and by 3."
+    ],
+    [
+     139.02,
+     "4,716 is even, and its digit sum is 18."
+    ],
+    [
+     142.18,
+     "So yes."
+    ],
+    [
+     143.3,
+     "So 4,716 runners could make equal teams of 3, 4, 6 or 9, but not teams of 5 or 10."
+    ],
+    [
+     151.21,
+     "Here is the method."
+    ],
+    [
+     152.71,
+     "For 2, 5 and 10, look at the last digit."
+    ],
+    [
+     156.41,
+     "For 4 and 25, look at the last two digits."
+    ],
+    [
+     159.67,
+     "For 8, the last three."
+    ],
+    [
+     161.93,
+     "For 3 and 9, add the digits."
+    ],
+    [
+     164.59,
+     "For 6, test for 2 and for 3."
+    ],
+    [
+     167.47,
+     "Test 7,560."
+    ],
+    [
+     168.46,
+     "The last digit is 0, so it is divisible by 2, by 5 and by 10."
+    ],
+    [
+     174.48,
+     "The last two digits are 60."
+    ],
+    [
+     177.15,
+     "60 divided by 4 is 15, so 4 works."
+    ],
+    [
+     180.51,
+     "But 60 is not 0 0, 25, 50 or 75, so 25 does not."
+    ],
+    [
+     185.81,
+     "The last three digits are 560."
+    ],
+    [
+     188.73,
+     "560 divided by 8 is 70, so 8 works."
+    ],
+    [
+     192.68,
+     "The digit sum is 7 plus 5 plus 6 plus 0, which is 18."
+    ],
+    [
+     197.05,
+     "So 3 and 9 both work, and so does 6."
+    ],
+    [
+     200.57,
+     "7,560 is divisible by every number on our list except 25."
+    ],
+    [
+     206.25,
+     "The number 5, 2, something, is divisible by 3."
+    ],
+    [
+     209.54,
+     "What could the missing digit be?"
+    ],
+    [
+     212.38,
+     "The digit sum is 5 plus 2 plus the missing digit."
+    ],
+    [
+     216.0,
+     "That is 7 plus the missing digit."
+    ],
+    [
+     218.99,
+     "It must be a multiple of 3."
+    ],
+    [
+     221.26,
+     "So it could be 9, 12 or 15."
+    ],
+    [
+     224.08,
+     "That gives 2, 5 or 8 for the missing digit."
+    ],
+    [
+     228.0,
+     "Your turn."
+    ],
+    [
+     228.74,
+     "The number 7, 3, something, is divisible by 5 and by 2."
+    ],
+    [
+     232.83,
+     "What is the missing digit?"
+    ],
+    [
+     234.76,
+     "Pause and work it out."
+    ],
+    [
+     237.79,
+     "Divisible by 5 means it ends in 0 or 5."
+    ],
+    [
+     240.88,
+     "Divisible by 2 means it ends in an even digit."
+    ],
+    [
+     244.52,
+     "Only 0 does both."
+    ],
+    [
+     245.87,
+     "The number is 730."
+    ],
+    [
+     247.84,
+     "Is 3,418 divisible by 4?"
+    ],
+    [
+     249.83,
+     "Here is Kai's working."
+    ],
+    [
+     251.65,
+     "Which line goes wrong first?"
+    ],
+    [
+     254.52,
+     "Line 2 is wrong."
+    ],
+    [
+     255.68,
+     "Being even only tells you about 2."
+    ],
+    [
+     258.13,
+     "For 4, you must test the last two digits."
+    ],
+    [
+     261.64,
+     "The last two digits are 18."
+    ],
+    [
+     264.1,
+     "18 divided by 4 is 4, remainder 2."
+    ],
+    [
+     267.2,
+     "So 3,418 is not divisible by 4."
+    ],
+    [
+     270.58,
+     "You already use a divisibility test in real life."
+    ],
+    [
+     274.08,
+     "A leap year has an extra day, the 29th of February."
+    ],
+    [
+     278.28,
+     "Leap years are the years that are divisible by 4."
+    ],
+    [
+     282.27,
+     "Is 2028 a leap year?"
+    ],
+    [
+     283.9,
+     "Look at the last two digits."
+    ],
+    [
+     286.18,
+     "28 divided by 4 is 7."
+    ],
+    [
+     287.89,
+     "Yes!"
+    ],
+    [
+     288.77,
+     "What about 2030?"
+    ],
+    [
+     290.11,
+     "30 divided by 4 leaves a remainder, so 2030 is not a leap year."
+    ],
+    [
+     295.37,
+     "Years that end in two zeros follow a special rule."
+    ],
+    [
+     300.1,
+     "One last question."
+    ],
+    [
+     301.6,
+     "Is 2,475 divisible by 25?"
+    ],
+    [
+     303.67,
+     "Pause the video and answer."
+    ],
+    [
+     307.31,
+     "Look at the last two digits."
+    ],
+    [
+     309.72,
+     "2,475 ends in 75, so yes, it is divisible by 25."
+    ],
+    [
+     314.39,
+     "To remember: for 2, 5 and 10, use the last digit."
+    ],
+    [
+     318.33,
+     "For 4 and 25, the last two digits."
+    ],
+    [
+     321.06,
+     "For 8, the last three."
+    ],
+    [
+     323.38,
+     "For 3 and 9, use the digit sum."
+    ],
+    [
+     326.39,
+     "For 6, the number must be divisible by 2 and by 3."
+    ],
+    [
+     330.81,
+     "Use these tests to find factors and missing digits quickly."
+    ],
+    [
+     335.44,
+     "Great work! Now practise lesson 1.5 on Camday."
+    ]
+   ],
+   "times": {
+    "1.5-k1": 23.98,
+    "1.5-k2": 100.43,
+    "1.5-k3": 236.74,
+    "1.5-k4": 306.26
+   },
+   "up": true
   }
  }
 }

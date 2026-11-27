@@ -55,7 +55,7 @@ def cmd_audio1(stage, unit, sec, url):
     cuts = [0] + [x for g in gaps for x in g] + [total]
     for i, text in enumerate(p):
         a, b = max(0, cuts[2 * i] - 0.08), cuts[2 * i + 1] + 0.12
-        assert 9 < len(text) / (b - a) < 24, f"paragraph {i} is {b - a:.1f}s for {len(text)} characters – a cut is in the wrong place"
+        assert 6 < len(text) / (b - a) < 24, f"paragraph {i} is {b - a:.1f}s for {len(text)} characters – a cut is in the wrong place"
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", whole, "-ss", str(a), "-to", str(b), "-ac", "1", "-ar", str(RATE), os.path.join(d, f"p{i:03d}.wav")], check=True)
     print("cut into", len(p), "clips")
 

@@ -1,0 +1,359 @@
+1
+00:00:06,880 --> 00:00:09,110
+A garden is a perfect square.
+
+2
+00:00:09,160 --> 00:00:12,020
+Its area is 169 square metres.
+
+3
+00:00:12,070 --> 00:00:14,430
+How long is each side?
+
+4
+00:00:14,480 --> 00:00:18,040
+Pause the video and work it out.
+
+5
+00:00:18,090 --> 00:00:21,500
+The area of a square is the side times the side.
+
+6
+00:00:21,550 --> 00:00:26,230
+So we need a number that, multiplied by itself, makes 169.
+
+7
+00:00:26,280 --> 00:00:28,400
+12 times 12 is 144.
+
+8
+00:00:28,450 --> 00:00:29,550
+Too small.
+
+9
+00:00:29,600 --> 00:00:31,720
+13 times 13 is 169.
+
+10
+00:00:31,770 --> 00:00:33,410
+That's it!
+
+11
+00:00:33,460 --> 00:00:36,720
+Each side of the garden is 13 metres.
+
+12
+00:00:36,770 --> 00:00:40,130
+A square number is a number times itself.
+
+13
+00:00:40,180 --> 00:00:41,450
+7 times 7 is 49.
+
+14
+00:00:41,500 --> 00:00:44,410
+We write 7 squared equals 49.
+
+15
+00:00:44,460 --> 00:00:47,010
+The small 2 is called an index.
+
+16
+00:00:47,060 --> 00:00:52,070
+A cube number is a number used three times in a multiplication.
+
+17
+00:00:52,120 --> 00:00:54,010
+4 times 4 times 4 is 64.
+
+18
+00:00:54,060 --> 00:00:56,730
+We write 4 cubed equals 64.
+
+19
+00:00:56,780 --> 00:01:00,150
+Careful: 7 squared is not 7 times 2.
+
+20
+00:01:00,200 --> 00:01:03,090
+The square root undoes squaring.
+
+21
+00:01:03,140 --> 00:01:08,310
+13 squared is 169, so the square root of 169 is 13.
+
+22
+00:01:08,360 --> 00:01:12,810
+It helps to know the square numbers up to 20 times 20.
+
+23
+00:01:12,860 --> 00:01:16,020
+Here are the ones from 11 to 20.
+
+24
+00:01:16,070 --> 00:01:22,640
+So the square root of 225 is 15, and the square root of 400 is 20.
+
+25
+00:01:22,690 --> 00:01:23,410
+Your turn.
+
+26
+00:01:23,460 --> 00:01:25,580
+Find the square root of 144.
+
+27
+00:01:25,630 --> 00:01:29,070
+Pause the video and try it.
+
+28
+00:01:29,120 --> 00:01:31,180
+12 times 12 is 144.
+
+29
+00:01:31,230 --> 00:01:35,290
+So the square root of 144 is 12.
+
+30
+00:01:35,340 --> 00:01:37,570
+The cube root undoes cubing.
+
+31
+00:01:37,620 --> 00:01:41,630
+4 cubed is 64, so the cube root of 64 is 4.
+
+32
+00:01:41,680 --> 00:01:47,570
+Learn the first five cube numbers: 1, 8, 27, 64 and 125.
+
+33
+00:01:47,620 --> 00:01:53,920
+A cube-shaped box that holds 64 small cubes has 4 small cubes along each edge.
+
+34
+00:01:53,970 --> 00:01:56,310
+What about the square root of 50?
+
+35
+00:01:56,360 --> 00:02:01,440
+50 is not a square number, so the answer is not a whole number.
+
+36
+00:02:01,490 --> 00:02:04,670
+Find the square numbers on either side.
+
+37
+00:02:04,720 --> 00:02:08,280
+49 is 7 squared, and 64 is 8 squared.
+
+38
+00:02:08,330 --> 00:02:10,560
+50 is between 49 and 64.
+
+39
+00:02:10,610 --> 00:02:15,290
+So the square root of 50 is between 7 and 8.
+
+40
+00:02:15,340 --> 00:02:22,900
+And because 50 is very close to 49, the square root of 50 is only a little more than 7.
+
+41
+00:02:22,950 --> 00:02:24,200
+Here is the method.
+
+42
+00:02:24,250 --> 00:02:29,270
+Step 1: for a square root, ask which number times itself gives the number.
+
+43
+00:02:29,320 --> 00:02:33,180
+For a cube root, ask which number cubed gives it.
+
+44
+00:02:33,230 --> 00:02:39,790
+Step 2: if it is not a square number, find the square numbers just below and just above.
+
+45
+00:02:39,840 --> 00:02:42,610
+Step 3: the root is between their roots.
+
+46
+00:02:42,660 --> 00:02:45,480
+Decide which one it is closer to.
+
+47
+00:02:45,530 --> 00:02:50,220
+Work out the square root of 81, plus the cube root of 8.
+
+48
+00:02:50,270 --> 00:02:54,990
+9 times 9 is 81, so the square root of 81 is 9.
+
+49
+00:02:55,040 --> 00:02:59,720
+2 times 2 times 2 is 8, so the cube root of 8 is 2.
+
+50
+00:02:59,770 --> 00:03:02,200
+9 plus 2 is 11.
+
+51
+00:03:02,250 --> 00:03:02,950
+Your turn.
+
+52
+00:03:03,000 --> 00:03:07,320
+Work out the square root of 49, minus the cube root of 27.
+
+53
+00:03:07,370 --> 00:03:10,380
+Pause and work it out.
+
+54
+00:03:10,430 --> 00:03:12,840
+The square root of 49 is 7.
+
+55
+00:03:12,890 --> 00:03:15,120
+The cube root of 27 is 3.
+
+56
+00:03:15,170 --> 00:03:17,040
+7 minus 3 is 4.
+
+57
+00:03:17,090 --> 00:03:21,190
+Between which two whole numbers is the square root of 90?
+
+58
+00:03:21,240 --> 00:03:23,630
+And which is it closer to?
+
+59
+00:03:23,680 --> 00:03:27,220
+81 is 9 squared, and 100 is 10 squared.
+
+60
+00:03:27,270 --> 00:03:33,760
+90 is between them, so the square root of 90 is between 9 and 10.
+
+61
+00:03:33,810 --> 00:03:36,090
+From 81 up to 90 is 9.
+
+62
+00:03:36,140 --> 00:03:38,640
+From 90 up to 100 is 10.
+
+63
+00:03:38,690 --> 00:03:42,480
+So 90 is slightly closer to 81.
+
+64
+00:03:42,530 --> 00:03:48,300
+The square root of 90 is between 9 and 10, a little closer to 9.
+
+65
+00:03:48,350 --> 00:03:51,170
+Zara is finding the square root of 64.
+
+66
+00:03:51,220 --> 00:03:53,840
+Which line goes wrong first?
+
+67
+00:03:53,890 --> 00:03:55,000
+Line 1 is wrong.
+
+68
+00:03:55,050 --> 00:03:57,030
+A square root is not a half.
+
+69
+00:03:57,080 --> 00:04:01,500
+It is the number that multiplies by itself to make 64.
+
+70
+00:04:01,550 --> 00:04:02,990
+8 times 8 is 64.
+
+71
+00:04:03,040 --> 00:04:06,340
+So the square root of 64 is 8.
+
+72
+00:04:06,390 --> 00:04:10,740
+A chessboard is a square with 64 small squares on it.
+
+73
+00:04:10,790 --> 00:04:13,570
+How many squares are along each side?
+
+74
+00:04:13,620 --> 00:04:15,630
+The square root of 64 is 8.
+
+75
+00:04:15,680 --> 00:04:19,160
+So the board is 8 squares by 8 squares.
+
+76
+00:04:19,210 --> 00:04:20,470
+And 64 is special.
+
+77
+00:04:20,520 --> 00:04:26,820
+It is a square number and a cube number at the same time: 8 squared and 4 cubed.
+
+78
+00:04:26,870 --> 00:04:28,120
+One last question.
+
+79
+00:04:28,170 --> 00:04:31,360
+Work out the cube root of 64, plus 2 squared.
+
+80
+00:04:31,410 --> 00:04:34,700
+Pause the video and answer.
+
+81
+00:04:34,750 --> 00:04:37,010
+The cube root of 64 is 4.
+
+82
+00:04:37,060 --> 00:04:38,400
+2 squared is 4.
+
+83
+00:04:38,450 --> 00:04:40,250
+4 plus 4 is 8.
+
+84
+00:04:40,300 --> 00:04:44,180
+To remember: a number squared is the number times itself.
+
+85
+00:04:44,230 --> 00:04:47,700
+A number cubed uses the number three times.
+
+86
+00:04:47,750 --> 00:04:49,770
+A square root undoes squaring.
+
+87
+00:04:49,820 --> 00:04:52,110
+A cube root undoes cubing.
+
+88
+00:04:52,160 --> 00:04:57,320
+Learn the squares up to 20 squared and the cubes up to 5 cubed.
+
+89
+00:04:57,370 --> 00:05:02,280
+To estimate a square root, use the square numbers on either side.
+
+90
+00:05:02,330 --> 00:05:07,470
+Great work! Now practise lesson 1.6 on Camday.
