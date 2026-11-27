@@ -229,7 +229,7 @@ VIDEOS["7.4"] = [
         PAUSE("7.4-k1", "How many cups do you need? Pause the video and work it out.", "6 × 2 3/4 = ?"),
     ]),
     dict(kind="hook", title="Split it up", steps=[
-        dict(say="Split 2 and 3 quarters into 2 and 3 quarters. 6 times 2 is 12. 6 times 3 quarters is 18 quarters, which is 4 and a half.",
+        dict(say="Split 2 and 3 quarters into its parts: 2, and 3 quarters. 6 times 2 is 12. 6 times 3 quarters is 18 quarters, which is 4 and a half.",
              do=[TBL(["Part", "Working"], [["6 × 2", "12"], ["6 × 3/4", "18/4 = 4 1/2"], ["total", "12 + 4 1/2 = 16 1/2"]], y=170), ROW(0, 1.5), ROW(1, 4)]),
         dict(say="Add them: 16 and a half cups.", do=[ROW(2, 0.3)]),
     ]),
@@ -279,13 +279,13 @@ VIDEOS["7.4"] = [
              do=[MATH(f"3 + {M(2, 1, 4)} = {M(5, 1, 4)} litres", x=230, y=300, color=BLUE)]),
     ]),
     dict(kind="pause", title="Quick check", steps=[
-        PAUSE("7.4-k4", "One last question. Estimate 7 times 3 and 9 tenths, to the nearest whole number. Pause the video and answer.", "Estimate 7 × 3 9/10 to the nearest whole."),
+        PAUSE("7.4-k4", "One last question. Work out 7 times 3 and 9 tenths, to the nearest whole number. Pause the video and answer.", "7 × 3 9/10, to the nearest whole?"),
         dict(say="7 times 3 is 21. 7 times 9 tenths is 6.3. 21 plus 6.3 is 27.3, which is 27 to the nearest whole.", do=[MATH("21 + 6.3 = 27.3", x=80, y=190), B("≈ 27", x=80, y=300, color=GREEN, at=4)]),
     ]),
     dict(kind="summary", title="What to remember", steps=[
         dict(say="To remember: partition. Multiply the whole part and the fraction part, then add.", do=[T("• **Partition**: whole part + fraction part", x=80, y=170)]),
         dict(say="Or use an improper fraction, and cancel first.", do=[T("• Or improper fraction; cancel first", x=80, y=250)]),
-        dict(say="Estimate first.", do=[T("• Estimate first", x=80, y=330)]),
+        dict(say="Always estimate first.", do=[T("• Estimate first", x=80, y=330)]),
         dict(say="Give answers as mixed numbers in their simplest form.", do=[T("• Answer as a mixed number, simplest form", x=80, y=410)]),
     ]),
 ]

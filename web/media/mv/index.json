@@ -29711,7 +29711,7 @@
     "2.5-k3": 149.2,
     "2.5-k4": 227.99
    },
-   "up": false
+   "up": true
   },
   "4.1": {
    "src": "media/mv/s8/4-1.mp4",
@@ -30002,7 +30002,7 @@
     "4.1-k3": 181.59,
     "4.1-k4": 249.09
    },
-   "up": false
+   "up": true
   },
   "5.1": {
    "src": "media/mv/s8/5-1.mp4",
@@ -30366,6 +30366,1549 @@
     "5.1-k4": 253.59
    },
    "up": false
+  },
+  "5.3": {
+   "src": "media/mv/s8/5-3.mp4",
+   "poster": "media/mv/s8/5-3_poster.jpg",
+   "srt": "media/mv/s8/5-3.srt",
+   "dur": 295.12,
+   "captions": [
+    [
+     6.07,
+     "Two villages want to dig a new well."
+    ],
+    [
+     8.54,
+     "It must be exactly the same distance from both villages."
+    ],
+    [
+     12.92,
+     "One point that works is halfway between them."
+    ],
+    [
+     15.97,
+     "But there are many more."
+    ],
+    [
+     17.6,
+     "Where are all the points that are the same distance from two places?"
+    ],
+    [
+     22.77,
+     "What shape do the points that are equally far from two villages make?"
+    ],
+    [
+     27.31,
+     "Pause the video and choose."
+    ],
+    [
+     30.48,
+     "They make a straight line."
+    ],
+    [
+     32.21,
+     "It goes through the halfway point, at right angles to the line joining the villages."
+    ],
+    [
+     37.8,
+     "It is called the perpendicular bisector."
+    ],
+    [
+     41.01,
+     "Bisector means it cuts the line in half."
+    ],
+    [
+     43.93,
+     "Perpendicular means it meets it at 90 degrees."
+    ],
+    [
+     47.84,
+     "Remember: compasses draw arcs."
+    ],
+    [
+     49.92,
+     "Every point on an arc is the same distance from its centre."
+    ],
+    [
+     54.02,
+     "That distance is the radius."
+    ],
+    [
+     56.51,
+     "You can construct a triangle accurately from different starting facts."
+    ],
+    [
+     61.33,
+     "With three sides, called S S S, draw one side."
+    ],
+    [
+     64.5,
+     "Then draw arcs from each end with the other two lengths."
+    ],
+    [
+     68.91,
+     "With two sides and the angle between them, S A S, use a ruler and a protractor."
+    ],
+    [
+     74.09,
+     "With two angles and the side between them, A S A, measure both angles."
+    ],
+    [
+     79.24,
+     "And for a right-angled triangle, R H S, draw the right angle, then use an arc for the longest side, the hypotenuse."
+    ],
+    [
+     87.45,
+     "Your turn."
+    ],
+    [
+     88.14,
+     "You are given three sides."
+    ],
+    [
+     89.94,
+     "Which kind of construction is that?"
+    ],
+    [
+     92.36,
+     "Pause the video and choose."
+    ],
+    [
+     95.63,
+     "Three sides is S S S: side, side, side."
+    ],
+    [
+     98.57,
+     "To construct the perpendicular bisector of A B, open the compasses to more than half of A B."
+    ],
+    [
+     104.74,
+     "Draw arcs from A, above and below the line."
+    ],
+    [
+     108.17,
+     "Keep the same width."
+    ],
+    [
+     109.46,
+     "Draw arcs from B, so they cross the first arcs."
+    ],
+    [
+     113.03,
+     "Join the two crossing points."
+    ],
+    [
+     114.97,
+     "Every point on this line is the same distance from A and from B."
+    ],
+    [
+     119.81,
+     "To bisect an angle, draw an arc from the vertex, O, that crosses both arms."
+    ],
+    [
+     125.34,
+     "From the two crossing points, draw two equal arcs that cross each other."
+    ],
+    [
+     130.81,
+     "Join the vertex to that crossing point."
+    ],
+    [
+     133.46,
+     "The angle is cut exactly in half."
+    ],
+    [
+     135.7,
+     "Every point on this line is the same distance from both arms."
+    ],
+    [
+     140.39,
+     "Here is the method."
+    ],
+    [
+     141.71,
+     "Step 1: make a quick sketch with the measurements."
+    ],
+    [
+     145.72,
+     "Step 2: draw the first line accurately with a ruler."
+    ],
+    [
+     149.92,
+     "Step 3: keep the compass width fixed when you draw matching arcs."
+    ],
+    [
+     155.17,
+     "Step 4: leave all your arcs showing, and check by measuring."
+    ],
+    [
+     160.0,
+     "Construct triangle A B C with A B equal to 7 centimetres, B C equal to 5 centimetres, and A C equal to 6 centimetres."
+    ],
+    [
+     168.79,
+     "Draw A B, 7 centimetres long."
+    ],
+    [
+     170.86,
+     "Set the compasses to 6 centimetres and draw an arc from A."
+    ],
+    [
+     174.99,
+     "Then set them to 5 centimetres and draw an arc from B."
+    ],
+    [
+     179.38,
+     "C is where the arcs cross."
+    ],
+    [
+     181.1,
+     "Join A C and B C."
+    ],
+    [
+     182.78,
+     "A lamp must be the same distance from the two walls of a corner."
+    ],
+    [
+     187.02,
+     "Where should it go?"
+    ],
+    [
+     188.83,
+     "Points that are equally far from two lines that meet are on the angle bisector."
+    ],
+    [
+     194.16,
+     "So the lamp goes on the bisector of the corner angle."
+    ],
+    [
+     198.29,
+     "Your turn."
+    ],
+    [
+     198.99,
+     "Points equally far from two lines that meet lie on which construction?"
+    ],
+    [
+     203.89,
+     "Pause and choose."
+    ],
+    [
+     206.48,
+     "Equally far from two lines that meet means the angle bisector."
+    ],
+    [
+     210.76,
+     "Equally far from two points means the perpendicular bisector."
+    ],
+    [
+     215.53,
+     "Max constructs the perpendicular bisector of A B."
+    ],
+    [
+     218.98,
+     "Which line goes wrong first?"
+    ],
+    [
+     221.5,
+     "Line 2 is wrong."
+    ],
+    [
+     222.61,
+     "Both arcs must have the same radius."
+    ],
+    [
+     225.12,
+     "Otherwise the line does not cut A B in half."
+    ],
+    [
+     228.74,
+     "Keep the compasses at 5 centimetres for both arcs."
+    ],
+    [
+     232.99,
+     "Phone networks use the same idea."
+    ],
+    [
+     235.29,
+     "A phone usually connects to the nearest mast."
+    ],
+    [
+     238.42,
+     "The boundary between two masts' areas is the perpendicular bisector of the line joining them."
+    ],
+    [
+     245.44,
+     "Maps made of these boundaries are called Voronoi diagrams."
+    ],
+    [
+     249.49,
+     "They are also used to plan school catchment areas and delivery zones."
+    ],
+    [
+     254.86,
+     "One last question."
+    ],
+    [
+     256.16,
+     "The perpendicular bisector of a 10 centimetre line crosses it how far from each end?"
+    ],
+    [
+     262.23,
+     "Pause the video and answer."
+    ],
+    [
+     265.58,
+     "It cuts the line in half."
+    ],
+    [
+     267.49,
+     "Half of 10 is 5."
+    ],
+    [
+     268.71,
+     "It crosses 5 centimetres from each end."
+    ],
+    [
+     272.23,
+     "To remember: you can construct triangles from S S S, S A S, A S A or R H S."
+    ],
+    [
+     277.45,
+     "Perpendicular bisector: equal arcs from both ends of the line."
+    ],
+    [
+     282.25,
+     "Angle bisector: an arc from the vertex, then two equal arcs."
+    ],
+    [
+     286.83,
+     "Keep your arcs, and check by measuring."
+    ],
+    [
+     290.04,
+     "Great work! Now practise lesson 5.3 on Camday."
+    ]
+   ],
+   "times": {
+    "5.3-k1": 29.43,
+    "5.3-k2": 94.58,
+    "5.3-k3": 205.43,
+    "5.3-k4": 264.53
+   },
+   "up": true
+  },
+  "5.2": {
+   "src": "media/mv/s8/5-2.mp4",
+   "poster": "media/mv/s8/5-2_poster.jpg",
+   "srt": "media/mv/s8/5-2.srt",
+   "dur": 291.24,
+   "captions": [
+    [
+     7.24,
+     "A carpenter builds a triangular roof frame, and extends the bottom beam past one corner."
+    ],
+    [
+     13.68,
+     "The inside angles at the other two corners are 35 degrees and 75 degrees."
+    ],
+    [
+     19.57,
+     "What is the angle outside, between the roof and the extended beam?"
+    ],
+    [
+     24.08,
+     "Pause the video and work it out."
+    ],
+    [
+     27.67,
+     "The third inside angle is 180 minus 35 minus 75, which is 70 degrees."
+    ],
+    [
+     33.64,
+     "The outside angle is on a straight line with it, so it is 180 minus 70, which is 110 degrees."
+    ],
+    [
+     42.23,
+     "But look: 35 plus 75 is also 110."
+    ],
+    [
+     45.29,
+     "Is that a shortcut?"
+    ],
+    [
+     47.61,
+     "Remember: the angles inside a triangle add up to 180 degrees."
+    ],
+    [
+     52.66,
+     "If two angles are 35 and 75, the third is 70 degrees."
+    ],
+    [
+     57.59,
+     "If you extend one side of a triangle, the angle between the extension and the next side is called an exterior angle."
+    ],
+    [
+     66.0,
+     "The interior angles a, b and c add up to 180."
+    ],
+    [
+     69.39,
+     "And c plus the exterior angle e also make 180, because they are on a straight line."
+    ],
+    [
+     76.21,
+     "So the exterior angle equals a plus b."
+    ],
+    [
+     78.79,
+     "The exterior angle is the sum of the two interior angles opposite it."
+    ],
+    [
+     84.04,
+     "Your turn."
+    ],
+    [
+     84.8,
+     "The two opposite interior angles are 20 degrees and 90 degrees."
+    ],
+    [
+     89.55,
+     "What is the exterior angle?"
+    ],
+    [
+     91.59,
+     "Pause the video and try it."
+    ],
+    [
+     95.03,
+     "The exterior angle is the sum of the two opposite interior angles."
+    ],
+    [
+     100.53,
+     "20 plus 90 is 110 degrees."
+    ],
+    [
+     103.25,
+     "Remember: the exterior angle and the interior angle next to it add up to 180, not the same value."
+    ],
+    [
+     110.78,
+     "Here is the method."
+    ],
+    [
+     112.1,
+     "Step 1: find the exterior angle."
+    ],
+    [
+     114.32,
+     "It is between a side and an extended side."
+    ],
+    [
+     117.77,
+     "Step 2: find the two interior angles that are not next to it."
+    ],
+    [
+     122.41,
+     "Step 3: the exterior angle equals their sum."
+    ],
+    [
+     125.54,
+     "Or subtract to find a missing interior angle."
+    ],
+    [
+     129.3,
+     "Step 4: check that the three interior angles add up to 180."
+    ],
+    [
+     134.66,
+     "An exterior angle is 140 degrees."
+    ],
+    [
+     137.27,
+     "One opposite interior angle is 85 degrees."
+    ],
+    [
+     140.59,
+     "Find the other one."
+    ],
+    [
+     142.64,
+     "140 minus 85 is 55."
+    ],
+    [
+     144.63,
+     "The other angle is 55 degrees."
+    ],
+    [
+     148.31,
+     "Your turn."
+    ],
+    [
+     149.07,
+     "An exterior angle is 150 degrees, and one opposite interior angle is 72 degrees."
+    ],
+    [
+     155.17,
+     "Find the other."
+    ],
+    [
+     156.31,
+     "Pause and work it out."
+    ],
+    [
+     159.39,
+     "150 equals 72 plus the other angle."
+    ],
+    [
+     163.11,
+     "150 minus 72 is 78 degrees."
+    ],
+    [
+     166.53,
+     "The opposite interior angles are 2 x and 3 x."
+    ],
+    [
+     170.1,
+     "The exterior angle is 125 degrees."
+    ],
+    [
+     172.8,
+     "Find x."
+    ],
+    [
+     173.9,
+     "5 x equals 125, so x equals 25."
+    ],
+    [
+     176.77,
+     "The angles are 50 degrees and 75 degrees."
+    ],
+    [
+     181.12,
+     "An isosceles triangle has a top angle of 40 degrees."
+    ],
+    [
+     184.86,
+     "Find the exterior angle at a base corner."
+    ],
+    [
+     188.36,
+     "The two base angles are equal: 180 minus 40 is 140, and half of 140 is 70."
+    ],
+    [
+     195.2,
+     "The exterior angle at a base corner is 40 plus 70, which is 110 degrees."
+    ],
+    [
+     202.4,
+     "In triangle A B C, angle A is 50 degrees and angle B is 60 degrees."
+    ],
+    [
+     207.26,
+     "Ruby finds the exterior angle at C."
+    ],
+    [
+     209.8,
+     "Which line goes wrong first?"
+    ],
+    [
+     212.38,
+     "Line 2 is wrong."
+    ],
+    [
+     213.55,
+     "The exterior angle and angle C are on a straight line, so they add up to 180."
+    ],
+    [
+     219.16,
+     "They are not equal."
+    ],
+    [
+     221.09,
+     "The exterior angle is 50 plus 60, which is 110 degrees."
+    ],
+    [
+     226.69,
+     "A cyclist rides round a triangular route."
+    ],
+    [
+     229.48,
+     "At each corner she turns through an exterior angle."
+    ],
+    [
+     233.5,
+     "By the time she is back at the start, she has turned all the way round once."
+    ],
+    [
+     238.87,
+     "So the three exterior angles of any triangle add up to 360 degrees."
+    ],
+    [
+     244.16,
+     "One last question."
+    ],
+    [
+     245.36,
+     "What is the exterior angle of an equilateral triangle?"
+    ],
+    [
+     248.98,
+     "Pause the video and answer."
+    ],
+    [
+     252.19,
+     "Each interior angle is 60 degrees."
+    ],
+    [
+     255.42,
+     "The exterior angle is 60 plus 60, which is 120 degrees."
+    ],
+    [
+     260.64,
+     "And 3 times 120 is 360."
+    ],
+    [
+     263.37,
+     "To remember: an exterior angle is made by extending one side of a triangle."
+    ],
+    [
+     268.96,
+     "The exterior angle equals the sum of the two interior angles opposite it."
+    ],
+    [
+     274.58,
+     "The exterior angle and the interior angle next to it add up to 180 degrees."
+    ],
+    [
+     280.72,
+     "You can prove it with the angle sum of a triangle, and a straight line."
+    ],
+    [
+     286.03,
+     "Great work! Now practise lesson 5.2 on Camday."
+    ]
+   ],
+   "times": {
+    "5.2-k1": 26.62,
+    "5.2-k2": 93.98,
+    "5.2-k3": 158.34,
+    "5.2-k4": 251.14
+   },
+   "up": true
+  },
+  "4.4": {
+   "src": "media/mv/s8/4-4.mp4",
+   "poster": "media/mv/s8/4-4_poster.jpg",
+   "srt": "media/mv/s8/4-4.srt",
+   "dur": 267.36,
+   "captions": [
+    [
+     7.54,
+     "A school buys 25 calculators at 7 dollars 96 each."
+    ],
+    [
+     11.53,
+     "The office has no calculator to hand!"
+    ],
+    [
+     15.03,
+     "How could you work out the total quickly, in your head?"
+    ],
+    [
+     19.3,
+     "What is 25 times 7 dollars 96?"
+    ],
+    [
+     21.72,
+     "Pause the video and work it out."
+    ],
+    [
+     25.7,
+     "7.96 is 4 cents less than 8."
+    ],
+    [
+     28.79,
+     "25 times 8 is 200."
+    ],
+    [
+     31.32,
+     "But each calculator is 0.04 less, and there are 25 of them."
+    ],
+    [
+     36.84,
+     "25 times 0.04 is 1."
+    ],
+    [
+     38.62,
+     "So the total is 200 minus 1, which is 199 dollars."
+    ],
+    [
+     43.85,
+     "Remember: 9 times 4.2 is 10 times 4.2, minus one 4.2."
+    ],
+    [
+     49.11,
+     "That is 42 minus 4.2, which is 37.8."
+    ],
+    [
+     53.23,
+     "And look for pairs that make 1."
+    ],
+    [
+     56.01,
+     "0.25 times 4 is 1."
+    ],
+    [
+     58.18,
+     "Here are some ways to make decimal calculations easier."
+    ],
+    [
+     61.98,
+     "Round and adjust, like the calculators."
+    ],
+    [
+     65.23,
+     "Use factors."
+    ],
+    [
+     66.38,
+     "15 is 3 times 5, so 3.6 times 15 is 3.6 times 3, which is 10.8, then times 5, which is 54."
+    ],
+    [
+     75.5,
+     "Use fractions."
+    ],
+    [
+     76.83,
+     "0.25 is a quarter, so 0.25 times 7.2 is 7.2 divided by 4, which is 1.8."
+    ],
+    [
+     84.1,
+     "And look for pairs."
+    ],
+    [
+     85.78,
+     "0.2 times 5 is 1."
+    ],
+    [
+     87.83,
+     "Your turn."
+    ],
+    [
+     88.64,
+     "Work out 0.2 times 4.6 times 5."
+    ],
+    [
+     91.14,
+     "Pause the video and try it."
+    ],
+    [
+     94.72,
+     "Pair 0.2 with 5."
+    ],
+    [
+     96.42,
+     "0.2 times 5 is 1."
+    ],
+    [
+     98.22,
+     "And 1 times 4.6 is 4.6."
+    ],
+    [
+     101.22,
+     "Here is the method."
+    ],
+    [
+     102.53,
+     "Step 1: look for numbers close to a whole number or a round number."
+    ],
+    [
+     107.69,
+     "Step 2: look for pairs that multiply to make 1, 10 or 100."
+    ],
+    [
+     113.44,
+     "Step 3: split a number into factors, or use fractions."
+    ],
+    [
+     117.8,
+     "0.25 is a quarter, 0.5 is a half, 0.2 is a fifth."
+    ],
+    [
+     122.3,
+     "Step 4: follow the order of operations, and check with an estimate."
+    ],
+    [
+     127.66,
+     "Work out 3.6 times 8.5, plus 3.6 times 1.5."
+    ],
+    [
+     131.51,
+     "Both parts have 3.6, so take it out: 3.6 times, bracket, 8.5 plus 1.5."
+    ],
+    [
+     138.34,
+     "8.5 plus 1.5 is 10."
+    ],
+    [
+     140.74,
+     "3.6 times 10 is 36."
+    ],
+    [
+     143.69,
+     "Work out 5.2 divided by 0.5."
+    ],
+    [
+     145.93,
+     "0.5 is a half, and there are 2 halves in every whole."
+    ],
+    [
+     150.17,
+     "So dividing by 0.5 is the same as multiplying by 2."
+    ],
+    [
+     154.81,
+     "Your turn."
+    ],
+    [
+     155.58,
+     "Finish it: what is 5.2 divided by 0.5?"
+    ],
+    [
+     158.53,
+     "Pause and work it out."
+    ],
+    [
+     161.64,
+     "5.2 times 2 is 10.4."
+    ],
+    [
+     164.6,
+     "In the same way, dividing by 0.25 is multiplying by 4."
+    ],
+    [
+     169.54,
+     "So 6.3 divided by 0.25 is 6.3 times 4, which is 25.2."
+    ],
+    [
+     174.94,
+     "Work out 0.125 times 7.3 times 8."
+    ],
+    [
+     178.47,
+     "0.125 is an eighth, so 0.125 times 8 is 1."
+    ],
+    [
+     182.96,
+     "And 1 times 7.3 is 7.3."
+    ],
+    [
+     185.97,
+     "Dan works out 15 times 5.98."
+    ],
+    [
+     188.36,
+     "Which line goes wrong first?"
+    ],
+    [
+     191.3,
+     "Line 2 is wrong."
+    ],
+    [
+     192.79,
+     "There are 15 lots of 0.02 to subtract, not just one."
+    ],
+    [
+     197.63,
+     "15 times 0.02 is 0.3."
+    ],
+    [
+     200.13,
+     "90 minus 0.3 is 89.7."
+    ],
+    [
+     203.39,
+     "Shops often set prices like 4 dollars 99, because they look smaller than 5 dollars."
+    ],
+    [
+     209.66,
+     "Round and adjust beats that trick."
+    ],
+    [
+     212.78,
+     "6 items at 4 dollars 99 cost 6 times 5, which is 30, minus 6 cents."
+    ],
+    [
+     218.94,
+     "That is 29 dollars 94."
+    ],
+    [
+     221.52,
+     "One last question."
+    ],
+    [
+     222.95,
+     "Work out 7.3 times 99."
+    ],
+    [
+     224.69,
+     "Pause the video and answer."
+    ],
+    [
+     228.24,
+     "99 is 1 less than 100."
+    ],
+    [
+     230.97,
+     "7.3 times 100 is 730."
+    ],
+    [
+     233.58,
+     "Subtract one 7.3: 730 minus 7.3 is 722.7."
+    ],
+    [
+     239.22,
+     "To remember: round and adjust."
+    ],
+    [
+     241.32,
+     "Adjust by the difference times the multiplier."
+    ],
+    [
+     245.08,
+     "Use factors, and pairs that make 1, 10 or 100."
+    ],
+    [
+     249.89,
+     "Remember: 0.25 is a quarter, 0.5 is a half, 0.2 is a fifth, and 0.125 is an eighth."
+    ],
+    [
+     257.92,
+     "Use the distributive law, and the order of operations."
+    ],
+    [
+     262.18,
+     "Great work! Now practise lesson 4.4 on Camday."
+    ]
+   ],
+   "times": {
+    "4.4-k1": 24.65,
+    "4.4-k2": 93.67,
+    "4.4-k3": 160.59,
+    "4.4-k4": 227.19
+   },
+   "up": true
+  },
+  "2.3": {
+   "src": "media/mv/s8/2-3.mp4",
+   "poster": "media/mv/s8/2-3_poster.jpg",
+   "srt": "media/mv/s8/2-3.srt",
+   "dur": 275.52,
+   "captions": [
+    [
+     6.27,
+     "A garden is x metres wide."
+    ],
+    [
+     8.04,
+     "Its length is x plus 5 metres."
+    ],
+    [
+     10.09,
+     "So its area is x times, bracket, x plus 5."
+    ],
+    [
+     13.5,
+     "Write the area x times, bracket, x plus 5, without brackets."
+    ],
+    [
+     17.71,
+     "Pause the video and try it."
+    ],
+    [
+     21.0,
+     "Multiply x by each term inside."
+    ],
+    [
+     23.21,
+     "x times x is x squared."
+    ],
+    [
+     24.85,
+     "x times 5 is 5 x."
+    ],
+    [
+     26.06,
+     "The area is x squared plus 5 x."
+    ],
+    [
+     28.82,
+     "Next door, a garden is 3 metres wide and 2 x minus 1 metres long."
+    ],
+    [
+     33.75,
+     "Its area is 3 times, bracket, 2 x minus 1, which is 6 x minus 3."
+    ],
+    [
+     39.16,
+     "Remember: to expand a bracket, multiply every term inside by the term outside."
+    ],
+    [
+     44.98,
+     "4, bracket, n plus 3, is 4 n plus 12."
+    ],
+    [
+     48.29,
+     "5, bracket, 2 y minus 3, is 10 y minus 15."
+    ],
+    [
+     52.82,
+     "The term outside can be a letter, or a negative number."
+    ],
+    [
+     56.48,
+     "Multiply each term inside, and use the sign rules."
+    ],
+    [
+     60.36,
+     "Negative 3 times 2 x is negative 6 x."
+    ],
+    [
+     63.37,
+     "Negative 3 times negative 1 is positive 3."
+    ],
+    [
+     66.78,
+     "So negative 3, bracket, 2 x minus 1, is negative 6 x plus 3."
+    ],
+    [
+     72.21,
+     "And 2 A times A is 2 A squared, while 2 A times 4 is 8 A."
+    ],
+    [
+     77.18,
+     "Your turn."
+    ],
+    [
+     77.92,
+     "Expand negative 2, bracket, A plus 6."
+    ],
+    [
+     80.65,
+     "Pause the video and try it."
+    ],
+    [
+     84.04,
+     "Negative 2 times A is negative 2 A."
+    ],
+    [
+     86.97,
+     "Negative 2 times 6 is negative 12."
+    ],
+    [
+     89.82,
+     "The answer is negative 2 A minus 12."
+    ],
+    [
+     93.39,
+     "To expand and simplify, expand each bracket, then collect like terms."
+    ],
+    [
+     98.34,
+     "The difference in the garden areas is x, bracket, x plus 5, minus 3, bracket, 2 x minus 1."
+    ],
+    [
+     105.35,
+     "That is x squared plus 5 x, minus 6 x, plus 3."
+    ],
+    [
+     108.65,
+     "Collect the x terms: 5 x minus 6 x is negative x."
+    ],
+    [
+     112.17,
+     "The answer is x squared minus x plus 3."
+    ],
+    [
+     115.53,
+     "A minus sign in front of a bracket changes the sign of every term inside."
+    ],
+    [
+     120.88,
+     "Here is the method."
+    ],
+    [
+     122.21,
+     "Step 1: multiply the term outside by every term inside, using the sign rules."
+    ],
+    [
+     128.16,
+     "Step 2: watch for x times x, which is x squared, and negative times negative, which is positive."
+    ],
+    [
+     135.37,
+     "Step 3: collect like terms."
+    ],
+    [
+     137.27,
+     "Keep the x squared terms, the x terms and the numbers separate."
+    ],
+    [
+     142.25,
+     "Step 4: check by putting in a number, like x equals 2, in both forms."
+    ],
+    [
+     147.73,
+     "Expand and simplify 5, bracket, x plus 2, minus 2, bracket, x minus 3."
+    ],
+    [
+     153.66,
+     "The first bracket gives 5 x plus 10."
+    ],
+    [
+     156.44,
+     "The second is negative 2 times each term: negative 2 x, and negative 2 times negative 3, which is plus 6."
+    ],
+    [
+     165.11,
+     "Collect: 5 x minus 2 x is 3 x, and 10 plus 6 is 16."
+    ],
+    [
+     169.78,
+     "The answer is 3 x plus 16."
+    ],
+    [
+     172.72,
+     "Your turn."
+    ],
+    [
+     173.46,
+     "Expand and simplify 2, bracket, x plus 4, plus 3, bracket, x minus 1."
+    ],
+    [
+     178.61,
+     "Pause and work it out."
+    ],
+    [
+     181.65,
+     "2 x plus 8, plus 3 x minus 3."
+    ],
+    [
+     184.14,
+     "2 x plus 3 x is 5 x, and 8 minus 3 is 5."
+    ],
+    [
+     187.57,
+     "The answer is 5 x plus 5."
+    ],
+    [
+     190.26,
+     "Expand 3 A, bracket, 2 B minus A."
+    ],
+    [
+     192.8,
+     "3 A times 2 B is 6 A B."
+    ],
+    [
+     194.56,
+     "3 A times negative A is negative 3 A squared."
+    ],
+    [
+     198.56,
+     "Noah expands and simplifies 7 minus 2, bracket, x minus 5."
+    ],
+    [
+     202.91,
+     "Which line goes wrong first?"
+    ],
+    [
+     205.56,
+     "Line 1 is wrong."
+    ],
+    [
+     206.91,
+     "Negative 2 times negative 5 is positive 10, not negative 10."
+    ],
+    [
+     212.51,
+     "So it is 7 minus 2 x plus 10, which is 17 minus 2 x."
+    ],
+    [
+     217.7,
+     "Expanding brackets is a mental maths trick."
+    ],
+    [
+     221.35,
+     "To work out 7 times 98, think of 98 as 100 minus 2."
+    ],
+    [
+     226.23,
+     "7 times 100 is 700."
+    ],
+    [
+     228.17,
+     "7 times 2 is 14."
+    ],
+    [
+     229.79,
+     "700 minus 14 is 686."
+    ],
+    [
+     231.83,
+     "Shopkeepers often use this to add up prices like 99 cents quickly."
+    ],
+    [
+     239.1,
+     "One last question."
+    ],
+    [
+     240.39,
+     "Expand y, bracket, 3 minus y."
+    ],
+    [
+     242.47,
+     "Pause the video and answer."
+    ],
+    [
+     245.81,
+     "y times 3 is 3 y."
+    ],
+    [
+     247.04,
+     "y times negative y is negative y squared."
+    ],
+    [
+     250.01,
+     "The answer is 3 y minus y squared."
+    ],
+    [
+     253.03,
+     "To remember: multiply every term inside the bracket by the term outside."
+    ],
+    [
+     258.57,
+     "x times x is x squared."
+    ],
+    [
+     260.13,
+     "Follow the sign rules."
+    ],
+    [
+     262.18,
+     "A minus sign in front of a bracket changes every sign inside."
+    ],
+    [
+     266.82,
+     "Collect like terms, and check with a number."
+    ],
+    [
+     270.29,
+     "Great work! Now practise lesson 2.3 on Camday."
+    ]
+   ],
+   "times": {
+    "2.3-k1": 19.95,
+    "2.3-k2": 82.99,
+    "2.3-k3": 180.6,
+    "2.3-k4": 244.76
+   },
+   "up": true
+  },
+  "4.3": {
+   "src": "media/mv/s8/4-3.mp4",
+   "poster": "media/mv/s8/4-3_poster.jpg",
+   "srt": "media/mv/s8/4-3.srt",
+   "dur": 254.28,
+   "captions": [
+    [
+     6.38,
+     "A craft shop has 5.67 metres of ribbon."
+    ],
+    [
+     9.41,
+     "Each bow needs 0.7 metres."
+    ],
+    [
+     11.44,
+     "How many bows can be made?"
+    ],
+    [
+     14.01,
+     "Dividing by a decimal looks hard."
+    ],
+    [
+     16.21,
+     "Can you make it easier?"
+    ],
+    [
+     18.3,
+     "What is 5.67 divided by 0.7?"
+    ],
+    [
+     20.62,
+     "Pause the video and work it out."
+    ],
+    [
+     24.67,
+     "Multiply both numbers by 10."
+    ],
+    [
+     27.27,
+     "5.67 divided by 0.7 is the same as 56.7 divided by 7."
+    ],
+    [
+     32.74,
+     "56 divided by 7 is 8, and 0.7 divided by 7 is 0.1."
+    ],
+    [
+     37.1,
+     "So the answer is 8.1."
+    ],
+    [
+     38.93,
+     "The shop can make 8 whole bows."
+    ],
+    [
+     42.18,
+     "Remember: for 36.8 divided by 4, divide each part."
+    ],
+    [
+     46.46,
+     "36 divided by 4 is 9, and 0.8 divided by 4 is 0.2."
+    ],
+    [
+     50.74,
+     "So the answer is 9.2."
+    ],
+    [
+     52.54,
+     "Keep the point in line."
+    ],
+    [
+     55.06,
+     "Multiply both numbers by the same power of 10, so that the number you divide by becomes a whole number."
+    ],
+    [
+     62.26,
+     "The answer does not change."
+    ],
+    [
+     64.7,
+     "If the divisor has 2 decimal places, multiply both by 100."
+    ],
+    [
+     70.25,
+     "1.56 divided by 0.12 becomes 156 divided by 12, which is 13."
+    ],
+    [
+     76.54,
+     "Dividing by a number between 0 and 1 gives a bigger answer."
+    ],
+    [
+     81.23,
+     "3 divided by 0.5 is 6, because there are 6 halves in 3."
+    ],
+    [
+     86.15,
+     "Your turn."
+    ],
+    [
+     86.95,
+     "Work out 2.5 divided by 0.5."
+    ],
+    [
+     89.18,
+     "Pause the video and try it."
+    ],
+    [
+     92.74,
+     "Multiply both by 10."
+    ],
+    [
+     94.47,
+     "25 divided by 5 is 5."
+    ],
+    [
+     96.28,
+     "There are 5 halves in 2 and a half."
+    ],
+    [
+     99.86,
+     "Here is the method."
+    ],
+    [
+     101.37,
+     "Step 1: multiply the divisor by 10 or 100, to make it a whole number."
+    ],
+    [
+     107.4,
+     "Step 2: multiply the other number by the same amount."
+    ],
+    [
+     111.79,
+     "Step 3: divide, using short division."
+    ],
+    [
+     114.47,
+     "Keep the point in line."
+    ],
+    [
+     116.69,
+     "Step 4: check by multiplying back."
+    ],
+    [
+     119.77,
+     "Work out 7.35 divided by 0.5."
+    ],
+    [
+     122.62,
+     "Multiply both by 10: 73.5 divided by 5."
+    ],
+    [
+     126.99,
+     "73.5 divided by 5 is 14.7."
+    ],
+    [
+     130.06,
+     "Check: 14.7 times 0.5 is 7.35."
+    ],
+    [
+     134.16,
+     "Your turn."
+    ],
+    [
+     135.03,
+     "Work out 0.36 divided by 0.04."
+    ],
+    [
+     137.64,
+     "Pause and work it out."
+    ],
+    [
+     140.95,
+     "The divisor has 2 decimal places, so multiply both by 100."
+    ],
+    [
+     145.98,
+     "36 divided by 4 is 9."
+    ],
+    [
+     148.36,
+     "How many 0.25 litre cups can be filled from a 3.8 litre jug?"
+    ],
+    [
+     153.94,
+     "Multiply both by 100: 380 divided by 25, which is 15.2."
+    ],
+    [
+     159.61,
+     "We can only count full cups, so the answer is 15 cups."
+    ],
+    [
+     164.05,
+     "0.6 kilograms of cherries cost 4 dollars 32."
+    ],
+    [
+     167.82,
+     "What is the price per kilogram?"
+    ],
+    [
+     170.49,
+     "Multiply both by 10: 43.2 divided by 6, which is 7.2."
+    ],
+    [
+     175.58,
+     "The price is 7 dollars 20 per kilogram."
+    ],
+    [
+     179.31,
+     "Tia works out 6.3 divided by 0.9."
+    ],
+    [
+     181.98,
+     "Which line goes wrong first?"
+    ],
+    [
+     184.78,
+     "Line 1 is wrong."
+    ],
+    [
+     186.1,
+     "She only multiplied 0.9 by 10."
+    ],
+    [
+     188.57,
+     "Both numbers must be multiplied by 10."
+    ],
+    [
+     191.7,
+     "Also, dividing by 0.9 should give an answer bigger than 6.3."
+    ],
+    [
+     197.2,
+     "63 divided by 9 is 7."
+    ],
+    [
+     199.98,
+     "A car uses 0.06 litres of fuel for every kilometre."
+    ],
+    [
+     204.58,
+     "How far can it go on 45 litres?"
+    ],
+    [
+     207.37,
+     "45 divided by 0.06 is 4,500 divided by 6, which is 750 kilometres."
+    ],
+    [
+     213.88,
+     "One last question."
+    ],
+    [
+     215.38,
+     "Is 9 divided by 0.3 equal to 30, 3, or 2.7?"
+    ],
+    [
+     218.96,
+     "Pause the video and choose."
+    ],
+    [
+     222.61,
+     "Multiply both by 10: 90 divided by 3 is 30."
+    ],
+    [
+     226.17,
+     "It is bigger than 9, because we divided by a number less than 1."
+    ],
+    [
+     232.0,
+     "To remember: multiply both numbers by 10 or 100, to make the divisor a whole number."
+    ],
+    [
+     239.2,
+     "Then use short division."
+    ],
+    [
+     241.61,
+     "Dividing by a number between 0 and 1 makes the answer bigger."
+    ],
+    [
+     246.55,
+     "Check by multiplying back."
+    ],
+    [
+     249.15,
+     "Great work! Now practise lesson 4.3 on Camday."
+    ]
+   ],
+   "times": {
+    "4.3-k1": 23.62,
+    "4.3-k2": 91.69,
+    "4.3-k3": 139.9,
+    "4.3-k4": 221.56
+   },
+   "up": true
   }
  }
 }

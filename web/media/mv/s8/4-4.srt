@@ -1,0 +1,287 @@
+1
+00:00:07,540 --> 00:00:11,480
+A school buys 25 calculators at 7 dollars 96 each.
+
+2
+00:00:11,530 --> 00:00:14,980
+The office has no calculator to hand!
+
+3
+00:00:15,030 --> 00:00:19,250
+How could you work out the total quickly, in your head?
+
+4
+00:00:19,300 --> 00:00:21,670
+What is 25 times 7 dollars 96?
+
+5
+00:00:21,720 --> 00:00:25,650
+Pause the video and work it out.
+
+6
+00:00:25,700 --> 00:00:28,740
+7.96 is 4 cents less than 8.
+
+7
+00:00:28,790 --> 00:00:31,270
+25 times 8 is 200.
+
+8
+00:00:31,320 --> 00:00:36,790
+But each calculator is 0.04 less, and there are 25 of them.
+
+9
+00:00:36,840 --> 00:00:38,570
+25 times 0.04 is 1.
+
+10
+00:00:38,620 --> 00:00:43,800
+So the total is 200 minus 1, which is 199 dollars.
+
+11
+00:00:43,850 --> 00:00:49,060
+Remember: 9 times 4.2 is 10 times 4.2, minus one 4.2.
+
+12
+00:00:49,110 --> 00:00:53,180
+That is 42 minus 4.2, which is 37.8.
+
+13
+00:00:53,230 --> 00:00:55,960
+And look for pairs that make 1.
+
+14
+00:00:56,010 --> 00:00:58,130
+0.25 times 4 is 1.
+
+15
+00:00:58,180 --> 00:01:01,930
+Here are some ways to make decimal calculations easier.
+
+16
+00:01:01,980 --> 00:01:05,180
+Round and adjust, like the calculators.
+
+17
+00:01:05,230 --> 00:01:06,330
+Use factors.
+
+18
+00:01:06,380 --> 00:01:15,450
+15 is 3 times 5, so 3.6 times 15 is 3.6 times 3, which is 10.8, then times 5, which is 54.
+
+19
+00:01:15,500 --> 00:01:16,780
+Use fractions.
+
+20
+00:01:16,830 --> 00:01:24,050
+0.25 is a quarter, so 0.25 times 7.2 is 7.2 divided by 4, which is 1.8.
+
+21
+00:01:24,100 --> 00:01:25,730
+And look for pairs.
+
+22
+00:01:25,780 --> 00:01:27,780
+0.2 times 5 is 1.
+
+23
+00:01:27,830 --> 00:01:28,590
+Your turn.
+
+24
+00:01:28,640 --> 00:01:31,090
+Work out 0.2 times 4.6 times 5.
+
+25
+00:01:31,140 --> 00:01:34,670
+Pause the video and try it.
+
+26
+00:01:34,720 --> 00:01:36,370
+Pair 0.2 with 5.
+
+27
+00:01:36,420 --> 00:01:38,170
+0.2 times 5 is 1.
+
+28
+00:01:38,220 --> 00:01:41,170
+And 1 times 4.6 is 4.6.
+
+29
+00:01:41,220 --> 00:01:42,480
+Here is the method.
+
+30
+00:01:42,530 --> 00:01:47,640
+Step 1: look for numbers close to a whole number or a round number.
+
+31
+00:01:47,690 --> 00:01:53,390
+Step 2: look for pairs that multiply to make 1, 10 or 100.
+
+32
+00:01:53,440 --> 00:01:57,750
+Step 3: split a number into factors, or use fractions.
+
+33
+00:01:57,800 --> 00:02:02,250
+0.25 is a quarter, 0.5 is a half, 0.2 is a fifth.
+
+34
+00:02:02,300 --> 00:02:07,610
+Step 4: follow the order of operations, and check with an estimate.
+
+35
+00:02:07,660 --> 00:02:11,460
+Work out 3.6 times 8.5, plus 3.6 times 1.5.
+
+36
+00:02:11,510 --> 00:02:18,290
+Both parts have 3.6, so take it out: 3.6 times, bracket, 8.5 plus 1.5.
+
+37
+00:02:18,340 --> 00:02:20,690
+8.5 plus 1.5 is 10.
+
+38
+00:02:20,740 --> 00:02:23,640
+3.6 times 10 is 36.
+
+39
+00:02:23,690 --> 00:02:25,880
+Work out 5.2 divided by 0.5.
+
+40
+00:02:25,930 --> 00:02:30,120
+0.5 is a half, and there are 2 halves in every whole.
+
+41
+00:02:30,170 --> 00:02:34,760
+So dividing by 0.5 is the same as multiplying by 2.
+
+42
+00:02:34,810 --> 00:02:35,530
+Your turn.
+
+43
+00:02:35,580 --> 00:02:38,480
+Finish it: what is 5.2 divided by 0.5?
+
+44
+00:02:38,530 --> 00:02:41,590
+Pause and work it out.
+
+45
+00:02:41,640 --> 00:02:44,550
+5.2 times 2 is 10.4.
+
+46
+00:02:44,600 --> 00:02:49,490
+In the same way, dividing by 0.25 is multiplying by 4.
+
+47
+00:02:49,540 --> 00:02:54,890
+So 6.3 divided by 0.25 is 6.3 times 4, which is 25.2.
+
+48
+00:02:54,940 --> 00:02:58,420
+Work out 0.125 times 7.3 times 8.
+
+49
+00:02:58,470 --> 00:03:02,910
+0.125 is an eighth, so 0.125 times 8 is 1.
+
+50
+00:03:02,960 --> 00:03:05,920
+And 1 times 7.3 is 7.3.
+
+51
+00:03:05,970 --> 00:03:08,310
+Dan works out 15 times 5.98.
+
+52
+00:03:08,360 --> 00:03:11,250
+Which line goes wrong first?
+
+53
+00:03:11,300 --> 00:03:12,740
+Line 2 is wrong.
+
+54
+00:03:12,790 --> 00:03:17,580
+There are 15 lots of 0.02 to subtract, not just one.
+
+55
+00:03:17,630 --> 00:03:20,080
+15 times 0.02 is 0.3.
+
+56
+00:03:20,130 --> 00:03:23,340
+90 minus 0.3 is 89.7.
+
+57
+00:03:23,390 --> 00:03:29,610
+Shops often set prices like 4 dollars 99, because they look smaller than 5 dollars.
+
+58
+00:03:29,660 --> 00:03:32,730
+Round and adjust beats that trick.
+
+59
+00:03:32,780 --> 00:03:38,890
+6 items at 4 dollars 99 cost 6 times 5, which is 30, minus 6 cents.
+
+60
+00:03:38,940 --> 00:03:41,470
+That is 29 dollars 94.
+
+61
+00:03:41,520 --> 00:03:42,900
+One last question.
+
+62
+00:03:42,950 --> 00:03:44,640
+Work out 7.3 times 99.
+
+63
+00:03:44,690 --> 00:03:48,190
+Pause the video and answer.
+
+64
+00:03:48,240 --> 00:03:50,920
+99 is 1 less than 100.
+
+65
+00:03:50,970 --> 00:03:53,530
+7.3 times 100 is 730.
+
+66
+00:03:53,580 --> 00:03:59,170
+Subtract one 7.3: 730 minus 7.3 is 722.7.
+
+67
+00:03:59,220 --> 00:04:01,270
+To remember: round and adjust.
+
+68
+00:04:01,320 --> 00:04:05,030
+Adjust by the difference times the multiplier.
+
+69
+00:04:05,080 --> 00:04:09,840
+Use factors, and pairs that make 1, 10 or 100.
+
+70
+00:04:09,890 --> 00:04:17,870
+Remember: 0.25 is a quarter, 0.5 is a half, 0.2 is a fifth, and 0.125 is an eighth.
+
+71
+00:04:17,920 --> 00:04:22,130
+Use the distributive law, and the order of operations.
+
+72
+00:04:22,180 --> 00:04:27,310
+Great work! Now practise lesson 4.4 on Camday.

@@ -1,0 +1,299 @@
+1
+00:00:06,270 --> 00:00:07,990
+A garden is x metres wide.
+
+2
+00:00:08,040 --> 00:00:10,040
+Its length is x plus 5 metres.
+
+3
+00:00:10,090 --> 00:00:13,450
+So its area is x times, bracket, x plus 5.
+
+4
+00:00:13,500 --> 00:00:17,660
+Write the area x times, bracket, x plus 5, without brackets.
+
+5
+00:00:17,710 --> 00:00:20,950
+Pause the video and try it.
+
+6
+00:00:21,000 --> 00:00:23,160
+Multiply x by each term inside.
+
+7
+00:00:23,210 --> 00:00:24,800
+x times x is x squared.
+
+8
+00:00:24,850 --> 00:00:26,010
+x times 5 is 5 x.
+
+9
+00:00:26,060 --> 00:00:28,770
+The area is x squared plus 5 x.
+
+10
+00:00:28,820 --> 00:00:33,700
+Next door, a garden is 3 metres wide and 2 x minus 1 metres long.
+
+11
+00:00:33,750 --> 00:00:39,110
+Its area is 3 times, bracket, 2 x minus 1, which is 6 x minus 3.
+
+12
+00:00:39,160 --> 00:00:44,930
+Remember: to expand a bracket, multiply every term inside by the term outside.
+
+13
+00:00:44,980 --> 00:00:48,240
+4, bracket, n plus 3, is 4 n plus 12.
+
+14
+00:00:48,290 --> 00:00:52,770
+5, bracket, 2 y minus 3, is 10 y minus 15.
+
+15
+00:00:52,820 --> 00:00:56,430
+The term outside can be a letter, or a negative number.
+
+16
+00:00:56,480 --> 00:01:00,310
+Multiply each term inside, and use the sign rules.
+
+17
+00:01:00,360 --> 00:01:03,320
+Negative 3 times 2 x is negative 6 x.
+
+18
+00:01:03,370 --> 00:01:06,730
+Negative 3 times negative 1 is positive 3.
+
+19
+00:01:06,780 --> 00:01:12,160
+So negative 3, bracket, 2 x minus 1, is negative 6 x plus 3.
+
+20
+00:01:12,210 --> 00:01:17,130
+And 2 A times A is 2 A squared, while 2 A times 4 is 8 A.
+
+21
+00:01:17,180 --> 00:01:17,870
+Your turn.
+
+22
+00:01:17,920 --> 00:01:20,600
+Expand negative 2, bracket, A plus 6.
+
+23
+00:01:20,650 --> 00:01:23,990
+Pause the video and try it.
+
+24
+00:01:24,040 --> 00:01:26,920
+Negative 2 times A is negative 2 A.
+
+25
+00:01:26,970 --> 00:01:29,770
+Negative 2 times 6 is negative 12.
+
+26
+00:01:29,820 --> 00:01:33,340
+The answer is negative 2 A minus 12.
+
+27
+00:01:33,390 --> 00:01:38,290
+To expand and simplify, expand each bracket, then collect like terms.
+
+28
+00:01:38,340 --> 00:01:45,300
+The difference in the garden areas is x, bracket, x plus 5, minus 3, bracket, 2 x minus 1.
+
+29
+00:01:45,350 --> 00:01:48,600
+That is x squared plus 5 x, minus 6 x, plus 3.
+
+30
+00:01:48,650 --> 00:01:52,120
+Collect the x terms: 5 x minus 6 x is negative x.
+
+31
+00:01:52,170 --> 00:01:55,480
+The answer is x squared minus x plus 3.
+
+32
+00:01:55,530 --> 00:02:00,830
+A minus sign in front of a bracket changes the sign of every term inside.
+
+33
+00:02:00,880 --> 00:02:02,160
+Here is the method.
+
+34
+00:02:02,210 --> 00:02:08,110
+Step 1: multiply the term outside by every term inside, using the sign rules.
+
+35
+00:02:08,160 --> 00:02:15,320
+Step 2: watch for x times x, which is x squared, and negative times negative, which is positive.
+
+36
+00:02:15,370 --> 00:02:17,220
+Step 3: collect like terms.
+
+37
+00:02:17,270 --> 00:02:22,200
+Keep the x squared terms, the x terms and the numbers separate.
+
+38
+00:02:22,250 --> 00:02:27,680
+Step 4: check by putting in a number, like x equals 2, in both forms.
+
+39
+00:02:27,730 --> 00:02:33,610
+Expand and simplify 5, bracket, x plus 2, minus 2, bracket, x minus 3.
+
+40
+00:02:33,660 --> 00:02:36,390
+The first bracket gives 5 x plus 10.
+
+41
+00:02:36,440 --> 00:02:45,060
+The second is negative 2 times each term: negative 2 x, and negative 2 times negative 3, which is plus 6.
+
+42
+00:02:45,110 --> 00:02:49,730
+Collect: 5 x minus 2 x is 3 x, and 10 plus 6 is 16.
+
+43
+00:02:49,780 --> 00:02:52,670
+The answer is 3 x plus 16.
+
+44
+00:02:52,720 --> 00:02:53,410
+Your turn.
+
+45
+00:02:53,460 --> 00:02:58,560
+Expand and simplify 2, bracket, x plus 4, plus 3, bracket, x minus 1.
+
+46
+00:02:58,610 --> 00:03:01,600
+Pause and work it out.
+
+47
+00:03:01,650 --> 00:03:04,090
+2 x plus 8, plus 3 x minus 3.
+
+48
+00:03:04,140 --> 00:03:07,520
+2 x plus 3 x is 5 x, and 8 minus 3 is 5.
+
+49
+00:03:07,570 --> 00:03:10,210
+The answer is 5 x plus 5.
+
+50
+00:03:10,260 --> 00:03:12,750
+Expand 3 A, bracket, 2 B minus A.
+
+51
+00:03:12,800 --> 00:03:14,510
+3 A times 2 B is 6 A B.
+
+52
+00:03:14,560 --> 00:03:18,510
+3 A times negative A is negative 3 A squared.
+
+53
+00:03:18,560 --> 00:03:22,860
+Noah expands and simplifies 7 minus 2, bracket, x minus 5.
+
+54
+00:03:22,910 --> 00:03:25,510
+Which line goes wrong first?
+
+55
+00:03:25,560 --> 00:03:26,860
+Line 1 is wrong.
+
+56
+00:03:26,910 --> 00:03:32,460
+Negative 2 times negative 5 is positive 10, not negative 10.
+
+57
+00:03:32,510 --> 00:03:37,650
+So it is 7 minus 2 x plus 10, which is 17 minus 2 x.
+
+58
+00:03:37,700 --> 00:03:41,300
+Expanding brackets is a mental maths trick.
+
+59
+00:03:41,350 --> 00:03:46,180
+To work out 7 times 98, think of 98 as 100 minus 2.
+
+60
+00:03:46,230 --> 00:03:48,120
+7 times 100 is 700.
+
+61
+00:03:48,170 --> 00:03:49,740
+7 times 2 is 14.
+
+62
+00:03:49,790 --> 00:03:51,780
+700 minus 14 is 686.
+
+63
+00:03:51,830 --> 00:03:59,050
+Shopkeepers often use this to add up prices like 99 cents quickly.
+
+64
+00:03:59,100 --> 00:04:00,340
+One last question.
+
+65
+00:04:00,390 --> 00:04:02,420
+Expand y, bracket, 3 minus y.
+
+66
+00:04:02,470 --> 00:04:05,760
+Pause the video and answer.
+
+67
+00:04:05,810 --> 00:04:06,990
+y times 3 is 3 y.
+
+68
+00:04:07,040 --> 00:04:09,960
+y times negative y is negative y squared.
+
+69
+00:04:10,010 --> 00:04:12,980
+The answer is 3 y minus y squared.
+
+70
+00:04:13,030 --> 00:04:18,520
+To remember: multiply every term inside the bracket by the term outside.
+
+71
+00:04:18,570 --> 00:04:20,080
+x times x is x squared.
+
+72
+00:04:20,130 --> 00:04:22,130
+Follow the sign rules.
+
+73
+00:04:22,180 --> 00:04:26,770
+A minus sign in front of a bracket changes every sign inside.
+
+74
+00:04:26,820 --> 00:04:30,240
+Collect like terms, and check with a number.
+
+75
+00:04:30,290 --> 00:04:35,470
+Great work! Now practise lesson 2.3 on Camday.

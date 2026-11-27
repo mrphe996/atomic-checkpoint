@@ -1,0 +1,315 @@
+1
+00:00:06,070 --> 00:00:08,490
+Two villages want to dig a new well.
+
+2
+00:00:08,540 --> 00:00:12,870
+It must be exactly the same distance from both villages.
+
+3
+00:00:12,920 --> 00:00:15,920
+One point that works is halfway between them.
+
+4
+00:00:15,970 --> 00:00:17,550
+But there are many more.
+
+5
+00:00:17,600 --> 00:00:22,720
+Where are all the points that are the same distance from two places?
+
+6
+00:00:22,770 --> 00:00:27,260
+What shape do the points that are equally far from two villages make?
+
+7
+00:00:27,310 --> 00:00:30,430
+Pause the video and choose.
+
+8
+00:00:30,480 --> 00:00:32,160
+They make a straight line.
+
+9
+00:00:32,210 --> 00:00:37,750
+It goes through the halfway point, at right angles to the line joining the villages.
+
+10
+00:00:37,800 --> 00:00:40,960
+It is called the perpendicular bisector.
+
+11
+00:00:41,010 --> 00:00:43,880
+Bisector means it cuts the line in half.
+
+12
+00:00:43,930 --> 00:00:47,790
+Perpendicular means it meets it at 90 degrees.
+
+13
+00:00:47,840 --> 00:00:49,870
+Remember: compasses draw arcs.
+
+14
+00:00:49,920 --> 00:00:53,970
+Every point on an arc is the same distance from its centre.
+
+15
+00:00:54,020 --> 00:00:56,460
+That distance is the radius.
+
+16
+00:00:56,510 --> 00:01:01,280
+You can construct a triangle accurately from different starting facts.
+
+17
+00:01:01,330 --> 00:01:04,450
+With three sides, called S S S, draw one side.
+
+18
+00:01:04,500 --> 00:01:08,860
+Then draw arcs from each end with the other two lengths.
+
+19
+00:01:08,910 --> 00:01:14,040
+With two sides and the angle between them, S A S, use a ruler and a protractor.
+
+20
+00:01:14,090 --> 00:01:19,190
+With two angles and the side between them, A S A, measure both angles.
+
+21
+00:01:19,240 --> 00:01:27,400
+And for a right-angled triangle, R H S, draw the right angle, then use an arc for the longest side, the hypotenuse.
+
+22
+00:01:27,450 --> 00:01:28,090
+Your turn.
+
+23
+00:01:28,140 --> 00:01:29,890
+You are given three sides.
+
+24
+00:01:29,940 --> 00:01:32,310
+Which kind of construction is that?
+
+25
+00:01:32,360 --> 00:01:35,580
+Pause the video and choose.
+
+26
+00:01:35,630 --> 00:01:38,520
+Three sides is S S S: side, side, side.
+
+27
+00:01:38,570 --> 00:01:44,690
+To construct the perpendicular bisector of A B, open the compasses to more than half of A B.
+
+28
+00:01:44,740 --> 00:01:48,120
+Draw arcs from A, above and below the line.
+
+29
+00:01:48,170 --> 00:01:49,410
+Keep the same width.
+
+30
+00:01:49,460 --> 00:01:52,980
+Draw arcs from B, so they cross the first arcs.
+
+31
+00:01:53,030 --> 00:01:54,920
+Join the two crossing points.
+
+32
+00:01:54,970 --> 00:01:59,760
+Every point on this line is the same distance from A and from B.
+
+33
+00:01:59,810 --> 00:02:05,290
+To bisect an angle, draw an arc from the vertex, O, that crosses both arms.
+
+34
+00:02:05,340 --> 00:02:10,760
+From the two crossing points, draw two equal arcs that cross each other.
+
+35
+00:02:10,810 --> 00:02:13,410
+Join the vertex to that crossing point.
+
+36
+00:02:13,460 --> 00:02:15,650
+The angle is cut exactly in half.
+
+37
+00:02:15,700 --> 00:02:20,340
+Every point on this line is the same distance from both arms.
+
+38
+00:02:20,390 --> 00:02:21,660
+Here is the method.
+
+39
+00:02:21,710 --> 00:02:25,670
+Step 1: make a quick sketch with the measurements.
+
+40
+00:02:25,720 --> 00:02:29,870
+Step 2: draw the first line accurately with a ruler.
+
+41
+00:02:29,920 --> 00:02:35,120
+Step 3: keep the compass width fixed when you draw matching arcs.
+
+42
+00:02:35,170 --> 00:02:39,950
+Step 4: leave all your arcs showing, and check by measuring.
+
+43
+00:02:40,000 --> 00:02:48,740
+Construct triangle A B C with A B equal to 7 centimetres, B C equal to 5 centimetres, and A C equal to 6 centimetres.
+
+44
+00:02:48,790 --> 00:02:50,810
+Draw A B, 7 centimetres long.
+
+45
+00:02:50,860 --> 00:02:54,940
+Set the compasses to 6 centimetres and draw an arc from A.
+
+46
+00:02:54,990 --> 00:02:59,330
+Then set them to 5 centimetres and draw an arc from B.
+
+47
+00:02:59,380 --> 00:03:01,050
+C is where the arcs cross.
+
+48
+00:03:01,100 --> 00:03:02,730
+Join A C and B C.
+
+49
+00:03:02,780 --> 00:03:06,970
+A lamp must be the same distance from the two walls of a corner.
+
+50
+00:03:07,020 --> 00:03:08,780
+Where should it go?
+
+51
+00:03:08,830 --> 00:03:14,110
+Points that are equally far from two lines that meet are on the angle bisector.
+
+52
+00:03:14,160 --> 00:03:18,240
+So the lamp goes on the bisector of the corner angle.
+
+53
+00:03:18,290 --> 00:03:18,940
+Your turn.
+
+54
+00:03:18,990 --> 00:03:23,840
+Points equally far from two lines that meet lie on which construction?
+
+55
+00:03:23,890 --> 00:03:26,430
+Pause and choose.
+
+56
+00:03:26,480 --> 00:03:30,710
+Equally far from two lines that meet means the angle bisector.
+
+57
+00:03:30,760 --> 00:03:35,480
+Equally far from two points means the perpendicular bisector.
+
+58
+00:03:35,530 --> 00:03:38,930
+Max constructs the perpendicular bisector of A B.
+
+59
+00:03:38,980 --> 00:03:41,450
+Which line goes wrong first?
+
+60
+00:03:41,500 --> 00:03:42,560
+Line 2 is wrong.
+
+61
+00:03:42,610 --> 00:03:45,070
+Both arcs must have the same radius.
+
+62
+00:03:45,120 --> 00:03:48,690
+Otherwise the line does not cut A B in half.
+
+63
+00:03:48,740 --> 00:03:52,940
+Keep the compasses at 5 centimetres for both arcs.
+
+64
+00:03:52,990 --> 00:03:55,240
+Phone networks use the same idea.
+
+65
+00:03:55,290 --> 00:03:58,370
+A phone usually connects to the nearest mast.
+
+66
+00:03:58,420 --> 00:04:05,390
+The boundary between two masts' areas is the perpendicular bisector of the line joining them.
+
+67
+00:04:05,440 --> 00:04:09,440
+Maps made of these boundaries are called Voronoi diagrams.
+
+68
+00:04:09,490 --> 00:04:14,810
+They are also used to plan school catchment areas and delivery zones.
+
+69
+00:04:14,860 --> 00:04:16,110
+One last question.
+
+70
+00:04:16,160 --> 00:04:22,180
+The perpendicular bisector of a 10 centimetre line crosses it how far from each end?
+
+71
+00:04:22,230 --> 00:04:25,530
+Pause the video and answer.
+
+72
+00:04:25,580 --> 00:04:27,440
+It cuts the line in half.
+
+73
+00:04:27,490 --> 00:04:28,660
+Half of 10 is 5.
+
+74
+00:04:28,710 --> 00:04:32,180
+It crosses 5 centimetres from each end.
+
+75
+00:04:32,230 --> 00:04:37,400
+To remember: you can construct triangles from S S S, S A S, A S A or R H S.
+
+76
+00:04:37,450 --> 00:04:42,200
+Perpendicular bisector: equal arcs from both ends of the line.
+
+77
+00:04:42,250 --> 00:04:46,780
+Angle bisector: an arc from the vertex, then two equal arcs.
+
+78
+00:04:46,830 --> 00:04:49,990
+Keep your arcs, and check by measuring.
+
+79
+00:04:50,040 --> 00:04:55,070
+Great work! Now practise lesson 5.3 on Camday.
