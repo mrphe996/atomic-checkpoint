@@ -2002,5 +2002,31 @@
     11
    ]
   }
+ },
+ "c5u11": {
+  "title": "Camday Maths Stage 5 · Unit 11: Multiplication and Division",
+  "pages": 14,
+  "dir": "media/books/c5u11/",
+  "ext": "webp",
+  "pdf": "media/books/c5u11.pdf?v=64bdd8ace7",
+  "v": "64bdd8ace7",
+  "secs": {
+   "11.1": [
+    2,
+    5
+   ],
+   "11.2": [
+    6,
+    9
+   ],
+   "11.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
  }
 }
