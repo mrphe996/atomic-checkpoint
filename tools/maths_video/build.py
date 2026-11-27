@@ -37,7 +37,27 @@ def paragraphs(stage, unit, sec):
 def cmd_text(stage, unit, sec):
     p = paragraphs(stage, unit, sec); d = work(stage, sec)
     open(os.path.join(d, "narration.txt"), "w").write("\n\n".join(p))
+    open(os.path.join(d, "narration1.txt"), "w").write(BREAK.join(p))   # one recording: `audio1` cuts it at the breaks
     print(f"{len(p)} paragraphs, {sum(map(len, p))} characters → {d}/narration.txt")
+
+
+BREAK = '\n\n<break time="1.5s" />\n\n'
+
+
+def cmd_audio1(stage, unit, sec, url):
+    """One recording of narration1.txt, cut into one clip per paragraph at the long silences (the breaks)."""
+    p = paragraphs(stage, unit, sec); d = work(stage, sec); whole = os.path.join(d, "whole.mp3")
+    subprocess.run(["curl", "-sS", "-f", "--retry", "5", "--retry-all-errors", "-o", whole, url], check=True)
+    log = subprocess.run(["ffmpeg", "-i", whole, "-af", "silencedetect=noise=-40dB:d=1.0", "-f", "null", "-"], capture_output=True, text=True).stderr
+    gaps = list(zip(map(float, re.findall(r"silence_start: ([\d.]+)", log)), map(float, re.findall(r"silence_end: ([\d.]+)", log))))
+    total = len(pcm(whole)) / 2 / RATE; gaps = [g for g in gaps if g[0] > 0.2 and g[1] < total - 0.2]
+    assert len(gaps) == len(p) - 1, f"{len(p)} paragraphs but {len(gaps)} long silences: use split=paragraph + `audio` for this lesson"
+    cuts = [0] + [x for g in gaps for x in g] + [total]
+    for i, text in enumerate(p):
+        a, b = max(0, cuts[2 * i] - 0.08), cuts[2 * i + 1] + 0.12
+        assert 9 < len(text) / (b - a) < 24, f"paragraph {i} is {b - a:.1f}s for {len(text)} characters – a cut is in the wrong place"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", whole, "-ss", str(a), "-to", str(b), "-ac", "1", "-ar", str(RATE), os.path.join(d, f"p{i:03d}.wav")], check=True)
+    print("cut into", len(p), "clips")
 
 
 def pcm(path):
@@ -49,14 +69,14 @@ def cmd_audio(stage, unit, sec, urls):
     p = paragraphs(stage, unit, sec); d = work(stage, sec)
     assert len(urls) == len(p), f"need {len(p)} audio links, got {len(urls)}"
     for i, u in enumerate(urls):
-        subprocess.run(["curl", "-sS", "-f", "-o", os.path.join(d, f"p{i:03d}.mp3"), u], check=True)
+        subprocess.run(["curl", "-sS", "-f", "--retry", "5", "--retry-all-errors", "-o", os.path.join(d, f"p{i:03d}.mp3"), u], check=True)
     print("downloaded", len(urls), "files")
 
 
 def timeline(stage, unit, sec):
     """seconds for every step from the real audio lengths; returns spec + the audio pieces in order"""
     scenes, s = lesson(stage, unit, sec); d = work(stage, sec)
-    clips = [pcm(os.path.join(d, f"p{i:03d}.mp3")) for i in range(len(paragraphs(stage, unit, sec)))]
+    clips = [pcm(next(f for f in (os.path.join(d, f"p{i:03d}{e}") for e in (".wav", ".mp3")) if os.path.exists(f))) for i in range(len(paragraphs(stage, unit, sec)))]
     dur = [len(c) / 2 / RATE for c in clips]
     pieces, t = [], 0.6
     def put(i, gap):
@@ -142,7 +162,7 @@ def cmd_render(stage, unit, sec, preview=None):
     open(srt, "w").write("\n".join(f"{i + 1}\n{fmt(c[0])} --> {fmt((caps[i + 1][0] if i + 1 < len(caps) else real) - 0.05)}\n{c[1]}\n" for i, c in enumerate(caps)))
     idx_p = os.path.join(WEB, "media", "mv", "index.json"); idx = json.load(open(idx_p)) if os.path.exists(idx_p) else {}
     idx.setdefault(str(stage), {})[sec] = {"src": f"media/mv/s{stage}/{base}.mp4", "poster": f"media/mv/s{stage}/{base}_poster.jpg", "srt": f"media/mv/s{stage}/{base}.srt",
-                                         "dur": round(real, 2), "captions": caps, "times": stops}
+                                         "dur": round(real, 2), "captions": caps, "times": stops, "up": False}   # set "up": true once the mp4 is in the video storage
     json.dump(idx, open(idx_p, "w"), ensure_ascii=False, indent=1)
     print(f"{mp4}: {real:.1f}s, {len(caps)} captions, pauses {stops}")
 
@@ -151,4 +171,5 @@ if __name__ == "__main__":
     c, st, un, sec = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
     if c == "text": cmd_text(st, un, sec)
     elif c == "audio": cmd_audio(st, un, sec, sys.argv[5:])
+    elif c == "audio1": cmd_audio1(st, un, sec, sys.argv[5])
     elif c == "render": cmd_render(st, un, sec, float(sys.argv[5]) if len(sys.argv) > 5 else None)

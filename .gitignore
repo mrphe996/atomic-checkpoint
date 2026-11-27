@@ -15,3 +15,5 @@ node_modules/
 __pycache__/
 *.pyc
 .DS_Store
+# lesson videos live in the video storage (Supabase bucket lesson-videos), not in git
+web/media/mv/**/*.mp4

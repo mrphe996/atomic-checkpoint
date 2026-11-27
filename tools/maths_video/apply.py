@@ -9,8 +9,8 @@ n = 0
 for f in sorted(glob.glob(os.path.join(WEB, "content", f"stage1{stage}-unit[0-9][0-9].json"))):
     d = json.load(open(f, encoding="utf-8")); hit = False
     for s in d["sections"]:
-        if s["id"] in vids:
+        if vids.get(s["id"], {}).get("up"):   # only videos already in the video storage ("up": true in index.json) are shown to learners
             v = vids[s["id"]]; assert set(v["times"]) == {x["id"] for x in s["stops"]}, f"{s['id']}: video pauses do not match the check questions"
-            s["lv"] = v; hit = True; n += 1
+            s["lv"] = {k: x for k, x in v.items() if k != "up"}; hit = True; n += 1
     if hit: json.dump(d, open(f, "w", encoding="utf-8"), ensure_ascii=False)
 print(f"Stage {stage}: {n} lesson videos")

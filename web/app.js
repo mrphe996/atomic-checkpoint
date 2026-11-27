@@ -9,6 +9,7 @@
   const $main = () => document.getElementById('main');
   const R = s => s.replace('.', '-');
   const secFromRoute = r => r.split('-').slice(1).join('.');
+  const CFG_VIDEO = (window.ATOMIC_CONFIG || {}).videoBase;
   const fmt = t => { t = Math.max(0, Math.round(t)); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`; };
   const fullT = (s, t) => fmt(s.video.offset + t);
   const go = (r, opts) => { if (opts) Object.assign(UI, opts); if (location.hash.slice(1) === r) render(); else location.hash = r; };
@@ -587,7 +588,7 @@
     let s = Core.sec(sid); const m = $main(); if (!s) return go('home');
     if (s.lesson && !(watch && s.lv)) return viewLesson(sid);
     // a Maths lesson's video: the same check questions, asked as pause questions at the video's own times
-    if (s.lesson) s = Object.assign({}, s, { lesson: null, video: s.lv, captions: s.lv.captions, stops: s.stops.map(x => Object.assign({}, x, { t: s.lv.times[x.id] })) });
+    if (s.lesson) s = Object.assign({}, s, { lesson: null, video: Object.assign({}, s.lv, { src: CFG_VIDEO ? CFG_VIDEO + s.lv.src.replace('media/mv/', '') : s.lv.src }), captions: s.lv.captions, stops: s.stops.map(x => Object.assign({}, x, { t: s.lv.times[x.id] })) });
     const lock = Core.secLock(st, s);
     subbar('', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}: ${C.unit.title}`), el('span', { class: 'sep' }), el('span', { class: 'ttl' }, `Lesson ${s.id} · ${s.title}`));
     if (lock) { m.append(bar(`Section ${s.id} · Video`), lockScreen(`Section ${s.id} is locked`, lock.reason, [lock])); return; }

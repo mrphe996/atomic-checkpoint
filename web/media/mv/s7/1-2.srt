@@ -1,0 +1,427 @@
+1
+00:00:07,370 --> 00:00:09,740
+Imagine a quiz with a harsh rule.
+
+2
+00:00:09,790 --> 00:00:12,540
+Every wrong answer loses you 3 points.
+
+3
+00:00:12,590 --> 00:00:15,150
+We write that as negative 3.
+
+4
+00:00:15,200 --> 00:00:17,910
+Mia gets 4 answers wrong.
+
+5
+00:00:17,960 --> 00:00:19,750
+How does her score change?
+
+6
+00:00:19,800 --> 00:00:23,410
+Pause the video and work it out.
+
+7
+00:00:23,460 --> 00:00:25,480
+Let's see it on a number line.
+
+8
+00:00:25,530 --> 00:00:27,340
+Mia starts at zero.
+
+9
+00:00:27,390 --> 00:00:30,490
+Each wrong answer is a jump of 3 to the left.
+
+10
+00:00:30,540 --> 00:00:33,000
+One, two, three, four jumps.
+
+11
+00:00:33,050 --> 00:00:35,180
+She lands on negative 12.
+
+12
+00:00:35,230 --> 00:00:39,640
+Negative 3, added 4 times, makes negative 12.
+
+13
+00:00:39,690 --> 00:00:43,910
+Adding the same number again and again is multiplying.
+
+14
+00:00:43,960 --> 00:00:47,380
+So 4 times negative 3 is negative 12.
+
+15
+00:00:47,430 --> 00:00:51,000
+Remember: 4 times 3 means 4 lots of 3.
+
+16
+00:00:51,050 --> 00:00:54,310
+3 plus 3 plus 3 plus 3 is 12.
+
+17
+00:00:54,360 --> 00:00:58,650
+The answer to a multiplication is called the product.
+
+18
+00:00:58,700 --> 00:01:01,480
+Division undoes multiplication.
+
+19
+00:01:01,530 --> 00:01:05,790
+4 times 3 is 12, so 12 divided by 3 is 4.
+
+20
+00:01:05,840 --> 00:01:08,690
+Look at these three calculations.
+
+21
+00:01:08,740 --> 00:01:10,650
+3 times 4 is 12.
+
+22
+00:01:10,700 --> 00:01:16,820
+Negative 3 times 4 is 4 lots of negative 3, which is negative 12.
+
+23
+00:01:16,870 --> 00:01:20,820
+And 3 times negative 4 is 3 lots of negative 4.
+
+24
+00:01:20,870 --> 00:01:23,490
+That is also negative 12.
+
+25
+00:01:23,540 --> 00:01:24,690
+Here is the rule.
+
+26
+00:01:24,740 --> 00:01:30,080
+When exactly one of the numbers is negative, the product is negative.
+
+27
+00:01:30,130 --> 00:01:34,340
+So find the size first, then put a minus sign in front.
+
+28
+00:01:34,390 --> 00:01:37,720
+Division is the inverse of multiplication.
+
+29
+00:01:37,770 --> 00:01:41,640
+We know negative 3 times 4 is negative 12.
+
+30
+00:01:41,690 --> 00:01:46,300
+So negative 12 divided by 4 must be negative 3.
+
+31
+00:01:46,350 --> 00:01:47,590
+Think of a debt.
+
+32
+00:01:47,640 --> 00:01:50,590
+A group of 5 friends owes 20 dollars.
+
+33
+00:01:50,640 --> 00:01:53,490
+We write that as negative 20.
+
+34
+00:01:53,540 --> 00:01:55,240
+They share it equally.
+
+35
+00:01:55,290 --> 00:01:58,670
+That splits negative 20 into 5 equal jumps.
+
+36
+00:01:58,720 --> 00:02:01,130
+Each jump is negative 4.
+
+37
+00:02:01,180 --> 00:02:04,360
+Negative 20 divided by 5 is negative 4.
+
+38
+00:02:04,410 --> 00:02:07,890
+Each friend has a debt of 4 dollars.
+
+39
+00:02:07,940 --> 00:02:08,650
+Your turn.
+
+40
+00:02:08,700 --> 00:02:10,780
+Work out 6 times negative 4.
+
+41
+00:02:10,830 --> 00:02:14,230
+Pause the video and try it.
+
+42
+00:02:14,280 --> 00:02:16,510
+Size first: 6 times 4 is 24.
+
+43
+00:02:16,560 --> 00:02:22,000
+One of the numbers is negative, so the answer is negative 24.
+
+44
+00:02:22,050 --> 00:02:23,350
+Here is the method.
+
+45
+00:02:23,400 --> 00:02:28,200
+Step 1: ignore the signs and work out the size of the answer.
+
+46
+00:02:28,250 --> 00:02:30,750
+Step 2: count the negative numbers.
+
+47
+00:02:30,800 --> 00:02:35,000
+If exactly one is negative, the answer is negative.
+
+48
+00:02:35,050 --> 00:02:37,260
+Step 3: check with the inverse.
+
+49
+00:02:37,310 --> 00:02:41,090
+Multiply your answer back, or divide it back.
+
+50
+00:02:41,140 --> 00:02:44,080
+Work out 8 times negative 5.
+
+51
+00:02:44,130 --> 00:02:45,180
+Size first.
+
+52
+00:02:45,230 --> 00:02:47,330
+8 times 5 is 40.
+
+53
+00:02:47,380 --> 00:02:51,880
+One number is negative, so the answer is negative 40.
+
+54
+00:02:51,930 --> 00:02:57,040
+Check with the inverse: negative 40 divided by 8 is negative 5.
+
+55
+00:02:57,090 --> 00:02:58,250
+Correct.
+
+56
+00:02:58,300 --> 00:03:00,460
+The order does not matter.
+
+57
+00:03:00,510 --> 00:03:06,620
+Negative 9 times 3: 9 times 3 is 27, one negative, so negative 27.
+
+58
+00:03:06,670 --> 00:03:08,610
+Find the missing number.
+
+59
+00:03:08,660 --> 00:03:12,240
+6 times something equals negative 24.
+
+60
+00:03:12,290 --> 00:03:14,620
+To undo times 6, divide by 6.
+
+61
+00:03:14,670 --> 00:03:19,040
+The missing number is negative 24 divided by 6.
+
+62
+00:03:19,090 --> 00:03:20,700
+24 divided by 6 is 4.
+
+63
+00:03:20,750 --> 00:03:24,260
+A negative divided by a positive is negative.
+
+64
+00:03:24,310 --> 00:03:27,650
+So the missing number is negative 4.
+
+65
+00:03:27,700 --> 00:03:31,220
+Check: 6 times negative 4 is negative 24.
+
+66
+00:03:31,270 --> 00:03:32,560
+It works.
+
+67
+00:03:32,610 --> 00:03:33,310
+Your turn.
+
+68
+00:03:33,360 --> 00:03:36,400
+Something divided by 5 equals negative 3.
+
+69
+00:03:36,450 --> 00:03:38,200
+Find the missing number.
+
+70
+00:03:38,250 --> 00:03:41,260
+Pause and work it out.
+
+71
+00:03:41,310 --> 00:03:44,440
+Undo divide by 5 by multiplying by 5.
+
+72
+00:03:44,490 --> 00:03:47,350
+Negative 3 times 5 is negative 15.
+
+73
+00:03:47,400 --> 00:03:51,850
+Check: negative 15 divided by 5 is negative 3.
+
+74
+00:03:51,900 --> 00:03:56,080
+Work out 4 times, bracket, negative 7 plus 2.
+
+75
+00:03:56,130 --> 00:03:57,650
+Brackets come first.
+
+76
+00:03:57,700 --> 00:04:02,610
+Negative 7 plus 2: start at negative 7 and move 2 to the right.
+
+77
+00:04:02,660 --> 00:04:04,650
+That is negative 5.
+
+78
+00:04:04,700 --> 00:04:05,810
+Now multiply.
+
+79
+00:04:05,860 --> 00:04:09,390
+4 times negative 5 is negative 20.
+
+80
+00:04:09,440 --> 00:04:16,350
+You can check another way: 4 times negative 7 is negative 28, and 4 times 2 is 8.
+
+81
+00:04:16,400 --> 00:04:19,270
+Negative 28 plus 8 is negative 20.
+
+82
+00:04:19,320 --> 00:04:21,200
+Both ways agree.
+
+83
+00:04:21,250 --> 00:04:25,280
+Ravi worked out 5 times, bracket, negative 3 minus 1.
+
+84
+00:04:25,330 --> 00:04:27,990
+Which line goes wrong first?
+
+85
+00:04:28,040 --> 00:04:29,270
+Line 1 is wrong.
+
+86
+00:04:29,320 --> 00:04:34,810
+Negative 3 minus 1 means start at negative 3 and move 1 further left.
+
+87
+00:04:34,860 --> 00:04:38,160
+That is negative 4, not negative 2.
+
+88
+00:04:38,210 --> 00:04:46,470
+The correct working: negative 3 minus 1 is negative 4, and 5 times negative 4 is negative 20.
+
+89
+00:04:46,520 --> 00:04:49,210
+Negative numbers describe depths too.
+
+90
+00:04:49,260 --> 00:04:56,300
+The shore of the Dead Sea is the lowest land on Earth, about 430 metres below sea level.
+
+91
+00:04:56,350 --> 00:05:03,640
+If you walked down to it in 10 equal stages, each stage would take you down 43 metres.
+
+92
+00:05:03,690 --> 00:05:07,770
+Negative 430 divided by 10 is negative 43.
+
+93
+00:05:07,820 --> 00:05:12,510
+A diver going down 5 metres every minute uses the same idea.
+
+94
+00:05:12,560 --> 00:05:16,540
+After 8 minutes, 8 times negative 5 is negative 40.
+
+95
+00:05:16,590 --> 00:05:20,330
+The diver is 40 metres below the surface.
+
+96
+00:05:20,380 --> 00:05:21,700
+One last question.
+
+97
+00:05:21,750 --> 00:05:24,290
+Work out negative 48 divided by 8.
+
+98
+00:05:24,340 --> 00:05:27,750
+Pause the video and answer.
+
+99
+00:05:27,800 --> 00:05:30,320
+Size first: 48 divided by 8 is 6.
+
+100
+00:05:30,370 --> 00:05:33,820
+A negative divided by a positive is negative.
+
+101
+00:05:33,870 --> 00:05:36,550
+So the answer is negative 6.
+
+102
+00:05:36,600 --> 00:05:40,780
+Check: negative 6 times 8 is negative 48.
+
+103
+00:05:40,830 --> 00:05:46,320
+To remember: a positive times a negative, in either order, is negative.
+
+104
+00:05:46,370 --> 00:05:50,130
+A negative divided by a positive is negative.
+
+105
+00:05:50,180 --> 00:05:53,690
+Find the size first, then decide the sign.
+
+106
+00:05:53,740 --> 00:05:57,540
+Do brackets first, and check with the inverse.
+
+107
+00:05:57,590 --> 00:06:02,790
+Great work! Now practise lesson 1.2 on Camday.

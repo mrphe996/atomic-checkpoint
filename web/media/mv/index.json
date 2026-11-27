@@ -336,7 +336,451 @@
     "1.1-k2": 130.69,
     "1.1-k3": 203.69,
     "1.1-k4": 264.61
-   }
+   },
+   "up": true
+  },
+  "1.2": {
+   "src": "media/mv/s7/1-2.mp4",
+   "poster": "media/mv/s7/1-2_poster.jpg",
+   "srt": "media/mv/s7/1-2.srt",
+   "dur": 362.84,
+   "captions": [
+    [
+     7.37,
+     "Imagine a quiz with a harsh rule."
+    ],
+    [
+     9.79,
+     "Every wrong answer loses you 3 points."
+    ],
+    [
+     12.59,
+     "We write that as negative 3."
+    ],
+    [
+     15.2,
+     "Mia gets 4 answers wrong."
+    ],
+    [
+     17.96,
+     "How does her score change?"
+    ],
+    [
+     19.8,
+     "Pause the video and work it out."
+    ],
+    [
+     23.46,
+     "Let's see it on a number line."
+    ],
+    [
+     25.53,
+     "Mia starts at zero."
+    ],
+    [
+     27.39,
+     "Each wrong answer is a jump of 3 to the left."
+    ],
+    [
+     30.54,
+     "One, two, three, four jumps."
+    ],
+    [
+     33.05,
+     "She lands on negative 12."
+    ],
+    [
+     35.23,
+     "Negative 3, added 4 times, makes negative 12."
+    ],
+    [
+     39.69,
+     "Adding the same number again and again is multiplying."
+    ],
+    [
+     43.96,
+     "So 4 times negative 3 is negative 12."
+    ],
+    [
+     47.43,
+     "Remember: 4 times 3 means 4 lots of 3."
+    ],
+    [
+     51.05,
+     "3 plus 3 plus 3 plus 3 is 12."
+    ],
+    [
+     54.36,
+     "The answer to a multiplication is called the product."
+    ],
+    [
+     58.7,
+     "Division undoes multiplication."
+    ],
+    [
+     61.53,
+     "4 times 3 is 12, so 12 divided by 3 is 4."
+    ],
+    [
+     65.84,
+     "Look at these three calculations."
+    ],
+    [
+     68.74,
+     "3 times 4 is 12."
+    ],
+    [
+     70.7,
+     "Negative 3 times 4 is 4 lots of negative 3, which is negative 12."
+    ],
+    [
+     76.87,
+     "And 3 times negative 4 is 3 lots of negative 4."
+    ],
+    [
+     80.87,
+     "That is also negative 12."
+    ],
+    [
+     83.54,
+     "Here is the rule."
+    ],
+    [
+     84.74,
+     "When exactly one of the numbers is negative, the product is negative."
+    ],
+    [
+     90.13,
+     "So find the size first, then put a minus sign in front."
+    ],
+    [
+     94.39,
+     "Division is the inverse of multiplication."
+    ],
+    [
+     97.77,
+     "We know negative 3 times 4 is negative 12."
+    ],
+    [
+     101.69,
+     "So negative 12 divided by 4 must be negative 3."
+    ],
+    [
+     106.35,
+     "Think of a debt."
+    ],
+    [
+     107.64,
+     "A group of 5 friends owes 20 dollars."
+    ],
+    [
+     110.64,
+     "We write that as negative 20."
+    ],
+    [
+     113.54,
+     "They share it equally."
+    ],
+    [
+     115.29,
+     "That splits negative 20 into 5 equal jumps."
+    ],
+    [
+     118.72,
+     "Each jump is negative 4."
+    ],
+    [
+     121.18,
+     "Negative 20 divided by 5 is negative 4."
+    ],
+    [
+     124.41,
+     "Each friend has a debt of 4 dollars."
+    ],
+    [
+     127.94,
+     "Your turn."
+    ],
+    [
+     128.7,
+     "Work out 6 times negative 4."
+    ],
+    [
+     130.83,
+     "Pause the video and try it."
+    ],
+    [
+     134.28,
+     "Size first: 6 times 4 is 24."
+    ],
+    [
+     136.56,
+     "One of the numbers is negative, so the answer is negative 24."
+    ],
+    [
+     142.05,
+     "Here is the method."
+    ],
+    [
+     143.4,
+     "Step 1: ignore the signs and work out the size of the answer."
+    ],
+    [
+     148.25,
+     "Step 2: count the negative numbers."
+    ],
+    [
+     150.8,
+     "If exactly one is negative, the answer is negative."
+    ],
+    [
+     155.05,
+     "Step 3: check with the inverse."
+    ],
+    [
+     157.31,
+     "Multiply your answer back, or divide it back."
+    ],
+    [
+     161.14,
+     "Work out 8 times negative 5."
+    ],
+    [
+     164.13,
+     "Size first."
+    ],
+    [
+     165.23,
+     "8 times 5 is 40."
+    ],
+    [
+     167.38,
+     "One number is negative, so the answer is negative 40."
+    ],
+    [
+     171.93,
+     "Check with the inverse: negative 40 divided by 8 is negative 5."
+    ],
+    [
+     177.09,
+     "Correct."
+    ],
+    [
+     178.3,
+     "The order does not matter."
+    ],
+    [
+     180.51,
+     "Negative 9 times 3: 9 times 3 is 27, one negative, so negative 27."
+    ],
+    [
+     186.67,
+     "Find the missing number."
+    ],
+    [
+     188.66,
+     "6 times something equals negative 24."
+    ],
+    [
+     192.29,
+     "To undo times 6, divide by 6."
+    ],
+    [
+     194.67,
+     "The missing number is negative 24 divided by 6."
+    ],
+    [
+     199.09,
+     "24 divided by 6 is 4."
+    ],
+    [
+     200.75,
+     "A negative divided by a positive is negative."
+    ],
+    [
+     204.31,
+     "So the missing number is negative 4."
+    ],
+    [
+     207.7,
+     "Check: 6 times negative 4 is negative 24."
+    ],
+    [
+     211.27,
+     "It works."
+    ],
+    [
+     212.61,
+     "Your turn."
+    ],
+    [
+     213.36,
+     "Something divided by 5 equals negative 3."
+    ],
+    [
+     216.45,
+     "Find the missing number."
+    ],
+    [
+     218.25,
+     "Pause and work it out."
+    ],
+    [
+     221.31,
+     "Undo divide by 5 by multiplying by 5."
+    ],
+    [
+     224.49,
+     "Negative 3 times 5 is negative 15."
+    ],
+    [
+     227.4,
+     "Check: negative 15 divided by 5 is negative 3."
+    ],
+    [
+     231.9,
+     "Work out 4 times, bracket, negative 7 plus 2."
+    ],
+    [
+     236.13,
+     "Brackets come first."
+    ],
+    [
+     237.7,
+     "Negative 7 plus 2: start at negative 7 and move 2 to the right."
+    ],
+    [
+     242.66,
+     "That is negative 5."
+    ],
+    [
+     244.7,
+     "Now multiply."
+    ],
+    [
+     245.86,
+     "4 times negative 5 is negative 20."
+    ],
+    [
+     249.44,
+     "You can check another way: 4 times negative 7 is negative 28, and 4 times 2 is 8."
+    ],
+    [
+     256.4,
+     "Negative 28 plus 8 is negative 20."
+    ],
+    [
+     259.32,
+     "Both ways agree."
+    ],
+    [
+     261.25,
+     "Ravi worked out 5 times, bracket, negative 3 minus 1."
+    ],
+    [
+     265.33,
+     "Which line goes wrong first?"
+    ],
+    [
+     268.04,
+     "Line 1 is wrong."
+    ],
+    [
+     269.32,
+     "Negative 3 minus 1 means start at negative 3 and move 1 further left."
+    ],
+    [
+     274.86,
+     "That is negative 4, not negative 2."
+    ],
+    [
+     278.21,
+     "The correct working: negative 3 minus 1 is negative 4, and 5 times negative 4 is negative 20."
+    ],
+    [
+     286.52,
+     "Negative numbers describe depths too."
+    ],
+    [
+     289.26,
+     "The shore of the Dead Sea is the lowest land on Earth, about 430 metres below sea level."
+    ],
+    [
+     296.35,
+     "If you walked down to it in 10 equal stages, each stage would take you down 43 metres."
+    ],
+    [
+     303.69,
+     "Negative 430 divided by 10 is negative 43."
+    ],
+    [
+     307.82,
+     "A diver going down 5 metres every minute uses the same idea."
+    ],
+    [
+     312.56,
+     "After 8 minutes, 8 times negative 5 is negative 40."
+    ],
+    [
+     316.59,
+     "The diver is 40 metres below the surface."
+    ],
+    [
+     320.38,
+     "One last question."
+    ],
+    [
+     321.75,
+     "Work out negative 48 divided by 8."
+    ],
+    [
+     324.34,
+     "Pause the video and answer."
+    ],
+    [
+     327.8,
+     "Size first: 48 divided by 8 is 6."
+    ],
+    [
+     330.37,
+     "A negative divided by a positive is negative."
+    ],
+    [
+     333.87,
+     "So the answer is negative 6."
+    ],
+    [
+     336.6,
+     "Check: negative 6 times 8 is negative 48."
+    ],
+    [
+     340.83,
+     "To remember: a positive times a negative, in either order, is negative."
+    ],
+    [
+     346.37,
+     "A negative divided by a positive is negative."
+    ],
+    [
+     350.18,
+     "Find the size first, then decide the sign."
+    ],
+    [
+     353.74,
+     "Do brackets first, and check with the inverse."
+    ],
+    [
+     357.59,
+     "Great work! Now practise lesson 1.2 on Camday."
+    ]
+   ],
+   "times": {
+    "1.2-k1": 22.41,
+    "1.2-k2": 133.23,
+    "1.2-k3": 220.26,
+    "1.2-k4": 326.75
+   },
+   "up": false
   }
  }
 }

@@ -14,6 +14,8 @@ const cfg = {
   stagePrice: e('COURSE_PRICE', 'US$49'), pairPrice: e('PAIR_PRICE', 'US$95'), bundlePrice: e('BUNDLE_PRICE', 'US$119'),
   // stages learners cannot open yet, e.g. LOCKED_STAGES=19 (11–19 = Mathematics Stages 1–9, 22–29 = ESL Stages 2–9). Default: every course is open (26/11/2026).
   lockedStages: e('LOCKED_STAGES', '').split(',').map(x => Number(x.trim())).filter(Boolean),
+  // lesson videos live outside the repo: VIDEO_BASE=https://<ref>.supabase.co/storage/v1/object/public/lesson-videos/ (empty = the local web/media/mv files)
+  videoBase: e('VIDEO_BASE'),
   supportEmail: e('SUPPORT_EMAIL', 'support@example.com'), legalVersion: '2026-11-draft',
   release: (process.env.VERCEL_GIT_COMMIT_SHA || '').slice(0, 7)
 };
