@@ -2370,5 +2370,27 @@
     16
    ]
   }
+ },
+ "c4u09": {
+  "title": "Camday Maths Stage 4 · Unit 9: Comparing, Rounding and Dividing",
+  "pages": 10,
+  "dir": "media/books/c4u09/",
+  "ext": "webp",
+  "pdf": "media/books/c4u09.pdf?v=7a22fc8fba",
+  "v": "7a22fc8fba",
+  "secs": {
+   "9.1": [
+    2,
+    5
+   ],
+   "9.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
