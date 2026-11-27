@@ -2072,5 +2072,27 @@
     10
    ]
   }
+ },
+ "c5u14": {
+  "title": "Camday Maths Stage 5 · Unit 14: Area and Perimeter",
+  "pages": 10,
+  "dir": "media/books/c5u14/",
+  "ext": "webp",
+  "pdf": "media/books/c5u14.pdf?v=08d3646eaf",
+  "v": "08d3646eaf",
+  "secs": {
+   "14.1": [
+    2,
+    5
+   ],
+   "14.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
