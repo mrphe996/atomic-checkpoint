@@ -2458,5 +2458,27 @@
     10
    ]
   }
+ },
+ "c4u13": {
+  "title": "Camday Maths Stage 4 · Unit 13: Addition and Subtraction",
+  "pages": 10,
+  "dir": "media/books/c4u13/",
+  "ext": "webp",
+  "pdf": "media/books/c4u13.pdf?v=faad1ed74d",
+  "v": "faad1ed74d",
+  "secs": {
+   "13.1": [
+    2,
+    5
+   ],
+   "13.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
