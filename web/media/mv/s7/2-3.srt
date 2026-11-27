@@ -1,0 +1,363 @@
+1
+00:00:06,590 --> 00:00:08,940
+Red bricks are x centimetres long.
+
+2
+00:00:08,990 --> 00:00:11,960
+Blue bricks are y centimetres long.
+
+3
+00:00:12,010 --> 00:00:17,380
+You join 3 red bricks, then 2 blue bricks, then 1 more red brick.
+
+4
+00:00:17,430 --> 00:00:18,710
+How long is the row?
+
+5
+00:00:18,760 --> 00:00:20,720
+Write it as simply as you can.
+
+6
+00:00:20,770 --> 00:00:23,720
+Pause the video and try.
+
+7
+00:00:23,770 --> 00:00:26,640
+The row is 3 x, plus 2 y, plus x.
+
+8
+00:00:26,690 --> 00:00:28,740
+Put the red bricks together.
+
+9
+00:00:28,790 --> 00:00:31,240
+3 x and 1 more x make 4 x.
+
+10
+00:00:31,290 --> 00:00:35,630
+The blue bricks are a different length, so they stay separate.
+
+11
+00:00:35,680 --> 00:00:37,880
+The row is 4 x plus 2 y.
+
+12
+00:00:37,930 --> 00:00:44,580
+In the expression 4 x plus 3 y minus 2, the terms are 4 x, 3 y, and negative 2.
+
+13
+00:00:44,630 --> 00:00:48,210
+The sign in front of a term belongs to that term.
+
+14
+00:00:48,260 --> 00:00:51,090
+Like terms have exactly the same letters.
+
+15
+00:00:51,140 --> 00:00:53,540
+3 x and 5 x are like terms.
+
+16
+00:00:53,590 --> 00:00:55,880
+3 x and 3 y are not like terms.
+
+17
+00:00:55,930 --> 00:00:58,390
+The letters are different.
+
+18
+00:00:58,440 --> 00:01:01,250
+x and x squared are not like terms either.
+
+19
+00:01:01,300 --> 00:01:03,500
+The powers are different.
+
+20
+00:01:03,550 --> 00:01:09,060
+You add or subtract like terms by adding or subtracting the numbers in front.
+
+21
+00:01:09,110 --> 00:01:11,050
+3 x plus 2 x is 5 x.
+
+22
+00:01:11,100 --> 00:01:13,010
+Unlike terms stay separate.
+
+23
+00:01:13,060 --> 00:01:16,450
+3 x plus 2 y cannot be made any simpler.
+
+24
+00:01:16,500 --> 00:01:20,610
+To simplify an expression, collect each kind of like term.
+
+25
+00:01:20,660 --> 00:01:23,750
+Try 6 a plus 4 b, minus 2 a, plus b.
+
+26
+00:01:23,800 --> 00:01:26,440
+The a terms are 6 a and minus 2 a.
+
+27
+00:01:26,490 --> 00:01:28,660
+6 a minus 2 a is 4 a.
+
+28
+00:01:28,710 --> 00:01:30,620
+The b terms are 4 b and b.
+
+29
+00:01:30,670 --> 00:01:32,280
+Remember, b means 1 b.
+
+30
+00:01:32,330 --> 00:01:34,340
+4 b plus 1 b is 5 b.
+
+31
+00:01:34,390 --> 00:01:38,210
+So the expression simplifies to 4 a plus 5 b.
+
+32
+00:01:38,260 --> 00:01:38,940
+Your turn.
+
+33
+00:01:38,990 --> 00:01:41,250
+Simplify 7 y, minus 2 y, plus y.
+
+34
+00:01:41,300 --> 00:01:44,600
+Pause the video and try it.
+
+35
+00:01:44,650 --> 00:01:46,320
+They are all y terms.
+
+36
+00:01:46,370 --> 00:01:49,120
+7 minus 2 is 5, and 5 plus 1 is 6.
+
+37
+00:01:49,170 --> 00:01:51,140
+The answer is 6 y.
+
+38
+00:01:51,190 --> 00:01:52,460
+Here is the method.
+
+39
+00:01:52,510 --> 00:01:57,170
+Step 1: mark each kind of like term, together with its sign.
+
+40
+00:01:57,220 --> 00:02:01,650
+Step 2: add or subtract the coefficients of each kind.
+
+41
+00:02:01,700 --> 00:02:03,690
+Step 3: write each kind once.
+
+42
+00:02:03,740 --> 00:02:07,400
+Plain numbers are like terms with each other.
+
+43
+00:02:07,450 --> 00:02:13,030
+Step 4: check by putting a number into both the question and your answer.
+
+44
+00:02:13,080 --> 00:02:16,790
+Simplify 5 x plus 3 y, plus 2 x, minus y.
+
+45
+00:02:16,840 --> 00:02:19,880
+The x terms: 5 x plus 2 x is 7 x.
+
+46
+00:02:19,930 --> 00:02:22,760
+The y terms: 3 y minus y is 2 y.
+
+47
+00:02:22,810 --> 00:02:25,480
+The answer is 7 x plus 2 y.
+
+48
+00:02:25,530 --> 00:02:28,450
+Check with x equals 1 and y equals 1.
+
+49
+00:02:28,500 --> 00:02:32,870
+The question gives 5 plus 3 plus 2 minus 1, which is 9.
+
+50
+00:02:32,920 --> 00:02:36,790
+The answer gives 7 plus 2, which is 9 too.
+
+51
+00:02:36,840 --> 00:02:40,710
+Simplify 8 plus 3 n, minus 5, minus 7 n.
+
+52
+00:02:40,760 --> 00:02:43,890
+The n terms: 3 n minus 7 n is negative 4 n.
+
+53
+00:02:43,940 --> 00:02:46,960
+The minus sign belongs to the 7 n.
+
+54
+00:02:47,010 --> 00:02:50,380
+The plain numbers: 8 minus 5 is 3.
+
+55
+00:02:50,430 --> 00:02:56,350
+So we get negative 4 n plus 3, which is usually written as 3 minus 4 n.
+
+56
+00:02:56,400 --> 00:02:57,110
+Your turn.
+
+57
+00:02:57,160 --> 00:03:00,100
+Simplify 2 a plus 5, plus 3 a, minus 1.
+
+58
+00:03:00,150 --> 00:03:03,190
+Pause and work it out.
+
+59
+00:03:03,240 --> 00:03:05,820
+The a terms: 2 a plus 3 a is 5 a.
+
+60
+00:03:05,870 --> 00:03:08,050
+The numbers: 5 minus 1 is 4.
+
+61
+00:03:08,100 --> 00:03:10,600
+The answer is 5 a plus 4.
+
+62
+00:03:10,650 --> 00:03:15,580
+Simplify 3 x squared, plus 2 x, minus x squared, plus 5 x.
+
+63
+00:03:15,630 --> 00:03:20,760
+The x squared terms: 3 x squared minus x squared is 2 x squared.
+
+64
+00:03:20,810 --> 00:03:23,920
+The x terms: 2 x plus 5 x is 7 x.
+
+65
+00:03:23,970 --> 00:03:26,440
+The answer is 2 x squared plus 7 x.
+
+66
+00:03:26,490 --> 00:03:29,590
+You cannot combine x squared with x.
+
+67
+00:03:29,640 --> 00:03:32,380
+Ben simplifies 4 m plus 3 n plus 2 m.
+
+68
+00:03:32,430 --> 00:03:34,430
+Which line is wrong?
+
+69
+00:03:34,480 --> 00:03:35,530
+Line 2 is wrong.
+
+70
+00:03:35,580 --> 00:03:40,120
+m and n are unlike terms, so they cannot be added together.
+
+71
+00:03:40,170 --> 00:03:42,070
+Only 4 m and 2 m combine.
+
+72
+00:03:42,120 --> 00:03:43,160
+They make 6 m.
+
+73
+00:03:43,210 --> 00:03:45,820
+The answer is 6 m plus 3 n.
+
+74
+00:03:45,870 --> 00:03:48,930
+You collect like terms every time you shop.
+
+75
+00:03:48,980 --> 00:03:54,600
+Imagine you buy 3 apples and 2 bananas, then go back for 2 more apples.
+
+76
+00:03:54,650 --> 00:03:57,370
+The till does not list them one by one.
+
+77
+00:03:57,420 --> 00:04:00,830
+It collects them: 5 apples and 2 bananas.
+
+78
+00:04:00,880 --> 00:04:09,200
+If an apple costs 40 cents and a banana costs 30 cents, the bill is 5 times 40, plus 2 times 30.
+
+79
+00:04:09,250 --> 00:04:11,320
+That is 260 cents.
+
+80
+00:04:11,370 --> 00:04:12,670
+One last question.
+
+81
+00:04:12,720 --> 00:04:15,980
+Simplify 6 x plus 2 y, minus 4 x, minus 5 y.
+
+82
+00:04:16,030 --> 00:04:19,400
+Pause the video and answer.
+
+83
+00:04:19,450 --> 00:04:22,010
+The x terms: 6 x minus 4 x is 2 x.
+
+84
+00:04:22,060 --> 00:04:25,310
+The y terms: 2 y minus 5 y is negative 3 y.
+
+85
+00:04:25,360 --> 00:04:28,010
+The answer is 2 x minus 3 y.
+
+86
+00:04:28,060 --> 00:04:33,020
+To remember: like terms have the same letters and the same powers.
+
+87
+00:04:33,070 --> 00:04:36,870
+Collect them by adding or subtracting the coefficients.
+
+88
+00:04:36,920 --> 00:04:40,080
+The sign belongs to the term after it.
+
+89
+00:04:40,130 --> 00:04:42,600
+Unlike terms stay separate.
+
+90
+00:04:42,650 --> 00:04:46,140
+Check your answer by substituting a number.
+
+91
+00:04:46,190 --> 00:04:51,310
+Great work! Now practise lesson 2.3 on Camday.

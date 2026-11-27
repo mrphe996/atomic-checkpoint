@@ -1,0 +1,355 @@
+1
+00:00:06,430 --> 00:00:08,110
+A school orders 4 packs.
+
+2
+00:00:08,160 --> 00:00:11,180
+Each pack has n pens and 3 pencils.
+
+3
+00:00:11,230 --> 00:00:13,540
+How many items is that altogether?
+
+4
+00:00:13,590 --> 00:00:15,830
+Write the total without brackets.
+
+5
+00:00:15,880 --> 00:00:18,900
+Pause the video and try.
+
+6
+00:00:18,950 --> 00:00:21,120
+One pack holds n plus 3 items.
+
+7
+00:00:21,170 --> 00:00:23,710
+So 4 packs hold 4 lots of n plus 3.
+
+8
+00:00:23,760 --> 00:00:26,410
+We write that with a bracket.
+
+9
+00:00:26,460 --> 00:00:30,340
+Count the pens first: 4 packs of n pens is 4 n.
+
+10
+00:00:30,390 --> 00:00:34,660
+Then the pencils: 4 packs of 3 pencils is 12.
+
+11
+00:00:34,710 --> 00:00:37,080
+Altogether, that is 4 n plus 12.
+
+12
+00:00:37,130 --> 00:00:39,970
+Both ways count the same items.
+
+13
+00:00:40,020 --> 00:00:42,720
+This already works with numbers.
+
+14
+00:00:42,770 --> 00:00:48,100
+4 times, bracket, 10 plus 3, is 4 times 13, which is 52.
+
+15
+00:00:48,150 --> 00:00:54,690
+You get the same answer if you multiply each part: 4 times 10, plus 4 times 3.
+
+16
+00:00:54,740 --> 00:00:57,940
+That is 40 plus 12, which is 52.
+
+17
+00:00:57,990 --> 00:01:03,920
+To expand a bracket, multiply every term inside the bracket by the term outside.
+
+18
+00:01:03,970 --> 00:01:07,840
+For 4, bracket, n plus 3: 4 times n is 4 n.
+
+19
+00:01:07,890 --> 00:01:10,540
+And 4 times 3 is 12.
+
+20
+00:01:10,590 --> 00:01:12,460
+A multiplication grid helps.
+
+21
+00:01:12,510 --> 00:01:17,740
+Put the outside term at the side, and the inside terms along the top.
+
+22
+00:01:17,790 --> 00:01:22,320
+So 4, bracket, n plus 3, expands to 4 n plus 12.
+
+23
+00:01:22,370 --> 00:01:23,030
+Your turn.
+
+24
+00:01:23,080 --> 00:01:25,040
+Expand 2, bracket, x plus 9.
+
+25
+00:01:25,090 --> 00:01:28,370
+Pause the video and try it.
+
+26
+00:01:28,420 --> 00:01:29,950
+2 times x is 2 x.
+
+27
+00:01:30,000 --> 00:01:31,430
+2 times 9 is 18.
+
+28
+00:01:31,480 --> 00:01:34,400
+The answer is 2 x plus 18.
+
+29
+00:01:34,450 --> 00:01:36,410
+Keep the sign of each term.
+
+30
+00:01:36,460 --> 00:01:39,120
+Expand 5, bracket, x minus 2.
+
+31
+00:01:39,170 --> 00:01:40,600
+5 times x is 5 x.
+
+32
+00:01:40,650 --> 00:01:43,560
+5 times negative 2 is negative 10.
+
+33
+00:01:43,610 --> 00:01:46,720
+So the answer is 5 x minus 10.
+
+34
+00:01:46,770 --> 00:01:49,250
+The term outside can be a letter too.
+
+35
+00:01:49,300 --> 00:01:50,680
+a, bracket, a plus 4.
+
+36
+00:01:50,730 --> 00:01:54,310
+a times a is a squared, and a times 4 is 4 a.
+
+37
+00:01:54,360 --> 00:01:55,650
+Here is the method.
+
+38
+00:01:55,700 --> 00:02:00,380
+Step 1: multiply the term outside by the first term inside.
+
+39
+00:02:00,430 --> 00:02:05,460
+Step 2: multiply it by the second term inside, and keep its sign.
+
+40
+00:02:05,510 --> 00:02:08,530
+Step 3: write the results with their signs.
+
+41
+00:02:08,580 --> 00:02:11,440
+Simplify if there are like terms.
+
+42
+00:02:11,490 --> 00:02:14,120
+Step 4: check with a number.
+
+43
+00:02:14,170 --> 00:02:17,230
+Expand 6, bracket, 2 k minus 3.
+
+44
+00:02:17,280 --> 00:02:19,930
+6 times 2 k is 12 k.
+
+45
+00:02:19,980 --> 00:02:22,780
+6 times negative 3 is negative 18.
+
+46
+00:02:22,830 --> 00:02:24,590
+Keep the minus.
+
+47
+00:02:24,640 --> 00:02:27,700
+The answer is 12 k minus 18.
+
+48
+00:02:27,750 --> 00:02:29,530
+Check with k equals 2.
+
+49
+00:02:29,580 --> 00:02:32,840
+The bracket gives 6 times 1, which is 6.
+
+50
+00:02:32,890 --> 00:02:37,200
+The answer gives 24 minus 18, which is also 6.
+
+51
+00:02:37,250 --> 00:02:37,940
+Your turn.
+
+52
+00:02:37,990 --> 00:02:40,060
+Expand 8, bracket, 3 minus p.
+
+53
+00:02:40,110 --> 00:02:43,080
+Pause and work it out.
+
+54
+00:02:43,130 --> 00:02:44,470
+8 times 3 is 24.
+
+55
+00:02:44,520 --> 00:02:47,520
+8 times negative p is negative 8 p.
+
+56
+00:02:47,570 --> 00:02:50,410
+The answer is 24 minus 8 p.
+
+57
+00:02:50,460 --> 00:02:56,280
+Expand and simplify 2, bracket, x plus 5, plus 3, bracket, x minus 1.
+
+58
+00:02:56,330 --> 00:02:59,720
+The first bracket gives 2 x plus 10.
+
+59
+00:02:59,770 --> 00:03:03,090
+The second bracket gives 3 x minus 3.
+
+60
+00:03:03,140 --> 00:03:05,040
+Now collect like terms.
+
+61
+00:03:05,090 --> 00:03:06,730
+2 x plus 3 x is 5 x.
+
+62
+00:03:06,780 --> 00:03:08,080
+10 minus 3 is 7.
+
+63
+00:03:08,130 --> 00:03:10,750
+The answer is 5 x plus 7.
+
+64
+00:03:10,800 --> 00:03:13,360
+Aisha expands 5, bracket, n plus 4.
+
+65
+00:03:13,410 --> 00:03:15,400
+Which line is wrong?
+
+66
+00:03:15,450 --> 00:03:16,610
+Line 2 is wrong.
+
+67
+00:03:16,660 --> 00:03:20,040
+The 4 must be multiplied by 5 as well.
+
+68
+00:03:20,090 --> 00:03:21,520
+5 times 4 is 20.
+
+69
+00:03:21,570 --> 00:03:24,200
+So the answer is 5 n plus 20.
+
+70
+00:03:24,250 --> 00:03:30,210
+Test n equals 1: the bracket gives 25, and 5 plus 20 is 25.
+
+71
+00:03:30,260 --> 00:03:33,670
+You expand brackets in your head when you shop.
+
+72
+00:03:33,720 --> 00:03:37,530
+Suppose you buy 6 notebooks at 99 cents each.
+
+73
+00:03:37,580 --> 00:03:39,380
+99 is 100 minus 1.
+
+74
+00:03:39,430 --> 00:03:43,920
+So the cost is 6, bracket, 100 minus 1.
+
+75
+00:03:43,970 --> 00:03:47,650
+That is 600 minus 6, which is 594 cents.
+
+76
+00:03:47,700 --> 00:03:51,650
+Much easier than multiplying 6 by 99.
+
+77
+00:03:51,700 --> 00:03:52,940
+One last question.
+
+78
+00:03:52,990 --> 00:03:56,440
+Expand and simplify 3, bracket, y plus 2, plus y.
+
+79
+00:03:56,490 --> 00:03:59,770
+Pause the video and answer.
+
+80
+00:03:59,820 --> 00:04:01,970
+The bracket gives 3 y plus 6.
+
+81
+00:04:02,020 --> 00:04:02,810
+Then add y.
+
+82
+00:04:02,860 --> 00:04:04,170
+3 y plus y is 4 y.
+
+83
+00:04:04,220 --> 00:04:06,620
+The answer is 4 y plus 6.
+
+84
+00:04:06,670 --> 00:04:13,070
+To remember: expand means multiply every term inside the bracket by the term outside.
+
+85
+00:04:13,120 --> 00:04:14,330
+Keep the signs.
+
+86
+00:04:14,380 --> 00:04:18,140
+5, bracket, x minus 2, is 5 x minus 10.
+
+87
+00:04:18,190 --> 00:04:21,110
+A letter outside works the same way.
+
+88
+00:04:21,160 --> 00:04:26,400
+Expand each bracket, then collect like terms, and check with a number.
+
+89
+00:04:26,450 --> 00:04:31,590
+Great work! Now practise lesson 2.4 on Camday.

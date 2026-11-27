@@ -1,0 +1,351 @@
+1
+00:00:05,980 --> 00:00:08,510
+A ride at a theme park has a sign.
+
+2
+00:00:08,560 --> 00:00:12,090
+You must be taller than 120 centimetres.
+
+3
+00:00:12,140 --> 00:00:15,750
+Lily is exactly 120 centimetres tall.
+
+4
+00:00:15,800 --> 00:00:17,300
+Can she go on the ride?
+
+5
+00:00:17,350 --> 00:00:20,530
+Pause the video and decide.
+
+6
+00:00:20,580 --> 00:00:22,050
+The answer is no.
+
+7
+00:00:22,100 --> 00:00:25,270
+Taller than 120 means more than 120.
+
+8
+00:00:25,320 --> 00:00:28,140
+Exactly 120 is not enough.
+
+9
+00:00:28,190 --> 00:00:31,180
+But 120 and a half centimetres is fine.
+
+10
+00:00:31,230 --> 00:00:36,420
+In maths we write the rule like this: h is greater than 120.
+
+11
+00:00:36,470 --> 00:00:38,640
+This sign means is less than.
+
+12
+00:00:38,690 --> 00:00:40,500
+3 is less than 8.
+
+13
+00:00:40,550 --> 00:00:42,850
+This sign means is greater than.
+
+14
+00:00:42,900 --> 00:00:44,860
+8 is greater than 3.
+
+15
+00:00:44,910 --> 00:00:48,120
+The open side always faces the bigger number.
+
+16
+00:00:48,170 --> 00:00:52,870
+With negative numbers, negative 4 is less than negative 1.
+
+17
+00:00:52,920 --> 00:01:00,000
+An inequality like h is greater than 120 describes a whole range of values, not just one.
+
+18
+00:01:00,050 --> 00:01:04,350
+h could be 121, or 130, or 120 and a half.
+
+19
+00:01:04,400 --> 00:01:06,870
+But not 120 itself.
+
+20
+00:01:06,920 --> 00:01:13,390
+On a number line, draw an open circle at 120, because 120 is not included.
+
+21
+00:01:13,440 --> 00:01:18,010
+Then draw an arrow to the right, towards the bigger numbers.
+
+22
+00:01:18,060 --> 00:01:18,720
+Your turn.
+
+23
+00:01:18,770 --> 00:01:22,200
+Which number satisfies x is less than negative 2?
+
+24
+00:01:22,250 --> 00:01:25,520
+Pause the video and choose.
+
+25
+00:01:25,570 --> 00:01:30,850
+Less than negative 2 means to the left of negative 2 on the number line.
+
+26
+00:01:30,900 --> 00:01:34,880
+Negative 5 is to the left, so negative 5 works.
+
+27
+00:01:34,930 --> 00:01:37,090
+You can join two inequalities.
+
+28
+00:01:37,140 --> 00:01:41,500
+This one says x is greater than negative 1, and less than 4.
+
+29
+00:01:41,550 --> 00:01:44,480
+So x is between negative 1 and 4.
+
+30
+00:01:44,530 --> 00:01:48,150
+Draw open circles at both ends, and join them.
+
+31
+00:01:48,200 --> 00:01:52,990
+If x must be an integer, the possible values are 0, 1, 2 and 3.
+
+32
+00:01:53,040 --> 00:01:56,150
+Negative 1 and 4 are not included.
+
+33
+00:01:56,200 --> 00:01:57,470
+Here is the method.
+
+34
+00:01:57,520 --> 00:02:03,410
+Step 1: decide whether the letter is greater than, or less than, the boundary.
+
+35
+00:02:03,460 --> 00:02:09,000
+Step 2: draw an open circle at the boundary, because it is not included.
+
+36
+00:02:09,050 --> 00:02:12,460
+Step 3: draw the line towards the values that work.
+
+37
+00:02:12,510 --> 00:02:15,930
+Right for greater than, left for less than.
+
+38
+00:02:15,980 --> 00:02:20,870
+Step 4: when you list integers, leave out the boundary values.
+
+39
+00:02:20,920 --> 00:02:23,590
+Write an inequality for this sentence.
+
+40
+00:02:23,640 --> 00:02:27,640
+The temperature, t, was below negative 3 degrees.
+
+41
+00:02:27,690 --> 00:02:29,220
+Below means less than.
+
+42
+00:02:29,270 --> 00:02:31,860
+So t is less than negative 3.
+
+43
+00:02:31,910 --> 00:02:33,420
+Now read a number line.
+
+44
+00:02:33,470 --> 00:02:37,780
+There is an open circle at 1, and an arrow to the right.
+
+45
+00:02:37,830 --> 00:02:40,670
+The open circle means 1 is not included.
+
+46
+00:02:40,720 --> 00:02:43,190
+The arrow points to bigger numbers.
+
+47
+00:02:43,240 --> 00:02:45,400
+So x is greater than 1.
+
+48
+00:02:45,450 --> 00:02:51,210
+List the integers that satisfy negative 3 is less than x, is less than 2.
+
+49
+00:02:51,260 --> 00:02:55,200
+x is greater than negative 3, so start at negative 2.
+
+50
+00:02:55,250 --> 00:02:57,780
+Negative 3 is not included.
+
+51
+00:02:57,830 --> 00:03:00,680
+x is less than 2, so stop at 1.
+
+52
+00:03:00,730 --> 00:03:05,170
+The integers are negative 2, negative 1, 0 and 1.
+
+53
+00:03:05,220 --> 00:03:05,880
+Your turn.
+
+54
+00:03:05,930 --> 00:03:10,700
+How many integers satisfy negative 2 is less than x, is less than 3?
+
+55
+00:03:10,750 --> 00:03:13,590
+Pause and count them.
+
+56
+00:03:13,640 --> 00:03:17,670
+Start just after negative 2, and stop just before 3.
+
+57
+00:03:17,720 --> 00:03:20,810
+The integers are negative 1, 0, 1 and 2.
+
+58
+00:03:20,860 --> 00:03:22,850
+That is 4 integers.
+
+59
+00:03:22,900 --> 00:03:25,560
+Sometimes the letter is on the right.
+
+60
+00:03:25,610 --> 00:03:27,650
+10 is greater than y.
+
+61
+00:03:27,700 --> 00:03:30,100
+Read it starting from the letter.
+
+62
+00:03:30,150 --> 00:03:33,660
+If 10 is greater than y, then y is less than 10.
+
+63
+00:03:33,710 --> 00:03:36,060
+They mean the same thing.
+
+64
+00:03:36,110 --> 00:03:41,070
+Finn lists the integers that satisfy 4 is less than x, is less than 8.
+
+65
+00:03:41,120 --> 00:03:43,620
+Which line goes wrong first?
+
+66
+00:03:43,670 --> 00:03:44,840
+Line 2 is wrong.
+
+67
+00:03:44,890 --> 00:03:48,630
+4 is not greater than 4, and 8 is not less than 8.
+
+68
+00:03:48,680 --> 00:03:51,610
+The end values are not included.
+
+69
+00:03:51,660 --> 00:03:53,940
+The integers are 5, 6 and 7.
+
+70
+00:03:53,990 --> 00:03:56,060
+That is 3 integers.
+
+71
+00:03:56,110 --> 00:03:58,240
+Inequalities are all around you.
+
+72
+00:03:58,290 --> 00:04:03,890
+A speed limit sign means your speed must not be more than the number shown.
+
+73
+00:04:03,940 --> 00:04:10,080
+A lift that carries fewer than 8 people: the number of people, p, is less than 8.
+
+74
+00:04:10,130 --> 00:04:14,560
+And water is liquid between its freezing and boiling points.
+
+75
+00:04:14,610 --> 00:04:19,290
+At sea level, that is between 0 and 100 degrees Celsius.
+
+76
+00:04:19,340 --> 00:04:20,620
+One last question.
+
+77
+00:04:20,670 --> 00:04:23,140
+The integer n can be 1, 2, 3 or 4.
+
+78
+00:04:23,190 --> 00:04:25,370
+Which inequality describes it?
+
+79
+00:04:25,420 --> 00:04:28,770
+Pause the video and choose.
+
+80
+00:04:28,820 --> 00:04:32,330
+n must be greater than 0, so that it starts at 1.
+
+81
+00:04:32,380 --> 00:04:35,170
+And less than 5, so that it stops at 4.
+
+82
+00:04:35,220 --> 00:04:39,130
+The answer is 0 is less than n, is less than 5.
+
+83
+00:04:39,180 --> 00:04:42,310
+To remember: x greater than a, or x less than a.
+
+84
+00:04:42,360 --> 00:04:45,170
+The value a itself is not included.
+
+85
+00:04:45,220 --> 00:04:51,750
+On a number line, draw an open circle at the boundary, and a line towards the values that work.
+
+86
+00:04:51,800 --> 00:04:55,800
+A double inequality means x is between two values.
+
+87
+00:04:55,850 --> 00:05:00,020
+When you list integers, leave out the boundary values.
+
+88
+00:05:00,070 --> 00:05:05,190
+Great work! Now practise lesson 2.6 on Camday.

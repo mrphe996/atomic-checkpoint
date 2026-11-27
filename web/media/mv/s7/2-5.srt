@@ -1,0 +1,447 @@
+1
+00:00:07,550 --> 00:00:08,980
+Look at this balance.
+
+2
+00:00:09,030 --> 00:00:13,010
+The left pan holds 2 bags of marbles and 5 loose marbles.
+
+3
+00:00:13,060 --> 00:00:15,960
+Each bag holds the same number, x.
+
+4
+00:00:16,010 --> 00:00:18,320
+The right pan holds 13 marbles.
+
+5
+00:00:18,370 --> 00:00:20,460
+The two pans balance.
+
+6
+00:00:20,510 --> 00:00:22,690
+How many marbles are in each bag?
+
+7
+00:00:22,740 --> 00:00:26,250
+Pause the video and work it out.
+
+8
+00:00:26,300 --> 00:00:28,460
+Take 5 marbles off both pans.
+
+9
+00:00:28,510 --> 00:00:29,830
+It still balances.
+
+10
+00:00:29,880 --> 00:00:32,590
+Now 2 bags balance 8 marbles.
+
+11
+00:00:32,640 --> 00:00:35,330
+Share both sides into 2 equal parts.
+
+12
+00:00:35,380 --> 00:00:37,380
+One bag balances 4 marbles.
+
+13
+00:00:37,430 --> 00:00:40,060
+So each bag holds 4 marbles.
+
+14
+00:00:40,110 --> 00:00:42,080
+Remember inverse operations.
+
+15
+00:00:42,130 --> 00:00:45,450
+Adding and subtracting undo each other.
+
+16
+00:00:45,500 --> 00:00:48,960
+Multiplying and dividing undo each other.
+
+17
+00:00:49,010 --> 00:00:52,920
+I think of a number, multiply it by 4, and get 36.
+
+18
+00:00:52,970 --> 00:00:55,610
+To find my number, divide 36 by 4.
+
+19
+00:00:55,660 --> 00:00:56,880
+It was 9.
+
+20
+00:00:56,930 --> 00:01:00,180
+An equation says that two things are equal.
+
+21
+00:01:00,230 --> 00:01:03,500
+2 x plus 5 equals 13 is an equation.
+
+22
+00:01:03,550 --> 00:01:07,430
+To solve it means to find the value of x that makes it true.
+
+23
+00:01:07,480 --> 00:01:10,200
+That value is called the solution.
+
+24
+00:01:10,250 --> 00:01:12,060
+An equation is like a balance.
+
+25
+00:01:12,110 --> 00:01:16,510
+Whatever you do to one side, you must do to the other side too.
+
+26
+00:01:16,560 --> 00:01:19,040
+Let's write the working properly.
+
+27
+00:01:19,090 --> 00:01:22,040
+Start with 2 x plus 5 equals 13.
+
+28
+00:01:22,090 --> 00:01:24,620
+Subtract 5 from both sides.
+
+29
+00:01:24,670 --> 00:01:27,300
+That leaves 2 x equals 8.
+
+30
+00:01:27,350 --> 00:01:29,770
+Divide both sides by 2.
+
+31
+00:01:29,820 --> 00:01:30,990
+So x equals 4.
+
+32
+00:01:31,040 --> 00:01:33,790
+Check: 2 times 4, plus 5, is 13.
+
+33
+00:01:33,840 --> 00:01:35,040
+Correct.
+
+34
+00:01:35,090 --> 00:01:35,830
+Your turn.
+
+35
+00:01:35,880 --> 00:01:37,410
+Solve 5 x equals 45.
+
+36
+00:01:37,460 --> 00:01:40,940
+Pause the video and try it.
+
+37
+00:01:40,990 --> 00:01:42,600
+5 x means 5 times x.
+
+38
+00:01:42,650 --> 00:01:45,570
+Undo it by dividing both sides by 5.
+
+39
+00:01:45,620 --> 00:01:47,310
+45 divided by 5 is 9.
+
+40
+00:01:47,360 --> 00:01:49,010
+So x equals 9.
+
+41
+00:01:49,060 --> 00:01:50,300
+Here is the method.
+
+42
+00:01:50,350 --> 00:01:55,470
+Step 1: look at what has been done to the letter, and in what order.
+
+43
+00:01:55,520 --> 00:01:58,170
+Step 2: undo the last operation first.
+
+44
+00:01:58,220 --> 00:02:00,570
+Do the same to both sides.
+
+45
+00:02:00,620 --> 00:02:04,660
+Step 3: keep going until the letter is on its own.
+
+46
+00:02:04,710 --> 00:02:10,810
+Step 4: check, by substituting your answer into the equation you started with.
+
+47
+00:02:10,860 --> 00:02:14,040
+Solve 3 y minus 4 equals 17.
+
+48
+00:02:14,090 --> 00:02:17,150
+The last thing done to y was subtract 4.
+
+49
+00:02:17,200 --> 00:02:19,410
+Undo it: add 4 to both sides.
+
+50
+00:02:19,460 --> 00:02:21,050
+3 y equals 21.
+
+51
+00:02:21,100 --> 00:02:22,400
+Now undo times 3.
+
+52
+00:02:22,450 --> 00:02:24,230
+Divide both sides by 3.
+
+53
+00:02:24,280 --> 00:02:25,660
+y equals 7.
+
+54
+00:02:25,710 --> 00:02:30,800
+Check: 3 times 7 is 21, and 21 minus 4 is 17.
+
+55
+00:02:30,850 --> 00:02:31,610
+Your turn.
+
+56
+00:02:31,660 --> 00:02:33,800
+Solve 2 m plus 7 equals 19.
+
+57
+00:02:33,850 --> 00:02:36,980
+Pause and work it out.
+
+58
+00:02:37,030 --> 00:02:39,240
+Subtract 7 from both sides.
+
+59
+00:02:39,290 --> 00:02:40,410
+2 m equals 12.
+
+60
+00:02:40,460 --> 00:02:42,340
+Divide both sides by 2.
+
+61
+00:02:42,390 --> 00:02:43,810
+m equals 6.
+
+62
+00:02:43,860 --> 00:02:46,880
+I think of a number, double it, and add 9.
+
+63
+00:02:46,930 --> 00:02:48,130
+The answer is 31.
+
+64
+00:02:48,180 --> 00:02:50,070
+What was my number?
+
+65
+00:02:50,120 --> 00:02:51,550
+Call the number n.
+
+66
+00:02:51,600 --> 00:02:54,580
+Double it and add 9 gives 2 n plus 9.
+
+67
+00:02:54,630 --> 00:02:56,360
+That equals 31.
+
+68
+00:02:56,410 --> 00:02:58,780
+Subtract 9 from both sides.
+
+69
+00:02:58,830 --> 00:03:00,580
+2 n equals 22.
+
+70
+00:03:00,630 --> 00:03:02,570
+Divide both sides by 2.
+
+71
+00:03:02,620 --> 00:03:03,610
+n equals 11.
+
+72
+00:03:03,660 --> 00:03:05,630
+My number was 11.
+
+73
+00:03:05,680 --> 00:03:10,060
+A taxi costs 4 dollars, plus 3 dollars for every kilometre.
+
+74
+00:03:10,110 --> 00:03:11,790
+A ride cost 25 dollars.
+
+75
+00:03:11,840 --> 00:03:13,460
+How far was it?
+
+76
+00:03:13,510 --> 00:03:15,840
+Call the distance d kilometres.
+
+77
+00:03:15,890 --> 00:03:19,690
+The cost is 3 d plus 4, and that equals 25.
+
+78
+00:03:19,740 --> 00:03:20,660
+Subtract 4.
+
+79
+00:03:20,710 --> 00:03:21,890
+3 d equals 21.
+
+80
+00:03:21,940 --> 00:03:22,950
+Divide by 3.
+
+81
+00:03:23,000 --> 00:03:23,910
+d equals 7.
+
+82
+00:03:23,960 --> 00:03:26,750
+The ride was 7 kilometres.
+
+83
+00:03:26,800 --> 00:03:29,370
+Dan solves 4 x plus 8 equals 20.
+
+84
+00:03:29,420 --> 00:03:32,210
+Which line goes wrong first?
+
+85
+00:03:32,260 --> 00:03:33,340
+Line 2 is wrong.
+
+86
+00:03:33,390 --> 00:03:36,460
+Dan divided only part of the left side by 4.
+
+87
+00:03:36,510 --> 00:03:38,710
+That breaks the balance.
+
+88
+00:03:38,760 --> 00:03:40,270
+Undo plus 8 first.
+
+89
+00:03:40,320 --> 00:03:41,480
+4 x equals 12.
+
+90
+00:03:41,530 --> 00:03:42,950
+Then divide by 4.
+
+91
+00:03:43,000 --> 00:03:44,450
+x equals 3.
+
+92
+00:03:44,500 --> 00:03:52,580
+Every time a map app tells you when you will arrive, it is solving an equation: distance equals speed times time.
+
+93
+00:03:52,630 --> 00:03:58,510
+Suppose you have 120 kilometres to go, at 60 kilometres an hour.
+
+94
+00:03:58,560 --> 00:04:00,550
+60 t equals 120.
+
+95
+00:04:00,600 --> 00:04:02,440
+Divide both sides by 60.
+
+96
+00:04:02,490 --> 00:04:03,310
+t equals 2.
+
+97
+00:04:03,360 --> 00:04:06,000
+You will arrive in 2 hours.
+
+98
+00:04:06,050 --> 00:04:07,370
+One last question.
+
+99
+00:04:07,420 --> 00:04:09,970
+Solve y over 4, minus 1, equals 5.
+
+100
+00:04:10,020 --> 00:04:13,430
+Pause the video and answer.
+
+101
+00:04:13,480 --> 00:04:15,060
+Add 1 to both sides.
+
+102
+00:04:15,110 --> 00:04:16,530
+y over 4 equals 6.
+
+103
+00:04:16,580 --> 00:04:18,580
+Multiply both sides by 4.
+
+104
+00:04:18,630 --> 00:04:20,110
+y equals 24.
+
+105
+00:04:20,160 --> 00:04:22,730
+To remember: an equation is a balance.
+
+106
+00:04:22,780 --> 00:04:25,760
+The solution makes both sides equal.
+
+107
+00:04:25,810 --> 00:04:27,480
+Do the same to both sides.
+
+108
+00:04:27,530 --> 00:04:30,460
+Undo the operations in reverse order.
+
+109
+00:04:30,510 --> 00:04:33,080
+Write each step on a new line.
+
+110
+00:04:33,130 --> 00:04:37,430
+To make an equation from words, choose a letter for the unknown.
+
+111
+00:04:37,480 --> 00:04:39,140
+And always check.
+
+112
+00:04:39,190 --> 00:04:44,310
+Great work! Now practise lesson 2.5 on Camday.

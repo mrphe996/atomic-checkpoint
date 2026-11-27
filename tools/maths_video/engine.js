@@ -88,7 +88,7 @@
   function table(scene, a, t) {
     const tb = div('tbl'); Object.assign(tb.style, { left: (a.x || 80) + 'px', top: (a.y || 170) + 'px' });
     tb.innerHTML = `<table><tr>${a.head.map(h => `<th>${tex(h)}</th>`).join('')}</tr>${a.rows.map(r => `<tr>${r.map(c => `<td>${tex(c)}</td>`).join('')}</tr>`).join('')}</table>`;
-    scene.box.append(tb); appear(tb.querySelector('tr'), t, 0.4);
+    scene.box.append(tb); appear(tb, t, 0.4);   // the whole grid, so no empty table shows before its step
     scene.rows[a.id] = [...tb.querySelectorAll('tr')].slice(1); scene.rows[a.id].forEach(r => r.style.opacity = 0);
   }
   function fig(scene, a, t) {
