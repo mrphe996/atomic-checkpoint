@@ -1,0 +1,207 @@
+1
+00:00:06,430 --> 00:00:09,680
+A craft shop has 7 and a half metres of ribbon.
+
+2
+00:00:09,730 --> 00:00:12,760
+Each bow needs 5 eighths of a metre.
+
+3
+00:00:12,810 --> 00:00:14,490
+How many bows can be made?
+
+4
+00:00:14,540 --> 00:00:18,010
+Pause the video and work it out.
+
+5
+00:00:18,060 --> 00:00:23,810
+12 bows, because 12 lots of 5 eighths make 60 eighths, which is 7 and a half.
+
+6
+00:00:23,860 --> 00:00:27,220
+Let's see how to divide by a fraction.
+
+7
+00:00:27,270 --> 00:00:32,150
+Remember: the reciprocal of a fraction is the fraction flipped over.
+
+8
+00:00:32,200 --> 00:00:35,130
+The reciprocal of 3 quarters is 4 thirds.
+
+9
+00:00:35,180 --> 00:00:37,930
+The reciprocal of 5 is a fifth.
+
+10
+00:00:37,980 --> 00:00:41,510
+To divide by a fraction, multiply by its reciprocal.
+
+11
+00:00:41,560 --> 00:00:47,030
+Keep the first fraction, change divide to multiply, and flip the second.
+
+12
+00:00:47,080 --> 00:00:47,740
+Your turn.
+
+13
+00:00:47,790 --> 00:00:52,650
+To divide by 5 eighths, do you multiply by 8 fifths, or by 5 eighths?
+
+14
+00:00:52,700 --> 00:00:55,980
+Pause the video and choose.
+
+15
+00:00:56,030 --> 00:00:59,160
+Multiply by 8 fifths, the reciprocal.
+
+16
+00:00:59,210 --> 00:01:02,380
+15 halves times 8 fifths is 12.
+
+17
+00:01:02,430 --> 00:01:03,590
+Why does it work?
+
+18
+00:01:03,640 --> 00:01:06,810
+Dividing by a half asks: how many halves fit?
+
+19
+00:01:06,860 --> 00:01:07,740
+2 in every 1.
+
+20
+00:01:07,790 --> 00:01:12,150
+So dividing by a half is the same as multiplying by 2.
+
+21
+00:01:12,200 --> 00:01:13,530
+Here is the method.
+
+22
+00:01:13,580 --> 00:01:18,060
+Step 1: change mixed numbers and integers to fractions.
+
+23
+00:01:18,110 --> 00:01:21,980
+Step 2: flip the second fraction, the divisor.
+
+24
+00:01:22,030 --> 00:01:25,270
+Step 3: multiply, cancelling first.
+
+25
+00:01:25,320 --> 00:01:29,660
+Step 4: simplify, and check that the size makes sense.
+
+26
+00:01:29,710 --> 00:01:33,640
+Work out 3 and a third, divided by 1 and a quarter.
+
+27
+00:01:33,690 --> 00:01:39,730
+That is 10 thirds times 4 fifths, which is 8 thirds, or 2 and 2 thirds.
+
+28
+00:01:39,780 --> 00:01:40,450
+Your turn.
+
+29
+00:01:40,500 --> 00:01:42,670
+Work out 4 fifths divided by 6.
+
+30
+00:01:42,720 --> 00:01:46,400
+Give your answer as a fraction in its simplest form.
+
+31
+00:01:46,450 --> 00:01:49,380
+Pause and work it out.
+
+32
+00:01:49,430 --> 00:01:52,540
+Dividing by 6 is multiplying by 1 sixth.
+
+33
+00:01:52,590 --> 00:01:57,990
+4 fifths times 1 sixth is 4 thirtieths, which is 2 fifteenths.
+
+34
+00:01:58,040 --> 00:02:03,020
+A 2 and a quarter litre jug fills glasses of 3 eighths of a litre.
+
+35
+00:02:03,070 --> 00:02:05,390
+9 quarters times 8 thirds is 6.
+
+36
+00:02:05,440 --> 00:02:06,930
+So 6 glasses.
+
+37
+00:02:06,980 --> 00:02:10,060
+Ivy works out 2 thirds divided by 4 fifths.
+
+38
+00:02:10,110 --> 00:02:12,070
+Which line is wrong?
+
+39
+00:02:12,120 --> 00:02:13,190
+Line 1 is wrong.
+
+40
+00:02:13,240 --> 00:02:15,350
+She flipped the first fraction.
+
+41
+00:02:15,400 --> 00:02:18,200
+Flip the second one, the divisor.
+
+42
+00:02:18,250 --> 00:02:23,730
+2 thirds times 5 quarters is 10 twelfths, which is 5 sixths.
+
+43
+00:02:23,780 --> 00:02:30,470
+Carpenters divide lengths by fractions to see how many pieces they can cut from one plank.
+
+44
+00:02:30,520 --> 00:02:31,820
+One last question.
+
+45
+00:02:31,870 --> 00:02:34,280
+Work out 9 divided by 3 quarters.
+
+46
+00:02:34,330 --> 00:02:37,700
+Pause the video and answer.
+
+47
+00:02:37,750 --> 00:02:40,600
+9 times 4 thirds is 12.
+
+48
+00:02:40,650 --> 00:02:45,580
+To remember: to divide by a fraction, multiply by its reciprocal.
+
+49
+00:02:45,630 --> 00:02:48,900
+Flip the second fraction, not the first.
+
+50
+00:02:48,950 --> 00:02:51,570
+Change mixed numbers first.
+
+51
+00:02:51,620 --> 00:02:56,270
+Dividing by a fraction less than 1 makes the answer bigger.
+
+52
+00:02:56,320 --> 00:03:01,430
+Great work! Now practise lesson 8.4 on Camday.

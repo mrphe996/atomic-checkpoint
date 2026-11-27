@@ -1,0 +1,235 @@
+1
+00:00:06,140 --> 00:00:13,030
+Three friends share prize money in the ratio 3 to 4 to 8, based on the hours each one worked.
+
+2
+00:00:13,080 --> 00:00:16,040
+The smallest share is 45 dollars.
+
+3
+00:00:16,090 --> 00:00:18,530
+What was the total prize, in dollars?
+
+4
+00:00:18,580 --> 00:00:22,090
+Pause the video and work it out.
+
+5
+00:00:22,140 --> 00:00:24,810
+The smallest share is 3 parts.
+
+6
+00:00:24,860 --> 00:00:29,340
+So 1 part is 45 divided by 3, which is 15 dollars.
+
+7
+00:00:29,390 --> 00:00:32,060
+There are 15 parts altogether.
+
+8
+00:00:32,110 --> 00:00:35,050
+15 times 15 is 225 dollars.
+
+9
+00:00:35,100 --> 00:00:41,760
+Remember: to share 120 dollars in the ratio 4 to 5 to 6, add the parts: 15.
+
+10
+00:00:41,810 --> 00:00:43,540
+1 part is 8 dollars.
+
+11
+00:00:43,590 --> 00:00:47,400
+The shares are 32, 40 and 48 dollars.
+
+12
+00:00:47,450 --> 00:00:54,050
+Whatever you are given, a share, the total, or a difference, first find the value of one part.
+
+13
+00:00:54,100 --> 00:00:54,740
+Your turn.
+
+14
+00:00:54,790 --> 00:00:55,710
+B has 4 parts.
+
+15
+00:00:55,760 --> 00:00:57,790
+What is B's share, in dollars?
+
+16
+00:00:57,840 --> 00:01:01,060
+Pause the video and try it.
+
+17
+00:01:01,110 --> 00:01:03,970
+4 times 15 is 60 dollars.
+
+18
+00:01:04,020 --> 00:01:08,490
+Check: 45 plus 60 plus 120 is 225.
+
+19
+00:01:08,540 --> 00:01:10,340
+Ratios link to fractions.
+
+20
+00:01:10,390 --> 00:01:15,850
+In 3 to 4 to 8, A gets 3 fifteenths, which is a fifth of the total.
+
+21
+00:01:15,900 --> 00:01:17,220
+Here is the method.
+
+22
+00:01:17,270 --> 00:01:19,350
+Step 1: add the parts.
+
+23
+00:01:19,400 --> 00:01:25,700
+Step 2: match what you know, a share, the total or a difference, to its number of parts.
+
+24
+00:01:25,750 --> 00:01:28,910
+Step 3: find one part, then multiply.
+
+25
+00:01:28,960 --> 00:01:32,980
+Step 4: check that the shares add up to the total.
+
+26
+00:01:33,030 --> 00:01:36,560
+In a club of 40, boys to girls is 3 to 5.
+
+27
+00:01:36,610 --> 00:01:39,080
+That is 15 boys and 25 girls.
+
+28
+00:01:39,130 --> 00:01:40,560
+4 more boys join.
+
+29
+00:01:40,610 --> 00:01:43,380
+The new ratio is 19 to 25.
+
+30
+00:01:43,430 --> 00:01:46,410
+A map has a scale of 1 to 25,000.
+
+31
+00:01:46,460 --> 00:01:53,860
+6.4 centimetres on the map is 160,000 centimetres, which is 1.6 kilometres.
+
+32
+00:01:53,910 --> 00:01:54,600
+Your turn.
+
+33
+00:01:54,650 --> 00:01:57,180
+Two shares are in the ratio 5 to 2.
+
+34
+00:01:57,230 --> 00:01:59,700
+The difference between them is 27.
+
+35
+00:01:59,750 --> 00:02:01,030
+What is the total?
+
+36
+00:02:01,080 --> 00:02:04,050
+Pause and work it out.
+
+37
+00:02:04,100 --> 00:02:06,280
+The difference is 3 parts.
+
+38
+00:02:06,330 --> 00:02:09,530
+1 part is 27 divided by 3, which is 9.
+
+39
+00:02:09,580 --> 00:02:12,220
+The total is 7 parts: 63.
+
+40
+00:02:12,270 --> 00:02:13,630
+Ratio 3 to 4 to 8.
+
+41
+00:02:13,680 --> 00:02:16,310
+A's share, 3 parts, is 45 dollars.
+
+42
+00:02:16,360 --> 00:02:17,880
+Nia finds the total.
+
+43
+00:02:17,930 --> 00:02:20,010
+Which line is wrong?
+
+44
+00:02:20,060 --> 00:02:21,300
+Line 1 is wrong.
+
+45
+00:02:21,350 --> 00:02:24,850
+45 dollars is 3 parts, not the total.
+
+46
+00:02:24,900 --> 00:02:28,460
+1 part is 45 divided by 3, which is 15.
+
+47
+00:02:28,510 --> 00:02:31,320
+The total is 225 dollars.
+
+48
+00:02:31,370 --> 00:02:37,550
+Business partners often share profits in the ratio of the money each one invested.
+
+49
+00:02:37,600 --> 00:02:38,880
+One last question.
+
+50
+00:02:38,930 --> 00:02:43,390
+Concrete is cement, sand and gravel in the ratio 1 to 2 to 5.
+
+51
+00:02:43,440 --> 00:02:47,080
+What fraction is gravel: 5 eighths, or 5 sevenths?
+
+52
+00:02:47,130 --> 00:02:50,480
+Pause the video and choose.
+
+53
+00:02:50,530 --> 00:02:52,730
+There are 8 parts altogether.
+
+54
+00:02:52,780 --> 00:02:55,690
+Gravel is 5 of them: 5 eighths.
+
+55
+00:02:55,740 --> 00:02:59,420
+To remember: find the value of one part first.
+
+56
+00:02:59,470 --> 00:03:03,600
+You can start from a share, the total, or a difference.
+
+57
+00:03:03,650 --> 00:03:07,420
+When a ratio changes, work with the real amounts.
+
+58
+00:03:07,470 --> 00:03:10,400
+A ratio gives fractions of the total.
+
+59
+00:03:10,450 --> 00:03:15,790
+Great work! Now practise lesson 11.1 on Camday.

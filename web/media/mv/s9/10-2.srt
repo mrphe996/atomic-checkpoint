@@ -1,0 +1,227 @@
+1
+00:00:06,370 --> 00:00:07,560
+A ball is dropped.
+
+2
+00:00:07,610 --> 00:00:09,890
+A sensor records how far it falls.
+
+3
+00:00:09,940 --> 00:00:14,290
+After T seconds, it has fallen about 5 T squared metres.
+
+4
+00:00:14,340 --> 00:00:18,290
+Would the graph of distance against time be a straight line?
+
+5
+00:00:18,340 --> 00:00:22,890
+Pause the video and choose: no, a curve, or yes.
+
+6
+00:00:22,940 --> 00:00:24,060
+No, it is a curve.
+
+7
+00:00:24,110 --> 00:00:30,870
+The ball falls faster and faster, so the distance does not go up by the same amount each second.
+
+8
+00:00:30,920 --> 00:00:38,700
+Remember: for Y equals 2 X plus 3, X equals negative 1 gives 1, 0 gives 3, and 1 gives 5.
+
+9
+00:00:38,750 --> 00:00:41,210
+Linear functions give straight lines.
+
+10
+00:00:41,260 --> 00:00:46,380
+Choose X values, find Y, plot the points and join them with a ruler.
+
+11
+00:00:46,430 --> 00:00:52,760
+For 2 X plus 3 Y equals 12, the quickest points are where the line crosses the axes.
+
+12
+00:00:52,810 --> 00:00:55,740
+Put X equals 0, then Y equals 0.
+
+13
+00:00:55,790 --> 00:00:56,500
+Your turn.
+
+14
+00:00:56,550 --> 00:01:00,210
+In 2 X plus 3 Y equals 12, what is Y when X is 0?
+
+15
+00:01:00,260 --> 00:01:03,650
+Pause the video and try it.
+
+16
+00:01:03,700 --> 00:01:05,660
+3 Y equals 12, so Y is 4.
+
+17
+00:01:05,710 --> 00:01:07,590
+And when Y is 0, X is 6.
+
+18
+00:01:07,640 --> 00:01:09,920
+Plot 0, 4 and 6, 0, and join.
+
+19
+00:01:09,970 --> 00:01:14,740
+A third point checks it: X equals 3 gives Y equals 2.
+
+20
+00:01:14,790 --> 00:01:17,270
+Functions with X squared give curves.
+
+21
+00:01:17,320 --> 00:01:22,740
+Plot more points, and join them with a smooth curve, not straight lines.
+
+22
+00:01:22,790 --> 00:01:24,100
+Here is the method.
+
+23
+00:01:24,150 --> 00:01:26,870
+Step 1: make a table of values.
+
+24
+00:01:26,920 --> 00:01:30,550
+Step 2: choose scales, and plot the points.
+
+25
+00:01:30,600 --> 00:01:35,410
+Step 3: straight line for linear, smooth curve for X squared.
+
+26
+00:01:35,460 --> 00:01:38,460
+Step 4: check with an extra point.
+
+27
+00:01:38,510 --> 00:01:42,170
+Where does 5 X plus 2 Y equals 10 cross the axes?
+
+28
+00:01:42,220 --> 00:01:44,290
+X equals 0 gives Y equals 5.
+
+29
+00:01:44,340 --> 00:01:46,970
+Y equals 0 gives X equals 2.
+
+30
+00:01:47,020 --> 00:01:55,280
+Y equals X squared minus 3, for X from negative 2 to 2: 1, negative 2, negative 3, negative 2, 1.
+
+31
+00:01:55,330 --> 00:01:56,000
+Your turn.
+
+32
+00:01:56,050 --> 00:01:58,540
+For the ball, D equals 5 T squared.
+
+33
+00:01:58,590 --> 00:02:00,070
+Find D when T is 1.5.
+
+34
+00:02:00,120 --> 00:02:03,060
+Pause and work it out.
+
+35
+00:02:03,110 --> 00:02:05,370
+1.5 squared is 2.25.
+
+36
+00:02:05,420 --> 00:02:09,270
+5 times 2.25 is 11.25 metres.
+
+37
+00:02:09,320 --> 00:02:13,300
+Is 4, 1 on the line 2 X plus 3 Y equals 12?
+
+38
+00:02:13,350 --> 00:02:15,460
+8 plus 3 is 11, not 12.
+
+39
+00:02:15,510 --> 00:02:16,570
+So no.
+
+40
+00:02:16,620 --> 00:02:20,610
+Tom plots Y equals X squared, for X from negative 2 to 2.
+
+41
+00:02:20,660 --> 00:02:22,580
+Which line is wrong?
+
+42
+00:02:22,630 --> 00:02:23,690
+Line 2 is wrong.
+
+43
+00:02:23,740 --> 00:02:26,330
+Y equals X squared is a curve.
+
+44
+00:02:26,380 --> 00:02:29,370
+Join the points with a smooth curve.
+
+45
+00:02:29,420 --> 00:02:32,680
+Engineers plot stopping distances against speed.
+
+46
+00:02:32,730 --> 00:02:39,150
+It is a curve: double the speed, and the braking distance is about four times as long.
+
+47
+00:02:39,200 --> 00:02:40,430
+One last question.
+
+48
+00:02:40,480 --> 00:02:44,130
+Is Y equals 3 X minus 1 a straight line, or a curve?
+
+49
+00:02:44,180 --> 00:02:47,450
+Pause the video and choose.
+
+50
+00:02:47,500 --> 00:02:48,520
+A straight line.
+
+51
+00:02:48,570 --> 00:02:51,460
+It is linear: there is no X squared.
+
+52
+00:02:51,510 --> 00:02:54,180
+To remember: table, plot, join.
+
+53
+00:02:54,230 --> 00:02:58,400
+For A X plus B Y equals C, use where it crosses the axes.
+
+54
+00:02:58,450 --> 00:03:00,050
+Linear gives a straight line.
+
+55
+00:03:00,100 --> 00:03:02,370
+X squared gives a smooth curve.
+
+56
+00:03:02,420 --> 00:03:04,850
+Check with an extra point.
+
+57
+00:03:04,900 --> 00:03:10,310
+Great work! Now practise lesson 10.2 on Camday.

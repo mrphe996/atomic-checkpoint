@@ -1,0 +1,235 @@
+1
+00:00:06,850 --> 00:00:10,390
+Amara's fitness watch draws a graph of her bike ride.
+
+2
+00:00:10,440 --> 00:00:15,940
+A steep section, then a flat section, then a less steep section back home.
+
+3
+00:00:15,990 --> 00:00:20,380
+What does the flat section mean: she stopped, or she was fastest?
+
+4
+00:00:20,430 --> 00:00:23,620
+Pause the video and choose.
+
+5
+00:00:23,670 --> 00:00:24,440
+She stopped.
+
+6
+00:00:24,490 --> 00:00:28,900
+Time goes on, but her distance from home does not change.
+
+7
+00:00:28,950 --> 00:00:32,810
+Remember: speed equals distance divided by time.
+
+8
+00:00:32,860 --> 00:00:36,400
+On a distance-time graph, the gradient is the speed.
+
+9
+00:00:36,450 --> 00:00:37,850
+Steeper means faster.
+
+10
+00:00:37,900 --> 00:00:40,550
+Sloping down means coming back.
+
+11
+00:00:40,600 --> 00:00:43,410
+Out: 10 kilometres in 20 minutes.
+
+12
+00:00:43,460 --> 00:00:50,390
+20 minutes is a third of an hour, so 10 times 3 is 30 kilometres per hour.
+
+13
+00:00:50,440 --> 00:00:51,070
+Your turn.
+
+14
+00:00:51,120 --> 00:00:54,820
+Find her speed on the way back, in kilometres per hour.
+
+15
+00:00:54,870 --> 00:00:58,070
+Pause the video and try it.
+
+16
+00:00:58,120 --> 00:01:02,700
+Back: 10 kilometres in 30 minutes, which is half an hour.
+
+17
+00:01:02,750 --> 00:01:07,070
+10 divided by a half is 20 kilometres per hour.
+
+18
+00:01:07,120 --> 00:01:11,370
+A straight line through the origin gives an equation.
+
+19
+00:01:11,420 --> 00:01:16,880
+A runner covers 240 metres in 100 seconds, so D equals 2.4 T.
+
+20
+00:01:16,930 --> 00:01:20,670
+On a cost graph, the gradient is the price for each item.
+
+21
+00:01:20,720 --> 00:01:23,940
+On a tank graph, it is litres per minute.
+
+22
+00:01:23,990 --> 00:01:25,300
+Here is the method.
+
+23
+00:01:25,350 --> 00:01:28,420
+Step 1: read the axes and the units.
+
+24
+00:01:28,470 --> 00:01:32,480
+Step 2: describe each section: up, flat, or down.
+
+25
+00:01:32,530 --> 00:01:36,320
+Step 3: gradient equals change up over change across.
+
+26
+00:01:36,370 --> 00:01:38,100
+That is the rate.
+
+27
+00:01:38,150 --> 00:01:42,010
+Step 4: check the units, like minutes or hours.
+
+28
+00:01:42,060 --> 00:01:48,700
+Three sections: 4 kilometres in 10 minutes, 6 in 20 minutes, 3 in 5 minutes.
+
+29
+00:01:48,750 --> 00:01:50,990
+Per minute: 0.4, 0.3, 0.6.
+
+30
+00:01:51,040 --> 00:01:53,390
+The third is fastest.
+
+31
+00:01:53,440 --> 00:01:57,100
+A taxi graph goes through 0, 3 and 10, 23.
+
+32
+00:01:57,150 --> 00:02:00,550
+The gradient is 20 over 10, which is 2.
+
+33
+00:02:00,600 --> 00:02:03,140
+So C equals 2 D plus 3.
+
+34
+00:02:03,190 --> 00:02:03,930
+Your turn.
+
+35
+00:02:03,980 --> 00:02:05,110
+D equals 2.4 T.
+
+36
+00:02:05,160 --> 00:02:07,410
+Find D when T is 900 seconds.
+
+37
+00:02:07,460 --> 00:02:10,550
+Pause and work it out.
+
+38
+00:02:10,600 --> 00:02:16,780
+2.4 times 900 is 2,160 metres, if she keeps the same speed.
+
+39
+00:02:16,830 --> 00:02:20,570
+At the flat section, Amara is 10 kilometres from home.
+
+40
+00:02:20,620 --> 00:02:21,980
+Leo reads the graph.
+
+41
+00:02:22,030 --> 00:02:23,930
+Which line is wrong?
+
+42
+00:02:23,980 --> 00:02:25,080
+Line 1 is wrong.
+
+43
+00:02:25,130 --> 00:02:27,030
+The height is the distance.
+
+44
+00:02:27,080 --> 00:02:29,450
+The speed is the gradient.
+
+45
+00:02:29,500 --> 00:02:31,180
+Flat means a speed of 0.
+
+46
+00:02:31,230 --> 00:02:32,880
+She has stopped.
+
+47
+00:02:32,930 --> 00:02:42,100
+Delivery apps and smart energy meters show graphs where the gradient is a rate: kilometres per hour, or kilowatt hours per day.
+
+48
+00:02:42,150 --> 00:02:43,450
+One last question.
+
+49
+00:02:43,500 --> 00:02:47,490
+A tank fills from 30 litres to 90 litres in 4 minutes.
+
+50
+00:02:47,540 --> 00:02:50,410
+What is the rate, in litres per minute?
+
+51
+00:02:50,460 --> 00:02:53,840
+Pause the video and answer.
+
+52
+00:02:53,890 --> 00:02:58,560
+60 litres in 4 minutes is 15 litres per minute.
+
+53
+00:02:58,610 --> 00:03:01,120
+To remember: the gradient is the rate.
+
+54
+00:03:01,170 --> 00:03:04,490
+On a distance-time graph, it is the speed.
+
+55
+00:03:04,540 --> 00:03:06,000
+Flat means no change.
+
+56
+00:03:06,050 --> 00:03:08,060
+Steeper means faster.
+
+57
+00:03:08,110 --> 00:03:10,290
+Check the units.
+
+58
+00:03:10,340 --> 00:03:14,140
+Straight lines give equations for predictions.
+
+59
+00:03:14,190 --> 00:03:19,550
+Great work! Now practise lesson 10.4 on Camday.

@@ -35,7 +35,7 @@ VIDEOS["15.1"] = [
     ]),
     dict(kind="idea", title="Check: midpoints", steps=[
         dict(say="At the midpoints: 5, 15, 25 and 35. Class 9A is the solid line. Class 9B is dashed.", do=[B("midpoints", x=80, y=190, color=GREEN), POLYS()]),
-        dict(say="9B's polygon is higher on the left. So 9B's journeys are generally shorter. Do not join the ends down to the axis.", do=[T("9B higher on the **left** → shorter", x=80, y=300)]),
+        dict(say="Compare the shapes: where is each polygon higher? Higher on the left means more short journeys. Do not join the ends down to the axis.", do=[T("higher on the **left** → more short journeys", x=80, y=300)]),
     ]),
     dict(kind="method", title="How do I draw one?", steps=[
         dict(say="Here is the method. Step 1: find each class midpoint.", do=[T("1. Class **midpoints**", x=80, y=170)]),

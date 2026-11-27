@@ -51837,7 +51837,7 @@
     "8.4-k3": 108.38,
     "8.4-k4": 156.7
    },
-   "up": false
+   "up": true
   },
   "8.5": {
    "src": "media/mv/s9/8-5.mp4",
@@ -52092,7 +52092,7 @@
     "8.5-k3": 106.74,
     "8.5-k4": 160.62
    },
-   "up": false
+   "up": true
   },
   "9.3": {
    "src": "media/mv/s9/9-3.mp4",
@@ -52841,7 +52841,7 @@
     "10.2-k3": 122.06,
     "10.2-k4": 166.45
    },
-   "up": false
+   "up": true
   },
   "9.2": {
    "src": "media/mv/s9/9-2.mp4",
@@ -53351,7 +53351,7 @@
     "11.1-k3": 123.05,
     "11.1-k4": 169.48
    },
-   "up": false
+   "up": true
   },
   "10.1": {
    "src": "media/mv/s9/10-1.mp4",
@@ -53845,7 +53845,7 @@
     "10.4-k3": 129.55,
     "10.4-k4": 172.84
    },
-   "up": false
+   "up": true
   },
   "12.3": {
    "src": "media/mv/s9/12-3.mp4",
@@ -54075,6 +54075,1265 @@
     "12.3-k2": 55.7,
     "12.3-k3": 109.76,
     "12.3-k4": 154.85
+   },
+   "up": false
+  },
+  "12.2": {
+   "src": "media/mv/s9/12-2.mp4",
+   "poster": "media/mv/s9/12-2_poster.jpg",
+   "srt": "media/mv/s9/12-2.srt",
+   "dur": 195.68,
+   "captions": [
+    [
+     6.71,
+     "A coin lands heads five times in a row."
+    ],
+    [
+     9.25,
+     "A friend says: tails is due next, it is more likely now!"
+    ],
+    [
+     13.44,
+     "Is tails more likely now?"
+    ],
+    [
+     15.09,
+     "Pause the video and choose: no, it is still a half, or yes."
+    ],
+    [
+     20.38,
+     "No."
+    ],
+    [
+     20.59,
+     "The coin has no memory."
+    ],
+    [
+     22.18,
+     "The probability of tails is still a half."
+    ],
+    [
+     25.57,
+     "Remember: for a fair coin, the probability of a head is a half."
+    ],
+    [
+     30.36,
+     "Two events are independent if one happening does not change the probability of the other."
+    ],
+    [
+     36.41,
+     "Two spins of a spinner, or two tosses of a coin, are independent."
+    ],
+    [
+     41.37,
+     "Believing that tails is due is called the gambler's fallacy."
+    ],
+    [
+     45.98,
+     "Your turn."
+    ],
+    [
+     46.68,
+     "Taking a counter and putting it back before the next pick."
+    ],
+    [
+     50.7,
+     "Does that make the events independent, or dependent?"
+    ],
+    [
+     54.3,
+     "Pause the video and choose."
+    ],
+    [
+     57.57,
+     "Independent."
+    ],
+    [
+     58.43,
+     "With replacement, the bag is the same every time."
+    ],
+    [
+     62.5,
+     "Events are dependent if one affects the other."
+    ],
+    [
+     65.92,
+     "A bag has 10 balls, numbered 1 to 10."
+    ],
+    [
+     68.67,
+     "Take one out, and do not put it back."
+    ],
+    [
+     71.42,
+     "Now 9 balls are left."
+    ],
+    [
+     73.53,
+     "If the first ball was odd, 5 even balls are left out of 9."
+    ],
+    [
+     77.66,
+     "So the chance the second is even is 5 ninths."
+    ],
+    [
+     81.41,
+     "Your turn."
+    ],
+    [
+     82.09,
+     "If the first ball was even, and not replaced, what is the probability the second is even?"
+    ],
+    [
+     88.14,
+     "Give a fraction."
+    ],
+    [
+     89.22,
+     "Pause and work it out."
+    ],
+    [
+     92.12,
+     "4 even balls are left, out of 9."
+    ],
+    [
+     94.56,
+     "The probability is 4 ninths."
+    ],
+    [
+     97.24,
+     "Here is the method."
+    ],
+    [
+     98.57,
+     "Step 1: does the first result change what can happen next?"
+    ],
+    [
+     103.21,
+     "Step 2: with replacement: independent."
+    ],
+    [
+     106.66,
+     "Step 3: without replacement: dependent."
+    ],
+    [
+     109.54,
+     "Recount what is left."
+    ],
+    [
+     111.64,
+     "Step 4: in real life, think about whether one event really affects the other."
+    ],
+    [
+     117.65,
+     "A bag has 3 red and 7 blue counters."
+    ],
+    [
+     120.23,
+     "The first is red, and it is not replaced."
+    ],
+    [
+     123.17,
+     "2 red are left, out of 9."
+    ],
+    [
+     124.96,
+     "The chance the second is red is 2 ninths."
+    ],
+    [
+     128.45,
+     "It rains today, and it rains tomorrow: probably dependent, because weather comes in spells."
+    ],
+    [
+     135.25,
+     "A fair dice gave three 2s in a row."
+    ],
+    [
+     137.69,
+     "The chance of a 2 next is still 1 sixth."
+    ],
+    [
+     141.04,
+     "A roulette wheel has landed on red 6 times."
+    ],
+    [
+     144.06,
+     "Jack thinks about the next spin."
+    ],
+    [
+     146.32,
+     "Which line is wrong?"
+    ],
+    [
+     148.27,
+     "Line 1 is wrong."
+    ],
+    [
+     149.46,
+     "The spins are independent."
+    ],
+    [
+     151.94,
+     "The probability of black has not changed."
+    ],
+    [
+     155.38,
+     "Casinos make money partly because players believe in the gambler's fallacy, and keep betting on the result that seems due."
+    ],
+    [
+     164.32,
+     "One last question."
+    ],
+    [
+     165.56,
+     "Roll a 6 on a dice, and toss a head on a coin."
+    ],
+    [
+     168.72,
+     "Independent, or dependent?"
+    ],
+    [
+     170.51,
+     "Pause the video and choose."
+    ],
+    [
+     173.77,
+     "Independent."
+    ],
+    [
+     174.62,
+     "The dice cannot affect the coin."
+    ],
+    [
+     177.44,
+     "To remember: independent means one does not affect the other."
+    ],
+    [
+     182.16,
+     "With replacement: independent."
+    ],
+    [
+     184.89,
+     "Without replacement: dependent."
+    ],
+    [
+     187.69,
+     "Coins and dice have no memory."
+    ],
+    [
+     190.24,
+     "Great work! Now practise lesson 12.2 on Camday."
+    ]
+   ],
+   "times": {
+    "12.2-k1": 19.33,
+    "12.2-k2": 56.52,
+    "12.2-k3": 91.07,
+    "12.2-k4": 172.72
+   },
+   "up": false
+  },
+  "11.2": {
+   "src": "media/mv/s9/11-2.mp4",
+   "poster": "media/mv/s9/11-2_poster.jpg",
+   "srt": "media/mv/s9/11-2.srt",
+   "dur": 192.44,
+   "captions": [
+    [
+     7.43,
+     "4 painters take 6 days to paint a school hall."
+    ],
+    [
+     10.7,
+     "The head teacher wants it done faster, so she hires more painters."
+    ],
+    [
+     15.95,
+     "With 8 painters, how many days will it take?"
+    ],
+    [
+     19.06,
+     "Pause the video and work it out."
+    ],
+    [
+     22.71,
+     "Twice as many painters take half the time."
+    ],
+    [
+     25.91,
+     "6 divided by 2 is 3 days."
+    ],
+    [
+     28.36,
+     "Remember direct proportion: if 3 kilograms cost 7.50 dollars, then 1 kilogram costs 2.50, and 5 kilograms cost 12.50."
+    ],
+    [
+     39.49,
+     "In inverse proportion, when one quantity is doubled, the other is halved."
+    ],
+    [
+     44.62,
+     "Their product stays the same."
+    ],
+    [
+     47.21,
+     "Here, multiply the painters by the days."
+    ],
+    [
+     49.95,
+     "This is the total amount of work."
+    ],
+    [
+     52.76,
+     "Your turn."
+    ],
+    [
+     53.44,
+     "How many painter-days does the hall need?"
+    ],
+    [
+     56.23,
+     "Pause the video and try it."
+    ],
+    [
+     59.47,
+     "4 times 6 is 24 painter-days."
+    ],
+    [
+     61.84,
+     "Divide 24 by the number of painters to find the days."
+    ],
+    [
+     66.71,
+     "Your turn."
+    ],
+    [
+     67.45,
+     "How many days for 12 painters?"
+    ],
+    [
+     69.7,
+     "Pause the video and answer."
+    ],
+    [
+     73.12,
+     "24 divided by 12 is 2 days."
+    ],
+    [
+     76.4,
+     "Ask: if one doubles, does the other double, or halve?"
+    ],
+    [
+     79.97,
+     "Double means direct: divide to find the rate."
+    ],
+    [
+     83.01,
+     "Halve means inverse: multiply to find the total."
+    ],
+    [
+     86.8,
+     "Here is the method."
+    ],
+    [
+     88.15,
+     "Step 1: decide: direct, or inverse?"
+    ],
+    [
+     91.2,
+     "Step 2: direct: find the value for one."
+    ],
+    [
+     94.58,
+     "Step 3: inverse: multiply to find the total, then divide."
+    ],
+    [
+     99.17,
+     "Step 4: check the answer goes up or down as it should."
+    ],
+    [
+     103.48,
+     "At 60 kilometres per hour, a trip takes 2 hours."
+    ],
+    [
+     107.72,
+     "The distance is 120 kilometres."
+    ],
+    [
+     110.46,
+     "At 80 kilometres per hour: 120 divided by 80 is 1.5 hours."
+    ],
+    [
+     116.14,
+     "Food for 30 campers lasts 12 days."
+    ],
+    [
+     119.42,
+     "That is 360 camper-days."
+    ],
+    [
+     121.73,
+     "For 40 campers: 360 divided by 40 is 9 days."
+    ],
+    [
+     126.53,
+     "A printer prints 42 pages in 3 minutes."
+    ],
+    [
+     129.86,
+     "That is direct: 14 pages a minute."
+    ],
+    [
+     132.77,
+     "In 8 minutes, 112 pages."
+    ],
+    [
+     135.38,
+     "4 painters take 6 days."
+    ],
+    [
+     137.11,
+     "Ollie finds the time for 8 painters."
+    ],
+    [
+     139.83,
+     "Which line is wrong?"
+    ],
+    [
+     141.88,
+     "Line 2 is wrong."
+    ],
+    [
+     143.07,
+     "More painters means less time."
+    ],
+    [
+     145.84,
+     "24 painter-days divided by 8 is 3 days."
+    ],
+    [
+     149.7,
+     "Project managers use inverse proportion to plan how many workers they need to finish a job on time."
+    ],
+    [
+     156.94,
+     "One last question."
+    ],
+    [
+     158.18,
+     "Speed and time for a fixed journey: inverse, or direct?"
+    ],
+    [
+     161.96,
+     "Pause the video and choose."
+    ],
+    [
+     165.22,
+     "Inverse."
+    ],
+    [
+     165.77,
+     "Double the speed, and the time halves."
+    ],
+    [
+     168.38,
+     "Speed times time is the fixed distance."
+    ],
+    [
+     171.61,
+     "To remember: direct: the ratio is constant."
+    ],
+    [
+     174.59,
+     "Double means double."
+    ],
+    [
+     176.53,
+     "Inverse: the product is constant."
+    ],
+    [
+     178.85,
+     "Double means halve."
+    ],
+    [
+     180.74,
+     "Direct: find one unit."
+    ],
+    [
+     182.25,
+     "Inverse: find the total."
+    ],
+    [
+     184.46,
+     "Check the answer makes sense."
+    ],
+    [
+     187.12,
+     "Great work! Now practise lesson 11.2 on Camday."
+    ]
+   ],
+   "times": {
+    "11.2-k1": 21.66,
+    "11.2-k2": 58.42,
+    "11.2-k3": 72.07,
+    "11.2-k4": 164.17
+   },
+   "up": true
+  },
+  "13.2": {
+   "src": "media/mv/s9/13-2.mp4",
+   "poster": "media/mv/s9/13-2_poster.jpg",
+   "srt": "media/mv/s9/13-2.srt",
+   "dur": 191.2,
+   "captions": [
+    [
+     6.9,
+     "A straight road runs from town A at 1, 2 to town B at 13, 8, on a grid in kilometres."
+    ],
+    [
+     12.99,
+     "Planners want charging stations one third and two thirds of the way along."
+    ],
+    [
+     18.85,
+     "Where is the point one third of the way along?"
+    ],
+    [
+     21.86,
+     "Pause the video and work it out."
+    ],
+    [
+     25.35,
+     "The road goes 12 across and 6 up."
+    ],
+    [
+     28.01,
+     "A third of that is 4 across and 2 up."
+    ],
+    [
+     30.98,
+     "From 1, 2, that is 5, 4."
+    ],
+    [
+     33.47,
+     "Remember: the midpoint of 2, 4 and 8, 10 is 5, 7."
+    ],
+    [
+     37.6,
+     "It is halfway along."
+    ],
+    [
+     39.84,
+     "Find the step from A to B: across, 13 minus 1 is 12."
+    ],
+    [
+     43.73,
+     "Up, 8 minus 2 is 6."
+    ],
+    [
+     45.16,
+     "For a fraction of the way, start at A, and add that fraction of the step."
+    ],
+    [
+     51.17,
+     "Your turn."
+    ],
+    [
+     51.84,
+     "Where is the point two thirds of the way along?"
+    ],
+    [
+     54.99,
+     "Pause the video and try it."
+    ],
+    [
+     58.2,
+     "Two thirds of 12 is 8."
+    ],
+    [
+     60.16,
+     "Two thirds of 6 is 4."
+    ],
+    [
+     62.03,
+     "From 1, 2, that is 9, 6."
+    ],
+    [
+     64.72,
+     "A point that divides A B in the ratio 1 to 3 splits it into 4 parts."
+    ],
+    [
+     70.22,
+     "Your turn."
+    ],
+    [
+     70.91,
+     "Ratio 1 to 3, from A."
+    ],
+    [
+     72.36,
+     "Is that a quarter of the way, or a third of the way?"
+    ],
+    [
+     75.97,
+     "Pause the video and choose."
+    ],
+    [
+     79.24,
+     "A quarter of the way."
+    ],
+    [
+     80.83,
+     "1 part out of 1 plus 3, which is 4 parts."
+    ],
+    [
+     84.48,
+     "Be careful with negative numbers."
+    ],
+    [
+     87.07,
+     "From negative 4, 6 to 8, negative 2, the step is 12 across, and negative 8 up."
+    ],
+    [
+     93.74,
+     "Here is the method."
+    ],
+    [
+     95.07,
+     "Step 1: find the step, B minus A."
+    ],
+    [
+     97.95,
+     "Step 2: for a ratio M to N, the fraction is M over M plus N."
+    ],
+    [
+     102.32,
+     "Step 3: multiply the step by the fraction, and add it to A."
+    ],
+    [
+     106.95,
+     "Step 4: check the point is between A and B."
+    ],
+    [
+     110.49,
+     "P divides A B in the ratio 2 to 3."
+    ],
+    [
+     113.32,
+     "A is 0, 5 and B is 10, 0."
+    ],
+    [
+     115.4,
+     "The fraction is 2 fifths."
+    ],
+    [
+     117.49,
+     "The step is 10, negative 5."
+    ],
+    [
+     119.73,
+     "2 fifths of it is 4, negative 2."
+    ],
+    [
+     122.4,
+     "So P is 4, 3."
+    ],
+    [
+     124.03,
+     "M at 5, 4 is one third of the way from A at 2, 1 to B."
+    ],
+    [
+     128.32,
+     "One third of the step is 3, 3."
+    ],
+    [
+     130.71,
+     "So the whole step is 9, 9, and B is 11, 10."
+    ],
+    [
+     134.68,
+     "Find the point one third of the way from 3, 3 to 9, 12."
+    ],
+    [
+     138.91,
+     "Mia answers."
+    ],
+    [
+     139.84,
+     "Which line is wrong?"
+    ],
+    [
+     141.93,
+     "Line 1 is wrong."
+    ],
+    [
+     142.99,
+     "Take a third of the step, not of the end point."
+    ],
+    [
+     146.66,
+     "The step is 6, 9."
+    ],
+    [
+     148.11,
+     "A third is 2, 3."
+    ],
+    [
+     149.47,
+     "Add to A: 5, 6."
+    ],
+    [
+     151.3,
+     "Animation software places the in-between frames at fractions of the way along a path, so movement looks smooth."
+    ],
+    [
+     159.3,
+     "One last question."
+    ],
+    [
+     160.61,
+     "Where is the point 3 quarters of the way from 0, 0 to 4, 8?"
+    ],
+    [
+     164.93,
+     "Pause the video and answer."
+    ],
+    [
+     168.3,
+     "3 quarters of 4 is 3."
+    ],
+    [
+     170.28,
+     "3 quarters of 8 is 6."
+    ],
+    [
+     172.27,
+     "So 3, 6."
+    ],
+    [
+     173.57,
+     "To remember: the step is B minus A."
+    ],
+    [
+     176.34,
+     "The point is A plus the fraction times the step."
+    ],
+    [
+     180.07,
+     "Ratio M to N means M over M plus N."
+    ],
+    [
+     182.87,
+     "The midpoint is the half-way case."
+    ],
+    [
+     185.75,
+     "Great work! Now practise lesson 13.2 on Camday."
+    ]
+   ],
+   "times": {
+    "13.2-k1": 24.3,
+    "13.2-k2": 57.15,
+    "13.2-k3": 78.19,
+    "13.2-k4": 167.25
+   },
+   "up": false
+  },
+  "10.3": {
+   "src": "media/mv/s9/10-3.mp4",
+   "poster": "media/mv/s9/10-3_poster.jpg",
+   "srt": "media/mv/s9/10-3.srt",
+   "dur": 202.32,
+   "captions": [
+    [
+     6.97,
+     "A road sign shows a gradient of 1 in 10."
+    ],
+    [
+     10.06,
+     "You rise 1 metre for every 10 metres along."
+    ],
+    [
+     13.38,
+     "How can you see the steepness of a line like 3 X plus 2 Y equals 8?"
+    ],
+    [
+     19.1,
+     "What should you do: rearrange to Y equals, or look at the number in front of X?"
+    ],
+    [
+     24.39,
+     "Pause the video and choose."
+    ],
+    [
+     27.6,
+     "Rearrange to Y equals."
+    ],
+    [
+     29.11,
+     "Then the number in front of X is the gradient."
+    ],
+    [
+     32.81,
+     "Remember: in Y equals M X plus C, M is the gradient and C is the Y intercept."
+    ],
+    [
+     38.35,
+     "Take 3 X plus 2 Y equals 8."
+    ],
+    [
+     40.6,
+     "Subtract 3 X: 2 Y equals 8 minus 3 X."
+    ],
+    [
+     43.69,
+     "Then divide by 2."
+    ],
+    [
+     45.65,
+     "Your turn."
+    ],
+    [
+     46.38,
+     "What is the gradient of 3 X plus 2 Y equals 8?"
+    ],
+    [
+     49.7,
+     "Pause the video and try it."
+    ],
+    [
+     53.06,
+     "Y equals 4 minus 1.5 X."
+    ],
+    [
+     54.93,
+     "The gradient is negative 1.5, and the Y intercept is 4."
+    ],
+    [
+     59.95,
+     "From two points: the gradient is the change in Y divided by the change in X."
+    ],
+    [
+     65.64,
+     "Through 1, 3 and 5, 11: 8 divided by 4 is 2."
+    ],
+    [
+     68.93,
+     "So the line is Y equals 2 X plus C."
+    ],
+    [
+     71.55,
+     "Substitute a point to find C."
+    ],
+    [
+     74.27,
+     "Your turn."
+    ],
+    [
+     74.99,
+     "The line is Y equals 2 X plus 1."
+    ],
+    [
+     77.3,
+     "What is the Y intercept?"
+    ],
+    [
+     79.03,
+     "Pause and answer."
+    ],
+    [
+     81.66,
+     "The Y intercept is 1."
+    ],
+    [
+     83.34,
+     "Check with the point 1, 3: 2 plus 1 is 3."
+    ],
+    [
+     86.61,
+     "The line crosses the Y axis at 0, 1."
+    ],
+    [
+     90.03,
+     "Parallel lines have the same gradient."
+    ],
+    [
+     92.91,
+     "Y equals 2 X plus 1 and Y equals 2 X minus 7 are parallel."
+    ],
+    [
+     97.84,
+     "Here is the method."
+    ],
+    [
+     99.22,
+     "Step 1: rearrange to Y equals."
+    ],
+    [
+     101.96,
+     "Step 2: read off the gradient and the intercept."
+    ],
+    [
+     106.02,
+     "Step 3: from two points, change in Y over change in X."
+    ],
+    [
+     110.25,
+     "Step 4: substitute a point to find C."
+    ],
+    [
+     113.51,
+     "X minus 3 Y equals 6."
+    ],
+    [
+     115.05,
+     "3 Y equals X minus 6, so Y equals a third X minus 2."
+    ],
+    [
+     118.85,
+     "The gradient is a third, the intercept negative 2."
+    ],
+    [
+     123.07,
+     "Through negative 2, 7 and 2, negative 1: the change in Y is negative 8, the change in X is 4."
+    ],
+    [
+     130.16,
+     "The gradient is negative 2."
+    ],
+    [
+     132.22,
+     "The line is Y equals negative 2 X plus 3."
+    ],
+    [
+     135.9,
+     "A line parallel to Y equals 4 X minus 1, through 0, 6: Y equals 4 X plus 6."
+    ],
+    [
+     142.33,
+     "Sam finds the gradient of 2 X plus 5 Y equals 20."
+    ],
+    [
+     146.16,
+     "Which line is wrong?"
+    ],
+    [
+     148.27,
+     "Line 1 is wrong."
+    ],
+    [
+     149.39,
+     "He did not make Y the subject."
+    ],
+    [
+     152.04,
+     "Y equals 4 minus 0.4 X."
+    ],
+    [
+     154.01,
+     "The gradient is negative 0.4."
+    ],
+    [
+     157.06,
+     "Wheelchair ramps must not be too steep."
+    ],
+    [
+     159.85,
+     "Many building rules say a ramp should rise no more than 1 metre for every 12 metres along."
+    ],
+    [
+     166.84,
+     "One last question."
+    ],
+    [
+     168.14,
+     "Which line is parallel to Y equals 5 X: Y equals 5 X minus 3, or Y equals negative 5 X?"
+    ],
+    [
+     174.4,
+     "Pause the video and choose."
+    ],
+    [
+     177.74,
+     "Y equals 5 X minus 3."
+    ],
+    [
+     179.4,
+     "It has the same gradient, 5."
+    ],
+    [
+     182.16,
+     "To remember: in Y equals M X plus C, M is the gradient and C the intercept."
+    ],
+    [
+     187.66,
+     "Rearrange first."
+    ],
+    [
+     190.0,
+     "Gradient is the change in Y over the change in X."
+    ],
+    [
+     193.7,
+     "Parallel lines have equal gradients."
+    ],
+    [
+     196.85,
+     "Great work! Now practise lesson 10.3 on Camday."
+    ]
+   ],
+   "times": {
+    "10.3-k1": 26.55,
+    "10.3-k2": 52.01,
+    "10.3-k3": 80.61,
+    "10.3-k4": 176.69
+   },
+   "up": false
+  },
+  "13.3": {
+   "src": "media/mv/s9/13-3.mp4",
+   "poster": "media/mv/s9/13-3_poster.jpg",
+   "srt": "media/mv/s9/13-3.srt",
+   "dur": 205.92,
+   "captions": [
+    [
+     6.49,
+     "In a puzzle app, you must move a tile into a slot."
+    ],
+    [
+     9.77,
+     "You may only reflect, rotate or translate it, maybe more than once."
+    ],
+    [
+     14.71,
+     "Does the tile ever change size?"
+    ],
+    [
+     16.79,
+     "Pause the video and choose: no, it stays congruent, or yes."
+    ],
+    [
+     22.14,
+     "No."
+    ],
+    [
+     22.35,
+     "Reflections, rotations and translations never change the size or shape."
+    ],
+    [
+     27.32,
+     "The image is congruent."
+    ],
+    [
+     29.48,
+     "Remember: a reflection needs a mirror line."
+    ],
+    [
+     32.43,
+     "A rotation needs an angle, a direction and a centre."
+    ],
+    [
+     35.99,
+     "A translation needs a vector."
+    ],
+    [
+     38.53,
+     "To combine transformations, do the first one, then apply the second one to the image."
+    ],
+    [
+     44.89,
+     "Triangle A has corners 1, 1, then 3, 1, and 1, 4."
+    ],
+    [
+     48.81,
+     "Reflect it in the Y axis to get B: negative 1, 1, then negative 3, 1, and negative 1, 4."
+    ],
+    [
+     55.85,
+     "Then rotate B 180 degrees about the origin to get C."
+    ],
+    [
+     60.56,
+     "Your turn."
+    ],
+    [
+     61.25,
+     "Where does A's corner 3, 1 end up in C?"
+    ],
+    [
+     63.95,
+     "Pause the video and try it."
+    ],
+    [
+     67.22,
+     "B's corner is negative 3, 1."
+    ],
+    [
+     69.53,
+     "A 180 degree rotation changes both signs: 3, negative 1."
+    ],
+    [
+     74.69,
+     "C is 1, negative 1, then 3, negative 1, and 1, negative 4."
+    ],
+    [
+     79.01,
+     "That is just A reflected in the X axis."
+    ],
+    [
+     81.91,
+     "One transformation does the job of two."
+    ],
+    [
+     85.36,
+     "Two reflections in perpendicular lines make a 180 degree rotation."
+    ],
+    [
+     90.71,
+     "Your turn."
+    ],
+    [
+     91.44,
+     "Two reflections in parallel lines make: a translation, or a 90 degree rotation?"
+    ],
+    [
+     97.24,
+     "Pause and choose."
+    ],
+    [
+     99.89,
+     "A translation."
+    ],
+    [
+     100.88,
+     "Reflect in X equals 1, then in X equals 4: everything moves 6 to the right."
+    ],
+    [
+     106.21,
+     "That is twice the gap between the lines."
+    ],
+    [
+     109.61,
+     "Here is the method."
+    ],
+    [
+     110.99,
+     "Step 1: do the first transformation."
+    ],
+    [
+     114.16,
+     "Step 2: apply the second to the image."
+    ],
+    [
+     117.5,
+     "Step 3: compare the final image with the start."
+    ],
+    [
+     121.46,
+     "Step 4: describe a single transformation fully."
+    ],
+    [
+     125.51,
+     "Translate by 2, negative 1, then by negative 5, 4."
+    ],
+    [
+     129.46,
+     "Add the vectors: negative 3, 3."
+    ],
+    [
+     131.91,
+     "One translation."
+    ],
+    [
+     133.72,
+     "1, 2 goes to negative 2, 1, and 3, 0 goes to 0, 3."
+    ],
+    [
+     137.83,
+     "That is a rotation of 90 degrees anticlockwise about the origin."
+    ],
+    [
+     143.64,
+     "Order can matter."
+    ],
+    [
+     144.79,
+     "Doing the same two moves the other way round may give a different image."
+    ],
+    [
+     150.18,
+     "Describe the single transformation that moves X, Y to X plus 4, Y minus 2."
+    ],
+    [
+     155.45,
+     "Ben answers."
+    ],
+    [
+     156.3,
+     "Which line is wrong?"
+    ],
+    [
+     158.28,
+     "Line 1 is not complete."
+    ],
+    [
+     159.94,
+     "A translation needs its vector."
+    ],
+    [
+     162.74,
+     "A translation by the vector 4, negative 2."
+    ],
+    [
+     166.47,
+     "Game engines and robot arms combine rotations and translations many times every second, to move objects into place."
+    ],
+    [
+     174.97,
+     "One last question."
+    ],
+    [
+     176.25,
+     "Images after reflections, rotations and translations are always: congruent, or bigger?"
+    ],
+    [
+     182.37,
+     "Pause the video and choose."
+    ],
+    [
+     185.69,
+     "Congruent."
+    ],
+    [
+     186.4,
+     "Same size, same shape."
+    ],
+    [
+     188.51,
+     "To remember: apply the second transformation to the image."
+    ],
+    [
+     193.11,
+     "Two transformations can equal one."
+    ],
+    [
+     196.14,
+     "Order can matter."
+    ],
+    [
+     198.01,
+     "The images stay congruent."
+    ],
+    [
+     200.56,
+     "Great work! Now practise lesson 13.3 on Camday."
+    ]
+   ],
+   "times": {
+    "13.3-k1": 21.09,
+    "13.3-k2": 66.17,
+    "13.3-k3": 98.84,
+    "13.3-k4": 184.64
    },
    "up": false
   }
