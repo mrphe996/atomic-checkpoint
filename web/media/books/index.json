@@ -2956,5 +2956,27 @@
     10
    ]
   }
+ },
+ "c3u16": {
+  "title": "Camday Maths Stage 3 · Unit 16: Chance",
+  "pages": 10,
+  "dir": "media/books/c3u16/",
+  "ext": "webp",
+  "pdf": "media/books/c3u16.pdf?v=6aec90e0fb",
+  "v": "6aec90e0fb",
+  "secs": {
+   "16.1": [
+    2,
+    5
+   ],
+   "16.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
