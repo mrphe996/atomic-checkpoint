@@ -1528,5 +1528,67 @@
     14
    ]
   }
+ },
+ "c6u07": {
+  "title": "Camday Maths Stage 6 · Unit 7: Exploring Measures",
+  "pages": 10,
+  "dir": "media/books/c6u07/",
+  "ext": "webp",
+  "pdf": "media/books/c6u07.pdf?v=4605c7326b",
+  "v": "4605c7326b",
+  "secs": {
+   "7.1": [
+    2,
+    5
+   ],
+   "7.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
+ },
+ "c6u08": {
+  "title": "Camday Maths Stage 6 · Unit 8: Addition and Subtraction (2)",
+  "pages": 10,
+  "dir": "media/books/c6u08/",
+  "ext": "webp",
+  "pdf": "media/books/c6u08.pdf?v=deccf654f5",
+  "v": "deccf654f5",
+  "secs": {
+   "8.1": [
+    2,
+    5
+   ],
+   "8.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
+ },
+ "c6u09": {
+  "title": "Camday Maths Stage 6 · Unit 9: Probability",
+  "pages": 7,
+  "dir": "media/books/c6u09/",
+  "ext": "webp",
+  "pdf": "media/books/c6u09.pdf?v=6d7677722f",
+  "v": "6d7677722f",
+  "secs": {
+   "9.1": [
+    2,
+    6
+   ],
+   "answers": [
+    7,
+    7
+   ]
+  }
  }
 }
