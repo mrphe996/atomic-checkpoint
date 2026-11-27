@@ -134,5 +134,7 @@
   }
 
   window.buildVideo = spec => { intro(spec); spec.scenes.forEach(sc => scene(spec, sc)); header(spec); outro(spec); window.seek(0); return anims.length; };
+  // is anything moving at time t? (the progress bar is the only long animation; shortcut: it then advances in half-second steps, fine at 4 px/s)
+  window.busy = t => anims.some(a => { const e = a.effect.getTiming(); return e.duration < 30000 && t * 1000 >= e.delay - 80 && t * 1000 <= e.delay + e.duration + 80; });
   window.seek = t => { for (const a of anims) a.currentTime = t * 1000; };
 })();

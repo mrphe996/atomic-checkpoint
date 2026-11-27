@@ -149,9 +149,12 @@ def cmd_render(stage, unit, sec, preview=None):
                                "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "96k",
                                "-shortest", "-movflags", "+faststart", mp4], stdin=subprocess.PIPE)
         stage_el = pg.query_selector("#stage")
-        for i in range(frames):
-            pg.evaluate(f"seek({i / FPS})")
-            ff.stdin.write(stage_el.screenshot(type="jpeg", quality=97))
+        shot = None; fresh = 0
+        for i in range(frames):   # a still picture is photographed twice a second, not 25 times: ~3× faster renders
+            if shot is None or i % 12 == 0 or os.environ.get("EVERY_FRAME") or pg.evaluate(f"busy({i / FPS})"):
+                pg.evaluate(f"seek({i / FPS})"); shot = stage_el.screenshot(type="jpeg", quality=97); fresh += 1
+            ff.stdin.write(shot)
+        print(f"{fresh} of {frames} frames photographed")
         pg.evaluate(f"seek({spec['introEnd'] + 6})"); poster = os.path.join(out_dir, base + "_poster.jpg")
         stage_el.screenshot(path=poster, type="jpeg", quality=85)
         ff.stdin.close(); ff.wait(); br.close()
