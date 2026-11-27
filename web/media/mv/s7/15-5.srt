@@ -1,0 +1,375 @@
+1
+00:00:08,750 --> 00:00:14,600
+A gift box is 20 centimetres long, 15 centimetres wide and 10 centimetres high.
+
+2
+00:00:14,650 --> 00:00:20,160
+You want to cover every face with wrapping paper, with no overlaps.
+
+3
+00:00:20,210 --> 00:00:21,970
+How much paper do you need?
+
+4
+00:00:22,020 --> 00:00:25,270
+Here is a hint: imagine opening the box out flat.
+
+5
+00:00:25,320 --> 00:00:28,820
+Pause the video and work it out.
+
+6
+00:00:28,870 --> 00:00:32,090
+A box has 6 faces, in 3 matching pairs.
+
+7
+00:00:32,140 --> 00:00:40,690
+The top and the bottom are each 20 by 15: that is 300 square centimetres each, 600 for the pair.
+
+8
+00:00:40,740 --> 00:00:46,090
+The front and the back are each 20 by 10: 400 for the pair.
+
+9
+00:00:46,140 --> 00:00:50,940
+The 2 ends are each 15 by 10: 300 for the pair.
+
+10
+00:00:50,990 --> 00:00:58,110
+600 plus 400 plus 300 is 1,300 square centimetres of paper.
+
+11
+00:00:58,160 --> 00:01:01,460
+Remember: a net is a 3D shape opened out flat.
+
+12
+00:01:01,510 --> 00:01:06,230
+The net of a cuboid has 6 rectangles, in 3 matching pairs.
+
+13
+00:01:06,280 --> 00:01:10,740
+The surface area of a 3D shape is the total area of all its faces.
+
+14
+00:01:10,790 --> 00:01:13,900
+It is the same as the area of its net.
+
+15
+00:01:13,950 --> 00:01:20,250
+For a cuboid, find the area of the 3 different faces, add them, and double the total.
+
+16
+00:01:20,300 --> 00:01:21,900
+Surface area is an area.
+
+17
+00:01:21,950 --> 00:01:25,960
+So it is measured in square units, not cubic units.
+
+18
+00:01:26,010 --> 00:01:28,580
+A cube has 6 identical square faces.
+
+19
+00:01:28,630 --> 00:01:32,770
+So its surface area is 6 times the area of 1 face.
+
+20
+00:01:32,820 --> 00:01:38,680
+For a cube with sides of 3 centimetres, 1 face is 3 times 3, which is 9.
+
+21
+00:01:38,730 --> 00:01:42,100
+6 times 9 is 54 square centimetres.
+
+22
+00:01:42,150 --> 00:01:42,790
+Your turn.
+
+23
+00:01:42,840 --> 00:01:47,170
+What is the surface area of a cube with sides of 2 centimetres?
+
+24
+00:01:47,220 --> 00:01:50,440
+Pause the video and try it.
+
+25
+00:01:50,490 --> 00:01:53,220
+1 face is 2 times 2, which is 4.
+
+26
+00:01:53,270 --> 00:01:54,780
+There are 6 faces.
+
+27
+00:01:54,830 --> 00:01:58,360
+6 times 4 is 24 square centimetres.
+
+28
+00:01:58,410 --> 00:01:59,690
+Here is the method.
+
+29
+00:01:59,740 --> 00:02:04,890
+Step 1: sketch the cuboid, and label its length, width and height.
+
+30
+00:02:04,940 --> 00:02:08,980
+Step 2: find the area of the 3 different faces.
+
+31
+00:02:09,030 --> 00:02:14,600
+Step 3: add them, and double the total, because opposite faces are equal.
+
+32
+00:02:14,650 --> 00:02:17,980
+Step 4: give the answer in square units.
+
+33
+00:02:18,030 --> 00:02:25,280
+Find the surface area of a cuboid that is 8 centimetres by 5 centimetres by 2 centimetres.
+
+34
+00:02:25,330 --> 00:02:29,610
+The 3 different faces are 8 times 5, which is 40.
+
+35
+00:02:29,660 --> 00:02:32,090
+Then 8 times 2, which is 16.
+
+36
+00:02:32,140 --> 00:02:35,020
+And 5 times 2, which is 10.
+
+37
+00:02:35,070 --> 00:02:36,190
+Add them: 66.
+
+38
+00:02:36,240 --> 00:02:39,780
+Double it: 132 square centimetres.
+
+39
+00:02:39,830 --> 00:02:40,510
+Your turn.
+
+40
+00:02:40,560 --> 00:02:42,270
+A cuboid is 3 by 3 by 1.
+
+41
+00:02:42,320 --> 00:02:44,100
+What is its surface area?
+
+42
+00:02:44,150 --> 00:02:47,470
+Pause the video and try it.
+
+43
+00:02:47,520 --> 00:02:50,490
+The 3 different faces are 9, 3 and 3.
+
+44
+00:02:50,540 --> 00:02:51,950
+They add up to 15.
+
+45
+00:02:52,000 --> 00:02:56,330
+Double it: the surface area is 30 square units.
+
+46
+00:02:56,380 --> 00:03:03,000
+A box with no lid is 40 centimetres long, 25 centimetres wide and 10 centimetres high.
+
+47
+00:03:03,050 --> 00:03:05,800
+How much cardboard is needed?
+
+48
+00:03:05,850 --> 00:03:12,860
+There is only 1 face of 40 by 25, the bottom: 1,000 square centimetres.
+
+49
+00:03:12,910 --> 00:03:18,230
+The front and back are 2 times 40 times 10, which is 800.
+
+50
+00:03:18,280 --> 00:03:23,210
+The ends are 2 times 25 times 10, which is 500.
+
+51
+00:03:23,260 --> 00:03:27,180
+The total is 2,300 square centimetres.
+
+52
+00:03:27,230 --> 00:03:31,110
+A cube has a surface area of 216 square centimetres.
+
+53
+00:03:31,160 --> 00:03:33,780
+Find the length of its side.
+
+54
+00:03:33,830 --> 00:03:35,970
+A cube has 6 equal faces.
+
+55
+00:03:36,020 --> 00:03:37,990
+216 divided by 6 is 36.
+
+56
+00:03:38,040 --> 00:03:41,260
+So each face has an area of 36.
+
+57
+00:03:41,310 --> 00:03:42,640
+6 times 6 is 36.
+
+58
+00:03:42,690 --> 00:03:45,680
+So the side is 6 centimetres.
+
+59
+00:03:45,730 --> 00:03:49,970
+A room is 5 metres long, 4 metres wide and 2.5 metres high.
+
+60
+00:03:50,020 --> 00:03:54,040
+You paint the 4 walls, but not the floor or the ceiling.
+
+61
+00:03:54,090 --> 00:03:56,270
+What area do you paint?
+
+62
+00:03:56,320 --> 00:04:00,490
+2 walls are 5 by 2.5: 2 times 12.5 is 25.
+
+63
+00:04:00,540 --> 00:04:06,080
+The other 2 walls are 4 by 2.5: 2 times 10 is 20.
+
+64
+00:04:06,130 --> 00:04:09,840
+25 plus 20 is 45 square metres.
+
+65
+00:04:09,890 --> 00:04:13,290
+Find the surface area of a cuboid, 5 by 4 by 2.
+
+66
+00:04:13,340 --> 00:04:14,970
+Here is Rosa's working.
+
+67
+00:04:15,020 --> 00:04:17,580
+Which line goes wrong first?
+
+68
+00:04:17,630 --> 00:04:18,740
+Line 2 is wrong.
+
+69
+00:04:18,790 --> 00:04:20,260
+That is only 3 faces.
+
+70
+00:04:20,310 --> 00:04:25,740
+A cuboid has 6 faces, because each face has a matching one opposite.
+
+71
+00:04:25,790 --> 00:04:27,270
+Double the total.
+
+72
+00:04:27,320 --> 00:04:30,540
+2 times 38 is 76 square units.
+
+73
+00:04:30,590 --> 00:04:34,010
+Take an ice cube with sides of 2 centimetres.
+
+74
+00:04:34,060 --> 00:04:37,800
+Its surface area is 24 square centimetres.
+
+75
+00:04:37,850 --> 00:04:42,490
+Now cut it into 8 small cubes, each with sides of 1 centimetre.
+
+76
+00:04:42,540 --> 00:04:44,650
+Each has a surface area of 6.
+
+77
+00:04:44,700 --> 00:04:48,180
+Together, that is 48 square centimetres.
+
+78
+00:04:48,230 --> 00:04:51,900
+It is the same amount of ice, but 2 times the surface.
+
+79
+00:04:51,950 --> 00:04:53,270
+Heat gets in faster.
+
+80
+00:04:53,320 --> 00:04:56,640
+That is why crushed ice melts so quickly.
+
+81
+00:04:56,690 --> 00:04:57,950
+One last question.
+
+82
+00:04:58,000 --> 00:05:01,750
+A cube has a surface area of 150 square centimetres.
+
+83
+00:05:01,800 --> 00:05:03,280
+How long is its side?
+
+84
+00:05:03,330 --> 00:05:07,020
+Pause the video and work it out.
+
+85
+00:05:07,070 --> 00:05:09,120
+150 divided by 6 is 25.
+
+86
+00:05:09,170 --> 00:05:11,680
+Each face has an area of 25.
+
+87
+00:05:11,730 --> 00:05:13,510
+And 5 times 5 is 25.
+
+88
+00:05:13,560 --> 00:05:16,700
+So the side is 5 centimetres.
+
+89
+00:05:16,750 --> 00:05:20,800
+To remember: surface area is the total area of all the faces.
+
+90
+00:05:20,850 --> 00:05:23,090
+It is the area of the net.
+
+91
+00:05:23,140 --> 00:05:28,030
+For a cuboid: find the 3 different faces, add them, and double.
+
+92
+00:05:28,080 --> 00:05:31,450
+For a cube: 6 times the area of 1 face.
+
+93
+00:05:31,500 --> 00:05:33,980
+The units are square units.
+
+94
+00:05:34,030 --> 00:05:39,430
+Great work! Now practise lesson 15.5 on Camday.

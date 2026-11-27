@@ -1,0 +1,351 @@
+1
+00:00:07,400 --> 00:00:11,260
+A class records its screen time at the weekend, in hours.
+
+2
+00:00:11,310 --> 00:00:15,580
+On Saturday, the boys' average is 4 hours, and the girls' is 3.
+
+3
+00:00:15,630 --> 00:00:19,350
+On Sunday, the boys' is 5, and the girls' is 4.
+
+4
+00:00:19,400 --> 00:00:28,210
+Which chart compares the boys and the girls, day by day: a dual bar chart, with 2 bars side by side, or a single bar chart of totals?
+
+5
+00:00:28,260 --> 00:00:31,410
+Pause the video and decide.
+
+6
+00:00:31,460 --> 00:00:32,550
+A dual bar chart.
+
+7
+00:00:32,600 --> 00:00:39,070
+For each day, there are 2 bars side by side: blue for the boys, and orange for the girls.
+
+8
+00:00:39,120 --> 00:00:44,320
+You can see at a glance that the boys had more screen time on both days.
+
+9
+00:00:44,370 --> 00:00:48,210
+Remember: the height of a bar shows the frequency.
+
+10
+00:00:48,260 --> 00:00:50,160
+Read the scale carefully.
+
+11
+00:00:50,210 --> 00:00:54,910
+A bar that reaches halfway between 10 and 20 shows 15.
+
+12
+00:00:54,960 --> 00:00:59,100
+A dual bar chart puts 2 bars side by side for each category.
+
+13
+00:00:59,150 --> 00:01:02,790
+It uses 2 colours, and a key to explain them.
+
+14
+00:01:02,840 --> 00:01:07,350
+It is good for comparing 2 groups, category by category.
+
+15
+00:01:07,400 --> 00:01:08,050
+Your turn.
+
+16
+00:01:08,100 --> 00:01:12,270
+On Saturday, the boys had 4 hours and the girls had 3 hours.
+
+17
+00:01:12,320 --> 00:01:14,450
+What is the total for Saturday?
+
+18
+00:01:14,500 --> 00:01:17,750
+Pause the video and try it.
+
+19
+00:01:17,800 --> 00:01:19,200
+4 plus 3 is 7 hours.
+
+20
+00:01:19,250 --> 00:01:23,340
+But the dual bar chart does not show that total directly.
+
+21
+00:01:23,390 --> 00:01:26,510
+For totals, there is a better chart.
+
+22
+00:01:26,560 --> 00:01:31,320
+A compound bar chart stacks the groups on top of each other, in 1 bar.
+
+23
+00:01:31,370 --> 00:01:34,490
+It is also called a stacked bar chart.
+
+24
+00:01:34,540 --> 00:01:39,660
+The total height shows the whole: 7 hours for Saturday, and 9 for Sunday.
+
+25
+00:01:39,710 --> 00:01:42,050
+Each section shows a part.
+
+26
+00:01:42,100 --> 00:01:44,200
+To read a top section, subtract.
+
+27
+00:01:44,250 --> 00:01:48,840
+Take the top of the section, minus the bottom of the section.
+
+28
+00:01:48,890 --> 00:01:49,600
+Your turn.
+
+29
+00:01:49,650 --> 00:01:51,570
+A compound bar reaches 40.
+
+30
+00:01:51,620 --> 00:01:53,840
+Its bottom section reaches 22.
+
+31
+00:01:53,890 --> 00:01:55,880
+How big is the top section?
+
+32
+00:01:55,930 --> 00:01:59,320
+Pause the video and try it.
+
+33
+00:01:59,370 --> 00:02:01,190
+40 minus 22 is 18.
+
+34
+00:02:01,240 --> 00:02:04,330
+The top section shows 18.
+
+35
+00:02:04,380 --> 00:02:05,660
+Here is the method.
+
+36
+00:02:05,710 --> 00:02:06,710
+Step 1: choose.
+
+37
+00:02:06,760 --> 00:02:09,430
+Use a dual bar chart to compare groups.
+
+38
+00:02:09,480 --> 00:02:13,480
+Use a compound bar chart to show totals and parts.
+
+39
+00:02:13,530 --> 00:02:16,730
+Step 2: draw the axes with a clear, even scale.
+
+40
+00:02:16,780 --> 00:02:18,740
+Add labels and a key.
+
+41
+00:02:18,790 --> 00:02:23,560
+Step 3: for a dual chart, draw 2 bars side by side for each category.
+
+42
+00:02:23,610 --> 00:02:26,410
+For a compound chart, stack them.
+
+43
+00:02:26,460 --> 00:02:31,480
+Step 4: to read a stacked section, take the top minus the bottom.
+
+44
+00:02:31,530 --> 00:02:36,060
+A compound bar shows the vehicles that pass a school on Monday.
+
+45
+00:02:36,110 --> 00:02:37,880
+The whole bar reaches 32.
+
+46
+00:02:37,930 --> 00:02:40,870
+The lower section, for bikes, reaches 19.
+
+47
+00:02:40,920 --> 00:02:44,770
+How many scooters does the upper section show?
+
+48
+00:02:44,820 --> 00:02:48,060
+Top minus bottom: 32 minus 19 is 13.
+
+49
+00:02:48,110 --> 00:02:50,710
+There were 13 scooters.
+
+50
+00:02:50,760 --> 00:02:57,460
+A shop wants to show its total sales for each month, split into online sales and sales in the store.
+
+51
+00:02:57,510 --> 00:02:59,760
+Which chart should it use?
+
+52
+00:02:59,810 --> 00:03:02,290
+Both the totals and the parts matter.
+
+53
+00:03:02,340 --> 00:03:05,840
+So the shop should use a compound bar chart.
+
+54
+00:03:05,890 --> 00:03:09,860
+This dual bar chart shows rainfall, in millimetres.
+
+55
+00:03:09,910 --> 00:03:13,340
+Town A had 70 in January and 50 in February.
+
+56
+00:03:13,390 --> 00:03:17,360
+Town B had 90 in January and 40 in February.
+
+57
+00:03:17,410 --> 00:03:20,660
+Which town had more rain in total?
+
+58
+00:03:20,710 --> 00:03:23,180
+Town A: 70 plus 50 is 120.
+
+59
+00:03:23,230 --> 00:03:26,250
+Town B: 90 plus 40 is 130.
+
+60
+00:03:26,300 --> 00:03:31,240
+Town B had more rain in total, even though it had less in February.
+
+61
+00:03:31,290 --> 00:03:33,570
+A compound bar shows fruit sold.
+
+62
+00:03:33,620 --> 00:03:36,630
+The lower section, for apples, reaches 24.
+
+63
+00:03:36,680 --> 00:03:38,460
+The whole bar reaches 45.
+
+64
+00:03:38,510 --> 00:03:41,590
+How many pears does the upper section show?
+
+65
+00:03:41,640 --> 00:03:43,270
+Here is Wren's working.
+
+66
+00:03:43,320 --> 00:03:45,860
+Which line goes wrong first?
+
+67
+00:03:45,910 --> 00:03:47,120
+Line 2 is wrong.
+
+68
+00:03:47,170 --> 00:03:50,720
+45 is the total for apples and pears together.
+
+69
+00:03:50,770 --> 00:03:54,490
+The pears section starts at 24, not at 0.
+
+70
+00:03:54,540 --> 00:03:56,500
+45 minus 24 is 21.
+
+71
+00:03:56,550 --> 00:03:59,180
+There are 21 pears.
+
+72
+00:03:59,230 --> 00:04:03,360
+An Olympic medal table is often drawn as a compound bar chart.
+
+73
+00:04:03,410 --> 00:04:07,750
+Each country's bar is split into gold, silver and bronze.
+
+74
+00:04:07,800 --> 00:04:13,410
+Weather websites use dual bar charts to compare 2 cities, month by month.
+
+75
+00:04:13,460 --> 00:04:16,360
+Before you read any chart, look for the key.
+
+76
+00:04:16,410 --> 00:04:19,320
+It tells you what each colour means.
+
+77
+00:04:19,370 --> 00:04:20,510
+One last question.
+
+78
+00:04:20,560 --> 00:04:25,760
+To show totals and parts, do you use a compound bar chart, or a dual bar chart?
+
+79
+00:04:25,810 --> 00:04:28,950
+Pause the video and answer.
+
+80
+00:04:29,000 --> 00:04:30,340
+A compound bar chart.
+
+81
+00:04:30,390 --> 00:04:35,720
+The height of the whole bar is the total, and the sections are the parts.
+
+82
+00:04:35,770 --> 00:04:39,420
+To remember: a dual bar chart has bars side by side.
+
+83
+00:04:39,470 --> 00:04:41,460
+It compares 2 groups.
+
+84
+00:04:41,510 --> 00:04:44,140
+A compound bar chart has stacked parts.
+
+85
+00:04:44,190 --> 00:04:46,480
+It shows totals and parts.
+
+86
+00:04:46,530 --> 00:04:49,390
+Use a clear scale, labels and a key.
+
+87
+00:04:49,440 --> 00:04:53,440
+For a stacked section, take the top minus the bottom.
+
+88
+00:04:53,490 --> 00:04:58,830
+Great work! Now practise lesson 16.2 on Camday.

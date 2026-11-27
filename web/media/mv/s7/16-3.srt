@@ -1,0 +1,443 @@
+1
+00:00:07,400 --> 00:00:11,110
+A survey asks 120 students how they travel to school.
+
+2
+00:00:11,160 --> 00:00:12,380
+Half of them walk.
+
+3
+00:00:12,430 --> 00:00:14,020
+A quarter take the bus.
+
+4
+00:00:14,070 --> 00:00:16,830
+The rest come by car or by bike.
+
+5
+00:00:16,880 --> 00:00:21,770
+A pie chart shows these parts of the whole as slices of a circle.
+
+6
+00:00:21,820 --> 00:00:23,890
+A full circle is 360 degrees.
+
+7
+00:00:23,940 --> 00:00:26,460
+What angle shows the half who walk?
+
+8
+00:00:26,510 --> 00:00:30,200
+Pause the video and work it out.
+
+9
+00:00:30,250 --> 00:00:31,830
+Half of 360 is 180.
+
+10
+00:00:31,880 --> 00:00:36,220
+The sector for walking has an angle of 180 degrees.
+
+11
+00:00:36,270 --> 00:00:38,920
+It is half of the circle.
+
+12
+00:00:38,970 --> 00:00:40,890
+A quarter of 360 is 90.
+
+13
+00:00:40,940 --> 00:00:45,310
+So the bus sector has an angle of 90 degrees.
+
+14
+00:00:45,360 --> 00:00:48,780
+Remember: a full turn is 360 degrees.
+
+15
+00:00:48,830 --> 00:00:49,900
+Half is 180.
+
+16
+00:00:49,950 --> 00:00:51,400
+A quarter is 90.
+
+17
+00:00:51,450 --> 00:00:53,630
+And 1 tenth is 36.
+
+18
+00:00:53,680 --> 00:00:56,570
+A pie chart is a circle, split into sectors.
+
+19
+00:00:56,620 --> 00:01:01,060
+The angle of each sector is in proportion to its frequency.
+
+20
+00:01:01,110 --> 00:01:07,180
+To find an angle: divide the frequency by the total, then multiply by 360.
+
+21
+00:01:07,230 --> 00:01:09,510
+18 students come by car.
+
+22
+00:01:09,560 --> 00:01:13,790
+18 divided by 120, times 360, is 54 degrees.
+
+23
+00:01:13,840 --> 00:01:15,340
+12 come by bike.
+
+24
+00:01:15,390 --> 00:01:17,740
+That is 36 degrees.
+
+25
+00:01:17,790 --> 00:01:18,520
+Your turn.
+
+26
+00:01:18,570 --> 00:01:19,760
+The total is 72.
+
+27
+00:01:19,810 --> 00:01:20,930
+1 group has 18.
+
+28
+00:01:20,980 --> 00:01:23,410
+What angle does that group need?
+
+29
+00:01:23,460 --> 00:01:26,910
+Pause the video and try it.
+
+30
+00:01:26,960 --> 00:01:29,480
+18 out of 72 is 1 quarter.
+
+31
+00:01:29,530 --> 00:01:33,090
+A quarter of 360 is 90 degrees.
+
+32
+00:01:33,140 --> 00:01:36,740
+You can also go from an angle back to a frequency.
+
+33
+00:01:36,790 --> 00:01:41,090
+Divide the angle by 360, then multiply by the total.
+
+34
+00:01:41,140 --> 00:01:44,010
+A pie chart shows 240 students.
+
+35
+00:01:44,060 --> 00:01:47,300
+The sector for drama is 45 degrees.
+
+36
+00:01:47,350 --> 00:01:49,560
+45 over 360 is 1 eighth.
+
+37
+00:01:49,610 --> 00:01:53,020
+1 eighth of 240 is 30 students.
+
+38
+00:01:53,070 --> 00:01:53,790
+Your turn.
+
+39
+00:01:53,840 --> 00:01:55,100
+The total is 180.
+
+40
+00:01:55,150 --> 00:01:57,870
+A sector has an angle of 60 degrees.
+
+41
+00:01:57,920 --> 00:01:59,570
+What is the frequency?
+
+42
+00:01:59,620 --> 00:02:03,040
+Pause the video and try it.
+
+43
+00:02:03,090 --> 00:02:05,520
+60 over 360 is 1 sixth.
+
+44
+00:02:05,570 --> 00:02:07,770
+1 sixth of 180 is 30.
+
+45
+00:02:07,820 --> 00:02:10,470
+The frequency is 30.
+
+46
+00:02:10,520 --> 00:02:15,270
+A waffle diagram is a grid of 100 squares: 10 rows of 10.
+
+47
+00:02:15,320 --> 00:02:18,000
+Each square is 1 per cent.
+
+48
+00:02:18,050 --> 00:02:20,610
+This waffle has 45 squares shaded.
+
+49
+00:02:20,660 --> 00:02:22,220
+It shows 45 per cent.
+
+50
+00:02:22,270 --> 00:02:25,750
+Waffles make percentages easy to count.
+
+51
+00:02:25,800 --> 00:02:27,110
+Here is the method.
+
+52
+00:02:27,160 --> 00:02:30,030
+Step 1: find the total frequency.
+
+53
+00:02:30,080 --> 00:02:35,180
+Step 2: work out the degrees for 1 item: 360 divided by the total.
+
+54
+00:02:35,230 --> 00:02:38,220
+Then multiply by each frequency.
+
+55
+00:02:38,270 --> 00:02:41,840
+Step 3: draw each angle with a protractor.
+
+56
+00:02:41,890 --> 00:02:45,870
+Step 4: check that the angles add up to 360 degrees.
+
+57
+00:02:45,920 --> 00:02:47,970
+Add labels or a key.
+
+58
+00:02:48,020 --> 00:02:51,150
+40 people choose their favourite sport.
+
+59
+00:02:51,200 --> 00:02:56,110
+16 choose football, 14 choose tennis, and 10 choose swimming.
+
+60
+00:02:56,160 --> 00:02:59,260
+Find the angles for a pie chart.
+
+61
+00:02:59,310 --> 00:03:01,450
+360 divided by 40 is 9.
+
+62
+00:03:01,500 --> 00:03:04,850
+So each person gets 9 degrees.
+
+63
+00:03:04,900 --> 00:03:08,420
+Football: 16 times 9 is 144 degrees.
+
+64
+00:03:08,470 --> 00:03:11,790
+Tennis: 14 times 9 is 126 degrees.
+
+65
+00:03:11,840 --> 00:03:15,810
+Swimming: 10 times 9 is 90 degrees.
+
+66
+00:03:15,860 --> 00:03:20,850
+Check: 144 plus 126 plus 90 is 360.
+
+67
+00:03:20,900 --> 00:03:25,830
+A waffle diagram has 28 squares shaded, for people who own a pet.
+
+68
+00:03:25,880 --> 00:03:27,520
+350 people were asked.
+
+69
+00:03:27,570 --> 00:03:29,530
+How many own a pet?
+
+70
+00:03:29,580 --> 00:03:32,570
+28 squares means 28 per cent.
+
+71
+00:03:32,620 --> 00:03:34,770
+0.28 times 350 is 98.
+
+72
+00:03:34,820 --> 00:03:37,740
+So 98 people own a pet.
+
+73
+00:03:37,790 --> 00:03:39,810
+School A has 600 students.
+
+74
+00:03:39,860 --> 00:03:43,710
+On its pie chart, the sport sector is 60 degrees.
+
+75
+00:03:43,760 --> 00:03:45,780
+School B has 240 students.
+
+76
+00:03:45,830 --> 00:03:48,330
+Its sport sector is 120 degrees.
+
+77
+00:03:48,380 --> 00:03:52,620
+Which school has more students who chose sport?
+
+78
+00:03:52,670 --> 00:03:56,140
+School A: 60 over 360 is 1 sixth.
+
+79
+00:03:56,190 --> 00:04:00,000
+1 sixth of 600 is 100 students.
+
+80
+00:04:00,050 --> 00:04:03,000
+School B: 120 over 360 is 1 third.
+
+81
+00:04:03,050 --> 00:04:05,650
+1 third of 240 is 80 students.
+
+82
+00:04:05,700 --> 00:04:10,890
+School A has more, even though its sector is smaller.
+
+83
+00:04:10,940 --> 00:04:13,600
+2 pie charts show favourite sports.
+
+84
+00:04:13,650 --> 00:04:18,550
+Class A has 20 students, and its football sector is 180 degrees.
+
+85
+00:04:18,600 --> 00:04:23,430
+Class B has 40 students, and its football sector is 90 degrees.
+
+86
+00:04:23,480 --> 00:04:25,130
+Here is Dev's working.
+
+87
+00:04:25,180 --> 00:04:27,850
+Which line goes wrong first?
+
+88
+00:04:27,900 --> 00:04:28,990
+Line 2 is wrong.
+
+89
+00:04:29,040 --> 00:04:32,040
+A pie chart shows proportions, not numbers.
+
+90
+00:04:32,090 --> 00:04:34,300
+You must use the totals.
+
+91
+00:04:34,350 --> 00:04:35,830
+Half of 20 is 10.
+
+92
+00:04:35,880 --> 00:04:37,810
+A quarter of 40 is 10.
+
+93
+00:04:37,860 --> 00:04:41,520
+The 2 classes have the same number.
+
+94
+00:04:41,570 --> 00:04:45,390
+A pie chart of the air you breathe has 1 huge sector.
+
+95
+00:04:45,440 --> 00:04:48,640
+About 78 per cent of air is nitrogen.
+
+96
+00:04:48,690 --> 00:04:50,690
+About 21 per cent is oxygen.
+
+97
+00:04:50,740 --> 00:04:55,560
+All the other gases together make up only about 1 per cent.
+
+98
+00:04:55,610 --> 00:05:01,820
+On a waffle diagram, that is 78 squares, 21 squares, and just 1 square.
+
+99
+00:05:01,870 --> 00:05:03,140
+One last question.
+
+100
+00:05:03,190 --> 00:05:06,010
+A waffle diagram has 27 squares shaded.
+
+101
+00:05:06,060 --> 00:05:08,140
+What percentage does it show?
+
+102
+00:05:08,190 --> 00:05:11,520
+Pause the video and answer.
+
+103
+00:05:11,570 --> 00:05:12,440
+27 per cent.
+
+104
+00:05:12,490 --> 00:05:16,590
+On a waffle diagram, each square is 1 per cent.
+
+105
+00:05:16,640 --> 00:05:23,590
+To remember: the angle on a pie chart is the frequency, divided by the total, times 360.
+
+106
+00:05:23,640 --> 00:05:28,670
+The frequency is the angle, divided by 360, times the total.
+
+107
+00:05:28,720 --> 00:05:31,380
+A waffle diagram has 100 squares.
+
+108
+00:05:31,430 --> 00:05:33,820
+Each one is 1 per cent.
+
+109
+00:05:33,870 --> 00:05:35,870
+Pie charts show proportions.
+
+110
+00:05:35,920 --> 00:05:39,710
+Check the totals before you compare 2 charts.
+
+111
+00:05:39,760 --> 00:05:45,110
+Great work! Now practise lesson 16.3 on Camday.

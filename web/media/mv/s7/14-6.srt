@@ -1,0 +1,359 @@
+1
+00:00:06,540 --> 00:00:11,050
+A photo on a phone is 4 centimetres wide and 3 centimetres tall.
+
+2
+00:00:11,100 --> 00:00:14,530
+You print it 3 times as big, for a frame.
+
+3
+00:00:14,580 --> 00:00:16,000
+How wide is the print?
+
+4
+00:00:16,050 --> 00:00:19,540
+Pause the video and work it out.
+
+5
+00:00:19,590 --> 00:00:21,590
+Multiply the width by 3.
+
+6
+00:00:21,640 --> 00:00:24,540
+4 times 3 is 12 centimetres.
+
+7
+00:00:24,590 --> 00:00:29,300
+The height is multiplied by 3 as well: 3 times 3 is 9 centimetres.
+
+8
+00:00:29,350 --> 00:00:33,170
+The print is bigger, but it is the same shape.
+
+9
+00:00:33,220 --> 00:00:36,890
+Remember: 4 times as long means multiply by 4.
+
+10
+00:00:36,940 --> 00:00:41,390
+A line of 2.5 centimetres becomes 10 centimetres.
+
+11
+00:00:41,440 --> 00:00:45,620
+An enlargement changes the size of a shape, but not its shape.
+
+12
+00:00:45,670 --> 00:00:51,010
+Every length is multiplied by the same number, called the scale factor.
+
+13
+00:00:51,060 --> 00:00:53,820
+Rectangle A is 2 squares by 1 square.
+
+14
+00:00:53,870 --> 00:00:56,330
+It is enlarged by scale factor 3.
+
+15
+00:00:56,380 --> 00:00:59,770
+Rectangle B is 6 squares by 3 squares.
+
+16
+00:00:59,820 --> 00:01:02,860
+Think about the corners of the 2 rectangles.
+
+17
+00:01:02,910 --> 00:01:08,140
+In an enlargement, do the angles stay the same, or are they multiplied too?
+
+18
+00:01:08,190 --> 00:01:11,440
+Pause the video and decide.
+
+19
+00:01:11,490 --> 00:01:13,240
+The angles stay the same.
+
+20
+00:01:13,290 --> 00:01:15,840
+Both rectangles have 4 right angles.
+
+21
+00:01:15,890 --> 00:01:18,110
+Only the lengths change.
+
+22
+00:01:18,160 --> 00:01:24,630
+To find a scale factor, divide a length on the image by the matching length on the object.
+
+23
+00:01:24,680 --> 00:01:28,780
+A side of 4 centimetres becomes 10 centimetres.
+
+24
+00:01:28,830 --> 00:01:30,810
+10 divided by 4 is 2.5.
+
+25
+00:01:30,860 --> 00:01:33,480
+The scale factor is 2.5.
+
+26
+00:01:33,530 --> 00:01:36,590
+An enlarged shape is similar to the original.
+
+27
+00:01:36,640 --> 00:01:38,380
+That means the same shape.
+
+28
+00:01:38,430 --> 00:01:42,730
+But it is not congruent, because the size is different.
+
+29
+00:01:42,780 --> 00:01:43,460
+Your turn.
+
+30
+00:01:43,510 --> 00:01:46,800
+A side of 2 centimetres becomes 7 centimetres.
+
+31
+00:01:46,850 --> 00:01:48,610
+What is the scale factor?
+
+32
+00:01:48,660 --> 00:01:51,970
+Pause the video and try it.
+
+33
+00:01:52,020 --> 00:01:55,870
+Image divided by object: 7 divided by 2 is 3.5.
+
+34
+00:01:55,920 --> 00:01:58,400
+The scale factor is 3.5.
+
+35
+00:01:58,450 --> 00:01:59,690
+Here is the method.
+
+36
+00:01:59,740 --> 00:02:05,850
+Step 1: count the length of each side in squares, and multiply by the scale factor.
+
+37
+00:02:05,900 --> 00:02:11,200
+Step 2: start at 1 corner, and draw each side with its new length.
+
+38
+00:02:11,250 --> 00:02:13,760
+Step 3: keep all the angles the same.
+
+39
+00:02:13,810 --> 00:02:18,880
+For a slanted side, multiply both the across move and the up move.
+
+40
+00:02:18,930 --> 00:02:24,380
+Step 4: check that every side has been multiplied by the same number.
+
+41
+00:02:24,430 --> 00:02:29,730
+A right-angled triangle has a base of 3 squares and a height of 2 squares.
+
+42
+00:02:29,780 --> 00:02:32,380
+Enlarge it by scale factor 3.
+
+43
+00:02:32,430 --> 00:02:35,920
+The new base is 3 times 3, which is 9 squares.
+
+44
+00:02:35,970 --> 00:02:40,160
+The new height is 2 times 3, which is 6 squares.
+
+45
+00:02:40,210 --> 00:02:41,710
+Draw the new triangle.
+
+46
+00:02:41,760 --> 00:02:47,190
+It is 3 times as wide, and 3 times as tall, with the same right angle.
+
+47
+00:02:47,240 --> 00:02:50,760
+A rectangle is 6 centimetres by 4 centimetres.
+
+48
+00:02:50,810 --> 00:02:54,730
+It is enlarged to 15 centimetres by 10 centimetres.
+
+49
+00:02:54,780 --> 00:02:56,990
+Find the scale factor.
+
+50
+00:02:57,040 --> 00:02:58,980
+15 divided by 6 is 2.5.
+
+51
+00:02:59,030 --> 00:03:05,080
+Check with the other pair of sides: 10 divided by 4 is also 2.5.
+
+52
+00:03:05,130 --> 00:03:11,550
+Both pairs give the same number, so this is an enlargement, with scale factor 2.5.
+
+53
+00:03:11,600 --> 00:03:15,500
+A side of a shape goes 2 squares right and 1 square up.
+
+54
+00:03:15,550 --> 00:03:20,140
+What happens to it in an enlargement with scale factor 4?
+
+55
+00:03:20,190 --> 00:03:22,030
+Multiply both moves by 4.
+
+56
+00:03:22,080 --> 00:03:26,450
+The new side goes 8 squares right and 4 squares up.
+
+57
+00:03:26,500 --> 00:03:30,200
+A rectangle 5 by 2 becomes a rectangle 10 by 6.
+
+58
+00:03:30,250 --> 00:03:32,590
+Is this an enlargement?
+
+59
+00:03:32,640 --> 00:03:34,380
+10 divided by 5 is 2.
+
+60
+00:03:34,430 --> 00:03:36,430
+But 6 divided by 2 is 3.
+
+61
+00:03:36,480 --> 00:03:39,360
+The 2 numbers are different.
+
+62
+00:03:39,410 --> 00:03:39,780
+So no.
+
+63
+00:03:39,830 --> 00:03:41,810
+The shape has been stretched.
+
+64
+00:03:41,860 --> 00:03:44,110
+It is not an enlargement.
+
+65
+00:03:44,160 --> 00:03:47,520
+Enlarge a rectangle, 3 by 4, by scale factor 2.
+
+66
+00:03:47,570 --> 00:03:49,190
+Here is Milo's working.
+
+67
+00:03:49,240 --> 00:03:51,770
+Which line goes wrong first?
+
+68
+00:03:51,820 --> 00:03:52,890
+Line 1 is wrong.
+
+69
+00:03:52,940 --> 00:03:55,900
+A scale factor means multiply every length.
+
+70
+00:03:55,950 --> 00:03:57,930
+It does not mean add.
+
+71
+00:03:57,980 --> 00:04:01,040
+3 times 2 is 6, and 4 times 2 is 8.
+
+72
+00:04:01,090 --> 00:04:04,070
+The new rectangle is 6 by 8.
+
+73
+00:04:04,120 --> 00:04:07,210
+A microscope is an enlargement machine.
+
+74
+00:04:07,260 --> 00:04:14,420
+With a magnification of 400, a cell 0.02 millimetres wide looks 8 millimetres wide.
+
+75
+00:04:14,470 --> 00:04:18,440
+When you pinch to zoom on a phone, the picture is enlarged.
+
+76
+00:04:18,490 --> 00:04:23,900
+Every length grows by the same scale factor, so nothing looks stretched.
+
+77
+00:04:23,950 --> 00:04:28,950
+A scale factor of 2 makes a photo 2 times as wide and 2 times as tall.
+
+78
+00:04:29,000 --> 00:04:32,600
+So it covers 4 times as much of the screen.
+
+79
+00:04:32,650 --> 00:04:33,960
+One last question.
+
+80
+00:04:34,010 --> 00:04:37,510
+A rectangle 3 by 4 becomes a rectangle 9 by 16.
+
+81
+00:04:37,560 --> 00:04:40,990
+Is that an enlargement, or not an enlargement?
+
+82
+00:04:41,040 --> 00:04:44,430
+Pause the video and decide.
+
+83
+00:04:44,480 --> 00:04:46,370
+It is not an enlargement.
+
+84
+00:04:46,420 --> 00:04:49,940
+9 divided by 3 is 3, but 16 divided by 4 is 4.
+
+85
+00:04:49,990 --> 00:04:54,220
+The sides are not multiplied by the same number.
+
+86
+00:04:54,270 --> 00:04:59,730
+To remember: an enlargement multiplies every length by the scale factor.
+
+87
+00:04:59,780 --> 00:05:03,860
+The angles do not change, so the shape stays the same.
+
+88
+00:05:03,910 --> 00:05:09,490
+The scale factor is an image length, divided by the matching object length.
+
+89
+00:05:09,540 --> 00:05:13,800
+On a grid, multiply both the across move and the up move.
+
+90
+00:05:13,850 --> 00:05:19,190
+Great work! Now practise lesson 14.6 on Camday.

@@ -1,0 +1,355 @@
+1
+00:00:06,320 --> 00:00:09,280
+A canteen records the lunches for 1 day.
+
+2
+00:00:09,330 --> 00:00:13,800
+Students from Year 7 and Year 8 choose pasta, rice or salad.
+
+3
+00:00:13,850 --> 00:00:16,010
+64 students eat lunch.
+
+4
+00:00:16,060 --> 00:00:21,990
+The cook wants to answer questions like: how many Year 8 students chose rice?
+
+5
+00:00:22,040 --> 00:00:31,450
+Which layout records both the year and the choice: a table with rows for the years and columns for the choices, or a single list of choices?
+
+6
+00:00:31,500 --> 00:00:34,670
+Pause the video and decide.
+
+7
+00:00:34,720 --> 00:00:38,280
+Use rows for the years, and columns for the choices.
+
+8
+00:00:38,330 --> 00:00:42,790
+Each number in the table then tells you 2 things at once.
+
+9
+00:00:42,840 --> 00:00:46,570
+Find the row for Year 8, and the column for rice.
+
+10
+00:00:46,620 --> 00:00:47,810
+They meet at 13.
+
+11
+00:00:47,860 --> 00:00:51,140
+So 13 students in Year 8 chose rice.
+
+12
+00:00:51,190 --> 00:00:55,900
+Remember: the total of a row is the sum of the numbers in it.
+
+13
+00:00:55,950 --> 00:00:58,250
+12 plus 9 plus 7 is 28.
+
+14
+00:00:58,300 --> 00:01:01,700
+A two-way table shows data sorted in 2 ways at once.
+
+15
+00:01:01,750 --> 00:01:06,830
+Here it is sorted by year, in the rows, and by lunch, in the columns.
+
+16
+00:01:06,880 --> 00:01:08,600
+Each row has a total.
+
+17
+00:01:08,650 --> 00:01:12,700
+Year 7 has 30 students, and Year 8 has 34.
+
+18
+00:01:12,750 --> 00:01:14,500
+Look at the salad column.
+
+19
+00:01:14,550 --> 00:01:18,100
+6 students in Year 7 chose salad, and 9 in Year 8.
+
+20
+00:01:18,150 --> 00:01:21,060
+How many students chose salad altogether?
+
+21
+00:01:21,110 --> 00:01:24,760
+Pause the video and work it out.
+
+22
+00:01:24,810 --> 00:01:26,050
+6 plus 9 is 15.
+
+23
+00:01:26,100 --> 00:01:33,570
+Add a totals row to the table: 26 chose pasta, 23 chose rice, and 15 chose salad.
+
+24
+00:01:33,620 --> 00:01:38,530
+The number in the bottom right corner is the grand total: 64 students.
+
+25
+00:01:38,580 --> 00:01:44,470
+You get 64 if you add the row totals, and also if you add the column totals.
+
+26
+00:01:44,520 --> 00:01:46,310
+Sometimes a table has gaps.
+
+27
+00:01:46,360 --> 00:01:48,220
+Use the totals to fill them.
+
+28
+00:01:48,270 --> 00:01:54,030
+A missing number is the total, minus the other numbers in that row or column.
+
+29
+00:01:54,080 --> 00:01:56,820
+Fill a row or column that has only 1 gap.
+
+30
+00:01:56,870 --> 00:01:59,200
+Then look for the next one.
+
+31
+00:01:59,250 --> 00:01:59,940
+Your turn.
+
+32
+00:01:59,990 --> 00:02:02,770
+A column reads 7, then a gap, then 11.
+
+33
+00:02:02,820 --> 00:02:03,960
+Its total is 30.
+
+34
+00:02:04,010 --> 00:02:05,900
+What is the missing value?
+
+35
+00:02:05,950 --> 00:02:09,310
+Pause the video and try it.
+
+36
+00:02:09,360 --> 00:02:11,070
+7 plus 11 is 18.
+
+37
+00:02:11,120 --> 00:02:13,060
+30 minus 18 is 12.
+
+38
+00:02:13,110 --> 00:02:16,260
+The missing value is 12.
+
+39
+00:02:16,310 --> 00:02:17,580
+Here is the method.
+
+40
+00:02:17,630 --> 00:02:19,240
+Step 1: read the labels.
+
+41
+00:02:19,290 --> 00:02:20,770
+What do the rows show?
+
+42
+00:02:20,820 --> 00:02:23,050
+What do the columns show?
+
+43
+00:02:23,100 --> 00:02:28,470
+Step 2: fill a gap where only 1 value is missing in a row or a column.
+
+44
+00:02:28,520 --> 00:02:32,440
+Step 3: keep going until the table is complete.
+
+45
+00:02:32,490 --> 00:02:35,920
+Step 4: check the grand total both ways.
+
+46
+00:02:35,970 --> 00:02:39,900
+This table shows how 56 students travel to school.
+
+47
+00:02:39,950 --> 00:02:41,890
+Some numbers are missing.
+
+48
+00:02:41,940 --> 00:02:47,300
+Start with the boys row: 28 minus 16 is 12 boys take the bus.
+
+49
+00:02:47,350 --> 00:02:51,550
+In the walk column: 35 minus 16 is 19 girls walk.
+
+50
+00:02:51,600 --> 00:02:56,010
+So the girls total is 19 plus 9, which is 28.
+
+51
+00:02:56,060 --> 00:02:59,830
+The bus total is 12 plus 9, which is 21.
+
+52
+00:02:59,880 --> 00:03:02,130
+Check: 35 plus 21 is 56.
+
+53
+00:03:02,180 --> 00:03:03,440
+Correct.
+
+54
+00:03:03,490 --> 00:03:05,360
+Go back to the lunch table.
+
+55
+00:03:05,410 --> 00:03:09,310
+What fraction of the Year 8 students chose rice?
+
+56
+00:03:09,360 --> 00:03:14,240
+The question is about Year 8, so use the Year 8 total: 34.
+
+57
+00:03:14,290 --> 00:03:16,110
+13 of them chose rice.
+
+58
+00:03:16,160 --> 00:03:18,960
+The fraction is 13 over 34.
+
+59
+00:03:19,010 --> 00:03:23,940
+Did a greater proportion of Year 7, or of Year 8, choose pasta?
+
+60
+00:03:23,990 --> 00:03:26,600
+In Year 7, it is 14 out of 30.
+
+61
+00:03:26,650 --> 00:03:28,900
+That is about 47 per cent.
+
+62
+00:03:28,950 --> 00:03:31,560
+In Year 8, it is 12 out of 34.
+
+63
+00:03:31,610 --> 00:03:34,410
+That is about 35 per cent.
+
+64
+00:03:34,460 --> 00:03:38,290
+So a greater proportion of Year 7 chose pasta.
+
+65
+00:03:38,340 --> 00:03:43,940
+From the lunch table: what fraction of the students who ate pasta were in Year 7?
+
+66
+00:03:43,990 --> 00:03:45,470
+Here is Gus's working.
+
+67
+00:03:45,520 --> 00:03:47,970
+Which line goes wrong first?
+
+68
+00:03:48,020 --> 00:03:49,120
+Line 2 is wrong.
+
+69
+00:03:49,170 --> 00:03:52,640
+The question is about the students who ate pasta.
+
+70
+00:03:52,690 --> 00:03:57,360
+So divide by the pasta total, 26, not by the Year 7 total.
+
+71
+00:03:57,410 --> 00:04:03,120
+The fraction is 14 over 26, which simplifies to 7 over 13.
+
+72
+00:04:03,170 --> 00:04:06,110
+A bus or train timetable is a two-way table.
+
+73
+00:04:06,160 --> 00:04:11,220
+The rows are the stops, and the columns are the different journeys.
+
+74
+00:04:11,270 --> 00:04:13,550
+A multiplication square is one too.
+
+75
+00:04:13,600 --> 00:04:17,440
+Find a row and a column, and read where they meet.
+
+76
+00:04:17,490 --> 00:04:24,800
+And a country's census sorts millions of people in 2 ways: for example, by age group and by region.
+
+77
+00:04:24,850 --> 00:04:26,040
+One last question.
+
+78
+00:04:26,090 --> 00:04:27,350
+Add the row totals.
+
+79
+00:04:27,400 --> 00:04:29,200
+Then add the column totals.
+
+80
+00:04:29,250 --> 00:04:32,440
+Should the 2 answers be the same, or different?
+
+81
+00:04:32,490 --> 00:04:35,690
+Pause the video and decide.
+
+82
+00:04:35,740 --> 00:04:36,310
+The same.
+
+83
+00:04:36,360 --> 00:04:39,170
+Both ways count every person exactly once.
+
+84
+00:04:39,220 --> 00:04:43,950
+If the answers are different, there is a mistake in the table.
+
+85
+00:04:44,000 --> 00:04:49,000
+To remember: a two-way table sorts data by 2 categories at once.
+
+86
+00:04:49,050 --> 00:04:53,180
+Use the row totals and column totals to fill the gaps.
+
+87
+00:04:53,230 --> 00:04:55,990
+Check the grand total both ways.
+
+88
+00:04:56,040 --> 00:05:00,880
+For a fraction, divide by the total of the group in the question.
+
+89
+00:05:00,930 --> 00:05:06,310
+Great work! Now practise lesson 16.1 on Camday.

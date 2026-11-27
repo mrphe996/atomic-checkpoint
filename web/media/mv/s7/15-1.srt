@@ -1,0 +1,347 @@
+1
+00:00:07,690 --> 00:00:11,850
+A shop sells floor tiles priced for each square metre.
+
+2
+00:00:11,900 --> 00:00:15,350
+But your floor plan is in square centimetres.
+
+3
+00:00:15,400 --> 00:00:19,020
+The floor is 180,000 square centimetres.
+
+4
+00:00:19,070 --> 00:00:21,380
+How many square metres is that?
+
+5
+00:00:21,430 --> 00:00:23,520
+Be careful: it is not 1,800.
+
+6
+00:00:23,570 --> 00:00:27,350
+Pause the video and work it out.
+
+7
+00:00:27,400 --> 00:00:29,950
+1 metre is 100 centimetres.
+
+8
+00:00:30,000 --> 00:00:35,440
+But 1 square metre is 100 centimetres by 100 centimetres.
+
+9
+00:00:35,490 --> 00:00:39,260
+That is 10,000 square centimetres.
+
+10
+00:00:39,310 --> 00:00:43,070
+So divide by 10,000, not by 100.
+
+11
+00:00:43,120 --> 00:00:49,090
+180,000 divided by 10,000 is 18 square metres.
+
+12
+00:00:49,140 --> 00:00:51,460
+Remember the length facts.
+
+13
+00:00:51,510 --> 00:00:54,280
+1 centimetre is 10 millimetres.
+
+14
+00:00:54,330 --> 00:00:56,730
+1 metre is 100 centimetres.
+
+15
+00:00:56,780 --> 00:00:59,830
+1 kilometre is 1,000 metres.
+
+16
+00:00:59,880 --> 00:01:05,880
+For an area, the length fact is used 2 times: once for the length, and once for the width.
+
+17
+00:01:05,930 --> 00:01:08,110
+So you square the number.
+
+18
+00:01:08,160 --> 00:01:10,730
+1 centimetre is 10 millimetres.
+
+19
+00:01:10,780 --> 00:01:17,280
+So 1 square centimetre is 10 times 10, which is 100 square millimetres.
+
+20
+00:01:17,330 --> 00:01:21,030
+1 square metre is 10,000 square centimetres.
+
+21
+00:01:21,080 --> 00:01:25,840
+And 1 square kilometre is 1 million square metres.
+
+22
+00:01:25,890 --> 00:01:26,560
+Your turn.
+
+23
+00:01:26,610 --> 00:01:29,780
+Change 2 square metres to square centimetres.
+
+24
+00:01:29,830 --> 00:01:33,120
+Pause the video and try it.
+
+25
+00:01:33,170 --> 00:01:37,980
+Each square metre is 10,000 square centimetres.
+
+26
+00:01:38,030 --> 00:01:43,090
+2 times 10,000 is 20,000 square centimetres.
+
+27
+00:01:43,140 --> 00:01:48,300
+Going from a bigger unit to a smaller unit, you need more of them.
+
+28
+00:01:48,350 --> 00:01:49,240
+So multiply.
+
+29
+00:01:49,290 --> 00:01:53,500
+4.5 square metres is 45,000 square centimetres.
+
+30
+00:01:53,550 --> 00:01:58,060
+Going from a smaller unit to a bigger unit, you need fewer.
+
+31
+00:01:58,110 --> 00:01:58,830
+So divide.
+
+32
+00:01:58,880 --> 00:02:03,160
+730 square millimetres is 7.3 square centimetres.
+
+33
+00:02:03,210 --> 00:02:03,930
+Your turn.
+
+34
+00:02:03,980 --> 00:02:07,910
+Change 850 square millimetres to square centimetres.
+
+35
+00:02:07,960 --> 00:02:11,380
+Pause the video and try it.
+
+36
+00:02:11,430 --> 00:02:15,900
+100 square millimetres make 1 square centimetre.
+
+37
+00:02:15,950 --> 00:02:20,680
+850 divided by 100 is 8.5 square centimetres.
+
+38
+00:02:20,730 --> 00:02:22,140
+Here is the method.
+
+39
+00:02:22,190 --> 00:02:24,460
+Step 1: write the length fact.
+
+40
+00:02:24,510 --> 00:02:28,100
+For example, 1 metre is 100 centimetres.
+
+41
+00:02:28,150 --> 00:02:31,450
+Step 2: square it, to get the area fact.
+
+42
+00:02:31,500 --> 00:02:35,690
+1 square metre is 10,000 square centimetres.
+
+43
+00:02:35,740 --> 00:02:38,250
+Step 3: to a smaller unit, multiply.
+
+44
+00:02:38,300 --> 00:02:40,580
+To a bigger unit, divide.
+
+45
+00:02:40,630 --> 00:02:45,110
+Step 4: check that the size of your answer makes sense.
+
+46
+00:02:45,160 --> 00:02:49,400
+Change 0.6 square metres to square centimetres.
+
+47
+00:02:49,450 --> 00:02:53,490
+Going to a smaller unit, so multiply by 10,000.
+
+48
+00:02:53,540 --> 00:02:57,440
+The answer is 6,000 square centimetres.
+
+49
+00:02:57,490 --> 00:03:01,200
+A rug is 1.5 metres long and 40 centimetres wide.
+
+50
+00:03:01,250 --> 00:03:04,130
+Find its area in square metres.
+
+51
+00:03:04,180 --> 00:03:07,620
+Make the units the same before you multiply.
+
+52
+00:03:07,670 --> 00:03:10,460
+40 centimetres is 0.4 metres.
+
+53
+00:03:10,510 --> 00:03:12,480
+1.5 times 0.4 is 0.6.
+
+54
+00:03:12,530 --> 00:03:15,920
+The area is 0.6 square metres.
+
+55
+00:03:15,970 --> 00:03:19,330
+1 litre of paint covers 10 square metres.
+
+56
+00:03:19,380 --> 00:03:23,570
+A wall measures 500 centimetres by 280 centimetres.
+
+57
+00:03:23,620 --> 00:03:26,200
+How much paint is needed?
+
+58
+00:03:26,250 --> 00:03:30,870
+Change the lengths to metres first: 5 metres by 2.8 metres.
+
+59
+00:03:30,920 --> 00:03:33,720
+The area is 14 square metres.
+
+60
+00:03:33,770 --> 00:03:36,050
+14 divided by 10 is 1.4.
+
+61
+00:03:36,100 --> 00:03:39,410
+You need 1.4 litres of paint.
+
+62
+00:03:39,460 --> 00:03:42,660
+Change 3 square metres to square centimetres.
+
+63
+00:03:42,710 --> 00:03:44,330
+Here is Pita's working.
+
+64
+00:03:44,380 --> 00:03:46,910
+Which line goes wrong first?
+
+65
+00:03:46,960 --> 00:03:48,240
+Line 2 is wrong.
+
+66
+00:03:48,290 --> 00:03:50,490
+100 is the fact for length.
+
+67
+00:03:50,540 --> 00:03:57,220
+For area, you must square it: 1 square metre is 10,000 square centimetres.
+
+68
+00:03:57,270 --> 00:04:02,990
+3 times 10,000 is 30,000 square centimetres.
+
+69
+00:04:03,040 --> 00:04:05,110
+Paper sizes are built on area.
+
+70
+00:04:05,160 --> 00:04:10,460
+The largest sheet, called A0, has an area of exactly 1 square metre.
+
+71
+00:04:10,510 --> 00:04:17,030
+Fold it in half 4 times, and you get 16 sheets of A4, the paper in your printer.
+
+72
+00:04:17,080 --> 00:04:21,070
+So 1 sheet of A4 is 10,000 divided by 16.
+
+73
+00:04:21,120 --> 00:04:25,260
+That is about 625 square centimetres.
+
+74
+00:04:25,310 --> 00:04:26,620
+One last question.
+
+75
+00:04:26,670 --> 00:04:29,860
+A tile is 50 centimetres by 50 centimetres.
+
+76
+00:04:29,910 --> 00:04:32,430
+What is its area in square metres?
+
+77
+00:04:32,480 --> 00:04:36,240
+Pause the video and work it out.
+
+78
+00:04:36,290 --> 00:04:38,380
+Change to metres first.
+
+79
+00:04:38,430 --> 00:04:41,080
+50 centimetres is 0.5 metres.
+
+80
+00:04:41,130 --> 00:04:44,990
+0.5 times 0.5 is 0.25 square metres.
+
+81
+00:04:45,040 --> 00:04:50,200
+To remember: 1 square centimetre is 100 square millimetres.
+
+82
+00:04:50,250 --> 00:04:54,650
+1 square metre is 10,000 square centimetres.
+
+83
+00:04:54,700 --> 00:04:58,210
+Square the length fact to get the area fact.
+
+84
+00:04:58,260 --> 00:05:00,120
+To a smaller unit, multiply.
+
+85
+00:05:00,170 --> 00:05:02,380
+To a bigger unit, divide.
+
+86
+00:05:02,430 --> 00:05:06,540
+Make the units the same before you multiply lengths.
+
+87
+00:05:06,590 --> 00:05:11,950
+Great work! Now practise lesson 15.1 on Camday.

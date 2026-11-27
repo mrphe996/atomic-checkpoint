@@ -1,0 +1,355 @@
+1
+00:00:06,410 --> 00:00:10,230
+An advert says that a farm has 35 hectares of land.
+
+2
+00:00:10,280 --> 00:00:13,500
+To picture that, think of a football pitch.
+
+3
+00:00:13,550 --> 00:00:17,170
+A pitch is about 100 metres by 70 metres.
+
+4
+00:00:17,220 --> 00:00:21,450
+First, what is the area of the football pitch, in square metres?
+
+5
+00:00:21,500 --> 00:00:25,000
+Pause the video and work it out.
+
+6
+00:00:25,050 --> 00:00:29,680
+100 times 70 is 7,000 square metres.
+
+7
+00:00:29,730 --> 00:00:33,260
+1 hectare is 10,000 square metres.
+
+8
+00:00:33,310 --> 00:00:38,010
+So 35 hectares is 350,000 square metres.
+
+9
+00:00:38,060 --> 00:00:41,250
+350,000 divided by 7,000 is 50.
+
+10
+00:00:41,300 --> 00:00:46,190
+The farm is as big as 50 football pitches.
+
+11
+00:00:46,240 --> 00:00:51,440
+Remember: the area of a rectangle is the length times the width.
+
+12
+00:00:51,490 --> 00:00:57,570
+A field 250 metres by 80 metres has an area of 20,000 square metres.
+
+13
+00:00:57,620 --> 00:01:00,100
+Land is measured in hectares.
+
+14
+00:01:00,150 --> 00:01:05,350
+1 hectare is the area of a square, 100 metres by 100 metres.
+
+15
+00:01:05,400 --> 00:01:08,440
+That is 10,000 square metres.
+
+16
+00:01:08,490 --> 00:01:11,210
+The short way to write hectares is h a.
+
+17
+00:01:11,260 --> 00:01:14,530
+A football pitch is about 0.7 hectares.
+
+18
+00:01:14,580 --> 00:01:19,830
+To change hectares into square metres, multiply by 10,000.
+
+19
+00:01:19,880 --> 00:01:20,530
+Your turn.
+
+20
+00:01:20,580 --> 00:01:22,990
+Change 3 hectares to square metres.
+
+21
+00:01:23,040 --> 00:01:26,290
+Pause the video and try it.
+
+22
+00:01:26,340 --> 00:01:31,610
+3 times 10,000 is 30,000 square metres.
+
+23
+00:01:31,660 --> 00:01:36,870
+To change square metres into hectares, divide by 10,000.
+
+24
+00:01:36,920 --> 00:01:40,900
+85,000 square metres is 8.5 hectares.
+
+25
+00:01:40,950 --> 00:01:46,120
+To find the area of a field in hectares, first find its area in square metres.
+
+26
+00:01:46,170 --> 00:01:47,480
+Then divide.
+
+27
+00:01:47,530 --> 00:01:48,270
+Your turn.
+
+28
+00:01:48,320 --> 00:01:51,130
+A field is 200 metres by 250 metres.
+
+29
+00:01:51,180 --> 00:01:53,440
+What is its area in hectares?
+
+30
+00:01:53,490 --> 00:01:56,980
+Pause the video and try it.
+
+31
+00:01:57,030 --> 00:02:01,230
+200 times 250 is 50,000 square metres.
+
+32
+00:02:01,280 --> 00:02:03,130
+Divide by 10,000.
+
+33
+00:02:03,180 --> 00:02:06,360
+The field is 5 hectares.
+
+34
+00:02:06,410 --> 00:02:07,690
+Here is the method.
+
+35
+00:02:07,740 --> 00:02:10,420
+Step 1: find the area in square metres.
+
+36
+00:02:10,470 --> 00:02:13,070
+The lengths must be in metres.
+
+37
+00:02:13,120 --> 00:02:17,530
+Step 2: divide by 10,000 to get hectares.
+
+38
+00:02:17,580 --> 00:02:23,700
+Step 3: to go from hectares to square metres, multiply by 10,000.
+
+39
+00:02:23,750 --> 00:02:26,600
+Step 4: check with something you know.
+
+40
+00:02:26,650 --> 00:02:30,140
+A football pitch is about 0.7 hectares.
+
+41
+00:02:30,190 --> 00:02:33,230
+A field is 300 metres by 180 metres.
+
+42
+00:02:33,280 --> 00:02:36,010
+Find its area in hectares.
+
+43
+00:02:36,060 --> 00:02:41,320
+300 times 180 is 54,000 square metres.
+
+44
+00:02:41,370 --> 00:02:43,000
+Divide by 10,000.
+
+45
+00:02:43,050 --> 00:02:46,130
+The field is 5.4 hectares.
+
+46
+00:02:46,180 --> 00:02:50,630
+A forest is a rectangle, 1.5 kilometres by 0.8 kilometres.
+
+47
+00:02:50,680 --> 00:02:53,200
+Find its area in hectares.
+
+48
+00:02:53,250 --> 00:02:58,320
+Change to metres first: 1,500 metres by 800 metres.
+
+49
+00:02:58,370 --> 00:03:02,490
+The area is 1,200,000 square metres.
+
+50
+00:03:02,540 --> 00:03:04,240
+Divide by 10,000.
+
+51
+00:03:04,290 --> 00:03:07,570
+The forest is 120 hectares.
+
+52
+00:03:07,620 --> 00:03:11,280
+A rectangular field has an area of 3.6 hectares.
+
+53
+00:03:11,330 --> 00:03:12,980
+It is 300 metres long.
+
+54
+00:03:13,030 --> 00:03:14,680
+How wide is it?
+
+55
+00:03:14,730 --> 00:03:19,230
+3.6 hectares is 36,000 square metres.
+
+56
+00:03:19,280 --> 00:03:22,190
+Divide the area by the length.
+
+57
+00:03:22,240 --> 00:03:25,060
+36,000 divided by 300 is 120.
+
+58
+00:03:25,110 --> 00:03:28,470
+The field is 120 metres wide.
+
+59
+00:03:28,520 --> 00:03:32,130
+Land costs 6,000 dollars for each hectare.
+
+60
+00:03:32,180 --> 00:03:37,740
+Find the price of a plot that is 500 metres by 140 metres.
+
+61
+00:03:37,790 --> 00:03:41,920
+500 times 140 is 70,000 square metres.
+
+62
+00:03:41,970 --> 00:03:44,560
+That is 7 hectares.
+
+63
+00:03:44,610 --> 00:03:49,180
+7 times 6,000 is 42,000 dollars.
+
+64
+00:03:49,230 --> 00:03:52,350
+Change 62,000 square metres to hectares.
+
+65
+00:03:52,400 --> 00:03:54,180
+Here is Yuri's working.
+
+66
+00:03:54,230 --> 00:03:56,950
+Which line goes wrong first?
+
+67
+00:03:57,000 --> 00:03:58,540
+Line 1 is wrong.
+
+68
+00:03:58,590 --> 00:04:02,310
+1 hectare is 100 metres by 100 metres.
+
+69
+00:04:02,360 --> 00:04:06,630
+That is 10,000 square metres, not 100.
+
+70
+00:04:06,680 --> 00:04:12,330
+62,000 divided by 10,000 is 6.2 hectares.
+
+71
+00:04:12,380 --> 00:04:16,830
+The smallest country in the world is Vatican City, inside Rome.
+
+72
+00:04:16,880 --> 00:04:19,880
+Its area is only about 44 hectares.
+
+73
+00:04:19,930 --> 00:04:22,920
+That is less than half a square kilometre.
+
+74
+00:04:22,970 --> 00:04:26,710
+You could walk across it in about 10 minutes.
+
+75
+00:04:26,760 --> 00:04:31,380
+Central Park, in New York, is much bigger: about 340 hectares.
+
+76
+00:04:31,430 --> 00:04:35,240
+Almost 8 Vatican Cities would fit inside it.
+
+77
+00:04:35,290 --> 00:04:36,510
+One last question.
+
+78
+00:04:36,560 --> 00:04:40,020
+How many hectares are there in 1 square kilometre?
+
+79
+00:04:40,070 --> 00:04:43,670
+Pause the video and work it out.
+
+80
+00:04:43,720 --> 00:04:51,230
+1 square kilometre is 1,000 metres by 1,000 metres: 1 million square metres.
+
+81
+00:04:51,280 --> 00:04:52,920
+Divide by 10,000.
+
+82
+00:04:52,970 --> 00:04:55,560
+That is 100 hectares.
+
+83
+00:04:55,610 --> 00:04:59,980
+To remember: 1 hectare is 10,000 square metres.
+
+84
+00:05:00,030 --> 00:05:04,300
+It is a square 100 metres by 100 metres.
+
+85
+00:05:04,350 --> 00:05:08,340
+Square metres to hectares: divide by 10,000.
+
+86
+00:05:08,390 --> 00:05:13,110
+Hectares to square metres: multiply by 10,000.
+
+87
+00:05:13,160 --> 00:05:16,530
+100 hectares make 1 square kilometre.
+
+88
+00:05:16,580 --> 00:05:20,390
+Always work out the area in square metres first.
+
+89
+00:05:20,440 --> 00:05:25,830
+Great work! Now practise lesson 15.2 on Camday.

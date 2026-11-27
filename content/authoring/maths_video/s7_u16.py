@@ -13,11 +13,11 @@ def STACK(bars, unit=24, x=700, y=140, w=500, at=0, names=("boys", "girls")):
     """A compound (stacked) bar chart of our own: bars = [(label, bottom, top)], drawn in a 480 × 340 box."""
     s = f'<line x1="70" y1="20" x2="70" y2="290" stroke="{INK}" stroke-width="3"/><line x1="70" y1="290" x2="460" y2="290" stroke="{INK}" stroke-width="3"/>'
     for i, (lab, a, b) in enumerate(bars):
-        bx = 130 + i * 160; ha, hb = a * unit, b * unit
+        bx = 100 + i * 140; ha, hb = a * unit, b * unit
         s += f'<rect x="{bx}" y="{290 - ha}" width="90" height="{ha}" fill="{BL}"/><rect x="{bx}" y="{290 - ha - hb}" width="90" height="{hb}" fill="{OR}"/>'
         s += f'<text x="{bx + 45}" y="{290 - ha / 2 + 8}" font-size="22" font-weight="700" text-anchor="middle" fill="#fff">{a}</text><text x="{bx + 45}" y="{290 - ha - hb / 2 + 8}" font-size="22" font-weight="700" text-anchor="middle" fill="#fff">{b}</text>'
         s += f'<text x="{bx + 45}" y="320" font-size="20" font-weight="700" text-anchor="middle" fill="{INK}">{lab}</text><text x="{bx + 45}" y="{290 - ha - hb - 10}" font-size="20" font-weight="700" text-anchor="middle" fill="{INK}">{a + b}</text>'
-    s += f'<rect x="330" y="24" width="18" height="18" fill="{OR}"/><text x="356" y="40" font-size="18" fill="{INK}">{names[1]}</text><rect x="330" y="50" width="18" height="18" fill="{BL}"/><text x="356" y="66" font-size="18" fill="{INK}">{names[0]}</text>'
+    s += f'<rect x="390" y="24" width="18" height="18" fill="{OR}"/><text x="416" y="40" font-size="18" fill="{INK}">{names[1]}</text><rect x="390" y="50" width="18" height="18" fill="{BL}"/><text x="416" y="66" font-size="18" fill="{INK}">{names[0]}</text>'
     return T(f'<svg viewBox="0 0 480 340" width="{w}" height="{w * 340 // 480}">{s}</svg>', x=x, y=y, at=at)
 LUNCH_HEAD = ["", "Pasta", "Rice", "Salad", "Total"]
 LUNCH = [["Year 7", "14", "10", "6", "30"], ["Year 8", "12", "13", "9", "34"], ["Total", "26", "23", "15", "64"]]

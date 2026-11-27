@@ -1,0 +1,435 @@
+1
+00:00:07,230 --> 00:00:10,790
+A tourist changes dollars into another currency.
+
+2
+00:00:10,840 --> 00:00:14,540
+The money changer's rule is simple: multiply by 4.
+
+3
+00:00:14,590 --> 00:00:16,890
+So 5 dollars becomes 20.
+
+4
+00:00:16,940 --> 00:00:18,360
+Someone receives 36.
+
+5
+00:00:18,410 --> 00:00:20,840
+How many dollars did they hand in?
+
+6
+00:00:20,890 --> 00:00:24,580
+Pause the video and work it out.
+
+7
+00:00:24,630 --> 00:00:27,660
+We know what came out, so we work backwards.
+
+8
+00:00:27,710 --> 00:00:31,360
+The opposite of multiply by 4 is divide by 4.
+
+9
+00:00:31,410 --> 00:00:33,220
+36 divided by 4 is 9.
+
+10
+00:00:33,270 --> 00:00:35,980
+They handed in 9 dollars.
+
+11
+00:00:36,030 --> 00:00:39,940
+Remember: every operation has an inverse that undoes it.
+
+12
+00:00:39,990 --> 00:00:41,360
+Add undoes subtract.
+
+13
+00:00:41,410 --> 00:00:43,540
+Multiply undoes divide.
+
+14
+00:00:43,590 --> 00:00:48,490
+If 7 times 6 is 42, then 42 divided by 6 is 7.
+
+15
+00:00:48,540 --> 00:00:51,930
+A function is a rule that links 2 sets of numbers.
+
+16
+00:00:51,980 --> 00:00:55,440
+A function machine shows the rule in a box.
+
+17
+00:00:55,490 --> 00:00:57,980
+The numbers that go in are the inputs.
+
+18
+00:00:58,030 --> 00:01:01,330
+The numbers that come out are the outputs.
+
+19
+00:01:01,380 --> 00:01:03,260
+Put 2 into this machine.
+
+20
+00:01:03,310 --> 00:01:04,380
+2 plus 3 is 5.
+
+21
+00:01:04,430 --> 00:01:06,460
+Put in 6, and out comes 9.
+
+22
+00:01:06,510 --> 00:01:09,580
+Each input has exactly 1 output.
+
+23
+00:01:09,630 --> 00:01:10,300
+Your turn.
+
+24
+00:01:10,350 --> 00:01:13,460
+The input is 8, and the machine subtracts 3.
+
+25
+00:01:13,510 --> 00:01:14,830
+What is the output?
+
+26
+00:01:14,880 --> 00:01:18,170
+Pause the video and try it.
+
+27
+00:01:18,220 --> 00:01:19,470
+8 minus 3 is 5.
+
+28
+00:01:19,520 --> 00:01:21,400
+The output is 5.
+
+29
+00:01:21,450 --> 00:01:25,630
+A mapping diagram shows the same function with 2 number lines.
+
+30
+00:01:25,680 --> 00:01:29,190
+An arrow goes from each input to its output.
+
+31
+00:01:29,240 --> 00:01:33,790
+For the machine plus 3, every arrow moves 3 places to the right.
+
+32
+00:01:33,840 --> 00:01:36,350
+The arrows are all parallel.
+
+33
+00:01:36,400 --> 00:01:42,330
+If you know the output, run the machine backwards, using the inverse operation.
+
+34
+00:01:42,380 --> 00:01:46,450
+The inverse machine for multiply by 4 is divide by 4.
+
+35
+00:01:46,500 --> 00:01:49,180
+36 goes in, and 9 comes out.
+
+36
+00:01:49,230 --> 00:01:49,920
+Your turn.
+
+37
+00:01:49,970 --> 00:01:51,180
+A machine adds 7.
+
+38
+00:01:51,230 --> 00:01:52,440
+The output is 12.
+
+39
+00:01:52,490 --> 00:01:53,850
+What was the input?
+
+40
+00:01:53,900 --> 00:01:57,250
+Pause the video and try it.
+
+41
+00:01:57,300 --> 00:02:00,380
+The inverse of add 7 is subtract 7.
+
+42
+00:02:00,430 --> 00:02:01,810
+12 minus 7 is 5.
+
+43
+00:02:01,860 --> 00:02:03,240
+The input was 5.
+
+44
+00:02:03,290 --> 00:02:05,750
+Check: 5 plus 7 is 12.
+
+45
+00:02:05,800 --> 00:02:07,080
+Here is the method.
+
+46
+00:02:07,130 --> 00:02:11,920
+Step 1: to find an output, put the input through the machine.
+
+47
+00:02:11,970 --> 00:02:17,080
+Step 2: to find an input, use the inverse operation on the output.
+
+48
+00:02:17,130 --> 00:02:21,080
+Step 3: to find the rule, compare the inputs and outputs.
+
+49
+00:02:21,130 --> 00:02:23,940
+Try adding, then try multiplying.
+
+50
+00:02:23,990 --> 00:02:27,150
+Step 4: test your rule on every pair.
+
+51
+00:02:27,200 --> 00:02:29,410
+This machine multiplies by 5.
+
+52
+00:02:29,460 --> 00:02:31,360
+Find the missing numbers.
+
+53
+00:02:31,410 --> 00:02:32,530
+1 goes to what?
+
+54
+00:02:32,580 --> 00:02:33,700
+3 goes to what?
+
+55
+00:02:33,750 --> 00:02:35,810
+And what goes to 40?
+
+56
+00:02:35,860 --> 00:02:37,420
+1 times 5 is 5.
+
+57
+00:02:37,470 --> 00:02:39,680
+3 times 5 is 15.
+
+58
+00:02:39,730 --> 00:02:42,330
+For the last one, work backwards.
+
+59
+00:02:42,380 --> 00:02:44,010
+40 divided by 5 is 8.
+
+60
+00:02:44,060 --> 00:02:45,840
+The input was 8.
+
+61
+00:02:45,890 --> 00:02:47,940
+This machine subtracts 6.
+
+62
+00:02:47,990 --> 00:02:50,380
+The outputs are 4, 11 and 19.
+
+63
+00:02:50,430 --> 00:02:52,270
+Find the inputs.
+
+64
+00:02:52,320 --> 00:02:54,880
+The inverse machine adds 6.
+
+65
+00:02:54,930 --> 00:02:56,630
+4 plus 6 is 10.
+
+66
+00:02:56,680 --> 00:02:58,490
+11 plus 6 is 17.
+
+67
+00:02:58,540 --> 00:03:00,350
+19 plus 6 is 25.
+
+68
+00:03:00,400 --> 00:03:04,280
+The inputs are 10, 17 and 25.
+
+69
+00:03:04,330 --> 00:03:08,500
+A one-step machine maps 2 to 8, 3 to 9, and 5 to 11.
+
+70
+00:03:08,550 --> 00:03:10,760
+What is the function?
+
+71
+00:03:10,810 --> 00:03:11,660
+2 goes to 8.
+
+72
+00:03:11,710 --> 00:03:15,430
+That could be add 6, or it could be multiply by 4.
+
+73
+00:03:15,480 --> 00:03:17,710
+One pair is not enough.
+
+74
+00:03:17,760 --> 00:03:18,730
+Test add 6.
+
+75
+00:03:18,780 --> 00:03:20,860
+3 plus 6 is 9, correct.
+
+76
+00:03:20,910 --> 00:03:23,640
+5 plus 6 is 11, correct.
+
+77
+00:03:23,690 --> 00:03:25,260
+Test multiply by 4.
+
+78
+00:03:25,310 --> 00:03:27,230
+3 times 4 is 12, not 9.
+
+79
+00:03:27,280 --> 00:03:29,930
+So the function is add 6.
+
+80
+00:03:29,980 --> 00:03:31,590
+A machine divides by 4.
+
+81
+00:03:31,640 --> 00:03:32,750
+The output is 6.
+
+82
+00:03:32,800 --> 00:03:33,840
+Find the input.
+
+83
+00:03:33,890 --> 00:03:35,430
+Here is Tia's working.
+
+84
+00:03:35,480 --> 00:03:38,010
+Which line goes wrong first?
+
+85
+00:03:38,060 --> 00:03:39,180
+Line 2 is wrong.
+
+86
+00:03:39,230 --> 00:03:41,600
+To go backwards, use the inverse.
+
+87
+00:03:41,650 --> 00:03:45,370
+The inverse of divide by 4 is multiply by 4.
+
+88
+00:03:45,420 --> 00:03:46,960
+6 times 4 is 24.
+
+89
+00:03:47,010 --> 00:03:48,540
+The input is 24.
+
+90
+00:03:48,590 --> 00:03:51,870
+Check: 24 divided by 4 is 6.
+
+91
+00:03:51,920 --> 00:03:54,610
+You use function machines every day.
+
+92
+00:03:54,660 --> 00:03:59,130
+To change inches into centimetres, multiply by 2.54.
+
+93
+00:03:59,180 --> 00:04:03,010
+In winter, the time in Hanoi is 7 hours ahead of London.
+
+94
+00:04:03,060 --> 00:04:07,220
+London time goes in, add 7, and Hanoi time comes out.
+
+95
+00:04:07,270 --> 00:04:13,530
+And to go from Hanoi time back to London time, use the inverse machine: subtract 7.
+
+96
+00:04:13,580 --> 00:04:14,790
+One last question.
+
+97
+00:04:14,840 --> 00:04:16,400
+A machine divides by 2.
+
+98
+00:04:16,450 --> 00:04:17,520
+The output is 9.
+
+99
+00:04:17,570 --> 00:04:18,850
+What was the input?
+
+100
+00:04:18,900 --> 00:04:22,130
+Pause the video and answer.
+
+101
+00:04:22,180 --> 00:04:25,930
+The inverse of divide by 2 is multiply by 2.
+
+102
+00:04:25,980 --> 00:04:27,320
+9 times 2 is 18.
+
+103
+00:04:27,370 --> 00:04:29,340
+The input was 18.
+
+104
+00:04:29,390 --> 00:04:33,490
+To remember: a function machine turns inputs into outputs.
+
+105
+00:04:33,540 --> 00:04:35,770
+Each input has 1 output.
+
+106
+00:04:35,820 --> 00:04:39,490
+A mapping diagram shows a function with arrows.
+
+107
+00:04:39,540 --> 00:04:43,910
+To find an input, use the inverse operation on the output.
+
+108
+00:04:43,960 --> 00:04:46,900
+To find a rule, test it on every pair.
+
+109
+00:04:46,950 --> 00:04:52,070
+Great work! Now practise lesson 9.4 on Camday.

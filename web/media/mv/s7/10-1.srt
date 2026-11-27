@@ -1,0 +1,367 @@
+1
+00:00:07,880 --> 00:00:10,290
+3 friends compare their phones.
+
+2
+00:00:10,340 --> 00:00:13,700
+Mia's phone shows 0.35 of its battery left.
+
+3
+00:00:13,750 --> 00:00:15,440
+Leo's shows 3 eighths.
+
+4
+00:00:15,490 --> 00:00:18,210
+And Sam's shows 36 per cent.
+
+5
+00:00:18,260 --> 00:00:20,760
+Whose phone has the most charge left?
+
+6
+00:00:20,810 --> 00:00:24,360
+Pause the video and work it out.
+
+7
+00:00:24,410 --> 00:00:28,220
+To compare them, write all 3 in the same form.
+
+8
+00:00:28,270 --> 00:00:30,440
+0.35 is 35 per cent.
+
+9
+00:00:30,490 --> 00:00:35,920
+3 divided by 8 is 0.375, which is 37.5 per cent.
+
+10
+00:00:35,970 --> 00:00:41,560
+So Leo has 37.5 per cent, Sam has 36 per cent, and Mia has 35 per cent.
+
+11
+00:00:41,610 --> 00:00:44,010
+Leo has the most charge.
+
+12
+00:00:44,060 --> 00:00:47,440
+Remember: per cent means out of 100.
+
+13
+00:00:47,490 --> 00:00:50,750
+45 per cent is 45 out of 100.
+
+14
+00:00:50,800 --> 00:00:55,740
+A fraction, a decimal and a percentage can all show the same amount.
+
+15
+00:00:55,790 --> 00:00:59,150
+One half is 0.5, and it is 50 per cent.
+
+16
+00:00:59,200 --> 00:01:02,610
+One quarter is 0.25, or 25 per cent.
+
+17
+00:01:02,660 --> 00:01:06,520
+3 quarters is 0.75, or 75 per cent.
+
+18
+00:01:06,570 --> 00:01:09,170
+One fifth is 0.2, or 20 per cent.
+
+19
+00:01:09,220 --> 00:01:12,140
+And one tenth is 0.1, or 10 per cent.
+
+20
+00:01:12,190 --> 00:01:15,410
+These are worth learning by heart.
+
+21
+00:01:15,460 --> 00:01:20,000
+To change a percentage to a decimal, divide by 100.
+
+22
+00:01:20,050 --> 00:01:22,350
+36 per cent is 0.36.
+
+23
+00:01:22,400 --> 00:01:26,850
+To change a decimal to a percentage, multiply by 100.
+
+24
+00:01:26,900 --> 00:01:29,010
+0.07 is 7 per cent.
+
+25
+00:01:29,060 --> 00:01:35,270
+To change a percentage to a fraction, write it over 100, then simplify.
+
+26
+00:01:35,320 --> 00:01:39,970
+36 per cent is 36 over 100, which is 9 over 25.
+
+27
+00:01:40,020 --> 00:01:44,860
+To change a fraction to a decimal, divide the top by the bottom.
+
+28
+00:01:44,910 --> 00:01:47,240
+3 divided by 8 is 0.375.
+
+29
+00:01:47,290 --> 00:01:47,960
+Your turn.
+
+30
+00:01:48,010 --> 00:01:50,180
+Write 3 fifths as a percentage.
+
+31
+00:01:50,230 --> 00:01:53,510
+Pause the video and try it.
+
+32
+00:01:53,560 --> 00:01:55,780
+Make the denominator 100.
+
+33
+00:01:55,830 --> 00:01:59,250
+Multiply the top and the bottom by 20.
+
+34
+00:01:59,300 --> 00:02:03,990
+3 fifths is 60 over 100, which is 60 per cent.
+
+35
+00:02:04,040 --> 00:02:08,990
+Here is the method for comparing fractions, decimals and percentages.
+
+36
+00:02:09,040 --> 00:02:10,720
+Step 1: choose one form.
+
+37
+00:02:10,770 --> 00:02:14,460
+Percentages or decimals are usually easiest.
+
+38
+00:02:14,510 --> 00:02:18,070
+Step 2: convert every number to that form.
+
+39
+00:02:18,120 --> 00:02:20,600
+Step 3: compare them.
+
+40
+00:02:20,650 --> 00:02:24,970
+Step 4: write your answer using the original numbers.
+
+41
+00:02:25,020 --> 00:02:29,460
+Write 65 per cent as a fraction in its simplest form.
+
+42
+00:02:29,510 --> 00:02:32,000
+65 per cent is 65 over 100.
+
+43
+00:02:32,050 --> 00:02:35,300
+Divide the top and the bottom by 5.
+
+44
+00:02:35,350 --> 00:02:37,920
+That gives 13 over 20.
+
+45
+00:02:37,970 --> 00:02:38,640
+Your turn.
+
+46
+00:02:38,690 --> 00:02:42,480
+Write 15 per cent as a fraction in its simplest form.
+
+47
+00:02:42,530 --> 00:02:45,830
+Pause the video and try it.
+
+48
+00:02:45,880 --> 00:02:48,310
+15 per cent is 15 over 100.
+
+49
+00:02:48,360 --> 00:02:51,520
+Divide the top and the bottom by 5.
+
+50
+00:02:51,570 --> 00:02:54,270
+The answer is 3 over 20.
+
+51
+00:02:54,320 --> 00:02:57,800
+Write 11 over 25 as a percentage.
+
+52
+00:02:57,850 --> 00:02:59,480
+4 times 25 is 100.
+
+53
+00:02:59,530 --> 00:03:03,200
+So multiply the top and the bottom by 4.
+
+54
+00:03:03,250 --> 00:03:07,940
+That gives 44 over 100, which is 44 per cent.
+
+55
+00:03:07,990 --> 00:03:12,110
+Write 7 over 16 as a decimal, and as a percentage.
+
+56
+00:03:12,160 --> 00:03:15,570
+16 does not go into 100, so divide.
+
+57
+00:03:15,620 --> 00:03:19,520
+7 divided by 16 is 0.4375.
+
+58
+00:03:19,570 --> 00:03:21,190
+Multiply by 100.
+
+59
+00:03:21,240 --> 00:03:24,140
+That is 43.75 per cent.
+
+60
+00:03:24,190 --> 00:03:31,220
+Put these in order, smallest first: 3 fifths, 0.58, 61 per cent, and 5 eighths.
+
+61
+00:03:31,270 --> 00:03:33,910
+Write them all as percentages.
+
+62
+00:03:33,960 --> 00:03:36,070
+3 fifths is 60 per cent.
+
+63
+00:03:36,120 --> 00:03:37,870
+0.58 is 58 per cent.
+
+64
+00:03:37,920 --> 00:03:40,840
+5 eighths is 62.5 per cent.
+
+65
+00:03:40,890 --> 00:03:43,560
+In order: 58, 60, 61, 62.5.
+
+66
+00:03:43,610 --> 00:03:49,740
+So the answer is 0.58, 3 fifths, 61 per cent, 5 eighths.
+
+67
+00:03:49,790 --> 00:03:51,710
+Write 0.4 as a percentage.
+
+68
+00:03:51,760 --> 00:03:53,370
+Here is Zoe's working.
+
+69
+00:03:53,420 --> 00:03:54,830
+Is it right?
+
+70
+00:03:54,880 --> 00:03:56,270
+Line 1 is wrong.
+
+71
+00:03:56,320 --> 00:04:01,030
+To change a decimal to a percentage, multiply by 100.
+
+72
+00:04:01,080 --> 00:04:03,380
+0.4 times 100 is 40.
+
+73
+00:04:03,430 --> 00:04:05,560
+So 0.4 is 40 per cent.
+
+74
+00:04:05,610 --> 00:04:08,580
+4 per cent would be 0.04.
+
+75
+00:04:08,630 --> 00:04:12,030
+Shops, doctors and scientists use all 3 forms.
+
+76
+00:04:12,080 --> 00:04:14,810
+A half price sale is 50 per cent off.
+
+77
+00:04:14,860 --> 00:04:18,890
+It is the same as multiplying the price by 0.5.
+
+78
+00:04:18,940 --> 00:04:22,230
+About 60 per cent of an adult's body is water.
+
+79
+00:04:22,280 --> 00:04:24,450
+That is about 3 fifths.
+
+80
+00:04:24,500 --> 00:04:32,290
+And a basketball player who scores 17 free throws out of 20 has scored 85 per cent of them.
+
+81
+00:04:32,340 --> 00:04:33,590
+One last question.
+
+82
+00:04:33,640 --> 00:04:35,820
+Write 1 eighth as a percentage.
+
+83
+00:04:35,870 --> 00:04:39,530
+Pause the video and work it out.
+
+84
+00:04:39,580 --> 00:04:42,050
+1 divided by 8 is 0.125.
+
+85
+00:04:42,100 --> 00:04:43,730
+Multiply by 100.
+
+86
+00:04:43,780 --> 00:04:47,010
+1 eighth is 12.5 per cent.
+
+87
+00:04:47,060 --> 00:04:51,150
+To remember: percentage to decimal, divide by 100.
+
+88
+00:04:51,200 --> 00:04:54,940
+Decimal to percentage, multiply by 100.
+
+89
+00:04:54,990 --> 00:05:00,020
+Percentage to fraction: write it over 100, then simplify.
+
+90
+00:05:00,070 --> 00:05:03,970
+Fraction to decimal: divide the top by the bottom.
+
+91
+00:05:04,020 --> 00:05:07,540
+To compare, put everything in the same form.
+
+92
+00:05:07,590 --> 00:05:12,990
+Great work! Now practise lesson 10.1 on Camday.

@@ -1,0 +1,343 @@
+1
+00:00:07,060 --> 00:00:15,180
+A pancake recipe for 4 people uses 200 grams of flour, 2 eggs and 300 millilitres of milk.
+
+2
+00:00:15,230 --> 00:00:17,980
+Mo is cooking for 10 people.
+
+3
+00:00:18,030 --> 00:00:19,840
+How much flour does Mo need?
+
+4
+00:00:19,890 --> 00:00:23,370
+Pause the video and work it out.
+
+5
+00:00:23,420 --> 00:00:26,360
+First find the flour for 1 person.
+
+6
+00:00:26,410 --> 00:00:29,470
+200 divided by 4 is 50 grams.
+
+7
+00:00:29,520 --> 00:00:31,230
+Then multiply by 10.
+
+8
+00:00:31,280 --> 00:00:34,250
+Mo needs 500 grams of flour.
+
+9
+00:00:34,300 --> 00:00:39,660
+In the same way, he needs 5 eggs, and 750 millilitres of milk.
+
+10
+00:00:39,710 --> 00:00:44,920
+Remember: if 1 pen costs 3 dollars, then 6 pens cost 18 dollars.
+
+11
+00:00:44,970 --> 00:00:51,720
+And if 5 pens cost 4 dollars, 1 pen costs 4 divided by 5, which is 80 cents.
+
+12
+00:00:51,770 --> 00:00:56,480
+2 quantities are in direct proportion if they grow at the same rate.
+
+13
+00:00:56,530 --> 00:00:58,860
+Double one, and the other doubles.
+
+14
+00:00:58,910 --> 00:01:01,650
+Halve one, and the other halves.
+
+15
+00:01:01,700 --> 00:01:05,360
+Flour and people are in direct proportion.
+
+16
+00:01:05,410 --> 00:01:07,480
+4 people need 200 grams.
+
+17
+00:01:07,530 --> 00:01:09,590
+8 people need 400 grams.
+
+18
+00:01:09,640 --> 00:01:12,260
+2 people need 100 grams.
+
+19
+00:01:12,310 --> 00:01:17,880
+The unitary method always works: find the value for 1, then multiply up.
+
+20
+00:01:17,930 --> 00:01:18,650
+Your turn.
+
+21
+00:01:18,700 --> 00:01:21,560
+3 kilograms of rice cost 4 dollars 50.
+
+22
+00:01:21,610 --> 00:01:23,780
+How much do 7 kilograms cost?
+
+23
+00:01:23,830 --> 00:01:27,250
+Pause the video and try it.
+
+24
+00:01:27,300 --> 00:01:32,540
+1 kilogram costs 4.50 divided by 3, which is 1 dollar 50.
+
+25
+00:01:32,590 --> 00:01:38,100
+7 kilograms cost 7 times 1.50, which is 10 dollars 50.
+
+26
+00:01:38,150 --> 00:01:40,040
+Which pack is better value?
+
+27
+00:01:40,090 --> 00:01:43,930
+To compare, find the price of the same amount of each.
+
+28
+00:01:43,980 --> 00:01:47,140
+Here we find the price for 100 grams.
+
+29
+00:01:47,190 --> 00:01:51,100
+The small pack costs 90 cents for 100 grams.
+
+30
+00:01:51,150 --> 00:01:55,610
+The large pack costs 80 cents for 100 grams.
+
+31
+00:01:55,660 --> 00:01:58,410
+So the large pack is better value.
+
+32
+00:01:58,460 --> 00:01:59,760
+Here is the method.
+
+33
+00:01:59,810 --> 00:02:03,960
+Step 1: check that the quantities are in direct proportion.
+
+34
+00:02:04,010 --> 00:02:07,000
+Does doubling one double the other?
+
+35
+00:02:07,050 --> 00:02:10,880
+Step 2: divide, to find the value for 1 unit.
+
+36
+00:02:10,930 --> 00:02:14,880
+Step 3: multiply by the number of units you need.
+
+37
+00:02:14,930 --> 00:02:18,950
+Step 4: check that your answer is a sensible size.
+
+38
+00:02:19,000 --> 00:02:23,670
+A smoothie recipe for 5 people needs 750 millilitres of milk.
+
+39
+00:02:23,720 --> 00:02:27,090
+How much milk is needed for 8 people?
+
+40
+00:02:27,140 --> 00:02:32,580
+For 1 person: 750 divided by 5 is 150 millilitres.
+
+41
+00:02:32,630 --> 00:02:38,070
+For 8 people: 8 times 150 is 1,200 millilitres.
+
+42
+00:02:38,120 --> 00:02:41,300
+A printer prints 180 pages in 6 minutes.
+
+43
+00:02:41,350 --> 00:02:45,330
+How many pages does it print in 25 minutes?
+
+44
+00:02:45,380 --> 00:02:49,800
+In 1 minute: 180 divided by 6 is 30 pages.
+
+45
+00:02:49,850 --> 00:02:54,760
+In 25 minutes: 25 times 30 is 750 pages.
+
+46
+00:02:54,810 --> 00:02:55,520
+Your turn.
+
+47
+00:02:55,570 --> 00:02:59,050
+A car uses 6 litres of fuel for 80 kilometres.
+
+48
+00:02:59,100 --> 00:03:02,650
+How many litres does it use for 200 kilometres?
+
+49
+00:03:02,700 --> 00:03:06,120
+Pause the video and try it.
+
+50
+00:03:06,170 --> 00:03:10,990
+Half of 80 is 40, so 40 kilometres uses 3 litres.
+
+51
+00:03:11,040 --> 00:03:14,070
+200 kilometres is 5 lots of 40.
+
+52
+00:03:14,120 --> 00:03:16,900
+5 times 3 is 15 litres.
+
+53
+00:03:16,950 --> 00:03:22,260
+A taxi costs 6 dollars for 1 kilometre, and 10 dollars for 2 kilometres.
+
+54
+00:03:22,310 --> 00:03:26,460
+Is the cost in direct proportion to the distance?
+
+55
+00:03:26,510 --> 00:03:30,590
+If it were, doubling the distance would double the cost.
+
+56
+00:03:30,640 --> 00:03:33,720
+2 kilometres would cost 12 dollars.
+
+57
+00:03:33,770 --> 00:03:35,410
+But it costs 10 dollars.
+
+58
+00:03:35,460 --> 00:03:35,840
+So no.
+
+59
+00:03:35,890 --> 00:03:40,620
+There must be a fixed fee, as well as a price per kilometre.
+
+60
+00:03:40,670 --> 00:03:42,620
+5 tickets cost 40 dollars.
+
+61
+00:03:42,670 --> 00:03:44,700
+How much do 8 tickets cost?
+
+62
+00:03:44,750 --> 00:03:46,480
+Here is Luca's working.
+
+63
+00:03:46,530 --> 00:03:49,180
+Which line goes wrong first?
+
+64
+00:03:49,230 --> 00:03:50,310
+Line 2 is wrong.
+
+65
+00:03:50,360 --> 00:03:52,710
+In direct proportion, we multiply.
+
+66
+00:03:52,760 --> 00:03:54,240
+We do not add.
+
+67
+00:03:54,290 --> 00:03:58,530
+1 ticket costs 40 divided by 5, which is 8 dollars.
+
+68
+00:03:58,580 --> 00:04:03,210
+So 8 tickets cost 8 times 8, which is 64 dollars.
+
+69
+00:04:03,260 --> 00:04:06,430
+Here is direct proportion in a thunderstorm.
+
+70
+00:04:06,480 --> 00:04:10,500
+Sound travels about 1 kilometre every 3 seconds.
+
+71
+00:04:10,550 --> 00:04:15,320
+You see the lightning, and then count the seconds until the thunder.
+
+72
+00:04:15,370 --> 00:04:20,190
+If you count 6 seconds, the storm is about 2 kilometres away.
+
+73
+00:04:20,240 --> 00:04:24,210
+If you count 12 seconds, it is about 4 kilometres away.
+
+74
+00:04:24,260 --> 00:04:27,830
+Double the time means double the distance.
+
+75
+00:04:27,880 --> 00:04:29,330
+One last question.
+
+76
+00:04:29,380 --> 00:04:35,760
+Which is better value: 500 grams for 2 dollars, or 300 grams for 1 dollar 50?
+
+77
+00:04:35,810 --> 00:04:39,420
+Pause the video and decide.
+
+78
+00:04:39,470 --> 00:04:42,060
+Find the price for 100 grams.
+
+79
+00:04:42,110 --> 00:04:45,260
+2 dollars divided by 5 is 40 cents.
+
+80
+00:04:45,310 --> 00:04:47,990
+1.50 divided by 3 is 50 cents.
+
+81
+00:04:48,040 --> 00:04:52,470
+So 500 grams for 2 dollars is better value.
+
+82
+00:04:52,520 --> 00:04:58,470
+To remember: in direct proportion, when one quantity doubles, the other doubles.
+
+83
+00:04:58,520 --> 00:05:02,090
+The unitary method: find 1, then multiply.
+
+84
+00:05:02,140 --> 00:05:06,270
+To compare value, find the price for the same amount.
+
+85
+00:05:06,320 --> 00:05:11,080
+A fixed fee means the quantities are not in direct proportion.
+
+86
+00:05:11,130 --> 00:05:16,430
+Great work! Now practise lesson 12.3 on Camday.

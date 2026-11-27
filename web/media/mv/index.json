@@ -9678,7 +9678,7 @@
     "7.1-k3": 209.45,
     "7.1-k4": 292.82
    },
-   "up": false
+   "up": true
   },
   "5.3": {
    "src": "media/mv/s7/5-3.mp4",
@@ -19173,7 +19173,7 @@
     "15.1-k3": 130.38,
     "15.1-k4": 275.24
    },
-   "up": false
+   "up": true
   },
   "13.1": {
    "src": "media/mv/s7/13-1.mp4",
@@ -19572,7 +19572,7 @@
     "13.1-k3": 168.6,
     "13.1-k4": 269.93
    },
-   "up": false
+   "up": true
   },
   "9.2": {
    "src": "media/mv/s7/9-2.mp4",
@@ -19947,7 +19947,7 @@
     "9.2-k3": 107.8,
     "9.2-k4": 281.59
    },
-   "up": false
+   "up": true
   },
   "14.5": {
    "src": "media/mv/s7/14-5.mp4",
@@ -20338,7 +20338,7 @@
     "14.5-k3": 111.37,
     "14.5-k4": 291.65
    },
-   "up": false
+   "up": true
   },
   "15.5": {
    "src": "media/mv/s7/15-5.mp4",
@@ -20729,7 +20729,7 @@
     "15.5-k3": 166.47,
     "15.5-k4": 306.02
    },
-   "up": false
+   "up": true
   },
   "9.4": {
    "src": "media/mv/s7/9-4.mp4",
@@ -21180,7 +21180,4615 @@
     "9.4-k3": 116.25,
     "9.4-k4": 261.13
    },
-   "up": false
+   "up": true
+  },
+  "12.2": {
+   "src": "media/mv/s7/12-2.mp4",
+   "poster": "media/mv/s7/12-2_poster.jpg",
+   "srt": "media/mv/s7/12-2.srt",
+   "dur": 306.72,
+   "captions": [
+    [
+     6.54,
+     "2 friends enter a competition together."
+    ],
+    [
+     9.61,
+     "Amira paid 3 dollars of the entry fee, and Ben paid 2 dollars."
+    ],
+    [
+     14.49,
+     "They win 400 dollars!"
+    ],
+    [
+     16.69,
+     "They share the prize in the same ratio as they paid: 3 to 2."
+    ],
+    [
+     21.53,
+     "How much does Amira get?"
+    ],
+    [
+     23.19,
+     "Pause the video and work it out."
+    ],
+    [
+     26.8,
+     "3 parts for Amira and 2 parts for Ben make 5 equal parts."
+    ],
+    [
+     31.7,
+     "400 divided by 5 is 80."
+    ],
+    [
+     33.68,
+     "Each part is worth 80 dollars."
+    ],
+    [
+     36.81,
+     "Amira gets 3 parts: 3 times 80 is 240 dollars."
+    ],
+    [
+     41.16,
+     "Ben gets 2 parts: 160 dollars."
+    ],
+    [
+     44.55,
+     "Check: 240 plus 160 is 400."
+    ],
+    [
+     48.66,
+     "Remember: to share into equal parts, divide."
+    ],
+    [
+     52.24,
+     "240 shared into 6 equal parts is 40 each."
+    ],
+    [
+     56.13,
+     "Every sharing problem uses the same 3 steps."
+    ],
+    [
+     59.12,
+     "First, add the parts of the ratio."
+    ],
+    [
+     61.98,
+     "Second, divide the amount by the total number of parts."
+    ],
+    [
+     65.85,
+     "That gives the value of 1 part."
+    ],
+    [
+     68.58,
+     "Third, multiply 1 part by each number in the ratio."
+    ],
+    [
+     72.82,
+     "Your turn."
+    ],
+    [
+     73.57,
+     "Share 30 in the ratio 1 to 4."
+    ],
+    [
+     75.75,
+     "What is the smaller share?"
+    ],
+    [
+     77.71,
+     "Pause the video and try it."
+    ],
+    [
+     81.14,
+     "1 plus 4 is 5 parts."
+    ],
+    [
+     82.87,
+     "30 divided by 5 is 6."
+    ],
+    [
+     84.67,
+     "The smaller share is 1 part, which is 6."
+    ],
+    [
+     88.12,
+     "The larger share is 24."
+    ],
+    [
+     90.65,
+     "Sometimes you know 1 share, not the total."
+    ],
+    [
+     93.82,
+     "Red beads to blue beads is 4 to 7, and there are 28 red beads."
+    ],
+    [
+     99.05,
+     "The 4 red parts are worth 28."
+    ],
+    [
+     101.53,
+     "So 1 part is 28 divided by 4, which is 7."
+    ],
+    [
+     105.58,
+     "Blue is 7 parts: 7 times 7 is 49 blue beads."
+    ],
+    [
+     109.97,
+     "Your turn."
+    ],
+    [
+     110.73,
+     "Red to blue is 2 to 5."
+    ],
+    [
+     112.4,
+     "There are 14 red."
+    ],
+    [
+     113.69,
+     "How many blue?"
+    ],
+    [
+     114.75,
+     "Pause the video and try it."
+    ],
+    [
+     118.2,
+     "2 parts are 14, so 1 part is 7."
+    ],
+    [
+     121.13,
+     "Blue is 5 parts: 5 times 7 is 35."
+    ],
+    [
+     124.79,
+     "Here is the method."
+    ],
+    [
+     126.12,
+     "Step 1: add the parts of the ratio."
+    ],
+    [
+     129.11,
+     "Step 2: divide the amount by the total number of parts, to find 1 part."
+    ],
+    [
+     134.75,
+     "Step 3: multiply 1 part by each number in the ratio."
+    ],
+    [
+     139.17,
+     "Step 4: check that the shares add up to the total."
+    ],
+    [
+     143.24,
+     "Share 63 stickers between Kai and Lola in the ratio 2 to 7."
+    ],
+    [
+     148.5,
+     "2 plus 7 is 9 parts."
+    ],
+    [
+     150.27,
+     "63 divided by 9 is 7 stickers in each part."
+    ],
+    [
+     154.63,
+     "Kai gets 2 times 7, which is 14."
+    ],
+    [
+     157.5,
+     "Lola gets 7 times 7, which is 49."
+    ],
+    [
+     161.01,
+     "900 dollars is shared in the ratio 2 to 3 to 4."
+    ],
+    [
+     164.93,
+     "Find each share."
+    ],
+    [
+     166.81,
+     "2 plus 3 plus 4 is 9 parts."
+    ],
+    [
+     169.38,
+     "900 divided by 9 is 100 dollars for each part."
+    ],
+    [
+     174.3,
+     "The shares are 200 dollars, 300 dollars and 400 dollars."
+    ],
+    [
+     180.35,
+     "A builder mixes cement and sand in the ratio 1 to 4."
+    ],
+    [
+     184.18,
+     "She uses 60 kilograms of sand."
+    ],
+    [
+     186.39,
+     "How much cement does she need?"
+    ],
+    [
+     189.15,
+     "The 4 parts of sand are 60 kilograms."
+    ],
+    [
+     192.28,
+     "So 1 part is 15 kilograms."
+    ],
+    [
+     194.48,
+     "She needs 15 kilograms of cement."
+    ],
+    [
+     197.82,
+     "The whole mix is 5 parts: 75 kilograms."
+    ],
+    [
+     201.55,
+     "In a club, boys to girls is 4 to 7."
+    ],
+    [
+     204.14,
+     "There are 15 more girls than boys."
+    ],
+    [
+     206.66,
+     "How many students are there?"
+    ],
+    [
+     209.29,
+     "The difference is 7 minus 4, which is 3 parts."
+    ],
+    [
+     213.07,
+     "Those 3 parts are 15 students."
+    ],
+    [
+     215.54,
+     "So 1 part is 5."
+    ],
+    [
+     217.32,
+     "Altogether there are 11 parts."
+    ],
+    [
+     219.99,
+     "11 times 5 is 55 students."
+    ],
+    [
+     222.85,
+     "Share 90 dollars in the ratio 1 to 2."
+    ],
+    [
+     225.68,
+     "Here is Hugo's working."
+    ],
+    [
+     227.44,
+     "Which line goes wrong first?"
+    ],
+    [
+     230.13,
+     "Line 1 is wrong."
+    ],
+    [
+     231.36,
+     "Those shares add up to 135 dollars, not 90."
+    ],
+    [
+     234.65,
+     "You must divide by the total number of parts."
+    ],
+    [
+     238.65,
+     "1 plus 2 is 3 parts."
+    ],
+    [
+     240.46,
+     "90 divided by 3 is 30."
+    ],
+    [
+     242.45,
+     "The shares are 30 dollars and 60 dollars."
+    ],
+    [
+     246.71,
+     "Jewellers use ratios."
+    ],
+    [
+     248.46,
+     "18 carat gold is 18 parts gold in every 24 parts."
+    ],
+    [
+     252.56,
+     "So gold to other metals is 18 to 6, which is 3 to 1."
+    ],
+    [
+     257.45,
+     "The air you breathe is a ratio too."
+    ],
+    [
+     259.98,
+     "Nitrogen to oxygen is about 4 to 1."
+    ],
+    [
+     263.05,
+     "So in every 5 litres of air, about 1 litre is oxygen."
+    ],
+    [
+     267.53,
+     "One last question."
+    ],
+    [
+     268.92,
+     "Share 100 in the ratio 3 to 7."
+    ],
+    [
+     271.23,
+     "What is the larger share?"
+    ],
+    [
+     273.16,
+     "Pause the video and answer."
+    ],
+    [
+     276.64,
+     "3 plus 7 is 10 parts."
+    ],
+    [
+     278.77,
+     "100 divided by 10 is 10."
+    ],
+    [
+     281.19,
+     "The larger share is 7 parts: 70."
+    ],
+    [
+     284.98,
+     "To remember: add the parts, find 1 part, then multiply."
+    ],
+    [
+     289.42,
+     "If you know 1 share, use it to find 1 part."
+    ],
+    [
+     293.07,
+     "If you know the difference, use the difference in parts."
+    ],
+    [
+     297.4,
+     "Always check that the shares add up to the total."
+    ],
+    [
+     301.25,
+     "Great work! Now practise lesson 12.2 on Camday."
+    ]
+   ],
+   "times": {
+    "12.2-k1": 25.75,
+    "12.2-k2": 80.09,
+    "12.2-k3": 117.15,
+    "12.2-k4": 275.59
+   },
+   "up": true
+  },
+  "16.5": {
+   "src": "media/mv/s7/16-5.mp4",
+   "poster": "media/mv/s7/16-5_poster.jpg",
+   "srt": "media/mv/s7/16-5.srt",
+   "dur": 273.44,
+   "captions": [
+    [
+     6.6,
+     "You have 3 sets of data."
+    ],
+    [
+     8.41,
+     "First: your height on every birthday, from age 5 to age 12."
+    ],
+    [
+     13.42,
+     "Second: how 30 classmates travel to school."
+    ],
+    [
+     16.62,
+     "Third: test scores for boys and girls, in 4 subjects."
+    ],
+    [
+     21.12,
+     "Start with your height on every birthday."
+    ],
+    [
+     23.9,
+     "Is that best shown on a line graph, or on a pie chart?"
+    ],
+    [
+     27.55,
+     "Pause the video and decide."
+    ],
+    [
+     30.78,
+     "A line graph."
+    ],
+    [
+     31.66,
+     "Your height changes over time, and a line graph shows that change clearly."
+    ],
+    [
+     37.2,
+     "Remember the 3 types of data."
+    ],
+    [
+     39.26,
+     "Categorical data is words, like colours."
+    ],
+    [
+     42.1,
+     "Discrete data is counted, like the number of pets."
+    ],
+    [
+     45.65,
+     "Continuous data is measured, like height."
+    ],
+    [
+     49.11,
+     "Different charts do different jobs."
+    ],
+    [
+     51.56,
+     "A bar chart compares categories, or counts."
+    ],
+    [
+     55.11,
+     "A dual bar chart compares 2 groups."
+    ],
+    [
+     57.6,
+     "A line graph shows change over time."
+    ],
+    [
+     60.7,
+     "Your turn."
+    ],
+    [
+     61.37,
+     "Which chart shows the parts of a whole: a pie chart, or a line graph?"
+    ],
+    [
+     66.01,
+     "Pause the video and decide."
+    ],
+    [
+     69.22,
+     "A pie chart."
+    ],
+    [
+     70.04,
+     "Each sector is 1 part, and the whole circle is the whole group."
+    ],
+    [
+     74.37,
+     "A waffle diagram does the same job."
+    ],
+    [
+     77.32,
+     "A good chart has a title."
+    ],
+    [
+     79.03,
+     "Its axes have labels, with units."
+    ],
+    [
+     81.83,
+     "The scale goes up in equal steps."
+    ],
+    [
+     84.01,
+     "For a bar chart, it should start at 0."
+    ],
+    [
+     87.07,
+     "If there are colours, there is a key."
+    ],
+    [
+     89.51,
+     "And a good chart says where the data came from."
+    ],
+    [
+     93.15,
+     "Here is the method."
+    ],
+    [
+     94.47,
+     "Step 1: what type of data is it?"
+    ],
+    [
+     96.68,
+     "Is it measured over time?"
+    ],
+    [
+     98.96,
+     "Step 2: what do you want to show?"
+    ],
+    [
+     101.17,
+     "A comparison, the parts of a whole, or a trend?"
+    ],
+    [
+     104.88,
+     "Step 3: pick the chart, and draw it carefully."
+    ],
+    [
+     108.73,
+     "Step 4: add the title, the labels, the units and a key."
+    ],
+    [
+     113.0,
+     "A café records the drinks it sells in 1 day: 90 coffees, 45 teas, 30 juices and 15 bottles of water."
+    ],
+    [
+     120.93,
+     "Which chart shows the share of each drink?"
+    ],
+    [
+     124.81,
+     "The shares are parts of a whole, so use a pie chart."
+    ],
+    [
+     128.62,
+     "The total is 180 drinks, so each drink gets 2 degrees."
+    ],
+    [
+     133.12,
+     "The angles are 180 degrees, 90 degrees, 60 degrees and 30 degrees."
+    ],
+    [
+     139.96,
+     "A town records its population every year, from 2015 to 2024."
+    ],
+    [
+     145.18,
+     "Which chart should it use?"
+    ],
+    [
+     147.99,
+     "The data changes over time, so a line graph is best."
+    ],
+    [
+     151.47,
+     "It shows the trend: is the population rising, or falling?"
+    ],
+    [
+     155.83,
+     "Your turn."
+    ],
+    [
+     156.53,
+     "You want to compare the scores of 2 classes, in 3 tests."
+    ],
+    [
+     160.45,
+     "Do you use a dual bar chart, or a pie chart?"
+    ],
+    [
+     163.53,
+     "Pause the video and decide."
+    ],
+    [
+     166.82,
+     "A dual bar chart."
+    ],
+    [
+     168.01,
+     "For each test, draw 2 bars side by side: 1 for each class."
+    ],
+    [
+     172.62,
+     "A bar chart has no title."
+    ],
+    [
+     174.41,
+     "Its axis starts at 20."
+    ],
+    [
+     175.99,
+     "And there are no units."
+    ],
+    [
+     177.65,
+     "How can you improve it?"
+    ],
+    [
+     179.85,
+     "Add a title."
+    ],
+    [
+     180.66,
+     "Start the axis at 0, so that the heights of the bars can be compared fairly."
+    ],
+    [
+     185.83,
+     "And label the axis, with its units."
+    ],
+    [
+     188.75,
+     "A survey of favourite fruit finds: apple 8, banana 5, mango 11."
+    ],
+    [
+     193.38,
+     "Here is Ines's plan for a chart."
+    ],
+    [
+     195.72,
+     "Which line goes wrong first?"
+    ],
+    [
+     198.33,
+     "Line 2 is wrong."
+    ],
+    [
+     199.44,
+     "Fruit names are categories."
+    ],
+    [
+     201.31,
+     "There is nothing in between apple and banana, so joining the points has no meaning."
+    ],
+    [
+     207.62,
+     "Use a bar chart for categories."
+    ],
+    [
+     210.28,
+     "Be careful with bar charts in adverts."
+    ],
+    [
+     213.26,
+     "2 phones score 52 and 55 in a test."
+    ],
+    [
+     216.01,
+     "If the axis starts at 50, the bars are 2 units and 5 units tall."
+    ],
+    [
+     221.58,
+     "The second bar looks more than 2 times as tall."
+    ],
+    [
+     225.31,
+     "But 55 is only about 6 per cent more than 52."
+    ],
+    [
+     229.44,
+     "So always look at where the axis starts."
+    ],
+    [
+     232.76,
+     "One last question."
+    ],
+    [
+     233.99,
+     "The axis of a bar chart should usually start at which number: 0, or the smallest value in the data?"
+    ],
+    [
+     240.78,
+     "Pause the video and answer."
+    ],
+    [
+     244.03,
+     "At 0."
+    ],
+    [
+     244.37,
+     "Then the height of each bar matches its value, and the comparison is fair."
+    ],
+    [
+     250.03,
+     "To remember: bar charts compare categories."
+    ],
+    [
+     253.21,
+     "Dual bar charts compare 2 groups."
+    ],
+    [
+     256.2,
+     "Pie charts and waffle diagrams show the parts of a whole."
+    ],
+    [
+     260.6,
+     "Line graphs show change over time."
+    ],
+    [
+     263.5,
+     "A good chart has a title, labels, units, a key and a fair scale."
+    ],
+    [
+     267.96,
+     "Great work! Now practise lesson 16.5 on Camday."
+    ]
+   ],
+   "times": {
+    "16.5-k1": 29.73,
+    "16.5-k2": 68.17,
+    "16.5-k3": 165.77,
+    "16.5-k4": 242.98
+   },
+   "up": true
+  },
+  "12.3": {
+   "src": "media/mv/s7/12-3.mp4",
+   "poster": "media/mv/s7/12-3_poster.jpg",
+   "srt": "media/mv/s7/12-3.srt",
+   "dur": 316.48,
+   "captions": [
+    [
+     7.06,
+     "A pancake recipe for 4 people uses 200 grams of flour, 2 eggs and 300 millilitres of milk."
+    ],
+    [
+     15.23,
+     "Mo is cooking for 10 people."
+    ],
+    [
+     18.03,
+     "How much flour does Mo need?"
+    ],
+    [
+     19.89,
+     "Pause the video and work it out."
+    ],
+    [
+     23.42,
+     "First find the flour for 1 person."
+    ],
+    [
+     26.41,
+     "200 divided by 4 is 50 grams."
+    ],
+    [
+     29.52,
+     "Then multiply by 10."
+    ],
+    [
+     31.28,
+     "Mo needs 500 grams of flour."
+    ],
+    [
+     34.3,
+     "In the same way, he needs 5 eggs, and 750 millilitres of milk."
+    ],
+    [
+     39.71,
+     "Remember: if 1 pen costs 3 dollars, then 6 pens cost 18 dollars."
+    ],
+    [
+     44.97,
+     "And if 5 pens cost 4 dollars, 1 pen costs 4 divided by 5, which is 80 cents."
+    ],
+    [
+     51.77,
+     "2 quantities are in direct proportion if they grow at the same rate."
+    ],
+    [
+     56.53,
+     "Double one, and the other doubles."
+    ],
+    [
+     58.91,
+     "Halve one, and the other halves."
+    ],
+    [
+     61.7,
+     "Flour and people are in direct proportion."
+    ],
+    [
+     65.41,
+     "4 people need 200 grams."
+    ],
+    [
+     67.53,
+     "8 people need 400 grams."
+    ],
+    [
+     69.64,
+     "2 people need 100 grams."
+    ],
+    [
+     72.31,
+     "The unitary method always works: find the value for 1, then multiply up."
+    ],
+    [
+     77.93,
+     "Your turn."
+    ],
+    [
+     78.7,
+     "3 kilograms of rice cost 4 dollars 50."
+    ],
+    [
+     81.61,
+     "How much do 7 kilograms cost?"
+    ],
+    [
+     83.83,
+     "Pause the video and try it."
+    ],
+    [
+     87.3,
+     "1 kilogram costs 4.50 divided by 3, which is 1 dollar 50."
+    ],
+    [
+     92.59,
+     "7 kilograms cost 7 times 1.50, which is 10 dollars 50."
+    ],
+    [
+     98.15,
+     "Which pack is better value?"
+    ],
+    [
+     100.09,
+     "To compare, find the price of the same amount of each."
+    ],
+    [
+     103.98,
+     "Here we find the price for 100 grams."
+    ],
+    [
+     107.19,
+     "The small pack costs 90 cents for 100 grams."
+    ],
+    [
+     111.15,
+     "The large pack costs 80 cents for 100 grams."
+    ],
+    [
+     115.66,
+     "So the large pack is better value."
+    ],
+    [
+     118.46,
+     "Here is the method."
+    ],
+    [
+     119.81,
+     "Step 1: check that the quantities are in direct proportion."
+    ],
+    [
+     124.01,
+     "Does doubling one double the other?"
+    ],
+    [
+     127.05,
+     "Step 2: divide, to find the value for 1 unit."
+    ],
+    [
+     130.93,
+     "Step 3: multiply by the number of units you need."
+    ],
+    [
+     134.93,
+     "Step 4: check that your answer is a sensible size."
+    ],
+    [
+     139.0,
+     "A smoothie recipe for 5 people needs 750 millilitres of milk."
+    ],
+    [
+     143.72,
+     "How much milk is needed for 8 people?"
+    ],
+    [
+     147.14,
+     "For 1 person: 750 divided by 5 is 150 millilitres."
+    ],
+    [
+     152.63,
+     "For 8 people: 8 times 150 is 1,200 millilitres."
+    ],
+    [
+     158.12,
+     "A printer prints 180 pages in 6 minutes."
+    ],
+    [
+     161.35,
+     "How many pages does it print in 25 minutes?"
+    ],
+    [
+     165.38,
+     "In 1 minute: 180 divided by 6 is 30 pages."
+    ],
+    [
+     169.85,
+     "In 25 minutes: 25 times 30 is 750 pages."
+    ],
+    [
+     174.81,
+     "Your turn."
+    ],
+    [
+     175.57,
+     "A car uses 6 litres of fuel for 80 kilometres."
+    ],
+    [
+     179.1,
+     "How many litres does it use for 200 kilometres?"
+    ],
+    [
+     182.7,
+     "Pause the video and try it."
+    ],
+    [
+     186.17,
+     "Half of 80 is 40, so 40 kilometres uses 3 litres."
+    ],
+    [
+     191.04,
+     "200 kilometres is 5 lots of 40."
+    ],
+    [
+     194.12,
+     "5 times 3 is 15 litres."
+    ],
+    [
+     196.95,
+     "A taxi costs 6 dollars for 1 kilometre, and 10 dollars for 2 kilometres."
+    ],
+    [
+     202.31,
+     "Is the cost in direct proportion to the distance?"
+    ],
+    [
+     206.51,
+     "If it were, doubling the distance would double the cost."
+    ],
+    [
+     210.64,
+     "2 kilometres would cost 12 dollars."
+    ],
+    [
+     213.77,
+     "But it costs 10 dollars."
+    ],
+    [
+     215.46,
+     "So no."
+    ],
+    [
+     215.89,
+     "There must be a fixed fee, as well as a price per kilometre."
+    ],
+    [
+     220.67,
+     "5 tickets cost 40 dollars."
+    ],
+    [
+     222.67,
+     "How much do 8 tickets cost?"
+    ],
+    [
+     224.75,
+     "Here is Luca's working."
+    ],
+    [
+     226.53,
+     "Which line goes wrong first?"
+    ],
+    [
+     229.23,
+     "Line 2 is wrong."
+    ],
+    [
+     230.36,
+     "In direct proportion, we multiply."
+    ],
+    [
+     232.76,
+     "We do not add."
+    ],
+    [
+     234.29,
+     "1 ticket costs 40 divided by 5, which is 8 dollars."
+    ],
+    [
+     238.58,
+     "So 8 tickets cost 8 times 8, which is 64 dollars."
+    ],
+    [
+     243.26,
+     "Here is direct proportion in a thunderstorm."
+    ],
+    [
+     246.48,
+     "Sound travels about 1 kilometre every 3 seconds."
+    ],
+    [
+     250.55,
+     "You see the lightning, and then count the seconds until the thunder."
+    ],
+    [
+     255.37,
+     "If you count 6 seconds, the storm is about 2 kilometres away."
+    ],
+    [
+     260.24,
+     "If you count 12 seconds, it is about 4 kilometres away."
+    ],
+    [
+     264.26,
+     "Double the time means double the distance."
+    ],
+    [
+     267.88,
+     "One last question."
+    ],
+    [
+     269.38,
+     "Which is better value: 500 grams for 2 dollars, or 300 grams for 1 dollar 50?"
+    ],
+    [
+     275.81,
+     "Pause the video and decide."
+    ],
+    [
+     279.47,
+     "Find the price for 100 grams."
+    ],
+    [
+     282.11,
+     "2 dollars divided by 5 is 40 cents."
+    ],
+    [
+     285.31,
+     "1.50 divided by 3 is 50 cents."
+    ],
+    [
+     288.04,
+     "So 500 grams for 2 dollars is better value."
+    ],
+    [
+     292.52,
+     "To remember: in direct proportion, when one quantity doubles, the other doubles."
+    ],
+    [
+     298.52,
+     "The unitary method: find 1, then multiply."
+    ],
+    [
+     302.14,
+     "To compare value, find the price for the same amount."
+    ],
+    [
+     306.32,
+     "A fixed fee means the quantities are not in direct proportion."
+    ],
+    [
+     311.13,
+     "Great work! Now practise lesson 12.3 on Camday."
+    ]
+   ],
+   "times": {
+    "12.3-k1": 22.37,
+    "12.3-k2": 86.25,
+    "12.3-k3": 185.12,
+    "12.3-k4": 278.42
+   },
+   "up": true
+  },
+  "10.1": {
+   "src": "media/mv/s7/10-1.mp4",
+   "poster": "media/mv/s7/10-1_poster.jpg",
+   "srt": "media/mv/s7/10-1.srt",
+   "dur": 313.04,
+   "captions": [
+    [
+     7.88,
+     "3 friends compare their phones."
+    ],
+    [
+     10.34,
+     "Mia's phone shows 0.35 of its battery left."
+    ],
+    [
+     13.75,
+     "Leo's shows 3 eighths."
+    ],
+    [
+     15.49,
+     "And Sam's shows 36 per cent."
+    ],
+    [
+     18.26,
+     "Whose phone has the most charge left?"
+    ],
+    [
+     20.81,
+     "Pause the video and work it out."
+    ],
+    [
+     24.41,
+     "To compare them, write all 3 in the same form."
+    ],
+    [
+     28.27,
+     "0.35 is 35 per cent."
+    ],
+    [
+     30.49,
+     "3 divided by 8 is 0.375, which is 37.5 per cent."
+    ],
+    [
+     35.97,
+     "So Leo has 37.5 per cent, Sam has 36 per cent, and Mia has 35 per cent."
+    ],
+    [
+     41.61,
+     "Leo has the most charge."
+    ],
+    [
+     44.06,
+     "Remember: per cent means out of 100."
+    ],
+    [
+     47.49,
+     "45 per cent is 45 out of 100."
+    ],
+    [
+     50.8,
+     "A fraction, a decimal and a percentage can all show the same amount."
+    ],
+    [
+     55.79,
+     "One half is 0.5, and it is 50 per cent."
+    ],
+    [
+     59.2,
+     "One quarter is 0.25, or 25 per cent."
+    ],
+    [
+     62.66,
+     "3 quarters is 0.75, or 75 per cent."
+    ],
+    [
+     66.57,
+     "One fifth is 0.2, or 20 per cent."
+    ],
+    [
+     69.22,
+     "And one tenth is 0.1, or 10 per cent."
+    ],
+    [
+     72.19,
+     "These are worth learning by heart."
+    ],
+    [
+     75.46,
+     "To change a percentage to a decimal, divide by 100."
+    ],
+    [
+     80.05,
+     "36 per cent is 0.36."
+    ],
+    [
+     82.4,
+     "To change a decimal to a percentage, multiply by 100."
+    ],
+    [
+     86.9,
+     "0.07 is 7 per cent."
+    ],
+    [
+     89.06,
+     "To change a percentage to a fraction, write it over 100, then simplify."
+    ],
+    [
+     95.32,
+     "36 per cent is 36 over 100, which is 9 over 25."
+    ],
+    [
+     100.02,
+     "To change a fraction to a decimal, divide the top by the bottom."
+    ],
+    [
+     104.91,
+     "3 divided by 8 is 0.375."
+    ],
+    [
+     107.29,
+     "Your turn."
+    ],
+    [
+     108.01,
+     "Write 3 fifths as a percentage."
+    ],
+    [
+     110.23,
+     "Pause the video and try it."
+    ],
+    [
+     113.56,
+     "Make the denominator 100."
+    ],
+    [
+     115.83,
+     "Multiply the top and the bottom by 20."
+    ],
+    [
+     119.3,
+     "3 fifths is 60 over 100, which is 60 per cent."
+    ],
+    [
+     124.04,
+     "Here is the method for comparing fractions, decimals and percentages."
+    ],
+    [
+     129.04,
+     "Step 1: choose one form."
+    ],
+    [
+     130.77,
+     "Percentages or decimals are usually easiest."
+    ],
+    [
+     134.51,
+     "Step 2: convert every number to that form."
+    ],
+    [
+     138.12,
+     "Step 3: compare them."
+    ],
+    [
+     140.65,
+     "Step 4: write your answer using the original numbers."
+    ],
+    [
+     145.02,
+     "Write 65 per cent as a fraction in its simplest form."
+    ],
+    [
+     149.51,
+     "65 per cent is 65 over 100."
+    ],
+    [
+     152.05,
+     "Divide the top and the bottom by 5."
+    ],
+    [
+     155.35,
+     "That gives 13 over 20."
+    ],
+    [
+     157.97,
+     "Your turn."
+    ],
+    [
+     158.69,
+     "Write 15 per cent as a fraction in its simplest form."
+    ],
+    [
+     162.53,
+     "Pause the video and try it."
+    ],
+    [
+     165.88,
+     "15 per cent is 15 over 100."
+    ],
+    [
+     168.36,
+     "Divide the top and the bottom by 5."
+    ],
+    [
+     171.57,
+     "The answer is 3 over 20."
+    ],
+    [
+     174.32,
+     "Write 11 over 25 as a percentage."
+    ],
+    [
+     177.85,
+     "4 times 25 is 100."
+    ],
+    [
+     179.53,
+     "So multiply the top and the bottom by 4."
+    ],
+    [
+     183.25,
+     "That gives 44 over 100, which is 44 per cent."
+    ],
+    [
+     187.99,
+     "Write 7 over 16 as a decimal, and as a percentage."
+    ],
+    [
+     192.16,
+     "16 does not go into 100, so divide."
+    ],
+    [
+     195.62,
+     "7 divided by 16 is 0.4375."
+    ],
+    [
+     199.57,
+     "Multiply by 100."
+    ],
+    [
+     201.24,
+     "That is 43.75 per cent."
+    ],
+    [
+     204.19,
+     "Put these in order, smallest first: 3 fifths, 0.58, 61 per cent, and 5 eighths."
+    ],
+    [
+     211.27,
+     "Write them all as percentages."
+    ],
+    [
+     213.96,
+     "3 fifths is 60 per cent."
+    ],
+    [
+     216.12,
+     "0.58 is 58 per cent."
+    ],
+    [
+     217.92,
+     "5 eighths is 62.5 per cent."
+    ],
+    [
+     220.89,
+     "In order: 58, 60, 61, 62.5."
+    ],
+    [
+     223.61,
+     "So the answer is 0.58, 3 fifths, 61 per cent, 5 eighths."
+    ],
+    [
+     229.79,
+     "Write 0.4 as a percentage."
+    ],
+    [
+     231.76,
+     "Here is Zoe's working."
+    ],
+    [
+     233.42,
+     "Is it right?"
+    ],
+    [
+     234.88,
+     "Line 1 is wrong."
+    ],
+    [
+     236.32,
+     "To change a decimal to a percentage, multiply by 100."
+    ],
+    [
+     241.08,
+     "0.4 times 100 is 40."
+    ],
+    [
+     243.43,
+     "So 0.4 is 40 per cent."
+    ],
+    [
+     245.61,
+     "4 per cent would be 0.04."
+    ],
+    [
+     248.63,
+     "Shops, doctors and scientists use all 3 forms."
+    ],
+    [
+     252.08,
+     "A half price sale is 50 per cent off."
+    ],
+    [
+     254.86,
+     "It is the same as multiplying the price by 0.5."
+    ],
+    [
+     258.94,
+     "About 60 per cent of an adult's body is water."
+    ],
+    [
+     262.28,
+     "That is about 3 fifths."
+    ],
+    [
+     264.5,
+     "And a basketball player who scores 17 free throws out of 20 has scored 85 per cent of them."
+    ],
+    [
+     272.34,
+     "One last question."
+    ],
+    [
+     273.64,
+     "Write 1 eighth as a percentage."
+    ],
+    [
+     275.87,
+     "Pause the video and work it out."
+    ],
+    [
+     279.58,
+     "1 divided by 8 is 0.125."
+    ],
+    [
+     282.1,
+     "Multiply by 100."
+    ],
+    [
+     283.78,
+     "1 eighth is 12.5 per cent."
+    ],
+    [
+     287.06,
+     "To remember: percentage to decimal, divide by 100."
+    ],
+    [
+     291.2,
+     "Decimal to percentage, multiply by 100."
+    ],
+    [
+     294.99,
+     "Percentage to fraction: write it over 100, then simplify."
+    ],
+    [
+     300.07,
+     "Fraction to decimal: divide the top by the bottom."
+    ],
+    [
+     304.02,
+     "To compare, put everything in the same form."
+    ],
+    [
+     307.59,
+     "Great work! Now practise lesson 10.1 on Camday."
+    ]
+   ],
+   "times": {
+    "10.1-k1": 23.36,
+    "10.1-k2": 112.51,
+    "10.1-k3": 164.83,
+    "10.1-k4": 278.53
+   },
+   "up": true
+  },
+  "15.2": {
+   "src": "media/mv/s7/15-2.mp4",
+   "poster": "media/mv/s7/15-2_poster.jpg",
+   "srt": "media/mv/s7/15-2.srt",
+   "dur": 325.88,
+   "captions": [
+    [
+     6.41,
+     "An advert says that a farm has 35 hectares of land."
+    ],
+    [
+     10.28,
+     "To picture that, think of a football pitch."
+    ],
+    [
+     13.55,
+     "A pitch is about 100 metres by 70 metres."
+    ],
+    [
+     17.22,
+     "First, what is the area of the football pitch, in square metres?"
+    ],
+    [
+     21.5,
+     "Pause the video and work it out."
+    ],
+    [
+     25.05,
+     "100 times 70 is 7,000 square metres."
+    ],
+    [
+     29.73,
+     "1 hectare is 10,000 square metres."
+    ],
+    [
+     33.31,
+     "So 35 hectares is 350,000 square metres."
+    ],
+    [
+     38.06,
+     "350,000 divided by 7,000 is 50."
+    ],
+    [
+     41.3,
+     "The farm is as big as 50 football pitches."
+    ],
+    [
+     46.24,
+     "Remember: the area of a rectangle is the length times the width."
+    ],
+    [
+     51.49,
+     "A field 250 metres by 80 metres has an area of 20,000 square metres."
+    ],
+    [
+     57.62,
+     "Land is measured in hectares."
+    ],
+    [
+     60.15,
+     "1 hectare is the area of a square, 100 metres by 100 metres."
+    ],
+    [
+     65.4,
+     "That is 10,000 square metres."
+    ],
+    [
+     68.49,
+     "The short way to write hectares is h a."
+    ],
+    [
+     71.26,
+     "A football pitch is about 0.7 hectares."
+    ],
+    [
+     74.58,
+     "To change hectares into square metres, multiply by 10,000."
+    ],
+    [
+     79.88,
+     "Your turn."
+    ],
+    [
+     80.58,
+     "Change 3 hectares to square metres."
+    ],
+    [
+     83.04,
+     "Pause the video and try it."
+    ],
+    [
+     86.34,
+     "3 times 10,000 is 30,000 square metres."
+    ],
+    [
+     91.66,
+     "To change square metres into hectares, divide by 10,000."
+    ],
+    [
+     96.92,
+     "85,000 square metres is 8.5 hectares."
+    ],
+    [
+     100.95,
+     "To find the area of a field in hectares, first find its area in square metres."
+    ],
+    [
+     106.17,
+     "Then divide."
+    ],
+    [
+     107.53,
+     "Your turn."
+    ],
+    [
+     108.32,
+     "A field is 200 metres by 250 metres."
+    ],
+    [
+     111.18,
+     "What is its area in hectares?"
+    ],
+    [
+     113.49,
+     "Pause the video and try it."
+    ],
+    [
+     117.03,
+     "200 times 250 is 50,000 square metres."
+    ],
+    [
+     121.28,
+     "Divide by 10,000."
+    ],
+    [
+     123.18,
+     "The field is 5 hectares."
+    ],
+    [
+     126.41,
+     "Here is the method."
+    ],
+    [
+     127.74,
+     "Step 1: find the area in square metres."
+    ],
+    [
+     130.47,
+     "The lengths must be in metres."
+    ],
+    [
+     133.12,
+     "Step 2: divide by 10,000 to get hectares."
+    ],
+    [
+     137.58,
+     "Step 3: to go from hectares to square metres, multiply by 10,000."
+    ],
+    [
+     143.75,
+     "Step 4: check with something you know."
+    ],
+    [
+     146.65,
+     "A football pitch is about 0.7 hectares."
+    ],
+    [
+     150.19,
+     "A field is 300 metres by 180 metres."
+    ],
+    [
+     153.28,
+     "Find its area in hectares."
+    ],
+    [
+     156.06,
+     "300 times 180 is 54,000 square metres."
+    ],
+    [
+     161.37,
+     "Divide by 10,000."
+    ],
+    [
+     163.05,
+     "The field is 5.4 hectares."
+    ],
+    [
+     166.18,
+     "A forest is a rectangle, 1.5 kilometres by 0.8 kilometres."
+    ],
+    [
+     170.68,
+     "Find its area in hectares."
+    ],
+    [
+     173.25,
+     "Change to metres first: 1,500 metres by 800 metres."
+    ],
+    [
+     178.37,
+     "The area is 1,200,000 square metres."
+    ],
+    [
+     182.54,
+     "Divide by 10,000."
+    ],
+    [
+     184.29,
+     "The forest is 120 hectares."
+    ],
+    [
+     187.62,
+     "A rectangular field has an area of 3.6 hectares."
+    ],
+    [
+     191.33,
+     "It is 300 metres long."
+    ],
+    [
+     193.03,
+     "How wide is it?"
+    ],
+    [
+     194.73,
+     "3.6 hectares is 36,000 square metres."
+    ],
+    [
+     199.28,
+     "Divide the area by the length."
+    ],
+    [
+     202.24,
+     "36,000 divided by 300 is 120."
+    ],
+    [
+     205.11,
+     "The field is 120 metres wide."
+    ],
+    [
+     208.52,
+     "Land costs 6,000 dollars for each hectare."
+    ],
+    [
+     212.18,
+     "Find the price of a plot that is 500 metres by 140 metres."
+    ],
+    [
+     217.79,
+     "500 times 140 is 70,000 square metres."
+    ],
+    [
+     221.97,
+     "That is 7 hectares."
+    ],
+    [
+     224.61,
+     "7 times 6,000 is 42,000 dollars."
+    ],
+    [
+     229.23,
+     "Change 62,000 square metres to hectares."
+    ],
+    [
+     232.4,
+     "Here is Yuri's working."
+    ],
+    [
+     234.23,
+     "Which line goes wrong first?"
+    ],
+    [
+     237.0,
+     "Line 1 is wrong."
+    ],
+    [
+     238.59,
+     "1 hectare is 100 metres by 100 metres."
+    ],
+    [
+     242.36,
+     "That is 10,000 square metres, not 100."
+    ],
+    [
+     246.68,
+     "62,000 divided by 10,000 is 6.2 hectares."
+    ],
+    [
+     252.38,
+     "The smallest country in the world is Vatican City, inside Rome."
+    ],
+    [
+     256.88,
+     "Its area is only about 44 hectares."
+    ],
+    [
+     259.93,
+     "That is less than half a square kilometre."
+    ],
+    [
+     262.97,
+     "You could walk across it in about 10 minutes."
+    ],
+    [
+     266.76,
+     "Central Park, in New York, is much bigger: about 340 hectares."
+    ],
+    [
+     271.43,
+     "Almost 8 Vatican Cities would fit inside it."
+    ],
+    [
+     275.29,
+     "One last question."
+    ],
+    [
+     276.56,
+     "How many hectares are there in 1 square kilometre?"
+    ],
+    [
+     280.07,
+     "Pause the video and work it out."
+    ],
+    [
+     283.72,
+     "1 square kilometre is 1,000 metres by 1,000 metres: 1 million square metres."
+    ],
+    [
+     291.28,
+     "Divide by 10,000."
+    ],
+    [
+     292.97,
+     "That is 100 hectares."
+    ],
+    [
+     295.61,
+     "To remember: 1 hectare is 10,000 square metres."
+    ],
+    [
+     300.03,
+     "It is a square 100 metres by 100 metres."
+    ],
+    [
+     304.35,
+     "Square metres to hectares: divide by 10,000."
+    ],
+    [
+     308.39,
+     "Hectares to square metres: multiply by 10,000."
+    ],
+    [
+     313.16,
+     "100 hectares make 1 square kilometre."
+    ],
+    [
+     316.58,
+     "Always work out the area in square metres first."
+    ],
+    [
+     320.44,
+     "Great work! Now practise lesson 15.2 on Camday."
+    ]
+   ],
+   "times": {
+    "15.2-k1": 24.0,
+    "15.2-k2": 85.29,
+    "15.2-k3": 115.98,
+    "15.2-k4": 282.67
+   },
+   "up": true
+  },
+  "16.1": {
+   "src": "media/mv/s7/16-1.mp4",
+   "poster": "media/mv/s7/16-1_poster.jpg",
+   "srt": "media/mv/s7/16-1.srt",
+   "dur": 306.36,
+   "captions": [
+    [
+     6.32,
+     "A canteen records the lunches for 1 day."
+    ],
+    [
+     9.33,
+     "Students from Year 7 and Year 8 choose pasta, rice or salad."
+    ],
+    [
+     13.85,
+     "64 students eat lunch."
+    ],
+    [
+     16.06,
+     "The cook wants to answer questions like: how many Year 8 students chose rice?"
+    ],
+    [
+     22.04,
+     "Which layout records both the year and the choice: a table with rows for the years and columns for the choices, or a single list of choices?"
+    ],
+    [
+     31.5,
+     "Pause the video and decide."
+    ],
+    [
+     34.72,
+     "Use rows for the years, and columns for the choices."
+    ],
+    [
+     38.33,
+     "Each number in the table then tells you 2 things at once."
+    ],
+    [
+     42.84,
+     "Find the row for Year 8, and the column for rice."
+    ],
+    [
+     46.62,
+     "They meet at 13."
+    ],
+    [
+     47.86,
+     "So 13 students in Year 8 chose rice."
+    ],
+    [
+     51.19,
+     "Remember: the total of a row is the sum of the numbers in it."
+    ],
+    [
+     55.95,
+     "12 plus 9 plus 7 is 28."
+    ],
+    [
+     58.3,
+     "A two-way table shows data sorted in 2 ways at once."
+    ],
+    [
+     61.75,
+     "Here it is sorted by year, in the rows, and by lunch, in the columns."
+    ],
+    [
+     66.88,
+     "Each row has a total."
+    ],
+    [
+     68.65,
+     "Year 7 has 30 students, and Year 8 has 34."
+    ],
+    [
+     72.75,
+     "Look at the salad column."
+    ],
+    [
+     74.55,
+     "6 students in Year 7 chose salad, and 9 in Year 8."
+    ],
+    [
+     78.15,
+     "How many students chose salad altogether?"
+    ],
+    [
+     81.11,
+     "Pause the video and work it out."
+    ],
+    [
+     84.81,
+     "6 plus 9 is 15."
+    ],
+    [
+     86.1,
+     "Add a totals row to the table: 26 chose pasta, 23 chose rice, and 15 chose salad."
+    ],
+    [
+     93.62,
+     "The number in the bottom right corner is the grand total: 64 students."
+    ],
+    [
+     98.58,
+     "You get 64 if you add the row totals, and also if you add the column totals."
+    ],
+    [
+     104.52,
+     "Sometimes a table has gaps."
+    ],
+    [
+     106.36,
+     "Use the totals to fill them."
+    ],
+    [
+     108.27,
+     "A missing number is the total, minus the other numbers in that row or column."
+    ],
+    [
+     114.08,
+     "Fill a row or column that has only 1 gap."
+    ],
+    [
+     116.87,
+     "Then look for the next one."
+    ],
+    [
+     119.25,
+     "Your turn."
+    ],
+    [
+     119.99,
+     "A column reads 7, then a gap, then 11."
+    ],
+    [
+     122.82,
+     "Its total is 30."
+    ],
+    [
+     124.01,
+     "What is the missing value?"
+    ],
+    [
+     125.95,
+     "Pause the video and try it."
+    ],
+    [
+     129.36,
+     "7 plus 11 is 18."
+    ],
+    [
+     131.12,
+     "30 minus 18 is 12."
+    ],
+    [
+     133.11,
+     "The missing value is 12."
+    ],
+    [
+     136.31,
+     "Here is the method."
+    ],
+    [
+     137.63,
+     "Step 1: read the labels."
+    ],
+    [
+     139.29,
+     "What do the rows show?"
+    ],
+    [
+     140.82,
+     "What do the columns show?"
+    ],
+    [
+     143.1,
+     "Step 2: fill a gap where only 1 value is missing in a row or a column."
+    ],
+    [
+     148.52,
+     "Step 3: keep going until the table is complete."
+    ],
+    [
+     152.49,
+     "Step 4: check the grand total both ways."
+    ],
+    [
+     155.97,
+     "This table shows how 56 students travel to school."
+    ],
+    [
+     159.95,
+     "Some numbers are missing."
+    ],
+    [
+     161.94,
+     "Start with the boys row: 28 minus 16 is 12 boys take the bus."
+    ],
+    [
+     167.35,
+     "In the walk column: 35 minus 16 is 19 girls walk."
+    ],
+    [
+     171.6,
+     "So the girls total is 19 plus 9, which is 28."
+    ],
+    [
+     176.06,
+     "The bus total is 12 plus 9, which is 21."
+    ],
+    [
+     179.88,
+     "Check: 35 plus 21 is 56."
+    ],
+    [
+     182.18,
+     "Correct."
+    ],
+    [
+     183.49,
+     "Go back to the lunch table."
+    ],
+    [
+     185.41,
+     "What fraction of the Year 8 students chose rice?"
+    ],
+    [
+     189.36,
+     "The question is about Year 8, so use the Year 8 total: 34."
+    ],
+    [
+     194.29,
+     "13 of them chose rice."
+    ],
+    [
+     196.16,
+     "The fraction is 13 over 34."
+    ],
+    [
+     199.01,
+     "Did a greater proportion of Year 7, or of Year 8, choose pasta?"
+    ],
+    [
+     203.99,
+     "In Year 7, it is 14 out of 30."
+    ],
+    [
+     206.65,
+     "That is about 47 per cent."
+    ],
+    [
+     208.95,
+     "In Year 8, it is 12 out of 34."
+    ],
+    [
+     211.61,
+     "That is about 35 per cent."
+    ],
+    [
+     214.46,
+     "So a greater proportion of Year 7 chose pasta."
+    ],
+    [
+     218.34,
+     "From the lunch table: what fraction of the students who ate pasta were in Year 7?"
+    ],
+    [
+     223.99,
+     "Here is Gus's working."
+    ],
+    [
+     225.52,
+     "Which line goes wrong first?"
+    ],
+    [
+     228.02,
+     "Line 2 is wrong."
+    ],
+    [
+     229.17,
+     "The question is about the students who ate pasta."
+    ],
+    [
+     232.69,
+     "So divide by the pasta total, 26, not by the Year 7 total."
+    ],
+    [
+     237.41,
+     "The fraction is 14 over 26, which simplifies to 7 over 13."
+    ],
+    [
+     243.17,
+     "A bus or train timetable is a two-way table."
+    ],
+    [
+     246.16,
+     "The rows are the stops, and the columns are the different journeys."
+    ],
+    [
+     251.27,
+     "A multiplication square is one too."
+    ],
+    [
+     253.6,
+     "Find a row and a column, and read where they meet."
+    ],
+    [
+     257.49,
+     "And a country's census sorts millions of people in 2 ways: for example, by age group and by region."
+    ],
+    [
+     264.85,
+     "One last question."
+    ],
+    [
+     266.09,
+     "Add the row totals."
+    ],
+    [
+     267.4,
+     "Then add the column totals."
+    ],
+    [
+     269.25,
+     "Should the 2 answers be the same, or different?"
+    ],
+    [
+     272.49,
+     "Pause the video and decide."
+    ],
+    [
+     275.74,
+     "The same."
+    ],
+    [
+     276.36,
+     "Both ways count every person exactly once."
+    ],
+    [
+     279.22,
+     "If the answers are different, there is a mistake in the table."
+    ],
+    [
+     284.0,
+     "To remember: a two-way table sorts data by 2 categories at once."
+    ],
+    [
+     289.05,
+     "Use the row totals and column totals to fill the gaps."
+    ],
+    [
+     293.23,
+     "Check the grand total both ways."
+    ],
+    [
+     296.04,
+     "For a fraction, divide by the total of the group in the question."
+    ],
+    [
+     300.93,
+     "Great work! Now practise lesson 16.1 on Camday."
+    ]
+   ],
+   "times": {
+    "16.1-k1": 33.67,
+    "16.1-k2": 83.76,
+    "16.1-k3": 128.31,
+    "16.1-k4": 274.69
+   },
+   "up": true
+  },
+  "16.6": {
+   "src": "media/mv/s7/16-6.mp4",
+   "poster": "media/mv/s7/16-6_poster.jpg",
+   "srt": "media/mv/s7/16-6.srt",
+   "dur": 313.24,
+   "captions": [
+    [
+     6.47,
+     "2 basketball players record their points in their last 5 games."
+    ],
+    [
+     12.51,
+     "Ana scores 12, 15, 11, 14 and 13."
+    ],
+    [
+     15.67,
+     "Bo scores 4, 25, 9, 22 and 5."
+    ],
+    [
+     19.01,
+     "What is the mean of Ana's points?"
+    ],
+    [
+     21.17,
+     "Pause the video and work it out."
+    ],
+    [
+     24.66,
+     "Add Ana's points: the total is 65."
+    ],
+    [
+     27.37,
+     "Divide by 5 games."
+    ],
+    [
+     28.81,
+     "Her mean is 13 points."
+    ],
+    [
+     31.11,
+     "Now Bo."
+    ],
+    [
+     31.63,
+     "His total is also 65, so his mean is 13 too."
+    ],
+    [
+     34.92,
+     "But the 2 players are very different."
+    ],
+    [
+     37.68,
+     "We need more than the mean to compare them."
+    ],
+    [
+     41.44,
+     "Remember: it helps to write data in order, smallest first."
+    ],
+    [
+     46.63,
+     "Ana's points in order are 11, 12, 13, 14, 15."
+    ],
+    [
+     50.65,
+     "Bo's are 4, 5, 9, 22, 25."
+    ],
+    [
+     53.44,
+     "There are 3 kinds of average."
+    ],
+    [
+     55.43,
+     "The mode is the most common value."
+    ],
+    [
+     57.77,
+     "Ana and Bo have no mode, because no score is repeated."
+    ],
+    [
+     62.03,
+     "The median is the middle value, when the data is in order."
+    ],
+    [
+     66.21,
+     "Ana's median is 13."
+    ],
+    [
+     67.57,
+     "Bo's median is 9."
+    ],
+    [
+     69.35,
+     "The mean is the total, divided by the number of values."
+    ],
+    [
+     73.36,
+     "Both means are 13."
+    ],
+    [
+     75.22,
+     "Your turn."
+    ],
+    [
+     75.99,
+     "Find the mean of 4, 8, 6 and 2."
+    ],
+    [
+     78.38,
+     "Pause the video and try it."
+    ],
+    [
+     81.86,
+     "The total is 20."
+    ],
+    [
+     83.22,
+     "There are 4 values."
+    ],
+    [
+     84.84,
+     "20 divided by 4 is 5."
+    ],
+    [
+     86.64,
+     "The mean is 5."
+    ],
+    [
+     88.38,
+     "The range tells you how spread out the data is."
+    ],
+    [
+     91.55,
+     "It is the largest value, minus the smallest value."
+    ],
+    [
+     95.47,
+     "Ana's range is 15 minus 11, which is 4."
+    ],
+    [
+     98.98,
+     "Bo's range is 25 minus 4, which is 21."
+    ],
+    [
+     102.95,
+     "Ana's scores are close together, so she is consistent."
+    ],
+    [
+     106.55,
+     "Bo has some great games, and some poor ones."
+    ],
+    [
+     110.03,
+     "With an even number of values, there are 2 middle values."
+    ],
+    [
+     114.04,
+     "The median is halfway between them."
+    ],
+    [
+     117.05,
+     "Find the median of 9, 2, 14, 7, 11 and 4."
+    ],
+    [
+     120.98,
+     "In order: 2, 4, 7, 9, 11, 14."
+    ],
+    [
+     123.76,
+     "The middle values are 7 and 9."
+    ],
+    [
+     127.18,
+     "Halfway between 7 and 9 is 8."
+    ],
+    [
+     129.62,
+     "The median is 8."
+    ],
+    [
+     131.51,
+     "Your turn."
+    ],
+    [
+     132.28,
+     "Find the median of 3, 9, 4 and 7."
+    ],
+    [
+     134.8,
+     "Pause the video and try it."
+    ],
+    [
+     138.27,
+     "In order: 3, 4, 7, 9."
+    ],
+    [
+     140.05,
+     "The middle values are 4 and 7."
+    ],
+    [
+     142.6,
+     "Halfway between them is 5.5."
+    ],
+    [
+     145.53,
+     "Here is the method."
+    ],
+    [
+     146.87,
+     "Step 1: find an average for each set."
+    ],
+    [
+     150.01,
+     "Step 2: find the range for each set."
+    ],
+    [
+     153.23,
+     "Step 3: compare."
+    ],
+    [
+     154.4,
+     "Which average is higher?"
+    ],
+    [
+     156.14,
+     "Which range is smaller?"
+    ],
+    [
+     158.37,
+     "Step 4: write 2 sentences, about the real situation."
+    ],
+    [
+     162.88,
+     "7 students give their shoe sizes: 3, 5, 5, 6, 5, 8 and 3."
+    ],
+    [
+     167.73,
+     "Find the mode."
+    ],
+    [
+     169.47,
+     "Size 5 appears 3 times."
+    ],
+    [
+     171.2,
+     "That is more than any other size."
+    ],
+    [
+     173.68,
+     "So the mode is 5."
+    ],
+    [
+     175.5,
+     "2 classes take the same test."
+    ],
+    [
+     177.81,
+     "Class A has a mean of 68 and a range of 12."
+    ],
+    [
+     181.22,
+     "Class B has a mean of 61 and a range of 30."
+    ],
+    [
+     184.63,
+     "Compare them."
+    ],
+    [
+     186.21,
+     "Class A has the higher mean."
+    ],
+    [
+     188.1,
+     "So on average, Class A scored higher."
+    ],
+    [
+     191.14,
+     "Class A also has the smaller range."
+    ],
+    [
+     193.53,
+     "So its scores were more consistent."
+    ],
+    [
+     196.46,
+     "5 people work at a small company."
+    ],
+    [
+     199.26,
+     "Their salaries, in thousands of dollars, are 18, 20, 21, 23 and 168."
+    ],
+    [
+     205.04,
+     "Which average shows a typical salary?"
+    ],
+    [
+     208.73,
+     "The total is 250, so the mean is 50."
+    ],
+    [
+     211.59,
+     "But that is more than 4 of the 5 people earn."
+    ],
+    [
+     215.18,
+     "1 huge salary pulls the mean up."
+    ],
+    [
+     218.28,
+     "The median is the middle value: 21."
+    ],
+    [
+     220.8,
+     "That is a much better picture of a typical salary."
+    ],
+    [
+     224.94,
+     "Find the median of 8, 3, 6, 1 and 5."
+    ],
+    [
+     227.73,
+     "Here is Tom's working."
+    ],
+    [
+     229.44,
+     "Which line goes wrong first?"
+    ],
+    [
+     232.16,
+     "Line 1 is wrong."
+    ],
+    [
+     233.28,
+     "You must put the data in order first."
+    ],
+    [
+     236.43,
+     "In order: 1, 3, 5, 6, 8."
+    ],
+    [
+     238.48,
+     "The middle value is 5."
+    ],
+    [
+     240.37,
+     "The median is 5."
+    ],
+    [
+     242.29,
+     "A shoe shop uses the mode."
+    ],
+    [
+     244.01,
+     "It needs to know which size sells the most, so that it can order more of that size."
+    ],
+    [
+     250.01,
+     "News reports often give the median house price, not the mean."
+    ],
+    [
+     254.15,
+     "A few very expensive houses would pull the mean up."
+    ],
+    [
+     258.15,
+     "And a mean does not have to be a real value."
+    ],
+    [
+     261.26,
+     "A country can have a mean of 2.4 people in each home, but no home has 2.4 people."
+    ],
+    [
+     267.54,
+     "One last question."
+    ],
+    [
+     268.8,
+     "Does a smaller range mean more consistent, or higher scores?"
+    ],
+    [
+     273.03,
+     "Pause the video and answer."
+    ],
+    [
+     276.33,
+     "More consistent."
+    ],
+    [
+     277.43,
+     "A small range means the values are close together."
+    ],
+    [
+     280.89,
+     "It does not tell you how high they are."
+    ],
+    [
+     284.13,
+     "To remember: the mode is the most common value."
+    ],
+    [
+     287.3,
+     "The median is the middle value, in order."
+    ],
+    [
+     290.07,
+     "The mean is the total, divided by the number of values."
+    ],
+    [
+     294.33,
+     "The range is the largest minus the smallest."
+    ],
+    [
+     297.32,
+     "It shows the spread."
+    ],
+    [
+     299.23,
+     "Compare 2 sets of data with an average, and with the range."
+    ],
+    [
+     303.94,
+     "Choose the median when there are extreme values."
+    ],
+    [
+     307.89,
+     "Great work! Now practise lesson 16.6 on Camday."
+    ]
+   ],
+   "times": {
+    "16.6-k1": 23.61,
+    "16.6-k2": 80.81,
+    "16.6-k3": 137.22,
+    "16.6-k4": 275.28
+   },
+   "up": true
+  },
+  "16.2": {
+   "src": "media/mv/s7/16-2.mp4",
+   "poster": "media/mv/s7/16-2_poster.jpg",
+   "srt": "media/mv/s7/16-2.srt",
+   "dur": 298.88,
+   "captions": [
+    [
+     7.4,
+     "A class records its screen time at the weekend, in hours."
+    ],
+    [
+     11.31,
+     "On Saturday, the boys' average is 4 hours, and the girls' is 3."
+    ],
+    [
+     15.63,
+     "On Sunday, the boys' is 5, and the girls' is 4."
+    ],
+    [
+     19.4,
+     "Which chart compares the boys and the girls, day by day: a dual bar chart, with 2 bars side by side, or a single bar chart of totals?"
+    ],
+    [
+     28.26,
+     "Pause the video and decide."
+    ],
+    [
+     31.46,
+     "A dual bar chart."
+    ],
+    [
+     32.6,
+     "For each day, there are 2 bars side by side: blue for the boys, and orange for the girls."
+    ],
+    [
+     39.12,
+     "You can see at a glance that the boys had more screen time on both days."
+    ],
+    [
+     44.37,
+     "Remember: the height of a bar shows the frequency."
+    ],
+    [
+     48.26,
+     "Read the scale carefully."
+    ],
+    [
+     50.21,
+     "A bar that reaches halfway between 10 and 20 shows 15."
+    ],
+    [
+     54.96,
+     "A dual bar chart puts 2 bars side by side for each category."
+    ],
+    [
+     59.15,
+     "It uses 2 colours, and a key to explain them."
+    ],
+    [
+     62.84,
+     "It is good for comparing 2 groups, category by category."
+    ],
+    [
+     67.4,
+     "Your turn."
+    ],
+    [
+     68.1,
+     "On Saturday, the boys had 4 hours and the girls had 3 hours."
+    ],
+    [
+     72.32,
+     "What is the total for Saturday?"
+    ],
+    [
+     74.5,
+     "Pause the video and try it."
+    ],
+    [
+     77.8,
+     "4 plus 3 is 7 hours."
+    ],
+    [
+     79.25,
+     "But the dual bar chart does not show that total directly."
+    ],
+    [
+     83.39,
+     "For totals, there is a better chart."
+    ],
+    [
+     86.56,
+     "A compound bar chart stacks the groups on top of each other, in 1 bar."
+    ],
+    [
+     91.37,
+     "It is also called a stacked bar chart."
+    ],
+    [
+     94.54,
+     "The total height shows the whole: 7 hours for Saturday, and 9 for Sunday."
+    ],
+    [
+     99.71,
+     "Each section shows a part."
+    ],
+    [
+     102.1,
+     "To read a top section, subtract."
+    ],
+    [
+     104.25,
+     "Take the top of the section, minus the bottom of the section."
+    ],
+    [
+     108.89,
+     "Your turn."
+    ],
+    [
+     109.65,
+     "A compound bar reaches 40."
+    ],
+    [
+     111.62,
+     "Its bottom section reaches 22."
+    ],
+    [
+     113.89,
+     "How big is the top section?"
+    ],
+    [
+     115.93,
+     "Pause the video and try it."
+    ],
+    [
+     119.37,
+     "40 minus 22 is 18."
+    ],
+    [
+     121.24,
+     "The top section shows 18."
+    ],
+    [
+     124.38,
+     "Here is the method."
+    ],
+    [
+     125.71,
+     "Step 1: choose."
+    ],
+    [
+     126.76,
+     "Use a dual bar chart to compare groups."
+    ],
+    [
+     129.48,
+     "Use a compound bar chart to show totals and parts."
+    ],
+    [
+     133.53,
+     "Step 2: draw the axes with a clear, even scale."
+    ],
+    [
+     136.78,
+     "Add labels and a key."
+    ],
+    [
+     138.79,
+     "Step 3: for a dual chart, draw 2 bars side by side for each category."
+    ],
+    [
+     143.61,
+     "For a compound chart, stack them."
+    ],
+    [
+     146.46,
+     "Step 4: to read a stacked section, take the top minus the bottom."
+    ],
+    [
+     151.53,
+     "A compound bar shows the vehicles that pass a school on Monday."
+    ],
+    [
+     156.11,
+     "The whole bar reaches 32."
+    ],
+    [
+     157.93,
+     "The lower section, for bikes, reaches 19."
+    ],
+    [
+     160.92,
+     "How many scooters does the upper section show?"
+    ],
+    [
+     164.82,
+     "Top minus bottom: 32 minus 19 is 13."
+    ],
+    [
+     168.11,
+     "There were 13 scooters."
+    ],
+    [
+     170.76,
+     "A shop wants to show its total sales for each month, split into online sales and sales in the store."
+    ],
+    [
+     177.51,
+     "Which chart should it use?"
+    ],
+    [
+     179.81,
+     "Both the totals and the parts matter."
+    ],
+    [
+     182.34,
+     "So the shop should use a compound bar chart."
+    ],
+    [
+     185.89,
+     "This dual bar chart shows rainfall, in millimetres."
+    ],
+    [
+     189.91,
+     "Town A had 70 in January and 50 in February."
+    ],
+    [
+     193.39,
+     "Town B had 90 in January and 40 in February."
+    ],
+    [
+     197.41,
+     "Which town had more rain in total?"
+    ],
+    [
+     200.71,
+     "Town A: 70 plus 50 is 120."
+    ],
+    [
+     203.23,
+     "Town B: 90 plus 40 is 130."
+    ],
+    [
+     206.3,
+     "Town B had more rain in total, even though it had less in February."
+    ],
+    [
+     211.29,
+     "A compound bar shows fruit sold."
+    ],
+    [
+     213.62,
+     "The lower section, for apples, reaches 24."
+    ],
+    [
+     216.68,
+     "The whole bar reaches 45."
+    ],
+    [
+     218.51,
+     "How many pears does the upper section show?"
+    ],
+    [
+     221.64,
+     "Here is Wren's working."
+    ],
+    [
+     223.32,
+     "Which line goes wrong first?"
+    ],
+    [
+     225.91,
+     "Line 2 is wrong."
+    ],
+    [
+     227.17,
+     "45 is the total for apples and pears together."
+    ],
+    [
+     230.77,
+     "The pears section starts at 24, not at 0."
+    ],
+    [
+     234.54,
+     "45 minus 24 is 21."
+    ],
+    [
+     236.55,
+     "There are 21 pears."
+    ],
+    [
+     239.23,
+     "An Olympic medal table is often drawn as a compound bar chart."
+    ],
+    [
+     243.41,
+     "Each country's bar is split into gold, silver and bronze."
+    ],
+    [
+     247.8,
+     "Weather websites use dual bar charts to compare 2 cities, month by month."
+    ],
+    [
+     253.46,
+     "Before you read any chart, look for the key."
+    ],
+    [
+     256.41,
+     "It tells you what each colour means."
+    ],
+    [
+     259.37,
+     "One last question."
+    ],
+    [
+     260.56,
+     "To show totals and parts, do you use a compound bar chart, or a dual bar chart?"
+    ],
+    [
+     265.81,
+     "Pause the video and answer."
+    ],
+    [
+     269.0,
+     "A compound bar chart."
+    ],
+    [
+     270.39,
+     "The height of the whole bar is the total, and the sections are the parts."
+    ],
+    [
+     275.77,
+     "To remember: a dual bar chart has bars side by side."
+    ],
+    [
+     279.47,
+     "It compares 2 groups."
+    ],
+    [
+     281.51,
+     "A compound bar chart has stacked parts."
+    ],
+    [
+     284.19,
+     "It shows totals and parts."
+    ],
+    [
+     286.53,
+     "Use a clear scale, labels and a key."
+    ],
+    [
+     289.44,
+     "For a stacked section, take the top minus the bottom."
+    ],
+    [
+     293.49,
+     "Great work! Now practise lesson 16.2 on Camday."
+    ]
+   ],
+   "times": {
+    "16.2-k1": 30.41,
+    "16.2-k2": 76.75,
+    "16.2-k3": 118.32,
+    "16.2-k4": 267.95
+   },
+   "up": true
+  },
+  "14.6": {
+   "src": "media/mv/s7/14-6.mp4",
+   "poster": "media/mv/s7/14-6_poster.jpg",
+   "srt": "media/mv/s7/14-6.srt",
+   "dur": 319.24,
+   "captions": [
+    [
+     6.54,
+     "A photo on a phone is 4 centimetres wide and 3 centimetres tall."
+    ],
+    [
+     11.1,
+     "You print it 3 times as big, for a frame."
+    ],
+    [
+     14.58,
+     "How wide is the print?"
+    ],
+    [
+     16.05,
+     "Pause the video and work it out."
+    ],
+    [
+     19.59,
+     "Multiply the width by 3."
+    ],
+    [
+     21.64,
+     "4 times 3 is 12 centimetres."
+    ],
+    [
+     24.59,
+     "The height is multiplied by 3 as well: 3 times 3 is 9 centimetres."
+    ],
+    [
+     29.35,
+     "The print is bigger, but it is the same shape."
+    ],
+    [
+     33.22,
+     "Remember: 4 times as long means multiply by 4."
+    ],
+    [
+     36.94,
+     "A line of 2.5 centimetres becomes 10 centimetres."
+    ],
+    [
+     41.44,
+     "An enlargement changes the size of a shape, but not its shape."
+    ],
+    [
+     45.67,
+     "Every length is multiplied by the same number, called the scale factor."
+    ],
+    [
+     51.06,
+     "Rectangle A is 2 squares by 1 square."
+    ],
+    [
+     53.87,
+     "It is enlarged by scale factor 3."
+    ],
+    [
+     56.38,
+     "Rectangle B is 6 squares by 3 squares."
+    ],
+    [
+     59.82,
+     "Think about the corners of the 2 rectangles."
+    ],
+    [
+     62.91,
+     "In an enlargement, do the angles stay the same, or are they multiplied too?"
+    ],
+    [
+     68.19,
+     "Pause the video and decide."
+    ],
+    [
+     71.49,
+     "The angles stay the same."
+    ],
+    [
+     73.29,
+     "Both rectangles have 4 right angles."
+    ],
+    [
+     75.89,
+     "Only the lengths change."
+    ],
+    [
+     78.16,
+     "To find a scale factor, divide a length on the image by the matching length on the object."
+    ],
+    [
+     84.68,
+     "A side of 4 centimetres becomes 10 centimetres."
+    ],
+    [
+     88.83,
+     "10 divided by 4 is 2.5."
+    ],
+    [
+     90.86,
+     "The scale factor is 2.5."
+    ],
+    [
+     93.53,
+     "An enlarged shape is similar to the original."
+    ],
+    [
+     96.64,
+     "That means the same shape."
+    ],
+    [
+     98.43,
+     "But it is not congruent, because the size is different."
+    ],
+    [
+     102.78,
+     "Your turn."
+    ],
+    [
+     103.51,
+     "A side of 2 centimetres becomes 7 centimetres."
+    ],
+    [
+     106.85,
+     "What is the scale factor?"
+    ],
+    [
+     108.66,
+     "Pause the video and try it."
+    ],
+    [
+     112.02,
+     "Image divided by object: 7 divided by 2 is 3.5."
+    ],
+    [
+     115.92,
+     "The scale factor is 3.5."
+    ],
+    [
+     118.45,
+     "Here is the method."
+    ],
+    [
+     119.74,
+     "Step 1: count the length of each side in squares, and multiply by the scale factor."
+    ],
+    [
+     125.9,
+     "Step 2: start at 1 corner, and draw each side with its new length."
+    ],
+    [
+     131.25,
+     "Step 3: keep all the angles the same."
+    ],
+    [
+     133.81,
+     "For a slanted side, multiply both the across move and the up move."
+    ],
+    [
+     138.93,
+     "Step 4: check that every side has been multiplied by the same number."
+    ],
+    [
+     144.43,
+     "A right-angled triangle has a base of 3 squares and a height of 2 squares."
+    ],
+    [
+     149.78,
+     "Enlarge it by scale factor 3."
+    ],
+    [
+     152.43,
+     "The new base is 3 times 3, which is 9 squares."
+    ],
+    [
+     155.97,
+     "The new height is 2 times 3, which is 6 squares."
+    ],
+    [
+     160.21,
+     "Draw the new triangle."
+    ],
+    [
+     161.76,
+     "It is 3 times as wide, and 3 times as tall, with the same right angle."
+    ],
+    [
+     167.24,
+     "A rectangle is 6 centimetres by 4 centimetres."
+    ],
+    [
+     170.81,
+     "It is enlarged to 15 centimetres by 10 centimetres."
+    ],
+    [
+     174.78,
+     "Find the scale factor."
+    ],
+    [
+     177.04,
+     "15 divided by 6 is 2.5."
+    ],
+    [
+     179.03,
+     "Check with the other pair of sides: 10 divided by 4 is also 2.5."
+    ],
+    [
+     185.13,
+     "Both pairs give the same number, so this is an enlargement, with scale factor 2.5."
+    ],
+    [
+     191.6,
+     "A side of a shape goes 2 squares right and 1 square up."
+    ],
+    [
+     195.55,
+     "What happens to it in an enlargement with scale factor 4?"
+    ],
+    [
+     200.19,
+     "Multiply both moves by 4."
+    ],
+    [
+     202.08,
+     "The new side goes 8 squares right and 4 squares up."
+    ],
+    [
+     206.5,
+     "A rectangle 5 by 2 becomes a rectangle 10 by 6."
+    ],
+    [
+     210.25,
+     "Is this an enlargement?"
+    ],
+    [
+     212.64,
+     "10 divided by 5 is 2."
+    ],
+    [
+     214.43,
+     "But 6 divided by 2 is 3."
+    ],
+    [
+     216.48,
+     "The 2 numbers are different."
+    ],
+    [
+     219.41,
+     "So no."
+    ],
+    [
+     219.83,
+     "The shape has been stretched."
+    ],
+    [
+     221.86,
+     "It is not an enlargement."
+    ],
+    [
+     224.16,
+     "Enlarge a rectangle, 3 by 4, by scale factor 2."
+    ],
+    [
+     227.57,
+     "Here is Milo's working."
+    ],
+    [
+     229.24,
+     "Which line goes wrong first?"
+    ],
+    [
+     231.82,
+     "Line 1 is wrong."
+    ],
+    [
+     232.94,
+     "A scale factor means multiply every length."
+    ],
+    [
+     235.95,
+     "It does not mean add."
+    ],
+    [
+     237.98,
+     "3 times 2 is 6, and 4 times 2 is 8."
+    ],
+    [
+     241.09,
+     "The new rectangle is 6 by 8."
+    ],
+    [
+     244.12,
+     "A microscope is an enlargement machine."
+    ],
+    [
+     247.26,
+     "With a magnification of 400, a cell 0.02 millimetres wide looks 8 millimetres wide."
+    ],
+    [
+     254.47,
+     "When you pinch to zoom on a phone, the picture is enlarged."
+    ],
+    [
+     258.49,
+     "Every length grows by the same scale factor, so nothing looks stretched."
+    ],
+    [
+     263.95,
+     "A scale factor of 2 makes a photo 2 times as wide and 2 times as tall."
+    ],
+    [
+     269.0,
+     "So it covers 4 times as much of the screen."
+    ],
+    [
+     272.65,
+     "One last question."
+    ],
+    [
+     274.01,
+     "A rectangle 3 by 4 becomes a rectangle 9 by 16."
+    ],
+    [
+     277.56,
+     "Is that an enlargement, or not an enlargement?"
+    ],
+    [
+     281.04,
+     "Pause the video and decide."
+    ],
+    [
+     284.48,
+     "It is not an enlargement."
+    ],
+    [
+     286.42,
+     "9 divided by 3 is 3, but 16 divided by 4 is 4."
+    ],
+    [
+     289.99,
+     "The sides are not multiplied by the same number."
+    ],
+    [
+     294.27,
+     "To remember: an enlargement multiplies every length by the scale factor."
+    ],
+    [
+     299.78,
+     "The angles do not change, so the shape stays the same."
+    ],
+    [
+     303.91,
+     "The scale factor is an image length, divided by the matching object length."
+    ],
+    [
+     309.54,
+     "On a grid, multiply both the across move and the up move."
+    ],
+    [
+     313.85,
+     "Great work! Now practise lesson 14.6 on Camday."
+    ]
+   ],
+   "times": {
+    "14.6-k1": 18.54,
+    "14.6-k2": 70.44,
+    "14.6-k3": 110.97,
+    "14.6-k4": 283.43
+   },
+   "up": true
+  },
+  "14.2": {
+   "src": "media/mv/s7/14-2.mp4",
+   "poster": "media/mv/s7/14-2_poster.jpg",
+   "srt": "media/mv/s7/14-2.srt",
+   "dur": 298.2,
+   "captions": [
+    [
+     7.23,
+     "A delivery robot in a warehouse can only move along the grid lines."
+    ],
+    [
+     12.11,
+     "It starts at negative 3, 2."
+    ],
+    [
+     14.08,
+     "It must reach 5, 2."
+    ],
+    [
+     16.01,
+     "How far does the robot travel?"
+    ],
+    [
+     18.07,
+     "Pause the video and work it out."
+    ],
+    [
+     21.65,
+     "Count along the grid."
+    ],
+    [
+     23.36,
+     "From negative 3 to 0 is 3 squares."
+    ],
+    [
+     26.11,
+     "From 0 to 5 is 5 more."
+    ],
+    [
+     27.9,
+     "That makes 8 units."
+    ],
+    [
+     29.99,
+     "Remember: in a coordinate pair, x comes first."
+    ],
+    [
+     33.03,
+     "x is across, and left is negative."
+    ],
+    [
+     35.28,
+     "y is up, and down is negative."
+    ],
+    [
+     37.81,
+     "A and B have the same y coordinate."
+    ],
+    [
+     40.15,
+     "So they lie on a horizontal line."
+    ],
+    [
+     42.91,
+     "The distance between them is the difference of the x coordinates."
+    ],
+    [
+     47.84,
+     "5 minus negative 3 is 8."
+    ],
+    [
+     50.21,
+     "Subtracting a negative is the same as adding."
+    ],
+    [
+     53.6,
+     "5 plus 3 is 8."
+    ],
+    [
+     55.2,
+     "Next, the robot goes from B to C: from 5, 2 down to 5, negative 4."
+    ],
+    [
+     59.82,
+     "These points have the same x coordinate, so the line is vertical."
+    ],
+    [
+     64.91,
+     "The distance is the difference of the y coordinates."
+    ],
+    [
+     68.92,
+     "2 minus negative 4 is 6."
+    ],
+    [
+     71.31,
+     "So the whole journey is 8 plus 6, which is 14 units."
+    ],
+    [
+     76.07,
+     "Your turn."
+    ],
+    [
+     76.83,
+     "What is the distance from 1, 4 to 1, negative 5?"
+    ],
+    [
+     80.47,
+     "Pause the video and try it."
+    ],
+    [
+     83.91,
+     "The x coordinates are the same, so subtract the y coordinates."
+    ],
+    [
+     88.59,
+     "4 minus negative 5 is 9."
+    ],
+    [
+     90.4,
+     "The distance is 9 units."
+    ],
+    [
+     92.76,
+     "Here is the method."
+    ],
+    [
+     94.1,
+     "Step 1: check which coordinate is the same."
+    ],
+    [
+     97.11,
+     "The same y means horizontal."
+    ],
+    [
+     99.08,
+     "The same x means vertical."
+    ],
+    [
+     101.45,
+     "Step 2: subtract the other coordinates: the larger minus the smaller."
+    ],
+    [
+     106.97,
+     "Step 3: remember that subtracting a negative is adding."
+    ],
+    [
+     111.59,
+     "Step 4: check."
+    ],
+    [
+     112.65,
+     "A distance is never negative."
+    ],
+    [
+     115.39,
+     "Find the distance from P, at negative 2, negative 6, to Q, at negative 2, 5."
+    ],
+    [
+     121.65,
+     "The x coordinate is negative 2 both times, so the line is vertical."
+    ],
+    [
+     126.89,
+     "5 minus negative 6 is 11."
+    ],
+    [
+     129.19,
+     "The distance is 11 units."
+    ],
+    [
+     132.05,
+     "R is at negative 4, 3."
+    ],
+    [
+     133.73,
+     "S is 10 units to the right of R."
+    ],
+    [
+     136.19,
+     "Find S."
+    ],
+    [
+     137.28,
+     "Moving right adds to the x coordinate."
+    ],
+    [
+     140.21,
+     "Negative 4 plus 10 is 6."
+    ],
+    [
+     142.07,
+     "The y coordinate stays the same."
+    ],
+    [
+     145.09,
+     "So S is at 6, 3."
+    ],
+    [
+     147.43,
+     "Your turn."
+    ],
+    [
+     148.15,
+     "T is 6 units below the point 3, 2."
+    ],
+    [
+     150.58,
+     "What is the y coordinate of T?"
+    ],
+    [
+     152.73,
+     "Pause the video and try it."
+    ],
+    [
+     156.06,
+     "Moving down subtracts from the y coordinate."
+    ],
+    [
+     159.52,
+     "2 minus 6 is negative 4."
+    ],
+    [
+     161.41,
+     "T is at 3, negative 4."
+    ],
+    [
+     163.69,
+     "A rectangle has corners at negative 2, negative 3."
+    ],
+    [
+     167.67,
+     "Then 4, negative 3."
+    ],
+    [
+     169.19,
+     "Then 4, 1."
+    ],
+    [
+     169.98,
+     "And negative 2, 1."
+    ],
+    [
+     171.42,
+     "Find its perimeter and its area."
+    ],
+    [
+     174.52,
+     "The width is 4 minus negative 2, which is 6."
+    ],
+    [
+     177.94,
+     "The height is 1 minus negative 3, which is 4."
+    ],
+    [
+     181.99,
+     "For the perimeter, add the width and the height, then double: 2 times 10 is 20 units."
+    ],
+    [
+     188.73,
+     "The area is 6 times 4, which is 24 square units."
+    ],
+    [
+     193.08,
+     "Find the point halfway between negative 6, 2 and 4, 2."
+    ],
+    [
+     198.04,
+     "The distance is 4 minus negative 6, which is 10."
+    ],
+    [
+     202.22,
+     "Half of 10 is 5."
+    ],
+    [
+     204.16,
+     "Move 5 right from negative 6."
+    ],
+    [
+     206.55,
+     "Negative 6 plus 5 is negative 1."
+    ],
+    [
+     209.19,
+     "The halfway point is negative 1, 2."
+    ],
+    [
+     212.62,
+     "Find the distance from negative 5, 1 to 3, 1."
+    ],
+    [
+     215.97,
+     "Here is Otto's working."
+    ],
+    [
+     217.68,
+     "Which line goes wrong first?"
+    ],
+    [
+     220.31,
+     "Line 1 is wrong."
+    ],
+    [
+     221.52,
+     "The first x coordinate is negative 5, not 5."
+    ],
+    [
+     225.42,
+     "3 minus negative 5 is 8."
+    ],
+    [
+     227.24,
+     "The distance is 8 units."
+    ],
+    [
+     229.06,
+     "You can check by counting on the grid."
+    ],
+    [
+     232.5,
+     "A lift works like a vertical number line."
+    ],
+    [
+     235.57,
+     "From floor negative 2, in the car park, up to floor 9, is 9 minus negative 2: 11 floors."
+    ],
+    [
+     242.72,
+     "In chess, a rook moves only along rows and columns."
+    ],
+    [
+     246.18,
+     "Its moves are exactly the distances in this lesson."
+    ],
+    [
+     250.19,
+     "And in a city built on a grid, you count blocks across, and blocks up, in just the same way."
+    ],
+    [
+     256.64,
+     "One last question."
+    ],
+    [
+     258.01,
+     "What is the distance from negative 7, 0 to negative 2, 0?"
+    ],
+    [
+     262.33,
+     "Pause the video and answer."
+    ],
+    [
+     265.78,
+     "Larger minus smaller: negative 2 minus negative 7."
+    ],
+    [
+     269.63,
+     "That is negative 2 plus 7, which is 5 units."
+    ],
+    [
+     273.57,
+     "To remember: the same y means a horizontal line."
+    ],
+    [
+     276.86,
+     "The distance is the difference in x."
+    ],
+    [
+     279.88,
+     "The same x means a vertical line."
+    ],
+    [
+     282.11,
+     "The distance is the difference in y."
+    ],
+    [
+     285.09,
+     "Take the larger minus the smaller."
+    ],
+    [
+     287.43,
+     "Subtracting a negative is adding."
+    ],
+    [
+     290.24,
+     "Distances are never negative."
+    ],
+    [
+     292.8,
+     "Great work! Now practise lesson 14.2 on Camday."
+    ]
+   ],
+   "times": {
+    "14.2-k1": 20.6,
+    "14.2-k2": 82.86,
+    "14.2-k3": 155.01,
+    "14.2-k4": 264.73
+   },
+   "up": true
+  },
+  "16.3": {
+   "src": "media/mv/s7/16-3.mp4",
+   "poster": "media/mv/s7/16-3_poster.jpg",
+   "srt": "media/mv/s7/16-3.srt",
+   "dur": 345.16,
+   "captions": [
+    [
+     7.4,
+     "A survey asks 120 students how they travel to school."
+    ],
+    [
+     11.16,
+     "Half of them walk."
+    ],
+    [
+     12.43,
+     "A quarter take the bus."
+    ],
+    [
+     14.07,
+     "The rest come by car or by bike."
+    ],
+    [
+     16.88,
+     "A pie chart shows these parts of the whole as slices of a circle."
+    ],
+    [
+     21.82,
+     "A full circle is 360 degrees."
+    ],
+    [
+     23.94,
+     "What angle shows the half who walk?"
+    ],
+    [
+     26.51,
+     "Pause the video and work it out."
+    ],
+    [
+     30.25,
+     "Half of 360 is 180."
+    ],
+    [
+     31.88,
+     "The sector for walking has an angle of 180 degrees."
+    ],
+    [
+     36.27,
+     "It is half of the circle."
+    ],
+    [
+     38.97,
+     "A quarter of 360 is 90."
+    ],
+    [
+     40.94,
+     "So the bus sector has an angle of 90 degrees."
+    ],
+    [
+     45.36,
+     "Remember: a full turn is 360 degrees."
+    ],
+    [
+     48.83,
+     "Half is 180."
+    ],
+    [
+     49.95,
+     "A quarter is 90."
+    ],
+    [
+     51.45,
+     "And 1 tenth is 36."
+    ],
+    [
+     53.68,
+     "A pie chart is a circle, split into sectors."
+    ],
+    [
+     56.62,
+     "The angle of each sector is in proportion to its frequency."
+    ],
+    [
+     61.11,
+     "To find an angle: divide the frequency by the total, then multiply by 360."
+    ],
+    [
+     67.23,
+     "18 students come by car."
+    ],
+    [
+     69.56,
+     "18 divided by 120, times 360, is 54 degrees."
+    ],
+    [
+     73.84,
+     "12 come by bike."
+    ],
+    [
+     75.39,
+     "That is 36 degrees."
+    ],
+    [
+     77.79,
+     "Your turn."
+    ],
+    [
+     78.57,
+     "The total is 72."
+    ],
+    [
+     79.81,
+     "1 group has 18."
+    ],
+    [
+     80.98,
+     "What angle does that group need?"
+    ],
+    [
+     83.46,
+     "Pause the video and try it."
+    ],
+    [
+     86.96,
+     "18 out of 72 is 1 quarter."
+    ],
+    [
+     89.53,
+     "A quarter of 360 is 90 degrees."
+    ],
+    [
+     93.14,
+     "You can also go from an angle back to a frequency."
+    ],
+    [
+     96.79,
+     "Divide the angle by 360, then multiply by the total."
+    ],
+    [
+     101.14,
+     "A pie chart shows 240 students."
+    ],
+    [
+     104.06,
+     "The sector for drama is 45 degrees."
+    ],
+    [
+     107.35,
+     "45 over 360 is 1 eighth."
+    ],
+    [
+     109.61,
+     "1 eighth of 240 is 30 students."
+    ],
+    [
+     113.07,
+     "Your turn."
+    ],
+    [
+     113.84,
+     "The total is 180."
+    ],
+    [
+     115.15,
+     "A sector has an angle of 60 degrees."
+    ],
+    [
+     117.92,
+     "What is the frequency?"
+    ],
+    [
+     119.62,
+     "Pause the video and try it."
+    ],
+    [
+     123.09,
+     "60 over 360 is 1 sixth."
+    ],
+    [
+     125.57,
+     "1 sixth of 180 is 30."
+    ],
+    [
+     127.82,
+     "The frequency is 30."
+    ],
+    [
+     130.52,
+     "A waffle diagram is a grid of 100 squares: 10 rows of 10."
+    ],
+    [
+     135.32,
+     "Each square is 1 per cent."
+    ],
+    [
+     138.05,
+     "This waffle has 45 squares shaded."
+    ],
+    [
+     140.66,
+     "It shows 45 per cent."
+    ],
+    [
+     142.27,
+     "Waffles make percentages easy to count."
+    ],
+    [
+     145.8,
+     "Here is the method."
+    ],
+    [
+     147.16,
+     "Step 1: find the total frequency."
+    ],
+    [
+     150.08,
+     "Step 2: work out the degrees for 1 item: 360 divided by the total."
+    ],
+    [
+     155.23,
+     "Then multiply by each frequency."
+    ],
+    [
+     158.27,
+     "Step 3: draw each angle with a protractor."
+    ],
+    [
+     161.89,
+     "Step 4: check that the angles add up to 360 degrees."
+    ],
+    [
+     165.92,
+     "Add labels or a key."
+    ],
+    [
+     168.02,
+     "40 people choose their favourite sport."
+    ],
+    [
+     171.2,
+     "16 choose football, 14 choose tennis, and 10 choose swimming."
+    ],
+    [
+     176.16,
+     "Find the angles for a pie chart."
+    ],
+    [
+     179.31,
+     "360 divided by 40 is 9."
+    ],
+    [
+     181.5,
+     "So each person gets 9 degrees."
+    ],
+    [
+     184.9,
+     "Football: 16 times 9 is 144 degrees."
+    ],
+    [
+     188.47,
+     "Tennis: 14 times 9 is 126 degrees."
+    ],
+    [
+     191.84,
+     "Swimming: 10 times 9 is 90 degrees."
+    ],
+    [
+     195.86,
+     "Check: 144 plus 126 plus 90 is 360."
+    ],
+    [
+     200.9,
+     "A waffle diagram has 28 squares shaded, for people who own a pet."
+    ],
+    [
+     205.88,
+     "350 people were asked."
+    ],
+    [
+     207.57,
+     "How many own a pet?"
+    ],
+    [
+     209.58,
+     "28 squares means 28 per cent."
+    ],
+    [
+     212.62,
+     "0.28 times 350 is 98."
+    ],
+    [
+     214.82,
+     "So 98 people own a pet."
+    ],
+    [
+     217.79,
+     "School A has 600 students."
+    ],
+    [
+     219.86,
+     "On its pie chart, the sport sector is 60 degrees."
+    ],
+    [
+     223.76,
+     "School B has 240 students."
+    ],
+    [
+     225.83,
+     "Its sport sector is 120 degrees."
+    ],
+    [
+     228.38,
+     "Which school has more students who chose sport?"
+    ],
+    [
+     232.67,
+     "School A: 60 over 360 is 1 sixth."
+    ],
+    [
+     236.19,
+     "1 sixth of 600 is 100 students."
+    ],
+    [
+     240.05,
+     "School B: 120 over 360 is 1 third."
+    ],
+    [
+     243.05,
+     "1 third of 240 is 80 students."
+    ],
+    [
+     245.7,
+     "School A has more, even though its sector is smaller."
+    ],
+    [
+     250.94,
+     "2 pie charts show favourite sports."
+    ],
+    [
+     253.65,
+     "Class A has 20 students, and its football sector is 180 degrees."
+    ],
+    [
+     258.6,
+     "Class B has 40 students, and its football sector is 90 degrees."
+    ],
+    [
+     263.48,
+     "Here is Dev's working."
+    ],
+    [
+     265.18,
+     "Which line goes wrong first?"
+    ],
+    [
+     267.9,
+     "Line 2 is wrong."
+    ],
+    [
+     269.04,
+     "A pie chart shows proportions, not numbers."
+    ],
+    [
+     272.09,
+     "You must use the totals."
+    ],
+    [
+     274.35,
+     "Half of 20 is 10."
+    ],
+    [
+     275.88,
+     "A quarter of 40 is 10."
+    ],
+    [
+     277.86,
+     "The 2 classes have the same number."
+    ],
+    [
+     281.57,
+     "A pie chart of the air you breathe has 1 huge sector."
+    ],
+    [
+     285.44,
+     "About 78 per cent of air is nitrogen."
+    ],
+    [
+     288.69,
+     "About 21 per cent is oxygen."
+    ],
+    [
+     290.74,
+     "All the other gases together make up only about 1 per cent."
+    ],
+    [
+     295.61,
+     "On a waffle diagram, that is 78 squares, 21 squares, and just 1 square."
+    ],
+    [
+     301.87,
+     "One last question."
+    ],
+    [
+     303.19,
+     "A waffle diagram has 27 squares shaded."
+    ],
+    [
+     306.06,
+     "What percentage does it show?"
+    ],
+    [
+     308.19,
+     "Pause the video and answer."
+    ],
+    [
+     311.57,
+     "27 per cent."
+    ],
+    [
+     312.49,
+     "On a waffle diagram, each square is 1 per cent."
+    ],
+    [
+     316.64,
+     "To remember: the angle on a pie chart is the frequency, divided by the total, times 360."
+    ],
+    [
+     323.64,
+     "The frequency is the angle, divided by 360, times the total."
+    ],
+    [
+     328.72,
+     "A waffle diagram has 100 squares."
+    ],
+    [
+     331.43,
+     "Each one is 1 per cent."
+    ],
+    [
+     333.87,
+     "Pie charts show proportions."
+    ],
+    [
+     335.92,
+     "Check the totals before you compare 2 charts."
+    ],
+    [
+     339.76,
+     "Great work! Now practise lesson 16.3 on Camday."
+    ]
+   ],
+   "times": {
+    "16.3-k1": 29.2,
+    "16.3-k2": 85.91,
+    "16.3-k3": 122.04,
+    "16.3-k4": 310.52
+   },
+   "up": true
+  },
+  "16.4": {
+   "src": "media/mv/s7/16-4.mp4",
+   "poster": "media/mv/s7/16-4_poster.jpg",
+   "srt": "media/mv/s7/16-4.srt",
+   "dur": 285.36,
+   "captions": [
+    [
+     6.24,
+     "A poster from a water company says: a shower uses 60 litres of water, and a bath uses 150 litres."
+    ],
+    [
+     13.67,
+     "It uses pictures of water droplets."
+    ],
+    [
+     16.36,
+     "1 droplet stands for 10 litres."
+    ],
+    [
+     19.28,
+     "How many droplets does the poster need for the shower?"
+    ],
+    [
+     22.96,
+     "Pause the video and work it out."
+    ],
+    [
+     26.54,
+     "60 divided by 10 is 6."
+    ],
+    [
+     28.58,
+     "The shower needs 6 droplets."
+    ],
+    [
+     31.71,
+     "The bath needs 15 droplets."
+    ],
+    [
+     33.65,
+     "You can see at once that a bath uses much more water."
+    ],
+    [
+     38.01,
+     "Remember: the key tells you what 1 symbol stands for."
+    ],
+    [
+     41.98,
+     "If 1 symbol is 10 items, then half a symbol is 5 items."
+    ],
+    [
+     46.66,
+     "If 1 icon is 20 people, then 3 and a half icons show 70 people."
+    ],
+    [
+     52.37,
+     "An infographic mixes pictures, icons, a few words and simple charts."
+    ],
+    [
+     56.98,
+     "It is designed to give information quickly."
+    ],
+    [
+     60.44,
+     "It often has a pictogram, with a key."
+    ],
+    [
+     62.94,
+     "It may have 1 big number as a headline."
+    ],
+    [
+     65.58,
+     "And it may have a small bar chart or pie chart."
+    ],
+    [
+     69.3,
+     "Your turn."
+    ],
+    [
+     70.06,
+     "1 icon stands for 50 people."
+    ],
+    [
+     72.2,
+     "How many people do 7 icons show?"
+    ],
+    [
+     74.63,
+     "Pause the video and try it."
+    ],
+    [
+     78.09,
+     "7 times 50 is 350 people."
+    ],
+    [
+     81.55,
+     "Infographics are made to grab your attention."
+    ],
+    [
+     84.5,
+     "So read them with care."
+    ],
+    [
+     86.01,
+     "First, check the scale."
+    ],
+    [
+     87.52,
+     "All the icons should be the same size."
+    ],
+    [
+     90.56,
+     "Second, check the source."
+    ],
+    [
+     92.3,
+     "Who collected the data?"
+    ],
+    [
+     93.9,
+     "How many people were asked?"
+    ],
+    [
+     96.33,
+     "Third, watch out for pictures that grow in 2 directions."
+    ],
+    [
+     100.42,
+     "A picture drawn 2 times as tall, and 2 times as wide, covers 4 times the area."
+    ],
+    [
+     106.66,
+     "Your turn."
+    ],
+    [
+     107.38,
+     "A picture is drawn 3 times as tall, and 3 times as wide."
+    ],
+    [
+     111.4,
+     "How many times as big does it look: 9, or 3?"
+    ],
+    [
+     114.56,
+     "Pause the video and decide."
+    ],
+    [
+     117.9,
+     "3 times 3 is 9."
+    ],
+    [
+     119.06,
+     "The picture covers 9 times the area, so it looks 9 times as big."
+    ],
+    [
+     124.55,
+     "Here is the method."
+    ],
+    [
+     125.92,
+     "Step 1: find the headline message."
+    ],
+    [
+     128.93,
+     "Step 2: read the key and the units."
+    ],
+    [
+     131.36,
+     "Turn the icons into numbers."
+    ],
+    [
+     133.86,
+     "Step 3: check the scale, the source and the sample size."
+    ],
+    [
+     138.32,
+     "Step 4: decide."
+    ],
+    [
+     139.43,
+     "Does the picture match the numbers fairly?"
+    ],
+    [
+     143.06,
+     "On a forest poster, 1 tree icon stands for 200 trees."
+    ],
+    [
+     147.02,
+     "A hillside has 6 and a half icons."
+    ],
+    [
+     149.57,
+     "How many trees is that?"
+    ],
+    [
+     151.84,
+     "6.5 times 200 is 1,300 trees."
+    ],
+    [
+     156.14,
+     "A school poster says: 2 in every 5 students play a sport each week."
+    ],
+    [
+     161.21,
+     "The school has 900 students."
+    ],
+    [
+     163.32,
+     "How many play a sport each week?"
+    ],
+    [
+     166.3,
+     "1 fifth of 900 is 180."
+    ],
+    [
+     168.64,
+     "So 2 fifths is 2 times 180, which is 360 students."
+    ],
+    [
+     174.53,
+     "An advert says: 8 out of 10 cat owners prefer our cat food."
+    ],
+    [
+     178.78,
+     "In small print, it says that 10 owners were asked, in the company's own shop."
+    ],
+    [
+     184.32,
+     "Comment on the claim."
+    ],
+    [
+     186.38,
+     "10 people is a tiny sample."
+    ],
+    [
+     188.31,
+     "And they were already shopping in that company's shop, so the sample is not fair."
+    ],
+    [
+     194.66,
+     "So the claim is not reliable."
+    ],
+    [
+     197.23,
+     "A poster shows 2 house icons."
+    ],
+    [
+     199.32,
+     "1 is drawn 2 times as tall and 2 times as wide as the other, to show 2 times as many houses."
+    ],
+    [
+     205.93,
+     "Here is Lars's comment."
+    ],
+    [
+     207.58,
+     "Which line goes wrong first?"
+    ],
+    [
+     210.15,
+     "Line 1 is wrong."
+    ],
+    [
+     211.34,
+     "2 times as tall and 2 times as wide gives 4 times the area."
+    ],
+    [
+     215.77,
+     "The icon looks 4 times as big."
+    ],
+    [
+     218.57,
+     "The picture exaggerates."
+    ],
+    [
+     220.29,
+     "A fair poster would draw 2 icons of the same size."
+    ],
+    [
+     224.42,
+     "Infographics are everywhere."
+    ],
+    [
+     226.38,
+     "Exit signs, and signs in airports, use simple pictures."
+    ],
+    [
+     230.22,
+     "People can understand them in any language."
+    ],
+    [
+     233.78,
+     "Weather apps use icons and a few numbers, to show a whole week on 1 small screen."
+    ],
+    [
+     239.84,
+     "And many food packets use red, amber and green labels, to show sugar, salt and fat at a glance."
+    ],
+    [
+     246.56,
+     "One last question."
+    ],
+    [
+     247.78,
+     "Which makes a claim more reliable: a large, fair sample, or bright colours?"
+    ],
+    [
+     252.85,
+     "Pause the video and answer."
+    ],
+    [
+     256.08,
+     "A large, fair sample."
+    ],
+    [
+     257.47,
+     "Bright colours make a poster look good, but they do not make it true."
+    ],
+    [
+     262.57,
+     "To remember: infographics combine pictures, numbers and simple charts."
+    ],
+    [
+     268.09,
+     "Use the key to turn icons into numbers."
+    ],
+    [
+     271.26,
+     "Check the scale, the source and the sample size."
+    ],
+    [
+     274.81,
+     "Pictures that grow in 2 directions exaggerate the difference."
+    ],
+    [
+     279.87,
+     "Great work! Now practise lesson 16.4 on Camday."
+    ]
+   ],
+   "times": {
+    "16.4-k1": 25.49,
+    "16.4-k2": 77.04,
+    "16.4-k3": 116.85,
+    "16.4-k4": 255.03
+   },
+   "up": true
   }
  }
 }

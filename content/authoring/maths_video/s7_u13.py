@@ -10,8 +10,8 @@ def SCALE(marks=(), x=90, y=420, at=0, w=1100):
     """The probability scale from 0 to 1; marks = [(value, label, colour)] drawn as dots above the line."""
     px = lambda v: 60 + v * 980
     s = f'<line x1="60" y1="90" x2="1040" y2="90" stroke="{INK}" stroke-width="5" stroke-linecap="round"/>'
-    for v, lab in ((0, "0 · impossible"), (0.5, "0.5 · even chance"), (1, "1 · certain")):
-        s += f'<line x1="{px(v)}" y1="74" x2="{px(v)}" y2="106" stroke="{INK}" stroke-width="4"/><text x="{px(v)}" y="140" font-size="24" font-weight="700" text-anchor="middle" fill="{INK}">{lab}</text>'
+    for v, lab, anchor in ((0, "0 · impossible", "start"), (0.5, "0.5 · even chance", "middle"), (1, "1 · certain", "end")):   # end labels stay inside the box
+        s += f'<line x1="{px(v)}" y1="74" x2="{px(v)}" y2="106" stroke="{INK}" stroke-width="4"/><text x="{px(v) + (-52 if anchor == "start" else 52 if anchor == "end" else 0)}" y="140" font-size="24" font-weight="700" text-anchor="{anchor}" fill="{INK}">{lab}</text>'
     for v, lab, c in marks:
         s += f'<circle cx="{px(v)}" cy="90" r="13" fill="{c}"/><text x="{px(v)}" y="52" font-size="26" font-weight="700" text-anchor="middle" fill="{c}">{lab}</text>'
     return T(f'<svg viewBox="0 0 1100 160" width="{w}" height="{w * 160 // 1100}">{s}</svg>', x=x, y=y, at=at)

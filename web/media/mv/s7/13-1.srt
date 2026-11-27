@@ -1,0 +1,383 @@
+1
+00:00:06,880 --> 00:00:12,150
+A weather app says there is a 70 per cent chance of rain tomorrow.
+
+2
+00:00:12,200 --> 00:00:14,370
+Your friend says rain is likely.
+
+3
+00:00:14,420 --> 00:00:17,760
+Your little brother says rain is certain.
+
+4
+00:00:17,810 --> 00:00:18,700
+Who is right?
+
+5
+00:00:18,750 --> 00:00:22,540
+Is a 70 per cent chance likely, certain, or unlikely?
+
+6
+00:00:22,590 --> 00:00:25,890
+Pause the video and decide.
+
+7
+00:00:25,940 --> 00:00:27,390
+Your friend is right.
+
+8
+00:00:27,440 --> 00:00:32,150
+70 per cent is more than an even chance, so rain is likely.
+
+9
+00:00:32,200 --> 00:00:33,710
+But it is not certain.
+
+10
+00:00:33,760 --> 00:00:38,100
+There is still a 30 per cent chance that it stays dry.
+
+11
+00:00:38,150 --> 00:00:41,860
+Remember: one half is 0.5, or 50 per cent.
+
+12
+00:00:41,910 --> 00:00:45,090
+One quarter is 0.25, or 25 per cent.
+
+13
+00:00:45,140 --> 00:00:47,700
+And 70 per cent is 0.7.
+
+14
+00:00:47,750 --> 00:00:51,470
+Probability measures how likely something is to happen.
+
+15
+00:00:51,520 --> 00:00:54,830
+Words help, but numbers are more precise.
+
+16
+00:00:54,880 --> 00:00:57,320
+Impossible means it cannot happen.
+
+17
+00:00:57,370 --> 00:00:59,420
+Its probability is 0.
+
+18
+00:00:59,470 --> 00:01:02,210
+Unlikely means less than an even chance.
+
+19
+00:01:02,260 --> 00:01:04,940
+An even chance is a probability of 0.5.
+
+20
+00:01:04,990 --> 00:01:08,150
+Likely means more than an even chance.
+
+21
+00:01:08,200 --> 00:01:08,850
+Your turn.
+
+22
+00:01:08,900 --> 00:01:13,200
+What does a probability of 1 mean: certain, or an even chance?
+
+23
+00:01:13,250 --> 00:01:16,490
+Pause the video and decide.
+
+24
+00:01:16,540 --> 00:01:18,920
+A probability of 1 means certain.
+
+25
+00:01:18,970 --> 00:01:21,090
+The event must happen.
+
+26
+00:01:21,140 --> 00:01:24,510
+All probabilities sit on a scale from 0 to 1.
+
+27
+00:01:24,560 --> 00:01:27,640
+0 is impossible, and 1 is certain.
+
+28
+00:01:27,690 --> 00:01:32,820
+You can write a probability as a fraction, a decimal or a percentage.
+
+29
+00:01:32,870 --> 00:01:37,910
+But a probability is never less than 0, and never more than 1.
+
+30
+00:01:37,960 --> 00:01:39,360
+Here is the method.
+
+31
+00:01:39,410 --> 00:01:41,180
+Step 1: ask 3 questions.
+
+32
+00:01:41,230 --> 00:01:42,700
+Can it never happen?
+
+33
+00:01:42,750 --> 00:01:43,840
+Must it happen?
+
+34
+00:01:43,890 --> 00:01:45,300
+Is it 50 50?
+
+35
+00:01:45,350 --> 00:01:51,230
+Step 2: if not, decide if it is more likely or less likely than an even chance.
+
+36
+00:01:51,280 --> 00:01:57,070
+Step 3: if you have a number, change it to a decimal and place it on the scale.
+
+37
+00:01:57,120 --> 00:02:02,260
+Step 4: to compare probabilities, write them all in the same form.
+
+38
+00:02:02,310 --> 00:02:04,330
+Place 3 events on the scale.
+
+39
+00:02:04,380 --> 00:02:06,990
+First: rolling a 7 on a normal dice.
+
+40
+00:02:07,040 --> 00:02:11,280
+A dice only has the numbers 1 to 6, so this is impossible.
+
+41
+00:02:11,330 --> 00:02:13,380
+The probability is 0.
+
+42
+00:02:13,430 --> 00:02:15,720
+Second: a coin landing on heads.
+
+43
+00:02:15,770 --> 00:02:18,310
+That is an even chance: 0.5.
+
+44
+00:02:18,360 --> 00:02:21,330
+Third: the day after Monday being Tuesday.
+
+45
+00:02:21,380 --> 00:02:22,480
+That is certain.
+
+46
+00:02:22,530 --> 00:02:24,530
+The probability is 1.
+
+47
+00:02:24,580 --> 00:02:32,420
+Which is more likely: an event with probability 7 tenths, or an event with probability 68 per cent?
+
+48
+00:02:32,470 --> 00:02:34,560
+Write both as decimals.
+
+49
+00:02:34,610 --> 00:02:36,040
+7 tenths is 0.7.
+
+50
+00:02:36,090 --> 00:02:38,450
+68 per cent is 0.68.
+
+51
+00:02:38,500 --> 00:02:39,550
+0.7 is bigger.
+
+52
+00:02:39,600 --> 00:02:42,220
+So 7 tenths is more likely.
+
+53
+00:02:42,270 --> 00:02:43,000
+Your turn.
+
+54
+00:02:43,050 --> 00:02:46,100
+Which is more likely: 0.45, or 2 fifths?
+
+55
+00:02:46,150 --> 00:02:49,600
+Pause the video and try it.
+
+56
+00:02:49,650 --> 00:02:51,170
+2 fifths is 0.4.
+
+57
+00:02:51,220 --> 00:02:53,920
+And 0.45 is bigger than 0.4.
+
+58
+00:02:53,970 --> 00:02:56,730
+So 0.45 is more likely.
+
+59
+00:02:56,780 --> 00:03:00,630
+Ella says the probability of her team winning is 1.3.
+
+60
+00:03:00,680 --> 00:03:02,430
+Can she be right?
+
+61
+00:03:02,480 --> 00:03:02,680
+No.
+
+62
+00:03:02,730 --> 00:03:05,550
+Probabilities are between 0 and 1.
+
+63
+00:03:05,600 --> 00:03:08,040
+And 1.3 is more than 1.
+
+64
+00:03:08,090 --> 00:03:12,690
+Put these events in order, from least likely to most likely.
+
+65
+00:03:12,740 --> 00:03:14,480
+A has probability 0.55.
+
+66
+00:03:14,530 --> 00:03:16,570
+B has probability 3 fifths.
+
+67
+00:03:16,620 --> 00:03:19,440
+C has probability 52 per cent.
+
+68
+00:03:19,490 --> 00:03:24,560
+Write them all as decimals: 0.55, 0.6 and 0.52.
+
+69
+00:03:24,610 --> 00:03:28,180
+The smallest is 0.52, then 0.55, then 0.6.
+
+70
+00:03:28,230 --> 00:03:30,790
+So the order is C, A, B.
+
+71
+00:03:30,840 --> 00:03:33,650
+A bag has 4 red sweets and 7 blue sweets.
+
+72
+00:03:33,700 --> 00:03:36,580
+Find the probability of picking a red one.
+
+73
+00:03:36,630 --> 00:03:38,110
+Here is Ali's working.
+
+74
+00:03:38,160 --> 00:03:40,610
+Which line goes wrong first?
+
+75
+00:03:40,660 --> 00:03:41,770
+Line 2 is wrong.
+
+76
+00:03:41,820 --> 00:03:45,750
+7 over 4 is more than 1, so it cannot be a probability.
+
+77
+00:03:45,800 --> 00:03:50,780
+Divide the number of red sweets by the total number of sweets.
+
+78
+00:03:50,830 --> 00:03:53,250
+There are 11 sweets altogether.
+
+79
+00:03:53,300 --> 00:03:56,670
+The probability of red is 4 over 11.
+
+80
+00:03:56,720 --> 00:04:00,100
+Weather forecasters use probability every day.
+
+81
+00:04:00,150 --> 00:04:07,350
+A 70 per cent chance of rain means: on 10 days like this one, it rains on about 7 of them.
+
+82
+00:04:07,400 --> 00:04:12,900
+A football match starts with a coin toss, because each captain has an even chance.
+
+83
+00:04:12,950 --> 00:04:14,740
+That makes it fair.
+
+84
+00:04:14,790 --> 00:04:20,260
+And doctors talk about risk in the same way: a number between 0 and 1.
+
+85
+00:04:20,310 --> 00:04:21,630
+One last question.
+
+86
+00:04:21,680 --> 00:04:27,480
+Which of these is a valid probability: 3 quarters, 4 thirds, or 110 per cent?
+
+87
+00:04:27,530 --> 00:04:30,930
+Pause the video and decide.
+
+88
+00:04:30,980 --> 00:04:31,820
+3 quarters.
+
+89
+00:04:31,870 --> 00:04:33,610
+It is between 0 and 1.
+
+90
+00:04:33,660 --> 00:04:36,850
+The other 2 are both more than 1.
+
+91
+00:04:36,900 --> 00:04:41,820
+To remember: probability goes from 0, impossible, to 1, certain.
+
+92
+00:04:41,870 --> 00:04:44,080
+0.5 is an even chance.
+
+93
+00:04:44,130 --> 00:04:49,370
+The words are: impossible, unlikely, even chance, likely and certain.
+
+94
+00:04:49,420 --> 00:04:54,040
+Write probabilities as fractions, decimals or percentages.
+
+95
+00:04:54,090 --> 00:04:58,340
+A probability is never below 0, and never above 1.
+
+96
+00:04:58,390 --> 00:05:03,790
+Great work! Now practise lesson 13.1 on Camday.
