@@ -144,7 +144,7 @@ VIDEOS["12.3"] = [
         dict(say="For independent events, the probability of A and B is P of A times P of B. A head and more than 2 on a dice: a half times 2 thirds is a third.",
              do=[B("P(A and B) = P(A) × P(B)", x=80, y=170, color=BLUE), MATH("½ × ⅔ = ⅓", x=80, y=280, at=8)]),
         dict(say="A tree diagram shows every outcome. Each light is green, G, or not green, N. Not green has probability 0.6.",
-             do=[TBL(["Outcome", "Probability"], [["GG", "0.4 × 0.4 = 0.16"], ["GN", "?"], ["NG", "0.6 × 0.4 = 0.24"], ["NN", "0.6 × 0.6 = 0.36"]], y=360), ROW(0, 3), ROW(2, 5), ROW(3, 6)]),
+             do=[TBL(["Outcome", "Probability"], [["GG", "0.4 × 0.4 = 0.16"], ["GN", "?"], ["NG", "?"], ["NN", "0.6 × 0.6 = 0.36"]], y=360), ROW(0, 3), ROW(2, 5), ROW(3, 6)]),
         PAUSE("12.3-k2", "Your turn. The first light is green, and the second is not. What is P of G N? Pause the video and try it.", "P(GN)?"),
     ]),
     dict(kind="idea", title="Check: 0.24", steps=[

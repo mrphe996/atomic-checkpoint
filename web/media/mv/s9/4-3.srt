@@ -1,0 +1,231 @@
+1
+00:00:05,960 --> 00:00:09,050
+A lift can carry at most 630 kilograms.
+
+2
+00:00:09,100 --> 00:00:12,110
+A delivery worker weighs 80 kilograms.
+
+3
+00:00:12,160 --> 00:00:16,280
+She wants to take boxes of 25 kilograms each.
+
+4
+00:00:16,330 --> 00:00:19,350
+What is the largest number of boxes she can take?
+
+5
+00:00:19,400 --> 00:00:22,760
+Pause the video and work it out.
+
+6
+00:00:22,810 --> 00:00:26,740
+80 plus 25 B must be less than or equal to 630.
+
+7
+00:00:26,790 --> 00:00:30,470
+So 25 B is at most 550, and B is at most 22.
+
+8
+00:00:30,520 --> 00:00:32,840
+She can take up to 22 boxes.
+
+9
+00:00:32,890 --> 00:00:37,790
+Any number up to 22 works, so the answer is a range.
+
+10
+00:00:37,840 --> 00:00:44,090
+Remember: less than, less than or equal to, greater than, and greater than or equal to.
+
+11
+00:00:44,140 --> 00:00:46,980
+Solve an inequality just like an equation.
+
+12
+00:00:47,030 --> 00:00:49,950
+The solution set is every value that works.
+
+13
+00:00:50,000 --> 00:00:52,220
+Show it on a number line.
+
+14
+00:00:52,270 --> 00:00:57,910
+Use an open circle for less than, or greater than: that value is not included.
+
+15
+00:00:57,960 --> 00:00:58,620
+Your turn.
+
+16
+00:00:58,670 --> 00:01:00,680
+X is less than or equal to 3.
+
+17
+00:01:00,730 --> 00:01:03,660
+Does the circle at 3 look open, or closed?
+
+18
+00:01:03,710 --> 00:01:06,270
+Pause and choose.
+
+19
+00:01:06,320 --> 00:01:08,130
+A closed, filled-in circle.
+
+20
+00:01:08,180 --> 00:01:11,840
+3 is included, so it is less than or equal to.
+
+21
+00:01:11,890 --> 00:01:17,610
+When you multiply or divide both sides by a negative number, reverse the sign.
+
+22
+00:01:17,660 --> 00:01:18,970
+Here is the method.
+
+23
+00:01:19,020 --> 00:01:21,940
+Step 1: solve it like an equation.
+
+24
+00:01:21,990 --> 00:01:27,120
+Step 2: if you multiply or divide by a negative, reverse the sign.
+
+25
+00:01:27,170 --> 00:01:32,260
+Step 3: show it with open or closed circles, or list the integers.
+
+26
+00:01:32,310 --> 00:01:34,930
+Step 4: check with a value.
+
+27
+00:01:34,980 --> 00:01:38,720
+Solve 7 minus 2 X is greater than or equal to 13.
+
+28
+00:01:38,770 --> 00:01:41,430
+Take 7: negative 2 X is at least 6.
+
+29
+00:01:41,480 --> 00:01:47,630
+Divide by negative 2, and reverse: X is less than or equal to negative 3.
+
+30
+00:01:47,680 --> 00:01:48,400
+Your turn.
+
+31
+00:01:48,450 --> 00:01:50,850
+Solve negative 3 X less than 12.
+
+32
+00:01:50,900 --> 00:01:53,930
+Pause and work it out.
+
+33
+00:01:53,980 --> 00:01:57,230
+Divide by negative 3, and reverse the sign.
+
+34
+00:01:57,280 --> 00:01:59,450
+X is greater than negative 4.
+
+35
+00:01:59,500 --> 00:02:02,600
+Check with X equals 0: 0 is less than 12.
+
+36
+00:02:02,650 --> 00:02:03,530
+True.
+
+37
+00:02:03,580 --> 00:02:10,510
+List the integers where negative 5 is less than or equal to 3 N plus 1, which is less than 10.
+
+38
+00:02:10,560 --> 00:02:13,470
+Take 1 from each part, then divide by 3.
+
+39
+00:02:13,520 --> 00:02:17,590
+N is from negative 2, up to but not including 3.
+
+40
+00:02:17,640 --> 00:02:20,560
+Jo solves 10 minus 3 X is greater than 4.
+
+41
+00:02:20,610 --> 00:02:22,560
+Which line is wrong?
+
+42
+00:02:22,610 --> 00:02:23,760
+Line 2 is wrong.
+
+43
+00:02:23,810 --> 00:02:27,400
+Dividing by negative 3 reverses the sign.
+
+44
+00:02:27,450 --> 00:02:28,780
+X is less than 2.
+
+45
+00:02:28,830 --> 00:02:32,880
+Check with X equals 0: 10 is greater than 4.
+
+46
+00:02:32,930 --> 00:02:37,830
+Weight limits, speed limits and budgets are inequalities, not equations.
+
+47
+00:02:37,880 --> 00:02:40,860
+Anything up to the limit is allowed.
+
+48
+00:02:40,910 --> 00:02:42,170
+One last question.
+
+49
+00:02:42,220 --> 00:02:45,740
+What is the largest integer with 2 X less than 9?
+
+50
+00:02:45,790 --> 00:02:49,100
+Pause the video and answer.
+
+51
+00:02:49,150 --> 00:02:50,700
+X is less than 4.5.
+
+52
+00:02:50,750 --> 00:02:54,200
+The largest integer below 4.5 is 4.
+
+53
+00:02:54,250 --> 00:02:58,110
+To remember: solve inequalities like equations.
+
+54
+00:02:58,160 --> 00:03:02,690
+Multiplying or dividing by a negative reverses the sign.
+
+55
+00:03:02,740 --> 00:03:05,620
+Open circles for less than or greater than.
+
+56
+00:03:05,670 --> 00:03:09,040
+Closed circles when the value is included.
+
+57
+00:03:09,090 --> 00:03:11,300
+Check with a value.
+
+58
+00:03:11,350 --> 00:03:16,430
+Great work! Now practise lesson 4.3 on Camday.

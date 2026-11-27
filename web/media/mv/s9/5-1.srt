@@ -1,0 +1,243 @@
+1
+00:00:06,320 --> 00:00:08,540
+A carpenter builds a roof truss.
+
+2
+00:00:08,590 --> 00:00:14,560
+Two parallel beams are joined by a sloping strut, and one angle is marked 64 degrees.
+
+3
+00:00:14,610 --> 00:00:18,360
+The truss also contains an isosceles triangle.
+
+4
+00:00:18,410 --> 00:00:25,280
+Which facts will help to find the other angles: parallel-line and triangle facts, or only Pythagoras?
+
+5
+00:00:25,330 --> 00:00:28,540
+Pause the video and choose.
+
+6
+00:00:28,590 --> 00:00:31,360
+Parallel-line facts and triangle facts.
+
+7
+00:00:31,410 --> 00:00:34,580
+Pythagoras finds lengths, not angles.
+
+8
+00:00:34,630 --> 00:00:41,420
+Remember: angles on a straight line add up to 180 degrees, and around a point to 360.
+
+9
+00:00:41,470 --> 00:00:44,400
+Vertically opposite angles are equal.
+
+10
+00:00:44,450 --> 00:00:49,860
+A triangle's angles add to 180, and a quadrilateral's to 360.
+
+11
+00:00:49,910 --> 00:00:54,810
+Where a line crosses two parallel lines, corresponding angles are equal.
+
+12
+00:00:54,860 --> 00:00:56,810
+They make an F shape.
+
+13
+00:00:56,860 --> 00:01:01,010
+Co-interior angles are between the lines, on the same side.
+
+14
+00:01:01,060 --> 00:01:05,260
+They make a C shape, and they add up to 180 degrees.
+
+15
+00:01:05,310 --> 00:01:05,990
+Your turn.
+
+16
+00:01:06,040 --> 00:01:08,330
+Alternate angles make a Z shape.
+
+17
+00:01:08,380 --> 00:01:11,920
+Are they equal, or do they add up to 180 degrees?
+
+18
+00:01:11,970 --> 00:01:14,560
+Pause and choose.
+
+19
+00:01:14,610 --> 00:01:16,580
+Alternate angles are equal.
+
+20
+00:01:16,630 --> 00:01:20,570
+Only co-interior angles add up to 180 degrees.
+
+21
+00:01:20,620 --> 00:01:23,020
+Real problems need a chain of facts.
+
+22
+00:01:23,070 --> 00:01:28,950
+Write the reason for each step, like alternate angles, or angles in a triangle.
+
+23
+00:01:29,000 --> 00:01:30,290
+Here is the method.
+
+24
+00:01:30,340 --> 00:01:34,520
+Step 1: mark all the angles you know on the diagram.
+
+25
+00:01:34,570 --> 00:01:40,030
+Step 2: look for parallel lines, triangles, straight lines and points.
+
+26
+00:01:40,080 --> 00:01:44,850
+Step 3: find one angle at a time, and give a reason each time.
+
+27
+00:01:44,900 --> 00:01:49,290
+Step 4: check that the angles add up where they should.
+
+28
+00:01:49,340 --> 00:01:54,090
+A transversal makes an angle of 72 degrees with a parallel line.
+
+29
+00:01:54,140 --> 00:01:58,510
+The alternate angle, inside a triangle, is also 72 degrees.
+
+30
+00:01:58,560 --> 00:02:02,440
+The triangle has another angle of 50 degrees.
+
+31
+00:02:02,490 --> 00:02:08,000
+So the third angle is 180 minus 72 minus 50, which is 58 degrees.
+
+32
+00:02:08,050 --> 00:02:11,030
+Reason: angles in a triangle.
+
+33
+00:02:11,080 --> 00:02:11,750
+Your turn.
+
+34
+00:02:11,800 --> 00:02:15,490
+An isosceles triangle has a top angle of 40 degrees.
+
+35
+00:02:15,540 --> 00:02:17,220
+What is each base angle?
+
+36
+00:02:17,270 --> 00:02:20,210
+Pause and work it out.
+
+37
+00:02:20,260 --> 00:02:23,120
+The two base angles are equal.
+
+38
+00:02:23,170 --> 00:02:28,610
+180 minus 40 is 140, and half of 140 is 70 degrees.
+
+39
+00:02:28,660 --> 00:02:34,160
+A parallelogram has neighbouring angles of 3 X and 2 X plus 20.
+
+40
+00:02:34,210 --> 00:02:37,150
+Neighbouring angles add up to 180.
+
+41
+00:02:37,200 --> 00:02:40,230
+So 5 X plus 20 is 180, and X is 32.
+
+42
+00:02:40,280 --> 00:02:43,690
+The angles are 96 and 84 degrees.
+
+43
+00:02:43,740 --> 00:02:47,430
+Two co-interior angles lie between parallel lines.
+
+44
+00:02:47,480 --> 00:02:48,850
+One is 110 degrees.
+
+45
+00:02:48,900 --> 00:02:50,420
+Sara finds the other.
+
+46
+00:02:50,470 --> 00:02:52,460
+Which line is wrong?
+
+47
+00:02:52,510 --> 00:02:53,770
+Line 1 is wrong.
+
+48
+00:02:53,820 --> 00:02:57,670
+Co-interior angles add up to 180 degrees.
+
+49
+00:02:57,720 --> 00:03:01,760
+180 minus 110 is 70 degrees.
+
+50
+00:03:01,810 --> 00:03:11,310
+Carpenters and surveyors use parallel-line angle facts every day, to cut joints that fit, and to lay out roads that cross railways.
+
+51
+00:03:11,360 --> 00:03:12,670
+One last question.
+
+52
+00:03:12,720 --> 00:03:17,130
+Angles on a straight line are 2 Y plus 10, and 3 Y minus 5.
+
+53
+00:03:17,180 --> 00:03:17,660
+Find Y.
+
+54
+00:03:17,710 --> 00:03:21,100
+Pause the video and answer.
+
+55
+00:03:21,150 --> 00:03:23,070
+They add up to 180.
+
+56
+00:03:23,120 --> 00:03:28,370
+5 Y plus 5 is 180, so 5 Y is 175, and Y is 35.
+
+57
+00:03:28,420 --> 00:03:33,930
+To remember: corresponding angles, F, and alternate angles, Z, are equal.
+
+58
+00:03:33,980 --> 00:03:38,200
+Co-interior angles, C, add up to 180 degrees.
+
+59
+00:03:38,250 --> 00:03:42,110
+Chain the facts, one step at a time, with reasons.
+
+60
+00:03:42,160 --> 00:03:46,150
+The base angles of an isosceles triangle are equal.
+
+61
+00:03:46,200 --> 00:03:51,430
+Great work! Now practise lesson 5.1 on Camday.

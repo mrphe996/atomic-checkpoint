@@ -1,0 +1,219 @@
+1
+00:00:06,970 --> 00:00:10,800
+A floor designer wants to use regular octagons for tiles.
+
+2
+00:00:10,850 --> 00:00:16,870
+To see how they fit together, she needs the size of each angle inside an octagon.
+
+3
+00:00:16,920 --> 00:00:22,550
+To find the angle sum of an octagon, would you split it into triangles, or circles?
+
+4
+00:00:22,600 --> 00:00:25,800
+Pause the video and choose.
+
+5
+00:00:25,850 --> 00:00:26,570
+Triangles.
+
+6
+00:00:26,620 --> 00:00:31,750
+We know that the angles in a triangle add up to 180 degrees.
+
+7
+00:00:31,800 --> 00:00:35,840
+Remember: a triangle's angles add up to 180 degrees.
+
+8
+00:00:35,890 --> 00:00:41,820
+A quadrilateral splits into 2 triangles, so its angles add up to 360.
+
+9
+00:00:41,870 --> 00:00:44,790
+From one corner, draw all the diagonals.
+
+10
+00:00:44,840 --> 00:00:48,870
+A polygon with N sides splits into N minus 2 triangles.
+
+11
+00:00:48,920 --> 00:00:53,060
+So the angle sum is N minus 2, times 180 degrees.
+
+12
+00:00:53,110 --> 00:00:53,720
+Your turn.
+
+13
+00:00:53,770 --> 00:00:56,130
+What is the angle sum of an octagon?
+
+14
+00:00:56,180 --> 00:00:59,340
+Pause the video and try it.
+
+15
+00:00:59,390 --> 00:01:04,180
+An octagon has 8 sides, so it splits into 6 triangles.
+
+16
+00:01:04,230 --> 00:01:07,340
+6 times 180 is 1,080 degrees.
+
+17
+00:01:07,390 --> 00:01:10,400
+In a regular polygon, every angle is the same.
+
+18
+00:01:10,450 --> 00:01:13,940
+So each angle is the angle sum, divided by N.
+
+19
+00:01:13,990 --> 00:01:15,310
+Here is the method.
+
+20
+00:01:15,360 --> 00:01:17,800
+Step 1: count the sides, N.
+
+21
+00:01:17,850 --> 00:01:22,380
+Step 2: the angle sum is N minus 2, times 180.
+
+22
+00:01:22,430 --> 00:01:25,400
+Step 3: for a regular polygon, divide by N.
+
+23
+00:01:25,450 --> 00:01:29,260
+For a missing angle, subtract the known angles.
+
+24
+00:01:29,310 --> 00:01:32,980
+Step 4: check that your answer is sensible.
+
+25
+00:01:33,030 --> 00:01:38,520
+A pentagon has angles of 100, 120, 95, 110 and X degrees.
+
+26
+00:01:38,570 --> 00:01:39,970
+The sum is 540.
+
+27
+00:01:40,020 --> 00:01:45,280
+The known angles add to 425, so X is 115 degrees.
+
+28
+00:01:45,330 --> 00:01:45,960
+Your turn.
+
+29
+00:01:46,010 --> 00:01:49,300
+What is each interior angle of a regular octagon?
+
+30
+00:01:49,350 --> 00:01:52,190
+Pause and work it out.
+
+31
+00:01:52,240 --> 00:01:57,280
+The angle sum is 1,080, and there are 8 equal angles.
+
+32
+00:01:57,330 --> 00:02:01,090
+1,080 divided by 8 is 135 degrees.
+
+33
+00:02:01,140 --> 00:02:04,690
+Two octagons meet with 270 degrees at a point.
+
+34
+00:02:04,740 --> 00:02:09,700
+That leaves 90 degrees, so a small square fills each gap.
+
+35
+00:02:09,750 --> 00:02:14,070
+The angles of a polygon add up to 2,520 degrees.
+
+36
+00:02:14,120 --> 00:02:15,430
+How many sides?
+
+37
+00:02:15,480 --> 00:02:18,620
+N minus 2, times 180, equals 2,520.
+
+38
+00:02:18,670 --> 00:02:22,080
+So N minus 2 is 14, and N is 16.
+
+39
+00:02:22,130 --> 00:02:24,660
+Omar finds the angle sum of a hexagon.
+
+40
+00:02:24,710 --> 00:02:26,570
+Which line is wrong?
+
+41
+00:02:26,620 --> 00:02:27,780
+Line 1 is wrong.
+
+42
+00:02:27,830 --> 00:02:33,700
+From one corner, a hexagon splits into 6 minus 2, which is 4 triangles.
+
+43
+00:02:33,750 --> 00:02:37,520
+4 times 180 is 720 degrees.
+
+44
+00:02:37,570 --> 00:02:40,680
+Bees build honeycomb from regular hexagons.
+
+45
+00:02:40,730 --> 00:02:47,330
+Each angle is 120 degrees, so three hexagons meet exactly at a point, with no gaps.
+
+46
+00:02:47,380 --> 00:02:48,640
+One last question.
+
+47
+00:02:48,690 --> 00:02:52,260
+What is the angle sum of a decagon, with 10 sides?
+
+48
+00:02:52,310 --> 00:02:55,610
+Pause the video and answer.
+
+49
+00:02:55,660 --> 00:02:58,440
+10 minus 2 is 8 triangles.
+
+50
+00:02:58,490 --> 00:03:02,140
+8 times 180 is 1,440 degrees.
+
+51
+00:03:02,190 --> 00:03:07,440
+To remember: the angle sum is N minus 2, times 180 degrees.
+
+52
+00:03:07,490 --> 00:03:11,520
+Regular polygon: each angle is the sum divided by N.
+
+53
+00:03:11,570 --> 00:03:15,410
+A missing angle is the sum minus the known angles.
+
+54
+00:03:15,460 --> 00:03:17,750
+Rearrange to find N.
+
+55
+00:03:17,800 --> 00:03:22,870
+Great work! Now practise lesson 5.2 on Camday.

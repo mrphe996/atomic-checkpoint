@@ -11,7 +11,7 @@ VIDEOS = {}
 VIDEOS["5.1"] = [
     dict(kind="hook", title="A roof truss", steps=[
         dict(say="A carpenter builds a roof truss. Two parallel beams are joined by a sloping strut, and one angle is marked 64 degrees. The truss also contains an isosceles triangle.",
-             do=[E("🏠", 90, 170, 100), T("parallel beams · a strut at **64°** · an isosceles triangle", x=230, y=200), PAR({"a": "64°", "e": "?"}, at=2, x=760, w=460)]),
+             do=[E("🏠", 90, 170, 100), T("parallel beams · a strut at **64°**", x=230, y=180), T("an isosceles triangle", x=230, y=240), PAR({"a": "64°", "e": "?"}, at=2, x=760, w=460)]),
         PAUSE("5.1-k1", "Which facts will help to find the other angles: parallel-line and triangle facts, or only Pythagoras? Pause the video and choose.", "Useful facts include … parallel-line and triangle facts, or only Pythagoras?"),
     ]),
     dict(kind="hook", title="Angle facts", steps=[
@@ -217,12 +217,12 @@ VIDEOS["5.4"] = [
     ]),
     dict(kind="idea", title="Polygons in a circle", steps=[
         dict(say="For a regular hexagon, draw a circle. Keep the same radius, and step it round the circle, marking points. Join the points.",
-             do=[SVG(POLY(REG(6), "#E8F1FF") + "".join(DOT(x, y) for x, y in REG(6)), 820, 140, w=340), T("step the **radius** round the circle", x=80, y=200)]),
+             do=[T("step the **radius** round the circle", x=80, y=200)]),
         dict(say="For a square, draw two diameters at right angles. For an octagon, bisect the right angles between them.", do=[T("square: perpendicular diameters · octagon: bisect them", x=80, y=300)]),
         PAUSE("5.4-k3", "Your turn. Stepping the radius round a circle, how many points do you mark? Pause and work it out.", "Points stepped round a circle with the radius?"),
     ]),
     dict(kind="idea", title="Check: 6 points", steps=[
-        dict(say="6 points. Each side of the hexagon is the same as the radius, because it makes 6 equilateral triangles at the centre.", do=[B("6 points", x=80, y=190, color=GREEN)]),
+        dict(say="6 points. Each side of the hexagon is the same as the radius, because it makes 6 equilateral triangles at the centre.", do=[B("6 points", x=80, y=190, color=GREEN), SVG(POLY(REG(6), "#E8F1FF") + "".join(DOT(x, y) for x, y in REG(6)), 820, 140, w=340)]),
     ]),
     dict(kind="method", title="How do I construct an angle?", steps=[
         dict(say="Here is the method. Step 1: 60 degrees comes from an equilateral triangle.", do=[T("1. **60°**: equilateral triangle", x=80, y=170)]),

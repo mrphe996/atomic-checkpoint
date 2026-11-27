@@ -29,7 +29,7 @@ VIDEOS["6.1"] = [
     ]),
     dict(kind="idea", title="Choosing a sample", steps=[
         dict(say="The population is everyone you want to know about. A sample is the part you actually ask. Here are four ways to choose a sample.",
-             do=[TBL(["Method", "How"], [["random", "everyone has an equal chance"], ["systematic", "every 20th name on a list"], ["stratified", "each group in proportion to its size"], ["convenience", "whoever is nearby – often biased"]], y=170), ROW(0, 0.5)]),
+             do=[TBL(["Method", "How"], [["random", "everyone has an equal chance"], ["systematic", "a fixed gap down a list"], ["stratified", "each group in proportion to its size"], ["convenience", "whoever is nearby – often biased"]], y=170), ROW(0, 0.5)]),
         dict(say="Stratified sampling takes each group, like each year group, in proportion to its size. Convenience sampling, like asking your friends, is quick but often unfair.", do=[ROW(2, 0.2), ROW(3, 5)]),
         dict(say="A bigger sample is usually more reliable, but takes longer. For 1,200 students, about 60 to 120 is sensible.", do=[T("bigger → more reliable · about **60–120** here", x=80, y=480)]),
     ]),

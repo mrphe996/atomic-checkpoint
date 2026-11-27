@@ -47571,6 +47571,3289 @@
     "3.4-k4": 180.06
    },
    "up": true
+  },
+  "4.2": {
+   "src": "media/mv/s9/4-2.mp4",
+   "poster": "media/mv/s9/4-2_poster.jpg",
+   "srt": "media/mv/s9/4-2.srt",
+   "dur": 202.96,
+   "captions": [
+    [
+     6.78,
+     "At a café, 2 juices and 3 muffins cost 13 dollars."
+    ],
+    [
+     10.85,
+     "2 juices and 1 muffin cost 7 dollars."
+    ],
+    [
+     14.4,
+     "How much is one muffin?"
+    ],
+    [
+     15.94,
+     "Pause the video and work it out."
+    ],
+    [
+     19.49,
+     "The two orders have the same juices."
+    ],
+    [
+     22.28,
+     "The difference is 2 muffins, and 13 minus 7 is 6 dollars."
+    ],
+    [
+     26.7,
+     "So one muffin costs 3 dollars."
+    ],
+    [
+     29.57,
+     "Then 2 juices plus 3 is 7, so a juice costs 2 dollars."
+    ],
+    [
+     34.41,
+     "Remember: if Y is 4, then 3 X plus Y equals 19 gives 3 X equals 15, so X is 5."
+    ],
+    [
+     41.38,
+     "Simultaneous equations are two equations with the same two unknowns, both true at once."
+    ],
+    [
+     48.02,
+     "To eliminate a letter, match its coefficients."
+    ],
+    [
+     51.18,
+     "If they are the same, subtract."
+    ],
+    [
+     53.31,
+     "If they have opposite signs, add."
+    ],
+    [
+     56.12,
+     "Your turn."
+    ],
+    [
+     56.85,
+     "X plus Y equals 10, and X minus Y equals 4."
+    ],
+    [
+     59.99,
+     "Find X."
+    ],
+    [
+     60.5,
+     "Pause the video and try it."
+    ],
+    [
+     63.88,
+     "The Y terms have opposite signs, so add the equations."
+    ],
+    [
+     67.92,
+     "2 X equals 14, so X is 7."
+    ],
+    [
+     69.8,
+     "Then Y is 3."
+    ],
+    [
+     71.25,
+     "If one equation gives a letter directly, like Y equals 2 X minus 1, substitute it into the other equation."
+    ],
+    [
+     79.27,
+     "Always check the pair of answers in both of the original equations."
+    ],
+    [
+     84.37,
+     "Here is the method."
+    ],
+    [
+     85.84,
+     "Step 1: label the equations 1 and 2."
+    ],
+    [
+     89.17,
+     "Step 2: make the coefficients of one letter match, multiplying if you need to."
+    ],
+    [
+     95.15,
+     "Step 3: add or subtract to eliminate it."
+    ],
+    [
+     98.06,
+     "Solve, then substitute back."
+    ],
+    [
+     100.64,
+     "Step 4: check in both equations."
+    ],
+    [
+     103.65,
+     "Solve 3 X plus 2 Y equals 12, and X plus Y equals 5."
+    ],
+    [
+     107.94,
+     "Double the second equation: 2 X plus 2 Y equals 10."
+    ],
+    [
+     112.7,
+     "Subtract: X equals 2."
+    ],
+    [
+     114.31,
+     "Then Y is 3."
+    ],
+    [
+     115.78,
+     "Your turn."
+    ],
+    [
+     116.54,
+     "Y equals 2 X minus 1, and 3 X plus Y equals 14."
+    ],
+    [
+     120.15,
+     "Find X."
+    ],
+    [
+     120.69,
+     "Pause and work it out."
+    ],
+    [
+     123.77,
+     "Replace Y with 2 X minus 1: 3 X plus 2 X minus 1 equals 14."
+    ],
+    [
+     128.78,
+     "So 5 X equals 15, and X is 3."
+    ],
+    [
+     131.24,
+     "Then Y is 5."
+    ],
+    [
+     132.81,
+     "Two numbers add to 37, and their difference is 13."
+    ],
+    [
+     137.16,
+     "X plus Y equals 37, and X minus Y equals 13."
+    ],
+    [
+     140.98,
+     "Add: 2 X equals 50."
+    ],
+    [
+     142.63,
+     "So the numbers are 25 and 12."
+    ],
+    [
+     145.7,
+     "Lucy solves 3 X plus 2 Y equals 8, and 3 X minus 2 Y equals 4, by subtracting."
+    ],
+    [
+     151.65,
+     "Which line is wrong?"
+    ],
+    [
+     153.73,
+     "Line 1 is wrong."
+    ],
+    [
+     154.97,
+     "2 Y minus negative 2 Y is 4 Y, not zero."
+    ],
+    [
+     158.61,
+     "So 4 Y equals 4, and Y is 1."
+    ],
+    [
+     160.9,
+     "Then 3 X equals 6, so X is 2."
+    ],
+    [
+     163.81,
+     "Businesses use simultaneous equations to mix ingredients to a target, and to find the price where income equals costs."
+    ],
+    [
+     172.61,
+     "One last question."
+    ],
+    [
+     173.85,
+     "X plus Y equals 5, and X equals 1."
+    ],
+    [
+     176.19,
+     "What is Y?"
+    ],
+    [
+     176.88,
+     "Pause the video and answer."
+    ],
+    [
+     180.14,
+     "1 plus Y equals 5, so Y is 4."
+    ],
+    [
+     183.1,
+     "To remember: two equations, with two unknowns."
+    ],
+    [
+     186.9,
+     "Elimination: match a coefficient, then add or subtract."
+    ],
+    [
+     191.28,
+     "Use substitution when a letter is given directly."
+    ],
+    [
+     195.25,
+     "Check in both equations."
+    ],
+    [
+     197.72,
+     "Great work! Now practise lesson 4.2 on Camday."
+    ]
+   ],
+   "times": {
+    "4.2-k1": 18.44,
+    "4.2-k2": 62.83,
+    "4.2-k3": 122.72,
+    "4.2-k4": 179.09
+   },
+   "up": true
+  },
+  "4.1": {
+   "src": "media/mv/s9/4-1.mp4",
+   "poster": "media/mv/s9/4-1_poster.jpg",
+   "srt": "media/mv/s9/4-1.srt",
+   "dur": 226.52,
+   "captions": [
+    [
+     7.5,
+     "Plan A costs 20 dollars a month, plus 10 cents per minute."
+    ],
+    [
+     12.04,
+     "Plan B costs 8 dollars a month, plus 25 cents per minute."
+    ],
+    [
+     17.06,
+     "For how many minutes do the two plans cost the same?"
+    ],
+    [
+     20.58,
+     "Pause the video and work it out."
+    ],
+    [
+     24.14,
+     "Let M be the minutes."
+    ],
+    [
+     25.85,
+     "Plan A costs 20 plus 0.1 M."
+    ],
+    [
+     28.05,
+     "Plan B costs 8 plus 0.25 M."
+    ],
+    [
+     30.24,
+     "Set them equal."
+    ],
+    [
+     32.01,
+     "Take away 8 and 0.1 M from both sides: 12 equals 0.15 M."
+    ],
+    [
+     37.04,
+     "So M is 80 minutes."
+    ],
+    [
+     39.29,
+     "Check: plan A is 20 plus 8, which is 28."
+    ],
+    [
+     42.93,
+     "Plan B is 8 plus 20, which is 28."
+    ],
+    [
+     46.48,
+     "Remember: do the same to both sides."
+    ],
+    [
+     49.4,
+     "3 X plus 4 equals 19, so 3 X equals 15, and X equals 5."
+    ],
+    [
+     54.42,
+     "To construct an equation, choose a letter for the unknown, and write both sides in algebra."
+    ],
+    [
+     61.13,
+     "If there are brackets, expand them first."
+    ],
+    [
+     63.9,
+     "Then collect the unknowns on the side with more of them."
+    ],
+    [
+     68.23,
+     "Your turn."
+    ],
+    [
+     68.98,
+     "Solve 3, bracket, 2 X minus 1, equals 2, bracket, X plus 7."
+    ],
+    [
+     73.46,
+     "Pause the video and try it."
+    ],
+    [
+     76.9,
+     "Expand: 6 X minus 3 equals 2 X plus 14."
+    ],
+    [
+     80.31,
+     "Take 2 X from both sides, and add 3: 4 X equals 17."
+    ],
+    [
+     84.77,
+     "So X is 4.25."
+    ],
+    [
+     86.45,
+     "Clear fractions by multiplying every term by the denominator."
+    ],
+    [
+     91.16,
+     "X plus 5, over 3, equals X minus 1."
+    ],
+    [
+     93.86,
+     "Times 3: X plus 5 equals 3 X minus 3."
+    ],
+    [
+     96.72,
+     "So X is 4."
+    ],
+    [
+     98.04,
+     "With two fractions, multiply by a common multiple of the denominators."
+    ],
+    [
+     103.42,
+     "Here is the method."
+    ],
+    [
+     104.75,
+     "Step 1: say what the letter stands for, and write the equation."
+    ],
+    [
+     109.69,
+     "Step 2: expand any brackets, and clear any fractions."
+    ],
+    [
+     114.08,
+     "Step 3: collect the unknowns on one side, and the numbers on the other."
+    ],
+    [
+     119.51,
+     "Step 4: check your answer in the original problem."
+    ],
+    [
+     123.69,
+     "I think of a number, double it, add 3, then double the result."
+    ],
+    [
+     128.6,
+     "I get 58."
+    ],
+    [
+     129.32,
+     "Write 2, bracket, 2 N plus 3, equals 58."
+    ],
+    [
+     133.04,
+     "Divide by 2: 2 N plus 3 equals 29."
+    ],
+    [
+     136.28,
+     "Take 3: 2 N equals 26."
+    ],
+    [
+     138.37,
+     "So N is 13."
+    ],
+    [
+     139.97,
+     "Your turn."
+    ],
+    [
+     140.73,
+     "Solve X over 2, plus X over 5, equals 14."
+    ],
+    [
+     143.84,
+     "Pause and work it out."
+    ],
+    [
+     146.91,
+     "Multiply every term by 10: 5 X plus 2 X equals 140."
+    ],
+    [
+     151.76,
+     "So 7 X equals 140, and X is 20."
+    ],
+    [
+     155.26,
+     "The angles of a triangle are X, 2 X plus 15, and 3 X minus 15."
+    ],
+    [
+     160.79,
+     "They add up to 180 degrees."
+    ],
+    [
+     163.2,
+     "So 6 X equals 180, and X is 30."
+    ],
+    [
+     165.97,
+     "The angles are 30, 75 and 75 degrees."
+    ],
+    [
+     169.82,
+     "Eva solves X over 3, plus 2, equals 6."
+    ],
+    [
+     172.7,
+     "Which line is wrong?"
+    ],
+    [
+     174.77,
+     "Line 1 is wrong."
+    ],
+    [
+     175.98,
+     "Every term must be multiplied by 3, including the 2."
+    ],
+    [
+     180.46,
+     "X plus 6 equals 18, so X is 12."
+    ],
+    [
+     183.92,
+     "Choosing between phone plans, taxis, or energy tariffs comes down to one equation: cost A equals cost B."
+    ],
+    [
+     190.96,
+     "Below the answer one is cheaper, and above it, the other is."
+    ],
+    [
+     195.57,
+     "One last question."
+    ],
+    [
+     196.96,
+     "Solve 2 X plus 9 equals 5 X."
+    ],
+    [
+     199.11,
+     "Pause the video and answer."
+    ],
+    [
+     202.58,
+     "Take 2 X from both sides: 9 equals 3 X."
+    ],
+    [
+     205.72,
+     "So X is 3."
+    ],
+    [
+     207.08,
+     "To remember: say what your letter means, and write the equation."
+    ],
+    [
+     211.97,
+     "Expand brackets, clear fractions, and collect terms."
+    ],
+    [
+     216.2,
+     "Do the same to both sides."
+    ],
+    [
+     218.66,
+     "Check in the original problem."
+    ],
+    [
+     221.27,
+     "Great work! Now practise lesson 4.1 on Camday."
+    ]
+   ],
+   "times": {
+    "4.1-k1": 23.09,
+    "4.1-k2": 75.85,
+    "4.1-k3": 145.86,
+    "4.1-k4": 201.53
+   },
+   "up": true
+  },
+  "4.3": {
+   "src": "media/mv/s9/4-3.mp4",
+   "poster": "media/mv/s9/4-3_poster.jpg",
+   "srt": "media/mv/s9/4-3.srt",
+   "dur": 196.48,
+   "captions": [
+    [
+     5.96,
+     "A lift can carry at most 630 kilograms."
+    ],
+    [
+     9.1,
+     "A delivery worker weighs 80 kilograms."
+    ],
+    [
+     12.16,
+     "She wants to take boxes of 25 kilograms each."
+    ],
+    [
+     16.33,
+     "What is the largest number of boxes she can take?"
+    ],
+    [
+     19.4,
+     "Pause the video and work it out."
+    ],
+    [
+     22.81,
+     "80 plus 25 B must be less than or equal to 630."
+    ],
+    [
+     26.79,
+     "So 25 B is at most 550, and B is at most 22."
+    ],
+    [
+     30.52,
+     "She can take up to 22 boxes."
+    ],
+    [
+     32.89,
+     "Any number up to 22 works, so the answer is a range."
+    ],
+    [
+     37.84,
+     "Remember: less than, less than or equal to, greater than, and greater than or equal to."
+    ],
+    [
+     44.14,
+     "Solve an inequality just like an equation."
+    ],
+    [
+     47.03,
+     "The solution set is every value that works."
+    ],
+    [
+     50.0,
+     "Show it on a number line."
+    ],
+    [
+     52.27,
+     "Use an open circle for less than, or greater than: that value is not included."
+    ],
+    [
+     57.96,
+     "Your turn."
+    ],
+    [
+     58.67,
+     "X is less than or equal to 3."
+    ],
+    [
+     60.73,
+     "Does the circle at 3 look open, or closed?"
+    ],
+    [
+     63.71,
+     "Pause and choose."
+    ],
+    [
+     66.32,
+     "A closed, filled-in circle."
+    ],
+    [
+     68.18,
+     "3 is included, so it is less than or equal to."
+    ],
+    [
+     71.89,
+     "When you multiply or divide both sides by a negative number, reverse the sign."
+    ],
+    [
+     77.66,
+     "Here is the method."
+    ],
+    [
+     79.02,
+     "Step 1: solve it like an equation."
+    ],
+    [
+     81.99,
+     "Step 2: if you multiply or divide by a negative, reverse the sign."
+    ],
+    [
+     87.17,
+     "Step 3: show it with open or closed circles, or list the integers."
+    ],
+    [
+     92.31,
+     "Step 4: check with a value."
+    ],
+    [
+     94.98,
+     "Solve 7 minus 2 X is greater than or equal to 13."
+    ],
+    [
+     98.77,
+     "Take 7: negative 2 X is at least 6."
+    ],
+    [
+     101.48,
+     "Divide by negative 2, and reverse: X is less than or equal to negative 3."
+    ],
+    [
+     107.68,
+     "Your turn."
+    ],
+    [
+     108.45,
+     "Solve negative 3 X less than 12."
+    ],
+    [
+     110.9,
+     "Pause and work it out."
+    ],
+    [
+     113.98,
+     "Divide by negative 3, and reverse the sign."
+    ],
+    [
+     117.28,
+     "X is greater than negative 4."
+    ],
+    [
+     119.5,
+     "Check with X equals 0: 0 is less than 12."
+    ],
+    [
+     122.65,
+     "True."
+    ],
+    [
+     123.58,
+     "List the integers where negative 5 is less than or equal to 3 N plus 1, which is less than 10."
+    ],
+    [
+     130.56,
+     "Take 1 from each part, then divide by 3."
+    ],
+    [
+     133.52,
+     "N is from negative 2, up to but not including 3."
+    ],
+    [
+     137.64,
+     "Jo solves 10 minus 3 X is greater than 4."
+    ],
+    [
+     140.61,
+     "Which line is wrong?"
+    ],
+    [
+     142.61,
+     "Line 2 is wrong."
+    ],
+    [
+     143.81,
+     "Dividing by negative 3 reverses the sign."
+    ],
+    [
+     147.45,
+     "X is less than 2."
+    ],
+    [
+     148.83,
+     "Check with X equals 0: 10 is greater than 4."
+    ],
+    [
+     152.93,
+     "Weight limits, speed limits and budgets are inequalities, not equations."
+    ],
+    [
+     157.88,
+     "Anything up to the limit is allowed."
+    ],
+    [
+     160.91,
+     "One last question."
+    ],
+    [
+     162.22,
+     "What is the largest integer with 2 X less than 9?"
+    ],
+    [
+     165.79,
+     "Pause the video and answer."
+    ],
+    [
+     169.15,
+     "X is less than 4.5."
+    ],
+    [
+     170.75,
+     "The largest integer below 4.5 is 4."
+    ],
+    [
+     174.25,
+     "To remember: solve inequalities like equations."
+    ],
+    [
+     178.16,
+     "Multiplying or dividing by a negative reverses the sign."
+    ],
+    [
+     182.74,
+     "Open circles for less than or greater than."
+    ],
+    [
+     185.67,
+     "Closed circles when the value is included."
+    ],
+    [
+     189.09,
+     "Check with a value."
+    ],
+    [
+     191.35,
+     "Great work! Now practise lesson 4.3 on Camday."
+    ]
+   ],
+   "times": {
+    "4.3-k1": 21.76,
+    "4.3-k2": 65.27,
+    "4.3-k3": 112.93,
+    "4.3-k4": 168.1
+   },
+   "up": true
+  },
+  "5.1": {
+   "src": "media/mv/s9/5-1.mp4",
+   "poster": "media/mv/s9/5-1_poster.jpg",
+   "srt": "media/mv/s9/5-1.srt",
+   "dur": 231.48,
+   "captions": [
+    [
+     6.32,
+     "A carpenter builds a roof truss."
+    ],
+    [
+     8.59,
+     "Two parallel beams are joined by a sloping strut, and one angle is marked 64 degrees."
+    ],
+    [
+     14.61,
+     "The truss also contains an isosceles triangle."
+    ],
+    [
+     18.41,
+     "Which facts will help to find the other angles: parallel-line and triangle facts, or only Pythagoras?"
+    ],
+    [
+     25.33,
+     "Pause the video and choose."
+    ],
+    [
+     28.59,
+     "Parallel-line facts and triangle facts."
+    ],
+    [
+     31.41,
+     "Pythagoras finds lengths, not angles."
+    ],
+    [
+     34.63,
+     "Remember: angles on a straight line add up to 180 degrees, and around a point to 360."
+    ],
+    [
+     41.47,
+     "Vertically opposite angles are equal."
+    ],
+    [
+     44.45,
+     "A triangle's angles add to 180, and a quadrilateral's to 360."
+    ],
+    [
+     49.91,
+     "Where a line crosses two parallel lines, corresponding angles are equal."
+    ],
+    [
+     54.86,
+     "They make an F shape."
+    ],
+    [
+     56.86,
+     "Co-interior angles are between the lines, on the same side."
+    ],
+    [
+     61.06,
+     "They make a C shape, and they add up to 180 degrees."
+    ],
+    [
+     65.31,
+     "Your turn."
+    ],
+    [
+     66.04,
+     "Alternate angles make a Z shape."
+    ],
+    [
+     68.38,
+     "Are they equal, or do they add up to 180 degrees?"
+    ],
+    [
+     71.97,
+     "Pause and choose."
+    ],
+    [
+     74.61,
+     "Alternate angles are equal."
+    ],
+    [
+     76.63,
+     "Only co-interior angles add up to 180 degrees."
+    ],
+    [
+     80.62,
+     "Real problems need a chain of facts."
+    ],
+    [
+     83.07,
+     "Write the reason for each step, like alternate angles, or angles in a triangle."
+    ],
+    [
+     89.0,
+     "Here is the method."
+    ],
+    [
+     90.34,
+     "Step 1: mark all the angles you know on the diagram."
+    ],
+    [
+     94.57,
+     "Step 2: look for parallel lines, triangles, straight lines and points."
+    ],
+    [
+     100.08,
+     "Step 3: find one angle at a time, and give a reason each time."
+    ],
+    [
+     104.9,
+     "Step 4: check that the angles add up where they should."
+    ],
+    [
+     109.34,
+     "A transversal makes an angle of 72 degrees with a parallel line."
+    ],
+    [
+     114.14,
+     "The alternate angle, inside a triangle, is also 72 degrees."
+    ],
+    [
+     118.56,
+     "The triangle has another angle of 50 degrees."
+    ],
+    [
+     122.49,
+     "So the third angle is 180 minus 72 minus 50, which is 58 degrees."
+    ],
+    [
+     128.05,
+     "Reason: angles in a triangle."
+    ],
+    [
+     131.08,
+     "Your turn."
+    ],
+    [
+     131.8,
+     "An isosceles triangle has a top angle of 40 degrees."
+    ],
+    [
+     135.54,
+     "What is each base angle?"
+    ],
+    [
+     137.27,
+     "Pause and work it out."
+    ],
+    [
+     140.26,
+     "The two base angles are equal."
+    ],
+    [
+     143.17,
+     "180 minus 40 is 140, and half of 140 is 70 degrees."
+    ],
+    [
+     148.66,
+     "A parallelogram has neighbouring angles of 3 X and 2 X plus 20."
+    ],
+    [
+     154.21,
+     "Neighbouring angles add up to 180."
+    ],
+    [
+     157.2,
+     "So 5 X plus 20 is 180, and X is 32."
+    ],
+    [
+     160.28,
+     "The angles are 96 and 84 degrees."
+    ],
+    [
+     163.74,
+     "Two co-interior angles lie between parallel lines."
+    ],
+    [
+     167.48,
+     "One is 110 degrees."
+    ],
+    [
+     168.9,
+     "Sara finds the other."
+    ],
+    [
+     170.47,
+     "Which line is wrong?"
+    ],
+    [
+     172.51,
+     "Line 1 is wrong."
+    ],
+    [
+     173.82,
+     "Co-interior angles add up to 180 degrees."
+    ],
+    [
+     177.72,
+     "180 minus 110 is 70 degrees."
+    ],
+    [
+     181.81,
+     "Carpenters and surveyors use parallel-line angle facts every day, to cut joints that fit, and to lay out roads that cross railways."
+    ],
+    [
+     191.36,
+     "One last question."
+    ],
+    [
+     192.72,
+     "Angles on a straight line are 2 Y plus 10, and 3 Y minus 5."
+    ],
+    [
+     197.18,
+     "Find Y."
+    ],
+    [
+     197.71,
+     "Pause the video and answer."
+    ],
+    [
+     201.15,
+     "They add up to 180."
+    ],
+    [
+     203.12,
+     "5 Y plus 5 is 180, so 5 Y is 175, and Y is 35."
+    ],
+    [
+     208.42,
+     "To remember: corresponding angles, F, and alternate angles, Z, are equal."
+    ],
+    [
+     213.98,
+     "Co-interior angles, C, add up to 180 degrees."
+    ],
+    [
+     218.25,
+     "Chain the facts, one step at a time, with reasons."
+    ],
+    [
+     222.16,
+     "The base angles of an isosceles triangle are equal."
+    ],
+    [
+     226.2,
+     "Great work! Now practise lesson 5.1 on Camday."
+    ]
+   ],
+   "times": {
+    "5.1-k1": 27.54,
+    "5.1-k2": 73.56,
+    "5.1-k3": 139.21,
+    "5.1-k4": 200.1
+   },
+   "up": true
+  },
+  "5.3": {
+   "src": "media/mv/s9/5-3.mp4",
+   "poster": "media/mv/s9/5-3_poster.jpg",
+   "srt": "media/mv/s9/5-3.srt",
+   "dur": 211.28,
+   "captions": [
+    [
+     7.12,
+     "A robot vacuum cleaner walks around the edge of a room shaped like a regular hexagon."
+    ],
+    [
+     12.83,
+     "It turns at each corner, until it faces the way it started."
+    ],
+    [
+     17.34,
+     "How far has it turned altogether, in degrees?"
+    ],
+    [
+     20.43,
+     "Pause the video and work it out."
+    ],
+    [
+     24.02,
+     "It ends up facing the same way, so it has turned through one full turn."
+    ],
+    [
+     29.25,
+     "That is 360 degrees."
+    ],
+    [
+     31.27,
+     "Remember: angles on a straight line add up to 180 degrees."
+    ],
+    [
+     36.37,
+     "Extend one side at each corner."
+    ],
+    [
+     38.63,
+     "The exterior angle is between the extension and the next side."
+    ],
+    [
+     43.14,
+     "The interior and exterior angles add up to 180 degrees."
+    ],
+    [
+     47.7,
+     "Walking all the way round any polygon, you turn through one full turn."
+    ],
+    [
+     52.83,
+     "So the exterior angles of any polygon add up to 360 degrees."
+    ],
+    [
+     57.78,
+     "Your turn."
+    ],
+    [
+     58.47,
+     "How much does the robot turn at each corner of the regular hexagon?"
+    ],
+    [
+     63.08,
+     "Pause the video and try it."
+    ],
+    [
+     66.33,
+     "360 shared between 6 equal corners is 60 degrees each."
+    ],
+    [
+     70.84,
+     "In a regular polygon, each exterior angle is 360 divided by N."
+    ],
+    [
+     76.56,
+     "So the number of sides is 360 divided by the exterior angle."
+    ],
+    [
+     81.71,
+     "Here is the method."
+    ],
+    [
+     83.19,
+     "Step 1: remember the exterior angles add up to 360 degrees."
+    ],
+    [
+     88.34,
+     "Step 2: in a regular polygon, each one is 360 divided by N."
+    ],
+    [
+     93.59,
+     "Step 3: the interior angle is 180 minus the exterior angle."
+    ],
+    [
+     98.98,
+     "Step 4: to find N, divide 360 by the exterior angle."
+    ],
+    [
+     103.71,
+     "A regular polygon has exterior angles of 24 degrees."
+    ],
+    [
+     108.43,
+     "360 divided by 24 is 15."
+    ],
+    [
+     110.61,
+     "It has 15 sides."
+    ],
+    [
+     112.61,
+     "Your turn."
+    ],
+    [
+     113.31,
+     "What is the exterior angle of a regular 9-sided polygon?"
+    ],
+    [
+     117.27,
+     "Pause and work it out."
+    ],
+    [
+     120.23,
+     "360 divided by 9 is 40 degrees."
+    ],
+    [
+     124.1,
+     "Find the interior angle of a regular 20-sided polygon."
+    ],
+    [
+     128.8,
+     "The exterior angle is 360 divided by 20, which is 18."
+    ],
+    [
+     133.41,
+     "The interior angle is 180 minus 18, which is 162 degrees."
+    ],
+    [
+     138.92,
+     "Can a regular polygon have exterior angles of 50 degrees?"
+    ],
+    [
+     143.57,
+     "360 divided by 50 is 7.2."
+    ],
+    [
+     145.61,
+     "That is not a whole number, so no."
+    ],
+    [
+     148.94,
+     "Nina finds the exterior angle sum of an octagon."
+    ],
+    [
+     152.28,
+     "Which line is wrong?"
+    ],
+    [
+     154.22,
+     "Line 1 is wrong."
+    ],
+    [
+     155.34,
+     "That is the interior angle sum."
+    ],
+    [
+     158.05,
+     "The exterior angles of every polygon add up to 360 degrees."
+    ],
+    [
+     163.23,
+     "Programmers draw regular polygons with turtle graphics."
+    ],
+    [
+     167.32,
+     "Move forward, then turn 360 divided by N degrees, and repeat N times."
+    ],
+    [
+     173.02,
+     "One last question."
+    ],
+    [
+     174.31,
+     "A regular polygon has exterior angles of 45 degrees."
+    ],
+    [
+     178.05,
+     "What is each interior angle?"
+    ],
+    [
+     180.06,
+     "Pause the video and answer."
+    ],
+    [
+     183.4,
+     "180 minus 45 is 135 degrees."
+    ],
+    [
+     186.17,
+     "It is a regular octagon."
+    ],
+    [
+     189.09,
+     "To remember: the exterior angles of any polygon add up to 360 degrees."
+    ],
+    [
+     195.08,
+     "Regular: each is 360 divided by N."
+    ],
+    [
+     198.53,
+     "Interior plus exterior is 180 degrees."
+    ],
+    [
+     202.32,
+     "N is 360 divided by the exterior angle."
+    ],
+    [
+     206.1,
+     "Great work! Now practise lesson 5.3 on Camday."
+    ]
+   ],
+   "times": {
+    "5.3-k1": 22.97,
+    "5.3-k2": 65.28,
+    "5.3-k3": 119.18,
+    "5.3-k4": 182.35
+   },
+   "up": true
+  },
+  "5.2": {
+   "src": "media/mv/s9/5-2.mp4",
+   "poster": "media/mv/s9/5-2_poster.jpg",
+   "srt": "media/mv/s9/5-2.srt",
+   "dur": 202.92,
+   "captions": [
+    [
+     6.97,
+     "A floor designer wants to use regular octagons for tiles."
+    ],
+    [
+     10.85,
+     "To see how they fit together, she needs the size of each angle inside an octagon."
+    ],
+    [
+     16.92,
+     "To find the angle sum of an octagon, would you split it into triangles, or circles?"
+    ],
+    [
+     22.6,
+     "Pause the video and choose."
+    ],
+    [
+     25.85,
+     "Triangles."
+    ],
+    [
+     26.62,
+     "We know that the angles in a triangle add up to 180 degrees."
+    ],
+    [
+     31.8,
+     "Remember: a triangle's angles add up to 180 degrees."
+    ],
+    [
+     35.89,
+     "A quadrilateral splits into 2 triangles, so its angles add up to 360."
+    ],
+    [
+     41.87,
+     "From one corner, draw all the diagonals."
+    ],
+    [
+     44.84,
+     "A polygon with N sides splits into N minus 2 triangles."
+    ],
+    [
+     48.92,
+     "So the angle sum is N minus 2, times 180 degrees."
+    ],
+    [
+     53.11,
+     "Your turn."
+    ],
+    [
+     53.77,
+     "What is the angle sum of an octagon?"
+    ],
+    [
+     56.18,
+     "Pause the video and try it."
+    ],
+    [
+     59.39,
+     "An octagon has 8 sides, so it splits into 6 triangles."
+    ],
+    [
+     64.23,
+     "6 times 180 is 1,080 degrees."
+    ],
+    [
+     67.39,
+     "In a regular polygon, every angle is the same."
+    ],
+    [
+     70.45,
+     "So each angle is the angle sum, divided by N."
+    ],
+    [
+     73.99,
+     "Here is the method."
+    ],
+    [
+     75.36,
+     "Step 1: count the sides, N."
+    ],
+    [
+     77.85,
+     "Step 2: the angle sum is N minus 2, times 180."
+    ],
+    [
+     82.43,
+     "Step 3: for a regular polygon, divide by N."
+    ],
+    [
+     85.45,
+     "For a missing angle, subtract the known angles."
+    ],
+    [
+     89.31,
+     "Step 4: check that your answer is sensible."
+    ],
+    [
+     93.03,
+     "A pentagon has angles of 100, 120, 95, 110 and X degrees."
+    ],
+    [
+     98.57,
+     "The sum is 540."
+    ],
+    [
+     100.02,
+     "The known angles add to 425, so X is 115 degrees."
+    ],
+    [
+     105.33,
+     "Your turn."
+    ],
+    [
+     106.01,
+     "What is each interior angle of a regular octagon?"
+    ],
+    [
+     109.35,
+     "Pause and work it out."
+    ],
+    [
+     112.24,
+     "The angle sum is 1,080, and there are 8 equal angles."
+    ],
+    [
+     117.33,
+     "1,080 divided by 8 is 135 degrees."
+    ],
+    [
+     121.14,
+     "Two octagons meet with 270 degrees at a point."
+    ],
+    [
+     124.74,
+     "That leaves 90 degrees, so a small square fills each gap."
+    ],
+    [
+     129.75,
+     "The angles of a polygon add up to 2,520 degrees."
+    ],
+    [
+     134.12,
+     "How many sides?"
+    ],
+    [
+     135.48,
+     "N minus 2, times 180, equals 2,520."
+    ],
+    [
+     138.67,
+     "So N minus 2 is 14, and N is 16."
+    ],
+    [
+     142.13,
+     "Omar finds the angle sum of a hexagon."
+    ],
+    [
+     144.71,
+     "Which line is wrong?"
+    ],
+    [
+     146.62,
+     "Line 1 is wrong."
+    ],
+    [
+     147.83,
+     "From one corner, a hexagon splits into 6 minus 2, which is 4 triangles."
+    ],
+    [
+     153.75,
+     "4 times 180 is 720 degrees."
+    ],
+    [
+     157.57,
+     "Bees build honeycomb from regular hexagons."
+    ],
+    [
+     160.73,
+     "Each angle is 120 degrees, so three hexagons meet exactly at a point, with no gaps."
+    ],
+    [
+     167.38,
+     "One last question."
+    ],
+    [
+     168.69,
+     "What is the angle sum of a decagon, with 10 sides?"
+    ],
+    [
+     172.31,
+     "Pause the video and answer."
+    ],
+    [
+     175.66,
+     "10 minus 2 is 8 triangles."
+    ],
+    [
+     178.49,
+     "8 times 180 is 1,440 degrees."
+    ],
+    [
+     182.19,
+     "To remember: the angle sum is N minus 2, times 180 degrees."
+    ],
+    [
+     187.49,
+     "Regular polygon: each angle is the sum divided by N."
+    ],
+    [
+     191.57,
+     "A missing angle is the sum minus the known angles."
+    ],
+    [
+     195.46,
+     "Rearrange to find N."
+    ],
+    [
+     197.8,
+     "Great work! Now practise lesson 5.2 on Camday."
+    ]
+   ],
+   "times": {
+    "5.2-k1": 24.8,
+    "5.2-k2": 58.34,
+    "5.2-k3": 111.19,
+    "5.2-k4": 174.61
+   },
+   "up": true
+  },
+  "5.4": {
+   "src": "media/mv/s9/5-4.mp4",
+   "poster": "media/mv/s9/5-4_poster.jpg",
+   "srt": "media/mv/s9/5-4.srt",
+   "dur": 222.48,
+   "captions": [
+    [
+     6.11,
+     "A design student must draw a regular hexagon logo, with guide lines at 60, 30 and 45 degrees."
+    ],
+    [
+     13.16,
+     "She may only use a ruler and compasses."
+    ],
+    [
+     16.67,
+     "Is a protractor needed, or not allowed?"
+    ],
+    [
+     19.35,
+     "Pause the video and choose."
+    ],
+    [
+     22.6,
+     "A protractor is not allowed."
+    ],
+    [
+     24.54,
+     "In a construction, you use compasses."
+    ],
+    [
+     27.1,
+     "Circles make exact equal lengths, and equal lengths make exact angles."
+    ],
+    [
+     32.51,
+     "Remember: an angle bisector cuts an angle in half."
+    ],
+    [
+     36.13,
+     "A perpendicular bisector meets a line at 90 degrees, through its midpoint."
+    ],
+    [
+     42.03,
+     "Draw a line A B."
+    ],
+    [
+     43.09,
+     "Put the compasses on A, and draw an arc that crosses the line at C."
+    ],
+    [
+     47.5,
+     "Keep the same radius."
+    ],
+    [
+     48.89,
+     "Put the compasses on C, and draw an arc that crosses the first arc at D."
+    ],
+    [
+     54.18,
+     "A C, A D and C D are all the same length."
+    ],
+    [
+     56.97,
+     "Triangle A C D is equilateral, so angle D A C is exactly 60 degrees."
+    ],
+    [
+     62.15,
+     "Your turn."
+    ],
+    [
+     62.86,
+     "If you bisect the 60 degree angle, what angle do you get?"
+    ],
+    [
+     66.91,
+     "Pause the video and try it."
+    ],
+    [
+     70.23,
+     "Half of 60 is 30 degrees."
+    ],
+    [
+     72.23,
+     "For 45 degrees, construct a right angle with a perpendicular, then bisect it."
+    ],
+    [
+     78.95,
+     "Always leave your construction arcs."
+    ],
+    [
+     81.41,
+     "They show your method."
+    ],
+    [
+     83.46,
+     "For a regular hexagon, draw a circle."
+    ],
+    [
+     85.97,
+     "Keep the same radius, and step it round the circle, marking points."
+    ],
+    [
+     90.53,
+     "Join the points."
+    ],
+    [
+     92.17,
+     "For a square, draw two diameters at right angles."
+    ],
+    [
+     95.54,
+     "For an octagon, bisect the right angles between them."
+    ],
+    [
+     99.73,
+     "Your turn."
+    ],
+    [
+     100.4,
+     "Stepping the radius round a circle, how many points do you mark?"
+    ],
+    [
+     104.69,
+     "Pause and work it out."
+    ],
+    [
+     107.56,
+     "6 points."
+    ],
+    [
+     108.2,
+     "Each side of the hexagon is the same as the radius, because it makes 6 equilateral triangles at the centre."
+    ],
+    [
+     116.42,
+     "Here is the method."
+    ],
+    [
+     117.89,
+     "Step 1: 60 degrees comes from an equilateral triangle."
+    ],
+    [
+     122.63,
+     "Step 2: 90 degrees comes from a perpendicular bisector."
+    ],
+    [
+     127.59,
+     "Step 3: bisect to halve an angle: 30, 45, 15 degrees."
+    ],
+    [
+     133.04,
+     "Step 4: keep the radius fixed, and leave the arcs."
+    ],
+    [
+     137.17,
+     "To construct 120 degrees, construct 60 degrees on a straight line."
+    ],
+    [
+     142.98,
+     "The angle on the other side is 180 minus 60, which is 120."
+    ],
+    [
+     148.63,
+     "To construct 15 degrees, bisect 60 to get 30, then bisect again."
+    ],
+    [
+     154.63,
+     "A hexagon drawn in a circle of radius 5 centimetres has sides of 5 centimetres, so its perimeter is 30 centimetres."
+    ],
+    [
+     163.65,
+     "Dan constructs 60 degrees."
+    ],
+    [
+     165.6,
+     "Which line is wrong?"
+    ],
+    [
+     167.66,
+     "Line 2 is wrong."
+    ],
+    [
+     168.75,
+     "The radius must stay the same, so that the triangle is equilateral."
+    ],
+    [
+     173.86,
+     "The arc from C must also have radius 4 centimetres."
+    ],
+    [
+     178.03,
+     "Architects and engineers used compass constructions for centuries."
+    ],
+    [
+     182.76,
+     "Today, design software uses exactly the same geometry."
+    ],
+    [
+     187.19,
+     "One last question."
+    ],
+    [
+     188.51,
+     "What angle do you get if you bisect 45 degrees?"
+    ],
+    [
+     191.95,
+     "Pause the video and answer."
+    ],
+    [
+     195.33,
+     "Half of 45 is 22.5 degrees."
+    ],
+    [
+     198.64,
+     "To remember: 60 degrees comes from an equilateral triangle."
+    ],
+    [
+     203.69,
+     "30 and 45 degrees come from bisecting 60 and 90."
+    ],
+    [
+     209.01,
+     "For a hexagon, step the radius round a circle."
+    ],
+    [
+     212.7,
+     "Squares and octagons come from perpendicular diameters."
+    ],
+    [
+     217.27,
+     "Great work! Now practise lesson 5.4 on Camday."
+    ]
+   ],
+   "times": {
+    "5.4-k1": 21.55,
+    "5.4-k2": 69.18,
+    "5.4-k3": 106.51,
+    "5.4-k4": 194.28
+   },
+   "up": true
+  },
+  "6.1": {
+   "src": "media/mv/s9/6-1.mp4",
+   "poster": "media/mv/s9/6-1_poster.jpg",
+   "srt": "media/mv/s9/6-1.srt",
+   "dur": 244.6,
+   "captions": [
+    [
+     7.05,
+     "A school has 1,200 students."
+    ],
+    [
+     9.11,
+     "The head wants to know: do students who use phones and screens more, sleep less?"
+    ],
+    [
+     15.0,
+     "Asking everyone would take far too long."
+    ],
+    [
+     18.49,
+     "What is the best first step: write a clear question and predictions, or ask your friends?"
+    ],
+    [
+     24.57,
+     "Pause the video and choose."
+    ],
+    [
+     27.81,
+     "Write a clear question and predictions first."
+    ],
+    [
+     30.97,
+     "Then you know exactly what data you need."
+    ],
+    [
+     34.39,
+     "Remember: primary data is data you collect yourself."
+    ],
+    [
+     38.0,
+     "Secondary data was collected by someone else, like data from a government website."
+    ],
+    [
+     44.25,
+     "First, write a statistical question, and a prediction you can test."
+    ],
+    [
+     48.95,
+     "For example: students with more than 3 hours of screen time sleep less than 8 hours."
+    ],
+    [
+     55.38,
+     "Then decide what data to collect, how, and how much."
+    ],
+    [
+     58.9,
+     "Collect it, show it, analyse it, and say whether it supports your prediction."
+    ],
+    [
+     64.67,
+     "Your turn."
+    ],
+    [
+     65.35,
+     "A prediction you can test: is it called a hypothesis, or a sample?"
+    ],
+    [
+     69.82,
+     "Pause the video and choose."
+    ],
+    [
+     73.05,
+     "It is a hypothesis."
+    ],
+    [
+     75.36,
+     "The population is everyone you want to know about."
+    ],
+    [
+     78.73,
+     "A sample is the part you actually ask."
+    ],
+    [
+     81.3,
+     "Here are four ways to choose a sample."
+    ],
+    [
+     84.42,
+     "Stratified sampling takes each group, like each year group, in proportion to its size."
+    ],
+    [
+     90.41,
+     "Convenience sampling, like asking your friends, is quick but often unfair."
+    ],
+    [
+     96.11,
+     "A bigger sample is usually more reliable, but takes longer."
+    ],
+    [
+     100.93,
+     "For 1,200 students, about 60 to 120 is sensible."
+    ],
+    [
+     105.4,
+     "Here is the method."
+    ],
+    [
+     106.76,
+     "Step 1: write the question and your predictions."
+    ],
+    [
+     110.75,
+     "Step 2: decide what data to collect, from whom, and how."
+    ],
+    [
+     115.19,
+     "Step 3: choose a fair sampling method and a sensible size."
+    ],
+    [
+     119.8,
+     "Step 4: plan how to show and analyse the data, then interpret it."
+    ],
+    [
+     124.87,
+     "A school has 400 students in Year 7, 300 in Year 8 and 500 in Year 9."
+    ],
+    [
+     131.48,
+     "They choose a sample of 60, in proportion."
+    ],
+    [
+     135.51,
+     "How many from Year 9?"
+    ],
+    [
+     137.52,
+     "500 out of 1,200, times 60, is 25."
+    ],
+    [
+     141.33,
+     "Your turn."
+    ],
+    [
+     142.06,
+     "Choosing every 20th name on a list: is that systematic sampling, or stratified sampling?"
+    ],
+    [
+     148.52,
+     "Pause and choose."
+    ],
+    [
+     151.16,
+     "It is systematic sampling."
+    ],
+    [
+     153.53,
+     "To choose 50 from 1,200, divide: 1,200 divided by 50 is 24."
+    ],
+    [
+     158.89,
+     "Pick a random start, then take every 24th name."
+    ],
+    [
+     163.7,
+     "Good questions are clear."
+    ],
+    [
+     165.47,
+     "Not: how much do you use screens?"
+    ],
+    [
+     167.8,
+     "But: yesterday, how many hours did you spend on screens?"
+    ],
+    [
+     171.75,
+     "With answer boxes like 0 to 1, 1 to 2, and so on."
+    ],
+    [
+     175.76,
+     "Ben wants the favourite sport of all 1,200 students."
+    ],
+    [
+     179.87,
+     "Which line is wrong?"
+    ],
+    [
+     182.01,
+     "Line 1 is wrong."
+    ],
+    [
+     183.09,
+     "The sample is far too small, and it is biased: they all play football."
+    ],
+    [
+     188.4,
+     "Use a larger random or stratified sample, like 100 students from the whole school."
+    ],
+    [
+     195.14,
+     "Opinion polls often ask about 1,000 people to estimate what millions of people think."
+    ],
+    [
+     201.42,
+     "It works because the sample is chosen very carefully."
+    ],
+    [
+     205.88,
+     "One last question."
+    ],
+    [
+     207.26,
+     "A school has 1,200 students."
+    ],
+    [
+     209.41,
+     "The sample is 10 percent."
+    ],
+    [
+     211.33,
+     "How many students are in the sample?"
+    ],
+    [
+     214.1,
+     "Pause the video and answer."
+    ],
+    [
+     217.57,
+     "10 percent of 1,200 is 120."
+    ],
+    [
+     221.69,
+     "To remember: question, predictions, data, analysis, conclusion."
+    ],
+    [
+     226.62,
+     "The population is everyone."
+    ],
+    [
+     228.5,
+     "The sample is who you ask."
+    ],
+    [
+     230.85,
+     "Use random, systematic or stratified samples."
+    ],
+    [
+     234.13,
+     "Avoid convenience."
+    ],
+    [
+     235.99,
+     "Bigger samples are usually more reliable."
+    ],
+    [
+     239.41,
+     "Great work! Now practise lesson 6.1 on Camday."
+    ]
+   ],
+   "times": {
+    "6.1-k1": 26.76,
+    "6.1-k2": 72.0,
+    "6.1-k3": 150.11,
+    "6.1-k4": 216.52
+   },
+   "up": false
+  },
+  "5.5": {
+   "src": "media/mv/s9/5-5.mp4",
+   "poster": "media/mv/s9/5-5_poster.jpg",
+   "srt": "media/mv/s9/5-5.srt",
+   "dur": 210.88,
+   "captions": [
+    [
+     6.43,
+     "A 5 metre ladder leans against a wall."
+    ],
+    [
+     9.17,
+     "Its foot is 1.4 metres from the wall."
+    ],
+    [
+     11.84,
+     "The wall and the ground make a right angle."
+    ],
+    [
+     15.49,
+     "How high up the wall does the ladder reach?"
+    ],
+    [
+     18.41,
+     "Pause the video and work it out."
+    ],
+    [
+     21.98,
+     "Height squared is 5 squared minus 1.4 squared."
+    ],
+    [
+     26.39,
+     "That is 25 minus 1.96, which is 23.04."
+    ],
+    [
+     30.03,
+     "The square root of 23.04 is 4.8 metres."
+    ],
+    [
+     34.31,
+     "This uses Pythagoras' theorem."
+    ],
+    [
+     37.02,
+     "Remember: 6 squared is 36, and the square root of 49 is 7."
+    ],
+    [
+     42.57,
+     "In a right-angled triangle, the longest side is the hypotenuse, C."
+    ],
+    [
+     46.95,
+     "Call the other sides A and B."
+    ],
+    [
+     49.42,
+     "Pythagoras' theorem says: A squared plus B squared equals C squared."
+    ],
+    [
+     54.98,
+     "Check with 3, 4 and 5: 9 plus 16 is 25."
+    ],
+    [
+     58.72,
+     "Your turn."
+    ],
+    [
+     59.4,
+     "Where is the hypotenuse: opposite the right angle, or is it the shortest side?"
+    ],
+    [
+     64.7,
+     "Pause the video and choose."
+    ],
+    [
+     67.93,
+     "The hypotenuse is opposite the right angle."
+    ],
+    [
+     70.94,
+     "It is always the longest side."
+    ],
+    [
+     73.58,
+     "To find a shorter side, rearrange: A squared equals C squared minus B squared."
+    ],
+    [
+     79.42,
+     "Here is the method."
+    ],
+    [
+     80.76,
+     "Step 1: find the hypotenuse: the side opposite the right angle."
+    ],
+    [
+     85.77,
+     "Step 2: square the sides you know."
+    ],
+    [
+     88.86,
+     "Step 3: for the hypotenuse, add."
+    ],
+    [
+     91.15,
+     "For a shorter side, subtract."
+    ],
+    [
+     93.79,
+     "Step 4: take the square root, and check the hypotenuse is the longest."
+    ],
+    [
+     99.26,
+     "A right-angled triangle has sides of 5 and 12 centimetres."
+    ],
+    [
+     104.72,
+     "25 plus 144 is 169."
+    ],
+    [
+     106.51,
+     "The square root of 169 is 13 centimetres."
+    ],
+    [
+     110.91,
+     "Your turn."
+    ],
+    [
+     111.67,
+     "The two shorter sides are 9 and 12."
+    ],
+    [
+     114.32,
+     "Find the hypotenuse."
+    ],
+    [
+     115.84,
+     "Pause and work it out."
+    ],
+    [
+     118.91,
+     "81 plus 144 is 225."
+    ],
+    [
+     121.16,
+     "The square root of 225 is 15."
+    ],
+    [
+     125.15,
+     "The hypotenuse is 17 metres, and one side is 8 metres."
+    ],
+    [
+     130.0,
+     "Subtract: 289 minus 64 is 225."
+    ],
+    [
+     132.69,
+     "The square root is 15 metres."
+    ],
+    [
+     135.84,
+     "The hypotenuse is 13 centimetres, and one side is 5 centimetres."
+    ],
+    [
+     140.63,
+     "Lily finds the other side."
+    ],
+    [
+     142.57,
+     "Which line is wrong?"
+    ],
+    [
+     144.61,
+     "Line 1 is wrong."
+    ],
+    [
+     145.74,
+     "For a shorter side, subtract."
+    ],
+    [
+     147.78,
+     "Her answer is longer than the hypotenuse, which is impossible."
+    ],
+    [
+     152.69,
+     "169 minus 25 is 144."
+    ],
+    [
+     154.79,
+     "The square root is 12 centimetres."
+    ],
+    [
+     158.92,
+     "Builders use the 3 4 5 rule."
+    ],
+    [
+     160.97,
+     "If a corner has sides of 3 metres and 4 metres, and the diagonal is exactly 5 metres, the corner is a perfect right angle."
+    ],
+    [
+     170.45,
+     "One last question."
+    ],
+    [
+     171.78,
+     "Is a triangle with sides 5, 6 and 8 right-angled?"
+    ],
+    [
+     175.41,
+     "Pause the video and choose."
+    ],
+    [
+     178.81,
+     "25 plus 36 is 61."
+    ],
+    [
+     180.3,
+     "But 8 squared is 64."
+    ],
+    [
+     182.05,
+     "They are not equal, so it is not right-angled."
+    ],
+    [
+     186.63,
+     "To remember: A squared plus B squared equals C squared, where C is the hypotenuse."
+    ],
+    [
+     192.83,
+     "For the hypotenuse, add."
+    ],
+    [
+     194.49,
+     "For a shorter side, subtract."
+    ],
+    [
+     197.05,
+     "The hypotenuse is the longest side."
+    ],
+    [
+     200.0,
+     "If A squared plus B squared equals C squared, the angle is 90 degrees."
+    ],
+    [
+     205.64,
+     "Great work! Now practise lesson 5.5 on Camday."
+    ]
+   ],
+   "times": {
+    "5.5-k1": 20.93,
+    "5.5-k2": 66.88,
+    "5.5-k3": 117.86,
+    "5.5-k4": 177.76
+   },
+   "up": false
+  },
+  "7.2": {
+   "src": "media/mv/s9/7-2.mp4",
+   "poster": "media/mv/s9/7-2_poster.jpg",
+   "srt": "media/mv/s9/7-2.srt",
+   "dur": 214.68,
+   "captions": [
+    [
+     6.83,
+     "A sports field is a rectangle, 80 metres by 60 metres, with a semicircle on each short end."
+    ],
+    [
+     13.54,
+     "The grass needs new seed."
+    ],
+    [
+     15.94,
+     "How would you split the field: into a rectangle and a circle, made of two semicircles, or into triangles only?"
+    ],
+    [
+     23.35,
+     "Pause the video and choose."
+    ],
+    [
+     26.57,
+     "A rectangle, and two semicircles."
+    ],
+    [
+     28.86,
+     "Together, the two semicircles make one whole circle."
+    ],
+    [
+     33.01,
+     "Remember the area formulae."
+    ],
+    [
+     34.86,
+     "Rectangle: length times width."
+    ],
+    [
+     36.91,
+     "Triangle: half base times height."
+    ],
+    [
+     39.18,
+     "Trapezium: half the sum of the parallel sides, times the height."
+    ],
+    [
+     43.56,
+     "Circle: pi R squared."
+    ],
+    [
+     45.55,
+     "A compound shape is made of simpler shapes."
+    ],
+    [
+     48.49,
+     "Split it, find each area, then add."
+    ],
+    [
+     50.87,
+     "For holes and cut-outs, subtract."
+    ],
+    [
+     53.68,
+     "For the field: the rectangle is 80 by 60."
+    ],
+    [
+     57.05,
+     "The circle has a diameter of 60, so its radius is 30."
+    ],
+    [
+     61.96,
+     "Your turn."
+    ],
+    [
+     62.65,
+     "Find the area of the field, in square metres, to 1 decimal place."
+    ],
+    [
+     67.11,
+     "Pause the video and try it."
+    ],
+    [
+     70.36,
+     "The rectangle is 4,800."
+    ],
+    [
+     72.54,
+     "The circle is pi times 30 squared, about 2,827.4."
+    ],
+    [
+     77.19,
+     "The total is about 7,627.4 square metres."
+    ],
+    [
+     81.64,
+     "Estimate first: 80 by 60 is 4,800, and the circle is about 3 times 900, which is 2,700."
+    ],
+    [
+     90.1,
+     "So about 7,500."
+    ],
+    [
+     91.56,
+     "The answer is sensible."
+    ],
+    [
+     94.35,
+     "Here is the method."
+    ],
+    [
+     95.7,
+     "Step 1: split the shape into simple shapes."
+    ],
+    [
+     99.31,
+     "Step 2: find any missing lengths."
+    ],
+    [
+     102.24,
+     "Step 3: find each area, then add, or subtract holes."
+    ],
+    [
+     106.47,
+     "Step 4: check with an estimate, and give the units."
+    ],
+    [
+     110.69,
+     "The end of a shed is a rectangle 6 metres by 4 metres, with a triangular roof of height 2 metres."
+    ],
+    [
+     118.19,
+     "24 plus half of 6 times 2, which is 6."
+    ],
+    [
+     121.12,
+     "The total is 30 square metres."
+    ],
+    [
+     123.99,
+     "Your turn."
+    ],
+    [
+     124.71,
+     "A square tile has sides of 20 centimetres, with a round hole of radius 4 centimetres."
+    ],
+    [
+     130.85,
+     "What is the area of the tile, to 1 decimal place?"
+    ],
+    [
+     134.38,
+     "Pause and work it out."
+    ],
+    [
+     137.37,
+     "400 minus pi times 16."
+    ],
+    [
+     139.55,
+     "That is 400 minus about 50.3, which is about 349.7 square centimetres."
+    ],
+    [
+     147.03,
+     "A ring has outer radius 5 and inner radius 2."
+    ],
+    [
+     150.79,
+     "Its area is pi times 25 minus 4, which is 21 pi, about 66.0."
+    ],
+    [
+     156.34,
+     "An L-shape is made of a 10 by 2 strip and a 2 by 8 strip."
+    ],
+    [
+     160.67,
+     "They share a 2 by 2 corner."
+    ],
+    [
+     162.72,
+     "Eva finds the area."
+    ],
+    [
+     164.17,
+     "Which line is wrong?"
+    ],
+    [
+     166.24,
+     "Line 1 is wrong."
+    ],
+    [
+     167.47,
+     "The 2 by 2 corner is counted twice."
+    ],
+    [
+     170.73,
+     "36 minus 4 is 32."
+    ],
+    [
+     173.44,
+     "Builders work out compound areas to order flooring, paint and turf."
+    ],
+    [
+     178.28,
+     "They usually add about 10 percent extra for cutting and waste."
+    ],
+    [
+     183.3,
+     "One last question."
+    ],
+    [
+     184.66,
+     "A rectangle 10 by 8 has a 4 by 3 rectangle cut from one corner."
+    ],
+    [
+     189.4,
+     "What is the area?"
+    ],
+    [
+     190.68,
+     "Pause the video and answer."
+    ],
+    [
+     194.11,
+     "80 minus 12 is 68."
+    ],
+    [
+     196.98,
+     "To remember: split, find each area, then add or subtract."
+    ],
+    [
+     201.38,
+     "Two semicircles make one whole circle."
+    ],
+    [
+     204.66,
+     "Do not count an overlap twice."
+    ],
+    [
+     207.32,
+     "Estimate to check."
+    ],
+    [
+     209.5,
+     "Great work! Now practise lesson 7.2 on Camday."
+    ]
+   ],
+   "times": {
+    "7.2-k1": 25.52,
+    "7.2-k2": 69.31,
+    "7.2-k3": 136.32,
+    "7.2-k4": 193.06
+   },
+   "up": false
+  },
+  "7.1": {
+   "src": "media/mv/s9/7-1.mp4",
+   "poster": "media/mv/s9/7-1_poster.jpg",
+   "srt": "media/mv/s9/7-1.srt",
+   "dur": 205.0,
+   "captions": [
+    [
+     7.44,
+     "A café sells one large pancake with a diameter of 30 centimetres for 8 dollars, or two small pancakes with diameters of 20 centimetres for 9 dollars."
+    ],
+    [
+     19.2,
+     "Which gives more pancake: one 30 centimetre, or two 20 centimetre?"
+    ],
+    [
+     24.27,
+     "Pause the video and choose."
+    ],
+    [
+     27.74,
+     "The one 30 centimetre pancake gives more."
+    ],
+    [
+     30.7,
+     "Let's see why, with the area of a circle."
+    ],
+    [
+     34.2,
+     "Remember: the diameter is twice the radius."
+    ],
+    [
+     37.4,
+     "A diameter of 18 centimetres means a radius of 9."
+    ],
+    [
+     41.59,
+     "The circumference is pi times the diameter, or 2 pi R."
+    ],
+    [
+     45.26,
+     "Use the pi key on your calculator."
+    ],
+    [
+     48.12,
+     "The area of a circle is pi R squared."
+    ],
+    [
+     51.11,
+     "Your turn."
+    ],
+    [
+     51.78,
+     "The area of a circle uses: pi R squared, or 2 pi R?"
+    ],
+    [
+     55.23,
+     "Pause the video and choose."
+    ],
+    [
+     58.46,
+     "Pi R squared."
+    ],
+    [
+     59.4,
+     "2 pi R is the circumference."
+    ],
+    [
+     61.98,
+     "The big pancake has radius 15."
+    ],
+    [
+     64.47,
+     "Its area is about 707 square centimetres."
+    ],
+    [
+     67.86,
+     "Each small one has radius 10, so the two together have about 628."
+    ],
+    [
+     73.79,
+     "To work backwards, rearrange."
+    ],
+    [
+     75.76,
+     "From the area: R squared is A divided by pi."
+    ],
+    [
+     78.74,
+     "From the circumference: D is C divided by pi."
+    ],
+    [
+     82.34,
+     "For an exact answer, leave pi in."
+    ],
+    [
+     84.79,
+     "A radius of 7 gives an area of 49 pi."
+    ],
+    [
+     88.09,
+     "Here is the method."
+    ],
+    [
+     89.43,
+     "Step 1: find the radius or diameter."
+    ],
+    [
+     92.53,
+     "Step 2: choose the formula: circumference or area."
+    ],
+    [
+     96.75,
+     "Step 3: work it out with the pi key, or leave pi in."
+    ],
+    [
+     100.8,
+     "Step 4: round, and give the units."
+    ],
+    [
+     103.77,
+     "A bike wheel has a diameter of 64 centimetres."
+    ],
+    [
+     107.47,
+     "In one turn it travels pi times 64, which is about 201.1 centimetres."
+    ],
+    [
+     113.55,
+     "A round rug has an area of 2.5 square metres."
+    ],
+    [
+     117.26,
+     "R squared is 2.5 divided by pi, about 0.796."
+    ],
+    [
+     120.89,
+     "So R is about 0.89 metres."
+    ],
+    [
+     123.59,
+     "Your turn."
+    ],
+    [
+     124.27,
+     "A circle has radius 5."
+    ],
+    [
+     125.79,
+     "What is its area, in terms of pi?"
+    ],
+    [
+     128.06,
+     "Pause and work it out."
+    ],
+    [
+     130.97,
+     "5 squared is 25, so the area is 25 pi."
+    ],
+    [
+     134.97,
+     "A semicircle with diameter 10: the curve is half of 10 pi, about 15.7."
+    ],
+    [
+     140.95,
+     "Add the straight edge, 10."
+    ],
+    [
+     143.17,
+     "The perimeter is about 25.7 centimetres."
+    ],
+    [
+     147.14,
+     "A circle has diameter 8 centimetres."
+    ],
+    [
+     149.73,
+     "Kai finds the area."
+    ],
+    [
+     151.1,
+     "Which line is wrong?"
+    ],
+    [
+     153.09,
+     "Line 1 is wrong."
+    ],
+    [
+     154.25,
+     "The area formula uses the radius, which is 4."
+    ],
+    [
+     158.08,
+     "Pi times 4 squared is 16 pi, about 50.3 square centimetres."
+    ],
+    [
+     163.81,
+     "A bike computer counts how many times the wheel turns."
+    ],
+    [
+     167.49,
+     "It multiplies by the circumference to work out how far you have ridden."
+    ],
+    [
+     172.89,
+     "One last question."
+    ],
+    [
+     174.18,
+     "Find the circumference of a circle with radius 3, to 1 decimal place."
+    ],
+    [
+     179.15,
+     "Pause the video and answer."
+    ],
+    [
+     182.5,
+     "2 times pi times 3 is 6 pi, which is about 18.8."
+    ],
+    [
+     187.3,
+     "To remember: the circumference is pi D, or 2 pi R."
+    ],
+    [
+     191.33,
+     "The area is pi R squared."
+    ],
+    [
+     192.98,
+     "Use the radius."
+    ],
+    [
+     194.52,
+     "Rearrange to work backwards."
+    ],
+    [
+     197.14,
+     "For exact answers, leave pi in."
+    ],
+    [
+     199.75,
+     "Great work! Now practise lesson 7.1 on Camday."
+    ]
+   ],
+   "times": {
+    "7.1-k1": 26.69,
+    "7.1-k2": 57.41,
+    "7.1-k3": 129.92,
+    "7.1-k4": 181.45
+   },
+   "up": false
+  },
+  "6.2": {
+   "src": "media/mv/s9/6-2.mp4",
+   "poster": "media/mv/s9/6-2_poster.jpg",
+   "srt": "media/mv/s9/6-2.srt",
+   "dur": 211.04,
+   "captions": [
+    [
+     5.38,
+     "A juice company says: 9 out of 10 people prefer our juice!"
+    ],
+    [
+     9.41,
+     "The survey was done outside its own shop."
+    ],
+    [
+     12.27,
+     "It asked: don't you agree our juice tastes better?"
+    ],
+    [
+     16.3,
+     "What are the main problems: a biased sample and a leading question, or nothing?"
+    ],
+    [
+     21.56,
+     "Pause the video and choose."
+    ],
+    [
+     24.75,
+     "A biased sample, because they asked its own customers."
+    ],
+    [
+     28.44,
+     "And a leading question, which pushes people towards one answer."
+    ],
+    [
+     33.29,
+     "Remember: a sample should represent the population."
+    ],
+    [
+     36.87,
+     "A sample that does not is biased."
+    ],
+    [
+     39.73,
+     "Bias makes results lean one way."
+    ],
+    [
+     41.95,
+     "Here are common sources."
+    ],
+    [
+     44.18,
+     "Non-response: only some people reply, and they may be different."
+    ],
+    [
+     48.47,
+     "Time and place: a traffic count on a holiday is not typical."
+    ],
+    [
+     53.05,
+     "The wording matters too."
+    ],
+    [
+     54.73,
+     "A question that pushes people towards one answer is biased."
+    ],
+    [
+     59.39,
+     "Your turn."
+    ],
+    [
+     60.06,
+     "'Don't you agree …?' Is that a leading question, or a neutral question?"
+    ],
+    [
+     64.81,
+     "Pause the video and choose."
+    ],
+    [
+     68.01,
+     "It is a leading question."
+    ],
+    [
+     69.7,
+     "A neutral question gives fair choices: which juice do you prefer, A, B, or no preference?"
+    ],
+    [
+     76.26,
+     "To avoid bias: use a random or stratified sample of a sensible size, ask neutral questions, and collect data at typical times and places."
+    ],
+    [
+     86.12,
+     "Here is the method."
+    ],
+    [
+     87.49,
+     "Step 1: who was asked?"
+    ],
+    [
+     89.08,
+     "Do they represent everyone?"
+    ],
+    [
+     91.58,
+     "Step 2: how many were asked?"
+    ],
+    [
+     94.33,
+     "Step 3: how were the questions worded?"
+    ],
+    [
+     97.06,
+     "When and where?"
+    ],
+    [
+     98.69,
+     "Step 4: are the results shown fairly?"
+    ],
+    [
+     101.96,
+     "A survey about public transport is done at a bus station."
+    ],
+    [
+     105.83,
+     "Bus users are over-represented, so it is biased."
+    ],
+    [
+     109.65,
+     "Counting cars at 3 in the morning to plan for traffic is also biased."
+    ],
+    [
+     114.43,
+     "Count at several typical times."
+    ],
+    [
+     117.13,
+     "Now look at a bar chart."
+    ],
+    [
+     118.98,
+     "Its vertical axis starts at 95, not 0."
+    ],
+    [
+     121.91,
+     "A value of 98 looks three times as tall as 96."
+    ],
+    [
+     126.0,
+     "Your turn."
+    ],
+    [
+     126.69,
+     "A vertical axis that does not start at 0: can it be misleading, or is it always fine?"
+    ],
+    [
+     132.52,
+     "Pause and choose."
+    ],
+    [
+     135.09,
+     "It can be misleading."
+    ],
+    [
+     136.55,
+     "The axis should start at 0, or show a clear break."
+    ],
+    [
+     140.59,
+     "A poll on a gaming website gets 50,000 votes on: should schools ban games?"
+    ],
+    [
+     146.3,
+     "Zara comments."
+    ],
+    [
+     147.38,
+     "Which line is wrong?"
+    ],
+    [
+     149.47,
+     "Line 1 is wrong."
+    ],
+    [
+     150.57,
+     "Size does not fix bias."
+    ],
+    [
+     152.14,
+     "The voters are gamers who chose to vote, so they do not represent everyone."
+    ],
+    [
+     157.83,
+     "Large but unrepresentative is still biased."
+    ],
+    [
+     161.44,
+     "Adverts and news reports sometimes use biased samples or misleading graphs."
+    ],
+    [
+     166.71,
+     "Always ask how the data was collected."
+    ],
+    [
+     169.93,
+     "One last question."
+    ],
+    [
+     171.3,
+     "A questionnaire is posted to 1,000 homes, and only 80 reply."
+    ],
+    [
+     175.87,
+     "What does that risk: non-response bias, or no bias?"
+    ],
+    [
+     179.75,
+     "Pause the video and choose."
+    ],
+    [
+     183.2,
+     "Non-response bias."
+    ],
+    [
+     184.46,
+     "The people who reply may be different from those who do not."
+    ],
+    [
+     189.2,
+     "To remember: bias comes from unfair samples, leading questions, timing and non-response."
+    ],
+    [
+     195.96,
+     "Use fair samples and neutral questions."
+    ],
+    [
+     199.27,
+     "Check graphs and claims for missing information."
+    ],
+    [
+     203.17,
+     "A big sample can still be biased."
+    ],
+    [
+     205.93,
+     "Great work! Now practise lesson 6.2 on Camday."
+    ]
+   ],
+   "times": {
+    "6.2-k1": 23.7,
+    "6.2-k2": 66.96,
+    "6.2-k3": 134.04,
+    "6.2-k4": 182.15
+   },
+   "up": false
+  },
+  "7.3": {
+   "src": "media/mv/s9/7-3.mp4",
+   "poster": "media/mv/s9/7-3_poster.jpg",
+   "srt": "media/mv/s9/7-3.srt",
+   "dur": 209.16,
+   "captions": [
+    [
+     6.51,
+     "A laptop stores 512 gigabytes."
+    ],
+    [
+     9.15,
+     "A grain of pollen is about 25 micrometres across."
+    ],
+    [
+     13.47,
+     "A cruise ship weighs 100,000 tonnes."
+    ],
+    [
+     17.19,
+     "What does micro mean: one millionth, or one million?"
+    ],
+    [
+     20.75,
+     "Pause the video and choose."
+    ],
+    [
+     23.99,
+     "Micro means one millionth."
+    ],
+    [
+     25.77,
+     "A micrometre is one millionth of a metre."
+    ],
+    [
+     29.13,
+     "Remember: 1 kilometre is 1,000 metres."
+    ],
+    [
+     32.92,
+     "1 metre is 100 centimetres, or 1,000 millimetres."
+    ],
+    [
+     37.81,
+     "1 kilogram is 1,000 grams."
+    ],
+    [
+     40.96,
+     "A prefix multiplies the unit by a power of 10."
+    ],
+    [
+     44.45,
+     "Mega means a million, 10 to the power 6."
+    ],
+    [
+     47.49,
+     "Kilo means a thousand."
+    ],
+    [
+     49.71,
+     "Centi is one hundredth."
+    ],
+    [
+     51.44,
+     "Milli is one thousandth."
+    ],
+    [
+     53.25,
+     "Micro is one millionth, 10 to the power minus 6."
+    ],
+    [
+     57.42,
+     "Your turn."
+    ],
+    [
+     58.19,
+     "Giga is bigger than mega."
+    ],
+    [
+     60.11,
+     "Is giga 10 to the power 9, or 10 to the power 6?"
+    ],
+    [
+     63.8,
+     "Pause the video and choose."
+    ],
+    [
+     67.27,
+     "Giga is 10 to the power 9, a thousand million."
+    ],
+    [
+     71.53,
+     "512 gigabytes is 512 times 10 to the 9 bytes."
+    ],
+    [
+     76.25,
+     "Also: 1 tonne is 1,000 kilograms."
+    ],
+    [
+     79.99,
+     "Big unit to small unit: multiply."
+    ],
+    [
+     82.18,
+     "Small unit to big unit: divide."
+    ],
+    [
+     84.78,
+     "Here is the method."
+    ],
+    [
+     86.24,
+     "Step 1: write the prefix as a power of 10."
+    ],
+    [
+     90.02,
+     "Step 2: convert to the base unit, like metres or grams."
+    ],
+    [
+     94.43,
+     "Step 3: convert to the unit you want."
+    ],
+    [
+     97.67,
+     "Step 4: check: a smaller unit means a bigger number."
+    ],
+    [
+     101.87,
+     "A lorry carries 12.4 tonnes."
+    ],
+    [
+     104.64,
+     "In kilograms, that is 12.4 times 1,000, which is 12,400 kilograms."
+    ],
+    [
+     111.71,
+     "A bacterium is 3 micrometres long."
+    ],
+    [
+     114.58,
+     "That is 3 times 10 to the minus 6 metres, which is 0.003 millimetres."
+    ],
+    [
+     120.93,
+     "Your turn."
+    ],
+    [
+     121.67,
+     "A hair is 80 micrometres thick."
+    ],
+    [
+     123.95,
+     "How many millimetres is that?"
+    ],
+    [
+     126.08,
+     "Pause and work it out."
+    ],
+    [
+     129.1,
+     "1,000 micrometres make 1 millimetre."
+    ],
+    [
+     132.92,
+     "80 divided by 1,000 is 0.08 millimetres."
+    ],
+    [
+     137.72,
+     "A 6 gigabyte film is 6,000 megabytes."
+    ],
+    [
+     141.17,
+     "And 250 microlitres of medicine is 0.25 millilitres."
+    ],
+    [
+     146.57,
+     "Max converts 350 milligrams to grams."
+    ],
+    [
+     149.52,
+     "Which line is wrong?"
+    ],
+    [
+     151.66,
+     "Line 1 is wrong."
+    ],
+    [
+     152.78,
+     "Grams are bigger than milligrams, so the number must get smaller."
+    ],
+    [
+     157.34,
+     "Divide."
+    ],
+    [
+     158.39,
+     "350 divided by 1,000 is 0.35 grams."
+    ],
+    [
+     163.28,
+     "The tiny parts inside computer chips are measured in nanometres, which are billionths of a metre."
+    ],
+    [
+     169.9,
+     "That is why so many fit on one chip."
+    ],
+    [
+     172.91,
+     "One last question."
+    ],
+    [
+     174.21,
+     "How many kilograms are in 2 tonnes?"
+    ],
+    [
+     176.74,
+     "Pause the video and answer."
+    ],
+    [
+     180.09,
+     "2 times 1,000 is 2,000 kilograms."
+    ],
+    [
+     184.4,
+     "To remember: giga is 10 to the 9, mega 10 to the 6, kilo 10 to the 3."
+    ],
+    [
+     190.96,
+     "Milli is 10 to the minus 3, and micro is 10 to the minus 6."
+    ],
+    [
+     196.51,
+     "1 tonne is 1,000 kilograms."
+    ],
+    [
+     199.78,
+     "To a bigger unit, divide."
+    ],
+    [
+     201.47,
+     "To a smaller unit, multiply."
+    ],
+    [
+     203.92,
+     "Great work! Now practise lesson 7.3 on Camday."
+    ]
+   ],
+   "times": {
+    "7.3-k1": 22.94,
+    "7.3-k2": 66.22,
+    "7.3-k3": 128.05,
+    "7.3-k4": 179.04
+   },
+   "up": false
   }
  }
 }

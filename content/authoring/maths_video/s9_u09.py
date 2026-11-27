@@ -135,7 +135,7 @@ VIDEOS["9.3"] = [
     ]),
     dict(kind="idea", title="Machines with powers", steps=[
         dict(say="A function machine can include powers. X, square, add 4, gives Y equals X squared plus 4.",
-             do=[MATH("x → square → + 4 → y = x² + 4", x=80, y=170), TBL(["x", "0", "1", "2", "3"], [["y", "4", "5", "8", "13"]], y=280), ROW(0, 4)]),
+             do=[MATH("x → square → + 4 → y = x² + 4", x=80, y=170), TBL(["x", "0", "1", "2"], [["y", "4", "5", "8"]], y=280), ROW(0, 4)]),
         PAUSE("9.3-k2", "Your turn. Find Y when X is negative 3. Pause the video and try it.", "y = x² + 4 at x = −3?"),
     ]),
     dict(kind="idea", title="Check: 13", steps=[

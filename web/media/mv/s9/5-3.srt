@@ -1,0 +1,215 @@
+1
+00:00:07,120 --> 00:00:12,780
+A robot vacuum cleaner walks around the edge of a room shaped like a regular hexagon.
+
+2
+00:00:12,830 --> 00:00:17,290
+It turns at each corner, until it faces the way it started.
+
+3
+00:00:17,340 --> 00:00:20,380
+How far has it turned altogether, in degrees?
+
+4
+00:00:20,430 --> 00:00:23,970
+Pause the video and work it out.
+
+5
+00:00:24,020 --> 00:00:29,200
+It ends up facing the same way, so it has turned through one full turn.
+
+6
+00:00:29,250 --> 00:00:31,220
+That is 360 degrees.
+
+7
+00:00:31,270 --> 00:00:36,320
+Remember: angles on a straight line add up to 180 degrees.
+
+8
+00:00:36,370 --> 00:00:38,580
+Extend one side at each corner.
+
+9
+00:00:38,630 --> 00:00:43,090
+The exterior angle is between the extension and the next side.
+
+10
+00:00:43,140 --> 00:00:47,650
+The interior and exterior angles add up to 180 degrees.
+
+11
+00:00:47,700 --> 00:00:52,780
+Walking all the way round any polygon, you turn through one full turn.
+
+12
+00:00:52,830 --> 00:00:57,730
+So the exterior angles of any polygon add up to 360 degrees.
+
+13
+00:00:57,780 --> 00:00:58,420
+Your turn.
+
+14
+00:00:58,470 --> 00:01:03,030
+How much does the robot turn at each corner of the regular hexagon?
+
+15
+00:01:03,080 --> 00:01:06,280
+Pause the video and try it.
+
+16
+00:01:06,330 --> 00:01:10,790
+360 shared between 6 equal corners is 60 degrees each.
+
+17
+00:01:10,840 --> 00:01:16,510
+In a regular polygon, each exterior angle is 360 divided by N.
+
+18
+00:01:16,560 --> 00:01:21,660
+So the number of sides is 360 divided by the exterior angle.
+
+19
+00:01:21,710 --> 00:01:23,140
+Here is the method.
+
+20
+00:01:23,190 --> 00:01:28,290
+Step 1: remember the exterior angles add up to 360 degrees.
+
+21
+00:01:28,340 --> 00:01:33,540
+Step 2: in a regular polygon, each one is 360 divided by N.
+
+22
+00:01:33,590 --> 00:01:38,930
+Step 3: the interior angle is 180 minus the exterior angle.
+
+23
+00:01:38,980 --> 00:01:43,660
+Step 4: to find N, divide 360 by the exterior angle.
+
+24
+00:01:43,710 --> 00:01:48,380
+A regular polygon has exterior angles of 24 degrees.
+
+25
+00:01:48,430 --> 00:01:50,560
+360 divided by 24 is 15.
+
+26
+00:01:50,610 --> 00:01:52,560
+It has 15 sides.
+
+27
+00:01:52,610 --> 00:01:53,260
+Your turn.
+
+28
+00:01:53,310 --> 00:01:57,220
+What is the exterior angle of a regular 9-sided polygon?
+
+29
+00:01:57,270 --> 00:02:00,180
+Pause and work it out.
+
+30
+00:02:00,230 --> 00:02:04,050
+360 divided by 9 is 40 degrees.
+
+31
+00:02:04,100 --> 00:02:08,750
+Find the interior angle of a regular 20-sided polygon.
+
+32
+00:02:08,800 --> 00:02:13,360
+The exterior angle is 360 divided by 20, which is 18.
+
+33
+00:02:13,410 --> 00:02:18,870
+The interior angle is 180 minus 18, which is 162 degrees.
+
+34
+00:02:18,920 --> 00:02:23,520
+Can a regular polygon have exterior angles of 50 degrees?
+
+35
+00:02:23,570 --> 00:02:25,560
+360 divided by 50 is 7.2.
+
+36
+00:02:25,610 --> 00:02:28,890
+That is not a whole number, so no.
+
+37
+00:02:28,940 --> 00:02:32,230
+Nina finds the exterior angle sum of an octagon.
+
+38
+00:02:32,280 --> 00:02:34,170
+Which line is wrong?
+
+39
+00:02:34,220 --> 00:02:35,290
+Line 1 is wrong.
+
+40
+00:02:35,340 --> 00:02:38,000
+That is the interior angle sum.
+
+41
+00:02:38,050 --> 00:02:43,180
+The exterior angles of every polygon add up to 360 degrees.
+
+42
+00:02:43,230 --> 00:02:47,270
+Programmers draw regular polygons with turtle graphics.
+
+43
+00:02:47,320 --> 00:02:52,970
+Move forward, then turn 360 divided by N degrees, and repeat N times.
+
+44
+00:02:53,020 --> 00:02:54,260
+One last question.
+
+45
+00:02:54,310 --> 00:02:58,000
+A regular polygon has exterior angles of 45 degrees.
+
+46
+00:02:58,050 --> 00:03:00,010
+What is each interior angle?
+
+47
+00:03:00,060 --> 00:03:03,350
+Pause the video and answer.
+
+48
+00:03:03,400 --> 00:03:06,120
+180 minus 45 is 135 degrees.
+
+49
+00:03:06,170 --> 00:03:09,040
+It is a regular octagon.
+
+50
+00:03:09,090 --> 00:03:15,030
+To remember: the exterior angles of any polygon add up to 360 degrees.
+
+51
+00:03:15,080 --> 00:03:18,480
+Regular: each is 360 divided by N.
+
+52
+00:03:18,530 --> 00:03:22,270
+Interior plus exterior is 180 degrees.
+
+53
+00:03:22,320 --> 00:03:26,050
+N is 360 divided by the exterior angle.
+
+54
+00:03:26,100 --> 00:03:31,230
+Great work! Now practise lesson 5.3 on Camday.

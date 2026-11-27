@@ -75,8 +75,8 @@ VIDEOS["8.2"] = [
         PAUSE("8.2-k1", "How much flour do you use altogether, in cups? Give your answer as a fraction in its simplest form. Pause the video and work it out.", "Total flour (cups)?"),
     ]),
     dict(kind="hook", title="Multiply first", steps=[
-        dict(say="Multiply first. 7 quarters times 5 halves is 35 eighths. Then add 2 thirds: 105 over 24, plus 16 over 24, is 121 over 24. That is 5 and 1 twenty-fourth cups.",
-             do=[MATH(f"{F(35, 8)} + {F(2, 3)} = {F(105, 24)} + {F(16, 24)}", x=80, y=180), B(f"{F(121, 24)} = {M(5, 1, 24)} cups", x=80, y=300, color=GREEN, at=10)]),
+        dict(say="Multiply first, then add the 2 thirds. The total is 121 over 24, which is 5 and 1 twenty-fourth cups. Let's see how.",
+             do=[T("**multiply** first, then add", x=80, y=180), B(f"{F(121, 24)} = {M(5, 1, 24)} cups", x=80, y=300, color=GREEN, at=4)]),
     ]),
     dict(kind="recall", title="Order of operations", steps=[
         dict(say="Remember the order: brackets, then indices, then multiply and divide, then add and subtract.", do=[B("Brackets → Indices → × ÷ → + −", x=80, y=190, color=BLUE)]),
@@ -87,7 +87,7 @@ VIDEOS["8.2"] = [
         PAUSE("8.2-k2", "Your turn. Work out 7 quarters times 5 halves. Give your answer as a fraction in its simplest form. Pause the video and try it.", "7/4 × 5/2?"),
     ]),
     dict(kind="idea", title="Check: 35/8", steps=[
-        dict(say="Multiply the tops and the bottoms: 35 eighths.", do=[B(f"{F(7, 4)} × {F(5, 2)} = {F(35, 8)}", x=80, y=190, color=GREEN)]),
+        dict(say="Multiply the tops and the bottoms: 35 eighths. Then add 2 thirds: 105 over 24, plus 16 over 24, is 121 over 24.", do=[B(f"{F(7, 4)} × {F(5, 2)} = {F(35, 8)}", x=80, y=190, color=GREEN), MATH(f"{F(105, 24)} + {F(16, 24)} = {F(121, 24)}", x=80, y=300, at=5)]),
         dict(say="Indices work with fractions too. 2 thirds, squared, is 4 ninths. Square the top and the bottom.", do=[MATH(f"({F(2, 3)})² = {F(4, 9)}", x=80, y=310)]),
     ]),
     dict(kind="method", title="How do I calculate in order?", steps=[
@@ -189,7 +189,7 @@ VIDEOS["8.4"] = [
         PAUSE("8.4-k1", "How many bows can be made? Pause the video and work it out.", "Number of bows?"),
     ]),
     dict(kind="hook", title="12 bows", steps=[
-        dict(say="7 and a half is 15 halves. 15 halves divided by 5 eighths is 15 halves times 8 fifths, which is 12. So 12 bows.", do=[MATH(f"{F(15, 2)} × {F(8, 5)} = 12", x=80, y=190), B("12 bows", x=80, y=300, color=GREEN)]),
+        dict(say="12 bows, because 12 lots of 5 eighths make 60 eighths, which is 7 and a half. Let's see how to divide by a fraction.", do=[MATH(f"12 × {F(5, 8)} = {F(60, 8)} = {M(7, 1, 2)}", x=80, y=190), B("12 bows", x=80, y=300, color=GREEN)]),
     ]),
     dict(kind="recall", title="Reciprocals", steps=[
         dict(say="Remember: the reciprocal of a fraction is the fraction flipped over. The reciprocal of 3 quarters is 4 thirds. The reciprocal of 5 is a fifth.", do=[MATH(f"{F(3, 4)} → {F(4, 3)}   ·   5 → {F(1, 5)}", x=80, y=190)]),
@@ -200,7 +200,7 @@ VIDEOS["8.4"] = [
         PAUSE("8.4-k2", "Your turn. To divide by 5 eighths, do you multiply by 8 fifths, or by 5 eighths? Pause the video and choose.", "To divide by 5/8, multiply by …"),
     ]),
     dict(kind="idea", title="Check: 8/5", steps=[
-        dict(say="Multiply by 8 fifths, the reciprocal.", do=[B(f"× {F(8, 5)}", x=80, y=190, color=GREEN)]),
+        dict(say="Multiply by 8 fifths, the reciprocal. 15 halves times 8 fifths is 12.", do=[B(f"× {F(8, 5)}", x=80, y=190, color=GREEN), MATH(f"{F(15, 2)} × {F(8, 5)} = 12", x=360, y=190, at=4)]),
         dict(say="Why does it work? Dividing by a half asks: how many halves fit? 2 in every 1. So dividing by a half is the same as multiplying by 2.", do=[MATH(f"÷ {F(1, 2)} = × 2", x=80, y=300)]),
     ]),
     dict(kind="method", title="How do I divide fractions?", steps=[

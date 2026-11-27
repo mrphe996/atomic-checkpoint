@@ -1,0 +1,259 @@
+1
+00:00:07,500 --> 00:00:11,990
+Plan A costs 20 dollars a month, plus 10 cents per minute.
+
+2
+00:00:12,040 --> 00:00:17,010
+Plan B costs 8 dollars a month, plus 25 cents per minute.
+
+3
+00:00:17,060 --> 00:00:20,530
+For how many minutes do the two plans cost the same?
+
+4
+00:00:20,580 --> 00:00:24,090
+Pause the video and work it out.
+
+5
+00:00:24,140 --> 00:00:25,800
+Let M be the minutes.
+
+6
+00:00:25,850 --> 00:00:28,000
+Plan A costs 20 plus 0.1 M.
+
+7
+00:00:28,050 --> 00:00:30,190
+Plan B costs 8 plus 0.25 M.
+
+8
+00:00:30,240 --> 00:00:31,960
+Set them equal.
+
+9
+00:00:32,010 --> 00:00:36,990
+Take away 8 and 0.1 M from both sides: 12 equals 0.15 M.
+
+10
+00:00:37,040 --> 00:00:39,240
+So M is 80 minutes.
+
+11
+00:00:39,290 --> 00:00:42,880
+Check: plan A is 20 plus 8, which is 28.
+
+12
+00:00:42,930 --> 00:00:46,430
+Plan B is 8 plus 20, which is 28.
+
+13
+00:00:46,480 --> 00:00:49,350
+Remember: do the same to both sides.
+
+14
+00:00:49,400 --> 00:00:54,370
+3 X plus 4 equals 19, so 3 X equals 15, and X equals 5.
+
+15
+00:00:54,420 --> 00:01:01,080
+To construct an equation, choose a letter for the unknown, and write both sides in algebra.
+
+16
+00:01:01,130 --> 00:01:03,850
+If there are brackets, expand them first.
+
+17
+00:01:03,900 --> 00:01:08,180
+Then collect the unknowns on the side with more of them.
+
+18
+00:01:08,230 --> 00:01:08,930
+Your turn.
+
+19
+00:01:08,980 --> 00:01:13,410
+Solve 3, bracket, 2 X minus 1, equals 2, bracket, X plus 7.
+
+20
+00:01:13,460 --> 00:01:16,850
+Pause the video and try it.
+
+21
+00:01:16,900 --> 00:01:20,260
+Expand: 6 X minus 3 equals 2 X plus 14.
+
+22
+00:01:20,310 --> 00:01:24,720
+Take 2 X from both sides, and add 3: 4 X equals 17.
+
+23
+00:01:24,770 --> 00:01:26,400
+So X is 4.25.
+
+24
+00:01:26,450 --> 00:01:31,110
+Clear fractions by multiplying every term by the denominator.
+
+25
+00:01:31,160 --> 00:01:33,810
+X plus 5, over 3, equals X minus 1.
+
+26
+00:01:33,860 --> 00:01:36,670
+Times 3: X plus 5 equals 3 X minus 3.
+
+27
+00:01:36,720 --> 00:01:37,990
+So X is 4.
+
+28
+00:01:38,040 --> 00:01:43,370
+With two fractions, multiply by a common multiple of the denominators.
+
+29
+00:01:43,420 --> 00:01:44,700
+Here is the method.
+
+30
+00:01:44,750 --> 00:01:49,640
+Step 1: say what the letter stands for, and write the equation.
+
+31
+00:01:49,690 --> 00:01:54,030
+Step 2: expand any brackets, and clear any fractions.
+
+32
+00:01:54,080 --> 00:01:59,460
+Step 3: collect the unknowns on one side, and the numbers on the other.
+
+33
+00:01:59,510 --> 00:02:03,640
+Step 4: check your answer in the original problem.
+
+34
+00:02:03,690 --> 00:02:08,550
+I think of a number, double it, add 3, then double the result.
+
+35
+00:02:08,600 --> 00:02:09,270
+I get 58.
+
+36
+00:02:09,320 --> 00:02:12,990
+Write 2, bracket, 2 N plus 3, equals 58.
+
+37
+00:02:13,040 --> 00:02:16,230
+Divide by 2: 2 N plus 3 equals 29.
+
+38
+00:02:16,280 --> 00:02:18,320
+Take 3: 2 N equals 26.
+
+39
+00:02:18,370 --> 00:02:19,920
+So N is 13.
+
+40
+00:02:19,970 --> 00:02:20,680
+Your turn.
+
+41
+00:02:20,730 --> 00:02:23,790
+Solve X over 2, plus X over 5, equals 14.
+
+42
+00:02:23,840 --> 00:02:26,860
+Pause and work it out.
+
+43
+00:02:26,910 --> 00:02:31,710
+Multiply every term by 10: 5 X plus 2 X equals 140.
+
+44
+00:02:31,760 --> 00:02:35,210
+So 7 X equals 140, and X is 20.
+
+45
+00:02:35,260 --> 00:02:40,740
+The angles of a triangle are X, 2 X plus 15, and 3 X minus 15.
+
+46
+00:02:40,790 --> 00:02:43,150
+They add up to 180 degrees.
+
+47
+00:02:43,200 --> 00:02:45,920
+So 6 X equals 180, and X is 30.
+
+48
+00:02:45,970 --> 00:02:49,770
+The angles are 30, 75 and 75 degrees.
+
+49
+00:02:49,820 --> 00:02:52,650
+Eva solves X over 3, plus 2, equals 6.
+
+50
+00:02:52,700 --> 00:02:54,720
+Which line is wrong?
+
+51
+00:02:54,770 --> 00:02:55,930
+Line 1 is wrong.
+
+52
+00:02:55,980 --> 00:03:00,410
+Every term must be multiplied by 3, including the 2.
+
+53
+00:03:00,460 --> 00:03:03,870
+X plus 6 equals 18, so X is 12.
+
+54
+00:03:03,920 --> 00:03:10,910
+Choosing between phone plans, taxis, or energy tariffs comes down to one equation: cost A equals cost B.
+
+55
+00:03:10,960 --> 00:03:15,520
+Below the answer one is cheaper, and above it, the other is.
+
+56
+00:03:15,570 --> 00:03:16,910
+One last question.
+
+57
+00:03:16,960 --> 00:03:19,060
+Solve 2 X plus 9 equals 5 X.
+
+58
+00:03:19,110 --> 00:03:22,530
+Pause the video and answer.
+
+59
+00:03:22,580 --> 00:03:25,670
+Take 2 X from both sides: 9 equals 3 X.
+
+60
+00:03:25,720 --> 00:03:27,030
+So X is 3.
+
+61
+00:03:27,080 --> 00:03:31,920
+To remember: say what your letter means, and write the equation.
+
+62
+00:03:31,970 --> 00:03:36,150
+Expand brackets, clear fractions, and collect terms.
+
+63
+00:03:36,200 --> 00:03:38,610
+Do the same to both sides.
+
+64
+00:03:38,660 --> 00:03:41,220
+Check in the original problem.
+
+65
+00:03:41,270 --> 00:03:46,470
+Great work! Now practise lesson 4.1 on Camday.

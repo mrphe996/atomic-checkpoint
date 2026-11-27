@@ -1,0 +1,227 @@
+1
+00:00:06,110 --> 00:00:13,110
+A design student must draw a regular hexagon logo, with guide lines at 60, 30 and 45 degrees.
+
+2
+00:00:13,160 --> 00:00:16,620
+She may only use a ruler and compasses.
+
+3
+00:00:16,670 --> 00:00:19,300
+Is a protractor needed, or not allowed?
+
+4
+00:00:19,350 --> 00:00:22,550
+Pause the video and choose.
+
+5
+00:00:22,600 --> 00:00:24,490
+A protractor is not allowed.
+
+6
+00:00:24,540 --> 00:00:27,050
+In a construction, you use compasses.
+
+7
+00:00:27,100 --> 00:00:32,460
+Circles make exact equal lengths, and equal lengths make exact angles.
+
+8
+00:00:32,510 --> 00:00:36,080
+Remember: an angle bisector cuts an angle in half.
+
+9
+00:00:36,130 --> 00:00:41,980
+A perpendicular bisector meets a line at 90 degrees, through its midpoint.
+
+10
+00:00:42,030 --> 00:00:43,040
+Draw a line A B.
+
+11
+00:00:43,090 --> 00:00:47,450
+Put the compasses on A, and draw an arc that crosses the line at C.
+
+12
+00:00:47,500 --> 00:00:48,840
+Keep the same radius.
+
+13
+00:00:48,890 --> 00:00:54,130
+Put the compasses on C, and draw an arc that crosses the first arc at D.
+
+14
+00:00:54,180 --> 00:00:56,920
+A C, A D and C D are all the same length.
+
+15
+00:00:56,970 --> 00:01:02,100
+Triangle A C D is equilateral, so angle D A C is exactly 60 degrees.
+
+16
+00:01:02,150 --> 00:01:02,810
+Your turn.
+
+17
+00:01:02,860 --> 00:01:06,860
+If you bisect the 60 degree angle, what angle do you get?
+
+18
+00:01:06,910 --> 00:01:10,180
+Pause the video and try it.
+
+19
+00:01:10,230 --> 00:01:12,180
+Half of 60 is 30 degrees.
+
+20
+00:01:12,230 --> 00:01:18,900
+For 45 degrees, construct a right angle with a perpendicular, then bisect it.
+
+21
+00:01:18,950 --> 00:01:21,360
+Always leave your construction arcs.
+
+22
+00:01:21,410 --> 00:01:23,410
+They show your method.
+
+23
+00:01:23,460 --> 00:01:25,920
+For a regular hexagon, draw a circle.
+
+24
+00:01:25,970 --> 00:01:30,480
+Keep the same radius, and step it round the circle, marking points.
+
+25
+00:01:30,530 --> 00:01:32,120
+Join the points.
+
+26
+00:01:32,170 --> 00:01:35,490
+For a square, draw two diameters at right angles.
+
+27
+00:01:35,540 --> 00:01:39,680
+For an octagon, bisect the right angles between them.
+
+28
+00:01:39,730 --> 00:01:40,350
+Your turn.
+
+29
+00:01:40,400 --> 00:01:44,640
+Stepping the radius round a circle, how many points do you mark?
+
+30
+00:01:44,690 --> 00:01:47,510
+Pause and work it out.
+
+31
+00:01:47,560 --> 00:01:48,150
+6 points.
+
+32
+00:01:48,200 --> 00:01:56,370
+Each side of the hexagon is the same as the radius, because it makes 6 equilateral triangles at the centre.
+
+33
+00:01:56,420 --> 00:01:57,840
+Here is the method.
+
+34
+00:01:57,890 --> 00:02:02,580
+Step 1: 60 degrees comes from an equilateral triangle.
+
+35
+00:02:02,630 --> 00:02:07,540
+Step 2: 90 degrees comes from a perpendicular bisector.
+
+36
+00:02:07,590 --> 00:02:12,990
+Step 3: bisect to halve an angle: 30, 45, 15 degrees.
+
+37
+00:02:13,040 --> 00:02:17,120
+Step 4: keep the radius fixed, and leave the arcs.
+
+38
+00:02:17,170 --> 00:02:22,930
+To construct 120 degrees, construct 60 degrees on a straight line.
+
+39
+00:02:22,980 --> 00:02:28,580
+The angle on the other side is 180 minus 60, which is 120.
+
+40
+00:02:28,630 --> 00:02:34,580
+To construct 15 degrees, bisect 60 to get 30, then bisect again.
+
+41
+00:02:34,630 --> 00:02:43,600
+A hexagon drawn in a circle of radius 5 centimetres has sides of 5 centimetres, so its perimeter is 30 centimetres.
+
+42
+00:02:43,650 --> 00:02:45,550
+Dan constructs 60 degrees.
+
+43
+00:02:45,600 --> 00:02:47,610
+Which line is wrong?
+
+44
+00:02:47,660 --> 00:02:48,700
+Line 2 is wrong.
+
+45
+00:02:48,750 --> 00:02:53,810
+The radius must stay the same, so that the triangle is equilateral.
+
+46
+00:02:53,860 --> 00:02:57,980
+The arc from C must also have radius 4 centimetres.
+
+47
+00:02:58,030 --> 00:03:02,710
+Architects and engineers used compass constructions for centuries.
+
+48
+00:03:02,760 --> 00:03:07,140
+Today, design software uses exactly the same geometry.
+
+49
+00:03:07,190 --> 00:03:08,460
+One last question.
+
+50
+00:03:08,510 --> 00:03:11,900
+What angle do you get if you bisect 45 degrees?
+
+51
+00:03:11,950 --> 00:03:15,280
+Pause the video and answer.
+
+52
+00:03:15,330 --> 00:03:18,590
+Half of 45 is 22.5 degrees.
+
+53
+00:03:18,640 --> 00:03:23,640
+To remember: 60 degrees comes from an equilateral triangle.
+
+54
+00:03:23,690 --> 00:03:28,960
+30 and 45 degrees come from bisecting 60 and 90.
+
+55
+00:03:29,010 --> 00:03:32,650
+For a hexagon, step the radius round a circle.
+
+56
+00:03:32,700 --> 00:03:37,220
+Squares and octagons come from perpendicular diameters.
+
+57
+00:03:37,270 --> 00:03:42,430
+Great work! Now practise lesson 5.4 on Camday.
