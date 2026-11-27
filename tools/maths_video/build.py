@@ -16,14 +16,6 @@ RATE, FPS, GAP, PAUSE_GAP = 24000, 25, 0.55, 1.4
 FIGS = ["figures.js", "figures2.js", "figures3.js", "figures4.js", "figures5.js"]
 
 
-def burn(mp4, srt):
-    """Captions printed into the picture, so the video has subtitles anywhere it is played (the app hides its own caption line for these)."""
-    tmp = mp4 + ".cc.mp4"; style = "FontName=Inter,FontSize=17,PrimaryColour=&H00FFFFFF,BackColour=&H99000000,BorderStyle=4,Outline=0,Shadow=0,MarginV=14,Bold=1"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", mp4, "-vf", f"subtitles={srt}:force_style='{style}'", "-c:v", "libx264", "-preset", "veryfast", "-crf", "23",
-                    "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", tmp], check=True)
-    os.replace(tmp, mp4)
-
-
 def work(stage, sec):
     d = f"/tmp/mv/{stage}_{sec}"; os.makedirs(d, exist_ok=True); return d
 
@@ -129,17 +121,17 @@ def cmd_render(stage, unit, sec, preview=None):
     base = sec.replace(".", "-"); mp4 = os.path.join(out_dir, base + ".mp4") if not preview else os.path.join(d, "preview.mp4")
     frames = int(spec["total"] * FPS) if not preview else int(preview * FPS)
     with sync_playwright() as p:
-        br = p.chromium.launch(); pg = br.new_page(viewport={"width": 1280, "height": 720})
+        br = p.chromium.launch(); pg = br.new_page(viewport={"width": 1280, "height": 720}, device_scale_factor=1.5)   # 1920×1080 frames
         errs = []; pg.on("pageerror", lambda e: errs.append(str(e)))
         pg.goto("file://" + hp); pg.wait_for_timeout(800)
         assert not errs, errs
         ff = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "image2pipe", "-framerate", str(FPS), "-i", "-", "-i", os.path.join(d, "audio.wav"),
-                               "-c:v", "libx264", "-preset", "veryfast", "-crf", "23", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "96k",
+                               "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "96k",
                                "-shortest", "-movflags", "+faststart", mp4], stdin=subprocess.PIPE)
         stage_el = pg.query_selector("#stage")
         for i in range(frames):
             pg.evaluate(f"seek({i / FPS})")
-            ff.stdin.write(stage_el.screenshot(type="jpeg", quality=90))
+            ff.stdin.write(stage_el.screenshot(type="jpeg", quality=97))
         pg.evaluate(f"seek({spec['introEnd'] + 6})"); poster = os.path.join(out_dir, base + "_poster.jpg")
         stage_el.screenshot(path=poster, type="jpeg", quality=85)
         ff.stdin.close(); ff.wait(); br.close()
@@ -148,7 +140,6 @@ def cmd_render(stage, unit, sec, preview=None):
     real = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", mp4], capture_output=True, text=True).stdout)
     srt = os.path.join(out_dir, base + ".srt"); fmt = lambda x: "%02d:%02d:%02d,%03d" % (x // 3600, x % 3600 // 60, x % 60, round(x % 1 * 1000) % 1000)
     open(srt, "w").write("\n".join(f"{i + 1}\n{fmt(c[0])} --> {fmt((caps[i + 1][0] if i + 1 < len(caps) else real) - 0.05)}\n{c[1]}\n" for i, c in enumerate(caps)))
-    burn(mp4, srt)
     idx_p = os.path.join(WEB, "media", "mv", "index.json"); idx = json.load(open(idx_p)) if os.path.exists(idx_p) else {}
     idx.setdefault(str(stage), {})[sec] = {"src": f"media/mv/s{stage}/{base}.mp4", "poster": f"media/mv/s{stage}/{base}_poster.jpg", "srt": f"media/mv/s{stage}/{base}.srt",
                                          "dur": round(real, 2), "captions": caps, "times": stops}
@@ -161,4 +152,3 @@ if __name__ == "__main__":
     if c == "text": cmd_text(st, un, sec)
     elif c == "audio": cmd_audio(st, un, sec, sys.argv[5:])
     elif c == "render": cmd_render(st, un, sec, float(sys.argv[5]) if len(sys.argv) > 5 else None)
-    elif c == "burn": b = os.path.join(WEB, "media", "mv", f"s{st}", sec.replace(".", "-")); burn(b + ".mp4", b + ".srt")

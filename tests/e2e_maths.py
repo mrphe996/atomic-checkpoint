@@ -58,8 +58,9 @@ with sync_playwright() as p:
     pg.evaluate("(async()=>{ await Core.switchUnit(1); location.hash='v-1-1'; })()"); pg.wait_for_timeout(2500)
     ok(pg.get_attribute('#lessonVideo', 'href') == '#vw-1-1', 'M18 Lesson 1.1 shows a "Watch the video lesson" card')
     pg.click('#lessonVideo'); pg.wait_for_timeout(2500)
-    v = pg.evaluate("(()=>{ const v=document.querySelector('video'); return v && { src: v.currentSrc || v.src, dur: v.duration } })()")
-    ok(v and v['src'].endswith('1-1.mp4') and v['dur'] > 200 and pg.is_hidden('.cap'), f'M19 The video lesson plays in the app player ({v}), its captions are in the picture so the player shows no second caption line')
+    v = pg.evaluate("(()=>{ const v=document.querySelector('video'); return v && { src: v.currentSrc || v.src, dur: v.duration, h: v.videoHeight } })()")
+    cc = pg.is_visible('.cap'); pg.click('button.chip:has-text("CC")'); cc = cc and pg.is_hidden('.cap'); pg.click('button.chip:has-text("CC")'); cc = cc and pg.is_visible('.cap')
+    ok(v and v['src'].endswith('1-1.mp4') and v['dur'] > 200 and v['h'] == 1080 and cc, f'M19 The video lesson plays in the app player ({v}), Full HD, and CC turns the captions off and on')
     ok(not errs, 'M15 No page errors' + (': ' + errs[0] if errs else ''))
     b.close()
 fails = [l for l in LOG if l.startswith('FAIL')]
