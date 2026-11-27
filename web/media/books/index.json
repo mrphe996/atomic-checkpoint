@@ -2864,5 +2864,31 @@
     14
    ]
   }
+ },
+ "c3u12": {
+  "title": "Camday Maths Stage 3 · Unit 12: Measure",
+  "pages": 14,
+  "dir": "media/books/c3u12/",
+  "ext": "webp",
+  "pdf": "media/books/c3u12.pdf?v=8d21845a38",
+  "v": "8d21845a38",
+  "secs": {
+   "12.1": [
+    2,
+    5
+   ],
+   "12.2": [
+    6,
+    9
+   ],
+   "12.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
  }
 }
