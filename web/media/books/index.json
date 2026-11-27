@@ -1866,5 +1866,75 @@
     10
    ]
   }
+ },
+ "c5u05": {
+  "title": "Camday Maths Stage 5 · Unit 5: Addition and Subtraction (1)",
+  "pages": 10,
+  "dir": "media/books/c5u05/",
+  "ext": "webp",
+  "pdf": "media/books/c5u05.pdf?v=861823b339",
+  "v": "861823b339",
+  "secs": {
+   "5.1": [
+    2,
+    5
+   ],
+   "5.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
+ },
+ "c5u06": {
+  "title": "Camday Maths Stage 5 · Unit 6: 3D Shapes",
+  "pages": 10,
+  "dir": "media/books/c5u06/",
+  "ext": "webp",
+  "pdf": "media/books/c5u06.pdf?v=f81f88f2bb",
+  "v": "f81f88f2bb",
+  "secs": {
+   "6.1": [
+    2,
+    5
+   ],
+   "6.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
+ },
+ "c5u07": {
+  "title": "Camday Maths Stage 5 · Unit 7: Fractions, Decimals and Percentages",
+  "pages": 14,
+  "dir": "media/books/c5u07/",
+  "ext": "webp",
+  "pdf": "media/books/c5u07.pdf?v=78e43bc51d",
+  "v": "78e43bc51d",
+  "secs": {
+   "7.1": [
+    2,
+    5
+   ],
+   "7.2": [
+    6,
+    9
+   ],
+   "7.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
  }
 }
