@@ -1,0 +1,399 @@
+1
+00:00:06,480 --> 00:00:08,070
+Open a pair of scissors.
+
+2
+00:00:08,120 --> 00:00:11,710
+The two blades cross, and they make 4 angles.
+
+3
+00:00:11,760 --> 00:00:16,880
+Suppose you open the scissors so that one angle is 40 degrees.
+
+4
+00:00:16,930 --> 00:00:18,820
+What is the angle next to it?
+
+5
+00:00:18,870 --> 00:00:22,350
+Pause the video and work it out.
+
+6
+00:00:22,400 --> 00:00:27,540
+The 40 degree angle and the angle next to it sit on a straight line.
+
+7
+00:00:27,590 --> 00:00:30,680
+So together they make 180 degrees.
+
+8
+00:00:30,730 --> 00:00:32,770
+180 minus 40 is 140.
+
+9
+00:00:32,820 --> 00:00:37,080
+The angle next to it is 140 degrees.
+
+10
+00:00:37,130 --> 00:00:39,040
+And here is the surprise.
+
+11
+00:00:39,090 --> 00:00:42,340
+The other two angles are 40 and 140 again.
+
+12
+00:00:42,390 --> 00:00:44,000
+Let's see why.
+
+13
+00:00:44,050 --> 00:00:45,470
+Remember two facts.
+
+14
+00:00:45,520 --> 00:00:49,740
+Angles on a straight line add up to 180 degrees.
+
+15
+00:00:49,790 --> 00:00:54,250
+And the angles of a triangle add up to 180 degrees.
+
+16
+00:00:54,300 --> 00:01:01,610
+If two angles are 55 and 75, the third is 180 minus 130, which is 50 degrees.
+
+17
+00:01:01,660 --> 00:01:05,220
+When two straight lines cross, we say they intersect.
+
+18
+00:01:05,270 --> 00:01:06,520
+They make 4 angles.
+
+19
+00:01:06,570 --> 00:01:08,700
+Call them a, b, c and d.
+
+20
+00:01:08,750 --> 00:01:11,530
+The angles opposite each other are equal.
+
+21
+00:01:11,580 --> 00:01:14,490
+They are called vertically opposite angles.
+
+22
+00:01:14,540 --> 00:01:17,110
+So a equals c, and b equals d.
+
+23
+00:01:17,160 --> 00:01:17,400
+Why?
+
+24
+00:01:17,450 --> 00:01:20,940
+a and b make a straight line, so a plus b is 180.
+
+25
+00:01:20,990 --> 00:01:24,830
+b and c also make a straight line, so b plus c is 180.
+
+26
+00:01:24,880 --> 00:01:27,760
+That means a and c must be equal.
+
+27
+00:01:27,810 --> 00:01:28,490
+Your turn.
+
+28
+00:01:28,540 --> 00:01:31,840
+Two lines cross, and one angle is 101 degrees.
+
+29
+00:01:31,890 --> 00:01:33,960
+What is the angle next to it?
+
+30
+00:01:34,010 --> 00:01:37,330
+Pause the video and try it.
+
+31
+00:01:37,380 --> 00:01:42,730
+Angles next to each other on a straight line add up to 180.
+
+32
+00:01:42,780 --> 00:01:45,840
+180 minus 101 is 79 degrees.
+
+33
+00:01:45,890 --> 00:01:50,070
+Lines that meet at 90 degrees are called perpendicular.
+
+34
+00:01:50,120 --> 00:01:52,930
+All 4 angles are right angles.
+
+35
+00:01:52,980 --> 00:01:54,690
+Parallel lines never meet.
+
+36
+00:01:54,740 --> 00:01:58,100
+On a diagram, they are marked with arrows.
+
+37
+00:01:58,150 --> 00:02:02,280
+A line that crosses parallel lines is called a transversal.
+
+38
+00:02:02,330 --> 00:02:06,800
+It makes 8 angles, but there are only 2 different sizes.
+
+39
+00:02:06,850 --> 00:02:11,450
+Corresponding angles are in matching positions, and they are equal.
+
+40
+00:02:11,500 --> 00:02:19,630
+Alternate angles are on opposite sides of the transversal, between the parallel lines, and they are equal too.
+
+41
+00:02:19,680 --> 00:02:20,980
+Here is the method.
+
+42
+00:02:21,030 --> 00:02:24,920
+Step 1: mark the angles you know on the diagram.
+
+43
+00:02:24,970 --> 00:02:26,880
+Step 2: use these facts.
+
+44
+00:02:26,930 --> 00:02:29,910
+Vertically opposite angles are equal.
+
+45
+00:02:29,960 --> 00:02:31,790
+A straight line is 180.
+
+46
+00:02:31,840 --> 00:02:34,140
+Around a point is 360.
+
+47
+00:02:34,190 --> 00:02:40,540
+Step 3: with parallel lines, corresponding angles and alternate angles are equal.
+
+48
+00:02:40,590 --> 00:02:44,270
+Step 4: write the reason next to each answer.
+
+49
+00:02:44,320 --> 00:02:45,880
+Two lines intersect.
+
+50
+00:02:45,930 --> 00:02:47,890
+One angle is 118 degrees.
+
+51
+00:02:47,940 --> 00:02:50,130
+Find the other three.
+
+52
+00:02:50,180 --> 00:02:55,250
+The angle vertically opposite is equal, so it is 118 degrees.
+
+53
+00:02:55,300 --> 00:02:59,080
+The angle next to it is on a straight line.
+
+54
+00:02:59,130 --> 00:03:02,130
+180 minus 118 is 62 degrees.
+
+55
+00:03:02,180 --> 00:03:08,350
+And the last angle is vertically opposite that one, so it is 62 degrees as well.
+
+56
+00:03:08,400 --> 00:03:13,400
+Two vertically opposite angles are 3 x plus 10, and 70 degrees.
+
+57
+00:03:13,450 --> 00:03:14,510
+Find x.
+
+58
+00:03:14,560 --> 00:03:17,670
+Vertically opposite angles are equal.
+
+59
+00:03:17,720 --> 00:03:20,350
+So 3 x plus 10 equals 70.
+
+60
+00:03:20,400 --> 00:03:21,560
+Subtract 10.
+
+61
+00:03:21,610 --> 00:03:22,970
+3 x equals 60.
+
+62
+00:03:23,020 --> 00:03:24,170
+Divide by 3.
+
+63
+00:03:24,220 --> 00:03:25,930
+x equals 20.
+
+64
+00:03:25,980 --> 00:03:26,670
+Your turn.
+
+65
+00:03:26,720 --> 00:03:30,760
+Two vertically opposite angles are 2 y, and 80 degrees.
+
+66
+00:03:30,810 --> 00:03:31,500
+What is y?
+
+67
+00:03:31,550 --> 00:03:34,530
+Pause and work it out.
+
+68
+00:03:34,580 --> 00:03:37,370
+They are equal, so 2 y equals 80.
+
+69
+00:03:37,420 --> 00:03:38,400
+Divide by 2.
+
+70
+00:03:38,450 --> 00:03:39,990
+y equals 40.
+
+71
+00:03:40,040 --> 00:03:43,090
+A transversal crosses two parallel lines.
+
+72
+00:03:43,140 --> 00:03:45,450
+One angle is 48 degrees.
+
+73
+00:03:45,500 --> 00:03:47,640
+The alternate angle is equal.
+
+74
+00:03:47,690 --> 00:03:50,070
+So it is also 48 degrees.
+
+75
+00:03:50,120 --> 00:03:57,120
+The angle on a straight line with it is 180 minus 48, which is 132 degrees.
+
+76
+00:03:57,170 --> 00:03:58,300
+Two lines cross.
+
+77
+00:03:58,350 --> 00:04:00,080
+One angle is 35 degrees.
+
+78
+00:04:00,130 --> 00:04:03,260
+Mia wants the angle vertically opposite it.
+
+79
+00:04:03,310 --> 00:04:05,290
+Which line is wrong?
+
+80
+00:04:05,340 --> 00:04:06,440
+Line 1 is wrong.
+
+81
+00:04:06,490 --> 00:04:09,110
+Vertically opposite angles are equal.
+
+82
+00:04:09,160 --> 00:04:13,630
+It is the angles next to each other that add up to 180.
+
+83
+00:04:13,680 --> 00:04:17,840
+So the vertically opposite angle is 35 degrees.
+
+84
+00:04:17,890 --> 00:04:21,880
+Railway tracks are a famous example of parallel lines.
+
+85
+00:04:21,930 --> 00:04:28,630
+On most of the world's railways, the two rails are exactly 1,435 millimetres apart.
+
+86
+00:04:28,680 --> 00:04:35,280
+If the rails were not parallel, the gap would change, and the train would come off the track.
+
+87
+00:04:35,330 --> 00:04:39,640
+The wooden sleepers under the rails cross them at right angles.
+
+88
+00:04:39,690 --> 00:04:42,690
+They are perpendicular to the rails.
+
+89
+00:04:42,740 --> 00:04:43,990
+One last question.
+
+90
+00:04:44,040 --> 00:04:47,680
+Between two parallel lines, an angle is 57 degrees.
+
+91
+00:04:47,730 --> 00:04:49,700
+What is its alternate angle?
+
+92
+00:04:49,750 --> 00:04:53,050
+Pause the video and answer.
+
+93
+00:04:53,100 --> 00:04:55,120
+Alternate angles are equal.
+
+94
+00:04:55,170 --> 00:04:58,500
+So the alternate angle is 57 degrees.
+
+95
+00:04:58,550 --> 00:05:02,580
+To remember: vertically opposite angles are equal.
+
+96
+00:05:02,630 --> 00:05:06,360
+Angles on a straight line add up to 180 degrees.
+
+97
+00:05:06,410 --> 00:05:08,490
+Around a point, 360.
+
+98
+00:05:08,540 --> 00:05:12,190
+Perpendicular lines meet at 90 degrees.
+
+99
+00:05:12,240 --> 00:05:17,860
+With parallel lines, corresponding angles and alternate angles are equal.
+
+100
+00:05:17,910 --> 00:05:23,030
+Great work! Now practise lesson 5.2 on Camday.

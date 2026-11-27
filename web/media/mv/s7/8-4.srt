@@ -1,0 +1,375 @@
+1
+00:00:05,970 --> 00:00:07,810
+Look at packaging in a shop.
+
+2
+00:00:07,860 --> 00:00:09,500
+Cereal comes in a cuboid.
+
+3
+00:00:09,550 --> 00:00:11,670
+Tennis balls come in a cylinder.
+
+4
+00:00:11,720 --> 00:00:15,660
+And some chocolate bars come in a triangular prism.
+
+5
+00:00:15,710 --> 00:00:18,730
+How many faces does a triangular prism have?
+
+6
+00:00:18,780 --> 00:00:22,290
+Pause the video and count them.
+
+7
+00:00:22,340 --> 00:00:24,700
+There is a triangle at each end.
+
+8
+00:00:24,750 --> 00:00:25,900
+That is 2 faces.
+
+9
+00:00:25,950 --> 00:00:28,610
+Between them there are 3 rectangles.
+
+10
+00:00:28,660 --> 00:00:30,900
+2 plus 3 makes 5 faces.
+
+11
+00:00:30,950 --> 00:00:32,090
+Remember 3 words.
+
+12
+00:00:32,140 --> 00:00:34,400
+A face is a surface of the shape.
+
+13
+00:00:34,450 --> 00:00:37,000
+An edge is a line where 2 faces meet.
+
+14
+00:00:37,050 --> 00:00:39,020
+A vertex is a corner.
+
+15
+00:00:39,070 --> 00:00:43,220
+A cube has 6 faces, 12 edges and 8 vertices.
+
+16
+00:00:43,270 --> 00:00:46,760
+A prism has the same cross-section all the way along.
+
+17
+00:00:46,810 --> 00:00:50,440
+A triangular prism has a triangle at both ends.
+
+18
+00:00:50,490 --> 00:00:56,590
+A pyramid has a flat base, and triangle faces that meet at one point, called the apex.
+
+19
+00:00:56,640 --> 00:00:57,290
+Your turn.
+
+20
+00:00:57,340 --> 00:01:00,840
+How many vertices does a square-based pyramid have?
+
+21
+00:01:00,890 --> 00:01:04,400
+Pause the video and count them.
+
+22
+00:01:04,450 --> 00:01:06,720
+The square base has 4 corners.
+
+23
+00:01:06,770 --> 00:01:09,280
+Then there is 1 more at the apex.
+
+24
+00:01:09,330 --> 00:01:11,840
+4 plus 1 makes 5 vertices.
+
+25
+00:01:11,890 --> 00:01:15,090
+Here are the numbers for some common shapes.
+
+26
+00:01:15,140 --> 00:01:20,510
+A cuboid has 6 faces, 12 edges and 8 vertices, the same as a cube.
+
+27
+00:01:20,560 --> 00:01:24,770
+A triangular prism has 5 faces, 9 edges and 6 vertices.
+
+28
+00:01:24,820 --> 00:01:29,900
+A square-based pyramid has 5 faces, 8 edges and 5 vertices.
+
+29
+00:01:29,950 --> 00:01:33,450
+A tetrahedron is a pyramid with a triangle base.
+
+30
+00:01:33,500 --> 00:01:36,890
+It has 4 faces, 6 edges and 4 vertices.
+
+31
+00:01:36,940 --> 00:01:40,130
+Here is a check for shapes with flat faces.
+
+32
+00:01:40,180 --> 00:01:43,900
+Faces plus vertices, minus edges, always equals 2.
+
+33
+00:01:43,950 --> 00:01:47,390
+For the cuboid: 6 plus 8 minus 12 is 2.
+
+34
+00:01:47,440 --> 00:01:56,890
+We can draw a 3D shape from different directions: the front view, the side view, and the top view, which is also called the plan.
+
+35
+00:01:56,940 --> 00:01:58,600
+Stand a cylinder upright.
+
+36
+00:01:58,650 --> 00:02:01,410
+From the front it looks like a rectangle.
+
+37
+00:02:01,460 --> 00:02:04,430
+From the top it looks like a circle.
+
+38
+00:02:04,480 --> 00:02:05,110
+Your turn.
+
+39
+00:02:05,160 --> 00:02:06,890
+A cone stands on its base.
+
+40
+00:02:06,940 --> 00:02:09,150
+What does its top view look like?
+
+41
+00:02:09,200 --> 00:02:12,400
+Pause the video and decide.
+
+42
+00:02:12,450 --> 00:02:18,420
+From above, you see the round base as a circle, and the apex as a dot at the centre.
+
+43
+00:02:18,470 --> 00:02:22,270
+A net is a flat shape that folds up to make a 3D shape.
+
+44
+00:02:22,320 --> 00:02:25,060
+This cross is made of 6 squares.
+
+45
+00:02:25,110 --> 00:02:28,470
+The row of 4 squares wraps round to make 4 sides.
+
+46
+00:02:28,520 --> 00:02:32,800
+The other 2 squares fold over, to make the top and the bottom.
+
+47
+00:02:32,850 --> 00:02:34,880
+It is a net of a cube.
+
+48
+00:02:34,930 --> 00:02:36,170
+Here is the method.
+
+49
+00:02:36,220 --> 00:02:41,950
+Step 1: decide if it is a prism or a pyramid, and name the shape of its base.
+
+50
+00:02:42,000 --> 00:02:45,960
+Step 2: count the faces, then the edges, then the vertices.
+
+51
+00:02:46,010 --> 00:02:49,900
+Work in order: top, bottom, then around the sides.
+
+52
+00:02:49,950 --> 00:02:54,970
+Step 3: check with faces plus vertices minus edges equals 2.
+
+53
+00:02:55,020 --> 00:03:01,030
+Step 4: for a view, imagine looking straight at the shape from that direction.
+
+54
+00:03:01,080 --> 00:03:06,760
+Count the faces, edges and vertices of a pyramid with a hexagon as its base.
+
+55
+00:03:06,810 --> 00:03:09,460
+Faces: 1 hexagon and 6 triangles.
+
+56
+00:03:09,510 --> 00:03:11,320
+That is 7 faces.
+
+57
+00:03:11,370 --> 00:03:15,350
+Edges: 6 around the base, and 6 going up to the apex.
+
+58
+00:03:15,400 --> 00:03:17,190
+That is 12 edges.
+
+59
+00:03:17,240 --> 00:03:19,980
+Vertices: 6 on the base, and 1 apex.
+
+60
+00:03:20,030 --> 00:03:22,010
+That is 7 vertices.
+
+61
+00:03:22,060 --> 00:03:25,180
+Check: 7 plus 7 minus 12 equals 2.
+
+62
+00:03:25,230 --> 00:03:26,470
+Correct.
+
+63
+00:03:26,520 --> 00:03:29,150
+A shape has a triangle as its front view.
+
+64
+00:03:29,200 --> 00:03:33,210
+Its side view is a rectangle, and its top view is a rectangle.
+
+65
+00:03:33,260 --> 00:03:34,480
+What is it?
+
+66
+00:03:34,530 --> 00:03:39,100
+It is a triangle from one direction, and rectangles from the others.
+
+67
+00:03:39,150 --> 00:03:43,870
+It is a triangular prism, lying on one of its rectangle faces.
+
+68
+00:03:43,920 --> 00:03:47,220
+How many edges does a square-based pyramid have?
+
+69
+00:03:47,270 --> 00:03:48,820
+Here is Omar's working.
+
+70
+00:03:48,870 --> 00:03:51,320
+Which line goes wrong first?
+
+71
+00:03:51,370 --> 00:03:52,450
+Line 2 is wrong.
+
+72
+00:03:52,500 --> 00:03:56,810
+There is an edge from every corner of the base up to the apex.
+
+73
+00:03:56,860 --> 00:03:58,990
+That is 4 edges, not 1.
+
+74
+00:03:59,040 --> 00:04:00,160
+4 plus 4 is 8.
+
+75
+00:04:00,210 --> 00:04:03,650
+A square-based pyramid has 8 edges.
+
+76
+00:04:03,700 --> 00:04:07,820
+The Great Pyramid in Egypt is a square-based pyramid.
+
+77
+00:04:07,870 --> 00:04:13,720
+It was built about 4,500 years ago, and it is about 139 metres tall.
+
+78
+00:04:13,770 --> 00:04:15,390
+Drink cans are cylinders.
+
+79
+00:04:15,440 --> 00:04:21,630
+A cylinder is strong, it is easy to hold, and cans stack neatly on top of each other.
+
+80
+00:04:21,680 --> 00:04:29,060
+And a classic football is stitched from 32 flat panels: 12 pentagons and 20 hexagons.
+
+81
+00:04:29,110 --> 00:04:30,380
+One last question.
+
+82
+00:04:30,430 --> 00:04:34,160
+A shape with flat faces has 7 faces and 10 vertices.
+
+83
+00:04:34,210 --> 00:04:36,200
+How many edges does it have?
+
+84
+00:04:36,250 --> 00:04:39,940
+Pause the video and work it out.
+
+85
+00:04:39,990 --> 00:04:43,420
+Faces plus vertices minus edges equals 2.
+
+86
+00:04:43,470 --> 00:04:46,650
+7 plus 10 is 17, and 17 minus 2 is 15.
+
+87
+00:04:46,700 --> 00:04:48,020
+It has 15 edges.
+
+88
+00:04:48,070 --> 00:04:52,140
+It is a prism with a pentagon at each end.
+
+89
+00:04:52,190 --> 00:04:56,070
+To remember: a prism has the same cross-section all along.
+
+90
+00:04:56,120 --> 00:04:59,140
+A pyramid comes to a point, the apex.
+
+91
+00:04:59,190 --> 00:05:02,540
+Count faces, edges and vertices in order.
+
+92
+00:05:02,590 --> 00:05:07,760
+For flat-faced shapes, faces plus vertices minus edges equals 2.
+
+93
+00:05:07,810 --> 00:05:14,470
+The front, side and top views show a shape from 3 directions, and a net folds up to make it.
+
+94
+00:05:14,520 --> 00:05:19,670
+Great work! Now practise lesson 8.4 on Camday.

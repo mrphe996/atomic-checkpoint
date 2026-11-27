@@ -1,0 +1,355 @@
+1
+00:00:07,060 --> 00:00:10,620
+One floor tile is broken, and a builder needs a new one.
+
+2
+00:00:10,670 --> 00:00:13,620
+The new tile must fit the gap exactly.
+
+3
+00:00:13,670 --> 00:00:17,080
+A tile is the same shape as the old one, but bigger.
+
+4
+00:00:17,130 --> 00:00:17,880
+Will it fit?
+
+5
+00:00:17,930 --> 00:00:21,070
+Pause the video and decide.
+
+6
+00:00:21,120 --> 00:00:21,270
+No.
+
+7
+00:00:21,320 --> 00:00:26,450
+To fit the gap, the tile must be the same shape, and also the same size.
+
+8
+00:00:26,500 --> 00:00:31,030
+It can be turned round or flipped over, and it will still fit.
+
+9
+00:00:31,080 --> 00:00:32,910
+Remember how we name angles.
+
+10
+00:00:32,960 --> 00:00:36,070
+Angle ABC is the angle at B, the middle letter.
+
+11
+00:00:36,120 --> 00:00:38,900
+It is between the lines BA and BC.
+
+12
+00:00:38,950 --> 00:00:43,970
+Two shapes are congruent if they are exactly the same shape and the same size.
+
+13
+00:00:44,020 --> 00:00:46,930
+One fits exactly on top of the other.
+
+14
+00:00:46,980 --> 00:00:49,820
+You may need to turn it, or flip it over.
+
+15
+00:00:49,870 --> 00:00:55,380
+This second triangle is turned, but its sides are still 3, 4 and 5 centimetres.
+
+16
+00:00:55,430 --> 00:00:57,900
+The triangles are congruent.
+
+17
+00:00:57,950 --> 00:01:03,380
+Shapes that are the same shape, but a different size, are not congruent.
+
+18
+00:01:03,430 --> 00:01:04,070
+Your turn.
+
+19
+00:01:04,120 --> 00:01:08,690
+A shape and its mirror image: are they congruent, or not congruent?
+
+20
+00:01:08,740 --> 00:01:11,950
+Pause the video and decide.
+
+21
+00:01:12,000 --> 00:01:13,250
+They are congruent.
+
+22
+00:01:13,300 --> 00:01:19,030
+A reflection flips the shape, but it does not change any length or any angle.
+
+23
+00:01:19,080 --> 00:01:26,400
+In congruent shapes, the matching parts are called corresponding sides and corresponding angles.
+
+24
+00:01:26,450 --> 00:01:29,010
+We write the letters in matching order.
+
+25
+00:01:29,060 --> 00:01:35,790
+If triangle ABC is congruent to triangle XYZ, then A matches X, B matches Y, and C matches Z.
+
+26
+00:01:35,840 --> 00:01:38,770
+Corresponding sides are equal: AB equals XY.
+
+27
+00:01:38,820 --> 00:01:43,050
+Corresponding angles are equal: angle B equals angle Y.
+
+28
+00:01:43,100 --> 00:01:43,780
+Your turn.
+
+29
+00:01:43,830 --> 00:01:46,830
+Triangle KLM is congruent to triangle RST.
+
+30
+00:01:46,880 --> 00:01:48,430
+Angle L is 72 degrees.
+
+31
+00:01:48,480 --> 00:01:49,590
+What is angle S?
+
+32
+00:01:49,640 --> 00:01:52,950
+Pause the video and try it.
+
+33
+00:01:53,000 --> 00:01:57,890
+L and S are both the second letter, so they are corresponding angles.
+
+34
+00:01:57,940 --> 00:02:00,010
+Angle S is 72 degrees.
+
+35
+00:02:00,060 --> 00:02:01,320
+Here is the method.
+
+36
+00:02:01,370 --> 00:02:07,300
+Step 1: check that the shapes are the same type, with the same number of sides.
+
+37
+00:02:07,350 --> 00:02:10,980
+Step 2: match up the corresponding sides and angles.
+
+38
+00:02:11,030 --> 00:02:14,080
+Turn or flip the shape in your head.
+
+39
+00:02:14,130 --> 00:02:20,030
+Step 3: if every matching side and angle is equal, the shapes are congruent.
+
+40
+00:02:20,080 --> 00:02:25,620
+If the shape is the same but the size is different, they are not congruent.
+
+41
+00:02:25,670 --> 00:02:29,700
+Quadrilateral ABCD is congruent to quadrilateral EFGH.
+
+42
+00:02:29,750 --> 00:02:34,840
+AB is 7 centimetres, BC is 5 centimetres, and EH is 4.5 centimetres.
+
+43
+00:02:34,890 --> 00:02:36,530
+Find FG and AD.
+
+44
+00:02:36,580 --> 00:02:38,520
+F matches B, and G matches C.
+
+45
+00:02:38,570 --> 00:02:41,820
+So FG equals BC, which is 5 centimetres.
+
+46
+00:02:41,870 --> 00:02:43,870
+A matches E, and D matches H.
+
+47
+00:02:43,920 --> 00:02:47,380
+So AD equals EH, which is 4.5 centimetres.
+
+48
+00:02:47,430 --> 00:02:50,620
+Triangle PQR is congruent to triangle UVW.
+
+49
+00:02:50,670 --> 00:02:54,320
+Angle P is 45 degrees and angle Q is 75 degrees.
+
+50
+00:02:54,370 --> 00:02:55,870
+Find angle W.
+
+51
+00:02:55,920 --> 00:02:58,670
+W is the third letter, so it matches R.
+
+52
+00:02:58,720 --> 00:03:00,030
+First find angle R.
+
+53
+00:03:00,080 --> 00:03:03,950
+The angles in a triangle add up to 180 degrees.
+
+54
+00:03:04,000 --> 00:03:06,680
+180 minus 45 minus 75 is 60.
+
+55
+00:03:06,730 --> 00:03:12,300
+Angle R is 60 degrees, so angle W is 60 degrees too.
+
+56
+00:03:12,350 --> 00:03:15,450
+Triangle A has sides 5, 12 and 13.
+
+57
+00:03:15,500 --> 00:03:18,590
+Triangle B has sides 12, 13 and 5.
+
+58
+00:03:18,640 --> 00:03:21,830
+Triangle C has sides 10, 24 and 26.
+
+59
+00:03:21,880 --> 00:03:24,230
+Which are congruent?
+
+60
+00:03:24,280 --> 00:03:26,380
+A and B have the same 3 lengths.
+
+61
+00:03:26,430 --> 00:03:30,430
+The order does not matter, so A and B are congruent.
+
+62
+00:03:30,480 --> 00:03:32,810
+Every side of C is 2 times as long.
+
+63
+00:03:32,860 --> 00:03:34,990
+C is the same shape, but bigger.
+
+64
+00:03:35,040 --> 00:03:37,860
+It is not congruent to the others.
+
+65
+00:03:37,910 --> 00:03:43,150
+Two equilateral triangles have sides of 3 centimetres and 5 centimetres.
+
+66
+00:03:43,200 --> 00:03:44,540
+Are they congruent?
+
+67
+00:03:44,590 --> 00:03:46,230
+Here is Noor's working.
+
+68
+00:03:46,280 --> 00:03:48,840
+Which line goes wrong first?
+
+69
+00:03:48,890 --> 00:03:49,950
+Line 2 is wrong.
+
+70
+00:03:50,000 --> 00:03:53,370
+Congruent needs the same shape and the same size.
+
+71
+00:03:53,420 --> 00:03:56,990
+These triangles have different side lengths.
+
+72
+00:03:57,040 --> 00:03:59,610
+So they are not congruent.
+
+73
+00:03:59,660 --> 00:04:02,120
+Factories depend on congruent shapes.
+
+74
+00:04:02,170 --> 00:04:09,120
+Every screen protector for one model of phone is congruent, so it fits any phone of that model.
+
+75
+00:04:09,170 --> 00:04:12,440
+A copy of a key must be congruent to the original.
+
+76
+00:04:12,490 --> 00:04:16,780
+If it is even slightly different, the lock will not open.
+
+77
+00:04:16,830 --> 00:04:22,650
+And in a jigsaw, each piece fits only one hole: the hole that is congruent to it.
+
+78
+00:04:22,700 --> 00:04:23,980
+One last question.
+
+79
+00:04:24,030 --> 00:04:25,750
+One rectangle is 4 by 6.
+
+80
+00:04:25,800 --> 00:04:27,080
+Another is 6 by 4.
+
+81
+00:04:27,130 --> 00:04:29,810
+Are they congruent, or not congruent?
+
+82
+00:04:29,860 --> 00:04:33,210
+Pause the video and answer.
+
+83
+00:04:33,260 --> 00:04:34,500
+They are congruent.
+
+84
+00:04:34,550 --> 00:04:39,200
+The second rectangle is the first one, turned a quarter turn.
+
+85
+00:04:39,250 --> 00:04:44,230
+To remember: congruent shapes are identical in shape and in size.
+
+86
+00:04:44,280 --> 00:04:46,890
+They may be turned or flipped.
+
+87
+00:04:46,940 --> 00:04:52,040
+Corresponding sides are equal, and corresponding angles are equal.
+
+88
+00:04:52,090 --> 00:04:56,520
+Write the letters of congruent shapes in matching order.
+
+89
+00:04:56,570 --> 00:05:01,590
+Great work! Now practise lesson 8.3 on Camday.

@@ -1,0 +1,387 @@
+1
+00:00:07,630 --> 00:00:10,170
+A games console costs 480 dollars.
+
+2
+00:00:10,220 --> 00:00:14,140
+In a sale, it is 5 sixths of the usual price.
+
+3
+00:00:14,190 --> 00:00:15,660
+What is the sale price?
+
+4
+00:00:15,710 --> 00:00:17,250
+Try to find a quick way.
+
+5
+00:00:17,300 --> 00:00:20,770
+Pause the video and work it out.
+
+6
+00:00:20,820 --> 00:00:24,430
+5 sixths is the whole price, minus 1 sixth.
+
+7
+00:00:24,480 --> 00:00:28,130
+And 1 sixth of 480 is easy: it is 80.
+
+8
+00:00:28,180 --> 00:00:30,360
+480 minus 80 is 400.
+
+9
+00:00:30,410 --> 00:00:34,260
+The sale price is 400 dollars.
+
+10
+00:00:34,310 --> 00:00:35,860
+Remember factors.
+
+11
+00:00:35,910 --> 00:00:40,450
+The factors of 12 are 1, 2, 3, 4, 6 and 12.
+
+12
+00:00:40,500 --> 00:00:44,630
+A number can be split into factors in different ways.
+
+13
+00:00:44,680 --> 00:00:48,030
+24 is 4 times 6, and also 3 times 8.
+
+14
+00:00:48,080 --> 00:00:54,880
+When a fraction is close to 1, find the small missing part, and subtract it from the whole.
+
+15
+00:00:54,930 --> 00:00:56,620
+9 tenths of 350.
+
+16
+00:00:56,670 --> 00:00:58,150
+1 tenth is 35.
+
+17
+00:00:58,200 --> 00:01:03,280
+So 9 tenths is 350 minus 35, which is 315.
+
+18
+00:01:03,330 --> 00:01:04,990
+3 quarters of 96.
+
+19
+00:01:05,040 --> 00:01:06,600
+1 quarter is 24.
+
+20
+00:01:06,650 --> 00:01:11,360
+So 3 quarters is 96 minus 24, which is 72.
+
+21
+00:01:11,410 --> 00:01:12,150
+Your turn.
+
+22
+00:01:12,200 --> 00:01:14,100
+Work out 4 fifths of 650.
+
+23
+00:01:14,150 --> 00:01:17,610
+Pause the video and try it.
+
+24
+00:01:17,660 --> 00:01:19,940
+1 fifth of 650 is 130.
+
+25
+00:01:19,990 --> 00:01:22,490
+Take that away from 650.
+
+26
+00:01:22,540 --> 00:01:24,960
+The answer is 520.
+
+27
+00:01:25,010 --> 00:01:27,200
+Here are three more ideas.
+
+28
+00:01:27,250 --> 00:01:28,840
+First: use factors.
+
+29
+00:01:28,890 --> 00:01:31,770
+1 twelfth is 1 third of 1 quarter.
+
+30
+00:01:31,820 --> 00:01:36,710
+So 1 twelfth of 600 is 1 third of 150, which is 50.
+
+31
+00:01:36,760 --> 00:01:39,870
+Second: cancel before you multiply.
+
+32
+00:01:39,920 --> 00:01:48,890
+In 15 over 28, times 14 over 45: 14 and 28 share a factor of 14, and 15 and 45 share a factor of 15.
+
+33
+00:01:48,940 --> 00:01:54,030
+That leaves 1 half times 1 third, which is 1 sixth.
+
+34
+00:01:54,080 --> 00:01:55,430
+Third: re-order.
+
+35
+00:01:55,480 --> 00:02:00,500
+In 3 sevenths times 5 times 14, do 3 sevenths of 14 first.
+
+36
+00:02:00,550 --> 00:02:01,380
+That is 6.
+
+37
+00:02:01,430 --> 00:02:03,770
+Then 6 times 5 is 30.
+
+38
+00:02:03,820 --> 00:02:05,130
+Here is the method.
+
+39
+00:02:05,180 --> 00:02:07,210
+Step 1: look at the fraction.
+
+40
+00:02:07,260 --> 00:02:08,420
+Is it close to 1?
+
+41
+00:02:08,470 --> 00:02:11,550
+Then use whole minus the small part.
+
+42
+00:02:11,600 --> 00:02:16,590
+Step 2: look for common factors, and cancel before you multiply.
+
+43
+00:02:16,640 --> 00:02:22,440
+Step 3: split a denominator into factors, or re-order the multiplication.
+
+44
+00:02:22,490 --> 00:02:25,250
+Step 4: follow the order of operations.
+
+45
+00:02:25,300 --> 00:02:29,250
+Multiply and divide before you add and subtract.
+
+46
+00:02:29,300 --> 00:02:32,700
+Work out 11 twelfths of 840.
+
+47
+00:02:32,750 --> 00:02:35,780
+1 twelfth of 840 is 70.
+
+48
+00:02:35,830 --> 00:02:39,020
+840 minus 70 is 770.
+
+49
+00:02:39,070 --> 00:02:42,360
+Work out 1 fifteenth of 2,400.
+
+50
+00:02:42,410 --> 00:02:43,710
+15 is 3 times 5.
+
+51
+00:02:43,760 --> 00:02:47,960
+So find 1 fifth first, then 1 third of that.
+
+52
+00:02:48,010 --> 00:02:51,050
+1 fifth of 2,400 is 480.
+
+53
+00:02:51,100 --> 00:02:54,440
+1 third of 480 is 160.
+
+54
+00:02:54,490 --> 00:02:55,280
+Your turn.
+
+55
+00:02:55,330 --> 00:02:57,800
+Work out 1 twentieth of 1,800.
+
+56
+00:02:57,850 --> 00:03:01,050
+Pause and work it out.
+
+57
+00:03:01,100 --> 00:03:03,160
+20 is 10 times 2.
+
+58
+00:03:03,210 --> 00:03:06,130
+1 tenth of 1,800 is 180.
+
+59
+00:03:06,180 --> 00:03:08,900
+Half of 180 is 90.
+
+60
+00:03:08,950 --> 00:03:13,500
+Work out 18 over 25, times 35 over 36.
+
+61
+00:03:13,550 --> 00:03:15,220
+Cancel 18 and 36.
+
+62
+00:03:15,270 --> 00:03:17,790
+They become 1 and 2.
+
+63
+00:03:17,840 --> 00:03:19,490
+Cancel 35 and 25.
+
+64
+00:03:19,540 --> 00:03:22,040
+They become 7 and 5.
+
+65
+00:03:22,090 --> 00:03:25,580
+1 fifth times 7 halves is 7 tenths.
+
+66
+00:03:25,630 --> 00:03:29,880
+Work out 2 thirds, plus 1 third times 3 quarters.
+
+67
+00:03:29,930 --> 00:03:31,090
+Multiply first.
+
+68
+00:03:31,140 --> 00:03:34,710
+1 third times 3 quarters is 1 quarter.
+
+69
+00:03:34,760 --> 00:03:35,430
+Then add.
+
+70
+00:03:35,480 --> 00:03:42,020
+2 thirds plus 1 quarter is 8 twelfths plus 3 twelfths, which is 11 twelfths.
+
+71
+00:03:42,070 --> 00:03:45,550
+Ana works out 1 half, plus 1 half times 1 half.
+
+72
+00:03:45,600 --> 00:03:47,590
+Which line is wrong?
+
+73
+00:03:47,640 --> 00:03:48,730
+Line 1 is wrong.
+
+74
+00:03:48,780 --> 00:03:49,860
+Ana added first.
+
+75
+00:03:49,910 --> 00:03:52,740
+You must multiply before you add.
+
+76
+00:03:52,790 --> 00:03:55,430
+1 half times 1 half is 1 quarter.
+
+77
+00:03:55,480 --> 00:03:59,310
+Then 1 half plus 1 quarter is 3 quarters.
+
+78
+00:03:59,360 --> 00:04:01,970
+You can use these tricks in any shop.
+
+79
+00:04:02,020 --> 00:04:03,910
+A sign says 10 percent off.
+
+80
+00:04:03,960 --> 00:04:07,410
+That means you pay 9 tenths of the price.
+
+81
+00:04:07,460 --> 00:04:10,320
+A pair of trainers costs 70 dollars.
+
+82
+00:04:10,370 --> 00:04:12,570
+1 tenth is 7 dollars.
+
+83
+00:04:12,620 --> 00:04:14,120
+70 minus 7 is 63.
+
+84
+00:04:14,170 --> 00:04:15,860
+You pay 63 dollars.
+
+85
+00:04:15,910 --> 00:04:19,150
+No written calculation needed.
+
+86
+00:04:19,200 --> 00:04:20,480
+One last question.
+
+87
+00:04:20,530 --> 00:04:23,820
+Work out 1 third, plus 2 thirds times 1 half.
+
+88
+00:04:23,870 --> 00:04:27,220
+Pause the video and answer.
+
+89
+00:04:27,270 --> 00:04:28,430
+Multiply first.
+
+90
+00:04:28,480 --> 00:04:31,100
+2 thirds times 1 half is 1 third.
+
+91
+00:04:31,150 --> 00:04:34,720
+Then 1 third plus 1 third is 2 thirds.
+
+92
+00:04:34,770 --> 00:04:40,450
+To remember: for a fraction close to 1, use the whole minus the small part.
+
+93
+00:04:40,500 --> 00:04:42,940
+Split denominators into factors.
+
+94
+00:04:42,990 --> 00:04:46,140
+1 twelfth is 1 third of 1 quarter.
+
+95
+00:04:46,190 --> 00:04:50,470
+Cancel before multiplying, and re-order when it helps.
+
+96
+00:04:50,520 --> 00:04:53,930
+And always follow the order of operations.
+
+97
+00:04:53,980 --> 00:04:59,150
+Great work! Now practise lesson 7.5 on Camday.

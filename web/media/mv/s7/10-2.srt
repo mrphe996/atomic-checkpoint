@@ -1,0 +1,363 @@
+1
+00:00:07,250 --> 00:00:09,260
+A town had 8,000 people.
+
+2
+00:00:09,310 --> 00:00:15,150
+10 years later, its population is 150 per cent of what it was.
+
+3
+00:00:15,200 --> 00:00:17,660
+How many people live in the town now?
+
+4
+00:00:17,710 --> 00:00:21,230
+Pause the video and work it out.
+
+5
+00:00:21,280 --> 00:00:25,760
+100 per cent is the whole amount: 8,000 people.
+
+6
+00:00:25,810 --> 00:00:29,670
+50 per cent is half of that: 4,000.
+
+7
+00:00:29,720 --> 00:00:33,490
+150 per cent is 8,000 plus 4,000.
+
+8
+00:00:33,540 --> 00:00:37,620
+The town now has 12,000 people.
+
+9
+00:00:37,670 --> 00:00:41,420
+Remember: to find 10 per cent, divide by 10.
+
+10
+00:00:41,470 --> 00:00:44,900
+To find 1 per cent, divide by 100.
+
+11
+00:00:44,950 --> 00:00:48,740
+You can build other percentages from these.
+
+12
+00:00:48,790 --> 00:00:55,360
+10 per cent of 320 is 32, so 30 per cent is 3 times 32, which is 96.
+
+13
+00:00:55,410 --> 00:00:58,080
+100 per cent is the whole amount.
+
+14
+00:00:58,130 --> 00:01:02,670
+More than 100 per cent means more than the whole.
+
+15
+00:01:02,720 --> 00:01:05,250
+150 per cent is 1.5 as a decimal.
+
+16
+00:01:05,300 --> 00:01:09,010
+It means one and a half times the amount.
+
+17
+00:01:09,060 --> 00:01:12,520
+200 per cent is 2: double the amount.
+
+18
+00:01:12,570 --> 00:01:15,340
+And 250 per cent is 2.5.
+
+19
+00:01:15,390 --> 00:01:21,950
+The rule is the same as before: to change a percentage to a decimal, divide by 100.
+
+20
+00:01:22,000 --> 00:01:22,710
+Your turn.
+
+21
+00:01:22,760 --> 00:01:25,150
+Write 175 per cent as a decimal.
+
+22
+00:01:25,200 --> 00:01:28,620
+Pause the video and try it.
+
+23
+00:01:28,670 --> 00:01:31,200
+175 divided by 100 is 1.75.
+
+24
+00:01:31,250 --> 00:01:35,400
+The digits move 2 places to the right.
+
+25
+00:01:35,450 --> 00:01:37,930
+A percentage can also be very small.
+
+26
+00:01:37,980 --> 00:01:41,870
+Less than 1 per cent is less than one hundredth.
+
+27
+00:01:41,920 --> 00:01:45,200
+0.5 per cent is half of 1 per cent.
+
+28
+00:01:45,250 --> 00:01:49,760
+As a decimal, 0.5 divided by 100 is 0.005.
+
+29
+00:01:49,810 --> 00:01:54,170
+A bank pays 0.5 per cent interest on 600 dollars.
+
+30
+00:01:54,220 --> 00:01:59,490
+1 per cent of 600 is 6, so 0.5 per cent is 3 dollars.
+
+31
+00:01:59,540 --> 00:02:00,350
+Your turn.
+
+32
+00:02:00,400 --> 00:02:02,670
+Find 0.1 per cent of 3,000.
+
+33
+00:02:02,720 --> 00:02:06,390
+Pause the video and try it.
+
+34
+00:02:06,440 --> 00:02:08,730
+1 per cent of 3,000 is 30.
+
+35
+00:02:08,780 --> 00:02:13,410
+0.1 per cent is one tenth of that, which is 3.
+
+36
+00:02:13,460 --> 00:02:14,880
+Here is the method.
+
+37
+00:02:14,930 --> 00:02:19,210
+Step 1: change the percentage to a decimal and multiply.
+
+38
+00:02:19,260 --> 00:02:24,240
+Or build it from 100 per cent, 10 per cent and 1 per cent.
+
+39
+00:02:24,290 --> 00:02:30,290
+Step 2: more than 100 per cent gives an answer bigger than the amount.
+
+40
+00:02:30,340 --> 00:02:36,940
+Step 3: less than 1 per cent gives an answer smaller than one hundredth of the amount.
+
+41
+00:02:36,990 --> 00:02:41,380
+Step 4: check that the size of your answer makes sense.
+
+42
+00:02:41,430 --> 00:02:44,540
+Find 145 per cent of 80.
+
+43
+00:02:44,590 --> 00:02:46,270
+100 per cent is 80.
+
+44
+00:02:46,320 --> 00:02:49,830
+10 per cent is 8, so 40 per cent is 32.
+
+45
+00:02:49,880 --> 00:02:54,940
+And 5 per cent is half of 10 per cent, which is 4.
+
+46
+00:02:54,990 --> 00:02:59,320
+Add them: 80 plus 32 plus 4 is 116.
+
+47
+00:02:59,370 --> 00:03:00,620
+Check the size.
+
+48
+00:03:00,670 --> 00:03:05,860
+145 per cent is more than the whole, and 116 is more than 80.
+
+49
+00:03:05,910 --> 00:03:06,840
+Good.
+
+50
+00:03:06,890 --> 00:03:10,300
+Find 0.4 per cent of 2,500.
+
+51
+00:03:10,350 --> 00:03:11,800
+1 per cent is 25.
+
+52
+00:03:11,850 --> 00:03:15,790
+0.1 per cent is one tenth of that: 2.5.
+
+53
+00:03:15,840 --> 00:03:20,320
+0.4 per cent is 4 times 2.5, which is 10.
+
+54
+00:03:20,370 --> 00:03:24,650
+Write 3.6 per cent as a decimal, and as a fraction.
+
+55
+00:03:24,700 --> 00:03:26,660
+First, the decimal.
+
+56
+00:03:26,710 --> 00:03:30,170
+3.6 divided by 100 is 0.036.
+
+57
+00:03:30,220 --> 00:03:32,420
+0.036 is 36 thousandths.
+
+58
+00:03:32,470 --> 00:03:35,700
+Divide the top and the bottom by 4.
+
+59
+00:03:35,750 --> 00:03:38,030
+That is 9 over 250.
+
+60
+00:03:38,080 --> 00:03:40,460
+A kitten weighed 0.8 kilograms.
+
+61
+00:03:40,510 --> 00:03:43,210
+Now it weighs 350 per cent of that.
+
+62
+00:03:43,260 --> 00:03:45,570
+What does it weigh now?
+
+63
+00:03:45,620 --> 00:03:49,170
+350 per cent is 3.5 as a decimal.
+
+64
+00:03:49,220 --> 00:03:51,130
+3.5 times 0.8 is 2.8.
+
+65
+00:03:51,180 --> 00:03:55,050
+The kitten now weighs 2.8 kilograms.
+
+66
+00:03:55,100 --> 00:03:57,070
+Find 0.3 per cent of 700.
+
+67
+00:03:57,120 --> 00:03:58,850
+Here is Raj's working.
+
+68
+00:03:58,900 --> 00:04:01,670
+Which line goes wrong first?
+
+69
+00:04:01,720 --> 00:04:03,220
+Line 1 is wrong.
+
+70
+00:04:03,270 --> 00:04:08,060
+0.3 per cent means 0.3 out of 100, which is 0.003.
+
+71
+00:04:08,110 --> 00:04:12,300
+An answer of 210 would be 30 per cent.
+
+72
+00:04:12,350 --> 00:04:14,400
+0.003 times 700 is 2.1.
+
+73
+00:04:14,450 --> 00:04:19,700
+That is a sensible size for such a small percentage.
+
+74
+00:04:19,750 --> 00:04:22,190
+Big percentages describe growth.
+
+75
+00:04:22,240 --> 00:04:28,010
+The population of India today is about 400 per cent of what it was in 1950.
+
+76
+00:04:28,060 --> 00:04:31,440
+That is about 4 times as many people.
+
+77
+00:04:31,490 --> 00:04:33,610
+Small percentages matter too.
+
+78
+00:04:33,660 --> 00:04:38,200
+Carbon dioxide is only about 0.04 per cent of the air.
+
+79
+00:04:38,250 --> 00:04:40,800
+That is 4 parts in every 10,000.
+
+80
+00:04:40,850 --> 00:04:45,960
+But even that small amount helps to keep our planet warm.
+
+81
+00:04:46,010 --> 00:04:47,390
+One last question.
+
+82
+00:04:47,440 --> 00:04:49,610
+What is 200 per cent of 7.5?
+
+83
+00:04:49,660 --> 00:04:53,150
+Pause the video and answer.
+
+84
+00:04:53,200 --> 00:04:55,860
+200 per cent means double.
+
+85
+00:04:55,910 --> 00:04:58,290
+2 times 7.5 is 15.
+
+86
+00:04:58,340 --> 00:05:04,240
+To remember: to change any percentage to a decimal, divide by 100.
+
+87
+00:05:04,290 --> 00:05:09,030
+150 per cent is 1.5, and 0.5 per cent is 0.005.
+
+88
+00:05:09,080 --> 00:05:13,150
+Over 100 per cent gives more than the amount.
+
+89
+00:05:13,200 --> 00:05:17,480
+Under 1 per cent gives less than one hundredth of it.
+
+90
+00:05:17,530 --> 00:05:25,700
+Build percentages from 100 per cent, 10 per cent and 1 per cent, and check the size of your answer.
+
+91
+00:05:25,750 --> 00:05:31,150
+Great work! Now practise lesson 10.2 on Camday.

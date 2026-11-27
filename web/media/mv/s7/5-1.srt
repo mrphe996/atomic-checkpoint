@@ -1,0 +1,375 @@
+1
+00:00:07,020 --> 00:00:10,940
+A round pizza is cut from the centre into 4 slices.
+
+2
+00:00:10,990 --> 00:00:18,350
+Three of the slices have angles of 95 degrees, 120 degrees and 80 degrees at the centre.
+
+3
+00:00:18,400 --> 00:00:20,770
+What angle does the last slice make?
+
+4
+00:00:20,820 --> 00:00:24,330
+Pause the video and work it out.
+
+5
+00:00:24,380 --> 00:00:27,680
+All the way round the centre is one full turn.
+
+6
+00:00:27,730 --> 00:00:30,200
+A full turn is 360 degrees.
+
+7
+00:00:30,250 --> 00:00:34,550
+The three slices we know add up to 295 degrees.
+
+8
+00:00:34,600 --> 00:00:36,490
+360 minus 295 is 65.
+
+9
+00:00:36,540 --> 00:00:41,130
+The last slice has an angle of 65 degrees.
+
+10
+00:00:41,180 --> 00:00:45,470
+Remember: angles on a straight line add up to 180 degrees.
+
+11
+00:00:45,520 --> 00:00:47,510
+That is half a turn.
+
+12
+00:00:47,560 --> 00:00:55,290
+If one angle is 128 degrees, the other is 180 minus 128, which is 52 degrees.
+
+13
+00:00:55,340 --> 00:01:00,170
+The angles around a point always add up to 360 degrees.
+
+14
+00:01:00,220 --> 00:01:04,670
+Here, two of the angles are 140 degrees and 85 degrees.
+
+15
+00:01:04,720 --> 00:01:06,290
+Find angle b.
+
+16
+00:01:06,340 --> 00:01:08,790
+140 plus 85 is 225.
+
+17
+00:01:08,840 --> 00:01:11,560
+360 minus 225 is 135.
+
+18
+00:01:11,610 --> 00:01:14,740
+So b is 135 degrees.
+
+19
+00:01:14,790 --> 00:01:15,520
+Your turn.
+
+20
+00:01:15,570 --> 00:01:20,370
+Three angles around a point are 200 degrees, 95 degrees, and y.
+
+21
+00:01:20,420 --> 00:01:20,910
+Find y.
+
+22
+00:01:20,960 --> 00:01:24,400
+Pause the video and try it.
+
+23
+00:01:24,450 --> 00:01:26,810
+200 plus 95 is 295.
+
+24
+00:01:26,860 --> 00:01:29,360
+360 minus 295 is 65.
+
+25
+00:01:29,410 --> 00:01:32,330
+So y is 65 degrees.
+
+26
+00:01:32,380 --> 00:01:35,860
+A quadrilateral is a shape with 4 straight sides.
+
+27
+00:01:35,910 --> 00:01:39,870
+Draw a diagonal, and it splits into 2 triangles.
+
+28
+00:01:39,920 --> 00:01:43,950
+The angles in each triangle add up to 180 degrees.
+
+29
+00:01:44,000 --> 00:01:50,780
+So the angles in a quadrilateral add up to 2 times 180, which is 360 degrees.
+
+30
+00:01:50,830 --> 00:01:55,280
+In this one, 74 plus 106 plus 82 is 262.
+
+31
+00:01:55,330 --> 00:01:57,530
+360 minus 262 is 98.
+
+32
+00:01:57,580 --> 00:02:00,890
+So angle d is 98 degrees.
+
+33
+00:02:00,940 --> 00:02:02,540
+Here is the method.
+
+34
+00:02:02,590 --> 00:02:05,410
+Step 1: decide which fact to use.
+
+35
+00:02:05,460 --> 00:02:07,410
+A straight line is 180.
+
+36
+00:02:07,460 --> 00:02:09,320
+Around a point is 360.
+
+37
+00:02:09,370 --> 00:02:10,880
+A triangle is 180.
+
+38
+00:02:10,930 --> 00:02:13,430
+A quadrilateral is 360.
+
+39
+00:02:13,480 --> 00:02:16,350
+Step 2: add the angles you know.
+
+40
+00:02:16,400 --> 00:02:19,270
+Step 3: subtract from the total.
+
+41
+00:02:19,320 --> 00:02:24,190
+Step 4: check that your answer looks sensible on the diagram.
+
+42
+00:02:24,240 --> 00:02:26,490
+Five equal angles meet at a point.
+
+43
+00:02:26,540 --> 00:02:28,400
+How big is each one?
+
+44
+00:02:28,450 --> 00:02:30,670
+The total is 360 degrees.
+
+45
+00:02:30,720 --> 00:02:34,410
+Share it equally: 360 divided by 5 is 72.
+
+46
+00:02:34,460 --> 00:02:37,230
+Each angle is 72 degrees.
+
+47
+00:02:37,280 --> 00:02:42,870
+Around a point, the angles are 2 x, 3 x, 100 degrees and 80 degrees.
+
+48
+00:02:42,920 --> 00:02:44,010
+Find x.
+
+49
+00:02:44,060 --> 00:02:46,020
+They add up to 360.
+
+50
+00:02:46,070 --> 00:02:50,920
+2 x plus 3 x plus 100 plus 80 equals 360.
+
+51
+00:02:50,970 --> 00:02:55,530
+Collect like terms: 5 x plus 180 equals 360.
+
+52
+00:02:55,580 --> 00:02:59,130
+Subtract 180: 5 x equals 180.
+
+53
+00:02:59,180 --> 00:03:00,260
+Divide by 5.
+
+54
+00:03:00,310 --> 00:03:01,940
+x equals 36.
+
+55
+00:03:01,990 --> 00:03:02,640
+Your turn.
+
+56
+00:03:02,690 --> 00:03:05,370
+A quadrilateral has three right angles.
+
+57
+00:03:05,420 --> 00:03:07,120
+What is the fourth angle?
+
+58
+00:03:07,170 --> 00:03:10,060
+Pause and work it out.
+
+59
+00:03:10,110 --> 00:03:14,390
+Three right angles make 3 times 90, which is 270.
+
+60
+00:03:14,440 --> 00:03:16,150
+360 minus 270 is 90.
+
+61
+00:03:16,200 --> 00:03:19,510
+The fourth angle is a right angle too.
+
+62
+00:03:19,560 --> 00:03:22,270
+The shape is a rectangle.
+
+63
+00:03:22,320 --> 00:03:27,550
+What is the smaller angle between the hands of a clock at 4 o'clock?
+
+64
+00:03:27,600 --> 00:03:30,860
+The 12 hour marks share 360 degrees.
+
+65
+00:03:30,910 --> 00:03:36,820
+360 divided by 12 is 30 degrees between each pair of marks.
+
+66
+00:03:36,870 --> 00:03:39,320
+From 12 to 4 is 4 marks.
+
+67
+00:03:39,370 --> 00:03:41,200
+4 times 30 is 120.
+
+68
+00:03:41,250 --> 00:03:44,360
+The angle is 120 degrees.
+
+69
+00:03:44,410 --> 00:03:49,210
+Three angles around a point are 150 degrees, 90 degrees, and a.
+
+70
+00:03:49,260 --> 00:03:50,900
+Here is Leo's working.
+
+71
+00:03:50,950 --> 00:03:53,610
+Which line goes wrong first?
+
+72
+00:03:53,660 --> 00:03:54,910
+Line 2 is wrong.
+
+73
+00:03:54,960 --> 00:03:59,240
+Angles around a point add up to 360 degrees, not 180.
+
+74
+00:03:59,290 --> 00:04:02,400
+And an angle cannot be negative.
+
+75
+00:04:02,450 --> 00:04:05,010
+360 minus 240 is 120.
+
+76
+00:04:05,060 --> 00:04:08,050
+So a is 120 degrees.
+
+77
+00:04:08,100 --> 00:04:11,220
+Why are there 360 degrees in a full turn?
+
+78
+00:04:11,270 --> 00:04:16,790
+The idea is thought to come from ancient Babylon, about 4,000 years ago.
+
+79
+00:04:16,840 --> 00:04:20,050
+The Babylonians counted in sixties.
+
+80
+00:04:20,100 --> 00:04:22,580
+360 is a very handy number.
+
+81
+00:04:22,630 --> 00:04:28,750
+It can be divided exactly by 2, 3, 4, 5, 6, 8, 9, 10 and 12.
+
+82
+00:04:28,800 --> 00:04:31,350
+Skateboarders use the same number.
+
+83
+00:04:31,400 --> 00:04:34,880
+A full spin in the air is called a 360.
+
+84
+00:04:34,930 --> 00:04:36,140
+One last question.
+
+85
+00:04:36,190 --> 00:04:38,320
+6 equal angles meet at a point.
+
+86
+00:04:38,370 --> 00:04:39,720
+How big is each one?
+
+87
+00:04:39,770 --> 00:04:43,020
+Pause the video and answer.
+
+88
+00:04:43,070 --> 00:04:45,360
+360 divided by 6 is 60.
+
+89
+00:04:45,410 --> 00:04:48,470
+Each angle is 60 degrees.
+
+90
+00:04:48,520 --> 00:04:53,500
+To remember: angles around a point add up to 360 degrees.
+
+91
+00:04:53,550 --> 00:05:00,400
+Angles in a quadrilateral add up to 360 degrees, because it is made of 2 triangles.
+
+92
+00:05:00,450 --> 00:05:06,020
+Angles on a straight line, and in a triangle, add up to 180 degrees.
+
+93
+00:05:06,070 --> 00:05:10,680
+Add the angles you know, subtract from the total, then check.
+
+94
+00:05:10,730 --> 00:05:15,870
+Great work! Now practise lesson 5.1 on Camday.

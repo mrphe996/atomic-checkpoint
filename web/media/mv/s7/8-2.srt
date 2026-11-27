@@ -1,0 +1,359 @@
+1
+00:00:06,540 --> 00:00:08,090
+Look at a bicycle wheel.
+
+2
+00:00:08,140 --> 00:00:10,020
+There is a hub in the middle.
+
+3
+00:00:10,070 --> 00:00:13,430
+Thin spokes go from the hub out to the rim.
+
+4
+00:00:13,480 --> 00:00:15,850
+A spoke goes from the hub to the rim.
+
+5
+00:00:15,900 --> 00:00:19,070
+Is it most like a radius, a diameter, or a chord?
+
+6
+00:00:19,120 --> 00:00:22,240
+Pause the video and decide.
+
+7
+00:00:22,290 --> 00:00:23,550
+A spoke is a radius.
+
+8
+00:00:23,600 --> 00:00:27,360
+It goes from the centre of the circle to the edge.
+
+9
+00:00:27,410 --> 00:00:33,790
+The hub is the centre, and the rim is the circumference: the distance all the way round.
+
+10
+00:00:33,840 --> 00:00:38,890
+Remember: the diameter goes right across the circle, through the centre.
+
+11
+00:00:38,940 --> 00:00:41,210
+It is 2 times the radius.
+
+12
+00:00:41,260 --> 00:00:48,920
+If the radius is 8.5 centimetres, the diameter is 2 times 8.5, which is 17 centimetres.
+
+13
+00:00:48,970 --> 00:00:49,980
+Two more words.
+
+14
+00:00:50,030 --> 00:00:55,320
+A chord is a straight line that joins 2 points on the circumference.
+
+15
+00:00:55,370 --> 00:01:00,260
+A tangent is a straight line that touches the circle at exactly 1 point.
+
+16
+00:01:00,310 --> 00:01:03,280
+A flat road is a tangent to a wheel.
+
+17
+00:01:03,330 --> 00:01:05,300
+A diameter is a special chord.
+
+18
+00:01:05,350 --> 00:01:08,870
+It is the chord that goes through the centre.
+
+19
+00:01:08,920 --> 00:01:09,540
+Your turn.
+
+20
+00:01:09,590 --> 00:01:12,830
+The longest chord of a circle is called the what?
+
+21
+00:01:12,880 --> 00:01:16,040
+Pause the video and decide.
+
+22
+00:01:16,090 --> 00:01:18,350
+The longest chord is the diameter.
+
+23
+00:01:18,400 --> 00:01:25,940
+A chord gets longer as it moves towards the centre, and it is longest when it passes through the centre.
+
+24
+00:01:25,990 --> 00:01:29,480
+A polygon is a closed 2D shape with straight sides.
+
+25
+00:01:29,530 --> 00:01:32,870
+We name a polygon by its number of sides.
+
+26
+00:01:32,920 --> 00:01:34,410
+3 sides: a triangle.
+
+27
+00:01:34,460 --> 00:01:36,350
+4 sides: a quadrilateral.
+
+28
+00:01:36,400 --> 00:01:38,440
+5 sides: a pentagon.
+
+29
+00:01:38,490 --> 00:01:39,990
+6 sides: a hexagon.
+
+30
+00:01:40,040 --> 00:01:41,630
+8 sides: an octagon.
+
+31
+00:01:41,680 --> 00:01:43,810
+10 sides: a decagon.
+
+32
+00:01:43,860 --> 00:01:45,900
+One is missing from the table.
+
+33
+00:01:45,950 --> 00:01:48,890
+What is the name of a polygon with 7 sides?
+
+34
+00:01:48,940 --> 00:01:52,170
+Pause the video and try it.
+
+35
+00:01:52,220 --> 00:01:55,450
+A polygon with 7 sides is a heptagon.
+
+36
+00:01:55,500 --> 00:02:00,010
+A regular polygon has all its sides equal, and all its angles equal.
+
+37
+00:02:00,060 --> 00:02:01,500
+It needs both.
+
+38
+00:02:01,550 --> 00:02:05,950
+A square is regular: 4 equal sides, and 4 right angles.
+
+39
+00:02:06,000 --> 00:02:10,220
+A rhombus has 4 equal sides, but its angles are not all equal.
+
+40
+00:02:10,270 --> 00:02:12,070
+So it is irregular.
+
+41
+00:02:12,120 --> 00:02:16,490
+A rectangle has 4 equal angles, but its sides are not all equal.
+
+42
+00:02:16,540 --> 00:02:18,420
+It is irregular too.
+
+43
+00:02:18,470 --> 00:02:19,750
+Here is the method.
+
+44
+00:02:19,800 --> 00:02:23,430
+Step 1: count the sides, to name the polygon.
+
+45
+00:02:23,480 --> 00:02:28,000
+Step 2: check whether all the sides, and all the angles, are equal.
+
+46
+00:02:28,050 --> 00:02:29,990
+If so, it is regular.
+
+47
+00:02:30,040 --> 00:02:32,990
+Step 3: for a triangle, compare the sides.
+
+48
+00:02:33,040 --> 00:02:39,820
+3 equal sides is equilateral, 2 equal sides is isosceles, and no equal sides is scalene.
+
+49
+00:02:39,870 --> 00:02:42,630
+Step 4: look for a right angle.
+
+50
+00:02:42,680 --> 00:02:45,670
+A circle has a radius of 7 centimetres.
+
+51
+00:02:45,720 --> 00:02:48,240
+One chord is 10 centimetres long.
+
+52
+00:02:48,290 --> 00:02:52,140
+Could another chord be 15 centimetres long?
+
+53
+00:02:52,190 --> 00:02:54,760
+The longest chord is the diameter.
+
+54
+00:02:54,810 --> 00:02:59,240
+The diameter is 2 times 7, which is 14 centimetres.
+
+55
+00:02:59,290 --> 00:03:00,830
+15 is more than 14.
+
+56
+00:03:00,880 --> 00:03:05,330
+So no: a chord of 15 centimetres is impossible.
+
+57
+00:03:05,380 --> 00:03:10,740
+A triangle has sides of 6 centimetres, 6 centimetres and 9 centimetres.
+
+58
+00:03:10,790 --> 00:03:11,900
+Name it.
+
+59
+00:03:11,950 --> 00:03:15,950
+2 sides are equal, so it is an isosceles triangle.
+
+60
+00:03:16,000 --> 00:03:21,000
+Another triangle has angles of 90 degrees, 40 degrees and 50 degrees.
+
+61
+00:03:21,050 --> 00:03:24,880
+It has a right angle, and all 3 angles are different.
+
+62
+00:03:24,930 --> 00:03:28,430
+So it is a right-angled scalene triangle.
+
+63
+00:03:28,480 --> 00:03:32,180
+A regular decagon has a perimeter of 45 centimetres.
+
+64
+00:03:32,230 --> 00:03:34,320
+How long is each side?
+
+65
+00:03:34,370 --> 00:03:39,910
+A decagon has 10 sides, and in a regular polygon they are all equal.
+
+66
+00:03:39,960 --> 00:03:41,880
+45 divided by 10 is 4.5.
+
+67
+00:03:41,930 --> 00:03:44,820
+Each side is 4.5 centimetres.
+
+68
+00:03:44,870 --> 00:03:48,990
+Is a rhombus with sides of 4 centimetres a regular polygon?
+
+69
+00:03:49,040 --> 00:03:50,550
+Here is Aya's working.
+
+70
+00:03:50,600 --> 00:03:53,080
+Which line goes wrong first?
+
+71
+00:03:53,130 --> 00:03:54,170
+Line 2 is wrong.
+
+72
+00:03:54,220 --> 00:03:57,090
+Regular means equal sides and equal angles.
+
+73
+00:03:57,140 --> 00:04:02,000
+The angles of a rhombus are not all equal, so it is not regular.
+
+74
+00:04:02,050 --> 00:04:03,880
+Equal sides are not enough.
+
+75
+00:04:03,930 --> 00:04:06,380
+Always check the angles too.
+
+76
+00:04:06,430 --> 00:04:08,670
+You can find polygons everywhere.
+
+77
+00:04:08,720 --> 00:04:14,370
+Bees build their honeycomb from hexagons, which fit together with no gaps.
+
+78
+00:04:14,420 --> 00:04:20,360
+A stop sign is a regular octagon, so drivers can recognise it by its shape alone.
+
+79
+00:04:20,410 --> 00:04:23,380
+And the British 50 pence coin has 7 sides.
+
+80
+00:04:23,430 --> 00:04:29,660
+The sides are slightly curved, so that the coin rolls smoothly inside a machine.
+
+81
+00:04:29,710 --> 00:04:30,910
+One last question.
+
+82
+00:04:30,960 --> 00:04:35,270
+A regular quadrilateral is a square, a rhombus, or a rectangle?
+
+83
+00:04:35,320 --> 00:04:38,540
+Pause the video and answer.
+
+84
+00:04:38,590 --> 00:04:39,600
+It is a square.
+
+85
+00:04:39,650 --> 00:04:43,740
+Only a square has 4 equal sides and 4 equal angles.
+
+86
+00:04:43,790 --> 00:04:51,240
+To remember: the parts of a circle are the centre, radius, diameter, circumference, chord and tangent.
+
+87
+00:04:51,290 --> 00:04:56,170
+The diameter is 2 times the radius, and it is the longest chord.
+
+88
+00:04:56,220 --> 00:04:59,590
+Polygons are named by their number of sides.
+
+89
+00:04:59,640 --> 00:05:03,680
+Regular means all sides equal, and all angles equal.
+
+90
+00:05:03,730 --> 00:05:08,910
+Great work! Now practise lesson 8.2 on Camday.

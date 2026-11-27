@@ -1,0 +1,343 @@
+1
+00:00:06,860 --> 00:00:10,420
+Before a holiday, Ravi changes dollars into euros.
+
+2
+00:00:10,470 --> 00:00:13,990
+The bank gives 0.9 euros for every dollar.
+
+3
+00:00:14,040 --> 00:00:17,120
+How many euros does Ravi get for 40 dollars?
+
+4
+00:00:17,170 --> 00:00:20,800
+Pause the video and work it out.
+
+5
+00:00:20,850 --> 00:00:22,880
+40 times 0.9 is 36.
+
+6
+00:00:22,930 --> 00:00:25,520
+Ravi gets 36 euros.
+
+7
+00:00:25,570 --> 00:00:32,170
+But a graph can change any amount quickly, in either direction, with no calculation at all.
+
+8
+00:00:32,220 --> 00:00:37,880
+Remember: before you read a graph, work out what 1 small square is worth.
+
+9
+00:00:37,930 --> 00:00:43,170
+If 5 squares take you from 0 to 10, each square is worth 2.
+
+10
+00:00:43,220 --> 00:00:46,820
+A conversion graph changes one unit into another.
+
+11
+00:00:46,870 --> 00:00:52,210
+It is a straight line through 0, 0, because 0 dollars is 0 euros.
+
+12
+00:00:52,260 --> 00:00:56,060
+To change 40 dollars: find 40 on the dollars axis.
+
+13
+00:00:56,110 --> 00:00:57,450
+Go up to the line.
+
+14
+00:00:57,500 --> 00:00:59,990
+Then go across to the euros axis.
+
+15
+00:01:00,040 --> 00:01:01,930
+You read 36 euros.
+
+16
+00:01:01,980 --> 00:01:05,260
+To go the other way, start on the euros axis.
+
+17
+00:01:05,310 --> 00:01:07,700
+Go across to the line, then down.
+
+18
+00:01:07,750 --> 00:01:09,950
+54 euros is 60 dollars.
+
+19
+00:01:10,000 --> 00:01:10,700
+Your turn.
+
+20
+00:01:10,750 --> 00:01:12,860
+How many dollars is 18 euros?
+
+21
+00:01:12,910 --> 00:01:16,270
+Pause the video and try it.
+
+22
+00:01:16,320 --> 00:01:21,290
+Find 18 on the euros axis, go across to the line, then down.
+
+23
+00:01:21,340 --> 00:01:23,050
+You reach 20 dollars.
+
+24
+00:01:23,100 --> 00:01:25,770
+Check: 20 times 0.9 is 18.
+
+25
+00:01:25,820 --> 00:01:29,210
+A distance time graph tells the story of a journey.
+
+26
+00:01:29,260 --> 00:01:32,860
+This one shows a cyclist's distance from home.
+
+27
+00:01:32,910 --> 00:01:35,870
+A line going up means moving away from home.
+
+28
+00:01:35,920 --> 00:01:37,650
+A flat line means stopped.
+
+29
+00:01:37,700 --> 00:01:40,660
+A line going down means coming back.
+
+30
+00:01:40,710 --> 00:01:43,830
+And a steeper line means a faster speed.
+
+31
+00:01:43,880 --> 00:01:45,050
+Look at the graph.
+
+32
+00:01:45,100 --> 00:01:48,080
+For how many minutes was the cyclist stopped?
+
+33
+00:01:48,130 --> 00:01:51,640
+Pause the video and work it out.
+
+34
+00:01:51,690 --> 00:01:56,220
+The flat part of the line goes from 20 minutes to 30 minutes.
+
+35
+00:01:56,270 --> 00:01:59,920
+So the cyclist was stopped for 10 minutes.
+
+36
+00:01:59,970 --> 00:02:01,220
+Here is the method.
+
+37
+00:02:01,270 --> 00:02:04,980
+Step 1: read the title, the axes and the units.
+
+38
+00:02:05,030 --> 00:02:09,690
+Step 2: work out the value of 1 small square on each axis.
+
+39
+00:02:09,740 --> 00:02:16,110
+Step 3: go from the value you know to the line, then across or down to the other axis.
+
+40
+00:02:16,160 --> 00:02:18,170
+Step 4: describe each section.
+
+41
+00:02:18,220 --> 00:02:20,640
+Is it going up, flat, or going down?
+
+42
+00:02:20,690 --> 00:02:22,020
+Is it steep?
+
+43
+00:02:22,070 --> 00:02:24,610
+Change 300 dollars into euros.
+
+44
+00:02:24,660 --> 00:02:28,440
+The graph only goes up to 100 dollars.
+
+45
+00:02:28,490 --> 00:02:31,270
+Read 100 dollars from the graph.
+
+46
+00:02:31,320 --> 00:02:33,320
+That is 90 euros.
+
+47
+00:02:33,370 --> 00:02:37,370
+300 dollars is 3 lots of 100 dollars.
+
+48
+00:02:37,420 --> 00:02:40,550
+3 times 90 is 270 euros.
+
+49
+00:02:40,600 --> 00:02:45,090
+How fast did the cyclist ride home, in kilometres per hour?
+
+50
+00:02:45,140 --> 00:02:49,210
+The line goes down from 30 minutes to 60 minutes.
+
+51
+00:02:49,260 --> 00:02:52,710
+That is 4 kilometres in 30 minutes.
+
+52
+00:02:52,760 --> 00:02:54,710
+30 minutes is half an hour.
+
+53
+00:02:54,760 --> 00:02:59,740
+In a full hour, the cyclist would ride 2 times as far: 8 kilometres.
+
+54
+00:02:59,790 --> 00:03:02,880
+The speed is 8 kilometres per hour.
+
+55
+00:03:02,930 --> 00:03:05,770
+Compare the ride out with the ride back.
+
+56
+00:03:05,820 --> 00:03:07,920
+Both are 4 kilometres.
+
+57
+00:03:07,970 --> 00:03:10,010
+The ride out took 20 minutes.
+
+58
+00:03:10,060 --> 00:03:12,190
+The ride back took 30 minutes.
+
+59
+00:03:12,240 --> 00:03:16,070
+The ride out took less time, so it was faster.
+
+60
+00:03:16,120 --> 00:03:18,170
+You can see it on the graph too.
+
+61
+00:03:18,220 --> 00:03:21,210
+The first part of the line is steeper.
+
+62
+00:03:21,260 --> 00:03:25,590
+On a distance axis, each small square is worth 5 kilometres.
+
+63
+00:03:25,640 --> 00:03:27,770
+A point is 3 squares above 20.
+
+64
+00:03:27,820 --> 00:03:29,450
+Here is Theo's working.
+
+65
+00:03:29,500 --> 00:03:32,040
+Which line goes wrong first?
+
+66
+00:03:32,090 --> 00:03:33,320
+Line 1 is wrong.
+
+67
+00:03:33,370 --> 00:03:36,020
+Each square is worth 5 kilometres.
+
+68
+00:03:36,070 --> 00:03:39,510
+So 3 squares are worth 15 kilometres.
+
+69
+00:03:39,560 --> 00:03:41,280
+20 plus 15 is 35.
+
+70
+00:03:41,330 --> 00:03:44,640
+The value is 35 kilometres.
+
+71
+00:03:44,690 --> 00:03:47,390
+A fitness watch draws graphs of your day.
+
+72
+00:03:47,440 --> 00:03:52,040
+On a heart rate graph, a flat low line means you are resting.
+
+73
+00:03:52,090 --> 00:03:55,060
+A steep climb means you have started to run.
+
+74
+00:03:55,110 --> 00:03:59,040
+And a slow slope down shows your heart recovering.
+
+75
+00:03:59,090 --> 00:04:01,890
+Weather apps do the same with temperature.
+
+76
+00:04:01,940 --> 00:04:06,380
+One look at the line tells you the story of the whole day.
+
+77
+00:04:06,430 --> 00:04:07,610
+One last question.
+
+78
+00:04:07,660 --> 00:04:12,320
+On a distance time graph, does a steeper line mean faster, or slower?
+
+79
+00:04:12,370 --> 00:04:15,560
+Pause the video and answer.
+
+80
+00:04:15,610 --> 00:04:16,030
+Faster.
+
+81
+00:04:16,080 --> 00:04:20,150
+A steeper line covers more distance in the same time.
+
+82
+00:04:20,200 --> 00:04:25,500
+To remember: a conversion graph is a straight line through 0, 0.
+
+83
+00:04:25,550 --> 00:04:30,470
+Read up and across, or across and down, using the scale carefully.
+
+84
+00:04:30,520 --> 00:04:33,880
+For values beyond the graph, use multiples.
+
+85
+00:04:33,930 --> 00:04:40,890
+On a distance time graph: up is away, flat is stopped, down is coming back, and steeper is faster.
+
+86
+00:04:40,940 --> 00:04:46,350
+Great work! Now practise lesson 11.4 on Camday.

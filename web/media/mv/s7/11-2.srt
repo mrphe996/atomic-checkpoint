@@ -1,0 +1,347 @@
+1
+00:00:06,700 --> 00:00:09,290
+A water tank already holds 4 litres.
+
+2
+00:00:09,340 --> 00:00:12,260
+A tap adds 2 litres every minute.
+
+3
+00:00:12,310 --> 00:00:15,490
+How much water is in the tank after 3 minutes?
+
+4
+00:00:15,540 --> 00:00:19,130
+Pause the video and work it out.
+
+5
+00:00:19,180 --> 00:00:21,980
+After 1 minute there are 6 litres.
+
+6
+00:00:22,030 --> 00:00:24,160
+After 2 minutes, 8 litres.
+
+7
+00:00:24,210 --> 00:00:26,980
+After 3 minutes, 10 litres.
+
+8
+00:00:27,030 --> 00:00:29,390
+As a function: y equals 2 x plus 4.
+
+9
+00:00:29,440 --> 00:00:32,900
+y is the number of litres, after x minutes.
+
+10
+00:00:32,950 --> 00:00:36,780
+Remember: the point 3, 5 means 3 across, then 5 up.
+
+11
+00:00:36,830 --> 00:00:40,060
+The x coordinate always comes first.
+
+12
+00:00:40,110 --> 00:00:42,130
+Let's draw the tank function.
+
+13
+00:00:42,180 --> 00:00:46,450
+First make a table of values for y equals 2 x plus 4.
+
+14
+00:00:46,500 --> 00:00:48,140
+Each pair is a point.
+
+15
+00:00:48,190 --> 00:00:48,940
+Plot 0, 4.
+
+16
+00:00:48,990 --> 00:00:49,750
+Then 1, 6.
+
+17
+00:00:49,800 --> 00:00:51,990
+Then 2, 8, and so on.
+
+18
+00:00:52,040 --> 00:00:54,260
+The points lie on a straight line.
+
+19
+00:00:54,310 --> 00:00:55,790
+Join them with a ruler.
+
+20
+00:00:55,840 --> 00:01:00,750
+A function with a straight line graph is called a linear function.
+
+21
+00:01:00,800 --> 00:01:01,980
+Look at the graph.
+
+22
+00:01:02,030 --> 00:01:04,500
+Where does the line cross the y axis?
+
+23
+00:01:04,550 --> 00:01:07,740
+Pause the video and decide.
+
+24
+00:01:07,790 --> 00:01:10,090
+The line crosses the y axis at 4.
+
+25
+00:01:10,140 --> 00:01:11,580
+That is where x is 0.
+
+26
+00:01:11,630 --> 00:01:16,400
+It is the starting amount: the 4 litres already in the tank.
+
+27
+00:01:16,450 --> 00:01:20,540
+The number that multiplies x tells you how steep the line is.
+
+28
+00:01:20,590 --> 00:01:23,880
+A bigger multiplier makes a steeper line.
+
+29
+00:01:23,930 --> 00:01:27,600
+y equals 2 x plus 4 goes up 2 for every 1 across.
+
+30
+00:01:27,650 --> 00:01:30,960
+It is steeper than y equals x plus 4.
+
+31
+00:01:31,010 --> 00:01:36,210
+A negative multiplier makes the line slope down, from left to right.
+
+32
+00:01:36,260 --> 00:01:36,940
+Your turn.
+
+33
+00:01:36,990 --> 00:01:43,570
+Which line is the steepest: y equals 5 x plus 1, y equals 2 x plus 5, or y equals x plus 9?
+
+34
+00:01:43,620 --> 00:01:46,940
+Pause the video and decide.
+
+35
+00:01:46,990 --> 00:01:50,590
+Look at the number that multiplies x: 5, 2 and 1.
+
+36
+00:01:50,640 --> 00:01:51,860
+The biggest is 5.
+
+37
+00:01:51,910 --> 00:01:55,310
+So y equals 5 x plus 1 is the steepest.
+
+38
+00:01:55,360 --> 00:01:56,660
+Here is the method.
+
+39
+00:01:56,710 --> 00:02:01,470
+Step 1: make a table of values, with at least 3 values of x.
+
+40
+00:02:01,520 --> 00:02:04,240
+Step 2: work out y for each x.
+
+41
+00:02:04,290 --> 00:02:07,240
+Step 3: plot the points carefully.
+
+42
+00:02:07,290 --> 00:02:09,370
+Step 4: join them with a ruler.
+
+43
+00:02:09,420 --> 00:02:13,500
+If one point is not on the line, check your working.
+
+44
+00:02:13,550 --> 00:02:18,780
+Draw the graph of y equals x minus 3, for x from negative 1 to 4.
+
+45
+00:02:18,830 --> 00:02:21,360
+Subtract 3 from each value of x.
+
+46
+00:02:21,410 --> 00:02:27,330
+That gives negative 4, negative 3, negative 2, negative 1, 0 and 1.
+
+47
+00:02:27,380 --> 00:02:29,460
+Plot the points and join them.
+
+48
+00:02:29,510 --> 00:02:32,990
+The line crosses the y axis at negative 3.
+
+49
+00:02:33,040 --> 00:02:37,810
+Make a table for y equals 6 minus 2 x, for x from 0 to 3.
+
+50
+00:02:37,860 --> 00:02:39,450
+When x is 0, y is 6.
+
+51
+00:02:39,500 --> 00:02:41,080
+When x is 1, y is 4.
+
+52
+00:02:41,130 --> 00:02:43,180
+Then 2, and then 0.
+
+53
+00:02:43,230 --> 00:02:45,100
+y goes down by 2 each time.
+
+54
+00:02:45,150 --> 00:02:47,360
+So the line slopes down.
+
+55
+00:02:47,410 --> 00:02:52,120
+Is the point 7, 19 on the line y equals 2 x plus 4?
+
+56
+00:02:52,170 --> 00:02:54,210
+Substitute x equals 7.
+
+57
+00:02:54,260 --> 00:02:56,930
+2 times 7 plus 4 is 18.
+
+58
+00:02:56,980 --> 00:02:58,010
+18 is not 19.
+
+59
+00:02:58,060 --> 00:03:01,200
+So the point is not on the line.
+
+60
+00:03:01,250 --> 00:03:05,940
+Use the tank graph to find when the tank holds 12 litres.
+
+61
+00:03:05,990 --> 00:03:09,080
+Go across from 12 on the y axis to the line.
+
+62
+00:03:09,130 --> 00:03:11,000
+Then go down to the x axis.
+
+63
+00:03:11,050 --> 00:03:12,410
+You reach 4.
+
+64
+00:03:12,460 --> 00:03:16,300
+So the tank holds 12 litres after 4 minutes.
+
+65
+00:03:16,350 --> 00:03:19,500
+Check: 2 times 4 plus 4 is 12.
+
+66
+00:03:19,550 --> 00:03:24,310
+Here is Finn's table for y equals 3 x plus 1, with x from 0 to 3.
+
+67
+00:03:24,360 --> 00:03:26,930
+Which line goes wrong first?
+
+68
+00:03:26,980 --> 00:03:28,150
+Line 1 is wrong.
+
+69
+00:03:28,200 --> 00:03:32,350
+When x is 3, y is 3 times 3 plus 1, which is 10, not 9.
+
+70
+00:03:32,400 --> 00:03:37,180
+A linear function goes up by the same amount every time.
+
+71
+00:03:37,230 --> 00:03:39,250
+The values are 1, 4, 7, 10.
+
+72
+00:03:39,300 --> 00:03:43,560
+And the points make a straight line, not a curve.
+
+73
+00:03:43,610 --> 00:03:46,510
+Straight line graphs describe steady change.
+
+74
+00:03:46,560 --> 00:03:52,770
+If you save the same amount every week, the graph of your savings is a line going up.
+
+75
+00:03:52,820 --> 00:03:58,670
+A candle burns down steadily, so the graph of its height is a line sloping down.
+
+76
+00:03:58,720 --> 00:04:02,180
+And the steeper the line, the faster the change.
+
+77
+00:04:02,230 --> 00:04:03,430
+One last question.
+
+78
+00:04:03,480 --> 00:04:07,400
+Does the line y equals 7 minus x slope up, or slope down?
+
+79
+00:04:07,450 --> 00:04:10,670
+Pause the video and answer.
+
+80
+00:04:10,720 --> 00:04:11,670
+It slopes down.
+
+81
+00:04:11,720 --> 00:04:15,790
+As x gets bigger, we subtract more, so y gets smaller.
+
+82
+00:04:15,840 --> 00:04:21,690
+To remember: make a table of values, plot the points, and join them with a ruler.
+
+83
+00:04:21,740 --> 00:04:24,940
+A linear function gives a straight line.
+
+84
+00:04:24,990 --> 00:04:27,410
+A bigger multiplier of x is steeper.
+
+85
+00:04:27,460 --> 00:04:30,300
+A negative multiplier slopes down.
+
+86
+00:04:30,350 --> 00:04:34,860
+A point is on the line if its coordinates fit the equation.
+
+87
+00:04:34,910 --> 00:04:40,270
+Great work! Now practise lesson 11.2 on Camday.

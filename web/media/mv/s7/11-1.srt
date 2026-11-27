@@ -1,0 +1,423 @@
+1
+00:00:06,110 --> 00:00:12,770
+A taxi company charges 3 dollars for every kilometre, plus a starting fee of 2 dollars.
+
+2
+00:00:12,820 --> 00:00:15,440
+What does a ride of 5 kilometres cost?
+
+3
+00:00:15,490 --> 00:00:19,100
+Pause the video and work it out.
+
+4
+00:00:19,150 --> 00:00:22,750
+5 kilometres at 3 dollars each is 15 dollars.
+
+5
+00:00:22,800 --> 00:00:25,510
+Add the starting fee of 2 dollars.
+
+6
+00:00:25,560 --> 00:00:28,170
+The ride costs 17 dollars.
+
+7
+00:00:28,220 --> 00:00:34,240
+The same rule works for any distance: multiply the distance by 3, then add 2.
+
+8
+00:00:34,290 --> 00:00:39,700
+Remember: a function machine takes an input, uses a rule, and gives an output.
+
+9
+00:00:39,750 --> 00:00:41,990
+This machine has 2 steps.
+
+10
+00:00:42,040 --> 00:00:42,920
+Put in 4.
+
+11
+00:00:42,970 --> 00:00:46,710
+4 times 3 is 12, and 12 plus 2 is 14.
+
+12
+00:00:46,760 --> 00:00:49,000
+The output is 14.
+
+13
+00:00:49,050 --> 00:00:53,360
+A function links each input to exactly 1 output, using a rule.
+
+14
+00:00:53,410 --> 00:00:58,350
+We can write the taxi rule in words: multiply by 3, then add 2.
+
+15
+00:00:58,400 --> 00:01:00,820
+We can also write it as an equation.
+
+16
+00:01:00,870 --> 00:01:02,190
+y equals 3 x plus 2.
+
+17
+00:01:02,240 --> 00:01:04,520
+Here x is the input, the distance.
+
+18
+00:01:04,570 --> 00:01:07,120
+And y is the output, the cost.
+
+19
+00:01:07,170 --> 00:01:07,880
+Your turn.
+
+20
+00:01:07,930 --> 00:01:09,380
+y equals 3 x plus 2.
+
+21
+00:01:09,430 --> 00:01:10,890
+Find y when x is 10.
+
+22
+00:01:10,940 --> 00:01:14,320
+Pause the video and try it.
+
+23
+00:01:14,370 --> 00:01:16,210
+Replace x with 10.
+
+24
+00:01:16,260 --> 00:01:20,190
+3 times 10 is 30, and 30 plus 2 is 32.
+
+25
+00:01:20,240 --> 00:01:21,890
+So y is 32.
+
+26
+00:01:21,940 --> 00:01:25,710
+A table shows many inputs and outputs together.
+
+27
+00:01:25,760 --> 00:01:27,330
+When x is 0, y is 2.
+
+28
+00:01:27,380 --> 00:01:28,950
+When x is 1, y is 5.
+
+29
+00:01:29,000 --> 00:01:30,970
+Then 8, 11 and 14.
+
+30
+00:01:31,020 --> 00:01:33,900
+Each time x goes up by 1, y goes up by 3.
+
+31
+00:01:33,950 --> 00:01:37,250
+That 3 is the number that multiplies x.
+
+32
+00:01:37,300 --> 00:01:38,940
+And when x is 0, y is 2.
+
+33
+00:01:38,990 --> 00:01:41,460
+That is the number added on.
+
+34
+00:01:41,510 --> 00:01:45,330
+Sometimes you know the output, and you want the input.
+
+35
+00:01:45,380 --> 00:01:47,400
+A taxi ride costs 26 dollars.
+
+36
+00:01:47,450 --> 00:01:49,020
+How far was it?
+
+37
+00:01:49,070 --> 00:01:53,670
+Work backwards, with inverse operations, in reverse order.
+
+38
+00:01:53,720 --> 00:01:57,420
+First undo the plus 2: 26 minus 2 is 24.
+
+39
+00:01:57,470 --> 00:02:01,030
+Then undo the times 3: 24 divided by 3 is 8.
+
+40
+00:02:01,080 --> 00:02:03,710
+The ride was 8 kilometres.
+
+41
+00:02:03,760 --> 00:02:04,440
+Your turn.
+
+42
+00:02:04,490 --> 00:02:05,960
+y equals 2 x minus 7.
+
+43
+00:02:06,010 --> 00:02:08,440
+Which value of x gives y equals 9?
+
+44
+00:02:08,490 --> 00:02:11,810
+Pause the video and try it.
+
+45
+00:02:11,860 --> 00:02:15,200
+First undo the minus 7: 9 plus 7 is 16.
+
+46
+00:02:15,250 --> 00:02:19,040
+Then undo the times 2: 16 divided by 2 is 8.
+
+47
+00:02:19,090 --> 00:02:20,460
+So x is 8.
+
+48
+00:02:20,510 --> 00:02:21,750
+Here is the method.
+
+49
+00:02:21,800 --> 00:02:25,690
+Step 1: read the rule, in words or as an equation.
+
+50
+00:02:25,740 --> 00:02:32,120
+Step 2: to find an output, substitute the input, and follow the order of operations.
+
+51
+00:02:32,170 --> 00:02:37,340
+Step 3: to find an input, use inverse operations, in reverse order.
+
+52
+00:02:37,390 --> 00:02:41,880
+Step 4: check by putting your answer back into the rule.
+
+53
+00:02:41,930 --> 00:02:45,500
+The rule is: divide the input by 4, then subtract 1.
+
+54
+00:02:45,550 --> 00:02:47,720
+Write it as an equation.
+
+55
+00:02:47,770 --> 00:02:50,150
+Divide x by 4: that is x over 4.
+
+56
+00:02:50,200 --> 00:02:51,920
+Then subtract 1.
+
+57
+00:02:51,970 --> 00:02:55,890
+So the equation is y equals x over 4, minus 1.
+
+58
+00:02:55,940 --> 00:03:01,090
+Complete a table for y equals 5 x minus 4, for x from 0 to 3.
+
+59
+00:03:01,140 --> 00:03:04,270
+When x is 0: 0 minus 4 is negative 4.
+
+60
+00:03:04,320 --> 00:03:07,230
+When x is 1: 5 minus 4 is 1.
+
+61
+00:03:07,280 --> 00:03:08,760
+When x is 2, y is 6.
+
+62
+00:03:08,810 --> 00:03:10,370
+When x is 3, y is 11.
+
+63
+00:03:10,420 --> 00:03:13,440
+The outputs go up by 5 each time.
+
+64
+00:03:13,490 --> 00:03:14,830
+Here is a table.
+
+65
+00:03:14,880 --> 00:03:16,220
+x is 1, 2, 3, 4.
+
+66
+00:03:16,270 --> 00:03:18,040
+And y is 1, 5, 9, 13.
+
+67
+00:03:18,090 --> 00:03:20,160
+Find the equation.
+
+68
+00:03:20,210 --> 00:03:21,510
+y goes up in fours.
+
+69
+00:03:21,560 --> 00:03:24,040
+So the rule starts with 4 x.
+
+70
+00:03:24,090 --> 00:03:25,970
+Test it with x equals 1.
+
+71
+00:03:26,020 --> 00:03:28,140
+4 times 1 is 4, but y is 1.
+
+72
+00:03:28,190 --> 00:03:30,460
+So we must subtract 3.
+
+73
+00:03:30,510 --> 00:03:33,410
+The equation is y equals 4 x minus 3.
+
+74
+00:03:33,460 --> 00:03:36,440
+Check with x equals 2: 8 minus 3 is 5.
+
+75
+00:03:36,490 --> 00:03:37,630
+Correct.
+
+76
+00:03:37,680 --> 00:03:39,140
+y equals 4 x plus 6.
+
+77
+00:03:39,190 --> 00:03:40,650
+Find x when y is 30.
+
+78
+00:03:40,700 --> 00:03:42,390
+Here is Maya's working.
+
+79
+00:03:42,440 --> 00:03:45,050
+Which line goes wrong first?
+
+80
+00:03:45,100 --> 00:03:46,190
+Line 1 is wrong.
+
+81
+00:03:46,240 --> 00:03:49,090
+You must undo the steps in reverse order.
+
+82
+00:03:49,140 --> 00:03:52,680
+The plus 6 was done last, so undo it first.
+
+83
+00:03:52,730 --> 00:03:54,390
+30 minus 6 is 24.
+
+84
+00:03:54,440 --> 00:03:57,020
+Then 24 divided by 4 is 6.
+
+85
+00:03:57,070 --> 00:03:58,570
+So x is 6.
+
+86
+00:03:58,620 --> 00:04:00,980
+Here is a function for travellers.
+
+87
+00:04:01,030 --> 00:04:07,900
+To change degrees Celsius into degrees Fahrenheit, a quick rule is: double it, and add 30.
+
+88
+00:04:07,950 --> 00:04:15,770
+So 20 degrees Celsius is about 2 times 20 plus 30, which is 70 degrees Fahrenheit.
+
+89
+00:04:15,820 --> 00:04:19,730
+The exact function is: multiply by 1.8, and add 32.
+
+90
+00:04:19,780 --> 00:04:20,820
+That gives 68.
+
+91
+00:04:20,870 --> 00:04:25,560
+The quick rule is close enough for packing a suitcase.
+
+92
+00:04:25,610 --> 00:04:27,010
+One last question.
+
+93
+00:04:27,060 --> 00:04:28,050
+x is 1, 2, 3.
+
+94
+00:04:28,100 --> 00:04:29,570
+And y is 7, 10, 13.
+
+95
+00:04:29,620 --> 00:04:31,260
+What is the equation?
+
+96
+00:04:31,310 --> 00:04:35,220
+Pause the video and work it out.
+
+97
+00:04:35,270 --> 00:04:38,120
+y goes up in threes, so start with 3 x.
+
+98
+00:04:38,170 --> 00:04:40,650
+When x is 1, 3 x is 3, but y is 7.
+
+99
+00:04:40,700 --> 00:04:41,320
+So add 4.
+
+100
+00:04:41,370 --> 00:04:44,540
+The equation is y equals 3 x plus 4.
+
+101
+00:04:44,590 --> 00:04:50,510
+To remember: a function turns each input into exactly 1 output, using a rule.
+
+102
+00:04:50,560 --> 00:04:55,850
+Write the rule in words, or as an equation, like y equals 3 x plus 2.
+
+103
+00:04:55,900 --> 00:04:57,920
+Find outputs by substituting.
+
+104
+00:04:57,970 --> 00:05:02,320
+Find inputs with inverse operations, in reverse order.
+
+105
+00:05:02,370 --> 00:05:06,930
+In a table, the step in y gives the number that multiplies x.
+
+106
+00:05:06,980 --> 00:05:12,390
+Great work! Now practise lesson 11.1 on Camday.

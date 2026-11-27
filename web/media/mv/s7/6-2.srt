@@ -1,0 +1,387 @@
+1
+00:00:06,090 --> 00:00:08,160
+A cook makes a huge pot of soup.
+
+2
+00:00:08,210 --> 00:00:11,620
+To check the salt, she does not drink the whole pot.
+
+3
+00:00:11,670 --> 00:00:14,690
+She stirs it, and tastes one spoonful.
+
+4
+00:00:14,740 --> 00:00:16,950
+Why does she stir the soup first?
+
+5
+00:00:17,000 --> 00:00:20,200
+Pause the video and choose.
+
+6
+00:00:20,250 --> 00:00:23,740
+She stirs so that the spoonful is like the whole pot.
+
+7
+00:00:23,790 --> 00:00:28,550
+If she only tasted the top, the salt might all be at the bottom.
+
+8
+00:00:28,600 --> 00:00:30,840
+The pot of soup is the population.
+
+9
+00:00:30,890 --> 00:00:33,210
+The spoonful is the sample.
+
+10
+00:00:33,260 --> 00:00:37,170
+Remember how to find a fraction of an amount.
+
+11
+00:00:37,220 --> 00:00:42,210
+One tenth of 300 is 300 divided by 10, which is 30.
+
+12
+00:00:42,260 --> 00:00:49,980
+So if a school has 840 students, and a survey asks 1 in every 10, it asks 84 students.
+
+13
+00:00:50,030 --> 00:00:55,400
+The population is everyone, or everything, that your question is about.
+
+14
+00:00:55,450 --> 00:01:00,480
+A sample is the smaller group that you actually collect data from.
+
+15
+00:01:00,530 --> 00:01:04,100
+For example: how do students at our school travel?
+
+16
+00:01:04,150 --> 00:01:06,640
+The population is all the students.
+
+17
+00:01:06,690 --> 00:01:09,290
+A sample could be 60 of them.
+
+18
+00:01:09,340 --> 00:01:13,210
+A factory wants to know how long its light bulbs last.
+
+19
+00:01:13,260 --> 00:01:15,310
+The population is every bulb.
+
+20
+00:01:15,360 --> 00:01:17,890
+A sample could be 100 bulbs.
+
+21
+00:01:17,940 --> 00:01:18,580
+Your turn.
+
+22
+00:01:18,630 --> 00:01:22,820
+What if the factory tested every single bulb until it failed?
+
+23
+00:01:22,870 --> 00:01:26,090
+Pause the video and choose.
+
+24
+00:01:26,140 --> 00:01:27,780
+That would be impossible.
+
+25
+00:01:27,830 --> 00:01:32,380
+Every bulb would be used up, so there would be nothing left to sell.
+
+26
+00:01:32,430 --> 00:01:34,820
+That is why we need samples.
+
+27
+00:01:34,870 --> 00:01:38,620
+A sample is only useful if it represents the population.
+
+28
+00:01:38,670 --> 00:01:42,690
+It should be like a mini version of the whole group.
+
+29
+00:01:42,740 --> 00:01:48,360
+A sample is biased if some members are more likely to be chosen than others.
+
+30
+00:01:48,410 --> 00:01:52,710
+For example, if you ask only your friends, the sample is biased.
+
+31
+00:01:52,760 --> 00:01:55,650
+Your friends may be similar to you.
+
+32
+00:01:55,700 --> 00:01:58,050
+The fairest way is a random sample.
+
+33
+00:01:58,100 --> 00:02:03,940
+Everyone has an equal chance of being chosen, like pulling names out of a hat.
+
+34
+00:02:03,990 --> 00:02:05,350
+Here is the method.
+
+35
+00:02:05,400 --> 00:02:08,280
+Step 1: identify the population.
+
+36
+00:02:08,330 --> 00:02:13,280
+Step 2: choose a sample size that is big enough, but practical.
+
+37
+00:02:13,330 --> 00:02:19,520
+Step 3: choose the members randomly, or make sure every group is included fairly.
+
+38
+00:02:19,570 --> 00:02:21,120
+Step 4: check for bias.
+
+39
+00:02:21,170 --> 00:02:25,340
+Ask: is anyone left out, or more likely to be picked?
+
+40
+00:02:25,390 --> 00:02:28,920
+Amina wants to know how students travel to school.
+
+41
+00:02:28,970 --> 00:02:32,430
+She asks the 30 students waiting at the bus stop.
+
+42
+00:02:32,480 --> 00:02:34,490
+Is her sample biased?
+
+43
+00:02:34,540 --> 00:02:37,830
+The population is all the students at the school.
+
+44
+00:02:37,880 --> 00:02:41,110
+But everyone in her sample uses the bus.
+
+45
+00:02:41,160 --> 00:02:46,330
+Walkers, cyclists and students who come by car had no chance of being chosen.
+
+46
+00:02:46,380 --> 00:02:48,850
+So yes, the sample is biased.
+
+47
+00:02:48,900 --> 00:02:51,050
+A school has 600 students.
+
+48
+00:02:51,100 --> 00:02:57,440
+For a quick survey, which sample size is most sensible: 6, 60 or 600?
+
+49
+00:02:57,490 --> 00:02:58,370
+6 is too few.
+
+50
+00:02:58,420 --> 00:03:03,060
+The results could be very different from the whole school.
+
+51
+00:03:03,110 --> 00:03:05,150
+600 is the whole population.
+
+52
+00:03:05,200 --> 00:03:09,360
+That is not a sample, and it would take too long.
+
+53
+00:03:09,410 --> 00:03:14,370
+60 is big enough to be reliable, and small enough to manage.
+
+54
+00:03:14,420 --> 00:03:15,080
+Your turn.
+
+55
+00:03:15,130 --> 00:03:20,110
+Which sample is least biased for finding the favourite sport of Year 8?
+
+56
+00:03:20,160 --> 00:03:22,710
+Pause and choose.
+
+57
+00:03:22,760 --> 00:03:28,090
+The best choice is 20 Year 8 students picked randomly from the register.
+
+58
+00:03:28,140 --> 00:03:34,470
+Everyone in Year 8 has an equal chance, and nobody outside Year 8 is included.
+
+59
+00:03:34,520 --> 00:03:40,240
+A school has 300 students in Years 7, 8 and 9, with 100 in each year.
+
+60
+00:03:40,290 --> 00:03:42,240
+You want a sample of 30.
+
+61
+00:03:42,290 --> 00:03:44,800
+How many from each year?
+
+62
+00:03:44,850 --> 00:03:46,700
+30 is one tenth of 300.
+
+63
+00:03:46,750 --> 00:03:49,820
+So take one tenth of each year.
+
+64
+00:03:49,870 --> 00:03:51,860
+One tenth of 100 is 10.
+
+65
+00:03:51,910 --> 00:03:56,400
+Choose 10 students from each year, at random.
+
+66
+00:03:56,450 --> 00:04:00,590
+A coin is flipped 10 times, and lands on heads 7 times.
+
+67
+00:04:00,640 --> 00:04:02,500
+That is 70 percent heads.
+
+68
+00:04:02,550 --> 00:04:04,490
+Is the coin unfair?
+
+69
+00:04:04,540 --> 00:04:10,020
+Then it is flipped 1000 times, and lands on heads 508 times.
+
+70
+00:04:10,070 --> 00:04:12,510
+That is 50.8 percent.
+
+71
+00:04:12,560 --> 00:04:17,320
+The large sample is very close to 50 percent, so the coin looks fair.
+
+72
+00:04:17,370 --> 00:04:21,290
+A small sample can be misleading, just by chance.
+
+73
+00:04:21,340 --> 00:04:24,420
+Do people in our town want a new sports centre?
+
+74
+00:04:24,470 --> 00:04:25,620
+Here is Jo's plan.
+
+75
+00:04:25,670 --> 00:04:27,500
+Which line is wrong?
+
+76
+00:04:27,550 --> 00:04:28,620
+Line 3 is wrong.
+
+77
+00:04:28,670 --> 00:04:34,400
+People at the swimming pool already like sport, so they are more likely to say yes.
+
+78
+00:04:34,450 --> 00:04:36,410
+The sample is biased.
+
+79
+00:04:36,460 --> 00:04:42,690
+A better sample would be 50 people chosen at random from across the whole town.
+
+80
+00:04:42,740 --> 00:04:50,380
+Before an election, opinion polls try to predict the result for a whole country, with millions of voters.
+
+81
+00:04:50,430 --> 00:04:52,090
+They do not ask everyone.
+
+82
+00:04:52,140 --> 00:04:56,590
+A typical poll asks only about one or two thousand people.
+
+83
+00:04:56,640 --> 00:05:05,840
+That works only if the sample is chosen carefully, so that it represents the whole country: young and old, city and countryside.
+
+84
+00:05:05,890 --> 00:05:07,220
+One last question.
+
+85
+00:05:07,270 --> 00:05:09,980
+A school has 250 boys and 250 girls.
+
+86
+00:05:10,030 --> 00:05:13,050
+A sample of 50 should keep the same mix.
+
+87
+00:05:13,100 --> 00:05:15,430
+How many girls should be in it?
+
+88
+00:05:15,480 --> 00:05:18,900
+Pause the video and answer.
+
+89
+00:05:18,950 --> 00:05:24,190
+Half of the students are girls, so half of the sample should be girls.
+
+90
+00:05:24,240 --> 00:05:26,030
+Half of 50 is 25.
+
+91
+00:05:26,080 --> 00:05:30,310
+To remember: the population is everyone the question is about.
+
+92
+00:05:30,360 --> 00:05:34,030
+The sample is the group you collect data from.
+
+93
+00:05:34,080 --> 00:05:36,830
+A good sample represents the population.
+
+94
+00:05:36,880 --> 00:05:39,970
+A biased sample favours some members.
+
+95
+00:05:40,020 --> 00:05:43,900
+Random sampling gives everyone an equal chance.
+
+96
+00:05:43,950 --> 00:05:48,020
+Larger samples are more reliable, but they take more time.
+
+97
+00:05:48,070 --> 00:05:53,270
+Great work! Now practise lesson 6.2 on Camday.

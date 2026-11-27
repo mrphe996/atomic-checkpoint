@@ -7720,6 +7720,8149 @@
     "4.5-k4": 274.54
    },
    "up": true
+  },
+  "5.1": {
+   "src": "media/mv/s7/5-1.mp4",
+   "poster": "media/mv/s7/5-1_poster.jpg",
+   "srt": "media/mv/s7/5-1.srt",
+   "dur": 315.92,
+   "captions": [
+    [
+     7.02,
+     "A round pizza is cut from the centre into 4 slices."
+    ],
+    [
+     10.99,
+     "Three of the slices have angles of 95 degrees, 120 degrees and 80 degrees at the centre."
+    ],
+    [
+     18.4,
+     "What angle does the last slice make?"
+    ],
+    [
+     20.82,
+     "Pause the video and work it out."
+    ],
+    [
+     24.38,
+     "All the way round the centre is one full turn."
+    ],
+    [
+     27.73,
+     "A full turn is 360 degrees."
+    ],
+    [
+     30.25,
+     "The three slices we know add up to 295 degrees."
+    ],
+    [
+     34.6,
+     "360 minus 295 is 65."
+    ],
+    [
+     36.54,
+     "The last slice has an angle of 65 degrees."
+    ],
+    [
+     41.18,
+     "Remember: angles on a straight line add up to 180 degrees."
+    ],
+    [
+     45.52,
+     "That is half a turn."
+    ],
+    [
+     47.56,
+     "If one angle is 128 degrees, the other is 180 minus 128, which is 52 degrees."
+    ],
+    [
+     55.34,
+     "The angles around a point always add up to 360 degrees."
+    ],
+    [
+     60.22,
+     "Here, two of the angles are 140 degrees and 85 degrees."
+    ],
+    [
+     64.72,
+     "Find angle b."
+    ],
+    [
+     66.34,
+     "140 plus 85 is 225."
+    ],
+    [
+     68.84,
+     "360 minus 225 is 135."
+    ],
+    [
+     71.61,
+     "So b is 135 degrees."
+    ],
+    [
+     74.79,
+     "Your turn."
+    ],
+    [
+     75.57,
+     "Three angles around a point are 200 degrees, 95 degrees, and y."
+    ],
+    [
+     80.42,
+     "Find y."
+    ],
+    [
+     80.96,
+     "Pause the video and try it."
+    ],
+    [
+     84.45,
+     "200 plus 95 is 295."
+    ],
+    [
+     86.86,
+     "360 minus 295 is 65."
+    ],
+    [
+     89.41,
+     "So y is 65 degrees."
+    ],
+    [
+     92.38,
+     "A quadrilateral is a shape with 4 straight sides."
+    ],
+    [
+     95.91,
+     "Draw a diagonal, and it splits into 2 triangles."
+    ],
+    [
+     99.92,
+     "The angles in each triangle add up to 180 degrees."
+    ],
+    [
+     104.0,
+     "So the angles in a quadrilateral add up to 2 times 180, which is 360 degrees."
+    ],
+    [
+     110.83,
+     "In this one, 74 plus 106 plus 82 is 262."
+    ],
+    [
+     115.33,
+     "360 minus 262 is 98."
+    ],
+    [
+     117.58,
+     "So angle d is 98 degrees."
+    ],
+    [
+     120.94,
+     "Here is the method."
+    ],
+    [
+     122.59,
+     "Step 1: decide which fact to use."
+    ],
+    [
+     125.46,
+     "A straight line is 180."
+    ],
+    [
+     127.46,
+     "Around a point is 360."
+    ],
+    [
+     129.37,
+     "A triangle is 180."
+    ],
+    [
+     130.93,
+     "A quadrilateral is 360."
+    ],
+    [
+     133.48,
+     "Step 2: add the angles you know."
+    ],
+    [
+     136.4,
+     "Step 3: subtract from the total."
+    ],
+    [
+     139.32,
+     "Step 4: check that your answer looks sensible on the diagram."
+    ],
+    [
+     144.24,
+     "Five equal angles meet at a point."
+    ],
+    [
+     146.54,
+     "How big is each one?"
+    ],
+    [
+     148.45,
+     "The total is 360 degrees."
+    ],
+    [
+     150.72,
+     "Share it equally: 360 divided by 5 is 72."
+    ],
+    [
+     154.46,
+     "Each angle is 72 degrees."
+    ],
+    [
+     157.28,
+     "Around a point, the angles are 2 x, 3 x, 100 degrees and 80 degrees."
+    ],
+    [
+     162.92,
+     "Find x."
+    ],
+    [
+     164.06,
+     "They add up to 360."
+    ],
+    [
+     166.07,
+     "2 x plus 3 x plus 100 plus 80 equals 360."
+    ],
+    [
+     170.97,
+     "Collect like terms: 5 x plus 180 equals 360."
+    ],
+    [
+     175.58,
+     "Subtract 180: 5 x equals 180."
+    ],
+    [
+     179.18,
+     "Divide by 5."
+    ],
+    [
+     180.31,
+     "x equals 36."
+    ],
+    [
+     181.99,
+     "Your turn."
+    ],
+    [
+     182.69,
+     "A quadrilateral has three right angles."
+    ],
+    [
+     185.42,
+     "What is the fourth angle?"
+    ],
+    [
+     187.17,
+     "Pause and work it out."
+    ],
+    [
+     190.11,
+     "Three right angles make 3 times 90, which is 270."
+    ],
+    [
+     194.44,
+     "360 minus 270 is 90."
+    ],
+    [
+     196.2,
+     "The fourth angle is a right angle too."
+    ],
+    [
+     199.56,
+     "The shape is a rectangle."
+    ],
+    [
+     202.32,
+     "What is the smaller angle between the hands of a clock at 4 o'clock?"
+    ],
+    [
+     207.6,
+     "The 12 hour marks share 360 degrees."
+    ],
+    [
+     210.91,
+     "360 divided by 12 is 30 degrees between each pair of marks."
+    ],
+    [
+     216.87,
+     "From 12 to 4 is 4 marks."
+    ],
+    [
+     219.37,
+     "4 times 30 is 120."
+    ],
+    [
+     221.25,
+     "The angle is 120 degrees."
+    ],
+    [
+     224.41,
+     "Three angles around a point are 150 degrees, 90 degrees, and a."
+    ],
+    [
+     229.26,
+     "Here is Leo's working."
+    ],
+    [
+     230.95,
+     "Which line goes wrong first?"
+    ],
+    [
+     233.66,
+     "Line 2 is wrong."
+    ],
+    [
+     234.96,
+     "Angles around a point add up to 360 degrees, not 180."
+    ],
+    [
+     239.29,
+     "And an angle cannot be negative."
+    ],
+    [
+     242.45,
+     "360 minus 240 is 120."
+    ],
+    [
+     245.06,
+     "So a is 120 degrees."
+    ],
+    [
+     248.1,
+     "Why are there 360 degrees in a full turn?"
+    ],
+    [
+     251.27,
+     "The idea is thought to come from ancient Babylon, about 4,000 years ago."
+    ],
+    [
+     256.84,
+     "The Babylonians counted in sixties."
+    ],
+    [
+     260.1,
+     "360 is a very handy number."
+    ],
+    [
+     262.63,
+     "It can be divided exactly by 2, 3, 4, 5, 6, 8, 9, 10 and 12."
+    ],
+    [
+     268.8,
+     "Skateboarders use the same number."
+    ],
+    [
+     271.4,
+     "A full spin in the air is called a 360."
+    ],
+    [
+     274.93,
+     "One last question."
+    ],
+    [
+     276.19,
+     "6 equal angles meet at a point."
+    ],
+    [
+     278.37,
+     "How big is each one?"
+    ],
+    [
+     279.77,
+     "Pause the video and answer."
+    ],
+    [
+     283.07,
+     "360 divided by 6 is 60."
+    ],
+    [
+     285.41,
+     "Each angle is 60 degrees."
+    ],
+    [
+     288.52,
+     "To remember: angles around a point add up to 360 degrees."
+    ],
+    [
+     293.55,
+     "Angles in a quadrilateral add up to 360 degrees, because it is made of 2 triangles."
+    ],
+    [
+     300.45,
+     "Angles on a straight line, and in a triangle, add up to 180 degrees."
+    ],
+    [
+     306.07,
+     "Add the angles you know, subtract from the total, then check."
+    ],
+    [
+     310.73,
+     "Great work! Now practise lesson 5.1 on Camday."
+    ]
+   ],
+   "times": {
+    "5.1-k1": 23.33,
+    "5.1-k2": 83.4,
+    "5.1-k3": 189.06,
+    "5.1-k4": 282.02
+   },
+   "up": true
+  },
+  "5.2": {
+   "src": "media/mv/s7/5-2.mp4",
+   "poster": "media/mv/s7/5-2_poster.jpg",
+   "srt": "media/mv/s7/5-2.srt",
+   "dur": 323.08,
+   "captions": [
+    [
+     6.48,
+     "Open a pair of scissors."
+    ],
+    [
+     8.12,
+     "The two blades cross, and they make 4 angles."
+    ],
+    [
+     11.76,
+     "Suppose you open the scissors so that one angle is 40 degrees."
+    ],
+    [
+     16.93,
+     "What is the angle next to it?"
+    ],
+    [
+     18.87,
+     "Pause the video and work it out."
+    ],
+    [
+     22.4,
+     "The 40 degree angle and the angle next to it sit on a straight line."
+    ],
+    [
+     27.59,
+     "So together they make 180 degrees."
+    ],
+    [
+     30.73,
+     "180 minus 40 is 140."
+    ],
+    [
+     32.82,
+     "The angle next to it is 140 degrees."
+    ],
+    [
+     37.13,
+     "And here is the surprise."
+    ],
+    [
+     39.09,
+     "The other two angles are 40 and 140 again."
+    ],
+    [
+     42.39,
+     "Let's see why."
+    ],
+    [
+     44.05,
+     "Remember two facts."
+    ],
+    [
+     45.52,
+     "Angles on a straight line add up to 180 degrees."
+    ],
+    [
+     49.79,
+     "And the angles of a triangle add up to 180 degrees."
+    ],
+    [
+     54.3,
+     "If two angles are 55 and 75, the third is 180 minus 130, which is 50 degrees."
+    ],
+    [
+     61.66,
+     "When two straight lines cross, we say they intersect."
+    ],
+    [
+     65.27,
+     "They make 4 angles."
+    ],
+    [
+     66.57,
+     "Call them a, b, c and d."
+    ],
+    [
+     68.75,
+     "The angles opposite each other are equal."
+    ],
+    [
+     71.58,
+     "They are called vertically opposite angles."
+    ],
+    [
+     74.54,
+     "So a equals c, and b equals d."
+    ],
+    [
+     77.16,
+     "Why?"
+    ],
+    [
+     77.45,
+     "a and b make a straight line, so a plus b is 180."
+    ],
+    [
+     80.99,
+     "b and c also make a straight line, so b plus c is 180."
+    ],
+    [
+     84.88,
+     "That means a and c must be equal."
+    ],
+    [
+     87.81,
+     "Your turn."
+    ],
+    [
+     88.54,
+     "Two lines cross, and one angle is 101 degrees."
+    ],
+    [
+     91.89,
+     "What is the angle next to it?"
+    ],
+    [
+     94.01,
+     "Pause the video and try it."
+    ],
+    [
+     97.38,
+     "Angles next to each other on a straight line add up to 180."
+    ],
+    [
+     102.78,
+     "180 minus 101 is 79 degrees."
+    ],
+    [
+     105.89,
+     "Lines that meet at 90 degrees are called perpendicular."
+    ],
+    [
+     110.12,
+     "All 4 angles are right angles."
+    ],
+    [
+     112.98,
+     "Parallel lines never meet."
+    ],
+    [
+     114.74,
+     "On a diagram, they are marked with arrows."
+    ],
+    [
+     118.15,
+     "A line that crosses parallel lines is called a transversal."
+    ],
+    [
+     122.33,
+     "It makes 8 angles, but there are only 2 different sizes."
+    ],
+    [
+     126.85,
+     "Corresponding angles are in matching positions, and they are equal."
+    ],
+    [
+     131.5,
+     "Alternate angles are on opposite sides of the transversal, between the parallel lines, and they are equal too."
+    ],
+    [
+     139.68,
+     "Here is the method."
+    ],
+    [
+     141.03,
+     "Step 1: mark the angles you know on the diagram."
+    ],
+    [
+     144.97,
+     "Step 2: use these facts."
+    ],
+    [
+     146.93,
+     "Vertically opposite angles are equal."
+    ],
+    [
+     149.96,
+     "A straight line is 180."
+    ],
+    [
+     151.84,
+     "Around a point is 360."
+    ],
+    [
+     154.19,
+     "Step 3: with parallel lines, corresponding angles and alternate angles are equal."
+    ],
+    [
+     160.59,
+     "Step 4: write the reason next to each answer."
+    ],
+    [
+     164.32,
+     "Two lines intersect."
+    ],
+    [
+     165.93,
+     "One angle is 118 degrees."
+    ],
+    [
+     167.94,
+     "Find the other three."
+    ],
+    [
+     170.18,
+     "The angle vertically opposite is equal, so it is 118 degrees."
+    ],
+    [
+     175.3,
+     "The angle next to it is on a straight line."
+    ],
+    [
+     179.13,
+     "180 minus 118 is 62 degrees."
+    ],
+    [
+     182.18,
+     "And the last angle is vertically opposite that one, so it is 62 degrees as well."
+    ],
+    [
+     188.4,
+     "Two vertically opposite angles are 3 x plus 10, and 70 degrees."
+    ],
+    [
+     193.45,
+     "Find x."
+    ],
+    [
+     194.56,
+     "Vertically opposite angles are equal."
+    ],
+    [
+     197.72,
+     "So 3 x plus 10 equals 70."
+    ],
+    [
+     200.4,
+     "Subtract 10."
+    ],
+    [
+     201.61,
+     "3 x equals 60."
+    ],
+    [
+     203.02,
+     "Divide by 3."
+    ],
+    [
+     204.22,
+     "x equals 20."
+    ],
+    [
+     205.98,
+     "Your turn."
+    ],
+    [
+     206.72,
+     "Two vertically opposite angles are 2 y, and 80 degrees."
+    ],
+    [
+     210.81,
+     "What is y?"
+    ],
+    [
+     211.55,
+     "Pause and work it out."
+    ],
+    [
+     214.58,
+     "They are equal, so 2 y equals 80."
+    ],
+    [
+     217.42,
+     "Divide by 2."
+    ],
+    [
+     218.45,
+     "y equals 40."
+    ],
+    [
+     220.04,
+     "A transversal crosses two parallel lines."
+    ],
+    [
+     223.14,
+     "One angle is 48 degrees."
+    ],
+    [
+     225.5,
+     "The alternate angle is equal."
+    ],
+    [
+     227.69,
+     "So it is also 48 degrees."
+    ],
+    [
+     230.12,
+     "The angle on a straight line with it is 180 minus 48, which is 132 degrees."
+    ],
+    [
+     237.17,
+     "Two lines cross."
+    ],
+    [
+     238.35,
+     "One angle is 35 degrees."
+    ],
+    [
+     240.13,
+     "Mia wants the angle vertically opposite it."
+    ],
+    [
+     243.31,
+     "Which line is wrong?"
+    ],
+    [
+     245.34,
+     "Line 1 is wrong."
+    ],
+    [
+     246.49,
+     "Vertically opposite angles are equal."
+    ],
+    [
+     249.16,
+     "It is the angles next to each other that add up to 180."
+    ],
+    [
+     253.68,
+     "So the vertically opposite angle is 35 degrees."
+    ],
+    [
+     257.89,
+     "Railway tracks are a famous example of parallel lines."
+    ],
+    [
+     261.93,
+     "On most of the world's railways, the two rails are exactly 1,435 millimetres apart."
+    ],
+    [
+     268.68,
+     "If the rails were not parallel, the gap would change, and the train would come off the track."
+    ],
+    [
+     275.33,
+     "The wooden sleepers under the rails cross them at right angles."
+    ],
+    [
+     279.69,
+     "They are perpendicular to the rails."
+    ],
+    [
+     282.74,
+     "One last question."
+    ],
+    [
+     284.04,
+     "Between two parallel lines, an angle is 57 degrees."
+    ],
+    [
+     287.73,
+     "What is its alternate angle?"
+    ],
+    [
+     289.75,
+     "Pause the video and answer."
+    ],
+    [
+     293.1,
+     "Alternate angles are equal."
+    ],
+    [
+     295.17,
+     "So the alternate angle is 57 degrees."
+    ],
+    [
+     298.55,
+     "To remember: vertically opposite angles are equal."
+    ],
+    [
+     302.63,
+     "Angles on a straight line add up to 180 degrees."
+    ],
+    [
+     306.41,
+     "Around a point, 360."
+    ],
+    [
+     308.54,
+     "Perpendicular lines meet at 90 degrees."
+    ],
+    [
+     312.24,
+     "With parallel lines, corresponding angles and alternate angles are equal."
+    ],
+    [
+     317.91,
+     "Great work! Now practise lesson 5.2 on Camday."
+    ]
+   ],
+   "times": {
+    "5.2-k1": 21.35,
+    "5.2-k2": 96.33,
+    "5.2-k3": 213.53,
+    "5.2-k4": 292.05
+   },
+   "up": true
+  },
+  "6.1": {
+   "src": "media/mv/s7/6-1.mp4",
+   "poster": "media/mv/s7/6-1_poster.jpg",
+   "srt": "media/mv/s7/6-1.srt",
+   "dur": 316.6,
+   "captions": [
+    [
+     7.16,
+     "Some students say: the school bus is late more often on rainy days."
+    ],
+    [
+     11.77,
+     "The head teacher wants evidence before she phones the bus company."
+    ],
+    [
+     16.86,
+     "Which data would best test this prediction?"
+    ],
+    [
+     19.83,
+     "Pause the video and choose."
+    ],
+    [
+     23.1,
+     "You need two facts for every school day: what the weather was, and whether the bus was late."
+    ],
+    [
+     29.59,
+     "Recording only the rainy days would not be enough."
+    ],
+    [
+     32.98,
+     "You could not compare them with the dry days."
+    ],
+    [
+     36.59,
+     "Remember tally marks."
+    ],
+    [
+     38.04,
+     "They are grouped in fives: four strokes, and a fifth one across them."
+    ],
+    [
+     43.33,
+     "Two groups of five, and three more, make 13."
+    ],
+    [
+     47.11,
+     "A statistical question is answered by collecting data, and the answers can vary."
+    ],
+    [
+     53.17,
+     "How many minutes late is the bus?"
+    ],
+    [
+     55.42,
+     "That is a statistical question."
+    ],
+    [
+     57.53,
+     "It changes from day to day."
+    ],
+    [
+     59.92,
+     "What time is the bus supposed to leave?"
+    ],
+    [
+     62.53,
+     "That is not statistical."
+    ],
+    [
+     64.14,
+     "It has one fixed answer."
+    ],
+    [
+     66.3,
+     "A prediction is a statement you can test with data, such as: the bus is late more often on rainy days."
+    ],
+    [
+     73.54,
+     "There are three types of data."
+    ],
+    [
+     75.61,
+     "Categorical data is words or categories, like the weather: sunny, rainy or cloudy."
+    ],
+    [
+     81.83,
+     "Discrete data is numbers that you count."
+    ],
+    [
+     84.66,
+     "Only certain values are possible."
+    ],
+    [
+     86.99,
+     "You cannot have 2 and a half late buses."
+    ],
+    [
+     90.37,
+     "Continuous data is numbers that you measure, such as time, length or mass."
+    ],
+    [
+     95.36,
+     "Any value in a range is possible."
+    ],
+    [
+     98.14,
+     "Your turn."
+    ],
+    [
+     98.82,
+     "Sort each piece of data into the correct type."
+    ],
+    [
+     101.97,
+     "Pause the video and try it."
+    ],
+    [
+     105.21,
+     "Ask yourself: is it a word, a count, or a measurement?"
+    ],
+    [
+     108.97,
+     "Words are categorical."
+    ],
+    [
+     110.5,
+     "Counts are discrete."
+    ],
+    [
+     111.89,
+     "Measurements are continuous."
+    ],
+    [
+     114.39,
+     "Here is the method."
+    ],
+    [
+     115.76,
+     "Step 1: write a clear question or prediction."
+    ],
+    [
+     119.54,
+     "Step 2: decide which data you need, what type it is, and how to collect it."
+    ],
+    [
+     125.17,
+     "Step 3: design a data collection sheet, and collect the data."
+    ],
+    [
+     130.1,
+     "Step 4: present the data, and decide whether your prediction was right."
+    ],
+    [
+     135.74,
+     "Sam counts the people in 20 cars at a crossing."
+    ],
+    [
+     139.04,
+     "He uses tallies, then writes the total for each number."
+    ],
+    [
+     142.9,
+     "The total is called the frequency."
+    ],
+    [
+     145.83,
+     "Check by adding the frequencies."
+    ],
+    [
+     148.6,
+     "9 plus 6 plus 2 plus 2 plus 1 is 20."
+    ],
+    [
+     151.71,
+     "That matches the 20 cars."
+    ],
+    [
+     154.42,
+     "Students time their walk to school in minutes."
+    ],
+    [
+     157.57,
+     "Time is continuous, so we record it in groups, called classes."
+    ],
+    [
+     162.38,
+     "The first group is from 0, up to but not including 5."
+    ],
+    [
+     166.14,
+     "We write it with inequality signs."
+    ],
+    [
+     169.1,
+     "Then 5 up to 10, then 10 up to 15, and so on."
+    ],
+    [
+     172.76,
+     "There are no gaps and no overlaps."
+    ],
+    [
+     176.08,
+     "A time of exactly 5 minutes goes in the second group, because that group starts at 5."
+    ],
+    [
+     182.27,
+     "Your turn."
+    ],
+    [
+     182.99,
+     "Which group does a time of 15 minutes go in?"
+    ],
+    [
+     186.13,
+     "Pause and choose."
+    ],
+    [
+     188.75,
+     "15 is not less than 15, so it cannot go in 10 up to 15."
+    ],
+    [
+     193.5,
+     "It goes in the group that starts at 15: 15 up to 20."
+    ],
+    [
+     198.54,
+     "Choose the right method."
+    ],
+    [
+     200.2,
+     "To find the favourite school lunch, ask people."
+    ],
+    [
+     203.45,
+     "That is a survey."
+    ],
+    [
+     205.18,
+     "To find how high a ball bounces, drop it and measure."
+    ],
+    [
+     208.76,
+     "That is an experiment."
+    ],
+    [
+     210.8,
+     "To find last year's rainfall, look it up."
+    ],
+    [
+     213.61,
+     "That is using existing records."
+    ],
+    [
+     216.28,
+     "In one month there were 15 dry days, and the bus was late on 6 of them."
+    ],
+    [
+     221.42,
+     "There were 5 rainy days, and it was late on 3."
+    ],
+    [
+     224.74,
+     "Here is Tara's conclusion."
+    ],
+    [
+     226.62,
+     "Which line is wrong?"
+    ],
+    [
+     228.62,
+     "Line 2 is wrong."
+    ],
+    [
+     229.72,
+     "There were many more dry days, so comparing the counts is not fair."
+    ],
+    [
+     234.32,
+     "Compare the fractions."
+    ],
+    [
+     236.38,
+     "On dry days it was late 6 times out of 15, which is 40 percent."
+    ],
+    [
+     241.16,
+     "On rainy days, 3 out of 5, which is 60 percent."
+    ],
+    [
+     244.72,
+     "So the bus really is late more often on rainy days."
+    ],
+    [
+     249.13,
+     "The biggest investigation of all is a census."
+    ],
+    [
+     252.23,
+     "A census collects data about every person in a country."
+    ],
+    [
+     256.57,
+     "Many countries hold one every 10 years."
+    ],
+    [
+     259.35,
+     "It records categorical data, like the language people speak, and discrete data, like the number of people in each home."
+    ],
+    [
+     268.38,
+     "Governments use the results to plan new schools, hospitals and roads."
+    ],
+    [
+     273.6,
+     "One last question."
+    ],
+    [
+     274.84,
+     "What is the capital of Peru?"
+    ],
+    [
+     276.76,
+     "Is that a statistical question?"
+    ],
+    [
+     278.89,
+     "Pause the video and choose."
+    ],
+    [
+     282.14,
+     "It is not a statistical question."
+    ],
+    [
+     284.32,
+     "It has one fixed answer, and you do not need to collect data that varies."
+    ],
+    [
+     289.68,
+     "To remember: a statistical question is answered with data that can vary."
+    ],
+    [
+     295.21,
+     "Categorical means words."
+    ],
+    [
+     296.97,
+     "Discrete means counted."
+    ],
+    [
+     298.67,
+     "Continuous means measured."
+    ],
+    [
+     301.13,
+     "Plan: question, data, collect, present, conclude."
+    ],
+    [
+     305.09,
+     "Use tallies and frequency tables, and compare fairly, with fractions or percentages."
+    ],
+    [
+     311.39,
+     "Great work! Now practise lesson 6.1 on Camday."
+    ]
+   ],
+   "times": {
+    "6.1-k1": 22.05,
+    "6.1-k2": 104.16,
+    "6.1-k3": 187.7,
+    "6.1-k4": 281.09
+   },
+   "up": true
+  },
+  "6.2": {
+   "src": "media/mv/s7/6-2.mp4",
+   "poster": "media/mv/s7/6-2_poster.jpg",
+   "srt": "media/mv/s7/6-2.srt",
+   "dur": 353.32,
+   "captions": [
+    [
+     6.09,
+     "A cook makes a huge pot of soup."
+    ],
+    [
+     8.21,
+     "To check the salt, she does not drink the whole pot."
+    ],
+    [
+     11.67,
+     "She stirs it, and tastes one spoonful."
+    ],
+    [
+     14.74,
+     "Why does she stir the soup first?"
+    ],
+    [
+     17.0,
+     "Pause the video and choose."
+    ],
+    [
+     20.25,
+     "She stirs so that the spoonful is like the whole pot."
+    ],
+    [
+     23.79,
+     "If she only tasted the top, the salt might all be at the bottom."
+    ],
+    [
+     28.6,
+     "The pot of soup is the population."
+    ],
+    [
+     30.89,
+     "The spoonful is the sample."
+    ],
+    [
+     33.26,
+     "Remember how to find a fraction of an amount."
+    ],
+    [
+     37.22,
+     "One tenth of 300 is 300 divided by 10, which is 30."
+    ],
+    [
+     42.26,
+     "So if a school has 840 students, and a survey asks 1 in every 10, it asks 84 students."
+    ],
+    [
+     50.03,
+     "The population is everyone, or everything, that your question is about."
+    ],
+    [
+     55.45,
+     "A sample is the smaller group that you actually collect data from."
+    ],
+    [
+     60.53,
+     "For example: how do students at our school travel?"
+    ],
+    [
+     64.15,
+     "The population is all the students."
+    ],
+    [
+     66.69,
+     "A sample could be 60 of them."
+    ],
+    [
+     69.34,
+     "A factory wants to know how long its light bulbs last."
+    ],
+    [
+     73.26,
+     "The population is every bulb."
+    ],
+    [
+     75.36,
+     "A sample could be 100 bulbs."
+    ],
+    [
+     77.94,
+     "Your turn."
+    ],
+    [
+     78.63,
+     "What if the factory tested every single bulb until it failed?"
+    ],
+    [
+     82.87,
+     "Pause the video and choose."
+    ],
+    [
+     86.14,
+     "That would be impossible."
+    ],
+    [
+     87.83,
+     "Every bulb would be used up, so there would be nothing left to sell."
+    ],
+    [
+     92.43,
+     "That is why we need samples."
+    ],
+    [
+     94.87,
+     "A sample is only useful if it represents the population."
+    ],
+    [
+     98.67,
+     "It should be like a mini version of the whole group."
+    ],
+    [
+     102.74,
+     "A sample is biased if some members are more likely to be chosen than others."
+    ],
+    [
+     108.41,
+     "For example, if you ask only your friends, the sample is biased."
+    ],
+    [
+     112.76,
+     "Your friends may be similar to you."
+    ],
+    [
+     115.7,
+     "The fairest way is a random sample."
+    ],
+    [
+     118.1,
+     "Everyone has an equal chance of being chosen, like pulling names out of a hat."
+    ],
+    [
+     123.99,
+     "Here is the method."
+    ],
+    [
+     125.4,
+     "Step 1: identify the population."
+    ],
+    [
+     128.33,
+     "Step 2: choose a sample size that is big enough, but practical."
+    ],
+    [
+     133.33,
+     "Step 3: choose the members randomly, or make sure every group is included fairly."
+    ],
+    [
+     139.57,
+     "Step 4: check for bias."
+    ],
+    [
+     141.17,
+     "Ask: is anyone left out, or more likely to be picked?"
+    ],
+    [
+     145.39,
+     "Amina wants to know how students travel to school."
+    ],
+    [
+     148.97,
+     "She asks the 30 students waiting at the bus stop."
+    ],
+    [
+     152.48,
+     "Is her sample biased?"
+    ],
+    [
+     154.54,
+     "The population is all the students at the school."
+    ],
+    [
+     157.88,
+     "But everyone in her sample uses the bus."
+    ],
+    [
+     161.16,
+     "Walkers, cyclists and students who come by car had no chance of being chosen."
+    ],
+    [
+     166.38,
+     "So yes, the sample is biased."
+    ],
+    [
+     168.9,
+     "A school has 600 students."
+    ],
+    [
+     171.1,
+     "For a quick survey, which sample size is most sensible: 6, 60 or 600?"
+    ],
+    [
+     177.49,
+     "6 is too few."
+    ],
+    [
+     178.42,
+     "The results could be very different from the whole school."
+    ],
+    [
+     183.11,
+     "600 is the whole population."
+    ],
+    [
+     185.2,
+     "That is not a sample, and it would take too long."
+    ],
+    [
+     189.41,
+     "60 is big enough to be reliable, and small enough to manage."
+    ],
+    [
+     194.42,
+     "Your turn."
+    ],
+    [
+     195.13,
+     "Which sample is least biased for finding the favourite sport of Year 8?"
+    ],
+    [
+     200.16,
+     "Pause and choose."
+    ],
+    [
+     202.76,
+     "The best choice is 20 Year 8 students picked randomly from the register."
+    ],
+    [
+     208.14,
+     "Everyone in Year 8 has an equal chance, and nobody outside Year 8 is included."
+    ],
+    [
+     214.52,
+     "A school has 300 students in Years 7, 8 and 9, with 100 in each year."
+    ],
+    [
+     220.29,
+     "You want a sample of 30."
+    ],
+    [
+     222.29,
+     "How many from each year?"
+    ],
+    [
+     224.85,
+     "30 is one tenth of 300."
+    ],
+    [
+     226.75,
+     "So take one tenth of each year."
+    ],
+    [
+     229.87,
+     "One tenth of 100 is 10."
+    ],
+    [
+     231.91,
+     "Choose 10 students from each year, at random."
+    ],
+    [
+     236.45,
+     "A coin is flipped 10 times, and lands on heads 7 times."
+    ],
+    [
+     240.64,
+     "That is 70 percent heads."
+    ],
+    [
+     242.55,
+     "Is the coin unfair?"
+    ],
+    [
+     244.54,
+     "Then it is flipped 1000 times, and lands on heads 508 times."
+    ],
+    [
+     250.07,
+     "That is 50.8 percent."
+    ],
+    [
+     252.56,
+     "The large sample is very close to 50 percent, so the coin looks fair."
+    ],
+    [
+     257.37,
+     "A small sample can be misleading, just by chance."
+    ],
+    [
+     261.34,
+     "Do people in our town want a new sports centre?"
+    ],
+    [
+     264.47,
+     "Here is Jo's plan."
+    ],
+    [
+     265.67,
+     "Which line is wrong?"
+    ],
+    [
+     267.55,
+     "Line 3 is wrong."
+    ],
+    [
+     268.67,
+     "People at the swimming pool already like sport, so they are more likely to say yes."
+    ],
+    [
+     274.45,
+     "The sample is biased."
+    ],
+    [
+     276.46,
+     "A better sample would be 50 people chosen at random from across the whole town."
+    ],
+    [
+     282.74,
+     "Before an election, opinion polls try to predict the result for a whole country, with millions of voters."
+    ],
+    [
+     290.43,
+     "They do not ask everyone."
+    ],
+    [
+     292.14,
+     "A typical poll asks only about one or two thousand people."
+    ],
+    [
+     296.64,
+     "That works only if the sample is chosen carefully, so that it represents the whole country: young and old, city and countryside."
+    ],
+    [
+     305.89,
+     "One last question."
+    ],
+    [
+     307.27,
+     "A school has 250 boys and 250 girls."
+    ],
+    [
+     310.03,
+     "A sample of 50 should keep the same mix."
+    ],
+    [
+     313.1,
+     "How many girls should be in it?"
+    ],
+    [
+     315.48,
+     "Pause the video and answer."
+    ],
+    [
+     318.95,
+     "Half of the students are girls, so half of the sample should be girls."
+    ],
+    [
+     324.24,
+     "Half of 50 is 25."
+    ],
+    [
+     326.08,
+     "To remember: the population is everyone the question is about."
+    ],
+    [
+     330.36,
+     "The sample is the group you collect data from."
+    ],
+    [
+     334.08,
+     "A good sample represents the population."
+    ],
+    [
+     336.88,
+     "A biased sample favours some members."
+    ],
+    [
+     340.02,
+     "Random sampling gives everyone an equal chance."
+    ],
+    [
+     343.95,
+     "Larger samples are more reliable, but they take more time."
+    ],
+    [
+     348.07,
+     "Great work! Now practise lesson 6.2 on Camday."
+    ]
+   ],
+   "times": {
+    "6.2-k1": 19.2,
+    "6.2-k2": 85.09,
+    "6.2-k3": 201.71,
+    "6.2-k4": 317.9
+   },
+   "up": true
+  },
+  "7.1": {
+   "src": "media/mv/s7/7-1.mp4",
+   "poster": "media/mv/s7/7-1_poster.jpg",
+   "srt": "media/mv/s7/7-1.srt",
+   "dur": 325.8,
+   "captions": [
+    [
+     6.42,
+     "Three classes took a swimming test."
+    ],
+    [
+     8.94,
+     "In class A, 7 tenths of the students passed."
+    ],
+    [
+     12.11,
+     "In class B, 5 eighths passed."
+    ],
+    [
+     14.19,
+     "In class C, 2 thirds passed."
+    ],
+    [
+     16.76,
+     "Which class had the greatest fraction passing?"
+    ],
+    [
+     19.86,
+     "Pause the video and decide."
+    ],
+    [
+     23.09,
+     "Fraction bars make it easy to see."
+    ],
+    [
+     25.59,
+     "Here are 7 tenths, 5 eighths and 2 thirds."
+    ],
+    [
+     29.23,
+     "The bar for class A is shaded the furthest."
+    ],
+    [
+     32.13,
+     "So class A did best."
+    ],
+    [
+     33.47,
+     "But drawing bars is slow."
+    ],
+    [
+     35.16,
+     "Let's learn a quicker way."
+    ],
+    [
+     37.46,
+     "Remember equivalent fractions."
+    ],
+    [
+     39.56,
+     "Multiply the numerator and the denominator by the same number, and the fraction keeps its value."
+    ],
+    [
+     46.82,
+     "2 thirds, 4 sixths and 8 twelfths are all the same amount."
+    ],
+    [
+     51.85,
+     "To compare fractions, write them with the same denominator."
+    ],
+    [
+     55.89,
+     "Then the larger numerator is the larger fraction."
+    ],
+    [
+     59.8,
+     "For tenths, eighths and thirds, a common denominator is 120."
+    ],
+    [
+     65.09,
+     "7 tenths is 84 over 120."
+    ],
+    [
+     67.76,
+     "5 eighths is 75 over 120, and 2 thirds is 80 over 120."
+    ],
+    [
+     74.2,
+     "84 is the largest numerator, so 7 tenths is the largest fraction."
+    ],
+    [
+     78.87,
+     "You can also change each fraction to a decimal, and compare those."
+    ],
+    [
+     84.16,
+     "Your turn."
+    ],
+    [
+     84.88,
+     "Which is larger: 5 sixths, or 7 ninths?"
+    ],
+    [
+     87.7,
+     "Pause the video and try it."
+    ],
+    [
+     91.05,
+     "A common denominator for 6 and 9 is 18."
+    ],
+    [
+     94.51,
+     "5 sixths is 15 eighteenths."
+    ],
+    [
+     96.91,
+     "7 ninths is 14 eighteenths."
+    ],
+    [
+     99.3,
+     "15 is more than 14, so 5 sixths is larger."
+    ],
+    [
+     103.58,
+     "An improper fraction has a numerator bigger than its denominator, like 11 quarters."
+    ],
+    [
+     110.21,
+     "11 divided by 4 is 2, remainder 3."
+    ],
+    [
+     113.12,
+     "So 11 quarters is the mixed number 2 and 3 quarters."
+    ],
+    [
+     118.12,
+     "To compare mixed numbers, compare the whole number parts first."
+    ],
+    [
+     122.34,
+     "Only if they are the same do you compare the fractions."
+    ],
+    [
+     126.58,
+     "Here is the method."
+    ],
+    [
+     127.92,
+     "Step 1: change improper fractions to mixed numbers, and compare the whole number parts first."
+    ],
+    [
+     135.03,
+     "Step 2: find a common denominator."
+    ],
+    [
+     137.5,
+     "The lowest common multiple of the denominators is best."
+    ],
+    [
+     142.04,
+     "Step 3: write equivalent fractions, and compare the numerators."
+    ],
+    [
+     147.24,
+     "Step 4: write your answer using the original fractions."
+    ],
+    [
+     151.81,
+     "Put these in order, smallest first: 5 sixths, 3 quarters, and 7 twelfths."
+    ],
+    [
+     157.88,
+     "The lowest common multiple of 6, 4 and 12 is 12."
+    ],
+    [
+     161.8,
+     "So use twelfths."
+    ],
+    [
+     163.66,
+     "5 sixths is 10 twelfths."
+    ],
+    [
+     165.72,
+     "3 quarters is 9 twelfths."
+    ],
+    [
+     167.87,
+     "7 twelfths stays the same."
+    ],
+    [
+     170.65,
+     "7 is less than 9, which is less than 10."
+    ],
+    [
+     173.89,
+     "So the order is 7 twelfths, 3 quarters, 5 sixths."
+    ],
+    [
+     178.41,
+     "Now compare an improper fraction with a mixed number."
+    ],
+    [
+     182.44,
+     "Which is larger: 13 fifths, or 2 and 3 quarters?"
+    ],
+    [
+     186.64,
+     "13 fifths is 2 and 3 fifths."
+    ],
+    [
+     188.98,
+     "Both have 2 wholes, so compare 3 fifths and 3 quarters."
+    ],
+    [
+     194.11,
+     "In twentieths, 3 fifths is 12 twentieths, and 3 quarters is 15 twentieths."
+    ],
+    [
+     200.17,
+     "So 2 and 3 quarters is larger."
+    ],
+    [
+     203.18,
+     "Your turn."
+    ],
+    [
+     203.92,
+     "Which is larger: 17 fifths, or 3 and a quarter?"
+    ],
+    [
+     207.45,
+     "Pause and work it out."
+    ],
+    [
+     210.5,
+     "17 fifths is 3 and 2 fifths."
+    ],
+    [
+     212.86,
+     "Both have 3 wholes."
+    ],
+    [
+     214.47,
+     "2 fifths is 8 twentieths, and 1 quarter is 5 twentieths."
+    ],
+    [
+     219.19,
+     "So 17 fifths is larger."
+    ],
+    [
+     221.69,
+     "Find a fraction between 1 third and 1 half."
+    ],
+    [
+     225.46,
+     "Sixths are not enough: 2 sixths and 3 sixths have no gap between them."
+    ],
+    [
+     230.8,
+     "Try twelfths."
+    ],
+    [
+     231.79,
+     "1 third is 4 twelfths, and 1 half is 6 twelfths."
+    ],
+    [
+     235.99,
+     "5 twelfths is between them."
+    ],
+    [
+     238.59,
+     "Which is larger: 3 eighths, or 2 fifths?"
+    ],
+    [
+     241.48,
+     "Here is Pia's reasoning."
+    ],
+    [
+     243.22,
+     "Which line is wrong?"
+    ],
+    [
+     245.21,
+     "Line 2 is wrong."
+    ],
+    [
+     246.31,
+     "A bigger denominator means smaller pieces."
+    ],
+    [
+     249.21,
+     "You must use a common denominator."
+    ],
+    [
+     252.11,
+     "In fortieths, 3 eighths is 15 fortieths, and 2 fifths is 16 fortieths."
+    ],
+    [
+     257.83,
+     "So 2 fifths is larger."
+    ],
+    [
+     260.18,
+     "In some countries, tools are measured in fractions of an inch."
+    ],
+    [
+     264.65,
+     "A mechanic might have spanners marked 3 eighths, 7 sixteenths and 1 half."
+    ],
+    [
+     270.47,
+     "Which one is the middle size?"
+    ],
+    [
+     272.61,
+     "Change them all to sixteenths: 6 sixteenths, 7 sixteenths and 8 sixteenths."
+    ],
+    [
+     278.7,
+     "So the 7 sixteenths spanner is in the middle."
+    ],
+    [
+     281.91,
+     "Mechanics order fractions like this every day."
+    ],
+    [
+     285.75,
+     "One last question."
+    ],
+    [
+     287.07,
+     "Which fraction is between 1 quarter and 1 half?"
+    ],
+    [
+     290.5,
+     "Pause the video and choose."
+    ],
+    [
+     293.87,
+     "In eighths, 1 quarter is 2 eighths, and 1 half is 4 eighths."
+    ],
+    [
+     298.51,
+     "So 3 eighths is between them."
+    ],
+    [
+     301.31,
+     "To remember: write fractions with a common denominator, then compare the numerators."
+    ],
+    [
+     307.75,
+     "Or change them to decimals."
+    ],
+    [
+     310.24,
+     "Change improper fractions to mixed numbers, and compare the whole parts first."
+    ],
+    [
+     316.28,
+     "A bigger denominator does not mean a bigger fraction."
+    ],
+    [
+     320.59,
+     "Great work! Now practise lesson 7.1 on Camday."
+    ]
+   ],
+   "times": {
+    "7.1-k1": 22.04,
+    "7.1-k2": 90.0,
+    "7.1-k3": 209.45,
+    "7.1-k4": 292.82
+   },
+   "up": false
+  },
+  "5.3": {
+   "src": "media/mv/s7/5-3.mp4",
+   "poster": "media/mv/s7/5-3_poster.jpg",
+   "srt": "media/mv/s7/5-3.srt",
+   "dur": 317.08,
+   "captions": [
+    [
+     7.36,
+     "A gardener wants a rectangular flower bed, 6 metres by 3 and a half metres."
+    ],
+    [
+     12.59,
+     "She has string, pegs and a tape measure."
+    ],
+    [
+     15.94,
+     "She measures the 4 sides correctly."
+    ],
+    [
+     18.49,
+     "But are the corners really right angles?"
+    ],
+    [
+     21.96,
+     "Which property guarantees that the corners are right angles?"
+    ],
+    [
+     26.19,
+     "Pause the video and choose."
+    ],
+    [
+     29.5,
+     "The answer is: the two diagonals are equal."
+    ],
+    [
+     32.42,
+     "A shape with the correct sides can still lean over, like a parallelogram."
+    ],
+    [
+     37.93,
+     "But when the two diagonals are the same length, the shape must be a rectangle, with 4 right angles."
+    ],
+    [
+     45.3,
+     "Remember how to use a protractor."
+    ],
+    [
+     47.5,
+     "Put its centre on the vertex of the angle."
+    ],
+    [
+     50.86,
+     "Line up zero with one arm of the angle."
+    ],
+    [
+     53.93,
+     "Then read from the scale that starts at zero."
+    ],
+    [
+     57.46,
+     "An acute angle must be less than 90 degrees, so if you read 130 and 50, choose 50."
+    ],
+    [
+     64.44,
+     "To draw a line perpendicular to another line, use a set square."
+    ],
+    [
+     68.68,
+     "Put one edge along the line, and draw along the other edge."
+    ],
+    [
+     73.2,
+     "You can also use a protractor."
+    ],
+    [
+     75.32,
+     "Put the centre on the point, and mark 90 degrees."
+    ],
+    [
+     79.33,
+     "To draw parallel lines, slide the set square along a ruler, and draw a line at each position."
+    ],
+    [
+     85.62,
+     "The lines stay the same distance apart."
+    ],
+    [
+     88.8,
+     "Your turn."
+    ],
+    [
+     89.49,
+     "On a diagram, what do lines marked with matching arrows tell you?"
+    ],
+    [
+     93.97,
+     "Pause the video and choose."
+    ],
+    [
+     97.24,
+     "Matching arrows mean the lines are parallel."
+    ],
+    [
+     100.27,
+     "Small squares in a corner mean a right angle, and matching dashes mean equal lengths."
+    ],
+    [
+     106.69,
+     "To draw a quadrilateral accurately, draw one side first."
+    ],
+    [
+     110.53,
+     "Then use a protractor for each angle, and a ruler for each length."
+    ],
+    [
+     115.62,
+     "Take this parallelogram."
+    ],
+    [
+     117.41,
+     "Draw the base, 6 centimetres long."
+    ],
+    [
+     120.51,
+     "At the left end, measure an angle of 63 degrees."
+    ],
+    [
+     124.33,
+     "At the right end, measure 117 degrees."
+    ],
+    [
+     127.9,
+     "Mark the sloping sides to the same length, and join the top."
+    ],
+    [
+     132.23,
+     "Notice that the two neighbouring angles add up to 180 degrees."
+    ],
+    [
+     137.25,
+     "Here is the method."
+    ],
+    [
+     138.58,
+     "Step 1: make a quick sketch, and label every length and angle you know."
+    ],
+    [
+     144.07,
+     "Step 2: draw the longest side you know with a ruler."
+    ],
+    [
+     148.23,
+     "Step 3: measure each angle at its ends with a protractor, and draw the next sides."
+    ],
+    [
+     154.55,
+     "Step 4: mark the lengths, join up, and check your drawing by measuring."
+    ],
+    [
+     160.1,
+     "Draw a rectangle 7 centimetres by 4 centimetres."
+    ],
+    [
+     163.7,
+     "First draw the side A B, 7 centimetres long."
+    ],
+    [
+     167.56,
+     "At A and at B, draw lines perpendicular to A B."
+    ],
+    [
+     171.14,
+     "Mark a point 4 centimetres up each line."
+    ],
+    [
+     173.95,
+     "Call the points D and C."
+    ],
+    [
+     176.19,
+     "Join D to C."
+    ],
+    [
+     177.02,
+     "Check: D C should be 7 centimetres long, and the diagonals should be equal."
+    ],
+    [
+     182.74,
+     "Amir draws a parallelogram with an angle of 50 degrees."
+    ],
+    [
+     186.71,
+     "What should the other angles be?"
+    ],
+    [
+     189.56,
+     "In a parallelogram, opposite angles are equal."
+    ],
+    [
+     192.97,
+     "So the opposite angle is 50 degrees."
+    ],
+    [
+     196.18,
+     "Neighbouring angles add up to 180 degrees."
+    ],
+    [
+     200.04,
+     "180 minus 50 is 130."
+    ],
+    [
+     201.88,
+     "The other two angles are 130 degrees each."
+    ],
+    [
+     206.28,
+     "Your turn."
+    ],
+    [
+     207.0,
+     "A parallelogram has an angle of 64 degrees."
+    ],
+    [
+     210.1,
+     "What is the angle next to it?"
+    ],
+    [
+     212.19,
+     "Pause and work it out."
+    ],
+    [
+     215.18,
+     "Neighbouring angles in a parallelogram add up to 180 degrees."
+    ],
+    [
+     220.58,
+     "180 minus 64 is 116 degrees."
+    ],
+    [
+     223.61,
+     "Kim draws an angle of 40 degrees at point A."
+    ],
+    [
+     226.85,
+     "Which line goes wrong first?"
+    ],
+    [
+     229.46,
+     "Line 2 is wrong."
+    ],
+    [
+     230.68,
+     "Kim read the wrong scale, so the angle she drew is really 140 degrees."
+    ],
+    [
+     236.57,
+     "Always use the scale that starts at zero on the arm of the angle."
+    ],
+    [
+     241.05,
+     "And check: 40 degrees is acute, so it must look smaller than a right angle."
+    ],
+    [
+     246.76,
+     "Builders need perfect right angles for walls and floors."
+    ],
+    [
+     250.54,
+     "Here is a trick they still use today."
+    ],
+    [
+     253.59,
+     "They make a triangle with sides of 3, 4 and 5 units."
+    ],
+    [
+     257.63,
+     "For example, 3 metres, 4 metres and 5 metres."
+    ],
+    [
+     261.67,
+     "The corner between the 3 side and the 4 side is always exactly 90 degrees."
+    ],
+    [
+     267.32,
+     "No protractor needed."
+    ],
+    [
+     269.48,
+     "One last question."
+    ],
+    [
+     270.68,
+     "What is true about the angles of a kite?"
+    ],
+    [
+     273.35,
+     "Pause the video and choose."
+    ],
+    [
+     276.56,
+     "A kite has one pair of equal opposite angles."
+    ],
+    [
+     279.42,
+     "It also has two pairs of equal sides next to each other."
+    ],
+    [
+     283.53,
+     "To remember: perpendicular lines meet at 90 degrees, and parallel lines never meet."
+    ],
+    [
+     290.25,
+     "Use a set square or a protractor for perpendicular lines, and a sliding set square for parallel lines."
+    ],
+    [
+     297.78,
+     "To draw a quadrilateral: sketch, draw one side, measure the angles, mark the lengths."
+    ],
+    [
+     304.08,
+     "Check with what you know: equal diagonals, equal opposite angles, and neighbours that add up to 180."
+    ],
+    [
+     311.99,
+     "Great work! Now practise lesson 5.3 on Camday."
+    ]
+   ],
+   "times": {
+    "5.3-k1": 28.45,
+    "5.3-k2": 96.19,
+    "5.3-k3": 214.13,
+    "5.3-k4": 275.51
+   },
+   "up": true
+  },
+  "7.2": {
+   "src": "media/mv/s7/7-2.mp4",
+   "poster": "media/mv/s7/7-2_poster.jpg",
+   "srt": "media/mv/s7/7-2.srt",
+   "dur": 286.96,
+   "captions": [
+    [
+     6.56,
+     "A cake recipe needs 2 and a quarter cups of flour."
+    ],
+    [
+     10.28,
+     "The icing needs 1 and 2 thirds cups."
+    ],
+    [
+     13.51,
+     "Altogether, is that more or less than 4 cups?"
+    ],
+    [
+     16.63,
+     "Pause the video and decide."
+    ],
+    [
+     19.91,
+     "The whole numbers make 3."
+    ],
+    [
+     21.68,
+     "Then we have a quarter and 2 thirds left to add."
+    ],
+    [
+     25.64,
+     "A quarter plus 2 thirds is 11 twelfths."
+    ],
+    [
+     28.7,
+     "That is less than 1 whole."
+    ],
+    [
+     30.74,
+     "So the total is 3 and 11 twelfths cups: just less than 4."
+    ],
+    [
+     35.77,
+     "Remember: to add fractions, they need a common denominator."
+    ],
+    [
+     39.86,
+     "Thirds and quarters can both be written as twelfths."
+    ],
+    [
+     44.01,
+     "Add the numerators only."
+    ],
+    [
+     45.63,
+     "The denominator tells you the size of the pieces, and that does not change."
+    ],
+    [
+     51.23,
+     "To add mixed numbers, add the whole numbers first."
+    ],
+    [
+     54.65,
+     "This also gives you a good estimate."
+    ],
+    [
+     57.66,
+     "Then add the fractions, using a common denominator."
+    ],
+    [
+     61.77,
+     "If the fraction part is improper, change it to a mixed number, and add it on."
+    ],
+    [
+     67.41,
+     "For example, 1 and 3 quarters plus 2 and a half."
+    ],
+    [
+     71.08,
+     "The wholes make 3."
+    ],
+    [
+     72.46,
+     "3 quarters plus 2 quarters is 5 quarters, which is 1 and a quarter."
+    ],
+    [
+     77.6,
+     "So the total is 4 and a quarter."
+    ],
+    [
+     80.6,
+     "Your turn."
+    ],
+    [
+     81.35,
+     "Work out 1 and 1 fifth, plus 2 and 2 fifths."
+    ],
+    [
+     84.65,
+     "Pause the video and try it."
+    ],
+    [
+     88.08,
+     "1 plus 2 is 3."
+    ],
+    [
+     89.28,
+     "1 fifth plus 2 fifths is 3 fifths."
+    ],
+    [
+     92.2,
+     "The answer is 3 and 3 fifths."
+    ],
+    [
+     95.23,
+     "Subtracting can be tricky."
+    ],
+    [
+     97.21,
+     "Take 5 and 1 third, minus 2 and 3 quarters."
+    ],
+    [
+     100.47,
+     "1 third is smaller than 3 quarters, so we cannot just subtract the fractions."
+    ],
+    [
+     106.87,
+     "The safest method is to change both numbers to improper fractions."
+    ],
+    [
+     112.22,
+     "5 and 1 third is 16 thirds."
+    ],
+    [
+     114.4,
+     "2 and 3 quarters is 11 quarters."
+    ],
+    [
+     117.55,
+     "In twelfths, that is 64 twelfths minus 33 twelfths, which is 31 twelfths."
+    ],
+    [
+     123.55,
+     "As a mixed number, 2 and 7 twelfths."
+    ],
+    [
+     127.06,
+     "Here is the method."
+    ],
+    [
+     128.44,
+     "Step 1: estimate with the whole numbers."
+    ],
+    [
+     131.88,
+     "Step 2: add or subtract the whole numbers."
+    ],
+    [
+     135.49,
+     "Step 3: add or subtract the fractions with a common denominator, and simplify."
+    ],
+    [
+     141.61,
+     "Step 4: if a fraction is improper, carry."
+    ],
+    [
+     144.5,
+     "For a hard subtraction, use improper fractions."
+    ],
+    [
+     148.35,
+     "Work out 1 and 5 eighths, plus 3 and 3 quarters."
+    ],
+    [
+     152.82,
+     "The wholes: 1 plus 3 is 4."
+    ],
+    [
+     155.53,
+     "The fractions: 5 eighths plus 6 eighths is 11 eighths."
+    ],
+    [
+     160.0,
+     "That is 1 and 3 eighths."
+    ],
+    [
+     162.54,
+     "4 plus 1 and 3 eighths is 5 and 3 eighths."
+    ],
+    [
+     166.87,
+     "Your turn."
+    ],
+    [
+     167.61,
+     "Work out 2 and 3 quarters, plus 1 and a half."
+    ],
+    [
+     170.93,
+     "Pause and work it out."
+    ],
+    [
+     173.96,
+     "The wholes make 3."
+    ],
+    [
+     175.36,
+     "3 quarters plus 2 quarters is 5 quarters, which is 1 and a quarter."
+    ],
+    [
+     180.56,
+     "3 plus 1 and a quarter is 4 and a quarter."
+    ],
+    [
+     184.38,
+     "Work out 6 and 2 fifths, minus 3 and a half."
+    ],
+    [
+     188.39,
+     "Change to improper fractions."
+    ],
+    [
+     190.78,
+     "6 and 2 fifths is 32 fifths."
+    ],
+    [
+     193.08,
+     "3 and a half is 7 halves."
+    ],
+    [
+     195.69,
+     "In tenths: 64 tenths minus 35 tenths is 29 tenths."
+    ],
+    [
+     200.0,
+     "That is 2 and 9 tenths."
+    ],
+    [
+     202.54,
+     "Lin works out 1 and 1 third, plus 2 and a quarter."
+    ],
+    [
+     206.23,
+     "Which line goes wrong first?"
+    ],
+    [
+     208.85,
+     "Line 2 is wrong."
+    ],
+    [
+     209.97,
+     "You cannot add the tops and add the bottoms."
+    ],
+    [
+     213.05,
+     "Thirds and quarters are different sizes."
+    ],
+    [
+     216.4,
+     "Use twelfths."
+    ],
+    [
+     217.45,
+     "4 twelfths plus 3 twelfths is 7 twelfths."
+    ],
+    [
+     220.74,
+     "The answer is 3 and 7 twelfths."
+    ],
+    [
+     223.78,
+     "Cooks add mixed numbers all the time."
+    ],
+    [
+     226.3,
+     "Suppose a recipe needs 1 and a half cups of milk, and you want to make it three times."
+    ],
+    [
+     232.7,
+     "1 and a half plus 1 and a half is 3."
+    ],
+    [
+     235.27,
+     "Add another 1 and a half, and you get 4 and a half cups."
+    ],
+    [
+     239.81,
+     "A measuring jug marked in halves, thirds and quarters is really a fraction number line."
+    ],
+    [
+     246.27,
+     "One last question."
+    ],
+    [
+     247.61,
+     "What is 3 minus 1 and 1 third?"
+    ],
+    [
+     249.84,
+     "Pause the video and answer."
+    ],
+    [
+     253.25,
+     "3 is 9 thirds."
+    ],
+    [
+     254.44,
+     "1 and 1 third is 4 thirds."
+    ],
+    [
+     256.65,
+     "9 thirds minus 4 thirds is 5 thirds, which is 1 and 2 thirds."
+    ],
+    [
+     262.4,
+     "To remember: add the wholes, then add the fractions with a common denominator."
+    ],
+    [
+     268.26,
+     "Change an improper fraction part to a mixed number, and carry."
+    ],
+    [
+     273.02,
+     "For subtraction, improper fractions avoid problems."
+    ],
+    [
+     277.26,
+     "Estimate with the whole numbers, and simplify your answer."
+    ],
+    [
+     281.76,
+     "Great work! Now practise lesson 7.2 on Camday."
+    ]
+   ],
+   "times": {
+    "7.2-k1": 18.86,
+    "7.2-k2": 87.03,
+    "7.2-k3": 172.91,
+    "7.2-k4": 252.2
+   },
+   "up": true
+  },
+  "7.3": {
+   "src": "media/mv/s7/7-3.mp4",
+   "poster": "media/mv/s7/7-3_poster.jpg",
+   "srt": "media/mv/s7/7-3.srt",
+   "dur": 292.96,
+   "captions": [
+    [
+     6.68,
+     "3 quarters of a garden is lawn."
+    ],
+    [
+     8.86,
+     "A gardener mows 2 thirds of the lawn before it starts to rain."
+    ],
+    [
+     13.77,
+     "What fraction of the whole garden has been mown?"
+    ],
+    [
+     17.05,
+     "Pause the video and work it out."
+    ],
+    [
+     20.64,
+     "Draw the garden as a rectangle with 4 columns."
+    ],
+    [
+     24.06,
+     "3 of the columns are lawn."
+    ],
+    [
+     26.0,
+     "That is 3 quarters."
+    ],
+    [
+     27.96,
+     "Now cut it into 3 rows, and take 2 of them."
+    ],
+    [
+     30.99,
+     "The dark part has been mown."
+    ],
+    [
+     33.51,
+     "There are 12 small pieces, and 6 are dark."
+    ],
+    [
+     36.67,
+     "6 twelfths is one half."
+    ],
+    [
+     38.4,
+     "Half of the garden has been mown."
+    ],
+    [
+     41.43,
+     "Remember how to find a fraction of an amount."
+    ],
+    [
+     44.71,
+     "For 3 fifths of 40, divide by the denominator, then multiply by the numerator."
+    ],
+    [
+     50.95,
+     "40 divided by 5 is 8."
+    ],
+    [
+     53.18,
+     "8 times 3 is 24."
+    ],
+    [
+     55.43,
+     "2 thirds of 3 quarters is the same as 2 thirds times 3 quarters."
+    ],
+    [
+     60.91,
+     "To multiply fractions, multiply the numerators, and multiply the denominators."
+    ],
+    [
+     67.03,
+     "2 times 3 is 6."
+    ],
+    [
+     68.27,
+     "3 times 4 is 12."
+    ],
+    [
+     69.59,
+     "That gives 6 twelfths, which simplifies to one half."
+    ],
+    [
+     73.87,
+     "It matches the diagram."
+    ],
+    [
+     76.32,
+     "Your turn."
+    ],
+    [
+     77.05,
+     "Work out 1 third times 1 quarter."
+    ],
+    [
+     79.48,
+     "Pause the video and try it."
+    ],
+    [
+     82.86,
+     "1 times 1 is 1."
+    ],
+    [
+     84.24,
+     "3 times 4 is 12."
+    ],
+    [
+     85.71,
+     "The answer is 1 twelfth."
+    ],
+    [
+     88.47,
+     "You can make the numbers smaller before you multiply."
+    ],
+    [
+     92.15,
+     "This is called cancelling."
+    ],
+    [
+     93.95,
+     "Divide a numerator and a denominator by the same number."
+    ],
+    [
+     98.39,
+     "In 2 thirds times 3 quarters, the threes cancel."
+    ],
+    [
+     102.14,
+     "And 2 and 4 both divide by 2."
+    ],
+    [
+     104.41,
+     "That leaves 1 over 1, times 1 over 2, which is one half."
+    ],
+    [
+     109.34,
+     "A whole number can be written as a fraction over 1."
+    ],
+    [
+     113.42,
+     "So 5 times 2 thirds is 5 over 1, times 2 over 3."
+    ],
+    [
+     117.26,
+     "That is 10 thirds, or 3 and 1 third."
+    ],
+    [
+     120.69,
+     "Here is the method."
+    ],
+    [
+     122.06,
+     "Step 1: write any whole number as a fraction over 1."
+    ],
+    [
+     126.36,
+     "Step 2: cancel common factors between any numerator and any denominator."
+    ],
+    [
+     132.22,
+     "Step 3: multiply the numerators, and multiply the denominators."
+    ],
+    [
+     137.45,
+     "Step 4: simplify, and change an improper fraction to a mixed number."
+    ],
+    [
+     142.81,
+     "Work out 4 ninths times 3 eighths."
+    ],
+    [
+     146.07,
+     "Cancel 4 with 8."
+    ],
+    [
+     147.5,
+     "They become 1 and 2."
+    ],
+    [
+     149.84,
+     "Cancel 3 with 9."
+    ],
+    [
+     151.3,
+     "They become 1 and 3."
+    ],
+    [
+     153.68,
+     "1 third times 1 half is 1 sixth."
+    ],
+    [
+     156.81,
+     "Work out 6 times 5 eighths."
+    ],
+    [
+     159.69,
+     "Write 6 as 6 over 1."
+    ],
+    [
+     161.47,
+     "Cancel 6 and 8 by 2."
+    ],
+    [
+     163.26,
+     "They become 3 and 4."
+    ],
+    [
+     165.59,
+     "3 times 5 is 15."
+    ],
+    [
+     167.19,
+     "1 times 4 is 4."
+    ],
+    [
+     168.69,
+     "15 quarters is 3 and 3 quarters."
+    ],
+    [
+     172.45,
+     "Your turn."
+    ],
+    [
+     173.2,
+     "Work out 4 times 3 tenths."
+    ],
+    [
+     175.14,
+     "Pause and work it out."
+    ],
+    [
+     178.18,
+     "4 times 3 is 12, so we get 12 tenths."
+    ],
+    [
+     181.36,
+     "That simplifies to 6 fifths, which is 1 and 1 fifth."
+    ],
+    [
+     186.36,
+     "In a club, 3 fifths of the members are adults."
+    ],
+    [
+     189.55,
+     "5 sixths of the adults play tennis."
+    ],
+    [
+     191.97,
+     "What fraction of the club are adults who play tennis?"
+    ],
+    [
+     196.19,
+     "We need 5 sixths of 3 fifths."
+    ],
+    [
+     198.36,
+     "Of means multiply."
+    ],
+    [
+     200.25,
+     "The fives cancel."
+    ],
+    [
+     201.49,
+     "3 and 6 cancel to 1 and 2."
+    ],
+    [
+     203.39,
+     "The answer is one half."
+    ],
+    [
+     205.06,
+     "Half of the club are adults who play tennis."
+    ],
+    [
+     208.82,
+     "Omar works out 2 fifths times 3 quarters."
+    ],
+    [
+     211.9,
+     "Which line is wrong?"
+    ],
+    [
+     213.95,
+     "Line 1 is wrong."
+    ],
+    [
+     215.07,
+     "Omar multiplied across the wrong way."
+    ],
+    [
+     217.65,
+     "Multiply top by top, and bottom by bottom."
+    ],
+    [
+     221.14,
+     "2 times 3 is 6, and 5 times 4 is 20."
+    ],
+    [
+     224.3,
+     "6 twentieths simplifies to 3 tenths."
+    ],
+    [
+     228.02,
+     "Here is a real fraction of a fraction."
+    ],
+    [
+     230.69,
+     "About 7 tenths of the Earth's surface is covered by water."
+    ],
+    [
+     235.3,
+     "And the Pacific Ocean holds roughly half of all that water surface."
+    ],
+    [
+     240.4,
+     "One half times 7 tenths is 7 twentieths."
+    ],
+    [
+     243.23,
+     "So the Pacific Ocean alone covers about a third of the whole planet."
+    ],
+    [
+     248.61,
+     "One last question."
+    ],
+    [
+     249.93,
+     "Is 3 quarters times 4 fifths more than 3 quarters, or less?"
+    ],
+    [
+     254.28,
+     "Pause the video and choose."
+    ],
+    [
+     257.66,
+     "It is less than 3 quarters."
+    ],
+    [
+     259.61,
+     "Multiplying by a fraction smaller than 1 makes the answer smaller."
+    ],
+    [
+     264.36,
+     "In fact, the fours cancel, and the answer is 3 fifths."
+    ],
+    [
+     268.8,
+     "To remember: of means multiply."
+    ],
+    [
+     271.62,
+     "Multiply the numerators, multiply the denominators, and simplify."
+    ],
+    [
+     276.85,
+     "Cancel common factors first, to make it easier."
+    ],
+    [
+     280.63,
+     "A whole number is a fraction over 1."
+    ],
+    [
+     283.03,
+     "And multiplying by a proper fraction makes the answer smaller."
+    ],
+    [
+     287.72,
+     "Great work! Now practise lesson 7.3 on Camday."
+    ]
+   ],
+   "times": {
+    "7.3-k1": 19.59,
+    "7.3-k2": 81.81,
+    "7.3-k3": 177.13,
+    "7.3-k4": 256.61
+   },
+   "up": true
+  },
+  "7.4": {
+   "src": "media/mv/s7/7-4.mp4",
+   "poster": "media/mv/s7/7-4_poster.jpg",
+   "srt": "media/mv/s7/7-4.srt",
+   "dur": 274.6,
+   "captions": [
+    [
+     6.34,
+     "There is 3 quarters of a pizza left."
+    ],
+    [
+     8.91,
+     "Three friends share it equally."
+    ],
+    [
+     11.67,
+     "What fraction of a whole pizza does each friend get?"
+    ],
+    [
+     15.14,
+     "Pause the video and work it out."
+    ],
+    [
+     18.68,
+     "3 quarters means 3 pieces, each a quarter of the pizza."
+    ],
+    [
+     22.61,
+     "Three friends, three pieces."
+    ],
+    [
+     24.61,
+     "They get one quarter each."
+    ],
+    [
+     27.02,
+     "Remember: 12 divided by 3 can mean share 12 into 3 equal groups."
+    ],
+    [
+     32.97,
+     "It can also mean: how many threes are in 12?"
+    ],
+    [
+     36.32,
+     "Both give 4."
+    ],
+    [
+     37.79,
+     "The second meaning helps with fractions."
+    ],
+    [
+     40.8,
+     "How many halves are in 5?"
+    ],
+    [
+     42.69,
+     "There are 10."
+    ],
+    [
+     44.22,
+     "Dividing by 3 is the same as finding one third."
+    ],
+    [
+     47.63,
+     "So dividing by 3 is the same as multiplying by 1 third."
+    ],
+    [
+     52.17,
+     "3 quarters divided by 3 is 3 quarters times 1 third."
+    ],
+    [
+     56.28,
+     "That is 3 twelfths, which simplifies to 1 quarter."
+    ],
+    [
+     60.77,
+     "Another example."
+    ],
+    [
+     62.04,
+     "2 fifths divided by 4 is 2 fifths times 1 quarter."
+    ],
+    [
+     66.01,
+     "That is 2 twentieths, or 1 tenth."
+    ],
+    [
+     69.18,
+     "Your turn."
+    ],
+    [
+     69.91,
+     "Work out 8 ninths divided by 4."
+    ],
+    [
+     72.17,
+     "Pause the video and try it."
+    ],
+    [
+     75.54,
+     "8 ninths shared into 4 equal parts is 2 ninths each."
+    ],
+    [
+     79.74,
+     "Or: 8 ninths times 1 quarter is 8 over 36, which simplifies to 2 ninths."
+    ],
+    [
+     86.1,
+     "3 quarters divided by 1 eighth asks: how many eighths are in 3 quarters?"
+    ],
+    [
+     92.03,
+     "3 quarters is the same as 6 eighths."
+    ],
+    [
+     94.92,
+     "So there are 6."
+    ],
+    [
+     96.67,
+     "Here is the method."
+    ],
+    [
+     98.01,
+     "Turn the second fraction upside down, and multiply."
+    ],
+    [
+     101.59,
+     "The upside-down fraction is called the reciprocal."
+    ],
+    [
+     105.65,
+     "3 quarters times 8 over 1 is 24 quarters, which is 6."
+    ],
+    [
+     110.1,
+     "The same answer."
+    ],
+    [
+     112.0,
+     "Here is the method."
+    ],
+    [
+     113.38,
+     "Step 1: write a whole number as a fraction over 1."
+    ],
+    [
+     117.57,
+     "Step 2: keep the first fraction."
+    ],
+    [
+     119.89,
+     "Change divide to multiply."
+    ],
+    [
+     121.78,
+     "Flip the second fraction."
+    ],
+    [
+     124.14,
+     "Step 3: cancel, and multiply."
+    ],
+    [
+     126.93,
+     "Step 4: check that the size of your answer makes sense."
+    ],
+    [
+     131.31,
+     "Work out 2 thirds divided by 4 ninths."
+    ],
+    [
+     134.8,
+     "Keep the first, change to times, flip the second."
+    ],
+    [
+     138.37,
+     "2 thirds times 9 quarters."
+    ],
+    [
+     140.82,
+     "Cancel 2 with 4, to get 1 and 2."
+    ],
+    [
+     143.56,
+     "Cancel 3 with 9, to get 1 and 3."
+    ],
+    [
+     146.86,
+     "That gives 3 halves, which is 1 and a half."
+    ],
+    [
+     150.0,
+     "Your turn."
+    ],
+    [
+     150.7,
+     "How many sixths are in 2 thirds?"
+    ],
+    [
+     152.94,
+     "Pause and work it out."
+    ],
+    [
+     155.88,
+     "2 thirds divided by 1 sixth is 2 thirds times 6."
+    ],
+    [
+     159.83,
+     "That is 12 thirds, which is 4."
+    ],
+    [
+     162.3,
+     "There are 4 sixths in 2 thirds."
+    ],
+    [
+     165.4,
+     "A bottle holds 5 sixths of a litre."
+    ],
+    [
+     167.84,
+     "How many doses of 1 twelfth of a litre can be poured from it?"
+    ],
+    [
+     172.65,
+     "5 sixths times 12 over 1 is 60 sixths."
+    ],
+    [
+     177.0,
+     "60 divided by 6 is 10."
+    ],
+    [
+     179.1,
+     "You can pour 10 doses."
+    ],
+    [
+     181.74,
+     "A ribbon is 3 fifths of a metre long."
+    ],
+    [
+     184.34,
+     "It is cut into 4 equal pieces."
+    ],
+    [
+     186.45,
+     "How long is each piece?"
+    ],
+    [
+     188.61,
+     "Dividing by 4 is multiplying by 1 quarter."
+    ],
+    [
+     191.9,
+     "3 fifths times 1 quarter is 3 twentieths of a metre."
+    ],
+    [
+     196.52,
+     "3 twentieths of a metre is 15 centimetres."
+    ],
+    [
+     200.57,
+     "Jay works out 2 fifths divided by 3 quarters."
+    ],
+    [
+     203.93,
+     "Which line is wrong?"
+    ],
+    [
+     205.97,
+     "Line 1 is wrong."
+    ],
+    [
+     207.05,
+     "Jay flipped the first fraction."
+    ],
+    [
+     209.13,
+     "Keep the first fraction, and flip only the second."
+    ],
+    [
+     213.05,
+     "2 fifths times 4 thirds is 8 fifteenths."
+    ],
+    [
+     216.85,
+     "Musicians divide fractions without even noticing."
+    ],
+    [
+     220.58,
+     "A waltz is written in 3 4 time."
+    ],
+    [
+     222.94,
+     "Each bar lasts 3 quarter notes."
+    ],
+    [
+     225.86,
+     "How many eighth notes fit in one bar?"
+    ],
+    [
+     228.52,
+     "That is 3 quarters divided by 1 eighth."
+    ],
+    [
+     231.87,
+     "3 quarters times 8 is 6."
+    ],
+    [
+     233.72,
+     "So 6 eighth notes fit in every bar of a waltz."
+    ],
+    [
+     237.81,
+     "One last question."
+    ],
+    [
+     239.14,
+     "What is 1 half divided by 1 quarter?"
+    ],
+    [
+     241.8,
+     "Pause the video and answer."
+    ],
+    [
+     245.2,
+     "How many quarters are in a half?"
+    ],
+    [
+     247.68,
+     "2."
+    ],
+    [
+     247.84,
+     "Or: 1 half times 4 is 4 halves, which is 2."
+    ],
+    [
+     251.73,
+     "To remember: dividing by a whole number n is multiplying by 1 over n."
+    ],
+    [
+     257.11,
+     "To divide by a fraction, multiply by its reciprocal."
+    ],
+    [
+     261.3,
+     "Keep the first fraction, and flip only the second."
+    ],
+    [
+     265.29,
+     "Dividing by a proper fraction gives a bigger answer."
+    ],
+    [
+     269.37,
+     "Great work! Now practise lesson 7.4 on Camday."
+    ]
+   ],
+   "times": {
+    "7.4-k1": 17.63,
+    "7.4-k2": 74.49,
+    "7.4-k3": 154.83,
+    "7.4-k4": 244.15
+   },
+   "up": true
+  },
+  "8.3": {
+   "src": "media/mv/s7/8-3.mp4",
+   "poster": "media/mv/s7/8-3_poster.jpg",
+   "srt": "media/mv/s7/8-3.srt",
+   "dur": 301.64,
+   "captions": [
+    [
+     7.06,
+     "One floor tile is broken, and a builder needs a new one."
+    ],
+    [
+     10.67,
+     "The new tile must fit the gap exactly."
+    ],
+    [
+     13.67,
+     "A tile is the same shape as the old one, but bigger."
+    ],
+    [
+     17.13,
+     "Will it fit?"
+    ],
+    [
+     17.93,
+     "Pause the video and decide."
+    ],
+    [
+     21.12,
+     "No."
+    ],
+    [
+     21.32,
+     "To fit the gap, the tile must be the same shape, and also the same size."
+    ],
+    [
+     26.5,
+     "It can be turned round or flipped over, and it will still fit."
+    ],
+    [
+     31.08,
+     "Remember how we name angles."
+    ],
+    [
+     32.96,
+     "Angle ABC is the angle at B, the middle letter."
+    ],
+    [
+     36.12,
+     "It is between the lines BA and BC."
+    ],
+    [
+     38.95,
+     "Two shapes are congruent if they are exactly the same shape and the same size."
+    ],
+    [
+     44.02,
+     "One fits exactly on top of the other."
+    ],
+    [
+     46.98,
+     "You may need to turn it, or flip it over."
+    ],
+    [
+     49.87,
+     "This second triangle is turned, but its sides are still 3, 4 and 5 centimetres."
+    ],
+    [
+     55.43,
+     "The triangles are congruent."
+    ],
+    [
+     57.95,
+     "Shapes that are the same shape, but a different size, are not congruent."
+    ],
+    [
+     63.43,
+     "Your turn."
+    ],
+    [
+     64.12,
+     "A shape and its mirror image: are they congruent, or not congruent?"
+    ],
+    [
+     68.74,
+     "Pause the video and decide."
+    ],
+    [
+     72.0,
+     "They are congruent."
+    ],
+    [
+     73.3,
+     "A reflection flips the shape, but it does not change any length or any angle."
+    ],
+    [
+     79.08,
+     "In congruent shapes, the matching parts are called corresponding sides and corresponding angles."
+    ],
+    [
+     86.45,
+     "We write the letters in matching order."
+    ],
+    [
+     89.06,
+     "If triangle ABC is congruent to triangle XYZ, then A matches X, B matches Y, and C matches Z."
+    ],
+    [
+     95.84,
+     "Corresponding sides are equal: AB equals XY."
+    ],
+    [
+     98.82,
+     "Corresponding angles are equal: angle B equals angle Y."
+    ],
+    [
+     103.1,
+     "Your turn."
+    ],
+    [
+     103.83,
+     "Triangle KLM is congruent to triangle RST."
+    ],
+    [
+     106.88,
+     "Angle L is 72 degrees."
+    ],
+    [
+     108.48,
+     "What is angle S?"
+    ],
+    [
+     109.64,
+     "Pause the video and try it."
+    ],
+    [
+     113.0,
+     "L and S are both the second letter, so they are corresponding angles."
+    ],
+    [
+     117.94,
+     "Angle S is 72 degrees."
+    ],
+    [
+     120.06,
+     "Here is the method."
+    ],
+    [
+     121.37,
+     "Step 1: check that the shapes are the same type, with the same number of sides."
+    ],
+    [
+     127.35,
+     "Step 2: match up the corresponding sides and angles."
+    ],
+    [
+     131.03,
+     "Turn or flip the shape in your head."
+    ],
+    [
+     134.13,
+     "Step 3: if every matching side and angle is equal, the shapes are congruent."
+    ],
+    [
+     140.08,
+     "If the shape is the same but the size is different, they are not congruent."
+    ],
+    [
+     145.67,
+     "Quadrilateral ABCD is congruent to quadrilateral EFGH."
+    ],
+    [
+     149.75,
+     "AB is 7 centimetres, BC is 5 centimetres, and EH is 4.5 centimetres."
+    ],
+    [
+     154.89,
+     "Find FG and AD."
+    ],
+    [
+     156.58,
+     "F matches B, and G matches C."
+    ],
+    [
+     158.57,
+     "So FG equals BC, which is 5 centimetres."
+    ],
+    [
+     161.87,
+     "A matches E, and D matches H."
+    ],
+    [
+     163.92,
+     "So AD equals EH, which is 4.5 centimetres."
+    ],
+    [
+     167.43,
+     "Triangle PQR is congruent to triangle UVW."
+    ],
+    [
+     170.67,
+     "Angle P is 45 degrees and angle Q is 75 degrees."
+    ],
+    [
+     174.37,
+     "Find angle W."
+    ],
+    [
+     175.92,
+     "W is the third letter, so it matches R."
+    ],
+    [
+     178.72,
+     "First find angle R."
+    ],
+    [
+     180.08,
+     "The angles in a triangle add up to 180 degrees."
+    ],
+    [
+     184.0,
+     "180 minus 45 minus 75 is 60."
+    ],
+    [
+     186.73,
+     "Angle R is 60 degrees, so angle W is 60 degrees too."
+    ],
+    [
+     192.35,
+     "Triangle A has sides 5, 12 and 13."
+    ],
+    [
+     195.5,
+     "Triangle B has sides 12, 13 and 5."
+    ],
+    [
+     198.64,
+     "Triangle C has sides 10, 24 and 26."
+    ],
+    [
+     201.88,
+     "Which are congruent?"
+    ],
+    [
+     204.28,
+     "A and B have the same 3 lengths."
+    ],
+    [
+     206.43,
+     "The order does not matter, so A and B are congruent."
+    ],
+    [
+     210.48,
+     "Every side of C is 2 times as long."
+    ],
+    [
+     212.86,
+     "C is the same shape, but bigger."
+    ],
+    [
+     215.04,
+     "It is not congruent to the others."
+    ],
+    [
+     217.91,
+     "Two equilateral triangles have sides of 3 centimetres and 5 centimetres."
+    ],
+    [
+     223.2,
+     "Are they congruent?"
+    ],
+    [
+     224.59,
+     "Here is Noor's working."
+    ],
+    [
+     226.28,
+     "Which line goes wrong first?"
+    ],
+    [
+     228.89,
+     "Line 2 is wrong."
+    ],
+    [
+     230.0,
+     "Congruent needs the same shape and the same size."
+    ],
+    [
+     233.42,
+     "These triangles have different side lengths."
+    ],
+    [
+     237.04,
+     "So they are not congruent."
+    ],
+    [
+     239.66,
+     "Factories depend on congruent shapes."
+    ],
+    [
+     242.17,
+     "Every screen protector for one model of phone is congruent, so it fits any phone of that model."
+    ],
+    [
+     249.17,
+     "A copy of a key must be congruent to the original."
+    ],
+    [
+     252.49,
+     "If it is even slightly different, the lock will not open."
+    ],
+    [
+     256.83,
+     "And in a jigsaw, each piece fits only one hole: the hole that is congruent to it."
+    ],
+    [
+     262.7,
+     "One last question."
+    ],
+    [
+     264.03,
+     "One rectangle is 4 by 6."
+    ],
+    [
+     265.8,
+     "Another is 6 by 4."
+    ],
+    [
+     267.13,
+     "Are they congruent, or not congruent?"
+    ],
+    [
+     269.86,
+     "Pause the video and answer."
+    ],
+    [
+     273.26,
+     "They are congruent."
+    ],
+    [
+     274.55,
+     "The second rectangle is the first one, turned a quarter turn."
+    ],
+    [
+     279.25,
+     "To remember: congruent shapes are identical in shape and in size."
+    ],
+    [
+     284.28,
+     "They may be turned or flipped."
+    ],
+    [
+     286.94,
+     "Corresponding sides are equal, and corresponding angles are equal."
+    ],
+    [
+     292.09,
+     "Write the letters of congruent shapes in matching order."
+    ],
+    [
+     296.57,
+     "Great work! Now practise lesson 8.3 on Camday."
+    ]
+   ],
+   "times": {
+    "8.3-k1": 20.07,
+    "8.3-k2": 70.95,
+    "8.3-k3": 111.95,
+    "8.3-k4": 272.21
+   },
+   "up": true
+  },
+  "8.2": {
+   "src": "media/mv/s7/8-2.mp4",
+   "poster": "media/mv/s7/8-2_poster.jpg",
+   "srt": "media/mv/s7/8-2.srt",
+   "dur": 308.96,
+   "captions": [
+    [
+     6.54,
+     "Look at a bicycle wheel."
+    ],
+    [
+     8.14,
+     "There is a hub in the middle."
+    ],
+    [
+     10.07,
+     "Thin spokes go from the hub out to the rim."
+    ],
+    [
+     13.48,
+     "A spoke goes from the hub to the rim."
+    ],
+    [
+     15.9,
+     "Is it most like a radius, a diameter, or a chord?"
+    ],
+    [
+     19.12,
+     "Pause the video and decide."
+    ],
+    [
+     22.29,
+     "A spoke is a radius."
+    ],
+    [
+     23.6,
+     "It goes from the centre of the circle to the edge."
+    ],
+    [
+     27.41,
+     "The hub is the centre, and the rim is the circumference: the distance all the way round."
+    ],
+    [
+     33.84,
+     "Remember: the diameter goes right across the circle, through the centre."
+    ],
+    [
+     38.94,
+     "It is 2 times the radius."
+    ],
+    [
+     41.26,
+     "If the radius is 8.5 centimetres, the diameter is 2 times 8.5, which is 17 centimetres."
+    ],
+    [
+     48.97,
+     "Two more words."
+    ],
+    [
+     50.03,
+     "A chord is a straight line that joins 2 points on the circumference."
+    ],
+    [
+     55.37,
+     "A tangent is a straight line that touches the circle at exactly 1 point."
+    ],
+    [
+     60.31,
+     "A flat road is a tangent to a wheel."
+    ],
+    [
+     63.33,
+     "A diameter is a special chord."
+    ],
+    [
+     65.35,
+     "It is the chord that goes through the centre."
+    ],
+    [
+     68.92,
+     "Your turn."
+    ],
+    [
+     69.59,
+     "The longest chord of a circle is called the what?"
+    ],
+    [
+     72.88,
+     "Pause the video and decide."
+    ],
+    [
+     76.09,
+     "The longest chord is the diameter."
+    ],
+    [
+     78.4,
+     "A chord gets longer as it moves towards the centre, and it is longest when it passes through the centre."
+    ],
+    [
+     85.99,
+     "A polygon is a closed 2D shape with straight sides."
+    ],
+    [
+     89.53,
+     "We name a polygon by its number of sides."
+    ],
+    [
+     92.92,
+     "3 sides: a triangle."
+    ],
+    [
+     94.46,
+     "4 sides: a quadrilateral."
+    ],
+    [
+     96.4,
+     "5 sides: a pentagon."
+    ],
+    [
+     98.49,
+     "6 sides: a hexagon."
+    ],
+    [
+     100.04,
+     "8 sides: an octagon."
+    ],
+    [
+     101.68,
+     "10 sides: a decagon."
+    ],
+    [
+     103.86,
+     "One is missing from the table."
+    ],
+    [
+     105.95,
+     "What is the name of a polygon with 7 sides?"
+    ],
+    [
+     108.94,
+     "Pause the video and try it."
+    ],
+    [
+     112.22,
+     "A polygon with 7 sides is a heptagon."
+    ],
+    [
+     115.5,
+     "A regular polygon has all its sides equal, and all its angles equal."
+    ],
+    [
+     120.06,
+     "It needs both."
+    ],
+    [
+     121.55,
+     "A square is regular: 4 equal sides, and 4 right angles."
+    ],
+    [
+     126.0,
+     "A rhombus has 4 equal sides, but its angles are not all equal."
+    ],
+    [
+     130.27,
+     "So it is irregular."
+    ],
+    [
+     132.12,
+     "A rectangle has 4 equal angles, but its sides are not all equal."
+    ],
+    [
+     136.54,
+     "It is irregular too."
+    ],
+    [
+     138.47,
+     "Here is the method."
+    ],
+    [
+     139.8,
+     "Step 1: count the sides, to name the polygon."
+    ],
+    [
+     143.48,
+     "Step 2: check whether all the sides, and all the angles, are equal."
+    ],
+    [
+     148.05,
+     "If so, it is regular."
+    ],
+    [
+     150.04,
+     "Step 3: for a triangle, compare the sides."
+    ],
+    [
+     153.04,
+     "3 equal sides is equilateral, 2 equal sides is isosceles, and no equal sides is scalene."
+    ],
+    [
+     159.87,
+     "Step 4: look for a right angle."
+    ],
+    [
+     162.68,
+     "A circle has a radius of 7 centimetres."
+    ],
+    [
+     165.72,
+     "One chord is 10 centimetres long."
+    ],
+    [
+     168.29,
+     "Could another chord be 15 centimetres long?"
+    ],
+    [
+     172.19,
+     "The longest chord is the diameter."
+    ],
+    [
+     174.81,
+     "The diameter is 2 times 7, which is 14 centimetres."
+    ],
+    [
+     179.29,
+     "15 is more than 14."
+    ],
+    [
+     180.88,
+     "So no: a chord of 15 centimetres is impossible."
+    ],
+    [
+     185.38,
+     "A triangle has sides of 6 centimetres, 6 centimetres and 9 centimetres."
+    ],
+    [
+     190.79,
+     "Name it."
+    ],
+    [
+     191.95,
+     "2 sides are equal, so it is an isosceles triangle."
+    ],
+    [
+     196.0,
+     "Another triangle has angles of 90 degrees, 40 degrees and 50 degrees."
+    ],
+    [
+     201.05,
+     "It has a right angle, and all 3 angles are different."
+    ],
+    [
+     204.93,
+     "So it is a right-angled scalene triangle."
+    ],
+    [
+     208.48,
+     "A regular decagon has a perimeter of 45 centimetres."
+    ],
+    [
+     212.23,
+     "How long is each side?"
+    ],
+    [
+     214.37,
+     "A decagon has 10 sides, and in a regular polygon they are all equal."
+    ],
+    [
+     219.96,
+     "45 divided by 10 is 4.5."
+    ],
+    [
+     221.93,
+     "Each side is 4.5 centimetres."
+    ],
+    [
+     224.87,
+     "Is a rhombus with sides of 4 centimetres a regular polygon?"
+    ],
+    [
+     229.04,
+     "Here is Aya's working."
+    ],
+    [
+     230.6,
+     "Which line goes wrong first?"
+    ],
+    [
+     233.13,
+     "Line 2 is wrong."
+    ],
+    [
+     234.22,
+     "Regular means equal sides and equal angles."
+    ],
+    [
+     237.14,
+     "The angles of a rhombus are not all equal, so it is not regular."
+    ],
+    [
+     242.05,
+     "Equal sides are not enough."
+    ],
+    [
+     243.93,
+     "Always check the angles too."
+    ],
+    [
+     246.43,
+     "You can find polygons everywhere."
+    ],
+    [
+     248.72,
+     "Bees build their honeycomb from hexagons, which fit together with no gaps."
+    ],
+    [
+     254.42,
+     "A stop sign is a regular octagon, so drivers can recognise it by its shape alone."
+    ],
+    [
+     260.41,
+     "And the British 50 pence coin has 7 sides."
+    ],
+    [
+     263.43,
+     "The sides are slightly curved, so that the coin rolls smoothly inside a machine."
+    ],
+    [
+     269.71,
+     "One last question."
+    ],
+    [
+     270.96,
+     "A regular quadrilateral is a square, a rhombus, or a rectangle?"
+    ],
+    [
+     275.32,
+     "Pause the video and answer."
+    ],
+    [
+     278.59,
+     "It is a square."
+    ],
+    [
+     279.65,
+     "Only a square has 4 equal sides and 4 equal angles."
+    ],
+    [
+     283.79,
+     "To remember: the parts of a circle are the centre, radius, diameter, circumference, chord and tangent."
+    ],
+    [
+     291.29,
+     "The diameter is 2 times the radius, and it is the longest chord."
+    ],
+    [
+     296.22,
+     "Polygons are named by their number of sides."
+    ],
+    [
+     299.64,
+     "Regular means all sides equal, and all angles equal."
+    ],
+    [
+     303.73,
+     "Great work! Now practise lesson 8.2 on Camday."
+    ]
+   ],
+   "times": {
+    "8.2-k1": 21.24,
+    "8.2-k2": 75.04,
+    "8.2-k3": 111.17,
+    "8.2-k4": 277.54
+   },
+   "up": true
+  },
+  "9.3": {
+   "src": "media/mv/s7/9-3.mp4",
+   "poster": "media/mv/s7/9-3_poster.jpg",
+   "srt": "media/mv/s7/9-3.srt",
+   "dur": 326.56,
+   "captions": [
+    [
+     6.32,
+     "Cinema tickets cost 7 dollars each."
+    ],
+    [
+     9.24,
+     "1 ticket costs 7 dollars, 2 tickets cost 14 dollars, and 3 tickets cost 21 dollars."
+    ],
+    [
+     16.72,
+     "How much do 20 tickets cost?"
+    ],
+    [
+     18.76,
+     "Pause the video and work it out."
+    ],
+    [
+     22.5,
+     "You could keep adding 7, twenty times."
+    ],
+    [
+     25.21,
+     "But there is a faster way: multiply the number of tickets by 7."
+    ],
+    [
+     30.24,
+     "20 times 7 is 140."
+    ],
+    [
+     32.34,
+     "20 tickets cost 140 dollars."
+    ],
+    [
+     36.15,
+     "Remember: in algebra, a letter stands for a number."
+    ],
+    [
+     39.83,
+     "7 n means 7 times n."
+    ],
+    [
+     41.83,
+     "And n plus 3 means n, add 3."
+    ],
+    [
+     44.18,
+     "If n is 9, then 7 n is 63, and n plus 3 is 12."
+    ],
+    [
+     48.59,
+     "Write the ticket prices in a table."
+    ],
+    [
+     50.93,
+     "The position number, n, says where each term is: first, second, third."
+    ],
+    [
+     56.17,
+     "Compare each term with its position number."
+    ],
+    [
+     60.05,
+     "7 is 1 times 7."
+    ],
+    [
+     61.4,
+     "14 is 2 times 7."
+    ],
+    [
+     62.84,
+     "21 is 3 times 7."
+    ],
+    [
+     64.83,
+     "Every term is 7 times its position number."
+    ],
+    [
+     67.78,
+     "So the term in position n is 7 n."
+    ],
+    [
+     70.1,
+     "We call this the nth term."
+    ],
+    [
+     72.48,
+     "A term-to-term rule gets the next term."
+    ],
+    [
+     75.08,
+     "The nth term rule gets any term, straight from its position."
+    ],
+    [
+     79.64,
+     "Now look at this sequence: 4, 5, 6, 7, 8."
+    ],
+    [
+     82.77,
+     "It is not a times table."
+    ],
+    [
+     85.15,
+     "Compare each term with its position number."
+    ],
+    [
+     88.7,
+     "4 is 1 plus 3."
+    ],
+    [
+     89.86,
+     "5 is 2 plus 3."
+    ],
+    [
+     91.01,
+     "6 is 3 plus 3."
+    ],
+    [
+     92.17,
+     "Each term is 3 more than its position."
+    ],
+    [
+     95.86,
+     "So the nth term is n plus 3."
+    ],
+    [
+     98.5,
+     "Your turn."
+    ],
+    [
+     99.22,
+     "The nth term of a sequence is n plus 8."
+    ],
+    [
+     102.04,
+     "What is the 15th term?"
+    ],
+    [
+     103.63,
+     "Pause the video and try it."
+    ],
+    [
+     106.98,
+     "For the 15th term, n is 15."
+    ],
+    [
+     109.8,
+     "15 plus 8 is 23."
+    ],
+    [
+     112.02,
+     "Here is the method."
+    ],
+    [
+     113.42,
+     "Step 1: write the sequence in a table, under the position numbers 1, 2, 3."
+    ],
+    [
+     119.44,
+     "Step 2: if the terms are a times table, multiply."
+    ],
+    [
+     123.03,
+     "The 9 times table has nth term 9 n."
+    ],
+    [
+     126.15,
+     "Step 3: if each term is a fixed amount more or less than its position, add or subtract that amount."
+    ],
+    [
+     133.53,
+     "Step 4: check your rule with the 1st, 2nd and 3rd terms."
+    ],
+    [
+     138.61,
+     "Find the nth term of 12, 24, 36, 48."
+    ],
+    [
+     142.15,
+     "Then find the 20th term."
+    ],
+    [
+     145.06,
+     "12 is 1 times 12."
+    ],
+    [
+     146.78,
+     "24 is 2 times 12."
+    ],
+    [
+     148.5,
+     "36 is 3 times 12."
+    ],
+    [
+     150.22,
+     "It is the 12 times table, so the nth term is 12 n."
+    ],
+    [
+     155.83,
+     "For the 20th term, n is 20."
+    ],
+    [
+     158.8,
+     "12 times 20 is 240."
+    ],
+    [
+     161.43,
+     "Find the nth term of 21, 22, 23, 24."
+    ],
+    [
+     164.95,
+     "Then find the 50th term."
+    ],
+    [
+     167.85,
+     "21 minus 1 is 20."
+    ],
+    [
+     169.48,
+     "22 minus 2 is 20."
+    ],
+    [
+     171.11,
+     "23 minus 3 is 20."
+    ],
+    [
+     172.74,
+     "Each term is 20 more than its position."
+    ],
+    [
+     176.49,
+     "The nth term is n plus 20."
+    ],
+    [
+     179.53,
+     "For the 50th term, 50 plus 20 is 70."
+    ],
+    [
+     183.92,
+     "Write the first 4 terms of the sequence with nth term n minus 6."
+    ],
+    [
+     188.84,
+     "Put in n equals 1: 1 minus 6 is negative 5."
+    ],
+    [
+     192.42,
+     "For n equals 2: 2 minus 6 is negative 4."
+    ],
+    [
+     196.29,
+     "Then negative 3, and negative 2."
+    ],
+    [
+     198.85,
+     "The sequence is negative 5, negative 4, negative 3, negative 2."
+    ],
+    [
+     204.43,
+     "The nth term of a sequence is 8 n."
+    ],
+    [
+     207.01,
+     "Which term is equal to 96?"
+    ],
+    [
+     209.54,
+     "8 times n is 96."
+    ],
+    [
+     211.0,
+     "Use the inverse: 96 divided by 8 is 12."
+    ],
+    [
+     214.57,
+     "It is the 12th term."
+    ],
+    [
+     216.95,
+     "Is 50 in this sequence?"
+    ],
+    [
+     218.93,
+     "50 divided by 8 is 6.25."
+    ],
+    [
+     221.0,
+     "That is not a whole number, so 50 is not a term."
+    ],
+    [
+     225.7,
+     "Your turn."
+    ],
+    [
+     226.43,
+     "The nth term is 6 n."
+    ],
+    [
+     227.9,
+     "Which term is equal to 54?"
+    ],
+    [
+     229.82,
+     "Pause the video and try it."
+    ],
+    [
+     233.21,
+     "54 divided by 6 is 9."
+    ],
+    [
+     235.18,
+     "It is the 9th term."
+    ],
+    [
+     236.97,
+     "Check: 6 times 9 is 54."
+    ],
+    [
+     239.68,
+     "Find the nth term of 5, 10, 15, 20."
+    ],
+    [
+     242.57,
+     "Here is Ben's working."
+    ],
+    [
+     244.38,
+     "Which line goes wrong first?"
+    ],
+    [
+     247.24,
+     "Line 2 is wrong."
+    ],
+    [
+     248.44,
+     "Add 5 is the term-to-term rule."
+    ],
+    [
+     250.77,
+     "Test n plus 5 with n equals 1: it gives 6, but the first term is 5."
+    ],
+    [
+     256.34,
+     "This is the 5 times table."
+    ],
+    [
+     258.39,
+     "The nth term is 5 n, and the 10th term is 50."
+    ],
+    [
+     262.49,
+     "On many streets, the houses on one side have even numbers: 2, 4, 6, 8."
+    ],
+    [
+     267.6,
+     "The nth house on that side is number 2 n."
+    ],
+    [
+     271.15,
+     "A resting adult heart beats about 70 times every minute."
+    ],
+    [
+     275.31,
+     "After n minutes, that is about 70 n beats."
+    ],
+    [
+     278.98,
+     "In 1 day there are 1,440 minutes."
+    ],
+    [
+     282.54,
+     "70 times 1,440 is about 100,000 beats, every day."
+    ],
+    [
+     288.37,
+     "One last question."
+    ],
+    [
+     289.67,
+     "The nth term is n minus 7."
+    ],
+    [
+     291.55,
+     "Find the 3rd term."
+    ],
+    [
+     292.84,
+     "Pause the video and answer."
+    ],
+    [
+     296.19,
+     "For the 3rd term, n is 3."
+    ],
+    [
+     298.29,
+     "3 minus 7 is negative 4."
+    ],
+    [
+     300.85,
+     "To remember: the position number n tells you where a term is."
+    ],
+    [
+     304.98,
+     "The nth term rule turns n into the term."
+    ],
+    [
+     308.23,
+     "A times table sequence has an nth term like 7 n."
+    ],
+    [
+     312.16,
+     "If each term is a fixed amount more or less than its position, add or subtract."
+    ],
+    [
+     318.07,
+     "Always test your rule with n equals 1."
+    ],
+    [
+     321.37,
+     "Great work! Now practise lesson 9.3 on Camday."
+    ]
+   ],
+   "times": {
+    "9.3-k1": 21.45,
+    "9.3-k2": 105.93,
+    "9.3-k3": 232.16,
+    "9.3-k4": 295.14
+   },
+   "up": true
+  },
+  "11.2": {
+   "src": "media/mv/s7/11-2.mp4",
+   "poster": "media/mv/s7/11-2_poster.jpg",
+   "srt": "media/mv/s7/11-2.srt",
+   "dur": 280.32,
+   "captions": [
+    [
+     6.7,
+     "A water tank already holds 4 litres."
+    ],
+    [
+     9.34,
+     "A tap adds 2 litres every minute."
+    ],
+    [
+     12.31,
+     "How much water is in the tank after 3 minutes?"
+    ],
+    [
+     15.54,
+     "Pause the video and work it out."
+    ],
+    [
+     19.18,
+     "After 1 minute there are 6 litres."
+    ],
+    [
+     22.03,
+     "After 2 minutes, 8 litres."
+    ],
+    [
+     24.21,
+     "After 3 minutes, 10 litres."
+    ],
+    [
+     27.03,
+     "As a function: y equals 2 x plus 4."
+    ],
+    [
+     29.44,
+     "y is the number of litres, after x minutes."
+    ],
+    [
+     32.95,
+     "Remember: the point 3, 5 means 3 across, then 5 up."
+    ],
+    [
+     36.83,
+     "The x coordinate always comes first."
+    ],
+    [
+     40.11,
+     "Let's draw the tank function."
+    ],
+    [
+     42.18,
+     "First make a table of values for y equals 2 x plus 4."
+    ],
+    [
+     46.5,
+     "Each pair is a point."
+    ],
+    [
+     48.19,
+     "Plot 0, 4."
+    ],
+    [
+     48.99,
+     "Then 1, 6."
+    ],
+    [
+     49.8,
+     "Then 2, 8, and so on."
+    ],
+    [
+     52.04,
+     "The points lie on a straight line."
+    ],
+    [
+     54.31,
+     "Join them with a ruler."
+    ],
+    [
+     55.84,
+     "A function with a straight line graph is called a linear function."
+    ],
+    [
+     60.8,
+     "Look at the graph."
+    ],
+    [
+     62.03,
+     "Where does the line cross the y axis?"
+    ],
+    [
+     64.55,
+     "Pause the video and decide."
+    ],
+    [
+     67.79,
+     "The line crosses the y axis at 4."
+    ],
+    [
+     70.14,
+     "That is where x is 0."
+    ],
+    [
+     71.63,
+     "It is the starting amount: the 4 litres already in the tank."
+    ],
+    [
+     76.45,
+     "The number that multiplies x tells you how steep the line is."
+    ],
+    [
+     80.59,
+     "A bigger multiplier makes a steeper line."
+    ],
+    [
+     83.93,
+     "y equals 2 x plus 4 goes up 2 for every 1 across."
+    ],
+    [
+     87.65,
+     "It is steeper than y equals x plus 4."
+    ],
+    [
+     91.01,
+     "A negative multiplier makes the line slope down, from left to right."
+    ],
+    [
+     96.26,
+     "Your turn."
+    ],
+    [
+     96.99,
+     "Which line is the steepest: y equals 5 x plus 1, y equals 2 x plus 5, or y equals x plus 9?"
+    ],
+    [
+     103.62,
+     "Pause the video and decide."
+    ],
+    [
+     106.99,
+     "Look at the number that multiplies x: 5, 2 and 1."
+    ],
+    [
+     110.64,
+     "The biggest is 5."
+    ],
+    [
+     111.91,
+     "So y equals 5 x plus 1 is the steepest."
+    ],
+    [
+     115.36,
+     "Here is the method."
+    ],
+    [
+     116.71,
+     "Step 1: make a table of values, with at least 3 values of x."
+    ],
+    [
+     121.52,
+     "Step 2: work out y for each x."
+    ],
+    [
+     124.29,
+     "Step 3: plot the points carefully."
+    ],
+    [
+     127.29,
+     "Step 4: join them with a ruler."
+    ],
+    [
+     129.42,
+     "If one point is not on the line, check your working."
+    ],
+    [
+     133.55,
+     "Draw the graph of y equals x minus 3, for x from negative 1 to 4."
+    ],
+    [
+     138.83,
+     "Subtract 3 from each value of x."
+    ],
+    [
+     141.41,
+     "That gives negative 4, negative 3, negative 2, negative 1, 0 and 1."
+    ],
+    [
+     147.38,
+     "Plot the points and join them."
+    ],
+    [
+     149.51,
+     "The line crosses the y axis at negative 3."
+    ],
+    [
+     153.04,
+     "Make a table for y equals 6 minus 2 x, for x from 0 to 3."
+    ],
+    [
+     157.86,
+     "When x is 0, y is 6."
+    ],
+    [
+     159.5,
+     "When x is 1, y is 4."
+    ],
+    [
+     161.13,
+     "Then 2, and then 0."
+    ],
+    [
+     163.23,
+     "y goes down by 2 each time."
+    ],
+    [
+     165.15,
+     "So the line slopes down."
+    ],
+    [
+     167.41,
+     "Is the point 7, 19 on the line y equals 2 x plus 4?"
+    ],
+    [
+     172.17,
+     "Substitute x equals 7."
+    ],
+    [
+     174.26,
+     "2 times 7 plus 4 is 18."
+    ],
+    [
+     176.98,
+     "18 is not 19."
+    ],
+    [
+     178.06,
+     "So the point is not on the line."
+    ],
+    [
+     181.25,
+     "Use the tank graph to find when the tank holds 12 litres."
+    ],
+    [
+     185.99,
+     "Go across from 12 on the y axis to the line."
+    ],
+    [
+     189.13,
+     "Then go down to the x axis."
+    ],
+    [
+     191.05,
+     "You reach 4."
+    ],
+    [
+     192.46,
+     "So the tank holds 12 litres after 4 minutes."
+    ],
+    [
+     196.35,
+     "Check: 2 times 4 plus 4 is 12."
+    ],
+    [
+     199.55,
+     "Here is Finn's table for y equals 3 x plus 1, with x from 0 to 3."
+    ],
+    [
+     204.36,
+     "Which line goes wrong first?"
+    ],
+    [
+     206.98,
+     "Line 1 is wrong."
+    ],
+    [
+     208.2,
+     "When x is 3, y is 3 times 3 plus 1, which is 10, not 9."
+    ],
+    [
+     212.4,
+     "A linear function goes up by the same amount every time."
+    ],
+    [
+     217.23,
+     "The values are 1, 4, 7, 10."
+    ],
+    [
+     219.3,
+     "And the points make a straight line, not a curve."
+    ],
+    [
+     223.61,
+     "Straight line graphs describe steady change."
+    ],
+    [
+     226.56,
+     "If you save the same amount every week, the graph of your savings is a line going up."
+    ],
+    [
+     232.82,
+     "A candle burns down steadily, so the graph of its height is a line sloping down."
+    ],
+    [
+     238.72,
+     "And the steeper the line, the faster the change."
+    ],
+    [
+     242.23,
+     "One last question."
+    ],
+    [
+     243.48,
+     "Does the line y equals 7 minus x slope up, or slope down?"
+    ],
+    [
+     247.45,
+     "Pause the video and answer."
+    ],
+    [
+     250.72,
+     "It slopes down."
+    ],
+    [
+     251.72,
+     "As x gets bigger, we subtract more, so y gets smaller."
+    ],
+    [
+     255.84,
+     "To remember: make a table of values, plot the points, and join them with a ruler."
+    ],
+    [
+     261.74,
+     "A linear function gives a straight line."
+    ],
+    [
+     264.99,
+     "A bigger multiplier of x is steeper."
+    ],
+    [
+     267.46,
+     "A negative multiplier slopes down."
+    ],
+    [
+     270.35,
+     "A point is on the line if its coordinates fit the equation."
+    ],
+    [
+     274.91,
+     "Great work! Now practise lesson 11.2 on Camday."
+    ]
+   ],
+   "times": {
+    "11.2-k1": 18.13,
+    "11.2-k2": 66.74,
+    "11.2-k3": 105.94,
+    "11.2-k4": 249.67
+   },
+   "up": true
+  },
+  "8.4": {
+   "src": "media/mv/s7/8-4.mp4",
+   "poster": "media/mv/s7/8-4_poster.jpg",
+   "srt": "media/mv/s7/8-4.srt",
+   "dur": 319.72,
+   "captions": [
+    [
+     5.97,
+     "Look at packaging in a shop."
+    ],
+    [
+     7.86,
+     "Cereal comes in a cuboid."
+    ],
+    [
+     9.55,
+     "Tennis balls come in a cylinder."
+    ],
+    [
+     11.72,
+     "And some chocolate bars come in a triangular prism."
+    ],
+    [
+     15.71,
+     "How many faces does a triangular prism have?"
+    ],
+    [
+     18.78,
+     "Pause the video and count them."
+    ],
+    [
+     22.34,
+     "There is a triangle at each end."
+    ],
+    [
+     24.75,
+     "That is 2 faces."
+    ],
+    [
+     25.95,
+     "Between them there are 3 rectangles."
+    ],
+    [
+     28.66,
+     "2 plus 3 makes 5 faces."
+    ],
+    [
+     30.95,
+     "Remember 3 words."
+    ],
+    [
+     32.14,
+     "A face is a surface of the shape."
+    ],
+    [
+     34.45,
+     "An edge is a line where 2 faces meet."
+    ],
+    [
+     37.05,
+     "A vertex is a corner."
+    ],
+    [
+     39.07,
+     "A cube has 6 faces, 12 edges and 8 vertices."
+    ],
+    [
+     43.27,
+     "A prism has the same cross-section all the way along."
+    ],
+    [
+     46.81,
+     "A triangular prism has a triangle at both ends."
+    ],
+    [
+     50.49,
+     "A pyramid has a flat base, and triangle faces that meet at one point, called the apex."
+    ],
+    [
+     56.64,
+     "Your turn."
+    ],
+    [
+     57.34,
+     "How many vertices does a square-based pyramid have?"
+    ],
+    [
+     60.89,
+     "Pause the video and count them."
+    ],
+    [
+     64.45,
+     "The square base has 4 corners."
+    ],
+    [
+     66.77,
+     "Then there is 1 more at the apex."
+    ],
+    [
+     69.33,
+     "4 plus 1 makes 5 vertices."
+    ],
+    [
+     71.89,
+     "Here are the numbers for some common shapes."
+    ],
+    [
+     75.14,
+     "A cuboid has 6 faces, 12 edges and 8 vertices, the same as a cube."
+    ],
+    [
+     80.56,
+     "A triangular prism has 5 faces, 9 edges and 6 vertices."
+    ],
+    [
+     84.82,
+     "A square-based pyramid has 5 faces, 8 edges and 5 vertices."
+    ],
+    [
+     89.95,
+     "A tetrahedron is a pyramid with a triangle base."
+    ],
+    [
+     93.5,
+     "It has 4 faces, 6 edges and 4 vertices."
+    ],
+    [
+     96.94,
+     "Here is a check for shapes with flat faces."
+    ],
+    [
+     100.18,
+     "Faces plus vertices, minus edges, always equals 2."
+    ],
+    [
+     103.95,
+     "For the cuboid: 6 plus 8 minus 12 is 2."
+    ],
+    [
+     107.44,
+     "We can draw a 3D shape from different directions: the front view, the side view, and the top view, which is also called the plan."
+    ],
+    [
+     116.94,
+     "Stand a cylinder upright."
+    ],
+    [
+     118.65,
+     "From the front it looks like a rectangle."
+    ],
+    [
+     121.46,
+     "From the top it looks like a circle."
+    ],
+    [
+     124.48,
+     "Your turn."
+    ],
+    [
+     125.16,
+     "A cone stands on its base."
+    ],
+    [
+     126.94,
+     "What does its top view look like?"
+    ],
+    [
+     129.2,
+     "Pause the video and decide."
+    ],
+    [
+     132.45,
+     "From above, you see the round base as a circle, and the apex as a dot at the centre."
+    ],
+    [
+     138.47,
+     "A net is a flat shape that folds up to make a 3D shape."
+    ],
+    [
+     142.32,
+     "This cross is made of 6 squares."
+    ],
+    [
+     145.11,
+     "The row of 4 squares wraps round to make 4 sides."
+    ],
+    [
+     148.52,
+     "The other 2 squares fold over, to make the top and the bottom."
+    ],
+    [
+     152.85,
+     "It is a net of a cube."
+    ],
+    [
+     154.93,
+     "Here is the method."
+    ],
+    [
+     156.22,
+     "Step 1: decide if it is a prism or a pyramid, and name the shape of its base."
+    ],
+    [
+     162.0,
+     "Step 2: count the faces, then the edges, then the vertices."
+    ],
+    [
+     166.01,
+     "Work in order: top, bottom, then around the sides."
+    ],
+    [
+     169.95,
+     "Step 3: check with faces plus vertices minus edges equals 2."
+    ],
+    [
+     175.02,
+     "Step 4: for a view, imagine looking straight at the shape from that direction."
+    ],
+    [
+     181.08,
+     "Count the faces, edges and vertices of a pyramid with a hexagon as its base."
+    ],
+    [
+     186.81,
+     "Faces: 1 hexagon and 6 triangles."
+    ],
+    [
+     189.51,
+     "That is 7 faces."
+    ],
+    [
+     191.37,
+     "Edges: 6 around the base, and 6 going up to the apex."
+    ],
+    [
+     195.4,
+     "That is 12 edges."
+    ],
+    [
+     197.24,
+     "Vertices: 6 on the base, and 1 apex."
+    ],
+    [
+     200.03,
+     "That is 7 vertices."
+    ],
+    [
+     202.06,
+     "Check: 7 plus 7 minus 12 equals 2."
+    ],
+    [
+     205.23,
+     "Correct."
+    ],
+    [
+     206.52,
+     "A shape has a triangle as its front view."
+    ],
+    [
+     209.2,
+     "Its side view is a rectangle, and its top view is a rectangle."
+    ],
+    [
+     213.26,
+     "What is it?"
+    ],
+    [
+     214.53,
+     "It is a triangle from one direction, and rectangles from the others."
+    ],
+    [
+     219.15,
+     "It is a triangular prism, lying on one of its rectangle faces."
+    ],
+    [
+     223.92,
+     "How many edges does a square-based pyramid have?"
+    ],
+    [
+     227.27,
+     "Here is Omar's working."
+    ],
+    [
+     228.87,
+     "Which line goes wrong first?"
+    ],
+    [
+     231.37,
+     "Line 2 is wrong."
+    ],
+    [
+     232.5,
+     "There is an edge from every corner of the base up to the apex."
+    ],
+    [
+     236.86,
+     "That is 4 edges, not 1."
+    ],
+    [
+     239.04,
+     "4 plus 4 is 8."
+    ],
+    [
+     240.21,
+     "A square-based pyramid has 8 edges."
+    ],
+    [
+     243.7,
+     "The Great Pyramid in Egypt is a square-based pyramid."
+    ],
+    [
+     247.87,
+     "It was built about 4,500 years ago, and it is about 139 metres tall."
+    ],
+    [
+     253.77,
+     "Drink cans are cylinders."
+    ],
+    [
+     255.44,
+     "A cylinder is strong, it is easy to hold, and cans stack neatly on top of each other."
+    ],
+    [
+     261.68,
+     "And a classic football is stitched from 32 flat panels: 12 pentagons and 20 hexagons."
+    ],
+    [
+     269.11,
+     "One last question."
+    ],
+    [
+     270.43,
+     "A shape with flat faces has 7 faces and 10 vertices."
+    ],
+    [
+     274.21,
+     "How many edges does it have?"
+    ],
+    [
+     276.25,
+     "Pause the video and work it out."
+    ],
+    [
+     279.99,
+     "Faces plus vertices minus edges equals 2."
+    ],
+    [
+     283.47,
+     "7 plus 10 is 17, and 17 minus 2 is 15."
+    ],
+    [
+     286.7,
+     "It has 15 edges."
+    ],
+    [
+     288.07,
+     "It is a prism with a pentagon at each end."
+    ],
+    [
+     292.19,
+     "To remember: a prism has the same cross-section all along."
+    ],
+    [
+     296.12,
+     "A pyramid comes to a point, the apex."
+    ],
+    [
+     299.19,
+     "Count faces, edges and vertices in order."
+    ],
+    [
+     302.59,
+     "For flat-faced shapes, faces plus vertices minus edges equals 2."
+    ],
+    [
+     307.81,
+     "The front, side and top views show a shape from 3 directions, and a net folds up to make it."
+    ],
+    [
+     314.52,
+     "Great work! Now practise lesson 8.4 on Camday."
+    ]
+   ],
+   "times": {
+    "8.4-k1": 21.29,
+    "8.4-k2": 63.4,
+    "8.4-k3": 131.4,
+    "8.4-k4": 278.94
+   },
+   "up": true
+  },
+  "11.4": {
+   "src": "media/mv/s7/11-4.mp4",
+   "poster": "media/mv/s7/11-4_poster.jpg",
+   "srt": "media/mv/s7/11-4.srt",
+   "dur": 286.4,
+   "captions": [
+    [
+     6.86,
+     "Before a holiday, Ravi changes dollars into euros."
+    ],
+    [
+     10.47,
+     "The bank gives 0.9 euros for every dollar."
+    ],
+    [
+     14.04,
+     "How many euros does Ravi get for 40 dollars?"
+    ],
+    [
+     17.17,
+     "Pause the video and work it out."
+    ],
+    [
+     20.85,
+     "40 times 0.9 is 36."
+    ],
+    [
+     22.93,
+     "Ravi gets 36 euros."
+    ],
+    [
+     25.57,
+     "But a graph can change any amount quickly, in either direction, with no calculation at all."
+    ],
+    [
+     32.22,
+     "Remember: before you read a graph, work out what 1 small square is worth."
+    ],
+    [
+     37.93,
+     "If 5 squares take you from 0 to 10, each square is worth 2."
+    ],
+    [
+     43.22,
+     "A conversion graph changes one unit into another."
+    ],
+    [
+     46.87,
+     "It is a straight line through 0, 0, because 0 dollars is 0 euros."
+    ],
+    [
+     52.26,
+     "To change 40 dollars: find 40 on the dollars axis."
+    ],
+    [
+     56.11,
+     "Go up to the line."
+    ],
+    [
+     57.5,
+     "Then go across to the euros axis."
+    ],
+    [
+     60.04,
+     "You read 36 euros."
+    ],
+    [
+     61.98,
+     "To go the other way, start on the euros axis."
+    ],
+    [
+     65.31,
+     "Go across to the line, then down."
+    ],
+    [
+     67.75,
+     "54 euros is 60 dollars."
+    ],
+    [
+     70.0,
+     "Your turn."
+    ],
+    [
+     70.75,
+     "How many dollars is 18 euros?"
+    ],
+    [
+     72.91,
+     "Pause the video and try it."
+    ],
+    [
+     76.32,
+     "Find 18 on the euros axis, go across to the line, then down."
+    ],
+    [
+     81.34,
+     "You reach 20 dollars."
+    ],
+    [
+     83.1,
+     "Check: 20 times 0.9 is 18."
+    ],
+    [
+     85.82,
+     "A distance time graph tells the story of a journey."
+    ],
+    [
+     89.26,
+     "This one shows a cyclist's distance from home."
+    ],
+    [
+     92.91,
+     "A line going up means moving away from home."
+    ],
+    [
+     95.92,
+     "A flat line means stopped."
+    ],
+    [
+     97.7,
+     "A line going down means coming back."
+    ],
+    [
+     100.71,
+     "And a steeper line means a faster speed."
+    ],
+    [
+     103.88,
+     "Look at the graph."
+    ],
+    [
+     105.1,
+     "For how many minutes was the cyclist stopped?"
+    ],
+    [
+     108.13,
+     "Pause the video and work it out."
+    ],
+    [
+     111.69,
+     "The flat part of the line goes from 20 minutes to 30 minutes."
+    ],
+    [
+     116.27,
+     "So the cyclist was stopped for 10 minutes."
+    ],
+    [
+     119.97,
+     "Here is the method."
+    ],
+    [
+     121.27,
+     "Step 1: read the title, the axes and the units."
+    ],
+    [
+     125.03,
+     "Step 2: work out the value of 1 small square on each axis."
+    ],
+    [
+     129.74,
+     "Step 3: go from the value you know to the line, then across or down to the other axis."
+    ],
+    [
+     136.16,
+     "Step 4: describe each section."
+    ],
+    [
+     138.22,
+     "Is it going up, flat, or going down?"
+    ],
+    [
+     140.69,
+     "Is it steep?"
+    ],
+    [
+     142.07,
+     "Change 300 dollars into euros."
+    ],
+    [
+     144.66,
+     "The graph only goes up to 100 dollars."
+    ],
+    [
+     148.49,
+     "Read 100 dollars from the graph."
+    ],
+    [
+     151.32,
+     "That is 90 euros."
+    ],
+    [
+     153.37,
+     "300 dollars is 3 lots of 100 dollars."
+    ],
+    [
+     157.42,
+     "3 times 90 is 270 euros."
+    ],
+    [
+     160.6,
+     "How fast did the cyclist ride home, in kilometres per hour?"
+    ],
+    [
+     165.14,
+     "The line goes down from 30 minutes to 60 minutes."
+    ],
+    [
+     169.26,
+     "That is 4 kilometres in 30 minutes."
+    ],
+    [
+     172.76,
+     "30 minutes is half an hour."
+    ],
+    [
+     174.76,
+     "In a full hour, the cyclist would ride 2 times as far: 8 kilometres."
+    ],
+    [
+     179.79,
+     "The speed is 8 kilometres per hour."
+    ],
+    [
+     182.93,
+     "Compare the ride out with the ride back."
+    ],
+    [
+     185.82,
+     "Both are 4 kilometres."
+    ],
+    [
+     187.97,
+     "The ride out took 20 minutes."
+    ],
+    [
+     190.06,
+     "The ride back took 30 minutes."
+    ],
+    [
+     192.24,
+     "The ride out took less time, so it was faster."
+    ],
+    [
+     196.12,
+     "You can see it on the graph too."
+    ],
+    [
+     198.22,
+     "The first part of the line is steeper."
+    ],
+    [
+     201.26,
+     "On a distance axis, each small square is worth 5 kilometres."
+    ],
+    [
+     205.64,
+     "A point is 3 squares above 20."
+    ],
+    [
+     207.82,
+     "Here is Theo's working."
+    ],
+    [
+     209.5,
+     "Which line goes wrong first?"
+    ],
+    [
+     212.09,
+     "Line 1 is wrong."
+    ],
+    [
+     213.37,
+     "Each square is worth 5 kilometres."
+    ],
+    [
+     216.07,
+     "So 3 squares are worth 15 kilometres."
+    ],
+    [
+     219.56,
+     "20 plus 15 is 35."
+    ],
+    [
+     221.33,
+     "The value is 35 kilometres."
+    ],
+    [
+     224.69,
+     "A fitness watch draws graphs of your day."
+    ],
+    [
+     227.44,
+     "On a heart rate graph, a flat low line means you are resting."
+    ],
+    [
+     232.09,
+     "A steep climb means you have started to run."
+    ],
+    [
+     235.11,
+     "And a slow slope down shows your heart recovering."
+    ],
+    [
+     239.09,
+     "Weather apps do the same with temperature."
+    ],
+    [
+     241.94,
+     "One look at the line tells you the story of the whole day."
+    ],
+    [
+     246.43,
+     "One last question."
+    ],
+    [
+     247.66,
+     "On a distance time graph, does a steeper line mean faster, or slower?"
+    ],
+    [
+     252.37,
+     "Pause the video and answer."
+    ],
+    [
+     255.61,
+     "Faster."
+    ],
+    [
+     256.08,
+     "A steeper line covers more distance in the same time."
+    ],
+    [
+     260.2,
+     "To remember: a conversion graph is a straight line through 0, 0."
+    ],
+    [
+     265.55,
+     "Read up and across, or across and down, using the scale carefully."
+    ],
+    [
+     270.52,
+     "For values beyond the graph, use multiples."
+    ],
+    [
+     273.93,
+     "On a distance time graph: up is away, flat is stopped, down is coming back, and steeper is faster."
+    ],
+    [
+     280.94,
+     "Great work! Now practise lesson 11.4 on Camday."
+    ]
+   ],
+   "times": {
+    "11.4-k1": 19.8,
+    "11.4-k2": 75.27,
+    "11.4-k3": 110.64,
+    "11.4-k4": 254.56
+   },
+   "up": true
+  },
+  "7.5": {
+   "src": "media/mv/s7/7-5.mp4",
+   "poster": "media/mv/s7/7-5_poster.jpg",
+   "srt": "media/mv/s7/7-5.srt",
+   "dur": 299.2,
+   "captions": [
+    [
+     7.63,
+     "A games console costs 480 dollars."
+    ],
+    [
+     10.22,
+     "In a sale, it is 5 sixths of the usual price."
+    ],
+    [
+     14.19,
+     "What is the sale price?"
+    ],
+    [
+     15.71,
+     "Try to find a quick way."
+    ],
+    [
+     17.3,
+     "Pause the video and work it out."
+    ],
+    [
+     20.82,
+     "5 sixths is the whole price, minus 1 sixth."
+    ],
+    [
+     24.48,
+     "And 1 sixth of 480 is easy: it is 80."
+    ],
+    [
+     28.18,
+     "480 minus 80 is 400."
+    ],
+    [
+     30.41,
+     "The sale price is 400 dollars."
+    ],
+    [
+     34.31,
+     "Remember factors."
+    ],
+    [
+     35.91,
+     "The factors of 12 are 1, 2, 3, 4, 6 and 12."
+    ],
+    [
+     40.5,
+     "A number can be split into factors in different ways."
+    ],
+    [
+     44.68,
+     "24 is 4 times 6, and also 3 times 8."
+    ],
+    [
+     48.08,
+     "When a fraction is close to 1, find the small missing part, and subtract it from the whole."
+    ],
+    [
+     54.93,
+     "9 tenths of 350."
+    ],
+    [
+     56.67,
+     "1 tenth is 35."
+    ],
+    [
+     58.2,
+     "So 9 tenths is 350 minus 35, which is 315."
+    ],
+    [
+     63.33,
+     "3 quarters of 96."
+    ],
+    [
+     65.04,
+     "1 quarter is 24."
+    ],
+    [
+     66.65,
+     "So 3 quarters is 96 minus 24, which is 72."
+    ],
+    [
+     71.41,
+     "Your turn."
+    ],
+    [
+     72.2,
+     "Work out 4 fifths of 650."
+    ],
+    [
+     74.15,
+     "Pause the video and try it."
+    ],
+    [
+     77.66,
+     "1 fifth of 650 is 130."
+    ],
+    [
+     79.99,
+     "Take that away from 650."
+    ],
+    [
+     82.54,
+     "The answer is 520."
+    ],
+    [
+     85.01,
+     "Here are three more ideas."
+    ],
+    [
+     87.25,
+     "First: use factors."
+    ],
+    [
+     88.89,
+     "1 twelfth is 1 third of 1 quarter."
+    ],
+    [
+     91.82,
+     "So 1 twelfth of 600 is 1 third of 150, which is 50."
+    ],
+    [
+     96.76,
+     "Second: cancel before you multiply."
+    ],
+    [
+     99.92,
+     "In 15 over 28, times 14 over 45: 14 and 28 share a factor of 14, and 15 and 45 share a factor of 15."
+    ],
+    [
+     108.94,
+     "That leaves 1 half times 1 third, which is 1 sixth."
+    ],
+    [
+     114.08,
+     "Third: re-order."
+    ],
+    [
+     115.48,
+     "In 3 sevenths times 5 times 14, do 3 sevenths of 14 first."
+    ],
+    [
+     120.55,
+     "That is 6."
+    ],
+    [
+     121.43,
+     "Then 6 times 5 is 30."
+    ],
+    [
+     123.82,
+     "Here is the method."
+    ],
+    [
+     125.18,
+     "Step 1: look at the fraction."
+    ],
+    [
+     127.26,
+     "Is it close to 1?"
+    ],
+    [
+     128.47,
+     "Then use whole minus the small part."
+    ],
+    [
+     131.6,
+     "Step 2: look for common factors, and cancel before you multiply."
+    ],
+    [
+     136.64,
+     "Step 3: split a denominator into factors, or re-order the multiplication."
+    ],
+    [
+     142.49,
+     "Step 4: follow the order of operations."
+    ],
+    [
+     145.3,
+     "Multiply and divide before you add and subtract."
+    ],
+    [
+     149.3,
+     "Work out 11 twelfths of 840."
+    ],
+    [
+     152.75,
+     "1 twelfth of 840 is 70."
+    ],
+    [
+     155.83,
+     "840 minus 70 is 770."
+    ],
+    [
+     159.07,
+     "Work out 1 fifteenth of 2,400."
+    ],
+    [
+     162.41,
+     "15 is 3 times 5."
+    ],
+    [
+     163.76,
+     "So find 1 fifth first, then 1 third of that."
+    ],
+    [
+     168.01,
+     "1 fifth of 2,400 is 480."
+    ],
+    [
+     171.1,
+     "1 third of 480 is 160."
+    ],
+    [
+     174.49,
+     "Your turn."
+    ],
+    [
+     175.33,
+     "Work out 1 twentieth of 1,800."
+    ],
+    [
+     177.85,
+     "Pause and work it out."
+    ],
+    [
+     181.1,
+     "20 is 10 times 2."
+    ],
+    [
+     183.21,
+     "1 tenth of 1,800 is 180."
+    ],
+    [
+     186.18,
+     "Half of 180 is 90."
+    ],
+    [
+     188.95,
+     "Work out 18 over 25, times 35 over 36."
+    ],
+    [
+     193.55,
+     "Cancel 18 and 36."
+    ],
+    [
+     195.27,
+     "They become 1 and 2."
+    ],
+    [
+     197.84,
+     "Cancel 35 and 25."
+    ],
+    [
+     199.54,
+     "They become 7 and 5."
+    ],
+    [
+     202.09,
+     "1 fifth times 7 halves is 7 tenths."
+    ],
+    [
+     205.63,
+     "Work out 2 thirds, plus 1 third times 3 quarters."
+    ],
+    [
+     209.93,
+     "Multiply first."
+    ],
+    [
+     211.14,
+     "1 third times 3 quarters is 1 quarter."
+    ],
+    [
+     214.76,
+     "Then add."
+    ],
+    [
+     215.48,
+     "2 thirds plus 1 quarter is 8 twelfths plus 3 twelfths, which is 11 twelfths."
+    ],
+    [
+     222.07,
+     "Ana works out 1 half, plus 1 half times 1 half."
+    ],
+    [
+     225.6,
+     "Which line is wrong?"
+    ],
+    [
+     227.64,
+     "Line 1 is wrong."
+    ],
+    [
+     228.78,
+     "Ana added first."
+    ],
+    [
+     229.91,
+     "You must multiply before you add."
+    ],
+    [
+     232.79,
+     "1 half times 1 half is 1 quarter."
+    ],
+    [
+     235.48,
+     "Then 1 half plus 1 quarter is 3 quarters."
+    ],
+    [
+     239.36,
+     "You can use these tricks in any shop."
+    ],
+    [
+     242.02,
+     "A sign says 10 percent off."
+    ],
+    [
+     243.96,
+     "That means you pay 9 tenths of the price."
+    ],
+    [
+     247.46,
+     "A pair of trainers costs 70 dollars."
+    ],
+    [
+     250.37,
+     "1 tenth is 7 dollars."
+    ],
+    [
+     252.62,
+     "70 minus 7 is 63."
+    ],
+    [
+     254.17,
+     "You pay 63 dollars."
+    ],
+    [
+     255.91,
+     "No written calculation needed."
+    ],
+    [
+     259.2,
+     "One last question."
+    ],
+    [
+     260.53,
+     "Work out 1 third, plus 2 thirds times 1 half."
+    ],
+    [
+     263.87,
+     "Pause the video and answer."
+    ],
+    [
+     267.27,
+     "Multiply first."
+    ],
+    [
+     268.48,
+     "2 thirds times 1 half is 1 third."
+    ],
+    [
+     271.15,
+     "Then 1 third plus 1 third is 2 thirds."
+    ],
+    [
+     274.77,
+     "To remember: for a fraction close to 1, use the whole minus the small part."
+    ],
+    [
+     280.5,
+     "Split denominators into factors."
+    ],
+    [
+     282.99,
+     "1 twelfth is 1 third of 1 quarter."
+    ],
+    [
+     286.19,
+     "Cancel before multiplying, and re-order when it helps."
+    ],
+    [
+     290.52,
+     "And always follow the order of operations."
+    ],
+    [
+     293.98,
+     "Great work! Now practise lesson 7.5 on Camday."
+    ]
+   ],
+   "times": {
+    "7.5-k1": 19.77,
+    "7.5-k2": 76.61,
+    "7.5-k3": 180.05,
+    "7.5-k4": 266.22
+   },
+   "up": true
+  },
+  "11.1": {
+   "src": "media/mv/s7/11-1.mp4",
+   "poster": "media/mv/s7/11-1_poster.jpg",
+   "srt": "media/mv/s7/11-1.srt",
+   "dur": 312.44,
+   "captions": [
+    [
+     6.11,
+     "A taxi company charges 3 dollars for every kilometre, plus a starting fee of 2 dollars."
+    ],
+    [
+     12.82,
+     "What does a ride of 5 kilometres cost?"
+    ],
+    [
+     15.49,
+     "Pause the video and work it out."
+    ],
+    [
+     19.15,
+     "5 kilometres at 3 dollars each is 15 dollars."
+    ],
+    [
+     22.8,
+     "Add the starting fee of 2 dollars."
+    ],
+    [
+     25.56,
+     "The ride costs 17 dollars."
+    ],
+    [
+     28.22,
+     "The same rule works for any distance: multiply the distance by 3, then add 2."
+    ],
+    [
+     34.29,
+     "Remember: a function machine takes an input, uses a rule, and gives an output."
+    ],
+    [
+     39.75,
+     "This machine has 2 steps."
+    ],
+    [
+     42.04,
+     "Put in 4."
+    ],
+    [
+     42.97,
+     "4 times 3 is 12, and 12 plus 2 is 14."
+    ],
+    [
+     46.76,
+     "The output is 14."
+    ],
+    [
+     49.05,
+     "A function links each input to exactly 1 output, using a rule."
+    ],
+    [
+     53.41,
+     "We can write the taxi rule in words: multiply by 3, then add 2."
+    ],
+    [
+     58.4,
+     "We can also write it as an equation."
+    ],
+    [
+     60.87,
+     "y equals 3 x plus 2."
+    ],
+    [
+     62.24,
+     "Here x is the input, the distance."
+    ],
+    [
+     64.57,
+     "And y is the output, the cost."
+    ],
+    [
+     67.17,
+     "Your turn."
+    ],
+    [
+     67.93,
+     "y equals 3 x plus 2."
+    ],
+    [
+     69.43,
+     "Find y when x is 10."
+    ],
+    [
+     70.94,
+     "Pause the video and try it."
+    ],
+    [
+     74.37,
+     "Replace x with 10."
+    ],
+    [
+     76.26,
+     "3 times 10 is 30, and 30 plus 2 is 32."
+    ],
+    [
+     80.24,
+     "So y is 32."
+    ],
+    [
+     81.94,
+     "A table shows many inputs and outputs together."
+    ],
+    [
+     85.76,
+     "When x is 0, y is 2."
+    ],
+    [
+     87.38,
+     "When x is 1, y is 5."
+    ],
+    [
+     89.0,
+     "Then 8, 11 and 14."
+    ],
+    [
+     91.02,
+     "Each time x goes up by 1, y goes up by 3."
+    ],
+    [
+     93.95,
+     "That 3 is the number that multiplies x."
+    ],
+    [
+     97.3,
+     "And when x is 0, y is 2."
+    ],
+    [
+     98.99,
+     "That is the number added on."
+    ],
+    [
+     101.51,
+     "Sometimes you know the output, and you want the input."
+    ],
+    [
+     105.38,
+     "A taxi ride costs 26 dollars."
+    ],
+    [
+     107.45,
+     "How far was it?"
+    ],
+    [
+     109.07,
+     "Work backwards, with inverse operations, in reverse order."
+    ],
+    [
+     113.72,
+     "First undo the plus 2: 26 minus 2 is 24."
+    ],
+    [
+     117.47,
+     "Then undo the times 3: 24 divided by 3 is 8."
+    ],
+    [
+     121.08,
+     "The ride was 8 kilometres."
+    ],
+    [
+     123.76,
+     "Your turn."
+    ],
+    [
+     124.49,
+     "y equals 2 x minus 7."
+    ],
+    [
+     126.01,
+     "Which value of x gives y equals 9?"
+    ],
+    [
+     128.49,
+     "Pause the video and try it."
+    ],
+    [
+     131.86,
+     "First undo the minus 7: 9 plus 7 is 16."
+    ],
+    [
+     135.25,
+     "Then undo the times 2: 16 divided by 2 is 8."
+    ],
+    [
+     139.09,
+     "So x is 8."
+    ],
+    [
+     140.51,
+     "Here is the method."
+    ],
+    [
+     141.8,
+     "Step 1: read the rule, in words or as an equation."
+    ],
+    [
+     145.74,
+     "Step 2: to find an output, substitute the input, and follow the order of operations."
+    ],
+    [
+     152.17,
+     "Step 3: to find an input, use inverse operations, in reverse order."
+    ],
+    [
+     157.39,
+     "Step 4: check by putting your answer back into the rule."
+    ],
+    [
+     161.93,
+     "The rule is: divide the input by 4, then subtract 1."
+    ],
+    [
+     165.55,
+     "Write it as an equation."
+    ],
+    [
+     167.77,
+     "Divide x by 4: that is x over 4."
+    ],
+    [
+     170.2,
+     "Then subtract 1."
+    ],
+    [
+     171.97,
+     "So the equation is y equals x over 4, minus 1."
+    ],
+    [
+     175.94,
+     "Complete a table for y equals 5 x minus 4, for x from 0 to 3."
+    ],
+    [
+     181.14,
+     "When x is 0: 0 minus 4 is negative 4."
+    ],
+    [
+     184.32,
+     "When x is 1: 5 minus 4 is 1."
+    ],
+    [
+     187.28,
+     "When x is 2, y is 6."
+    ],
+    [
+     188.81,
+     "When x is 3, y is 11."
+    ],
+    [
+     190.42,
+     "The outputs go up by 5 each time."
+    ],
+    [
+     193.49,
+     "Here is a table."
+    ],
+    [
+     194.88,
+     "x is 1, 2, 3, 4."
+    ],
+    [
+     196.27,
+     "And y is 1, 5, 9, 13."
+    ],
+    [
+     198.09,
+     "Find the equation."
+    ],
+    [
+     200.21,
+     "y goes up in fours."
+    ],
+    [
+     201.56,
+     "So the rule starts with 4 x."
+    ],
+    [
+     204.09,
+     "Test it with x equals 1."
+    ],
+    [
+     206.02,
+     "4 times 1 is 4, but y is 1."
+    ],
+    [
+     208.19,
+     "So we must subtract 3."
+    ],
+    [
+     210.51,
+     "The equation is y equals 4 x minus 3."
+    ],
+    [
+     213.46,
+     "Check with x equals 2: 8 minus 3 is 5."
+    ],
+    [
+     216.49,
+     "Correct."
+    ],
+    [
+     217.68,
+     "y equals 4 x plus 6."
+    ],
+    [
+     219.19,
+     "Find x when y is 30."
+    ],
+    [
+     220.7,
+     "Here is Maya's working."
+    ],
+    [
+     222.44,
+     "Which line goes wrong first?"
+    ],
+    [
+     225.1,
+     "Line 1 is wrong."
+    ],
+    [
+     226.24,
+     "You must undo the steps in reverse order."
+    ],
+    [
+     229.14,
+     "The plus 6 was done last, so undo it first."
+    ],
+    [
+     232.73,
+     "30 minus 6 is 24."
+    ],
+    [
+     234.44,
+     "Then 24 divided by 4 is 6."
+    ],
+    [
+     237.07,
+     "So x is 6."
+    ],
+    [
+     238.62,
+     "Here is a function for travellers."
+    ],
+    [
+     241.03,
+     "To change degrees Celsius into degrees Fahrenheit, a quick rule is: double it, and add 30."
+    ],
+    [
+     247.95,
+     "So 20 degrees Celsius is about 2 times 20 plus 30, which is 70 degrees Fahrenheit."
+    ],
+    [
+     255.82,
+     "The exact function is: multiply by 1.8, and add 32."
+    ],
+    [
+     259.78,
+     "That gives 68."
+    ],
+    [
+     260.87,
+     "The quick rule is close enough for packing a suitcase."
+    ],
+    [
+     265.61,
+     "One last question."
+    ],
+    [
+     267.06,
+     "x is 1, 2, 3."
+    ],
+    [
+     268.1,
+     "And y is 7, 10, 13."
+    ],
+    [
+     269.62,
+     "What is the equation?"
+    ],
+    [
+     271.31,
+     "Pause the video and work it out."
+    ],
+    [
+     275.27,
+     "y goes up in threes, so start with 3 x."
+    ],
+    [
+     278.17,
+     "When x is 1, 3 x is 3, but y is 7."
+    ],
+    [
+     280.7,
+     "So add 4."
+    ],
+    [
+     281.37,
+     "The equation is y equals 3 x plus 4."
+    ],
+    [
+     284.59,
+     "To remember: a function turns each input into exactly 1 output, using a rule."
+    ],
+    [
+     290.56,
+     "Write the rule in words, or as an equation, like y equals 3 x plus 2."
+    ],
+    [
+     295.9,
+     "Find outputs by substituting."
+    ],
+    [
+     297.97,
+     "Find inputs with inverse operations, in reverse order."
+    ],
+    [
+     302.37,
+     "In a table, the step in y gives the number that multiplies x."
+    ],
+    [
+     306.98,
+     "Great work! Now practise lesson 11.1 on Camday."
+    ]
+   ],
+   "times": {
+    "11.1-k1": 18.1,
+    "11.1-k2": 73.32,
+    "11.1-k3": 130.81,
+    "11.1-k4": 274.22
+   },
+   "up": true
+  },
+  "10.2": {
+   "src": "media/mv/s7/10-2.mp4",
+   "poster": "media/mv/s7/10-2_poster.jpg",
+   "srt": "media/mv/s7/10-2.srt",
+   "dur": 331.2,
+   "captions": [
+    [
+     7.25,
+     "A town had 8,000 people."
+    ],
+    [
+     9.31,
+     "10 years later, its population is 150 per cent of what it was."
+    ],
+    [
+     15.2,
+     "How many people live in the town now?"
+    ],
+    [
+     17.71,
+     "Pause the video and work it out."
+    ],
+    [
+     21.28,
+     "100 per cent is the whole amount: 8,000 people."
+    ],
+    [
+     25.81,
+     "50 per cent is half of that: 4,000."
+    ],
+    [
+     29.72,
+     "150 per cent is 8,000 plus 4,000."
+    ],
+    [
+     33.54,
+     "The town now has 12,000 people."
+    ],
+    [
+     37.67,
+     "Remember: to find 10 per cent, divide by 10."
+    ],
+    [
+     41.47,
+     "To find 1 per cent, divide by 100."
+    ],
+    [
+     44.95,
+     "You can build other percentages from these."
+    ],
+    [
+     48.79,
+     "10 per cent of 320 is 32, so 30 per cent is 3 times 32, which is 96."
+    ],
+    [
+     55.41,
+     "100 per cent is the whole amount."
+    ],
+    [
+     58.13,
+     "More than 100 per cent means more than the whole."
+    ],
+    [
+     62.72,
+     "150 per cent is 1.5 as a decimal."
+    ],
+    [
+     65.3,
+     "It means one and a half times the amount."
+    ],
+    [
+     69.06,
+     "200 per cent is 2: double the amount."
+    ],
+    [
+     72.57,
+     "And 250 per cent is 2.5."
+    ],
+    [
+     75.39,
+     "The rule is the same as before: to change a percentage to a decimal, divide by 100."
+    ],
+    [
+     82.0,
+     "Your turn."
+    ],
+    [
+     82.76,
+     "Write 175 per cent as a decimal."
+    ],
+    [
+     85.2,
+     "Pause the video and try it."
+    ],
+    [
+     88.67,
+     "175 divided by 100 is 1.75."
+    ],
+    [
+     91.25,
+     "The digits move 2 places to the right."
+    ],
+    [
+     95.45,
+     "A percentage can also be very small."
+    ],
+    [
+     97.98,
+     "Less than 1 per cent is less than one hundredth."
+    ],
+    [
+     101.92,
+     "0.5 per cent is half of 1 per cent."
+    ],
+    [
+     105.25,
+     "As a decimal, 0.5 divided by 100 is 0.005."
+    ],
+    [
+     109.81,
+     "A bank pays 0.5 per cent interest on 600 dollars."
+    ],
+    [
+     114.22,
+     "1 per cent of 600 is 6, so 0.5 per cent is 3 dollars."
+    ],
+    [
+     119.54,
+     "Your turn."
+    ],
+    [
+     120.4,
+     "Find 0.1 per cent of 3,000."
+    ],
+    [
+     122.72,
+     "Pause the video and try it."
+    ],
+    [
+     126.44,
+     "1 per cent of 3,000 is 30."
+    ],
+    [
+     128.78,
+     "0.1 per cent is one tenth of that, which is 3."
+    ],
+    [
+     133.46,
+     "Here is the method."
+    ],
+    [
+     134.93,
+     "Step 1: change the percentage to a decimal and multiply."
+    ],
+    [
+     139.26,
+     "Or build it from 100 per cent, 10 per cent and 1 per cent."
+    ],
+    [
+     144.29,
+     "Step 2: more than 100 per cent gives an answer bigger than the amount."
+    ],
+    [
+     150.34,
+     "Step 3: less than 1 per cent gives an answer smaller than one hundredth of the amount."
+    ],
+    [
+     156.99,
+     "Step 4: check that the size of your answer makes sense."
+    ],
+    [
+     161.43,
+     "Find 145 per cent of 80."
+    ],
+    [
+     164.59,
+     "100 per cent is 80."
+    ],
+    [
+     166.32,
+     "10 per cent is 8, so 40 per cent is 32."
+    ],
+    [
+     169.88,
+     "And 5 per cent is half of 10 per cent, which is 4."
+    ],
+    [
+     174.99,
+     "Add them: 80 plus 32 plus 4 is 116."
+    ],
+    [
+     179.37,
+     "Check the size."
+    ],
+    [
+     180.67,
+     "145 per cent is more than the whole, and 116 is more than 80."
+    ],
+    [
+     185.91,
+     "Good."
+    ],
+    [
+     186.89,
+     "Find 0.4 per cent of 2,500."
+    ],
+    [
+     190.35,
+     "1 per cent is 25."
+    ],
+    [
+     191.85,
+     "0.1 per cent is one tenth of that: 2.5."
+    ],
+    [
+     195.84,
+     "0.4 per cent is 4 times 2.5, which is 10."
+    ],
+    [
+     200.37,
+     "Write 3.6 per cent as a decimal, and as a fraction."
+    ],
+    [
+     204.7,
+     "First, the decimal."
+    ],
+    [
+     206.71,
+     "3.6 divided by 100 is 0.036."
+    ],
+    [
+     210.22,
+     "0.036 is 36 thousandths."
+    ],
+    [
+     212.47,
+     "Divide the top and the bottom by 4."
+    ],
+    [
+     215.75,
+     "That is 9 over 250."
+    ],
+    [
+     218.08,
+     "A kitten weighed 0.8 kilograms."
+    ],
+    [
+     220.51,
+     "Now it weighs 350 per cent of that."
+    ],
+    [
+     223.26,
+     "What does it weigh now?"
+    ],
+    [
+     225.62,
+     "350 per cent is 3.5 as a decimal."
+    ],
+    [
+     229.22,
+     "3.5 times 0.8 is 2.8."
+    ],
+    [
+     231.18,
+     "The kitten now weighs 2.8 kilograms."
+    ],
+    [
+     235.1,
+     "Find 0.3 per cent of 700."
+    ],
+    [
+     237.12,
+     "Here is Raj's working."
+    ],
+    [
+     238.9,
+     "Which line goes wrong first?"
+    ],
+    [
+     241.72,
+     "Line 1 is wrong."
+    ],
+    [
+     243.27,
+     "0.3 per cent means 0.3 out of 100, which is 0.003."
+    ],
+    [
+     248.11,
+     "An answer of 210 would be 30 per cent."
+    ],
+    [
+     252.35,
+     "0.003 times 700 is 2.1."
+    ],
+    [
+     254.45,
+     "That is a sensible size for such a small percentage."
+    ],
+    [
+     259.75,
+     "Big percentages describe growth."
+    ],
+    [
+     262.24,
+     "The population of India today is about 400 per cent of what it was in 1950."
+    ],
+    [
+     268.06,
+     "That is about 4 times as many people."
+    ],
+    [
+     271.49,
+     "Small percentages matter too."
+    ],
+    [
+     273.66,
+     "Carbon dioxide is only about 0.04 per cent of the air."
+    ],
+    [
+     278.25,
+     "That is 4 parts in every 10,000."
+    ],
+    [
+     280.85,
+     "But even that small amount helps to keep our planet warm."
+    ],
+    [
+     286.01,
+     "One last question."
+    ],
+    [
+     287.44,
+     "What is 200 per cent of 7.5?"
+    ],
+    [
+     289.66,
+     "Pause the video and answer."
+    ],
+    [
+     293.2,
+     "200 per cent means double."
+    ],
+    [
+     295.91,
+     "2 times 7.5 is 15."
+    ],
+    [
+     298.34,
+     "To remember: to change any percentage to a decimal, divide by 100."
+    ],
+    [
+     304.29,
+     "150 per cent is 1.5, and 0.5 per cent is 0.005."
+    ],
+    [
+     309.08,
+     "Over 100 per cent gives more than the amount."
+    ],
+    [
+     313.2,
+     "Under 1 per cent gives less than one hundredth of it."
+    ],
+    [
+     317.53,
+     "Build percentages from 100 per cent, 10 per cent and 1 per cent, and check the size of your answer."
+    ],
+    [
+     325.75,
+     "Great work! Now practise lesson 10.2 on Camday."
+    ]
+   ],
+   "times": {
+    "10.2-k1": 20.23,
+    "10.2-k2": 87.62,
+    "10.2-k3": 125.39,
+    "10.2-k4": 292.15
+   },
+   "up": true
+  },
+  "11.3": {
+   "src": "media/mv/s7/11-3.mp4",
+   "poster": "media/mv/s7/11-3_poster.jpg",
+   "srt": "media/mv/s7/11-3.srt",
+   "dur": 282.8,
+   "captions": [
+    [
+     7.12,
+     "Some cities are built on a grid."
+    ],
+    [
+     9.33,
+     "Every house on Avenue 3 has an x coordinate of 3, whatever its y coordinate is."
+    ],
+    [
+     15.31,
+     "Here are 3 houses: 3, 1."
+    ],
+    [
+     17.46,
+     "And 3, 4."
+    ],
+    [
+     18.26,
+     "And 3, negative 2."
+    ],
+    [
+     20.43,
+     "What kind of line do these 3 points make: vertical, horizontal, or sloping?"
+    ],
+    [
+     25.62,
+     "Pause the video and decide."
+    ],
+    [
+     28.89,
+     "Plot the points."
+    ],
+    [
+     30.02,
+     "They are all 3 across, so they sit one above another."
+    ],
+    [
+     33.75,
+     "They make a vertical line."
+    ],
+    [
+     36.13,
+     "Remember: x is across."
+    ],
+    [
+     37.61,
+     "Negative x is to the left."
+    ],
+    [
+     39.36,
+     "And y is up."
+    ],
+    [
+     40.16,
+     "Negative y is down."
+    ],
+    [
+     41.99,
+     "The point negative 2, 3 is 2 to the left, and 3 up."
+    ],
+    [
+     46.4,
+     "Every point on a vertical line has the same x coordinate."
+    ],
+    [
+     50.31,
+     "So we name the line by that number."
+    ],
+    [
+     52.71,
+     "This is the line x equals 3."
+    ],
+    [
+     55.18,
+     "Now think about the y axis."
+    ],
+    [
+     57.01,
+     "It is a vertical line too."
+    ],
+    [
+     58.77,
+     "Is the y axis the line x equals 0, or the line y equals 0?"
+    ],
+    [
+     62.69,
+     "Pause the video and decide."
+    ],
+    [
+     65.91,
+     "Every point on the y axis is 0 across."
+    ],
+    [
+     68.57,
+     "So the y axis is the line x equals 0."
+    ],
+    [
+     71.71,
+     "Every point on a horizontal line has the same y coordinate."
+    ],
+    [
+     75.69,
+     "These points all have y equals negative 2."
+    ],
+    [
+     79.08,
+     "So this is the line y equals negative 2."
+    ],
+    [
+     81.87,
+     "And the x axis is the line y equals 0."
+    ],
+    [
+     85.07,
+     "Be careful."
+    ],
+    [
+     85.82,
+     "The line x equals a number is vertical."
+    ],
+    [
+     88.45,
+     "It crosses the x axis at that number."
+    ],
+    [
+     91.49,
+     "Here is the method."
+    ],
+    [
+     92.83,
+     "Step 1: look at the points."
+    ],
+    [
+     94.74,
+     "Which coordinate stays the same?"
+    ],
+    [
+     97.55,
+     "Step 2: the same x means a vertical line, x equals that value."
+    ],
+    [
+     101.78,
+     "The same y means a horizontal line, y equals that value."
+    ],
+    [
+     106.15,
+     "Step 3: to draw x equals a, find a on the x axis, and draw straight up and down through it."
+    ],
+    [
+     112.76,
+     "Step 4: the lines x equals a and y equals b cross at the point a, b."
+    ],
+    [
+     117.86,
+     "A line passes through negative 4, 6, and negative 4, negative 2."
+    ],
+    [
+     122.8,
+     "What is its equation?"
+    ],
+    [
+     124.97,
+     "The x coordinate is negative 4 both times."
+    ],
+    [
+     127.9,
+     "So it is a vertical line."
+    ],
+    [
+     130.2,
+     "Its equation is x equals negative 4."
+    ],
+    [
+     133.35,
+     "Where do the lines x equals 4 and y equals negative 1 cross?"
+    ],
+    [
+     138.27,
+     "On the first line, every point has x equals 4."
+    ],
+    [
+     141.53,
+     "On the second, every point has y equals negative 1."
+    ],
+    [
+     145.15,
+     "The crossing point has both."
+    ],
+    [
+     147.68,
+     "So they cross at 4, negative 1."
+    ],
+    [
+     150.7,
+     "Your turn."
+    ],
+    [
+     151.39,
+     "Where do the lines x equals negative 1 and y equals 6 cross?"
+    ],
+    [
+     155.52,
+     "Pause the video and try it."
+    ],
+    [
+     158.78,
+     "The point must have x equals negative 1, and y equals 6."
+    ],
+    [
+     162.98,
+     "x comes first."
+    ],
+    [
+     164.02,
+     "They cross at negative 1, 6."
+    ],
+    [
+     166.67,
+     "The lines x equals 2, x equals 7, y equals 1 and y equals 4 make a rectangle."
+    ],
+    [
+     172.36,
+     "Find its area."
+    ],
+    [
+     173.95,
+     "The width is 7 minus 2, which is 5."
+    ],
+    [
+     176.78,
+     "The height is 4 minus 1, which is 3."
+    ],
+    [
+     180.24,
+     "The area is 5 times 3, which is 15 square units."
+    ],
+    [
+     184.68,
+     "Which of these points are on the line y equals negative 3?"
+    ],
+    [
+     189.3,
+     "Negative 3, 2."
+    ],
+    [
+     190.41,
+     "Then 5, negative 3."
+    ],
+    [
+     191.93,
+     "Then 0, negative 3."
+    ],
+    [
+     193.99,
+     "The y coordinate must be negative 3."
+    ],
+    [
+     196.51,
+     "In the first point, y is 2, so it is not on the line."
+    ],
+    [
+     200.23,
+     "The other 2 points are on the line."
+    ],
+    [
+     203.23,
+     "Draw the line x equals 2."
+    ],
+    [
+     204.97,
+     "Here is Ivy's working."
+    ],
+    [
+     206.51,
+     "Which line goes wrong first?"
+    ],
+    [
+     209.01,
+     "Line 1 is wrong."
+    ],
+    [
+     210.21,
+     "x equals 2 means every point is 2 across."
+    ],
+    [
+     213.3,
+     "So find 2 on the x axis."
+    ],
+    [
+     215.65,
+     "Then draw a vertical line through it."
+    ],
+    [
+     218.28,
+     "Ivy drew the line y equals 2 by mistake."
+    ],
+    [
+     221.66,
+     "Much of Manhattan, in New York, is a grid."
+    ],
+    [
+     224.46,
+     "Avenues run one way, and numbered streets cross them."
+    ],
+    [
+     227.98,
+     "An address is like a pair of coordinates."
+    ],
+    [
+     231.26,
+     "On a globe, the equator is the line of latitude 0 degrees."
+    ],
+    [
+     235.25,
+     "It is like the line y equals 0."
+    ],
+    [
+     237.93,
+     "And on a chessboard, each column has a letter."
+    ],
+    [
+     241.03,
+     "All the squares in column e make a vertical line."
+    ],
+    [
+     244.89,
+     "One last question."
+    ],
+    [
+     246.15,
+     "Is the line y equals 5 horizontal, or vertical?"
+    ],
+    [
+     249.46,
+     "Pause the video and answer."
+    ],
+    [
+     252.75,
+     "It is horizontal."
+    ],
+    [
+     253.94,
+     "Every point is 5 up, so the line runs straight across."
+    ],
+    [
+     258.27,
+     "To remember: x equals a is a vertical line."
+    ],
+    [
+     261.21,
+     "Every point has x coordinate a."
+    ],
+    [
+     263.88,
+     "y equals b is a horizontal line."
+    ],
+    [
+     266.03,
+     "Every point has y coordinate b."
+    ],
+    [
+     268.66,
+     "The y axis is x equals 0, and the x axis is y equals 0."
+    ],
+    [
+     273.02,
+     "The lines x equals a and y equals b cross at the point a, b."
+    ],
+    [
+     277.38,
+     "Great work! Now practise lesson 11.3 on Camday."
+    ]
+   ],
+   "times": {
+    "11.3-k1": 27.84,
+    "11.3-k2": 64.86,
+    "11.3-k3": 157.73,
+    "11.3-k4": 251.7
+   },
+   "up": false
+  },
+  "9.1": {
+   "src": "media/mv/s7/9-1.mp4",
+   "poster": "media/mv/s7/9-1_poster.jpg",
+   "srt": "media/mv/s7/9-1.srt",
+   "dur": 349.32,
+   "captions": [
+    [
+     7.28,
+     "Lena puts 6 dollars in a money box in week 1."
+    ],
+    [
+     10.47,
+     "Every week after that, she adds 5 dollars."
+    ],
+    [
+     14.0,
+     "How much is in the box at the end of week 4?"
+    ],
+    [
+     17.0,
+     "Pause the video and work it out."
+    ],
+    [
+     20.58,
+     "Week 1: 6 dollars."
+    ],
+    [
+     22.47,
+     "Week 2: 6 plus 5 is 11."
+    ],
+    [
+     24.89,
+     "Week 3: 11 plus 5 is 16."
+    ],
+    [
+     27.41,
+     "Week 4: 16 plus 5 is 21."
+    ],
+    [
+     30.48,
+     "At the end of week 4, there are 21 dollars in the box."
+    ],
+    [
+     34.97,
+     "Remember: every operation has an inverse, which undoes it."
+    ],
+    [
+     38.96,
+     "Add and subtract undo each other."
+    ],
+    [
+     41.78,
+     "Multiply and divide undo each other too."
+    ],
+    [
+     45.15,
+     "Lena's amounts make a list: 6, 11, 16, 21."
+    ],
+    [
+     48.46,
+     "A list of numbers in a set order is called a sequence."
+    ],
+    [
+     53.26,
+     "Each number in the list is a term."
+    ],
+    [
+     55.56,
+     "Every term has a position: first, second, third, fourth."
+    ],
+    [
+     59.9,
+     "The position tells you where the term is."
+    ],
+    [
+     62.87,
+     "The value is the number itself."
+    ],
+    [
+     65.11,
+     "The 3rd term has the value 16."
+    ],
+    [
+     67.83,
+     "Now think about this."
+    ],
+    [
+     69.36,
+     "A sequence starts 2, 4."
+    ],
+    [
+     71.04,
+     "What is the next term?"
+    ],
+    [
+     72.64,
+     "Pause the video and decide."
+    ],
+    [
+     76.0,
+     "You cannot tell from two terms."
+    ],
+    [
+     78.34,
+     "The rule could be add 2, which gives 2, 4, 6."
+    ],
+    [
+     82.28,
+     "Or the rule could be multiply by 2, which gives 2, 4, 8."
+    ],
+    [
+     86.36,
+     "Both rules fit."
+    ],
+    [
+     88.0,
+     "With 3 or more terms, you can test a rule, and be sure."
+    ],
+    [
+     92.26,
+     "A term-to-term rule tells you how to get from one term to the next term."
+    ],
+    [
+     97.56,
+     "To build a sequence, you need 2 things: the first term, and the rule."
+    ],
+    [
+     102.74,
+     "First term 9, rule add 6."
+    ],
+    [
+     105.41,
+     "9 plus 6 is 15."
+    ],
+    [
+     107.02,
+     "15 plus 6 is 21."
+    ],
+    [
+     108.73,
+     "21 plus 6 is 27."
+    ],
+    [
+     111.0,
+     "Your turn."
+    ],
+    [
+     111.72,
+     "A sequence starts at 5, and the rule is add 4."
+    ],
+    [
+     115.04,
+     "What is the 4th term?"
+    ],
+    [
+     116.55,
+     "Pause the video and try it."
+    ],
+    [
+     119.9,
+     "5, then 9, then 13, then 17."
+    ],
+    [
+     122.67,
+     "The 4th term is 17."
+    ],
+    [
+     125.1,
+     "A rule is not always add."
+    ],
+    [
+     127.33,
+     "Each of these sequences starts at 60."
+    ],
+    [
+     130.63,
+     "Subtract 8 gives 60, 52, 44, 36."
+    ],
+    [
+     134.03,
+     "Divide by 2 gives 60, 30, 15, 7.5."
+    ],
+    [
+     138.49,
+     "And multiply by 2 gives 60, 120, 240, 480."
+    ],
+    [
+     144.12,
+     "Here is the method."
+    ],
+    [
+     145.44,
+     "Step 1: find the rule, or read it from the question."
+    ],
+    [
+     149.6,
+     "Step 2: find a term you know, next to the gap."
+    ],
+    [
+     153.3,
+     "Step 3: to move right, to a later term, use the rule."
+    ],
+    [
+     156.86,
+     "To move left, to an earlier term, use the inverse."
+    ],
+    [
+     160.76,
+     "Step 4: check by running the rule along the whole sequence."
+    ],
+    [
+     165.55,
+     "The first term is 5."
+    ],
+    [
+     167.02,
+     "The rule is multiply by 3."
+    ],
+    [
+     168.94,
+     "Write the first 4 terms."
+    ],
+    [
+     171.27,
+     "5 times 3 is 15."
+    ],
+    [
+     173.25,
+     "15 times 3 is 45."
+    ],
+    [
+     175.35,
+     "45 times 3 is 135."
+    ],
+    [
+     178.13,
+     "The sequence is 5, 15, 45, 135."
+    ],
+    [
+     180.81,
+     "Multiplying makes a sequence grow very quickly."
+    ],
+    [
+     185.41,
+     "The first term is 2."
+    ],
+    [
+     186.92,
+     "The rule is: multiply by 3, then subtract 1."
+    ],
+    [
+     190.22,
+     "Write the first 4 terms."
+    ],
+    [
+     192.57,
+     "2 times 3 is 6, subtract 1 is 5."
+    ],
+    [
+     196.15,
+     "5 times 3 is 15, subtract 1 is 14."
+    ],
+    [
+     199.69,
+     "And 14 times 3 is 42, subtract 1 is 41."
+    ],
+    [
+     204.3,
+     "The sequence is 2, 5, 14, 41."
+    ],
+    [
+     207.79,
+     "The rule is subtract 6."
+    ],
+    [
+     209.69,
+     "The 3rd term is 10."
+    ],
+    [
+     211.26,
+     "Find the first 4 terms."
+    ],
+    [
+     213.17,
+     "First, put 10 in the 3rd position."
+    ],
+    [
+     216.53,
+     "To move right, use the rule."
+    ],
+    [
+     218.86,
+     "10 minus 6 is 4."
+    ],
+    [
+     220.2,
+     "The 4th term is 4."
+    ],
+    [
+     222.25,
+     "To move left, use the inverse: add 6."
+    ],
+    [
+     225.71,
+     "10 plus 6 is 16, and 16 plus 6 is 22."
+    ],
+    [
+     229.72,
+     "The sequence is 22, 16, 10, 4."
+    ],
+    [
+     232.38,
+     "Check: it goes down by 6 each time."
+    ],
+    [
+     236.03,
+     "Find the missing terms: 14, blank, blank, 38."
+    ],
+    [
+     239.52,
+     "The rule is add a number."
+    ],
+    [
+     242.01,
+     "From 14 to 38 there are 3 steps."
+    ],
+    [
+     244.58,
+     "Count the gaps, not the boxes."
+    ],
+    [
+     247.54,
+     "38 minus 14 is 24."
+    ],
+    [
+     249.34,
+     "24 divided by 3 is 8."
+    ],
+    [
+     251.43,
+     "So the rule is add 8."
+    ],
+    [
+     254.08,
+     "14 plus 8 is 22, and 22 plus 8 is 30."
+    ],
+    [
+     258.22,
+     "Check: 30 plus 8 is 38."
+    ],
+    [
+     261.34,
+     "The rule is subtract 5."
+    ],
+    [
+     263.07,
+     "The 3rd term is 9."
+    ],
+    [
+     264.41,
+     "Find the 2nd term."
+    ],
+    [
+     265.76,
+     "Here is Dan's working."
+    ],
+    [
+     267.41,
+     "Which line goes wrong first?"
+    ],
+    [
+     270.06,
+     "Line 2 is wrong."
+    ],
+    [
+     271.19,
+     "Going back means moving left, so you must use the inverse: add 5."
+    ],
+    [
+     276.34,
+     "9 plus 5 is 14."
+    ],
+    [
+     277.75,
+     "The 2nd term is 14."
+    ],
+    [
+     279.54,
+     "Check: 14 minus 5 is 9."
+    ],
+    [
+     282.27,
+     "Sequences are everywhere."
+    ],
+    [
+     284.68,
+     "Leap years usually come every 4 years: 2024, 2028, 2032."
+    ],
+    [
+     290.08,
+     "The rule is add 4."
+    ],
+    [
+     292.37,
+     "Some bacteria can split in two about every 20 minutes."
+    ],
+    [
+     296.67,
+     "1 becomes 2, then 4, then 8."
+    ],
+    [
+     298.9,
+     "The rule is multiply by 2."
+    ],
+    [
+     301.52,
+     "After only 7 hours of doubling, 1 bacterium could become more than 2 million."
+    ],
+    [
+     307.89,
+     "One last question."
+    ],
+    [
+     309.26,
+     "The rule is add 3."
+    ],
+    [
+     310.64,
+     "The 4th term is 20."
+    ],
+    [
+     312.09,
+     "What is the 1st term?"
+    ],
+    [
+     313.69,
+     "Pause the video and work it out."
+    ],
+    [
+     317.54,
+     "Move left, so subtract 3 each time."
+    ],
+    [
+     320.93,
+     "20, 17, 14, 11."
+    ],
+    [
+     322.38,
+     "The 1st term is 11."
+    ],
+    [
+     324.77,
+     "To remember: a sequence is a list of terms in order."
+    ],
+    [
+     328.25,
+     "The position says where a term is, and the value is the number."
+    ],
+    [
+     333.02,
+     "A term-to-term rule takes you from one term to the next."
+    ],
+    [
+     337.3,
+     "To go back, use the inverse operation."
+    ],
+    [
+     340.5,
+     "And use 3 or more terms to be sure of a rule."
+    ],
+    [
+     344.12,
+     "Great work! Now practise lesson 9.1 on Camday."
+    ]
+   ],
+   "times": {
+    "9.1-k1": 19.53,
+    "9.1-k2": 74.95,
+    "9.1-k3": 118.85,
+    "9.1-k4": 316.49
+   },
+   "up": false
+  },
+  "13.3": {
+   "src": "media/mv/s7/13-3.mp4",
+   "poster": "media/mv/s7/13-3_poster.jpg",
+   "srt": "media/mv/s7/13-3.srt",
+   "dur": 334.8,
+   "captions": [
+    [
+     7.32,
+     "Zane rolls a dice 60 times."
+    ],
+    [
+     9.56,
+     "He gets a six 18 times."
+    ],
+    [
+     12.02,
+     "How many sixes would you expect from a fair dice, in 60 rolls?"
+    ],
+    [
+     16.45,
+     "Pause the video and work it out."
+    ],
+    [
+     20.13,
+     "On a fair dice, the probability of a six is 1 sixth."
+    ],
+    [
+     24.31,
+     "1 sixth of 60 is 10."
+    ],
+    [
+     25.92,
+     "You would expect about 10 sixes."
+    ],
+    [
+     29.04,
+     "Zane got 18."
+    ],
+    [
+     30.0,
+     "That is a lot more than 10."
+    ],
+    [
+     32.15,
+     "Perhaps his dice is not fair."
+    ],
+    [
+     35.01,
+     "Remember: to find a fraction of an amount, divide by the denominator."
+    ],
+    [
+     40.73,
+     "1 fifth of 150 is 150 divided by 5, which is 30."
+    ],
+    [
+     45.26,
+     "Sometimes we cannot work out a probability by counting equally likely outcomes."
+    ],
+    [
+     50.75,
+     "Then we do an experiment."
+    ],
+    [
+     52.49,
+     "Each go is called a trial."
+    ],
+    [
+     54.85,
+     "The experimental probability is the number of times the event happens, divided by the number of trials."
+    ],
+    [
+     62.17,
+     "For Zane's dice: 18 sixes in 60 rolls."
+    ],
+    [
+     65.86,
+     "18 divided by 60 is 0.3."
+    ],
+    [
+     68.75,
+     "Your turn."
+    ],
+    [
+     69.48,
+     "A spinner lands on green 12 times in 40 spins."
+    ],
+    [
+     72.88,
+     "What is the experimental probability of green, as a decimal?"
+    ],
+    [
+     77.3,
+     "Pause the video and try it."
+    ],
+    [
+     80.69,
+     "12 divided by 40 is 0.3."
+    ],
+    [
+     82.85,
+     "The experimental probability of green is 0.3."
+    ],
+    [
+     87.45,
+     "The expected number is the probability, multiplied by the number of trials."
+    ],
+    [
+     93.14,
+     "Results vary by chance."
+    ],
+    [
+     94.88,
+     "From a fair dice, 8 sixes or 12 sixes in 60 rolls would not be a surprise."
+    ],
+    [
+     101.05,
+     "But 18 is far from 10."
+    ],
+    [
+     102.69,
+     "Over many trials, a result far from the expected number suggests the dice is biased."
+    ],
+    [
+     108.94,
+     "Biased means not fair."
+    ],
+    [
+     111.12,
+     "Your turn."
+    ],
+    [
+     111.88,
+     "The probability of red is 0.2."
+    ],
+    [
+     114.16,
+     "How many reds would you expect in 150 trials?"
+    ],
+    [
+     117.59,
+     "Pause the video and try it."
+    ],
+    [
+     121.04,
+     "0.2 times 150 is 30."
+    ],
+    [
+     123.08,
+     "You would expect about 30 reds."
+    ],
+    [
+     126.8,
+     "With only a few trials, chance has a big effect."
+    ],
+    [
+     130.15,
+     "Toss a coin 4 times, and you might easily get 3 heads."
+    ],
+    [
+     134.47,
+     "With many trials, the experimental probability settles close to the true probability."
+    ],
+    [
+     140.43,
+     "So more trials give a more reliable estimate."
+    ],
+    [
+     144.14,
+     "Here is the method."
+    ],
+    [
+     145.46,
+     "Step 1: do many trials, and record the results in a table."
+    ],
+    [
+     150.03,
+     "Step 2: divide the number of times the event happens by the number of trials."
+    ],
+    [
+     155.94,
+     "Step 3: to predict, multiply the probability by the number of trials."
+    ],
+    [
+     161.34,
+     "Step 4: compare the results with what you expected."
+    ],
+    [
+     165.56,
+     "A coin is tossed 120 times, and it lands on heads 66 times."
+    ],
+    [
+     170.13,
+     "Find the experimental probability of heads."
+    ],
+    [
+     174.01,
+     "66 divided by 120 is 0.55."
+    ],
+    [
+     176.46,
+     "That is the experimental probability."
+    ],
+    [
+     180.49,
+     "For a fair coin, you would expect 0.5 times 120, which is 60 heads."
+    ],
+    [
+     185.97,
+     "66 is a little more than 60."
+    ],
+    [
+     188.25,
+     "That is not enough to say the coin is biased."
+    ],
+    [
+     192.48,
+     "A factory tests its phones."
+    ],
+    [
+     194.69,
+     "4 in every 250 fail the test."
+    ],
+    [
+     197.07,
+     "How many would you expect to fail, out of 10,000 phones?"
+    ],
+    [
+     202.2,
+     "The experimental probability is 4 divided by 250, which is 0.016."
+    ],
+    [
+     208.65,
+     "0.016 times 10,000 is 160."
+    ],
+    [
+     211.54,
+     "You would expect about 160 phones to fail."
+    ],
+    [
+     216.74,
+     "2 groups test a spinner."
+    ],
+    [
+     218.77,
+     "Group A gets 14 reds in 40 spins."
+    ],
+    [
+     221.55,
+     "Group B gets 78 reds in 200 spins."
+    ],
+    [
+     224.42,
+     "Which estimate is better?"
+    ],
+    [
+     227.09,
+     "Group A's estimate is 0.35."
+    ],
+    [
+     229.2,
+     "Group B's is 0.39."
+    ],
+    [
+     230.61,
+     "Group B did more trials, so its estimate is more reliable."
+    ],
+    [
+     235.7,
+     "Better still, combine them."
+    ],
+    [
+     238.13,
+     "92 reds in 240 spins gives about 0.38."
+    ],
+    [
+     242.1,
+     "A coin is tossed 20 times, and it lands on heads 13 times."
+    ],
+    [
+     246.46,
+     "Here is Remi's working."
+    ],
+    [
+     248.18,
+     "Which line goes wrong first?"
+    ],
+    [
+     250.83,
+     "Line 2 is wrong."
+    ],
+    [
+     252.03,
+     "Results vary by chance, especially with only a few trials."
+    ],
+    [
+     256.36,
+     "13 heads in 20 tosses is quite normal for a fair coin."
+    ],
+    [
+     260.94,
+     "To decide if a coin is biased, you need many more trials."
+    ],
+    [
+     265.25,
+     "About 1 person in 10 is left-handed."
+    ],
+    [
+     267.9,
+     "That probability comes from counting people, not from equally likely outcomes."
+    ],
+    [
+     274.2,
+     "So in a school of 900 students, you would expect about 90 to be left-handed."
+    ],
+    [
+     280.71,
+     "Weather forecasts work in the same way."
+    ],
+    [
+     283.39,
+     "Forecasters look at thousands of past days with similar conditions, and count how often it rained."
+    ],
+    [
+     290.7,
+     "One last question."
+    ],
+    [
+     292.08,
+     "Which estimate is more reliable: one from 500 trials, or one from 20 trials?"
+    ],
+    [
+     297.9,
+     "Pause the video and decide."
+    ],
+    [
+     301.37,
+     "The estimate from 500 trials."
+    ],
+    [
+     303.63,
+     "With more trials, chance has less effect."
+    ],
+    [
+     307.37,
+     "To remember: experimental probability is the number of times the event happens, divided by the number of trials."
+    ],
+    [
+     315.58,
+     "The expected number is the probability times the number of trials."
+    ],
+    [
+     320.68,
+     "More trials give a more reliable estimate."
+    ],
+    [
+     324.13,
+     "Over many trials, results far from the expected number suggest bias."
+    ],
+    [
+     329.34,
+     "Great work! Now practise lesson 13.3 on Camday."
+    ]
+   ],
+   "times": {
+    "13.3-k1": 19.08,
+    "13.3-k2": 79.64,
+    "13.3-k3": 119.99,
+    "13.3-k4": 300.32
+   },
+   "up": false
   }
  }
 }

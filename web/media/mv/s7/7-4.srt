@@ -1,0 +1,347 @@
+1
+00:00:06,340 --> 00:00:08,860
+There is 3 quarters of a pizza left.
+
+2
+00:00:08,910 --> 00:00:11,620
+Three friends share it equally.
+
+3
+00:00:11,670 --> 00:00:15,090
+What fraction of a whole pizza does each friend get?
+
+4
+00:00:15,140 --> 00:00:18,630
+Pause the video and work it out.
+
+5
+00:00:18,680 --> 00:00:22,560
+3 quarters means 3 pieces, each a quarter of the pizza.
+
+6
+00:00:22,610 --> 00:00:24,560
+Three friends, three pieces.
+
+7
+00:00:24,610 --> 00:00:26,970
+They get one quarter each.
+
+8
+00:00:27,020 --> 00:00:32,920
+Remember: 12 divided by 3 can mean share 12 into 3 equal groups.
+
+9
+00:00:32,970 --> 00:00:36,270
+It can also mean: how many threes are in 12?
+
+10
+00:00:36,320 --> 00:00:37,740
+Both give 4.
+
+11
+00:00:37,790 --> 00:00:40,750
+The second meaning helps with fractions.
+
+12
+00:00:40,800 --> 00:00:42,640
+How many halves are in 5?
+
+13
+00:00:42,690 --> 00:00:44,170
+There are 10.
+
+14
+00:00:44,220 --> 00:00:47,580
+Dividing by 3 is the same as finding one third.
+
+15
+00:00:47,630 --> 00:00:52,120
+So dividing by 3 is the same as multiplying by 1 third.
+
+16
+00:00:52,170 --> 00:00:56,230
+3 quarters divided by 3 is 3 quarters times 1 third.
+
+17
+00:00:56,280 --> 00:01:00,720
+That is 3 twelfths, which simplifies to 1 quarter.
+
+18
+00:01:00,770 --> 00:01:01,990
+Another example.
+
+19
+00:01:02,040 --> 00:01:05,960
+2 fifths divided by 4 is 2 fifths times 1 quarter.
+
+20
+00:01:06,010 --> 00:01:09,130
+That is 2 twentieths, or 1 tenth.
+
+21
+00:01:09,180 --> 00:01:09,860
+Your turn.
+
+22
+00:01:09,910 --> 00:01:12,120
+Work out 8 ninths divided by 4.
+
+23
+00:01:12,170 --> 00:01:15,490
+Pause the video and try it.
+
+24
+00:01:15,540 --> 00:01:19,690
+8 ninths shared into 4 equal parts is 2 ninths each.
+
+25
+00:01:19,740 --> 00:01:26,050
+Or: 8 ninths times 1 quarter is 8 over 36, which simplifies to 2 ninths.
+
+26
+00:01:26,100 --> 00:01:31,980
+3 quarters divided by 1 eighth asks: how many eighths are in 3 quarters?
+
+27
+00:01:32,030 --> 00:01:34,870
+3 quarters is the same as 6 eighths.
+
+28
+00:01:34,920 --> 00:01:36,620
+So there are 6.
+
+29
+00:01:36,670 --> 00:01:37,960
+Here is the method.
+
+30
+00:01:38,010 --> 00:01:41,540
+Turn the second fraction upside down, and multiply.
+
+31
+00:01:41,590 --> 00:01:45,600
+The upside-down fraction is called the reciprocal.
+
+32
+00:01:45,650 --> 00:01:50,050
+3 quarters times 8 over 1 is 24 quarters, which is 6.
+
+33
+00:01:50,100 --> 00:01:51,950
+The same answer.
+
+34
+00:01:52,000 --> 00:01:53,330
+Here is the method.
+
+35
+00:01:53,380 --> 00:01:57,520
+Step 1: write a whole number as a fraction over 1.
+
+36
+00:01:57,570 --> 00:01:59,840
+Step 2: keep the first fraction.
+
+37
+00:01:59,890 --> 00:02:01,730
+Change divide to multiply.
+
+38
+00:02:01,780 --> 00:02:04,090
+Flip the second fraction.
+
+39
+00:02:04,140 --> 00:02:06,880
+Step 3: cancel, and multiply.
+
+40
+00:02:06,930 --> 00:02:11,260
+Step 4: check that the size of your answer makes sense.
+
+41
+00:02:11,310 --> 00:02:14,750
+Work out 2 thirds divided by 4 ninths.
+
+42
+00:02:14,800 --> 00:02:18,320
+Keep the first, change to times, flip the second.
+
+43
+00:02:18,370 --> 00:02:20,770
+2 thirds times 9 quarters.
+
+44
+00:02:20,820 --> 00:02:23,510
+Cancel 2 with 4, to get 1 and 2.
+
+45
+00:02:23,560 --> 00:02:26,810
+Cancel 3 with 9, to get 1 and 3.
+
+46
+00:02:26,860 --> 00:02:29,950
+That gives 3 halves, which is 1 and a half.
+
+47
+00:02:30,000 --> 00:02:30,650
+Your turn.
+
+48
+00:02:30,700 --> 00:02:32,890
+How many sixths are in 2 thirds?
+
+49
+00:02:32,940 --> 00:02:35,830
+Pause and work it out.
+
+50
+00:02:35,880 --> 00:02:39,780
+2 thirds divided by 1 sixth is 2 thirds times 6.
+
+51
+00:02:39,830 --> 00:02:42,250
+That is 12 thirds, which is 4.
+
+52
+00:02:42,300 --> 00:02:45,350
+There are 4 sixths in 2 thirds.
+
+53
+00:02:45,400 --> 00:02:47,790
+A bottle holds 5 sixths of a litre.
+
+54
+00:02:47,840 --> 00:02:52,600
+How many doses of 1 twelfth of a litre can be poured from it?
+
+55
+00:02:52,650 --> 00:02:56,950
+5 sixths times 12 over 1 is 60 sixths.
+
+56
+00:02:57,000 --> 00:02:59,050
+60 divided by 6 is 10.
+
+57
+00:02:59,100 --> 00:03:01,690
+You can pour 10 doses.
+
+58
+00:03:01,740 --> 00:03:04,290
+A ribbon is 3 fifths of a metre long.
+
+59
+00:03:04,340 --> 00:03:06,400
+It is cut into 4 equal pieces.
+
+60
+00:03:06,450 --> 00:03:08,560
+How long is each piece?
+
+61
+00:03:08,610 --> 00:03:11,850
+Dividing by 4 is multiplying by 1 quarter.
+
+62
+00:03:11,900 --> 00:03:16,470
+3 fifths times 1 quarter is 3 twentieths of a metre.
+
+63
+00:03:16,520 --> 00:03:20,520
+3 twentieths of a metre is 15 centimetres.
+
+64
+00:03:20,570 --> 00:03:23,880
+Jay works out 2 fifths divided by 3 quarters.
+
+65
+00:03:23,930 --> 00:03:25,920
+Which line is wrong?
+
+66
+00:03:25,970 --> 00:03:27,000
+Line 1 is wrong.
+
+67
+00:03:27,050 --> 00:03:29,080
+Jay flipped the first fraction.
+
+68
+00:03:29,130 --> 00:03:33,000
+Keep the first fraction, and flip only the second.
+
+69
+00:03:33,050 --> 00:03:36,800
+2 fifths times 4 thirds is 8 fifteenths.
+
+70
+00:03:36,850 --> 00:03:40,530
+Musicians divide fractions without even noticing.
+
+71
+00:03:40,580 --> 00:03:42,890
+A waltz is written in 3 4 time.
+
+72
+00:03:42,940 --> 00:03:45,810
+Each bar lasts 3 quarter notes.
+
+73
+00:03:45,860 --> 00:03:48,470
+How many eighth notes fit in one bar?
+
+74
+00:03:48,520 --> 00:03:51,820
+That is 3 quarters divided by 1 eighth.
+
+75
+00:03:51,870 --> 00:03:53,670
+3 quarters times 8 is 6.
+
+76
+00:03:53,720 --> 00:03:57,760
+So 6 eighth notes fit in every bar of a waltz.
+
+77
+00:03:57,810 --> 00:03:59,090
+One last question.
+
+78
+00:03:59,140 --> 00:04:01,750
+What is 1 half divided by 1 quarter?
+
+79
+00:04:01,800 --> 00:04:05,150
+Pause the video and answer.
+
+80
+00:04:05,200 --> 00:04:07,630
+How many quarters are in a half?
+
+81
+00:04:07,680 --> 00:04:07,790
+2.
+
+82
+00:04:07,840 --> 00:04:11,680
+Or: 1 half times 4 is 4 halves, which is 2.
+
+83
+00:04:11,730 --> 00:04:17,060
+To remember: dividing by a whole number n is multiplying by 1 over n.
+
+84
+00:04:17,110 --> 00:04:21,250
+To divide by a fraction, multiply by its reciprocal.
+
+85
+00:04:21,300 --> 00:04:25,240
+Keep the first fraction, and flip only the second.
+
+86
+00:04:25,290 --> 00:04:29,320
+Dividing by a proper fraction gives a bigger answer.
+
+87
+00:04:29,370 --> 00:04:34,550
+Great work! Now practise lesson 7.4 on Camday.

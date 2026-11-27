@@ -1,0 +1,319 @@
+1
+00:00:07,360 --> 00:00:12,540
+A gardener wants a rectangular flower bed, 6 metres by 3 and a half metres.
+
+2
+00:00:12,590 --> 00:00:15,890
+She has string, pegs and a tape measure.
+
+3
+00:00:15,940 --> 00:00:18,440
+She measures the 4 sides correctly.
+
+4
+00:00:18,490 --> 00:00:21,910
+But are the corners really right angles?
+
+5
+00:00:21,960 --> 00:00:26,140
+Which property guarantees that the corners are right angles?
+
+6
+00:00:26,190 --> 00:00:29,450
+Pause the video and choose.
+
+7
+00:00:29,500 --> 00:00:32,370
+The answer is: the two diagonals are equal.
+
+8
+00:00:32,420 --> 00:00:37,880
+A shape with the correct sides can still lean over, like a parallelogram.
+
+9
+00:00:37,930 --> 00:00:45,250
+But when the two diagonals are the same length, the shape must be a rectangle, with 4 right angles.
+
+10
+00:00:45,300 --> 00:00:47,450
+Remember how to use a protractor.
+
+11
+00:00:47,500 --> 00:00:50,810
+Put its centre on the vertex of the angle.
+
+12
+00:00:50,860 --> 00:00:53,880
+Line up zero with one arm of the angle.
+
+13
+00:00:53,930 --> 00:00:57,410
+Then read from the scale that starts at zero.
+
+14
+00:00:57,460 --> 00:01:04,390
+An acute angle must be less than 90 degrees, so if you read 130 and 50, choose 50.
+
+15
+00:01:04,440 --> 00:01:08,630
+To draw a line perpendicular to another line, use a set square.
+
+16
+00:01:08,680 --> 00:01:13,150
+Put one edge along the line, and draw along the other edge.
+
+17
+00:01:13,200 --> 00:01:15,270
+You can also use a protractor.
+
+18
+00:01:15,320 --> 00:01:19,280
+Put the centre on the point, and mark 90 degrees.
+
+19
+00:01:19,330 --> 00:01:25,570
+To draw parallel lines, slide the set square along a ruler, and draw a line at each position.
+
+20
+00:01:25,620 --> 00:01:28,750
+The lines stay the same distance apart.
+
+21
+00:01:28,800 --> 00:01:29,440
+Your turn.
+
+22
+00:01:29,490 --> 00:01:33,920
+On a diagram, what do lines marked with matching arrows tell you?
+
+23
+00:01:33,970 --> 00:01:37,190
+Pause the video and choose.
+
+24
+00:01:37,240 --> 00:01:40,220
+Matching arrows mean the lines are parallel.
+
+25
+00:01:40,270 --> 00:01:46,640
+Small squares in a corner mean a right angle, and matching dashes mean equal lengths.
+
+26
+00:01:46,690 --> 00:01:50,480
+To draw a quadrilateral accurately, draw one side first.
+
+27
+00:01:50,530 --> 00:01:55,570
+Then use a protractor for each angle, and a ruler for each length.
+
+28
+00:01:55,620 --> 00:01:57,360
+Take this parallelogram.
+
+29
+00:01:57,410 --> 00:02:00,460
+Draw the base, 6 centimetres long.
+
+30
+00:02:00,510 --> 00:02:04,280
+At the left end, measure an angle of 63 degrees.
+
+31
+00:02:04,330 --> 00:02:07,850
+At the right end, measure 117 degrees.
+
+32
+00:02:07,900 --> 00:02:12,180
+Mark the sloping sides to the same length, and join the top.
+
+33
+00:02:12,230 --> 00:02:17,200
+Notice that the two neighbouring angles add up to 180 degrees.
+
+34
+00:02:17,250 --> 00:02:18,530
+Here is the method.
+
+35
+00:02:18,580 --> 00:02:24,020
+Step 1: make a quick sketch, and label every length and angle you know.
+
+36
+00:02:24,070 --> 00:02:28,180
+Step 2: draw the longest side you know with a ruler.
+
+37
+00:02:28,230 --> 00:02:34,500
+Step 3: measure each angle at its ends with a protractor, and draw the next sides.
+
+38
+00:02:34,550 --> 00:02:40,050
+Step 4: mark the lengths, join up, and check your drawing by measuring.
+
+39
+00:02:40,100 --> 00:02:43,650
+Draw a rectangle 7 centimetres by 4 centimetres.
+
+40
+00:02:43,700 --> 00:02:47,510
+First draw the side A B, 7 centimetres long.
+
+41
+00:02:47,560 --> 00:02:51,090
+At A and at B, draw lines perpendicular to A B.
+
+42
+00:02:51,140 --> 00:02:53,900
+Mark a point 4 centimetres up each line.
+
+43
+00:02:53,950 --> 00:02:56,140
+Call the points D and C.
+
+44
+00:02:56,190 --> 00:02:56,970
+Join D to C.
+
+45
+00:02:57,020 --> 00:03:02,690
+Check: D C should be 7 centimetres long, and the diagonals should be equal.
+
+46
+00:03:02,740 --> 00:03:06,660
+Amir draws a parallelogram with an angle of 50 degrees.
+
+47
+00:03:06,710 --> 00:03:09,510
+What should the other angles be?
+
+48
+00:03:09,560 --> 00:03:12,920
+In a parallelogram, opposite angles are equal.
+
+49
+00:03:12,970 --> 00:03:16,130
+So the opposite angle is 50 degrees.
+
+50
+00:03:16,180 --> 00:03:19,990
+Neighbouring angles add up to 180 degrees.
+
+51
+00:03:20,040 --> 00:03:21,830
+180 minus 50 is 130.
+
+52
+00:03:21,880 --> 00:03:26,230
+The other two angles are 130 degrees each.
+
+53
+00:03:26,280 --> 00:03:26,950
+Your turn.
+
+54
+00:03:27,000 --> 00:03:30,050
+A parallelogram has an angle of 64 degrees.
+
+55
+00:03:30,100 --> 00:03:32,140
+What is the angle next to it?
+
+56
+00:03:32,190 --> 00:03:35,130
+Pause and work it out.
+
+57
+00:03:35,180 --> 00:03:40,530
+Neighbouring angles in a parallelogram add up to 180 degrees.
+
+58
+00:03:40,580 --> 00:03:43,560
+180 minus 64 is 116 degrees.
+
+59
+00:03:43,610 --> 00:03:46,800
+Kim draws an angle of 40 degrees at point A.
+
+60
+00:03:46,850 --> 00:03:49,410
+Which line goes wrong first?
+
+61
+00:03:49,460 --> 00:03:50,630
+Line 2 is wrong.
+
+62
+00:03:50,680 --> 00:03:56,520
+Kim read the wrong scale, so the angle she drew is really 140 degrees.
+
+63
+00:03:56,570 --> 00:04:01,000
+Always use the scale that starts at zero on the arm of the angle.
+
+64
+00:04:01,050 --> 00:04:06,710
+And check: 40 degrees is acute, so it must look smaller than a right angle.
+
+65
+00:04:06,760 --> 00:04:10,490
+Builders need perfect right angles for walls and floors.
+
+66
+00:04:10,540 --> 00:04:13,540
+Here is a trick they still use today.
+
+67
+00:04:13,590 --> 00:04:17,580
+They make a triangle with sides of 3, 4 and 5 units.
+
+68
+00:04:17,630 --> 00:04:21,620
+For example, 3 metres, 4 metres and 5 metres.
+
+69
+00:04:21,670 --> 00:04:27,270
+The corner between the 3 side and the 4 side is always exactly 90 degrees.
+
+70
+00:04:27,320 --> 00:04:29,430
+No protractor needed.
+
+71
+00:04:29,480 --> 00:04:30,630
+One last question.
+
+72
+00:04:30,680 --> 00:04:33,300
+What is true about the angles of a kite?
+
+73
+00:04:33,350 --> 00:04:36,510
+Pause the video and choose.
+
+74
+00:04:36,560 --> 00:04:39,370
+A kite has one pair of equal opposite angles.
+
+75
+00:04:39,420 --> 00:04:43,480
+It also has two pairs of equal sides next to each other.
+
+76
+00:04:43,530 --> 00:04:50,200
+To remember: perpendicular lines meet at 90 degrees, and parallel lines never meet.
+
+77
+00:04:50,250 --> 00:04:57,730
+Use a set square or a protractor for perpendicular lines, and a sliding set square for parallel lines.
+
+78
+00:04:57,780 --> 00:05:04,030
+To draw a quadrilateral: sketch, draw one side, measure the angles, mark the lengths.
+
+79
+00:05:04,080 --> 00:05:11,940
+Check with what you know: equal diagonals, equal opposite angles, and neighbours that add up to 180.
+
+80
+00:05:11,990 --> 00:05:17,030
+Great work! Now practise lesson 5.3 on Camday.

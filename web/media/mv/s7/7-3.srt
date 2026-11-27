@@ -1,0 +1,371 @@
+1
+00:00:06,680 --> 00:00:08,810
+3 quarters of a garden is lawn.
+
+2
+00:00:08,860 --> 00:00:13,720
+A gardener mows 2 thirds of the lawn before it starts to rain.
+
+3
+00:00:13,770 --> 00:00:17,000
+What fraction of the whole garden has been mown?
+
+4
+00:00:17,050 --> 00:00:20,590
+Pause the video and work it out.
+
+5
+00:00:20,640 --> 00:00:24,010
+Draw the garden as a rectangle with 4 columns.
+
+6
+00:00:24,060 --> 00:00:25,950
+3 of the columns are lawn.
+
+7
+00:00:26,000 --> 00:00:27,910
+That is 3 quarters.
+
+8
+00:00:27,960 --> 00:00:30,940
+Now cut it into 3 rows, and take 2 of them.
+
+9
+00:00:30,990 --> 00:00:33,460
+The dark part has been mown.
+
+10
+00:00:33,510 --> 00:00:36,620
+There are 12 small pieces, and 6 are dark.
+
+11
+00:00:36,670 --> 00:00:38,350
+6 twelfths is one half.
+
+12
+00:00:38,400 --> 00:00:41,380
+Half of the garden has been mown.
+
+13
+00:00:41,430 --> 00:00:44,660
+Remember how to find a fraction of an amount.
+
+14
+00:00:44,710 --> 00:00:50,900
+For 3 fifths of 40, divide by the denominator, then multiply by the numerator.
+
+15
+00:00:50,950 --> 00:00:53,130
+40 divided by 5 is 8.
+
+16
+00:00:53,180 --> 00:00:55,380
+8 times 3 is 24.
+
+17
+00:00:55,430 --> 00:01:00,860
+2 thirds of 3 quarters is the same as 2 thirds times 3 quarters.
+
+18
+00:01:00,910 --> 00:01:06,980
+To multiply fractions, multiply the numerators, and multiply the denominators.
+
+19
+00:01:07,030 --> 00:01:08,220
+2 times 3 is 6.
+
+20
+00:01:08,270 --> 00:01:09,540
+3 times 4 is 12.
+
+21
+00:01:09,590 --> 00:01:13,820
+That gives 6 twelfths, which simplifies to one half.
+
+22
+00:01:13,870 --> 00:01:16,270
+It matches the diagram.
+
+23
+00:01:16,320 --> 00:01:17,000
+Your turn.
+
+24
+00:01:17,050 --> 00:01:19,430
+Work out 1 third times 1 quarter.
+
+25
+00:01:19,480 --> 00:01:22,810
+Pause the video and try it.
+
+26
+00:01:22,860 --> 00:01:24,190
+1 times 1 is 1.
+
+27
+00:01:24,240 --> 00:01:25,660
+3 times 4 is 12.
+
+28
+00:01:25,710 --> 00:01:28,420
+The answer is 1 twelfth.
+
+29
+00:01:28,470 --> 00:01:32,100
+You can make the numbers smaller before you multiply.
+
+30
+00:01:32,150 --> 00:01:33,900
+This is called cancelling.
+
+31
+00:01:33,950 --> 00:01:38,340
+Divide a numerator and a denominator by the same number.
+
+32
+00:01:38,390 --> 00:01:42,090
+In 2 thirds times 3 quarters, the threes cancel.
+
+33
+00:01:42,140 --> 00:01:44,360
+And 2 and 4 both divide by 2.
+
+34
+00:01:44,410 --> 00:01:49,290
+That leaves 1 over 1, times 1 over 2, which is one half.
+
+35
+00:01:49,340 --> 00:01:53,370
+A whole number can be written as a fraction over 1.
+
+36
+00:01:53,420 --> 00:01:57,210
+So 5 times 2 thirds is 5 over 1, times 2 over 3.
+
+37
+00:01:57,260 --> 00:02:00,640
+That is 10 thirds, or 3 and 1 third.
+
+38
+00:02:00,690 --> 00:02:02,010
+Here is the method.
+
+39
+00:02:02,060 --> 00:02:06,310
+Step 1: write any whole number as a fraction over 1.
+
+40
+00:02:06,360 --> 00:02:12,170
+Step 2: cancel common factors between any numerator and any denominator.
+
+41
+00:02:12,220 --> 00:02:17,400
+Step 3: multiply the numerators, and multiply the denominators.
+
+42
+00:02:17,450 --> 00:02:22,760
+Step 4: simplify, and change an improper fraction to a mixed number.
+
+43
+00:02:22,810 --> 00:02:26,020
+Work out 4 ninths times 3 eighths.
+
+44
+00:02:26,070 --> 00:02:27,450
+Cancel 4 with 8.
+
+45
+00:02:27,500 --> 00:02:29,790
+They become 1 and 2.
+
+46
+00:02:29,840 --> 00:02:31,250
+Cancel 3 with 9.
+
+47
+00:02:31,300 --> 00:02:33,630
+They become 1 and 3.
+
+48
+00:02:33,680 --> 00:02:36,760
+1 third times 1 half is 1 sixth.
+
+49
+00:02:36,810 --> 00:02:39,640
+Work out 6 times 5 eighths.
+
+50
+00:02:39,690 --> 00:02:41,420
+Write 6 as 6 over 1.
+
+51
+00:02:41,470 --> 00:02:43,210
+Cancel 6 and 8 by 2.
+
+52
+00:02:43,260 --> 00:02:45,540
+They become 3 and 4.
+
+53
+00:02:45,590 --> 00:02:47,140
+3 times 5 is 15.
+
+54
+00:02:47,190 --> 00:02:48,640
+1 times 4 is 4.
+
+55
+00:02:48,690 --> 00:02:52,400
+15 quarters is 3 and 3 quarters.
+
+56
+00:02:52,450 --> 00:02:53,150
+Your turn.
+
+57
+00:02:53,200 --> 00:02:55,090
+Work out 4 times 3 tenths.
+
+58
+00:02:55,140 --> 00:02:58,130
+Pause and work it out.
+
+59
+00:02:58,180 --> 00:03:01,310
+4 times 3 is 12, so we get 12 tenths.
+
+60
+00:03:01,360 --> 00:03:06,310
+That simplifies to 6 fifths, which is 1 and 1 fifth.
+
+61
+00:03:06,360 --> 00:03:09,500
+In a club, 3 fifths of the members are adults.
+
+62
+00:03:09,550 --> 00:03:11,920
+5 sixths of the adults play tennis.
+
+63
+00:03:11,970 --> 00:03:16,140
+What fraction of the club are adults who play tennis?
+
+64
+00:03:16,190 --> 00:03:18,310
+We need 5 sixths of 3 fifths.
+
+65
+00:03:18,360 --> 00:03:20,200
+Of means multiply.
+
+66
+00:03:20,250 --> 00:03:21,440
+The fives cancel.
+
+67
+00:03:21,490 --> 00:03:23,340
+3 and 6 cancel to 1 and 2.
+
+68
+00:03:23,390 --> 00:03:25,010
+The answer is one half.
+
+69
+00:03:25,060 --> 00:03:28,770
+Half of the club are adults who play tennis.
+
+70
+00:03:28,820 --> 00:03:31,850
+Omar works out 2 fifths times 3 quarters.
+
+71
+00:03:31,900 --> 00:03:33,900
+Which line is wrong?
+
+72
+00:03:33,950 --> 00:03:35,020
+Line 1 is wrong.
+
+73
+00:03:35,070 --> 00:03:37,600
+Omar multiplied across the wrong way.
+
+74
+00:03:37,650 --> 00:03:41,090
+Multiply top by top, and bottom by bottom.
+
+75
+00:03:41,140 --> 00:03:44,250
+2 times 3 is 6, and 5 times 4 is 20.
+
+76
+00:03:44,300 --> 00:03:47,970
+6 twentieths simplifies to 3 tenths.
+
+77
+00:03:48,020 --> 00:03:50,640
+Here is a real fraction of a fraction.
+
+78
+00:03:50,690 --> 00:03:55,250
+About 7 tenths of the Earth's surface is covered by water.
+
+79
+00:03:55,300 --> 00:04:00,350
+And the Pacific Ocean holds roughly half of all that water surface.
+
+80
+00:04:00,400 --> 00:04:03,180
+One half times 7 tenths is 7 twentieths.
+
+81
+00:04:03,230 --> 00:04:08,560
+So the Pacific Ocean alone covers about a third of the whole planet.
+
+82
+00:04:08,610 --> 00:04:09,880
+One last question.
+
+83
+00:04:09,930 --> 00:04:14,230
+Is 3 quarters times 4 fifths more than 3 quarters, or less?
+
+84
+00:04:14,280 --> 00:04:17,610
+Pause the video and choose.
+
+85
+00:04:17,660 --> 00:04:19,560
+It is less than 3 quarters.
+
+86
+00:04:19,610 --> 00:04:24,310
+Multiplying by a fraction smaller than 1 makes the answer smaller.
+
+87
+00:04:24,360 --> 00:04:28,750
+In fact, the fours cancel, and the answer is 3 fifths.
+
+88
+00:04:28,800 --> 00:04:31,570
+To remember: of means multiply.
+
+89
+00:04:31,620 --> 00:04:36,800
+Multiply the numerators, multiply the denominators, and simplify.
+
+90
+00:04:36,850 --> 00:04:40,580
+Cancel common factors first, to make it easier.
+
+91
+00:04:40,630 --> 00:04:42,980
+A whole number is a fraction over 1.
+
+92
+00:04:43,030 --> 00:04:47,670
+And multiplying by a proper fraction makes the answer smaller.
+
+93
+00:04:47,720 --> 00:04:52,910
+Great work! Now practise lesson 7.3 on Camday.
