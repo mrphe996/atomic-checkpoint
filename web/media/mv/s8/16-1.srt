@@ -1,0 +1,239 @@
+1
+00:00:08,470 --> 00:00:14,380
+A class records how long each student slept last night, to the nearest minute.
+
+2
+00:00:14,430 --> 00:00:19,830
+The times go from 5 hours 40 minutes, up to 10 hours 10 minutes.
+
+3
+00:00:19,880 --> 00:00:23,050
+A bar for every possible time would be useless.
+
+4
+00:00:23,100 --> 00:00:26,480
+Almost every bar would have a height of 1.
+
+5
+00:00:26,530 --> 00:00:29,270
+What is the best way to show the pattern?
+
+6
+00:00:29,320 --> 00:00:32,510
+Pause the video and choose.
+
+7
+00:00:32,560 --> 00:00:39,160
+Group the times into classes, like 6 to 7 hours, and count how many are in each class.
+
+8
+00:00:39,210 --> 00:00:43,200
+Remember: discrete data is counted, like the number of pets.
+
+9
+00:00:43,250 --> 00:00:47,190
+Continuous data is measured, like a time or a mass.
+
+10
+00:00:47,240 --> 00:00:47,900
+Your turn.
+
+11
+00:00:47,950 --> 00:00:50,100
+Is mass discrete or continuous?
+
+12
+00:00:50,150 --> 00:00:53,420
+Pause the video and choose.
+
+13
+00:00:53,470 --> 00:00:56,360
+Mass is continuous, because it is measured.
+
+14
+00:00:56,410 --> 00:01:00,260
+Put data into classes with equal class intervals.
+
+15
+00:01:00,310 --> 00:01:05,190
+For discrete data, groups like 0 to 4, 5 to 9, and 10 to 14 work.
+
+16
+00:01:05,240 --> 00:01:11,410
+For continuous data, use inequalities, so that every value fits exactly one class.
+
+17
+00:01:11,460 --> 00:01:15,830
+6 is less than or equal to t, which is less than 7.
+
+18
+00:01:15,880 --> 00:01:18,980
+For continuous data, draw a frequency diagram.
+
+19
+00:01:19,030 --> 00:01:22,740
+The bars have no gaps, because the scale is continuous.
+
+20
+00:01:22,790 --> 00:01:24,380
+Label both axes.
+
+21
+00:01:24,430 --> 00:01:28,610
+For grouped discrete data, draw a bar chart with gaps.
+
+22
+00:01:28,660 --> 00:01:29,290
+Your turn.
+
+23
+00:01:29,340 --> 00:01:32,120
+What do the bars for continuous data have?
+
+24
+00:01:32,170 --> 00:01:35,340
+Pause the video and choose.
+
+25
+00:01:35,390 --> 00:01:35,890
+No gaps.
+
+26
+00:01:35,940 --> 00:01:37,200
+Here is the method.
+
+27
+00:01:37,250 --> 00:01:41,950
+Step 1: choose equal class intervals that cover all the data.
+
+28
+00:01:42,000 --> 00:01:45,810
+Step 2: tally the data into a frequency table.
+
+29
+00:01:45,860 --> 00:01:47,370
+Step 3: draw the bars.
+
+30
+00:01:47,420 --> 00:01:51,610
+Gaps for discrete data, no gaps for continuous data.
+
+31
+00:01:51,660 --> 00:01:54,990
+Step 4: label the axes, and give a title.
+
+32
+00:01:55,040 --> 00:01:56,740
+Look at the sleep diagram.
+
+33
+00:01:56,790 --> 00:02:00,580
+The modal class is the one with the highest frequency, 9.
+
+34
+00:02:00,630 --> 00:02:05,100
+That is 7 is less than or equal to t, which is less than 8.
+
+35
+00:02:05,150 --> 00:02:13,980
+The number of students is the total of the frequencies: 2 plus 5 plus 9 plus 8 plus 4 plus 2, which is 30.
+
+36
+00:02:14,030 --> 00:02:19,900
+The fraction who slept at least 9 hours is 4 plus 2, which is 6 out of 30.
+
+37
+00:02:19,950 --> 00:02:21,730
+That is 1 fifth.
+
+38
+00:02:21,780 --> 00:02:24,920
+Masses go from 41 to 78 kilograms.
+
+39
+00:02:24,970 --> 00:02:31,780
+Classes of width 10 could be: 40 to 50, 50 to 60, 60 to 70, and 70 to 80.
+
+40
+00:02:31,830 --> 00:02:36,370
+They cover all the data, with equal widths.
+
+41
+00:02:36,420 --> 00:02:44,270
+Lee uses classes 140 to 150, 150 to 160, and 160 to 170 centimetres for heights.
+
+42
+00:02:44,320 --> 00:02:47,680
+Which line shows the problem?
+
+43
+00:02:47,730 --> 00:02:49,230
+The classes overlap.
+
+44
+00:02:49,280 --> 00:02:52,420
+A height of exactly 150 fits two classes.
+
+45
+00:02:52,470 --> 00:02:54,910
+Use inequalities instead.
+
+46
+00:02:54,960 --> 00:03:00,070
+140 is less than or equal to h, which is less than 150.
+
+47
+00:03:00,120 --> 00:03:03,150
+Then 150 to 160, and so on.
+
+48
+00:03:03,200 --> 00:03:08,910
+Health experts recommend that teenagers sleep about 8 to 10 hours a night.
+
+49
+00:03:08,960 --> 00:03:14,360
+In our class, only 14 of the 30 students slept 8 hours or more.
+
+50
+00:03:14,410 --> 00:03:15,670
+One last question.
+
+51
+00:03:15,720 --> 00:03:17,930
+The frequencies are 4, 9 and 2.
+
+52
+00:03:17,980 --> 00:03:20,920
+What is the frequency of the modal class?
+
+53
+00:03:20,970 --> 00:03:24,290
+Pause the video and answer.
+
+54
+00:03:24,340 --> 00:03:28,680
+The modal class has the highest frequency, which is 9.
+
+55
+00:03:28,730 --> 00:03:33,160
+To remember: use equal class intervals, with no overlaps.
+
+56
+00:03:33,210 --> 00:03:40,330
+For continuous data, use inequalities, like 6 is less than or equal to t, which is less than 7.
+
+57
+00:03:40,380 --> 00:03:43,230
+Continuous data has no gaps between bars.
+
+58
+00:03:43,280 --> 00:03:45,400
+Discrete data has gaps.
+
+59
+00:03:45,450 --> 00:03:48,700
+The modal class has the highest frequency.
+
+60
+00:03:48,750 --> 00:03:54,150
+Great work! Now practise lesson 16.1 on Camday.

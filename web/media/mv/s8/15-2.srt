@@ -1,0 +1,251 @@
+1
+00:00:08,190 --> 00:00:14,310
+A garden has a flower bed shaped like a parallelogram, and a lawn shaped like a trapezium.
+
+2
+00:00:14,360 --> 00:00:18,690
+A trapezium has two parallel sides of different lengths.
+
+3
+00:00:18,740 --> 00:00:23,570
+Can we find their areas using only rectangles and triangles?
+
+4
+00:00:23,620 --> 00:00:27,030
+A parallelogram can be rearranged into which shape?
+
+5
+00:00:27,080 --> 00:00:30,270
+Pause the video and choose.
+
+6
+00:00:30,320 --> 00:00:36,440
+Cut a right-angled triangle off one end of the parallelogram, and slide it to the other end.
+
+7
+00:00:36,490 --> 00:00:40,410
+You get a rectangle, with the same base and height.
+
+8
+00:00:40,460 --> 00:00:44,410
+Remember: the area of a rectangle is length times width.
+
+9
+00:00:44,460 --> 00:00:48,620
+The area of a triangle is a half, times base, times height.
+
+10
+00:00:48,670 --> 00:00:52,590
+A triangle with base 8 and height 5 has area 20.
+
+11
+00:00:52,640 --> 00:00:57,870
+So the area of a parallelogram is base times height, just like the rectangle.
+
+12
+00:00:57,920 --> 00:01:02,880
+The height must be the perpendicular height, at right angles to the base.
+
+13
+00:01:02,930 --> 00:01:04,940
+Not the slanting side.
+
+14
+00:01:04,990 --> 00:01:05,660
+Your turn.
+
+15
+00:01:05,710 --> 00:01:08,550
+A parallelogram has base 7 and height 3.
+
+16
+00:01:08,600 --> 00:01:09,780
+What is its area?
+
+17
+00:01:09,830 --> 00:01:13,120
+Pause the video and try it.
+
+18
+00:01:13,170 --> 00:01:14,290
+7 times 3 is 21.
+
+19
+00:01:14,340 --> 00:01:15,590
+Now the trapezium.
+
+20
+00:01:15,640 --> 00:01:21,770
+Two identical trapezia, one turned upside down, fit together to make a parallelogram.
+
+21
+00:01:21,820 --> 00:01:25,370
+Its base is a plus b, and its height is h.
+
+22
+00:01:25,420 --> 00:01:27,610
+So one trapezium is half of that.
+
+23
+00:01:27,660 --> 00:01:32,110
+Add the parallel sides, halve, and multiply by the height.
+
+24
+00:01:32,160 --> 00:01:33,440
+Here is the method.
+
+25
+00:01:33,490 --> 00:01:39,240
+Step 1: find the base, or the parallel sides, and the perpendicular height.
+
+26
+00:01:39,290 --> 00:01:42,260
+Step 2: ignore any slanting sides.
+
+27
+00:01:42,310 --> 00:01:47,410
+Step 3: use A equals b h, or A equals a half, a plus b, times h.
+
+28
+00:01:47,460 --> 00:01:50,390
+Step 4: give the units squared.
+
+29
+00:01:50,440 --> 00:01:57,130
+A trapezium has parallel sides 6 and 10 centimetres, and height 5 centimetres.
+
+30
+00:01:57,180 --> 00:02:03,990
+6 plus 10 is 16, half of 16 is 8, and 8 times 5 is 40 square centimetres.
+
+31
+00:02:04,040 --> 00:02:04,720
+Your turn.
+
+32
+00:02:04,770 --> 00:02:08,610
+A trapezium has parallel sides 5 and 7, and height 2.
+
+33
+00:02:08,660 --> 00:02:09,860
+What is its area?
+
+34
+00:02:09,910 --> 00:02:12,870
+Pause and work it out.
+
+35
+00:02:12,920 --> 00:02:14,510
+5 plus 7 is 12.
+
+36
+00:02:14,560 --> 00:02:16,270
+Half of 12 is 6.
+
+37
+00:02:16,320 --> 00:02:18,580
+6 times 2 is 12.
+
+38
+00:02:18,630 --> 00:02:25,380
+A trapezium has area 63 square centimetres, height 7, and one parallel side of 4.
+
+39
+00:02:25,430 --> 00:02:26,650
+Find the other.
+
+40
+00:02:26,700 --> 00:02:29,670
+63 equals a half, 4 plus b, times 7.
+
+41
+00:02:29,720 --> 00:02:34,090
+Half of 7 is 3.5, and 63 divided by 3.5 is 18.
+
+42
+00:02:34,140 --> 00:02:36,700
+So b is 14 centimetres.
+
+43
+00:02:36,750 --> 00:02:41,460
+A parallelogram has base 10, a slanting side of 6, and height 5.
+
+44
+00:02:41,510 --> 00:02:42,870
+Max finds the area.
+
+45
+00:02:42,920 --> 00:02:44,910
+Which line is wrong?
+
+46
+00:02:44,960 --> 00:02:46,070
+Line 1 is wrong.
+
+47
+00:02:46,120 --> 00:02:47,960
+He used the slanting side.
+
+48
+00:02:48,010 --> 00:02:50,610
+Use the perpendicular height.
+
+49
+00:02:50,660 --> 00:02:54,680
+10 times 5 is 50 square centimetres.
+
+50
+00:02:54,730 --> 00:02:57,410
+Many roofs have trapezium-shaped sides.
+
+51
+00:02:57,460 --> 00:03:02,720
+To order roof tiles, a builder works out the area of each trapezium.
+
+52
+00:03:02,770 --> 00:03:14,890
+A roof face with parallel edges of 8 and 12 metres, and a slope height of 4 metres, has an area of a half times 20 times 4, which is 40 square metres.
+
+53
+00:03:14,940 --> 00:03:16,240
+One last question.
+
+54
+00:03:16,290 --> 00:03:19,170
+A parallelogram has area 40 and base 8.
+
+55
+00:03:19,220 --> 00:03:20,600
+What is its height?
+
+56
+00:03:20,650 --> 00:03:24,030
+Pause the video and answer.
+
+57
+00:03:24,080 --> 00:03:25,820
+40 equals 8 times h.
+
+58
+00:03:25,870 --> 00:03:29,590
+So h is 40 divided by 8, which is 5.
+
+59
+00:03:29,640 --> 00:03:34,320
+To remember: the area of a parallelogram is base times height.
+
+60
+00:03:34,370 --> 00:03:38,170
+The area of a trapezium is a half, a plus b, times h.
+
+61
+00:03:38,220 --> 00:03:41,250
+Always use the perpendicular height.
+
+62
+00:03:41,300 --> 00:03:44,180
+Rearrange to find a missing length.
+
+63
+00:03:44,230 --> 00:03:49,550
+Great work! Now practise lesson 15.2 on Camday.

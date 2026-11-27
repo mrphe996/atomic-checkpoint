@@ -1,0 +1,235 @@
+1
+00:00:08,220 --> 00:00:10,750
+A ridge tent is a triangular prism.
+
+2
+00:00:10,800 --> 00:00:14,870
+Its end is a triangle 2 metres wide and 1.5 metres high.
+
+3
+00:00:14,920 --> 00:00:17,330
+The tent is 3 metres long.
+
+4
+00:00:17,380 --> 00:00:20,640
+How much air is inside the tent, in cubic metres?
+
+5
+00:00:20,690 --> 00:00:24,210
+Pause the video and work it out.
+
+6
+00:00:24,260 --> 00:00:30,150
+The triangle's area is a half times 2 times 1.5, which is 1.5 square metres.
+
+7
+00:00:30,200 --> 00:00:38,130
+That triangle runs the whole 3 metres, so the volume is 1.5 times 3, which is 4.5 cubic metres.
+
+8
+00:00:38,180 --> 00:00:43,230
+Remember: the volume of a cuboid is length times width times height.
+
+9
+00:00:43,280 --> 00:00:48,960
+A 5 by 3 by 2 centimetre cuboid has a volume of 30 cubic centimetres.
+
+10
+00:00:49,010 --> 00:00:52,780
+A prism has the same cross-section all along its length.
+
+11
+00:00:52,830 --> 00:00:57,560
+Its volume is the area of the cross-section, times the length.
+
+12
+00:00:57,610 --> 00:00:59,130
+A cuboid is a prism too.
+
+13
+00:00:59,180 --> 00:01:04,980
+For a triangular prism, the volume is a half, times b, times h, times the length.
+
+14
+00:01:05,030 --> 00:01:05,680
+Your turn.
+
+15
+00:01:05,730 --> 00:01:10,740
+A prism has a cross-section of 5 square metres and a length of 4 metres.
+
+16
+00:01:10,790 --> 00:01:12,070
+What is its volume?
+
+17
+00:01:12,120 --> 00:01:15,370
+Pause the video and try it.
+
+18
+00:01:15,420 --> 00:01:17,720
+5 times 4 is 20 cubic metres.
+
+19
+00:01:17,770 --> 00:01:23,820
+Volume is measured in cubic units, like cubic centimetres and cubic metres.
+
+20
+00:01:23,870 --> 00:01:27,540
+And 1 litre is 1,000 cubic centimetres.
+
+21
+00:01:27,590 --> 00:01:28,920
+Here is the method.
+
+22
+00:01:28,970 --> 00:01:33,660
+Step 1: find the triangle's base and perpendicular height.
+
+23
+00:01:33,710 --> 00:01:38,270
+Step 2: the cross-section area is a half, times b, times h.
+
+24
+00:01:38,320 --> 00:01:42,010
+Step 3: multiply by the length of the prism.
+
+25
+00:01:42,060 --> 00:01:45,500
+Step 4: write the answer in cubic units.
+
+26
+00:01:45,550 --> 00:01:50,830
+A wedge has a triangular end with base 6 centimetres and height 4.
+
+27
+00:01:50,880 --> 00:01:52,930
+It is 15 centimetres long.
+
+28
+00:01:52,980 --> 00:01:57,530
+The cross-section is a half times 6 times 4, which is 12.
+
+29
+00:01:57,580 --> 00:02:02,760
+The volume is 12 times 15, which is 180 cubic centimetres.
+
+30
+00:02:02,810 --> 00:02:03,500
+Your turn.
+
+31
+00:02:03,550 --> 00:02:07,780
+A triangle with base 4 and height 3 makes a prism 10 long.
+
+32
+00:02:07,830 --> 00:02:09,180
+What is its volume?
+
+33
+00:02:09,230 --> 00:02:12,210
+Pause and work it out.
+
+34
+00:02:12,260 --> 00:02:14,900
+A half times 4 times 3 is 6.
+
+35
+00:02:14,950 --> 00:02:17,090
+6 times 10 is 60.
+
+36
+00:02:17,140 --> 00:02:20,890
+A prism has a volume of 210 cubic centimetres.
+
+37
+00:02:20,940 --> 00:02:27,160
+Its cross-section is a triangle with base 5 and height 6, so the area is 15.
+
+38
+00:02:27,210 --> 00:02:32,410
+The length is 210 divided by 15, which is 14 centimetres.
+
+39
+00:02:32,460 --> 00:02:38,230
+A triangular prism has a triangle with base 8 and height 5, and a length of 10.
+
+40
+00:02:38,280 --> 00:02:39,780
+Zoe finds the volume.
+
+41
+00:02:39,830 --> 00:02:41,800
+Which line is wrong?
+
+42
+00:02:41,850 --> 00:02:42,980
+Line 1 is wrong.
+
+43
+00:02:43,030 --> 00:02:44,460
+She forgot the half.
+
+44
+00:02:44,510 --> 00:02:51,220
+The cross-section is a triangle, so its area is a half times 8 times 5, which is 20.
+
+45
+00:02:51,270 --> 00:02:54,490
+20 times 10 is 200.
+
+46
+00:02:54,540 --> 00:02:58,350
+A water trough for animals is a triangular prism.
+
+47
+00:02:58,400 --> 00:03:05,050
+Its end has base 40 centimetres and height 30, and it is 150 centimetres long.
+
+48
+00:03:05,100 --> 00:03:11,180
+The volume is 600 times 150, which is 90,000 cubic centimetres.
+
+49
+00:03:11,230 --> 00:03:16,110
+Divide by 1,000: it holds 90 litres of water.
+
+50
+00:03:16,160 --> 00:03:17,500
+One last question.
+
+51
+00:03:17,550 --> 00:03:20,840
+How many litres is 5,000 cubic centimetres?
+
+52
+00:03:20,890 --> 00:03:24,330
+Pause the video and answer.
+
+53
+00:03:24,380 --> 00:03:28,060
+1 litre is 1,000 cubic centimetres.
+
+54
+00:03:28,110 --> 00:03:32,350
+5,000 divided by 1,000 is 5 litres.
+
+55
+00:03:32,400 --> 00:03:38,200
+To remember: the volume of a prism is the cross-section area times the length.
+
+56
+00:03:38,250 --> 00:03:41,790
+A triangle cross-section has area a half b h.
+
+57
+00:03:41,840 --> 00:03:44,820
+Rearrange to find a missing length.
+
+58
+00:03:44,870 --> 00:03:48,790
+1 litre is 1,000 cubic centimetres.
+
+59
+00:03:48,840 --> 00:03:54,230
+Great work! Now practise lesson 15.3 on Camday.

@@ -149,12 +149,12 @@ VIDEOS["15.2"] = [
 
 VIDEOS["15.3"] = [
     dict(kind="hook", title="A tent", steps=[
-        dict(say="A ridge tent is a triangular prism. Its end is a triangle 2 metres wide and 1.5 metres high. The tent is 3 metres long.", do=[E("⛺", 90, 170, 100), PRISM("3 m", "2 m", "1.5 m", at=1)]),
+        dict(say="A ridge tent is a triangular prism. Its end is a triangle 2 metres wide and 1.5 metres high. The tent is 3 metres long.", do=[E("⛺", 90, 170, 100), PRISM("2 m", "1.5 m", "3 m", at=1)]),
         PAUSE("15.3-k1", "How much air is inside the tent, in cubic metres? Pause the video and work it out.", "Tent volume (m³)?"),
     ]),
     dict(kind="hook", title="4.5 cubic metres", steps=[
         dict(say="The triangle's area is a half times 2 times 1.5, which is 1.5 square metres. That triangle runs the whole 3 metres, so the volume is 1.5 times 3, which is 4.5 cubic metres.",
-             do=[PRISM("3 m", "2 m", "1.5 m"), MATH("½ × 2 × 1.5 = 1.5 m²", x=80, y=190), B("1.5 × 3 = 4.5 m³", x=80, y=300, color=GREEN, at=8)]),
+             do=[PRISM("2 m", "1.5 m", "3 m"), MATH("½ × 2 × 1.5 = 1.5 m²", x=80, y=190), B("1.5 × 3 = 4.5 m³", x=80, y=300, color=GREEN, at=8)]),
     ]),
     dict(kind="recall", title="Cuboids", steps=[
         dict(say="Remember: the volume of a cuboid is length times width times height. A 5 by 3 by 2 centimetre cuboid has a volume of 30 cubic centimetres.", do=[MATH("5 × 3 × 2 = 30 cm³", x=80, y=200)]),
@@ -176,7 +176,7 @@ VIDEOS["15.3"] = [
     ]),
     dict(kind="example", title="A wedge", steps=[
         dict(say="A wedge has a triangular end with base 6 centimetres and height 4. It is 15 centimetres long. The cross-section is a half times 6 times 4, which is 12. The volume is 12 times 15, which is 180 cubic centimetres.",
-             do=[PRISM("15 cm", "6 cm", "4 cm"), MATH("½ × 6 × 4 = 12", x=80, y=190), B("12 × 15 = 180 cm³", x=80, y=300, color=GREEN, at=10)]),
+             do=[PRISM("6 cm", "4 cm", "15 cm"), MATH("½ × 6 × 4 = 12", x=80, y=190), B("12 × 15 = 180 cm³", x=80, y=300, color=GREEN, at=10)]),
         PAUSE("15.3-k3", "Your turn. A triangle with base 4 and height 3 makes a prism 10 long. What is its volume? Pause and work it out.", "Triangle 4 × 3 (b × h), length 10. V?"),
     ]),
     dict(kind="example", title="Check: 4, 3 and 10", steps=[

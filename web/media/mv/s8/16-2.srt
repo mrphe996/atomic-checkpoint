@@ -1,0 +1,199 @@
+1
+00:00:06,570 --> 00:00:17,290
+Mia's phone records the battery level every hour from 8 am to 2 pm: 100, 88, 75, 66, 52, 40 and 31 percent.
+
+2
+00:00:17,340 --> 00:00:20,480
+Is the battery running down roughly steadily?
+
+3
+00:00:20,530 --> 00:00:23,790
+Pause the video and choose.
+
+4
+00:00:23,840 --> 00:00:24,090
+Yes.
+
+5
+00:00:24,140 --> 00:00:31,400
+It falls by about 11 to 13 percent every hour, so the points lie close to a straight line.
+
+6
+00:00:31,450 --> 00:00:36,790
+Remember: for a line graph, plot the points, then join them with straight lines.
+
+7
+00:00:36,840 --> 00:00:39,570
+Time goes on the horizontal axis.
+
+8
+00:00:39,620 --> 00:00:47,950
+A time series graph shows a quantity measured at regular time intervals, with the points joined by straight lines.
+
+9
+00:00:48,000 --> 00:00:51,450
+It shows the trend: the general direction of change.
+
+10
+00:00:51,500 --> 00:00:53,350
+Up, down, or steady.
+
+11
+00:00:53,400 --> 00:00:54,050
+Your turn.
+
+12
+00:00:54,100 --> 00:00:56,000
+What is the battery's trend?
+
+13
+00:00:56,050 --> 00:00:59,280
+Pause the video and choose.
+
+14
+00:00:59,330 --> 00:01:01,130
+It is a downward trend.
+
+15
+00:01:01,180 --> 00:01:05,310
+Points between the plotted times are only estimates.
+
+16
+00:01:05,360 --> 00:01:12,220
+At 10:30, the battery was probably about 70 percent, halfway between 75 and 66.
+
+17
+00:01:12,270 --> 00:01:17,000
+Continuing the trend, the battery would reach 0 at about 4 or 5 pm.
+
+18
+00:01:17,050 --> 00:01:21,400
+But predictions far into the future are less reliable.
+
+19
+00:01:21,450 --> 00:01:22,760
+Here is the method.
+
+20
+00:01:22,810 --> 00:01:27,440
+Step 1: put time on the horizontal axis, with equal steps.
+
+21
+00:01:27,490 --> 00:01:31,650
+Step 2: choose a vertical scale that fits the data.
+
+22
+00:01:31,700 --> 00:01:37,200
+Step 3: plot each point accurately, and join them with straight lines.
+
+23
+00:01:37,250 --> 00:01:41,190
+Step 4: describe the trend, and any big changes.
+
+24
+00:01:41,240 --> 00:01:44,820
+In which hour did the battery drop most?
+
+25
+00:01:44,870 --> 00:01:48,270
+The drops are 12, 13, 9, 14, 12 and 9.
+
+26
+00:01:48,320 --> 00:01:52,540
+The biggest is 14, from 11 am to 12 noon.
+
+27
+00:01:52,590 --> 00:01:53,240
+Your turn.
+
+28
+00:01:53,290 --> 00:01:56,000
+How much did it drop from 1 pm to 2 pm?
+
+29
+00:01:56,050 --> 00:01:59,240
+Pause and check the table.
+
+30
+00:01:59,290 --> 00:02:04,350
+From 40 percent to 31 percent is a drop of 9 percent.
+
+31
+00:02:04,400 --> 00:02:06,030
+Be careful with scales.
+
+32
+00:02:06,080 --> 00:02:11,900
+If the vertical axis starts at 60 percent instead of 0, small changes look huge.
+
+33
+00:02:11,950 --> 00:02:15,010
+Always check where the axis starts.
+
+34
+00:02:15,060 --> 00:02:16,970
+Sam draws the battery graph.
+
+35
+00:02:17,020 --> 00:02:18,920
+Which line is wrong?
+
+36
+00:02:18,970 --> 00:02:20,040
+Line 1 is wrong.
+
+37
+00:02:20,090 --> 00:02:25,040
+In a time series graph, time always goes on the horizontal axis.
+
+38
+00:02:25,090 --> 00:02:28,100
+Time across, battery percentage up.
+
+39
+00:02:28,150 --> 00:02:35,780
+Scientists use time series graphs to show how the world's average temperature has changed since the 1800s.
+
+40
+00:02:35,830 --> 00:02:41,980
+The graph goes up and down from year to year, but the overall trend is upward.
+
+41
+00:02:42,030 --> 00:02:43,230
+One last question.
+
+42
+00:02:43,280 --> 00:02:47,460
+Is a prediction 3 days ahead more reliable, or less reliable?
+
+43
+00:02:47,510 --> 00:02:50,730
+Pause the video and choose.
+
+44
+00:02:50,780 --> 00:02:51,700
+Less reliable.
+
+45
+00:02:51,750 --> 00:02:56,240
+The further ahead you predict, the more things can change.
+
+46
+00:02:56,290 --> 00:03:01,020
+To remember: regular time intervals go on the horizontal axis.
+
+47
+00:03:01,070 --> 00:03:04,010
+Join the points with straight lines.
+
+48
+00:03:04,060 --> 00:03:06,370
+Describe the trend.
+
+49
+00:03:06,420 --> 00:03:10,790
+Values in between, and in the future, are only estimates.
+
+50
+00:03:10,840 --> 00:03:16,270
+Great work! Now practise lesson 16.2 on Camday.

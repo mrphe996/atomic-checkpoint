@@ -1,0 +1,255 @@
+1
+00:00:07,360 --> 00:00:11,290
+Two friends live at 2, 7 and at 10, 3 on a town grid.
+
+2
+00:00:11,340 --> 00:00:15,880
+They want to meet exactly halfway between their homes.
+
+3
+00:00:15,930 --> 00:00:17,460
+Where should they meet?
+
+4
+00:00:17,510 --> 00:00:21,060
+Pause the video and work it out.
+
+5
+00:00:21,110 --> 00:00:23,720
+Halfway between 2 and 10 is 6.
+
+6
+00:00:23,770 --> 00:00:26,290
+Halfway between 7 and 3 is 5.
+
+7
+00:00:26,340 --> 00:00:28,440
+They meet at 6, 5.
+
+8
+00:00:28,490 --> 00:00:31,760
+Remember: in a coordinate, x comes first, across.
+
+9
+00:00:31,810 --> 00:00:32,500
+Then y, up.
+
+10
+00:00:32,550 --> 00:00:37,520
+And halfway between two numbers is their mean: add them and halve.
+
+11
+00:00:37,570 --> 00:00:41,030
+The midpoint of a line segment is halfway along it.
+
+12
+00:00:41,080 --> 00:00:45,010
+Its x coordinate is halfway between the two x coordinates.
+
+13
+00:00:45,060 --> 00:00:49,550
+Its y coordinate is halfway between the two y coordinates.
+
+14
+00:00:49,600 --> 00:00:54,110
+In symbols: add the x's and halve, and add the y's and halve.
+
+15
+00:00:54,160 --> 00:00:54,860
+Your turn.
+
+16
+00:00:54,910 --> 00:00:57,710
+What is the midpoint of 0, 0 and 8, 6?
+
+17
+00:00:57,760 --> 00:01:01,140
+Pause the video and try it.
+
+18
+00:01:01,190 --> 00:01:03,520
+0 plus 8 is 8, halved is 4.
+
+19
+00:01:03,570 --> 00:01:05,890
+0 plus 6 is 6, halved is 3.
+
+20
+00:01:05,940 --> 00:01:08,290
+The midpoint is 4, 3.
+
+21
+00:01:08,340 --> 00:01:10,640
+With negatives, add carefully.
+
+22
+00:01:10,690 --> 00:01:16,990
+The midpoint of negative 4, 1 and 2, negative 5 is negative 1, negative 2.
+
+23
+00:01:17,040 --> 00:01:18,330
+Here is the method.
+
+24
+00:01:18,380 --> 00:01:22,040
+Step 1: add the two x coordinates, and halve.
+
+25
+00:01:22,090 --> 00:01:25,810
+Step 2: add the two y coordinates, and halve.
+
+26
+00:01:25,860 --> 00:01:28,600
+Step 3: write the point as x, y.
+
+27
+00:01:28,650 --> 00:01:36,060
+Step 4: to find a missing end, step from the known end to the midpoint, then take the same step again.
+
+28
+00:01:36,110 --> 00:01:39,360
+Find the midpoint of 0, 3 and 5, 8.
+
+29
+00:01:39,410 --> 00:01:42,090
+0 plus 5 is 5, halved is 2.5.
+
+30
+00:01:42,140 --> 00:01:44,910
+3 plus 8 is 11, halved is 5.5.
+
+31
+00:01:44,960 --> 00:01:47,820
+The midpoint is 2.5, 5.5.
+
+32
+00:01:47,870 --> 00:01:52,220
+M at 4, 1 is the midpoint of A B, and A is at 1, negative 3.
+
+33
+00:01:52,270 --> 00:01:52,740
+Find B.
+
+34
+00:01:52,790 --> 00:01:55,160
+From A to M is 3 across and 4 up.
+
+35
+00:01:55,210 --> 00:01:58,500
+Take the same step again from M: 7, 5.
+
+36
+00:01:58,550 --> 00:01:59,250
+Your turn.
+
+37
+00:01:59,300 --> 00:02:01,040
+M is 2, 2 and A is 0, 0.
+
+38
+00:02:01,090 --> 00:02:01,860
+Where is B?
+
+39
+00:02:01,910 --> 00:02:04,900
+Pause and work it out.
+
+40
+00:02:04,950 --> 00:02:07,400
+From A to M is 2 across and 2 up.
+
+41
+00:02:07,450 --> 00:02:10,450
+The same again from M gives 4, 4.
+
+42
+00:02:10,500 --> 00:02:13,900
+A square has opposite corners at 1, 1 and 5, 5.
+
+43
+00:02:13,950 --> 00:02:16,030
+Where do the diagonals cross?
+
+44
+00:02:16,080 --> 00:02:22,900
+The diagonals of a square cut each other in half, so they cross at the midpoint: 3, 3.
+
+45
+00:02:22,950 --> 00:02:25,960
+Kim finds the midpoint of 2, 3 and 8, 9.
+
+46
+00:02:26,010 --> 00:02:28,650
+Which line goes wrong first?
+
+47
+00:02:28,700 --> 00:02:29,790
+Line 1 is wrong.
+
+48
+00:02:29,840 --> 00:02:30,870
+She subtracted.
+
+49
+00:02:30,920 --> 00:02:34,360
+You must add the coordinates, then halve.
+
+50
+00:02:34,410 --> 00:02:36,980
+2 plus 8 is 10, halved is 5.
+
+51
+00:02:37,030 --> 00:02:39,600
+3 plus 9 is 12, halved is 6.
+
+52
+00:02:39,650 --> 00:02:42,120
+The midpoint is 5, 6.
+
+53
+00:02:42,170 --> 00:02:44,810
+Video games use midpoints all the time.
+
+54
+00:02:44,860 --> 00:02:53,700
+To place a camera halfway between two players, the game finds the midpoint of their coordinates, many times every second.
+
+55
+00:02:53,750 --> 00:02:55,060
+One last question.
+
+56
+00:02:55,110 --> 00:02:58,600
+What is the midpoint of negative 4, 0 and 4, 0?
+
+57
+00:02:58,650 --> 00:03:02,040
+Pause the video and answer.
+
+58
+00:03:02,090 --> 00:03:05,440
+Negative 4 plus 4 is 0, and 0 plus 0 is 0.
+
+59
+00:03:05,490 --> 00:03:08,670
+The midpoint is the origin, 0, 0.
+
+60
+00:03:08,720 --> 00:03:14,010
+To remember: the midpoint is the mean of the x's, and the mean of the y's.
+
+61
+00:03:14,060 --> 00:03:16,810
+Take care with negative numbers.
+
+62
+00:03:16,860 --> 00:03:21,570
+For a missing end, repeat the step from the end to the midpoint.
+
+63
+00:03:21,620 --> 00:03:26,160
+The diagonals of a parallelogram cross at their midpoints.
+
+64
+00:03:26,210 --> 00:03:31,590
+Great work! Now practise lesson 14.2 on Camday.

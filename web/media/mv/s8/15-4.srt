@@ -1,0 +1,267 @@
+1
+00:00:09,700 --> 00:00:11,840
+A gift box is a triangular prism.
+
+2
+00:00:11,890 --> 00:00:15,840
+You want to know how much card is needed to make it.
+
+3
+00:00:15,890 --> 00:00:19,980
+How many faces does it have, and what shapes are they?
+
+4
+00:00:20,030 --> 00:00:22,820
+What are the faces of a triangular prism?
+
+5
+00:00:22,870 --> 00:00:26,080
+Pause the video and choose.
+
+6
+00:00:26,130 --> 00:00:31,260
+It has 2 triangles, one at each end, and 3 rectangles round the sides.
+
+7
+00:00:31,310 --> 00:00:32,990
+That is 5 faces.
+
+8
+00:00:33,040 --> 00:00:37,080
+Remember: a net is a flat shape that folds up to make a solid.
+
+9
+00:00:37,130 --> 00:00:38,940
+It shows every face.
+
+10
+00:00:38,990 --> 00:00:42,780
+The surface area is the total area of all the faces.
+
+11
+00:00:42,830 --> 00:00:49,260
+Here is a prism whose ends are right-angled triangles with sides 3, 4 and 5 centimetres.
+
+12
+00:00:49,310 --> 00:00:51,730
+It is 10 centimetres long.
+
+13
+00:00:51,780 --> 00:00:55,550
+The three rectangles are 30, 40 and 50.
+
+14
+00:00:55,600 --> 00:01:01,390
+Add everything: 12 plus 120 is 132 square centimetres.
+
+15
+00:01:01,440 --> 00:01:05,640
+A pyramid has a base, and triangular faces that meet at a point.
+
+16
+00:01:05,690 --> 00:01:09,380
+There is one triangle for each side of the base.
+
+17
+00:01:09,430 --> 00:01:16,970
+For each triangle, use its slant height: the height of the triangle face, not the height of the pyramid.
+
+18
+00:01:17,020 --> 00:01:17,660
+Your turn.
+
+19
+00:01:17,710 --> 00:01:20,980
+How many faces does a square-based pyramid have?
+
+20
+00:01:21,030 --> 00:01:24,250
+Pause the video and try it.
+
+21
+00:01:24,300 --> 00:01:28,520
+1 square base, plus 4 triangles, makes 5 faces.
+
+22
+00:01:28,570 --> 00:01:29,860
+Here is the method.
+
+23
+00:01:29,910 --> 00:01:33,360
+Step 1: sketch the net, or list the faces.
+
+24
+00:01:33,410 --> 00:01:35,790
+Step 2: find the area of each face.
+
+25
+00:01:35,840 --> 00:01:38,150
+Triangles need a half b h.
+
+26
+00:01:38,200 --> 00:01:41,290
+Step 3: group the identical faces.
+
+27
+00:01:41,340 --> 00:01:45,270
+Step 4: add them all, and give the units squared.
+
+28
+00:01:45,320 --> 00:01:49,670
+A square-based pyramid has a base of side 4 centimetres.
+
+29
+00:01:49,720 --> 00:01:52,660
+Each triangle has a slant height of 6.
+
+30
+00:01:52,710 --> 00:01:55,410
+The base is 4 times 4, which is 16.
+
+31
+00:01:55,460 --> 00:01:59,580
+Each triangle is a half times 4 times 6, which is 12.
+
+32
+00:01:59,630 --> 00:02:01,700
+4 triangles make 48.
+
+33
+00:02:01,750 --> 00:02:07,190
+The total is 16 plus 48, which is 64 square centimetres.
+
+34
+00:02:07,240 --> 00:02:07,900
+Your turn.
+
+35
+00:02:07,950 --> 00:02:12,000
+A square base of side 6 has triangles with slant height 5.
+
+36
+00:02:12,050 --> 00:02:13,770
+What is the surface area?
+
+37
+00:02:13,820 --> 00:02:16,730
+Pause and work it out.
+
+38
+00:02:16,780 --> 00:02:18,140
+The base is 36.
+
+39
+00:02:18,190 --> 00:02:23,120
+Each triangle is a half times 6 times 5, which is 15.
+
+40
+00:02:23,170 --> 00:02:25,000
+4 triangles make 60.
+
+41
+00:02:25,050 --> 00:02:27,150
+36 plus 60 is 96.
+
+42
+00:02:27,200 --> 00:02:31,940
+A tent has triangular ends with base 2 metres and height 1.5.
+
+43
+00:02:31,990 --> 00:02:35,230
+Its two sloping sides are 1.8 by 3 metres.
+
+44
+00:02:35,280 --> 00:02:36,490
+It has no floor.
+
+45
+00:02:36,540 --> 00:02:39,150
+The two ends make 3 square metres.
+
+46
+00:02:39,200 --> 00:02:41,040
+The two sides make 10.8.
+
+47
+00:02:41,090 --> 00:02:44,650
+In total, 13.8 square metres of fabric.
+
+48
+00:02:44,700 --> 00:02:51,040
+A prism has triangles of a half times 4 times 3, and rectangles of 40, 30 and 50.
+
+49
+00:02:51,090 --> 00:02:53,330
+Raj adds up the surface area.
+
+50
+00:02:53,380 --> 00:02:55,460
+Which line is wrong?
+
+51
+00:02:55,510 --> 00:02:56,570
+Line 1 is wrong.
+
+52
+00:02:56,620 --> 00:02:59,830
+There are two triangular ends, not one.
+
+53
+00:02:59,880 --> 00:03:04,400
+2 times 6 is 12, plus 120 is 132.
+
+54
+00:03:04,450 --> 00:03:08,200
+Some chocolate bars are sold in triangular prism boxes.
+
+55
+00:03:08,250 --> 00:03:13,790
+Designers work out the surface area to know how much card each box needs.
+
+56
+00:03:13,840 --> 00:03:20,400
+Saving even a few square centimetres per box adds up to a lot of card over millions of boxes.
+
+57
+00:03:20,450 --> 00:03:21,630
+One last question.
+
+58
+00:03:21,680 --> 00:03:24,310
+How many faces does a tetrahedron have?
+
+59
+00:03:24,360 --> 00:03:27,550
+Pause the video and answer.
+
+60
+00:03:27,600 --> 00:03:29,450
+A tetrahedron has 4 faces.
+
+61
+00:03:29,500 --> 00:03:31,680
+They are all triangles.
+
+62
+00:03:31,730 --> 00:03:36,320
+To remember: surface area is the total area of all the faces.
+
+63
+00:03:36,370 --> 00:03:40,840
+A triangular prism has 2 triangles and 3 rectangles.
+
+64
+00:03:40,890 --> 00:03:43,310
+A pyramid has a base plus triangles.
+
+65
+00:03:43,360 --> 00:03:45,370
+Use the slant heights.
+
+66
+00:03:45,420 --> 00:03:48,150
+A net helps you not to miss a face.
+
+67
+00:03:48,200 --> 00:03:53,550
+Great work! Now practise lesson 15.4 on Camday.

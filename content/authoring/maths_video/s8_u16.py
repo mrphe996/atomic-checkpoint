@@ -22,7 +22,7 @@ VIDEOS["16.1"] = [
         PAUSE("16.1-k1", "What is the best way to show the pattern? Pause the video and choose.", "Best idea?"),
     ]),
     dict(kind="hook", title="Group the data", steps=[
-        dict(say="Group the times into classes, like 6 to 7 hours, and count how many are in each class.", do=[B("group the times into classes", x=80, y=200, color=GREEN), SLEEP(at=2)]),
+        dict(say="Group the times into classes, like 6 to 7 hours, and count how many are in each class.", do=[B("group into classes", x=80, y=200, color=GREEN), SLEEP(at=2)]),
     ]),
     dict(kind="recall", title="Discrete and continuous", steps=[
         dict(say="Remember: discrete data is counted, like the number of pets. Continuous data is measured, like a time or a mass.", do=[T("**discrete**: counted · **continuous**: measured", x=80, y=190)]),

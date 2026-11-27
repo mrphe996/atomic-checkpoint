@@ -41268,7 +41268,7 @@
     "15.1-k3": 124.33,
     "15.1-k4": 199.0
    },
-   "up": false
+   "up": true
   },
   "14.6": {
    "src": "media/mv/s8/14-6.mp4",
@@ -41514,6 +41514,1548 @@
     "14.6-k2": 68.76,
     "14.6-k3": 122.31,
     "14.6-k4": 192.97
+   },
+   "up": true
+  },
+  "15.2": {
+   "src": "media/mv/s8/15-2.mp4",
+   "poster": "media/mv/s8/15-2_poster.jpg",
+   "srt": "media/mv/s8/15-2.srt",
+   "dur": 229.6,
+   "captions": [
+    [
+     8.19,
+     "A garden has a flower bed shaped like a parallelogram, and a lawn shaped like a trapezium."
+    ],
+    [
+     14.36,
+     "A trapezium has two parallel sides of different lengths."
+    ],
+    [
+     18.74,
+     "Can we find their areas using only rectangles and triangles?"
+    ],
+    [
+     23.62,
+     "A parallelogram can be rearranged into which shape?"
+    ],
+    [
+     27.08,
+     "Pause the video and choose."
+    ],
+    [
+     30.32,
+     "Cut a right-angled triangle off one end of the parallelogram, and slide it to the other end."
+    ],
+    [
+     36.49,
+     "You get a rectangle, with the same base and height."
+    ],
+    [
+     40.46,
+     "Remember: the area of a rectangle is length times width."
+    ],
+    [
+     44.46,
+     "The area of a triangle is a half, times base, times height."
+    ],
+    [
+     48.67,
+     "A triangle with base 8 and height 5 has area 20."
+    ],
+    [
+     52.64,
+     "So the area of a parallelogram is base times height, just like the rectangle."
+    ],
+    [
+     57.92,
+     "The height must be the perpendicular height, at right angles to the base."
+    ],
+    [
+     62.93,
+     "Not the slanting side."
+    ],
+    [
+     64.99,
+     "Your turn."
+    ],
+    [
+     65.71,
+     "A parallelogram has base 7 and height 3."
+    ],
+    [
+     68.6,
+     "What is its area?"
+    ],
+    [
+     69.83,
+     "Pause the video and try it."
+    ],
+    [
+     73.17,
+     "7 times 3 is 21."
+    ],
+    [
+     74.34,
+     "Now the trapezium."
+    ],
+    [
+     75.64,
+     "Two identical trapezia, one turned upside down, fit together to make a parallelogram."
+    ],
+    [
+     81.82,
+     "Its base is a plus b, and its height is h."
+    ],
+    [
+     85.42,
+     "So one trapezium is half of that."
+    ],
+    [
+     87.66,
+     "Add the parallel sides, halve, and multiply by the height."
+    ],
+    [
+     92.16,
+     "Here is the method."
+    ],
+    [
+     93.49,
+     "Step 1: find the base, or the parallel sides, and the perpendicular height."
+    ],
+    [
+     99.29,
+     "Step 2: ignore any slanting sides."
+    ],
+    [
+     102.31,
+     "Step 3: use A equals b h, or A equals a half, a plus b, times h."
+    ],
+    [
+     107.46,
+     "Step 4: give the units squared."
+    ],
+    [
+     110.44,
+     "A trapezium has parallel sides 6 and 10 centimetres, and height 5 centimetres."
+    ],
+    [
+     117.18,
+     "6 plus 10 is 16, half of 16 is 8, and 8 times 5 is 40 square centimetres."
+    ],
+    [
+     124.04,
+     "Your turn."
+    ],
+    [
+     124.77,
+     "A trapezium has parallel sides 5 and 7, and height 2."
+    ],
+    [
+     128.66,
+     "What is its area?"
+    ],
+    [
+     129.91,
+     "Pause and work it out."
+    ],
+    [
+     132.92,
+     "5 plus 7 is 12."
+    ],
+    [
+     134.56,
+     "Half of 12 is 6."
+    ],
+    [
+     136.32,
+     "6 times 2 is 12."
+    ],
+    [
+     138.63,
+     "A trapezium has area 63 square centimetres, height 7, and one parallel side of 4."
+    ],
+    [
+     145.43,
+     "Find the other."
+    ],
+    [
+     146.7,
+     "63 equals a half, 4 plus b, times 7."
+    ],
+    [
+     149.72,
+     "Half of 7 is 3.5, and 63 divided by 3.5 is 18."
+    ],
+    [
+     154.14,
+     "So b is 14 centimetres."
+    ],
+    [
+     156.75,
+     "A parallelogram has base 10, a slanting side of 6, and height 5."
+    ],
+    [
+     161.51,
+     "Max finds the area."
+    ],
+    [
+     162.92,
+     "Which line is wrong?"
+    ],
+    [
+     164.96,
+     "Line 1 is wrong."
+    ],
+    [
+     166.12,
+     "He used the slanting side."
+    ],
+    [
+     168.01,
+     "Use the perpendicular height."
+    ],
+    [
+     170.66,
+     "10 times 5 is 50 square centimetres."
+    ],
+    [
+     174.73,
+     "Many roofs have trapezium-shaped sides."
+    ],
+    [
+     177.46,
+     "To order roof tiles, a builder works out the area of each trapezium."
+    ],
+    [
+     182.77,
+     "A roof face with parallel edges of 8 and 12 metres, and a slope height of 4 metres, has an area of a half times 20 times 4, which is 40 square metres."
+    ],
+    [
+     194.94,
+     "One last question."
+    ],
+    [
+     196.29,
+     "A parallelogram has area 40 and base 8."
+    ],
+    [
+     199.22,
+     "What is its height?"
+    ],
+    [
+     200.65,
+     "Pause the video and answer."
+    ],
+    [
+     204.08,
+     "40 equals 8 times h."
+    ],
+    [
+     205.87,
+     "So h is 40 divided by 8, which is 5."
+    ],
+    [
+     209.64,
+     "To remember: the area of a parallelogram is base times height."
+    ],
+    [
+     214.37,
+     "The area of a trapezium is a half, a plus b, times h."
+    ],
+    [
+     218.22,
+     "Always use the perpendicular height."
+    ],
+    [
+     221.3,
+     "Rearrange to find a missing length."
+    ],
+    [
+     224.23,
+     "Great work! Now practise lesson 15.2 on Camday."
+    ]
+   ],
+   "times": {
+    "15.2-k1": 29.27,
+    "15.2-k2": 72.12,
+    "15.2-k3": 131.87,
+    "15.2-k4": 203.03
+   },
+   "up": true
+  },
+  "14.2": {
+   "src": "media/mv/s8/14-2.mp4",
+   "poster": "media/mv/s8/14-2_poster.jpg",
+   "srt": "media/mv/s8/14-2.srt",
+   "dur": 211.64,
+   "captions": [
+    [
+     7.36,
+     "Two friends live at 2, 7 and at 10, 3 on a town grid."
+    ],
+    [
+     11.34,
+     "They want to meet exactly halfway between their homes."
+    ],
+    [
+     15.93,
+     "Where should they meet?"
+    ],
+    [
+     17.51,
+     "Pause the video and work it out."
+    ],
+    [
+     21.11,
+     "Halfway between 2 and 10 is 6."
+    ],
+    [
+     23.77,
+     "Halfway between 7 and 3 is 5."
+    ],
+    [
+     26.34,
+     "They meet at 6, 5."
+    ],
+    [
+     28.49,
+     "Remember: in a coordinate, x comes first, across."
+    ],
+    [
+     31.81,
+     "Then y, up."
+    ],
+    [
+     32.55,
+     "And halfway between two numbers is their mean: add them and halve."
+    ],
+    [
+     37.57,
+     "The midpoint of a line segment is halfway along it."
+    ],
+    [
+     41.08,
+     "Its x coordinate is halfway between the two x coordinates."
+    ],
+    [
+     45.06,
+     "Its y coordinate is halfway between the two y coordinates."
+    ],
+    [
+     49.6,
+     "In symbols: add the x's and halve, and add the y's and halve."
+    ],
+    [
+     54.16,
+     "Your turn."
+    ],
+    [
+     54.91,
+     "What is the midpoint of 0, 0 and 8, 6?"
+    ],
+    [
+     57.76,
+     "Pause the video and try it."
+    ],
+    [
+     61.19,
+     "0 plus 8 is 8, halved is 4."
+    ],
+    [
+     63.57,
+     "0 plus 6 is 6, halved is 3."
+    ],
+    [
+     65.94,
+     "The midpoint is 4, 3."
+    ],
+    [
+     68.34,
+     "With negatives, add carefully."
+    ],
+    [
+     70.69,
+     "The midpoint of negative 4, 1 and 2, negative 5 is negative 1, negative 2."
+    ],
+    [
+     77.04,
+     "Here is the method."
+    ],
+    [
+     78.38,
+     "Step 1: add the two x coordinates, and halve."
+    ],
+    [
+     82.09,
+     "Step 2: add the two y coordinates, and halve."
+    ],
+    [
+     85.86,
+     "Step 3: write the point as x, y."
+    ],
+    [
+     88.65,
+     "Step 4: to find a missing end, step from the known end to the midpoint, then take the same step again."
+    ],
+    [
+     96.11,
+     "Find the midpoint of 0, 3 and 5, 8."
+    ],
+    [
+     99.41,
+     "0 plus 5 is 5, halved is 2.5."
+    ],
+    [
+     102.14,
+     "3 plus 8 is 11, halved is 5.5."
+    ],
+    [
+     104.96,
+     "The midpoint is 2.5, 5.5."
+    ],
+    [
+     107.87,
+     "M at 4, 1 is the midpoint of A B, and A is at 1, negative 3."
+    ],
+    [
+     112.27,
+     "Find B."
+    ],
+    [
+     112.79,
+     "From A to M is 3 across and 4 up."
+    ],
+    [
+     115.21,
+     "Take the same step again from M: 7, 5."
+    ],
+    [
+     118.55,
+     "Your turn."
+    ],
+    [
+     119.3,
+     "M is 2, 2 and A is 0, 0."
+    ],
+    [
+     121.09,
+     "Where is B?"
+    ],
+    [
+     121.91,
+     "Pause and work it out."
+    ],
+    [
+     124.95,
+     "From A to M is 2 across and 2 up."
+    ],
+    [
+     127.45,
+     "The same again from M gives 4, 4."
+    ],
+    [
+     130.5,
+     "A square has opposite corners at 1, 1 and 5, 5."
+    ],
+    [
+     133.95,
+     "Where do the diagonals cross?"
+    ],
+    [
+     136.08,
+     "The diagonals of a square cut each other in half, so they cross at the midpoint: 3, 3."
+    ],
+    [
+     142.95,
+     "Kim finds the midpoint of 2, 3 and 8, 9."
+    ],
+    [
+     146.01,
+     "Which line goes wrong first?"
+    ],
+    [
+     148.7,
+     "Line 1 is wrong."
+    ],
+    [
+     149.84,
+     "She subtracted."
+    ],
+    [
+     150.92,
+     "You must add the coordinates, then halve."
+    ],
+    [
+     154.41,
+     "2 plus 8 is 10, halved is 5."
+    ],
+    [
+     157.03,
+     "3 plus 9 is 12, halved is 6."
+    ],
+    [
+     159.65,
+     "The midpoint is 5, 6."
+    ],
+    [
+     162.17,
+     "Video games use midpoints all the time."
+    ],
+    [
+     164.86,
+     "To place a camera halfway between two players, the game finds the midpoint of their coordinates, many times every second."
+    ],
+    [
+     173.75,
+     "One last question."
+    ],
+    [
+     175.11,
+     "What is the midpoint of negative 4, 0 and 4, 0?"
+    ],
+    [
+     178.65,
+     "Pause the video and answer."
+    ],
+    [
+     182.09,
+     "Negative 4 plus 4 is 0, and 0 plus 0 is 0."
+    ],
+    [
+     185.49,
+     "The midpoint is the origin, 0, 0."
+    ],
+    [
+     188.72,
+     "To remember: the midpoint is the mean of the x's, and the mean of the y's."
+    ],
+    [
+     194.06,
+     "Take care with negative numbers."
+    ],
+    [
+     196.86,
+     "For a missing end, repeat the step from the end to the midpoint."
+    ],
+    [
+     201.62,
+     "The diagonals of a parallelogram cross at their midpoints."
+    ],
+    [
+     206.21,
+     "Great work! Now practise lesson 14.2 on Camday."
+    ]
+   ],
+   "times": {
+    "14.2-k1": 20.06,
+    "14.2-k2": 60.14,
+    "14.2-k3": 123.9,
+    "14.2-k4": 181.04
+   },
+   "up": true
+  },
+  "15.3": {
+   "src": "media/mv/s8/15-3.mp4",
+   "poster": "media/mv/s8/15-3_poster.jpg",
+   "srt": "media/mv/s8/15-3.srt",
+   "dur": 234.28,
+   "captions": [
+    [
+     8.22,
+     "A ridge tent is a triangular prism."
+    ],
+    [
+     10.8,
+     "Its end is a triangle 2 metres wide and 1.5 metres high."
+    ],
+    [
+     14.92,
+     "The tent is 3 metres long."
+    ],
+    [
+     17.38,
+     "How much air is inside the tent, in cubic metres?"
+    ],
+    [
+     20.69,
+     "Pause the video and work it out."
+    ],
+    [
+     24.26,
+     "The triangle's area is a half times 2 times 1.5, which is 1.5 square metres."
+    ],
+    [
+     30.2,
+     "That triangle runs the whole 3 metres, so the volume is 1.5 times 3, which is 4.5 cubic metres."
+    ],
+    [
+     38.18,
+     "Remember: the volume of a cuboid is length times width times height."
+    ],
+    [
+     43.28,
+     "A 5 by 3 by 2 centimetre cuboid has a volume of 30 cubic centimetres."
+    ],
+    [
+     49.01,
+     "A prism has the same cross-section all along its length."
+    ],
+    [
+     52.83,
+     "Its volume is the area of the cross-section, times the length."
+    ],
+    [
+     57.61,
+     "A cuboid is a prism too."
+    ],
+    [
+     59.18,
+     "For a triangular prism, the volume is a half, times b, times h, times the length."
+    ],
+    [
+     65.03,
+     "Your turn."
+    ],
+    [
+     65.73,
+     "A prism has a cross-section of 5 square metres and a length of 4 metres."
+    ],
+    [
+     70.79,
+     "What is its volume?"
+    ],
+    [
+     72.12,
+     "Pause the video and try it."
+    ],
+    [
+     75.42,
+     "5 times 4 is 20 cubic metres."
+    ],
+    [
+     77.77,
+     "Volume is measured in cubic units, like cubic centimetres and cubic metres."
+    ],
+    [
+     83.87,
+     "And 1 litre is 1,000 cubic centimetres."
+    ],
+    [
+     87.59,
+     "Here is the method."
+    ],
+    [
+     88.97,
+     "Step 1: find the triangle's base and perpendicular height."
+    ],
+    [
+     93.71,
+     "Step 2: the cross-section area is a half, times b, times h."
+    ],
+    [
+     98.32,
+     "Step 3: multiply by the length of the prism."
+    ],
+    [
+     102.06,
+     "Step 4: write the answer in cubic units."
+    ],
+    [
+     105.55,
+     "A wedge has a triangular end with base 6 centimetres and height 4."
+    ],
+    [
+     110.88,
+     "It is 15 centimetres long."
+    ],
+    [
+     112.98,
+     "The cross-section is a half times 6 times 4, which is 12."
+    ],
+    [
+     117.58,
+     "The volume is 12 times 15, which is 180 cubic centimetres."
+    ],
+    [
+     122.81,
+     "Your turn."
+    ],
+    [
+     123.55,
+     "A triangle with base 4 and height 3 makes a prism 10 long."
+    ],
+    [
+     127.83,
+     "What is its volume?"
+    ],
+    [
+     129.23,
+     "Pause and work it out."
+    ],
+    [
+     132.26,
+     "A half times 4 times 3 is 6."
+    ],
+    [
+     134.95,
+     "6 times 10 is 60."
+    ],
+    [
+     137.14,
+     "A prism has a volume of 210 cubic centimetres."
+    ],
+    [
+     140.94,
+     "Its cross-section is a triangle with base 5 and height 6, so the area is 15."
+    ],
+    [
+     147.21,
+     "The length is 210 divided by 15, which is 14 centimetres."
+    ],
+    [
+     152.46,
+     "A triangular prism has a triangle with base 8 and height 5, and a length of 10."
+    ],
+    [
+     158.28,
+     "Zoe finds the volume."
+    ],
+    [
+     159.83,
+     "Which line is wrong?"
+    ],
+    [
+     161.85,
+     "Line 1 is wrong."
+    ],
+    [
+     163.03,
+     "She forgot the half."
+    ],
+    [
+     164.51,
+     "The cross-section is a triangle, so its area is a half times 8 times 5, which is 20."
+    ],
+    [
+     171.27,
+     "20 times 10 is 200."
+    ],
+    [
+     174.54,
+     "A water trough for animals is a triangular prism."
+    ],
+    [
+     178.4,
+     "Its end has base 40 centimetres and height 30, and it is 150 centimetres long."
+    ],
+    [
+     185.1,
+     "The volume is 600 times 150, which is 90,000 cubic centimetres."
+    ],
+    [
+     191.23,
+     "Divide by 1,000: it holds 90 litres of water."
+    ],
+    [
+     196.16,
+     "One last question."
+    ],
+    [
+     197.55,
+     "How many litres is 5,000 cubic centimetres?"
+    ],
+    [
+     200.89,
+     "Pause the video and answer."
+    ],
+    [
+     204.38,
+     "1 litre is 1,000 cubic centimetres."
+    ],
+    [
+     208.11,
+     "5,000 divided by 1,000 is 5 litres."
+    ],
+    [
+     212.4,
+     "To remember: the volume of a prism is the cross-section area times the length."
+    ],
+    [
+     218.25,
+     "A triangle cross-section has area a half b h."
+    ],
+    [
+     221.84,
+     "Rearrange to find a missing length."
+    ],
+    [
+     224.87,
+     "1 litre is 1,000 cubic centimetres."
+    ],
+    [
+     228.84,
+     "Great work! Now practise lesson 15.3 on Camday."
+    ]
+   ],
+   "times": {
+    "15.3-k1": 23.21,
+    "15.3-k2": 74.37,
+    "15.3-k3": 131.21,
+    "15.3-k4": 203.33
+   },
+   "up": false
+  },
+  "15.4": {
+   "src": "media/mv/s8/15-4.mp4",
+   "poster": "media/mv/s8/15-4_poster.jpg",
+   "srt": "media/mv/s8/15-4.srt",
+   "dur": 233.6,
+   "captions": [
+    [
+     9.7,
+     "A gift box is a triangular prism."
+    ],
+    [
+     11.89,
+     "You want to know how much card is needed to make it."
+    ],
+    [
+     15.89,
+     "How many faces does it have, and what shapes are they?"
+    ],
+    [
+     20.03,
+     "What are the faces of a triangular prism?"
+    ],
+    [
+     22.87,
+     "Pause the video and choose."
+    ],
+    [
+     26.13,
+     "It has 2 triangles, one at each end, and 3 rectangles round the sides."
+    ],
+    [
+     31.31,
+     "That is 5 faces."
+    ],
+    [
+     33.04,
+     "Remember: a net is a flat shape that folds up to make a solid."
+    ],
+    [
+     37.13,
+     "It shows every face."
+    ],
+    [
+     38.99,
+     "The surface area is the total area of all the faces."
+    ],
+    [
+     42.83,
+     "Here is a prism whose ends are right-angled triangles with sides 3, 4 and 5 centimetres."
+    ],
+    [
+     49.31,
+     "It is 10 centimetres long."
+    ],
+    [
+     51.78,
+     "The three rectangles are 30, 40 and 50."
+    ],
+    [
+     55.6,
+     "Add everything: 12 plus 120 is 132 square centimetres."
+    ],
+    [
+     61.44,
+     "A pyramid has a base, and triangular faces that meet at a point."
+    ],
+    [
+     65.69,
+     "There is one triangle for each side of the base."
+    ],
+    [
+     69.43,
+     "For each triangle, use its slant height: the height of the triangle face, not the height of the pyramid."
+    ],
+    [
+     77.02,
+     "Your turn."
+    ],
+    [
+     77.71,
+     "How many faces does a square-based pyramid have?"
+    ],
+    [
+     81.03,
+     "Pause the video and try it."
+    ],
+    [
+     84.3,
+     "1 square base, plus 4 triangles, makes 5 faces."
+    ],
+    [
+     88.57,
+     "Here is the method."
+    ],
+    [
+     89.91,
+     "Step 1: sketch the net, or list the faces."
+    ],
+    [
+     93.41,
+     "Step 2: find the area of each face."
+    ],
+    [
+     95.84,
+     "Triangles need a half b h."
+    ],
+    [
+     98.2,
+     "Step 3: group the identical faces."
+    ],
+    [
+     101.34,
+     "Step 4: add them all, and give the units squared."
+    ],
+    [
+     105.32,
+     "A square-based pyramid has a base of side 4 centimetres."
+    ],
+    [
+     109.72,
+     "Each triangle has a slant height of 6."
+    ],
+    [
+     112.71,
+     "The base is 4 times 4, which is 16."
+    ],
+    [
+     115.46,
+     "Each triangle is a half times 4 times 6, which is 12."
+    ],
+    [
+     119.63,
+     "4 triangles make 48."
+    ],
+    [
+     121.75,
+     "The total is 16 plus 48, which is 64 square centimetres."
+    ],
+    [
+     127.24,
+     "Your turn."
+    ],
+    [
+     127.95,
+     "A square base of side 6 has triangles with slant height 5."
+    ],
+    [
+     132.05,
+     "What is the surface area?"
+    ],
+    [
+     133.82,
+     "Pause and work it out."
+    ],
+    [
+     136.78,
+     "The base is 36."
+    ],
+    [
+     138.19,
+     "Each triangle is a half times 6 times 5, which is 15."
+    ],
+    [
+     143.17,
+     "4 triangles make 60."
+    ],
+    [
+     145.05,
+     "36 plus 60 is 96."
+    ],
+    [
+     147.2,
+     "A tent has triangular ends with base 2 metres and height 1.5."
+    ],
+    [
+     151.99,
+     "Its two sloping sides are 1.8 by 3 metres."
+    ],
+    [
+     155.28,
+     "It has no floor."
+    ],
+    [
+     156.54,
+     "The two ends make 3 square metres."
+    ],
+    [
+     159.2,
+     "The two sides make 10.8."
+    ],
+    [
+     161.09,
+     "In total, 13.8 square metres of fabric."
+    ],
+    [
+     164.7,
+     "A prism has triangles of a half times 4 times 3, and rectangles of 40, 30 and 50."
+    ],
+    [
+     171.09,
+     "Raj adds up the surface area."
+    ],
+    [
+     173.38,
+     "Which line is wrong?"
+    ],
+    [
+     175.51,
+     "Line 1 is wrong."
+    ],
+    [
+     176.62,
+     "There are two triangular ends, not one."
+    ],
+    [
+     179.88,
+     "2 times 6 is 12, plus 120 is 132."
+    ],
+    [
+     184.45,
+     "Some chocolate bars are sold in triangular prism boxes."
+    ],
+    [
+     188.25,
+     "Designers work out the surface area to know how much card each box needs."
+    ],
+    [
+     193.84,
+     "Saving even a few square centimetres per box adds up to a lot of card over millions of boxes."
+    ],
+    [
+     200.45,
+     "One last question."
+    ],
+    [
+     201.68,
+     "How many faces does a tetrahedron have?"
+    ],
+    [
+     204.36,
+     "Pause the video and answer."
+    ],
+    [
+     207.6,
+     "A tetrahedron has 4 faces."
+    ],
+    [
+     209.5,
+     "They are all triangles."
+    ],
+    [
+     211.73,
+     "To remember: surface area is the total area of all the faces."
+    ],
+    [
+     216.37,
+     "A triangular prism has 2 triangles and 3 rectangles."
+    ],
+    [
+     220.89,
+     "A pyramid has a base plus triangles."
+    ],
+    [
+     223.36,
+     "Use the slant heights."
+    ],
+    [
+     225.42,
+     "A net helps you not to miss a face."
+    ],
+    [
+     228.2,
+     "Great work! Now practise lesson 15.4 on Camday."
+    ]
+   ],
+   "times": {
+    "15.4-k1": 25.08,
+    "15.4-k2": 83.25,
+    "15.4-k3": 135.73,
+    "15.4-k4": 206.55
+   },
+   "up": false
+  },
+  "16.1": {
+   "src": "media/mv/s8/16-1.mp4",
+   "poster": "media/mv/s8/16-1_poster.jpg",
+   "srt": "media/mv/s8/16-1.srt",
+   "dur": 234.2,
+   "captions": [
+    [
+     8.47,
+     "A class records how long each student slept last night, to the nearest minute."
+    ],
+    [
+     14.43,
+     "The times go from 5 hours 40 minutes, up to 10 hours 10 minutes."
+    ],
+    [
+     19.88,
+     "A bar for every possible time would be useless."
+    ],
+    [
+     23.1,
+     "Almost every bar would have a height of 1."
+    ],
+    [
+     26.53,
+     "What is the best way to show the pattern?"
+    ],
+    [
+     29.32,
+     "Pause the video and choose."
+    ],
+    [
+     32.56,
+     "Group the times into classes, like 6 to 7 hours, and count how many are in each class."
+    ],
+    [
+     39.21,
+     "Remember: discrete data is counted, like the number of pets."
+    ],
+    [
+     43.25,
+     "Continuous data is measured, like a time or a mass."
+    ],
+    [
+     47.24,
+     "Your turn."
+    ],
+    [
+     47.95,
+     "Is mass discrete or continuous?"
+    ],
+    [
+     50.15,
+     "Pause the video and choose."
+    ],
+    [
+     53.47,
+     "Mass is continuous, because it is measured."
+    ],
+    [
+     56.41,
+     "Put data into classes with equal class intervals."
+    ],
+    [
+     60.31,
+     "For discrete data, groups like 0 to 4, 5 to 9, and 10 to 14 work."
+    ],
+    [
+     65.24,
+     "For continuous data, use inequalities, so that every value fits exactly one class."
+    ],
+    [
+     71.46,
+     "6 is less than or equal to t, which is less than 7."
+    ],
+    [
+     75.88,
+     "For continuous data, draw a frequency diagram."
+    ],
+    [
+     79.03,
+     "The bars have no gaps, because the scale is continuous."
+    ],
+    [
+     82.79,
+     "Label both axes."
+    ],
+    [
+     84.43,
+     "For grouped discrete data, draw a bar chart with gaps."
+    ],
+    [
+     88.66,
+     "Your turn."
+    ],
+    [
+     89.34,
+     "What do the bars for continuous data have?"
+    ],
+    [
+     92.17,
+     "Pause the video and choose."
+    ],
+    [
+     95.39,
+     "No gaps."
+    ],
+    [
+     95.94,
+     "Here is the method."
+    ],
+    [
+     97.25,
+     "Step 1: choose equal class intervals that cover all the data."
+    ],
+    [
+     102.0,
+     "Step 2: tally the data into a frequency table."
+    ],
+    [
+     105.86,
+     "Step 3: draw the bars."
+    ],
+    [
+     107.42,
+     "Gaps for discrete data, no gaps for continuous data."
+    ],
+    [
+     111.66,
+     "Step 4: label the axes, and give a title."
+    ],
+    [
+     115.04,
+     "Look at the sleep diagram."
+    ],
+    [
+     116.79,
+     "The modal class is the one with the highest frequency, 9."
+    ],
+    [
+     120.63,
+     "That is 7 is less than or equal to t, which is less than 8."
+    ],
+    [
+     125.15,
+     "The number of students is the total of the frequencies: 2 plus 5 plus 9 plus 8 plus 4 plus 2, which is 30."
+    ],
+    [
+     134.03,
+     "The fraction who slept at least 9 hours is 4 plus 2, which is 6 out of 30."
+    ],
+    [
+     139.95,
+     "That is 1 fifth."
+    ],
+    [
+     141.78,
+     "Masses go from 41 to 78 kilograms."
+    ],
+    [
+     144.97,
+     "Classes of width 10 could be: 40 to 50, 50 to 60, 60 to 70, and 70 to 80."
+    ],
+    [
+     151.83,
+     "They cover all the data, with equal widths."
+    ],
+    [
+     156.42,
+     "Lee uses classes 140 to 150, 150 to 160, and 160 to 170 centimetres for heights."
+    ],
+    [
+     164.32,
+     "Which line shows the problem?"
+    ],
+    [
+     167.73,
+     "The classes overlap."
+    ],
+    [
+     169.28,
+     "A height of exactly 150 fits two classes."
+    ],
+    [
+     172.47,
+     "Use inequalities instead."
+    ],
+    [
+     174.96,
+     "140 is less than or equal to h, which is less than 150."
+    ],
+    [
+     180.12,
+     "Then 150 to 160, and so on."
+    ],
+    [
+     183.2,
+     "Health experts recommend that teenagers sleep about 8 to 10 hours a night."
+    ],
+    [
+     188.96,
+     "In our class, only 14 of the 30 students slept 8 hours or more."
+    ],
+    [
+     194.41,
+     "One last question."
+    ],
+    [
+     195.72,
+     "The frequencies are 4, 9 and 2."
+    ],
+    [
+     197.98,
+     "What is the frequency of the modal class?"
+    ],
+    [
+     200.97,
+     "Pause the video and answer."
+    ],
+    [
+     204.34,
+     "The modal class has the highest frequency, which is 9."
+    ],
+    [
+     208.73,
+     "To remember: use equal class intervals, with no overlaps."
+    ],
+    [
+     213.21,
+     "For continuous data, use inequalities, like 6 is less than or equal to t, which is less than 7."
+    ],
+    [
+     220.38,
+     "Continuous data has no gaps between bars."
+    ],
+    [
+     223.28,
+     "Discrete data has gaps."
+    ],
+    [
+     225.45,
+     "The modal class has the highest frequency."
+    ],
+    [
+     228.75,
+     "Great work! Now practise lesson 16.1 on Camday."
+    ]
+   ],
+   "times": {
+    "16.1-k1": 31.51,
+    "16.1-k2": 52.42,
+    "16.1-k3": 94.34,
+    "16.1-k4": 203.29
+   },
+   "up": false
+  },
+  "16.2": {
+   "src": "media/mv/s8/16-2.mp4",
+   "poster": "media/mv/s8/16-2_poster.jpg",
+   "srt": "media/mv/s8/16-2.srt",
+   "dur": 196.32,
+   "captions": [
+    [
+     6.57,
+     "Mia's phone records the battery level every hour from 8 am to 2 pm: 100, 88, 75, 66, 52, 40 and 31 percent."
+    ],
+    [
+     17.34,
+     "Is the battery running down roughly steadily?"
+    ],
+    [
+     20.53,
+     "Pause the video and choose."
+    ],
+    [
+     23.84,
+     "Yes."
+    ],
+    [
+     24.14,
+     "It falls by about 11 to 13 percent every hour, so the points lie close to a straight line."
+    ],
+    [
+     31.45,
+     "Remember: for a line graph, plot the points, then join them with straight lines."
+    ],
+    [
+     36.84,
+     "Time goes on the horizontal axis."
+    ],
+    [
+     39.62,
+     "A time series graph shows a quantity measured at regular time intervals, with the points joined by straight lines."
+    ],
+    [
+     48.0,
+     "It shows the trend: the general direction of change."
+    ],
+    [
+     51.5,
+     "Up, down, or steady."
+    ],
+    [
+     53.4,
+     "Your turn."
+    ],
+    [
+     54.1,
+     "What is the battery's trend?"
+    ],
+    [
+     56.05,
+     "Pause the video and choose."
+    ],
+    [
+     59.33,
+     "It is a downward trend."
+    ],
+    [
+     61.18,
+     "Points between the plotted times are only estimates."
+    ],
+    [
+     65.36,
+     "At 10:30, the battery was probably about 70 percent, halfway between 75 and 66."
+    ],
+    [
+     72.27,
+     "Continuing the trend, the battery would reach 0 at about 4 or 5 pm."
+    ],
+    [
+     77.05,
+     "But predictions far into the future are less reliable."
+    ],
+    [
+     81.45,
+     "Here is the method."
+    ],
+    [
+     82.81,
+     "Step 1: put time on the horizontal axis, with equal steps."
+    ],
+    [
+     87.49,
+     "Step 2: choose a vertical scale that fits the data."
+    ],
+    [
+     91.7,
+     "Step 3: plot each point accurately, and join them with straight lines."
+    ],
+    [
+     97.25,
+     "Step 4: describe the trend, and any big changes."
+    ],
+    [
+     101.24,
+     "In which hour did the battery drop most?"
+    ],
+    [
+     104.87,
+     "The drops are 12, 13, 9, 14, 12 and 9."
+    ],
+    [
+     108.32,
+     "The biggest is 14, from 11 am to 12 noon."
+    ],
+    [
+     112.59,
+     "Your turn."
+    ],
+    [
+     113.29,
+     "How much did it drop from 1 pm to 2 pm?"
+    ],
+    [
+     116.05,
+     "Pause and check the table."
+    ],
+    [
+     119.29,
+     "From 40 percent to 31 percent is a drop of 9 percent."
+    ],
+    [
+     124.4,
+     "Be careful with scales."
+    ],
+    [
+     126.08,
+     "If the vertical axis starts at 60 percent instead of 0, small changes look huge."
+    ],
+    [
+     131.95,
+     "Always check where the axis starts."
+    ],
+    [
+     135.06,
+     "Sam draws the battery graph."
+    ],
+    [
+     137.02,
+     "Which line is wrong?"
+    ],
+    [
+     138.97,
+     "Line 1 is wrong."
+    ],
+    [
+     140.09,
+     "In a time series graph, time always goes on the horizontal axis."
+    ],
+    [
+     145.09,
+     "Time across, battery percentage up."
+    ],
+    [
+     148.15,
+     "Scientists use time series graphs to show how the world's average temperature has changed since the 1800s."
+    ],
+    [
+     155.83,
+     "The graph goes up and down from year to year, but the overall trend is upward."
+    ],
+    [
+     162.03,
+     "One last question."
+    ],
+    [
+     163.28,
+     "Is a prediction 3 days ahead more reliable, or less reliable?"
+    ],
+    [
+     167.51,
+     "Pause the video and choose."
+    ],
+    [
+     170.78,
+     "Less reliable."
+    ],
+    [
+     171.75,
+     "The further ahead you predict, the more things can change."
+    ],
+    [
+     176.29,
+     "To remember: regular time intervals go on the horizontal axis."
+    ],
+    [
+     181.07,
+     "Join the points with straight lines."
+    ],
+    [
+     184.06,
+     "Describe the trend."
+    ],
+    [
+     186.42,
+     "Values in between, and in the future, are only estimates."
+    ],
+    [
+     190.84,
+     "Great work! Now practise lesson 16.2 on Camday."
+    ]
+   ],
+   "times": {
+    "16.2-k1": 22.79,
+    "16.2-k2": 58.28,
+    "16.2-k3": 118.24,
+    "16.2-k4": 169.73
    },
    "up": false
   }
