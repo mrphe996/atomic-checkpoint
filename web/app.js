@@ -610,7 +610,7 @@
     const cc = el('button', { class: 'chip' + (UI.cc ? ' on' : ''), type: 'button', 'aria-pressed': String(UI.cc) }, 'CC');
     const fs = el('button', { class: 'chip', type: 'button', 'aria-label': 'Full screen' }, svgI(I.full, 16));
     const ctrl = el('div', { class: 'card ctrl' }, ppBtn, track, time, spd, cc, fs);
-    const capP = el('p', { class: 'cap', hidden: !UI.cc }); const capT = el('span'); capP.append(el('b', {}, 'Narrator: '), capT);
+    const capP = el('p', { class: 'cap', hidden: !UI.cc || !!s.lv }); const capT = el('span'); capP.append(el('b', {}, 'Narrator: '), capT);
     let openStop = null, lastSave = 0, segEnd = null;
     player.append(qlayer);
     const wrap = el('div', { class: 'pwrap' }, player, ctrl);
@@ -710,6 +710,7 @@
     track.addEventListener('click', e => { const r = track.getBoundingClientRect(); segEnd = null; v.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * s.video.dur; });
     track.addEventListener('keydown', e => { if (e.key === 'ArrowRight') v.currentTime = Math.min(s.video.dur, v.currentTime + 5); if (e.key === 'ArrowLeft') v.currentTime = Math.max(0, v.currentTime - 5); if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); togglePlay(); } });
     spd.onclick = () => { UI.speed = UI.speed === 1 ? 1.25 : UI.speed === 1.25 ? 1.5 : UI.speed === 1.5 ? 2 : 1; v.playbackRate = UI.speed; spd.textContent = UI.speed + '×'; };
+    if (s.lv) cc.hidden = true;   // lesson videos have their captions printed in the picture
     cc.onclick = () => { UI.cc = !UI.cc; capP.hidden = !UI.cc; cc.classList.toggle('on', UI.cc); cc.setAttribute('aria-pressed', String(UI.cc)); };
     // full screen covers the video, its controls and the question layer; where the browser cannot (iPhone), the page fakes it
     fs.onclick = () => {

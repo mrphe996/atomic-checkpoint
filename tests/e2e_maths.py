@@ -59,7 +59,7 @@ with sync_playwright() as p:
     ok(pg.get_attribute('#lessonVideo', 'href') == '#vw-1-1', 'M18 Lesson 1.1 shows a "Watch the video lesson" card')
     pg.click('#lessonVideo'); pg.wait_for_timeout(2500)
     v = pg.evaluate("(()=>{ const v=document.querySelector('video'); return v && { src: v.currentSrc || v.src, dur: v.duration } })()")
-    ok(v and v['src'].endswith('1-1.mp4') and v['dur'] > 200, f'M19 The video lesson plays in the app player ({v})')
+    ok(v and v['src'].endswith('1-1.mp4') and v['dur'] > 200 and pg.is_hidden('.cap'), f'M19 The video lesson plays in the app player ({v}), its captions are in the picture so the player shows no second caption line')
     ok(not errs, 'M15 No page errors' + (': ' + errs[0] if errs else ''))
     b.close()
 fails = [l for l in LOG if l.startswith('FAIL')]
