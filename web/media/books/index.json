@@ -2300,5 +2300,27 @@
     10
    ]
   }
+ },
+ "c4u06": {
+  "title": "Camday Maths Stage 4 · Unit 6: 2D Shapes",
+  "pages": 11,
+  "dir": "media/books/c4u06/",
+  "ext": "webp",
+  "pdf": "media/books/c4u06.pdf?v=e9f79f0704",
+  "v": "e9f79f0704",
+  "secs": {
+   "6.1": [
+    2,
+    6
+   ],
+   "6.2": [
+    7,
+    10
+   ],
+   "answers": [
+    11,
+    11
+   ]
+  }
  }
 }
