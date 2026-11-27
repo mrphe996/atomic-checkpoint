@@ -2672,5 +2672,27 @@
     14
    ]
   }
+ },
+ "c3u04": {
+  "title": "Camday Maths Stage 3 · Unit 4: 3D Shapes",
+  "pages": 10,
+  "dir": "media/books/c3u04/",
+  "ext": "webp",
+  "pdf": "media/books/c3u04.pdf?v=32527e71b5",
+  "v": "32527e71b5",
+  "secs": {
+   "4.1": [
+    2,
+    5
+   ],
+   "4.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
