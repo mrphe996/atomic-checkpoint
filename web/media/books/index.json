@@ -2094,5 +2094,27 @@
     10
    ]
   }
+ },
+ "c5u15": {
+  "title": "Camday Maths Stage 5 · Unit 15: Multiplying and Dividing Fractions and Decimals",
+  "pages": 10,
+  "dir": "media/books/c5u15/",
+  "ext": "webp",
+  "pdf": "media/books/c5u15.pdf?v=017836690f",
+  "v": "017836690f",
+  "secs": {
+   "15.1": [
+    2,
+    5
+   ],
+   "15.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
