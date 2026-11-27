@@ -781,6 +781,472 @@
     "1.2-k4": 326.75
    },
    "up": false
+  },
+  "1.3": {
+   "src": "media/mv/s7/1-3.mp4",
+   "poster": "media/mv/s7/1-3_poster.jpg",
+   "srt": "media/mv/s7/1-3.srt",
+   "dur": 320.8,
+   "captions": [
+    [
+     6.69,
+     "Two buses leave the same station."
+    ],
+    [
+     9.08,
+     "Bus A leaves every 6 minutes."
+    ],
+    [
+     11.19,
+     "Bus B leaves every 8 minutes."
+    ],
+    [
+     13.84,
+     "At 9 o'clock they leave together."
+    ],
+    [
+     16.83,
+     "After how many minutes do they next leave together?"
+    ],
+    [
+     20.25,
+     "Pause the video and work it out."
+    ],
+    [
+     23.79,
+     "Let's watch."
+    ],
+    [
+     24.86,
+     "Bus A leaves after 6, 12, 18, 24 minutes."
+    ],
+    [
+     29.07,
+     "Bus B leaves after 8, 16, 24 minutes."
+    ],
+    [
+     32.9,
+     "Both lines land on 24."
+    ],
+    [
+     34.75,
+     "So the buses next leave together after 24 minutes, at 9:24."
+    ],
+    [
+     40.26,
+     "The multiples of a number are the answers in its times table."
+    ],
+    [
+     44.83,
+     "The multiples of 6 are 6, 12, 18, 24, 30, and so on."
+    ],
+    [
+     49.41,
+     "They go on for ever."
+    ],
+    [
+     51.72,
+     "The multiples of 8 are 8, 16, 24, 32, 40, and so on."
+    ],
+    [
+     57.4,
+     "A common multiple of two numbers is a multiple of both."
+    ],
+    [
+     61.08,
+     "It is in both lists."
+    ],
+    [
+     62.97,
+     "24 is in both lists."
+    ],
+    [
+     64.65,
+     "So is 48."
+    ],
+    [
+     65.4,
+     "These are common multiples of 6 and 8."
+    ],
+    [
+     69.14,
+     "The smallest one is 24."
+    ],
+    [
+     70.84,
+     "We call it the lowest common multiple, or LCM."
+    ],
+    [
+     74.79,
+     "You don't need two full lists."
+    ],
+    [
+     76.81,
+     "Just list the multiples of the bigger number, and test each one."
+    ],
+    [
+     81.68,
+     "Find the LCM of 9 and 12."
+    ],
+    [
+     83.81,
+     "The bigger number is 12."
+    ],
+    [
+     86.41,
+     "12."
+    ],
+    [
+     86.74,
+     "Does 9 divide 12?"
+    ],
+    [
+     88.62,
+     "No."
+    ],
+    [
+     89.5,
+     "24."
+    ],
+    [
+     89.84,
+     "Does 9 divide 24?"
+    ],
+    [
+     91.74,
+     "No."
+    ],
+    [
+     92.63,
+     "36."
+    ],
+    [
+     92.94,
+     "36 divided by 9 is 4."
+    ],
+    [
+     95.1,
+     "Yes!"
+    ],
+    [
+     95.51,
+     "So the LCM of 9 and 12 is 36."
+    ],
+    [
+     99.04,
+     "Your turn."
+    ],
+    [
+     99.81,
+     "Find the LCM of 8 and 12."
+    ],
+    [
+     101.72,
+     "Pause the video and try it."
+    ],
+    [
+     105.19,
+     "Multiples of 12: 12."
+    ],
+    [
+     107.17,
+     "8 does not divide 12."
+    ],
+    [
+     109.25,
+     "Next, 24."
+    ],
+    [
+     110.14,
+     "24 divided by 8 is 3."
+    ],
+    [
+     112.22,
+     "So the LCM is 24."
+    ],
+    [
+     114.46,
+     "Here is the method."
+    ],
+    [
+     115.78,
+     "Step 1: write the multiples of the bigger number, in order."
+    ],
+    [
+     120.45,
+     "Step 2: for each one, test whether the other number divides it."
+    ],
+    [
+     125.43,
+     "Step 3: the first one that works is the LCM."
+    ],
+    [
+     129.11,
+     "A useful check: the LCM is never smaller than the bigger number, and never more than the two numbers multiplied together."
+    ],
+    [
+     137.95,
+     "Find the LCM of 6 and 15."
+    ],
+    [
+     140.69,
+     "Start with the bigger number."
+    ],
+    [
+     143.04,
+     "15."
+    ],
+    [
+     143.28,
+     "15 divided by 6 is not a whole number."
+    ],
+    [
+     146.91,
+     "Next, 30."
+    ],
+    [
+     147.71,
+     "30 divided by 6 is 5."
+    ],
+    [
+     149.59,
+     "That works, so the LCM is 30."
+    ],
+    [
+     152.73,
+     "Sometimes it is even quicker."
+    ],
+    [
+     155.1,
+     "The LCM of 7 and 21: 21 is already a multiple of 7, so the LCM is 21."
+    ],
+    [
+     161.29,
+     "Find the LCM of 4, 6 and 10."
+    ],
+    [
+     163.45,
+     "Do it in two stages."
+    ],
+    [
+     165.54,
+     "First, 4 and 6."
+    ],
+    [
+     166.94,
+     "Multiples of 6: 6, then 12."
+    ],
+    [
+     169.45,
+     "4 divides 12, so their LCM is 12."
+    ],
+    [
+     173.07,
+     "Now find the LCM of 12 and 10."
+    ],
+    [
+     176.38,
+     "Multiples of 12: 12, 24, 36, 48, 60."
+    ],
+    [
+     180.91,
+     "60 divided by 10 is 6."
+    ],
+    [
+     183.17,
+     "So the LCM of 4, 6 and 10 is 60."
+    ],
+    [
+     187.0,
+     "Your turn."
+    ],
+    [
+     187.75,
+     "Find the LCM of 3, 5 and 6."
+    ],
+    [
+     189.79,
+     "Pause and work it out."
+    ],
+    [
+     192.84,
+     "Take 5 and 6 first."
+    ],
+    [
+     194.81,
+     "Multiples of 6: 6, 12, 18, 24, 30."
+    ],
+    [
+     198.33,
+     "5 divides 30."
+    ],
+    [
+     199.67,
+     "And 3 divides 30 too."
+    ],
+    [
+     201.85,
+     "So the LCM is 30."
+    ],
+    [
+     204.16,
+     "Hot dogs come in packs of 10."
+    ],
+    [
+     206.21,
+     "Buns come in packs of 8."
+    ],
+    [
+     207.91,
+     "What is the smallest number of each you can buy, to have the same number of both?"
+    ],
+    [
+     214.19,
+     "Equal numbers means a common multiple."
+    ],
+    [
+     217.04,
+     "The smallest is the LCM of 10 and 8."
+    ],
+    [
+     220.29,
+     "Multiples of 10: 10, 20, 30, 40."
+    ],
+    [
+     223.77,
+     "40 divided by 8 is 5."
+    ],
+    [
+     226.05,
+     "So the LCM is 40."
+    ],
+    [
+     228.45,
+     "Buy 40 of each."
+    ],
+    [
+     229.61,
+     "That is 4 packs of hot dogs and 5 packs of buns."
+    ],
+    [
+     233.87,
+     "Lena wants the LCM of 6 and 9."
+    ],
+    [
+     236.02,
+     "Which line goes wrong first?"
+    ],
+    [
+     238.57,
+     "Line 1 is wrong."
+    ],
+    [
+     239.69,
+     "Multiplying always gives a common multiple, but not always the lowest one."
+    ],
+    [
+     245.41,
+     "Multiples of 9: 9, then 18."
+    ],
+    [
+     248.02,
+     "18 divided by 6 is 3."
+    ],
+    [
+     250.05,
+     "So the LCM is 18, not 54."
+    ],
+    [
+     253.02,
+     "In North America, some cicadas live underground and come out only once every 13 years."
+    ],
+    [
+     259.4,
+     "Others come out every 17 years."
+    ],
+    [
+     262.25,
+     "How often do both kinds come out in the same year?"
+    ],
+    [
+     266.04,
+     "That is the LCM of 13 and 17."
+    ],
+    [
+     268.78,
+     "No smaller multiple of 17 works, so here the LCM really is 13 times 17."
+    ],
+    [
+     274.92,
+     "That is 221."
+    ],
+    [
+     275.96,
+     "They only meet once every 221 years!"
+    ],
+    [
+     279.63,
+     "One last question."
+    ],
+    [
+     281.0,
+     "Find the LCM of 9 and 15."
+    ],
+    [
+     282.92,
+     "Pause the video and answer."
+    ],
+    [
+     286.38,
+     "Multiples of 15: 15, no."
+    ],
+    [
+     288.84,
+     "30, no."
+    ],
+    [
+     289.55,
+     "45."
+    ],
+    [
+     289.86,
+     "45 divided by 9 is 5."
+    ],
+    [
+     292.01,
+     "So the LCM is 45."
+    ],
+    [
+     294.3,
+     "To remember: a common multiple is in both times tables."
+    ],
+    [
+     298.01,
+     "The LCM is the smallest one."
+    ],
+    [
+     300.45,
+     "List the multiples of the bigger number and test each one."
+    ],
+    [
+     305.03,
+     "The LCM is at least the bigger number, and at most the product."
+    ],
+    [
+     309.75,
+     "Problems about things happening together again, or equal packs, use the LCM."
+    ],
+    [
+     315.57,
+     "Great work! Now practise lesson 1.3 on Camday."
+    ]
+   ],
+   "times": {
+    "1.3-k1": 22.74,
+    "1.3-k2": 104.14,
+    "1.3-k3": 191.79,
+    "1.3-k4": 285.33
+   }
   }
  }
 }

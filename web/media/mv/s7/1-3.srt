@@ -1,0 +1,451 @@
+1
+00:00:06,690 --> 00:00:09,030
+Two buses leave the same station.
+
+2
+00:00:09,080 --> 00:00:11,140
+Bus A leaves every 6 minutes.
+
+3
+00:00:11,190 --> 00:00:13,790
+Bus B leaves every 8 minutes.
+
+4
+00:00:13,840 --> 00:00:16,780
+At 9 o'clock they leave together.
+
+5
+00:00:16,830 --> 00:00:20,200
+After how many minutes do they next leave together?
+
+6
+00:00:20,250 --> 00:00:23,740
+Pause the video and work it out.
+
+7
+00:00:23,790 --> 00:00:24,810
+Let's watch.
+
+8
+00:00:24,860 --> 00:00:29,020
+Bus A leaves after 6, 12, 18, 24 minutes.
+
+9
+00:00:29,070 --> 00:00:32,850
+Bus B leaves after 8, 16, 24 minutes.
+
+10
+00:00:32,900 --> 00:00:34,700
+Both lines land on 24.
+
+11
+00:00:34,750 --> 00:00:40,210
+So the buses next leave together after 24 minutes, at 9:24.
+
+12
+00:00:40,260 --> 00:00:44,780
+The multiples of a number are the answers in its times table.
+
+13
+00:00:44,830 --> 00:00:49,360
+The multiples of 6 are 6, 12, 18, 24, 30, and so on.
+
+14
+00:00:49,410 --> 00:00:51,670
+They go on for ever.
+
+15
+00:00:51,720 --> 00:00:57,350
+The multiples of 8 are 8, 16, 24, 32, 40, and so on.
+
+16
+00:00:57,400 --> 00:01:01,030
+A common multiple of two numbers is a multiple of both.
+
+17
+00:01:01,080 --> 00:01:02,920
+It is in both lists.
+
+18
+00:01:02,970 --> 00:01:04,600
+24 is in both lists.
+
+19
+00:01:04,650 --> 00:01:05,350
+So is 48.
+
+20
+00:01:05,400 --> 00:01:09,090
+These are common multiples of 6 and 8.
+
+21
+00:01:09,140 --> 00:01:10,790
+The smallest one is 24.
+
+22
+00:01:10,840 --> 00:01:14,740
+We call it the lowest common multiple, or LCM.
+
+23
+00:01:14,790 --> 00:01:16,760
+You don't need two full lists.
+
+24
+00:01:16,810 --> 00:01:21,630
+Just list the multiples of the bigger number, and test each one.
+
+25
+00:01:21,680 --> 00:01:23,760
+Find the LCM of 9 and 12.
+
+26
+00:01:23,810 --> 00:01:26,360
+The bigger number is 12.
+
+27
+00:01:26,410 --> 00:01:26,690
+12.
+
+28
+00:01:26,740 --> 00:01:28,570
+Does 9 divide 12?
+
+29
+00:01:28,620 --> 00:01:29,450
+No.
+
+30
+00:01:29,500 --> 00:01:29,790
+24.
+
+31
+00:01:29,840 --> 00:01:31,690
+Does 9 divide 24?
+
+32
+00:01:31,740 --> 00:01:32,580
+No.
+
+33
+00:01:32,630 --> 00:01:32,890
+36.
+
+34
+00:01:32,940 --> 00:01:35,050
+36 divided by 9 is 4.
+
+35
+00:01:35,100 --> 00:01:35,460
+Yes!
+
+36
+00:01:35,510 --> 00:01:38,990
+So the LCM of 9 and 12 is 36.
+
+37
+00:01:39,040 --> 00:01:39,760
+Your turn.
+
+38
+00:01:39,810 --> 00:01:41,670
+Find the LCM of 8 and 12.
+
+39
+00:01:41,720 --> 00:01:45,140
+Pause the video and try it.
+
+40
+00:01:45,190 --> 00:01:47,120
+Multiples of 12: 12.
+
+41
+00:01:47,170 --> 00:01:49,200
+8 does not divide 12.
+
+42
+00:01:49,250 --> 00:01:50,090
+Next, 24.
+
+43
+00:01:50,140 --> 00:01:52,170
+24 divided by 8 is 3.
+
+44
+00:01:52,220 --> 00:01:54,410
+So the LCM is 24.
+
+45
+00:01:54,460 --> 00:01:55,730
+Here is the method.
+
+46
+00:01:55,780 --> 00:02:00,400
+Step 1: write the multiples of the bigger number, in order.
+
+47
+00:02:00,450 --> 00:02:05,380
+Step 2: for each one, test whether the other number divides it.
+
+48
+00:02:05,430 --> 00:02:09,060
+Step 3: the first one that works is the LCM.
+
+49
+00:02:09,110 --> 00:02:17,900
+A useful check: the LCM is never smaller than the bigger number, and never more than the two numbers multiplied together.
+
+50
+00:02:17,950 --> 00:02:20,640
+Find the LCM of 6 and 15.
+
+51
+00:02:20,690 --> 00:02:22,990
+Start with the bigger number.
+
+52
+00:02:23,040 --> 00:02:23,230
+15.
+
+53
+00:02:23,280 --> 00:02:26,860
+15 divided by 6 is not a whole number.
+
+54
+00:02:26,910 --> 00:02:27,660
+Next, 30.
+
+55
+00:02:27,710 --> 00:02:29,540
+30 divided by 6 is 5.
+
+56
+00:02:29,590 --> 00:02:32,680
+That works, so the LCM is 30.
+
+57
+00:02:32,730 --> 00:02:35,050
+Sometimes it is even quicker.
+
+58
+00:02:35,100 --> 00:02:41,240
+The LCM of 7 and 21: 21 is already a multiple of 7, so the LCM is 21.
+
+59
+00:02:41,290 --> 00:02:43,400
+Find the LCM of 4, 6 and 10.
+
+60
+00:02:43,450 --> 00:02:45,490
+Do it in two stages.
+
+61
+00:02:45,540 --> 00:02:46,890
+First, 4 and 6.
+
+62
+00:02:46,940 --> 00:02:49,400
+Multiples of 6: 6, then 12.
+
+63
+00:02:49,450 --> 00:02:53,020
+4 divides 12, so their LCM is 12.
+
+64
+00:02:53,070 --> 00:02:56,330
+Now find the LCM of 12 and 10.
+
+65
+00:02:56,380 --> 00:03:00,860
+Multiples of 12: 12, 24, 36, 48, 60.
+
+66
+00:03:00,910 --> 00:03:03,120
+60 divided by 10 is 6.
+
+67
+00:03:03,170 --> 00:03:06,950
+So the LCM of 4, 6 and 10 is 60.
+
+68
+00:03:07,000 --> 00:03:07,700
+Your turn.
+
+69
+00:03:07,750 --> 00:03:09,740
+Find the LCM of 3, 5 and 6.
+
+70
+00:03:09,790 --> 00:03:12,790
+Pause and work it out.
+
+71
+00:03:12,840 --> 00:03:14,760
+Take 5 and 6 first.
+
+72
+00:03:14,810 --> 00:03:18,280
+Multiples of 6: 6, 12, 18, 24, 30.
+
+73
+00:03:18,330 --> 00:03:19,620
+5 divides 30.
+
+74
+00:03:19,670 --> 00:03:21,800
+And 3 divides 30 too.
+
+75
+00:03:21,850 --> 00:03:24,110
+So the LCM is 30.
+
+76
+00:03:24,160 --> 00:03:26,160
+Hot dogs come in packs of 10.
+
+77
+00:03:26,210 --> 00:03:27,860
+Buns come in packs of 8.
+
+78
+00:03:27,910 --> 00:03:34,140
+What is the smallest number of each you can buy, to have the same number of both?
+
+79
+00:03:34,190 --> 00:03:36,990
+Equal numbers means a common multiple.
+
+80
+00:03:37,040 --> 00:03:40,240
+The smallest is the LCM of 10 and 8.
+
+81
+00:03:40,290 --> 00:03:43,720
+Multiples of 10: 10, 20, 30, 40.
+
+82
+00:03:43,770 --> 00:03:46,000
+40 divided by 8 is 5.
+
+83
+00:03:46,050 --> 00:03:48,400
+So the LCM is 40.
+
+84
+00:03:48,450 --> 00:03:49,560
+Buy 40 of each.
+
+85
+00:03:49,610 --> 00:03:53,820
+That is 4 packs of hot dogs and 5 packs of buns.
+
+86
+00:03:53,870 --> 00:03:55,970
+Lena wants the LCM of 6 and 9.
+
+87
+00:03:56,020 --> 00:03:58,520
+Which line goes wrong first?
+
+88
+00:03:58,570 --> 00:03:59,640
+Line 1 is wrong.
+
+89
+00:03:59,690 --> 00:04:05,360
+Multiplying always gives a common multiple, but not always the lowest one.
+
+90
+00:04:05,410 --> 00:04:07,970
+Multiples of 9: 9, then 18.
+
+91
+00:04:08,020 --> 00:04:10,000
+18 divided by 6 is 3.
+
+92
+00:04:10,050 --> 00:04:12,970
+So the LCM is 18, not 54.
+
+93
+00:04:13,020 --> 00:04:19,350
+In North America, some cicadas live underground and come out only once every 13 years.
+
+94
+00:04:19,400 --> 00:04:22,200
+Others come out every 17 years.
+
+95
+00:04:22,250 --> 00:04:25,990
+How often do both kinds come out in the same year?
+
+96
+00:04:26,040 --> 00:04:28,730
+That is the LCM of 13 and 17.
+
+97
+00:04:28,780 --> 00:04:34,870
+No smaller multiple of 17 works, so here the LCM really is 13 times 17.
+
+98
+00:04:34,920 --> 00:04:35,910
+That is 221.
+
+99
+00:04:35,960 --> 00:04:39,580
+They only meet once every 221 years!
+
+100
+00:04:39,630 --> 00:04:40,950
+One last question.
+
+101
+00:04:41,000 --> 00:04:42,870
+Find the LCM of 9 and 15.
+
+102
+00:04:42,920 --> 00:04:46,330
+Pause the video and answer.
+
+103
+00:04:46,380 --> 00:04:48,790
+Multiples of 15: 15, no.
+
+104
+00:04:48,840 --> 00:04:49,500
+30, no.
+
+105
+00:04:49,550 --> 00:04:49,810
+45.
+
+106
+00:04:49,860 --> 00:04:51,960
+45 divided by 9 is 5.
+
+107
+00:04:52,010 --> 00:04:54,250
+So the LCM is 45.
+
+108
+00:04:54,300 --> 00:04:57,960
+To remember: a common multiple is in both times tables.
+
+109
+00:04:58,010 --> 00:05:00,400
+The LCM is the smallest one.
+
+110
+00:05:00,450 --> 00:05:04,980
+List the multiples of the bigger number and test each one.
+
+111
+00:05:05,030 --> 00:05:09,700
+The LCM is at least the bigger number, and at most the product.
+
+112
+00:05:09,750 --> 00:05:15,520
+Problems about things happening together again, or equal packs, use the LCM.
+
+113
+00:05:15,570 --> 00:05:20,750
+Great work! Now practise lesson 1.3 on Camday.
