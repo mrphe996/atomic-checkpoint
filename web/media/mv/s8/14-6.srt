@@ -1,0 +1,231 @@
+1
+00:00:06,450 --> 00:00:09,590
+A projector shines a small picture onto a wall.
+
+2
+00:00:09,640 --> 00:00:17,240
+The picture on the wall is 3 times as wide as the original, and every line in it points back to the lamp.
+
+3
+00:00:17,290 --> 00:00:21,060
+Is the picture on the wall the same shape as the original?
+
+4
+00:00:21,110 --> 00:00:24,240
+Pause the video and choose.
+
+5
+00:00:24,290 --> 00:00:24,520
+Yes.
+
+6
+00:00:24,570 --> 00:00:26,070
+Only the size changes.
+
+7
+00:00:26,120 --> 00:00:30,420
+Every length is multiplied by 3, and the angles stay the same.
+
+8
+00:00:30,470 --> 00:00:33,080
+This is called an enlargement.
+
+9
+00:00:33,130 --> 00:00:38,090
+Remember: an enlargement with scale factor 2 doubles every length.
+
+10
+00:00:38,140 --> 00:00:44,110
+A 4 centimetre side, enlarged by scale factor 3, becomes 12 centimetres.
+
+11
+00:00:44,160 --> 00:00:47,540
+An enlargement changes the size, but not the shape.
+
+12
+00:00:47,590 --> 00:00:50,690
+All lengths are multiplied by the scale factor.
+
+13
+00:00:50,740 --> 00:00:52,920
+All angles stay the same.
+
+14
+00:00:52,970 --> 00:00:56,020
+The centre of enlargement fixes the position.
+
+15
+00:00:56,070 --> 00:01:02,640
+Each image vertex is the scale factor times as far from the centre as the object vertex.
+
+16
+00:01:02,690 --> 00:01:03,330
+Your turn.
+
+17
+00:01:03,380 --> 00:01:06,500
+In an enlargement, what happens to the angles?
+
+18
+00:01:06,550 --> 00:01:09,760
+Pause the video and choose.
+
+19
+00:01:09,810 --> 00:01:11,360
+The angles stay the same.
+
+20
+00:01:11,410 --> 00:01:15,590
+The scale factor is the image length divided by the object length.
+
+21
+00:01:15,640 --> 00:01:19,830
+To find the centre, draw lines through pairs of matching vertices.
+
+22
+00:01:19,880 --> 00:01:22,170
+They all meet at the centre.
+
+23
+00:01:22,220 --> 00:01:23,490
+Here is the method.
+
+24
+00:01:23,540 --> 00:01:28,690
+Step 1: from the centre, count the steps across and up to a vertex.
+
+25
+00:01:28,740 --> 00:01:32,750
+Step 2: multiply those steps by the scale factor.
+
+26
+00:01:32,800 --> 00:01:38,270
+Step 3: count the new steps from the centre, and plot the image vertex.
+
+27
+00:01:38,320 --> 00:01:42,880
+Step 4: repeat for every vertex, then check the lengths.
+
+28
+00:01:42,930 --> 00:01:48,660
+Enlarge the triangle 1, 1; 3, 1; 1, 2 by scale factor 3, centre 0, 0.
+
+29
+00:01:48,710 --> 00:01:56,000
+With the origin as centre, just multiply every coordinate by 3: 3, 3; 9, 3; 3, 6.
+
+30
+00:01:56,050 --> 00:01:56,780
+Your turn.
+
+31
+00:01:56,830 --> 00:02:00,200
+Enlarge 4, 3 by scale factor 2, centre 2, 1.
+
+32
+00:02:00,250 --> 00:02:03,310
+Pause and work it out.
+
+33
+00:02:03,360 --> 00:02:07,660
+From the centre 2, 1 to 4, 3 is 2 across and 2 up.
+
+34
+00:02:07,710 --> 00:02:10,440
+Times 2 gives 4 across and 4 up.
+
+35
+00:02:10,490 --> 00:02:13,080
+From 2, 1, that is 6, 5.
+
+36
+00:02:13,130 --> 00:02:18,780
+A shape with a perimeter of 14 centimetres is enlarged by scale factor 4.
+
+37
+00:02:18,830 --> 00:02:26,270
+Every length is multiplied by 4, so the perimeter is 14 times 4, which is 56 centimetres.
+
+38
+00:02:26,320 --> 00:02:30,180
+Ben enlarges 3, 2 by scale factor 2, centre 1, 1.
+
+39
+00:02:30,230 --> 00:02:32,970
+Which line goes wrong first?
+
+40
+00:02:33,020 --> 00:02:34,220
+Line 2 is wrong.
+
+41
+00:02:34,270 --> 00:02:35,080
+He added 2.
+
+42
+00:02:35,130 --> 00:02:39,700
+You must multiply the steps by 2: 4 across and 2 up.
+
+43
+00:02:39,750 --> 00:02:42,440
+From 1, 1, that is 5, 3.
+
+44
+00:02:42,490 --> 00:02:50,250
+When a photo is enlarged from 10 by 15 centimetres to 20 by 30 centimetres, every length is doubled.
+
+45
+00:02:50,300 --> 00:02:55,020
+The scale factor is 2, so the picture keeps its shape.
+
+46
+00:02:55,070 --> 00:02:58,810
+But a print of 20 by 25 would not be an enlargement.
+
+47
+00:02:58,860 --> 00:03:03,810
+The shape would change, so part of the photo must be cut off.
+
+48
+00:03:03,860 --> 00:03:05,090
+One last question.
+
+49
+00:03:05,140 --> 00:03:08,720
+A side is 3 centimetres, and the scale factor is 5.
+
+50
+00:03:08,770 --> 00:03:10,650
+How long is the image side?
+
+51
+00:03:10,700 --> 00:03:13,970
+Pause the video and answer.
+
+52
+00:03:14,020 --> 00:03:17,280
+3 times 5 is 15 centimetres.
+
+53
+00:03:17,330 --> 00:03:21,190
+To remember: lengths are multiplied by the scale factor.
+
+54
+00:03:21,240 --> 00:03:23,200
+Angles do not change.
+
+55
+00:03:23,250 --> 00:03:28,090
+Distances from the centre are multiplied by the scale factor too.
+
+56
+00:03:28,140 --> 00:03:33,120
+The scale factor is the image length divided by the object length.
+
+57
+00:03:33,170 --> 00:03:37,240
+Lines through matching vertices meet at the centre.
+
+58
+00:03:37,290 --> 00:03:42,670
+Great work! Now practise lesson 14.6 on Camday.

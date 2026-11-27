@@ -1,0 +1,239 @@
+1
+00:00:06,680 --> 00:00:10,210
+A photo shows a mountain reflected in a still lake.
+
+2
+00:00:10,260 --> 00:00:12,940
+The water line is perfectly horizontal.
+
+3
+00:00:12,990 --> 00:00:16,010
+The peak is 3 units above the water.
+
+4
+00:00:16,060 --> 00:00:18,500
+Where is the reflection of the peak?
+
+5
+00:00:18,550 --> 00:00:21,760
+Pause the video and choose.
+
+6
+00:00:21,810 --> 00:00:26,860
+A reflection is the same distance from the mirror line, on the other side.
+
+7
+00:00:26,910 --> 00:00:30,790
+So the reflected peak is 3 units below the water.
+
+8
+00:00:30,840 --> 00:00:33,670
+Remember: x equals 3 is a vertical line.
+
+9
+00:00:33,720 --> 00:00:37,170
+y equals negative 1 is a horizontal line.
+
+10
+00:00:37,220 --> 00:00:44,020
+Each image point is the same distance from the mirror line as the object point, but on the other side.
+
+11
+00:00:44,070 --> 00:00:46,980
+Measure at right angles to the line.
+
+12
+00:00:47,030 --> 00:00:48,640
+Reflect in x equals 2.
+
+13
+00:00:48,690 --> 00:00:52,040
+The point 4, 2 is 2 to the right of the line.
+
+14
+00:00:52,090 --> 00:00:55,310
+So its image is 2 to the left: 0, 2.
+
+15
+00:00:55,360 --> 00:00:56,070
+Your turn.
+
+16
+00:00:56,120 --> 00:00:58,100
+Reflect 5, 3 in x equals 2.
+
+17
+00:00:58,150 --> 00:01:01,540
+Pause the video and try it.
+
+18
+00:01:01,590 --> 00:01:07,780
+5, 3 is 3 to the right of the line, so its image is 3 to the left: negative 1, 3.
+
+19
+00:01:07,830 --> 00:01:12,090
+Reflecting in the line y equals x swaps the coordinates.
+
+20
+00:01:12,140 --> 00:01:14,020
+3, 1 becomes 1, 3.
+
+21
+00:01:14,070 --> 00:01:19,570
+To find a mirror line, find the midpoints between object points and their images.
+
+22
+00:01:19,620 --> 00:01:22,440
+The mirror line goes through them.
+
+23
+00:01:22,490 --> 00:01:23,740
+Here is the method.
+
+24
+00:01:23,790 --> 00:01:25,730
+Step 1: draw the mirror line.
+
+25
+00:01:25,780 --> 00:01:31,560
+x equals a is vertical, y equals b is horizontal, and y equals x is diagonal.
+
+26
+00:01:31,610 --> 00:01:37,170
+Step 2: for each vertex, count the distance to the line, at right angles.
+
+27
+00:01:37,220 --> 00:01:42,590
+Step 3: count the same distance on the other side, and plot the image.
+
+28
+00:01:42,640 --> 00:01:47,330
+Step 4: check that the image is flipped, but the same size.
+
+29
+00:01:47,380 --> 00:01:51,060
+Reflect 1, 5 and 3, negative 1 in y equals 1.
+
+30
+00:01:51,110 --> 00:01:56,440
+1, 5 is 4 above the line, so its image is 4 below: 1, negative 3.
+
+31
+00:01:56,490 --> 00:02:01,620
+3, negative 1 is 2 below, so its image is 2 above: 3, 3.
+
+32
+00:02:01,670 --> 00:02:02,330
+Your turn.
+
+33
+00:02:02,380 --> 00:02:04,890
+Reflect 4, 1 in the line y equals x.
+
+34
+00:02:04,940 --> 00:02:07,860
+Pause and work it out.
+
+35
+00:02:07,910 --> 00:02:09,710
+Swap the coordinates.
+
+36
+00:02:09,760 --> 00:02:11,850
+4, 1 becomes 1, 4.
+
+37
+00:02:11,900 --> 00:02:16,610
+2, 5 maps to 2, negative 1, and 4, 6 maps to 4, negative 2.
+
+38
+00:02:16,660 --> 00:02:19,190
+The midpoints are 2, 2 and 4, 2.
+
+39
+00:02:19,240 --> 00:02:22,170
+They are both on the line y equals 2.
+
+40
+00:02:22,220 --> 00:02:24,660
+That is the mirror line.
+
+41
+00:02:24,710 --> 00:02:27,770
+Ivy reflects 5, 1 in the line x equals 3.
+
+42
+00:02:27,820 --> 00:02:29,830
+Which line is wrong?
+
+43
+00:02:29,880 --> 00:02:30,980
+Line 1 is wrong.
+
+44
+00:02:31,030 --> 00:02:33,500
+That is a reflection in the y axis.
+
+45
+00:02:33,550 --> 00:02:39,960
+Count from x equals 3 instead: 5 is 2 to the right, so the image is 2 to the left.
+
+46
+00:02:40,010 --> 00:02:42,420
+The image is 1, 1.
+
+47
+00:02:42,470 --> 00:02:47,340
+The word ambulance is often painted back to front on the front of the vehicle.
+
+48
+00:02:47,390 --> 00:02:52,810
+Drivers ahead see it in their rear-view mirror, reflected the right way round.
+
+49
+00:02:52,860 --> 00:02:54,160
+One last question.
+
+50
+00:02:54,210 --> 00:02:56,860
+Reflect 0, 4 in the line y equals 1.
+
+51
+00:02:56,910 --> 00:03:00,290
+Pause the video and answer.
+
+52
+00:03:00,340 --> 00:03:03,250
+0, 4 is 3 above the line y equals 1.
+
+53
+00:03:03,300 --> 00:03:07,020
+So its image is 3 below: 0, negative 2.
+
+54
+00:03:07,070 --> 00:03:13,240
+To remember: same distance from the mirror line, on the other side, at right angles.
+
+55
+00:03:13,290 --> 00:03:14,820
+x equals a is vertical.
+
+56
+00:03:14,870 --> 00:03:16,530
+y equals b is horizontal.
+
+57
+00:03:16,580 --> 00:03:20,290
+Reflecting in y equals x swaps the coordinates.
+
+58
+00:03:20,340 --> 00:03:25,190
+Find a mirror line from the midpoints of object and image pairs.
+
+59
+00:03:25,240 --> 00:03:29,060
+Reflections flip a shape, but keep it congruent.
+
+60
+00:03:29,110 --> 00:03:34,470
+Great work! Now practise lesson 14.4 on Camday.

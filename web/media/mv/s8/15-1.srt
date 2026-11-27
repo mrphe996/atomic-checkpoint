@@ -1,0 +1,243 @@
+1
+00:00:08,170 --> 00:00:11,380
+A road sign in the UK says: Edinburgh, 45 miles.
+
+2
+00:00:11,430 --> 00:00:15,270
+But the car's trip computer is set to kilometres.
+
+3
+00:00:15,320 --> 00:00:18,500
+Is a mile longer or shorter than a kilometre?
+
+4
+00:00:18,550 --> 00:00:22,780
+A useful fact is that 5 miles is about 8 kilometres.
+
+5
+00:00:22,830 --> 00:00:25,180
+How many kilometres is 45 miles?
+
+6
+00:00:25,230 --> 00:00:28,970
+Pause the video and work it out.
+
+7
+00:00:29,020 --> 00:00:31,490
+45 miles is 9 lots of 5 miles.
+
+8
+00:00:31,540 --> 00:00:36,720
+So it is 9 lots of 8 kilometres, which is 72 kilometres.
+
+9
+00:00:36,770 --> 00:00:42,770
+Remember: 8 fifths of 30 is 30 divided by 5, times 8, which is 48.
+
+10
+00:00:42,820 --> 00:00:48,900
+And 5 eighths of 40 is 40 divided by 8, times 5, which is 25.
+
+11
+00:00:48,950 --> 00:00:51,390
+A mile is longer than a kilometre.
+
+12
+00:00:51,440 --> 00:00:54,140
+5 miles is about 8 kilometres.
+
+13
+00:00:54,190 --> 00:00:58,650
+To change miles to kilometres, divide by 5 and multiply by 8.
+
+14
+00:00:58,700 --> 00:01:03,710
+To change kilometres to miles, divide by 8 and multiply by 5.
+
+15
+00:01:03,760 --> 00:01:04,450
+Your turn.
+
+16
+00:01:04,500 --> 00:01:06,790
+How many kilometres is 15 miles?
+
+17
+00:01:06,840 --> 00:01:10,160
+Pause the video and try it.
+
+18
+00:01:10,210 --> 00:01:15,810
+15 divided by 5 is 3, and 3 times 8 is 24 kilometres.
+
+19
+00:01:15,860 --> 00:01:22,700
+For the same distance, the number of kilometres is always bigger, about 1.6 times the miles.
+
+20
+00:01:22,750 --> 00:01:29,170
+Speeds convert the same way: 50 miles per hour is about 80 kilometres per hour.
+
+21
+00:01:29,220 --> 00:01:30,630
+Here is the method.
+
+22
+00:01:30,680 --> 00:01:35,170
+Step 1: remember that 5 miles is about 8 kilometres.
+
+23
+00:01:35,220 --> 00:01:40,380
+Step 2: miles to kilometres, divide by 5, then multiply by 8.
+
+24
+00:01:40,430 --> 00:01:45,650
+Step 3: kilometres to miles, divide by 8, then multiply by 5.
+
+25
+00:01:45,700 --> 00:01:46,670
+Step 4: check.
+
+26
+00:01:46,720 --> 00:01:50,350
+The kilometres should be the bigger number.
+
+27
+00:01:50,400 --> 00:01:53,620
+Convert 120 kilometres to miles.
+
+28
+00:01:53,670 --> 00:01:55,970
+120 divided by 8 is 15.
+
+29
+00:01:56,020 --> 00:01:58,870
+15 times 5 is 75 miles.
+
+30
+00:01:58,920 --> 00:01:59,650
+Your turn.
+
+31
+00:01:59,700 --> 00:02:02,220
+How many miles is 200 kilometres?
+
+32
+00:02:02,270 --> 00:02:05,330
+Pause and work it out.
+
+33
+00:02:05,380 --> 00:02:08,060
+200 divided by 8 is 25.
+
+34
+00:02:08,110 --> 00:02:11,450
+25 times 5 is 125 miles.
+
+35
+00:02:11,500 --> 00:02:15,510
+Which is further: 30 miles, or 45 kilometres?
+
+36
+00:02:15,560 --> 00:02:21,010
+30 miles is 30 divided by 5, times 8, which is 48 kilometres.
+
+37
+00:02:21,060 --> 00:02:25,440
+48 is more than 45, so 30 miles is further.
+
+38
+00:02:25,490 --> 00:02:28,630
+A speed limit is 70 miles per hour.
+
+39
+00:02:28,680 --> 00:02:35,110
+70 divided by 5 is 14, and 14 times 8 is 112 kilometres per hour.
+
+40
+00:02:35,160 --> 00:02:40,100
+For numbers that are not multiples of 5, multiply by 1.6.
+
+41
+00:02:40,150 --> 00:02:45,100
+13 miles is 13 times 1.6, which is 20.8 kilometres.
+
+42
+00:02:45,150 --> 00:02:47,860
+Ola converts 40 miles to kilometres.
+
+43
+00:02:47,910 --> 00:02:49,940
+Which line is wrong?
+
+44
+00:02:49,990 --> 00:02:51,050
+Line 1 is wrong.
+
+45
+00:02:51,100 --> 00:02:53,900
+The kilometres must be the bigger number.
+
+46
+00:02:53,950 --> 00:02:56,390
+She used the wrong fraction.
+
+47
+00:02:56,440 --> 00:03:00,220
+40 times 8 fifths is 64 kilometres.
+
+48
+00:03:00,270 --> 00:03:03,290
+A marathon is about 26.2 miles long.
+
+49
+00:03:03,340 --> 00:03:08,330
+Using 1.6 kilometres per mile, that is about 42 kilometres.
+
+50
+00:03:08,380 --> 00:03:12,550
+The official distance is 42.195 kilometres.
+
+51
+00:03:12,600 --> 00:03:13,850
+One last question.
+
+52
+00:03:13,900 --> 00:03:16,660
+Which is longer: 1 mile or 1 kilometre?
+
+53
+00:03:16,710 --> 00:03:20,000
+Pause the video and choose.
+
+54
+00:03:20,050 --> 00:03:21,420
+1 mile is longer.
+
+55
+00:03:21,470 --> 00:03:24,220
+It is about 1.6 kilometres.
+
+56
+00:03:24,270 --> 00:03:28,010
+To remember: 5 miles is about 8 kilometres.
+
+57
+00:03:28,060 --> 00:03:30,720
+Miles to kilometres, times 8 fifths.
+
+58
+00:03:30,770 --> 00:03:34,050
+Kilometres to miles, times 5 eighths.
+
+59
+00:03:34,100 --> 00:03:37,880
+Kilometres are about 1.6 times the miles.
+
+60
+00:03:37,930 --> 00:03:40,620
+Speeds convert in the same way.
+
+61
+00:03:40,670 --> 00:03:46,030
+Great work! Now practise lesson 15.1 on Camday.

@@ -38821,7 +38821,7 @@
     "12.1-k3": 139.36,
     "12.1-k4": 216.65
    },
-   "up": false
+   "up": true
   },
   "12.2": {
    "src": "media/mv/s8/12-2.mp4",
@@ -39690,7 +39690,7 @@
     "13.1-k3": 150.52,
     "13.1-k4": 241.59
    },
-   "up": false
+   "up": true
   },
   "14.1": {
    "src": "media/mv/s8/14-1.mp4",
@@ -39956,6 +39956,1564 @@
     "14.1-k2": 74.7,
     "14.1-k3": 137.58,
     "14.1-k4": 205.32
+   },
+   "up": true
+  },
+  "14.3": {
+   "src": "media/mv/s8/14-3.mp4",
+   "poster": "media/mv/s8/14-3_poster.jpg",
+   "srt": "media/mv/s8/14-3.srt",
+   "dur": 217.08,
+   "captions": [
+    [
+     6.94,
+     "In a room planning app, a sofa is dragged 5 squares right and 2 squares down."
+    ],
+    [
+     12.31,
+     "The app records the move as two numbers stacked in brackets."
+    ],
+    [
+     17.04,
+     "How is that move written?"
+    ],
+    [
+     18.77,
+     "Pause the video and choose."
+    ],
+    [
+     22.03,
+     "It is written as a column vector, with 5 on top and negative 2 underneath."
+    ],
+    [
+     27.22,
+     "The top number is the move across."
+    ],
+    [
+     29.6,
+     "The bottom number is the move up or down."
+    ],
+    [
+     33.02,
+     "Remember: a translation slides a shape."
+    ],
+    [
+     35.94,
+     "It does not turn or flip."
+    ],
+    [
+     37.82,
+     "Move 2, 3 by 4 right and 1 up, and you get 6, 4."
+    ],
+    [
+     41.97,
+     "A translation is described by a column vector."
+    ],
+    [
+     45.09,
+     "The starting shape is the object, and the moved shape is the image."
+    ],
+    [
+     50.18,
+     "The image is congruent to the object."
+    ],
+    [
+     52.64,
+     "It has the same shape and size, and faces the same way."
+    ],
+    [
+     56.85,
+     "Your turn."
+    ],
+    [
+     57.55,
+     "A translated image is what?"
+    ],
+    [
+     59.42,
+     "Pause the video and choose."
+    ],
+    [
+     62.7,
+     "It is congruent."
+    ],
+    [
+     63.78,
+     "To describe a translation, pick one vertex and count across, then up or down, to its image."
+    ],
+    [
+     70.46,
+     "To reverse a translation, change both signs."
+    ],
+    [
+     73.77,
+     "The reverse of 4 over negative 3 is negative 4 over 3."
+    ],
+    [
+     78.39,
+     "Here is the method."
+    ],
+    [
+     79.69,
+     "Step 1: read the top number."
+    ],
+    [
+     81.62,
+     "Move each vertex that many right, or left if it is negative."
+    ],
+    [
+     86.28,
+     "Step 2: read the bottom number."
+    ],
+    [
+     88.45,
+     "Move up, or down if it is negative."
+    ],
+    [
+     91.45,
+     "Step 3: plot the image vertices, and join them."
+    ],
+    [
+     95.41,
+     "Step 4: check that the image is the same shape, the same size, and the same way round."
+    ],
+    [
+     101.82,
+     "Translate the triangle 1, 1; 4, 1; 1, 3 by the vector negative 2 over 3."
+    ],
+    [
+     107.68,
+     "Subtract 2 from each x, and add 3 to each y."
+    ],
+    [
+     111.8,
+     "The image is at negative 1, 4; 2, 4; and negative 1, 6."
+    ],
+    [
+     116.93,
+     "Your turn."
+    ],
+    [
+     117.69,
+     "Translate 0, 0 by the vector negative 3 over negative 4."
+    ],
+    [
+     121.95,
+     "Pause and work it out."
+    ],
+    [
+     125.02,
+     "3 left and 4 down from 0, 0 gives negative 3, negative 4."
+    ],
+    [
+     130.5,
+     "A vertex moves from 3, negative 1 to negative 2, 4."
+    ],
+    [
+     134.66,
+     "Across: negative 2 minus 3 is negative 5."
+    ],
+    [
+     138.0,
+     "Up: 4 minus negative 1 is 5."
+    ],
+    [
+     140.29,
+     "The vector is negative 5 over 5."
+    ],
+    [
+     143.45,
+     "Translate by 3 over 1, then by negative 1 over 4."
+    ],
+    [
+     147.28,
+     "Add the tops: 2."
+    ],
+    [
+     148.53,
+     "Add the bottoms: 5."
+    ],
+    [
+     150.02,
+     "It is the same as one translation by 2 over 5."
+    ],
+    [
+     154.17,
+     "Ed translates 2, 2 by the vector 1 over 4."
+    ],
+    [
+     157.49,
+     "Which line is wrong?"
+    ],
+    [
+     159.62,
+     "Line 1 is wrong."
+    ],
+    [
+     160.77,
+     "He swapped the numbers."
+    ],
+    [
+     162.43,
+     "The top number is the move across: 1 right, then 4 up."
+    ],
+    [
+     166.87,
+     "2 plus 1 is 3, and 2 plus 4 is 6."
+    ],
+    [
+     169.9,
+     "The image is 3, 6."
+    ],
+    [
+     172.11,
+     "Cartoon and game animators use translations."
+    ],
+    [
+     175.17,
+     "To move a character across the screen, the computer adds the same vector to every point, many times a second."
+    ],
+    [
+     183.3,
+     "One last question."
+    ],
+    [
+     184.6,
+     "What is the reverse of 2 over negative 5?"
+    ],
+    [
+     187.56,
+     "Pause the video and choose."
+    ],
+    [
+     190.91,
+     "Change both signs: negative 2 over 5."
+    ],
+    [
+     194.34,
+     "To remember: in a column vector, the top is across and the bottom is up or down."
+    ],
+    [
+     200.26,
+     "Translations keep shapes congruent, and the same way round."
+    ],
+    [
+     205.03,
+     "Describe one by counting from a vertex to its image."
+    ],
+    [
+     209.04,
+     "To reverse, change both signs."
+    ],
+    [
+     211.69,
+     "Great work! Now practise lesson 14.3 on Camday."
+    ]
+   ],
+   "times": {
+    "14.3-k1": 20.98,
+    "14.3-k2": 61.65,
+    "14.3-k3": 123.97,
+    "14.3-k4": 189.86
+   },
+   "up": true
+  },
+  "14.4": {
+   "src": "media/mv/s8/14-4.mp4",
+   "poster": "media/mv/s8/14-4_poster.jpg",
+   "srt": "media/mv/s8/14-4.srt",
+   "dur": 214.52,
+   "captions": [
+    [
+     6.68,
+     "A photo shows a mountain reflected in a still lake."
+    ],
+    [
+     10.26,
+     "The water line is perfectly horizontal."
+    ],
+    [
+     12.99,
+     "The peak is 3 units above the water."
+    ],
+    [
+     16.06,
+     "Where is the reflection of the peak?"
+    ],
+    [
+     18.55,
+     "Pause the video and choose."
+    ],
+    [
+     21.81,
+     "A reflection is the same distance from the mirror line, on the other side."
+    ],
+    [
+     26.91,
+     "So the reflected peak is 3 units below the water."
+    ],
+    [
+     30.84,
+     "Remember: x equals 3 is a vertical line."
+    ],
+    [
+     33.72,
+     "y equals negative 1 is a horizontal line."
+    ],
+    [
+     37.22,
+     "Each image point is the same distance from the mirror line as the object point, but on the other side."
+    ],
+    [
+     44.07,
+     "Measure at right angles to the line."
+    ],
+    [
+     47.03,
+     "Reflect in x equals 2."
+    ],
+    [
+     48.69,
+     "The point 4, 2 is 2 to the right of the line."
+    ],
+    [
+     52.09,
+     "So its image is 2 to the left: 0, 2."
+    ],
+    [
+     55.36,
+     "Your turn."
+    ],
+    [
+     56.12,
+     "Reflect 5, 3 in x equals 2."
+    ],
+    [
+     58.15,
+     "Pause the video and try it."
+    ],
+    [
+     61.59,
+     "5, 3 is 3 to the right of the line, so its image is 3 to the left: negative 1, 3."
+    ],
+    [
+     67.83,
+     "Reflecting in the line y equals x swaps the coordinates."
+    ],
+    [
+     72.14,
+     "3, 1 becomes 1, 3."
+    ],
+    [
+     74.07,
+     "To find a mirror line, find the midpoints between object points and their images."
+    ],
+    [
+     79.62,
+     "The mirror line goes through them."
+    ],
+    [
+     82.49,
+     "Here is the method."
+    ],
+    [
+     83.79,
+     "Step 1: draw the mirror line."
+    ],
+    [
+     85.78,
+     "x equals a is vertical, y equals b is horizontal, and y equals x is diagonal."
+    ],
+    [
+     91.61,
+     "Step 2: for each vertex, count the distance to the line, at right angles."
+    ],
+    [
+     97.22,
+     "Step 3: count the same distance on the other side, and plot the image."
+    ],
+    [
+     102.64,
+     "Step 4: check that the image is flipped, but the same size."
+    ],
+    [
+     107.38,
+     "Reflect 1, 5 and 3, negative 1 in y equals 1."
+    ],
+    [
+     111.11,
+     "1, 5 is 4 above the line, so its image is 4 below: 1, negative 3."
+    ],
+    [
+     116.49,
+     "3, negative 1 is 2 below, so its image is 2 above: 3, 3."
+    ],
+    [
+     121.67,
+     "Your turn."
+    ],
+    [
+     122.38,
+     "Reflect 4, 1 in the line y equals x."
+    ],
+    [
+     124.94,
+     "Pause and work it out."
+    ],
+    [
+     127.91,
+     "Swap the coordinates."
+    ],
+    [
+     129.76,
+     "4, 1 becomes 1, 4."
+    ],
+    [
+     131.9,
+     "2, 5 maps to 2, negative 1, and 4, 6 maps to 4, negative 2."
+    ],
+    [
+     136.66,
+     "The midpoints are 2, 2 and 4, 2."
+    ],
+    [
+     139.24,
+     "They are both on the line y equals 2."
+    ],
+    [
+     142.22,
+     "That is the mirror line."
+    ],
+    [
+     144.71,
+     "Ivy reflects 5, 1 in the line x equals 3."
+    ],
+    [
+     147.82,
+     "Which line is wrong?"
+    ],
+    [
+     149.88,
+     "Line 1 is wrong."
+    ],
+    [
+     151.03,
+     "That is a reflection in the y axis."
+    ],
+    [
+     153.55,
+     "Count from x equals 3 instead: 5 is 2 to the right, so the image is 2 to the left."
+    ],
+    [
+     160.01,
+     "The image is 1, 1."
+    ],
+    [
+     162.47,
+     "The word ambulance is often painted back to front on the front of the vehicle."
+    ],
+    [
+     167.39,
+     "Drivers ahead see it in their rear-view mirror, reflected the right way round."
+    ],
+    [
+     172.86,
+     "One last question."
+    ],
+    [
+     174.21,
+     "Reflect 0, 4 in the line y equals 1."
+    ],
+    [
+     176.91,
+     "Pause the video and answer."
+    ],
+    [
+     180.34,
+     "0, 4 is 3 above the line y equals 1."
+    ],
+    [
+     183.3,
+     "So its image is 3 below: 0, negative 2."
+    ],
+    [
+     187.07,
+     "To remember: same distance from the mirror line, on the other side, at right angles."
+    ],
+    [
+     193.29,
+     "x equals a is vertical."
+    ],
+    [
+     194.87,
+     "y equals b is horizontal."
+    ],
+    [
+     196.58,
+     "Reflecting in y equals x swaps the coordinates."
+    ],
+    [
+     200.34,
+     "Find a mirror line from the midpoints of object and image pairs."
+    ],
+    [
+     205.24,
+     "Reflections flip a shape, but keep it congruent."
+    ],
+    [
+     209.11,
+     "Great work! Now practise lesson 14.4 on Camday."
+    ]
+   ],
+   "times": {
+    "14.4-k1": 20.76,
+    "14.4-k2": 60.54,
+    "14.4-k3": 126.86,
+    "14.4-k4": 179.29
+   },
+   "up": true
+  },
+  "13.2": {
+   "src": "media/mv/s8/13-2.mp4",
+   "poster": "media/mv/s8/13-2_poster.jpg",
+   "srt": "media/mv/s8/13-2.srt",
+   "dur": 297.72,
+   "captions": [
+    [
+     8.52,
+     "A spreadsheet simulates rolling a dice 6,000 times."
+    ],
+    [
+     13.04,
+     "It gets 1,012 sixes."
+    ],
+    [
+     15.37,
+     "How many sixes would you expect?"
+    ],
+    [
+     18.1,
+     "How many sixes would you expect in 6,000 rolls?"
+    ],
+    [
+     21.76,
+     "Pause the video and work it out."
+    ],
+    [
+     25.65,
+     "The probability of a six is 1 sixth."
+    ],
+    [
+     28.98,
+     "1 sixth of 6,000 is 1,000."
+    ],
+    [
+     31.38,
+     "So 1,012 is very close to what we expect."
+    ],
+    [
+     35.72,
+     "But what if there had only been 60 rolls, with 18 sixes?"
+    ],
+    [
+     40.08,
+     "Would that be strange?"
+    ],
+    [
+     42.34,
+     "Remember: the experimental probability, or relative frequency, is the frequency divided by the number of trials."
+    ],
+    [
+     51.11,
+     "23 heads in 50 tosses is 0.46."
+    ],
+    [
+     54.01,
+     "Theoretical probability comes from equally likely outcomes."
+    ],
+    [
+     58.66,
+     "The probability of a six is 1 sixth, which is about 0.167."
+    ],
+    [
+     63.78,
+     "Experimental probability comes from trials."
+    ],
+    [
+     66.78,
+     "With only a few trials, the results can be far off."
+    ],
+    [
+     70.33,
+     "With many trials, they get closer to the theoretical value."
+    ],
+    [
+     74.98,
+     "Your turn."
+    ],
+    [
+     75.87,
+     "Write 1,012 divided by 6,000 to 3 decimal places."
+    ],
+    [
+     80.23,
+     "Pause the video and try it."
+    ],
+    [
+     84.03,
+     "1,012 divided by 6,000 is 0.1686, which is 0.169 to 3 decimal places."
+    ],
+    [
+     90.61,
+     "Very close to 0.167."
+    ],
+    [
+     92.51,
+     "But 18 sixes in 60 rolls is 0.3, which is far off."
+    ],
+    [
+     97.27,
+     "With so few rolls, that can still happen by chance."
+    ],
+    [
+     102.68,
+     "When outcomes are not equally likely, like a drawing pin landing point up, the relative frequency from many trials is the best estimate of the probability."
+    ],
+    [
+     113.85,
+     "The expected frequency is the probability times the number of trials."
+    ],
+    [
+     119.27,
+     "A fair coin tossed 300 times should give about 150 heads."
+    ],
+    [
+     124.3,
+     "Here is the method."
+    ],
+    [
+     125.65,
+     "Step 1: find the theoretical probability, if you can."
+    ],
+    [
+     129.96,
+     "Step 2: find the relative frequency: the frequency divided by the trials."
+    ],
+    [
+     135.81,
+     "Step 3: compare them."
+    ],
+    [
+     137.31,
+     "Think about how many trials there were."
+    ],
+    [
+     140.65,
+     "Step 4: a big difference over many trials suggests the dice or spinner is biased."
+    ],
+    [
+     146.89,
+     "A dice is rolled 600 times, and lands on 4 a total of 160 times."
+    ],
+    [
+     152.45,
+     "Is it biased?"
+    ],
+    [
+     153.57,
+     "We would expect 600 divided by 6, which is 100 fours."
+    ],
+    [
+     158.73,
+     "160 is far more than 100, over many trials."
+    ],
+    [
+     162.34,
+     "So the dice is probably biased towards 4."
+    ],
+    [
+     166.34,
+     "A coin gives 7 heads in 10 tosses, 56 in 100, and 503 in 1,000."
+    ],
+    [
+     172.51,
+     "The relative frequencies are 0.7, 0.56, and 0.503."
+    ],
+    [
+     177.41,
+     "They get closer to 0.5 as the trials go up."
+    ],
+    [
+     182.17,
+     "Your turn."
+    ],
+    [
+     182.87,
+     "Where does the most reliable estimate come from?"
+    ],
+    [
+     186.24,
+     "Pause and choose."
+    ],
+    [
+     188.83,
+     "The most reliable estimate comes from the most trials."
+    ],
+    [
+     193.44,
+     "Two groups can also combine their results."
+    ],
+    [
+     197.03,
+     "14 reds in 50 spins, and 66 in 250, make 80 reds in 300 spins, which is about 0.27."
+    ],
+    [
+     204.68,
+     "A pin lands point up 128 times in 400 drops."
+    ],
+    [
+     209.22,
+     "Estimate how many times it will land point up in 2,500 drops."
+    ],
+    [
+     215.52,
+     "128 divided by 400 is 0.32."
+    ],
+    [
+     218.31,
+     "0.32 times 2,500 is 800."
+    ],
+    [
+     221.34,
+     "A coin is tossed 8 times and gives 6 heads."
+    ],
+    [
+     224.49,
+     "Which line is wrong?"
+    ],
+    [
+     226.51,
+     "Line 2 is wrong."
+    ],
+    [
+     227.68,
+     "8 trials is far too few."
+    ],
+    [
+     229.43,
+     "6 heads in 8 tosses happens quite often with a fair coin."
+    ],
+    [
+     234.15,
+     "Toss it many more times before deciding."
+    ],
+    [
+     237.35,
+     "Weather forecasts use experimental probability."
+    ],
+    [
+     240.83,
+     "A 70 percent chance of rain means that on past days with very similar conditions, it rained on about 70 percent of them."
+    ],
+    [
+     250.26,
+     "The more past data the forecasters have, the more reliable the estimate."
+    ],
+    [
+     255.63,
+     "One last question."
+    ],
+    [
+     257.03,
+     "The probability is 0.15, and there are 400 trials."
+    ],
+    [
+     260.93,
+     "What is the expected frequency?"
+    ],
+    [
+     263.35,
+     "Pause the video and answer."
+    ],
+    [
+     266.85,
+     "0.15 times 400 is 60."
+    ],
+    [
+     270.36,
+     "To remember: theoretical probability comes from equally likely outcomes."
+    ],
+    [
+     275.57,
+     "Experimental probability is frequency divided by trials."
+    ],
+    [
+     280.17,
+     "More trials get closer to the true probability."
+    ],
+    [
+     283.93,
+     "Expected frequency equals probability times trials."
+    ],
+    [
+     288.21,
+     "A large difference over many trials suggests bias."
+    ],
+    [
+     292.28,
+     "Great work! Now practise lesson 13.2 on Camday."
+    ]
+   ],
+   "times": {
+    "13.2-k1": 24.6,
+    "13.2-k2": 82.98,
+    "13.2-k3": 187.78,
+    "13.2-k4": 265.8
+   },
+   "up": true
+  },
+  "14.5": {
+   "src": "media/mv/s8/14-5.mp4",
+   "poster": "media/mv/s8/14-5_poster.jpg",
+   "srt": "media/mv/s8/14-5.srt",
+   "dur": 210.24,
+   "captions": [
+    [
+     6.37,
+     "A revolving door turns 90 degrees clockwise about its centre post every time someone pushes it."
+    ],
+    [
+     13.58,
+     "To describe a turn exactly, what three facts do you need?"
+    ],
+    [
+     17.96,
+     "What are the three facts?"
+    ],
+    [
+     19.66,
+     "Pause the video and choose."
+    ],
+    [
+     22.89,
+     "You need the angle, the direction, and the centre."
+    ],
+    [
+     26.47,
+     "For the door: 90 degrees, clockwise, about the centre post."
+    ],
+    [
+     31.25,
+     "Remember: a quarter turn is 90 degrees, a half turn is 180, and a three quarter turn is 270 degrees."
+    ],
+    [
+     39.95,
+     "A rotation needs three facts: the angle, the direction, clockwise or anticlockwise, and the centre of rotation."
+    ],
+    [
+     47.58,
+     "A half turn needs no direction."
+    ],
+    [
+     50.26,
+     "The image is congruent to the object."
+    ],
+    [
+     52.74,
+     "The centre is the only point that does not move."
+    ],
+    [
+     56.51,
+     "Your turn."
+    ],
+    [
+     57.19,
+     "What is the only fixed point in a rotation?"
+    ],
+    [
+     60.11,
+     "Pause the video and choose."
+    ],
+    [
+     63.35,
+     "The centre."
+    ],
+    [
+     64.1,
+     "You can rotate with tracing paper: trace the shape, pin the centre, and turn."
+    ],
+    [
+     69.33,
+     "About the origin there are also rules."
+    ],
+    [
+     72.46,
+     "Here is the method."
+    ],
+    [
+     73.77,
+     "Step 1: find the angle, the direction and the centre."
+    ],
+    [
+     78.0,
+     "Step 2: trace the shape, and pin the centre."
+    ],
+    [
+     81.08,
+     "Or use the rules for the origin."
+    ],
+    [
+     83.86,
+     "Step 3: turn through the angle in the right direction, and plot the image."
+    ],
+    [
+     89.53,
+     "Step 4: to describe a rotation, give all three facts."
+    ],
+    [
+     93.88,
+     "Rotate 2, 5 through 90 degrees clockwise about the origin."
+    ],
+    [
+     98.17,
+     "The rule is x, y goes to y, negative x."
+    ],
+    [
+     101.6,
+     "Your turn."
+    ],
+    [
+     102.33,
+     "Use the rule."
+    ],
+    [
+     103.28,
+     "Where does 2, 5 go?"
+    ],
+    [
+     104.67,
+     "Pause and work it out."
+    ],
+    [
+     107.68,
+     "y is 5, and negative x is negative 2."
+    ],
+    [
+     110.69,
+     "So 2, 5 goes to 5, negative 2."
+    ],
+    [
+     113.68,
+     "Triangle A maps to triangle B."
+    ],
+    [
+     115.96,
+     "The point 0, 0 stays fixed, so that is the centre."
+    ],
+    [
+     119.76,
+     "The point 3, 0 moves to 0, negative 3: a quarter turn clockwise."
+    ],
+    [
+     124.63,
+     "So it is a rotation of 90 degrees clockwise, about 0, 0."
+    ],
+    [
+     129.43,
+     "A turn of 270 degrees anticlockwise ends in the same place as 90 degrees clockwise, because 360 minus 270 is 90."
+    ],
+    [
+     140.12,
+     "Ana describes a quarter turn."
+    ],
+    [
+     142.09,
+     "Which line is wrong?"
+    ],
+    [
+     144.0,
+     "Line 1 is not complete."
+    ],
+    [
+     145.56,
+     "A rotation needs the direction, and the centre, as well as the angle."
+    ],
+    [
+     150.8,
+     "For example: rotation 90 degrees clockwise, about 0, 0."
+    ],
+    [
+     155.89,
+     "A clock's minute hand is a rotation about the centre of the clock."
+    ],
+    [
+     160.76,
+     "It turns 360 degrees every hour, so 6 degrees every minute."
+    ],
+    [
+     165.66,
+     "In 15 minutes it rotates 90 degrees clockwise."
+    ],
+    [
+     170.08,
+     "One last question."
+    ],
+    [
+     171.5,
+     "Rotate 4, 1 through 180 degrees about the origin."
+    ],
+    [
+     175.35,
+     "Pause the video and answer."
+    ],
+    [
+     178.88,
+     "A half turn changes both signs."
+    ],
+    [
+     181.2,
+     "4, 1 goes to negative 4, negative 1."
+    ],
+    [
+     184.45,
+     "To remember: angle, direction and centre."
+    ],
+    [
+     187.93,
+     "Rotations keep shapes congruent."
+    ],
+    [
+     190.86,
+     "About the origin: 90 clockwise gives y, negative x."
+    ],
+    [
+     194.93,
+     "90 anticlockwise gives negative y, x."
+    ],
+    [
+     197.88,
+     "180 gives negative x, negative y."
+    ],
+    [
+     201.06,
+     "For other centres, work relative to the centre."
+    ],
+    [
+     204.8,
+     "Great work! Now practise lesson 14.5 on Camday."
+    ]
+   ],
+   "times": {
+    "14.5-k1": 21.84,
+    "14.5-k2": 62.3,
+    "14.5-k3": 106.63,
+    "14.5-k4": 177.83
+   },
+   "up": true
+  },
+  "15.1": {
+   "src": "media/mv/s8/15-1.mp4",
+   "poster": "media/mv/s8/15-1_poster.jpg",
+   "srt": "media/mv/s8/15-1.srt",
+   "dur": 226.08,
+   "captions": [
+    [
+     8.17,
+     "A road sign in the UK says: Edinburgh, 45 miles."
+    ],
+    [
+     11.43,
+     "But the car's trip computer is set to kilometres."
+    ],
+    [
+     15.32,
+     "Is a mile longer or shorter than a kilometre?"
+    ],
+    [
+     18.55,
+     "A useful fact is that 5 miles is about 8 kilometres."
+    ],
+    [
+     22.83,
+     "How many kilometres is 45 miles?"
+    ],
+    [
+     25.23,
+     "Pause the video and work it out."
+    ],
+    [
+     29.02,
+     "45 miles is 9 lots of 5 miles."
+    ],
+    [
+     31.54,
+     "So it is 9 lots of 8 kilometres, which is 72 kilometres."
+    ],
+    [
+     36.77,
+     "Remember: 8 fifths of 30 is 30 divided by 5, times 8, which is 48."
+    ],
+    [
+     42.82,
+     "And 5 eighths of 40 is 40 divided by 8, times 5, which is 25."
+    ],
+    [
+     48.95,
+     "A mile is longer than a kilometre."
+    ],
+    [
+     51.44,
+     "5 miles is about 8 kilometres."
+    ],
+    [
+     54.19,
+     "To change miles to kilometres, divide by 5 and multiply by 8."
+    ],
+    [
+     58.7,
+     "To change kilometres to miles, divide by 8 and multiply by 5."
+    ],
+    [
+     63.76,
+     "Your turn."
+    ],
+    [
+     64.5,
+     "How many kilometres is 15 miles?"
+    ],
+    [
+     66.84,
+     "Pause the video and try it."
+    ],
+    [
+     70.21,
+     "15 divided by 5 is 3, and 3 times 8 is 24 kilometres."
+    ],
+    [
+     75.86,
+     "For the same distance, the number of kilometres is always bigger, about 1.6 times the miles."
+    ],
+    [
+     82.75,
+     "Speeds convert the same way: 50 miles per hour is about 80 kilometres per hour."
+    ],
+    [
+     89.22,
+     "Here is the method."
+    ],
+    [
+     90.68,
+     "Step 1: remember that 5 miles is about 8 kilometres."
+    ],
+    [
+     95.22,
+     "Step 2: miles to kilometres, divide by 5, then multiply by 8."
+    ],
+    [
+     100.43,
+     "Step 3: kilometres to miles, divide by 8, then multiply by 5."
+    ],
+    [
+     105.7,
+     "Step 4: check."
+    ],
+    [
+     106.72,
+     "The kilometres should be the bigger number."
+    ],
+    [
+     110.4,
+     "Convert 120 kilometres to miles."
+    ],
+    [
+     113.67,
+     "120 divided by 8 is 15."
+    ],
+    [
+     116.02,
+     "15 times 5 is 75 miles."
+    ],
+    [
+     118.92,
+     "Your turn."
+    ],
+    [
+     119.7,
+     "How many miles is 200 kilometres?"
+    ],
+    [
+     122.27,
+     "Pause and work it out."
+    ],
+    [
+     125.38,
+     "200 divided by 8 is 25."
+    ],
+    [
+     128.11,
+     "25 times 5 is 125 miles."
+    ],
+    [
+     131.5,
+     "Which is further: 30 miles, or 45 kilometres?"
+    ],
+    [
+     135.56,
+     "30 miles is 30 divided by 5, times 8, which is 48 kilometres."
+    ],
+    [
+     141.06,
+     "48 is more than 45, so 30 miles is further."
+    ],
+    [
+     145.49,
+     "A speed limit is 70 miles per hour."
+    ],
+    [
+     148.68,
+     "70 divided by 5 is 14, and 14 times 8 is 112 kilometres per hour."
+    ],
+    [
+     155.16,
+     "For numbers that are not multiples of 5, multiply by 1.6."
+    ],
+    [
+     160.15,
+     "13 miles is 13 times 1.6, which is 20.8 kilometres."
+    ],
+    [
+     165.15,
+     "Ola converts 40 miles to kilometres."
+    ],
+    [
+     167.91,
+     "Which line is wrong?"
+    ],
+    [
+     169.99,
+     "Line 1 is wrong."
+    ],
+    [
+     171.1,
+     "The kilometres must be the bigger number."
+    ],
+    [
+     173.95,
+     "She used the wrong fraction."
+    ],
+    [
+     176.44,
+     "40 times 8 fifths is 64 kilometres."
+    ],
+    [
+     180.27,
+     "A marathon is about 26.2 miles long."
+    ],
+    [
+     183.34,
+     "Using 1.6 kilometres per mile, that is about 42 kilometres."
+    ],
+    [
+     188.38,
+     "The official distance is 42.195 kilometres."
+    ],
+    [
+     192.6,
+     "One last question."
+    ],
+    [
+     193.9,
+     "Which is longer: 1 mile or 1 kilometre?"
+    ],
+    [
+     196.71,
+     "Pause the video and choose."
+    ],
+    [
+     200.05,
+     "1 mile is longer."
+    ],
+    [
+     201.47,
+     "It is about 1.6 kilometres."
+    ],
+    [
+     204.27,
+     "To remember: 5 miles is about 8 kilometres."
+    ],
+    [
+     208.06,
+     "Miles to kilometres, times 8 fifths."
+    ],
+    [
+     210.77,
+     "Kilometres to miles, times 5 eighths."
+    ],
+    [
+     214.1,
+     "Kilometres are about 1.6 times the miles."
+    ],
+    [
+     217.93,
+     "Speeds convert in the same way."
+    ],
+    [
+     220.67,
+     "Great work! Now practise lesson 15.1 on Camday."
+    ]
+   ],
+   "times": {
+    "15.1-k1": 27.97,
+    "15.1-k2": 69.16,
+    "15.1-k3": 124.33,
+    "15.1-k4": 199.0
+   },
+   "up": false
+  },
+  "14.6": {
+   "src": "media/mv/s8/14-6.mp4",
+   "poster": "media/mv/s8/14-6_poster.jpg",
+   "srt": "media/mv/s8/14-6.srt",
+   "dur": 222.72,
+   "captions": [
+    [
+     6.45,
+     "A projector shines a small picture onto a wall."
+    ],
+    [
+     9.64,
+     "The picture on the wall is 3 times as wide as the original, and every line in it points back to the lamp."
+    ],
+    [
+     17.29,
+     "Is the picture on the wall the same shape as the original?"
+    ],
+    [
+     21.11,
+     "Pause the video and choose."
+    ],
+    [
+     24.29,
+     "Yes."
+    ],
+    [
+     24.57,
+     "Only the size changes."
+    ],
+    [
+     26.12,
+     "Every length is multiplied by 3, and the angles stay the same."
+    ],
+    [
+     30.47,
+     "This is called an enlargement."
+    ],
+    [
+     33.13,
+     "Remember: an enlargement with scale factor 2 doubles every length."
+    ],
+    [
+     38.14,
+     "A 4 centimetre side, enlarged by scale factor 3, becomes 12 centimetres."
+    ],
+    [
+     44.16,
+     "An enlargement changes the size, but not the shape."
+    ],
+    [
+     47.59,
+     "All lengths are multiplied by the scale factor."
+    ],
+    [
+     50.74,
+     "All angles stay the same."
+    ],
+    [
+     52.97,
+     "The centre of enlargement fixes the position."
+    ],
+    [
+     56.07,
+     "Each image vertex is the scale factor times as far from the centre as the object vertex."
+    ],
+    [
+     62.69,
+     "Your turn."
+    ],
+    [
+     63.38,
+     "In an enlargement, what happens to the angles?"
+    ],
+    [
+     66.55,
+     "Pause the video and choose."
+    ],
+    [
+     69.81,
+     "The angles stay the same."
+    ],
+    [
+     71.41,
+     "The scale factor is the image length divided by the object length."
+    ],
+    [
+     75.64,
+     "To find the centre, draw lines through pairs of matching vertices."
+    ],
+    [
+     79.88,
+     "They all meet at the centre."
+    ],
+    [
+     82.22,
+     "Here is the method."
+    ],
+    [
+     83.54,
+     "Step 1: from the centre, count the steps across and up to a vertex."
+    ],
+    [
+     88.74,
+     "Step 2: multiply those steps by the scale factor."
+    ],
+    [
+     92.8,
+     "Step 3: count the new steps from the centre, and plot the image vertex."
+    ],
+    [
+     98.32,
+     "Step 4: repeat for every vertex, then check the lengths."
+    ],
+    [
+     102.93,
+     "Enlarge the triangle 1, 1; 3, 1; 1, 2 by scale factor 3, centre 0, 0."
+    ],
+    [
+     108.71,
+     "With the origin as centre, just multiply every coordinate by 3: 3, 3; 9, 3; 3, 6."
+    ],
+    [
+     116.05,
+     "Your turn."
+    ],
+    [
+     116.83,
+     "Enlarge 4, 3 by scale factor 2, centre 2, 1."
+    ],
+    [
+     120.25,
+     "Pause and work it out."
+    ],
+    [
+     123.36,
+     "From the centre 2, 1 to 4, 3 is 2 across and 2 up."
+    ],
+    [
+     127.71,
+     "Times 2 gives 4 across and 4 up."
+    ],
+    [
+     130.49,
+     "From 2, 1, that is 6, 5."
+    ],
+    [
+     133.13,
+     "A shape with a perimeter of 14 centimetres is enlarged by scale factor 4."
+    ],
+    [
+     138.83,
+     "Every length is multiplied by 4, so the perimeter is 14 times 4, which is 56 centimetres."
+    ],
+    [
+     146.32,
+     "Ben enlarges 3, 2 by scale factor 2, centre 1, 1."
+    ],
+    [
+     150.23,
+     "Which line goes wrong first?"
+    ],
+    [
+     153.02,
+     "Line 2 is wrong."
+    ],
+    [
+     154.27,
+     "He added 2."
+    ],
+    [
+     155.13,
+     "You must multiply the steps by 2: 4 across and 2 up."
+    ],
+    [
+     159.75,
+     "From 1, 1, that is 5, 3."
+    ],
+    [
+     162.49,
+     "When a photo is enlarged from 10 by 15 centimetres to 20 by 30 centimetres, every length is doubled."
+    ],
+    [
+     170.3,
+     "The scale factor is 2, so the picture keeps its shape."
+    ],
+    [
+     175.07,
+     "But a print of 20 by 25 would not be an enlargement."
+    ],
+    [
+     178.86,
+     "The shape would change, so part of the photo must be cut off."
+    ],
+    [
+     183.86,
+     "One last question."
+    ],
+    [
+     185.14,
+     "A side is 3 centimetres, and the scale factor is 5."
+    ],
+    [
+     188.77,
+     "How long is the image side?"
+    ],
+    [
+     190.7,
+     "Pause the video and answer."
+    ],
+    [
+     194.02,
+     "3 times 5 is 15 centimetres."
+    ],
+    [
+     197.33,
+     "To remember: lengths are multiplied by the scale factor."
+    ],
+    [
+     201.24,
+     "Angles do not change."
+    ],
+    [
+     203.25,
+     "Distances from the centre are multiplied by the scale factor too."
+    ],
+    [
+     208.14,
+     "The scale factor is the image length divided by the object length."
+    ],
+    [
+     213.17,
+     "Lines through matching vertices meet at the centre."
+    ],
+    [
+     217.29,
+     "Great work! Now practise lesson 14.6 on Camday."
+    ]
+   ],
+   "times": {
+    "14.6-k1": 23.24,
+    "14.6-k2": 68.76,
+    "14.6-k3": 122.31,
+    "14.6-k4": 192.97
    },
    "up": false
   }

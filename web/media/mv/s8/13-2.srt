@@ -1,0 +1,283 @@
+1
+00:00:08,520 --> 00:00:12,990
+A spreadsheet simulates rolling a dice 6,000 times.
+
+2
+00:00:13,040 --> 00:00:15,320
+It gets 1,012 sixes.
+
+3
+00:00:15,370 --> 00:00:18,050
+How many sixes would you expect?
+
+4
+00:00:18,100 --> 00:00:21,710
+How many sixes would you expect in 6,000 rolls?
+
+5
+00:00:21,760 --> 00:00:25,600
+Pause the video and work it out.
+
+6
+00:00:25,650 --> 00:00:28,930
+The probability of a six is 1 sixth.
+
+7
+00:00:28,980 --> 00:00:31,330
+1 sixth of 6,000 is 1,000.
+
+8
+00:00:31,380 --> 00:00:35,670
+So 1,012 is very close to what we expect.
+
+9
+00:00:35,720 --> 00:00:40,030
+But what if there had only been 60 rolls, with 18 sixes?
+
+10
+00:00:40,080 --> 00:00:42,290
+Would that be strange?
+
+11
+00:00:42,340 --> 00:00:51,060
+Remember: the experimental probability, or relative frequency, is the frequency divided by the number of trials.
+
+12
+00:00:51,110 --> 00:00:53,960
+23 heads in 50 tosses is 0.46.
+
+13
+00:00:54,010 --> 00:00:58,610
+Theoretical probability comes from equally likely outcomes.
+
+14
+00:00:58,660 --> 00:01:03,730
+The probability of a six is 1 sixth, which is about 0.167.
+
+15
+00:01:03,780 --> 00:01:06,730
+Experimental probability comes from trials.
+
+16
+00:01:06,780 --> 00:01:10,280
+With only a few trials, the results can be far off.
+
+17
+00:01:10,330 --> 00:01:14,930
+With many trials, they get closer to the theoretical value.
+
+18
+00:01:14,980 --> 00:01:15,820
+Your turn.
+
+19
+00:01:15,870 --> 00:01:20,180
+Write 1,012 divided by 6,000 to 3 decimal places.
+
+20
+00:01:20,230 --> 00:01:23,980
+Pause the video and try it.
+
+21
+00:01:24,030 --> 00:01:30,560
+1,012 divided by 6,000 is 0.1686, which is 0.169 to 3 decimal places.
+
+22
+00:01:30,610 --> 00:01:32,460
+Very close to 0.167.
+
+23
+00:01:32,510 --> 00:01:37,220
+But 18 sixes in 60 rolls is 0.3, which is far off.
+
+24
+00:01:37,270 --> 00:01:42,630
+With so few rolls, that can still happen by chance.
+
+25
+00:01:42,680 --> 00:01:53,800
+When outcomes are not equally likely, like a drawing pin landing point up, the relative frequency from many trials is the best estimate of the probability.
+
+26
+00:01:53,850 --> 00:01:59,220
+The expected frequency is the probability times the number of trials.
+
+27
+00:01:59,270 --> 00:02:04,250
+A fair coin tossed 300 times should give about 150 heads.
+
+28
+00:02:04,300 --> 00:02:05,600
+Here is the method.
+
+29
+00:02:05,650 --> 00:02:09,910
+Step 1: find the theoretical probability, if you can.
+
+30
+00:02:09,960 --> 00:02:15,760
+Step 2: find the relative frequency: the frequency divided by the trials.
+
+31
+00:02:15,810 --> 00:02:17,260
+Step 3: compare them.
+
+32
+00:02:17,310 --> 00:02:20,600
+Think about how many trials there were.
+
+33
+00:02:20,650 --> 00:02:26,840
+Step 4: a big difference over many trials suggests the dice or spinner is biased.
+
+34
+00:02:26,890 --> 00:02:32,400
+A dice is rolled 600 times, and lands on 4 a total of 160 times.
+
+35
+00:02:32,450 --> 00:02:33,520
+Is it biased?
+
+36
+00:02:33,570 --> 00:02:38,680
+We would expect 600 divided by 6, which is 100 fours.
+
+37
+00:02:38,730 --> 00:02:42,290
+160 is far more than 100, over many trials.
+
+38
+00:02:42,340 --> 00:02:46,290
+So the dice is probably biased towards 4.
+
+39
+00:02:46,340 --> 00:02:52,460
+A coin gives 7 heads in 10 tosses, 56 in 100, and 503 in 1,000.
+
+40
+00:02:52,510 --> 00:02:57,360
+The relative frequencies are 0.7, 0.56, and 0.503.
+
+41
+00:02:57,410 --> 00:03:02,120
+They get closer to 0.5 as the trials go up.
+
+42
+00:03:02,170 --> 00:03:02,820
+Your turn.
+
+43
+00:03:02,870 --> 00:03:06,190
+Where does the most reliable estimate come from?
+
+44
+00:03:06,240 --> 00:03:08,780
+Pause and choose.
+
+45
+00:03:08,830 --> 00:03:13,390
+The most reliable estimate comes from the most trials.
+
+46
+00:03:13,440 --> 00:03:16,980
+Two groups can also combine their results.
+
+47
+00:03:17,030 --> 00:03:24,630
+14 reds in 50 spins, and 66 in 250, make 80 reds in 300 spins, which is about 0.27.
+
+48
+00:03:24,680 --> 00:03:29,170
+A pin lands point up 128 times in 400 drops.
+
+49
+00:03:29,220 --> 00:03:35,470
+Estimate how many times it will land point up in 2,500 drops.
+
+50
+00:03:35,520 --> 00:03:38,260
+128 divided by 400 is 0.32.
+
+51
+00:03:38,310 --> 00:03:41,290
+0.32 times 2,500 is 800.
+
+52
+00:03:41,340 --> 00:03:44,440
+A coin is tossed 8 times and gives 6 heads.
+
+53
+00:03:44,490 --> 00:03:46,460
+Which line is wrong?
+
+54
+00:03:46,510 --> 00:03:47,630
+Line 2 is wrong.
+
+55
+00:03:47,680 --> 00:03:49,380
+8 trials is far too few.
+
+56
+00:03:49,430 --> 00:03:54,100
+6 heads in 8 tosses happens quite often with a fair coin.
+
+57
+00:03:54,150 --> 00:03:57,300
+Toss it many more times before deciding.
+
+58
+00:03:57,350 --> 00:04:00,780
+Weather forecasts use experimental probability.
+
+59
+00:04:00,830 --> 00:04:10,210
+A 70 percent chance of rain means that on past days with very similar conditions, it rained on about 70 percent of them.
+
+60
+00:04:10,260 --> 00:04:15,580
+The more past data the forecasters have, the more reliable the estimate.
+
+61
+00:04:15,630 --> 00:04:16,980
+One last question.
+
+62
+00:04:17,030 --> 00:04:20,880
+The probability is 0.15, and there are 400 trials.
+
+63
+00:04:20,930 --> 00:04:23,300
+What is the expected frequency?
+
+64
+00:04:23,350 --> 00:04:26,800
+Pause the video and answer.
+
+65
+00:04:26,850 --> 00:04:30,310
+0.15 times 400 is 60.
+
+66
+00:04:30,360 --> 00:04:35,520
+To remember: theoretical probability comes from equally likely outcomes.
+
+67
+00:04:35,570 --> 00:04:40,120
+Experimental probability is frequency divided by trials.
+
+68
+00:04:40,170 --> 00:04:43,880
+More trials get closer to the true probability.
+
+69
+00:04:43,930 --> 00:04:48,160
+Expected frequency equals probability times trials.
+
+70
+00:04:48,210 --> 00:04:52,230
+A large difference over many trials suggests bias.
+
+71
+00:04:52,280 --> 00:04:57,670
+Great work! Now practise lesson 13.2 on Camday.

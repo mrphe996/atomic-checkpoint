@@ -169,7 +169,7 @@ VIDEOS["16.3"] = [
     ]),
     dict(kind="example", title="Drawing one", steps=[
         dict(say="Draw a diagram for 52, 47, 61, 55, 49, 58, 63 and 50. The stems are 4, 5 and 6.", do=[STEM([4, 5, 6], [[7, 9], [0, 2, 5, 8], [1, 3]], "Key: 5 | 2 means 52")]),
-        dict(say="There are 8 values, so the median is halfway between the 4th and the 5th: 52 and 55.", do=[MATH("4th 52, 5th 55", x=80, y=200)]),
+        dict(say="There are 8 values, so the median is halfway between the 4th and the 5th values.", do=[MATH("8 values: halfway between the 4th and 5th", x=80, y=200)]),
         PAUSE("16.3-k3", "Your turn. What is the median of these 8 values? Pause and work it out.", "Median of 47, 49, 50, 52, 55, 58, 61, 63?"),
     ]),
     dict(kind="example", title="Check: 53.5", steps=[
