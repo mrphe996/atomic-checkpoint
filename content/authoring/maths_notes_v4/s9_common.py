@@ -35,3 +35,10 @@ def pt(id, prompt, x, y, hint, reason, **kw):
 def bg(id, prompt, deg, hint, reason, **kw):
     """a three-figure bearing"""
     return short(id, prompt + " Write three figures, e.g. 045.", [f"{deg:03d}", f"{deg:03d}°"], hint, reason, **kw)
+
+
+def seq(id, prompt, terms, hint, reason, **kw):
+    """a list of numbers typed with commas, e.g. 4, 7, 12"""
+    s = ", ".join(str(t) for t in terms)
+    rx = r"/^\s*" + r"\s*[,; ]\s*".join(str(t).replace("-", "[-−]").replace(".", r"\.") for t in terms) + r"\s*$/"
+    return short(id, prompt + " Separate them with commas.", [s, rx], hint, reason, skill="Application", **kw)

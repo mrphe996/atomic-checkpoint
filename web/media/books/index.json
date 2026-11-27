@@ -1388,5 +1388,71 @@
     25
    ]
   }
+ },
+ "c6u01": {
+  "title": "Camday Maths Stage 6 · Unit 1: The Number System",
+  "pages": 10,
+  "dir": "media/books/c6u01/",
+  "ext": "webp",
+  "pdf": "media/books/c6u01.pdf?v=9b5c1bd0dc",
+  "v": "9b5c1bd0dc",
+  "secs": {
+   "1.1": [
+    2,
+    5
+   ],
+   "1.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
+ },
+ "c6u02": {
+  "title": "Camday Maths Stage 6 · Unit 2: Numbers and Sequences",
+  "pages": 14,
+  "dir": "media/books/c6u02/",
+  "ext": "webp",
+  "pdf": "media/books/c6u02.pdf?v=f7464b1821",
+  "v": "f7464b1821",
+  "secs": {
+   "2.1": [
+    2,
+    5
+   ],
+   "2.2": [
+    6,
+    9
+   ],
+   "2.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
+ },
+ "c6u03": {
+  "title": "Camday Maths Stage 6 · Unit 3: Averages",
+  "pages": 7,
+  "dir": "media/books/c6u03/",
+  "ext": "webp",
+  "pdf": "media/books/c6u03.pdf?v=eb8356d152",
+  "v": "eb8356d152",
+  "secs": {
+   "3.1": [
+    2,
+    6
+   ],
+   "answers": [
+    7,
+    7
+   ]
+  }
  }
 }
