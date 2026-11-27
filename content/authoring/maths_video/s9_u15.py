@@ -221,7 +221,7 @@ VIDEOS["15.4"] = [
     dict(kind="example", title="Masses", steps=[
         dict(say="Masses in kilograms: 0 to 10, 4 items. 10 to 20, 10 items. 20 to 30, 6 items. 4 times 5, plus 10 times 15, plus 6 times 25 is 320. Divide by 20: an estimated mean of 16 kilograms.",
              do=[MATH("(20 + 150 + 150) ÷ 20 = 16 kg", x=80, y=180)]),
-        dict(say="Brand A has an estimated mean of 20.25 hours, and a range of 20. Brand B has 18.9 hours, and a range of 15. A lasts longer on average. B is more consistent.", do=[T("A: longer · B: more consistent", x=80, y=290)]),
+        dict(say="Brand A has an estimated mean of 20.25 hours. Brand B has 18.9 hours, but its results are closer together. A lasts longer on average. B is more consistent.", do=[T("A: longer · B: more consistent", x=80, y=290)]),
     ]),
     dict(kind="error", title="Spot the mistake", steps=[
         dict(say="Max finds the estimated mean of the battery data. Which line is wrong?", do=LINES("Max", "estimated mean, battery data", ["810 ÷ 4 classes = 202.5 h"])),

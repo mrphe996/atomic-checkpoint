@@ -1,0 +1,223 @@
+1
+00:00:07,280 --> 00:00:09,580
+A lifeboat station gets a call.
+
+2
+00:00:09,630 --> 00:00:14,050
+A yacht is 12 kilometres away, on a bearing of 130 degrees.
+
+3
+00:00:14,100 --> 00:00:19,000
+A helicopter base is 8 kilometres due east of the station.
+
+4
+00:00:19,050 --> 00:00:27,330
+What does a scale drawing let you do: measure distances and bearings you cannot measure directly, or avoid using a protractor?
+
+5
+00:00:27,380 --> 00:00:30,520
+Pause the video and choose.
+
+6
+00:00:30,570 --> 00:00:38,220
+It lets you measure distances and bearings you cannot measure directly, like from the base to the yacht.
+
+7
+00:00:38,270 --> 00:00:44,450
+Remember: bearings are measured clockwise from north, with three figures.
+
+8
+00:00:44,500 --> 00:00:53,270
+A scale of 1 to 200,000 means 1 centimetre represents 200,000 centimetres, which is 2 kilometres.
+
+9
+00:00:53,320 --> 00:01:05,320
+A scale can be written as 1 centimetre represents 2 kilometres, or as a ratio, 1 to 200,000, with no units, because both parts are in the same unit.
+
+10
+00:01:05,370 --> 00:01:11,340
+On the map, the station to the base is 8 kilometres, which is 4 centimetres.
+
+11
+00:01:11,390 --> 00:01:12,180
+Your turn.
+
+12
+00:01:12,230 --> 00:01:17,760
+At 1 to 200,000, how many centimetres on the map is 12 kilometres?
+
+13
+00:01:17,810 --> 00:01:21,440
+Pause the video and try it.
+
+14
+00:01:21,490 --> 00:01:24,120
+12 divided by 2 is 6 centimetres.
+
+15
+00:01:24,170 --> 00:01:33,130
+Draw the station, then the yacht 6 centimetres away on 130 degrees, and the base 4 centimetres due east.
+
+16
+00:01:33,180 --> 00:01:36,630
+Then measure from the base to the yacht with a ruler.
+
+17
+00:01:36,680 --> 00:01:41,470
+Draw a north line at the base, and measure the bearing clockwise.
+
+18
+00:01:41,520 --> 00:01:42,180
+Your turn.
+
+19
+00:01:42,230 --> 00:01:46,010
+Base to yacht measures about 4 centimetres on the map.
+
+20
+00:01:46,060 --> 00:01:47,990
+How many kilometres is that?
+
+21
+00:01:48,040 --> 00:01:50,950
+Pause and work it out.
+
+22
+00:01:51,000 --> 00:01:53,630
+4 times 2 is about 8 kilometres.
+
+23
+00:01:53,680 --> 00:01:56,900
+The bearing measures about 171 degrees.
+
+24
+00:01:56,950 --> 00:02:02,320
+Measure carefully: 1 millimetre on this map is 200 metres.
+
+25
+00:02:02,370 --> 00:02:03,650
+Here is the method.
+
+26
+00:02:03,700 --> 00:02:08,040
+Step 1: choose a scale, and convert the real distances.
+
+27
+00:02:08,090 --> 00:02:11,420
+Step 2: draw a north line at each point.
+
+28
+00:02:11,470 --> 00:02:16,630
+Step 3: draw the bearings clockwise, and the lengths accurately.
+
+29
+00:02:16,680 --> 00:02:20,670
+Step 4: measure what you need, and convert back.
+
+30
+00:02:20,720 --> 00:02:24,670
+4.5 kilometres on a 1 to 25,000 map.
+
+31
+00:02:24,720 --> 00:02:28,900
+4.5 kilometres is 450,000 centimetres.
+
+32
+00:02:28,950 --> 00:02:33,120
+Divide by 25,000: 18 centimetres.
+
+33
+00:02:33,170 --> 00:02:36,920
+5 centimetres represents 1 kilometre.
+
+34
+00:02:36,970 --> 00:02:43,300
+1 kilometre is 100,000 centimetres, so 1 centimetre is 20,000.
+
+35
+00:02:43,350 --> 00:02:46,420
+The scale is 1 to 20,000.
+
+36
+00:02:46,470 --> 00:02:50,760
+The bearing of the yacht from the station is 130.
+
+37
+00:02:50,810 --> 00:02:56,170
+The back bearing is 130 plus 180, which is 310 degrees.
+
+38
+00:02:56,220 --> 00:02:58,860
+1 centimetre represents 5 kilometres.
+
+39
+00:02:58,910 --> 00:03:00,900
+Ella writes this as a ratio.
+
+40
+00:03:00,950 --> 00:03:02,910
+Which line is wrong?
+
+41
+00:03:02,960 --> 00:03:03,980
+Line 1 is wrong.
+
+42
+00:03:04,030 --> 00:03:08,150
+Both parts of a ratio scale must be in the same units.
+
+43
+00:03:08,200 --> 00:03:12,590
+5 kilometres is 500,000 centimetres.
+
+44
+00:03:12,640 --> 00:03:15,110
+So 1 to 500,000.
+
+45
+00:03:15,160 --> 00:03:22,440
+Orienteers and rescue teams use a map, a scale and a compass bearing to find places they cannot see.
+
+46
+00:03:22,490 --> 00:03:23,810
+One last question.
+
+47
+00:03:23,860 --> 00:03:26,070
+A plan has a scale of 1 to 50.
+
+48
+00:03:26,120 --> 00:03:28,570
+How many metres is 3 centimetres?
+
+49
+00:03:28,620 --> 00:03:32,010
+Pause the video and answer.
+
+50
+00:03:32,060 --> 00:03:37,610
+3 times 50 is 150 centimetres, which is 1.5 metres.
+
+51
+00:03:37,660 --> 00:03:43,360
+To remember: a scale can be written in words, or as 1 to N, in the same units.
+
+52
+00:03:43,410 --> 00:03:45,520
+Map length is real divided by N.
+
+53
+00:03:45,570 --> 00:03:47,410
+Real is map times N.
+
+54
+00:03:47,460 --> 00:03:51,160
+Bearings: north line, clockwise, three figures.
+
+55
+00:03:51,210 --> 00:03:53,440
+Measure carefully.
+
+56
+00:03:53,490 --> 00:03:58,830
+Great work! Now practise lesson 13.1 on Camday.

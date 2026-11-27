@@ -1,0 +1,219 @@
+1
+00:00:07,170 --> 00:00:09,970
+A raffle has tickets numbered 1 to 30.
+
+2
+00:00:10,020 --> 00:00:11,470
+One ticket is drawn.
+
+3
+00:00:11,520 --> 00:00:17,280
+You win a prize if the number is a multiple of 7, or a multiple of 11.
+
+4
+00:00:17,330 --> 00:00:21,670
+Can a number from 1 to 30 be a multiple of both 7 and 11?
+
+5
+00:00:21,720 --> 00:00:26,080
+Pause the video and choose: no, or yes.
+
+6
+00:00:26,130 --> 00:00:26,290
+No.
+
+7
+00:00:26,340 --> 00:00:31,650
+The first number that is a multiple of both is 77, which is too big.
+
+8
+00:00:31,700 --> 00:00:40,160
+Remember: the probability of an event is the number of favourable outcomes, divided by the total number of outcomes.
+
+9
+00:00:40,210 --> 00:00:46,110
+Events are mutually exclusive if they cannot happen at the same time.
+
+10
+00:00:46,160 --> 00:00:49,990
+Multiples of 7 up to 30 are 7, 14, 21 and 28.
+
+11
+00:00:50,040 --> 00:00:52,570
+Multiples of 11 are 11 and 22.
+
+12
+00:00:52,620 --> 00:00:54,500
+None is in both.
+
+13
+00:00:54,550 --> 00:01:02,390
+For mutually exclusive events, the probability of A or B is the probability of A plus the probability of B.
+
+14
+00:01:02,440 --> 00:01:03,080
+Your turn.
+
+15
+00:01:03,130 --> 00:01:06,230
+What is the probability of winning the raffle?
+
+16
+00:01:06,280 --> 00:01:09,800
+Give your answer as a fraction in its simplest form.
+
+17
+00:01:09,850 --> 00:01:13,050
+Pause the video and try it.
+
+18
+00:01:13,100 --> 00:01:18,610
+4 thirtieths plus 2 thirtieths is 6 thirtieths, which is a fifth.
+
+19
+00:01:18,660 --> 00:01:24,300
+Multiples of 3 and even numbers are not mutually exclusive: 6 and 12 are both.
+
+20
+00:01:24,350 --> 00:01:27,040
+Adding would count them twice.
+
+21
+00:01:27,090 --> 00:01:32,820
+If mutually exclusive events cover every outcome, their probabilities add up to 1.
+
+22
+00:01:32,870 --> 00:01:34,640
+Here is a spinner.
+
+23
+00:01:34,690 --> 00:01:35,340
+Your turn.
+
+24
+00:01:35,390 --> 00:01:37,720
+What is the probability of yellow?
+
+25
+00:01:37,770 --> 00:01:40,660
+Pause and work it out.
+
+26
+00:01:40,710 --> 00:01:42,980
+The others add up to 0.7.
+
+27
+00:01:43,030 --> 00:01:45,300
+1 minus 0.7 is 0.3.
+
+28
+00:01:45,350 --> 00:01:46,670
+Here is the method.
+
+29
+00:01:46,720 --> 00:01:50,270
+Step 1: check they cannot happen together.
+
+30
+00:01:50,320 --> 00:01:53,770
+Step 2: if not, add their probabilities.
+
+31
+00:01:53,820 --> 00:01:58,710
+Step 3: if they overlap, list and count the outcomes instead.
+
+32
+00:01:58,760 --> 00:02:02,430
+Step 4: all outcomes together add up to 1.
+
+33
+00:02:02,480 --> 00:02:04,710
+On a dice: less than 3, or a 6.
+
+34
+00:02:04,760 --> 00:02:08,700
+That is 2 sixths plus 1 sixth, which is a half.
+
+35
+00:02:08,750 --> 00:02:14,540
+A spinner: P of A is 0.42, P of B is 0.18, P of C is X, and P of D is 2 X.
+
+36
+00:02:14,590 --> 00:02:18,010
+3 X equals 0.4, so X is 2 fifteenths.
+
+37
+00:02:18,060 --> 00:02:21,560
+The probability of winning a game is 0.15.
+
+38
+00:02:21,610 --> 00:02:25,410
+In 200 games, you expect about 30 wins.
+
+39
+00:02:25,460 --> 00:02:30,000
+On a dice, Ahmed finds the probability of even, or greater than 3.
+
+40
+00:02:30,050 --> 00:02:31,950
+Which line is wrong?
+
+41
+00:02:32,000 --> 00:02:33,160
+Line 1 is wrong.
+
+42
+00:02:33,210 --> 00:02:36,970
+4 and 6 are in both, so the events overlap.
+
+43
+00:02:37,020 --> 00:02:39,490
+The outcomes are 2, 4, 5 and 6.
+
+44
+00:02:39,540 --> 00:02:42,490
+That is 4 sixths, or 2 thirds.
+
+45
+00:02:42,540 --> 00:02:50,510
+Game designers add the probabilities of separate rewards, to make sure all the chances add up to exactly 1.
+
+46
+00:02:50,560 --> 00:02:51,760
+One last question.
+
+47
+00:02:51,810 --> 00:02:56,920
+On a dice, are even and odd mutually exclusive, or not mutually exclusive?
+
+48
+00:02:56,970 --> 00:03:00,200
+Pause the video and choose.
+
+49
+00:03:00,250 --> 00:03:01,540
+Mutually exclusive.
+
+50
+00:03:01,590 --> 00:03:04,270
+No number is both even and odd.
+
+51
+00:03:04,320 --> 00:03:08,900
+To remember: mutually exclusive events cannot both happen.
+
+52
+00:03:08,950 --> 00:03:11,770
+Then P of A or B is P of A plus P of B.
+
+53
+00:03:11,820 --> 00:03:14,430
+All the outcomes add up to 1.
+
+54
+00:03:14,480 --> 00:03:17,870
+If events overlap, count instead of adding.
+
+55
+00:03:17,920 --> 00:03:23,310
+Great work! Now practise lesson 12.1 on Camday.

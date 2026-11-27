@@ -1,0 +1,227 @@
+1
+00:00:06,680 --> 00:00:08,740
+Sami thinks a dice is biased.
+
+2
+00:00:08,790 --> 00:00:11,660
+He rolls it 50 times, and gets 14 sixes.
+
+3
+00:00:11,710 --> 00:00:15,050
+What would you expect from a fair dice?
+
+4
+00:00:15,100 --> 00:00:20,740
+How many sixes would you expect in 50 rolls of a fair dice, to 1 decimal place?
+
+5
+00:00:20,790 --> 00:00:24,440
+Pause the video and work it out.
+
+6
+00:00:24,490 --> 00:00:26,710
+1 sixth of 50 is about 8.3.
+
+7
+00:00:26,760 --> 00:00:28,800
+He got 14, which is more.
+
+8
+00:00:28,850 --> 00:00:31,700
+But is that enough evidence?
+
+9
+00:00:31,750 --> 00:00:37,660
+Remember: relative frequency is the frequency divided by the number of trials.
+
+10
+00:00:37,710 --> 00:00:44,020
+Sami keeps rolling, and records the relative frequency as the number of rolls grows.
+
+11
+00:00:44,070 --> 00:00:44,780
+Your turn.
+
+12
+00:00:44,830 --> 00:00:48,370
+What is the relative frequency after 500 rolls?
+
+13
+00:00:48,420 --> 00:00:51,830
+Pause the video and try it.
+
+14
+00:00:51,880 --> 00:00:54,330
+84 divided by 500 is 0.168.
+
+15
+00:00:54,380 --> 00:00:58,320
+That is very close to 1 sixth, about 0.167.
+
+16
+00:00:58,370 --> 00:01:01,640
+The dice looks fair after all.
+
+17
+00:01:01,690 --> 00:01:03,540
+Small samples can mislead.
+
+18
+00:01:03,590 --> 00:01:06,720
+Large samples give better estimates.
+
+19
+00:01:06,770 --> 00:01:12,550
+Sometimes there is no theoretical probability, like a drawing pin landing point up.
+
+20
+00:01:12,600 --> 00:01:14,860
+Then you must experiment.
+
+21
+00:01:14,910 --> 00:01:15,530
+Your turn.
+
+22
+00:01:15,580 --> 00:01:23,480
+What is the best estimate of the probability a pin lands point up: the relative frequency from many drops, or a half?
+
+23
+00:01:23,530 --> 00:01:26,040
+Pause and choose.
+
+24
+00:01:26,090 --> 00:01:28,670
+The relative frequency from many drops.
+
+25
+00:01:28,720 --> 00:01:31,850
+There is no reason for it to be a half.
+
+26
+00:01:31,900 --> 00:01:36,990
+Expected frequency is the probability times the number of trials.
+
+27
+00:01:37,040 --> 00:01:38,390
+Here is the method.
+
+28
+00:01:38,440 --> 00:01:41,590
+Step 1: find the relative frequency.
+
+29
+00:01:41,640 --> 00:01:47,090
+Step 2: compare it with the theoretical probability, if there is one.
+
+30
+00:01:47,140 --> 00:01:50,030
+Step 3: think about the number of trials.
+
+31
+00:01:50,080 --> 00:01:52,150
+More is more reliable.
+
+32
+00:01:52,200 --> 00:01:55,710
+Step 4: use the best estimate to predict.
+
+33
+00:01:55,760 --> 00:01:58,330
+A spinner has 4 equal sections.
+
+34
+00:01:58,380 --> 00:02:01,620
+In 1,000 spins, red comes up 380 times.
+
+35
+00:02:01,670 --> 00:02:04,230
+A fair spinner gives about 250.
+
+36
+00:02:04,280 --> 00:02:07,650
+It is probably biased towards red.
+
+37
+00:02:07,700 --> 00:02:11,820
+A pin lands point up 62 times in 200 drops.
+
+38
+00:02:11,870 --> 00:02:13,860
+The estimate is 0.31.
+
+39
+00:02:13,910 --> 00:02:17,620
+In 1,500 drops, expect about 465.
+
+40
+00:02:17,670 --> 00:02:21,500
+Combine results for a better estimate.
+
+41
+00:02:21,550 --> 00:02:27,460
+9 sixes in 60, and 41 in 240: 50 in 300, about 0.167.
+
+42
+00:02:27,510 --> 00:02:29,990
+Sami got 14 sixes in 50 rolls.
+
+43
+00:02:30,040 --> 00:02:32,230
+Which line is wrong?
+
+44
+00:02:32,280 --> 00:02:33,460
+Line 2 is wrong.
+
+45
+00:02:33,510 --> 00:02:36,390
+50 rolls is too few to be sure.
+
+46
+00:02:36,440 --> 00:02:42,600
+After 500 rolls, the relative frequency was 0.168, close to fair.
+
+47
+00:02:42,650 --> 00:02:49,450
+Medical trials test new treatments on thousands of people, so that the results are reliable.
+
+48
+00:02:49,500 --> 00:02:50,890
+One last question.
+
+49
+00:02:50,940 --> 00:02:55,020
+The probability is 0.31, and there are 1,000 trials.
+
+50
+00:02:55,070 --> 00:02:56,850
+How many do you expect?
+
+51
+00:02:56,900 --> 00:03:00,400
+Pause the video and answer.
+
+52
+00:03:00,450 --> 00:03:04,520
+0.31 times 1,000 is 310.
+
+53
+00:03:04,570 --> 00:03:09,510
+To remember: relative frequency is frequency divided by trials.
+
+54
+00:03:09,560 --> 00:03:13,780
+With many trials, it settles near the true probability.
+
+55
+00:03:13,830 --> 00:03:16,930
+Expected frequency is P times trials.
+
+56
+00:03:16,980 --> 00:03:19,930
+Do not judge bias from a few trials.
+
+57
+00:03:19,980 --> 00:03:25,390
+Great work! Now practise lesson 12.4 on Camday.

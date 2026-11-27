@@ -54076,7 +54076,7 @@
     "12.3-k3": 109.76,
     "12.3-k4": 154.85
    },
-   "up": false
+   "up": true
   },
   "12.2": {
    "src": "media/mv/s9/12-2.mp4",
@@ -54331,7 +54331,7 @@
     "12.2-k3": 91.07,
     "12.2-k4": 172.72
    },
-   "up": false
+   "up": true
   },
   "11.2": {
    "src": "media/mv/s9/11-2.mp4",
@@ -54837,7 +54837,7 @@
     "13.2-k3": 78.19,
     "13.2-k4": 167.25
    },
-   "up": false
+   "up": true
   },
   "10.3": {
    "src": "media/mv/s9/10-3.mp4",
@@ -55088,7 +55088,7 @@
     "10.3-k3": 80.61,
     "10.3-k4": 176.69
    },
-   "up": false
+   "up": true
   },
   "13.3": {
    "src": "media/mv/s9/13-3.mp4",
@@ -55334,6 +55334,1400 @@
     "13.3-k2": 66.17,
     "13.3-k3": 98.84,
     "13.3-k4": 184.64
+   },
+   "up": false
+  },
+  "12.1": {
+   "src": "media/mv/s9/12-1.mp4",
+   "poster": "media/mv/s9/12-1_poster.jpg",
+   "srt": "media/mv/s9/12-1.srt",
+   "dur": 203.36,
+   "captions": [
+    [
+     7.17,
+     "A raffle has tickets numbered 1 to 30."
+    ],
+    [
+     10.02,
+     "One ticket is drawn."
+    ],
+    [
+     11.52,
+     "You win a prize if the number is a multiple of 7, or a multiple of 11."
+    ],
+    [
+     17.33,
+     "Can a number from 1 to 30 be a multiple of both 7 and 11?"
+    ],
+    [
+     21.72,
+     "Pause the video and choose: no, or yes."
+    ],
+    [
+     26.13,
+     "No."
+    ],
+    [
+     26.34,
+     "The first number that is a multiple of both is 77, which is too big."
+    ],
+    [
+     31.7,
+     "Remember: the probability of an event is the number of favourable outcomes, divided by the total number of outcomes."
+    ],
+    [
+     40.21,
+     "Events are mutually exclusive if they cannot happen at the same time."
+    ],
+    [
+     46.16,
+     "Multiples of 7 up to 30 are 7, 14, 21 and 28."
+    ],
+    [
+     50.04,
+     "Multiples of 11 are 11 and 22."
+    ],
+    [
+     52.62,
+     "None is in both."
+    ],
+    [
+     54.55,
+     "For mutually exclusive events, the probability of A or B is the probability of A plus the probability of B."
+    ],
+    [
+     62.44,
+     "Your turn."
+    ],
+    [
+     63.13,
+     "What is the probability of winning the raffle?"
+    ],
+    [
+     66.28,
+     "Give your answer as a fraction in its simplest form."
+    ],
+    [
+     69.85,
+     "Pause the video and try it."
+    ],
+    [
+     73.1,
+     "4 thirtieths plus 2 thirtieths is 6 thirtieths, which is a fifth."
+    ],
+    [
+     78.66,
+     "Multiples of 3 and even numbers are not mutually exclusive: 6 and 12 are both."
+    ],
+    [
+     84.35,
+     "Adding would count them twice."
+    ],
+    [
+     87.09,
+     "If mutually exclusive events cover every outcome, their probabilities add up to 1."
+    ],
+    [
+     92.87,
+     "Here is a spinner."
+    ],
+    [
+     94.69,
+     "Your turn."
+    ],
+    [
+     95.39,
+     "What is the probability of yellow?"
+    ],
+    [
+     97.77,
+     "Pause and work it out."
+    ],
+    [
+     100.71,
+     "The others add up to 0.7."
+    ],
+    [
+     103.03,
+     "1 minus 0.7 is 0.3."
+    ],
+    [
+     105.35,
+     "Here is the method."
+    ],
+    [
+     106.72,
+     "Step 1: check they cannot happen together."
+    ],
+    [
+     110.32,
+     "Step 2: if not, add their probabilities."
+    ],
+    [
+     113.82,
+     "Step 3: if they overlap, list and count the outcomes instead."
+    ],
+    [
+     118.76,
+     "Step 4: all outcomes together add up to 1."
+    ],
+    [
+     122.48,
+     "On a dice: less than 3, or a 6."
+    ],
+    [
+     124.76,
+     "That is 2 sixths plus 1 sixth, which is a half."
+    ],
+    [
+     128.75,
+     "A spinner: P of A is 0.42, P of B is 0.18, P of C is X, and P of D is 2 X."
+    ],
+    [
+     134.59,
+     "3 X equals 0.4, so X is 2 fifteenths."
+    ],
+    [
+     138.06,
+     "The probability of winning a game is 0.15."
+    ],
+    [
+     141.61,
+     "In 200 games, you expect about 30 wins."
+    ],
+    [
+     145.46,
+     "On a dice, Ahmed finds the probability of even, or greater than 3."
+    ],
+    [
+     150.05,
+     "Which line is wrong?"
+    ],
+    [
+     152.0,
+     "Line 1 is wrong."
+    ],
+    [
+     153.21,
+     "4 and 6 are in both, so the events overlap."
+    ],
+    [
+     157.02,
+     "The outcomes are 2, 4, 5 and 6."
+    ],
+    [
+     159.54,
+     "That is 4 sixths, or 2 thirds."
+    ],
+    [
+     162.54,
+     "Game designers add the probabilities of separate rewards, to make sure all the chances add up to exactly 1."
+    ],
+    [
+     170.56,
+     "One last question."
+    ],
+    [
+     171.81,
+     "On a dice, are even and odd mutually exclusive, or not mutually exclusive?"
+    ],
+    [
+     176.97,
+     "Pause the video and choose."
+    ],
+    [
+     180.25,
+     "Mutually exclusive."
+    ],
+    [
+     181.59,
+     "No number is both even and odd."
+    ],
+    [
+     184.32,
+     "To remember: mutually exclusive events cannot both happen."
+    ],
+    [
+     188.95,
+     "Then P of A or B is P of A plus P of B."
+    ],
+    [
+     191.82,
+     "All the outcomes add up to 1."
+    ],
+    [
+     194.48,
+     "If events overlap, count instead of adding."
+    ],
+    [
+     197.92,
+     "Great work! Now practise lesson 12.1 on Camday."
+    ]
+   ],
+   "times": {
+    "12.1-k1": 25.08,
+    "12.1-k2": 72.05,
+    "12.1-k3": 99.66,
+    "12.1-k4": 179.2
+   },
+   "up": true
+  },
+  "13.1": {
+   "src": "media/mv/s9/13-1.mp4",
+   "poster": "media/mv/s9/13-1_poster.jpg",
+   "srt": "media/mv/s9/13-1.srt",
+   "dur": 238.88,
+   "captions": [
+    [
+     7.28,
+     "A lifeboat station gets a call."
+    ],
+    [
+     9.63,
+     "A yacht is 12 kilometres away, on a bearing of 130 degrees."
+    ],
+    [
+     14.1,
+     "A helicopter base is 8 kilometres due east of the station."
+    ],
+    [
+     19.05,
+     "What does a scale drawing let you do: measure distances and bearings you cannot measure directly, or avoid using a protractor?"
+    ],
+    [
+     27.38,
+     "Pause the video and choose."
+    ],
+    [
+     30.57,
+     "It lets you measure distances and bearings you cannot measure directly, like from the base to the yacht."
+    ],
+    [
+     38.27,
+     "Remember: bearings are measured clockwise from north, with three figures."
+    ],
+    [
+     44.5,
+     "A scale of 1 to 200,000 means 1 centimetre represents 200,000 centimetres, which is 2 kilometres."
+    ],
+    [
+     53.32,
+     "A scale can be written as 1 centimetre represents 2 kilometres, or as a ratio, 1 to 200,000, with no units, because both parts are in the same unit."
+    ],
+    [
+     65.37,
+     "On the map, the station to the base is 8 kilometres, which is 4 centimetres."
+    ],
+    [
+     71.39,
+     "Your turn."
+    ],
+    [
+     72.23,
+     "At 1 to 200,000, how many centimetres on the map is 12 kilometres?"
+    ],
+    [
+     77.81,
+     "Pause the video and try it."
+    ],
+    [
+     81.49,
+     "12 divided by 2 is 6 centimetres."
+    ],
+    [
+     84.17,
+     "Draw the station, then the yacht 6 centimetres away on 130 degrees, and the base 4 centimetres due east."
+    ],
+    [
+     93.18,
+     "Then measure from the base to the yacht with a ruler."
+    ],
+    [
+     96.68,
+     "Draw a north line at the base, and measure the bearing clockwise."
+    ],
+    [
+     101.52,
+     "Your turn."
+    ],
+    [
+     102.23,
+     "Base to yacht measures about 4 centimetres on the map."
+    ],
+    [
+     106.06,
+     "How many kilometres is that?"
+    ],
+    [
+     108.04,
+     "Pause and work it out."
+    ],
+    [
+     111.0,
+     "4 times 2 is about 8 kilometres."
+    ],
+    [
+     113.68,
+     "The bearing measures about 171 degrees."
+    ],
+    [
+     116.95,
+     "Measure carefully: 1 millimetre on this map is 200 metres."
+    ],
+    [
+     122.37,
+     "Here is the method."
+    ],
+    [
+     123.7,
+     "Step 1: choose a scale, and convert the real distances."
+    ],
+    [
+     128.09,
+     "Step 2: draw a north line at each point."
+    ],
+    [
+     131.47,
+     "Step 3: draw the bearings clockwise, and the lengths accurately."
+    ],
+    [
+     136.68,
+     "Step 4: measure what you need, and convert back."
+    ],
+    [
+     140.72,
+     "4.5 kilometres on a 1 to 25,000 map."
+    ],
+    [
+     144.72,
+     "4.5 kilometres is 450,000 centimetres."
+    ],
+    [
+     148.95,
+     "Divide by 25,000: 18 centimetres."
+    ],
+    [
+     153.17,
+     "5 centimetres represents 1 kilometre."
+    ],
+    [
+     156.97,
+     "1 kilometre is 100,000 centimetres, so 1 centimetre is 20,000."
+    ],
+    [
+     163.35,
+     "The scale is 1 to 20,000."
+    ],
+    [
+     166.47,
+     "The bearing of the yacht from the station is 130."
+    ],
+    [
+     170.81,
+     "The back bearing is 130 plus 180, which is 310 degrees."
+    ],
+    [
+     176.22,
+     "1 centimetre represents 5 kilometres."
+    ],
+    [
+     178.91,
+     "Ella writes this as a ratio."
+    ],
+    [
+     180.95,
+     "Which line is wrong?"
+    ],
+    [
+     182.96,
+     "Line 1 is wrong."
+    ],
+    [
+     184.03,
+     "Both parts of a ratio scale must be in the same units."
+    ],
+    [
+     188.2,
+     "5 kilometres is 500,000 centimetres."
+    ],
+    [
+     192.64,
+     "So 1 to 500,000."
+    ],
+    [
+     195.16,
+     "Orienteers and rescue teams use a map, a scale and a compass bearing to find places they cannot see."
+    ],
+    [
+     202.49,
+     "One last question."
+    ],
+    [
+     203.86,
+     "A plan has a scale of 1 to 50."
+    ],
+    [
+     206.12,
+     "How many metres is 3 centimetres?"
+    ],
+    [
+     208.62,
+     "Pause the video and answer."
+    ],
+    [
+     212.06,
+     "3 times 50 is 150 centimetres, which is 1.5 metres."
+    ],
+    [
+     217.66,
+     "To remember: a scale can be written in words, or as 1 to N, in the same units."
+    ],
+    [
+     223.41,
+     "Map length is real divided by N."
+    ],
+    [
+     225.57,
+     "Real is map times N."
+    ],
+    [
+     227.46,
+     "Bearings: north line, clockwise, three figures."
+    ],
+    [
+     231.21,
+     "Measure carefully."
+    ],
+    [
+     233.49,
+     "Great work! Now practise lesson 13.1 on Camday."
+    ]
+   ],
+   "times": {
+    "13.1-k1": 29.52,
+    "13.1-k2": 80.44,
+    "13.1-k3": 109.95,
+    "13.1-k4": 211.01
+   },
+   "up": true
+  },
+  "12.4": {
+   "src": "media/mv/s9/12-4.mp4",
+   "poster": "media/mv/s9/12-4_poster.jpg",
+   "srt": "media/mv/s9/12-4.srt",
+   "dur": 205.44,
+   "captions": [
+    [
+     6.68,
+     "Sami thinks a dice is biased."
+    ],
+    [
+     8.79,
+     "He rolls it 50 times, and gets 14 sixes."
+    ],
+    [
+     11.71,
+     "What would you expect from a fair dice?"
+    ],
+    [
+     15.1,
+     "How many sixes would you expect in 50 rolls of a fair dice, to 1 decimal place?"
+    ],
+    [
+     20.79,
+     "Pause the video and work it out."
+    ],
+    [
+     24.49,
+     "1 sixth of 50 is about 8.3."
+    ],
+    [
+     26.76,
+     "He got 14, which is more."
+    ],
+    [
+     28.85,
+     "But is that enough evidence?"
+    ],
+    [
+     31.75,
+     "Remember: relative frequency is the frequency divided by the number of trials."
+    ],
+    [
+     37.71,
+     "Sami keeps rolling, and records the relative frequency as the number of rolls grows."
+    ],
+    [
+     44.07,
+     "Your turn."
+    ],
+    [
+     44.83,
+     "What is the relative frequency after 500 rolls?"
+    ],
+    [
+     48.42,
+     "Pause the video and try it."
+    ],
+    [
+     51.88,
+     "84 divided by 500 is 0.168."
+    ],
+    [
+     54.38,
+     "That is very close to 1 sixth, about 0.167."
+    ],
+    [
+     58.37,
+     "The dice looks fair after all."
+    ],
+    [
+     61.69,
+     "Small samples can mislead."
+    ],
+    [
+     63.59,
+     "Large samples give better estimates."
+    ],
+    [
+     66.77,
+     "Sometimes there is no theoretical probability, like a drawing pin landing point up."
+    ],
+    [
+     72.6,
+     "Then you must experiment."
+    ],
+    [
+     74.91,
+     "Your turn."
+    ],
+    [
+     75.58,
+     "What is the best estimate of the probability a pin lands point up: the relative frequency from many drops, or a half?"
+    ],
+    [
+     83.53,
+     "Pause and choose."
+    ],
+    [
+     86.09,
+     "The relative frequency from many drops."
+    ],
+    [
+     88.72,
+     "There is no reason for it to be a half."
+    ],
+    [
+     91.9,
+     "Expected frequency is the probability times the number of trials."
+    ],
+    [
+     97.04,
+     "Here is the method."
+    ],
+    [
+     98.44,
+     "Step 1: find the relative frequency."
+    ],
+    [
+     101.64,
+     "Step 2: compare it with the theoretical probability, if there is one."
+    ],
+    [
+     107.14,
+     "Step 3: think about the number of trials."
+    ],
+    [
+     110.08,
+     "More is more reliable."
+    ],
+    [
+     112.2,
+     "Step 4: use the best estimate to predict."
+    ],
+    [
+     115.76,
+     "A spinner has 4 equal sections."
+    ],
+    [
+     118.38,
+     "In 1,000 spins, red comes up 380 times."
+    ],
+    [
+     121.67,
+     "A fair spinner gives about 250."
+    ],
+    [
+     124.28,
+     "It is probably biased towards red."
+    ],
+    [
+     127.7,
+     "A pin lands point up 62 times in 200 drops."
+    ],
+    [
+     131.87,
+     "The estimate is 0.31."
+    ],
+    [
+     133.91,
+     "In 1,500 drops, expect about 465."
+    ],
+    [
+     137.67,
+     "Combine results for a better estimate."
+    ],
+    [
+     141.55,
+     "9 sixes in 60, and 41 in 240: 50 in 300, about 0.167."
+    ],
+    [
+     147.51,
+     "Sami got 14 sixes in 50 rolls."
+    ],
+    [
+     150.04,
+     "Which line is wrong?"
+    ],
+    [
+     152.28,
+     "Line 2 is wrong."
+    ],
+    [
+     153.51,
+     "50 rolls is too few to be sure."
+    ],
+    [
+     156.44,
+     "After 500 rolls, the relative frequency was 0.168, close to fair."
+    ],
+    [
+     162.65,
+     "Medical trials test new treatments on thousands of people, so that the results are reliable."
+    ],
+    [
+     169.5,
+     "One last question."
+    ],
+    [
+     170.94,
+     "The probability is 0.31, and there are 1,000 trials."
+    ],
+    [
+     175.07,
+     "How many do you expect?"
+    ],
+    [
+     176.9,
+     "Pause the video and answer."
+    ],
+    [
+     180.45,
+     "0.31 times 1,000 is 310."
+    ],
+    [
+     184.57,
+     "To remember: relative frequency is frequency divided by trials."
+    ],
+    [
+     189.56,
+     "With many trials, it settles near the true probability."
+    ],
+    [
+     193.83,
+     "Expected frequency is P times trials."
+    ],
+    [
+     196.98,
+     "Do not judge bias from a few trials."
+    ],
+    [
+     199.98,
+     "Great work! Now practise lesson 12.4 on Camday."
+    ]
+   ],
+   "times": {
+    "12.4-k1": 23.44,
+    "12.4-k2": 50.83,
+    "12.4-k3": 85.04,
+    "12.4-k4": 179.4
+   },
+   "up": true
+  },
+  "14.3": {
+   "src": "media/mv/s9/14-3.mp4",
+   "poster": "media/mv/s9/14-3_poster.jpg",
+   "srt": "media/mv/s9/14-3.srt",
+   "dur": 186.44,
+   "captions": [
+    [
+     7.16,
+     "A rectangular cake is a cuboid, but not a cube."
+    ],
+    [
+     10.33,
+     "Its edges are all different lengths."
+    ],
+    [
+     12.76,
+     "It must be cut by one straight slice, into two halves that are exact mirror images."
+    ],
+    [
+     18.91,
+     "How many different ways can you do it?"
+    ],
+    [
+     21.5,
+     "Pause the video and work it out."
+    ],
+    [
+     25.09,
+     "3 ways: across the length, across the width, or across the height, each time through the middle."
+    ],
+    [
+     32.29,
+     "Remember: a rectangle has 2 lines of symmetry, and a square has 4."
+    ],
+    [
+     37.55,
+     "A plane of symmetry is a flat cut that splits a solid into two congruent halves that are mirror images."
+    ],
+    [
+     44.7,
+     "A cuboid with three different edge lengths has 3."
+    ],
+    [
+     48.65,
+     "Your turn."
+    ],
+    [
+     49.32,
+     "How many planes of symmetry does a square-based cuboid have, if it is not a cube?"
+    ],
+    [
+     54.73,
+     "Pause the video and try it."
+    ],
+    [
+     57.94,
+     "5."
+    ],
+    [
+     58.09,
+     "The square end has 4 lines of symmetry, giving 4 planes along the length."
+    ],
+    [
+     63.67,
+     "Plus 1 plane halfway along."
+    ],
+    [
+     66.28,
+     "A cube has 9: 3 parallel to the faces, and 6 through opposite edges."
+    ],
+    [
+     71.26,
+     "A cylinder has infinitely many."
+    ],
+    [
+     74.08,
+     "Here is the method."
+    ],
+    [
+     75.38,
+     "Step 1: look at the end shape, and count its lines of symmetry."
+    ],
+    [
+     80.22,
+     "Step 2: each line gives a plane along the length."
+    ],
+    [
+     84.34,
+     "Step 3: if the ends match, add a plane halfway along."
+    ],
+    [
+     88.68,
+     "Step 4: imagine a mirror on each plane, to check."
+    ],
+    [
+     92.65,
+     "A prism with isosceles triangle ends, not equilateral."
+    ],
+    [
+     96.63,
+     "The triangle has 1 line of symmetry."
+    ],
+    [
+     99.29,
+     "Plus 1 halfway along: 2 planes."
+    ],
+    [
+     102.13,
+     "A prism with equilateral triangle ends: 3 lines, plus 1."
+    ],
+    [
+     106.36,
+     "That makes 4."
+    ],
+    [
+     107.89,
+     "Your turn."
+    ],
+    [
+     108.58,
+     "How many planes of symmetry does a regular hexagonal prism have?"
+    ],
+    [
+     112.99,
+     "Pause and work it out."
+    ],
+    [
+     115.9,
+     "A regular hexagon has 6 lines of symmetry."
+    ],
+    [
+     119.14,
+     "Plus 1 halfway along: 7."
+    ],
+    [
+     121.54,
+     "A cone has infinitely many: any plane through its point and the centre of its base."
+    ],
+    [
+     127.35,
+     "Find the planes of symmetry of a 2 by 2 by 5 cuboid."
+    ],
+    [
+     131.25,
+     "Kit answers."
+    ],
+    [
+     132.15,
+     "Which line is wrong?"
+    ],
+    [
+     134.19,
+     "Line 2 is wrong."
+    ],
+    [
+     135.33,
+     "He forgot the plane halfway along the length."
+    ],
+    [
+     139.09,
+     "4 plus 1 is 5 planes."
+    ],
+    [
+     141.74,
+     "Most cars have one plane of symmetry, down the middle."
+    ],
+    [
+     145.44,
+     "Designers often model one half, then reflect it."
+    ],
+    [
+     149.28,
+     "One last question."
+    ],
+    [
+     150.53,
+     "Does a sphere have infinitely many planes of symmetry, or 1 plane?"
+    ],
+    [
+     155.11,
+     "Pause the video and choose."
+    ],
+    [
+     158.38,
+     "Infinitely many."
+    ],
+    [
+     159.5,
+     "Any plane through the centre cuts it into two mirror-image halves."
+    ],
+    [
+     164.66,
+     "To remember: a plane of symmetry cuts a solid into mirror-image halves."
+    ],
+    [
+     170.1,
+     "Cuboid 3, square-based cuboid 5, cube 9."
+    ],
+    [
+     173.99,
+     "Prism: the end shape's lines, plus 1."
+    ],
+    [
+     177.11,
+     "Cylinders, cones and spheres: infinitely many."
+    ],
+    [
+     180.95,
+     "Great work! Now practise lesson 14.3 on Camday."
+    ]
+   ],
+   "times": {
+    "14.3-k1": 24.04,
+    "14.3-k2": 56.89,
+    "14.3-k3": 114.85,
+    "14.3-k4": 157.33
+   },
+   "up": false
+  },
+  "15.2": {
+   "src": "media/mv/s9/15-2.mp4",
+   "poster": "media/mv/s9/15-2_poster.jpg",
+   "srt": "media/mv/s9/15-2.srt",
+   "dur": 192.6,
+   "captions": [
+    [
+     6.38,
+     "A beach kiosk records the temperature at noon, and the number of ice creams sold, on 10 days."
+    ],
+    [
+     12.92,
+     "Do hotter days mean more sales?"
+    ],
+    [
+     15.66,
+     "Which graph is best: a scatter graph, or a pie chart?"
+    ],
+    [
+     19.2,
+     "Pause the video and choose."
+    ],
+    [
+     22.41,
+     "A scatter graph."
+    ],
+    [
+     23.48,
+     "It plots one point for each day: the temperature across, and the sales up."
+    ],
+    [
+     29.01,
+     "Remember: plot each pair, X across and Y up, on axes with sensible scales."
+    ],
+    [
+     34.49,
+     "The pattern of the points shows correlation."
+    ],
+    [
+     37.46,
+     "Positive: as one goes up, so does the other."
+    ],
+    [
+     40.43,
+     "Negative: as one goes up, the other goes down."
+    ],
+    [
+     43.53,
+     "None: no clear pattern."
+    ],
+    [
+     45.63,
+     "Your turn."
+    ],
+    [
+     46.34,
+     "Do temperature and sales show positive correlation, or negative correlation?"
+    ],
+    [
+     51.69,
+     "Pause the video and choose."
+    ],
+    [
+     54.99,
+     "Positive correlation."
+    ],
+    [
+     56.53,
+     "Hotter days have higher sales."
+    ],
+    [
+     59.27,
+     "Draw a line of best fit: a straight line through the middle of the points, with about the same number on each side."
+    ],
+    [
+     67.98,
+     "It does not have to go through the origin."
+    ],
+    [
+     71.16,
+     "This one goes through 16, 12 and 34, 106."
+    ],
+    [
+     74.81,
+     "Your turn."
+    ],
+    [
+     75.54,
+     "Use the line to estimate the sales at 26 degrees."
+    ],
+    [
+     79.07,
+     "Pause and work it out."
+    ],
+    [
+     82.06,
+     "Go up from 26 to the line, then across."
+    ],
+    [
+     85.15,
+     "About 64 ice creams."
+    ],
+    [
+     87.28,
+     "Only estimate inside the range of the data."
+    ],
+    [
+     90.35,
+     "At 45 degrees, the estimate would not be reliable."
+    ],
+    [
+     94.47,
+     "Here is the method."
+    ],
+    [
+     95.87,
+     "Step 1: plot the points."
+    ],
+    [
+     98.18,
+     "Step 2: describe the correlation: positive, negative or none, strong or weak."
+    ],
+    [
+     104.22,
+     "Step 3: draw a line of best fit through the middle."
+    ],
+    [
+     108.21,
+     "Step 4: estimate inside the data range only."
+    ],
+    [
+     112.06,
+     "Points rise steeply from left to right, close to a line: strong positive correlation."
+    ],
+    [
+     118.46,
+     "One hot day, only 20 ice creams were sold, because the kiosk shut early."
+    ],
+    [
+     123.52,
+     "That point is an outlier."
+    ],
+    [
+     125.28,
+     "Ignore it when you draw the line."
+    ],
+    [
+     128.14,
+     "Ice cream sales and sunburn are positively correlated."
+    ],
+    [
+     131.84,
+     "But ice cream does not cause sunburn."
+    ],
+    [
+     134.38,
+     "Hot sunny weather causes both."
+    ],
+    [
+     136.99,
+     "Lena draws a line of best fit for the ice cream data."
+    ],
+    [
+     140.5,
+     "Which line is wrong?"
+    ],
+    [
+     142.37,
+     "Line 1 is wrong."
+    ],
+    [
+     143.49,
+     "A line of best fit follows the points."
+    ],
+    [
+     146.13,
+     "It does not have to go through the origin."
+    ],
+    [
+     149.61,
+     "Draw it through the middle of the points."
+    ],
+    [
+     153.0,
+     "Businesses plot advertising spending against sales, to see whether their adverts seem to work."
+    ],
+    [
+     160.12,
+     "One last question."
+    ],
+    [
+     161.36,
+     "Does correlation prove that one thing causes the other?"
+    ],
+    [
+     165.14,
+     "Pause the video and choose: no, or yes."
+    ],
+    [
+     169.21,
+     "No."
+    ],
+    [
+     169.41,
+     "Correlation shows a link, not a cause."
+    ],
+    [
+     172.49,
+     "To remember: correlation can be positive, negative, or none."
+    ],
+    [
+     177.14,
+     "Draw the line of best fit through the middle of the points."
+    ],
+    [
+     181.58,
+     "Estimate inside the data range only."
+    ],
+    [
+     184.52,
+     "Correlation is not causation."
+    ],
+    [
+     187.15,
+     "Great work! Now practise lesson 15.2 on Camday."
+    ]
+   ],
+   "times": {
+    "15.2-k1": 21.36,
+    "15.2-k2": 53.94,
+    "15.2-k3": 81.01,
+    "15.2-k4": 168.16
+   },
+   "up": false
+  },
+  "15.4": {
+   "src": "media/mv/s9/15-4.mp4",
+   "poster": "media/mv/s9/15-4_poster.jpg",
+   "srt": "media/mv/s9/15-4.srt",
+   "dur": 197.8,
+   "captions": [
+    [
+     7.26,
+     "A reviewer tests 40 phones, and groups their battery life in hours into classes."
+    ],
+    [
+     12.97,
+     "She has lost the individual results."
+    ],
+    [
+     16.09,
+     "Can she still find an average?"
+    ],
+    [
+     18.11,
+     "Pause the video and choose: yes, an estimate, or no."
+    ],
+    [
+     23.01,
+     "Yes, but only an estimate, because the exact values are lost."
+    ],
+    [
+     27.71,
+     "Remember: the mean from a frequency table is the total of value times frequency, divided by the total frequency."
+    ],
+    [
+     35.96,
+     "Use each class midpoint as an estimate of the values in that class."
+    ],
+    [
+     40.6,
+     "Multiply each midpoint by its frequency."
+    ],
+    [
+     43.92,
+     "Your turn."
+    ],
+    [
+     44.59,
+     "Find the estimated mean, in hours."
+    ],
+    [
+     46.87,
+     "Pause the video and try it."
+    ],
+    [
+     50.08,
+     "810 divided by 40 is 20.25 hours."
+    ],
+    [
+     52.78,
+     "It is only an estimate, because we do not know the exact values in each class."
+    ],
+    [
+     59.73,
+     "The modal class is the class with the highest frequency."
+    ],
+    [
+     64.14,
+     "Your turn."
+    ],
+    [
+     65.01,
+     "Which is the modal class: 15 to 20, or 20 to 25?"
+    ],
+    [
+     69.21,
+     "Pause and choose."
+    ],
+    [
+     72.09,
+     "15 to 20 hours, with 14 phones."
+    ],
+    [
+     75.88,
+     "For the median, use running totals: 6, 20, 32, 40."
+    ],
+    [
+     80.58,
+     "The 20th value is in 15 to 20, and the 21st is in 20 to 25."
+    ],
+    [
+     86.13,
+     "So the median is about 20."
+    ],
+    [
+     89.12,
+     "Here is the method."
+    ],
+    [
+     90.48,
+     "Step 1: find each class midpoint."
+    ],
+    [
+     93.39,
+     "Step 2: multiply each midpoint by its frequency, and add."
+    ],
+    [
+     98.03,
+     "Step 3: divide by the total frequency."
+    ],
+    [
+     101.36,
+     "Step 4: find the modal class, and the median class from running totals."
+    ],
+    [
+     106.9,
+     "Masses in kilograms: 0 to 10, 4 items."
+    ],
+    [
+     110.69,
+     "10 to 20, 10 items."
+    ],
+    [
+     112.58,
+     "20 to 30, 6 items."
+    ],
+    [
+     114.38,
+     "4 times 5, plus 10 times 15, plus 6 times 25 is 320."
+    ],
+    [
+     119.56,
+     "Divide by 20: an estimated mean of 16 kilograms."
+    ],
+    [
+     124.9,
+     "Brand A has an estimated mean of 20.25 hours."
+    ],
+    [
+     128.37,
+     "Brand B has 18.9 hours, but its results are closer together."
+    ],
+    [
+     132.99,
+     "A lasts longer on average."
+    ],
+    [
+     134.99,
+     "B is more consistent."
+    ],
+    [
+     137.16,
+     "Max finds the estimated mean of the battery data."
+    ],
+    [
+     140.53,
+     "Which line is wrong?"
+    ],
+    [
+     142.45,
+     "Line 1 is wrong."
+    ],
+    [
+     143.57,
+     "He divided by the number of classes."
+    ],
+    [
+     146.09,
+     "Divide by the number of phones."
+    ],
+    [
+     148.81,
+     "810 divided by 40 is 20.25 hours."
+    ],
+    [
+     153.29,
+     "Census data, like ages and incomes, is often published in groups."
+    ],
+    [
+     157.77,
+     "Statisticians estimate the mean using midpoints."
+    ],
+    [
+     161.63,
+     "One last question."
+    ],
+    [
+     162.88,
+     "Estimate the range of the battery data: the largest possible value minus the smallest possible value."
+    ],
+    [
+     169.91,
+     "Pause the video and answer."
+    ],
+    [
+     173.19,
+     "30 minus 10 is 20 hours."
+    ],
+    [
+     176.53,
+     "To remember: use midpoints to estimate."
+    ],
+    [
+     179.81,
+     "The estimated mean is the total of f times X, divided by the total frequency."
+    ],
+    [
+     185.45,
+     "The modal class has the highest frequency."
+    ],
+    [
+     188.88,
+     "Find the median class from running totals."
+    ],
+    [
+     192.41,
+     "Great work! Now practise lesson 15.4 on Camday."
+    ]
+   ],
+   "times": {
+    "15.4-k1": 21.96,
+    "15.4-k2": 49.03,
+    "15.4-k3": 71.04,
+    "15.4-k4": 172.14
    },
    "up": false
   }

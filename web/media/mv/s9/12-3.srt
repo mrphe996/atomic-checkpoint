@@ -1,0 +1,215 @@
+1
+00:00:06,420 --> 00:00:10,630
+On the way to school, Lin passes two sets of traffic lights.
+
+2
+00:00:10,680 --> 00:00:12,330
+They work independently.
+
+3
+00:00:12,380 --> 00:00:16,650
+The chance each one is green when she arrives is 0.4.
+
+4
+00:00:16,700 --> 00:00:19,610
+What is the probability that both are green?
+
+5
+00:00:19,660 --> 00:00:23,160
+Pause the video and work it out.
+
+6
+00:00:23,210 --> 00:00:26,520
+0.4 times 0.4 is 0.16.
+
+7
+00:00:26,570 --> 00:00:30,820
+Remember: independent events do not affect each other.
+
+8
+00:00:30,870 --> 00:00:35,770
+For independent events, the probability of A and B is P of A times P of B.
+
+9
+00:00:35,820 --> 00:00:40,800
+A head and more than 2 on a dice: a half times 2 thirds is a third.
+
+10
+00:00:40,850 --> 00:00:43,260
+A tree diagram shows every outcome.
+
+11
+00:00:43,310 --> 00:00:46,070
+Each light is green, G, or not green, N.
+
+12
+00:00:46,120 --> 00:00:48,730
+Not green has probability 0.6.
+
+13
+00:00:48,780 --> 00:00:49,370
+Your turn.
+
+14
+00:00:49,420 --> 00:00:52,460
+The first light is green, and the second is not.
+
+15
+00:00:52,510 --> 00:00:53,560
+What is P of G N?
+
+16
+00:00:53,610 --> 00:00:56,700
+Pause the video and try it.
+
+17
+00:00:56,750 --> 00:00:58,620
+0.4 times 0.6 is 0.24.
+
+18
+00:00:58,670 --> 00:01:01,060
+Multiply along the branches.
+
+19
+00:01:01,110 --> 00:01:04,230
+The four outcomes add up to 1.
+
+20
+00:01:04,280 --> 00:01:07,130
+To combine different routes, add.
+
+21
+00:01:07,180 --> 00:01:08,470
+Here is the method.
+
+22
+00:01:08,520 --> 00:01:12,570
+Step 1: draw a tree diagram with all the outcomes.
+
+23
+00:01:12,620 --> 00:01:16,490
+Step 2: branches from one point add up to 1.
+
+24
+00:01:16,540 --> 00:01:19,570
+Step 3: multiply along each route.
+
+25
+00:01:19,620 --> 00:01:22,490
+Step 4: add the routes you want.
+
+26
+00:01:22,540 --> 00:01:25,990
+A spinner has a probability of winning of a fifth.
+
+27
+00:01:26,040 --> 00:01:27,180
+It is spun twice.
+
+28
+00:01:27,230 --> 00:01:30,880
+The chance of winning both is 1 twenty-fifth.
+
+29
+00:01:30,930 --> 00:01:36,720
+The bus is late with probability 0.2, and it rains with probability 0.3.
+
+30
+00:01:36,770 --> 00:01:38,420
+They are independent.
+
+31
+00:01:38,470 --> 00:01:43,340
+The chance of neither is 0.8 times 0.7, which is 0.56.
+
+32
+00:01:43,390 --> 00:01:44,030
+Your turn.
+
+33
+00:01:44,080 --> 00:01:47,860
+What is the probability that exactly one light is green?
+
+34
+00:01:47,910 --> 00:01:50,760
+Pause and work it out.
+
+35
+00:01:50,810 --> 00:01:53,180
+Two routes: G N and N G.
+
+36
+00:01:53,230 --> 00:01:56,050
+0.24 plus 0.24 is 0.48.
+
+37
+00:01:56,100 --> 00:02:03,640
+Over 50 school days, both lights are green on about 0.16 times 50, which is 8 days.
+
+38
+00:02:03,690 --> 00:02:06,570
+Each light is green with probability 0.4.
+
+39
+00:02:06,620 --> 00:02:09,570
+Emma finds the probability both are green.
+
+40
+00:02:09,620 --> 00:02:11,540
+Which line is wrong?
+
+41
+00:02:11,590 --> 00:02:12,690
+Line 1 is wrong.
+
+42
+00:02:12,740 --> 00:02:16,320
+For and, with independent events, multiply.
+
+43
+00:02:16,370 --> 00:02:19,680
+0.4 times 0.4 is 0.16.
+
+44
+00:02:19,730 --> 00:02:27,420
+Engineers multiply the chances that independent parts fail, to work out how reliable a whole machine is.
+
+45
+00:02:27,470 --> 00:02:28,660
+One last question.
+
+46
+00:02:28,710 --> 00:02:32,580
+What is the probability that at least one light is green?
+
+47
+00:02:32,630 --> 00:02:35,850
+Pause the video and answer.
+
+48
+00:02:35,900 --> 00:02:39,360
+At least one is everything except none.
+
+49
+00:02:39,410 --> 00:02:41,810
+1 minus 0.36 is 0.64.
+
+50
+00:02:41,860 --> 00:02:46,280
+To remember: for independent events, and means multiply.
+
+51
+00:02:46,330 --> 00:02:50,420
+Tree diagrams: multiply along, add between routes.
+
+52
+00:02:50,470 --> 00:02:53,590
+Branches from one point add up to 1.
+
+53
+00:02:53,640 --> 00:02:56,510
+At least one is 1 minus P of none.
+
+54
+00:02:56,560 --> 00:03:01,990
+Great work! Now practise lesson 12.3 on Camday.
