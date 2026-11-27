@@ -18,8 +18,8 @@ def fr(id, prompt, n, d, hint, reason, **kw):
     return num(id, prompt + " Give your answer as a fraction in its simplest form.", n / d, hint, reason, tol=1e-6, **kw)
 
 
-def ex(id, prompt, ans, hint, reason, v="x", **kw):
-    return expr(id, prompt, ans, hint, reason, vars=v, lhs=None, **kw)
+def ex(id, prompt, ans, hint, reason, v="x", lhs=None, **kw):
+    return expr(id, prompt, ans, hint, reason, vars=v, lhs=lhs, **kw)
 
 
 NB = ["^[^()]*$"]

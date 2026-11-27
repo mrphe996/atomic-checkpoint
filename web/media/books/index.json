@@ -1190,5 +1190,61 @@
     24
    ]
   }
+ },
+ "c9u09": {
+  "title": "Camday Maths Stage 9 · Unit 9: Sequences and Functions",
+  "pages": 14,
+  "dir": "media/books/c9u09/",
+  "ext": "webp",
+  "pdf": "media/books/c9u09.pdf?v=c932dd6bd7",
+  "v": "c932dd6bd7",
+  "secs": {
+   "9.1": [
+    2,
+    5
+   ],
+   "9.2": [
+    6,
+    9
+   ],
+   "9.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
+ },
+ "c9u10": {
+  "title": "Camday Maths Stage 9 · Unit 10: Graphs",
+  "pages": 19,
+  "dir": "media/books/c9u10/",
+  "ext": "webp",
+  "pdf": "media/books/c9u10.pdf?v=dca2a05d7a",
+  "v": "dca2a05d7a",
+  "secs": {
+   "10.1": [
+    2,
+    5
+   ],
+   "10.2": [
+    6,
+    10
+   ],
+   "10.3": [
+    11,
+    14
+   ],
+   "10.4": [
+    15,
+    18
+   ],
+   "answers": [
+    19,
+    19
+   ]
+  }
  }
 }
