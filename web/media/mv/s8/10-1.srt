@@ -1,0 +1,267 @@
+1
+00:00:07,830 --> 00:00:11,960
+A concert ticket went up from 60 dollars to 75 dollars.
+
+2
+00:00:12,010 --> 00:00:15,770
+The organiser says it is only a small rise.
+
+3
+00:00:15,820 --> 00:00:18,380
+By what percentage did the price rise?
+
+4
+00:00:18,430 --> 00:00:21,970
+Pause the video and work it out.
+
+5
+00:00:22,020 --> 00:00:23,890
+The rise is 15 dollars.
+
+6
+00:00:23,940 --> 00:00:27,820
+Compare it with the original price, 60 dollars.
+
+7
+00:00:27,870 --> 00:00:31,660
+15 divided by 60 is 0.25, which is 25 percent.
+
+8
+00:00:31,710 --> 00:00:35,300
+That is a quarter more, not so small!
+
+9
+00:00:35,350 --> 00:00:40,830
+Remember: to find 15 percent of 80, multiply 0.15 by 80.
+
+10
+00:00:40,880 --> 00:00:42,470
+That is 12.
+
+11
+00:00:42,520 --> 00:00:47,310
+To increase an amount by a percentage, find the percentage, then add it.
+
+12
+00:00:47,360 --> 00:00:50,480
+To decrease, find it, then subtract it.
+
+13
+00:00:50,530 --> 00:00:51,330
+Your turn.
+
+14
+00:00:51,380 --> 00:00:53,610
+Increase 200 by 35 percent.
+
+15
+00:00:53,660 --> 00:00:57,290
+Pause the video and try it.
+
+16
+00:00:57,340 --> 00:01:00,530
+35 percent of 200 is 70.
+
+17
+00:01:00,580 --> 00:01:03,650
+200 plus 70 is 270.
+
+18
+00:01:03,700 --> 00:01:09,530
+The percentage change is the change, divided by the original amount, times 100.
+
+19
+00:01:09,580 --> 00:01:12,840
+Always divide by the original amount.
+
+20
+00:01:12,890 --> 00:01:16,870
+The actual change, 15 dollars, is the absolute change.
+
+21
+00:01:16,920 --> 00:01:19,400
+25 percent is the relative change.
+
+22
+00:01:19,450 --> 00:01:24,650
+Percentages make it fair to compare changes of different sizes.
+
+23
+00:01:24,700 --> 00:01:25,970
+Here is the method.
+
+24
+00:01:26,020 --> 00:01:33,020
+Step 1: to increase or decrease, find the percentage of the original, then add or subtract it.
+
+25
+00:01:33,070 --> 00:01:39,340
+Step 2: for a percentage change, find the change: the new amount minus the original.
+
+26
+00:01:39,390 --> 00:01:44,230
+Step 3: divide by the original, and multiply by 100.
+
+27
+00:01:44,280 --> 00:01:48,440
+Step 4: say whether it is an increase or a decrease.
+
+28
+00:01:48,490 --> 00:01:51,340
+A laptop costs 850 dollars.
+
+29
+00:01:51,390 --> 00:01:54,350
+It is reduced by 12 percent.
+
+30
+00:01:54,400 --> 00:01:57,030
+12 percent of 850 is 102.
+
+31
+00:01:57,080 --> 00:02:00,690
+850 minus 102 is 748 dollars.
+
+32
+00:02:00,740 --> 00:02:01,450
+Your turn.
+
+33
+00:02:01,500 --> 00:02:04,800
+A price falls from 80 dollars to 68 dollars.
+
+34
+00:02:04,850 --> 00:02:07,230
+What is the percentage decrease?
+
+35
+00:02:07,280 --> 00:02:10,300
+Pause and work it out.
+
+36
+00:02:10,350 --> 00:02:12,700
+The change is 12 dollars.
+
+37
+00:02:12,750 --> 00:02:16,060
+12 divided by 80, times 100, is 15.
+
+38
+00:02:16,110 --> 00:02:19,300
+It is a 15 percent decrease.
+
+39
+00:02:19,350 --> 00:02:23,120
+In shop A, a price went from 40 to 46 dollars.
+
+40
+00:02:23,170 --> 00:02:26,020
+In shop B, from 120 to 132 dollars.
+
+41
+00:02:26,070 --> 00:02:29,650
+Which had the bigger percentage rise?
+
+42
+00:02:29,700 --> 00:02:32,730
+Shop A: 6 divided by 40 is 15 percent.
+
+43
+00:02:32,780 --> 00:02:35,980
+Shop B: 12 divided by 120 is 10 percent.
+
+44
+00:02:36,030 --> 00:02:42,940
+Shop A had the bigger percentage rise, even though shop B rose more in dollars.
+
+45
+00:02:42,990 --> 00:02:46,320
+A price falls from 50 dollars to 40 dollars.
+
+46
+00:02:46,370 --> 00:02:48,930
+Jay finds the percentage decrease.
+
+47
+00:02:48,980 --> 00:02:51,630
+Which line goes wrong first?
+
+48
+00:02:51,680 --> 00:02:52,820
+Line 2 is wrong.
+
+49
+00:02:52,870 --> 00:02:54,900
+He divided by the new price.
+
+50
+00:02:54,950 --> 00:02:58,580
+You must divide by the original price, 50.
+
+51
+00:02:58,630 --> 00:03:03,860
+10 divided by 50, times 100, is 20 percent.
+
+52
+00:03:03,910 --> 00:03:08,590
+Governments track population changes as percentages.
+
+53
+00:03:08,640 --> 00:03:12,870
+A town fell from 25,000 people to 23,500.
+
+54
+00:03:12,920 --> 00:03:14,710
+The change is 1,500.
+
+55
+00:03:14,760 --> 00:03:18,480
+1,500 divided by 25,000, times 100, is 6.
+
+56
+00:03:18,530 --> 00:03:26,290
+That is a 6 percent decrease, which helps compare it with towns of other sizes.
+
+57
+00:03:26,340 --> 00:03:27,750
+One last question.
+
+58
+00:03:27,800 --> 00:03:29,860
+Decrease 90 by 10 percent.
+
+59
+00:03:29,910 --> 00:03:33,450
+Pause the video and answer.
+
+60
+00:03:33,500 --> 00:03:36,030
+10 percent of 90 is 9.
+
+61
+00:03:36,080 --> 00:03:38,580
+90 minus 9 is 81.
+
+62
+00:03:38,630 --> 00:03:41,700
+To remember: to increase, add the percentage.
+
+63
+00:03:41,750 --> 00:03:43,990
+To decrease, subtract it.
+
+64
+00:03:44,040 --> 00:03:50,080
+Percentage change equals the change, divided by the original, times 100.
+
+65
+00:03:50,130 --> 00:03:55,300
+Know the difference between absolute change and percentage change.
+
+66
+00:03:55,350 --> 00:03:58,820
+Use percentages to compare changes fairly.
+
+67
+00:03:58,870 --> 00:04:04,230
+Great work! Now practise lesson 10.1 on Camday.

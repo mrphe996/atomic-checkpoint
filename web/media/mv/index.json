@@ -34639,7 +34639,7 @@
     "8.1-k3": 156.01,
     "8.1-k4": 217.14
    },
-   "up": false
+   "up": true
   },
   "8.2": {
    "src": "media/mv/s8/8-2.mp4",
@@ -35839,7 +35839,7 @@
     "9.1-k3": 160.6,
     "9.1-k4": 230.34
    },
-   "up": false
+   "up": true
   },
   "9.2": {
    "src": "media/mv/s8/9-2.mp4",
@@ -36157,6 +36157,843 @@
     "9.2-k2": 70.41,
     "9.2-k3": 124.97,
     "9.2-k4": 204.86
+   },
+   "up": true
+  },
+  "9.4": {
+   "src": "media/mv/s8/9-4.mp4",
+   "poster": "media/mv/s8/9-4_poster.jpg",
+   "srt": "media/mv/s8/9-4.srt",
+   "dur": 225.44,
+   "captions": [
+    [
+     7.26,
+     "A travel app changes dollars into euros with a rule: euros equals dollars times 0.9."
+    ],
+    [
+     13.15,
+     "Going back, it must undo that rule."
+    ],
+    [
+     16.15,
+     "What rule changes euros back into dollars?"
+    ],
+    [
+     19.07,
+     "Pause the video and choose."
+    ],
+    [
+     22.35,
+     "The opposite of times 0.9 is divide by 0.9."
+    ],
+    [
+     26.25,
+     "So 90 euros is 90 divided by 0.9, which is 100 dollars."
+    ],
+    [
+     31.78,
+     "Remember: a function machine does each step in order."
+    ],
+    [
+     35.89,
+     "Input 4, times 3, then plus 5, gives 17."
+    ],
+    [
+     39.54,
+     "A function can be shown as a machine, as a table, as a mapping diagram, or as an equation."
+    ],
+    [
+     45.69,
+     "This machine is times 2, then plus 3."
+    ],
+    [
+     48.77,
+     "As an equation, it is y equals 2 x plus 3."
+    ],
+    [
+     51.72,
+     "On a mapping diagram, arrows join each input to its output."
+    ],
+    [
+     56.41,
+     "Your turn."
+    ],
+    [
+     57.16,
+     "Using y equals 2 x plus 3, find y when x is 10."
+    ],
+    [
+     60.66,
+     "Pause the video and try it."
+    ],
+    [
+     64.08,
+     "2 times 10 is 20, and 20 plus 3 is 23."
+    ],
+    [
+     69.02,
+     "The inverse undoes the function."
+    ],
+    [
+     71.38,
+     "Reverse the order, and use the opposite operations."
+    ],
+    [
+     75.14,
+     "Times 2, then plus 3, becomes minus 3, then divide by 2."
+    ],
+    [
+     79.82,
+     "Check: an output of 11."
+    ],
+    [
+     81.77,
+     "11 minus 3 is 8, and 8 divided by 2 is 4."
+    ],
+    [
+     85.24,
+     "That was the input."
+    ],
+    [
+     87.4,
+     "Here is the method."
+    ],
+    [
+     88.74,
+     "Step 1: apply the steps of the machine in order."
+    ],
+    [
+     92.69,
+     "Step 2: write the function as an equation, y equals something."
+    ],
+    [
+     97.68,
+     "Step 3: for the inverse, reverse the order and use the inverse operations."
+    ],
+    [
+     103.53,
+     "Step 4: check by going there and back."
+    ],
+    [
+     106.87,
+     "The machine is plus 4, then times 3."
+    ],
+    [
+     109.51,
+     "Write y in terms of x."
+    ],
+    [
+     111.12,
+     "Adding 4 gives x plus 4."
+    ],
+    [
+     112.88,
+     "Then the whole of that is multiplied by 3."
+    ],
+    [
+     116.5,
+     "So y equals 3, bracket, x plus 4."
+    ],
+    [
+     118.92,
+     "The bracket shows that adding came first."
+    ],
+    [
+     122.48,
+     "A table shows x equals 1, 2, 3, and y equals 1, 4, 7."
+    ],
+    [
+     126.77,
+     "y goes up by 3, so start with 3 x."
+    ],
+    [
+     129.52,
+     "3 times 1 is 3, but y is 1, so subtract 2."
+    ],
+    [
+     132.93,
+     "y equals 3 x minus 2."
+    ],
+    [
+     135.18,
+     "Your turn."
+    ],
+    [
+     135.91,
+     "Using the inverse of y equals 2 x plus 3, find x when y is 23."
+    ],
+    [
+     140.49,
+     "Pause and work it out."
+    ],
+    [
+     143.51,
+     "Use the inverse: minus 3, then divide by 2."
+    ],
+    [
+     147.44,
+     "23 minus 3 is 20, and 20 divided by 2 is 10."
+    ],
+    [
+     152.01,
+     "Rosa finds the inverse of: times 2, then plus 6."
+    ],
+    [
+     155.49,
+     "Which line is wrong?"
+    ],
+    [
+     157.5,
+     "Line 1 is wrong."
+    ],
+    [
+     158.62,
+     "She used the opposite operations, but not in the reverse order."
+    ],
+    [
+     163.03,
+     "Undo the last step first."
+    ],
+    [
+     165.33,
+     "The inverse is minus 6, then divide by 2."
+    ],
+    [
+     168.79,
+     "Check with 1: 1 times 2 plus 6 is 8."
+    ],
+    [
+     171.82,
+     "8 minus 6 is 2, divided by 2 is 1."
+    ],
+    [
+     175.24,
+     "Recipes from different countries use different units."
+    ],
+    [
+     179.26,
+     "To change Celsius to Fahrenheit: times 1.8, then plus 32."
+    ],
+    [
+     184.14,
+     "The inverse is minus 32, then divide by 1.8."
+    ],
+    [
+     187.89,
+     "So an oven at 356 degrees Fahrenheit is 180 degrees Celsius."
+    ],
+    [
+     193.57,
+     "One last question."
+    ],
+    [
+     194.87,
+     "What is the inverse of add 7?"
+    ],
+    [
+     196.96,
+     "Pause the video and choose."
+    ],
+    [
+     200.31,
+     "The inverse of add 7 is subtract 7."
+    ],
+    [
+     203.55,
+     "To remember: a function can be a machine, a table, a mapping diagram or an equation."
+    ],
+    [
+     209.7,
+     "Brackets show which step came first."
+    ],
+    [
+     212.74,
+     "The inverse reverses the order, and uses the inverse operations."
+    ],
+    [
+     217.69,
+     "Check by going there and back."
+    ],
+    [
+     220.27,
+     "Great work! Now practise lesson 9.4 on Camday."
+    ]
+   ],
+   "times": {
+    "9.4-k1": 21.3,
+    "9.4-k2": 63.03,
+    "9.4-k3": 142.46,
+    "9.4-k4": 199.26
+   },
+   "up": true
+  },
+  "10.2": {
+   "src": "media/mv/s8/10-2.mp4",
+   "poster": "media/mv/s8/10-2_poster.jpg",
+   "srt": "media/mv/s8/10-2.srt",
+   "dur": 257.68,
+   "captions": [
+    [
+     6.71,
+     "A shop takes 35 percent off everything."
+    ],
+    [
+     9.94,
+     "A jacket costs 120 dollars."
+    ],
+    [
+     12.73,
+     "Can you find the sale price in one calculation?"
+    ],
+    [
+     16.5,
+     "What is 120 dollars with 35 percent off?"
+    ],
+    [
+     19.76,
+     "Pause the video and work it out."
+    ],
+    [
+     23.78,
+     "If 35 percent is taken off, you pay 100 minus 35, which is 65 percent."
+    ],
+    [
+     30.26,
+     "65 percent as a decimal is 0.65."
+    ],
+    [
+     33.77,
+     "So multiply by 0.65."
+    ],
+    [
+     35.74,
+     "120 times 0.65 is 78 dollars."
+    ],
+    [
+     38.6,
+     "That is one calculation."
+    ],
+    [
+     41.52,
+     "Remember: 35 percent is 0.35, and 100 percent is 1."
+    ],
+    [
+     47.03,
+     "108 percent is 1.08."
+    ],
+    [
+     49.74,
+     "A multiplier changes an amount in one step."
+    ],
+    [
+     53.31,
+     "After a 15 percent increase you have 115 percent, so multiply by 1.15."
+    ],
+    [
+     59.13,
+     "After a 35 percent decrease you have 65 percent, so multiply by 0.65."
+    ],
+    [
+     65.41,
+     "Your turn."
+    ],
+    [
+     66.14,
+     "What is the multiplier for a 22 percent decrease?"
+    ],
+    [
+     69.74,
+     "Pause the video and try it."
+    ],
+    [
+     73.12,
+     "100 minus 22 is 78 percent."
+    ],
+    [
+     75.92,
+     "So the multiplier is 0.78."
+    ],
+    [
+     79.17,
+     "Multipliers also work for repeated changes."
+    ],
+    [
+     82.78,
+     "Two 10 percent rises is times 1.1, times 1.1, which is times 1.21."
+    ],
+    [
+     88.32,
+     "That is a 21 percent rise, not 20 percent."
+    ],
+    [
+     92.4,
+     "Here is the method."
+    ],
+    [
+     93.9,
+     "Step 1: for an increase of r percent, the multiplier is 1 plus r over 100."
+    ],
+    [
+     99.76,
+     "For a decrease, it is 1 minus r over 100."
+    ],
+    [
+     103.56,
+     "Step 2: multiply the original amount by the multiplier."
+    ],
+    [
+     108.1,
+     "Step 3: for several changes, multiply the multipliers together."
+    ],
+    [
+     113.26,
+     "Step 4: check."
+    ],
+    [
+     114.33,
+     "An increase has a multiplier above 1."
+    ],
+    [
+     117.14,
+     "A decrease has one below 1."
+    ],
+    [
+     119.74,
+     "A car worth 14,000 dollars loses 18 percent of its value."
+    ],
+    [
+     125.77,
+     "The multiplier is 0.82."
+    ],
+    [
+     128.2,
+     "14,000 times 0.82 is 11,480 dollars."
+    ],
+    [
+     132.55,
+     "Your turn."
+    ],
+    [
+     133.44,
+     "Increase 500 by 12 percent, using times 1.12."
+    ],
+    [
+     137.45,
+     "Pause and work it out."
+    ],
+    [
+     140.81,
+     "500 times 1.12 is 560."
+    ],
+    [
+     144.45,
+     "A price rises 20 percent, then falls 20 percent."
+    ],
+    [
+     148.54,
+     "Is it back where it started?"
+    ],
+    [
+     150.92,
+     "Times 1.2, times 0.8, is times 0.96."
+    ],
+    [
+     154.54,
+     "0.96 is 96 percent."
+    ],
+    [
+     156.08,
+     "So overall it is a 4 percent decrease."
+    ],
+    [
+     159.16,
+     "It is not back to the start."
+    ],
+    [
+     161.98,
+     "A value is multiplied by 1.035."
+    ],
+    [
+     164.78,
+     "What percentage change is that?"
+    ],
+    [
+     167.57,
+     "1.035 is 103.5 percent, so it is a 3.5 percent increase."
+    ],
+    [
+     173.17,
+     "Lee decreases 90 dollars by 30 percent."
+    ],
+    [
+     176.08,
+     "Which line goes wrong first?"
+    ],
+    [
+     178.72,
+     "Line 1 is wrong."
+    ],
+    [
+     180.04,
+     "0.3 finds the 30 percent taken off."
+    ],
+    [
+     182.94,
+     "After the decrease you keep 70 percent, so the multiplier is 0.7."
+    ],
+    [
+     188.88,
+     "90 times 0.7 is 63 dollars."
+    ],
+    [
+     192.46,
+     "Banks pay interest as a percentage each year."
+    ],
+    [
+     195.89,
+     "With 5 percent interest, savings are multiplied by 1.05 every year."
+    ],
+    [
+     201.55,
+     "1,000 dollars becomes 1,000 times 1.05 times 1.05, which is 1,102 dollars 50, after 2 years."
+    ],
+    [
+     210.82,
+     "The interest earns interest too."
+    ],
+    [
+     214.59,
+     "One last question."
+    ],
+    [
+     215.91,
+     "Multiplying by 1.1 twice is what percentage increase?"
+    ],
+    [
+     219.79,
+     "Pause the video and answer."
+    ],
+    [
+     223.17,
+     "1.1 times 1.1 is 1.21, which is 121 percent."
+    ],
+    [
+     227.24,
+     "So it is a 21 percent increase."
+    ],
+    [
+     230.65,
+     "To remember: for an increase of r percent, multiply by 1 plus r over 100."
+    ],
+    [
+     236.48,
+     "For a decrease, multiply by 1 minus r over 100."
+    ],
+    [
+     240.78,
+     "One calculation gives the new amount."
+    ],
+    [
+     243.94,
+     "For repeated changes, multiply the multipliers."
+    ],
+    [
+     247.85,
+     "You can turn a multiplier back into a percentage change."
+    ],
+    [
+     252.3,
+     "Great work! Now practise lesson 10.2 on Camday."
+    ]
+   ],
+   "times": {
+    "10.2-k1": 22.73,
+    "10.2-k2": 72.07,
+    "10.2-k3": 139.76,
+    "10.2-k4": 222.12
+   },
+   "up": false
+  },
+  "10.1": {
+   "src": "media/mv/s8/10-1.mp4",
+   "poster": "media/mv/s8/10-1_poster.jpg",
+   "srt": "media/mv/s8/10-1.srt",
+   "dur": 244.28,
+   "captions": [
+    [
+     7.83,
+     "A concert ticket went up from 60 dollars to 75 dollars."
+    ],
+    [
+     12.01,
+     "The organiser says it is only a small rise."
+    ],
+    [
+     15.82,
+     "By what percentage did the price rise?"
+    ],
+    [
+     18.43,
+     "Pause the video and work it out."
+    ],
+    [
+     22.02,
+     "The rise is 15 dollars."
+    ],
+    [
+     23.94,
+     "Compare it with the original price, 60 dollars."
+    ],
+    [
+     27.87,
+     "15 divided by 60 is 0.25, which is 25 percent."
+    ],
+    [
+     31.71,
+     "That is a quarter more, not so small!"
+    ],
+    [
+     35.35,
+     "Remember: to find 15 percent of 80, multiply 0.15 by 80."
+    ],
+    [
+     40.88,
+     "That is 12."
+    ],
+    [
+     42.52,
+     "To increase an amount by a percentage, find the percentage, then add it."
+    ],
+    [
+     47.36,
+     "To decrease, find it, then subtract it."
+    ],
+    [
+     50.53,
+     "Your turn."
+    ],
+    [
+     51.38,
+     "Increase 200 by 35 percent."
+    ],
+    [
+     53.66,
+     "Pause the video and try it."
+    ],
+    [
+     57.34,
+     "35 percent of 200 is 70."
+    ],
+    [
+     60.58,
+     "200 plus 70 is 270."
+    ],
+    [
+     63.7,
+     "The percentage change is the change, divided by the original amount, times 100."
+    ],
+    [
+     69.58,
+     "Always divide by the original amount."
+    ],
+    [
+     72.89,
+     "The actual change, 15 dollars, is the absolute change."
+    ],
+    [
+     76.92,
+     "25 percent is the relative change."
+    ],
+    [
+     79.45,
+     "Percentages make it fair to compare changes of different sizes."
+    ],
+    [
+     84.7,
+     "Here is the method."
+    ],
+    [
+     86.02,
+     "Step 1: to increase or decrease, find the percentage of the original, then add or subtract it."
+    ],
+    [
+     93.07,
+     "Step 2: for a percentage change, find the change: the new amount minus the original."
+    ],
+    [
+     99.39,
+     "Step 3: divide by the original, and multiply by 100."
+    ],
+    [
+     104.28,
+     "Step 4: say whether it is an increase or a decrease."
+    ],
+    [
+     108.49,
+     "A laptop costs 850 dollars."
+    ],
+    [
+     111.39,
+     "It is reduced by 12 percent."
+    ],
+    [
+     114.4,
+     "12 percent of 850 is 102."
+    ],
+    [
+     117.08,
+     "850 minus 102 is 748 dollars."
+    ],
+    [
+     120.74,
+     "Your turn."
+    ],
+    [
+     121.5,
+     "A price falls from 80 dollars to 68 dollars."
+    ],
+    [
+     124.85,
+     "What is the percentage decrease?"
+    ],
+    [
+     127.28,
+     "Pause and work it out."
+    ],
+    [
+     130.35,
+     "The change is 12 dollars."
+    ],
+    [
+     132.75,
+     "12 divided by 80, times 100, is 15."
+    ],
+    [
+     136.11,
+     "It is a 15 percent decrease."
+    ],
+    [
+     139.35,
+     "In shop A, a price went from 40 to 46 dollars."
+    ],
+    [
+     143.17,
+     "In shop B, from 120 to 132 dollars."
+    ],
+    [
+     146.07,
+     "Which had the bigger percentage rise?"
+    ],
+    [
+     149.7,
+     "Shop A: 6 divided by 40 is 15 percent."
+    ],
+    [
+     152.78,
+     "Shop B: 12 divided by 120 is 10 percent."
+    ],
+    [
+     156.03,
+     "Shop A had the bigger percentage rise, even though shop B rose more in dollars."
+    ],
+    [
+     162.99,
+     "A price falls from 50 dollars to 40 dollars."
+    ],
+    [
+     166.37,
+     "Jay finds the percentage decrease."
+    ],
+    [
+     168.98,
+     "Which line goes wrong first?"
+    ],
+    [
+     171.68,
+     "Line 2 is wrong."
+    ],
+    [
+     172.87,
+     "He divided by the new price."
+    ],
+    [
+     174.95,
+     "You must divide by the original price, 50."
+    ],
+    [
+     178.63,
+     "10 divided by 50, times 100, is 20 percent."
+    ],
+    [
+     183.91,
+     "Governments track population changes as percentages."
+    ],
+    [
+     188.64,
+     "A town fell from 25,000 people to 23,500."
+    ],
+    [
+     192.92,
+     "The change is 1,500."
+    ],
+    [
+     194.76,
+     "1,500 divided by 25,000, times 100, is 6."
+    ],
+    [
+     198.53,
+     "That is a 6 percent decrease, which helps compare it with towns of other sizes."
+    ],
+    [
+     206.34,
+     "One last question."
+    ],
+    [
+     207.8,
+     "Decrease 90 by 10 percent."
+    ],
+    [
+     209.91,
+     "Pause the video and answer."
+    ],
+    [
+     213.5,
+     "10 percent of 90 is 9."
+    ],
+    [
+     216.08,
+     "90 minus 9 is 81."
+    ],
+    [
+     218.63,
+     "To remember: to increase, add the percentage."
+    ],
+    [
+     221.75,
+     "To decrease, subtract it."
+    ],
+    [
+     224.04,
+     "Percentage change equals the change, divided by the original, times 100."
+    ],
+    [
+     230.13,
+     "Know the difference between absolute change and percentage change."
+    ],
+    [
+     235.35,
+     "Use percentages to compare changes fairly."
+    ],
+    [
+     238.87,
+     "Great work! Now practise lesson 10.1 on Camday."
+    ]
+   ],
+   "times": {
+    "10.1-k1": 20.97,
+    "10.1-k2": 56.29,
+    "10.1-k3": 129.3,
+    "10.1-k4": 212.45
    },
    "up": false
   }

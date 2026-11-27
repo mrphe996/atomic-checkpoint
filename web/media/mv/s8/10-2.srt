@@ -1,0 +1,271 @@
+1
+00:00:06,710 --> 00:00:09,890
+A shop takes 35 percent off everything.
+
+2
+00:00:09,940 --> 00:00:12,680
+A jacket costs 120 dollars.
+
+3
+00:00:12,730 --> 00:00:16,450
+Can you find the sale price in one calculation?
+
+4
+00:00:16,500 --> 00:00:19,710
+What is 120 dollars with 35 percent off?
+
+5
+00:00:19,760 --> 00:00:23,730
+Pause the video and work it out.
+
+6
+00:00:23,780 --> 00:00:30,210
+If 35 percent is taken off, you pay 100 minus 35, which is 65 percent.
+
+7
+00:00:30,260 --> 00:00:33,720
+65 percent as a decimal is 0.65.
+
+8
+00:00:33,770 --> 00:00:35,690
+So multiply by 0.65.
+
+9
+00:00:35,740 --> 00:00:38,550
+120 times 0.65 is 78 dollars.
+
+10
+00:00:38,600 --> 00:00:41,470
+That is one calculation.
+
+11
+00:00:41,520 --> 00:00:46,980
+Remember: 35 percent is 0.35, and 100 percent is 1.
+
+12
+00:00:47,030 --> 00:00:49,690
+108 percent is 1.08.
+
+13
+00:00:49,740 --> 00:00:53,260
+A multiplier changes an amount in one step.
+
+14
+00:00:53,310 --> 00:00:59,080
+After a 15 percent increase you have 115 percent, so multiply by 1.15.
+
+15
+00:00:59,130 --> 00:01:05,360
+After a 35 percent decrease you have 65 percent, so multiply by 0.65.
+
+16
+00:01:05,410 --> 00:01:06,090
+Your turn.
+
+17
+00:01:06,140 --> 00:01:09,690
+What is the multiplier for a 22 percent decrease?
+
+18
+00:01:09,740 --> 00:01:13,070
+Pause the video and try it.
+
+19
+00:01:13,120 --> 00:01:15,870
+100 minus 22 is 78 percent.
+
+20
+00:01:15,920 --> 00:01:19,120
+So the multiplier is 0.78.
+
+21
+00:01:19,170 --> 00:01:22,730
+Multipliers also work for repeated changes.
+
+22
+00:01:22,780 --> 00:01:28,270
+Two 10 percent rises is times 1.1, times 1.1, which is times 1.21.
+
+23
+00:01:28,320 --> 00:01:32,350
+That is a 21 percent rise, not 20 percent.
+
+24
+00:01:32,400 --> 00:01:33,850
+Here is the method.
+
+25
+00:01:33,900 --> 00:01:39,710
+Step 1: for an increase of r percent, the multiplier is 1 plus r over 100.
+
+26
+00:01:39,760 --> 00:01:43,510
+For a decrease, it is 1 minus r over 100.
+
+27
+00:01:43,560 --> 00:01:48,050
+Step 2: multiply the original amount by the multiplier.
+
+28
+00:01:48,100 --> 00:01:53,210
+Step 3: for several changes, multiply the multipliers together.
+
+29
+00:01:53,260 --> 00:01:54,280
+Step 4: check.
+
+30
+00:01:54,330 --> 00:01:57,090
+An increase has a multiplier above 1.
+
+31
+00:01:57,140 --> 00:01:59,690
+A decrease has one below 1.
+
+32
+00:01:59,740 --> 00:02:05,720
+A car worth 14,000 dollars loses 18 percent of its value.
+
+33
+00:02:05,770 --> 00:02:08,150
+The multiplier is 0.82.
+
+34
+00:02:08,200 --> 00:02:12,500
+14,000 times 0.82 is 11,480 dollars.
+
+35
+00:02:12,550 --> 00:02:13,390
+Your turn.
+
+36
+00:02:13,440 --> 00:02:17,400
+Increase 500 by 12 percent, using times 1.12.
+
+37
+00:02:17,450 --> 00:02:20,760
+Pause and work it out.
+
+38
+00:02:20,810 --> 00:02:24,400
+500 times 1.12 is 560.
+
+39
+00:02:24,450 --> 00:02:28,490
+A price rises 20 percent, then falls 20 percent.
+
+40
+00:02:28,540 --> 00:02:30,870
+Is it back where it started?
+
+41
+00:02:30,920 --> 00:02:34,490
+Times 1.2, times 0.8, is times 0.96.
+
+42
+00:02:34,540 --> 00:02:36,030
+0.96 is 96 percent.
+
+43
+00:02:36,080 --> 00:02:39,110
+So overall it is a 4 percent decrease.
+
+44
+00:02:39,160 --> 00:02:41,930
+It is not back to the start.
+
+45
+00:02:41,980 --> 00:02:44,730
+A value is multiplied by 1.035.
+
+46
+00:02:44,780 --> 00:02:47,520
+What percentage change is that?
+
+47
+00:02:47,570 --> 00:02:53,120
+1.035 is 103.5 percent, so it is a 3.5 percent increase.
+
+48
+00:02:53,170 --> 00:02:56,030
+Lee decreases 90 dollars by 30 percent.
+
+49
+00:02:56,080 --> 00:02:58,670
+Which line goes wrong first?
+
+50
+00:02:58,720 --> 00:02:59,990
+Line 1 is wrong.
+
+51
+00:03:00,040 --> 00:03:02,890
+0.3 finds the 30 percent taken off.
+
+52
+00:03:02,940 --> 00:03:08,830
+After the decrease you keep 70 percent, so the multiplier is 0.7.
+
+53
+00:03:08,880 --> 00:03:12,410
+90 times 0.7 is 63 dollars.
+
+54
+00:03:12,460 --> 00:03:15,840
+Banks pay interest as a percentage each year.
+
+55
+00:03:15,890 --> 00:03:21,500
+With 5 percent interest, savings are multiplied by 1.05 every year.
+
+56
+00:03:21,550 --> 00:03:30,770
+1,000 dollars becomes 1,000 times 1.05 times 1.05, which is 1,102 dollars 50, after 2 years.
+
+57
+00:03:30,820 --> 00:03:34,540
+The interest earns interest too.
+
+58
+00:03:34,590 --> 00:03:35,860
+One last question.
+
+59
+00:03:35,910 --> 00:03:39,740
+Multiplying by 1.1 twice is what percentage increase?
+
+60
+00:03:39,790 --> 00:03:43,120
+Pause the video and answer.
+
+61
+00:03:43,170 --> 00:03:47,190
+1.1 times 1.1 is 1.21, which is 121 percent.
+
+62
+00:03:47,240 --> 00:03:50,600
+So it is a 21 percent increase.
+
+63
+00:03:50,650 --> 00:03:56,430
+To remember: for an increase of r percent, multiply by 1 plus r over 100.
+
+64
+00:03:56,480 --> 00:04:00,730
+For a decrease, multiply by 1 minus r over 100.
+
+65
+00:04:00,780 --> 00:04:03,890
+One calculation gives the new amount.
+
+66
+00:04:03,940 --> 00:04:07,800
+For repeated changes, multiply the multipliers.
+
+67
+00:04:07,850 --> 00:04:12,250
+You can turn a multiplier back into a percentage change.
+
+68
+00:04:12,300 --> 00:04:17,630
+Great work! Now practise lesson 10.2 on Camday.
