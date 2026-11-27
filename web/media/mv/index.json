@@ -1,0 +1,342 @@
+{
+ "7": {
+  "1.1": {
+   "src": "media/mv/s7/1-1.mp4",
+   "poster": "media/mv/s7/1-1_poster.jpg",
+   "srt": "media/mv/s7/1-1.srt",
+   "dur": 303.08,
+   "captions": [
+    [
+     7.48,
+     "Here is a puzzle."
+    ],
+    [
+     8.74,
+     "At 6 in the morning, the temperature on a mountain is negative 4 degrees Celsius."
+    ],
+    [
+     14.71,
+     "That is 4 degrees below zero."
+    ],
+    [
+     17.4,
+     "By noon, the sun has warmed it up by 9 degrees."
+    ],
+    [
+     20.74,
+     "What is the temperature now?"
+    ],
+    [
+     23.28,
+     "Pause the video and work it out."
+    ],
+    [
+     26.98,
+     "Let's check."
+    ],
+    [
+     27.92,
+     "We start at negative 4."
+    ],
+    [
+     30.28,
+     "Warmer means the red liquid goes up."
+    ],
+    [
+     32.91,
+     "4 degrees takes us up to zero, and 5 more takes us to 5 degrees."
+    ],
+    [
+     38.13,
+     "So at noon it is 5 degrees Celsius."
+    ],
+    [
+     41.34,
+     "In the evening it falls by 12 degrees."
+    ],
+    [
+     44.18,
+     "The liquid drops down past zero, all the way to negative 7."
+    ],
+    [
+     49.14,
+     "Numbers like these are called integers: whole numbers, their negatives, and zero."
+    ],
+    [
+     55.43,
+     "On a number line, numbers get bigger as you move to the right."
+    ],
+    [
+     60.26,
+     "So negative 2 is bigger than negative 7, because it is further to the right, even though 7 is bigger than 2."
+    ],
+    [
+     68.91,
+     "To add a positive number, move to the right."
+    ],
+    [
+     72.55,
+     "Negative 4 plus 9."
+    ],
+    [
+     74.0,
+     "Start at negative 4 and jump 9 places to the right."
+    ],
+    [
+     78.09,
+     "We land on 5."
+    ],
+    [
+     79.69,
+     "To add a negative number, move to the left."
+    ],
+    [
+     83.25,
+     "3 plus negative 5."
+    ],
+    [
+     84.69,
+     "Start at 3 and jump 5 places to the left."
+    ],
+    [
+     87.98,
+     "We land on negative 2."
+    ],
+    [
+     90.3,
+     "Notice that adding negative 5 gives the same answer as taking away 5."
+    ],
+    [
+     96.13,
+     "To subtract a positive number, move to the left."
+    ],
+    [
+     99.88,
+     "5 minus 12: start at 5 and jump 12 places left, past zero, to negative 7."
+    ],
+    [
+     106.13,
+     "Now the tricky one."
+    ],
+    [
+     107.64,
+     "What is 2 minus negative 3?"
+    ],
+    [
+     110.32,
+     "Taking away a negative is the opposite of adding a negative, so it means move right."
+    ],
+    [
+     116.38,
+     "Subtracting negative 3 is the same as adding 3."
+    ],
+    [
+     120.32,
+     "Start at 2, jump 3 to the right, and we land on 5."
+    ],
+    [
+     124.72,
+     "Your turn."
+    ],
+    [
+     125.48,
+     "Work out negative 2 minus negative 9."
+    ],
+    [
+     128.29,
+     "Pause the video and try it."
+    ],
+    [
+     131.74,
+     "Subtracting negative 9 is the same as adding 9."
+    ],
+    [
+     135.41,
+     "Start at negative 2 and jump 9 to the right."
+    ],
+    [
+     138.85,
+     "The answer is 7."
+    ],
+    [
+     140.65,
+     "Here is a method that always works."
+    ],
+    [
+     143.14,
+     "Step 1: swap any double sign."
+    ],
+    [
+     145.21,
+     "Subtract a negative becomes add; add a negative becomes subtract."
+    ],
+    [
+     150.4,
+     "Step 2: start at the first number on a number line, or picture one in your head."
+    ],
+    [
+     156.57,
+     "Step 3: move right to add and left to subtract."
+    ],
+    [
+     160.56,
+     "Step 4: check that the answer makes sense."
+    ],
+    [
+     164.28,
+     "In Oslo it is negative 6 degrees."
+    ],
+    [
+     166.8,
+     "In Cairo it is 23 degrees."
+    ],
+    [
+     168.79,
+     "How much warmer is Cairo?"
+    ],
+    [
+     171.25,
+     "The difference is the higher number minus the lower number: 23 minus negative 6."
+    ],
+    [
+     178.04,
+     "On the number line, count up from negative 6 to zero."
+    ],
+    [
+     181.97,
+     "That is 6 degrees."
+    ],
+    [
+     183.85,
+     "Then from zero up to 23."
+    ],
+    [
+     186.17,
+     "That is 23 degrees more."
+    ],
+    [
+     188.48,
+     "6 plus 23 is 29."
+    ],
+    [
+     190.57,
+     "So Cairo is 29 degrees warmer than Oslo."
+    ],
+    [
+     194.31,
+     "Your turn."
+    ],
+    [
+     195.05,
+     "It is 15 degrees in Lima and negative 8 degrees in Moscow."
+    ],
+    [
+     199.34,
+     "How many degrees warmer is Lima?"
+    ],
+    [
+     201.71,
+     "Pause and work it out."
+    ],
+    [
+     204.74,
+     "15 minus negative 8 is 15 plus 8, which is 23."
+    ],
+    [
+     209.16,
+     "Lima is 23 degrees warmer."
+    ],
+    [
+     212.2,
+     "Sam worked out negative 5 minus negative 2."
+    ],
+    [
+     215.44,
+     "Can you spot the mistake?"
+    ],
+    [
+     217.87,
+     "Line 2 is wrong."
+    ],
+    [
+     219.13,
+     "Only the minus negative 2 becomes plus 2."
+    ],
+    [
+     222.35,
+     "The negative 5 does not change."
+    ],
+    [
+     225.34,
+     "The correct working: negative 5 plus 2 equals negative 3."
+    ],
+    [
+     230.53,
+     "Negative numbers are everywhere."
+    ],
+    [
+     233.07,
+     "The coldest temperature ever measured on Earth was about negative 89 degrees, at Vostok Station in Antarctica in 1983."
+    ],
+    [
+     242.96,
+     "The hottest official air temperature is about 57 degrees, in Death Valley in the USA."
+    ],
+    [
+     249.73,
+     "So the difference is 57 minus negative 89, which is 57 plus 89: about 146 degrees!"
+    ],
+    [
+     258.09,
+     "One last question."
+    ],
+    [
+     259.46,
+     "Work out negative 6 plus negative 7."
+    ],
+    [
+     262.2,
+     "Pause the video and answer."
+    ],
+    [
+     265.66,
+     "Adding negative 7 means moving 7 to the left."
+    ],
+    [
+     269.27,
+     "From negative 6, that takes us to negative 13."
+    ],
+    [
+     273.51,
+     "To remember: integers are positive and negative whole numbers and zero."
+    ],
+    [
+     278.52,
+     "Further right on the number line means bigger."
+    ],
+    [
+     282.32,
+     "Adding a negative is the same as subtracting."
+    ],
+    [
+     286.09,
+     "Subtracting a negative is the same as adding."
+    ],
+    [
+     289.88,
+     "And the difference between two numbers is the bigger one minus the smaller one, even when one is negative."
+    ],
+    [
+     297.82,
+     "Great work! Now practise lesson 1.1 on Camday."
+    ]
+   ],
+   "times": {
+    "1.1-k1": 25.93,
+    "1.1-k2": 130.69,
+    "1.1-k3": 203.69,
+    "1.1-k4": 264.61
+   }
+  }
+ }
+}

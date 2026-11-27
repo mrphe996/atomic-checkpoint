@@ -101,7 +101,7 @@
   function shell(opts) {
     const r = location.hash.slice(1) || 'home'; const app = document.getElementById('app'); app.innerHTML = '';
     const me = Core.S.me;
-    const area = r.startsWith('v-') || r.startsWith('sp-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || /^stage-\d+$/.test(r) || /^checkout-\d+$/.test(r) || r === 'map' || r === 'level' ? 'course' : r === 'bank' || r === 'topic' || r === 'drill' ? 'bank' : r === 'test' || r === 'tests' || r === 'result' || r === 'remedial' || r === 'final' || /^f(x|res)-\d+$/.test(r) ? 'test' : r === 'profile' || r === 'cert' ? 'profile' : r === 'board' ? 'board' : r === 'home' ? 'home' : r === 'challenge' || /^ch[lxpr]-/.test(r) ? 'challenge' : r === 'games' || /^game-/.test(r) ? 'games' : r;
+    const area = r.startsWith('v-') || r.startsWith('vw-') || r.startsWith('sp-') || r.startsWith('ex-') || r.startsWith('ws-') || r.startsWith('lab-') || /^u-\d+$/.test(r) || /^stage-\d+$/.test(r) || /^checkout-\d+$/.test(r) || r === 'map' || r === 'level' ? 'course' : r === 'bank' || r === 'topic' || r === 'drill' ? 'bank' : r === 'test' || r === 'tests' || r === 'result' || r === 'remedial' || r === 'final' || /^f(x|res)-\d+$/.test(r) ? 'test' : r === 'profile' || r === 'cert' ? 'profile' : r === 'board' ? 'board' : r === 'home' ? 'home' : r === 'challenge' || /^ch[lxpr]-/.test(r) ? 'challenge' : r === 'games' || /^game-/.test(r) ? 'games' : r;
     const right = el('span', { class: 'topright' });
     let nav;
     if (st) {
@@ -583,9 +583,11 @@
   }
   /* ---------- lesson: video with pause questions ---------- */
   let activeVideo = null;
-  function viewVideo(sid) {
-    const s = Core.sec(sid), m = $main(); if (!s) return go('home');
-    if (s.lesson) return viewLesson(sid);
+  function viewVideo(sid, watch) {
+    let s = Core.sec(sid); const m = $main(); if (!s) return go('home');
+    if (s.lesson && !(watch && s.lv)) return viewLesson(sid);
+    // a Maths lesson's video: the same check questions, asked as pause questions at the video's own times
+    if (s.lesson) s = Object.assign({}, s, { lesson: null, video: s.lv, captions: s.lv.captions, stops: s.stops.map(x => Object.assign({}, x, { t: s.lv.times[x.id] })) });
     const lock = Core.secLock(st, s);
     subbar('', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}: ${C.unit.title}`), el('span', { class: 'sep' }), el('span', { class: 'ttl' }, `Lesson ${s.id} · ${s.title}`));
     if (lock) { m.append(bar(`Section ${s.id} · Video`), lockScreen(`Section ${s.id} is locked`, lock.reason, [lock])); return; }
@@ -925,6 +927,8 @@
       el('div', { class: 'lgoalbox' }, el('span', { class: 'hl' }, 'In this lesson you will learn to'), el('ul', { class: 'lgoals' }, ...s.objs.map(o => el('li', {}, (C.objectives[o] || {}).t || o)))), lprog);
     m.append(head);
     const v4 = s.notes === 'v4';
+    if (s.lv) m.append(el('a', { class: 'card lvideo', href: '#vw-' + R(sid), id: 'lessonVideo' }, el('span', { class: 'lvthumb', style: `background-image:url(${s.lv.poster})` }, el('span', { class: 'lp-play pulse', 'aria-hidden': 'true' }, svgI(I.play, 28, '#1C2A3A', 2.6))),
+      el('span', {}, el('b', {}, 'Watch the video lesson'), el('small', {}, `${fmt(s.lv.dur)} · animated, with ${s.stops.length} pause questions and captions`))));
     if (s.pdf && s.pdf.length) m.append(docPanel(s));   // the lesson document comes first: easy to find and read
     if (v4) m.append(lessonToc(s));
     const body = el('div', { class: 'lessonbody' + (v4 ? ' v4' : '') }); m.append(body);
@@ -2982,7 +2986,7 @@
     const mo = new MutationObserver(recs => { if (skel && recs.some(x => [...x.addedNodes].some(n => n !== skel))) { skel.remove(); skel = null; mo.disconnect(); } }); mo.observe(m, { childList: true });
     try {
       const pm = r.match(/^(stage|checkout|fx|fres)-(\d+)$/); const cpm = r.match(/^(cpx|cpr)-([A-Z]{1,2}\d)$/); const chm = r.match(/^chl-([a-z]+)$/) ? ['', 'chl', r.slice(4)] : r.match(/^(chx|chp|chr)-([a-z]+)-(\d{2})$/);
-      if (r.startsWith('gm-')) await viewSecGames(secFromRoute(r)); else if (r.startsWith('v-')) viewVideo(secFromRoute(r)); else if (r.startsWith('sp-')) viewSpeak(secFromRoute(r)); else if (r.startsWith('ex-')) viewExercises(secFromRoute(r)); else if (r.startsWith('ws-')) viewWorksheet(secFromRoute(r)); else if (r.startsWith('lab-')) viewLab(secFromRoute(r));
+      if (r.startsWith('gm-')) await viewSecGames(secFromRoute(r)); else if (r.startsWith('v-')) viewVideo(secFromRoute(r)); else if (r.startsWith('vw-')) viewVideo(secFromRoute(r), true); else if (r.startsWith('sp-')) viewSpeak(secFromRoute(r)); else if (r.startsWith('ex-')) viewExercises(secFromRoute(r)); else if (r.startsWith('ws-')) viewWorksheet(secFromRoute(r)); else if (r.startsWith('lab-')) viewLab(secFromRoute(r));
       else if (/^courses(-\w+)?$/.test(r)) await viewCourses(r.split('-')[1]);
       else if (/^course-[a-z0-9-]+$/.test(r)) await viewCourse(r.slice(7));
       else if (cpm && st) { if (cpm[1] === 'cpx') await viewCpExam(cpm[2]); else await viewCpResult(cpm[2]); }

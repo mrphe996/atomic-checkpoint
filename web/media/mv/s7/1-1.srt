@@ -1,0 +1,323 @@
+1
+00:00:07,480 --> 00:00:08,690
+Here is a puzzle.
+
+2
+00:00:08,740 --> 00:00:14,660
+At 6 in the morning, the temperature on a mountain is negative 4 degrees Celsius.
+
+3
+00:00:14,710 --> 00:00:17,350
+That is 4 degrees below zero.
+
+4
+00:00:17,400 --> 00:00:20,690
+By noon, the sun has warmed it up by 9 degrees.
+
+5
+00:00:20,740 --> 00:00:23,230
+What is the temperature now?
+
+6
+00:00:23,280 --> 00:00:26,930
+Pause the video and work it out.
+
+7
+00:00:26,980 --> 00:00:27,870
+Let's check.
+
+8
+00:00:27,920 --> 00:00:30,230
+We start at negative 4.
+
+9
+00:00:30,280 --> 00:00:32,860
+Warmer means the red liquid goes up.
+
+10
+00:00:32,910 --> 00:00:38,080
+4 degrees takes us up to zero, and 5 more takes us to 5 degrees.
+
+11
+00:00:38,130 --> 00:00:41,290
+So at noon it is 5 degrees Celsius.
+
+12
+00:00:41,340 --> 00:00:44,130
+In the evening it falls by 12 degrees.
+
+13
+00:00:44,180 --> 00:00:49,090
+The liquid drops down past zero, all the way to negative 7.
+
+14
+00:00:49,140 --> 00:00:55,380
+Numbers like these are called integers: whole numbers, their negatives, and zero.
+
+15
+00:00:55,430 --> 00:01:00,210
+On a number line, numbers get bigger as you move to the right.
+
+16
+00:01:00,260 --> 00:01:08,860
+So negative 2 is bigger than negative 7, because it is further to the right, even though 7 is bigger than 2.
+
+17
+00:01:08,910 --> 00:01:12,500
+To add a positive number, move to the right.
+
+18
+00:01:12,550 --> 00:01:13,950
+Negative 4 plus 9.
+
+19
+00:01:14,000 --> 00:01:18,040
+Start at negative 4 and jump 9 places to the right.
+
+20
+00:01:18,090 --> 00:01:19,640
+We land on 5.
+
+21
+00:01:19,690 --> 00:01:23,200
+To add a negative number, move to the left.
+
+22
+00:01:23,250 --> 00:01:24,640
+3 plus negative 5.
+
+23
+00:01:24,690 --> 00:01:27,930
+Start at 3 and jump 5 places to the left.
+
+24
+00:01:27,980 --> 00:01:30,250
+We land on negative 2.
+
+25
+00:01:30,300 --> 00:01:36,080
+Notice that adding negative 5 gives the same answer as taking away 5.
+
+26
+00:01:36,130 --> 00:01:39,830
+To subtract a positive number, move to the left.
+
+27
+00:01:39,880 --> 00:01:46,080
+5 minus 12: start at 5 and jump 12 places left, past zero, to negative 7.
+
+28
+00:01:46,130 --> 00:01:47,590
+Now the tricky one.
+
+29
+00:01:47,640 --> 00:01:50,270
+What is 2 minus negative 3?
+
+30
+00:01:50,320 --> 00:01:56,330
+Taking away a negative is the opposite of adding a negative, so it means move right.
+
+31
+00:01:56,380 --> 00:02:00,270
+Subtracting negative 3 is the same as adding 3.
+
+32
+00:02:00,320 --> 00:02:04,670
+Start at 2, jump 3 to the right, and we land on 5.
+
+33
+00:02:04,720 --> 00:02:05,430
+Your turn.
+
+34
+00:02:05,480 --> 00:02:08,240
+Work out negative 2 minus negative 9.
+
+35
+00:02:08,290 --> 00:02:11,690
+Pause the video and try it.
+
+36
+00:02:11,740 --> 00:02:15,360
+Subtracting negative 9 is the same as adding 9.
+
+37
+00:02:15,410 --> 00:02:18,800
+Start at negative 2 and jump 9 to the right.
+
+38
+00:02:18,850 --> 00:02:20,600
+The answer is 7.
+
+39
+00:02:20,650 --> 00:02:23,090
+Here is a method that always works.
+
+40
+00:02:23,140 --> 00:02:25,160
+Step 1: swap any double sign.
+
+41
+00:02:25,210 --> 00:02:30,350
+Subtract a negative becomes add; add a negative becomes subtract.
+
+42
+00:02:30,400 --> 00:02:36,520
+Step 2: start at the first number on a number line, or picture one in your head.
+
+43
+00:02:36,570 --> 00:02:40,510
+Step 3: move right to add and left to subtract.
+
+44
+00:02:40,560 --> 00:02:44,230
+Step 4: check that the answer makes sense.
+
+45
+00:02:44,280 --> 00:02:46,750
+In Oslo it is negative 6 degrees.
+
+46
+00:02:46,800 --> 00:02:48,740
+In Cairo it is 23 degrees.
+
+47
+00:02:48,790 --> 00:02:51,200
+How much warmer is Cairo?
+
+48
+00:02:51,250 --> 00:02:57,990
+The difference is the higher number minus the lower number: 23 minus negative 6.
+
+49
+00:02:58,040 --> 00:03:01,920
+On the number line, count up from negative 6 to zero.
+
+50
+00:03:01,970 --> 00:03:03,800
+That is 6 degrees.
+
+51
+00:03:03,850 --> 00:03:06,120
+Then from zero up to 23.
+
+52
+00:03:06,170 --> 00:03:08,430
+That is 23 degrees more.
+
+53
+00:03:08,480 --> 00:03:10,520
+6 plus 23 is 29.
+
+54
+00:03:10,570 --> 00:03:14,260
+So Cairo is 29 degrees warmer than Oslo.
+
+55
+00:03:14,310 --> 00:03:15,000
+Your turn.
+
+56
+00:03:15,050 --> 00:03:19,290
+It is 15 degrees in Lima and negative 8 degrees in Moscow.
+
+57
+00:03:19,340 --> 00:03:21,660
+How many degrees warmer is Lima?
+
+58
+00:03:21,710 --> 00:03:24,690
+Pause and work it out.
+
+59
+00:03:24,740 --> 00:03:29,110
+15 minus negative 8 is 15 plus 8, which is 23.
+
+60
+00:03:29,160 --> 00:03:32,150
+Lima is 23 degrees warmer.
+
+61
+00:03:32,200 --> 00:03:35,390
+Sam worked out negative 5 minus negative 2.
+
+62
+00:03:35,440 --> 00:03:37,820
+Can you spot the mistake?
+
+63
+00:03:37,870 --> 00:03:39,080
+Line 2 is wrong.
+
+64
+00:03:39,130 --> 00:03:42,300
+Only the minus negative 2 becomes plus 2.
+
+65
+00:03:42,350 --> 00:03:45,290
+The negative 5 does not change.
+
+66
+00:03:45,340 --> 00:03:50,480
+The correct working: negative 5 plus 2 equals negative 3.
+
+67
+00:03:50,530 --> 00:03:53,020
+Negative numbers are everywhere.
+
+68
+00:03:53,070 --> 00:04:02,910
+The coldest temperature ever measured on Earth was about negative 89 degrees, at Vostok Station in Antarctica in 1983.
+
+69
+00:04:02,960 --> 00:04:09,680
+The hottest official air temperature is about 57 degrees, in Death Valley in the USA.
+
+70
+00:04:09,730 --> 00:04:18,040
+So the difference is 57 minus negative 89, which is 57 plus 89: about 146 degrees!
+
+71
+00:04:18,090 --> 00:04:19,410
+One last question.
+
+72
+00:04:19,460 --> 00:04:22,150
+Work out negative 6 plus negative 7.
+
+73
+00:04:22,200 --> 00:04:25,610
+Pause the video and answer.
+
+74
+00:04:25,660 --> 00:04:29,220
+Adding negative 7 means moving 7 to the left.
+
+75
+00:04:29,270 --> 00:04:33,460
+From negative 6, that takes us to negative 13.
+
+76
+00:04:33,510 --> 00:04:38,470
+To remember: integers are positive and negative whole numbers and zero.
+
+77
+00:04:38,520 --> 00:04:42,270
+Further right on the number line means bigger.
+
+78
+00:04:42,320 --> 00:04:46,040
+Adding a negative is the same as subtracting.
+
+79
+00:04:46,090 --> 00:04:49,830
+Subtracting a negative is the same as adding.
+
+80
+00:04:49,880 --> 00:04:57,770
+And the difference between two numbers is the bigger one minus the smaller one, even when one is negative.
+
+81
+00:04:57,820 --> 00:05:03,030
+Great work! Now practise lesson 1.1 on Camday.

@@ -54,6 +54,12 @@ with sync_playwright() as p:
     ok(pg.query_selector('#challengeCard a[href="#challenge"]') is not None, 'M16 Maths Challenge opens from Tests & exams inside the Maths course')
     pg.evaluate("location.hash='u-2'"); pg.wait_for_timeout(1500)
     ok(pg.query_selector('#challengeCard') is not None and pg.query_selector('nav a[href="#challenge"]') is None, 'M17 …and from the Maths unit page, not the top menu')
+    # Phase 2: lesson 1.1 has a video; the Read page links to it and the player pauses on the lesson's own check questions
+    pg.evaluate("(async()=>{ await Core.switchUnit(1); location.hash='v-1-1'; })()"); pg.wait_for_timeout(2500)
+    ok(pg.get_attribute('#lessonVideo', 'href') == '#vw-1-1', 'M18 Lesson 1.1 shows a "Watch the video lesson" card')
+    pg.click('#lessonVideo'); pg.wait_for_timeout(2500)
+    v = pg.evaluate("(()=>{ const v=document.querySelector('video'); return v && { src: v.currentSrc || v.src, dur: v.duration } })()")
+    ok(v and v['src'].endswith('1-1.mp4') and v['dur'] > 200, f'M19 The video lesson plays in the app player ({v})')
     ok(not errs, 'M15 No page errors' + (': ' + errs[0] if errs else ''))
     b.close()
 fails = [l for l in LOG if l.startswith('FAIL')]

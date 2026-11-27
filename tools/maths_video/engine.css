@@ -1,0 +1,28 @@
+*{box-sizing:border-box} body{margin:0;background:#000}
+#stage{position:relative;width:1280px;height:720px;overflow:hidden;background:#FFFDF6;font-family:Inter,Arial,sans-serif;color:#1B2433}
+.layer{position:absolute;left:0;top:0;pointer-events:none}
+.hdr{position:absolute;left:0;top:0;right:0;height:56px;display:flex;align-items:center;gap:14px;padding:0 28px;background:#fff;border-bottom:3px solid #1B2433;font-size:17px;z-index:5}
+.hdr img{height:30px} .hdr span{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:14px;color:#556} .hdr b{margin-left:auto;font-size:17px}
+.prog{position:absolute;left:0;bottom:0;height:8px;width:100%;background:#FFD84D;transform-origin:left;z-index:5}
+.intro{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#FFFDF6;z-index:6}
+.ilogo img{height:96px} .iband{width:420px;height:14px;background:#FFD84D;border-radius:7px;margin:26px 0 22px;transform-origin:left}
+.istage{font-size:22px;letter-spacing:.14em;font-weight:700;color:#556;text-transform:uppercase} .ititle{font-size:52px;font-weight:800;text-align:center;line-height:1.2;margin-top:14px}
+.scene{position:absolute;inset:0;opacity:0}
+.shead{position:absolute;left:80px;top:78px;display:flex;align-items:center;gap:16px} .shead h2{margin:0;font-size:36px;font-weight:800}
+.chip{font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:8px}
+.it{position:absolute;font-size:30px;line-height:1.35;max-width:1120px} .it.big{font-size:46px;font-weight:800} .it.math{font-size:40px;font-weight:700;font-variant-numeric:tabular-nums}
+.it.note{font-size:24px;color:#556;font-style:italic}
+.it b{background:linear-gradient(transparent 58%,#FFD84D 58%)}
+.hlbox{position:absolute;inset:-8px -14px;border:4px solid #E0483E;border-radius:14px;transform-origin:left}
+.strike{position:absolute;left:-6px;right:-6px;top:52%;height:5px;background:#E0483E;transform-origin:left;border-radius:3px}
+.mark{position:absolute;right:-56px;top:-4px;font-size:44px;font-weight:900} .mark.tick{color:#1F9D61} .mark.cross{color:#E0483E}
+.nlt{font-size:24px;font-weight:600;fill:#1B2433} .nlt.zero{font-weight:900} .nll{font-size:30px;font-weight:800}
+.tht{font-size:20px;font-weight:600;fill:#1B2433} .tht.zero{font-weight:900;fill:#2F6FEB}
+.thlabel{position:absolute;font-size:34px;font-weight:800;color:#E0483E;background:#fff;border:3px solid #E0483E;border-radius:12px;padding:2px 12px}
+.tbl{position:absolute} .tbl table{border-collapse:collapse;font-size:28px} .tbl th,.tbl td{border:2px solid #C9CFDA;padding:10px 22px;text-align:left} .tbl th{background:#FFF1B8}
+.figbox{position:absolute} .figbox svg{width:100%;height:auto}
+.pausecard{position:absolute;left:160px;top:230px;width:960px;display:flex;gap:28px;align-items:center;background:#fff;border:5px solid #1B2433;border-radius:26px;padding:34px 40px;box-shadow:10px 10px 0 #FFD84D}
+.pc-ic{width:110px;height:110px;border-radius:55px;background:#FFD84D;display:flex;align-items:center;justify-content:center;font-size:56px;flex:none}
+.pausecard b{font-size:26px;text-transform:uppercase;letter-spacing:.08em} .pausecard p{font-size:36px;font-weight:700;margin:8px 0} .pausecard small{font-size:20px;color:#556}
+.emoji{position:absolute;line-height:1}
+.backdrop{position:absolute;inset:56px 0 0 0;background:rgba(255,253,246,.86)}
