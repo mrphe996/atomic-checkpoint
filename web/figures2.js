@@ -387,7 +387,7 @@
     const lb = o.labels || [], v = o.values || [], ymax = o.ymax || Math.max(...v, 1), step = o.step || ymax / 5, px0 = 70, px1 = 450, py0 = 260, py1 = 20, bw = (px1 - px0) / Math.max(1, lb.length);
     const sy = x => py0 - x / ymax * (py0 - py1); let s = '';
     for (let y = 0; y <= ymax + 1e-9; y += step) s += L(px0, sy(y), px1, sy(y), { w: 0.6, c: '#D6E0EE' }) + T(px0 - 8, sy(y) + 4, +y.toFixed(2), { size: 11, anchor: 'end' });
-    lb.forEach((l, i) => { const x = px0 + bw * i + bw * 0.18; s += `<rect x="${x}" y="${sy(v[i])}" width="${bw * 0.64}" height="${py0 - sy(v[i])}" fill="${(o.colours || [])[i] || C.blue}"/>` + T(x + bw * 0.32, py0 + 18, l, { size: 11 }); });
+    const ng = o.gap === false, f0 = ng ? 0 : 0.18, fw = ng ? 1 : 0.64; lb.forEach((l, i) => { const x = px0 + bw * i + bw * f0; s += `<rect x="${x}" y="${sy(v[i])}" width="${bw * fw}" height="${py0 - sy(v[i])}" fill="${(o.colours || [])[i] || C.blue}"${ng ? ' stroke="#fff" stroke-width="1.5"' : ''}/>` + T(x + bw * fw / 2, py0 + 18, l, { size: 11 }); });
     s += L(px0, py0, px1, py0) + L(px0, py0, px0, py1) + T(16, (py0 + py1) / 2, o.ylabel || '', { size: 12, bold: true, rot: -90 }) + T((px0 + px1) / 2, 312, o.xlabel || '', { size: 12, bold: true });
     return { svg: W(s), a: {} };
   };

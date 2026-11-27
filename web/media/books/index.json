@@ -2028,5 +2028,27 @@
     14
    ]
   }
+ },
+ "c5u12": {
+  "title": "Camday Maths Stage 5 · Unit 12: Data",
+  "pages": 12,
+  "dir": "media/books/c5u12/",
+  "ext": "webp",
+  "pdf": "media/books/c5u12.pdf?v=ebb3975553",
+  "v": "ebb3975553",
+  "secs": {
+   "12.1": [
+    2,
+    6
+   ],
+   "12.2": [
+    7,
+    11
+   ],
+   "answers": [
+    12,
+    12
+   ]
+  }
  }
 }
