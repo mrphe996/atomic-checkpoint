@@ -1,0 +1,191 @@
+1
+00:00:06,510 --> 00:00:18,430
+A sports club has four sets of data: members' favourite sports, monthly attendance for a year, the times of a 400 metre race, and boys and girls in each age group.
+
+2
+00:00:18,480 --> 00:00:20,830
+Which kind of chart suits each one?
+
+3
+00:00:20,880 --> 00:00:23,710
+Start with the monthly attendance.
+
+4
+00:00:23,760 --> 00:00:26,940
+Which chart is best for attendance each month?
+
+5
+00:00:26,990 --> 00:00:30,240
+Pause the video and choose.
+
+6
+00:00:30,290 --> 00:00:38,020
+A time series graph, because the attendance is measured every month, and we want to see how it changes over time.
+
+7
+00:00:38,070 --> 00:00:47,540
+Remember the charts you know: bar charts, pie charts, line graphs, frequency diagrams, stem-and-leaf diagrams, and scatter graphs.
+
+8
+00:00:47,590 --> 00:00:51,470
+Choose the chart for the question you want to answer.
+
+9
+00:00:51,520 --> 00:00:52,150
+Your turn.
+
+10
+00:00:52,200 --> 00:00:57,060
+Which diagram sorts shapes by has a right angle, and is a quadrilateral?
+
+11
+00:00:57,110 --> 00:01:00,300
+Pause the video and choose.
+
+12
+00:01:00,350 --> 00:01:01,490
+A Carroll diagram.
+
+13
+00:01:01,540 --> 00:01:06,220
+It sorts items into a grid by two features: yes or no for each.
+
+14
+00:01:06,270 --> 00:01:09,100
+To justify a choice means to give a reason.
+
+15
+00:01:09,150 --> 00:01:17,290
+For example: a time series graph, because the data is attendance measured each month, and I want to see the trend.
+
+16
+00:01:17,340 --> 00:01:18,610
+Here is the method.
+
+17
+00:01:18,660 --> 00:01:25,640
+Step 1: identify the type of data: categorical, discrete, continuous, over time, or in pairs.
+
+18
+00:01:25,690 --> 00:01:32,620
+Step 2: decide what you want to show: a comparison, a proportion, a trend, or a relationship.
+
+19
+00:01:32,670 --> 00:01:36,850
+Step 3: pick the chart that shows that most clearly.
+
+20
+00:01:36,900 --> 00:01:40,420
+Step 4: justify your choice with a reason.
+
+21
+00:01:40,470 --> 00:01:48,060
+Favourite sports, as fractions of all the members: a pie chart, because it shows proportions of a whole.
+
+22
+00:01:48,110 --> 00:01:57,050
+40 race times, measured to a tenth of a second: a frequency diagram, because the data is continuous, with many values.
+
+23
+00:01:57,100 --> 00:02:03,550
+Boys and girls in each age group: a dual bar chart, to compare the two groups side by side.
+
+24
+00:02:03,600 --> 00:02:04,260
+Your turn.
+
+25
+00:02:04,310 --> 00:02:09,340
+Which chart shows the relationship between revision time and test score?
+
+26
+00:02:09,390 --> 00:02:11,940
+Pause and choose.
+
+27
+00:02:11,990 --> 00:02:19,510
+A scatter graph, because there are two variables for each student, and we want to see if they are related.
+
+28
+00:02:19,560 --> 00:02:23,300
+Amy wants to show monthly attendance through the year.
+
+29
+00:02:23,350 --> 00:02:25,260
+Which line is wrong?
+
+30
+00:02:25,310 --> 00:02:26,370
+Line 1 is wrong.
+
+31
+00:02:26,420 --> 00:02:29,310
+A pie chart hides the order of the months.
+
+32
+00:02:29,360 --> 00:02:32,380
+A time series graph shows the trend.
+
+33
+00:02:32,430 --> 00:02:34,910
+Use a time series graph.
+
+34
+00:02:34,960 --> 00:02:37,690
+Data journalists choose charts every day.
+
+35
+00:02:37,740 --> 00:02:43,240
+The same numbers can tell a clear story in one chart, and be confusing in another.
+
+36
+00:02:43,290 --> 00:02:48,120
+Choosing the right chart is part of telling the truth with data.
+
+37
+00:02:48,170 --> 00:02:49,380
+One last question.
+
+38
+00:02:49,430 --> 00:02:50,980
+What does justify mean?
+
+39
+00:02:51,030 --> 00:02:54,260
+Pause the video and choose.
+
+40
+00:02:54,310 --> 00:02:56,760
+Justify means give a reason.
+
+41
+00:02:56,810 --> 00:03:01,850
+To remember: match the chart to the type of data, and to its purpose.
+
+42
+00:03:01,900 --> 00:03:03,450
+Proportion: pie chart.
+
+43
+00:03:03,500 --> 00:03:04,830
+Trend: time series.
+
+44
+00:03:04,880 --> 00:03:07,420
+Relationship: scatter graph.
+
+45
+00:03:07,470 --> 00:03:09,950
+Comparison: a bar or dual bar chart.
+
+46
+00:03:10,000 --> 00:03:13,670
+Grouped continuous data: a frequency diagram.
+
+47
+00:03:13,720 --> 00:03:16,290
+Always justify your choice.
+
+48
+00:03:16,340 --> 00:03:21,750
+Great work! Now practise lesson 16.5 on Camday.

@@ -1,0 +1,263 @@
+1
+00:00:06,130 --> 00:00:10,740
+Two clubs show how their members travel there, in pie charts.
+
+2
+00:00:10,790 --> 00:00:14,320
+In both charts, the cycle sector is 90 degrees.
+
+3
+00:00:14,370 --> 00:00:18,070
+Club A has 40 members, and club B has 200.
+
+4
+00:00:18,120 --> 00:00:21,250
+Do the same number of people cycle to each club?
+
+5
+00:00:21,300 --> 00:00:24,440
+Pause the video and choose.
+
+6
+00:00:24,490 --> 00:00:24,690
+No.
+
+7
+00:00:24,740 --> 00:00:30,750
+90 degrees is a quarter of the circle, so a quarter of each club cycles.
+
+8
+00:00:30,800 --> 00:00:32,600
+A quarter of 40 is 10.
+
+9
+00:00:32,650 --> 00:00:35,080
+A quarter of 200 is 50.
+
+10
+00:00:35,130 --> 00:00:39,960
+Remember: a sector's angle is its fraction of 360 degrees.
+
+11
+00:00:40,010 --> 00:00:41,980
+90 degrees is a quarter.
+
+12
+00:00:42,030 --> 00:00:44,380
+180 degrees is a half.
+
+13
+00:00:44,430 --> 00:00:48,540
+A pie chart shows proportions, which are fractions of the whole.
+
+14
+00:00:48,590 --> 00:00:50,610
+It does not show actual numbers.
+
+15
+00:00:50,660 --> 00:00:54,800
+Equal sectors can mean very different numbers of people.
+
+16
+00:00:54,850 --> 00:01:00,220
+To find a number, use: the angle, divided by 360, times the total.
+
+17
+00:01:00,270 --> 00:01:00,910
+Your turn.
+
+18
+00:01:00,960 --> 00:01:03,170
+How many members of club B cycle?
+
+19
+00:01:03,220 --> 00:01:06,360
+Pause the video and check.
+
+20
+00:01:06,410 --> 00:01:09,430
+90 divided by 360, times 200, is 50.
+
+21
+00:01:09,480 --> 00:01:13,100
+To compare proportions, compare the angles.
+
+22
+00:01:13,150 --> 00:01:17,150
+To compare numbers, work out each amount.
+
+23
+00:01:17,200 --> 00:01:18,490
+Here is the method.
+
+24
+00:01:18,540 --> 00:01:19,550
+Step 1: decide.
+
+25
+00:01:19,600 --> 00:01:24,050
+Is the question about a proportion, or an actual number?
+
+26
+00:01:24,100 --> 00:01:28,990
+Step 2: for proportions, compare the angles, or the fractions.
+
+27
+00:01:29,040 --> 00:01:36,140
+Step 3: for numbers, work out the angle divided by 360, times the total, for each chart.
+
+28
+00:01:36,190 --> 00:01:40,430
+Step 4: explain your conclusion, using both charts.
+
+29
+00:01:40,480 --> 00:01:45,880
+In school P, the Science sector is 108 degrees, out of 30 students.
+
+30
+00:01:45,930 --> 00:01:49,940
+In school Q, it is 96 degrees, out of 60 students.
+
+31
+00:01:49,990 --> 00:01:53,850
+Which has a greater proportion choosing Science?
+
+32
+00:01:53,900 --> 00:01:57,080
+108 is more than 96, so school P.
+
+33
+00:01:57,130 --> 00:02:01,370
+But which has more students choosing Science?
+
+34
+00:02:01,420 --> 00:02:04,410
+P: 108 over 360, times 30, is 9.
+
+35
+00:02:04,460 --> 00:02:07,460
+Q: 96 over 360, times 60, is 16.
+
+36
+00:02:07,510 --> 00:02:08,870
+School Q.
+
+37
+00:02:08,920 --> 00:02:09,680
+Your turn.
+
+38
+00:02:09,730 --> 00:02:12,780
+How many is a 120 degree sector of 45?
+
+39
+00:02:12,830 --> 00:02:15,970
+Pause and work it out.
+
+40
+00:02:16,020 --> 00:02:19,070
+120 degrees is a third of 360.
+
+41
+00:02:19,120 --> 00:02:21,680
+A third of 45 is 15.
+
+42
+00:02:21,730 --> 00:02:25,280
+A sector of 60 degrees represents 15 people.
+
+43
+00:02:25,330 --> 00:02:26,750
+What is the total?
+
+44
+00:02:26,800 --> 00:02:29,700
+60 degrees is a sixth of the circle.
+
+45
+00:02:29,750 --> 00:02:34,090
+So the total is 15 times 6, which is 90 people.
+
+46
+00:02:34,140 --> 00:02:38,140
+In pie A, pasta is 180 degrees, out of 20 people.
+
+47
+00:02:38,190 --> 00:02:42,180
+In pie B, pasta is 120 degrees, out of 90 people.
+
+48
+00:02:42,230 --> 00:02:44,390
+Which line is wrong?
+
+49
+00:02:44,440 --> 00:02:45,670
+Line 1 is wrong.
+
+50
+00:02:45,720 --> 00:02:50,310
+A bigger angle means a bigger proportion, not more people.
+
+51
+00:02:50,360 --> 00:02:51,910
+A: half of 20 is 10.
+
+52
+00:02:51,960 --> 00:02:54,300
+B: a third of 90 is 30.
+
+53
+00:02:54,350 --> 00:02:56,860
+More people like pasta in B.
+
+54
+00:02:56,910 --> 00:03:01,460
+News reports often show pie charts of how a country spends its money.
+
+55
+00:03:01,510 --> 00:03:04,730
+Before comparing two countries, check the totals.
+
+56
+00:03:04,780 --> 00:03:10,610
+A small slice of a big budget can be more money than a big slice of a small one.
+
+57
+00:03:10,660 --> 00:03:11,940
+One last question.
+
+58
+00:03:11,990 --> 00:03:15,110
+What is a 72 degree sector as a percentage?
+
+59
+00:03:15,160 --> 00:03:18,500
+Pause the video and answer.
+
+60
+00:03:18,550 --> 00:03:23,750
+72 divided by 360 is 0.2, which is 20 percent.
+
+61
+00:03:23,800 --> 00:03:27,220
+To remember: pie charts show proportions.
+
+62
+00:03:27,270 --> 00:03:32,090
+The number is the angle, divided by 360, times the total.
+
+63
+00:03:32,140 --> 00:03:34,190
+Compare proportions by angle.
+
+64
+00:03:34,240 --> 00:03:36,980
+Compare amounts by calculating.
+
+65
+00:03:37,030 --> 00:03:39,990
+Check the totals before you decide.
+
+66
+00:03:40,040 --> 00:03:45,390
+Great work! Now practise lesson 16.4 on Camday.

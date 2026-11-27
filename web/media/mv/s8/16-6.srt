@@ -1,0 +1,259 @@
+1
+00:00:06,480 --> 00:00:09,310
+A cricket coach must pick one bowler.
+
+2
+00:00:09,360 --> 00:00:14,440
+These are the runs each bowler gave away per over in recent games.
+
+3
+00:00:14,490 --> 00:00:15,990
+Asha: 4, 5, 4, 6, 5.
+
+4
+00:00:16,040 --> 00:00:18,020
+Ben: 1, 9, 2, 8, 5.
+
+5
+00:00:18,070 --> 00:00:20,820
+Which bowler is the more reliable choice?
+
+6
+00:00:20,870 --> 00:00:24,060
+Pause the video and choose.
+
+7
+00:00:24,110 --> 00:00:26,550
+Their averages are almost the same.
+
+8
+00:00:26,600 --> 00:00:31,610
+But Asha's runs are always between 4 and 6, while Ben's go from 1 to 9.
+
+9
+00:00:31,660 --> 00:00:36,430
+Asha is more consistent, so she is the more reliable choice.
+
+10
+00:00:36,480 --> 00:00:39,900
+Remember: the mean is the sum divided by the count.
+
+11
+00:00:39,950 --> 00:00:42,000
+The median is the middle value.
+
+12
+00:00:42,050 --> 00:00:43,910
+The mode is the most common.
+
+13
+00:00:43,960 --> 00:00:47,450
+The range is the largest minus the smallest.
+
+14
+00:00:47,500 --> 00:00:48,130
+Your turn.
+
+15
+00:00:48,180 --> 00:00:50,380
+What is the range of Asha's runs?
+
+16
+00:00:50,430 --> 00:00:53,610
+Pause the video and try it.
+
+17
+00:00:53,660 --> 00:00:54,680
+6 minus 4 is 2.
+
+18
+00:00:54,730 --> 00:01:00,650
+To compare two sets of data, compare an average, which shows how big the values are.
+
+19
+00:01:00,700 --> 00:01:05,380
+And compare the range, which shows how spread out they are.
+
+20
+00:01:05,430 --> 00:01:08,650
+A smaller range means more consistent.
+
+21
+00:01:08,700 --> 00:01:14,010
+The mean uses every value, but it is pulled by extreme values, called outliers.
+
+22
+00:01:14,060 --> 00:01:16,650
+The median is not affected by extremes.
+
+23
+00:01:16,700 --> 00:01:20,730
+The mode suits categories, or the most popular size.
+
+24
+00:01:20,780 --> 00:01:21,430
+Your turn.
+
+25
+00:01:21,480 --> 00:01:24,660
+With an outlier, which average should you use?
+
+26
+00:01:24,710 --> 00:01:27,960
+Pause the video and choose.
+
+27
+00:01:28,010 --> 00:01:28,720
+The median.
+
+28
+00:01:28,770 --> 00:01:30,030
+Here is the method.
+
+29
+00:01:30,080 --> 00:01:33,970
+Step 1: work out a suitable average for each set.
+
+30
+00:01:34,020 --> 00:01:37,400
+Step 2: work out the range for each set.
+
+31
+00:01:37,450 --> 00:01:38,590
+Step 3: compare.
+
+32
+00:01:38,640 --> 00:01:40,370
+Which average is higher?
+
+33
+00:01:40,420 --> 00:01:43,070
+Which set is more consistent?
+
+34
+00:01:43,120 --> 00:01:47,750
+Step 4: write a conclusion in context, using the numbers.
+
+35
+00:01:47,800 --> 00:01:53,740
+Five salaries, in thousands of dollars, are 28, 30, 31, 33 and 150.
+
+36
+00:01:53,790 --> 00:01:57,220
+The mean is 54.4, pulled up by the 150.
+
+37
+00:01:57,270 --> 00:02:00,790
+The median is 31, which is more typical.
+
+38
+00:02:00,840 --> 00:02:02,690
+Use the median.
+
+39
+00:02:02,740 --> 00:02:05,960
+Class X has a mean of 62 and a range of 30.
+
+40
+00:02:06,010 --> 00:02:09,230
+Class Y has a mean of 58 and a range of 12.
+
+41
+00:02:09,280 --> 00:02:11,510
+Class X did better on average.
+
+42
+00:02:11,560 --> 00:02:14,880
+Class Y's marks were more consistent.
+
+43
+00:02:14,930 --> 00:02:18,730
+A shop sells shoes in sizes 5, 6, 6, 7, 6, 8 and 9.
+
+44
+00:02:18,780 --> 00:02:21,830
+Which average helps the shop order stock?
+
+45
+00:02:21,880 --> 00:02:26,080
+The mode, 6, because it is the most popular size.
+
+46
+00:02:26,130 --> 00:02:27,870
+Team A has a range of 3.
+
+47
+00:02:27,920 --> 00:02:29,750
+Team B has a range of 10.
+
+48
+00:02:29,800 --> 00:02:31,790
+Which line is wrong?
+
+49
+00:02:31,840 --> 00:02:32,910
+Line 1 is wrong.
+
+50
+00:02:32,960 --> 00:02:35,420
+The range measures spread, not size.
+
+51
+00:02:35,470 --> 00:02:37,230
+Team B is less consistent.
+
+52
+00:02:37,280 --> 00:02:40,430
+Use an average to say who scores more.
+
+53
+00:02:40,480 --> 00:02:43,340
+Team B's scores are more spread out.
+
+54
+00:02:43,390 --> 00:02:47,610
+News reports usually give the median house price, not the mean.
+
+55
+00:02:47,660 --> 00:02:54,990
+A few very expensive houses would pull the mean up, and make prices look higher than most people pay.
+
+56
+00:02:55,040 --> 00:02:56,100
+One last question.
+
+57
+00:02:56,150 --> 00:02:58,240
+What does the range tell you about?
+
+58
+00:02:58,290 --> 00:03:01,290
+Pause the video and choose.
+
+59
+00:03:01,340 --> 00:03:05,090
+The range tells you about the spread of the data.
+
+60
+00:03:05,140 --> 00:03:08,840
+To remember: compare an average, and the range.
+
+61
+00:03:08,890 --> 00:03:12,040
+A smaller range means more consistent.
+
+62
+00:03:12,090 --> 00:03:14,060
+The median resists outliers.
+
+63
+00:03:14,110 --> 00:03:16,480
+The mode suits categories.
+
+64
+00:03:16,530 --> 00:03:20,290
+Write your conclusion in context, with numbers.
+
+65
+00:03:20,340 --> 00:03:25,710
+Great work! Now practise lesson 16.6 on Camday.

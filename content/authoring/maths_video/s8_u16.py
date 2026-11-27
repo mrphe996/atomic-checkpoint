@@ -9,7 +9,7 @@ from .s7_u16 import BARS, PIE, BL, OR
 
 SLEEP = lambda gap=False, x=640, y=130, w=600, at=0: FIG(x, y, w, at, kind="barchart", labels=["5–6", "6–7", "7–8", "8–9", "9–10", "10–11"], values=[2, 5, 9, 8, 4, 2], ymax=10, step=2, ylabel="Frequency", xlabel="Time asleep, t (hours)", gap=gap, colours=[BL] * 6)
 BATTERY = lambda at=0, **k: LG(dict(min=8, max=14, step=1, label="Time (hour)"), dict(min=0, max=100, step=20, label="Battery (%)"), [[8, 100], [9, 88], [10, 75], [11, 66], [12, 52], [13, 40], [14, 31]], at=at, **k)
-STEM = lambda stems, right, key, x=700, y=140, w=480, at=0: FIG(x, y, w, at, kind="stemleaf", stems=stems, right=right, key=key)
+STEM = lambda stems, right, key, x=620, y=120, w=640, at=0: FIG(x, y, w, at, kind="stemleaf", stems=stems, right=right, key=key)
 REACT = lambda at=0, **k: STEM([1, 2, 3, 4], [[8, 9], [2, 4, 5, 6, 7, 8, 9], [0, 1, 3, 5, 7], [1]], "Key: 2 | 4 means 24", at=at, **k)
 
 VIDEOS = {}
@@ -208,7 +208,7 @@ VIDEOS["16.4"] = [
     ]),
     dict(kind="hook", title="Proportions, not amounts", steps=[
         dict(say="No. 90 degrees is a quarter of the circle, so a quarter of each club cycles. A quarter of 40 is 10. A quarter of 200 is 50.",
-             do=[MATH(f"90° = {F(1, 4)}", x=80, y=180), MATH(f"A: {F(1, 4)} × 40 = 10", x=80, y=270, at=5), MATH(f"B: {F(1, 4)} × 200 = 50", x=80, y=350, at=8), B("10 vs 50", x=80, y=440, color=GREEN, at=10)]),
+             do=[MATH(f"90° = {F(1, 4)}", x=80, y=160), MATH(f"A: {F(1, 4)} × 40 = 10", x=80, y=265, at=5), MATH(f"B: {F(1, 4)} × 200 = 50", x=80, y=370, at=8), B("10 vs 50", x=80, y=480, color=GREEN, at=10)]),
     ]),
     dict(kind="recall", title="Sector angles", steps=[
         dict(say="Remember: a sector's angle is its fraction of 360 degrees. 90 degrees is a quarter. 180 degrees is a half.", do=[MATH("angle = fraction × 360°", x=80, y=190), MATH(f"90° = {F(1, 4)} · 180° = {F(1, 2)}", x=80, y=290)]),

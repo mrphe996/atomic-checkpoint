@@ -42304,7 +42304,7 @@
     "15.3-k3": 131.21,
     "15.3-k4": 203.33
    },
-   "up": false
+   "up": true
   },
   "15.4": {
    "src": "media/mv/s8/15-4.mp4",
@@ -42587,7 +42587,7 @@
     "15.4-k3": 135.73,
     "15.4-k4": 206.55
    },
-   "up": false
+   "up": true
   },
   "16.1": {
    "src": "media/mv/s8/16-1.mp4",
@@ -42842,7 +42842,7 @@
     "16.1-k3": 94.34,
     "16.1-k4": 203.29
    },
-   "up": false
+   "up": true
   },
   "16.2": {
    "src": "media/mv/s8/16-2.mp4",
@@ -43057,7 +43057,1003 @@
     "16.2-k3": 118.24,
     "16.2-k4": 169.73
    },
-   "up": false
+   "up": true
+  },
+  "16.3": {
+   "src": "media/mv/s8/16-3.mp4",
+   "poster": "media/mv/s8/16-3_poster.jpg",
+   "srt": "media/mv/s8/16-3.srt",
+   "dur": 210.88,
+   "captions": [
+    [
+     6.98,
+     "Fifteen students test their reaction times, in hundredths of a second."
+    ],
+    [
+     14.24,
+     "The results are 24, 31, 19, 27, 35, 22, 28, 41, 26, 33, 29, 18, 37, 25 and 30."
+    ],
+    [
+     22.89,
+     "How could you show every value in order, and still see the shape of the data?"
+    ],
+    [
+     28.56,
+     "Which diagram keeps all the values in order?"
+    ],
+    [
+     31.66,
+     "Pause the video and choose."
+    ],
+    [
+     34.96,
+     "A stem-and-leaf diagram."
+    ],
+    [
+     36.58,
+     "The tens digit is the stem, and the units digit is the leaf."
+    ],
+    [
+     41.19,
+     "Remember: the median is the middle value, when the values are in order."
+    ],
+    [
+     46.6,
+     "The range is the largest minus the smallest."
+    ],
+    [
+     49.95,
+     "41 minus 18 is 23."
+    ],
+    [
+     51.87,
+     "Write the stems in a column."
+    ],
+    [
+     53.84,
+     "Write each leaf next to its stem, in order, lined up."
+    ],
+    [
+     57.57,
+     "Always give a key, like: 2, leaf 4, means 24."
+    ],
+    [
+     61.29,
+     "It keeps every value, and it shows the shape like a bar chart on its side."
+    ],
+    [
+     66.68,
+     "Your turn."
+    ],
+    [
+     67.41,
+     "There are 15 values."
+    ],
+    [
+     68.85,
+     "What is the median?"
+    ],
+    [
+     70.23,
+     "Pause the video and try it."
+    ],
+    [
+     73.59,
+     "With 15 values, the median is the 8th."
+    ],
+    [
+     77.54,
+     "Count along: 18, 19, then 22, 24, 25, 26, 27, 28."
+    ],
+    [
+     82.62,
+     "The median is 28."
+    ],
+    [
+     84.94,
+     "The mean is the sum, 425, divided by 15, which is about 28.3."
+    ],
+    [
+     90.99,
+     "Here is the method."
+    ],
+    [
+     92.29,
+     "Step 1: choose the stems, often the tens, and write them in a column."
+    ],
+    [
+     97.57,
+     "Step 2: write each leaf next to its stem."
+    ],
+    [
+     100.38,
+     "Then redraw it with the leaves in order."
+    ],
+    [
+     103.66,
+     "Step 3: line up the leaves, and add a key."
+    ],
+    [
+     107.12,
+     "Step 4: read off the median, mode and range."
+    ],
+    [
+     110.82,
+     "Draw a diagram for 52, 47, 61, 55, 49, 58, 63 and 50."
+    ],
+    [
+     116.56,
+     "The stems are 4, 5 and 6."
+    ],
+    [
+     119.82,
+     "There are 8 values, so the median is halfway between the 4th and the 5th values."
+    ],
+    [
+     126.2,
+     "Your turn."
+    ],
+    [
+     126.89,
+     "What is the median of these 8 values?"
+    ],
+    [
+     129.45,
+     "Pause and work it out."
+    ],
+    [
+     132.37,
+     "52 plus 55 is 107."
+    ],
+    [
+     134.68,
+     "Halve it: 53.5."
+    ],
+    [
+     137.16,
+     "A key can show decimals."
+    ],
+    [
+     139.22,
+     "If 3, leaf 4, means 3.4 kilograms, then 3 with leaves 1, 4, 4, 8 means 3.1, 3.4, 3.4 and 3.8."
+    ],
+    [
+     147.23,
+     "The mode is 3.4, because it appears twice."
+    ],
+    [
+     151.39,
+     "Kai draws a stem-and-leaf diagram for 34, 31 and 38."
+    ],
+    [
+     155.77,
+     "Which line is wrong?"
+    ],
+    [
+     158.0,
+     "Line 1 is wrong."
+    ],
+    [
+     159.1,
+     "The leaves are not in order, and there is no key."
+    ],
+    [
+     163.0,
+     "It should be 3, leaves 1, 4, 8, with a key: 3, leaf 1, means 31."
+    ],
+    [
+     169.03,
+     "Some railway timetables are stem-and-leaf diagrams!"
+    ],
+    [
+     172.56,
+     "The hour is the stem, and the minutes of each departure are the leaves."
+    ],
+    [
+     178.03,
+     "One last question."
+    ],
+    [
+     179.23,
+     "What does a stem-and-leaf diagram always need?"
+    ],
+    [
+     182.31,
+     "Pause the video and choose."
+    ],
+    [
+     185.51,
+     "It always needs a key, so that readers know what the numbers mean."
+    ],
+    [
+     190.42,
+     "To remember: the stem is the leading digit, and the leaf is the last digit."
+    ],
+    [
+     196.05,
+     "Leaves go in order, and lined up."
+    ],
+    [
+     198.77,
+     "Always give a key."
+    ],
+    [
+     200.94,
+     "Find the median, mode and range straight from the diagram."
+    ],
+    [
+     205.49,
+     "Great work! Now practise lesson 16.3 on Camday."
+    ]
+   ],
+   "times": {
+    "16.3-k1": 33.91,
+    "16.3-k2": 72.54,
+    "16.3-k3": 131.32,
+    "16.3-k4": 184.46
+   },
+   "up": true
+  },
+  "16.4": {
+   "src": "media/mv/s8/16-4.mp4",
+   "poster": "media/mv/s8/16-4_poster.jpg",
+   "srt": "media/mv/s8/16-4.srt",
+   "dur": 225.44,
+   "captions": [
+    [
+     6.13,
+     "Two clubs show how their members travel there, in pie charts."
+    ],
+    [
+     10.79,
+     "In both charts, the cycle sector is 90 degrees."
+    ],
+    [
+     14.37,
+     "Club A has 40 members, and club B has 200."
+    ],
+    [
+     18.12,
+     "Do the same number of people cycle to each club?"
+    ],
+    [
+     21.3,
+     "Pause the video and choose."
+    ],
+    [
+     24.49,
+     "No."
+    ],
+    [
+     24.74,
+     "90 degrees is a quarter of the circle, so a quarter of each club cycles."
+    ],
+    [
+     30.8,
+     "A quarter of 40 is 10."
+    ],
+    [
+     32.65,
+     "A quarter of 200 is 50."
+    ],
+    [
+     35.13,
+     "Remember: a sector's angle is its fraction of 360 degrees."
+    ],
+    [
+     40.01,
+     "90 degrees is a quarter."
+    ],
+    [
+     42.03,
+     "180 degrees is a half."
+    ],
+    [
+     44.43,
+     "A pie chart shows proportions, which are fractions of the whole."
+    ],
+    [
+     48.59,
+     "It does not show actual numbers."
+    ],
+    [
+     50.66,
+     "Equal sectors can mean very different numbers of people."
+    ],
+    [
+     54.85,
+     "To find a number, use: the angle, divided by 360, times the total."
+    ],
+    [
+     60.27,
+     "Your turn."
+    ],
+    [
+     60.96,
+     "How many members of club B cycle?"
+    ],
+    [
+     63.22,
+     "Pause the video and check."
+    ],
+    [
+     66.41,
+     "90 divided by 360, times 200, is 50."
+    ],
+    [
+     69.48,
+     "To compare proportions, compare the angles."
+    ],
+    [
+     73.15,
+     "To compare numbers, work out each amount."
+    ],
+    [
+     77.2,
+     "Here is the method."
+    ],
+    [
+     78.54,
+     "Step 1: decide."
+    ],
+    [
+     79.6,
+     "Is the question about a proportion, or an actual number?"
+    ],
+    [
+     84.1,
+     "Step 2: for proportions, compare the angles, or the fractions."
+    ],
+    [
+     89.04,
+     "Step 3: for numbers, work out the angle divided by 360, times the total, for each chart."
+    ],
+    [
+     96.19,
+     "Step 4: explain your conclusion, using both charts."
+    ],
+    [
+     100.48,
+     "In school P, the Science sector is 108 degrees, out of 30 students."
+    ],
+    [
+     105.93,
+     "In school Q, it is 96 degrees, out of 60 students."
+    ],
+    [
+     109.99,
+     "Which has a greater proportion choosing Science?"
+    ],
+    [
+     113.9,
+     "108 is more than 96, so school P."
+    ],
+    [
+     117.13,
+     "But which has more students choosing Science?"
+    ],
+    [
+     121.42,
+     "P: 108 over 360, times 30, is 9."
+    ],
+    [
+     124.46,
+     "Q: 96 over 360, times 60, is 16."
+    ],
+    [
+     127.51,
+     "School Q."
+    ],
+    [
+     128.92,
+     "Your turn."
+    ],
+    [
+     129.73,
+     "How many is a 120 degree sector of 45?"
+    ],
+    [
+     132.83,
+     "Pause and work it out."
+    ],
+    [
+     136.02,
+     "120 degrees is a third of 360."
+    ],
+    [
+     139.12,
+     "A third of 45 is 15."
+    ],
+    [
+     141.73,
+     "A sector of 60 degrees represents 15 people."
+    ],
+    [
+     145.33,
+     "What is the total?"
+    ],
+    [
+     146.8,
+     "60 degrees is a sixth of the circle."
+    ],
+    [
+     149.75,
+     "So the total is 15 times 6, which is 90 people."
+    ],
+    [
+     154.14,
+     "In pie A, pasta is 180 degrees, out of 20 people."
+    ],
+    [
+     158.19,
+     "In pie B, pasta is 120 degrees, out of 90 people."
+    ],
+    [
+     162.23,
+     "Which line is wrong?"
+    ],
+    [
+     164.44,
+     "Line 1 is wrong."
+    ],
+    [
+     165.72,
+     "A bigger angle means a bigger proportion, not more people."
+    ],
+    [
+     170.36,
+     "A: half of 20 is 10."
+    ],
+    [
+     171.96,
+     "B: a third of 90 is 30."
+    ],
+    [
+     174.35,
+     "More people like pasta in B."
+    ],
+    [
+     176.91,
+     "News reports often show pie charts of how a country spends its money."
+    ],
+    [
+     181.51,
+     "Before comparing two countries, check the totals."
+    ],
+    [
+     184.78,
+     "A small slice of a big budget can be more money than a big slice of a small one."
+    ],
+    [
+     190.66,
+     "One last question."
+    ],
+    [
+     191.99,
+     "What is a 72 degree sector as a percentage?"
+    ],
+    [
+     195.16,
+     "Pause the video and answer."
+    ],
+    [
+     198.55,
+     "72 divided by 360 is 0.2, which is 20 percent."
+    ],
+    [
+     203.8,
+     "To remember: pie charts show proportions."
+    ],
+    [
+     207.27,
+     "The number is the angle, divided by 360, times the total."
+    ],
+    [
+     212.14,
+     "Compare proportions by angle."
+    ],
+    [
+     214.24,
+     "Compare amounts by calculating."
+    ],
+    [
+     217.03,
+     "Check the totals before you decide."
+    ],
+    [
+     220.04,
+     "Great work! Now practise lesson 16.4 on Camday."
+    ]
+   ],
+   "times": {
+    "16.4-k1": 23.44,
+    "16.4-k2": 65.36,
+    "16.4-k3": 134.97,
+    "16.4-k4": 197.5
+   },
+   "up": true
+  },
+  "16.5": {
+   "src": "media/mv/s8/16-5.mp4",
+   "poster": "media/mv/s8/16-5_poster.jpg",
+   "srt": "media/mv/s8/16-5.srt",
+   "dur": 201.8,
+   "captions": [
+    [
+     6.51,
+     "A sports club has four sets of data: members' favourite sports, monthly attendance for a year, the times of a 400 metre race, and boys and girls in each age group."
+    ],
+    [
+     18.48,
+     "Which kind of chart suits each one?"
+    ],
+    [
+     20.88,
+     "Start with the monthly attendance."
+    ],
+    [
+     23.76,
+     "Which chart is best for attendance each month?"
+    ],
+    [
+     26.99,
+     "Pause the video and choose."
+    ],
+    [
+     30.29,
+     "A time series graph, because the attendance is measured every month, and we want to see how it changes over time."
+    ],
+    [
+     38.07,
+     "Remember the charts you know: bar charts, pie charts, line graphs, frequency diagrams, stem-and-leaf diagrams, and scatter graphs."
+    ],
+    [
+     47.59,
+     "Choose the chart for the question you want to answer."
+    ],
+    [
+     51.52,
+     "Your turn."
+    ],
+    [
+     52.2,
+     "Which diagram sorts shapes by has a right angle, and is a quadrilateral?"
+    ],
+    [
+     57.11,
+     "Pause the video and choose."
+    ],
+    [
+     60.35,
+     "A Carroll diagram."
+    ],
+    [
+     61.54,
+     "It sorts items into a grid by two features: yes or no for each."
+    ],
+    [
+     66.27,
+     "To justify a choice means to give a reason."
+    ],
+    [
+     69.15,
+     "For example: a time series graph, because the data is attendance measured each month, and I want to see the trend."
+    ],
+    [
+     77.34,
+     "Here is the method."
+    ],
+    [
+     78.66,
+     "Step 1: identify the type of data: categorical, discrete, continuous, over time, or in pairs."
+    ],
+    [
+     85.69,
+     "Step 2: decide what you want to show: a comparison, a proportion, a trend, or a relationship."
+    ],
+    [
+     92.67,
+     "Step 3: pick the chart that shows that most clearly."
+    ],
+    [
+     96.9,
+     "Step 4: justify your choice with a reason."
+    ],
+    [
+     100.47,
+     "Favourite sports, as fractions of all the members: a pie chart, because it shows proportions of a whole."
+    ],
+    [
+     108.11,
+     "40 race times, measured to a tenth of a second: a frequency diagram, because the data is continuous, with many values."
+    ],
+    [
+     117.1,
+     "Boys and girls in each age group: a dual bar chart, to compare the two groups side by side."
+    ],
+    [
+     123.6,
+     "Your turn."
+    ],
+    [
+     124.31,
+     "Which chart shows the relationship between revision time and test score?"
+    ],
+    [
+     129.39,
+     "Pause and choose."
+    ],
+    [
+     131.99,
+     "A scatter graph, because there are two variables for each student, and we want to see if they are related."
+    ],
+    [
+     139.56,
+     "Amy wants to show monthly attendance through the year."
+    ],
+    [
+     143.35,
+     "Which line is wrong?"
+    ],
+    [
+     145.31,
+     "Line 1 is wrong."
+    ],
+    [
+     146.42,
+     "A pie chart hides the order of the months."
+    ],
+    [
+     149.36,
+     "A time series graph shows the trend."
+    ],
+    [
+     152.43,
+     "Use a time series graph."
+    ],
+    [
+     154.96,
+     "Data journalists choose charts every day."
+    ],
+    [
+     157.74,
+     "The same numbers can tell a clear story in one chart, and be confusing in another."
+    ],
+    [
+     163.29,
+     "Choosing the right chart is part of telling the truth with data."
+    ],
+    [
+     168.17,
+     "One last question."
+    ],
+    [
+     169.43,
+     "What does justify mean?"
+    ],
+    [
+     171.03,
+     "Pause the video and choose."
+    ],
+    [
+     174.31,
+     "Justify means give a reason."
+    ],
+    [
+     176.81,
+     "To remember: match the chart to the type of data, and to its purpose."
+    ],
+    [
+     181.9,
+     "Proportion: pie chart."
+    ],
+    [
+     183.5,
+     "Trend: time series."
+    ],
+    [
+     184.88,
+     "Relationship: scatter graph."
+    ],
+    [
+     187.47,
+     "Comparison: a bar or dual bar chart."
+    ],
+    [
+     190.0,
+     "Grouped continuous data: a frequency diagram."
+    ],
+    [
+     193.72,
+     "Always justify your choice."
+    ],
+    [
+     196.34,
+     "Great work! Now practise lesson 16.5 on Camday."
+    ]
+   ],
+   "times": {
+    "16.5-k1": 29.24,
+    "16.5-k2": 59.3,
+    "16.5-k3": 130.94,
+    "16.5-k4": 173.26
+   },
+   "up": true
+  },
+  "16.6": {
+   "src": "media/mv/s8/16-6.mp4",
+   "poster": "media/mv/s8/16-6_poster.jpg",
+   "srt": "media/mv/s8/16-6.srt",
+   "dur": 205.76,
+   "captions": [
+    [
+     6.48,
+     "A cricket coach must pick one bowler."
+    ],
+    [
+     9.36,
+     "These are the runs each bowler gave away per over in recent games."
+    ],
+    [
+     14.49,
+     "Asha: 4, 5, 4, 6, 5."
+    ],
+    [
+     16.04,
+     "Ben: 1, 9, 2, 8, 5."
+    ],
+    [
+     18.07,
+     "Which bowler is the more reliable choice?"
+    ],
+    [
+     20.87,
+     "Pause the video and choose."
+    ],
+    [
+     24.11,
+     "Their averages are almost the same."
+    ],
+    [
+     26.6,
+     "But Asha's runs are always between 4 and 6, while Ben's go from 1 to 9."
+    ],
+    [
+     31.66,
+     "Asha is more consistent, so she is the more reliable choice."
+    ],
+    [
+     36.48,
+     "Remember: the mean is the sum divided by the count."
+    ],
+    [
+     39.95,
+     "The median is the middle value."
+    ],
+    [
+     42.05,
+     "The mode is the most common."
+    ],
+    [
+     43.96,
+     "The range is the largest minus the smallest."
+    ],
+    [
+     47.5,
+     "Your turn."
+    ],
+    [
+     48.18,
+     "What is the range of Asha's runs?"
+    ],
+    [
+     50.43,
+     "Pause the video and try it."
+    ],
+    [
+     53.66,
+     "6 minus 4 is 2."
+    ],
+    [
+     54.73,
+     "To compare two sets of data, compare an average, which shows how big the values are."
+    ],
+    [
+     60.7,
+     "And compare the range, which shows how spread out they are."
+    ],
+    [
+     65.43,
+     "A smaller range means more consistent."
+    ],
+    [
+     68.7,
+     "The mean uses every value, but it is pulled by extreme values, called outliers."
+    ],
+    [
+     74.06,
+     "The median is not affected by extremes."
+    ],
+    [
+     76.7,
+     "The mode suits categories, or the most popular size."
+    ],
+    [
+     80.78,
+     "Your turn."
+    ],
+    [
+     81.48,
+     "With an outlier, which average should you use?"
+    ],
+    [
+     84.71,
+     "Pause the video and choose."
+    ],
+    [
+     88.01,
+     "The median."
+    ],
+    [
+     88.77,
+     "Here is the method."
+    ],
+    [
+     90.08,
+     "Step 1: work out a suitable average for each set."
+    ],
+    [
+     94.02,
+     "Step 2: work out the range for each set."
+    ],
+    [
+     97.45,
+     "Step 3: compare."
+    ],
+    [
+     98.64,
+     "Which average is higher?"
+    ],
+    [
+     100.42,
+     "Which set is more consistent?"
+    ],
+    [
+     103.12,
+     "Step 4: write a conclusion in context, using the numbers."
+    ],
+    [
+     107.8,
+     "Five salaries, in thousands of dollars, are 28, 30, 31, 33 and 150."
+    ],
+    [
+     113.79,
+     "The mean is 54.4, pulled up by the 150."
+    ],
+    [
+     117.27,
+     "The median is 31, which is more typical."
+    ],
+    [
+     120.84,
+     "Use the median."
+    ],
+    [
+     122.74,
+     "Class X has a mean of 62 and a range of 30."
+    ],
+    [
+     126.01,
+     "Class Y has a mean of 58 and a range of 12."
+    ],
+    [
+     129.28,
+     "Class X did better on average."
+    ],
+    [
+     131.56,
+     "Class Y's marks were more consistent."
+    ],
+    [
+     134.93,
+     "A shop sells shoes in sizes 5, 6, 6, 7, 6, 8 and 9."
+    ],
+    [
+     138.78,
+     "Which average helps the shop order stock?"
+    ],
+    [
+     141.88,
+     "The mode, 6, because it is the most popular size."
+    ],
+    [
+     146.13,
+     "Team A has a range of 3."
+    ],
+    [
+     147.92,
+     "Team B has a range of 10."
+    ],
+    [
+     149.8,
+     "Which line is wrong?"
+    ],
+    [
+     151.84,
+     "Line 1 is wrong."
+    ],
+    [
+     152.96,
+     "The range measures spread, not size."
+    ],
+    [
+     155.47,
+     "Team B is less consistent."
+    ],
+    [
+     157.28,
+     "Use an average to say who scores more."
+    ],
+    [
+     160.48,
+     "Team B's scores are more spread out."
+    ],
+    [
+     163.39,
+     "News reports usually give the median house price, not the mean."
+    ],
+    [
+     167.66,
+     "A few very expensive houses would pull the mean up, and make prices look higher than most people pay."
+    ],
+    [
+     175.04,
+     "One last question."
+    ],
+    [
+     176.15,
+     "What does the range tell you about?"
+    ],
+    [
+     178.29,
+     "Pause the video and choose."
+    ],
+    [
+     181.34,
+     "The range tells you about the spread of the data."
+    ],
+    [
+     185.14,
+     "To remember: compare an average, and the range."
+    ],
+    [
+     188.89,
+     "A smaller range means more consistent."
+    ],
+    [
+     192.09,
+     "The median resists outliers."
+    ],
+    [
+     194.11,
+     "The mode suits categories."
+    ],
+    [
+     196.53,
+     "Write your conclusion in context, with numbers."
+    ],
+    [
+     200.34,
+     "Great work! Now practise lesson 16.6 on Camday."
+    ]
+   ],
+   "times": {
+    "16.6-k1": 23.06,
+    "16.6-k2": 52.61,
+    "16.6-k3": 86.96,
+    "16.6-k4": 180.29
+   },
+   "up": true
   }
  }
 }
