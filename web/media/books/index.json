@@ -1936,5 +1936,49 @@
     14
    ]
   }
+ },
+ "c5u08": {
+  "title": "Camday Maths Stage 5 · Unit 8: Probability",
+  "pages": 11,
+  "dir": "media/books/c5u08/",
+  "ext": "webp",
+  "pdf": "media/books/c5u08.pdf?v=56265ecfb4",
+  "v": "56265ecfb4",
+  "secs": {
+   "8.1": [
+    2,
+    6
+   ],
+   "8.2": [
+    7,
+    10
+   ],
+   "answers": [
+    11,
+    11
+   ]
+  }
+ },
+ "c5u09": {
+  "title": "Camday Maths Stage 5 · Unit 9: Addition and Subtraction (2)",
+  "pages": 10,
+  "dir": "media/books/c5u09/",
+  "ext": "webp",
+  "pdf": "media/books/c5u09.pdf?v=19667aa68a",
+  "v": "19667aa68a",
+  "secs": {
+   "9.1": [
+    2,
+    5
+   ],
+   "9.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
