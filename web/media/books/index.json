@@ -2572,5 +2572,27 @@
     10
    ]
   }
+ },
+ "c4u18": {
+  "title": "Camday Maths Stage 4 · Unit 18: Position, Direction and Movement",
+  "pages": 10,
+  "dir": "media/books/c4u18/",
+  "ext": "webp",
+  "pdf": "media/books/c4u18.pdf?v=e4e28de884",
+  "v": "e4e28de884",
+  "secs": {
+   "18.1": [
+    2,
+    5
+   ],
+   "18.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
