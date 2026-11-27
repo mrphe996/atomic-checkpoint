@@ -8,7 +8,7 @@ The narration is voiced with VoiceZuno (one text_to_speech call per lesson, spli
   python3 tools/maths_video/build.py audio  7 1 1.1 URL1 URL2 …   (the audio_url of each paragraph, in order)
   python3 tools/maths_video/build.py render 7 1 1.1   → web/media/mv/s7/1-1.mp4 (+ poster) and web/media/mv/index.json
 Then tools/maths_video/apply.py 7 copies the index entry into each lesson's `lv` (rebuild_maths_v4.sh runs it)."""
-import importlib, json, os, re, subprocess, sys, wave
+import fcntl, importlib, json, os, re, subprocess, sys, wave
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 WEB = os.path.join(ROOT, "web")
 sys.path.insert(0, os.path.join(ROOT, "content", "authoring"))
@@ -51,7 +51,8 @@ def cmd_audio1(stage, unit, sec, url):
     log = subprocess.run(["ffmpeg", "-i", whole, "-af", "silencedetect=noise=-40dB:d=1.0", "-f", "null", "-"], capture_output=True, text=True).stderr
     gaps = list(zip(map(float, re.findall(r"silence_start: ([\d.]+)", log)), map(float, re.findall(r"silence_end: ([\d.]+)", log))))
     total = len(pcm(whole)) / 2 / RATE; gaps = [g for g in gaps if g[0] > 0.2 and g[1] < total - 0.2]
-    assert len(gaps) == len(p) - 1, f"{len(p)} paragraphs but {len(gaps)} long silences: use split=paragraph + `audio` for this lesson"
+    assert len(gaps) >= len(p) - 1, f"{len(p)} paragraphs but {len(gaps)} long silences: use split=paragraph + `audio` for this lesson"
+    gaps = sorted(sorted(gaps, key=lambda g: g[0] - g[1])[:len(p) - 1])   # the breaks are the longest silences; a slow pause inside a sentence is shorter
     cuts = [0] + [x for g in gaps for x in g] + [total]
     for i, text in enumerate(p):
         a, b = max(0, cuts[2 * i] - 0.08), cuts[2 * i + 1] + 0.12
@@ -163,10 +164,12 @@ def cmd_render(stage, unit, sec, preview=None):
     real = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", mp4], capture_output=True, text=True).stdout)
     srt = os.path.join(out_dir, base + ".srt"); fmt = lambda x: "%02d:%02d:%02d,%03d" % (x // 3600, x % 3600 // 60, x % 60, round(x % 1 * 1000) % 1000)
     open(srt, "w").write("\n".join(f"{i + 1}\n{fmt(c[0])} --> {fmt((caps[i + 1][0] if i + 1 < len(caps) else real) - 0.05)}\n{c[1]}\n" for i, c in enumerate(caps)))
-    idx_p = os.path.join(WEB, "media", "mv", "index.json"); idx = json.load(open(idx_p)) if os.path.exists(idx_p) else {}
-    idx.setdefault(str(stage), {})[sec] = {"src": f"media/mv/s{stage}/{base}.mp4", "poster": f"media/mv/s{stage}/{base}_poster.jpg", "srt": f"media/mv/s{stage}/{base}.srt",
-                                         "dur": round(real, 2), "captions": caps, "times": stops, "up": False}   # set "up": true once the mp4 is in the video storage
-    json.dump(idx, open(idx_p, "w"), ensure_ascii=False, indent=1)
+    idx_p = os.path.join(WEB, "media", "mv", "index.json")
+    with open("/tmp/mv/index.lock", "w") as lk:   # two renders may finish at the same moment
+        fcntl.flock(lk, fcntl.LOCK_EX); idx = json.load(open(idx_p)) if os.path.exists(idx_p) else {}
+        idx.setdefault(str(stage), {})[sec] = {"src": f"media/mv/s{stage}/{base}.mp4", "poster": f"media/mv/s{stage}/{base}_poster.jpg", "srt": f"media/mv/s{stage}/{base}.srt",
+                                             "dur": round(real, 2), "captions": caps, "times": stops, "up": False}   # set "up": true once the mp4 is in the video storage
+        json.dump(idx, open(idx_p, "w"), ensure_ascii=False, indent=1)
     print(f"{mp4}: {real:.1f}s, {len(caps)} captions, pauses {stops}")
 
 

@@ -93,7 +93,7 @@
   }
   function fig(scene, a, t) {
     const g = window.AtomicFig && window.AtomicFig.get(a.fig.kind, a.fig); if (!g) return;
-    const d = div('figbox', g.svg, { left: (a.x || 700) + 'px', top: (a.y || 160) + 'px', width: (a.w || 500) + 'px' }); scene.box.append(d); appear(d, t, 0.6, 'scale(.92)');
+    const d = div('figbox' + (a.big ? ' big' : ''), g.svg, { left: (a.x || 700) + 'px', top: (a.y || 160) + 'px', width: (a.w || 500) + 'px' }); scene.box.append(d); appear(d, t, 0.6, 'scale(.92)');
   }
 
   // ---------- scenes ----------

@@ -20,7 +20,7 @@
 .tht{font-size:20px;font-weight:600;fill:#1B2433} .tht.zero{font-weight:900;fill:#2F6FEB}
 .thlabel{position:absolute;font-size:34px;font-weight:800;color:#E0483E;background:#fff;border:3px solid #E0483E;border-radius:12px;padding:2px 12px}
 .tbl{position:absolute} .tbl table{border-collapse:collapse;font-size:28px} .tbl th,.tbl td{border:2px solid #C9CFDA;padding:10px 22px;text-align:left} .tbl th{background:#FFF1B8}
-.figbox{position:absolute} .figbox svg{width:100%;height:auto}
+.figbox{position:absolute} .figbox svg{width:100%;height:auto} .figbox.big svg text{font-size:22px!important;font-weight:700}   /* app figures have small labels: enlarge them for video */
 .pausecard{position:absolute;left:160px;top:230px;width:960px;display:flex;gap:28px;align-items:center;background:#fff;border:5px solid #1B2433;border-radius:26px;padding:34px 40px;box-shadow:10px 10px 0 #FFD84D}
 .pc-ic{width:110px;height:110px;border-radius:55px;background:#FFD84D;display:flex;align-items:center;justify-content:center;font-size:56px;flex:none}
 .pausecard b{font-size:26px;text-transform:uppercase;letter-spacing:.08em} .pausecard p{font-size:36px;font-weight:700;margin:8px 0} .pausecard small{font-size:20px;color:#556}
