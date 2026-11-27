@@ -2594,5 +2594,31 @@
     10
    ]
   }
+ },
+ "c3u01": {
+  "title": "Camday Maths Stage 3 · Unit 1: Numbers to 1000",
+  "pages": 14,
+  "dir": "media/books/c3u01/",
+  "ext": "webp",
+  "pdf": "media/books/c3u01.pdf?v=376f8625e0",
+  "v": "376f8625e0",
+  "secs": {
+   "1.1": [
+    2,
+    5
+   ],
+   "1.2": [
+    6,
+    9
+   ],
+   "1.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
  }
 }
