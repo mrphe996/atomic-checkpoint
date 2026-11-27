@@ -4939,6 +4939,2787 @@
     "2.4-k4": 238.77
    },
    "up": true
+  },
+  "3.1": {
+   "src": "media/mv/s7/3-1.mp4",
+   "poster": "media/mv/s7/3-1_poster.jpg",
+   "srt": "media/mv/s7/3-1.srt",
+   "dur": 310.72,
+   "captions": [
+    [
+     8.24,
+     "A factory packs 1000 screws in every box."
+    ],
+    [
+     11.72,
+     "Each screw has a mass of 2.35 grams."
+    ],
+    [
+     15.33,
+     "What is the mass of all the screws in one box?"
+    ],
+    [
+     18.42,
+     "Pause the video and work it out."
+    ],
+    [
+     21.96,
+     "We need 2.35 times 1000."
+    ],
+    [
+     24.16,
+     "Watch what happens to the digits."
+    ],
+    [
+     27.74,
+     "Multiplying by 1000 moves every digit 3 places to the left."
+    ],
+    [
+     32.4,
+     "The 2 moves from the ones to the thousands."
+    ],
+    [
+     36.34,
+     "The answer is 2,350 grams."
+    ],
+    [
+     38.49,
+     "That is more than 2 kilograms of screws."
+    ],
+    [
+     42.35,
+     "Remember place value."
+    ],
+    [
+     44.19,
+     "In 4.07, the 4 is worth 4 ones."
+    ],
+    [
+     47.45,
+     "The 0 is worth 0 tenths, and the 7 is worth 7 hundredths."
+    ],
+    [
+     52.42,
+     "10, 100, 1000 and 10,000 are called powers of 10."
+    ],
+    [
+     59.38,
+     "We can write them with an index."
+    ],
+    [
+     62.27,
+     "100 is 10 times 10, so it is 10 to the power 2."
+    ],
+    [
+     67.06,
+     "1000 is 10 to the power 3, and 10,000 is 10 to the power 4."
+    ],
+    [
+     73.7,
+     "Notice the pattern."
+    ],
+    [
+     74.97,
+     "The index is the same as the number of zeros."
+    ],
+    [
+     78.53,
+     "When you multiply by 10, every digit moves one place to the left."
+    ],
+    [
+     83.38,
+     "It becomes worth 10 times as much."
+    ],
+    [
+     86.47,
+     "Multiply by 100, and the digits move 2 places to the left."
+    ],
+    [
+     91.9,
+     "2.35 becomes 235."
+    ],
+    [
+     94.04,
+     "Dividing by 10 moves every digit one place to the right."
+    ],
+    [
+     99.18,
+     "2.35 becomes 0.235."
+    ],
+    [
+     101.48,
+     "The decimal point never moves."
+    ],
+    [
+     103.58,
+     "Only the digits move."
+    ],
+    [
+     105.6,
+     "Your turn."
+    ],
+    [
+     106.41,
+     "Work out 7.1 times 10 to the power 3."
+    ],
+    [
+     109.4,
+     "Pause the video and try it."
+    ],
+    [
+     112.97,
+     "10 to the power 3 is 1000, so the digits move 3 places to the left."
+    ],
+    [
+     118.75,
+     "We fill the gaps with zeros."
+    ],
+    [
+     121.17,
+     "The answer is 7,100."
+    ],
+    [
+     123.44,
+     "Here is the method."
+    ],
+    [
+     124.9,
+     "Step 1: count the zeros, or read the index."
+    ],
+    [
+     128.21,
+     "10 to the power 3 means 3 places."
+    ],
+    [
+     131.3,
+     "Step 2: to multiply, move the digits left."
+    ],
+    [
+     134.26,
+     "To divide, move the digits right."
+    ],
+    [
+     137.15,
+     "Step 3: fill any gaps with zeros."
+    ],
+    [
+     140.21,
+     "Step 4: check."
+    ],
+    [
+     141.21,
+     "Multiplying makes the number bigger."
+    ],
+    [
+     143.8,
+     "Dividing makes it smaller."
+    ],
+    [
+     146.22,
+     "Work out 56 divided by 1000."
+    ],
+    [
+     149.88,
+     "1000 has 3 zeros, so the digits move 3 places to the right."
+    ],
+    [
+     155.51,
+     "56 becomes 5.6, then 0.56, then 0.056."
+    ],
+    [
+     160.7,
+     "A zero fills the empty tenths place."
+    ],
+    [
+     163.53,
+     "The answer is 0.056."
+    ],
+    [
+     165.66,
+     "Your turn."
+    ],
+    [
+     166.46,
+     "Work out 85 divided by 10 to the power 4."
+    ],
+    [
+     169.77,
+     "Pause and work it out."
+    ],
+    [
+     172.95,
+     "10 to the power 4 is 10,000."
+    ],
+    [
+     175.89,
+     "Move the digits 4 places to the right."
+    ],
+    [
+     179.88,
+     "85 becomes 0.0085."
+    ],
+    [
+     182.32,
+     "Fill the gap."
+    ],
+    [
+     183.54,
+     "9.2 times something equals 920."
+    ],
+    [
+     187.01,
+     "The 9 has moved from the ones to the hundreds."
+    ],
+    [
+     190.25,
+     "That is 2 places to the left."
+    ],
+    [
+     192.84,
+     "2 places means 10 to the power 2, which is 100."
+    ],
+    [
+     197.75,
+     "A sheet of paper is 0.09 millimetres thick."
+    ],
+    [
+     201.0,
+     "How thick is a pile of 1000 sheets, in centimetres?"
+    ],
+    [
+     205.41,
+     "0.09 times 1000: move the digits 3 places left."
+    ],
+    [
+     209.96,
+     "That is 90 millimetres."
+    ],
+    [
+     212.74,
+     "There are 10 millimetres in a centimetre."
+    ],
+    [
+     216.01,
+     "90 divided by 10 is 9."
+    ],
+    [
+     217.77,
+     "The pile is 9 centimetres thick."
+    ],
+    [
+     220.87,
+     "Noor works out 6.8 times 10."
+    ],
+    [
+     223.16,
+     "Which line goes wrong first?"
+    ],
+    [
+     226.0,
+     "Line 1 is wrong."
+    ],
+    [
+     227.25,
+     "Adding a zero only works for whole numbers."
+    ],
+    [
+     230.61,
+     "6.80 is the same as 6.8, so nothing has changed."
+    ],
+    [
+     234.91,
+     "The digits must move one place to the left."
+    ],
+    [
+     238.6,
+     "6.8 times 10 is 68."
+    ],
+    [
+     240.78,
+     "Powers of 10 are built into the metric system."
+    ],
+    [
+     245.1,
+     "Kilo means 1000."
+    ],
+    [
+     246.6,
+     "So 1 kilometre is 1000 metres, and 1 kilogram is 1000 grams."
+    ],
+    [
+     252.79,
+     "A 5 kilometre run is 5 times 1000, which is 5000 metres."
+    ],
+    [
+     258.93,
+     "Milli means divide by 1000."
+    ],
+    [
+     261.64,
+     "A 250 millilitre glass of juice is 250 divided by 1000, which is 0.25 litres."
+    ],
+    [
+     269.94,
+     "One last question."
+    ],
+    [
+     271.25,
+     "Which calculation is equal to 0.6?"
+    ],
+    [
+     273.73,
+     "Pause the video and choose."
+    ],
+    [
+     277.1,
+     "60 divided by 100."
+    ],
+    [
+     278.85,
+     "The digits move 2 places to the right."
+    ],
+    [
+     282.55,
+     "60 becomes 0.60, which is 0.6."
+    ],
+    [
+     286.02,
+     "To remember: the index of a power of 10 tells you the number of zeros."
+    ],
+    [
+     291.61,
+     "To multiply, digits move left."
+    ],
+    [
+     293.69,
+     "To divide, digits move right."
+    ],
+    [
+     296.25,
+     "Fill gaps with zeros."
+    ],
+    [
+     297.72,
+     "The decimal point does not move."
+    ],
+    [
+     300.5,
+     "And check: multiplying makes it bigger, dividing makes it smaller."
+    ],
+    [
+     305.6,
+     "Great work! Now practise lesson 3.1 on Camday."
+    ]
+   ],
+   "times": {
+    "3.1-k1": 20.91,
+    "3.1-k2": 111.92,
+    "3.1-k3": 171.9,
+    "3.1-k4": 276.05
+   },
+   "up": true
+  },
+  "3.2": {
+   "src": "media/mv/s7/3-2.mp4",
+   "poster": "media/mv/s7/3-2_poster.jpg",
+   "srt": "media/mv/s7/3-2.srt",
+   "dur": 322.8,
+   "captions": [
+    [
+     5.7,
+     "A sprinter crosses the line."
+    ],
+    [
+     8.03,
+     "The timing system measures 10.386 seconds."
+    ],
+    [
+     12.08,
+     "But the big screen only shows 10.4 seconds."
+    ],
+    [
+     15.33,
+     "It has been rounded."
+    ],
+    [
+     17.39,
+     "What would the screen show with 2 digits after the point?"
+    ],
+    [
+     21.39,
+     "Pause the video and work it out."
+    ],
+    [
+     25.04,
+     "Keep 2 digits after the point: 10.38."
+    ],
+    [
+     28.3,
+     "The next digit is 6."
+    ],
+    [
+     30.61,
+     "6 is 5 or more, so we round up."
+    ],
+    [
+     33.24,
+     "The 8 becomes 9."
+    ],
+    [
+     34.6,
+     "The screen would show 10.39 seconds."
+    ],
+    [
+     38.22,
+     "On a number line, 10.386 is past the halfway point, so it is closer to 10.39."
+    ],
+    [
+     45.52,
+     "You already know how to round whole numbers."
+    ],
+    [
+     49.01,
+     "Round 3,748 to the nearest hundred."
+    ],
+    [
+     52.34,
+     "It lies between 3,700 and 3,800."
+    ],
+    [
+     55.28,
+     "The tens digit is 4, which is less than 5."
+    ],
+    [
+     59.14,
+     "So it rounds down, to 3,700."
+    ],
+    [
+     62.26,
+     "You are always told how accurate the answer must be."
+    ],
+    [
+     65.77,
+     "This is the degree of accuracy."
+    ],
+    [
+     68.4,
+     "It might be the nearest whole number, 1 decimal place, or 2 decimal places."
+    ],
+    [
+     73.69,
+     "We write d p for decimal places."
+    ],
+    [
+     76.5,
+     "The rule is always the same."
+    ],
+    [
+     78.35,
+     "First, find the last digit you are keeping."
+    ],
+    [
+     81.73,
+     "Then look at the next digit."
+    ],
+    [
+     83.63,
+     "We call it the decider."
+    ],
+    [
+     85.73,
+     "If the decider is 5 or more, round up."
+    ],
+    [
+     88.37,
+     "If it is less than 5, leave the digit as it is."
+    ],
+    [
+     92.17,
+     "Round 10.386 to 1 decimal place."
+    ],
+    [
+     95.02,
+     "Keep the 3."
+    ],
+    [
+     96.0,
+     "The decider is 8, so round up."
+    ],
+    [
+     98.66,
+     "The answer is 10.4."
+    ],
+    [
+     100.9,
+     "Now to 2 decimal places."
+    ],
+    [
+     102.89,
+     "Keep the 8."
+    ],
+    [
+     103.79,
+     "The decider is 6, so round up."
+    ],
+    [
+     106.27,
+     "The answer is 10.39."
+    ],
+    [
+     108.47,
+     "Your turn."
+    ],
+    [
+     109.31,
+     "Round 12.75 to 1 decimal place."
+    ],
+    [
+     111.89,
+     "Pause the video and try it."
+    ],
+    [
+     115.53,
+     "Keep 1 digit after the point: 12.7."
+    ],
+    [
+     118.52,
+     "The decider is 5."
+    ],
+    [
+     119.97,
+     "5 or more means round up."
+    ],
+    [
+     122.1,
+     "The answer is 12.8."
+    ],
+    [
+     124.27,
+     "Here is the method."
+    ],
+    [
+     125.59,
+     "Step 1: count that many digits after the decimal point, and draw a line after the last one."
+    ],
+    [
+     132.45,
+     "Step 2: look at the digit just after the line."
+    ],
+    [
+     136.3,
+     "Step 3: if it is 5 or more, add 1 to the last digit you kept."
+    ],
+    [
+     140.69,
+     "If it is under 5, leave it."
+    ],
+    [
+     143.18,
+     "Step 4: write exactly the number of decimal places asked for."
+    ],
+    [
+     148.08,
+     "Round 27.649 to 1 decimal place."
+    ],
+    [
+     152.05,
+     "Keep 1 digit after the point, and draw the line."
+    ],
+    [
+     156.05,
+     "The decider is 4."
+    ],
+    [
+     157.45,
+     "That is less than 5, so the 6 stays."
+    ],
+    [
+     160.42,
+     "The answer is 27.6."
+    ],
+    [
+     162.54,
+     "Do not look at the 9."
+    ],
+    [
+     163.92,
+     "Only the digit straight after the line matters."
+    ],
+    [
+     167.56,
+     "Round 3.596 to 2 decimal places."
+    ],
+    [
+     171.27,
+     "Keep 2 digits: 3.59."
+    ],
+    [
+     173.01,
+     "The decider is 6, so we add 1 to the 9."
+    ],
+    [
+     176.96,
+     "3.59 plus 0.01 is 3.60."
+    ],
+    [
+     179.28,
+     "The 9 becomes 0, and 1 is carried to the tenths."
+    ],
+    [
+     184.66,
+     "Write 3.60."
+    ],
+    [
+     185.56,
+     "Keep the final zero."
+    ],
+    [
+     187.2,
+     "It shows that the number is given to 2 decimal places."
+    ],
+    [
+     192.19,
+     "Your turn."
+    ],
+    [
+     193.06,
+     "Round 0.0458 to 2 decimal places."
+    ],
+    [
+     195.93,
+     "Pause and work it out."
+    ],
+    [
+     199.24,
+     "Keep 2 digits after the point: 0.04."
+    ],
+    [
+     202.31,
+     "The decider is 5, so round up."
+    ],
+    [
+     204.87,
+     "The answer is 0.05."
+    ],
+    [
+     207.04,
+     "Three friends share a 25 dollar bill equally."
+    ],
+    [
+     210.3,
+     "How much does each pay, to the nearest cent?"
+    ],
+    [
+     214.04,
+     "25 divided by 3 is 8.3333, and the threes go on for ever."
+    ],
+    [
+     219.86,
+     "Cents need 2 decimal places."
+    ],
+    [
+     222.21,
+     "Keep 8.33."
+    ],
+    [
+     223.05,
+     "The decider is 3, so round down."
+    ],
+    [
+     225.74,
+     "Each friend pays 8 dollars 33."
+    ],
+    [
+     228.81,
+     "Eli rounds 8.2471 to 1 decimal place."
+    ],
+    [
+     231.97,
+     "Which line goes wrong first?"
+    ],
+    [
+     234.91,
+     "Line 1 is wrong."
+    ],
+    [
+     236.02,
+     "Eli started from the last digit and rounded again and again."
+    ],
+    [
+     240.19,
+     "Only the digit straight after the kept place matters."
+    ],
+    [
+     244.42,
+     "Keep 8.2."
+    ],
+    [
+     245.15,
+     "The decider is 4, so the 2 stays."
+    ],
+    [
+     247.81,
+     "The answer is 8.2."
+    ],
+    [
+     249.27,
+     "Always round in one step."
+    ],
+    [
+     251.84,
+     "Sprint times are recorded to 2 decimal places."
+    ],
+    [
+     255.77,
+     "The men's 100 metres world record is 9.58 seconds, set by Usain Bolt in 2009."
+    ],
+    [
+     262.89,
+     "To the nearest whole number, that is 10 seconds."
+    ],
+    [
+     266.71,
+     "To 1 decimal place, it is 9.6 seconds."
+    ],
+    [
+     270.29,
+     "The more decimal places you keep, the more accurate the number is."
+    ],
+    [
+     274.79,
+     "That is why races use hundredths of a second."
+    ],
+    [
+     278.41,
+     "One last question."
+    ],
+    [
+     279.82,
+     "Round 6.997 to 2 decimal places, and write all the digits."
+    ],
+    [
+     284.36,
+     "Pause the video and answer."
+    ],
+    [
+     287.87,
+     "Keep 6.99."
+    ],
+    [
+     288.96,
+     "The decider is 7, so add 1 hundredth."
+    ],
+    [
+     292.99,
+     "6.99 plus 0.01 is 7.00."
+    ],
+    [
+     295.5,
+     "Write 7.00, with both zeros."
+    ],
+    [
+     299.1,
+     "To remember: find the last digit to keep, then look at the next digit, the decider."
+    ],
+    [
+     305.12,
+     "5 or more, round up."
+    ],
+    [
+     306.63,
+     "Under 5, keep."
+    ],
+    [
+     308.24,
+     "Round in one step, from the original number."
+    ],
+    [
+     311.8,
+     "Give exactly the number of decimal places asked for, and keep any final zero."
+    ],
+    [
+     317.62,
+     "Great work! Now practise lesson 3.2 on Camday."
+    ]
+   ],
+   "times": {
+    "3.2-k1": 23.99,
+    "3.2-k2": 114.48,
+    "3.2-k3": 198.19,
+    "3.2-k4": 286.82
+   },
+   "up": true
+  },
+  "4.1": {
+   "src": "media/mv/s7/4-1.mp4",
+   "poster": "media/mv/s7/4-1_poster.jpg",
+   "srt": "media/mv/s7/4-1.srt",
+   "dur": 314.76,
+   "captions": [
+    [
+     6.43,
+     "Four swimmers finish a race."
+    ],
+    [
+     9.16,
+     "Their times are 58.4 seconds, 58.39 seconds, 58.04 seconds, and 58.415 seconds."
+    ],
+    [
+     17.43,
+     "The smallest time wins."
+    ],
+    [
+     19.03,
+     "Which time won?"
+    ],
+    [
+     20.08,
+     "Pause the video and decide."
+    ],
+    [
+     23.36,
+     "Every time starts with 58, so look at the tenths."
+    ],
+    [
+     27.46,
+     "58.04 has 0 tenths."
+    ],
+    [
+     29.05,
+     "The others have 3 or 4 tenths."
+    ],
+    [
+     32.1,
+     "So 58.04 seconds is the smallest time."
+    ],
+    [
+     35.3,
+     "That swimmer won."
+    ],
+    [
+     37.28,
+     "Remember these signs."
+    ],
+    [
+     38.77,
+     "Less than, and greater than."
+    ],
+    [
+     41.29,
+     "Equal to, and not equal to."
+    ],
+    [
+     43.87,
+     "0.5 is equal to 0.50."
+    ],
+    [
+     45.56,
+     "A zero at the end of a decimal does not change its value."
+    ],
+    [
+     50.72,
+     "To compare decimals, start with the whole-number parts."
+    ],
+    [
+     54.5,
+     "If they are the same, compare the tenths."
+    ],
+    [
+     57.86,
+     "Compare 58.4 and 58.39."
+    ],
+    [
+     60.06,
+     "The whole numbers match."
+    ],
+    [
+     62.36,
+     "The tenths are 4 and 3."
+    ],
+    [
+     64.56,
+     "4 is bigger, so 58.4 is greater than 58.39."
+    ],
+    [
+     69.22,
+     "You only move on to the hundredths when the tenths are the same."
+    ],
+    [
+     74.09,
+     "Here is a useful trick."
+    ],
+    [
+     75.65,
+     "Write zeros at the end, so that every number has the same number of decimal places."
+    ],
+    [
+     81.85,
+     "Now compare them like whole numbers: 400, 390, 40 and 415."
+    ],
+    [
+     88.45,
+     "In order, smallest first: 58.04, 58.39, 58.4, 58.415."
+    ],
+    [
+     95.55,
+     "Be careful."
+    ],
+    [
+     96.51,
+     "A longer number is not always bigger."
+    ],
+    [
+     99.74,
+     "0.7 is greater than 0.6999."
+    ],
+    [
+     102.64,
+     "Your turn."
+    ],
+    [
+     103.33,
+     "Which of these numbers is the largest?"
+    ],
+    [
+     105.97,
+     "Pause the video and choose."
+    ],
+    [
+     109.25,
+     "The answer is 0.6."
+    ],
+    [
+     110.57,
+     "It has 6 tenths."
+    ],
+    [
+     111.74,
+     "The other numbers have fewer tenths, even though they have more digits."
+    ],
+    [
+     117.49,
+     "Here is the method."
+    ],
+    [
+     118.84,
+     "Step 1: line the numbers up by the decimal point."
+    ],
+    [
+     122.86,
+     "Step 2: fill empty places with zeros, so they all have the same number of decimal places."
+    ],
+    [
+     129.61,
+     "Step 3: compare the whole numbers, then the tenths, then the hundredths, and so on."
+    ],
+    [
+     135.84,
+     "Step 4: write the original numbers in order."
+    ],
+    [
+     139.57,
+     "Write these in order, smallest first: 6.2, 6.05, 6.199 and 6.21."
+    ],
+    [
+     146.6,
+     "Give them all 3 decimal places."
+    ],
+    [
+     149.45,
+     "Compare 200, 50, 199 and 210."
+    ],
+    [
+     152.93,
+     "The smallest is 50, then 199, then 200, then 210."
+    ],
+    [
+     159.36,
+     "So the order is 6.05, 6.199, 6.2, 6.21."
+    ],
+    [
+     164.76,
+     "Which is smaller: negative 1.4, or negative 1.35?"
+    ],
+    [
+     169.61,
+     "Without the signs, 1.40 is bigger than 1.35."
+    ],
+    [
+     174.6,
+     "So negative 1.4 is further from zero."
+    ],
+    [
+     177.21,
+     "It is further left on the number line, which makes it smaller."
+    ],
+    [
+     182.13,
+     "Negative 1.4 is less than negative 1.35."
+    ],
+    [
+     186.32,
+     "Your turn."
+    ],
+    [
+     187.13,
+     "Which is smaller: negative 0.3, or negative 0.25?"
+    ],
+    [
+     191.12,
+     "Pause and decide."
+    ],
+    [
+     193.91,
+     "0.30 is bigger than 0.25."
+    ],
+    [
+     196.12,
+     "So negative 0.3 is further from zero, and it is the smaller number."
+    ],
+    [
+     202.61,
+     "Is 4.30 equal to 4.3?"
+    ],
+    [
+     204.8,
+     "Yes."
+    ],
+    [
+     205.22,
+     "4.30 has 3 tenths and 0 hundredths."
+    ],
+    [
+     208.87,
+     "That is the same as 4.3."
+    ],
+    [
+     211.92,
+     "Is 0.09 equal to 0.9?"
+    ],
+    [
+     214.0,
+     "No."
+    ],
+    [
+     214.29,
+     "0.09 is 9 hundredths, but 0.9 is 9 tenths."
+    ],
+    [
+     218.99,
+     "Ivy puts 0.8, 0.75 and 0.125 in order, smallest first."
+    ],
+    [
+     223.78,
+     "Which line goes wrong first?"
+    ],
+    [
+     226.81,
+     "Line 1 is wrong."
+    ],
+    [
+     228.0,
+     "The number of digits does not tell you the size."
+    ],
+    [
+     231.56,
+     "Compare the tenths: 8, 7 and 1."
+    ],
+    [
+     234.4,
+     "The correct order, smallest first, is 0.125, 0.75, 0.8."
+    ],
+    [
+     240.32,
+     "Ordering decimals decides who gets the gold medal."
+    ],
+    [
+     244.41,
+     "At the 2008 Olympic Games, Michael Phelps won the 100 metres butterfly in 50.58 seconds."
+    ],
+    [
+     252.16,
+     "The swimmer in second place took 50.59 seconds."
+    ],
+    [
+     256.79,
+     "The tenths are the same."
+    ],
+    [
+     258.44,
+     "Only the hundredths are different."
+    ],
+    [
+     260.78,
+     "He won by just one hundredth of a second!"
+    ],
+    [
+     264.15,
+     "One last question."
+    ],
+    [
+     265.82,
+     "How many of these numbers are greater than 1.1?"
+    ],
+    [
+     270.17,
+     "1.5, 1.05, 1.505 and 1.055."
+    ],
+    [
+     272.68,
+     "Pause the video and count."
+    ],
+    [
+     276.49,
+     "Compare the tenths with 1.1."
+    ],
+    [
+     279.04,
+     "1.5 and 1.505 have 5 tenths, so they are greater."
+    ],
+    [
+     283.51,
+     "1.05 and 1.055 have 0 tenths, so they are smaller."
+    ],
+    [
+     288.06,
+     "The answer is 2."
+    ],
+    [
+     290.07,
+     "To remember: compare the whole numbers, then the tenths, then the hundredths, in turn."
+    ],
+    [
+     296.51,
+     "Add zeros at the end, so the numbers have the same number of decimal places."
+    ],
+    [
+     302.1,
+     "More digits does not mean bigger."
+    ],
+    [
+     304.94,
+     "With negative numbers, the one further from zero is smaller."
+    ],
+    [
+     309.56,
+     "Great work! Now practise lesson 4.1 on Camday."
+    ]
+   ],
+   "times": {
+    "4.1-k1": 22.31,
+    "4.1-k2": 108.2,
+    "4.1-k3": 192.86,
+    "4.1-k4": 275.44
+   },
+   "up": true
+  },
+  "4.2": {
+   "src": "media/mv/s7/4-2.mp4",
+   "poster": "media/mv/s7/4-2_poster.jpg",
+   "srt": "media/mv/s7/4-2.srt",
+   "dur": 296.08,
+   "captions": [
+    [
+     7.3,
+     "Lena buys a book for 7 dollars 85, and a pen for 2 dollars 40."
+    ],
+    [
+     12.41,
+     "She pays with a 20 dollar note."
+    ],
+    [
+     15.51,
+     "How much change should she get?"
+    ],
+    [
+     17.64,
+     "Pause the video and work it out."
+    ],
+    [
+     21.23,
+     "First add the prices."
+    ],
+    [
+     23.44,
+     "7.85 plus 2.40 is 10.25."
+    ],
+    [
+     26.51,
+     "Then take that away from 20."
+    ],
+    [
+     29.32,
+     "20 minus 10.25 is 9.75."
+    ],
+    [
+     31.63,
+     "Lena gets 9 dollars 75 change."
+    ],
+    [
+     35.2,
+     "Remember column addition."
+    ],
+    [
+     37.23,
+     "Line up ones under ones, and tens under tens."
+    ],
+    [
+     40.89,
+     "476 plus 58."
+    ],
+    [
+     42.41,
+     "Carry when a column adds up to 10 or more."
+    ],
+    [
+     45.83,
+     "The answer is 534."
+    ],
+    [
+     47.85,
+     "With decimals, the rule is: line up the decimal points."
+    ],
+    [
+     51.53,
+     "Then every digit sits under a digit with the same place value."
+    ],
+    [
+     56.22,
+     "7.85 plus 2.4."
+    ],
+    [
+     57.75,
+     "Write 2.4 as 2.40, so there are no gaps."
+    ],
+    [
+     62.66,
+     "Add from the right."
+    ],
+    [
+     64.45,
+     "5 plus 0 is 5."
+    ],
+    [
+     65.77,
+     "8 plus 4 is 12: write 2, carry 1."
+    ],
+    [
+     68.89,
+     "7 plus 2 plus 1 is 10."
+    ],
+    [
+     71.51,
+     "The decimal point in the answer goes straight under the other points."
+    ],
+    [
+     76.87,
+     "The total is 10.25."
+    ],
+    [
+     78.89,
+     "Your turn."
+    ],
+    [
+     79.72,
+     "Work out 0.9 plus 0.35."
+    ],
+    [
+     81.62,
+     "Pause the video and try it."
+    ],
+    [
+     85.25,
+     "Write 0.9 as 0.90."
+    ],
+    [
+     87.17,
+     "90 hundredths plus 35 hundredths is 125 hundredths."
+    ],
+    [
+     92.61,
+     "The answer is 1.25."
+    ],
+    [
+     95.18,
+     "Subtracting works the same way."
+    ],
+    [
+     98.66,
+     "20 minus 10.25."
+    ],
+    [
+     100.34,
+     "Write 20 as 20.00."
+    ],
+    [
+     102.91,
+     "Subtract column by column from the right, exchanging when you need to."
+    ],
+    [
+     108.21,
+     "The answer is 9.75."
+    ],
+    [
+     110.19,
+     "Check by adding back."
+    ],
+    [
+     112.53,
+     "9.75 plus 10.25 is 20."
+    ],
+    [
+     115.52,
+     "With negative numbers, use the integer rules."
+    ],
+    [
+     119.42,
+     "4.2 minus negative 1.3 is 4.2 plus 1.3, which is 5.5."
+    ],
+    [
+     124.55,
+     "Here is the method."
+    ],
+    [
+     125.94,
+     "Step 1: estimate first, by rounding."
+    ],
+    [
+     129.13,
+     "Step 2: write the numbers with the decimal points lined up, and fill the gaps with zeros."
+    ],
+    [
+     135.86,
+     "Step 3: add or subtract column by column, from the right."
+    ],
+    [
+     140.45,
+     "Step 4: put the decimal point in the answer, under the others."
+    ],
+    [
+     144.83,
+     "Then compare with your estimate."
+    ],
+    [
+     147.63,
+     "Work out 4.7 plus 0.36 plus 12.05."
+    ],
+    [
+     151.09,
+     "First estimate: 5 plus 0 plus 12 is about 17."
+    ],
+    [
+     156.22,
+     "Line up the points."
+    ],
+    [
+     158.15,
+     "Hundredths: 0 plus 6 plus 5 is 11."
+    ],
+    [
+     161.4,
+     "Write 1, carry 1."
+    ],
+    [
+     163.02,
+     "Tenths: 7 plus 3 plus 0 plus 1 is 11."
+    ],
+    [
+     166.55,
+     "Write 1, carry 1."
+    ],
+    [
+     168.18,
+     "The answer is 17.11."
+    ],
+    [
+     170.64,
+     "Work out 8 minus 2.374."
+    ],
+    [
+     172.83,
+     "Write 8 with 3 decimal places."
+    ],
+    [
+     176.23,
+     "Exchange: 8 ones become 7 ones, 9 tenths, 9 hundredths and 10 thousandths."
+    ],
+    [
+     182.71,
+     "Now subtract."
+    ],
+    [
+     183.93,
+     "The answer is 5.626."
+    ],
+    [
+     186.35,
+     "Your turn."
+    ],
+    [
+     187.15,
+     "Work out 2.5 minus negative 0.7."
+    ],
+    [
+     189.73,
+     "Pause and work it out."
+    ],
+    [
+     192.91,
+     "Subtracting a negative is the same as adding."
+    ],
+    [
+     196.76,
+     "2.5 plus 0.7 is 3.2."
+    ],
+    [
+     199.03,
+     "A recipe needs 0.75 kilograms of flour."
+    ],
+    [
+     202.03,
+     "Ama has 2.1 kilograms."
+    ],
+    [
+     203.73,
+     "She makes the recipe twice."
+    ],
+    [
+     205.81,
+     "How much flour is left?"
+    ],
+    [
+     208.13,
+     "She uses 0.75 plus 0.75, which is 1.5 kilograms."
+    ],
+    [
+     213.45,
+     "2.10 minus 1.50 is 0.6."
+    ],
+    [
+     215.64,
+     "She has 0.6 kilograms left."
+    ],
+    [
+     218.76,
+     "Raj works out 3.6 plus 1.25 like this."
+    ],
+    [
+     221.68,
+     "He lined up the digits on the right."
+    ],
+    [
+     224.45,
+     "What went wrong?"
+    ],
+    [
+     226.23,
+     "The 6 tenths were added to 5 hundredths."
+    ],
+    [
+     229.13,
+     "The decimal points are not in a line."
+    ],
+    [
+     232.38,
+     "Line up the points and fill in a zero."
+    ],
+    [
+     236.14,
+     "3.60 plus 1.25 is 4.85."
+    ],
+    [
+     238.97,
+     "Doctors add and subtract decimals every day."
+    ],
+    [
+     242.29,
+     "Normal body temperature is about 37 degrees Celsius."
+    ],
+    [
+     246.77,
+     "Suppose a thermometer reads 38.6 degrees."
+    ],
+    [
+     249.99,
+     "How far above normal is that?"
+    ],
+    [
+     252.82,
+     "38.6 minus 37.0 is 1.6."
+    ],
+    [
+     254.8,
+     "The temperature is 1.6 degrees above normal."
+    ],
+    [
+     258.58,
+     "That is a fever."
+    ],
+    [
+     260.51,
+     "One last question."
+    ],
+    [
+     261.99,
+     "What is 10 minus 0.01?"
+    ],
+    [
+     263.81,
+     "Pause the video and answer."
+    ],
+    [
+     267.44,
+     "Write 10 as 10.00."
+    ],
+    [
+     269.42,
+     "Take away 1 hundredth."
+    ],
+    [
+     271.84,
+     "The answer is 9.99."
+    ],
+    [
+     274.48,
+     "To remember: line up the decimal points, and fill gaps with zeros."
+    ],
+    [
+     279.5,
+     "Add or subtract as you do with whole numbers."
+    ],
+    [
+     283.1,
+     "Use the integer rules for negative decimals."
+    ],
+    [
+     286.64,
+     "Estimate first, and check with the inverse operation."
+    ],
+    [
+     290.88,
+     "Great work! Now practise lesson 4.2 on Camday."
+    ]
+   ],
+   "times": {
+    "4.2-k1": 20.18,
+    "4.2-k2": 84.2,
+    "4.2-k3": 191.86,
+    "4.2-k4": 266.39
+   },
+   "up": true
+  },
+  "4.3": {
+   "src": "media/mv/s7/4-3.mp4",
+   "poster": "media/mv/s7/4-3_poster.jpg",
+   "srt": "media/mv/s7/4-3.srt",
+   "dur": 287.52,
+   "captions": [
+    [
+     6.42,
+     "Petrol costs 1 dollar 36 for each litre."
+    ],
+    [
+     9.69,
+     "A car's tank takes 42 litres."
+    ],
+    [
+     12.61,
+     "Estimate the cost of a full tank, by working out 40 times 1.4."
+    ],
+    [
+     17.27,
+     "Pause the video and try it."
+    ],
+    [
+     20.69,
+     "4 times 14 is 56, so 40 times 1.4 is also 56."
+    ],
+    [
+     25.05,
+     "A full tank costs about 56 dollars."
+    ],
+    [
+     28.99,
+     "Now let's find the exact cost: 1.36 times 42."
+    ],
+    [
+     33.53,
+     "First, remember how to multiply whole numbers."
+    ],
+    [
+     37.53,
+     "136 times 42."
+    ],
+    [
+     39.21,
+     "136 times 40 is 5,440."
+    ],
+    [
+     42.2,
+     "136 times 2 is 272."
+    ],
+    [
+     44.78,
+     "Add them: 5,712."
+    ],
+    [
+     47.5,
+     "To multiply a decimal, first multiply as if there were no decimal point."
+    ],
+    [
+     53.76,
+     "136 times 42 is 5,712."
+    ],
+    [
+     56.22,
+     "Then count the decimal places in the question."
+    ],
+    [
+     59.85,
+     "1.36 has 2 decimal places."
+    ],
+    [
+     62.45,
+     "The answer must have 2 decimal places as well."
+    ],
+    [
+     66.32,
+     "So it is 57.12."
+    ],
+    [
+     68.13,
+     "A full tank costs 57 dollars 12."
+    ],
+    [
+     70.57,
+     "That is close to our estimate of 56, so the point is in the right place."
+    ],
+    [
+     76.62,
+     "Your turn."
+    ],
+    [
+     77.38,
+     "Work out 2.7 times 3."
+    ],
+    [
+     78.97,
+     "Pause the video and try it."
+    ],
+    [
+     82.41,
+     "27 times 3 is 81."
+    ],
+    [
+     83.89,
+     "The question has 1 decimal place, so the answer is 8.1."
+    ],
+    [
+     89.24,
+     "The same idea works with two decimals."
+    ],
+    [
+     91.84,
+     "Count the decimal places in both numbers."
+    ],
+    [
+     95.2,
+     "0.3 times 0.2."
+    ],
+    [
+     96.44,
+     "3 times 2 is 6."
+    ],
+    [
+     97.76,
+     "There is 1 decimal place in each number, so 2 altogether."
+    ],
+    [
+     102.8,
+     "The answer is 0.06."
+    ],
+    [
+     105.03,
+     "Notice something."
+    ],
+    [
+     106.22,
+     "Multiplying by a number less than 1 makes the answer smaller."
+    ],
+    [
+     111.05,
+     "Here is the method."
+    ],
+    [
+     112.43,
+     "Step 1: estimate, by rounding."
+    ],
+    [
+     115.15,
+     "Step 2: multiply the numbers as if there were no decimal points."
+    ],
+    [
+     120.24,
+     "Step 3: count the total number of decimal places in the question."
+    ],
+    [
+     125.43,
+     "Step 4: put the point in, so the answer has that many decimal places."
+    ],
+    [
+     130.27,
+     "Check with your estimate."
+    ],
+    [
+     132.58,
+     "Work out 23.8 times 6."
+    ],
+    [
+     134.79,
+     "Estimate first: 24 times 6 is 144."
+    ],
+    [
+     138.75,
+     "Without the point: 238 times 6."
+    ],
+    [
+     142.36,
+     "200 times 6 is 1,200."
+    ],
+    [
+     144.8,
+     "30 times 6 is 180."
+    ],
+    [
+     146.89,
+     "8 times 6 is 48."
+    ],
+    [
+     148.75,
+     "Altogether, 1,428."
+    ],
+    [
+     151.39,
+     "The question has 1 decimal place."
+    ],
+    [
+     154.13,
+     "So the answer is 142.8."
+    ],
+    [
+     156.58,
+     "Work out 1.5 times 0.4."
+    ],
+    [
+     159.41,
+     "15 times 4 is 60."
+    ],
+    [
+     161.94,
+     "There are 2 decimal places in the question."
+    ],
+    [
+     165.56,
+     "So the answer is 0.60, which is 0.6."
+    ],
+    [
+     169.15,
+     "Your turn."
+    ],
+    [
+     169.95,
+     "Work out 0.9 times 0.9."
+    ],
+    [
+     171.8,
+     "Pause and work it out."
+    ],
+    [
+     174.96,
+     "9 times 9 is 81."
+    ],
+    [
+     176.36,
+     "There are 2 decimal places in the question."
+    ],
+    [
+     180.11,
+     "The answer is 0.81."
+    ],
+    [
+     182.32,
+     "Fabric costs 4 dollars 65 for each metre."
+    ],
+    [
+     185.78,
+     "How much do 3.2 metres cost?"
+    ],
+    [
+     188.14,
+     "Estimate: 5 times 3 is 15."
+    ],
+    [
+     190.88,
+     "Without the points: 465 times 32 is 14,880."
+    ],
+    [
+     196.17,
+     "There are 2 plus 1, so 3 decimal places."
+    ],
+    [
+     200.1,
+     "That gives 14.880."
+    ],
+    [
+     201.87,
+     "The fabric costs 14 dollars 88."
+    ],
+    [
+     205.46,
+     "Zoe works out 0.2 times 0.3."
+    ],
+    [
+     207.84,
+     "Which line is wrong?"
+    ],
+    [
+     210.09,
+     "Line 2 is wrong."
+    ],
+    [
+     211.27,
+     "The question has 2 decimal places altogether, so the answer needs 2 as well."
+    ],
+    [
+     217.46,
+     "The answer is 0.06."
+    ],
+    [
+     219.05,
+     "That makes sense: a part of 0.3 must be less than 0.3."
+    ],
+    [
+     224.1,
+     "Here is a trick for a stormy day."
+    ],
+    [
+     226.62,
+     "Sound travels about 0.34 kilometres every second."
+    ],
+    [
+     230.91,
+     "You see lightning, and count 6 seconds until the thunder."
+    ],
+    [
+     235.59,
+     "0.34 times 6."
+    ],
+    [
+     236.81,
+     "34 times 6 is 204, and there are 2 decimal places."
+    ],
+    [
+     241.49,
+     "The storm is about 2.04 kilometres away."
+    ],
+    [
+     245.79,
+     "One last question."
+    ],
+    [
+     247.05,
+     "Which of these answers is smaller than 12?"
+    ],
+    [
+     250.0,
+     "Pause the video and choose."
+    ],
+    [
+     253.29,
+     "12 times 0.8."
+    ],
+    [
+     254.48,
+     "Multiplying by a number less than 1 makes the answer smaller."
+    ],
+    [
+     260.06,
+     "12 times 0.8 is 9.6."
+    ],
+    [
+     262.44,
+     "To remember: multiply without the points, then count the decimal places in the question."
+    ],
+    [
+     269.15,
+     "The answer has the same total number of decimal places."
+    ],
+    [
+     273.42,
+     "Multiplying by a number between 0 and 1 makes the answer smaller."
+    ],
+    [
+     278.67,
+     "Always estimate, to check where the point goes."
+    ],
+    [
+     282.26,
+     "Great work! Now practise lesson 4.3 on Camday."
+    ]
+   ],
+   "times": {
+    "4.3-k1": 19.64,
+    "4.3-k2": 81.36,
+    "4.3-k3": 173.91,
+    "4.3-k4": 252.24
+   },
+   "up": true
+  },
+  "4.4": {
+   "src": "media/mv/s7/4-4.mp4",
+   "poster": "media/mv/s7/4-4_poster.jpg",
+   "srt": "media/mv/s7/4-4.srt",
+   "dur": 312.24,
+   "captions": [
+    [
+     6.35,
+     "Six friends share a pizza bill."
+    ],
+    [
+     8.73,
+     "The bill is 38 dollars 70, and they split it equally."
+    ],
+    [
+     13.34,
+     "How much does each friend pay?"
+    ],
+    [
+     15.39,
+     "Pause the video and work it out."
+    ],
+    [
+     18.97,
+     "We need 38.70 divided by 6."
+    ],
+    [
+     21.13,
+     "Estimate first: 36 divided by 6 is 6, so the answer is a bit more than 6."
+    ],
+    [
+     27.54,
+     "The exact answer is 6.45."
+    ],
+    [
+     29.57,
+     "Each friend pays 6 dollars 45."
+    ],
+    [
+     32.01,
+     "Let's see how to work that out."
+    ],
+    [
+     35.08,
+     "Remember short division."
+    ],
+    [
+     37.24,
+     "774 divided by 6."
+    ],
+    [
+     39.32,
+     "7 divided by 6 is 1, remainder 1."
+    ],
+    [
+     42.32,
+     "Carry the 1 to make 17."
+    ],
+    [
+     44.96,
+     "17 divided by 6 is 2, remainder 5."
+    ],
+    [
+     48.28,
+     "Carry the 5 to make 54."
+    ],
+    [
+     50.53,
+     "54 divided by 6 is 9."
+    ],
+    [
+     52.58,
+     "The answer is 129."
+    ],
+    [
+     54.88,
+     "To divide a decimal by a whole number, use short division."
+    ],
+    [
+     58.79,
+     "Write the decimal point in the answer directly above the point in the question."
+    ],
+    [
+     64.66,
+     "38.70 divided by 6."
+    ],
+    [
+     66.47,
+     "3 divided by 6 is 0, so look at 38."
+    ],
+    [
+     69.81,
+     "38 divided by 6 is 6, remainder 2."
+    ],
+    [
+     73.6,
+     "Now we reach the decimal point, so put a point in the answer."
+    ],
+    [
+     78.12,
+     "Carry the 2 to make 27."
+    ],
+    [
+     80.26,
+     "27 divided by 6 is 4, remainder 3."
+    ],
+    [
+     83.44,
+     "Then 30 divided by 6 is 5."
+    ],
+    [
+     86.41,
+     "The answer is 6.45."
+    ],
+    [
+     89.01,
+     "Your turn."
+    ],
+    [
+     89.78,
+     "Work out 8.4 divided by 2."
+    ],
+    [
+     91.77,
+     "Pause the video and try it."
+    ],
+    [
+     95.24,
+     "8 divided by 2 is 4."
+    ],
+    [
+     96.97,
+     "Write the point."
+    ],
+    [
+     98.35,
+     "4 divided by 2 is 2."
+    ],
+    [
+     100.08,
+     "The answer is 4.2."
+    ],
+    [
+     102.18,
+     "Sometimes there is a remainder at the end."
+    ],
+    [
+     105.08,
+     "Then write extra zeros after the decimal point, and keep dividing."
+    ],
+    [
+     110.18,
+     "7.3 divided by 4."
+    ],
+    [
+     112.37,
+     "Write 7.3 as 7.300."
+    ],
+    [
+     115.37,
+     "7 divided by 4 is 1, remainder 3."
+    ],
+    [
+     118.49,
+     "33 divided by 4 is 8, remainder 1."
+    ],
+    [
+     121.71,
+     "10 divided by 4 is 2, remainder 2."
+    ],
+    [
+     124.92,
+     "20 divided by 4 is 5."
+    ],
+    [
+     127.46,
+     "The answer is 1.825."
+    ],
+    [
+     130.2,
+     "Here is the method."
+    ],
+    [
+     131.6,
+     "Step 1: estimate first."
+    ],
+    [
+     133.84,
+     "Step 2: set out short division."
+    ],
+    [
+     136.02,
+     "Write the point in the answer above the point in the question."
+    ],
+    [
+     140.95,
+     "Step 3: divide digit by digit, carrying the remainders."
+    ],
+    [
+     145.43,
+     "Step 4: if there is a remainder at the end, add zeros and carry on."
+    ],
+    [
+     150.06,
+     "Then check by multiplying."
+    ],
+    [
+     152.41,
+     "Work out 14.56 divided by 4."
+    ],
+    [
+     155.1,
+     "Estimate: 16 divided by 4 is 4."
+    ],
+    [
+     158.63,
+     "14 divided by 4 is 3, remainder 2."
+    ],
+    [
+     161.58,
+     "Write 3, then the point."
+    ],
+    [
+     164.2,
+     "25 divided by 4 is 6, remainder 1."
+    ],
+    [
+     167.52,
+     "16 divided by 4 is 4."
+    ],
+    [
+     170.11,
+     "The answer is 3.64."
+    ],
+    [
+     171.67,
+     "That is close to the estimate of 4."
+    ],
+    [
+     175.07,
+     "Your turn."
+    ],
+    [
+     175.79,
+     "Work out 3 divided by 8."
+    ],
+    [
+     177.52,
+     "You will need to add zeros."
+    ],
+    [
+     179.46,
+     "Pause and work it out."
+    ],
+    [
+     182.44,
+     "Write 3 as 3.000."
+    ],
+    [
+     184.21,
+     "30 divided by 8 is 3, remainder 6."
+    ],
+    [
+     187.75,
+     "60 divided by 8 is 7, remainder 4."
+    ],
+    [
+     191.29,
+     "40 divided by 8 is 5."
+    ],
+    [
+     193.48,
+     "The answer is 0.375."
+    ],
+    [
+     196.12,
+     "Work out 52.8 divided by 16."
+    ],
+    [
+     198.93,
+     "Estimate: 48 divided by 16 is 3."
+    ],
+    [
+     202.69,
+     "It helps to list the multiples of 16: 16, 32, 48, 64."
+    ],
+    [
+     208.52,
+     "52 divided by 16 is 3, remainder 4."
+    ],
+    [
+     211.81,
+     "Write the point."
+    ],
+    [
+     213.31,
+     "Then 48 divided by 16 is 3."
+    ],
+    [
+     215.84,
+     "The answer is 3.3."
+    ],
+    [
+     218.07,
+     "A plank is 2.85 metres long."
+    ],
+    [
+     220.2,
+     "It is cut into 5 equal pieces."
+    ],
+    [
+     222.47,
+     "How long is each piece, in centimetres?"
+    ],
+    [
+     225.98,
+     "2.85 divided by 5 is 0.57 metres."
+    ],
+    [
+     230.14,
+     "Multiply by 100 to change metres to centimetres."
+    ],
+    [
+     234.12,
+     "Each piece is 57 centimetres long."
+    ],
+    [
+     237.48,
+     "Max works out 7.2 divided by 3."
+    ],
+    [
+     239.93,
+     "Which line is wrong?"
+    ],
+    [
+     242.06,
+     "Line 3 is wrong."
+    ],
+    [
+     243.16,
+     "Max forgot the decimal point."
+    ],
+    [
+     245.15,
+     "It goes in the answer, straight above the point in 7.2."
+    ],
+    [
+     249.47,
+     "The answer is 2.4."
+    ],
+    [
+     250.9,
+     "An estimate helps: 7 divided by 3 is about 2, so 24 is far too big."
+    ],
+    [
+     256.77,
+     "A marathon is a very exact distance: 42.195 kilometres."
+    ],
+    [
+     262.01,
+     "A half marathon is that distance divided by 2."
+    ],
+    [
+     265.88,
+     "42 divided by 2 is 21, and 0.195 divided by 2 is 0.0975."
+    ],
+    [
+     271.76,
+     "A half marathon is 21.0975 kilometres."
+    ],
+    [
+     275.76,
+     "That is about 21.1 kilometres."
+    ],
+    [
+     279.46,
+     "One last question."
+    ],
+    [
+     280.84,
+     "What is 0.9 divided by 3?"
+    ],
+    [
+     282.76,
+     "Pause the video and answer."
+    ],
+    [
+     286.23,
+     "9 tenths divided by 3 is 3 tenths."
+    ],
+    [
+     289.09,
+     "The answer is 0.3."
+    ],
+    [
+     291.16,
+     "To remember: put the point in the answer, above the point in the question."
+    ],
+    [
+     296.7,
+     "Divide digit by digit, carrying remainders."
+    ],
+    [
+     300.31,
+     "Add zeros after the point to keep dividing."
+    ],
+    [
+     303.73,
+     "Estimate first, and check by multiplying."
+    ],
+    [
+     307.14,
+     "Great work! Now practise lesson 4.4 on Camday."
+    ]
+   ],
+   "times": {
+    "4.4-k1": 17.92,
+    "4.4-k2": 94.19,
+    "4.4-k3": 181.39,
+    "4.4-k4": 285.18
+   },
+   "up": true
+  },
+  "4.5": {
+   "src": "media/mv/s7/4-5.mp4",
+   "poster": "media/mv/s7/4-5_poster.jpg",
+   "srt": "media/mv/s7/4-5.srt",
+   "dur": 310.24,
+   "captions": [
+    [
+     7.52,
+     "A market seller sells 9 boxes of mangoes."
+    ],
+    [
+     10.81,
+     "Each box costs 6 dollars 80."
+    ],
+    [
+     13.6,
+     "Can you work out the total in your head?"
+    ],
+    [
+     16.29,
+     "Pause the video and try."
+    ],
+    [
+     19.31,
+     "9 is nearly 10."
+    ],
+    [
+     20.74,
+     "And 10 boxes are easy: 10 times 6.80 is 68 dollars."
+    ],
+    [
+     26.16,
+     "That is one box too many."
+    ],
+    [
+     28.25,
+     "So take one box off."
+    ],
+    [
+     29.92,
+     "68 minus 6.80 is 61.20."
+    ],
+    [
+     32.4,
+     "9 boxes cost 61 dollars 20."
+    ],
+    [
+     34.71,
+     "This trick is called compensation."
+    ],
+    [
+     38.17,
+     "Remember three useful laws."
+    ],
+    [
+     40.0,
+     "You can multiply in any order."
+    ],
+    [
+     42.03,
+     "3 times 7 is the same as 7 times 3."
+    ],
+    [
+     44.95,
+     "You can group in any way."
+    ],
+    [
+     46.91,
+     "2 times 5, times 9, is the same as 2, times 5 times 9."
+    ],
+    [
+     51.7,
+     "And you can split a number."
+    ],
+    [
+     54.07,
+     "6 times 14 is 6 times 10, plus 6 times 4."
+    ],
+    [
+     58.22,
+     "Compensation means: use a nearby round number, then adjust."
+    ],
+    [
+     62.79,
+     "9 times a number is 10 times the number, minus the number."
+    ],
+    [
+     67.76,
+     "So 9 times 6.8 is 68 minus 6.8, which is 61.2."
+    ],
+    [
+     73.26,
+     "It works for 99 as well."
+    ],
+    [
+     75.24,
+     "99 times a number is 100 times the number, minus the number."
+    ],
+    [
+     80.73,
+     "Here are three more strategies."
+    ],
+    [
+     83.33,
+     "First: a decimal is a division."
+    ],
+    [
+     85.93,
+     "0.06 is 6 divided by 100."
+    ],
+    [
+     88.58,
+     "So 0.06 times 3,500 is 6 times 35, which is 210."
+    ],
+    [
+     94.74,
+     "Second: split the divisor."
+    ],
+    [
+     97.1,
+     "Dividing by 40 is the same as dividing by 4, then by 10."
+    ],
+    [
+     102.2,
+     "13.6 divided by 4 is 3.4, and 3.4 divided by 10 is 0.34."
+    ],
+    [
+     107.84,
+     "Third: re-order, to use an easy pair."
+    ],
+    [
+     110.91,
+     "0.25 times 4 is exactly 1."
+    ],
+    [
+     113.62,
+     "Your turn."
+    ],
+    [
+     114.41,
+     "Work out 0.5 times 4.6 times 2 in your head."
+    ],
+    [
+     117.89,
+     "Pause the video and try it."
+    ],
+    [
+     121.43,
+     "Do the easy pair first."
+    ],
+    [
+     123.54,
+     "0.5 times 2 is 1."
+    ],
+    [
+     125.1,
+     "Then 1 times 4.6 is 4.6."
+    ],
+    [
+     127.85,
+     "Here is the method."
+    ],
+    [
+     129.33,
+     "Step 1: look at the numbers."
+    ],
+    [
+     131.51,
+     "Is one close to a round number?"
+    ],
+    [
+     133.92,
+     "Is there a pair that makes 1, 10 or 100?"
+    ],
+    [
+     137.59,
+     "Step 2: choose a strategy."
+    ],
+    [
+     139.42,
+     "Compensate, split, re-order, or write the decimal as a division."
+    ],
+    [
+     144.5,
+     "Step 3: write down the steps, so you do not lose track."
+    ],
+    [
+     148.84,
+     "Step 4: check with an estimate."
+    ],
+    [
+     151.81,
+     "Work out 0.25 times 9.7 times 4."
+    ],
+    [
+     155.58,
+     "Re-order it."
+    ],
+    [
+     156.66,
+     "Do 0.25 times 4 first."
+    ],
+    [
+     158.63,
+     "That is 1."
+    ],
+    [
+     160.08,
+     "1 times 9.7 is 9.7."
+    ],
+    [
+     161.72,
+     "Done, with no written multiplication."
+    ],
+    [
+     165.47,
+     "Work out 0.08 times 450."
+    ],
+    [
+     168.76,
+     "0.08 is 8 divided by 100."
+    ],
+    [
+     172.43,
+     "8 times 450 is 3,600."
+    ],
+    [
+     174.85,
+     "Divide by 100."
+    ],
+    [
+     176.47,
+     "The answer is 36."
+    ],
+    [
+     178.98,
+     "Work out 7.2 divided by 30."
+    ],
+    [
+     182.05,
+     "Dividing by 30 is dividing by 3, then by 10."
+    ],
+    [
+     186.45,
+     "7.2 divided by 3 is 2.4."
+    ],
+    [
+     189.05,
+     "Then 2.4 divided by 10 is 0.24."
+    ],
+    [
+     192.95,
+     "Your turn."
+    ],
+    [
+     193.75,
+     "Work out 8.4 divided by 20."
+    ],
+    [
+     195.93,
+     "Pause and work it out."
+    ],
+    [
+     199.11,
+     "Divide by 2, then by 10."
+    ],
+    [
+     201.54,
+     "8.4 divided by 2 is 4.2."
+    ],
+    [
+     203.98,
+     "Then 4.2 divided by 10 is 0.42."
+    ],
+    [
+     207.68,
+     "A ticket costs 11 dollars 95."
+    ],
+    [
+     210.17,
+     "How much do 6 tickets cost?"
+    ],
+    [
+     213.04,
+     "Round up to 12 dollars."
+    ],
+    [
+     215.32,
+     "6 times 12 is 72."
+    ],
+    [
+     217.56,
+     "Each ticket was 5 cents too much."
+    ],
+    [
+     220.24,
+     "6 times 5 cents is 30 cents."
+    ],
+    [
+     223.05,
+     "Take that off."
+    ],
+    [
+     224.44,
+     "72 minus 0.30 is 71.70."
+    ],
+    [
+     226.71,
+     "The tickets cost 71 dollars 70."
+    ],
+    [
+     230.32,
+     "Sam works out 9 times 3.4, using 10 times 3.4."
+    ],
+    [
+     234.23,
+     "Which line goes wrong first?"
+    ],
+    [
+     237.15,
+     "Line 2 is wrong."
+    ],
+    [
+     238.54,
+     "9 lots is one lot of 3.4 less than 10 lots."
+    ],
+    [
+     242.26,
+     "So subtract 3.4, not 1."
+    ],
+    [
+     244.8,
+     "34 minus 3.4 is 30.6."
+    ],
+    [
+     248.05,
+     "Shops love prices that end in 99."
+    ],
+    [
+     250.69,
+     "Compensation makes them easy."
+    ],
+    [
+     253.01,
+     "Suppose you buy 5 drinks at 3 dollars 99 each."
+    ],
+    [
+     257.23,
+     "Pretend each one costs 4 dollars."
+    ],
+    [
+     260.14,
+     "5 times 4 is 20."
+    ],
+    [
+     262.11,
+     "Each price was 1 cent too much, so take off 5 cents."
+    ],
+    [
+     266.24,
+     "The total is 19 dollars 95."
+    ],
+    [
+     268.94,
+     "One last question."
+    ],
+    [
+     270.37,
+     "What is 99 times 0.3?"
+    ],
+    [
+     272.04,
+     "Pause the video and answer."
+    ],
+    [
+     275.59,
+     "100 times 0.3 is 30."
+    ],
+    [
+     277.74,
+     "That is one lot of 0.3 too many."
+    ],
+    [
+     281.19,
+     "30 minus 0.3 is 29.7."
+    ],
+    [
+     284.01,
+     "To remember: compensation means round, calculate, then adjust."
+    ],
+    [
+     289.0,
+     "Split numbers or divisors."
+    ],
+    [
+     291.14,
+     "Dividing by 40 is dividing by 4, then by 10."
+    ],
+    [
+     295.31,
+     "Re-order to use easy pairs, like 0.25 times 4."
+    ],
+    [
+     299.7,
+     "And a decimal is a division."
+    ],
+    [
+     302.26,
+     "0.06 is 6 divided by 100."
+    ],
+    [
+     305.09,
+     "Great work! Now practise lesson 4.5 on Camday."
+    ]
+   ],
+   "times": {
+    "4.5-k1": 18.26,
+    "4.5-k2": 120.38,
+    "4.5-k3": 198.06,
+    "4.5-k4": 274.54
+   },
+   "up": true
   }
  }
 }

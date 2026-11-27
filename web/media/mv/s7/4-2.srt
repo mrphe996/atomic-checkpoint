@@ -1,0 +1,379 @@
+1
+00:00:07,300 --> 00:00:12,360
+Lena buys a book for 7 dollars 85, and a pen for 2 dollars 40.
+
+2
+00:00:12,410 --> 00:00:15,460
+She pays with a 20 dollar note.
+
+3
+00:00:15,510 --> 00:00:17,590
+How much change should she get?
+
+4
+00:00:17,640 --> 00:00:21,180
+Pause the video and work it out.
+
+5
+00:00:21,230 --> 00:00:23,390
+First add the prices.
+
+6
+00:00:23,440 --> 00:00:26,460
+7.85 plus 2.40 is 10.25.
+
+7
+00:00:26,510 --> 00:00:29,270
+Then take that away from 20.
+
+8
+00:00:29,320 --> 00:00:31,580
+20 minus 10.25 is 9.75.
+
+9
+00:00:31,630 --> 00:00:35,150
+Lena gets 9 dollars 75 change.
+
+10
+00:00:35,200 --> 00:00:37,180
+Remember column addition.
+
+11
+00:00:37,230 --> 00:00:40,840
+Line up ones under ones, and tens under tens.
+
+12
+00:00:40,890 --> 00:00:42,360
+476 plus 58.
+
+13
+00:00:42,410 --> 00:00:45,780
+Carry when a column adds up to 10 or more.
+
+14
+00:00:45,830 --> 00:00:47,800
+The answer is 534.
+
+15
+00:00:47,850 --> 00:00:51,480
+With decimals, the rule is: line up the decimal points.
+
+16
+00:00:51,530 --> 00:00:56,170
+Then every digit sits under a digit with the same place value.
+
+17
+00:00:56,220 --> 00:00:57,700
+7.85 plus 2.4.
+
+18
+00:00:57,750 --> 00:01:02,610
+Write 2.4 as 2.40, so there are no gaps.
+
+19
+00:01:02,660 --> 00:01:04,400
+Add from the right.
+
+20
+00:01:04,450 --> 00:01:05,720
+5 plus 0 is 5.
+
+21
+00:01:05,770 --> 00:01:08,840
+8 plus 4 is 12: write 2, carry 1.
+
+22
+00:01:08,890 --> 00:01:11,460
+7 plus 2 plus 1 is 10.
+
+23
+00:01:11,510 --> 00:01:16,820
+The decimal point in the answer goes straight under the other points.
+
+24
+00:01:16,870 --> 00:01:18,840
+The total is 10.25.
+
+25
+00:01:18,890 --> 00:01:19,670
+Your turn.
+
+26
+00:01:19,720 --> 00:01:21,570
+Work out 0.9 plus 0.35.
+
+27
+00:01:21,620 --> 00:01:25,200
+Pause the video and try it.
+
+28
+00:01:25,250 --> 00:01:27,120
+Write 0.9 as 0.90.
+
+29
+00:01:27,170 --> 00:01:32,560
+90 hundredths plus 35 hundredths is 125 hundredths.
+
+30
+00:01:32,610 --> 00:01:35,130
+The answer is 1.25.
+
+31
+00:01:35,180 --> 00:01:38,610
+Subtracting works the same way.
+
+32
+00:01:38,660 --> 00:01:40,290
+20 minus 10.25.
+
+33
+00:01:40,340 --> 00:01:42,860
+Write 20 as 20.00.
+
+34
+00:01:42,910 --> 00:01:48,160
+Subtract column by column from the right, exchanging when you need to.
+
+35
+00:01:48,210 --> 00:01:50,140
+The answer is 9.75.
+
+36
+00:01:50,190 --> 00:01:52,480
+Check by adding back.
+
+37
+00:01:52,530 --> 00:01:55,470
+9.75 plus 10.25 is 20.
+
+38
+00:01:55,520 --> 00:01:59,370
+With negative numbers, use the integer rules.
+
+39
+00:01:59,420 --> 00:02:04,500
+4.2 minus negative 1.3 is 4.2 plus 1.3, which is 5.5.
+
+40
+00:02:04,550 --> 00:02:05,890
+Here is the method.
+
+41
+00:02:05,940 --> 00:02:09,080
+Step 1: estimate first, by rounding.
+
+42
+00:02:09,130 --> 00:02:15,810
+Step 2: write the numbers with the decimal points lined up, and fill the gaps with zeros.
+
+43
+00:02:15,860 --> 00:02:20,400
+Step 3: add or subtract column by column, from the right.
+
+44
+00:02:20,450 --> 00:02:24,780
+Step 4: put the decimal point in the answer, under the others.
+
+45
+00:02:24,830 --> 00:02:27,580
+Then compare with your estimate.
+
+46
+00:02:27,630 --> 00:02:31,040
+Work out 4.7 plus 0.36 plus 12.05.
+
+47
+00:02:31,090 --> 00:02:36,170
+First estimate: 5 plus 0 plus 12 is about 17.
+
+48
+00:02:36,220 --> 00:02:38,100
+Line up the points.
+
+49
+00:02:38,150 --> 00:02:41,350
+Hundredths: 0 plus 6 plus 5 is 11.
+
+50
+00:02:41,400 --> 00:02:42,970
+Write 1, carry 1.
+
+51
+00:02:43,020 --> 00:02:46,500
+Tenths: 7 plus 3 plus 0 plus 1 is 11.
+
+52
+00:02:46,550 --> 00:02:48,130
+Write 1, carry 1.
+
+53
+00:02:48,180 --> 00:02:50,590
+The answer is 17.11.
+
+54
+00:02:50,640 --> 00:02:52,780
+Work out 8 minus 2.374.
+
+55
+00:02:52,830 --> 00:02:56,180
+Write 8 with 3 decimal places.
+
+56
+00:02:56,230 --> 00:03:02,660
+Exchange: 8 ones become 7 ones, 9 tenths, 9 hundredths and 10 thousandths.
+
+57
+00:03:02,710 --> 00:03:03,880
+Now subtract.
+
+58
+00:03:03,930 --> 00:03:06,300
+The answer is 5.626.
+
+59
+00:03:06,350 --> 00:03:07,100
+Your turn.
+
+60
+00:03:07,150 --> 00:03:09,680
+Work out 2.5 minus negative 0.7.
+
+61
+00:03:09,730 --> 00:03:12,860
+Pause and work it out.
+
+62
+00:03:12,910 --> 00:03:16,710
+Subtracting a negative is the same as adding.
+
+63
+00:03:16,760 --> 00:03:18,980
+2.5 plus 0.7 is 3.2.
+
+64
+00:03:19,030 --> 00:03:21,980
+A recipe needs 0.75 kilograms of flour.
+
+65
+00:03:22,030 --> 00:03:23,680
+Ama has 2.1 kilograms.
+
+66
+00:03:23,730 --> 00:03:25,760
+She makes the recipe twice.
+
+67
+00:03:25,810 --> 00:03:28,080
+How much flour is left?
+
+68
+00:03:28,130 --> 00:03:33,400
+She uses 0.75 plus 0.75, which is 1.5 kilograms.
+
+69
+00:03:33,450 --> 00:03:35,590
+2.10 minus 1.50 is 0.6.
+
+70
+00:03:35,640 --> 00:03:38,710
+She has 0.6 kilograms left.
+
+71
+00:03:38,760 --> 00:03:41,630
+Raj works out 3.6 plus 1.25 like this.
+
+72
+00:03:41,680 --> 00:03:44,400
+He lined up the digits on the right.
+
+73
+00:03:44,450 --> 00:03:46,180
+What went wrong?
+
+74
+00:03:46,230 --> 00:03:49,080
+The 6 tenths were added to 5 hundredths.
+
+75
+00:03:49,130 --> 00:03:52,330
+The decimal points are not in a line.
+
+76
+00:03:52,380 --> 00:03:56,090
+Line up the points and fill in a zero.
+
+77
+00:03:56,140 --> 00:03:58,920
+3.60 plus 1.25 is 4.85.
+
+78
+00:03:58,970 --> 00:04:02,240
+Doctors add and subtract decimals every day.
+
+79
+00:04:02,290 --> 00:04:06,720
+Normal body temperature is about 37 degrees Celsius.
+
+80
+00:04:06,770 --> 00:04:09,940
+Suppose a thermometer reads 38.6 degrees.
+
+81
+00:04:09,990 --> 00:04:12,770
+How far above normal is that?
+
+82
+00:04:12,820 --> 00:04:14,750
+38.6 minus 37.0 is 1.6.
+
+83
+00:04:14,800 --> 00:04:18,530
+The temperature is 1.6 degrees above normal.
+
+84
+00:04:18,580 --> 00:04:20,460
+That is a fever.
+
+85
+00:04:20,510 --> 00:04:21,940
+One last question.
+
+86
+00:04:21,990 --> 00:04:23,760
+What is 10 minus 0.01?
+
+87
+00:04:23,810 --> 00:04:27,390
+Pause the video and answer.
+
+88
+00:04:27,440 --> 00:04:29,370
+Write 10 as 10.00.
+
+89
+00:04:29,420 --> 00:04:31,790
+Take away 1 hundredth.
+
+90
+00:04:31,840 --> 00:04:34,430
+The answer is 9.99.
+
+91
+00:04:34,480 --> 00:04:39,450
+To remember: line up the decimal points, and fill gaps with zeros.
+
+92
+00:04:39,500 --> 00:04:43,050
+Add or subtract as you do with whole numbers.
+
+93
+00:04:43,100 --> 00:04:46,590
+Use the integer rules for negative decimals.
+
+94
+00:04:46,640 --> 00:04:50,830
+Estimate first, and check with the inverse operation.
+
+95
+00:04:50,880 --> 00:04:56,030
+Great work! Now practise lesson 4.2 on Camday.

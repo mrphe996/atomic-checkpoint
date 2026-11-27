@@ -1,0 +1,407 @@
+1
+00:00:06,350 --> 00:00:08,680
+Six friends share a pizza bill.
+
+2
+00:00:08,730 --> 00:00:13,290
+The bill is 38 dollars 70, and they split it equally.
+
+3
+00:00:13,340 --> 00:00:15,340
+How much does each friend pay?
+
+4
+00:00:15,390 --> 00:00:18,920
+Pause the video and work it out.
+
+5
+00:00:18,970 --> 00:00:21,080
+We need 38.70 divided by 6.
+
+6
+00:00:21,130 --> 00:00:27,490
+Estimate first: 36 divided by 6 is 6, so the answer is a bit more than 6.
+
+7
+00:00:27,540 --> 00:00:29,520
+The exact answer is 6.45.
+
+8
+00:00:29,570 --> 00:00:31,960
+Each friend pays 6 dollars 45.
+
+9
+00:00:32,010 --> 00:00:35,030
+Let's see how to work that out.
+
+10
+00:00:35,080 --> 00:00:37,190
+Remember short division.
+
+11
+00:00:37,240 --> 00:00:39,270
+774 divided by 6.
+
+12
+00:00:39,320 --> 00:00:42,270
+7 divided by 6 is 1, remainder 1.
+
+13
+00:00:42,320 --> 00:00:44,910
+Carry the 1 to make 17.
+
+14
+00:00:44,960 --> 00:00:48,230
+17 divided by 6 is 2, remainder 5.
+
+15
+00:00:48,280 --> 00:00:50,480
+Carry the 5 to make 54.
+
+16
+00:00:50,530 --> 00:00:52,530
+54 divided by 6 is 9.
+
+17
+00:00:52,580 --> 00:00:54,830
+The answer is 129.
+
+18
+00:00:54,880 --> 00:00:58,740
+To divide a decimal by a whole number, use short division.
+
+19
+00:00:58,790 --> 00:01:04,610
+Write the decimal point in the answer directly above the point in the question.
+
+20
+00:01:04,660 --> 00:01:06,420
+38.70 divided by 6.
+
+21
+00:01:06,470 --> 00:01:09,760
+3 divided by 6 is 0, so look at 38.
+
+22
+00:01:09,810 --> 00:01:13,550
+38 divided by 6 is 6, remainder 2.
+
+23
+00:01:13,600 --> 00:01:18,070
+Now we reach the decimal point, so put a point in the answer.
+
+24
+00:01:18,120 --> 00:01:20,210
+Carry the 2 to make 27.
+
+25
+00:01:20,260 --> 00:01:23,390
+27 divided by 6 is 4, remainder 3.
+
+26
+00:01:23,440 --> 00:01:26,360
+Then 30 divided by 6 is 5.
+
+27
+00:01:26,410 --> 00:01:28,960
+The answer is 6.45.
+
+28
+00:01:29,010 --> 00:01:29,730
+Your turn.
+
+29
+00:01:29,780 --> 00:01:31,720
+Work out 8.4 divided by 2.
+
+30
+00:01:31,770 --> 00:01:35,190
+Pause the video and try it.
+
+31
+00:01:35,240 --> 00:01:36,920
+8 divided by 2 is 4.
+
+32
+00:01:36,970 --> 00:01:38,300
+Write the point.
+
+33
+00:01:38,350 --> 00:01:40,030
+4 divided by 2 is 2.
+
+34
+00:01:40,080 --> 00:01:42,130
+The answer is 4.2.
+
+35
+00:01:42,180 --> 00:01:45,030
+Sometimes there is a remainder at the end.
+
+36
+00:01:45,080 --> 00:01:50,130
+Then write extra zeros after the decimal point, and keep dividing.
+
+37
+00:01:50,180 --> 00:01:52,320
+7.3 divided by 4.
+
+38
+00:01:52,370 --> 00:01:55,320
+Write 7.3 as 7.300.
+
+39
+00:01:55,370 --> 00:01:58,440
+7 divided by 4 is 1, remainder 3.
+
+40
+00:01:58,490 --> 00:02:01,660
+33 divided by 4 is 8, remainder 1.
+
+41
+00:02:01,710 --> 00:02:04,870
+10 divided by 4 is 2, remainder 2.
+
+42
+00:02:04,920 --> 00:02:07,410
+20 divided by 4 is 5.
+
+43
+00:02:07,460 --> 00:02:10,150
+The answer is 1.825.
+
+44
+00:02:10,200 --> 00:02:11,550
+Here is the method.
+
+45
+00:02:11,600 --> 00:02:13,790
+Step 1: estimate first.
+
+46
+00:02:13,840 --> 00:02:15,970
+Step 2: set out short division.
+
+47
+00:02:16,020 --> 00:02:20,900
+Write the point in the answer above the point in the question.
+
+48
+00:02:20,950 --> 00:02:25,380
+Step 3: divide digit by digit, carrying the remainders.
+
+49
+00:02:25,430 --> 00:02:30,010
+Step 4: if there is a remainder at the end, add zeros and carry on.
+
+50
+00:02:30,060 --> 00:02:32,360
+Then check by multiplying.
+
+51
+00:02:32,410 --> 00:02:35,050
+Work out 14.56 divided by 4.
+
+52
+00:02:35,100 --> 00:02:38,580
+Estimate: 16 divided by 4 is 4.
+
+53
+00:02:38,630 --> 00:02:41,530
+14 divided by 4 is 3, remainder 2.
+
+54
+00:02:41,580 --> 00:02:44,150
+Write 3, then the point.
+
+55
+00:02:44,200 --> 00:02:47,470
+25 divided by 4 is 6, remainder 1.
+
+56
+00:02:47,520 --> 00:02:50,060
+16 divided by 4 is 4.
+
+57
+00:02:50,110 --> 00:02:51,620
+The answer is 3.64.
+
+58
+00:02:51,670 --> 00:02:55,020
+That is close to the estimate of 4.
+
+59
+00:02:55,070 --> 00:02:55,740
+Your turn.
+
+60
+00:02:55,790 --> 00:02:57,470
+Work out 3 divided by 8.
+
+61
+00:02:57,520 --> 00:02:59,410
+You will need to add zeros.
+
+62
+00:02:59,460 --> 00:03:02,390
+Pause and work it out.
+
+63
+00:03:02,440 --> 00:03:04,160
+Write 3 as 3.000.
+
+64
+00:03:04,210 --> 00:03:07,700
+30 divided by 8 is 3, remainder 6.
+
+65
+00:03:07,750 --> 00:03:11,240
+60 divided by 8 is 7, remainder 4.
+
+66
+00:03:11,290 --> 00:03:13,430
+40 divided by 8 is 5.
+
+67
+00:03:13,480 --> 00:03:16,070
+The answer is 0.375.
+
+68
+00:03:16,120 --> 00:03:18,880
+Work out 52.8 divided by 16.
+
+69
+00:03:18,930 --> 00:03:22,640
+Estimate: 48 divided by 16 is 3.
+
+70
+00:03:22,690 --> 00:03:28,470
+It helps to list the multiples of 16: 16, 32, 48, 64.
+
+71
+00:03:28,520 --> 00:03:31,760
+52 divided by 16 is 3, remainder 4.
+
+72
+00:03:31,810 --> 00:03:33,260
+Write the point.
+
+73
+00:03:33,310 --> 00:03:35,790
+Then 48 divided by 16 is 3.
+
+74
+00:03:35,840 --> 00:03:38,020
+The answer is 3.3.
+
+75
+00:03:38,070 --> 00:03:40,150
+A plank is 2.85 metres long.
+
+76
+00:03:40,200 --> 00:03:42,420
+It is cut into 5 equal pieces.
+
+77
+00:03:42,470 --> 00:03:45,930
+How long is each piece, in centimetres?
+
+78
+00:03:45,980 --> 00:03:50,090
+2.85 divided by 5 is 0.57 metres.
+
+79
+00:03:50,140 --> 00:03:54,070
+Multiply by 100 to change metres to centimetres.
+
+80
+00:03:54,120 --> 00:03:57,430
+Each piece is 57 centimetres long.
+
+81
+00:03:57,480 --> 00:03:59,880
+Max works out 7.2 divided by 3.
+
+82
+00:03:59,930 --> 00:04:02,010
+Which line is wrong?
+
+83
+00:04:02,060 --> 00:04:03,110
+Line 3 is wrong.
+
+84
+00:04:03,160 --> 00:04:05,100
+Max forgot the decimal point.
+
+85
+00:04:05,150 --> 00:04:09,420
+It goes in the answer, straight above the point in 7.2.
+
+86
+00:04:09,470 --> 00:04:10,850
+The answer is 2.4.
+
+87
+00:04:10,900 --> 00:04:16,720
+An estimate helps: 7 divided by 3 is about 2, so 24 is far too big.
+
+88
+00:04:16,770 --> 00:04:21,960
+A marathon is a very exact distance: 42.195 kilometres.
+
+89
+00:04:22,010 --> 00:04:25,830
+A half marathon is that distance divided by 2.
+
+90
+00:04:25,880 --> 00:04:31,710
+42 divided by 2 is 21, and 0.195 divided by 2 is 0.0975.
+
+91
+00:04:31,760 --> 00:04:35,710
+A half marathon is 21.0975 kilometres.
+
+92
+00:04:35,760 --> 00:04:39,410
+That is about 21.1 kilometres.
+
+93
+00:04:39,460 --> 00:04:40,790
+One last question.
+
+94
+00:04:40,840 --> 00:04:42,710
+What is 0.9 divided by 3?
+
+95
+00:04:42,760 --> 00:04:46,180
+Pause the video and answer.
+
+96
+00:04:46,230 --> 00:04:49,040
+9 tenths divided by 3 is 3 tenths.
+
+97
+00:04:49,090 --> 00:04:51,110
+The answer is 0.3.
+
+98
+00:04:51,160 --> 00:04:56,650
+To remember: put the point in the answer, above the point in the question.
+
+99
+00:04:56,700 --> 00:05:00,260
+Divide digit by digit, carrying remainders.
+
+100
+00:05:00,310 --> 00:05:03,680
+Add zeros after the point to keep dividing.
+
+101
+00:05:03,730 --> 00:05:07,090
+Estimate first, and check by multiplying.
+
+102
+00:05:07,140 --> 00:05:12,190
+Great work! Now practise lesson 4.4 on Camday.

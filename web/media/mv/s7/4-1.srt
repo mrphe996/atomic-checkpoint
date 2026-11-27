@@ -1,0 +1,347 @@
+1
+00:00:06,430 --> 00:00:09,110
+Four swimmers finish a race.
+
+2
+00:00:09,160 --> 00:00:17,380
+Their times are 58.4 seconds, 58.39 seconds, 58.04 seconds, and 58.415 seconds.
+
+3
+00:00:17,430 --> 00:00:18,980
+The smallest time wins.
+
+4
+00:00:19,030 --> 00:00:20,030
+Which time won?
+
+5
+00:00:20,080 --> 00:00:23,310
+Pause the video and decide.
+
+6
+00:00:23,360 --> 00:00:27,410
+Every time starts with 58, so look at the tenths.
+
+7
+00:00:27,460 --> 00:00:29,000
+58.04 has 0 tenths.
+
+8
+00:00:29,050 --> 00:00:32,050
+The others have 3 or 4 tenths.
+
+9
+00:00:32,100 --> 00:00:35,250
+So 58.04 seconds is the smallest time.
+
+10
+00:00:35,300 --> 00:00:37,230
+That swimmer won.
+
+11
+00:00:37,280 --> 00:00:38,720
+Remember these signs.
+
+12
+00:00:38,770 --> 00:00:41,240
+Less than, and greater than.
+
+13
+00:00:41,290 --> 00:00:43,820
+Equal to, and not equal to.
+
+14
+00:00:43,870 --> 00:00:45,510
+0.5 is equal to 0.50.
+
+15
+00:00:45,560 --> 00:00:50,670
+A zero at the end of a decimal does not change its value.
+
+16
+00:00:50,720 --> 00:00:54,450
+To compare decimals, start with the whole-number parts.
+
+17
+00:00:54,500 --> 00:00:57,810
+If they are the same, compare the tenths.
+
+18
+00:00:57,860 --> 00:01:00,010
+Compare 58.4 and 58.39.
+
+19
+00:01:00,060 --> 00:01:02,310
+The whole numbers match.
+
+20
+00:01:02,360 --> 00:01:04,510
+The tenths are 4 and 3.
+
+21
+00:01:04,560 --> 00:01:09,170
+4 is bigger, so 58.4 is greater than 58.39.
+
+22
+00:01:09,220 --> 00:01:14,040
+You only move on to the hundredths when the tenths are the same.
+
+23
+00:01:14,090 --> 00:01:15,600
+Here is a useful trick.
+
+24
+00:01:15,650 --> 00:01:21,800
+Write zeros at the end, so that every number has the same number of decimal places.
+
+25
+00:01:21,850 --> 00:01:28,400
+Now compare them like whole numbers: 400, 390, 40 and 415.
+
+26
+00:01:28,450 --> 00:01:35,500
+In order, smallest first: 58.04, 58.39, 58.4, 58.415.
+
+27
+00:01:35,550 --> 00:01:36,460
+Be careful.
+
+28
+00:01:36,510 --> 00:01:39,690
+A longer number is not always bigger.
+
+29
+00:01:39,740 --> 00:01:42,590
+0.7 is greater than 0.6999.
+
+30
+00:01:42,640 --> 00:01:43,280
+Your turn.
+
+31
+00:01:43,330 --> 00:01:45,920
+Which of these numbers is the largest?
+
+32
+00:01:45,970 --> 00:01:49,200
+Pause the video and choose.
+
+33
+00:01:49,250 --> 00:01:50,520
+The answer is 0.6.
+
+34
+00:01:50,570 --> 00:01:51,690
+It has 6 tenths.
+
+35
+00:01:51,740 --> 00:01:57,440
+The other numbers have fewer tenths, even though they have more digits.
+
+36
+00:01:57,490 --> 00:01:58,790
+Here is the method.
+
+37
+00:01:58,840 --> 00:02:02,810
+Step 1: line the numbers up by the decimal point.
+
+38
+00:02:02,860 --> 00:02:09,560
+Step 2: fill empty places with zeros, so they all have the same number of decimal places.
+
+39
+00:02:09,610 --> 00:02:15,790
+Step 3: compare the whole numbers, then the tenths, then the hundredths, and so on.
+
+40
+00:02:15,840 --> 00:02:19,520
+Step 4: write the original numbers in order.
+
+41
+00:02:19,570 --> 00:02:26,550
+Write these in order, smallest first: 6.2, 6.05, 6.199 and 6.21.
+
+42
+00:02:26,600 --> 00:02:29,400
+Give them all 3 decimal places.
+
+43
+00:02:29,450 --> 00:02:32,880
+Compare 200, 50, 199 and 210.
+
+44
+00:02:32,930 --> 00:02:39,310
+The smallest is 50, then 199, then 200, then 210.
+
+45
+00:02:39,360 --> 00:02:44,710
+So the order is 6.05, 6.199, 6.2, 6.21.
+
+46
+00:02:44,760 --> 00:02:49,560
+Which is smaller: negative 1.4, or negative 1.35?
+
+47
+00:02:49,610 --> 00:02:54,550
+Without the signs, 1.40 is bigger than 1.35.
+
+48
+00:02:54,600 --> 00:02:57,160
+So negative 1.4 is further from zero.
+
+49
+00:02:57,210 --> 00:03:02,080
+It is further left on the number line, which makes it smaller.
+
+50
+00:03:02,130 --> 00:03:06,270
+Negative 1.4 is less than negative 1.35.
+
+51
+00:03:06,320 --> 00:03:07,080
+Your turn.
+
+52
+00:03:07,130 --> 00:03:11,070
+Which is smaller: negative 0.3, or negative 0.25?
+
+53
+00:03:11,120 --> 00:03:13,860
+Pause and decide.
+
+54
+00:03:13,910 --> 00:03:16,070
+0.30 is bigger than 0.25.
+
+55
+00:03:16,120 --> 00:03:22,560
+So negative 0.3 is further from zero, and it is the smaller number.
+
+56
+00:03:22,610 --> 00:03:24,750
+Is 4.30 equal to 4.3?
+
+57
+00:03:24,800 --> 00:03:25,170
+Yes.
+
+58
+00:03:25,220 --> 00:03:28,820
+4.30 has 3 tenths and 0 hundredths.
+
+59
+00:03:28,870 --> 00:03:31,870
+That is the same as 4.3.
+
+60
+00:03:31,920 --> 00:03:33,950
+Is 0.09 equal to 0.9?
+
+61
+00:03:34,000 --> 00:03:34,240
+No.
+
+62
+00:03:34,290 --> 00:03:38,940
+0.09 is 9 hundredths, but 0.9 is 9 tenths.
+
+63
+00:03:38,990 --> 00:03:43,730
+Ivy puts 0.8, 0.75 and 0.125 in order, smallest first.
+
+64
+00:03:43,780 --> 00:03:46,760
+Which line goes wrong first?
+
+65
+00:03:46,810 --> 00:03:47,950
+Line 1 is wrong.
+
+66
+00:03:48,000 --> 00:03:51,510
+The number of digits does not tell you the size.
+
+67
+00:03:51,560 --> 00:03:54,350
+Compare the tenths: 8, 7 and 1.
+
+68
+00:03:54,400 --> 00:04:00,270
+The correct order, smallest first, is 0.125, 0.75, 0.8.
+
+69
+00:04:00,320 --> 00:04:04,360
+Ordering decimals decides who gets the gold medal.
+
+70
+00:04:04,410 --> 00:04:12,110
+At the 2008 Olympic Games, Michael Phelps won the 100 metres butterfly in 50.58 seconds.
+
+71
+00:04:12,160 --> 00:04:16,740
+The swimmer in second place took 50.59 seconds.
+
+72
+00:04:16,790 --> 00:04:18,390
+The tenths are the same.
+
+73
+00:04:18,440 --> 00:04:20,730
+Only the hundredths are different.
+
+74
+00:04:20,780 --> 00:04:24,100
+He won by just one hundredth of a second!
+
+75
+00:04:24,150 --> 00:04:25,770
+One last question.
+
+76
+00:04:25,820 --> 00:04:30,120
+How many of these numbers are greater than 1.1?
+
+77
+00:04:30,170 --> 00:04:32,630
+1.5, 1.05, 1.505 and 1.055.
+
+78
+00:04:32,680 --> 00:04:36,440
+Pause the video and count.
+
+79
+00:04:36,490 --> 00:04:38,990
+Compare the tenths with 1.1.
+
+80
+00:04:39,040 --> 00:04:43,460
+1.5 and 1.505 have 5 tenths, so they are greater.
+
+81
+00:04:43,510 --> 00:04:48,010
+1.05 and 1.055 have 0 tenths, so they are smaller.
+
+82
+00:04:48,060 --> 00:04:50,020
+The answer is 2.
+
+83
+00:04:50,070 --> 00:04:56,460
+To remember: compare the whole numbers, then the tenths, then the hundredths, in turn.
+
+84
+00:04:56,510 --> 00:05:02,050
+Add zeros at the end, so the numbers have the same number of decimal places.
+
+85
+00:05:02,100 --> 00:05:04,890
+More digits does not mean bigger.
+
+86
+00:05:04,940 --> 00:05:09,510
+With negative numbers, the one further from zero is smaller.
+
+87
+00:05:09,560 --> 00:05:14,710
+Great work! Now practise lesson 4.1 on Camday.

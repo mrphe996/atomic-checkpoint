@@ -1,0 +1,407 @@
+1
+00:00:07,520 --> 00:00:10,760
+A market seller sells 9 boxes of mangoes.
+
+2
+00:00:10,810 --> 00:00:13,550
+Each box costs 6 dollars 80.
+
+3
+00:00:13,600 --> 00:00:16,240
+Can you work out the total in your head?
+
+4
+00:00:16,290 --> 00:00:19,260
+Pause the video and try.
+
+5
+00:00:19,310 --> 00:00:20,690
+9 is nearly 10.
+
+6
+00:00:20,740 --> 00:00:26,110
+And 10 boxes are easy: 10 times 6.80 is 68 dollars.
+
+7
+00:00:26,160 --> 00:00:28,200
+That is one box too many.
+
+8
+00:00:28,250 --> 00:00:29,870
+So take one box off.
+
+9
+00:00:29,920 --> 00:00:32,350
+68 minus 6.80 is 61.20.
+
+10
+00:00:32,400 --> 00:00:34,660
+9 boxes cost 61 dollars 20.
+
+11
+00:00:34,710 --> 00:00:38,120
+This trick is called compensation.
+
+12
+00:00:38,170 --> 00:00:39,950
+Remember three useful laws.
+
+13
+00:00:40,000 --> 00:00:41,980
+You can multiply in any order.
+
+14
+00:00:42,030 --> 00:00:44,900
+3 times 7 is the same as 7 times 3.
+
+15
+00:00:44,950 --> 00:00:46,860
+You can group in any way.
+
+16
+00:00:46,910 --> 00:00:51,650
+2 times 5, times 9, is the same as 2, times 5 times 9.
+
+17
+00:00:51,700 --> 00:00:54,020
+And you can split a number.
+
+18
+00:00:54,070 --> 00:00:58,170
+6 times 14 is 6 times 10, plus 6 times 4.
+
+19
+00:00:58,220 --> 00:01:02,740
+Compensation means: use a nearby round number, then adjust.
+
+20
+00:01:02,790 --> 00:01:07,710
+9 times a number is 10 times the number, minus the number.
+
+21
+00:01:07,760 --> 00:01:13,210
+So 9 times 6.8 is 68 minus 6.8, which is 61.2.
+
+22
+00:01:13,260 --> 00:01:15,190
+It works for 99 as well.
+
+23
+00:01:15,240 --> 00:01:20,680
+99 times a number is 100 times the number, minus the number.
+
+24
+00:01:20,730 --> 00:01:23,280
+Here are three more strategies.
+
+25
+00:01:23,330 --> 00:01:25,880
+First: a decimal is a division.
+
+26
+00:01:25,930 --> 00:01:28,530
+0.06 is 6 divided by 100.
+
+27
+00:01:28,580 --> 00:01:34,690
+So 0.06 times 3,500 is 6 times 35, which is 210.
+
+28
+00:01:34,740 --> 00:01:37,050
+Second: split the divisor.
+
+29
+00:01:37,100 --> 00:01:42,150
+Dividing by 40 is the same as dividing by 4, then by 10.
+
+30
+00:01:42,200 --> 00:01:47,790
+13.6 divided by 4 is 3.4, and 3.4 divided by 10 is 0.34.
+
+31
+00:01:47,840 --> 00:01:50,860
+Third: re-order, to use an easy pair.
+
+32
+00:01:50,910 --> 00:01:53,570
+0.25 times 4 is exactly 1.
+
+33
+00:01:53,620 --> 00:01:54,360
+Your turn.
+
+34
+00:01:54,410 --> 00:01:57,840
+Work out 0.5 times 4.6 times 2 in your head.
+
+35
+00:01:57,890 --> 00:02:01,380
+Pause the video and try it.
+
+36
+00:02:01,430 --> 00:02:03,490
+Do the easy pair first.
+
+37
+00:02:03,540 --> 00:02:05,050
+0.5 times 2 is 1.
+
+38
+00:02:05,100 --> 00:02:07,800
+Then 1 times 4.6 is 4.6.
+
+39
+00:02:07,850 --> 00:02:09,280
+Here is the method.
+
+40
+00:02:09,330 --> 00:02:11,460
+Step 1: look at the numbers.
+
+41
+00:02:11,510 --> 00:02:13,870
+Is one close to a round number?
+
+42
+00:02:13,920 --> 00:02:17,540
+Is there a pair that makes 1, 10 or 100?
+
+43
+00:02:17,590 --> 00:02:19,370
+Step 2: choose a strategy.
+
+44
+00:02:19,420 --> 00:02:24,450
+Compensate, split, re-order, or write the decimal as a division.
+
+45
+00:02:24,500 --> 00:02:28,790
+Step 3: write down the steps, so you do not lose track.
+
+46
+00:02:28,840 --> 00:02:31,760
+Step 4: check with an estimate.
+
+47
+00:02:31,810 --> 00:02:35,530
+Work out 0.25 times 9.7 times 4.
+
+48
+00:02:35,580 --> 00:02:36,610
+Re-order it.
+
+49
+00:02:36,660 --> 00:02:38,580
+Do 0.25 times 4 first.
+
+50
+00:02:38,630 --> 00:02:40,030
+That is 1.
+
+51
+00:02:40,080 --> 00:02:41,670
+1 times 9.7 is 9.7.
+
+52
+00:02:41,720 --> 00:02:45,420
+Done, with no written multiplication.
+
+53
+00:02:45,470 --> 00:02:48,710
+Work out 0.08 times 450.
+
+54
+00:02:48,760 --> 00:02:52,380
+0.08 is 8 divided by 100.
+
+55
+00:02:52,430 --> 00:02:54,800
+8 times 450 is 3,600.
+
+56
+00:02:54,850 --> 00:02:56,420
+Divide by 100.
+
+57
+00:02:56,470 --> 00:02:58,930
+The answer is 36.
+
+58
+00:02:58,980 --> 00:03:02,000
+Work out 7.2 divided by 30.
+
+59
+00:03:02,050 --> 00:03:06,400
+Dividing by 30 is dividing by 3, then by 10.
+
+60
+00:03:06,450 --> 00:03:09,000
+7.2 divided by 3 is 2.4.
+
+61
+00:03:09,050 --> 00:03:12,900
+Then 2.4 divided by 10 is 0.24.
+
+62
+00:03:12,950 --> 00:03:13,700
+Your turn.
+
+63
+00:03:13,750 --> 00:03:15,880
+Work out 8.4 divided by 20.
+
+64
+00:03:15,930 --> 00:03:19,060
+Pause and work it out.
+
+65
+00:03:19,110 --> 00:03:21,490
+Divide by 2, then by 10.
+
+66
+00:03:21,540 --> 00:03:23,930
+8.4 divided by 2 is 4.2.
+
+67
+00:03:23,980 --> 00:03:27,630
+Then 4.2 divided by 10 is 0.42.
+
+68
+00:03:27,680 --> 00:03:30,120
+A ticket costs 11 dollars 95.
+
+69
+00:03:30,170 --> 00:03:32,990
+How much do 6 tickets cost?
+
+70
+00:03:33,040 --> 00:03:35,270
+Round up to 12 dollars.
+
+71
+00:03:35,320 --> 00:03:37,510
+6 times 12 is 72.
+
+72
+00:03:37,560 --> 00:03:40,190
+Each ticket was 5 cents too much.
+
+73
+00:03:40,240 --> 00:03:43,000
+6 times 5 cents is 30 cents.
+
+74
+00:03:43,050 --> 00:03:44,390
+Take that off.
+
+75
+00:03:44,440 --> 00:03:46,660
+72 minus 0.30 is 71.70.
+
+76
+00:03:46,710 --> 00:03:50,270
+The tickets cost 71 dollars 70.
+
+77
+00:03:50,320 --> 00:03:54,180
+Sam works out 9 times 3.4, using 10 times 3.4.
+
+78
+00:03:54,230 --> 00:03:57,100
+Which line goes wrong first?
+
+79
+00:03:57,150 --> 00:03:58,490
+Line 2 is wrong.
+
+80
+00:03:58,540 --> 00:04:02,210
+9 lots is one lot of 3.4 less than 10 lots.
+
+81
+00:04:02,260 --> 00:04:04,750
+So subtract 3.4, not 1.
+
+82
+00:04:04,800 --> 00:04:08,000
+34 minus 3.4 is 30.6.
+
+83
+00:04:08,050 --> 00:04:10,640
+Shops love prices that end in 99.
+
+84
+00:04:10,690 --> 00:04:12,960
+Compensation makes them easy.
+
+85
+00:04:13,010 --> 00:04:17,180
+Suppose you buy 5 drinks at 3 dollars 99 each.
+
+86
+00:04:17,230 --> 00:04:20,090
+Pretend each one costs 4 dollars.
+
+87
+00:04:20,140 --> 00:04:22,060
+5 times 4 is 20.
+
+88
+00:04:22,110 --> 00:04:26,190
+Each price was 1 cent too much, so take off 5 cents.
+
+89
+00:04:26,240 --> 00:04:28,890
+The total is 19 dollars 95.
+
+90
+00:04:28,940 --> 00:04:30,320
+One last question.
+
+91
+00:04:30,370 --> 00:04:31,990
+What is 99 times 0.3?
+
+92
+00:04:32,040 --> 00:04:35,540
+Pause the video and answer.
+
+93
+00:04:35,590 --> 00:04:37,690
+100 times 0.3 is 30.
+
+94
+00:04:37,740 --> 00:04:41,140
+That is one lot of 0.3 too many.
+
+95
+00:04:41,190 --> 00:04:43,960
+30 minus 0.3 is 29.7.
+
+96
+00:04:44,010 --> 00:04:48,950
+To remember: compensation means round, calculate, then adjust.
+
+97
+00:04:49,000 --> 00:04:51,090
+Split numbers or divisors.
+
+98
+00:04:51,140 --> 00:04:55,260
+Dividing by 40 is dividing by 4, then by 10.
+
+99
+00:04:55,310 --> 00:04:59,650
+Re-order to use easy pairs, like 0.25 times 4.
+
+100
+00:04:59,700 --> 00:05:02,210
+And a decimal is a division.
+
+101
+00:05:02,260 --> 00:05:05,040
+0.06 is 6 divided by 100.
+
+102
+00:05:05,090 --> 00:05:10,190
+Great work! Now practise lesson 4.5 on Camday.

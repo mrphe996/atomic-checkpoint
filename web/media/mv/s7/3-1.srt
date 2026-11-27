@@ -1,0 +1,363 @@
+1
+00:00:08,240 --> 00:00:11,670
+A factory packs 1000 screws in every box.
+
+2
+00:00:11,720 --> 00:00:15,280
+Each screw has a mass of 2.35 grams.
+
+3
+00:00:15,330 --> 00:00:18,370
+What is the mass of all the screws in one box?
+
+4
+00:00:18,420 --> 00:00:21,910
+Pause the video and work it out.
+
+5
+00:00:21,960 --> 00:00:24,110
+We need 2.35 times 1000.
+
+6
+00:00:24,160 --> 00:00:27,690
+Watch what happens to the digits.
+
+7
+00:00:27,740 --> 00:00:32,350
+Multiplying by 1000 moves every digit 3 places to the left.
+
+8
+00:00:32,400 --> 00:00:36,290
+The 2 moves from the ones to the thousands.
+
+9
+00:00:36,340 --> 00:00:38,440
+The answer is 2,350 grams.
+
+10
+00:00:38,490 --> 00:00:42,300
+That is more than 2 kilograms of screws.
+
+11
+00:00:42,350 --> 00:00:44,140
+Remember place value.
+
+12
+00:00:44,190 --> 00:00:47,400
+In 4.07, the 4 is worth 4 ones.
+
+13
+00:00:47,450 --> 00:00:52,370
+The 0 is worth 0 tenths, and the 7 is worth 7 hundredths.
+
+14
+00:00:52,420 --> 00:00:59,330
+10, 100, 1000 and 10,000 are called powers of 10.
+
+15
+00:00:59,380 --> 00:01:02,220
+We can write them with an index.
+
+16
+00:01:02,270 --> 00:01:07,010
+100 is 10 times 10, so it is 10 to the power 2.
+
+17
+00:01:07,060 --> 00:01:13,650
+1000 is 10 to the power 3, and 10,000 is 10 to the power 4.
+
+18
+00:01:13,700 --> 00:01:14,920
+Notice the pattern.
+
+19
+00:01:14,970 --> 00:01:18,480
+The index is the same as the number of zeros.
+
+20
+00:01:18,530 --> 00:01:23,330
+When you multiply by 10, every digit moves one place to the left.
+
+21
+00:01:23,380 --> 00:01:26,420
+It becomes worth 10 times as much.
+
+22
+00:01:26,470 --> 00:01:31,850
+Multiply by 100, and the digits move 2 places to the left.
+
+23
+00:01:31,900 --> 00:01:33,990
+2.35 becomes 235.
+
+24
+00:01:34,040 --> 00:01:39,130
+Dividing by 10 moves every digit one place to the right.
+
+25
+00:01:39,180 --> 00:01:41,430
+2.35 becomes 0.235.
+
+26
+00:01:41,480 --> 00:01:43,530
+The decimal point never moves.
+
+27
+00:01:43,580 --> 00:01:45,550
+Only the digits move.
+
+28
+00:01:45,600 --> 00:01:46,360
+Your turn.
+
+29
+00:01:46,410 --> 00:01:49,350
+Work out 7.1 times 10 to the power 3.
+
+30
+00:01:49,400 --> 00:01:52,920
+Pause the video and try it.
+
+31
+00:01:52,970 --> 00:01:58,700
+10 to the power 3 is 1000, so the digits move 3 places to the left.
+
+32
+00:01:58,750 --> 00:02:01,120
+We fill the gaps with zeros.
+
+33
+00:02:01,170 --> 00:02:03,390
+The answer is 7,100.
+
+34
+00:02:03,440 --> 00:02:04,850
+Here is the method.
+
+35
+00:02:04,900 --> 00:02:08,160
+Step 1: count the zeros, or read the index.
+
+36
+00:02:08,210 --> 00:02:11,250
+10 to the power 3 means 3 places.
+
+37
+00:02:11,300 --> 00:02:14,210
+Step 2: to multiply, move the digits left.
+
+38
+00:02:14,260 --> 00:02:17,100
+To divide, move the digits right.
+
+39
+00:02:17,150 --> 00:02:20,160
+Step 3: fill any gaps with zeros.
+
+40
+00:02:20,210 --> 00:02:21,160
+Step 4: check.
+
+41
+00:02:21,210 --> 00:02:23,750
+Multiplying makes the number bigger.
+
+42
+00:02:23,800 --> 00:02:26,170
+Dividing makes it smaller.
+
+43
+00:02:26,220 --> 00:02:29,830
+Work out 56 divided by 1000.
+
+44
+00:02:29,880 --> 00:02:35,460
+1000 has 3 zeros, so the digits move 3 places to the right.
+
+45
+00:02:35,510 --> 00:02:40,650
+56 becomes 5.6, then 0.56, then 0.056.
+
+46
+00:02:40,700 --> 00:02:43,480
+A zero fills the empty tenths place.
+
+47
+00:02:43,530 --> 00:02:45,610
+The answer is 0.056.
+
+48
+00:02:45,660 --> 00:02:46,410
+Your turn.
+
+49
+00:02:46,460 --> 00:02:49,720
+Work out 85 divided by 10 to the power 4.
+
+50
+00:02:49,770 --> 00:02:52,900
+Pause and work it out.
+
+51
+00:02:52,950 --> 00:02:55,840
+10 to the power 4 is 10,000.
+
+52
+00:02:55,890 --> 00:02:59,830
+Move the digits 4 places to the right.
+
+53
+00:02:59,880 --> 00:03:02,270
+85 becomes 0.0085.
+
+54
+00:03:02,320 --> 00:03:03,490
+Fill the gap.
+
+55
+00:03:03,540 --> 00:03:06,960
+9.2 times something equals 920.
+
+56
+00:03:07,010 --> 00:03:10,200
+The 9 has moved from the ones to the hundreds.
+
+57
+00:03:10,250 --> 00:03:12,790
+That is 2 places to the left.
+
+58
+00:03:12,840 --> 00:03:17,700
+2 places means 10 to the power 2, which is 100.
+
+59
+00:03:17,750 --> 00:03:20,950
+A sheet of paper is 0.09 millimetres thick.
+
+60
+00:03:21,000 --> 00:03:25,360
+How thick is a pile of 1000 sheets, in centimetres?
+
+61
+00:03:25,410 --> 00:03:29,910
+0.09 times 1000: move the digits 3 places left.
+
+62
+00:03:29,960 --> 00:03:32,690
+That is 90 millimetres.
+
+63
+00:03:32,740 --> 00:03:35,960
+There are 10 millimetres in a centimetre.
+
+64
+00:03:36,010 --> 00:03:37,720
+90 divided by 10 is 9.
+
+65
+00:03:37,770 --> 00:03:40,820
+The pile is 9 centimetres thick.
+
+66
+00:03:40,870 --> 00:03:43,110
+Noor works out 6.8 times 10.
+
+67
+00:03:43,160 --> 00:03:45,950
+Which line goes wrong first?
+
+68
+00:03:46,000 --> 00:03:47,200
+Line 1 is wrong.
+
+69
+00:03:47,250 --> 00:03:50,560
+Adding a zero only works for whole numbers.
+
+70
+00:03:50,610 --> 00:03:54,860
+6.80 is the same as 6.8, so nothing has changed.
+
+71
+00:03:54,910 --> 00:03:58,550
+The digits must move one place to the left.
+
+72
+00:03:58,600 --> 00:04:00,730
+6.8 times 10 is 68.
+
+73
+00:04:00,780 --> 00:04:05,050
+Powers of 10 are built into the metric system.
+
+74
+00:04:05,100 --> 00:04:06,550
+Kilo means 1000.
+
+75
+00:04:06,600 --> 00:04:12,740
+So 1 kilometre is 1000 metres, and 1 kilogram is 1000 grams.
+
+76
+00:04:12,790 --> 00:04:18,880
+A 5 kilometre run is 5 times 1000, which is 5000 metres.
+
+77
+00:04:18,930 --> 00:04:21,590
+Milli means divide by 1000.
+
+78
+00:04:21,640 --> 00:04:29,890
+A 250 millilitre glass of juice is 250 divided by 1000, which is 0.25 litres.
+
+79
+00:04:29,940 --> 00:04:31,200
+One last question.
+
+80
+00:04:31,250 --> 00:04:33,680
+Which calculation is equal to 0.6?
+
+81
+00:04:33,730 --> 00:04:37,050
+Pause the video and choose.
+
+82
+00:04:37,100 --> 00:04:38,800
+60 divided by 100.
+
+83
+00:04:38,850 --> 00:04:42,500
+The digits move 2 places to the right.
+
+84
+00:04:42,550 --> 00:04:45,970
+60 becomes 0.60, which is 0.6.
+
+85
+00:04:46,020 --> 00:04:51,560
+To remember: the index of a power of 10 tells you the number of zeros.
+
+86
+00:04:51,610 --> 00:04:53,640
+To multiply, digits move left.
+
+87
+00:04:53,690 --> 00:04:56,200
+To divide, digits move right.
+
+88
+00:04:56,250 --> 00:04:57,670
+Fill gaps with zeros.
+
+89
+00:04:57,720 --> 00:05:00,450
+The decimal point does not move.
+
+90
+00:05:00,500 --> 00:05:05,550
+And check: multiplying makes it bigger, dividing makes it smaller.
+
+91
+00:05:05,600 --> 00:05:10,670
+Great work! Now practise lesson 3.1 on Camday.

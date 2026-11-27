@@ -1,0 +1,351 @@
+1
+00:00:06,420 --> 00:00:09,640
+Petrol costs 1 dollar 36 for each litre.
+
+2
+00:00:09,690 --> 00:00:12,560
+A car's tank takes 42 litres.
+
+3
+00:00:12,610 --> 00:00:17,220
+Estimate the cost of a full tank, by working out 40 times 1.4.
+
+4
+00:00:17,270 --> 00:00:20,640
+Pause the video and try it.
+
+5
+00:00:20,690 --> 00:00:25,000
+4 times 14 is 56, so 40 times 1.4 is also 56.
+
+6
+00:00:25,050 --> 00:00:28,940
+A full tank costs about 56 dollars.
+
+7
+00:00:28,990 --> 00:00:33,480
+Now let's find the exact cost: 1.36 times 42.
+
+8
+00:00:33,530 --> 00:00:37,480
+First, remember how to multiply whole numbers.
+
+9
+00:00:37,530 --> 00:00:39,160
+136 times 42.
+
+10
+00:00:39,210 --> 00:00:42,150
+136 times 40 is 5,440.
+
+11
+00:00:42,200 --> 00:00:44,730
+136 times 2 is 272.
+
+12
+00:00:44,780 --> 00:00:47,450
+Add them: 5,712.
+
+13
+00:00:47,500 --> 00:00:53,710
+To multiply a decimal, first multiply as if there were no decimal point.
+
+14
+00:00:53,760 --> 00:00:56,170
+136 times 42 is 5,712.
+
+15
+00:00:56,220 --> 00:00:59,800
+Then count the decimal places in the question.
+
+16
+00:00:59,850 --> 00:01:02,400
+1.36 has 2 decimal places.
+
+17
+00:01:02,450 --> 00:01:06,270
+The answer must have 2 decimal places as well.
+
+18
+00:01:06,320 --> 00:01:08,080
+So it is 57.12.
+
+19
+00:01:08,130 --> 00:01:10,520
+A full tank costs 57 dollars 12.
+
+20
+00:01:10,570 --> 00:01:16,570
+That is close to our estimate of 56, so the point is in the right place.
+
+21
+00:01:16,620 --> 00:01:17,330
+Your turn.
+
+22
+00:01:17,380 --> 00:01:18,920
+Work out 2.7 times 3.
+
+23
+00:01:18,970 --> 00:01:22,360
+Pause the video and try it.
+
+24
+00:01:22,410 --> 00:01:23,840
+27 times 3 is 81.
+
+25
+00:01:23,890 --> 00:01:29,190
+The question has 1 decimal place, so the answer is 8.1.
+
+26
+00:01:29,240 --> 00:01:31,790
+The same idea works with two decimals.
+
+27
+00:01:31,840 --> 00:01:35,150
+Count the decimal places in both numbers.
+
+28
+00:01:35,200 --> 00:01:36,390
+0.3 times 0.2.
+
+29
+00:01:36,440 --> 00:01:37,710
+3 times 2 is 6.
+
+30
+00:01:37,760 --> 00:01:42,750
+There is 1 decimal place in each number, so 2 altogether.
+
+31
+00:01:42,800 --> 00:01:44,980
+The answer is 0.06.
+
+32
+00:01:45,030 --> 00:01:46,170
+Notice something.
+
+33
+00:01:46,220 --> 00:01:51,000
+Multiplying by a number less than 1 makes the answer smaller.
+
+34
+00:01:51,050 --> 00:01:52,380
+Here is the method.
+
+35
+00:01:52,430 --> 00:01:55,100
+Step 1: estimate, by rounding.
+
+36
+00:01:55,150 --> 00:02:00,190
+Step 2: multiply the numbers as if there were no decimal points.
+
+37
+00:02:00,240 --> 00:02:05,380
+Step 3: count the total number of decimal places in the question.
+
+38
+00:02:05,430 --> 00:02:10,220
+Step 4: put the point in, so the answer has that many decimal places.
+
+39
+00:02:10,270 --> 00:02:12,530
+Check with your estimate.
+
+40
+00:02:12,580 --> 00:02:14,740
+Work out 23.8 times 6.
+
+41
+00:02:14,790 --> 00:02:18,700
+Estimate first: 24 times 6 is 144.
+
+42
+00:02:18,750 --> 00:02:22,310
+Without the point: 238 times 6.
+
+43
+00:02:22,360 --> 00:02:24,750
+200 times 6 is 1,200.
+
+44
+00:02:24,800 --> 00:02:26,840
+30 times 6 is 180.
+
+45
+00:02:26,890 --> 00:02:28,700
+8 times 6 is 48.
+
+46
+00:02:28,750 --> 00:02:31,340
+Altogether, 1,428.
+
+47
+00:02:31,390 --> 00:02:34,080
+The question has 1 decimal place.
+
+48
+00:02:34,130 --> 00:02:36,530
+So the answer is 142.8.
+
+49
+00:02:36,580 --> 00:02:39,360
+Work out 1.5 times 0.4.
+
+50
+00:02:39,410 --> 00:02:41,890
+15 times 4 is 60.
+
+51
+00:02:41,940 --> 00:02:45,510
+There are 2 decimal places in the question.
+
+52
+00:02:45,560 --> 00:02:49,100
+So the answer is 0.60, which is 0.6.
+
+53
+00:02:49,150 --> 00:02:49,900
+Your turn.
+
+54
+00:02:49,950 --> 00:02:51,750
+Work out 0.9 times 0.9.
+
+55
+00:02:51,800 --> 00:02:54,910
+Pause and work it out.
+
+56
+00:02:54,960 --> 00:02:56,310
+9 times 9 is 81.
+
+57
+00:02:56,360 --> 00:03:00,060
+There are 2 decimal places in the question.
+
+58
+00:03:00,110 --> 00:03:02,270
+The answer is 0.81.
+
+59
+00:03:02,320 --> 00:03:05,730
+Fabric costs 4 dollars 65 for each metre.
+
+60
+00:03:05,780 --> 00:03:08,090
+How much do 3.2 metres cost?
+
+61
+00:03:08,140 --> 00:03:10,830
+Estimate: 5 times 3 is 15.
+
+62
+00:03:10,880 --> 00:03:16,120
+Without the points: 465 times 32 is 14,880.
+
+63
+00:03:16,170 --> 00:03:20,050
+There are 2 plus 1, so 3 decimal places.
+
+64
+00:03:20,100 --> 00:03:21,820
+That gives 14.880.
+
+65
+00:03:21,870 --> 00:03:25,410
+The fabric costs 14 dollars 88.
+
+66
+00:03:25,460 --> 00:03:27,790
+Zoe works out 0.2 times 0.3.
+
+67
+00:03:27,840 --> 00:03:30,040
+Which line is wrong?
+
+68
+00:03:30,090 --> 00:03:31,220
+Line 2 is wrong.
+
+69
+00:03:31,270 --> 00:03:37,410
+The question has 2 decimal places altogether, so the answer needs 2 as well.
+
+70
+00:03:37,460 --> 00:03:39,000
+The answer is 0.06.
+
+71
+00:03:39,050 --> 00:03:44,050
+That makes sense: a part of 0.3 must be less than 0.3.
+
+72
+00:03:44,100 --> 00:03:46,570
+Here is a trick for a stormy day.
+
+73
+00:03:46,620 --> 00:03:50,860
+Sound travels about 0.34 kilometres every second.
+
+74
+00:03:50,910 --> 00:03:55,540
+You see lightning, and count 6 seconds until the thunder.
+
+75
+00:03:55,590 --> 00:03:56,760
+0.34 times 6.
+
+76
+00:03:56,810 --> 00:04:01,440
+34 times 6 is 204, and there are 2 decimal places.
+
+77
+00:04:01,490 --> 00:04:05,740
+The storm is about 2.04 kilometres away.
+
+78
+00:04:05,790 --> 00:04:07,000
+One last question.
+
+79
+00:04:07,050 --> 00:04:09,950
+Which of these answers is smaller than 12?
+
+80
+00:04:10,000 --> 00:04:13,240
+Pause the video and choose.
+
+81
+00:04:13,290 --> 00:04:14,430
+12 times 0.8.
+
+82
+00:04:14,480 --> 00:04:20,010
+Multiplying by a number less than 1 makes the answer smaller.
+
+83
+00:04:20,060 --> 00:04:22,390
+12 times 0.8 is 9.6.
+
+84
+00:04:22,440 --> 00:04:29,100
+To remember: multiply without the points, then count the decimal places in the question.
+
+85
+00:04:29,150 --> 00:04:33,370
+The answer has the same total number of decimal places.
+
+86
+00:04:33,420 --> 00:04:38,620
+Multiplying by a number between 0 and 1 makes the answer smaller.
+
+87
+00:04:38,670 --> 00:04:42,210
+Always estimate, to check where the point goes.
+
+88
+00:04:42,260 --> 00:04:47,470
+Great work! Now practise lesson 4.3 on Camday.
