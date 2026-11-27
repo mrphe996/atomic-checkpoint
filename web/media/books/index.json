@@ -2528,5 +2528,27 @@
     14
    ]
   }
+ },
+ "c4u16": {
+  "title": "Camday Maths Stage 4 · Unit 16: Data Display and Interpretation",
+  "pages": 10,
+  "dir": "media/books/c4u16/",
+  "ext": "webp",
+  "pdf": "media/books/c4u16.pdf?v=2026bc3acc",
+  "v": "2026bc3acc",
+  "secs": {
+   "16.1": [
+    2,
+    5
+   ],
+   "16.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }

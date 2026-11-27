@@ -58,6 +58,15 @@
     s += put(o.a, 130) + put(o.ab, 240) + put(o.b, 350) + (o.out || []).map((t, i) => `<text x="${50 + i * 30}" y="278" font-size="14" text-anchor="middle" fill="#1F2A37">${t}</text>`).join('');
     return { svg: W(s), a: {} };
   };
+  // dot plot: o.labels (values along the line), o.counts (dots above each), o.xlabel
+  F.dotplot = (o) => {
+    const lb = o.labels || [], c = o.counts || [], n = lb.length, x0 = 60, x1 = 420, y = 250, dx = n > 1 ? (x1 - x0) / (n - 1) : 0;
+    let s = `<line x1="${x0 - 20}" y1="${y}" x2="${x1 + 20}" y2="${y}" stroke="#1F2A37" stroke-width="2"/>`;
+    lb.forEach((l, i) => { const x = x0 + i * dx; s += `<line x1="${x}" y1="${y - 6}" x2="${x}" y2="${y + 6}" stroke="#1F2A37" stroke-width="1.5"/><text x="${x}" y="${y + 26}" font-size="14" text-anchor="middle" fill="#1F2A37">${l}</text>`;
+      for (let k = 0; k < (c[i] || 0); k++) s += `<circle cx="${x}" cy="${y - 20 - k * 22}" r="8" fill="#1F4FA0"/>`; });
+    if (o.xlabel) s += `<text x="240" y="305" font-size="14" font-weight="700" text-anchor="middle" fill="#1F2A37">${o.xlabel}</text>`;
+    return { svg: W(s), a: {} };
+  };
   F.cells = (o) => {
     const cs = o.cells || [], C = o.cols || Math.max(...cs.map(c => c[0]), 0) + 1, R = o.rows || Math.max(...cs.map(c => c[1]), 0) + 1;
     const sz = Math.min(400 / C, 280 / R, 60), x0 = 240 - C * sz / 2, y0 = 160 - R * sz / 2; let s = '';
