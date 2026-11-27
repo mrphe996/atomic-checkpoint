@@ -1,0 +1,307 @@
+1
+00:00:07,050 --> 00:00:12,080
+Someone says: a square is a rectangle, and a rectangle is a parallelogram.
+
+2
+00:00:12,130 --> 00:00:13,520
+Is that true?
+
+3
+00:00:13,570 --> 00:00:15,180
+Is a square a rectangle?
+
+4
+00:00:15,230 --> 00:00:18,460
+Pause the video and decide.
+
+5
+00:00:18,510 --> 00:00:22,260
+A rectangle is any quadrilateral with 4 right angles.
+
+6
+00:00:22,310 --> 00:00:27,220
+A square has 4 right angles, so yes, a square is a special rectangle.
+
+7
+00:00:27,270 --> 00:00:29,630
+It also has 4 equal sides.
+
+8
+00:00:29,680 --> 00:00:36,610
+Remember: a regular polygon with n sides has n lines of symmetry, and rotational symmetry of order n.
+
+9
+00:00:36,660 --> 00:00:40,070
+A regular octagon has 8 lines of symmetry.
+
+10
+00:00:40,120 --> 00:00:46,110
+Each quadrilateral has its own properties: sides, angles, diagonals and symmetry.
+
+11
+00:00:46,160 --> 00:00:48,360
+Look carefully at the diagonals.
+
+12
+00:00:48,410 --> 00:00:55,240
+In a kite, the diagonals cross at 90 degrees, but only one of them cuts the other in half.
+
+13
+00:00:55,290 --> 00:00:55,960
+Your turn.
+
+14
+00:00:56,010 --> 00:01:00,680
+The diagonals cross at 90 degrees, and only one bisects the other.
+
+15
+00:01:00,730 --> 00:01:01,970
+Which shape is it?
+
+16
+00:01:02,020 --> 00:01:05,300
+Pause the video and choose.
+
+17
+00:01:05,350 --> 00:01:06,210
+It is a kite.
+
+18
+00:01:06,260 --> 00:01:10,390
+The long diagonal cuts the short one in half, at 90 degrees.
+
+19
+00:01:10,440 --> 00:01:14,560
+But the short one does not cut the long one in half.
+
+20
+00:01:14,610 --> 00:01:19,430
+A shape belongs to a family if it has all the properties of that family.
+
+21
+00:01:19,480 --> 00:01:26,410
+So a square is a rectangle, a rectangle is a parallelogram, and a parallelogram is a trapezium.
+
+22
+00:01:26,460 --> 00:01:30,540
+A square is also a rhombus, and a rhombus is a parallelogram.
+
+23
+00:01:30,590 --> 00:01:32,780
+A rhombus is also a kite.
+
+24
+00:01:32,830 --> 00:01:35,100
+But not every rhombus is a square.
+
+25
+00:01:35,150 --> 00:01:38,180
+A rhombus does not need right angles.
+
+26
+00:01:38,230 --> 00:01:39,520
+Here is the method.
+
+27
+00:01:39,570 --> 00:01:41,210
+Step 1: check the sides.
+
+28
+00:01:41,260 --> 00:01:42,270
+Are they equal?
+
+29
+00:01:42,320 --> 00:01:44,090
+Are they parallel?
+
+30
+00:01:44,140 --> 00:01:45,880
+Step 2: check the angles.
+
+31
+00:01:45,930 --> 00:01:46,810
+Right angles?
+
+32
+00:01:46,860 --> 00:01:48,930
+Opposite angles equal?
+
+33
+00:01:48,980 --> 00:01:51,010
+Step 3: check the diagonals.
+
+34
+00:01:51,060 --> 00:01:51,450
+Equal?
+
+35
+00:01:51,500 --> 00:01:52,490
+Perpendicular?
+
+36
+00:01:52,540 --> 00:01:54,970
+Do they bisect each other?
+
+37
+00:01:55,020 --> 00:01:57,610
+Step 4: name the most specific shape.
+
+38
+00:01:57,660 --> 00:02:01,790
+But remember it belongs to the bigger families too.
+
+39
+00:02:01,840 --> 00:02:08,140
+A quadrilateral's diagonals are equal and bisect each other, but they are not perpendicular.
+
+40
+00:02:08,190 --> 00:02:09,250
+Name it.
+
+41
+00:02:09,300 --> 00:02:12,190
+Bisecting diagonals means a parallelogram.
+
+42
+00:02:12,240 --> 00:02:14,580
+Equal diagonals means a rectangle.
+
+43
+00:02:14,630 --> 00:02:17,600
+Not perpendicular means it is not a square.
+
+44
+00:02:17,650 --> 00:02:19,620
+So it is a rectangle.
+
+45
+00:02:19,670 --> 00:02:23,320
+A rhombus has 2 lines of symmetry: its two diagonals.
+
+46
+00:02:23,370 --> 00:02:29,170
+It looks the same after a half turn, so its rotational symmetry has order 2.
+
+47
+00:02:29,220 --> 00:02:29,870
+Your turn.
+
+48
+00:02:29,920 --> 00:02:34,070
+What is the order of rotational symmetry of a parallelogram?
+
+49
+00:02:34,120 --> 00:02:37,010
+Pause and work it out.
+
+50
+00:02:37,060 --> 00:02:42,030
+A parallelogram fits onto itself after a half turn, and after a full turn.
+
+51
+00:02:42,080 --> 00:02:43,250
+So the order is 2.
+
+52
+00:02:43,300 --> 00:02:45,970
+But it has no lines of symmetry.
+
+53
+00:02:46,020 --> 00:02:49,760
+True or false: a trapezium can have a line of symmetry.
+
+54
+00:02:49,810 --> 00:02:50,100
+True.
+
+55
+00:02:50,150 --> 00:02:56,090
+An isosceles trapezium has one line, through the middles of the parallel sides.
+
+56
+00:02:56,140 --> 00:02:59,270
+A shape has exactly one pair of parallel sides.
+
+57
+00:02:59,320 --> 00:03:00,150
+Ben names it.
+
+58
+00:03:00,200 --> 00:03:02,060
+Which line is wrong?
+
+59
+00:03:02,110 --> 00:03:03,190
+Line 2 is wrong.
+
+60
+00:03:03,240 --> 00:03:06,750
+A parallelogram needs two pairs of parallel sides.
+
+61
+00:03:06,800 --> 00:03:09,210
+One pair makes a trapezium.
+
+62
+00:03:09,260 --> 00:03:11,780
+The shape is a trapezium.
+
+63
+00:03:11,830 --> 00:03:15,160
+Many folding tables and lamps use parallelograms.
+
+64
+00:03:15,210 --> 00:03:22,970
+When the sides are joined at hinges, a parallelogram can lean over, but its opposite sides stay parallel.
+
+65
+00:03:23,020 --> 00:03:26,550
+So the table top stays level, even as the legs fold.
+
+66
+00:03:26,600 --> 00:03:30,690
+A rectangle that leans over becomes a parallelogram.
+
+67
+00:03:30,740 --> 00:03:31,920
+One last question.
+
+68
+00:03:31,970 --> 00:03:34,880
+A rhombus with a right angle is what shape?
+
+69
+00:03:34,930 --> 00:03:38,140
+Pause the video and choose.
+
+70
+00:03:38,190 --> 00:03:40,180
+A rhombus has 4 equal sides.
+
+71
+00:03:40,230 --> 00:03:45,090
+If one angle is 90 degrees, all four are, so it is a square.
+
+72
+00:03:45,140 --> 00:03:51,360
+To remember: know the sides, angles, diagonals and symmetry of each quadrilateral.
+
+73
+00:03:51,410 --> 00:03:55,410
+A square is a rectangle, and a rectangle is a parallelogram.
+
+74
+00:03:55,460 --> 00:03:57,790
+A square is also a rhombus.
+
+75
+00:03:57,840 --> 00:04:02,830
+A regular polygon with n sides has n lines of symmetry, and order n.
+
+76
+00:04:02,880 --> 00:04:06,020
+Name the most specific shape that fits.
+
+77
+00:04:06,070 --> 00:04:11,190
+Great work! Now practise lesson 8.1 on Camday.

@@ -1,0 +1,271 @@
+1
+00:00:07,610 --> 00:00:12,550
+A quiz question: 3 quarters times 17, plus 3 quarters times 3.
+
+2
+00:00:12,600 --> 00:00:15,840
+You have 10 seconds, and no paper.
+
+3
+00:00:15,890 --> 00:00:17,120
+What is the answer?
+
+4
+00:00:17,170 --> 00:00:20,680
+Pause the video and work it out.
+
+5
+00:00:20,730 --> 00:00:22,900
+Both parts have 3 quarters.
+
+6
+00:00:22,950 --> 00:00:27,280
+So take it out: 3 quarters times, bracket, 17 plus 3.
+
+7
+00:00:27,330 --> 00:00:30,970
+That is 3 quarters of 20, which is 15.
+
+8
+00:00:31,020 --> 00:00:36,750
+Remember: A times B, plus A times C, equals A times, bracket, B plus C.
+
+9
+00:00:36,800 --> 00:00:43,080
+For example, 7 times 23, plus 7 times 77, is 7 times 100, which is 700.
+
+10
+00:00:43,130 --> 00:00:46,960
+Here are some ways to make fraction calculations easier.
+
+11
+00:00:47,010 --> 00:00:50,900
+Take out a common factor, like the quiz question.
+
+12
+00:00:50,950 --> 00:00:57,260
+Cancel before multiplying, as in 14 fifteenths times 25 twenty-eighths.
+
+13
+00:00:57,310 --> 00:00:58,960
+14 and 28 share 14.
+
+14
+00:00:59,010 --> 00:01:00,570
+25 and 15 share 5.
+
+15
+00:01:00,620 --> 00:01:05,950
+That leaves 1 third times 5 halves, which is 5 sixths.
+
+16
+00:01:06,000 --> 00:01:08,320
+And use whole minus a part.
+
+17
+00:01:08,370 --> 00:01:13,040
+7 eighths of 48 is the whole 48, minus 1 eighth of 48.
+
+18
+00:01:13,090 --> 00:01:16,390
+That is 48 minus 6, which is 42.
+
+19
+00:01:16,440 --> 00:01:17,210
+Your turn.
+
+20
+00:01:17,260 --> 00:01:18,920
+Find 9 tenths of 250.
+
+21
+00:01:18,970 --> 00:01:22,520
+Pause the video and try it.
+
+22
+00:01:22,570 --> 00:01:24,860
+1 tenth of 250 is 25.
+
+23
+00:01:24,910 --> 00:01:30,100
+So 9 tenths is 250 minus 25, which is 225.
+
+24
+00:01:30,150 --> 00:01:32,990
+The order of operations still applies.
+
+25
+00:01:33,040 --> 00:01:34,820
+Multiply before you add.
+
+26
+00:01:34,870 --> 00:01:41,680
+1 half plus 1 third times 3 quarters is 1 half plus 1 quarter, which is 3 quarters.
+
+27
+00:01:41,730 --> 00:01:43,520
+But brackets come first.
+
+28
+00:01:43,570 --> 00:01:49,900
+1 half plus 1 third, in a bracket, times 6, is 5 sixths times 6, which is 5.
+
+29
+00:01:49,950 --> 00:01:51,220
+Here is the method.
+
+30
+00:01:51,270 --> 00:01:54,890
+Step 1: look for a common factor to take out.
+
+31
+00:01:54,940 --> 00:01:58,070
+Step 2: cancel before you multiply.
+
+32
+00:01:58,120 --> 00:02:02,490
+Step 3: re-order the numbers, or use whole minus a part.
+
+33
+00:02:02,540 --> 00:02:07,760
+Step 4: follow the order of operations, and check with an estimate.
+
+34
+00:02:07,810 --> 00:02:12,480
+Work out 18 thirty-fifths times 21 twenty-fourths.
+
+35
+00:02:12,530 --> 00:02:15,790
+18 and 24 share 6, leaving 3 and 4.
+
+36
+00:02:15,840 --> 00:02:19,640
+21 and 35 share 7, leaving 3 and 5.
+
+37
+00:02:19,690 --> 00:02:23,650
+3 fifths times 3 quarters is 9 twentieths.
+
+38
+00:02:23,700 --> 00:02:24,460
+Your turn.
+
+39
+00:02:24,510 --> 00:02:28,150
+Work out 10 twenty-firsts times 14 fifteenths.
+
+40
+00:02:28,200 --> 00:02:31,320
+Pause and work it out.
+
+41
+00:02:31,370 --> 00:02:34,540
+10 and 15 share 5, leaving 2 and 3.
+
+42
+00:02:34,590 --> 00:02:37,760
+14 and 21 share 7, leaving 2 and 3.
+
+43
+00:02:37,810 --> 00:02:43,090
+So it is 2 thirds times 2 thirds, which is 4 ninths.
+
+44
+00:02:43,140 --> 00:02:48,160
+Work out 4 times 2 and 3 eighths, plus 4 times 1 and 5 eighths.
+
+45
+00:02:48,210 --> 00:02:54,430
+Take out the 4: 4 times, bracket, 2 and 3 eighths plus 1 and 5 eighths.
+
+46
+00:02:54,480 --> 00:02:56,620
+The bracket is exactly 4.
+
+47
+00:02:56,670 --> 00:02:58,920
+And 4 times 4 is 16.
+
+48
+00:02:58,970 --> 00:03:02,530
+Max works out 1 third plus 2 thirds times 1 half.
+
+49
+00:03:02,580 --> 00:03:05,140
+Which line goes wrong first?
+
+50
+00:03:05,190 --> 00:03:06,380
+Line 1 is wrong.
+
+51
+00:03:06,430 --> 00:03:09,270
+Multiplication comes before addition.
+
+52
+00:03:09,320 --> 00:03:12,390
+2 thirds times 1 half is 1 third.
+
+53
+00:03:12,440 --> 00:03:16,020
+Then 1 third plus 1 third is 2 thirds.
+
+54
+00:03:16,070 --> 00:03:19,360
+A shop has a sale: everything is 1 quarter off.
+
+55
+00:03:19,410 --> 00:03:22,390
+So you pay 3 quarters of the price.
+
+56
+00:03:22,440 --> 00:03:26,900
+You buy a 36 dollar shirt and a 44 dollar pair of jeans.
+
+57
+00:03:26,950 --> 00:03:33,160
+Instead of two calculations, add first: 3 quarters of 80 is 60 dollars.
+
+58
+00:03:33,210 --> 00:03:34,520
+One last question.
+
+59
+00:03:34,570 --> 00:03:37,470
+What is 1 half minus 1 quarter times 2?
+
+60
+00:03:37,520 --> 00:03:40,910
+Pause the video and answer.
+
+61
+00:03:40,960 --> 00:03:42,110
+Multiply first.
+
+62
+00:03:42,160 --> 00:03:44,360
+1 quarter times 2 is 1 half.
+
+63
+00:03:44,410 --> 00:03:47,320
+Then 1 half minus 1 half is 0.
+
+64
+00:03:47,370 --> 00:03:52,360
+To remember: take out common factors, using the distributive law.
+
+65
+00:03:52,410 --> 00:03:54,860
+Cancel before multiplying.
+
+66
+00:03:54,910 --> 00:03:58,110
+Use whole minus a part, and re-ordering.
+
+67
+00:03:58,160 --> 00:04:01,280
+The order of operations still applies.
+
+68
+00:04:01,330 --> 00:04:06,510
+Great work! Now practise lesson 7.6 on Camday.

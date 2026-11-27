@@ -165,7 +165,7 @@ VIDEOS["12.3"] = [
         dict(say="4 parts is 26 kilograms, so 1 part is 26 divided by 4, which is 6.5 kilograms of cement.", do=[B("26 ÷ 4 = 6.5 kg", x=80, y=200, color=GREEN)]),
     ]),
     dict(kind="idea", title="Best buys", steps=[
-        dict(say="To compare prices, find a unit rate, like the price per 100 grams.", do=[TBL(["Pack", "Price", "Per 100 g"], [["400 g", "$3.60", "$0.90"], ["650 g", "$5.53", "$0.85"]], y=170), ROW(0, 2), ROW(1, 4)]),
+        dict(say="To compare prices, find a unit rate, like the price per 100 grams. 400 grams for 3 dollars 60 is 90 cents per 100 grams. 650 grams for 5 dollars 53 is about 85 cents per 100 grams.", do=[TBL(["Pack", "Price", "Per 100 g"], [["400 g", "$3.60", "$0.90"], ["650 g", "$5.53", "$0.85"]], y=170), ROW(0, 4), ROW(1, 8)]),
         dict(say="The 650 gram pack is better value, because it costs less per 100 grams.", do=[T("650 g is the **better buy**", x=80, y=380, color=GREEN)]),
     ]),
     dict(kind="method", title="How do I solve proportion problems?", steps=[

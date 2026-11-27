@@ -1,0 +1,283 @@
+1
+00:00:05,970 --> 00:00:13,160
+An architect builds a model and draws it from three directions: from the front, from the side, and from above.
+
+2
+00:00:13,210 --> 00:00:16,280
+The view from above is called the plan.
+
+3
+00:00:16,330 --> 00:00:18,210
+Why does she need all three?
+
+4
+00:00:18,260 --> 00:00:22,810
+Could two different buildings look the same from the front?
+
+5
+00:00:22,860 --> 00:00:26,400
+Could two different solids have the same front view?
+
+6
+00:00:26,450 --> 00:00:29,660
+Pause the video and decide.
+
+7
+00:00:29,710 --> 00:00:29,940
+Yes.
+
+8
+00:00:29,990 --> 00:00:34,720
+A cylinder and a cuboid can both look like a rectangle from the front.
+
+9
+00:00:34,770 --> 00:00:38,000
+You need other views to tell them apart.
+
+10
+00:00:38,050 --> 00:00:43,030
+Remember: a triangular prism has 5 faces, 9 edges and 6 vertices.
+
+11
+00:00:43,080 --> 00:00:48,140
+A square-based pyramid has 5 faces, 8 edges and 5 vertices.
+
+12
+00:00:48,190 --> 00:00:54,030
+For any solid with flat faces and no holes, faces plus vertices minus edges equals 2.
+
+13
+00:00:54,080 --> 00:00:56,030
+This is Euler's rule.
+
+14
+00:00:56,080 --> 00:00:56,690
+Your turn.
+
+15
+00:00:56,740 --> 00:00:59,080
+What is F plus V minus E for a cube?
+
+16
+00:00:59,130 --> 00:01:02,600
+Pause the video and work it out.
+
+17
+00:01:02,650 --> 00:01:06,620
+A cube has 6 faces, 8 vertices and 12 edges.
+
+18
+00:01:06,670 --> 00:01:09,280
+6 plus 8 minus 12 is 2.
+
+19
+00:01:09,330 --> 00:01:12,050
+The plan is the view from directly above.
+
+20
+00:01:12,100 --> 00:01:19,150
+The front elevation is the view from the front, and the side elevation is the view from the side.
+
+21
+00:01:19,200 --> 00:01:24,510
+Here is a solid made of 4 cubes: 3 in a row, with 1 on top of the left cube.
+
+22
+00:01:24,560 --> 00:01:28,380
+From the front it looks like an L of 4 squares.
+
+23
+00:01:28,430 --> 00:01:32,360
+From the side, you see 2 squares, one on top of the other.
+
+24
+00:01:32,410 --> 00:01:35,590
+From above, you see 3 squares in a row.
+
+25
+00:01:35,640 --> 00:01:36,870
+Here is the method.
+
+26
+00:01:36,920 --> 00:01:43,310
+Step 1: name the shape from its cross-section, for a prism, or its base, for a pyramid.
+
+27
+00:01:43,360 --> 00:01:47,170
+Step 2: count the faces, vertices and edges carefully.
+
+28
+00:01:47,220 --> 00:01:49,440
+Check with Euler's rule.
+
+29
+00:01:49,490 --> 00:01:54,140
+Step 3: draw the plan, front and side elevations to scale.
+
+30
+00:01:54,190 --> 00:01:58,280
+Step 4: use the views together to identify a solid.
+
+31
+00:01:58,330 --> 00:02:00,050
+A pyramid has 7 vertices.
+
+32
+00:02:00,100 --> 00:02:03,020
+One is the top, so the base has 6 corners.
+
+33
+00:02:03,070 --> 00:02:05,410
+It is a hexagonal pyramid.
+
+34
+00:02:05,460 --> 00:02:08,770
+It has 7 faces: the base and 6 triangles.
+
+35
+00:02:08,820 --> 00:02:13,180
+It has 12 edges: 6 round the base and 6 up to the top.
+
+36
+00:02:13,230 --> 00:02:16,190
+Check: 7 plus 7 minus 12 is 2.
+
+37
+00:02:16,240 --> 00:02:17,600
+The plan is a circle.
+
+38
+00:02:17,650 --> 00:02:20,550
+The front and side views are both triangles.
+
+39
+00:02:20,600 --> 00:02:21,690
+What solid is it?
+
+40
+00:02:21,740 --> 00:02:25,120
+It is round from above, and pointed from the sides.
+
+41
+00:02:25,170 --> 00:02:26,540
+It is a cone.
+
+42
+00:02:26,590 --> 00:02:27,220
+Your turn.
+
+43
+00:02:27,270 --> 00:02:30,160
+What is the plan of a cylinder standing up?
+
+44
+00:02:30,210 --> 00:02:32,720
+Pause and choose.
+
+45
+00:02:32,770 --> 00:02:36,890
+From directly above, a standing cylinder looks like a circle.
+
+46
+00:02:36,940 --> 00:02:41,190
+From the front and the side, it looks like a rectangle.
+
+47
+00:02:41,240 --> 00:02:43,650
+A shape has 6 faces and 12 edges.
+
+48
+00:02:43,700 --> 00:02:46,110
+Kim finds the number of vertices.
+
+49
+00:02:46,160 --> 00:02:48,750
+Which line goes wrong first?
+
+50
+00:02:48,800 --> 00:02:49,890
+Line 1 is wrong.
+
+51
+00:02:49,940 --> 00:02:52,890
+Euler's rule is F plus V minus E equals 2.
+
+52
+00:02:52,940 --> 00:02:55,870
+You cannot have negative vertices!
+
+53
+00:02:55,920 --> 00:02:59,270
+6 plus V minus 12 equals 2, so V equals 8.
+
+54
+00:02:59,320 --> 00:03:01,360
+It could be a cube.
+
+55
+00:03:01,410 --> 00:03:08,040
+A classic football is made of 12 pentagons and 20 hexagons, so it has 32 faces.
+
+56
+00:03:08,090 --> 00:03:11,290
+It has 60 vertices and 90 edges.
+
+57
+00:03:11,340 --> 00:03:15,120
+Check Euler's rule: 32 plus 60 minus 90 is 2.
+
+58
+00:03:15,170 --> 00:03:18,130
+It works even for a football.
+
+59
+00:03:18,180 --> 00:03:19,400
+One last question.
+
+60
+00:03:19,450 --> 00:03:20,890
+A prism has 15 edges.
+
+61
+00:03:20,940 --> 00:03:23,090
+How many vertices does it have?
+
+62
+00:03:23,140 --> 00:03:26,410
+Pause the video and answer.
+
+63
+00:03:26,460 --> 00:03:30,970
+A prism with an n-sided end has 3 n edges and 2 n vertices.
+
+64
+00:03:31,020 --> 00:03:34,220
+15 edges means n is 5, a pentagonal prism.
+
+65
+00:03:34,270 --> 00:03:36,470
+So it has 10 vertices.
+
+66
+00:03:36,520 --> 00:03:41,630
+To remember: for solids with flat faces, F plus V minus E equals 2.
+
+67
+00:03:41,680 --> 00:03:43,790
+The plan is the view from above.
+
+68
+00:03:43,840 --> 00:03:48,200
+The elevations are the views from the front and the side.
+
+69
+00:03:48,250 --> 00:03:50,580
+Draw the views to scale.
+
+70
+00:03:50,630 --> 00:03:54,390
+Use several views together to identify a solid.
+
+71
+00:03:54,440 --> 00:03:59,470
+Great work! Now practise lesson 8.3 on Camday.

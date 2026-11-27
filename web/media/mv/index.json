@@ -34316,6 +34316,1848 @@
     "7.5-k3": 116.39,
     "7.5-k4": 176.7
    },
+   "up": true
+  },
+  "8.1": {
+   "src": "media/mv/s8/8-1.mp4",
+   "poster": "media/mv/s8/8-1_poster.jpg",
+   "srt": "media/mv/s8/8-1.srt",
+   "dur": 251.24,
+   "captions": [
+    [
+     7.05,
+     "Someone says: a square is a rectangle, and a rectangle is a parallelogram."
+    ],
+    [
+     12.13,
+     "Is that true?"
+    ],
+    [
+     13.57,
+     "Is a square a rectangle?"
+    ],
+    [
+     15.23,
+     "Pause the video and decide."
+    ],
+    [
+     18.51,
+     "A rectangle is any quadrilateral with 4 right angles."
+    ],
+    [
+     22.31,
+     "A square has 4 right angles, so yes, a square is a special rectangle."
+    ],
+    [
+     27.27,
+     "It also has 4 equal sides."
+    ],
+    [
+     29.68,
+     "Remember: a regular polygon with n sides has n lines of symmetry, and rotational symmetry of order n."
+    ],
+    [
+     36.66,
+     "A regular octagon has 8 lines of symmetry."
+    ],
+    [
+     40.12,
+     "Each quadrilateral has its own properties: sides, angles, diagonals and symmetry."
+    ],
+    [
+     46.16,
+     "Look carefully at the diagonals."
+    ],
+    [
+     48.41,
+     "In a kite, the diagonals cross at 90 degrees, but only one of them cuts the other in half."
+    ],
+    [
+     55.29,
+     "Your turn."
+    ],
+    [
+     56.01,
+     "The diagonals cross at 90 degrees, and only one bisects the other."
+    ],
+    [
+     60.73,
+     "Which shape is it?"
+    ],
+    [
+     62.02,
+     "Pause the video and choose."
+    ],
+    [
+     65.35,
+     "It is a kite."
+    ],
+    [
+     66.26,
+     "The long diagonal cuts the short one in half, at 90 degrees."
+    ],
+    [
+     70.44,
+     "But the short one does not cut the long one in half."
+    ],
+    [
+     74.61,
+     "A shape belongs to a family if it has all the properties of that family."
+    ],
+    [
+     79.48,
+     "So a square is a rectangle, a rectangle is a parallelogram, and a parallelogram is a trapezium."
+    ],
+    [
+     86.46,
+     "A square is also a rhombus, and a rhombus is a parallelogram."
+    ],
+    [
+     90.59,
+     "A rhombus is also a kite."
+    ],
+    [
+     92.83,
+     "But not every rhombus is a square."
+    ],
+    [
+     95.15,
+     "A rhombus does not need right angles."
+    ],
+    [
+     98.23,
+     "Here is the method."
+    ],
+    [
+     99.57,
+     "Step 1: check the sides."
+    ],
+    [
+     101.26,
+     "Are they equal?"
+    ],
+    [
+     102.32,
+     "Are they parallel?"
+    ],
+    [
+     104.14,
+     "Step 2: check the angles."
+    ],
+    [
+     105.93,
+     "Right angles?"
+    ],
+    [
+     106.86,
+     "Opposite angles equal?"
+    ],
+    [
+     108.98,
+     "Step 3: check the diagonals."
+    ],
+    [
+     111.06,
+     "Equal?"
+    ],
+    [
+     111.5,
+     "Perpendicular?"
+    ],
+    [
+     112.54,
+     "Do they bisect each other?"
+    ],
+    [
+     115.02,
+     "Step 4: name the most specific shape."
+    ],
+    [
+     117.66,
+     "But remember it belongs to the bigger families too."
+    ],
+    [
+     121.84,
+     "A quadrilateral's diagonals are equal and bisect each other, but they are not perpendicular."
+    ],
+    [
+     128.19,
+     "Name it."
+    ],
+    [
+     129.3,
+     "Bisecting diagonals means a parallelogram."
+    ],
+    [
+     132.24,
+     "Equal diagonals means a rectangle."
+    ],
+    [
+     134.63,
+     "Not perpendicular means it is not a square."
+    ],
+    [
+     137.65,
+     "So it is a rectangle."
+    ],
+    [
+     139.67,
+     "A rhombus has 2 lines of symmetry: its two diagonals."
+    ],
+    [
+     143.37,
+     "It looks the same after a half turn, so its rotational symmetry has order 2."
+    ],
+    [
+     149.22,
+     "Your turn."
+    ],
+    [
+     149.92,
+     "What is the order of rotational symmetry of a parallelogram?"
+    ],
+    [
+     154.12,
+     "Pause and work it out."
+    ],
+    [
+     157.06,
+     "A parallelogram fits onto itself after a half turn, and after a full turn."
+    ],
+    [
+     162.08,
+     "So the order is 2."
+    ],
+    [
+     163.3,
+     "But it has no lines of symmetry."
+    ],
+    [
+     166.02,
+     "True or false: a trapezium can have a line of symmetry."
+    ],
+    [
+     169.81,
+     "True."
+    ],
+    [
+     170.15,
+     "An isosceles trapezium has one line, through the middles of the parallel sides."
+    ],
+    [
+     176.14,
+     "A shape has exactly one pair of parallel sides."
+    ],
+    [
+     179.32,
+     "Ben names it."
+    ],
+    [
+     180.2,
+     "Which line is wrong?"
+    ],
+    [
+     182.11,
+     "Line 2 is wrong."
+    ],
+    [
+     183.24,
+     "A parallelogram needs two pairs of parallel sides."
+    ],
+    [
+     186.8,
+     "One pair makes a trapezium."
+    ],
+    [
+     189.26,
+     "The shape is a trapezium."
+    ],
+    [
+     191.83,
+     "Many folding tables and lamps use parallelograms."
+    ],
+    [
+     195.21,
+     "When the sides are joined at hinges, a parallelogram can lean over, but its opposite sides stay parallel."
+    ],
+    [
+     203.02,
+     "So the table top stays level, even as the legs fold."
+    ],
+    [
+     206.6,
+     "A rectangle that leans over becomes a parallelogram."
+    ],
+    [
+     210.74,
+     "One last question."
+    ],
+    [
+     211.97,
+     "A rhombus with a right angle is what shape?"
+    ],
+    [
+     214.93,
+     "Pause the video and choose."
+    ],
+    [
+     218.19,
+     "A rhombus has 4 equal sides."
+    ],
+    [
+     220.23,
+     "If one angle is 90 degrees, all four are, so it is a square."
+    ],
+    [
+     225.14,
+     "To remember: know the sides, angles, diagonals and symmetry of each quadrilateral."
+    ],
+    [
+     231.41,
+     "A square is a rectangle, and a rectangle is a parallelogram."
+    ],
+    [
+     235.46,
+     "A square is also a rhombus."
+    ],
+    [
+     237.84,
+     "A regular polygon with n sides has n lines of symmetry, and order n."
+    ],
+    [
+     242.88,
+     "Name the most specific shape that fits."
+    ],
+    [
+     246.07,
+     "Great work! Now practise lesson 8.1 on Camday."
+    ]
+   ],
+   "times": {
+    "8.1-k1": 17.46,
+    "8.1-k2": 64.3,
+    "8.1-k3": 156.01,
+    "8.1-k4": 217.14
+   },
+   "up": false
+  },
+  "8.2": {
+   "src": "media/mv/s8/8-2.mp4",
+   "poster": "media/mv/s8/8-2_poster.jpg",
+   "srt": "media/mv/s8/8-2.srt",
+   "dur": 255.44,
+   "captions": [
+    [
+     7.09,
+     "A bicycle wheel has a diameter of 70 centimetres."
+    ],
+    [
+     10.36,
+     "Each full turn, the bike moves forward one circumference: the distance round the wheel."
+    ],
+    [
+     16.71,
+     "Roughly how far does the bike go in one turn: 2 times 70, or 3 times 70?"
+    ],
+    [
+     22.31,
+     "Pause the video and choose."
+    ],
+    [
+     25.81,
+     "The distance round a circle is a bit more than 3 times its diameter."
+    ],
+    [
+     31.1,
+     "So one turn is about 3 times 70, which is 210 centimetres."
+    ],
+    [
+     36.17,
+     "Remember: the diameter goes right across the circle, through the centre."
+    ],
+    [
+     41.33,
+     "It is twice the radius."
+    ],
+    [
+     42.98,
+     "A radius of 4.5 centimetres gives a diameter of 9 centimetres."
+    ],
+    [
+     47.98,
+     "Measure the circumference and the diameter of some round objects, and divide."
+    ],
+    [
+     53.42,
+     "Something amazing happens."
+    ],
+    [
+     55.81,
+     "The answer is always about 3.14."
+    ],
+    [
+     58.51,
+     "This number is called pi."
+    ],
+    [
+     60.62,
+     "Its digits go on forever: 3.14159, and so on."
+    ],
+    [
+     64.98,
+     "Your turn."
+    ],
+    [
+     65.68,
+     "Circumference divided by diameter, for any circle, is about what, to 2 decimal places?"
+    ],
+    [
+     71.77,
+     "Pause the video and answer."
+    ],
+    [
+     75.08,
+     "It is 3.14."
+    ],
+    [
+     75.9,
+     "So the circumference is pi times the diameter."
+    ],
+    [
+     79.36,
+     "Or, because the diameter is 2 r, it is 2 pi r."
+    ],
+    [
+     83.37,
+     "For the wheel: pi times 70 is 219.9, which is about 220 centimetres."
+    ],
+    [
+     89.22,
+     "That is close to our estimate."
+    ],
+    [
+     92.34,
+     "Use the pi button on a calculator, and round sensibly."
+    ],
+    [
+     96.46,
+     "Without a calculator, use 3.14."
+    ],
+    [
+     99.37,
+     "Here is the method."
+    ],
+    [
+     100.72,
+     "Step 1: decide whether you have the radius or the diameter."
+    ],
+    [
+     105.45,
+     "Step 2: use C equals pi d, or C equals 2 pi r."
+    ],
+    [
+     109.32,
+     "Step 3: use the pi button, and round sensibly, with units."
+    ],
+    [
+     113.84,
+     "Step 4: check with an estimate."
+    ],
+    [
+     116.12,
+     "The circumference is just over 3 times the diameter."
+    ],
+    [
+     120.49,
+     "Find the circumference when the radius is 8 centimetres."
+    ],
+    [
+     125.12,
+     "C equals 2 times pi times 8, which is 50.27, or 50.3 centimetres to 1 decimal place."
+    ],
+    [
+     132.62,
+     "Your turn."
+    ],
+    [
+     133.36,
+     "Find the circumference when the diameter is 20 centimetres, to 1 decimal place."
+    ],
+    [
+     139.26,
+     "Pause and work it out."
+    ],
+    [
+     142.31,
+     "Pi times 20 is 62.83."
+    ],
+    [
+     144.35,
+     "To 1 decimal place, that is 62.8 centimetres."
+    ],
+    [
+     149.28,
+     "A round pond has a circumference of 31.4 metres."
+    ],
+    [
+     152.75,
+     "Find its diameter."
+    ],
+    [
+     154.05,
+     "C equals pi d, so d equals C divided by pi."
+    ],
+    [
+     157.71,
+     "31.4 divided by pi is 9.99, which is about 10 metres."
+    ],
+    [
+     163.27,
+     "Find the perimeter of a semicircle with diameter 10 centimetres."
+    ],
+    [
+     168.39,
+     "The curved part is half of pi times 10, which is 15.7."
+    ],
+    [
+     173.26,
+     "Don't forget the straight edge, which is the diameter, 10."
+    ],
+    [
+     177.9,
+     "The perimeter is 25.7 centimetres."
+    ],
+    [
+     181.16,
+     "Maya finds the circumference when the radius is 6 centimetres."
+    ],
+    [
+     185.67,
+     "Which line goes wrong first?"
+    ],
+    [
+     188.26,
+     "Line 1 is wrong."
+    ],
+    [
+     189.51,
+     "6 is the radius, not the diameter."
+    ],
+    [
+     192.18,
+     "The diameter is 12."
+    ],
+    [
+     194.22,
+     "Pi times 12 is 37.7 centimetres."
+    ],
+    [
+     197.93,
+     "Surveyors measure roads with a measuring wheel."
+    ],
+    [
+     201.3,
+     "It has a circumference of exactly 1 metre, so it counts 1 metre for every turn."
+    ],
+    [
+     207.52,
+     "Its diameter must be 1 divided by pi, which is about 31.8 centimetres."
+    ],
+    [
+     213.47,
+     "One last question."
+    ],
+    [
+     214.77,
+     "A circle has a circumference of 25.1 centimetres."
+    ],
+    [
+     218.29,
+     "Find its diameter, to the nearest centimetre."
+    ],
+    [
+     221.53,
+     "Pause the video and answer."
+    ],
+    [
+     224.87,
+     "d equals C divided by pi."
+    ],
+    [
+     227.0,
+     "25.1 divided by pi is 7.99, which is 8 centimetres."
+    ],
+    [
+     231.88,
+     "To remember: pi is the circumference divided by the diameter."
+    ],
+    [
+     236.99,
+     "It is about 3.14159."
+    ],
+    [
+     239.21,
+     "C equals pi d, or 2 pi r."
+    ],
+    [
+     241.84,
+     "To find the diameter, divide the circumference by pi."
+    ],
+    [
+     245.99,
+     "Round sensibly, and estimate with 3 times the diameter."
+    ],
+    [
+     250.34,
+     "Great work! Now practise lesson 8.2 on Camday."
+    ]
+   ],
+   "times": {
+    "8.2-k1": 24.76,
+    "8.2-k2": 74.03,
+    "8.2-k3": 141.26,
+    "8.2-k4": 223.82
+   },
+   "up": true
+  },
+  "8.3": {
+   "src": "media/mv/s8/8-3.mp4",
+   "poster": "media/mv/s8/8-3_poster.jpg",
+   "srt": "media/mv/s8/8-3.srt",
+   "dur": 239.52,
+   "captions": [
+    [
+     5.97,
+     "An architect builds a model and draws it from three directions: from the front, from the side, and from above."
+    ],
+    [
+     13.21,
+     "The view from above is called the plan."
+    ],
+    [
+     16.33,
+     "Why does she need all three?"
+    ],
+    [
+     18.26,
+     "Could two different buildings look the same from the front?"
+    ],
+    [
+     22.86,
+     "Could two different solids have the same front view?"
+    ],
+    [
+     26.45,
+     "Pause the video and decide."
+    ],
+    [
+     29.71,
+     "Yes."
+    ],
+    [
+     29.99,
+     "A cylinder and a cuboid can both look like a rectangle from the front."
+    ],
+    [
+     34.77,
+     "You need other views to tell them apart."
+    ],
+    [
+     38.05,
+     "Remember: a triangular prism has 5 faces, 9 edges and 6 vertices."
+    ],
+    [
+     43.08,
+     "A square-based pyramid has 5 faces, 8 edges and 5 vertices."
+    ],
+    [
+     48.19,
+     "For any solid with flat faces and no holes, faces plus vertices minus edges equals 2."
+    ],
+    [
+     54.08,
+     "This is Euler's rule."
+    ],
+    [
+     56.08,
+     "Your turn."
+    ],
+    [
+     56.74,
+     "What is F plus V minus E for a cube?"
+    ],
+    [
+     59.13,
+     "Pause the video and work it out."
+    ],
+    [
+     62.65,
+     "A cube has 6 faces, 8 vertices and 12 edges."
+    ],
+    [
+     66.67,
+     "6 plus 8 minus 12 is 2."
+    ],
+    [
+     69.33,
+     "The plan is the view from directly above."
+    ],
+    [
+     72.1,
+     "The front elevation is the view from the front, and the side elevation is the view from the side."
+    ],
+    [
+     79.2,
+     "Here is a solid made of 4 cubes: 3 in a row, with 1 on top of the left cube."
+    ],
+    [
+     84.56,
+     "From the front it looks like an L of 4 squares."
+    ],
+    [
+     88.43,
+     "From the side, you see 2 squares, one on top of the other."
+    ],
+    [
+     92.41,
+     "From above, you see 3 squares in a row."
+    ],
+    [
+     95.64,
+     "Here is the method."
+    ],
+    [
+     96.92,
+     "Step 1: name the shape from its cross-section, for a prism, or its base, for a pyramid."
+    ],
+    [
+     103.36,
+     "Step 2: count the faces, vertices and edges carefully."
+    ],
+    [
+     107.22,
+     "Check with Euler's rule."
+    ],
+    [
+     109.49,
+     "Step 3: draw the plan, front and side elevations to scale."
+    ],
+    [
+     114.19,
+     "Step 4: use the views together to identify a solid."
+    ],
+    [
+     118.33,
+     "A pyramid has 7 vertices."
+    ],
+    [
+     120.1,
+     "One is the top, so the base has 6 corners."
+    ],
+    [
+     123.07,
+     "It is a hexagonal pyramid."
+    ],
+    [
+     125.46,
+     "It has 7 faces: the base and 6 triangles."
+    ],
+    [
+     128.82,
+     "It has 12 edges: 6 round the base and 6 up to the top."
+    ],
+    [
+     133.23,
+     "Check: 7 plus 7 minus 12 is 2."
+    ],
+    [
+     136.24,
+     "The plan is a circle."
+    ],
+    [
+     137.65,
+     "The front and side views are both triangles."
+    ],
+    [
+     140.6,
+     "What solid is it?"
+    ],
+    [
+     141.74,
+     "It is round from above, and pointed from the sides."
+    ],
+    [
+     145.17,
+     "It is a cone."
+    ],
+    [
+     146.59,
+     "Your turn."
+    ],
+    [
+     147.27,
+     "What is the plan of a cylinder standing up?"
+    ],
+    [
+     150.21,
+     "Pause and choose."
+    ],
+    [
+     152.77,
+     "From directly above, a standing cylinder looks like a circle."
+    ],
+    [
+     156.94,
+     "From the front and the side, it looks like a rectangle."
+    ],
+    [
+     161.24,
+     "A shape has 6 faces and 12 edges."
+    ],
+    [
+     163.7,
+     "Kim finds the number of vertices."
+    ],
+    [
+     166.16,
+     "Which line goes wrong first?"
+    ],
+    [
+     168.8,
+     "Line 1 is wrong."
+    ],
+    [
+     169.94,
+     "Euler's rule is F plus V minus E equals 2."
+    ],
+    [
+     172.94,
+     "You cannot have negative vertices!"
+    ],
+    [
+     175.92,
+     "6 plus V minus 12 equals 2, so V equals 8."
+    ],
+    [
+     179.32,
+     "It could be a cube."
+    ],
+    [
+     181.41,
+     "A classic football is made of 12 pentagons and 20 hexagons, so it has 32 faces."
+    ],
+    [
+     188.09,
+     "It has 60 vertices and 90 edges."
+    ],
+    [
+     191.34,
+     "Check Euler's rule: 32 plus 60 minus 90 is 2."
+    ],
+    [
+     195.17,
+     "It works even for a football."
+    ],
+    [
+     198.18,
+     "One last question."
+    ],
+    [
+     199.45,
+     "A prism has 15 edges."
+    ],
+    [
+     200.94,
+     "How many vertices does it have?"
+    ],
+    [
+     203.14,
+     "Pause the video and answer."
+    ],
+    [
+     206.46,
+     "A prism with an n-sided end has 3 n edges and 2 n vertices."
+    ],
+    [
+     211.02,
+     "15 edges means n is 5, a pentagonal prism."
+    ],
+    [
+     214.27,
+     "So it has 10 vertices."
+    ],
+    [
+     216.52,
+     "To remember: for solids with flat faces, F plus V minus E equals 2."
+    ],
+    [
+     221.68,
+     "The plan is the view from above."
+    ],
+    [
+     223.84,
+     "The elevations are the views from the front and the side."
+    ],
+    [
+     228.25,
+     "Draw the views to scale."
+    ],
+    [
+     230.63,
+     "Use several views together to identify a solid."
+    ],
+    [
+     234.44,
+     "Great work! Now practise lesson 8.3 on Camday."
+    ]
+   ],
+   "times": {
+    "8.3-k1": 28.66,
+    "8.3-k2": 61.6,
+    "8.3-k3": 151.72,
+    "8.3-k4": 205.41
+   },
+   "up": false
+  },
+  "7.6": {
+   "src": "media/mv/s8/7-6.mp4",
+   "poster": "media/mv/s8/7-6_poster.jpg",
+   "srt": "media/mv/s8/7-6.srt",
+   "dur": 246.56,
+   "captions": [
+    [
+     7.61,
+     "A quiz question: 3 quarters times 17, plus 3 quarters times 3."
+    ],
+    [
+     12.6,
+     "You have 10 seconds, and no paper."
+    ],
+    [
+     15.89,
+     "What is the answer?"
+    ],
+    [
+     17.17,
+     "Pause the video and work it out."
+    ],
+    [
+     20.73,
+     "Both parts have 3 quarters."
+    ],
+    [
+     22.95,
+     "So take it out: 3 quarters times, bracket, 17 plus 3."
+    ],
+    [
+     27.33,
+     "That is 3 quarters of 20, which is 15."
+    ],
+    [
+     31.02,
+     "Remember: A times B, plus A times C, equals A times, bracket, B plus C."
+    ],
+    [
+     36.8,
+     "For example, 7 times 23, plus 7 times 77, is 7 times 100, which is 700."
+    ],
+    [
+     43.13,
+     "Here are some ways to make fraction calculations easier."
+    ],
+    [
+     47.01,
+     "Take out a common factor, like the quiz question."
+    ],
+    [
+     50.95,
+     "Cancel before multiplying, as in 14 fifteenths times 25 twenty-eighths."
+    ],
+    [
+     57.31,
+     "14 and 28 share 14."
+    ],
+    [
+     59.01,
+     "25 and 15 share 5."
+    ],
+    [
+     60.62,
+     "That leaves 1 third times 5 halves, which is 5 sixths."
+    ],
+    [
+     66.0,
+     "And use whole minus a part."
+    ],
+    [
+     68.37,
+     "7 eighths of 48 is the whole 48, minus 1 eighth of 48."
+    ],
+    [
+     73.09,
+     "That is 48 minus 6, which is 42."
+    ],
+    [
+     76.44,
+     "Your turn."
+    ],
+    [
+     77.26,
+     "Find 9 tenths of 250."
+    ],
+    [
+     78.97,
+     "Pause the video and try it."
+    ],
+    [
+     82.57,
+     "1 tenth of 250 is 25."
+    ],
+    [
+     84.91,
+     "So 9 tenths is 250 minus 25, which is 225."
+    ],
+    [
+     90.15,
+     "The order of operations still applies."
+    ],
+    [
+     93.04,
+     "Multiply before you add."
+    ],
+    [
+     94.87,
+     "1 half plus 1 third times 3 quarters is 1 half plus 1 quarter, which is 3 quarters."
+    ],
+    [
+     101.73,
+     "But brackets come first."
+    ],
+    [
+     103.57,
+     "1 half plus 1 third, in a bracket, times 6, is 5 sixths times 6, which is 5."
+    ],
+    [
+     109.95,
+     "Here is the method."
+    ],
+    [
+     111.27,
+     "Step 1: look for a common factor to take out."
+    ],
+    [
+     114.94,
+     "Step 2: cancel before you multiply."
+    ],
+    [
+     118.12,
+     "Step 3: re-order the numbers, or use whole minus a part."
+    ],
+    [
+     122.54,
+     "Step 4: follow the order of operations, and check with an estimate."
+    ],
+    [
+     127.81,
+     "Work out 18 thirty-fifths times 21 twenty-fourths."
+    ],
+    [
+     132.53,
+     "18 and 24 share 6, leaving 3 and 4."
+    ],
+    [
+     135.84,
+     "21 and 35 share 7, leaving 3 and 5."
+    ],
+    [
+     139.69,
+     "3 fifths times 3 quarters is 9 twentieths."
+    ],
+    [
+     143.7,
+     "Your turn."
+    ],
+    [
+     144.51,
+     "Work out 10 twenty-firsts times 14 fifteenths."
+    ],
+    [
+     148.2,
+     "Pause and work it out."
+    ],
+    [
+     151.37,
+     "10 and 15 share 5, leaving 2 and 3."
+    ],
+    [
+     154.59,
+     "14 and 21 share 7, leaving 2 and 3."
+    ],
+    [
+     157.81,
+     "So it is 2 thirds times 2 thirds, which is 4 ninths."
+    ],
+    [
+     163.14,
+     "Work out 4 times 2 and 3 eighths, plus 4 times 1 and 5 eighths."
+    ],
+    [
+     168.21,
+     "Take out the 4: 4 times, bracket, 2 and 3 eighths plus 1 and 5 eighths."
+    ],
+    [
+     174.48,
+     "The bracket is exactly 4."
+    ],
+    [
+     176.67,
+     "And 4 times 4 is 16."
+    ],
+    [
+     178.97,
+     "Max works out 1 third plus 2 thirds times 1 half."
+    ],
+    [
+     182.58,
+     "Which line goes wrong first?"
+    ],
+    [
+     185.19,
+     "Line 1 is wrong."
+    ],
+    [
+     186.43,
+     "Multiplication comes before addition."
+    ],
+    [
+     189.32,
+     "2 thirds times 1 half is 1 third."
+    ],
+    [
+     192.44,
+     "Then 1 third plus 1 third is 2 thirds."
+    ],
+    [
+     196.07,
+     "A shop has a sale: everything is 1 quarter off."
+    ],
+    [
+     199.41,
+     "So you pay 3 quarters of the price."
+    ],
+    [
+     202.44,
+     "You buy a 36 dollar shirt and a 44 dollar pair of jeans."
+    ],
+    [
+     206.95,
+     "Instead of two calculations, add first: 3 quarters of 80 is 60 dollars."
+    ],
+    [
+     213.21,
+     "One last question."
+    ],
+    [
+     214.57,
+     "What is 1 half minus 1 quarter times 2?"
+    ],
+    [
+     217.52,
+     "Pause the video and answer."
+    ],
+    [
+     220.96,
+     "Multiply first."
+    ],
+    [
+     222.16,
+     "1 quarter times 2 is 1 half."
+    ],
+    [
+     224.41,
+     "Then 1 half minus 1 half is 0."
+    ],
+    [
+     227.37,
+     "To remember: take out common factors, using the distributive law."
+    ],
+    [
+     232.41,
+     "Cancel before multiplying."
+    ],
+    [
+     234.91,
+     "Use whole minus a part, and re-ordering."
+    ],
+    [
+     238.16,
+     "The order of operations still applies."
+    ],
+    [
+     241.33,
+     "Great work! Now practise lesson 7.6 on Camday."
+    ]
+   ],
+   "times": {
+    "7.6-k1": 19.68,
+    "7.6-k2": 81.52,
+    "7.6-k3": 150.32,
+    "7.6-k4": 219.91
+   },
+   "up": true
+  },
+  "9.1": {
+   "src": "media/mv/s8/9-1.mp4",
+   "poster": "media/mv/s8/9-1_poster.jpg",
+   "srt": "media/mv/s8/9-1.srt",
+   "dur": 265.76,
+   "captions": [
+    [
+     6.56,
+     "Ana saves 5 dollars more each week than the week before, starting with 5 dollars."
+    ],
+    [
+     12.44,
+     "Ben doubles his savings each week, starting with 1 dollar."
+    ],
+    [
+     17.21,
+     "Ana's amounts go 5, 10, 15, 20, 25."
+    ],
+    [
+     20.61,
+     "Ben's go 1, 2, 4, and so on."
+    ],
+    [
+     23.88,
+     "How much does Ben save in week 5?"
+    ],
+    [
+     26.14,
+     "Pause the video and work it out."
+    ],
+    [
+     29.73,
+     "Ben's amounts are 1, 2, 4, 8 and 16."
+    ],
+    [
+     32.85,
+     "In week 5, Ana saves more."
+    ],
+    [
+     35.1,
+     "But by week 10 Ben saves 512 dollars, and Ana only 50."
+    ],
+    [
+     40.33,
+     "Remember: a term-to-term rule tells you how to get from one term to the next."
+    ],
+    [
+     46.7,
+     "Start at 50, and subtract 6: 50, 44, 38, 32."
+    ],
+    [
+     50.88,
+     "A linear sequence goes up, or down, by the same amount each time."
+    ],
+    [
+     55.29,
+     "Ana's savings go up by 5 each week."
+    ],
+    [
+     58.21,
+     "A non-linear sequence does not."
+    ],
+    [
+     60.63,
+     "Ben's savings double."
+    ],
+    [
+     62.27,
+     "And the square numbers, 1, 4, 9, 16, go up by 3, then 5, then 7."
+    ],
+    [
+     67.83,
+     "Your turn."
+    ],
+    [
+     68.67,
+     "Is 3, 6, 12, 24 linear or non-linear?"
+    ],
+    [
+     71.76,
+     "Pause the video and choose."
+    ],
+    [
+     75.42,
+     "The differences are 3, 6 and 12."
+    ],
+    [
+     77.76,
+     "They are not the same, so the sequence is non-linear."
+    ],
+    [
+     81.65,
+     "It doubles each time."
+    ],
+    [
+     83.74,
+     "A position-to-term rule gives any term straight from its position, n."
+    ],
+    [
+     88.94,
+     "Term equals 3 n plus 2 gives 5, 8, 11, and so on."
+    ],
+    [
+     93.17,
+     "It is very useful for far terms."
+    ],
+    [
+     95.95,
+     "The 50th term is 3 times 50, plus 2, which is 152."
+    ],
+    [
+     100.84,
+     "Here is the method."
+    ],
+    [
+     102.14,
+     "Step 1: for a term-to-term rule, start with the first term, and apply the rule again and again."
+    ],
+    [
+     109.21,
+     "Step 2: for a position-to-term rule, put n equals 1, 2, 3, and so on into the rule."
+    ],
+    [
+     115.78,
+     "Step 3: check the differences."
+    ],
+    [
+     117.97,
+     "The same difference means linear."
+    ],
+    [
+     120.38,
+     "Otherwise it is non-linear."
+    ],
+    [
+     122.91,
+     "Step 4: use the position-to-term rule for terms far along."
+    ],
+    [
+     127.66,
+     "Start at 4."
+    ],
+    [
+     128.63,
+     "The rule is: halve, then add 6."
+    ],
+    [
+     131.37,
+     "Half of 4 is 2, and 2 plus 6 is 8."
+    ],
+    [
+     134.37,
+     "Half of 8 is 4, plus 6 is 10."
+    ],
+    [
+     136.94,
+     "Half of 10 is 5, plus 6 is 11."
+    ],
+    [
+     140.14,
+     "The rule is: term equals n squared, plus 1."
+    ],
+    [
+     143.99,
+     "Put in n equals 1, 2, 3, 4."
+    ],
+    [
+     146.41,
+     "That gives 2, 5, 10 and 17."
+    ],
+    [
+     148.83,
+     "The 10th term is 10 squared plus 1, which is 101."
+    ],
+    [
+     153.78,
+     "Your turn."
+    ],
+    [
+     154.5,
+     "The rule is: term equals 2 n squared."
+    ],
+    [
+     157.16,
+     "What is the 3rd term?"
+    ],
+    [
+     158.67,
+     "Pause and work it out."
+    ],
+    [
+     161.65,
+     "Put n equals 3."
+    ],
+    [
+     162.9,
+     "3 squared is 9, and 2 times 9 is 18."
+    ],
+    [
+     165.92,
+     "Square first, then multiply."
+    ],
+    [
+     168.81,
+     "Start at 200, and the rule is divide by 2."
+    ],
+    [
+     172.95,
+     "When does the sequence first go below 10?"
+    ],
+    [
+     176.98,
+     "200, 100, 50, 25, 12.5, then 6.25."
+    ],
+    [
+     180.33,
+     "The 6th term is the first below 10."
+    ],
+    [
+     184.33,
+     "Start at 5."
+    ],
+    [
+     185.13,
+     "The term-to-term rule is times 3."
+    ],
+    [
+     187.54,
+     "Lucy finds the third term."
+    ],
+    [
+     189.43,
+     "Which line is wrong?"
+    ],
+    [
+     191.44,
+     "Line 1 is wrong."
+    ],
+    [
+     192.54,
+     "A term-to-term rule is applied to the previous term, not to the position number."
+    ],
+    [
+     198.57,
+     "5, then 15, then 45."
+    ],
+    [
+     200.58,
+     "The third term is 45."
+    ],
+    [
+     203.24,
+     "Fold a sheet of paper in half, and it gets twice as thick."
+    ],
+    [
+     207.36,
+     "Each fold doubles it."
+    ],
+    [
+     208.86,
+     "That is a non-linear sequence: 1, 2, 4, 8 layers, and so on."
+    ],
+    [
+     213.67,
+     "After just 7 folds there are 128 layers, and the paper is too thick to fold again."
+    ],
+    [
+     219.73,
+     "Doubling grows very fast."
+    ],
+    [
+     222.13,
+     "One last question."
+    ],
+    [
+     223.48,
+     "Start at 1."
+    ],
+    [
+     224.3,
+     "The rule is times 2, plus 1."
+    ],
+    [
+     226.4,
+     "What is the 4th term?"
+    ],
+    [
+     227.97,
+     "Pause the video and answer."
+    ],
+    [
+     231.39,
+     "1, then 2 plus 1 is 3, then 6 plus 1 is 7, then 14 plus 1 is 15."
+    ],
+    [
+     237.6,
+     "The 4th term is 15."
+    ],
+    [
+     240.0,
+     "To remember: term-to-term rules use the previous term."
+    ],
+    [
+     243.76,
+     "Position-to-term rules use the position, n."
+    ],
+    [
+     247.31,
+     "Linear sequences have a constant difference."
+    ],
+    [
+     250.37,
+     "Non-linear ones do not."
+    ],
+    [
+     252.53,
+     "Two-step rules combine two operations."
+    ],
+    [
+     255.92,
+     "Use position-to-term rules for terms far along the sequence."
+    ],
+    [
+     260.57,
+     "Great work! Now practise lesson 9.1 on Camday."
+    ]
+   ],
+   "times": {
+    "9.1-k1": 28.68,
+    "9.1-k2": 74.37,
+    "9.1-k3": 160.6,
+    "9.1-k4": 230.34
+   },
+   "up": false
+  },
+  "9.2": {
+   "src": "media/mv/s8/9-2.mp4",
+   "poster": "media/mv/s8/9-2_poster.jpg",
+   "srt": "media/mv/s8/9-2.srt",
+   "dur": 235.52,
+   "captions": [
+    [
+     6.99,
+     "A fence is built from wooden pieces."
+    ],
+    [
+     9.94,
+     "1 panel uses 4 pieces of wood."
+    ],
+    [
+     12.4,
+     "2 panels use 7."
+    ],
+    [
+     13.63,
+     "3 panels use 10."
+    ],
+    [
+     15.49,
+     "How many pieces of wood for 10 panels?"
+    ],
+    [
+     18.24,
+     "Pause the video and work it out."
+    ],
+    [
+     21.96,
+     "Each new panel adds 3 pieces."
+    ],
+    [
+     24.51,
+     "From 3 panels to 10 panels is 7 more panels, so 7 times 3 more pieces."
+    ],
+    [
+     30.65,
+     "10 plus 21 is 31."
+    ],
+    [
+     32.7,
+     "Can we find a rule that works for any number of panels?"
+    ],
+    [
+     36.73,
+     "Remember: in 6, 11, 16, 21, the difference is 5 each time."
+    ],
+    [
+     41.84,
+     "So the next term is 26."
+    ],
+    [
+     44.42,
+     "The difference tells you the multiplier."
+    ],
+    [
+     47.26,
+     "The pieces go up by 3, so the rule has 3 times n."
+    ],
+    [
+     51.3,
+     "Compare: 3 times 1 is 3, but the first term is 4."
+    ],
+    [
+     55.17,
+     "So add 1."
+    ],
+    [
+     55.88,
+     "The rule is 3 n plus 1."
+    ],
+    [
+     58.25,
+     "It fits the picture: each panel adds 3 pieces, plus 1 extra piece at the start."
+    ],
+    [
+     64.49,
+     "Your turn."
+    ],
+    [
+     65.31,
+     "Find the rule for 2, 8, 14, 20."
+    ],
+    [
+     67.85,
+     "Pause the video and try it."
+    ],
+    [
+     71.46,
+     "The difference is 6, so start with 6 n."
+    ],
+    [
+     74.47,
+     "6 times 1 is 6, but the first term is 2."
+    ],
+    [
+     77.55,
+     "So subtract 4."
+    ],
+    [
+     78.63,
+     "The rule is 6 n minus 4."
+    ],
+    [
+     81.03,
+     "Here is the method."
+    ],
+    [
+     82.55,
+     "Step 1: count the terms for patterns 1, 2, 3 and 4."
+    ],
+    [
+     87.18,
+     "Step 2: find the difference."
+    ],
+    [
+     89.18,
+     "If it is constant, the sequence is linear."
+    ],
+    [
+     92.73,
+     "Step 3: compare with d times n, and add or subtract to fit."
+    ],
+    [
+     97.35,
+     "Step 4: check with another term, and link the rule to the pattern."
+    ],
+    [
+     102.49,
+     "Find the rule for 20, 17, 14, 11."
+    ],
+    [
+     105.41,
+     "The difference is negative 3, so start with negative 3 n."
+    ],
+    [
+     110.99,
+     "When n is 1, negative 3 n is negative 3."
+    ],
+    [
+     114.49,
+     "To get 20, add 23."
+    ],
+    [
+     116.06,
+     "The rule is 23 minus 3 n."
+    ],
+    [
+     118.8,
+     "Your turn."
+    ],
+    [
+     119.69,
+     "Find the rule for 30, 26, 22, 18."
+    ],
+    [
+     122.65,
+     "Pause and work it out."
+    ],
+    [
+     126.02,
+     "The difference is negative 4."
+    ],
+    [
+     128.53,
+     "Negative 4 times 1 is negative 4."
+    ],
+    [
+     131.38,
+     "To get 30, add 34."
+    ],
+    [
+     132.93,
+     "The rule is 34 minus 4 n."
+    ],
+    [
+     135.64,
+     "Is 100 a term of 3 n plus 1?"
+    ],
+    [
+     138.12,
+     "Set 3 n plus 1 equal to 100."
+    ],
+    [
+     140.6,
+     "3 n equals 99, so n equals 33."
+    ],
+    [
+     143.26,
+     "That is a whole number, so yes."
+    ],
+    [
+     146.01,
+     "It is the 33rd term."
+    ],
+    [
+     148.33,
+     "Dots are arranged in squares: 1, 4, 9, 16."
+    ],
+    [
+     151.38,
+     "Each pattern is n dots by n dots, so the rule is n squared."
+    ],
+    [
+     155.67,
+     "Not every rule is linear."
+    ],
+    [
+     158.04,
+     "Jack finds the rule for 7, 12, 17, 22."
+    ],
+    [
+     161.32,
+     "Which line goes wrong first?"
+    ],
+    [
+     164.29,
+     "Line 2 is wrong."
+    ],
+    [
+     165.44,
+     "The difference is the number that multiplies n."
+    ],
+    [
+     168.79,
+     "It should start with 5 n."
+    ],
+    [
+     171.13,
+     "5 times 1 is 5, and the first term is 7, so add 2."
+    ],
+    [
+     175.2,
+     "The rule is 5 n plus 2."
+    ],
+    [
+     177.62,
+     "A farmer builds a straight fence."
+    ],
+    [
+     180.09,
+     "Each section is 3 metres long, with a post at each end."
+    ],
+    [
+     184.22,
+     "1 section needs 2 posts, 2 sections need 3, 3 sections need 4."
+    ],
+    [
+     189.42,
+     "The rule is n plus 1 posts."
+    ],
+    [
+     191.49,
+     "So a 30 section fence needs 31 posts, not 30."
+    ],
+    [
+     194.93,
+     "Forgetting the extra post is a famous mistake!"
+    ],
+    [
+     199.0,
+     "One last question."
+    ],
+    [
+     200.38,
+     "Is 62 a term of 6 n plus 2?"
+    ],
+    [
+     202.44,
+     "Pause the video and choose."
+    ],
+    [
+     205.91,
+     "6 n plus 2 equals 62, so 6 n equals 60, and n equals 10."
+    ],
+    [
+     210.74,
+     "A whole number, so yes."
+    ],
+    [
+     212.73,
+     "It is the 10th term."
+    ],
+    [
+     215.0,
+     "To remember: a constant difference d means a linear sequence."
+    ],
+    [
+     219.11,
+     "The rule is d n plus c."
+    ],
+    [
+     221.21,
+     "Find c by comparing d times 1 with the first term."
+    ],
+    [
+     225.28,
+     "Check with another term."
+    ],
+    [
+     227.79,
+     "Link the rule to the pattern."
+    ],
+    [
+     230.33,
+     "Great work! Now practise lesson 9.2 on Camday."
+    ]
+   ],
+   "times": {
+    "9.2-k1": 20.91,
+    "9.2-k2": 70.41,
+    "9.2-k3": 124.97,
+    "9.2-k4": 204.86
+   },
    "up": false
   }
  }

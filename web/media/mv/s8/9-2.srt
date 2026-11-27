@@ -1,0 +1,303 @@
+1
+00:00:06,990 --> 00:00:09,890
+A fence is built from wooden pieces.
+
+2
+00:00:09,940 --> 00:00:12,350
+1 panel uses 4 pieces of wood.
+
+3
+00:00:12,400 --> 00:00:13,580
+2 panels use 7.
+
+4
+00:00:13,630 --> 00:00:15,440
+3 panels use 10.
+
+5
+00:00:15,490 --> 00:00:18,190
+How many pieces of wood for 10 panels?
+
+6
+00:00:18,240 --> 00:00:21,910
+Pause the video and work it out.
+
+7
+00:00:21,960 --> 00:00:24,460
+Each new panel adds 3 pieces.
+
+8
+00:00:24,510 --> 00:00:30,600
+From 3 panels to 10 panels is 7 more panels, so 7 times 3 more pieces.
+
+9
+00:00:30,650 --> 00:00:32,650
+10 plus 21 is 31.
+
+10
+00:00:32,700 --> 00:00:36,680
+Can we find a rule that works for any number of panels?
+
+11
+00:00:36,730 --> 00:00:41,790
+Remember: in 6, 11, 16, 21, the difference is 5 each time.
+
+12
+00:00:41,840 --> 00:00:44,370
+So the next term is 26.
+
+13
+00:00:44,420 --> 00:00:47,210
+The difference tells you the multiplier.
+
+14
+00:00:47,260 --> 00:00:51,250
+The pieces go up by 3, so the rule has 3 times n.
+
+15
+00:00:51,300 --> 00:00:55,120
+Compare: 3 times 1 is 3, but the first term is 4.
+
+16
+00:00:55,170 --> 00:00:55,830
+So add 1.
+
+17
+00:00:55,880 --> 00:00:58,200
+The rule is 3 n plus 1.
+
+18
+00:00:58,250 --> 00:01:04,440
+It fits the picture: each panel adds 3 pieces, plus 1 extra piece at the start.
+
+19
+00:01:04,490 --> 00:01:05,260
+Your turn.
+
+20
+00:01:05,310 --> 00:01:07,800
+Find the rule for 2, 8, 14, 20.
+
+21
+00:01:07,850 --> 00:01:11,410
+Pause the video and try it.
+
+22
+00:01:11,460 --> 00:01:14,420
+The difference is 6, so start with 6 n.
+
+23
+00:01:14,470 --> 00:01:17,500
+6 times 1 is 6, but the first term is 2.
+
+24
+00:01:17,550 --> 00:01:18,580
+So subtract 4.
+
+25
+00:01:18,630 --> 00:01:20,980
+The rule is 6 n minus 4.
+
+26
+00:01:21,030 --> 00:01:22,500
+Here is the method.
+
+27
+00:01:22,550 --> 00:01:27,130
+Step 1: count the terms for patterns 1, 2, 3 and 4.
+
+28
+00:01:27,180 --> 00:01:29,130
+Step 2: find the difference.
+
+29
+00:01:29,180 --> 00:01:32,680
+If it is constant, the sequence is linear.
+
+30
+00:01:32,730 --> 00:01:37,300
+Step 3: compare with d times n, and add or subtract to fit.
+
+31
+00:01:37,350 --> 00:01:42,440
+Step 4: check with another term, and link the rule to the pattern.
+
+32
+00:01:42,490 --> 00:01:45,360
+Find the rule for 20, 17, 14, 11.
+
+33
+00:01:45,410 --> 00:01:50,940
+The difference is negative 3, so start with negative 3 n.
+
+34
+00:01:50,990 --> 00:01:54,440
+When n is 1, negative 3 n is negative 3.
+
+35
+00:01:54,490 --> 00:01:56,010
+To get 20, add 23.
+
+36
+00:01:56,060 --> 00:01:58,750
+The rule is 23 minus 3 n.
+
+37
+00:01:58,800 --> 00:01:59,640
+Your turn.
+
+38
+00:01:59,690 --> 00:02:02,600
+Find the rule for 30, 26, 22, 18.
+
+39
+00:02:02,650 --> 00:02:05,970
+Pause and work it out.
+
+40
+00:02:06,020 --> 00:02:08,480
+The difference is negative 4.
+
+41
+00:02:08,530 --> 00:02:11,330
+Negative 4 times 1 is negative 4.
+
+42
+00:02:11,380 --> 00:02:12,880
+To get 30, add 34.
+
+43
+00:02:12,930 --> 00:02:15,590
+The rule is 34 minus 4 n.
+
+44
+00:02:15,640 --> 00:02:18,070
+Is 100 a term of 3 n plus 1?
+
+45
+00:02:18,120 --> 00:02:20,550
+Set 3 n plus 1 equal to 100.
+
+46
+00:02:20,600 --> 00:02:23,210
+3 n equals 99, so n equals 33.
+
+47
+00:02:23,260 --> 00:02:25,960
+That is a whole number, so yes.
+
+48
+00:02:26,010 --> 00:02:28,280
+It is the 33rd term.
+
+49
+00:02:28,330 --> 00:02:31,330
+Dots are arranged in squares: 1, 4, 9, 16.
+
+50
+00:02:31,380 --> 00:02:35,620
+Each pattern is n dots by n dots, so the rule is n squared.
+
+51
+00:02:35,670 --> 00:02:37,990
+Not every rule is linear.
+
+52
+00:02:38,040 --> 00:02:41,270
+Jack finds the rule for 7, 12, 17, 22.
+
+53
+00:02:41,320 --> 00:02:44,240
+Which line goes wrong first?
+
+54
+00:02:44,290 --> 00:02:45,390
+Line 2 is wrong.
+
+55
+00:02:45,440 --> 00:02:48,740
+The difference is the number that multiplies n.
+
+56
+00:02:48,790 --> 00:02:51,080
+It should start with 5 n.
+
+57
+00:02:51,130 --> 00:02:55,150
+5 times 1 is 5, and the first term is 7, so add 2.
+
+58
+00:02:55,200 --> 00:02:57,570
+The rule is 5 n plus 2.
+
+59
+00:02:57,620 --> 00:03:00,040
+A farmer builds a straight fence.
+
+60
+00:03:00,090 --> 00:03:04,170
+Each section is 3 metres long, with a post at each end.
+
+61
+00:03:04,220 --> 00:03:09,370
+1 section needs 2 posts, 2 sections need 3, 3 sections need 4.
+
+62
+00:03:09,420 --> 00:03:11,440
+The rule is n plus 1 posts.
+
+63
+00:03:11,490 --> 00:03:14,880
+So a 30 section fence needs 31 posts, not 30.
+
+64
+00:03:14,930 --> 00:03:18,950
+Forgetting the extra post is a famous mistake!
+
+65
+00:03:19,000 --> 00:03:20,330
+One last question.
+
+66
+00:03:20,380 --> 00:03:22,390
+Is 62 a term of 6 n plus 2?
+
+67
+00:03:22,440 --> 00:03:25,860
+Pause the video and choose.
+
+68
+00:03:25,910 --> 00:03:30,690
+6 n plus 2 equals 62, so 6 n equals 60, and n equals 10.
+
+69
+00:03:30,740 --> 00:03:32,680
+A whole number, so yes.
+
+70
+00:03:32,730 --> 00:03:34,950
+It is the 10th term.
+
+71
+00:03:35,000 --> 00:03:39,060
+To remember: a constant difference d means a linear sequence.
+
+72
+00:03:39,110 --> 00:03:41,160
+The rule is d n plus c.
+
+73
+00:03:41,210 --> 00:03:45,230
+Find c by comparing d times 1 with the first term.
+
+74
+00:03:45,280 --> 00:03:47,740
+Check with another term.
+
+75
+00:03:47,790 --> 00:03:50,280
+Link the rule to the pattern.
+
+76
+00:03:50,330 --> 00:03:55,470
+Great work! Now practise lesson 9.2 on Camday.

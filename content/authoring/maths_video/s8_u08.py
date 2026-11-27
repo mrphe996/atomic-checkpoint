@@ -32,11 +32,11 @@ VIDEOS["8.1"] = [
     dict(kind="idea", title="Properties", steps=[
         dict(say="Each quadrilateral has its own properties: sides, angles, diagonals and symmetry.",
              do=[TBL(["Shape", "Sides", "Angles", "Diagonals", "Lines / order"],
-                     [["square", "4 equal, 2 pairs parallel", "all 90°", "equal, bisect at 90°", "4 / 4"],
-                      ["rectangle", "opposites equal, 2 pairs parallel", "all 90°", "equal, bisect", "2 / 2"],
-                      ["rhombus", "4 equal, 2 pairs parallel", "opposites equal", "bisect at 90°", "2 / 2"],
-                      ["parallelogram", "opposites equal, 2 pairs parallel", "opposites equal", "bisect", "0 / 2"],
-                      ["kite", "2 pairs of adjacent equal", "one pair equal", "cross at 90°, one bisects", "1 / 1"],
+                     [["square", "4 equal", "all 90°", "equal, bisect at 90°", "4 / 4"],
+                      ["rectangle", "opposites equal", "all 90°", "equal, bisect", "2 / 2"],
+                      ["rhombus", "4 equal", "opposites equal", "bisect at 90°", "2 / 2"],
+                      ["parallelogram", "opposites equal", "opposites equal", "bisect", "0 / 2"],
+                      ["kite", "2 pairs adjacent equal", "one pair equal", "90°, one bisects", "1 / 1"],
                       ["trapezium", "1 pair parallel", "–", "–", "0 / 1"]], x=40, y=150), ROW(0, 0.3), ROW(1, 1.3), ROW(2, 2.3)]),
         dict(say="Look carefully at the diagonals. In a kite, the diagonals cross at 90 degrees, but only one of them cuts the other in half.", do=[ROW(3, 0.3), ROW(4, 1.2), ROW(5, 3.5)]),
         PAUSE("8.1-k2", "Your turn. The diagonals cross at 90 degrees, and only one bisects the other. Which shape is it? Pause the video and choose.", "Diagonals cross at 90° and only one bisects the other: …"),
@@ -49,7 +49,7 @@ VIDEOS["8.1"] = [
         dict(say="A shape belongs to a family if it has all the properties of that family. So a square is a rectangle, a rectangle is a parallelogram, and a parallelogram is a trapezium.",
              do=[MATH("square ⊂ rectangle ⊂ parallelogram ⊂ trapezium", x=80, y=180)]),
         dict(say="A square is also a rhombus, and a rhombus is a parallelogram. A rhombus is also a kite.", do=[MATH("square ⊂ rhombus ⊂ parallelogram", x=80, y=280), T("a rhombus is also a **kite**", x=80, y=370)]),
-        dict(say="But not every rhombus is a square. A rhombus does not need right angles.", do=[SVG(POLY(RHOMB), 840, 150, w=320), T("not every rhombus is a square ✗", x=80, y=450, color=RED)]),
+        dict(say="But not every rhombus is a square. A rhombus does not need right angles.", do=[SVG(POLY(RHOMB), 900, 240, w=300), T("not every rhombus is a square ✗", x=80, y=450, color=RED)]),
     ]),
     dict(kind="method", title="How do I identify a quadrilateral?", steps=[
         dict(say="Here is the method. Step 1: check the sides. Are they equal? Are they parallel?", do=[T("1. **Sides**: equal? parallel?", x=80, y=170)]),
@@ -175,7 +175,7 @@ VIDEOS["8.3"] = [
     ]),
     dict(kind="hook", title="Yes", steps=[
         dict(say="Yes. A cylinder and a cuboid can both look like a rectangle from the front. You need other views to tell them apart.",
-             do=[SOLID("cylinder", x=640, w=300), SOLID("cuboid", x=960, w=300, at=0.6), B("both: a rectangle from the front", x=80, y=200, color=GREEN)]),
+             do=[SOLID("cylinder", x=800, w=230), SOLID("cuboid", x=1030, w=230, at=0.6), B("both: a rectangle from the front", x=80, y=200, color=GREEN)]),
     ]),
     dict(kind="recall", title="Faces, edges, vertices", steps=[
         dict(say="Remember: a triangular prism has 5 faces, 9 edges and 6 vertices. A square-based pyramid has 5 faces, 8 edges and 5 vertices.",
@@ -183,7 +183,7 @@ VIDEOS["8.3"] = [
     ]),
     dict(kind="idea", title="Euler's rule", steps=[
         dict(say="For any solid with flat faces and no holes, faces plus vertices minus edges equals 2. This is Euler's rule.",
-             do=[B("F + V − E = 2", x=80, y=160, color=BLUE), TBL(["Solid", "F", "V", "E", "F + V − E"], [["cube", "6", "8", "12", "2"], ["triangular prism", "5", "6", "9", "2"], ["square-based pyramid", "5", "5", "8", "2"]], y=260), ROW(0, 3), ROW(1, 4), ROW(2, 5)]),
+             do=[B("F + V − E = 2", x=80, y=160, color=BLUE), TBL(["Solid", "F", "V", "E", "F + V − E"], [["triangular prism", "5", "6", "9", "2"], ["square-based pyramid", "5", "5", "8", "2"]], y=260), ROW(0, 3), ROW(1, 4)]),
         PAUSE("8.3-k2", "Your turn. What is F plus V minus E for a cube? Pause the video and work it out.", "F + V − E for a cube?"),
     ]),
     dict(kind="idea", title="Check: a cube", steps=[
@@ -193,9 +193,9 @@ VIDEOS["8.3"] = [
         dict(say="The plan is the view from directly above. The front elevation is the view from the front, and the side elevation is the view from the side.",
              do=[T("**plan**: from above · **front elevation** · **side elevation**", x=80, y=170)]),
         dict(say="Here is a solid made of 4 cubes: 3 in a row, with 1 on top of the left cube. From the front it looks like an L of 4 squares.",
-             do=[CELLS([[0, 1], [1, 1], [2, 1], [0, 0]], x=80, y=260, w=300), T("front", x=150, y=500)]),
+             do=[CELLS([[0, 1], [1, 1], [2, 1], [0, 0]], x=40, y=200, w=400), T("front", x=205, y=480)]),
         dict(say="From the side, you see 2 squares, one on top of the other. From above, you see 3 squares in a row.",
-             do=[CELLS([[0, 1], [0, 0]], x=460, y=260, w=200), T("side", x=500, y=500), CELLS([[0, 0], [1, 0], [2, 0]], x=760, y=260, w=300, at=3), T("plan", x=830, y=500, at=3)]),
+             do=[CELLS([[0, 1], [0, 0]], x=440, y=200, w=400), T("side", x=615, y=480), CELLS([[0, 0], [1, 0], [2, 0]], x=840, y=200, w=400, at=3), T("plan", x=1010, y=480, at=3)]),
     ]),
     dict(kind="method", title="How do I describe a 3D shape?", steps=[
         dict(say="Here is the method. Step 1: name the shape from its cross-section, for a prism, or its base, for a pyramid.", do=[T("1. Name it: **cross-section** or **base**", x=80, y=170)]),
