@@ -2116,5 +2116,27 @@
     10
    ]
   }
+ },
+ "c5u16": {
+  "title": "Camday Maths Stage 5 · Unit 16: Time",
+  "pages": 10,
+  "dir": "media/books/c5u16/",
+  "ext": "webp",
+  "pdf": "media/books/c5u16.pdf?v=eeadaf22ca",
+  "v": "eeadaf22ca",
+  "secs": {
+   "16.1": [
+    2,
+    5
+   ],
+   "16.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
