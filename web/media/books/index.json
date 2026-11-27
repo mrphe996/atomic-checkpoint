@@ -2812,5 +2812,31 @@
     14
    ]
   }
+ },
+ "c3u10": {
+  "title": "Camday Maths Stage 3 · Unit 10: More Multiplication and Division",
+  "pages": 14,
+  "dir": "media/books/c3u10/",
+  "ext": "webp",
+  "pdf": "media/books/c3u10.pdf?v=2a7591eed9",
+  "v": "2a7591eed9",
+  "secs": {
+   "10.1": [
+    2,
+    5
+   ],
+   "10.2": [
+    6,
+    9
+   ],
+   "10.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
  }
 }
