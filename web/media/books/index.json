@@ -2230,5 +2230,31 @@
     10
    ]
   }
+ },
+ "c4u03": {
+  "title": "Camday Maths Stage 4 · Unit 3: Addition and Subtraction of Whole Numbers",
+  "pages": 14,
+  "dir": "media/books/c4u03/",
+  "ext": "webp",
+  "pdf": "media/books/c4u03.pdf?v=9a2d49249a",
+  "v": "9a2d49249a",
+  "secs": {
+   "3.1": [
+    2,
+    5
+   ],
+   "3.2": [
+    6,
+    9
+   ],
+   "3.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
  }
 }
