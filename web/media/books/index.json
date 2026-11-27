@@ -1354,5 +1354,39 @@
     16
    ]
   }
+ },
+ "c9u15": {
+  "title": "Camday Maths Stage 9 · Unit 15: Interpreting and discussing results",
+  "pages": 25,
+  "dir": "media/books/c9u15/",
+  "ext": "webp",
+  "pdf": "media/books/c9u15.pdf?v=89272e82cd",
+  "v": "89272e82cd",
+  "secs": {
+   "15.1": [
+    2,
+    5
+   ],
+   "15.2": [
+    6,
+    10
+   ],
+   "15.3": [
+    11,
+    14
+   ],
+   "15.4": [
+    15,
+    18
+   ],
+   "15.5": [
+    19,
+    23
+   ],
+   "answers": [
+    24,
+    25
+   ]
+  }
  }
 }
