@@ -2480,5 +2480,27 @@
     10
    ]
   }
+ },
+ "c4u14": {
+  "title": "Camday Maths Stage 4 · Unit 14: Area and Perimeter",
+  "pages": 10,
+  "dir": "media/books/c4u14/",
+  "ext": "webp",
+  "pdf": "media/books/c4u14.pdf?v=2754250b80",
+  "v": "2754250b80",
+  "secs": {
+   "14.1": [
+    2,
+    5
+   ],
+   "14.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
