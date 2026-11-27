@@ -1980,5 +1980,27 @@
     10
    ]
   }
+ },
+ "c5u10": {
+  "title": "Camday Maths Stage 5 · Unit 10: Angles",
+  "pages": 11,
+  "dir": "media/books/c5u10/",
+  "ext": "webp",
+  "pdf": "media/books/c5u10.pdf?v=ceaf357051",
+  "v": "ceaf357051",
+  "secs": {
+   "10.1": [
+    2,
+    6
+   ],
+   "10.2": [
+    7,
+    10
+   ],
+   "answers": [
+    11,
+    11
+   ]
+  }
  }
 }
