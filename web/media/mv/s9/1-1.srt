@@ -1,0 +1,295 @@
+1
+00:00:06,400 --> 00:00:10,840
+A square patio must have an area of exactly 20 square metres.
+
+2
+00:00:10,890 --> 00:00:14,700
+So each side is the square root of 20 metres.
+
+3
+00:00:14,750 --> 00:00:21,050
+A calculator shows 4.472135955, and the digits keep going.
+
+4
+00:00:21,100 --> 00:00:25,360
+Can the square root of 20 be written exactly as a fraction?
+
+5
+00:00:25,410 --> 00:00:28,720
+Pause the video and decide.
+
+6
+00:00:28,770 --> 00:00:28,930
+No.
+
+7
+00:00:28,980 --> 00:00:34,620
+20 is not a square number, so its square root can never be written as a fraction.
+
+8
+00:00:34,670 --> 00:00:38,820
+Its digits go on forever, with no repeating pattern.
+
+9
+00:00:38,870 --> 00:00:42,360
+Numbers like this are called irrational numbers.
+
+10
+00:00:42,410 --> 00:00:50,710
+Remember the square numbers: 1, 4, 9, 16, 25, 36, 49, 64, 81 and 100.
+
+11
+00:00:50,760 --> 00:00:55,700
+And the cube numbers: 1, 8, 27, 64, 125 and 216.
+
+12
+00:00:55,750 --> 00:00:59,260
+So the cube root of 125 is 5.
+
+13
+00:00:59,310 --> 00:01:03,680
+A rational number can be written as a fraction of two integers.
+
+14
+00:01:03,730 --> 00:01:09,980
+Integers, fractions, terminating decimals and recurring decimals are all rational.
+
+15
+00:01:10,030 --> 00:01:13,780
+An irrational number cannot be written as a fraction.
+
+16
+00:01:13,830 --> 00:01:17,160
+Its decimal goes on forever, without repeating.
+
+17
+00:01:17,210 --> 00:01:22,370
+The square root of 3, the cube root of 10, and pi are irrational.
+
+18
+00:01:22,420 --> 00:01:23,070
+Your turn.
+
+19
+00:01:23,120 --> 00:01:25,090
+Is pi rational or irrational?
+
+20
+00:01:25,140 --> 00:01:28,380
+Pause the video and choose.
+
+21
+00:01:28,430 --> 00:01:29,780
+Pi is irrational.
+
+22
+00:01:29,830 --> 00:01:34,480
+It is 3.14159, and its digits never end and never repeat.
+
+23
+00:01:34,530 --> 00:01:38,170
+22 sevenths is only an estimate of pi.
+
+24
+00:01:38,220 --> 00:01:47,820
+The square root of a whole number is either a whole number, like the square root of 36, or it is irrational, like the square root of 20.
+
+25
+00:01:47,870 --> 00:01:50,930
+An irrational root is called a surd.
+
+26
+00:01:50,980 --> 00:01:55,470
+To estimate a root, find the square numbers on either side.
+
+27
+00:01:55,520 --> 00:02:02,110
+20 is between 16 and 25, so the square root of 20 is between 4 and 5, nearer 4.
+
+28
+00:02:02,160 --> 00:02:05,000
+For a cube root, use cube numbers.
+
+29
+00:02:05,050 --> 00:02:11,250
+40 is between 27 and 64, so the cube root of 40 is between 3 and 4.
+
+30
+00:02:11,300 --> 00:02:12,590
+Here is the method.
+
+31
+00:02:12,640 --> 00:02:16,810
+Step 1: can the number be written as a fraction of integers?
+
+32
+00:02:16,860 --> 00:02:20,740
+Terminating and recurring decimals are rational.
+
+33
+00:02:20,790 --> 00:02:26,090
+Step 2: for a square root or cube root, is the number a square or cube number?
+
+34
+00:02:26,140 --> 00:02:28,760
+If not, the root is irrational.
+
+35
+00:02:28,810 --> 00:02:34,030
+Step 3: find the square or cube numbers just below and just above.
+
+36
+00:02:34,080 --> 00:02:39,050
+Step 4: estimate between the two roots, nearer the closer one.
+
+37
+00:02:39,100 --> 00:02:46,830
+Sort these: 0.7, the square root of 81, the square root of 12, 2 ninths, and negative 5.
+
+38
+00:02:46,880 --> 00:02:48,210
+0.7 is 7 tenths.
+
+39
+00:02:48,260 --> 00:02:50,530
+The square root of 81 is 9.
+
+40
+00:02:50,580 --> 00:02:54,600
+2 ninths and negative 5 are rational too.
+
+41
+00:02:54,650 --> 00:03:01,170
+12 is not a square number, so the square root of 12 is the only irrational one.
+
+42
+00:03:01,220 --> 00:03:05,930
+Between which two whole numbers is the square root of 70?
+
+43
+00:03:05,980 --> 00:03:09,560
+64 is 8 squared, and 81 is 9 squared.
+
+44
+00:03:09,610 --> 00:03:12,640
+70 is between 64 and 81, nearer 64.
+
+45
+00:03:12,690 --> 00:03:19,260
+So the square root of 70 is between 8 and 9, a bit less than halfway.
+
+46
+00:03:19,310 --> 00:03:20,080
+Your turn.
+
+47
+00:03:20,130 --> 00:03:23,930
+Is the square root of 70 closer to 8.4, or 8.9?
+
+48
+00:03:23,980 --> 00:03:26,720
+Pause and choose.
+
+49
+00:03:26,770 --> 00:03:28,510
+Check by squaring.
+
+50
+00:03:28,560 --> 00:03:30,600
+8.4 squared is 70.56.
+
+51
+00:03:30,650 --> 00:03:32,700
+8.9 squared is 79.21.
+
+52
+00:03:32,750 --> 00:03:37,030
+So the square root of 70 is about 8.4.
+
+53
+00:03:37,080 --> 00:03:40,280
+Surds can multiply to give rational numbers.
+
+54
+00:03:40,330 --> 00:03:47,250
+The square root of 2, times the square root of 8, is the square root of 16, which is 4.
+
+55
+00:03:47,300 --> 00:03:51,000
+Raj asks: is 0.272727, and so on, rational?
+
+56
+00:03:51,050 --> 00:03:53,300
+Which line is wrong?
+
+57
+00:03:53,350 --> 00:03:54,440
+Line 2 is wrong.
+
+58
+00:03:54,490 --> 00:03:57,220
+The decimal never ends, but it repeats.
+
+59
+00:03:57,270 --> 00:04:00,040
+Repeating decimals are rational.
+
+60
+00:04:00,090 --> 00:04:06,210
+0.2727, and so on, is 27 ninety-ninths, which is 3 elevenths.
+
+61
+00:04:06,260 --> 00:04:12,050
+The diagonal of a square tile with sides of 1 metre is the square root of 2 metres.
+
+62
+00:04:12,100 --> 00:04:13,940
+That is irrational.
+
+63
+00:04:13,990 --> 00:04:20,350
+A builder cannot measure it exactly, so they round it: about 1.414 metres.
+
+64
+00:04:20,400 --> 00:04:21,750
+One last question.
+
+65
+00:04:21,800 --> 00:04:25,160
+Is 0.333, and so on, rational or irrational?
+
+66
+00:04:25,210 --> 00:04:28,650
+Pause the video and choose.
+
+67
+00:04:28,700 --> 00:04:29,710
+It is rational.
+
+68
+00:04:29,760 --> 00:04:33,010
+It repeats, and it is equal to 1 third.
+
+69
+00:04:33,060 --> 00:04:37,970
+To remember: a rational number can be written as a fraction of integers.
+
+70
+00:04:38,020 --> 00:04:40,440
+An irrational number cannot.
+
+71
+00:04:40,490 --> 00:04:46,410
+Roots of whole numbers that are not square or cube numbers are irrational surds.
+
+72
+00:04:46,460 --> 00:04:50,160
+Estimate roots between known squares or cubes.
+
+73
+00:04:50,210 --> 00:04:53,040
+Recurring decimals are rational.
+
+74
+00:04:53,090 --> 00:04:58,190
+Great work! Now practise lesson 1.1 on Camday.

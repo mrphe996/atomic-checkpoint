@@ -1,0 +1,267 @@
+1
+00:00:06,770 --> 00:00:10,050
+A cube has edges of length X squared centimetres.
+
+2
+00:00:10,100 --> 00:00:12,970
+Its volume is X squared, all cubed.
+
+3
+00:00:13,020 --> 00:00:17,130
+Is X squared, all cubed, equal to X to the 5, or X to the 6?
+
+4
+00:00:17,180 --> 00:00:20,390
+Pause the video and choose.
+
+5
+00:00:20,440 --> 00:00:25,330
+X squared, all cubed, is X squared, times X squared, times X squared.
+
+6
+00:00:25,380 --> 00:00:27,910
+That is 2 plus 2 plus 2, which is 6.
+
+7
+00:00:27,960 --> 00:00:29,890
+So it is X to the 6.
+
+8
+00:00:29,940 --> 00:00:31,840
+Check with X equals 2.
+
+9
+00:00:31,890 --> 00:00:34,850
+2 squared is 4, and 4 cubed is 64.
+
+10
+00:00:34,900 --> 00:00:37,350
+2 to the 6 is also 64.
+
+11
+00:00:37,400 --> 00:00:41,600
+Remember: 3 to the 4, times 3 squared, is 3 to the 6.
+
+12
+00:00:41,650 --> 00:00:46,160
+And 5 to the 7, divided by 5 cubed, is 5 to the 4.
+
+13
+00:00:46,210 --> 00:00:48,340
+The same laws work with letters.
+
+14
+00:00:48,390 --> 00:00:50,120
+Multiply: add the indices.
+
+15
+00:00:50,170 --> 00:00:51,620
+Divide: subtract them.
+
+16
+00:00:51,670 --> 00:00:54,970
+A power of a power: multiply the indices.
+
+17
+00:00:55,020 --> 00:00:55,670
+Your turn.
+
+18
+00:00:55,720 --> 00:00:58,710
+Simplify Y to the 9, divided by Y to the 4.
+
+19
+00:00:58,760 --> 00:01:02,010
+Pause the video and try it.
+
+20
+00:01:02,060 --> 00:01:04,620
+Dividing, so subtract the indices.
+
+21
+00:01:04,670 --> 00:01:05,770
+9 minus 4 is 5.
+
+22
+00:01:05,820 --> 00:01:08,230
+The answer is Y to the 5.
+
+23
+00:01:08,280 --> 00:01:12,000
+Deal with the numbers and the letters separately.
+
+24
+00:01:12,050 --> 00:01:16,390
+3 A to the 4, times 5 A squared, is 15 A to the 6.
+
+25
+00:01:16,440 --> 00:01:21,370
+12 B to the 7, divided by 4 B cubed, is 3 B to the 4.
+
+26
+00:01:21,420 --> 00:01:25,320
+Only add terms with exactly the same letter and power.
+
+27
+00:01:25,370 --> 00:01:28,640
+6 W cubed plus 2 W cubed is 8 W cubed.
+
+28
+00:01:28,690 --> 00:01:30,020
+Here is the method.
+
+29
+00:01:30,070 --> 00:01:33,820
+Step 1: multiply or divide the numbers first.
+
+30
+00:01:33,870 --> 00:01:41,930
+Step 2: for each letter, multiplying adds the indices, dividing subtracts, and a power of a power multiplies.
+
+31
+00:01:41,980 --> 00:01:47,710
+Step 3: a bracket raised to a power: apply the power to everything inside.
+
+32
+00:01:47,760 --> 00:01:51,520
+Step 4: check by substituting a small number.
+
+33
+00:01:51,570 --> 00:01:54,760
+Simplify 4 P cubed Q, times 2 P Q to the 5.
+
+34
+00:01:54,810 --> 00:01:56,860
+The numbers: 4 times 2 is 8.
+
+35
+00:01:56,910 --> 00:01:59,120
+P cubed times P is P to the 4.
+
+36
+00:01:59,170 --> 00:02:02,150
+Q times Q to the 5 is Q to the 6.
+
+37
+00:02:02,200 --> 00:02:04,720
+Simplify 3 K squared, all cubed.
+
+38
+00:02:04,770 --> 00:02:05,930
+Cube the 3: 27.
+
+39
+00:02:05,980 --> 00:02:08,100
+Cube K squared: K to the 6.
+
+40
+00:02:08,150 --> 00:02:10,900
+The answer is 27 K to the 6.
+
+41
+00:02:10,950 --> 00:02:11,620
+Your turn.
+
+42
+00:02:11,670 --> 00:02:13,920
+Simplify 2 C cubed, all squared.
+
+43
+00:02:13,970 --> 00:02:16,910
+Pause and work it out.
+
+44
+00:02:16,960 --> 00:02:19,450
+Square the 2 too: 2 squared is 4.
+
+45
+00:02:19,500 --> 00:02:21,920
+C cubed, squared, is C to the 6.
+
+46
+00:02:21,970 --> 00:02:24,550
+The answer is 4 C to the 6.
+
+47
+00:02:24,600 --> 00:02:27,420
+Tom simplifies 2 Y to the 4, all cubed.
+
+48
+00:02:27,470 --> 00:02:29,440
+Which line is wrong?
+
+49
+00:02:29,490 --> 00:02:30,540
+Line 1 is wrong.
+
+50
+00:02:30,590 --> 00:02:32,180
+He forgot to cube the 2.
+
+51
+00:02:32,230 --> 00:02:35,390
+Everything inside the bracket is cubed.
+
+52
+00:02:35,440 --> 00:02:39,730
+2 cubed is 8, so the answer is 8 Y to the 12.
+
+53
+00:02:39,780 --> 00:02:41,600
+Index laws help in science.
+
+54
+00:02:41,650 --> 00:02:49,790
+If a balloon's radius doubles, its volume, which depends on R cubed, becomes 2 cubed, which is 8 times bigger.
+
+55
+00:02:49,840 --> 00:02:51,120
+One last question.
+
+56
+00:02:51,170 --> 00:02:54,430
+Can 6 W cubed plus 2 W squared be simplified?
+
+57
+00:02:54,480 --> 00:02:57,820
+Pause the video and choose.
+
+58
+00:02:57,870 --> 00:02:58,020
+No.
+
+59
+00:02:58,070 --> 00:03:00,820
+W cubed and W squared are not like terms.
+
+60
+00:03:00,870 --> 00:03:03,210
+So it cannot be simplified.
+
+61
+00:03:03,260 --> 00:03:05,900
+To remember: multiply, add the indices.
+
+62
+00:03:05,950 --> 00:03:07,070
+Divide, subtract.
+
+63
+00:03:07,120 --> 00:03:09,480
+Power of a power, multiply.
+
+64
+00:03:09,530 --> 00:03:12,810
+Deal with numbers and letters separately.
+
+65
+00:03:12,860 --> 00:03:16,720
+A power on a bracket applies to everything inside.
+
+66
+00:03:16,770 --> 00:03:19,220
+Only like terms can be added.
+
+67
+00:03:19,270 --> 00:03:24,430
+Great work! Now practise lesson 2.3 on Camday.

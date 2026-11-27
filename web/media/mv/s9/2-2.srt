@@ -1,0 +1,235 @@
+1
+00:00:06,860 --> 00:00:11,510
+Adult tickets cost A dollars, and child tickets cost C dollars.
+
+2
+00:00:11,560 --> 00:00:18,250
+A family buys 2 adult tickets and 3 child tickets, and pays with a 100 dollar note.
+
+3
+00:00:18,300 --> 00:00:22,200
+Is the change 100 minus, bracket, 2A plus 3C?
+
+4
+00:00:22,250 --> 00:00:24,300
+Or 100 minus 2A plus 3C?
+
+5
+00:00:24,350 --> 00:00:28,060
+Pause the video and choose.
+
+6
+00:00:28,110 --> 00:00:30,430
+The whole cost is 2A plus 3C.
+
+7
+00:00:30,480 --> 00:00:38,800
+The change takes all of it away from 100, so it needs a bracket: 100 minus, bracket, 2A plus 3C.
+
+8
+00:00:38,850 --> 00:00:41,900
+Remember: collect like terms to simplify.
+
+9
+00:00:41,950 --> 00:00:45,250
+3 X plus 2 Y minus X is 2 X plus 2 Y.
+
+10
+00:00:45,300 --> 00:00:47,660
+Turn each phrase into an operation.
+
+11
+00:00:47,710 --> 00:00:53,090
+Use a bracket when a whole quantity is multiplied, divided, or squared.
+
+12
+00:00:53,140 --> 00:00:53,760
+Your turn.
+
+13
+00:00:53,810 --> 00:00:56,710
+Write an expression for the mean of A and B.
+
+14
+00:00:56,760 --> 00:00:59,920
+Pause the video and try it.
+
+15
+00:00:59,970 --> 00:01:02,910
+Add them, then divide by how many there are.
+
+16
+00:01:02,960 --> 00:01:08,010
+The mean of two numbers is their total, in a bracket, divided by 2.
+
+17
+00:01:08,060 --> 00:01:12,700
+Always say what the letters stand for, and check with a number.
+
+18
+00:01:12,750 --> 00:01:14,040
+Here is the method.
+
+19
+00:01:14,090 --> 00:01:19,120
+Step 1: choose letters for the unknowns, and say what they mean.
+
+20
+00:01:19,170 --> 00:01:22,830
+Step 2: turn each phrase into an operation.
+
+21
+00:01:22,880 --> 00:01:27,720
+Step 3: use brackets for a total, or a sum, that is operated on.
+
+22
+00:01:27,770 --> 00:01:31,670
+Step 4: simplify, then test with a simple number.
+
+23
+00:01:31,720 --> 00:01:32,990
+Ali is X years old.
+
+24
+00:01:33,040 --> 00:01:37,640
+His sister is 3 years younger, and his father is 4 times Ali's age.
+
+25
+00:01:37,690 --> 00:01:40,270
+Write the total of their ages.
+
+26
+00:01:40,320 --> 00:01:42,410
+X, plus X minus 3, plus 4 X.
+
+27
+00:01:42,460 --> 00:01:45,400
+Collect like terms: 6 X minus 3.
+
+28
+00:01:45,450 --> 00:01:48,460
+A rectangle has sides of X plus 4, and 2 X.
+
+29
+00:01:48,510 --> 00:01:51,420
+Its perimeter is two of each side.
+
+30
+00:01:51,470 --> 00:01:52,120
+Your turn.
+
+31
+00:01:52,170 --> 00:01:54,690
+Write the perimeter, and simplify it.
+
+32
+00:01:54,740 --> 00:01:57,620
+Pause and work it out.
+
+33
+00:01:57,670 --> 00:02:00,430
+2 lots of X plus 4 is 2 X plus 8.
+
+34
+00:02:00,480 --> 00:02:02,220
+2 lots of 2 X is 4 X.
+
+35
+00:02:02,270 --> 00:02:04,730
+Altogether, 6 X plus 8.
+
+36
+00:02:04,780 --> 00:02:06,490
+Test with X equals 1.
+
+37
+00:02:06,540 --> 00:02:10,350
+The sides are 5 and 2, so the perimeter is 14.
+
+38
+00:02:10,400 --> 00:02:11,950
+And 6 plus 8 is 14.
+
+39
+00:02:12,000 --> 00:02:13,250
+It works.
+
+40
+00:02:13,300 --> 00:02:16,750
+A price of P dollars goes up by 15 percent.
+
+41
+00:02:16,800 --> 00:02:21,450
+The multiplier is 1.15, so the new price is 1.15 P.
+
+42
+00:02:21,500 --> 00:02:24,670
+Ben writes: the total of A and B, divided by 4.
+
+43
+00:02:24,720 --> 00:02:26,580
+Which line is wrong?
+
+44
+00:02:26,630 --> 00:02:27,760
+Line 1 is wrong.
+
+45
+00:02:27,810 --> 00:02:29,900
+Only B would be divided by 4.
+
+46
+00:02:29,950 --> 00:02:32,370
+The total needs a bracket.
+
+47
+00:02:32,420 --> 00:02:36,530
+It should be the bracket A plus B, all divided by 4.
+
+48
+00:02:36,580 --> 00:02:40,660
+Online shops build expressions to price your basket.
+
+49
+00:02:40,710 --> 00:02:49,550
+10 percent off 2 adult and 3 child tickets, plus 5 dollars delivery, is 0.9, bracket, 2A plus 3C, plus 5.
+
+50
+00:02:49,600 --> 00:02:50,850
+One last question.
+
+51
+00:02:50,900 --> 00:02:54,410
+Write an expression for 20 percent off a price P.
+
+52
+00:02:54,460 --> 00:02:57,770
+Pause the video and answer.
+
+53
+00:02:57,820 --> 00:03:00,660
+20 percent off leaves 80 percent.
+
+54
+00:03:00,710 --> 00:03:03,480
+So the new price is 0.8 P.
+
+55
+00:03:03,530 --> 00:03:07,110
+To remember: say what your letters stand for.
+
+56
+00:03:07,160 --> 00:03:10,080
+Use brackets for whole quantities.
+
+57
+00:03:10,130 --> 00:03:13,110
+Simplify by collecting like terms.
+
+58
+00:03:13,160 --> 00:03:16,170
+Test your expression with a number.
+
+59
+00:03:16,220 --> 00:03:21,390
+Great work! Now practise lesson 2.2 on Camday.

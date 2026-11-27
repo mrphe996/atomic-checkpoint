@@ -1,0 +1,291 @@
+1
+00:00:05,580 --> 00:00:09,050
+Fold a sheet of paper in half, again and again.
+
+2
+00:00:09,100 --> 00:00:14,170
+After 5 folds there are 2 to the power 5 layers, which is 32.
+
+3
+00:00:14,220 --> 00:00:15,560
+Now go backwards.
+
+4
+00:00:15,610 --> 00:00:20,230
+Each unfold halves the number of layers: 32, 16, 8, 4, 2.
+
+5
+00:00:20,280 --> 00:00:22,090
+What comes next?
+
+6
+00:00:22,140 --> 00:00:23,440
+Halve 2 once more.
+
+7
+00:00:23,490 --> 00:00:25,310
+What is 2 to the power 0?
+
+8
+00:00:25,360 --> 00:00:29,110
+Pause the video and work it out.
+
+9
+00:00:29,160 --> 00:00:30,270
+Half of 2 is 1.
+
+10
+00:00:30,320 --> 00:00:32,210
+So 2 to the power 0 is 1.
+
+11
+00:00:32,260 --> 00:00:35,320
+That is one sheet, with no folds.
+
+12
+00:00:35,370 --> 00:00:40,550
+Remember: 2 to the power 5 means five 2s multiplied together.
+
+13
+00:00:40,600 --> 00:00:44,530
+2 times 2 times 2 times 2 times 2 is 32.
+
+14
+00:00:44,580 --> 00:00:45,730
+Keep going down.
+
+15
+00:00:45,780 --> 00:00:47,450
+Each step divides by 2.
+
+16
+00:00:47,500 --> 00:00:54,430
+So 2 to the power negative 2 is a quarter, and 2 to the power negative 3 is an eighth.
+
+17
+00:00:54,480 --> 00:00:58,560
+So A to the power 0 is 1, for any number A that is not zero.
+
+18
+00:00:58,610 --> 00:01:03,030
+And A to the power negative N is 1 over A to the power N.
+
+19
+00:01:03,080 --> 00:01:03,760
+Your turn.
+
+20
+00:01:03,810 --> 00:01:07,050
+Write 2 to the power negative 1 as a decimal.
+
+21
+00:01:07,100 --> 00:01:10,420
+Pause the video and try it.
+
+22
+00:01:10,470 --> 00:01:14,790
+2 to the power negative 1 is 1 over 2, which is a half.
+
+23
+00:01:14,840 --> 00:01:17,410
+As a decimal, that is 0.5.
+
+24
+00:01:17,460 --> 00:01:22,720
+Another example: 5 to the power negative 2 is 1 over 25.
+
+25
+00:01:22,770 --> 00:01:26,830
+With the same base, when you multiply, add the indices.
+
+26
+00:01:26,880 --> 00:01:30,580
+3 to the 4, times 3 squared, is 3 to the 6.
+
+27
+00:01:30,630 --> 00:01:33,430
+When you divide, subtract the indices.
+
+28
+00:01:33,480 --> 00:01:37,350
+7 to the 5, divided by 7 squared, is 7 cubed.
+
+29
+00:01:37,400 --> 00:01:40,840
+These laws work with negative and zero indices too.
+
+30
+00:01:40,890 --> 00:01:43,920
+But only when the bases are the same.
+
+31
+00:01:43,970 --> 00:01:45,250
+Here is the method.
+
+32
+00:01:45,300 --> 00:01:48,730
+Step 1: check that the bases are the same.
+
+33
+00:01:48,780 --> 00:01:51,410
+Step 2: multiplying, add the indices.
+
+34
+00:01:51,460 --> 00:01:53,700
+Dividing, subtract them.
+
+35
+00:01:53,750 --> 00:01:58,040
+Step 3: take care with the signs of negative indices.
+
+36
+00:01:58,090 --> 00:02:05,370
+Step 4: use A to the power 0 is 1, and A to the negative N is 1 over A to the N, to find a value.
+
+37
+00:02:05,420 --> 00:02:09,280
+Simplify 5 cubed times 5 to the power negative 7.
+
+38
+00:02:09,330 --> 00:02:13,730
+Add the indices: 3 plus negative 7 is negative 4.
+
+39
+00:02:13,780 --> 00:02:17,220
+The answer is 5 to the power negative 4.
+
+40
+00:02:17,270 --> 00:02:17,970
+Your turn.
+
+41
+00:02:18,020 --> 00:02:22,830
+3 to the 4, times 3 to the power negative 2, is 3 to what power?
+
+42
+00:02:22,880 --> 00:02:25,900
+Pause and work it out.
+
+43
+00:02:25,950 --> 00:02:27,170
+Add the indices.
+
+44
+00:02:27,220 --> 00:02:28,990
+4 plus negative 2 is 2.
+
+45
+00:02:29,040 --> 00:02:32,000
+So it is 3 squared, which is 9.
+
+46
+00:02:32,050 --> 00:02:36,880
+Simplify 6 to the negative 2, divided by 6 to the negative 5.
+
+47
+00:02:36,930 --> 00:02:41,830
+Subtract the indices: negative 2 minus negative 5 is 3.
+
+48
+00:02:41,880 --> 00:02:44,320
+The answer is 6 cubed.
+
+49
+00:02:44,370 --> 00:02:49,430
+8 to the 4, times 8 to the power something, is 8 to the negative 1.
+
+50
+00:02:49,480 --> 00:02:51,730
+Find the missing index.
+
+51
+00:02:51,780 --> 00:02:54,750
+4 plus the missing index is negative 1.
+
+52
+00:02:54,800 --> 00:02:58,010
+So the missing index is negative 5.
+
+53
+00:02:58,060 --> 00:03:00,970
+Sam works out 4 to the power negative 2.
+
+54
+00:03:01,020 --> 00:03:03,010
+Which line is wrong?
+
+55
+00:03:03,060 --> 00:03:04,150
+Line 1 is wrong.
+
+56
+00:03:04,200 --> 00:03:07,670
+A negative index does not make a negative number.
+
+57
+00:03:07,720 --> 00:03:09,370
+It means 1 over.
+
+58
+00:03:09,420 --> 00:03:15,430
+4 to the power negative 2 is 1 over 4 squared, which is 1 sixteenth.
+
+59
+00:03:15,480 --> 00:03:18,520
+Computer memory comes in powers of 2.
+
+60
+00:03:18,570 --> 00:03:23,900
+2 to the power 10 bytes is 1,024 bytes, called a kibibyte.
+
+61
+00:03:23,950 --> 00:03:30,760
+And when a medicine halves in the body every few hours, the amount left uses powers of a half.
+
+62
+00:03:30,810 --> 00:03:32,050
+One last question.
+
+63
+00:03:32,100 --> 00:03:33,830
+What is 7 to the power 0?
+
+64
+00:03:33,880 --> 00:03:37,160
+Pause the video and answer.
+
+65
+00:03:37,210 --> 00:03:40,620
+Any number, except zero, to the power 0 is 1.
+
+66
+00:03:40,670 --> 00:03:43,100
+So 7 to the power 0 is 1.
+
+67
+00:03:43,150 --> 00:03:45,590
+To remember: A to the power 0 is 1.
+
+68
+00:03:45,640 --> 00:03:49,470
+A to the power negative N is 1 over A to the N.
+
+69
+00:03:49,520 --> 00:03:51,320
+Multiply: add the indices.
+
+70
+00:03:51,370 --> 00:03:53,430
+Divide: subtract them.
+
+71
+00:03:53,480 --> 00:03:56,080
+The laws need the same base.
+
+72
+00:03:56,130 --> 00:03:59,820
+A negative index does not make a negative number.
+
+73
+00:03:59,870 --> 00:04:05,030
+Great work! Now practise lesson 1.3 on Camday.

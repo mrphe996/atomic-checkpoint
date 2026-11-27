@@ -1,0 +1,251 @@
+1
+00:00:07,230 --> 00:00:14,620
+A driving app estimates braking distance in metres with the expression v squared over 20, plus v over 3.
+
+2
+00:00:14,670 --> 00:00:18,250
+Here v is the speed in kilometres per hour.
+
+3
+00:00:18,300 --> 00:00:21,880
+Engineers test it with different values of v.
+
+4
+00:00:21,930 --> 00:00:24,130
+What is its value when v is 30?
+
+5
+00:00:24,180 --> 00:00:27,850
+Pause the video and work it out.
+
+6
+00:00:27,900 --> 00:00:32,150
+30 squared is 900, and 900 over 20 is 45.
+
+7
+00:00:32,200 --> 00:00:33,830
+30 over 3 is 10.
+
+8
+00:00:33,880 --> 00:00:40,460
+So the braking distance is 45 plus 10, which is 55 metres.
+
+9
+00:00:40,510 --> 00:00:47,920
+If someone types negative 30 by mistake, v squared is still 900, but v over 3 is negative 10.
+
+10
+00:00:47,970 --> 00:00:51,600
+The app gives 35, which makes no sense.
+
+11
+00:00:51,650 --> 00:00:59,410
+Remember the order of operations: brackets, then indices, then multiply and divide, then add and subtract.
+
+12
+00:00:59,460 --> 00:01:02,530
+Replace each letter by its value in brackets.
+
+13
+00:01:02,580 --> 00:01:05,570
+Then follow the order of operations.
+
+14
+00:01:05,620 --> 00:01:08,170
+Take care when a value is negative.
+
+15
+00:01:08,220 --> 00:01:14,540
+When A is negative 3, negative A squared is negative 9, because only the 3 is squared.
+
+16
+00:01:14,590 --> 00:01:17,090
+And A cubed is negative 27.
+
+17
+00:01:17,140 --> 00:01:17,800
+Your turn.
+
+18
+00:01:17,850 --> 00:01:20,060
+What is negative 3, all squared?
+
+19
+00:01:20,110 --> 00:01:23,370
+Pause the video and try it.
+
+20
+00:01:23,420 --> 00:01:26,450
+Negative 3 times negative 3 is positive 9.
+
+21
+00:01:26,500 --> 00:01:30,290
+A negative number squared is always positive.
+
+22
+00:01:30,340 --> 00:01:34,810
+A counter-example is one case that shows a statement is false.
+
+23
+00:01:34,860 --> 00:01:37,280
+N squared is always bigger than N?
+
+24
+00:01:37,330 --> 00:01:40,890
+No: when N is 0.5, N squared is only 0.25.
+
+25
+00:01:40,940 --> 00:01:42,220
+Here is the method.
+
+26
+00:01:42,270 --> 00:01:48,400
+Step 1: write the expression, with each letter replaced by its value in brackets.
+
+27
+00:01:48,450 --> 00:01:50,840
+Step 2: work out the powers first.
+
+28
+00:01:50,890 --> 00:01:53,550
+Take care with negative signs.
+
+29
+00:01:53,600 --> 00:01:58,060
+Step 3: then multiply and divide, then add and subtract.
+
+30
+00:01:58,110 --> 00:02:01,890
+Step 4: ask yourself: is the answer sensible?
+
+31
+00:02:01,940 --> 00:02:07,440
+Find 3 X squared, minus 2 Y cubed, when X is negative 4 and Y is 2.
+
+32
+00:02:07,490 --> 00:02:13,180
+3 times negative 4, all squared, is 3 times 16, which is 48.
+
+33
+00:02:13,230 --> 00:02:17,190
+2 times 2 cubed is 2 times 8, which is 16.
+
+34
+00:02:17,240 --> 00:02:19,460
+48 minus 16 is 32.
+
+35
+00:02:19,510 --> 00:02:20,160
+Your turn.
+
+36
+00:02:20,210 --> 00:02:22,730
+What is X cubed when X is negative 2?
+
+37
+00:02:22,780 --> 00:02:25,670
+Pause and work it out.
+
+38
+00:02:25,720 --> 00:02:28,320
+Negative 2 times negative 2 is 4.
+
+39
+00:02:28,370 --> 00:02:30,980
+4 times negative 2 is negative 8.
+
+40
+00:02:31,030 --> 00:02:34,670
+A negative number cubed stays negative.
+
+41
+00:02:34,720 --> 00:02:39,460
+Find P plus Q, over P minus Q, when P is 7 and Q is negative 3.
+
+42
+00:02:39,510 --> 00:02:42,580
+The top is 7 plus negative 3, which is 4.
+
+43
+00:02:42,630 --> 00:02:46,630
+The bottom is 7 minus negative 3, which is 10.
+
+44
+00:02:46,680 --> 00:02:49,200
+4 over 10 is 0.4.
+
+45
+00:02:49,250 --> 00:02:52,380
+Ella finds 2 X squared when X is negative 5.
+
+46
+00:02:52,430 --> 00:02:54,380
+Which line is wrong?
+
+47
+00:02:54,430 --> 00:02:55,530
+Line 1 is wrong.
+
+48
+00:02:55,580 --> 00:02:57,840
+Indices come before multiplying.
+
+49
+00:02:57,890 --> 00:03:00,410
+Square the negative 5 first.
+
+50
+00:03:00,460 --> 00:03:05,620
+Negative 5 squared is 25, and 2 times 25 is 50.
+
+51
+00:03:05,670 --> 00:03:11,710
+Spreadsheets and apps substitute values into formulae millions of times a day.
+
+52
+00:03:11,760 --> 00:03:19,160
+Engineers test them with negative, zero and huge inputs, to make sure the answers are always sensible.
+
+53
+00:03:19,210 --> 00:03:20,330
+One last question.
+
+54
+00:03:20,380 --> 00:03:22,930
+What is negative X squared, when X is 4?
+
+55
+00:03:22,980 --> 00:03:26,080
+Pause the video and answer.
+
+56
+00:03:26,130 --> 00:03:27,510
+Only X is squared.
+
+57
+00:03:27,560 --> 00:03:32,830
+4 squared is 16, and the negative sign makes it negative 16.
+
+58
+00:03:32,880 --> 00:03:36,450
+To remember: substitute values in brackets.
+
+59
+00:03:36,500 --> 00:03:39,140
+A negative number squared is positive.
+
+60
+00:03:39,190 --> 00:03:41,240
+Cubed, it is negative.
+
+61
+00:03:41,290 --> 00:03:46,990
+Indices come before multiplying and dividing, then adding and subtracting.
+
+62
+00:03:47,040 --> 00:03:50,940
+One counter-example proves a statement is false.
+
+63
+00:03:50,990 --> 00:03:56,110
+Great work! Now practise lesson 2.1 on Camday.
