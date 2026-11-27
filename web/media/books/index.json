@@ -2138,5 +2138,49 @@
     10
    ]
   }
+ },
+ "c5u17": {
+  "title": "Camday Maths Stage 5 · Unit 17: Number and the Laws of Arithmetic",
+  "pages": 10,
+  "dir": "media/books/c5u17/",
+  "ext": "webp",
+  "pdf": "media/books/c5u17.pdf?v=5a999fb9a4",
+  "v": "5a999fb9a4",
+  "secs": {
+   "17.1": [
+    2,
+    5
+   ],
+   "17.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
+ },
+ "c5u18": {
+  "title": "Camday Maths Stage 5 · Unit 18: Position and Direction",
+  "pages": 10,
+  "dir": "media/books/c5u18/",
+  "ext": "webp",
+  "pdf": "media/books/c5u18.pdf?v=30f9c425b6",
+  "v": "30f9c425b6",
+  "secs": {
+   "18.1": [
+    2,
+    5
+   ],
+   "18.2": [
+    6,
+    9
+   ],
+   "answers": [
+    10,
+    10
+   ]
+  }
  }
 }
