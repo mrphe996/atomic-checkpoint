@@ -43,7 +43,7 @@ VIDEOS["12.1"] = [
         dict(say="Step 3: to compare, write each ratio in the form 1 to n, or n to 1.", do=[T("3. Compare with **1 : n** or **n : 1**", x=80, y=350)]),
         dict(say="Step 4: keep the parts in the same order as the question.", do=[T("4. Keep the **order**", x=80, y=440), E("✅", 1100, 410, 90, at=0.8)]),
     ]),
-    dict(kind="example", title="A decimal ratio", steps=[
+    dict(kind="example", title="A fraction ratio", steps=[
         dict(say="Simplify 3 quarters to 2 thirds. Multiply both by 12: 9 to 8.", do=[MATH("¾ : ⅔ = 9 : 8", x=80, y=170)]),
         PAUSE("12.1-k3", "Your turn. Simplify 0.6 to 1.5. Pause and work it out.", "Simplify 0.6 : 1.5."),
     ]),

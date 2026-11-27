@@ -37629,7 +37629,7 @@
     "9.3-k3": 148.21,
     "9.3-k4": 225.06
    },
-   "up": false
+   "up": true
   },
   "11.2": {
    "src": "media/mv/s8/11-2.mp4",
@@ -37907,6 +37907,2055 @@
     "11.2-k2": 63.57,
     "11.2-k3": 123.27,
     "11.2-k4": 182.68
+   },
+   "up": true
+  },
+  "11.3": {
+   "src": "media/mv/s8/11-3.mp4",
+   "poster": "media/mv/s8/11-3_poster.jpg",
+   "srt": "media/mv/s8/11-3.srt",
+   "dur": 238.52,
+   "captions": [
+    [
+     6.82,
+     "Some road signs show a gradient."
+    ],
+    [
+     9.21,
+     "A gradient of 1 in 8 means the road rises 1 metre for every 8 metres across."
+    ],
+    [
+     15.43,
+     "Lines have gradients too."
+    ],
+    [
+     17.3,
+     "Which is steeper: y equals 2 x plus 1, or y equals 3 x minus 4?"
+    ],
+    [
+     22.56,
+     "Which line is steeper?"
+    ],
+    [
+     24.05,
+     "Pause the video and choose."
+    ],
+    [
+     27.26,
+     "y equals 3 x minus 4 is steeper."
+    ],
+    [
+     29.63,
+     "It goes up 3 for every 1 across."
+    ],
+    [
+     31.99,
+     "y equals 2 x plus 1 only goes up 2."
+    ],
+    [
+     34.57,
+     "The number in front of x tells you the steepness."
+    ],
+    [
+     38.74,
+     "Remember: y equals 2 x plus 1 passes through 0, 1 and 1, 3."
+    ],
+    [
+     43.41,
+     "And y equals 3 x minus 4 crosses the y axis at negative 4."
+    ],
+    [
+     48.55,
+     "In y equals m x plus c, m is the gradient."
+    ],
+    [
+     51.31,
+     "It is how much y goes up when x goes up by 1."
+    ],
+    [
+     54.26,
+     "c is the y intercept, where the line crosses the y axis."
+    ],
+    [
+     58.48,
+     "Your turn."
+    ],
+    [
+     59.2,
+     "What is the intercept of y equals 5 x minus 2?"
+    ],
+    [
+     62.54,
+     "Pause the video and try it."
+    ],
+    [
+     65.9,
+     "The intercept is negative 2."
+    ],
+    [
+     67.81,
+     "To find a gradient from a graph, choose two points on the line."
+    ],
+    [
+     72.12,
+     "The gradient is the change in y, divided by the change in x."
+    ],
+    [
+     76.22,
+     "Rise over run."
+    ],
+    [
+     77.73,
+     "From A at 1, 3, to B at 4, 9: the rise is 6, and the run is 3."
+    ],
+    [
+     82.57,
+     "6 divided by 3 is 2."
+    ],
+    [
+     84.13,
+     "The line crosses at 1, so it is y equals 2 x plus 1."
+    ],
+    [
+     88.74,
+     "Here is the method."
+    ],
+    [
+     90.05,
+     "Step 1: read the y intercept, c, where the line crosses the y axis."
+    ],
+    [
+     95.24,
+     "Step 2: choose two clear points."
+    ],
+    [
+     97.48,
+     "The gradient m is rise over run."
+    ],
+    [
+     99.71,
+     "It is negative if the line slopes down."
+    ],
+    [
+     102.99,
+     "Step 3: write y equals m x plus c."
+    ],
+    [
+     105.98,
+     "Step 4: check with another point on the line."
+    ],
+    [
+     109.78,
+     "A line goes through 0, negative 3, and 2, 5."
+    ],
+    [
+     113.12,
+     "It crosses the y axis at negative 3, so c is negative 3."
+    ],
+    [
+     117.92,
+     "The rise is 5 minus negative 3, which is 8."
+    ],
+    [
+     121.41,
+     "The run is 2."
+    ],
+    [
+     122.46,
+     "8 divided by 2 is 4."
+    ],
+    [
+     124.08,
+     "So y equals 4 x minus 3."
+    ],
+    [
+     126.58,
+     "Your turn."
+    ],
+    [
+     127.33,
+     "What is the gradient of the line through 0, 1, and 2, 7?"
+    ],
+    [
+     131.5,
+     "Pause and work it out."
+    ],
+    [
+     134.54,
+     "The rise is 7 minus 1, which is 6."
+    ],
+    [
+     137.37,
+     "The run is 2."
+    ],
+    [
+     138.45,
+     "6 divided by 2 is 3."
+    ],
+    [
+     140.67,
+     "A line goes through 0, 6 and 3, 0."
+    ],
+    [
+     143.37,
+     "c is 6."
+    ],
+    [
+     143.93,
+     "The line goes down 6 as it goes across 3."
+    ],
+    [
+     147.19,
+     "Negative 6 divided by 3 is negative 2."
+    ],
+    [
+     150.21,
+     "So y equals negative 2 x plus 6."
+    ],
+    [
+     153.3,
+     "Parallel lines have the same gradient."
+    ],
+    [
+     156.17,
+     "A line parallel to y equals 5 x minus 1, through 0, 4, has gradient 5 and intercept 4."
+    ],
+    [
+     162.65,
+     "It is y equals 5 x plus 4."
+    ],
+    [
+     165.16,
+     "Finn finds the gradient through 2, 1 and 6, 3."
+    ],
+    [
+     168.78,
+     "Which line goes wrong first?"
+    ],
+    [
+     171.53,
+     "Line 2 is wrong."
+    ],
+    [
+     172.59,
+     "He divided the run by the rise."
+    ],
+    [
+     174.65,
+     "The gradient is the change in y divided by the change in x."
+    ],
+    [
+     179.11,
+     "2 divided by 4 is a half."
+    ],
+    [
+     181.81,
+     "Building rules limit how steep a wheelchair ramp can be."
+    ],
+    [
+     186.03,
+     "A common limit is a gradient of 1 in 12."
+    ],
+    [
+     189.03,
+     "That means 1 unit up for every 12 across."
+    ],
+    [
+     192.67,
+     "So to rise 60 centimetres, a ramp needs to be about 7.2 metres long across the ground."
+    ],
+    [
+     199.72,
+     "One last question."
+    ],
+    [
+     201.0,
+     "Which line is parallel to y equals negative 2 x plus 1?"
+    ],
+    [
+     204.9,
+     "Pause the video and choose."
+    ],
+    [
+     208.22,
+     "Parallel lines have the same gradient, negative 2."
+    ],
+    [
+     211.94,
+     "So y equals negative 2 x minus 5 is parallel."
+    ],
+    [
+     215.83,
+     "To remember: in y equals m x plus c, m is the gradient and c is the y intercept."
+    ],
+    [
+     221.49,
+     "Gradient is rise over run."
+    ],
+    [
+     223.34,
+     "A negative gradient slopes down."
+    ],
+    [
+     226.17,
+     "Parallel lines have the same gradient."
+    ],
+    [
+     229.28,
+     "Rearrange to y equals something, to read m and c."
+    ],
+    [
+     233.11,
+     "Great work! Now practise lesson 11.3 on Camday."
+    ]
+   ],
+   "times": {
+    "11.3-k1": 26.21,
+    "11.3-k2": 64.85,
+    "11.3-k3": 133.49,
+    "11.3-k4": 207.17
+   },
+   "up": true
+  },
+  "11.4": {
+   "src": "media/mv/s8/11-4.mp4",
+   "poster": "media/mv/s8/11-4_poster.jpg",
+   "srt": "media/mv/s8/11-4.srt",
+   "dur": 240.76,
+   "captions": [
+    [
+     6.77,
+     "A family drives 120 kilometres to a beach in 1 and a half hours."
+    ],
+    [
+     11.61,
+     "They stay 2 hours, then drive home in 2 hours because of traffic."
+    ],
+    [
+     17.08,
+     "On which part of the trip were they fastest?"
+    ],
+    [
+     20.1,
+     "Pause the video and choose."
+    ],
+    [
+     23.34,
+     "Going out, they drove 120 kilometres in 1.5 hours."
+    ],
+    [
+     27.32,
+     "That is 80 kilometres per hour."
+    ],
+    [
+     29.79,
+     "Coming home took 2 hours, which is only 60 kilometres per hour."
+    ],
+    [
+     34.8,
+     "So they were fastest going out."
+    ],
+    [
+     37.82,
+     "Remember: speed equals distance divided by time."
+    ],
+    [
+     41.78,
+     "On a distance-time graph, the gradient is the speed."
+    ],
+    [
+     45.22,
+     "A steeper line means faster."
+    ],
+    [
+     47.07,
+     "A flat line means stopped."
+    ],
+    [
+     48.79,
+     "A line sloping down means coming back."
+    ],
+    [
+     51.86,
+     "Your turn."
+    ],
+    [
+     52.61,
+     "What was their speed on the way home: 120 kilometres in 2 hours?"
+    ],
+    [
+     57.43,
+     "Pause the video and try it."
+    ],
+    [
+     60.87,
+     "120 divided by 2 is 60 kilometres per hour."
+    ],
+    [
+     64.14,
+     "The shape of any graph tells a story."
+    ],
+    [
+     66.95,
+     "A straight line means a steady rate."
+    ],
+    [
+     69.69,
+     "A curve means the rate is changing."
+    ],
+    [
+     72.9,
+     "Fill a tall, thin vase with water at a steady rate, and the depth rises quickly."
+    ],
+    [
+     78.23,
+     "In a wide bowl, it rises slowly."
+    ],
+    [
+     80.91,
+     "Here is the method."
+    ],
+    [
+     82.22,
+     "Step 1: read the title, the axes and the units."
+    ],
+    [
+     85.48,
+     "Check the scale."
+    ],
+    [
+     87.13,
+     "Step 2: describe each section."
+    ],
+    [
+     89.22,
+     "Is it going up, flat or going down?"
+    ],
+    [
+     91.66,
+     "Steep or gentle?"
+    ],
+    [
+     93.32,
+     "Step 3: work out rates as gradients, like speed equals distance divided by time."
+    ],
+    [
+     99.52,
+     "Step 4: explain what it means in the real situation."
+    ],
+    [
+     103.84,
+     "Find the average speed for the whole trip, including the stop."
+    ],
+    [
+     108.42,
+     "The total distance is 240 kilometres."
+    ],
+    [
+     111.16,
+     "The total time is 5 and a half hours."
+    ],
+    [
+     114.44,
+     "240 divided by 5.5 is about 43.6 kilometres per hour."
+    ],
+    [
+     118.94,
+     "The stop brings the average down."
+    ],
+    [
+     122.29,
+     "Water flows steadily into a cylinder with a narrowing funnel on top."
+    ],
+    [
+     126.89,
+     "In the cylinder, the depth rises at a steady rate, so the graph is a straight line."
+    ],
+    [
+     133.04,
+     "In the funnel, the space gets narrower, so the depth rises faster and faster."
+    ],
+    [
+     138.3,
+     "The graph curves upwards, getting steeper."
+    ],
+    [
+     141.72,
+     "Your turn."
+    ],
+    [
+     142.42,
+     "A curve getting steeper means the rate is what?"
+    ],
+    [
+     145.7,
+     "Pause and choose."
+    ],
+    [
+     148.28,
+     "Getting steeper means the rate is increasing."
+    ],
+    [
+     151.8,
+     "And if two people's lines cross on a distance-time graph, they are at the same place at the same time."
+    ],
+    [
+     158.61,
+     "They meet."
+    ],
+    [
+     159.83,
+     "A distance-time graph reaches 60 kilometres at 2 hours."
+    ],
+    [
+     163.89,
+     "Zara finds the speed."
+    ],
+    [
+     165.44,
+     "Which line goes wrong first?"
+    ],
+    [
+     168.05,
+     "Line 2 is wrong."
+    ],
+    [
+     169.19,
+     "The height shows the distance, not the speed."
+    ],
+    [
+     172.37,
+     "The speed is the gradient."
+    ],
+    [
+     174.76,
+     "60 divided by 2 is 30 kilometres per hour."
+    ],
+    [
+     179.05,
+     "A running app draws a distance-time graph of your run."
+    ],
+    [
+     182.73,
+     "Steep parts show where you ran fast."
+    ],
+    [
+     185.19,
+     "Flat parts show where you stopped, maybe at a traffic light."
+    ],
+    [
+     189.83,
+     "The app's pace is just the gradient of the graph, worked out for you."
+    ],
+    [
+     194.92,
+     "One last question."
+    ],
+    [
+     196.23,
+     "9 kilometres in 45 minutes is how many kilometres per hour?"
+    ],
+    [
+     200.53,
+     "Pause the video and answer."
+    ],
+    [
+     203.9,
+     "45 minutes is three quarters of an hour."
+    ],
+    [
+     207.4,
+     "9 divided by 0.75 is 12."
+    ],
+    [
+     209.49,
+     "Or: 3 kilometres every 15 minutes, which is 12 in an hour."
+    ],
+    [
+     215.11,
+     "To remember: on a distance-time graph, the gradient is the speed."
+    ],
+    [
+     219.66,
+     "Flat means stopped."
+    ],
+    [
+     220.99,
+     "Down means coming back."
+    ],
+    [
+     223.15,
+     "A straight line means a steady rate."
+    ],
+    [
+     225.58,
+     "A curve means a changing rate."
+    ],
+    [
+     228.16,
+     "Average speed is total distance divided by total time."
+    ],
+    [
+     232.51,
+     "Describe each section in context."
+    ],
+    [
+     235.34,
+     "Great work! Now practise lesson 11.4 on Camday."
+    ]
+   ],
+   "times": {
+    "11.4-k1": 22.29,
+    "11.4-k2": 59.82,
+    "11.4-k3": 147.23,
+    "11.4-k4": 202.85
+   },
+   "up": true
+  },
+  "12.1": {
+   "src": "media/mv/s8/12-1.mp4",
+   "poster": "media/mv/s8/12-1_poster.jpg",
+   "srt": "media/mv/s8/12-1.srt",
+   "dur": 245.24,
+   "captions": [
+    [
+     6.7,
+     "A pastry recipe uses 0.5 kilograms of flour and 250 grams of butter."
+    ],
+    [
+     12.04,
+     "Another recipe uses flour and butter in the ratio 3 to 2."
+    ],
+    [
+     17.06,
+     "Which recipe is more buttery?"
+    ],
+    [
+     19.1,
+     "Pause the video and choose."
+    ],
+    [
+     22.41,
+     "Change to the same units."
+    ],
+    [
+     24.74,
+     "0.5 kilograms is 500 grams."
+    ],
+    [
+     27.25,
+     "So recipe 1 is 500 to 250, which simplifies to 2 to 1."
+    ],
+    [
+     32.83,
+     "Recipe 1 has 2 parts of flour for each part of butter."
+    ],
+    [
+     36.98,
+     "Recipe 2 has 3 to 2, which is 1.5 to 1."
+    ],
+    [
+     39.98,
+     "Less flour for each part of butter, so recipe 2 is more buttery."
+    ],
+    [
+     45.46,
+     "Remember: to simplify a ratio, divide all the parts by their highest common factor."
+    ],
+    [
+     52.4,
+     "12 to 18 simplifies to 2 to 3."
+    ],
+    [
+     54.91,
+     "45 to 60 simplifies to 3 to 4."
+    ],
+    [
+     57.97,
+     "If the units are different, change them to the same units first."
+    ],
+    [
+     62.83,
+     "To compare ratios, write them in the form n to 1, or 1 to n."
+    ],
+    [
+     67.01,
+     "Then they are easy to compare."
+    ],
+    [
+     69.65,
+     "Your turn."
+    ],
+    [
+     70.47,
+     "Simplify 400 metres to 1.2 kilometres."
+    ],
+    [
+     73.57,
+     "Pause the video and try it."
+    ],
+    [
+     77.18,
+     "1.2 kilometres is 1,200 metres."
+    ],
+    [
+     80.78,
+     "400 to 1,200."
+    ],
+    [
+     82.28,
+     "Divide both by 400: 1 to 3."
+    ],
+    [
+     85.97,
+     "Clear decimals by multiplying."
+    ],
+    [
+     88.67,
+     "1.2 to 0.8 is 12 to 8, which is 3 to 2."
+    ],
+    [
+     92.72,
+     "Clear fractions by multiplying by a common denominator."
+    ],
+    [
+     96.77,
+     "A half to a third, times 6, is 3 to 2."
+    ],
+    [
+     100.12,
+     "Three-part ratios simplify in the same way."
+    ],
+    [
+     103.96,
+     "24 to 36 to 60, divided by 12, is 2 to 3 to 5."
+    ],
+    [
+     108.62,
+     "Here is the method."
+    ],
+    [
+     109.96,
+     "Step 1: change to the same units, and clear any decimals or fractions."
+    ],
+    [
+     115.46,
+     "Step 2: divide all the parts by the H C F."
+    ],
+    [
+     118.98,
+     "Step 3: to compare, write each ratio in the form 1 to n, or n to 1."
+    ],
+    [
+     124.42,
+     "Step 4: keep the parts in the same order as the question."
+    ],
+    [
+     128.98,
+     "Simplify 3 quarters to 2 thirds."
+    ],
+    [
+     131.7,
+     "Multiply both by 12: 9 to 8."
+    ],
+    [
+     134.63,
+     "Your turn."
+    ],
+    [
+     135.47,
+     "Simplify 0.6 to 1.5."
+    ],
+    [
+     137.16,
+     "Pause and work it out."
+    ],
+    [
+     140.41,
+     "Multiply by 10: 6 to 15."
+    ],
+    [
+     142.73,
+     "Divide by 3: 2 to 5."
+    ],
+    [
+     145.22,
+     "A map's scale is 4 centimetres to 1 kilometre."
+    ],
+    [
+     149.75,
+     "Write it as 1 to n."
+    ],
+    [
+     151.62,
+     "1 kilometre is 100,000 centimetres."
+    ],
+    [
+     155.07,
+     "So it is 4 to 100,000."
+    ],
+    [
+     157.23,
+     "Divide by 4: 1 to 25,000."
+    ],
+    [
+     160.24,
+     "Class A has 12 boys and 18 girls."
+    ],
+    [
+     163.24,
+     "Class B has 10 boys and 14 girls."
+    ],
+    [
+     166.23,
+     "Which has more girls per boy?"
+    ],
+    [
+     168.86,
+     "A: 18 divided by 12 is 1.5."
+    ],
+    [
+     171.31,
+     "B: 14 divided by 10 is 1.4."
+    ],
+    [
+     173.76,
+     "Class A."
+    ],
+    [
+     175.04,
+     "Jo simplifies 300 grams to 2 kilograms."
+    ],
+    [
+     178.29,
+     "Which line is wrong?"
+    ],
+    [
+     180.5,
+     "Line 1 is wrong."
+    ],
+    [
+     181.82,
+     "She ignored the units."
+    ],
+    [
+     183.64,
+     "Change to the same units first: 300 grams to 2,000 grams."
+    ],
+    [
+     188.89,
+     "Divide by 100: 3 to 20."
+    ],
+    [
+     192.01,
+     "Screens are described by ratios."
+    ],
+    [
+     194.56,
+     "A widescreen TV is 16 to 9."
+    ],
+    [
+     196.71,
+     "An older TV was 4 to 3."
+    ],
+    [
+     199.1,
+     "In the form n to 1, 16 to 9 is about 1.78 to 1, and 4 to 3 is about 1.33 to 1."
+    ],
+    [
+     205.84,
+     "So widescreen is much wider for its height."
+    ],
+    [
+     210.11,
+     "One last question."
+    ],
+    [
+     211.39,
+     "Write 5 to 8 in the form 1 to n."
+    ],
+    [
+     213.66,
+     "What is n?"
+    ],
+    [
+     214.37,
+     "Pause the video and answer."
+    ],
+    [
+     217.7,
+     "Divide both parts by 5."
+    ],
+    [
+     219.72,
+     "8 divided by 5 is 1.6."
+    ],
+    [
+     221.66,
+     "So it is 1 to 1.6."
+    ],
+    [
+     223.8,
+     "To remember: use the same units, clear decimals and fractions, then divide by the H C F."
+    ],
+    [
+     230.25,
+     "The forms 1 to n, and n to 1, help you compare."
+    ],
+    [
+     234.13,
+     "Three-part ratios work the same way."
+    ],
+    [
+     237.17,
+     "Keep the order of the parts."
+    ],
+    [
+     239.8,
+     "Great work! Now practise lesson 12.1 on Camday."
+    ]
+   ],
+   "times": {
+    "12.1-k1": 21.36,
+    "12.1-k2": 76.13,
+    "12.1-k3": 139.36,
+    "12.1-k4": 216.65
+   },
+   "up": false
+  },
+  "12.2": {
+   "src": "media/mv/s8/12-2.mp4",
+   "poster": "media/mv/s8/12-2_poster.jpg",
+   "srt": "media/mv/s8/12-2.srt",
+   "dur": 253.08,
+   "captions": [
+    [
+     6.5,
+     "Three friends buy a painting together."
+    ],
+    [
+     9.75,
+     "Ana pays 200 dollars, Ben 300 dollars, and Cara 100 dollars."
+    ],
+    [
+     14.87,
+     "Later they sell it for 840 dollars."
+    ],
+    [
+     18.41,
+     "To be fair, they share the money in the same ratio as they paid: 200 to 300 to 100, which is 2 to 3 to 1."
+    ],
+    [
+     28.01,
+     "What is Ana's fair share of 840 dollars?"
+    ],
+    [
+     31.05,
+     "Pause the video and work it out."
+    ],
+    [
+     34.88,
+     "2 plus 3 plus 1 is 6 parts."
+    ],
+    [
+     37.39,
+     "One part is 840 divided by 6, which is 140 dollars."
+    ],
+    [
+     42.67,
+     "Ana gets 2 parts, 280 dollars."
+    ],
+    [
+     45.53,
+     "Ben gets 420, and Cara gets 140."
+    ],
+    [
+     48.57,
+     "Check: they add up to 840."
+    ],
+    [
+     51.6,
+     "Remember: to share 60 in the ratio 2 to 3, there are 5 parts."
+    ],
+    [
+     56.83,
+     "One part is 12."
+    ],
+    [
+     58.11,
+     "So the shares are 24 and 36."
+    ],
+    [
+     61.06,
+     "Always find the value of one part first."
+    ],
+    [
+     63.69,
+     "From a total: divide the total by the number of parts."
+    ],
+    [
+     67.79,
+     "From one share: if Ben got 420 dollars for 3 parts, one part is 140."
+    ],
+    [
+     74.24,
+     "From a difference: if Ben got 280 dollars more than Cara, that is 2 parts."
+    ],
+    [
+     80.19,
+     "So one part is 140."
+    ],
+    [
+     82.26,
+     "Your turn."
+    ],
+    [
+     83.03,
+     "Share 56 in the ratio 3 to 4 to 7."
+    ],
+    [
+     85.62,
+     "What is the smallest share?"
+    ],
+    [
+     87.67,
+     "Pause the video and try it."
+    ],
+    [
+     91.13,
+     "3 plus 4 plus 7 is 14 parts."
+    ],
+    [
+     93.64,
+     "One part is 56 divided by 14, which is 4."
+    ],
+    [
+     97.31,
+     "The smallest share is 3 times 4, which is 12."
+    ],
+    [
+     101.89,
+     "Here is the method."
+    ],
+    [
+     103.23,
+     "Step 1: simplify the ratio if you can."
+    ],
+    [
+     106.47,
+     "Step 2: decide what you know: the total, one share, or a difference."
+    ],
+    [
+     111.69,
+     "Step 3: find the value of one part."
+    ],
+    [
+     114.76,
+     "Step 4: multiply to get each share."
+    ],
+    [
+     117.2,
+     "Check that they add up to the total."
+    ],
+    [
+     120.26,
+     "Red sweets and blue sweets are in the ratio 5 to 3."
+    ],
+    [
+     124.03,
+     "There are 12 more red than blue."
+    ],
+    [
+     126.4,
+     "How many sweets altogether?"
+    ],
+    [
+     128.94,
+     "The difference is 2 parts, which is 12."
+    ],
+    [
+     132.02,
+     "So one part is 6."
+    ],
+    [
+     133.36,
+     "The total is 8 parts, which is 48 sweets."
+    ],
+    [
+     137.14,
+     "Your turn."
+    ],
+    [
+     137.89,
+     "Cats and dogs are in the ratio 2 to 5."
+    ],
+    [
+     140.74,
+     "There are 15 dogs."
+    ],
+    [
+     142.09,
+     "How many cats?"
+    ],
+    [
+     143.14,
+     "Pause and work it out."
+    ],
+    [
+     146.19,
+     "5 parts is 15 dogs, so one part is 3."
+    ],
+    [
+     149.27,
+     "Cats are 2 parts, which is 6."
+    ],
+    [
+     152.23,
+     "A triangle's angles are in the ratio 2 to 3 to 4."
+    ],
+    [
+     156.29,
+     "Find them."
+    ],
+    [
+     157.11,
+     "The angles add up to 180 degrees, and there are 9 parts."
+    ],
+    [
+     161.75,
+     "One part is 20 degrees."
+    ],
+    [
+     163.65,
+     "The angles are 40, 60 and 80 degrees."
+    ],
+    [
+     167.26,
+     "Max shares 720 dollars in the ratio 2 to 3 to 4."
+    ],
+    [
+     171.26,
+     "Which line goes wrong first?"
+    ],
+    [
+     174.15,
+     "Line 1 is wrong."
+    ],
+    [
+     175.3,
+     "Divide by the total number of parts, which is 9, not by the number of people."
+    ],
+    [
+     180.84,
+     "And his shares add up to much more than 720!"
+    ],
+    [
+     184.55,
+     "One part is 80."
+    ],
+    [
+     186.11,
+     "The shares are 160, 240 and 320 dollars."
+    ],
+    [
+     190.83,
+     "Business partners often share profits in the ratio of the money they put in."
+    ],
+    [
+     196.88,
+     "The painting cost 600 dollars and sold for 840, so the profit was 240 dollars."
+    ],
+    [
+     203.64,
+     "Shared 2 to 3 to 1, that is 6 parts of 40 dollars: Ana's profit is 80, Ben's 120, and Cara's 40."
+    ],
+    [
+     212.75,
+     "One last question."
+    ],
+    [
+     214.06,
+     "A triangle's angles are in the ratio 1 to 1 to 2."
+    ],
+    [
+     217.61,
+     "What is the largest angle?"
+    ],
+    [
+     219.5,
+     "Pause the video and answer."
+    ],
+    [
+     222.86,
+     "4 parts make 180 degrees, so one part is 45."
+    ],
+    [
+     226.63,
+     "The largest angle is 2 parts, which is 90 degrees."
+    ],
+    [
+     231.45,
+     "To remember: the total divided by the number of parts gives one part."
+    ],
+    [
+     236.71,
+     "From one share, or a difference, find one part first."
+    ],
+    [
+     240.88,
+     "The shares must add up to the total."
+    ],
+    [
+     243.79,
+     "Profits and angles can be shared in ratios too."
+    ],
+    [
+     247.6,
+     "Great work! Now practise lesson 12.2 on Camday."
+    ]
+   ],
+   "times": {
+    "12.2-k1": 33.83,
+    "12.2-k2": 90.08,
+    "12.2-k3": 145.14,
+    "12.2-k4": 221.81
+   },
+   "up": true
+  },
+  "12.3": {
+   "src": "media/mv/s8/12-3.mp4",
+   "poster": "media/mv/s8/12-3_poster.jpg",
+   "srt": "media/mv/s8/12-3.srt",
+   "dur": 256.24,
+   "captions": [
+    [
+     7.27,
+     "To make a shade of green, Ali mixes 2 litres of blue with 3 litres of yellow."
+    ],
+    [
+     12.85,
+     "Bea mixes 3 litres of blue with 5 litres of yellow."
+    ],
+    [
+     17.09,
+     "Will the two shades be the same?"
+    ],
+    [
+     19.29,
+     "Pause the video and choose."
+    ],
+    [
+     22.55,
+     "No."
+    ],
+    [
+     22.79,
+     "Write each as blue to 1 litre of yellow."
+    ],
+    [
+     25.91,
+     "Ali: 2 to 3 is about 0.67 to 1."
+    ],
+    [
+     28.34,
+     "Bea: 3 to 5 is 0.6 to 1."
+    ],
+    [
+     30.21,
+     "The ratios are different, so the shades are different."
+    ],
+    [
+     34.43,
+     "Ali's is bluer."
+    ],
+    [
+     36.16,
+     "Remember the unitary method."
+    ],
+    [
+     38.56,
+     "If 4 pens cost 6 dollars, 1 pen costs 1 dollar 50, and 7 pens cost 10 dollars 50."
+    ],
+    [
+     46.08,
+     "Two quantities are in direct proportion if their ratio stays the same."
+    ],
+    [
+     50.86,
+     "To get the same shade, the ratio of blue to yellow must not change."
+    ],
+    [
+     55.98,
+     "So to make more of Ali's green, multiply both parts by the same number."
+    ],
+    [
+     61.65,
+     "2 to 3 becomes 4 to 6, or 10 to 15."
+    ],
+    [
+     65.0,
+     "Your turn."
+    ],
+    [
+     65.72,
+     "Sand and cement are mixed in the ratio 4 to 1."
+    ],
+    [
+     69.06,
+     "How much cement goes with 26 kilograms of sand?"
+    ],
+    [
+     72.47,
+     "Pause the video and try it."
+    ],
+    [
+     75.83,
+     "4 parts is 26 kilograms, so 1 part is 26 divided by 4, which is 6.5 kilograms of cement."
+    ],
+    [
+     83.99,
+     "To compare prices, find a unit rate, like the price per 100 grams."
+    ],
+    [
+     90.18,
+     "400 grams for 3 dollars 60 is 90 cents per 100 grams."
+    ],
+    [
+     95.15,
+     "650 grams for 5 dollars 53 is about 85 cents per 100 grams."
+    ],
+    [
+     101.23,
+     "The 650 gram pack is better value, because it costs less per 100 grams."
+    ],
+    [
+     107.72,
+     "Here is the method."
+    ],
+    [
+     109.05,
+     "Step 1: write the ratio, with the units in the same order."
+    ],
+    [
+     113.64,
+     "Step 2: find the multiplier from the quantity you know, or use the unitary method."
+    ],
+    [
+     120.0,
+     "Step 3: multiply the other part by the same number."
+    ],
+    [
+     124.17,
+     "Step 4: to compare, find unit rates."
+    ],
+    [
+     126.68,
+     "The best buy has the lowest price per unit."
+    ],
+    [
+     130.23,
+     "Flour and sugar are in the ratio 5 to 2."
+    ],
+    [
+     133.82,
+     "How much flour goes with 350 grams of sugar?"
+    ],
+    [
+     137.77,
+     "2 parts is 350, so 1 part is 175."
+    ],
+    [
+     140.73,
+     "5 parts is 875 grams."
+    ],
+    [
+     143.16,
+     "Your turn."
+    ],
+    [
+     144.05,
+     "Which is better value: 300 grams for 2 dollars 40, or 500 grams for 3 dollars 90?"
+    ],
+    [
+     151.21,
+     "Pause and choose."
+    ],
+    [
+     154.12,
+     "300 grams for 2 dollars 40 is 80 cents per 100 grams."
+    ],
+    [
+     159.56,
+     "500 grams for 3 dollars 90 is 78 cents per 100 grams."
+    ],
+    [
+     164.99,
+     "The 500 gram pack is better value."
+    ],
+    [
+     169.03,
+     "Here x is 2, 5, 8, and y is 7, 17.5, 28."
+    ],
+    [
+     172.48,
+     "Are they in direct proportion?"
+    ],
+    [
+     175.07,
+     "Divide y by x: 3.5, 3.5, 3.5."
+    ],
+    [
+     177.58,
+     "The same every time, so yes."
+    ],
+    [
+     179.99,
+     "y equals 3.5 x."
+    ],
+    [
+     181.84,
+     "Ali's mix is 2 blue to 3 yellow."
+    ],
+    [
+     184.18,
+     "He uses 6 litres of yellow."
+    ],
+    [
+     186.16,
+     "How much blue?"
+    ],
+    [
+     187.19,
+     "Which line goes wrong first?"
+    ],
+    [
+     189.79,
+     "Line 1 is wrong."
+    ],
+    [
+     190.98,
+     "Ratios scale by multiplying, not adding."
+    ],
+    [
+     193.96,
+     "Yellow was multiplied by 2."
+    ],
+    [
+     196.52,
+     "So blue is 2 times 2, which is 4 litres."
+    ],
+    [
+     200.21,
+     "Builders mix concrete in ratios of cement, sand and gravel, such as 1 to 2 to 3."
+    ],
+    [
+     205.92,
+     "If the ratio changes, the concrete can be weak."
+    ],
+    [
+     209.83,
+     "For a big job they scale up every part by the same multiplier: 50 kilograms of cement needs 100 of sand and 150 of gravel."
+    ],
+    [
+     220.11,
+     "One last question."
+    ],
+    [
+     221.46,
+     "y is in direct proportion to x."
+    ],
+    [
+     223.77,
+     "y is 12 when x is 3."
+    ],
+    [
+     225.27,
+     "What is y when x is 10?"
+    ],
+    [
+     226.99,
+     "Pause the video and answer."
+    ],
+    [
+     230.41,
+     "12 divided by 3 is 4, so y equals 4 x."
+    ],
+    [
+     233.88,
+     "When x is 10, y is 40."
+    ],
+    [
+     236.44,
+     "To remember: in direct proportion, the ratio stays the same."
+    ],
+    [
+     241.15,
+     "Scale both parts by the same multiplier."
+    ],
+    [
+     244.47,
+     "Compare using 1 to n, or unit rates."
+    ],
+    [
+     247.43,
+     "The best buy has the lowest price per unit."
+    ],
+    [
+     250.85,
+     "Great work! Now practise lesson 12.3 on Camday."
+    ]
+   ],
+   "times": {
+    "12.3-k1": 21.5,
+    "12.3-k2": 74.78,
+    "12.3-k3": 153.07,
+    "12.3-k4": 229.36
+   },
+   "up": true
+  },
+  "13.1": {
+   "src": "media/mv/s8/13-1.mp4",
+   "poster": "media/mv/s8/13-1_poster.jpg",
+   "srt": "media/mv/s8/13-1.srt",
+   "dur": 269.92,
+   "captions": [
+    [
+     7.23,
+     "In a board game, you roll two dice and add the scores."
+    ],
+    [
+     10.88,
+     "You need a total of 7 to win."
+    ],
+    [
+     13.38,
+     "Is a total of 7 more likely than a total of 12?"
+    ],
+    [
+     17.52,
+     "Which total is more likely: 7 or 12?"
+    ],
+    [
+     20.27,
+     "Pause the video and choose."
+    ],
+    [
+     23.72,
+     "There is only one way to make 12: 6 and 6."
+    ],
+    [
+     27.2,
+     "But there are six ways to make 7: 1 and 6, 2 and 5, 3 and 4, 4 and 3, 5 and 2, and 6 and 1."
+    ],
+    [
+     34.74,
+     "So 7 is much more likely."
+    ],
+    [
+     37.36,
+     "Remember: when outcomes are equally likely, the probability of an event is the number of favourable outcomes, divided by the total number of outcomes."
+    ],
+    [
+     48.21,
+     "On a fair dice, the probability of a number less than 3 is 2 sixths, which is 1 third."
+    ],
+    [
+     54.88,
+     "For two dice, list every combination in a table."
+    ],
+    [
+     58.31,
+     "This is called a sample space diagram."
+    ],
+    [
+     61.03,
+     "Each dice has 6 scores, so there are 6 times 6 outcomes."
+    ],
+    [
+     65.58,
+     "Your turn."
+    ],
+    [
+     66.26,
+     "How many outcomes are there for two dice?"
+    ],
+    [
+     69.06,
+     "Pause the video and work it out."
+    ],
+    [
+     72.65,
+     "6 times 6 is 36 outcomes."
+    ],
+    [
+     74.64,
+     "The 7s lie along a diagonal."
+    ],
+    [
+     76.88,
+     "There are 6 of them, so the probability of 7 is 6 thirty-sixths, which is 1 sixth."
+    ],
+    [
+     83.98,
+     "An event and its complement, not the event, cover every outcome."
+    ],
+    [
+     88.33,
+     "So the probability of not A is 1 minus the probability of A."
+    ],
+    [
+     92.95,
+     "The probability of a total that is not 7 is 1 minus 1 sixth, which is 5 sixths."
+    ],
+    [
+     99.4,
+     "And if outcomes cannot happen together, their probabilities add up to 1."
+    ],
+    [
+     105.01,
+     "Here is the method."
+    ],
+    [
+     106.33,
+     "Step 1: list all the equally likely outcomes, in a list or a sample space diagram."
+    ],
+    [
+     112.56,
+     "Step 2: count the total, and the favourable outcomes."
+    ],
+    [
+     116.96,
+     "Step 3: divide favourable by total, and simplify."
+    ],
+    [
+     121.11,
+     "Step 4: for not, or at least one, it can be quicker to use 1 minus."
+    ],
+    [
+     126.32,
+     "A coin is tossed, and a dice is rolled."
+    ],
+    [
+     129.08,
+     "What is the probability of a head and an even number?"
+    ],
+    [
+     132.84,
+     "There are 2 times 6, which is 12 outcomes."
+    ],
+    [
+     136.37,
+     "The favourable ones are head 2, head 4 and head 6."
+    ],
+    [
+     140.38,
+     "That is 3 out of 12, which is 1 quarter."
+    ],
+    [
+     144.14,
+     "Your turn."
+    ],
+    [
+     144.83,
+     "With two dice, what is the probability of a total of 2?"
+    ],
+    [
+     148.65,
+     "Pause and work it out."
+    ],
+    [
+     151.57,
+     "The only way is 1 and 1."
+    ],
+    [
+     153.51,
+     "That is 1 outcome out of 36."
+    ],
+    [
+     155.76,
+     "The probability is 1 thirty-sixth."
+    ],
+    [
+     159.05,
+     "A spinner lands on red with probability 0.2, blue 0.35, and green 0.15."
+    ],
+    [
+     165.02,
+     "The rest is yellow."
+    ],
+    [
+     166.62,
+     "The known ones add up to 0.7."
+    ],
+    [
+     169.05,
+     "So yellow is 1 minus 0.7, which is 0.3."
+    ],
+    [
+     172.88,
+     "With two dice, what is the probability of at least one six?"
+    ],
+    [
+     177.08,
+     "It is quicker to find the probability of no six."
+    ],
+    [
+     180.49,
+     "Each dice has 5 non-sixes, so 5 times 5 is 25 outcomes with no six."
+    ],
+    [
+     185.81,
+     "So the probability of at least one six is 1 minus 25 thirty-sixths, which is 11 thirty-sixths."
+    ],
+    [
+     193.64,
+     "Lily finds the probability that two dice both show 6."
+    ],
+    [
+     197.36,
+     "Which line goes wrong first?"
+    ],
+    [
+     199.88,
+     "Line 1 is wrong."
+    ],
+    [
+     201.08,
+     "Each of the 6 scores on the first dice goes with each of the 6 on the second."
+    ],
+    [
+     206.87,
+     "That is 6 times 6, which is 36 outcomes."
+    ],
+    [
+     210.42,
+     "So the probability is 1 thirty-sixth."
+    ],
+    [
+     213.78,
+     "Game designers use these probabilities."
+    ],
+    [
+     216.53,
+     "In some board games, the squares or tiles numbered 6 and 8 produce resources most often, because those totals are very likely with two dice."
+    ],
+    [
+     226.95,
+     "Totals of 2 and 12 are rare, with a probability of only 1 thirty-sixth each."
+    ],
+    [
+     233.34,
+     "One last question."
+    ],
+    [
+     234.67,
+     "The probability of A is 0.45."
+    ],
+    [
+     236.81,
+     "What is the probability of not A?"
+    ],
+    [
+     239.24,
+     "Pause the video and answer."
+    ],
+    [
+     242.64,
+     "1 minus 0.45 is 0.55."
+    ],
+    [
+     245.97,
+     "To remember: list all the equally likely outcomes, with a sample space diagram."
+    ],
+    [
+     251.96,
+     "The probability is favourable divided by total."
+    ],
+    [
+     255.81,
+     "The probability of not A is 1 minus the probability of A."
+    ],
+    [
+     260.33,
+     "Outcomes that cannot happen together add up to 1."
+    ],
+    [
+     264.5,
+     "Great work! Now practise lesson 13.1 on Camday."
+    ]
+   ],
+   "times": {
+    "13.1-k1": 22.67,
+    "13.1-k2": 71.6,
+    "13.1-k3": 150.52,
+    "13.1-k4": 241.59
+   },
+   "up": false
+  },
+  "14.1": {
+   "src": "media/mv/s8/14-1.mp4",
+   "poster": "media/mv/s8/14-1_poster.jpg",
+   "srt": "media/mv/s8/14-1.srt",
+   "dur": 235.88,
+   "captions": [
+    [
+     5.98,
+     "A boat leaves a harbour and sails on a bearing of 0 7 0 degrees."
+    ],
+    [
+     10.83,
+     "That means 70 degrees, turning clockwise from north."
+    ],
+    [
+     15.33,
+     "Roughly which way does the boat point?"
+    ],
+    [
+     17.96,
+     "Pause the video and choose."
+    ],
+    [
+     21.22,
+     "70 degrees is a bit less than 90, which is east."
+    ],
+    [
+     24.76,
+     "So the boat heads east-north-east, a little north of east."
+    ],
+    [
+     29.58,
+     "And what bearing would take it straight back?"
+    ],
+    [
+     32.62,
+     "We will find out."
+    ],
+    [
+     34.32,
+     "Remember: north is 0 degrees, east is 90, south is 180, and west is 270."
+    ],
+    [
+     40.22,
+     "They are measured clockwise from north."
+    ],
+    [
+     43.41,
+     "South-east is halfway between east and south: 135 degrees."
+    ],
+    [
+     48.71,
+     "A bearing is the direction of one point from another."
+    ],
+    [
+     52.72,
+     "It is measured from north, clockwise, and it is always written with three figures, like 0 7 0, 2 4 5, or 0 0 8."
+    ],
+    [
+     61.65,
+     "The bearing of B from A means: stand at A, face north, then turn clockwise until you face B."
+    ],
+    [
+     68.28,
+     "Your turn."
+    ],
+    [
+     68.96,
+     "What is the bearing of due west?"
+    ],
+    [
+     71.14,
+     "Write three figures."
+    ],
+    [
+     72.51,
+     "Pause the video and try it."
+    ],
+    [
+     75.75,
+     "Due west is 2 7 0 degrees."
+    ],
+    [
+     77.94,
+     "Now, the bearing back."
+    ],
+    [
+     79.79,
+     "The bearing of A from B differs by 180 degrees."
+    ],
+    [
+     83.74,
+     "If B is 0 4 0 from A, then A is 40 plus 180, which is 2 2 0 from B."
+    ],
+    [
+     89.92,
+     "If the bearing is more than 180, subtract 180 instead."
+    ],
+    [
+     95.24,
+     "3 0 0 becomes 1 2 0."
+    ],
+    [
+     97.75,
+     "Here is the method."
+    ],
+    [
+     99.08,
+     "Step 1: find the point you are measuring from, and draw north there."
+    ],
+    [
+     104.37,
+     "Step 2: measure clockwise from north to the line joining the points."
+    ],
+    [
+     109.73,
+     "Step 3: write the answer with three figures."
+    ],
+    [
+     113.45,
+     "Step 4: for the back bearing, add or subtract 180."
+    ],
+    [
+     118.09,
+     "The angle clockwise from north at P to Q is 115 degrees."
+    ],
+    [
+     122.76,
+     "So the bearing of Q from P is 1 1 5."
+    ],
+    [
+     125.77,
+     "The bearing of P from Q is 115 plus 180, which is 2 9 5."
+    ],
+    [
+     131.0,
+     "Your turn."
+    ],
+    [
+     131.74,
+     "A bearing is 0 7 0 degrees."
+    ],
+    [
+     133.74,
+     "What is the back bearing?"
+    ],
+    [
+     135.59,
+     "Pause and work it out."
+    ],
+    [
+     138.63,
+     "70 plus 180 is 250."
+    ],
+    [
+     140.31,
+     "The back bearing is 2 5 0 degrees."
+    ],
+    [
+     143.34,
+     "That takes the boat straight back to the harbour."
+    ],
+    [
+     148.24,
+     "The angle from north anticlockwise to C, at D, is 40 degrees."
+    ],
+    [
+     153.16,
+     "Bearings go clockwise, so the bearing is 360 minus 40, which is 3 2 0 degrees."
+    ],
+    [
+     159.99,
+     "The angle from north, anticlockwise, to T is 65 degrees."
+    ],
+    [
+     164.04,
+     "Sam writes the bearing."
+    ],
+    [
+     165.7,
+     "Which line is wrong?"
+    ],
+    [
+     167.69,
+     "Line 1 is wrong."
+    ],
+    [
+     169.22,
+     "Bearings are measured clockwise."
+    ],
+    [
+     172.28,
+     "360 minus 65 is 295."
+    ],
+    [
+     174.74,
+     "The bearing is 2 9 5 degrees."
+    ],
+    [
+     177.77,
+     "Pilots and ship captains use bearings."
+    ],
+    [
+     180.71,
+     "Airport runways are numbered by their bearing, divided by 10."
+    ],
+    [
+     185.41,
+     "A runway pointing on a bearing of about 2 7 0 is called runway 27."
+    ],
+    [
+     191.06,
+     "The other end of the same runway points the opposite way, 0 9 0, so it is called runway 9."
+    ],
+    [
+     198.23,
+     "One last question."
+    ],
+    [
+     199.48,
+     "What is south-west as a bearing?"
+    ],
+    [
+     201.7,
+     "Write three figures."
+    ],
+    [
+     203.09,
+     "Pause the video and answer."
+    ],
+    [
+     206.37,
+     "South is 180, and west is 270."
+    ],
+    [
+     209.08,
+     "South-west is halfway between: 2 2 5 degrees."
+    ],
+    [
+     213.7,
+     "To remember: bearings are measured from north, clockwise, with three figures."
+    ],
+    [
+     219.56,
+     "From A means stand at A."
+    ],
+    [
+     222.02,
+     "The back bearing is the bearing plus or minus 180 degrees."
+    ],
+    [
+     227.04,
+     "Use a protractor and a scale for drawings."
+    ],
+    [
+     230.44,
+     "Great work! Now practise lesson 14.1 on Camday."
+    ]
+   ],
+   "times": {
+    "14.1-k1": 20.17,
+    "14.1-k2": 74.7,
+    "14.1-k3": 137.58,
+    "14.1-k4": 205.32
    },
    "up": false
   }

@@ -1,0 +1,263 @@
+1
+00:00:07,230 --> 00:00:10,830
+In a board game, you roll two dice and add the scores.
+
+2
+00:00:10,880 --> 00:00:13,330
+You need a total of 7 to win.
+
+3
+00:00:13,380 --> 00:00:17,470
+Is a total of 7 more likely than a total of 12?
+
+4
+00:00:17,520 --> 00:00:20,220
+Which total is more likely: 7 or 12?
+
+5
+00:00:20,270 --> 00:00:23,670
+Pause the video and choose.
+
+6
+00:00:23,720 --> 00:00:27,150
+There is only one way to make 12: 6 and 6.
+
+7
+00:00:27,200 --> 00:00:34,690
+But there are six ways to make 7: 1 and 6, 2 and 5, 3 and 4, 4 and 3, 5 and 2, and 6 and 1.
+
+8
+00:00:34,740 --> 00:00:37,310
+So 7 is much more likely.
+
+9
+00:00:37,360 --> 00:00:48,160
+Remember: when outcomes are equally likely, the probability of an event is the number of favourable outcomes, divided by the total number of outcomes.
+
+10
+00:00:48,210 --> 00:00:54,830
+On a fair dice, the probability of a number less than 3 is 2 sixths, which is 1 third.
+
+11
+00:00:54,880 --> 00:00:58,260
+For two dice, list every combination in a table.
+
+12
+00:00:58,310 --> 00:01:00,980
+This is called a sample space diagram.
+
+13
+00:01:01,030 --> 00:01:05,530
+Each dice has 6 scores, so there are 6 times 6 outcomes.
+
+14
+00:01:05,580 --> 00:01:06,210
+Your turn.
+
+15
+00:01:06,260 --> 00:01:09,010
+How many outcomes are there for two dice?
+
+16
+00:01:09,060 --> 00:01:12,600
+Pause the video and work it out.
+
+17
+00:01:12,650 --> 00:01:14,590
+6 times 6 is 36 outcomes.
+
+18
+00:01:14,640 --> 00:01:16,830
+The 7s lie along a diagonal.
+
+19
+00:01:16,880 --> 00:01:23,930
+There are 6 of them, so the probability of 7 is 6 thirty-sixths, which is 1 sixth.
+
+20
+00:01:23,980 --> 00:01:28,280
+An event and its complement, not the event, cover every outcome.
+
+21
+00:01:28,330 --> 00:01:32,900
+So the probability of not A is 1 minus the probability of A.
+
+22
+00:01:32,950 --> 00:01:39,350
+The probability of a total that is not 7 is 1 minus 1 sixth, which is 5 sixths.
+
+23
+00:01:39,400 --> 00:01:44,960
+And if outcomes cannot happen together, their probabilities add up to 1.
+
+24
+00:01:45,010 --> 00:01:46,280
+Here is the method.
+
+25
+00:01:46,330 --> 00:01:52,510
+Step 1: list all the equally likely outcomes, in a list or a sample space diagram.
+
+26
+00:01:52,560 --> 00:01:56,910
+Step 2: count the total, and the favourable outcomes.
+
+27
+00:01:56,960 --> 00:02:01,060
+Step 3: divide favourable by total, and simplify.
+
+28
+00:02:01,110 --> 00:02:06,270
+Step 4: for not, or at least one, it can be quicker to use 1 minus.
+
+29
+00:02:06,320 --> 00:02:09,030
+A coin is tossed, and a dice is rolled.
+
+30
+00:02:09,080 --> 00:02:12,790
+What is the probability of a head and an even number?
+
+31
+00:02:12,840 --> 00:02:16,320
+There are 2 times 6, which is 12 outcomes.
+
+32
+00:02:16,370 --> 00:02:20,330
+The favourable ones are head 2, head 4 and head 6.
+
+33
+00:02:20,380 --> 00:02:24,090
+That is 3 out of 12, which is 1 quarter.
+
+34
+00:02:24,140 --> 00:02:24,780
+Your turn.
+
+35
+00:02:24,830 --> 00:02:28,600
+With two dice, what is the probability of a total of 2?
+
+36
+00:02:28,650 --> 00:02:31,520
+Pause and work it out.
+
+37
+00:02:31,570 --> 00:02:33,460
+The only way is 1 and 1.
+
+38
+00:02:33,510 --> 00:02:35,710
+That is 1 outcome out of 36.
+
+39
+00:02:35,760 --> 00:02:39,000
+The probability is 1 thirty-sixth.
+
+40
+00:02:39,050 --> 00:02:44,970
+A spinner lands on red with probability 0.2, blue 0.35, and green 0.15.
+
+41
+00:02:45,020 --> 00:02:46,570
+The rest is yellow.
+
+42
+00:02:46,620 --> 00:02:49,000
+The known ones add up to 0.7.
+
+43
+00:02:49,050 --> 00:02:52,830
+So yellow is 1 minus 0.7, which is 0.3.
+
+44
+00:02:52,880 --> 00:02:57,030
+With two dice, what is the probability of at least one six?
+
+45
+00:02:57,080 --> 00:03:00,440
+It is quicker to find the probability of no six.
+
+46
+00:03:00,490 --> 00:03:05,760
+Each dice has 5 non-sixes, so 5 times 5 is 25 outcomes with no six.
+
+47
+00:03:05,810 --> 00:03:13,590
+So the probability of at least one six is 1 minus 25 thirty-sixths, which is 11 thirty-sixths.
+
+48
+00:03:13,640 --> 00:03:17,310
+Lily finds the probability that two dice both show 6.
+
+49
+00:03:17,360 --> 00:03:19,830
+Which line goes wrong first?
+
+50
+00:03:19,880 --> 00:03:21,030
+Line 1 is wrong.
+
+51
+00:03:21,080 --> 00:03:26,820
+Each of the 6 scores on the first dice goes with each of the 6 on the second.
+
+52
+00:03:26,870 --> 00:03:30,370
+That is 6 times 6, which is 36 outcomes.
+
+53
+00:03:30,420 --> 00:03:33,730
+So the probability is 1 thirty-sixth.
+
+54
+00:03:33,780 --> 00:03:36,480
+Game designers use these probabilities.
+
+55
+00:03:36,530 --> 00:03:46,900
+In some board games, the squares or tiles numbered 6 and 8 produce resources most often, because those totals are very likely with two dice.
+
+56
+00:03:46,950 --> 00:03:53,290
+Totals of 2 and 12 are rare, with a probability of only 1 thirty-sixth each.
+
+57
+00:03:53,340 --> 00:03:54,620
+One last question.
+
+58
+00:03:54,670 --> 00:03:56,760
+The probability of A is 0.45.
+
+59
+00:03:56,810 --> 00:03:59,190
+What is the probability of not A?
+
+60
+00:03:59,240 --> 00:04:02,590
+Pause the video and answer.
+
+61
+00:04:02,640 --> 00:04:05,920
+1 minus 0.45 is 0.55.
+
+62
+00:04:05,970 --> 00:04:11,910
+To remember: list all the equally likely outcomes, with a sample space diagram.
+
+63
+00:04:11,960 --> 00:04:15,760
+The probability is favourable divided by total.
+
+64
+00:04:15,810 --> 00:04:20,280
+The probability of not A is 1 minus the probability of A.
+
+65
+00:04:20,330 --> 00:04:24,450
+Outcomes that cannot happen together add up to 1.
+
+66
+00:04:24,500 --> 00:04:29,870
+Great work! Now practise lesson 13.1 on Camday.

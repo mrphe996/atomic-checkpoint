@@ -233,8 +233,8 @@ VIDEOS["14.4"] = [
         PAUSE("14.4-k2", "Your turn. Reflect 5, 3 in x equals 2. Pause the video and try it.", "Reflect (5, 3) in x = 2."),
     ]),
     dict(kind="idea", title="Check, and diagonal lines", steps=[
-        dict(say="5, 3 is 3 to the right of the line, so its image is 3 to the left: negative 1, 3. Reflecting in the line y equals x swaps the coordinates. 4, 1 becomes 1, 4.",
-             do=[B("(−1, 3)", x=80, y=170, color=GREEN), G([-1, 5], [-1, 5], lines=[dict(m=1, c=0, label="y = x")], points=[P(4, 1, "(4, 1)"), P(1, 4, "(1, 4)")], at=6), MATH("y = x: (a, b) → (b, a)", x=80, y=280, at=6)]),
+        dict(say="5, 3 is 3 to the right of the line, so its image is 3 to the left: negative 1, 3. Reflecting in the line y equals x swaps the coordinates. 3, 1 becomes 1, 3.",
+             do=[B("(−1, 3)", x=80, y=170, color=GREEN), G([-1, 5], [-1, 5], lines=[dict(m=1, c=0, label="y = x")], points=[P(3, 1, "(3, 1)"), P(1, 3, "(1, 3)")], at=6), MATH("y = x: (a, b) → (b, a)", x=80, y=280, at=6)]),
         dict(say="To find a mirror line, find the midpoints between object points and their images. The mirror line goes through them.", do=[T("mirror line: through the **midpoints**", x=80, y=380)]),
     ]),
     dict(kind="method", title="How do I reflect in a line?", steps=[

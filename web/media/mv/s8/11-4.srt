@@ -1,0 +1,279 @@
+1
+00:00:06,770 --> 00:00:11,560
+A family drives 120 kilometres to a beach in 1 and a half hours.
+
+2
+00:00:11,610 --> 00:00:17,030
+They stay 2 hours, then drive home in 2 hours because of traffic.
+
+3
+00:00:17,080 --> 00:00:20,050
+On which part of the trip were they fastest?
+
+4
+00:00:20,100 --> 00:00:23,290
+Pause the video and choose.
+
+5
+00:00:23,340 --> 00:00:27,270
+Going out, they drove 120 kilometres in 1.5 hours.
+
+6
+00:00:27,320 --> 00:00:29,740
+That is 80 kilometres per hour.
+
+7
+00:00:29,790 --> 00:00:34,750
+Coming home took 2 hours, which is only 60 kilometres per hour.
+
+8
+00:00:34,800 --> 00:00:37,770
+So they were fastest going out.
+
+9
+00:00:37,820 --> 00:00:41,730
+Remember: speed equals distance divided by time.
+
+10
+00:00:41,780 --> 00:00:45,170
+On a distance-time graph, the gradient is the speed.
+
+11
+00:00:45,220 --> 00:00:47,020
+A steeper line means faster.
+
+12
+00:00:47,070 --> 00:00:48,740
+A flat line means stopped.
+
+13
+00:00:48,790 --> 00:00:51,810
+A line sloping down means coming back.
+
+14
+00:00:51,860 --> 00:00:52,560
+Your turn.
+
+15
+00:00:52,610 --> 00:00:57,380
+What was their speed on the way home: 120 kilometres in 2 hours?
+
+16
+00:00:57,430 --> 00:01:00,820
+Pause the video and try it.
+
+17
+00:01:00,870 --> 00:01:04,090
+120 divided by 2 is 60 kilometres per hour.
+
+18
+00:01:04,140 --> 00:01:06,900
+The shape of any graph tells a story.
+
+19
+00:01:06,950 --> 00:01:09,640
+A straight line means a steady rate.
+
+20
+00:01:09,690 --> 00:01:12,850
+A curve means the rate is changing.
+
+21
+00:01:12,900 --> 00:01:18,180
+Fill a tall, thin vase with water at a steady rate, and the depth rises quickly.
+
+22
+00:01:18,230 --> 00:01:20,860
+In a wide bowl, it rises slowly.
+
+23
+00:01:20,910 --> 00:01:22,170
+Here is the method.
+
+24
+00:01:22,220 --> 00:01:25,430
+Step 1: read the title, the axes and the units.
+
+25
+00:01:25,480 --> 00:01:27,080
+Check the scale.
+
+26
+00:01:27,130 --> 00:01:29,170
+Step 2: describe each section.
+
+27
+00:01:29,220 --> 00:01:31,610
+Is it going up, flat or going down?
+
+28
+00:01:31,660 --> 00:01:33,270
+Steep or gentle?
+
+29
+00:01:33,320 --> 00:01:39,470
+Step 3: work out rates as gradients, like speed equals distance divided by time.
+
+30
+00:01:39,520 --> 00:01:43,790
+Step 4: explain what it means in the real situation.
+
+31
+00:01:43,840 --> 00:01:48,370
+Find the average speed for the whole trip, including the stop.
+
+32
+00:01:48,420 --> 00:01:51,110
+The total distance is 240 kilometres.
+
+33
+00:01:51,160 --> 00:01:54,390
+The total time is 5 and a half hours.
+
+34
+00:01:54,440 --> 00:01:58,890
+240 divided by 5.5 is about 43.6 kilometres per hour.
+
+35
+00:01:58,940 --> 00:02:02,240
+The stop brings the average down.
+
+36
+00:02:02,290 --> 00:02:06,840
+Water flows steadily into a cylinder with a narrowing funnel on top.
+
+37
+00:02:06,890 --> 00:02:12,990
+In the cylinder, the depth rises at a steady rate, so the graph is a straight line.
+
+38
+00:02:13,040 --> 00:02:18,250
+In the funnel, the space gets narrower, so the depth rises faster and faster.
+
+39
+00:02:18,300 --> 00:02:21,670
+The graph curves upwards, getting steeper.
+
+40
+00:02:21,720 --> 00:02:22,370
+Your turn.
+
+41
+00:02:22,420 --> 00:02:25,650
+A curve getting steeper means the rate is what?
+
+42
+00:02:25,700 --> 00:02:28,230
+Pause and choose.
+
+43
+00:02:28,280 --> 00:02:31,750
+Getting steeper means the rate is increasing.
+
+44
+00:02:31,800 --> 00:02:38,560
+And if two people's lines cross on a distance-time graph, they are at the same place at the same time.
+
+45
+00:02:38,610 --> 00:02:39,780
+They meet.
+
+46
+00:02:39,830 --> 00:02:43,840
+A distance-time graph reaches 60 kilometres at 2 hours.
+
+47
+00:02:43,890 --> 00:02:45,390
+Zara finds the speed.
+
+48
+00:02:45,440 --> 00:02:48,000
+Which line goes wrong first?
+
+49
+00:02:48,050 --> 00:02:49,140
+Line 2 is wrong.
+
+50
+00:02:49,190 --> 00:02:52,320
+The height shows the distance, not the speed.
+
+51
+00:02:52,370 --> 00:02:54,710
+The speed is the gradient.
+
+52
+00:02:54,760 --> 00:02:59,000
+60 divided by 2 is 30 kilometres per hour.
+
+53
+00:02:59,050 --> 00:03:02,680
+A running app draws a distance-time graph of your run.
+
+54
+00:03:02,730 --> 00:03:05,140
+Steep parts show where you ran fast.
+
+55
+00:03:05,190 --> 00:03:09,780
+Flat parts show where you stopped, maybe at a traffic light.
+
+56
+00:03:09,830 --> 00:03:14,870
+The app's pace is just the gradient of the graph, worked out for you.
+
+57
+00:03:14,920 --> 00:03:16,180
+One last question.
+
+58
+00:03:16,230 --> 00:03:20,480
+9 kilometres in 45 minutes is how many kilometres per hour?
+
+59
+00:03:20,530 --> 00:03:23,850
+Pause the video and answer.
+
+60
+00:03:23,900 --> 00:03:27,350
+45 minutes is three quarters of an hour.
+
+61
+00:03:27,400 --> 00:03:29,440
+9 divided by 0.75 is 12.
+
+62
+00:03:29,490 --> 00:03:35,060
+Or: 3 kilometres every 15 minutes, which is 12 in an hour.
+
+63
+00:03:35,110 --> 00:03:39,610
+To remember: on a distance-time graph, the gradient is the speed.
+
+64
+00:03:39,660 --> 00:03:40,940
+Flat means stopped.
+
+65
+00:03:40,990 --> 00:03:43,100
+Down means coming back.
+
+66
+00:03:43,150 --> 00:03:45,530
+A straight line means a steady rate.
+
+67
+00:03:45,580 --> 00:03:48,110
+A curve means a changing rate.
+
+68
+00:03:48,160 --> 00:03:52,460
+Average speed is total distance divided by total time.
+
+69
+00:03:52,510 --> 00:03:55,290
+Describe each section in context.
+
+70
+00:03:55,340 --> 00:04:00,710
+Great work! Now practise lesson 11.4 on Camday.

@@ -1,0 +1,275 @@
+1
+00:00:07,270 --> 00:00:12,800
+To make a shade of green, Ali mixes 2 litres of blue with 3 litres of yellow.
+
+2
+00:00:12,850 --> 00:00:17,040
+Bea mixes 3 litres of blue with 5 litres of yellow.
+
+3
+00:00:17,090 --> 00:00:19,240
+Will the two shades be the same?
+
+4
+00:00:19,290 --> 00:00:22,500
+Pause the video and choose.
+
+5
+00:00:22,550 --> 00:00:22,740
+No.
+
+6
+00:00:22,790 --> 00:00:25,860
+Write each as blue to 1 litre of yellow.
+
+7
+00:00:25,910 --> 00:00:28,290
+Ali: 2 to 3 is about 0.67 to 1.
+
+8
+00:00:28,340 --> 00:00:30,160
+Bea: 3 to 5 is 0.6 to 1.
+
+9
+00:00:30,210 --> 00:00:34,380
+The ratios are different, so the shades are different.
+
+10
+00:00:34,430 --> 00:00:36,110
+Ali's is bluer.
+
+11
+00:00:36,160 --> 00:00:38,510
+Remember the unitary method.
+
+12
+00:00:38,560 --> 00:00:46,030
+If 4 pens cost 6 dollars, 1 pen costs 1 dollar 50, and 7 pens cost 10 dollars 50.
+
+13
+00:00:46,080 --> 00:00:50,810
+Two quantities are in direct proportion if their ratio stays the same.
+
+14
+00:00:50,860 --> 00:00:55,930
+To get the same shade, the ratio of blue to yellow must not change.
+
+15
+00:00:55,980 --> 00:01:01,600
+So to make more of Ali's green, multiply both parts by the same number.
+
+16
+00:01:01,650 --> 00:01:04,950
+2 to 3 becomes 4 to 6, or 10 to 15.
+
+17
+00:01:05,000 --> 00:01:05,670
+Your turn.
+
+18
+00:01:05,720 --> 00:01:09,010
+Sand and cement are mixed in the ratio 4 to 1.
+
+19
+00:01:09,060 --> 00:01:12,420
+How much cement goes with 26 kilograms of sand?
+
+20
+00:01:12,470 --> 00:01:15,780
+Pause the video and try it.
+
+21
+00:01:15,830 --> 00:01:23,940
+4 parts is 26 kilograms, so 1 part is 26 divided by 4, which is 6.5 kilograms of cement.
+
+22
+00:01:23,990 --> 00:01:30,130
+To compare prices, find a unit rate, like the price per 100 grams.
+
+23
+00:01:30,180 --> 00:01:35,100
+400 grams for 3 dollars 60 is 90 cents per 100 grams.
+
+24
+00:01:35,150 --> 00:01:41,180
+650 grams for 5 dollars 53 is about 85 cents per 100 grams.
+
+25
+00:01:41,230 --> 00:01:47,670
+The 650 gram pack is better value, because it costs less per 100 grams.
+
+26
+00:01:47,720 --> 00:01:49,000
+Here is the method.
+
+27
+00:01:49,050 --> 00:01:53,590
+Step 1: write the ratio, with the units in the same order.
+
+28
+00:01:53,640 --> 00:01:59,950
+Step 2: find the multiplier from the quantity you know, or use the unitary method.
+
+29
+00:02:00,000 --> 00:02:04,120
+Step 3: multiply the other part by the same number.
+
+30
+00:02:04,170 --> 00:02:06,630
+Step 4: to compare, find unit rates.
+
+31
+00:02:06,680 --> 00:02:10,180
+The best buy has the lowest price per unit.
+
+32
+00:02:10,230 --> 00:02:13,770
+Flour and sugar are in the ratio 5 to 2.
+
+33
+00:02:13,820 --> 00:02:17,720
+How much flour goes with 350 grams of sugar?
+
+34
+00:02:17,770 --> 00:02:20,680
+2 parts is 350, so 1 part is 175.
+
+35
+00:02:20,730 --> 00:02:23,110
+5 parts is 875 grams.
+
+36
+00:02:23,160 --> 00:02:24,000
+Your turn.
+
+37
+00:02:24,050 --> 00:02:31,160
+Which is better value: 300 grams for 2 dollars 40, or 500 grams for 3 dollars 90?
+
+38
+00:02:31,210 --> 00:02:34,070
+Pause and choose.
+
+39
+00:02:34,120 --> 00:02:39,510
+300 grams for 2 dollars 40 is 80 cents per 100 grams.
+
+40
+00:02:39,560 --> 00:02:44,940
+500 grams for 3 dollars 90 is 78 cents per 100 grams.
+
+41
+00:02:44,990 --> 00:02:48,980
+The 500 gram pack is better value.
+
+42
+00:02:49,030 --> 00:02:52,430
+Here x is 2, 5, 8, and y is 7, 17.5, 28.
+
+43
+00:02:52,480 --> 00:02:55,020
+Are they in direct proportion?
+
+44
+00:02:55,070 --> 00:02:57,530
+Divide y by x: 3.5, 3.5, 3.5.
+
+45
+00:02:57,580 --> 00:02:59,940
+The same every time, so yes.
+
+46
+00:02:59,990 --> 00:03:01,790
+y equals 3.5 x.
+
+47
+00:03:01,840 --> 00:03:04,130
+Ali's mix is 2 blue to 3 yellow.
+
+48
+00:03:04,180 --> 00:03:06,110
+He uses 6 litres of yellow.
+
+49
+00:03:06,160 --> 00:03:07,140
+How much blue?
+
+50
+00:03:07,190 --> 00:03:09,740
+Which line goes wrong first?
+
+51
+00:03:09,790 --> 00:03:10,930
+Line 1 is wrong.
+
+52
+00:03:10,980 --> 00:03:13,910
+Ratios scale by multiplying, not adding.
+
+53
+00:03:13,960 --> 00:03:16,470
+Yellow was multiplied by 2.
+
+54
+00:03:16,520 --> 00:03:20,160
+So blue is 2 times 2, which is 4 litres.
+
+55
+00:03:20,210 --> 00:03:25,870
+Builders mix concrete in ratios of cement, sand and gravel, such as 1 to 2 to 3.
+
+56
+00:03:25,920 --> 00:03:29,780
+If the ratio changes, the concrete can be weak.
+
+57
+00:03:29,830 --> 00:03:40,060
+For a big job they scale up every part by the same multiplier: 50 kilograms of cement needs 100 of sand and 150 of gravel.
+
+58
+00:03:40,110 --> 00:03:41,410
+One last question.
+
+59
+00:03:41,460 --> 00:03:43,720
+y is in direct proportion to x.
+
+60
+00:03:43,770 --> 00:03:45,220
+y is 12 when x is 3.
+
+61
+00:03:45,270 --> 00:03:46,940
+What is y when x is 10?
+
+62
+00:03:46,990 --> 00:03:50,360
+Pause the video and answer.
+
+63
+00:03:50,410 --> 00:03:53,830
+12 divided by 3 is 4, so y equals 4 x.
+
+64
+00:03:53,880 --> 00:03:56,390
+When x is 10, y is 40.
+
+65
+00:03:56,440 --> 00:04:01,100
+To remember: in direct proportion, the ratio stays the same.
+
+66
+00:04:01,150 --> 00:04:04,420
+Scale both parts by the same multiplier.
+
+67
+00:04:04,470 --> 00:04:07,380
+Compare using 1 to n, or unit rates.
+
+68
+00:04:07,430 --> 00:04:10,800
+The best buy has the lowest price per unit.
+
+69
+00:04:10,850 --> 00:04:16,190
+Great work! Now practise lesson 12.3 on Camday.

@@ -1,0 +1,295 @@
+1
+00:00:06,700 --> 00:00:11,990
+A pastry recipe uses 0.5 kilograms of flour and 250 grams of butter.
+
+2
+00:00:12,040 --> 00:00:17,010
+Another recipe uses flour and butter in the ratio 3 to 2.
+
+3
+00:00:17,060 --> 00:00:19,050
+Which recipe is more buttery?
+
+4
+00:00:19,100 --> 00:00:22,360
+Pause the video and choose.
+
+5
+00:00:22,410 --> 00:00:24,690
+Change to the same units.
+
+6
+00:00:24,740 --> 00:00:27,200
+0.5 kilograms is 500 grams.
+
+7
+00:00:27,250 --> 00:00:32,780
+So recipe 1 is 500 to 250, which simplifies to 2 to 1.
+
+8
+00:00:32,830 --> 00:00:36,930
+Recipe 1 has 2 parts of flour for each part of butter.
+
+9
+00:00:36,980 --> 00:00:39,930
+Recipe 2 has 3 to 2, which is 1.5 to 1.
+
+10
+00:00:39,980 --> 00:00:45,410
+Less flour for each part of butter, so recipe 2 is more buttery.
+
+11
+00:00:45,460 --> 00:00:52,350
+Remember: to simplify a ratio, divide all the parts by their highest common factor.
+
+12
+00:00:52,400 --> 00:00:54,860
+12 to 18 simplifies to 2 to 3.
+
+13
+00:00:54,910 --> 00:00:57,920
+45 to 60 simplifies to 3 to 4.
+
+14
+00:00:57,970 --> 00:01:02,780
+If the units are different, change them to the same units first.
+
+15
+00:01:02,830 --> 00:01:06,960
+To compare ratios, write them in the form n to 1, or 1 to n.
+
+16
+00:01:07,010 --> 00:01:09,600
+Then they are easy to compare.
+
+17
+00:01:09,650 --> 00:01:10,420
+Your turn.
+
+18
+00:01:10,470 --> 00:01:13,520
+Simplify 400 metres to 1.2 kilometres.
+
+19
+00:01:13,570 --> 00:01:17,130
+Pause the video and try it.
+
+20
+00:01:17,180 --> 00:01:20,730
+1.2 kilometres is 1,200 metres.
+
+21
+00:01:20,780 --> 00:01:22,230
+400 to 1,200.
+
+22
+00:01:22,280 --> 00:01:25,920
+Divide both by 400: 1 to 3.
+
+23
+00:01:25,970 --> 00:01:28,620
+Clear decimals by multiplying.
+
+24
+00:01:28,670 --> 00:01:32,670
+1.2 to 0.8 is 12 to 8, which is 3 to 2.
+
+25
+00:01:32,720 --> 00:01:36,720
+Clear fractions by multiplying by a common denominator.
+
+26
+00:01:36,770 --> 00:01:40,070
+A half to a third, times 6, is 3 to 2.
+
+27
+00:01:40,120 --> 00:01:43,910
+Three-part ratios simplify in the same way.
+
+28
+00:01:43,960 --> 00:01:48,570
+24 to 36 to 60, divided by 12, is 2 to 3 to 5.
+
+29
+00:01:48,620 --> 00:01:49,910
+Here is the method.
+
+30
+00:01:49,960 --> 00:01:55,410
+Step 1: change to the same units, and clear any decimals or fractions.
+
+31
+00:01:55,460 --> 00:01:58,930
+Step 2: divide all the parts by the H C F.
+
+32
+00:01:58,980 --> 00:02:04,370
+Step 3: to compare, write each ratio in the form 1 to n, or n to 1.
+
+33
+00:02:04,420 --> 00:02:08,930
+Step 4: keep the parts in the same order as the question.
+
+34
+00:02:08,980 --> 00:02:11,650
+Simplify 3 quarters to 2 thirds.
+
+35
+00:02:11,700 --> 00:02:14,580
+Multiply both by 12: 9 to 8.
+
+36
+00:02:14,630 --> 00:02:15,420
+Your turn.
+
+37
+00:02:15,470 --> 00:02:17,110
+Simplify 0.6 to 1.5.
+
+38
+00:02:17,160 --> 00:02:20,360
+Pause and work it out.
+
+39
+00:02:20,410 --> 00:02:22,680
+Multiply by 10: 6 to 15.
+
+40
+00:02:22,730 --> 00:02:25,170
+Divide by 3: 2 to 5.
+
+41
+00:02:25,220 --> 00:02:29,700
+A map's scale is 4 centimetres to 1 kilometre.
+
+42
+00:02:29,750 --> 00:02:31,570
+Write it as 1 to n.
+
+43
+00:02:31,620 --> 00:02:35,020
+1 kilometre is 100,000 centimetres.
+
+44
+00:02:35,070 --> 00:02:37,180
+So it is 4 to 100,000.
+
+45
+00:02:37,230 --> 00:02:40,190
+Divide by 4: 1 to 25,000.
+
+46
+00:02:40,240 --> 00:02:43,190
+Class A has 12 boys and 18 girls.
+
+47
+00:02:43,240 --> 00:02:46,180
+Class B has 10 boys and 14 girls.
+
+48
+00:02:46,230 --> 00:02:48,810
+Which has more girls per boy?
+
+49
+00:02:48,860 --> 00:02:51,260
+A: 18 divided by 12 is 1.5.
+
+50
+00:02:51,310 --> 00:02:53,710
+B: 14 divided by 10 is 1.4.
+
+51
+00:02:53,760 --> 00:02:54,990
+Class A.
+
+52
+00:02:55,040 --> 00:02:58,240
+Jo simplifies 300 grams to 2 kilograms.
+
+53
+00:02:58,290 --> 00:03:00,450
+Which line is wrong?
+
+54
+00:03:00,500 --> 00:03:01,770
+Line 1 is wrong.
+
+55
+00:03:01,820 --> 00:03:03,590
+She ignored the units.
+
+56
+00:03:03,640 --> 00:03:08,840
+Change to the same units first: 300 grams to 2,000 grams.
+
+57
+00:03:08,890 --> 00:03:11,960
+Divide by 100: 3 to 20.
+
+58
+00:03:12,010 --> 00:03:14,510
+Screens are described by ratios.
+
+59
+00:03:14,560 --> 00:03:16,660
+A widescreen TV is 16 to 9.
+
+60
+00:03:16,710 --> 00:03:19,050
+An older TV was 4 to 3.
+
+61
+00:03:19,100 --> 00:03:25,790
+In the form n to 1, 16 to 9 is about 1.78 to 1, and 4 to 3 is about 1.33 to 1.
+
+62
+00:03:25,840 --> 00:03:30,060
+So widescreen is much wider for its height.
+
+63
+00:03:30,110 --> 00:03:31,340
+One last question.
+
+64
+00:03:31,390 --> 00:03:33,610
+Write 5 to 8 in the form 1 to n.
+
+65
+00:03:33,660 --> 00:03:34,320
+What is n?
+
+66
+00:03:34,370 --> 00:03:37,650
+Pause the video and answer.
+
+67
+00:03:37,700 --> 00:03:39,670
+Divide both parts by 5.
+
+68
+00:03:39,720 --> 00:03:41,610
+8 divided by 5 is 1.6.
+
+69
+00:03:41,660 --> 00:03:43,750
+So it is 1 to 1.6.
+
+70
+00:03:43,800 --> 00:03:50,200
+To remember: use the same units, clear decimals and fractions, then divide by the H C F.
+
+71
+00:03:50,250 --> 00:03:54,080
+The forms 1 to n, and n to 1, help you compare.
+
+72
+00:03:54,130 --> 00:03:57,120
+Three-part ratios work the same way.
+
+73
+00:03:57,170 --> 00:03:59,750
+Keep the order of the parts.
+
+74
+00:03:59,800 --> 00:04:05,190
+Great work! Now practise lesson 12.1 on Camday.

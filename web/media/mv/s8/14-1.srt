@@ -1,0 +1,251 @@
+1
+00:00:05,980 --> 00:00:10,780
+A boat leaves a harbour and sails on a bearing of 0 7 0 degrees.
+
+2
+00:00:10,830 --> 00:00:15,280
+That means 70 degrees, turning clockwise from north.
+
+3
+00:00:15,330 --> 00:00:17,910
+Roughly which way does the boat point?
+
+4
+00:00:17,960 --> 00:00:21,170
+Pause the video and choose.
+
+5
+00:00:21,220 --> 00:00:24,710
+70 degrees is a bit less than 90, which is east.
+
+6
+00:00:24,760 --> 00:00:29,530
+So the boat heads east-north-east, a little north of east.
+
+7
+00:00:29,580 --> 00:00:32,570
+And what bearing would take it straight back?
+
+8
+00:00:32,620 --> 00:00:34,270
+We will find out.
+
+9
+00:00:34,320 --> 00:00:40,170
+Remember: north is 0 degrees, east is 90, south is 180, and west is 270.
+
+10
+00:00:40,220 --> 00:00:43,360
+They are measured clockwise from north.
+
+11
+00:00:43,410 --> 00:00:48,660
+South-east is halfway between east and south: 135 degrees.
+
+12
+00:00:48,710 --> 00:00:52,670
+A bearing is the direction of one point from another.
+
+13
+00:00:52,720 --> 00:01:01,600
+It is measured from north, clockwise, and it is always written with three figures, like 0 7 0, 2 4 5, or 0 0 8.
+
+14
+00:01:01,650 --> 00:01:08,230
+The bearing of B from A means: stand at A, face north, then turn clockwise until you face B.
+
+15
+00:01:08,280 --> 00:01:08,910
+Your turn.
+
+16
+00:01:08,960 --> 00:01:11,090
+What is the bearing of due west?
+
+17
+00:01:11,140 --> 00:01:12,460
+Write three figures.
+
+18
+00:01:12,510 --> 00:01:15,700
+Pause the video and try it.
+
+19
+00:01:15,750 --> 00:01:17,890
+Due west is 2 7 0 degrees.
+
+20
+00:01:17,940 --> 00:01:19,740
+Now, the bearing back.
+
+21
+00:01:19,790 --> 00:01:23,690
+The bearing of A from B differs by 180 degrees.
+
+22
+00:01:23,740 --> 00:01:29,870
+If B is 0 4 0 from A, then A is 40 plus 180, which is 2 2 0 from B.
+
+23
+00:01:29,920 --> 00:01:35,190
+If the bearing is more than 180, subtract 180 instead.
+
+24
+00:01:35,240 --> 00:01:37,700
+3 0 0 becomes 1 2 0.
+
+25
+00:01:37,750 --> 00:01:39,030
+Here is the method.
+
+26
+00:01:39,080 --> 00:01:44,320
+Step 1: find the point you are measuring from, and draw north there.
+
+27
+00:01:44,370 --> 00:01:49,680
+Step 2: measure clockwise from north to the line joining the points.
+
+28
+00:01:49,730 --> 00:01:53,400
+Step 3: write the answer with three figures.
+
+29
+00:01:53,450 --> 00:01:58,040
+Step 4: for the back bearing, add or subtract 180.
+
+30
+00:01:58,090 --> 00:02:02,710
+The angle clockwise from north at P to Q is 115 degrees.
+
+31
+00:02:02,760 --> 00:02:05,720
+So the bearing of Q from P is 1 1 5.
+
+32
+00:02:05,770 --> 00:02:10,950
+The bearing of P from Q is 115 plus 180, which is 2 9 5.
+
+33
+00:02:11,000 --> 00:02:11,690
+Your turn.
+
+34
+00:02:11,740 --> 00:02:13,690
+A bearing is 0 7 0 degrees.
+
+35
+00:02:13,740 --> 00:02:15,540
+What is the back bearing?
+
+36
+00:02:15,590 --> 00:02:18,580
+Pause and work it out.
+
+37
+00:02:18,630 --> 00:02:20,260
+70 plus 180 is 250.
+
+38
+00:02:20,310 --> 00:02:23,290
+The back bearing is 2 5 0 degrees.
+
+39
+00:02:23,340 --> 00:02:28,190
+That takes the boat straight back to the harbour.
+
+40
+00:02:28,240 --> 00:02:33,110
+The angle from north anticlockwise to C, at D, is 40 degrees.
+
+41
+00:02:33,160 --> 00:02:39,940
+Bearings go clockwise, so the bearing is 360 minus 40, which is 3 2 0 degrees.
+
+42
+00:02:39,990 --> 00:02:43,990
+The angle from north, anticlockwise, to T is 65 degrees.
+
+43
+00:02:44,040 --> 00:02:45,650
+Sam writes the bearing.
+
+44
+00:02:45,700 --> 00:02:47,640
+Which line is wrong?
+
+45
+00:02:47,690 --> 00:02:49,170
+Line 1 is wrong.
+
+46
+00:02:49,220 --> 00:02:52,230
+Bearings are measured clockwise.
+
+47
+00:02:52,280 --> 00:02:54,690
+360 minus 65 is 295.
+
+48
+00:02:54,740 --> 00:02:57,720
+The bearing is 2 9 5 degrees.
+
+49
+00:02:57,770 --> 00:03:00,660
+Pilots and ship captains use bearings.
+
+50
+00:03:00,710 --> 00:03:05,360
+Airport runways are numbered by their bearing, divided by 10.
+
+51
+00:03:05,410 --> 00:03:11,010
+A runway pointing on a bearing of about 2 7 0 is called runway 27.
+
+52
+00:03:11,060 --> 00:03:18,180
+The other end of the same runway points the opposite way, 0 9 0, so it is called runway 9.
+
+53
+00:03:18,230 --> 00:03:19,430
+One last question.
+
+54
+00:03:19,480 --> 00:03:21,650
+What is south-west as a bearing?
+
+55
+00:03:21,700 --> 00:03:23,040
+Write three figures.
+
+56
+00:03:23,090 --> 00:03:26,320
+Pause the video and answer.
+
+57
+00:03:26,370 --> 00:03:29,030
+South is 180, and west is 270.
+
+58
+00:03:29,080 --> 00:03:33,650
+South-west is halfway between: 2 2 5 degrees.
+
+59
+00:03:33,700 --> 00:03:39,510
+To remember: bearings are measured from north, clockwise, with three figures.
+
+60
+00:03:39,560 --> 00:03:41,970
+From A means stand at A.
+
+61
+00:03:42,020 --> 00:03:46,990
+The back bearing is the bearing plus or minus 180 degrees.
+
+62
+00:03:47,040 --> 00:03:50,390
+Use a protractor and a scale for drawings.
+
+63
+00:03:50,440 --> 00:03:55,830
+Great work! Now practise lesson 14.1 on Camday.

@@ -226,8 +226,8 @@ VIDEOS["15.4"] = [
         dict(say="The three rectangles are 30, 40 and 50. Add everything: 12 plus 120 is 132 square centimetres.", do=[ROW(1, 0.3), ROW(2, 1.2), ROW(3, 2.1), ROW(4, 5)]),
     ]),
     dict(kind="idea", title="Pyramids", steps=[
-        dict(say="A pyramid has a base, and triangular faces that meet at a point. A square-based pyramid has 1 square and 4 identical triangles. A tetrahedron has 4 triangles.",
-             do=[PYR(), T("square-based: **1 square + 4 triangles**", x=80, y=180), T("tetrahedron: **4 triangles**", x=80, y=260, at=7)]),
+        dict(say="A pyramid has a base, and triangular faces that meet at a point. There is one triangle for each side of the base.",
+             do=[PYR(), T("a **base** + triangles to a point", x=80, y=180), T("one triangle for **each side** of the base", x=80, y=260, at=5)]),
         dict(say="For each triangle, use its slant height: the height of the triangle face, not the height of the pyramid.", do=[T("use the **slant height** of each face", x=80, y=350, color=RED)]),
         PAUSE("15.4-k2", "Your turn. How many faces does a square-based pyramid have? Pause the video and try it.", "Faces of a square-based pyramid?"),
     ]),
