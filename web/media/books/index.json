@@ -2838,5 +2838,31 @@
     14
    ]
   }
+ },
+ "c3u11": {
+  "title": "Camday Maths Stage 3 · Unit 11: More Fractions",
+  "pages": 14,
+  "dir": "media/books/c3u11/",
+  "ext": "webp",
+  "pdf": "media/books/c3u11.pdf?v=9c42be8dca",
+  "v": "9c42be8dca",
+  "secs": {
+   "11.1": [
+    2,
+    5
+   ],
+   "11.2": [
+    6,
+    9
+   ],
+   "11.3": [
+    10,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
  }
 }
