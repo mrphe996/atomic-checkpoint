@@ -15,7 +15,7 @@ const G = require('../shared/grade-core.js');
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'content/src');
 // the figure library, loaded the way the browser loads it, so every fig:{kind} in the content is checked
-const FIGLIB = (() => { const win = {}; try { for (const f of ['web/figures.js', 'web/figures2.js', 'web/figures3.js', 'web/figures4.js', 'web/figures5.js']) { const p = path.join(ROOT, f); if (fs.existsSync(p)) new Function('window', fs.readFileSync(p, 'utf8'))(win); } } catch (e) { console.error('figure library:', e.message); } return win.AtomicFig; })();
+const FIGLIB = (() => { const win = {}; try { for (const f of ['web/figures.js', 'web/figures2.js', 'web/figures3.js', 'web/figures4.js', 'web/figures5.js', 'web/figures6.js']) { const p = path.join(ROOT, f); if (fs.existsSync(p)) new Function('window', fs.readFileSync(p, 'utf8'))(win); } } catch (e) { console.error('figure library:', e.message); } return win.AtomicFig; })();
 const ANCHORS = { // label anchors each figure provides (keep in sync with web/figures.js)
   microscope: ['eyepiece', 'objective', 'stage', 'clips', 'diaphragm', 'light', 'coarse', 'fine', 'arm', 'base'],
   plantcell: ['wall', 'membrane', 'cytoplasm', 'nucleus', 'vacuole', 'chloroplast', 'mito'],

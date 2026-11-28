@@ -15,7 +15,7 @@ from PIL import Image
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 WEB = os.path.join(ROOT, "web")
-SCRIPTS = ["figures.js", "figures2.js", "figures3.js", "figures4.js", "figures5.js"]
+SCRIPTS = ["figures.js", "figures2.js", "figures3.js", "figures4.js", "figures5.js", "figures6.js"]
 import base64
 LOGO = "data:image/svg+xml;base64," + base64.b64encode(open(os.path.join(WEB, "camday_logo.svg"), "rb").read()).decode()
 ICON = "data:image/svg+xml;base64," + base64.b64encode(open(os.path.join(WEB, "camday_icon.svg"), "rb").read()).decode()

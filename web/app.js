@@ -631,7 +631,7 @@
       el('div', { class: 'btnrow' }, el('a', { class: 'btn small', href: '#map' }, '🧠 Mind map'), el('a', { class: 'btn small', href: '#ws-' + R(sid) }, '📄 Worksheet')),
       el('div', { class: 'goal' }, el('span', { class: 'gi' }, svgI(I.bulb, 16, '#1C2A3A', 2)), el('span', {}, el('b', {}, 'Daily goal: '), `this video lasts ${fmt(s.video.dur)} with ${s.stops.length} pause questions – finish it to keep your streak going.`)));
     m.append(bar(`Unit ${Core.UNO} › ${s.id} › Video`), tocBtn(), el('div', { class: 'lesson' }, lessonMain, side));
-    if (s.read) lessonMain.append(sciRead(s, vs));
+    if (s.read) m.append(sciRead(s, vs));   // under the video and its chapters, transcript, words and notes
     const drawSide = () => {
       tabsBox.innerHTML = ''; [['chapters', 'Chapters'], ['transcript', 'Transcript'], ['words', '⭐ Words'], ['notes', 'My notes']].forEach(([k, t]) => tabsBox.append(el('button', { type: 'button', role: 'tab', 'aria-selected': String(UI.side === k), class: UI.side === k ? 'on' : '', onclick: () => { UI.side = k; drawSide(); } }, t)));
       sideBody.innerHTML = ''; const t = v.currentTime || 0;

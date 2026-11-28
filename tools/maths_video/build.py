@@ -13,7 +13,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 WEB = os.path.join(ROOT, "web")
 sys.path.insert(0, os.path.join(ROOT, "content", "authoring"))
 RATE, FPS, GAP, PAUSE_GAP = 24000, 25, 0.55, 1.4
-FIGS = ["figures.js", "figures2.js", "figures3.js", "figures4.js", "figures5.js"]
+FIGS = ["figures.js", "figures2.js", "figures3.js", "figures4.js", "figures5.js", "figures6.js"]
 
 
 def work(stage, sec):
