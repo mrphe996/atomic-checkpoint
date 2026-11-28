@@ -200,6 +200,7 @@
   const vstate = (st, sid) => (st.video[sid] = st.video[sid] || { pos: 0, stops: {}, completed: false });
   const stopDone = (st, sid, stop) => !!((vstate(st, sid).stops[stop.id] || {}).done);
   const stopsLeft = (st, s) => s.stops.filter(x => !stopDone(st, s.id, x));
+  const isRead = s => !!(s.lesson && !s.lv);   // a reading lesson with no video (Maths without a video yet)
   const videoDone = (st, s) => vstate(st, s.id).completed && stopsLeft(st, s).length === 0;
   const reqLeft = (st, s) => s.req.filter(q => !((st.items[q.id] || {}).done));
   const secDone = (st, s) => videoDone(st, s) && reqLeft(st, s).length === 0;
@@ -219,7 +220,7 @@
     return { reason: `Finish section ${prev.id} first.`, ...firstMissingIn(st, prev) };
   }
   function firstMissingIn(st, s) {
-    if (!videoDone(st, s)) return { what: s.lesson ? `Section ${s.id} lesson (${stopsLeft(st, s).length} check question(s) left${vstate(st, s.id).completed ? '' : ', not marked as finished'})` : `Section ${s.id} video (${stopsLeft(st, s).length} pause question(s) left${vstate(st, s.id).completed ? '' : ', not watched to the end'})`, route: 'v-' + s.id.replace('.', '-') };
+    if (!videoDone(st, s)) return { what: isRead(s) ? `Section ${s.id} lesson (${stopsLeft(st, s).length} check question(s) left${vstate(st, s.id).completed ? '' : ', not marked as finished'})` : `Section ${s.id} video (${stopsLeft(st, s).length} pause question(s) left${vstate(st, s.id).completed ? '' : ', not watched to the end'})`, route: 'v-' + s.id.replace('.', '-') };
     const q = reqLeft(st, s)[0]; if (!q) return null;
     const i = s.req.indexOf(q);
     return { what: `the “${QE.TYPE_VI[q.type]}” task (Core question ${i + 1}) in section ${s.id}`, route: 'ex-' + s.id.replace('.', '-'), idx: i, tab: 'req' };
@@ -227,7 +228,7 @@
   function missingForTest(st) {
     const out = []; if (unitOpen(UNIT())) return out;
     for (const s of secs()) {
-      if (!videoDone(st, s)) out.push({ what: `Section ${s.id} ${s.lesson ? 'lesson' : 'video'} – ${s.title}` + (stopsLeft(st, s).length ? ` (${stopsLeft(st, s).length} ${s.lesson ? 'check' : 'pause'} question(s) left)` : (s.lesson ? ' (not marked as finished)' : ' (not watched to the end)')), route: 'v-' + s.id.replace('.', '-') });
+      if (!videoDone(st, s)) out.push({ what: `Section ${s.id} ${isRead(s) ? 'lesson' : 'video'} – ${s.title}` + (stopsLeft(st, s).length ? ` (${stopsLeft(st, s).length} ${isRead(s) ? 'check' : 'pause'} question(s) left)` : (isRead(s) ? ' (not marked as finished)' : ' (not watched to the end)')), route: 'v-' + s.id.replace('.', '-') });
       reqLeft(st, s).forEach(q => { const i = s.req.indexOf(q); out.push({ what: `Section ${s.id} · Core question ${i + 1}: ${QE.TYPE_VI[q.type]} – “${q.prompt.slice(0, 60)}${q.prompt.length > 60 ? '…' : ''}”`, route: 'ex-' + s.id.replace('.', '-'), idx: i, tab: 'req' }); });
     }
     return out;
@@ -392,7 +393,7 @@
     for (const s of secs()) {
       const lock = secLock(st, s);
       if (lock) { if (lock.guest) return { label: `Sign up free to unlock topic ${s.id}`, route: 'signup' }; if (lock.paywall) return { label: 'Unlock the rest of Cambridge Stage 7', route: 'pricing' }; break; }
-      if (!videoDone(st, s)) return { label: s.lesson ? `Read the section ${s.id} lesson` : `Watch the section ${s.id} video`, route: 'v-' + s.id.replace('.', '-') };
+      if (!videoDone(st, s)) return { label: isRead(s) ? `Read the section ${s.id} lesson` : `Watch the section ${s.id} video`, route: 'v-' + s.id.replace('.', '-') };
       const q = reqLeft(st, s)[0]; if (q) return { label: `Core practice for section ${s.id}`, route: 'ex-' + s.id.replace('.', '-'), tab: 'req', idx: s.req.indexOf(q) };
     }
     const ts = testState(st);
@@ -435,7 +436,7 @@
     unitId, unitReady, switchUnit, loadIndex, peekUnit, cached, loadFinal, get FINAL() { return FINAL; },
     xpNow, levelInfo, unitSeconds, totalSeconds, estMinutes, seqLock, unitOpen, learnerStage, enrolled, enrol, buy, freeMode, FREE_UNIT, expiredCourses, MOVE_ON, levelOf, subjectKeys, myCourses, courseProgress, levelProgress, canBuy, ensureOwnStage, startClock, refreshFinal, finalPassed, submitFinal, loadCp, refreshCp, dropCache, withOv, submitCp, activity,
     boot, selectLearner, leaveLearner, refreshAccount, cur, persist, flush, canOpen,
-    sec, secs, vstate, stopDone, stopsLeft, videoDone, reqLeft, secDone, secLock, firstMissingIn, missingForTest,
+    sec, secs, vstate, stopDone, stopsLeft, videoDone, isRead, reqLeft, secDone, secLock, firstMissingIn, missingForTest,
     attempts, lastAttempt, passed, isPass, nextForm, remKey, remLeft, testState, submitTest, refreshAttempts, refreshResults,
     unitStatus, rankScore, xp, streak, stageComplete, startGuest, adoptGuest,
     week, today, certificate, competitionRank, nextActivity, jpegPdf, saveFile

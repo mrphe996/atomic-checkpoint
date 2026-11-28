@@ -185,7 +185,7 @@
       const link = (r, label, ok) => el('a', { href: '#' + r, class: route === r ? 'on' : '' }, el('span', { class: 'st' + (ok ? ' ok' : '') }, ok ? '✓' : ''), label);
       if (lock && lock.paywall) sn.append(el('div', { class: 'why' }, lock.reason));
       else if (lock) sn.append(el('div', { class: 'why' }, lock.reason), link('ws-' + R(s.id), 'Worksheet', (ss.ws || []).includes(s.id)));
-      else sn.append(...[link('v-' + R(s.id), s.lesson ? 'Read' : 'Watch', vd), link('ex-' + R(s.id), `Practise · ${s.req.length - rl}/${s.req.length} Core`, rl === 0), s.lab ? link('lab-' + R(s.id), '🧪 Experiment', !!((ss.labs || {})[s.id] || {}).v && !!(((ss.labs || {})[s.id] || {}).v || {}).done) : null, secGameWords(s).length ? link('gm-' + R(s.id), '🎮 Word games', !!((ss.games || {})[s.id])) : null, link('ws-' + R(s.id), 'Worksheet', (ss.ws || []).includes(s.id))].filter(Boolean));
+      else sn.append(...[link('v-' + R(s.id), Core.isRead(s) ? 'Read' : 'Watch', vd), link('ex-' + R(s.id), `Practise · ${s.req.length - rl}/${s.req.length} Core`, rl === 0), s.lab ? link('lab-' + R(s.id), '🧪 Experiment', !!((ss.labs || {})[s.id] || {}).v && !!(((ss.labs || {})[s.id] || {}).v || {}).done) : null, secGameWords(s).length ? link('gm-' + R(s.id), '🎮 Word games', !!((ss.games || {})[s.id])) : null, link('ws-' + R(s.id), 'Worksheet', (ss.ws || []).includes(s.id))].filter(Boolean));
     });
     const passed = !!(st.results || {})[Core.unitId(n)];
     sn.append(el('a', { href: here ? '#test' : '#u-' + n, class: route === 'test' && here ? 'on' : '', onclick: here ? null : e => { e.preventDefault(); Core.switchUnit(n).then(() => go('test')); } }, el('span', { class: 'st' + (passed ? ' ok' : '') }, passed ? '✓' : '★'), `Unit Test ${n} · 45 min`));
@@ -399,7 +399,7 @@
     document.getElementById('wrap').before(el('section', { class: 'dhero dots' }, el('div', { class: 'dhero-in' },
       el('div', { class: 'dhero-txt' }, el('span', { class: 'eyebrow' }, isGuest() ? 'GUEST · TOPIC 3.1 IS OPEN' : dateTxt),
         el('h1', {}, isGuest() ? 'Welcome to Camday ' : `${greet}, ${st.alias} `, el('span', { class: 'wobble', style: 'display:inline-block;color:var(--gold)' }, '✦')),
-        el('p', {}, started ? `You are on ${cur.id} ${cur.title} — next: ${nx.label.charAt(0).toLowerCase() + nx.label.slice(1)}.` : `Start with Unit ${Core.UNO}: ${C.unit.title} – topic ${C.sections[0] ? C.sections[0].id : '3.1'}. ${C.sections[0] && C.sections[0].lesson ? 'Read the lesson' : 'Watch the lesson'}, then practise.`)),
+        el('p', {}, started ? `You are on ${cur.id} ${cur.title} — next: ${nx.label.charAt(0).toLowerCase() + nx.label.slice(1)}.` : `Start with Unit ${Core.UNO}: ${C.unit.title} – topic ${C.sections[0] ? C.sections[0].id : '3.1'}. ${Core.isRead(C.sections[0] || {}) ? 'Read the lesson' : 'Watch the lesson'}, then practise.`)),
       el('div', { class: 'dstats' },
         el('a', { class: 'card dstat', href: '#profile', id: 'streakCard' }, el('span', { class: 'bob', html: AtomicIcons.html('flame', { filled: true, size: 34, color: '#E8590C' }) }),
           el('span', {}, el('b', {}, `${sk} day${sk === 1 ? '' : 's'}`), el('br'), el('small', {}, 'learning streak'))),
@@ -432,7 +432,7 @@
       el('div', { class: 'tablewrap' }, el('div', { class: 'drows' }, el('div', { class: 'drow h' }, ...['Topic', 'Lesson', 'Core', 'Practice', 'Extension', 'Status'].map(t => el('span', {}, t))),
         ...C.sections.map(s => { const v = Core.vstate(st, s.id), core = 8 - Core.reqLeft(st, s).length, [c, t] = stCls(s), np = Object.values(v.stops).filter(x => x.done).length;
           return el('a', { class: 'drow', href: Core.secLock(st, s) ? '#u-' + Core.UNO : (Core.videoDone(st, s) ? '#ex-' : '#v-') + R(s.id) }, el('span', {}, el('b', { style: 'color:var(--blue)' }, s.id), ' ' + s.title),
-            el('span', {}, Core.videoDone(st, s) ? (s.lesson ? 'Read' : 'Watched') : np ? `${np} of ${s.stops.length} ${s.lesson ? 'checks' : 'pauses'}` : '—'),
+            el('span', {}, Core.videoDone(st, s) ? (Core.isRead(s) ? 'Read' : 'Watched') : np ? `${np} of ${s.stops.length} ${Core.isRead(s) ? 'checks' : 'pauses'}` : '—'),
             el('span', { class: 'dcore' }, el('span', { class: 'pbar' }, el('i', { style: `width:${core / 8 * 100}%` })), `${core}/8`),
             el('span', {}, `${s.prac.filter(q => (st.items[q.id] || {}).done).length}/${s.prac.length}`), el('span', {}, `${s.adv.filter(q => (st.items[q.id] || {}).done).length}/${s.adv.length}`),
             el('span', {}, el('span', { class: 'status ' + c }, t))); })))));
@@ -508,9 +508,9 @@
       const started = vd || ansStops || reqDone || pracDone;
       const state = lock ? 'lock' : done ? 'done' : started ? 'go' : 'new';
       const tile = (cls, ic, name, sub, href, locked, extra) => el('a', { class: 'u4tile ' + cls, href: locked ? null : href, 'aria-disabled': locked ? 'true' : null, style: locked ? 'opacity:.55;pointer-events:none' : null }, el('i', {}, ...AtomicIcons.swap(ic, / go\b/.test(' ' + cls))), el('span', {}, el('b', {}, name), el('small', {}, sub), extra || null));
-      const vlen = s.lesson ? `about ${Math.max(5, Math.round(s.video.dur / 60))} min · ${s.stops.length} check questions` : `${fmt(s.video.dur)} · ${s.stops.length} pause questions`;
+      const vlen = Core.isRead(s) ? `about ${Math.max(5, Math.round(s.video.dur / 60))} min · ${s.stops.length} check questions` : `${fmt(s.video.dur)} · ${s.stops.length} pause questions`;
       const tiles = el('div', { class: 'u4tiles' },
-        tile(vd ? 'ok' : ansStops ? 'go' : '', s.lesson ? '📖' : '▶', s.lesson ? 'Read the lesson' : 'Watch', vd ? vlen + ' ✓' : ansStops ? `${ansStops} of ${s.stops.length} pauses · ${fmt(vs.pos || 0)}` : vlen, '#v-' + R(s.id), !!lock),
+        tile(vd ? 'ok' : ansStops ? 'go' : '', Core.isRead(s) ? '📖' : '▶', Core.isRead(s) ? 'Read the lesson' : 'Watch', vd ? vlen + ' ✓' : ansStops ? `${ansStops} of ${s.stops.length} pauses · ${fmt(vs.pos || 0)}` : vlen, '#v-' + R(s.id), !!lock),
         tile(reqDone === 8 ? 'ok' : reqDone || pracDone ? 'go' : '', reqDone === 8 ? '✓' : s.vocab ? (C.unit.young ? '🎧' : '🎤') : '✎', s.vocab ? (C.unit.young ? 'Listen & practise' : 'Listen, say & practise') : 'Practise', `${pracDone}/${s.prac.length} · ${reqDone}/8 Core`, '#ex-' + R(s.id), !!lock || !vd, reqDone && reqDone < 8 ? el('span', { class: 'u4mini' }, el('i', { style: `width:${reqDone / 8 * 100}%` })) : null),
         s.lab ? (() => { const L = (st.labs || {})[s.id] || {}; const vdn = !!(L.v || {}).done, hdn = !!(L.h || {}).done; return tile(vdn && hdn ? 'ok' : vdn || hdn ? 'go' : '', '🧪', 'Experiment', vdn && hdn ? 'Lab + home ✓' : vdn ? 'Lab ✓ · try it at home' : 'Virtual lab + at home', '#lab-' + R(s.id), !!lock); })()
           : tile(st.ws.includes(s.id) ? 'ok' : '', '🖨', 'Worksheet', st.ws.includes(s.id) ? 'Printed' : 'Print only', '#ws-' + R(s.id), !!lock),
@@ -569,7 +569,7 @@
         el('div', { class: 'float' }, el('i', {}, Core.passed(st) ? '🏆' : '▶'), el('div', {}, el('b', {}, Core.passed(st) ? 'Unit passed' : 'Next up'), nx.label)))));
     document.getElementById('wrap').before(heroS);
     m.append(...[tocBtn(), el('div', { class: 'u4head' }, el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, `Cambridge ${Core.stageName(Core.STAGE)} · Unit ${Core.UNO}`), el('h2', {}, 'Your learning path')),
-      el('div', { class: 'u4steps' }, ...(C.unit.tiny ? ['1 Read the lesson', '2 Practise', '3 Word games', '4 Unit Test'] : Core.IS_PRIMARY ? (Core.stageNo(Core.STAGE) <= 5 ? ['1 Watch', C.unit.young ? '2 Listen & practise' : '2 Listen & say', '3 Experiment', '4 Word games', '5 Unit Test'] : ['1 Watch', '2 Listen & say', '3 Experiment', '4 Unit Test']) : [C.unit.read ? '0 Read first' : null, Core.IS_MATHS ? '1 Read the lesson' : '1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test'].filter(Boolean)).map(t => el('span', {}, t)))),
+      el('div', { class: 'u4steps' }, ...(C.unit.tiny ? ['1 Read the lesson', '2 Practise', '3 Word games', '4 Unit Test'] : Core.IS_PRIMARY ? (Core.stageNo(Core.STAGE) <= 5 ? ['1 Watch', C.unit.young ? '2 Listen & practise' : '2 Listen & say', '3 Experiment', '4 Word games', '5 Unit Test'] : ['1 Watch', '2 Listen & say', '3 Experiment', '4 Unit Test']) : [C.unit.read ? '0 Read first' : null, Core.isRead(C.sections[0] || {}) ? '1 Read the lesson' : '1 Watch', '2 Practise', '3 Worksheet', '4 Unit Test'].filter(Boolean)).map(t => el('span', {}, t)))),
       C.unit.read ? el('section', { class: 'card readfirst', id: 'readFirst' }, el('div', { class: 'rfico', 'aria-hidden': 'true' }, '📘'),
         el('div', {}, el('p', { class: 'eyebrow', style: 'margin:0' }, Core.IS_MATHS ? 'Read before the lesson' : 'Read before you watch'), el('h3', { style: 'margin:2px 0 4px' }, `Unit ${Core.UNO} pre-reading pack (PDF)`),
           el('p', { class: 'muted', style: 'margin:0' }, Core.IS_MATHS ? 'The key ideas, methods and worked examples of every section, with “Try it” questions. Print it or read it before you start the unit.' : 'The key ideas of each video, the key words and “Think first” questions. Read a section before you watch its video.')),
@@ -579,16 +579,16 @@
     m.append(el('div', { class: 'u4two' },
       el('section', { class: 'card' }, el('h2', { style: 'margin:0;font-size:22px' }, 'What you will learn'), el('span', { class: 'muted' }, `${sec} of ${nobj} secure`),
         el('ul', { class: 'u4objs objs' }, ...Object.entries(C.objectives).map(([k, o]) => el('li', { class: objSecure(k) ? 'ok' : '' }, o.t)))),
-      el('section', { class: 'card' }, el('h2', { style: 'margin:0;font-size:22px' }, 'Concept map'), el('span', { class: 'muted' }, C.sections[0] && C.sections[0].lesson ? 'Tap a box to see its lesson and questions' : 'Tap a box to see its video and questions'),
+      el('section', { class: 'card' }, el('h2', { style: 'margin:0;font-size:22px' }, 'Concept map'), el('span', { class: 'muted' }, Core.isRead(C.sections[0] || {}) ? 'Tap a box to see its lesson and questions' : 'Tap a box to see its video and questions'),
         el('div', { class: 'u4map' }, mindmapSvg(false)), el('a', { class: 'btn small', href: '#map' }, 'Open the interactive map', el('span', { class: 'arr' }, ' →')))));
   }
   /* ---------- lesson: video with pause questions ---------- */
   let activeVideo = null;
   function viewVideo(sid, watch) {
     let s = Core.sec(sid); const m = $main(); if (!s) return go('home');
-    if (s.lesson && !(watch && s.lv)) return viewLesson(sid);
+    if (s.lesson && !s.lv) return viewLesson(sid);   // a Maths lesson with a video opens on the video, the lesson to read under it (like Science)
     // a Maths lesson's video: the same check questions, asked as pause questions at the video's own times
-    if (s.lesson) s = Object.assign({}, s, { lesson: null, video: Object.assign({}, s.lv, { src: CFG_VIDEO ? CFG_VIDEO + s.lv.src.replace('media/mv/', '') : s.lv.src }), captions: s.lv.captions, stops: s.stops.map(x => Object.assign({}, x, { t: s.lv.times[x.id] })) });
+    if (s.lesson) s = Object.assign({}, s, { lesson: null, read: s.read || s.lesson, video: Object.assign({}, s.lv, { src: CFG_VIDEO ? CFG_VIDEO + s.lv.src.replace('media/mv/', '') : s.lv.src }), captions: s.lv.captions, stops: s.stops.map(x => Object.assign({}, x, { t: s.lv.times[x.id] })) });
     const lock = Core.secLock(st, s);
     subbar('', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}: ${C.unit.title}`), el('span', { class: 'sep' }), el('span', { class: 'ttl' }, `Lesson ${s.id} · ${s.title}`));
     if (lock) { m.append(bar(`Section ${s.id} · Video`), lockScreen(`Section ${s.id} is locked`, lock.reason, [lock])); return; }
@@ -628,7 +628,7 @@
     const sideBody = el('div', { class: 'card', style: 'padding:14px' });
     const side = el('aside', { class: 'side' }, tabsBox, sideBody,
       el('div', { class: 'card', style: 'padding:18px 20px' }, el('b', { class: 'lex' }, 'This lesson\'s objectives'), el('ul', { style: 'margin:6px 0 0;padding-left:18px;font-size:15px' }, ...s.objs.map(o => el('li', {}, C.objectives[o].t)))),
-      el('div', { class: 'btnrow' }, el('a', { class: 'btn small', href: '#map' }, '🧠 Mind map'), el('a', { class: 'btn small', href: '#ws-' + R(sid) }, '📄 Worksheet')),
+      el('div', { class: 'btnrow' }, el('a', { class: 'btn small', href: '#map' }, '🧠 Mind map'), el('a', { class: 'btn small', href: '#ws-' + R(sid) }, '📄 Worksheet'), s.read && hasNotes() && !Core.sec(sid).read ? el('button', { class: 'btn small', type: 'button', id: 'readNotes', onclick: () => openReader(sid) }, '📖 Unit notes') : null),
       el('div', { class: 'goal' }, el('span', { class: 'gi' }, svgI(I.bulb, 16, '#1C2A3A', 2)), el('span', {}, el('b', {}, 'Daily goal: '), `this video lasts ${fmt(s.video.dur)} with ${s.stops.length} pause questions – finish it to keep your streak going.`)));
     m.append(bar(`Unit ${Core.UNO} › ${s.id} › Video`), tocBtn(), el('div', { class: 'lesson' }, lessonMain, side));
     if (s.read) m.append(sciRead(s, vs));   // under the video and its chapters, transcript, words and notes
@@ -874,7 +874,7 @@
   const liveTry = vs => (q, host, after) => { const rec = (vs.tries[q.id] = vs.tries[q.id] || { tries: 0 });
     QE.practice(q, host, { rec, seed: st.id, nested: true, free: true, save: () => Core.persist(), onDone: () => { Core.persist(); after && after(); } });
     if (rec.done && after) after(); };
-  // Science: the lesson to read under its video (s.read, v4 blocks with live "Your turn" questions), then the lesson document (PDF)
+  // Science and Maths: the lesson to read under its video (s.read, or a Maths lesson, v4 blocks with live "Your turn" questions), then the lesson document (PDF)
   function sciRead(s, vs) {
     vs.tries = vs.tries || {}; const live = liveTry(vs);
     return el('div', { class: 'lessonbody v4 sciread', id: 'sciRead' }, el('h2', { class: 'lex', style: 'margin:18px 0 0' }, '📘 Read the lesson'),
@@ -1215,7 +1215,7 @@
     const lock = Core.secLock(st, s);
     if (lock || !Core.videoDone(st, s)) {
       subbar('blue', el('a', { class: 'back', href: '#u-' + Core.UNO }, `← Unit ${Core.UNO}: ${C.unit.title}`), el('span', { class: 'ttl' }, `${s.id} ${s.title} · Practice`));
-      m.append(bar(`Section ${s.id} · Practice`), lock ? lockScreen(`Practice for section ${s.id} is locked`, lock.reason, [lock]) : lockScreen(`Practice for section ${s.id} is locked`, s.lesson ? 'Read the lesson and answer its check questions before you start the practice.' : 'Watch the whole video and answer its pause questions before you start the practice.', [Core.firstMissingIn(st, s)])); return;
+      m.append(bar(`Section ${s.id} · Practice`), lock ? lockScreen(`Practice for section ${s.id} is locked`, lock.reason, [lock]) : lockScreen(`Practice for section ${s.id} is locked`, Core.isRead(s) ? 'Read the lesson and answer its check questions before you start the practice.' : 'Watch the whole video and answer its pause questions before you start the practice.', [Core.firstMissingIn(st, s)])); return;
     }
     return viewFocusPractice(s);   // every course practises inside the full-screen practice room (Maths too, from 27/11/2026)
     let tab = UI.tab[route] || 'req'; if (!(s[tab] || []).length) tab = 'req'; const list = s[tab]; let idx = Math.min(UI.idx[route + tab] || 0, list.length - 1);

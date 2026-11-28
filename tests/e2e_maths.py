@@ -23,8 +23,8 @@ with sync_playwright() as p:
     ok(rep <= 2, f'M5 Other units: a question shape appears at most twice in main Practice (worst {rep})')
     # lesson: finishing offers notes or practice
     pg.evaluate("location.hash='v-2-3'"); pg.wait_for_timeout(2000)
-    ok(pg.query_selector('#lessonChoose #readNotes') is not None and pg.query_selector('#lessonChoose #toPractice') is not None, 'M6 After the lesson: choose "Read the lesson notes" or "Practise"')
-    ok(pg.query_selector('.lb-idea .qfig svg') is not None, 'M7 The tile picture is drawn in the lesson')
+    ok(pg.query_selector('.player video') is not None and pg.query_selector('#sciRead .lblock') is not None and pg.query_selector('#readNotes') is not None, 'M6 The lesson opens on its video, the lesson to read under it, and the unit notes one tap away')
+    ok(pg.query_selector('#sciRead .lb-idea .qfig svg') is not None, 'M7 The tile picture is drawn in the lesson')
     pg.click('#readNotes'); pg.wait_for_timeout(900)
     top = pg.evaluate("(()=>{ const b=document.querySelector('#readerBody'), t=document.querySelector('#rd-2-3'); return Math.abs(t.offsetTop - b.scrollTop) })()")
     ok(pg.query_selector('#reader') is not None and top < 40 and pg.input_value('#readerSec') == '2.3', f'M8 The notes open at lesson 2.3 (offset {top}px)')
@@ -56,8 +56,7 @@ with sync_playwright() as p:
     ok(pg.query_selector('#challengeCard') is not None and pg.query_selector('nav a[href="#challenge"]') is None, 'M17 …and from the Maths unit page, not the top menu')
     # Phase 2: lesson 1.1 has a video; the Read page links to it and the player pauses on the lesson's own check questions
     pg.evaluate("(async()=>{ await Core.switchUnit(1); location.hash='v-1-1'; })()"); pg.wait_for_timeout(2500)
-    ok(pg.get_attribute('#lessonVideo', 'href') == '#vw-1-1', 'M18 Lesson 1.1 shows a "Watch the video lesson" card')
-    pg.click('#lessonVideo'); pg.wait_for_timeout(2500)
+    ok(pg.query_selector('.player video') is not None and pg.query_selector('#sciRead') is not None, 'M18 Lesson 1.1 opens on the video lesson, like Science')
     v = pg.evaluate("(()=>{ const v=document.querySelector('video'); return v && { src: v.currentSrc || v.src, dur: v.duration, h: v.videoHeight } })()")
     cc = pg.is_visible('.cap'); pg.click('button.chip:has-text("CC")'); cc = cc and pg.is_hidden('.cap'); pg.click('button.chip:has-text("CC")'); cc = cc and pg.is_visible('.cap')
     ok(v and v['src'].endswith('1-1.mp4') and v['dur'] > 200 and v['h'] == 1080 and cc, f'M19 The video lesson plays in the app player ({v}), Full HD, and CC turns the captions off and on')
