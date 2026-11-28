@@ -45,7 +45,8 @@
   /* ---------------- renderers ---------------- */
   function dataTable(d) {
     const t = el('table', { class: 'grid data' }); if (d.caption) t.append(el('caption', {}, d.caption));
-    t.append(el('tr', {}, ...d.head.map(h => el('th', {}, h)))); d.rows.forEach(r => t.append(el('tr', {}, ...r.map(c => el('td', {}, String(c))))));
+    const rich = c => String(c).split(/(\*\*[^*]+\*\*)/).map(p => /^\*\*.*\*\*$/.test(p) ? el('b', {}, p.slice(2, -2)) : p);   // **bold** in cells, as in lesson text
+    t.append(el('tr', {}, ...d.head.map(h => el('th', {}, ...rich(h))))); d.rows.forEach(r => t.append(el('tr', {}, ...r.map(c => el('td', {}, ...rich(c))))));
     return el('div', { class: 'tablewrap' }, t);
   }
   function figureBox(name, opts, extra) {

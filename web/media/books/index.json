@@ -3252,5 +3252,185 @@
     19
    ]
   }
+ },
+ "s7u09": {
+  "title": "Camday Science Stage 7 · Unit 9: Chemical Reactions",
+  "pages": 19,
+  "dir": "media/books/s7u09/",
+  "ext": "webp",
+  "pdf": "media/books/s7u09.pdf?v=e15878ca75",
+  "v": "e15878ca75",
+  "secs": {
+   "9.1": [
+    2,
+    5
+   ],
+   "9.2": [
+    6,
+    10
+   ],
+   "9.3": [
+    11,
+    14
+   ],
+   "9.4": [
+    15,
+    18
+   ],
+   "answers": [
+    19,
+    19
+   ]
+  }
+ },
+ "s7u10": {
+  "title": "Camday Science Stage 7 · Unit 10: Forces",
+  "pages": 20,
+  "dir": "media/books/s7u10/",
+  "ext": "webp",
+  "pdf": "media/books/s7u10.pdf?v=ed443c7f01",
+  "v": "ed443c7f01",
+  "secs": {
+   "10.1": [
+    2,
+    7
+   ],
+   "10.2": [
+    8,
+    10
+   ],
+   "10.3": [
+    11,
+    14
+   ],
+   "10.4": [
+    15,
+    19
+   ],
+   "answers": [
+    20,
+    20
+   ]
+  }
+ },
+ "s7u11": {
+  "title": "Camday Science Stage 7 · Unit 11: Energy",
+  "pages": 19,
+  "dir": "media/books/s7u11/",
+  "ext": "webp",
+  "pdf": "media/books/s7u11.pdf?v=204b209cae",
+  "v": "204b209cae",
+  "secs": {
+   "11.1": [
+    2,
+    5
+   ],
+   "11.2": [
+    6,
+    9
+   ],
+   "11.3": [
+    10,
+    13
+   ],
+   "11.4": [
+    14,
+    18
+   ],
+   "answers": [
+    19,
+    19
+   ]
+  }
+ },
+ "s7u12": {
+  "title": "Camday Science Stage 7 · Unit 12: Electricity",
+  "pages": 20,
+  "dir": "media/books/s7u12/",
+  "ext": "webp",
+  "pdf": "media/books/s7u12.pdf?v=77fa4d8319",
+  "v": "77fa4d8319",
+  "secs": {
+   "12.1": [
+    2,
+    6
+   ],
+   "12.2": [
+    7,
+    11
+   ],
+   "12.3": [
+    12,
+    15
+   ],
+   "12.4": [
+    16,
+    19
+   ],
+   "answers": [
+    20,
+    20
+   ]
+  }
+ },
+ "s7u13": {
+  "title": "Camday Science Stage 7 · Unit 13: Earth Processes",
+  "pages": 20,
+  "dir": "media/books/s7u13/",
+  "ext": "webp",
+  "pdf": "media/books/s7u13.pdf?v=d970a8035e",
+  "v": "d970a8035e",
+  "secs": {
+   "13.1": [
+    2,
+    6
+   ],
+   "13.2": [
+    7,
+    10
+   ],
+   "13.3": [
+    11,
+    15
+   ],
+   "13.4": [
+    16,
+    19
+   ],
+   "answers": [
+    20,
+    20
+   ]
+  }
+ },
+ "s7u14": {
+  "title": "Camday Science Stage 7 · Unit 14: Earth and Beyond",
+  "pages": 20,
+  "dir": "media/books/s7u14/",
+  "ext": "webp",
+  "pdf": "media/books/s7u14.pdf?v=276a5156ef",
+  "v": "276a5156ef",
+  "secs": {
+   "14.1": [
+    2,
+    6
+   ],
+   "14.2": [
+    7,
+    11
+   ],
+   "14.3": [
+    12,
+    15
+   ],
+   "14.4": [
+    16,
+    19
+   ],
+   "answers": [
+    20,
+    20
+   ]
+  }
  }
 }

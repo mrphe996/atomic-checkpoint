@@ -222,6 +222,13 @@
   };
   const LETTERED = { ammeter: 'A', voltmeter: 'V', motor: 'M' };
   const part = (p, x, y, vert) => { const k = typeof p === 'string' ? p : p.k; const lb = typeof p === 'object' && p.l; let g = (SYM[k] || SYM.wire)(x, y); if (vert && LETTERED[k]) g = g.replace(/<text[^>]*>[AVM]<\/text>/, ''); return (vert ? `<g transform="rotate(90 ${x} ${y})">${g}</g>` + (LETTERED[k] ? T(x, y + 5, LETTERED[k], { bold: true, size: 14 }) : '') : g) + (lb ? T(x + (vert ? 30 : 0), y + (vert ? 5 : -22), lb, { size: 13, bold: true, fill: C.blue, anchor: vert ? 'start' : 'middle' }) : ''); };
+  // a key of circuit symbols with names: o.parts = ['cell', 'battery', 'lamp', …]
+  F.symbols = (o) => {
+    const ps = o.parts || ['cell', 'battery', 'lamp', 'switch', 'closed', 'buzzer', 'ammeter', 'motor'], names = { cell: 'cell', battery: 'battery', lamp: 'lamp', switch: 'open switch', closed: 'closed switch', buzzer: 'buzzer', ammeter: 'ammeter', voltmeter: 'voltmeter', motor: 'motor', resistor: 'resistor', variable: 'variable resistor', wire: 'wire' };
+    const cols = 4, rows = Math.ceil(ps.length / cols); let s = '';
+    ps.forEach((k, i) => { const x = 60 + (i % cols) * 120, y = 70 + Math.floor(i / cols) * (rows > 1 ? 130 : 0) + (rows > 1 ? 0 : 60); s += L(x - 46, y, x + 46, y) + part(k, x, y) + T(x, y + 50, names[k] || k, { size: 13, bold: true }); });
+    return { svg: W(s), a: {} };
+  };
   F.circuit = (o) => {
     let s = ''; const x0 = 60, x1 = 420, y0 = 60, y1 = 260;
     if ((o.type || 'series') === 'series') {

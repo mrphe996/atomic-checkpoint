@@ -447,4 +447,71 @@
     return { svg: W(s), a: {} };
   };
 
+  /* ---------------- Stage 7 Unit 10 Forces ---------------- */
+  // force diagram: an object (o.obj label, o.shape 'box'|'ball'|'person') with arrows o.forces = [{dir:'up'|'down'|'left'|'right', t:'weight 20 N', n: relative size 1–5}]
+  F.sciForce = (o = {}) => {
+    const cx = 240, cy = o.title ? 172 : 160, w = 110, h = 70, C = { up: BLUE, down: RED, left: ORANGE, right: DGREEN };
+    let s = o.title ? T(240, 24, o.title, { size: 15, bold: true }) : '';
+    if (o.ground) s += `<rect x="20" y="${cy + h / 2}" width="440" height="10" fill="#C8B79A"/>`;
+    s += o.shape === 'ball' ? `<circle cx="${cx}" cy="${cy}" r="${h / 2}" fill="${SKY}" stroke="${INK}" stroke-width="2"/>` : `<rect x="${cx - w / 2}" y="${cy - h / 2}" width="${w}" height="${h}" rx="8" fill="${SKY}" stroke="${INK}" stroke-width="2"/>`;
+    s += lines(cx, cy + 4, o.obj || '', 14, { size: 13, bold: true });
+    (o.forces || []).forEach(f => { const L = (f.dir === 'left' || f.dir === 'right' ? 10 : 24) + (f.n || 2) * 16, c = f.c || C[f.dir] || INK;
+      if (f.dir === 'up') s += arrow(cx, cy - h / 2, cx, cy - h / 2 - L, c) + T(cx + 10, cy - h / 2 - L + 4, f.t, { size: 12.5, bold: true, fill: c, anchor: 'start' });
+      if (f.dir === 'down') s += arrow(cx, cy + h / 2, cx, cy + h / 2 + L, c) + T(cx + 10, cy + h / 2 + L - 2, f.t, { size: 12.5, bold: true, fill: c, anchor: 'start' });
+      if (f.dir === 'left') s += arrow(cx - (o.shape === 'ball' ? h / 2 : w / 2), cy, cx - w / 2 - L, cy, c) + lines(cx - w / 2 - L - 6, cy + 4, f.t, 12, { size: 12.5, bold: true, fill: c, anchor: 'end' });
+      if (f.dir === 'right') s += arrow(cx + (o.shape === 'ball' ? h / 2 : w / 2), cy, cx + w / 2 + L, cy, c) + lines(cx + w / 2 + L + 6, cy + 4, f.t, 12, { size: 12.5, bold: true, fill: c, anchor: 'start' }); });
+    if (o.note) s += T(240, 308, o.note, { size: 11, fill: GREY });
+    return { svg: W(s), a: {} };
+  };
+
+  /* ---------------- Stage 7 Unit 11 Energy and sound ---------------- */
+  // a sound wave: a vibrating loudspeaker and air particles bunched into compressions; o.medium label
+  F.sciSound = (o = {}) => {
+    let s = T(240, 26, o.title || 'Sound: vibrations passed from particle to particle', { size: 14, bold: true });
+    s += `<g class="sa a-rise" style="--dx:6px;--dy:0px;--t:0.5s"><rect x="40" y="100" width="18" height="120" fill="${INK}"/><path d="M58 120 L84 92 V228 L58 200Z" fill="${GREY}" stroke="${INK}" stroke-width="2"/></g>`;
+    for (let c = 0; c < 26; c++) { const x0 = 104 + c * 13.5, dx = 9 * Math.sin(c * 0.55); for (let r = 0; r < 8; r++) s += `<circle cx="${(x0 + dx).toFixed(1)}" cy="${104 + r * 16 + (c % 2) * 6}" r="3.6" fill="${BLUE}"/>`; }
+    [0, 1].forEach(m => { const c = Math.PI * (2 * m + 1) / 0.55 - 0.5, x = 104 + c * 13.5; s += T(x, 258, 'compression', { size: 10.5, fill: GREY }) + T(x + 85, 258, 'rarefaction', { size: 10.5, fill: GREY }); });
+    s += arrow(110, 286, 440, 286, DGREEN, true) + T(275, 306, o.medium || 'energy travels through the air to your ear', { size: 12, bold: true, fill: DGREEN });
+    return { svg: W(s), a: {} };
+  };
+
+  /* ---------------- Stage 7 Unit 13 Earth ---------------- */
+  // the layers of the Earth: a cut-away globe with labels
+  F.sciEarth = () => {
+    const cx = 170, cy = 165, R = [140, 120, 66, 30], col = ['#8D6E63', '#F4A259', '#E9573F', '#FDD835'], nm = ['crust (solid rock)', 'mantle (hot rock; upper part semi-molten)', 'outer core (liquid iron and nickel)', 'inner core (solid, hottest)'];
+    let s = `<circle cx="${cx}" cy="${cy}" r="${R[0] + 4}" fill="#3A7BD5"/>` + R.map((r, i) => `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${col[i]}"/>`).join('');
+    s += `<path d="M${cx} ${cy} L${cx + R[0] + 6} ${cy} A${R[0] + 6} ${R[0] + 6} 0 0 0 ${cx} ${cy - R[0] - 6}Z" fill="#fff" opacity="0"/>`;
+    const ys = [42, 104, 186, 250], px = [cx + 100, cx + 96, cx + 42, cx + 10], py = [cy - 102, cy - 50, cy + 30, cy + 8];
+    nm.forEach((t, i) => { s += `<path d="M${px[i]} ${py[i]} L330 ${ys[i]}" stroke="${INK}" stroke-width="1.2" fill="none"/><circle cx="${px[i]}" cy="${py[i]}" r="2.5" fill="${INK}"/>` + lines(334, ys[i] + 4, t, 20, { size: 12, bold: i === 3, anchor: 'start' }); });
+    return { svg: W(s), a: {} };
+  };
+
+  /* ---------------- Stage 7 Unit 14 Earth and beyond ---------------- */
+  // eclipses (not to scale): o.type 'solar' (Moon between Sun and Earth) or 'lunar' (Earth between Sun and Moon)
+  F.sciEclipse = (o = {}) => {
+    const solar = (o.type || 'solar') === 'solar', sy = 160;
+    let s = T(240, 26, solar ? 'Solar eclipse: the Moon blocks the Sun' : 'Lunar eclipse: the Moon is in the Earth’s shadow', { size: 15, bold: true });
+    s += `<circle cx="40" cy="${sy}" r="70" fill="${GOLD}"/>` + T(40, sy + 4, 'Sun', { size: 13, bold: true });
+    const sm = solar ? [250, 28] : [260, 34], bg = solar ? [410, 40] : [420, 12];   // [x, r] of the small body in the middle and the body behind
+    const [mx, mr] = sm, [ex, er] = bg;
+    const X = 480, R0 = 70, k1 = (R0 - mr) / (mx - 40), k2 = (R0 + mr) / (mx - 40), tip = 40 + R0 / k1;
+    s += `<path d="M${mx} ${sy - mr} L${X} ${sy - R0 + (X - 40) * k2} L${X} ${sy + R0 - (X - 40) * k2} L${mx} ${sy + mr}Z" fill="#90A4AE" opacity=".35"/>`;   // penumbra: partial shadow
+    s += tip < X ? `<path d="M${mx} ${sy - mr} L${tip} ${sy} L${mx} ${sy + mr}Z" fill="#37474F" opacity=".8"/>` : `<path d="M${mx} ${sy - mr} L${X} ${sy - R0 + (X - 40) * k1} L${X} ${sy + R0 - (X - 40) * k1} L${mx} ${sy + mr}Z" fill="#37474F" opacity=".8"/>`;   // umbra
+    s += `<circle cx="${mx}" cy="${sy}" r="${mr}" fill="${solar ? '#B0BEC5' : '#3A7BD5'}" stroke="${INK}"/>` + T(mx, sy - mr - 10, solar ? 'Moon' : 'Earth', { size: 13, bold: true });
+    s += `<circle cx="${ex}" cy="${sy}" r="${er}" fill="${solar ? '#3A7BD5' : '#B5541C'}" stroke="${INK}"/>` + T(ex, sy - er - 10, solar ? 'Earth' : 'Moon (looks red)', { size: 13, bold: true });
+    s += T(ex - 20, sy + (solar ? 70 : 60), 'umbra: total', { size: 11.5, fill: INK, anchor: 'end' }) + T(ex - 20, sy + (solar ? 88 : 78), 'penumbra: partial', { size: 11.5, fill: GREY, anchor: 'end' });
+    return { svg: W(s + T(240, 308, 'not to scale', { size: 11, fill: GREY })), a: {} };
+  };
+  // tides: the Earth with two water bulges and the Moon; o.sun: 'line' (spring tides) or 'right' (neap tides)
+  F.sciTides = (o = {}) => {
+    const cx = 220, cy = 165, sun = o.sun;
+    let s = T(240, 26, sun === 'line' ? 'Spring tides: Sun and Moon in line' : sun === 'right' ? 'Neap tides: Sun and Moon at right angles' : 'The Moon pulls the oceans into two bulges', { size: 14, bold: true });
+    s += `<ellipse cx="${cx}" cy="${cy}" rx="${sun === 'right' ? 78 : 92}" ry="${sun === 'right' ? 70 : 62}" fill="#90CAF9" opacity=".85"/><circle cx="${cx}" cy="${cy}" r="56" fill="#66BB6A" stroke="${DGREEN}"/>` + T(cx, cy + 4, 'Earth', { size: 13, bold: true, fill: '#fff' });
+    s += `<circle cx="420" cy="${cy}" r="18" fill="#B0BEC5" stroke="${INK}"/>` + T(420, cy + 36, 'Moon', { size: 12, bold: true }) + arrow(392, cy, 320, cy, BLUE) + T(356, cy - 10, 'gravity', { size: 11, fill: BLUE });
+    if (sun === 'line') s += ICON.sun(40, cy) + T(40, cy + 44, 'Sun', { size: 12, bold: true });
+    if (sun === 'right') s += ICON.sun(cx, 270) + T(cx + 40, 276, 'Sun', { size: 12, bold: true, anchor: 'start' });
+    s += T(cx + 120, cy + 70, 'high tide', { size: 11, fill: BLUE }) + T(cx - 118, cy + 70, 'high tide', { size: 11, fill: BLUE });
+    return { svg: W(s), a: {} };
+  };
+
 })();
