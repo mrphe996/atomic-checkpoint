@@ -152,7 +152,7 @@ def page_html(body):
     kx = os.path.join(WEB, "vendor/katex")
     # maths is typeset exactly as in the app (KaTeX via mathtype.js): fractions, powers, equations
     return (f"<!DOCTYPE html><html><head><meta charset='utf-8'><link rel='stylesheet' href='file://{kx}/katex.min.css'><style>{CSS}"
-            f" .lblock .katex{{font-size:1.08em}} .lblock .katex .mfrac{{font-size:1.06em}}</style></head><body><div class='lblock'>{body}</div>"
+            f" .lblock .katex{{font-size:1.08em}} .lblock .katex .mfrac{{font-size:1.06em}}{' .fig svg{width:94%;max-height:96mm}' if SUBJ == 'Science' else ''}</style></head><body><div class='lblock'>{body}</div>"
             f"<script>window.AtomicTheme=null;window.Core={{IS_MATHS:true}};</script>{scripts}<script src='file://{kx}/katex.min.js'></script>"
             f"<script src='file://{os.path.join(WEB, 'mathtype.js')}'></script>"
             f"<script>document.querySelectorAll('[data-fig]').forEach(d=>{{const f=JSON.parse(d.dataset.fig);"
