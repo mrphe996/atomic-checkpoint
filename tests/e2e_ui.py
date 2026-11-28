@@ -39,7 +39,7 @@ with sync_playwright() as p:
     ok(pg.query_selector('#payBtn') is None, 'U8 Mathematics Stage 9 cannot be bought while locked')
     ok(pg.evaluate("Core.switchStage(19).then(()=>'open',e=>e.message)") == 'locked', 'U9 Switching to stage 19 in code is refused')
     pg.evaluate("location.hash='courses-maths'"); pg.wait_for_timeout(700)
-    ok(pg.evaluate("[...document.querySelectorAll('.ccard')].some(c => /COMING SOON/.test(c.innerText) && (c.querySelector('.cclv') || {}).innerText === '9')"), 'U10 The course list shows Mathematics Stage 9 as coming soon')
+    ok(pg.evaluate("[...document.querySelectorAll('.ccard')].some(c => /Coming soon/.test(c.innerText) && (c.querySelector('.cclv') || {}).innerText === '9')"), 'U10 The course list shows Mathematics Stage 9 as coming soon')
     # enrol Stage 8 and switch through the switcher
     pg.evaluate("location.hash='checkout-8'"); pg.wait_for_timeout(900)
     ok(pg.query_selector('#stageLocked') is not None and pg.query_selector('#payBtn') is None and '80%' in pg.inner_text('#stageLocked'), 'U25 One stage per learner: Stage 8 is locked for a Stage 7 learner until 80% is done')

@@ -1495,34 +1495,53 @@
   const buyErr = x => ({ payments_closed: 'Payments are not open yet.', checkout_closed: 'The payment window was closed – nothing was charged.', payment_pending: 'Payment received – your course opens in a minute. Reload the page if it does not.',
     stage_locked: 'This stage opens after 80 % of your current stage.', already_enrolled: 'You already have this course.', payments_unavailable: 'The payment page could not load. Check your connection and try again.' }[x && x.code] || errText(x));
   const crumbs = (...tail) => el('nav', { class: 'crumb', 'aria-label': 'Breadcrumb' }, el('a', { href: '#home' }, 'Dashboard'), ' › ', el('a', { href: '#level' }, Core.levelName(Core.STAGE)), ...tail.flatMap(t => [' › ', t]));
-  // ---- course catalogue: subjects × levels (Science and Mathematics, Lower Secondary → IGCSE → AS & A Level) ----
+  // ---- course catalogue: subjects × levels (the page shows Stages 1–9; IGCSE and A Level entries stay in the catalogue for later) ----
   let CATALOG = null;
   async function loadCatalog() { if (!CATALOG) { try { const r = await fetch('content/catalog.json'); CATALOG = r.ok ? await r.json() : null; } catch (e) { CATALOG = null; } } return CATALOG; }
   const subjTag = (S0) => el('span', { class: 'subjtag', style: `--sc:${S0.color}` }, S0.icon + ' ' + S0.name);
+  const ageOf = n => `Ages ${n + 4}–${n + 5}`;   // Cambridge Stage n is the school year for ages n+4 to n+5
   function courseCard(c, S0) {
     const isStage = !!c.stage && c.status !== 'soon' && !Core.stageLocked(c.stage); const en = isStage && st && !isGuest() && Core.enrolled(c.stage), mine = en;
     const other = isStage && st && !isGuest() && !en && Core.myCourses().length && Core.levelOf(c.stage) !== Core.learnerStage();   // one stage per learner
     const state = c.status === 'soon' || (c.stage && Core.stageLocked(c.stage)) ? 'soon' : mine ? 'mine' : other ? 'locked' : c.status === 'enrol' || isStage ? 'enrol' : 'open';
-    const tag = { soon: 'COMING SOON', mine: 'YOUR COURSE', enrolled: 'ENROLLED', enrol: 'NOT ENROLLED', open: 'OPEN', locked: `LOCKED · FINISH STAGE ${Core.learnerStage()} FIRST` }[state];
-    const btn = state === 'soon' ? el('a', { class: 'btn small', href: c.stage ? '#stage-' + c.stage : '#course-' + c.id }, 'Details', el('span', { class: 'arr' }, ' →'))
-      : state === 'locked' ? el('a', { class: 'btn small', href: '#stage-' + c.stage }, '🔒 Locked')
-      : state === 'mine' || state === 'enrolled' || state === 'open' ? el('a', { class: 'btn small primary', href: '#stage-' + c.stage }, 'Open', el('span', { class: 'arr' }, ' →'))
-        : el('a', { class: 'btn small gold', href: '#checkout-' + c.stage }, `Enrol · ${PRICE}`, el('span', { class: 'arr' }, ' →'));
-    return el('section', { class: 'card ccard ' + state + (mine ? ' cur' : ''), id: isStage ? 'stageCard' + c.stage : 'course-' + c.id, style: `--sc:${S0.color}` },
-      el('div', { class: 'cchead' }, el('span', { class: 'cclv' }, c.stage ? String(c.badge || c.stage) : c.level === 'igcse' ? 'IG' : 'A'), el('span', { class: 'cccode' }, c.code)),
-      el('span', { class: 'eyebrow', style: 'margin:0' }, tag), el('h3', { style: 'margin:0' }, c.title),
-      el('p', { class: 'muted', style: 'margin:0;font-size:14px' }, mine && c.stage === Core.STAGE ? `${Core.unitCount()} units · ≈ ${estH(Core.INDEX.est || 0)} of learning · Unit Tests, Checkpoint exam room, end-of-year exams and a certificate` : c.about || (c.stage ? `Cambridge Stage ${c.stage} – units are being prepared` : '')), btn);
+    const now = mine && c.stage === Core.STAGE, n = c.badge || c.stage;
+    const tag = { soon: 'Coming soon', mine: now ? 'Studying now' : 'In your plan', enrol: '', open: 'Open', locked: `Opens after Stage ${Core.learnerStage()}` }[state];
+    const btn = state === 'soon' ? el('a', { class: 'btn small', href: '#stage-' + c.stage }, 'See details')
+      : state === 'locked' ? el('a', { class: 'btn small', href: '#stage-' + c.stage }, 'See the stage')
+      : state === 'mine' || state === 'open' ? el('a', { class: 'btn small primary', href: '#stage-' + c.stage }, now ? 'Continue' : 'Open')
+        : el('a', { class: 'btn small gold', href: '#checkout-' + c.stage }, `Enrol for ${PRICE}`);
+    return el('article', { class: 'ccard ' + state + (now ? ' now' : ''), id: 'stageCard' + c.stage, style: `--sc:${S0.color}` },
+      el('span', { class: 'cclv', 'aria-hidden': 'true' }, String(n)),
+      el('div', { class: 'ccbody' },
+        el('h3', {}, `Stage ${n}`, el('span', { class: 'ccage' }, ageOf(n))),
+        el('p', { class: 'ccabout' }, now ? `${Core.unitCount()} units, about ${estH(Core.INDEX.est || 0)} of learning, Unit Tests, the Checkpoint exam room, end-of-year exams and a certificate.` : c.about || ''),
+        el('div', { class: 'ccfoot' }, tag ? el('span', { class: 'cctag' }, tag) : null, btn)));
   }
   async function viewCourses(subject) {
     const m = $main(); const K = await loadCatalog(); if (!K) { m.append(el('p', {}, 'Could not load the courses.')); return; }
     subject = subject || 'science'; const S0 = K.subjects.find(x => x.id === subject) || K.subjects[0];
-    pageHero('CAMDAY COURSES', 'Subjects and levels', 'Choose a subject, then a level – from Cambridge Lower Secondary (Checkpoint) to IGCSE and AS & A Level. Each stage or course is enrolled separately.');
-    m.append(el('nav', { class: 'subjtabs', role: 'tablist', 'aria-label': 'Subjects' }, ...K.subjects.map(x => el('a', { role: 'tab', class: 'subjtab' + (x.id === S0.id ? ' on' : ''), 'aria-selected': String(x.id === S0.id), href: '#courses-' + x.id, style: `--sc:${x.color}` }, x.icon + ' ' + x.name,
-      el('small', {}, K.courses.some(c => c.subject === x.id && c.status !== 'soon' && !(c.stage && Core.stageLocked(c.stage))) ? 'open now' : 'coming soon')))));
-    K.levels.forEach(L => {
-      const list = K.courses.filter(c => c.subject === S0.id && c.level === L.id); if (!list.length) return;
-      m.append(el('section', { class: 'lvlgroup' }, el('div', { class: 'lvlhead' }, el('h2', { style: 'margin:0' }, L.name), el('span', { class: 'muted' }, `${L.ages} · ${L.note}`)),
-        el('div', { class: 'ccgrid' }, ...list.map(c => courseCard(c, S0)))));
+    const LV = K.levels.filter(L => L.id === 'primary' || L.id === 'lsec');   // for now Camday teaches Stages 1–9 only (no IGCSE or A Level)
+    const list = K.courses.filter(c => c.subject === S0.id && c.stage && LV.some(L => L.id === c.level)), num = c => c.badge || c.stage;
+    const lo = Math.min(...list.map(num)), hi = Math.max(...list.map(num)), byN = {}; list.forEach(c => { byN[num(c)] = c; });
+    const name = S0.id === 'esl' ? 'English as a Second Language' : S0.name;
+    const step = g => { const c = byN[g]; if (!c) return el('li', { class: 'lstep none' }, el('span', {}, g));
+      const mine = st && !isGuest() && Core.enrolled(c.stage), now = mine && c.stage === Core.STAGE;
+      return el('li', { class: 'lstep' + (mine ? ' mine' : '') + (now ? ' now' : '') }, el('button', { type: 'button', 'aria-label': `Stage ${g}${now ? ', studying now' : mine ? ', in your plan' : ''}`,
+        onclick: () => { const t = document.getElementById('stageCard' + c.stage); if (t) { t.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' }); t.classList.remove('flash'); void t.offsetWidth; t.classList.add('flash'); } } }, g), now ? el('small', {}, 'You') : null); };
+    const w = document.getElementById('wrap'); w.classList.add('landing');
+    w.before(el('section', { class: 'chero', style: `--sc:${S0.color}` }, el('div', { class: 'chero-in' },
+      el('nav', { class: 'subjtabs', role: 'tablist', 'aria-label': 'Subjects' }, ...K.subjects.map(x => el('a', { role: 'tab', class: 'subjtab' + (x.id === S0.id ? ' on' : ''), 'aria-selected': String(x.id === S0.id), href: '#courses-' + x.id, style: `--sc:${x.color}` }, el('i', { 'aria-hidden': 'true' }), x.name))),
+      el('h1', {}, `Cambridge ${name}`),
+      el('p', { class: 'chero-sub' }, `Stages ${lo} to ${hi}, for ages ${lo + 4} to ${hi + 5}. Each stage is one school year of lessons, practice and tests. You pay once per stage and study one stage at a time.`),
+      el('div', { class: 'ladder' },
+        el('div', { class: 'lgrp' }, el('ol', {}, ...[1, 2, 3, 4, 5, 6].map(step)), el('span', { class: 'lname' }, 'Cambridge Primary')),
+        el('div', { class: 'lgrp' }, el('ol', {}, ...[7, 8, 9].map(step)), el('span', { class: 'lname' }, 'Lower Secondary')),
+        el('span', { class: 'lflag' }, 'Checkpoint tests')))));
+    LV.forEach(L => {
+      const cs = list.filter(c => c.level === L.id); if (!cs.length) return;
+      const codes = [...new Set(cs.map(c => c.code))].join(', ');
+      m.append(el('section', { class: 'lvlgroup' }, el('header', { class: 'lvlhead' }, el('h2', {}, L.name), el('p', {}, `${L.ages.replace(/^a/, 'A')}, syllabus ${codes}`)),
+        el('div', { class: 'ccgrid' }, ...cs.map(c => courseCard(c, S0)))));
     });
   }
   function viewLevel() { return viewCourses('science'); }
