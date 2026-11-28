@@ -3804,5 +3804,377 @@
     14
    ]
   }
+ },
+ "s9u01": {
+  "title": "Camday Science Stage 9 · Unit 1: Photosynthesis and Transport in Plants",
+  "pages": 11,
+  "dir": "media/books/s9u01/",
+  "ext": "webp",
+  "pdf": "media/books/s9u01.pdf?v=580a215f6a",
+  "v": "580a215f6a",
+  "secs": {
+   "1.1": [
+    2,
+    6
+   ],
+   "1.2": [
+    7,
+    10
+   ],
+   "answers": [
+    11,
+    11
+   ]
+  }
+ },
+ "s9u02": {
+  "title": "Camday Science Stage 9 · Unit 2: Excretion",
+  "pages": 7,
+  "dir": "media/books/s9u02/",
+  "ext": "webp",
+  "pdf": "media/books/s9u02.pdf?v=39d3bb4142",
+  "v": "39d3bb4142",
+  "secs": {
+   "2.1": [
+    2,
+    6
+   ],
+   "answers": [
+    7,
+    7
+   ]
+  }
+ },
+ "s9u03": {
+  "title": "Camday Science Stage 9 · Unit 3: Variation and Inheritance",
+  "pages": 22,
+  "dir": "media/books/s9u03/",
+  "ext": "webp",
+  "pdf": "media/books/s9u03.pdf?v=58977e38ce",
+  "v": "58977e38ce",
+  "secs": {
+   "3.1": [
+    2,
+    5
+   ],
+   "3.2": [
+    6,
+    9
+   ],
+   "3.3": [
+    10,
+    13
+   ],
+   "3.4": [
+    14,
+    17
+   ],
+   "3.5": [
+    18,
+    20
+   ],
+   "answers": [
+    21,
+    22
+   ]
+  }
+ },
+ "s9u04": {
+  "title": "Camday Science Stage 9 · Unit 4: The Structure of the Atom and the Periodic Table",
+  "pages": 11,
+  "dir": "media/books/s9u04/",
+  "ext": "webp",
+  "pdf": "media/books/s9u04.pdf?v=429272fdea",
+  "v": "429272fdea",
+  "secs": {
+   "4.1": [
+    2,
+    5
+   ],
+   "4.2": [
+    6,
+    10
+   ],
+   "answers": [
+    11,
+    11
+   ]
+  }
+ },
+ "s9u05": {
+  "title": "Camday Science Stage 9 · Unit 5: Chemical Bonding and Structure of Materials",
+  "pages": 16,
+  "dir": "media/books/s9u05/",
+  "ext": "webp",
+  "pdf": "media/books/s9u05.pdf?v=fb32f8bbc3",
+  "v": "fb32f8bbc3",
+  "secs": {
+   "5.1": [
+    2,
+    4
+   ],
+   "5.2": [
+    5,
+    8
+   ],
+   "5.3": [
+    9,
+    11
+   ],
+   "5.4": [
+    12,
+    15
+   ],
+   "answers": [
+    16,
+    16
+   ]
+  }
+ },
+ "s9u06": {
+  "title": "Camday Science Stage 9 · Unit 6: Displacement Reactions",
+  "pages": 9,
+  "dir": "media/books/s9u06/",
+  "ext": "webp",
+  "pdf": "media/books/s9u06.pdf?v=0533172d06",
+  "v": "0533172d06",
+  "secs": {
+   "6.1": [
+    2,
+    4
+   ],
+   "6.2": [
+    5,
+    8
+   ],
+   "answers": [
+    9,
+    9
+   ]
+  }
+ },
+ "s9u07": {
+  "title": "Camday Science Stage 9 · Unit 7: Salts",
+  "pages": 9,
+  "dir": "media/books/s9u07/",
+  "ext": "webp",
+  "pdf": "media/books/s9u07.pdf?v=06d289ab09",
+  "v": "06d289ab09",
+  "secs": {
+   "7.1": [
+    2,
+    5
+   ],
+   "7.2": [
+    6,
+    8
+   ],
+   "answers": [
+    9,
+    9
+   ]
+  }
+ },
+ "s9u08": {
+  "title": "Camday Science Stage 9 · Unit 8: Rate of Reaction",
+  "pages": 12,
+  "dir": "media/books/s9u08/",
+  "ext": "webp",
+  "pdf": "media/books/s9u08.pdf?v=e2af085c7f",
+  "v": "e2af085c7f",
+  "secs": {
+   "8.1": [
+    2,
+    3
+   ],
+   "8.2": [
+    4,
+    7
+   ],
+   "8.3": [
+    8,
+    11
+   ],
+   "answers": [
+    12,
+    12
+   ]
+  }
+ },
+ "s9u09": {
+  "title": "Camday Science Stage 9 · Unit 9: Density",
+  "pages": 15,
+  "dir": "media/books/s9u09/",
+  "ext": "webp",
+  "pdf": "media/books/s9u09.pdf?v=db79882f2d",
+  "v": "db79882f2d",
+  "secs": {
+   "9.1": [
+    2,
+    6
+   ],
+   "9.2": [
+    7,
+    10
+   ],
+   "9.3": [
+    11,
+    14
+   ],
+   "answers": [
+    15,
+    15
+   ]
+  }
+ },
+ "s9u10": {
+  "title": "Camday Science Stage 9 · Unit 10: Transfer of Thermal Energy",
+  "pages": 18,
+  "dir": "media/books/s9u10/",
+  "ext": "webp",
+  "pdf": "media/books/s9u10.pdf?v=c7435c7d0d",
+  "v": "c7435c7d0d",
+  "secs": {
+   "10.1": [
+    2,
+    4
+   ],
+   "10.2": [
+    5,
+    7
+   ],
+   "10.3": [
+    8,
+    10
+   ],
+   "10.4": [
+    11,
+    14
+   ],
+   "10.5": [
+    15,
+    16
+   ],
+   "answers": [
+    17,
+    18
+   ]
+  }
+ },
+ "s9u11": {
+  "title": "Camday Science Stage 9 · Unit 11: Sound",
+  "pages": 14,
+  "dir": "media/books/s9u11/",
+  "ext": "webp",
+  "pdf": "media/books/s9u11.pdf?v=1aa50c0802",
+  "v": "1aa50c0802",
+  "secs": {
+   "11.1": [
+    2,
+    5
+   ],
+   "11.2": [
+    6,
+    10
+   ],
+   "11.4": [
+    11,
+    13
+   ],
+   "answers": [
+    14,
+    14
+   ]
+  }
+ },
+ "s9u12": {
+  "title": "Camday Science Stage 9 · Unit 12: Electrical Circuits",
+  "pages": 17,
+  "dir": "media/books/s9u12/",
+  "ext": "webp",
+  "pdf": "media/books/s9u12.pdf?v=ad7eeae827",
+  "v": "ad7eeae827",
+  "secs": {
+   "12.1": [
+    2,
+    4
+   ],
+   "12.2": [
+    5,
+    8
+   ],
+   "12.3": [
+    9,
+    11
+   ],
+   "12.4": [
+    12,
+    13
+   ],
+   "12.5": [
+    14,
+    16
+   ],
+   "answers": [
+    17,
+    17
+   ]
+  }
+ },
+ "s9u13": {
+  "title": "Camday Science Stage 9 · Unit 13: Earth and Climate Change",
+  "pages": 16,
+  "dir": "media/books/s9u13/",
+  "ext": "webp",
+  "pdf": "media/books/s9u13.pdf?v=ecedcd0707",
+  "v": "ecedcd0707",
+  "secs": {
+   "13.1": [
+    2,
+    5
+   ],
+   "13.2": [
+    6,
+    8
+   ],
+   "13.3": [
+    9,
+    11
+   ],
+   "13.4": [
+    12,
+    15
+   ],
+   "answers": [
+    16,
+    16
+   ]
+  }
+ },
+ "s9u14": {
+  "title": "Camday Science Stage 9 · Unit 14: Astronomy",
+  "pages": 11,
+  "dir": "media/books/s9u14/",
+  "ext": "webp",
+  "pdf": "media/books/s9u14.pdf?v=8099a28a15",
+  "v": "8099a28a15",
+  "secs": {
+   "14.1": [
+    2,
+    4
+   ],
+   "14.2": [
+    5,
+    7
+   ],
+   "14.3": [
+    8,
+    10
+   ],
+   "answers": [
+    11,
+    11
+   ]
+  }
  }
 }

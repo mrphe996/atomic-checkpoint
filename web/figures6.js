@@ -632,4 +632,15 @@
     return { svg: W(s), a: {} };
   };
 
+  /* ---------------- Stage 9 Unit 10 Thermal energy ---------------- */
+  // a convection current in a room heated by a radiator on one wall
+  F.sciConvection = () => {
+    let s = `<rect x="40" y="30" width="400" height="260" fill="#FBFCFE" stroke="${INK}" stroke-width="2.5"/>` + `<rect x="50" y="200" width="22" height="80" rx="4" fill="${RED}"/>` + T(61, 192, 'heater', { size: 11, bold: true, fill: RED });
+    s += `<path d="M90 250 C90 120 90 60 180 60 H360 C420 60 420 120 420 180 C420 260 380 270 300 270 H120" fill="none" stroke="${GREY}" stroke-width="2" stroke-dasharray="8 8" class="sa a-flow"/>`;
+    s += arrow(90, 160, 90, 110, RED) + arrow(260, 60, 320, 60, ORANGE) + arrow(420, 140, 420, 200, BLUE) + arrow(260, 270, 190, 270, BLUE);
+    s += T(110, 130, 'warm air rises', { size: 12, bold: true, fill: RED, anchor: 'start' }) + T(240, 90, 'spreads out', { size: 12, fill: ORANGE }) + T(410, 120, 'cools, sinks', { size: 12, bold: true, fill: BLUE, anchor: 'end' }) + T(240, 255, 'cool air flows to the heater', { size: 12, fill: BLUE });
+    s += T(240, 312, 'a convection current', { size: 12, fill: GREY });
+    return { svg: W(s), a: {} };
+  };
+
 })();

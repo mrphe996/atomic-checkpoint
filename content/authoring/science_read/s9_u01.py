@@ -1,0 +1,117 @@
+# -*- coding: utf-8 -*-
+"""Science Stage 9 · Unit 1 Photosynthesis and Transport in Plants – Read the lesson (shown below the video) and the lesson document (PDF).
+Camday's own text, examples and questions; scope: Cambridge Lower Secondary Science 0893, Stage 9 (9Bp.05–9Bp.07, 9Bs.01, 9TWSp.04)."""
+from maths_notes_v4.kit4 import H, I, Y, X, K, L, W, BK, Ex, mcq, grid, num
+
+READ = {}
+CARD = lambda title, cards, cols=None: dict({"kind": "sciCards", "title": title, "cards": cards}, **({"cols": cols} if cols else {}))
+LB = lambda base, *labels, **kw: dict({"kind": "sciLabel", "base": base, "labels": [list(l) for l in labels]}, **kw)
+
+# =====================================================================================================
+# 1.1 Photosynthesis · 9Bp.06, 9Bp.07, 9TWSp.04
+# =====================================================================================================
+READ["1.1"] = L(
+    H("Where does a tree's mass come from?",
+      "A mango seed weighs a few grams. Forty years later the tree weighs several tonnes – yet the soil around it has hardly changed.",
+      "Where did all that mass come from? Write your idea, then check it in this lesson."),
+    I("What is photosynthesis?",
+      "Plants are **producers**: they make their own food by **photosynthesis** ('photo' = light, 'synthesis' = putting together).",
+      table=[["Reactants", "", "Products"], ["**carbon dioxide + water**", "→ (light energy, chlorophyll) →", "**glucose + oxygen**"]],
+      then=["Carbon dioxide comes from the air through tiny pores in the leaves; water comes from the soil through the roots. **Chlorophyll** in the **chloroplasts** absorbs the light energy.",
+            "Glucose is used for respiration, turned into starch for storage, or used to make new cells – **biomass**. So most of a tree's mass comes from the **air** (carbon dioxide) and water!",
+            "All the energy in food chains comes from sunlight, captured by producers in photosynthesis."]),
+    I("Predict, watch, explain: pondweed and light",
+      "Pondweed in water gives off bubbles of gas. One lamp is 10 cm from the pondweed, another 50 cm. The near pondweed gives off far more bubbles.",
+      fig={"kind": "pondweed"},
+      then=["The bubbles are **oxygen** from photosynthesis. More light energy means faster photosynthesis – up to a limit, when something else (carbon dioxide or temperature) holds it back."]),
+    I("Data: bubbles and distance from the lamp",
+      "Bubbles counted in one minute with the lamp at different distances:",
+      fig={"kind": "linegraph", "x": {"min": 0, "max": 50, "step": 10, "label": "distance from lamp (cm)"}, "y": {"min": 0, "max": 50, "step": 10, "label": "bubbles per minute"},
+           "series": [{"pts": [[10, 44], [20, 28], [30, 17], [40, 11], [50, 7]]}]},
+      then=["The further the lamp, the fewer the bubbles – but the line is a **curve**: light intensity falls quickly as the lamp moves away.",
+            "Control variables: the same pondweed, water temperature (a heat shield or water bath) and amount of carbon dioxide."]),
+    Y("Read the graph",
+      num("s9u01r11", "Use the graph. How many fewer bubbles per minute were there at 30 cm than at 10 cm?", 27, "Read both values and subtract.", "44 − 17 = 27.")),
+    I("Adaptations for photosynthesis",
+      "Leaves are adapted to capture light and exchange gases.",
+      fig=LB("leafsection", (208, 50, "upper epidermis (thin, clear)", "l"), (158, 200, "spongy layer (air spaces)", "l"), (108, 250, "lower epidermis with stomata", "l"), (248, 110, "palisade layer (many chloroplasts)", "r")),
+      table=[["Feature", "How it helps"], ["broad, thin leaf", "large surface for light; gases diffuse a short distance"], ["many chloroplasts in palisade cells near the top", "absorb as much light as possible"],
+             ["air spaces in the spongy layer", "carbon dioxide reaches every cell"], ["**stomata** (pores) on the underside", "let carbon dioxide in and oxygen out"], ["veins (xylem and phloem)", "bring water; take away sugars"]]),
+    I("Testing a leaf for starch",
+      "Plants store glucose as **starch**, so a leaf that has photosynthesised contains starch.",
+      table=[["Step", "Why"], ["boil the leaf in water for 1 minute", "kills it and softens cell membranes"], ["**turn off the Bunsen**, put the leaf in a tube of ethanol in the hot water", "ethanol removes the green chlorophyll; it is flammable, so no flames"],
+             ["rinse in warm water", "softens the brittle leaf"], ["add iodine solution", "blue-black shows starch"]],
+      then=["A leaf kept in the dark for two days stays orange-brown: no light, no photosynthesis, no starch."]),
+    Y("Why ethanol?",
+      mcq("s9u01r12", "Why is the leaf placed in ethanol during the starch test?",
+          [("To remove the chlorophyll so the colour change can be seen.", True, "Yes – the green would hide the blue-black colour."), ("To add starch to the leaf.", False, "Ethanol adds nothing."),
+           ("To kill bacteria.", False, "Not the reason here."), ("To make the leaf green.", False, "It removes the green.")],
+          "What would hide the iodine colour?", "Ethanol dissolves chlorophyll, leaving a pale leaf.")),
+    K("Key points",
+      "**Photosynthesis**: carbon dioxide + water → glucose + oxygen, using light energy absorbed by chlorophyll.",
+      "Glucose is used for respiration, stored as starch or built into new biomass; food chains get their energy from sunlight.",
+      "More light → faster photosynthesis, up to a limit.",
+      "Leaves: broad and thin, palisade cells with chloroplasts, air spaces, stomata. Starch test: boil, ethanol, rinse, iodine."),
+    book=BK(
+        [("photosynthesis", "making glucose from carbon dioxide and water using light energy"), ("chlorophyll", "green pigment that absorbs light"),
+         ("stomata", "tiny pores in a leaf that let gases in and out"), ("biomass", "the mass of living material")],
+        [], [],
+        [Ex("Write the word equation for photosynthesis.", ans="carbon dioxide + water → glucose + oxygen (light, chlorophyll)"),
+         Ex("Give three ways a leaf is adapted for photosynthesis.", ans="e.g. broad and thin; many chloroplasts in palisade cells; air spaces; stomata"),
+         Ex("Describe how to test a leaf for starch and explain each step.", ans="boil (kill, soften), ethanol in hot water with flame off (remove chlorophyll), rinse (soften), iodine (blue-black = starch)"),
+         Ex("Name the independent and dependent variables in the pondweed experiment.", ans="independent: distance from the lamp (light intensity); dependent: number of bubbles per minute"),
+         Ex("Explain why cutting down forests affects the air we breathe.", ans="Fewer trees photosynthesise, so less carbon dioxide is removed and less oxygen is released.", think=True)],
+        ["write the word equation for photosynthesis", "explain where the energy in food chains comes from", "describe how leaves are adapted", "test a leaf for starch"],
+        look=["the pondweed data", "the leaf diagram"],
+        note="Read it after the video: photosynthesis, the pondweed data, leaf adaptations and the starch test (answers at the back)."),
+)
+
+# =====================================================================================================
+# 1.2 Absorption and transport of water and mineral salts · 9Bp.05, 9Bs.01
+# =====================================================================================================
+READ["1.2"] = L(
+    H("Drinking through a straw",
+      "A tall tree lifts hundreds of litres of water a day from its roots to leaves 30 m above the ground – with no pump and no heart.",
+      "How could water climb so high? Make a guess."),
+    I("Why plants need water and mineral salts",
+      "Water is needed for photosynthesis, to carry dissolved substances, to keep cells cool, and to keep cells **turgid** (firm) – a full vacuole pushes against the cell wall. Without enough water cells become **flaccid** and the plant wilts.",
+      table=[["Mineral salt", "Used to make", "Without it"], ["**nitrates**", "proteins (and chlorophyll)", "poor growth; pale, yellow older leaves"], ["**magnesium**", "chlorophyll", "yellow leaves"]],
+      then=["Farmers add **fertilisers** containing nitrates and other minerals to soil that lacks them."]),
+    I("Predict, watch, explain: celery in coloured water",
+      "A celery stalk stands in red-coloured water for a day. The leaves develop red veins, and a cut across the stalk shows red only as a ring of small dots.",
+      then=["The red water travelled up in the **xylem** vessels – the tubes that carry water and mineral salts from the roots to the leaves."]),
+    I("From roots to leaves",
+      "Water travels through the plant in stages.",
+      fig={"kind": "sciFlow", "title": "The path of water", "steps": [{"t": "Root hair cells", "d": "absorb water from the soil"}, {"t": "Root", "d": "cell to cell inwards"},
+                                                                     {"t": "Xylem", "d": "up the stem"}, {"t": "Leaf", "d": "to the cells"}, {"t": "Stomata", "d": "evaporates out: transpiration"}]},
+      then=["**Root hairs** give a huge surface area. Water moves in because the soil water is more dilute (higher water concentration) than the cell sap; dissolved mineral salts come too.",
+            "**Xylem** vessels are dead cells with no contents or end walls, joined into long hollow tubes with thick, stiff walls that also support the plant.",
+            "**Transpiration**: water evaporates from leaf cells and escapes through the stomata, pulling more water up the xylem behind it – like sucking a drink up a straw."]),
+    Y("Which part?",
+      grid("s9u01r21", "Which part of the plant does each job?", ["Root hair cells", "Xylem", "Stomata"],
+           [("absorb water from the soil", "Root hair cells"), ("carry water up the stem", "Xylem"), ("let water vapour escape from the leaf", "Stomata"), ("give a large surface area in the soil", "Root hair cells")],
+           "Follow the water from soil to air.", "Root hairs absorb; xylem carries; stomata release water vapour.")),
+    Y("Nitrates",
+      mcq("s9u01r22", "A tomato plant has small, pale yellow leaves. Which mineral salt is it most likely lacking?",
+          [("nitrates", True, "Yes – needed to make proteins for growth."), ("sodium", False, "Not a key plant mineral at this level."), ("calcium carbonate", False, "Not the cause."),
+           ("oxygen", False, "Oxygen is a gas, not a mineral salt.")],
+          "Which mineral is needed to make proteins?", "Lack of nitrates causes poor growth and yellow leaves.")),
+    K("Key points",
+      "Plants need water (photosynthesis, transport, support) and mineral salts: **nitrates** (proteins), **magnesium** (chlorophyll).",
+      "Root hairs absorb water and mineral salts; their large surface area speeds this up.",
+      "**Xylem**: hollow tubes of dead cells carry water up the plant.",
+      "**Transpiration** – evaporation from the leaves – pulls water up the xylem."),
+    book=BK(
+        [("xylem", "tubes that carry water and mineral salts up a plant"), ("transpiration", "loss of water vapour from leaves, which pulls water up the plant"),
+         ("turgid", "firm because the vacuole is full of water"), ("flaccid", "soft because the cell has lost water"), ("nitrate", "a mineral salt needed to make proteins")],
+        [], [],
+        [Ex("Why do plants need: (a) nitrates (b) magnesium?", ans="(a) to make proteins for growth (b) to make chlorophyll"),
+         Ex("Explain how the structure of root hair cells helps them absorb water.", ans="The long extension gives a large surface area in contact with soil water."),
+         Ex("Describe the path of water from the soil to the air.", ans="root hair cells → root cells → xylem in root, stem and leaf → leaf cells → evaporates and escapes through stomata"),
+         Ex("Quick quiz.", ("Word equation for photosynthesis?", "carbon dioxide + water → glucose + oxygen"), ("Which tubes carry water up a plant?", "xylem"),
+            ("Why does a plant wilt without water?", "cells lose water and become flaccid"), ("What does iodine show in a leaf?", "starch")),
+         Ex("Predict what happens to the rate of transpiration on a hot, windy day. Explain.", ans="It increases – water evaporates faster in heat and wind, so more water is pulled up.", think=True)],
+        ["explain why plants need water, nitrates and magnesium", "describe how roots absorb water", "explain how xylem and transpiration move water up a plant"],
+        look=["the path of water", "the celery experiment"],
+        note="Read it after the video: water, mineral salts, xylem and transpiration, plus a quick quiz (answers at the back)."),
+)
