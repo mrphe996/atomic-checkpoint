@@ -221,7 +221,7 @@
     let s = (o.title ? T(240, 26, o.title, { size: 16, bold: true }) : '') + `<line x1="${8 + gap / 2}" y1="${y}" x2="${8 + gap * (n - 0.5)}" y2="${y}" stroke="#C9D4E3" stroke-width="3"/>` +
       `<circle cx="${8 + gap / 2}" cy="${y}" r="6" fill="${ORANGE}" class="sa a-rise" style="--dx:${gap * (n - 1)}px;--dy:0px;--t:${n * 1.4}s"/>`;
     P.forEach((p, i) => { const x = 8 + gap * (i + 0.5);
-      s += `<circle cx="${x}" cy="${y}" r="38" fill="#fff" stroke="${INK}" stroke-width="2"/>` + (ICON[p.icon] ? ICON[p.icon](x, y) : '') + lines(x, y + 62, p.t, Math.max(10, Math.floor(gap / 7.5)), { size: 12, bold: true });
+      s += `<circle cx="${x}" cy="${y}" r="38" fill="#fff" stroke="${INK}" stroke-width="2"/>` + (ICON[p.icon] ? ICON[p.icon](x, y) : T(x, y + 9, i + 1, { size: 26, bold: true, fill: BLUE })) + lines(x, y + 62, p.t, Math.max(10, Math.floor(gap / 7.5)), { size: 12, bold: true });
       if (p.d) s += lines(x, y + 62 + 15 * wrap(p.t, Math.max(10, Math.floor(gap / 7.5))).length, p.d, Math.max(12, Math.floor(gap / 6.2)), { size: 10.5, fill: GREY });
       if (i < n - 1) s += arrow(x + 42, y, x + gap - 44, y, GREY); });
     return { svg: W(s), a: {} };
@@ -304,4 +304,147 @@
     s += ICON.sun(300, 82) + ICON.turbine(330, 196) + ICON.turbine(400, 186) + ICON.solar(320, 250) + ICON.solar(392, 250) + T(360, 296, 'much less carbon dioxide', { size: 12 });
     return { svg: W(s), a: {} };
   };
+  /* ---------------- Stage 7 Unit 2 Measurements ---------------- */
+  const eye = (x, y, c = INK) => `<path d="M${x - 16} ${y} Q${x} ${y - 12} ${x + 16} ${y} Q${x} ${y + 12} ${x - 16} ${y}Z" fill="#fff" stroke="${c}" stroke-width="2"/><circle cx="${x}" cy="${y}" r="5" fill="${c}"/>`;
+  // reading a rule: eyes at A (left), B (straight above), C (right); o.cm = true length, o.obj label
+  F.sciParallax = (o = {}) => {
+    const x0 = 50, k = 17, y = 230, L = o.cm || 20;   // 1 cm = 17 px, scale 0–22
+    let s = T(240, 24, o.title || 'Where should your eye be?', { size: 15, bold: true });
+    s += `<rect x="${x0}" y="${y - 30}" width="${L * k}" height="22" rx="4" fill="${GOLD}" stroke="${INK}" stroke-width="1.5"/>` + T(x0 + L * k / 2, y - 14, o.obj || 'pencil', { size: 11, bold: true });
+    s += `<rect x="${x0 - 14}" y="${y}" width="${22 * k + 18}" height="40" fill="#FFF8E1" stroke="${INK}" stroke-width="1.5"/>`;
+    for (let i = 0; i <= 22 * 10; i++) { const x = x0 + i * k / 10, big = i % 10 === 0, mid = i % 5 === 0; s += `<line x1="${x}" y1="${y}" x2="${x}" y2="${y + (big ? 14 : mid ? 9 : 5)}" stroke="${INK}" stroke-width="${big ? 1.4 : 0.7}"/>` + (big && (i / 10) % 2 === 0 ? T(x, y + 30, i / 10, { size: 10 }) : ''); }
+    const xe = x0 + L * k;
+    [["A", xe - 60, RED], ['B', xe, DGREEN], ['C', xe + 70, RED]].forEach(([l, ex, c]) => { s += eye(ex, 78, c) + T(ex, 58, l, { size: 14, bold: true, fill: c }) + `<line x1="${ex}" y1="90" x2="${xe + (xe - ex) * 0.22}" y2="${y + 4}" stroke="${c}" stroke-width="1.6" stroke-dasharray="5 4"${l === 'B' ? ' class="sa a-flow"' : ''}/>`; });
+    s += T(240, 306, o.note || 'Only eye B, straight above the mark, reads the true length', { size: 12, fill: GREY });
+    return { svg: W(s), a: {} };
+  };
+  // close-up of a measuring cylinder: meniscus, eye too high / level / too low; o.v reading at the bottom of the meniscus
+  F.sciMeniscus = (o = {}) => {
+    const v = o.v || 46, x = 190, w = 90, top = 40, bot = 290, lo = v - 6, sc = (bot - top) / 12, Y = t => bot - (t - lo) * sc;
+    let s = `<path d="M${x} ${top - 10} V${bot} M${x + w} ${top - 10} V${bot}" stroke="${INK}" stroke-width="2.6" fill="none"/>`;
+    const yl = Y(v); s += `<path d="M${x + 1.5} ${yl - 12} Q${x + w / 2} ${yl + 12} ${x + w - 1.5} ${yl - 12} V${bot} H${x + 1.5}Z" fill="${SKY}"/><path d="M${x + 1.5} ${yl - 12} Q${x + w / 2} ${yl + 12} ${x + w - 1.5} ${yl - 12}" fill="none" stroke="${BLUE}" stroke-width="2.4"/>`;
+    for (let t = lo; t <= lo + 12; t++) { const y = Y(t), big = t % 5 === 0; s += `<line x1="${x}" y1="${y}" x2="${x + (big ? 26 : 14)}" y2="${y}" stroke="${INK}" stroke-width="${big ? 1.8 : 1}"/>` + (big ? T(x - 8, y + 4, t, { size: 12, anchor: 'end' }) : ''); }
+    s += `<line x1="${x + w / 2 - 30}" y1="${yl}" x2="${x + w + 70}" y2="${yl}" stroke="${DGREEN}" stroke-width="2" stroke-dasharray="5 4" class="sa a-flow"/>` + eye(x + w + 92, yl, DGREEN) + T(x + w + 92, yl + 30, 'eye level', { size: 12, bold: true, fill: DGREEN });
+    s += eye(x + w + 92, yl - 70, RED) + T(x + w + 92, yl - 92, 'too high', { size: 12, fill: RED }) + eye(x + w + 92, yl + 74, RED) + T(x + w + 92, yl + 104, 'too low', { size: 12, fill: RED });
+    s += lines(78, 120, 'meniscus: read the bottom of the curve', 14, { size: 12, bold: true, fill: BLUE }) + arrow(110, 150, x + w / 2 - 6, yl + 2, BLUE) + T(240, 24, `Reading: ${v} cm³`, { size: 15, bold: true });
+    return { svg: W(s), a: {} };
+  };
+  // a leaf on 1 cm squared paper: full squares dark, more-than-half squares light; o.full/o.half counts shown
+  F.sciLeafGrid = (o = {}) => {
+    const n = 10, sz = 24, x0 = 40, y0 = 40, cx = 5, cy = 5, rx = 4.4, ry = 3.0;
+    const cover = (i, j) => { let c = 0; for (let a = 0; a < 6; a++) for (let b = 0; b < 6; b++) { const px = i + (a + 0.5) / 6 - cx, py = j + (b + 0.5) / 6 - cy, u = (px * 0.8 + py * 0.6), w2 = (-px * 0.6 + py * 0.8); if ((u / rx) ** 2 + (w2 / ry) ** 2 <= 1) c++; } return c / 36; };
+    let s = '', full = 0, half = 0;
+    for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) { const c = cover(i, j), f = c > 0.97 ? GREEN : c > 0.5 ? '#C5E8B7' : '#fff'; if (c > 0.97) full++; else if (c > 0.5) half++;
+      s += `<rect x="${x0 + i * sz}" y="${y0 + j * sz}" width="${sz}" height="${sz}" fill="${f}" stroke="#B0BEC5" stroke-width="0.8"/>`; }
+    s += `<ellipse cx="${x0 + cx * sz}" cy="${y0 + cy * sz}" rx="${rx * sz}" ry="${ry * sz}" transform="rotate(${Math.atan2(0.6, 0.8) * 180 / Math.PI} ${x0 + cx * sz} ${y0 + cy * sz})" fill="none" stroke="${DGREEN}" stroke-width="3"/>`;
+    s += `<line x1="${x0 + 9.4 * sz}" y1="${y0 + 9.4 * sz}" x2="${x0 + 10.6 * sz}" y2="${y0 + 10.6 * sz}" stroke="${DGREEN}" stroke-width="3"/>`;
+    const tx = 320; s += box(tx - 20, 50, 180, 210, SOFT) + `<rect x="${tx}" y="70" width="20" height="20" fill="${GREEN}"/>` + T(tx + 30, 85, `full: ${full}`, { anchor: 'start', bold: true }) + `<rect x="${tx}" y="104" width="20" height="20" fill="#C5E8B7" stroke="#B0BEC5"/>` + T(tx + 30, 119, `over half: ${half}`, { anchor: 'start', bold: true });
+    s += `<rect x="${tx}" y="138" width="20" height="20" fill="#fff" stroke="#B0BEC5"/>` + T(tx + 30, 153, 'under half: ignore', { anchor: 'start', size: 12 }) + T(tx + 70, 196, `area ≈ ${full} + ${half}`, { bold: true }) + T(tx + 70, 220, `≈ ${full + half} cm²`, { size: 16, bold: true, fill: BLUE }) + T(tx + 70, 246, 'each square = 1 cm²', { size: 11, fill: GREY });
+    return { svg: W(s), a: { full, half } };
+  };
+  // electronic balance with tare: 1 empty beaker, 2 press tare → 0.0 g, 3 add sand → o.g g
+  F.sciTare = (o = {}) => {
+    const g = o.g == null ? 36.5 : o.g, beak = o.beaker == null ? 52.4 : o.beaker;
+    const bal = (x, read, fill, lab, note) => `<rect x="${x - 62}" y="216" width="124" height="44" rx="8" fill="#ECEFF1" stroke="${INK}" stroke-width="2"/><rect x="${x - 70}" y="206" width="140" height="10" rx="3" fill="${GREY}"/>`
+      + `<rect x="${x - 40}" y="226" width="56" height="24" rx="4" fill="${INK}"/>` + T(x - 12, 243, read, { size: 13, bold: true, fill: '#7CFC9A' }) + `<circle cx="${x + 38}" cy="238" r="10" fill="${note ? ORANGE : '#B0BEC5'}" stroke="${INK}" stroke-width="1.5"${note ? ' class="sa a-pulse" style="--o:' + (x + 38) + 'px 238px"' : ''}/>` + T(x + 38, 266, 'tare', { size: 10 })
+      + `<path d="M${x - 28} 130 V200 Q${x - 28} 206 ${x - 22} 206 H${x + 22} Q${x + 28} 206 ${x + 28} 200 V130" fill="#fff" stroke="${INK}" stroke-width="2.2"/>` + (fill ? `<path d="M${x - 26} 176 Q${x} 166 ${x + 26} 176 V200 Q${x + 26} 204 ${x + 22} 204 H${x - 22} Q${x - 26} 204 ${x - 26} 200Z" fill="#E0C48A"/>` : '')
+      + lines(x, 290, lab, 18, { size: 12, bold: true });
+    let s = T(240, 30, 'Using the tare button', { size: 16, bold: true }) + bal(80, beak.toFixed(1) + ' g', false, '1 empty beaker') + bal(240, '0.0 g', false, '2 press tare', true) + bal(400, g.toFixed(1) + ' g', true, '3 add the sand: only its mass');
+    s += arrow(150, 160, 170, 160, GREY) + arrow(310, 160, 330, 160, GREY);
+    return { svg: W(s), a: {} };
+  };
+
+  // label any other figure: o.base = figure kind, o.bo = its options, o.s = scale (the picture shrinks to make room),
+  // o.labels = [[x, y, text, side]] with x, y in the base picture's own coordinates; side 'l' or 'r' (default: nearest edge)
+  F.sciLabel = (o = {}) => {
+    const g = AF.get(o.base, o.bo || {}).svg || '', i = g.indexOf('>', g.indexOf('<svg')) + 1, inner = g.slice(i, g.lastIndexOf('</svg>'));
+    const s = o.s || 0.6, dx = 240 - 240 * s, dy = (o.title ? 172 : 160) - 160 * s, P = (x, y) => [dx + x * s, dy + y * s];
+    let out = (o.title ? T(240, 22, o.title, { size: 15, bold: true }) : '') + `<g transform="translate(${dx} ${dy}) scale(${s})">${inner}</g>`;
+    const L = (o.labels || []).map(([x, y, t, side]) => { const [px, py] = P(x, y); return { px, py, t, left: side ? side === 'l' : px < 240, ty: py }; });
+    [true, false].forEach(sd => { const g2 = L.filter(l => l.left === sd).sort((a, b) => a.py - b.py);   // spread the text so labels never overlap
+      g2.forEach((l, k) => { const gap = 14 + 15 * (k ? wrap(g2[k - 1].t, 12).length : 0); if (k && l.ty < g2[k - 1].ty + gap) l.ty = g2[k - 1].ty + gap; }); const over = g2.length ? g2[g2.length - 1].ty - 300 : 0;
+      if (over > 0) g2.forEach(l => { l.ty -= over; }); });
+    L.forEach(l => { const tx = l.left ? dx - 6 : 480 - dx + 6, ex = l.left ? tx + 4 : tx - 4;
+      out += `<path d="M${l.px} ${l.py} L${ex} ${l.ty}" fill="none" stroke="${INK}" stroke-width="1.2"/><circle cx="${l.px}" cy="${l.py}" r="2.5" fill="${INK}"/>`
+        + lines(l.left ? tx - 2 : tx + 2, l.ty + 4, l.t, 12, { size: 12, bold: true, anchor: l.left ? 'end' : 'start' }); });
+    return { svg: W(out), a: {} };
+  };
+
+  /* ---------------- Stage 7 Unit 6 Materials and their structure ---------------- */
+  // states of matter and the changes between them: solid, liquid, gas boxes with labelled arrows
+  F.sciStates = (o = {}) => {
+    const P = (cx, cy, st) => { let s = `<rect x="${cx - 52}" y="${cy - 44}" width="104" height="88" rx="8" fill="#fff" stroke="${INK}" stroke-width="2"/>`, k = 0;
+      const dot = (x, y, c) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="6" fill="${c || BLUE}" stroke="${INK}" stroke-width="0.8"/>`, r = q => ((Math.sin(q * 12.9898) * 43758.5453) % 1 + 1) % 1;
+      if (st === 'solid') for (let a = 0; a < 6; a++) for (let b = 0; b < 5; b++) s += `<g class="sa a-swing" style="--o:${cx - 40 + a * 16}px ${cy - 32 + b * 16}px">${dot(cx - 40 + a * 16, cy - 32 + b * 16)}</g>`;
+      else if (st === 'liquid') for (k = 0; k < 18; k++) s += dot(cx - 42 + r(k) * 84, cy + 36 - (k % 4) * 13 - r(k + 40) * 4);
+      else for (k = 0; k < 6; k++) s += `<g class="sa a-rise" style="--dx:${(r(k + 3) - 0.5) * 20}px;--dy:${(r(k + 7) - 0.5) * 20}px;--t:${2 + k * 0.3}s">${dot(cx - 40 + r(k) * 80, cy - 34 + r(k + 9) * 68)}</g>`;
+      return s + T(cx, cy + 64, st, { size: 14, bold: true }); };
+    let s = P(80, 210, 'solid') + P(400, 210, 'liquid') + P(240, 72, 'gas');
+    const A = (x1, y1, x2, y2, t, tx, ty, c) => arrow(x1, y1, x2, y2, c) + T(tx, ty, t, { size: 12, bold: true, fill: c });
+    s += A(140, 196, 338, 196, 'melting', 240, 186, RED) + A(338, 228, 140, 228, 'freezing', 240, 246, BLUE);
+    s += A(384, 160, 300, 98, 'evaporating / boiling', 404, 118, RED) + arrow(282, 114, 366, 172, BLUE) + T(300, 158, 'condensing', { size: 12, bold: true, fill: BLUE, anchor: 'end' });
+    s += T(240, 306, o.note || 'heating: red arrows · cooling: blue arrows', { size: 11, fill: GREY });
+    return { svg: W(s), a: {} };
+  };
+  // particle diagrams: o.boxes = [{t: label, kind: 'atoms'|'mol'|'compound'|'mixture'|'mixel', a: colour, b: colour}]
+  F.sciMatter = (o = {}) => {
+    const bx = o.boxes || [{ t: 'element (atoms)', kind: 'atoms' }, { t: 'element (molecules)', kind: 'mol' }, { t: 'compound', kind: 'compound' }, { t: 'mixture', kind: 'mixture' }];
+    const n = bx.length, gap = 472 / n, bw = Math.min(150, gap - 12), R = 9;
+    const at = (x, y, c, rr) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${rr || R}" fill="${c}" stroke="${INK}" stroke-width="1"/>`, rn = q => ((Math.sin(q * 78.233) * 43758.5453) % 1 + 1) % 1;
+    let s = '';
+    bx.forEach((b, i) => { const x0 = 4 + gap * i + (gap - bw) / 2, y0 = 60, h = 180, ca = b.a || BLUE, cb = b.b || RED, cc = b.c || GOLD;
+      s += `<rect x="${x0}" y="${y0}" width="${bw}" height="${h}" rx="8" fill="#fff" stroke="${INK}" stroke-width="2"/>`;
+      const spots = []; for (let r = 0; r < 3; r++) for (let c = 0; c < 2; c++) spots.push([x0 + bw * (0.27 + c * 0.46) + (rn(i * 9 + r * 2 + c) - 0.5) * 14, y0 + 34 + r * 56 + (rn(i * 5 + r + c * 7) - 0.5) * 12]);
+      spots.forEach(([x, y], k) => {
+        if (b.kind === 'atoms') s += at(x, y, ca);
+        else if (b.kind === 'mol') s += at(x - 8, y, ca) + at(x + 8, y, ca);
+        else if (b.kind === 'compound') s += at(x - 9, y, cb) + at(x + 7, y - 7, ca, 7) + at(x + 7, y + 7, ca, 7);
+        else if (b.kind === 'compound1') s += at(x - 8, y, cb) + at(x + 8, y, ca);
+        else if (b.kind === 'mixel') s += k % 2 ? at(x, y, ca) : at(x, y, cc);
+        else s += k % 3 === 0 ? at(x - 8, y, ca) + at(x + 8, y, ca) : k % 3 === 1 ? at(x - 9, y, cb) + at(x + 7, y - 7, ca, 7) + at(x + 7, y + 7, ca, 7) : at(x, y, cc); });
+      s += lines(x0 + bw / 2, y0 + h + 24, b.t, 18, { size: 13, bold: true }); if (b.d) s += lines(x0 + bw / 2, y0 + h + 42, b.d, 22, { size: 11, fill: GREY }); });
+    if (o.title) s += T(240, 34, o.title, { size: 15, bold: true });
+    return { svg: W(s), a: {} };
+  };
+  // a simplified Periodic Table: metals / non-metals, o.mark = [symbol] highlighted, o.group / o.period highlighted
+  const PT = ['H,,,,,,,,,,,,,,,,,He', 'Li,Be,,,,,,,,,,,B,C,N,O,F,Ne', 'Na,Mg,,,,,,,,,,,Al,Si,P,S,Cl,Ar', 'K,Ca,Sc,Ti,V,Cr,Mn,Fe,Co,Ni,Cu,Zn,Ga,Ge,As,Se,Br,Kr', 'Rb,Sr,Y,Zr,Nb,Mo,Tc,Ru,Rh,Pd,Ag,Cd,In,Sn,Sb,Te,I,Xe'].map(r => r.split(','));
+  const NONMETAL = 'H,He,B,C,N,O,F,Ne,Si,P,S,Cl,Ar,Ge,As,Se,Br,Kr,Sb,Te,I,Xe'.split(',');
+  F.sciPeriodic = (o = {}) => {
+    const cw = 25.5, ch = 38, x0 = 11, y0 = 52, mark = o.mark || [];
+    let s = T(240, 26, o.title || 'The Periodic Table (first five periods)', { size: 15, bold: true });
+    PT.forEach((row, p) => row.forEach((e, g) => { if (!e) return; const x = x0 + g * cw, y = y0 + p * ch, nm = NONMETAL.includes(e), hi = mark.includes(e) || o.group === g + 1 || o.period === p + 1;
+      s += `<rect x="${x}" y="${y}" width="${cw - 2}" height="${ch - 3}" rx="3" fill="${hi ? GOLD : nm ? '#E3F2E1' : '#DCE8FB'}" stroke="${hi ? ORANGE : '#9FB3CC'}" stroke-width="${hi ? 2 : 1}"/>` + T(x + cw / 2 - 1, y + ch / 2 + 3, e, { size: 11, bold: true }); }));
+    for (let g = 1; g <= 18; g++) s += T(x0 + (g - 0.5) * cw - 1, y0 - 6, g, { size: 8, fill: GREY });
+    for (let p = 1; p <= 5; p++) s += T(x0 - 4, y0 + (p - 0.5) * ch + 3, p, { size: 8, fill: GREY, anchor: 'end' });
+    s += `<rect x="60" y="${y0 + 5 * ch + 14}" width="16" height="12" fill="#DCE8FB" stroke="#9FB3CC"/>` + T(82, y0 + 5 * ch + 24, 'metals', { size: 12, anchor: 'start' })
+      + `<rect x="170" y="${y0 + 5 * ch + 14}" width="16" height="12" fill="#E3F2E1" stroke="#9FB3CC"/>` + T(192, y0 + 5 * ch + 24, 'non-metals', { size: 12, anchor: 'start' })
+      + T(300, y0 + 5 * ch + 24, 'columns = groups · rows = periods', { size: 11, fill: GREY, anchor: 'start' });
+    return { svg: W(s), a: {} };
+  };
+
+  /* ---------------- Stage 7 Unit 7 Properties of materials ---------------- */
+  // three test tubes with iron nails: A air + water, B dry air (drying agent), C boiled water under oil; o.after shows rust in A
+  F.sciRust = (o = {}) => {
+    const tube = (x, lab, water, oil, dry, rust, note) => {
+      let s = `<path d="M${x - 26} 50 V236 A26 26 0 0 0 ${x + 26} 236 V50" fill="#fff" stroke="${INK}" stroke-width="2.4"/>`;
+      if (water) s += `<path d="M${x - 24} ${oil ? 150 : 170} V236 A24 24 0 0 0 ${x + 24} 236 V${oil ? 150 : 170}Z" fill="${SKY}"/>`;
+      if (oil) s += `<rect x="${x - 24}" y="134" width="48" height="16" fill="#F6D365"/>` + T(x + 40, 146, 'oil', { size: 11, anchor: 'start' });
+      if (dry) s += [0, 1, 2, 3, 4, 5].map(i => `<circle cx="${x - 14 + (i % 3) * 14}" cy="${250 - Math.floor(i / 3) * 12}" r="6" fill="#ECEFF1" stroke="${GREY}"/>`).join('') + T(x + 40, 254, 'drying agent', { size: 10, anchor: 'start' });
+      s += `<rect x="${x - 3}" y="${dry ? 80 : 90}" width="6" height="${dry ? 140 : 150}" fill="${rust ? '#B5541C' : '#90A4AE'}" stroke="${INK}" stroke-width="1"/><rect x="${x - 9}" y="${dry ? 76 : 86}" width="18" height="6" fill="${rust ? '#B5541C' : '#90A4AE'}"/>`;
+      if (rust) s += [0, 1, 2, 3, 4].map(i => `<circle cx="${x + (i % 2 ? 5 : -5)}" cy="${110 + i * 24}" r="4" fill="#8D3A12" class="sa a-blink" style="animation-delay:${i * 0.4}s"/>`).join('');
+      return s + `<rect x="${x - 30}" y="40" width="60" height="12" rx="3" fill="#A1887F"/>` + T(x, 30, lab, { size: 15, bold: true }) + lines(x, 286, note, 16, { size: 11.5, bold: true, fill: rust ? RED : INK });
+    };
+    const A = o.after !== false;
+    return { svg: W(tube(80, 'A', true, false, false, A, 'air + water') + tube(240, 'B', false, false, true, false, 'dry air, no water') + tube(400, 'C', true, true, false, false, 'water, no air (boiled, oil on top)')), a: {} };
+  };
+  // atoms in layers: pure metal (layers slide) and an alloy (bigger atoms stop the sliding)
+  F.sciAlloy = () => {
+    const at = (x, y, r, c) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${c}" stroke="${INK}" stroke-width="1"/>`;
+    let s = T(120, 28, 'pure metal', { size: 15, bold: true }) + T(360, 28, 'alloy', { size: 15, bold: true });
+    for (let r = 0; r < 5; r++) { const shift = r < 2 ? '' : ' class="sa a-swing" style="--o:120px 400px"'; let row = ''; for (let c = 0; c < 7; c++) row += at(36 + c * 28, 80 + r * 28, 13, '#B0BEC5'); s += r === 2 ? `<g class="sa a-rise" style="--dx:14px;--dy:0px;--t:2.4s">${row}</g>` : `<g>${row}</g>`; }
+    for (let r = 0; r < 5; r++) for (let c = 0; c < 7; c++) { const big = (r * 7 + c) % 5 === 2; s += at(276 + c * 28 + (big ? 2 : 0), 80 + r * 28 + (big ? -3 : 0), big ? 17 : 13, big ? GOLD : '#B0BEC5'); }
+    s += arrow(30, 230, 210, 230, RED) + lines(120, 252, 'layers slide easily: soft, malleable', 26, { size: 12 }) + lines(360, 252, 'different-sized atoms stop the layers sliding: harder, stronger', 28, { size: 12 });
+    return { svg: W(s), a: {} };
+  };
+
 })();

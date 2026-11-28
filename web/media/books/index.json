@@ -3030,5 +3030,227 @@
     39
    ]
   }
+ },
+ "s7u02": {
+  "title": "Camday Science Stage 7 · Unit 2: Measurements",
+  "pages": 33,
+  "dir": "media/books/s7u02/",
+  "ext": "webp",
+  "pdf": "media/books/s7u02.pdf?v=a8f200f993",
+  "v": "a8f200f993",
+  "secs": {
+   "2.1": [
+    2,
+    7
+   ],
+   "2.2": [
+    8,
+    13
+   ],
+   "2.3": [
+    14,
+    18
+   ],
+   "2.4": [
+    19,
+    24
+   ],
+   "2.5": [
+    25,
+    28
+   ],
+   "2.6": [
+    29,
+    31
+   ],
+   "answers": [
+    32,
+    33
+   ]
+  }
+ },
+ "s7u03": {
+  "title": "Camday Science Stage 7 · Unit 3: Cells",
+  "pages": 28,
+  "dir": "media/books/s7u03/",
+  "ext": "webp",
+  "pdf": "media/books/s7u03.pdf?v=25136079eb",
+  "v": "25136079eb",
+  "secs": {
+   "3.1": [
+    2,
+    7
+   ],
+   "3.2": [
+    8,
+    14
+   ],
+   "3.3": [
+    15,
+    20
+   ],
+   "3.4": [
+    21,
+    26
+   ],
+   "answers": [
+    27,
+    28
+   ]
+  }
+ },
+ "s7u04": {
+  "title": "Camday Science Stage 7 · Unit 4: Classifying Living Things",
+  "pages": 27,
+  "dir": "media/books/s7u04/",
+  "ext": "webp",
+  "pdf": "media/books/s7u04.pdf?v=6944a82f9c",
+  "v": "6944a82f9c",
+  "secs": {
+   "4.1": [
+    2,
+    5
+   ],
+   "4.2": [
+    6,
+    9
+   ],
+   "4.3": [
+    10,
+    15
+   ],
+   "4.4": [
+    16,
+    20
+   ],
+   "4.5": [
+    21,
+    25
+   ],
+   "answers": [
+    26,
+    27
+   ]
+  }
+ },
+ "s7u05": {
+  "title": "Camday Science Stage 7 · Unit 5: Food Chains and Food Webs",
+  "pages": 13,
+  "dir": "media/books/s7u05/",
+  "ext": "webp",
+  "pdf": "media/books/s7u05.pdf?v=299c3d9b8f",
+  "v": "299c3d9b8f",
+  "secs": {
+   "5.1": [
+    2,
+    6
+   ],
+   "5.2": [
+    7,
+    12
+   ],
+   "answers": [
+    13,
+    13
+   ]
+  }
+ },
+ "s7u06": {
+  "title": "Camday Science Stage 7 · Unit 6: Materials and Their Structure",
+  "pages": 32,
+  "dir": "media/books/s7u06/",
+  "ext": "webp",
+  "pdf": "media/books/s7u06.pdf?v=eb31712b85",
+  "v": "eb31712b85",
+  "secs": {
+   "6.1": [
+    2,
+    6
+   ],
+   "6.2": [
+    7,
+    11
+   ],
+   "6.3": [
+    12,
+    16
+   ],
+   "6.4": [
+    17,
+    21
+   ],
+   "6.5": [
+    22,
+    26
+   ],
+   "6.6": [
+    27,
+    30
+   ],
+   "answers": [
+    31,
+    32
+   ]
+  }
+ },
+ "s7u07": {
+  "title": "Camday Science Stage 7 · Unit 7: Properties of Materials",
+  "pages": 19,
+  "dir": "media/books/s7u07/",
+  "ext": "webp",
+  "pdf": "media/books/s7u07.pdf?v=3435a496d1",
+  "v": "3435a496d1",
+  "secs": {
+   "7.1": [
+    2,
+    6
+   ],
+   "7.2": [
+    7,
+    11
+   ],
+   "7.3": [
+    12,
+    14
+   ],
+   "7.4": [
+    15,
+    18
+   ],
+   "answers": [
+    19,
+    19
+   ]
+  }
+ },
+ "s7u08": {
+  "title": "Camday Science Stage 7 · Unit 8: Acids and Alkalis",
+  "pages": 19,
+  "dir": "media/books/s7u08/",
+  "ext": "webp",
+  "pdf": "media/books/s7u08.pdf?v=b6ecc6107f",
+  "v": "b6ecc6107f",
+  "secs": {
+   "8.1": [
+    2,
+    5
+   ],
+   "8.2": [
+    6,
+    9
+   ],
+   "8.3": [
+    10,
+    14
+   ],
+   "8.4": [
+    15,
+    18
+   ],
+   "answers": [
+    19,
+    19
+   ]
+  }
  }
 }
