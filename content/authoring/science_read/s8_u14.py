@@ -1,0 +1,148 @@
+# -*- coding: utf-8 -*-
+"""Science Stage 8 · Unit 14 Planetary Systems – Read the lesson (shown below the video) and the lesson document (PDF).
+Camday's own text, examples and questions; scope: Cambridge Lower Secondary Science 0893, Stage 8 (8ESs.01, 8ESs.02, 8ESp.01)."""
+from maths_notes_v4.kit4 import H, I, Y, X, K, L, W, BK, Ex, mcq, grid, num
+
+READ = {}
+CARD = lambda title, cards, cols=None: dict({"kind": "sciCards", "title": title, "cards": cards}, **({"cols": cols} if cols else {}))
+
+# =====================================================================================================
+# 14.1 Galaxies · 8ESs.01
+# =====================================================================================================
+READ["14.1"] = L(
+    H("Looking back in time",
+      "The light from some stars you see tonight left them before you were born – some before the pyramids were built.",
+      "So when you look at the night sky, are you seeing the stars as they are now?"),
+    I("The Milky Way",
+      "A **galaxy** is a huge group of stars, gas and dust held together by gravity. Our galaxy is the **Milky Way**.",
+      then=["It is a **spiral** galaxy, like a giant spinning pinwheel, with hundreds of billions of stars. The Sun lies on one of its spiral arms, about 27 000 light years from the centre.",
+            "On a really dark night, away from city lights (**light pollution**), the Milky Way appears as a pale band across the sky."]),
+    I("Shapes of galaxies",
+      "There are trillions of galaxies. They come in four main shapes.",
+      fig=CARD("Galaxy shapes", [{"t": "Spiral", "d": "a central bulge with arms – like the Milky Way"}, {"t": "Elliptical", "d": "oval, like a rugby ball; mostly old stars"},
+                                 {"t": "Lenticular", "d": "lens-shaped disc with a bulge, no arms"}, {"t": "Irregular", "d": "no clear shape"}], 4),
+      then=["The Milky Way belongs to the **Local Group** of about 50 galaxies. Our large neighbour, Andromeda, is moving towards us and may merge with the Milky Way in about four billion years."]),
+    I("What is inside a galaxy?",
+      "A galaxy contains stars, **planetary systems**, clouds of gas, and **stellar dust**: tiny specks of ice, carbon, silicon and metals.",
+      then=["Stellar dust blocks our view of some parts of the galaxy, but it is also the raw material for new stars and planets."]),
+    I("Predict, watch, explain: a balloon model of the Universe",
+      "Six dots are drawn on a balloon to stand for galaxies, then the balloon is blown up. Every dot moves further from every other dot, and no dot is at the centre.",
+      then=["Space itself is stretching, so distant galaxies are moving away from us and from each other: the **Universe is expanding**. The model has limits – the real Universe is not the rubber skin of a balloon."]),
+    Y("Galaxy shapes",
+      mcq("s8u14r11", "What shape is the Milky Way?",
+          [("spiral", True, "Yes – a disc with spiral arms."), ("elliptical", False, "Elliptical galaxies have no arms."), ("irregular", False, "The Milky Way has a clear shape."),
+           ("lenticular", False, "Lenticular galaxies have no arms.")],
+          "Think of a pinwheel.", "The Milky Way is a spiral galaxy.")),
+    K("Key points",
+      "A **galaxy** is a huge group of stars, gas and dust held together by gravity.",
+      "The **Milky Way** is a spiral galaxy; the Sun is on a spiral arm.",
+      "Galaxy shapes: spiral, elliptical, lenticular, irregular.",
+      "Galaxies contain stars, planetary systems, gas and stellar dust. The Universe is expanding."),
+    book=BK(
+        [("galaxy", "a huge group of stars, gas and dust held together by gravity"), ("Milky Way", "our home galaxy, a spiral galaxy"), ("stellar dust", "tiny solid particles in space"),
+         ("light pollution", "artificial light that hides the stars")],
+        [], [],
+        [Ex("Name the four shapes of galaxies and describe one.", ans="spiral, elliptical, lenticular, irregular; e.g. spiral: a bulge with arms"),
+         Ex("Where is the Sun in the Milky Way?", ans="on one of the spiral arms, about 27 000 light years from the centre"),
+         Ex("What evidence does the balloon model illustrate?", ans="Galaxies are moving apart – the Universe is expanding."),
+         Ex("Why can people in cities see fewer stars than people in the countryside?", ans="Light pollution from street lights and buildings makes the sky brighter and hides faint stars.", think=True)],
+        ["describe a galaxy and the Milky Way", "name the main shapes of galaxies", "explain the balloon model of the expanding Universe"],
+        look=["galaxy shapes", "the balloon model"],
+        note="Read it after the video: galaxies, the Milky Way and the expanding Universe (answers at the back)."),
+)
+
+# =====================================================================================================
+# 14.2 Planetary systems · 8ESs.02
+# =====================================================================================================
+READ["14.2"] = L(
+    H("Steady or twinkling?",
+      "Look at the night sky: most points of light twinkle, but a few shine with a steady light.",
+      "The steady ones are often planets. Why might planets look different from stars?"),
+    I("Our planetary system",
+      "A **planetary system** is a star and everything that orbits it. Ours is the Solar System.",
+      fig={"kind": "orbits"},
+      table=[["Object", "Description"], ["inner (rocky) planets", "Mercury, Venus, Earth, Mars"], ["outer (gas) planets", "Jupiter, Saturn, Uranus, Neptune"],
+             ["**asteroids**", "rocky leftovers; most in the asteroid belt between Mars and Jupiter"], ["**dwarf planets**", "rounded by gravity but smaller than planets, e.g. Pluto (reclassified in 2006)"],
+             ["**comets**", "lumps of ice, dust and rock on long, thin orbits"]],
+      then=["Planets and moons reflect sunlight, so they shine steadily. Astronomers have found thousands of **exoplanets** – planets orbiting other stars."]),
+    I("Real data: how long is each planet's year?",
+      "Time to orbit the Sun once (Earth years):",
+      fig={"kind": "barchart", "labels": ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn"], "values": [0.24, 0.62, 1, 1.9, 11.9, 29.5], "ymax": 30, "step": 5,
+           "ylabel": "orbit time (Earth years)", "xlabel": "planet"},
+      then=["The further a planet is from the Sun, the longer its orbit takes."]),
+    Y("Read the chart",
+      num("s8u14r21", "How many times longer is Saturn's year than Jupiter's? Give your answer to 1 decimal place.", 2.5, "Divide Saturn's value by Jupiter's.", "29.5 ÷ 11.9 ≈ 2.5 times.",
+          errs=[(17.6, "'How many times' means divide.")])),
+    I("How the Solar System formed",
+      "About 4.6 billion years ago the Solar System formed from a **nebula** – a huge cloud of gas and dust.",
+      fig={"kind": "sciFlow", "title": "From nebula to Solar System", "steps": [{"t": "Nebula", "d": "cloud of gas and dust"}, {"t": "Collapse", "d": "gravity pulls it in; it spins"},
+                                                                              {"t": "Protostar", "d": "hot centre becomes the Sun"}, {"t": "Protoplanets", "d": "dust and rock clump into planets"}]},
+      then=["Jupiter's strong gravity stopped the rocks between Mars and Jupiter joining into a planet – they became the **asteroid belt**. Beyond Neptune, the **Kuiper Belt** holds icy objects."]),
+    I("Comets",
+      "Comets are 'dirty snowballs' of ice, dust and rock on long, thin orbits.",
+      then=["Near the Sun, the ice turns to gas, releasing dust. Radiation and the solar wind push the gas and dust away, so a comet's **tail always points away from the Sun** – even when the comet is moving away from it."]),
+    Y("Comet tails",
+      mcq("s8u14r22", "Why does a comet's tail point away from the Sun?",
+          [("The Sun's radiation and solar wind push the gas and dust away.", True, "Yes."), ("The comet leaves it behind as it moves.", False, "The tail points away from the Sun even when the comet moves away from it."),
+           ("Gravity pulls the tail away.", False, "The Sun's gravity pulls towards the Sun."), ("The tail is made of fire.", False, "It is gas and dust.")],
+          "What pushes outwards from the Sun?", "Radiation pressure and the solar wind push the tail away from the Sun.")),
+    K("Key points",
+      "A planetary system is a star and everything orbiting it: planets, moons, asteroids, dwarf planets, comets.",
+      "Further from the Sun → longer orbit.",
+      "The Solar System formed from a nebula about 4.6 billion years ago; Jupiter's gravity kept the asteroid belt from forming a planet.",
+      "A comet's tail always points away from the Sun."),
+    book=BK(
+        [("planetary system", "a star and the objects that orbit it"), ("asteroid", "a rocky object orbiting the Sun, smaller than a planet"),
+         ("dwarf planet", "a rounded body smaller than a planet, e.g. Pluto"), ("comet", "a body of ice, dust and rock on a long orbit"), ("nebula", "a cloud of gas and dust in space"),
+         ("exoplanet", "a planet orbiting another star")],
+        [], [],
+        [Ex("Describe the differences between an asteroid, a dwarf planet and a comet.", ans="asteroid: small rocky body; dwarf planet: rounded by gravity, smaller than a planet; comet: ice, dust and rock on a long orbit with a tail near the Sun"),
+         Ex("Describe how the Solar System formed.", ans="A nebula collapsed under gravity and spun; the hot centre became the Sun; dust and rock clumped into protoplanets and planets."),
+         Ex("Why are there asteroids between Mars and Jupiter rather than a planet?", ans="Jupiter's strong gravity disturbed the rocks so they could not join together."),
+         Ex("Why do planets shine with a steady light while stars twinkle?", ans="Planets are much closer and appear as tiny discs, reflecting sunlight; stars are point sources whose light is disturbed by moving air.", think=True)],
+        ["describe the parts of the Solar System", "describe how the Solar System formed", "explain the asteroid belt and comet tails"],
+        look=["the objects table", "from nebula to Solar System"],
+        note="Read it after the video: planetary systems, formation of the Solar System, asteroids and comets (answers at the back)."),
+)
+
+# =====================================================================================================
+# 14.3 The Earth's magnetic field · 8ESp.01
+# =====================================================================================================
+READ["14.3"] = L(
+    H("Lights in the polar sky",
+      "Near the North and South Poles, the night sky sometimes glows with moving curtains of green and pink light.",
+      "What could make the sky glow? It is linked to the Earth's magnetic field."),
+    I("What makes Earth magnetic?",
+      "Earth has a solid inner core and a **liquid outer core** of molten **iron and nickel**. The molten metal is always moving, making electric currents that produce a magnetic field.",
+      fig={"kind": "sciField"},
+      then=["So Earth behaves like a giant bar magnet, with a field reaching far out into space. A compass lines up with this field.",
+            "The **magnetic** north pole is not at the **geographic** North Pole, and it slowly wanders – tens of kilometres a year."]),
+    I("Earth's magnetic shield",
+      "The Sun constantly sends out a stream of charged particles: the **solar wind**.",
+      fig=CARD("The magnetic field …", [{"icon": "globe", "t": "protects life", "d": "deflects the solar wind, which could strip away the atmosphere"},
+                                        {"icon": "sun", "t": "makes auroras", "d": "particles hit atoms in the air near the poles, which give out light"},
+                                        {"icon": "magnifier", "t": "guides navigation", "d": "compasses; some birds, turtles and fish sense it"}], 3),
+      then=["The solar wind can also push spacecraft fitted with huge, thin **solar sails**."]),
+    Y("Cause of the field",
+      mcq("s8u14r31", "What causes Earth's magnetic field?",
+          [("Moving molten iron and nickel in the outer core.", True, "Yes."), ("A giant bar magnet buried at the North Pole.", False, "There is no buried magnet."),
+           ("The Moon's gravity.", False, "Gravity causes tides, not magnetism."), ("Sunlight heating the poles.", False, "Sunlight does not cause the field.")],
+          "Think about the core.", "Currents in the moving liquid metal of the outer core make the field.")),
+    K("Key points",
+      "Moving molten iron and nickel in the outer core produce Earth's magnetic field.",
+      "Earth behaves like a giant bar magnet; the magnetic pole wanders and is not at the geographic pole.",
+      "The field deflects the **solar wind**, protecting the atmosphere and life, and causes **auroras** near the poles."),
+    book=BK(
+        [("solar wind", "a stream of charged particles from the Sun"), ("aurora", "coloured light in the sky near the poles"),
+         ("magnetic pole", "where Earth's magnetic field lines point straight into or out of the ground")],
+        [], [],
+        [Ex("Explain what produces Earth's magnetic field.", ans="Moving molten iron and nickel in the outer core create electric currents, which produce the field."),
+         Ex("Give two ways Earth's magnetic field affects life.", ans="It deflects the solar wind, protecting the atmosphere; it lets animals and people navigate."),
+         Ex("Why are auroras seen mainly near the poles?", ans="The field lines guide the charged particles down into the atmosphere near the poles."),
+         Ex("Quick quiz.", ("What is the Milky Way?", "a spiral galaxy of billions of stars, including the Sun"), ("Name the four shapes of galaxies.", "spiral, elliptical, lenticular, irregular"),
+            ("Why does a comet's tail point away from the Sun?", "radiation and the solar wind push it away"), ("What causes Earth's magnetic field?", "moving molten metal in the outer core")),
+         Ex("Mars has almost no magnetic field and a very thin atmosphere. Suggest a link.", ans="Without a magnetic field, the solar wind could strip away much of its atmosphere.", think=True)],
+        ["describe how Earth's magnetic field is produced", "explain how it protects life and causes auroras"],
+        look=["Earth as a magnet", "the magnetic shield"],
+        note="Read it after the video: Earth's magnetic field, the solar wind and auroras, plus a quick quiz (answers at the back)."),
+)

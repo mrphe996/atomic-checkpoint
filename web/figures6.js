@@ -191,17 +191,18 @@
   // cards: o.title, o.cards = [{icon, t (title), d (short text), ok: true|false (tick or cross badge)}], o.cols (default: all in one row up to 4)
   F.sciCards = (o = {}) => {
     const C = o.cards || [], n = C.length, cols = o.cols || Math.min(n, 4), rows = Math.ceil(n / cols), top = o.title ? 34 : 8;
-    const cw = (464 - (cols - 1) * 8) / cols, ch = (312 - top - (rows - 1) * 8) / rows, small = ch < 140;
+    const cw = (464 - (cols - 1) * 8) / cols, ch0 = (312 - top - (rows - 1) * 8) / rows, ch = C.some(c => c.icon) ? ch0 : Math.min(ch0, 120), small = ch < 140;
+    const off = 0, Hh = C.some(c => c.icon) ? 320 : Math.ceil(top + rows * ch + (rows - 1) * 8 + 8);   // text-only cards: a shorter picture
     let s = o.title ? T(240, 24, o.title, { size: 16, bold: true }) : '';
     const tw = Math.max(10, Math.floor(cw / 8)), dw = Math.max(12, Math.floor(cw / 6.4));
-    C.forEach((c, i) => { const x = 8 + (i % cols) * (cw + 8), y = top + Math.floor(i / cols) * (ch + 8), cx = x + cw / 2;
+    C.forEach((c, i) => { const x = 8 + (i % cols) * (cw + 8), y = top + off + Math.floor(i / cols) * (ch + 8), cx = x + cw / 2;
       const tall = (c.icon ? 60 : 0) + wrap(c.t, tw).length * 16 + (c.d ? wrap(c.d, dw).length * 14 + 4 : 0), iy = y + Math.max(small ? 30 : 34, (ch - tall) / 2 + 28);
       s += `<rect x="${x}" y="${y}" width="${cw}" height="${ch}" rx="12" fill="${c.ok === false ? '#FFF4F4' : c.ok ? '#F0FAF3' : SOFT}" stroke="${c.ok === false ? '#F3B6B6' : c.ok ? '#A5D6A7' : '#C9D4E3'}" stroke-width="1.5"/>`;
       if (c.icon && ICON[c.icon]) s += ICON[c.icon](cx, iy);
       if (c.ok != null) s += `<g transform="translate(${x + cw - 22} ${y + 22}) scale(.55) translate(${-(x + cw - 22)} ${-(y + 22)})">${ICON[c.ok ? 'tick' : 'cross'](x + cw - 22, y + 22)}</g>`;
       const ty = c.icon ? iy + 46 : iy - 12; s += lines(cx, ty, c.t, tw, { size: 13, bold: true });
       if (c.d) s += lines(cx, ty + 16 * wrap(c.t, tw).length + 2, c.d, dw, { size: 11, fill: GREY }); });
-    return { svg: W(s), a: {} };
+    return { svg: W(s).replace('viewBox="0 0 480 320"', `viewBox="0 0 480 ${Hh}"`).replace('height="320" rx="10"', `height="${Hh}" rx="10"`), a: {} };
   };
 
   // a cycle of steps round a circle, with a dot going round: o.steps = [...], o.title, o.centre
@@ -511,6 +512,123 @@
     if (sun === 'line') s += ICON.sun(40, cy) + T(40, cy + 44, 'Sun', { size: 12, bold: true });
     if (sun === 'right') s += ICON.sun(cx, 270) + T(cx + 40, 276, 'Sun', { size: 12, bold: true, anchor: 'start' });
     s += T(cx + 120, cy + 70, 'high tide', { size: 11, fill: BLUE }) + T(cx - 118, cy + 70, 'high tide', { size: 11, fill: BLUE });
+    return { svg: W(s), a: {} };
+  };
+
+  /* ---------------- Stage 8 Unit 2 Human body systems ---------------- */
+  // an arm with the biceps and triceps; o.bent true: biceps contracted
+  F.sciArm = (o = {}) => {
+    const bent = o.bent !== false, sx = 120, sy = 70, ex = 200, ey = 220, a = bent ? -1.05 : 0.05, fx = ex + 170 * Math.cos(a), fy = ey + 170 * Math.sin(a);
+    let s = T(240, 24, bent ? 'Bending the arm: the biceps contracts' : 'Straightening the arm: the triceps contracts', { size: 14, bold: true });
+    s += `<line x1="${sx}" y1="${sy}" x2="${ex}" y2="${ey}" stroke="#ECEFF1" stroke-width="16" stroke-linecap="round"/><line x1="${sx}" y1="${sy}" x2="${ex}" y2="${ey}" stroke="${INK}" stroke-width="1.5"/>`;
+    s += `<line x1="${ex}" y1="${ey}" x2="${fx}" y2="${fy}" stroke="#ECEFF1" stroke-width="14" stroke-linecap="round"/><line x1="${ex}" y1="${ey}" x2="${fx}" y2="${fy}" stroke="${INK}" stroke-width="1.5"/><circle cx="${ex}" cy="${ey}" r="10" fill="#fff" stroke="${INK}" stroke-width="2"/>`;
+    const bx = ex + 34 * Math.cos(a), by = ey + 34 * Math.sin(a);   // biceps: front of upper arm → just below the elbow on the forearm
+    s += `<path d="M${sx + 18} ${sy + 18} Q${sx + 70 + (bent ? 40 : 14)} ${(sy + by) / 2 - 10} ${bx} ${by}" stroke="${bent ? RED : '#F3A0A0'}" stroke-width="${bent ? 22 : 12}" fill="none" stroke-linecap="round"/>`;
+    s += `<path d="M${sx - 10} ${sy + 10} Q${sx - 10 - (bent ? 6 : 30)} ${(sy + ey) / 2 + 10} ${ex - 14} ${ey + 10}" stroke="${bent ? '#9FA8DA' : BLUE}" stroke-width="${bent ? 12 : 20}" fill="none" stroke-linecap="round"/>`;
+    s += T(300, 80, bent ? 'biceps contracts' : 'biceps relaxes', { size: 13, bold: true, fill: RED, anchor: 'start' }) + T(300, 98, bent ? '(shorter and fatter)' : '(longer and thinner)', { size: 11, fill: RED, anchor: 'start' })
+      + T(24, 276, bent ? 'triceps relaxes' : 'triceps contracts', { size: 13, bold: true, fill: BLUE, anchor: 'start' }) + T(ex, ey + 32, 'elbow (hinge joint)', { size: 11 });
+    s += T(240, 306, 'muscles can only pull, so they work in antagonistic pairs', { size: 11.5, fill: GREY });
+    return { svg: W(s), a: {} };
+  };
+
+  /* ---------------- Stage 8 Unit 4 Atoms ---------------- */
+  // Rutherford's gold foil experiment: alpha particles from a source; most pass, a few deflect, a very few bounce back
+  F.sciGoldFoil = () => {
+    let s = T(240, 24, 'Firing alpha particles at thin gold foil', { size: 14, bold: true });
+    s += `<rect x="20" y="140" width="56" height="40" rx="6" fill="#B0BEC5" stroke="${INK}"/>` + T(48, 200, 'source', { size: 11 }) + `<rect x="232" y="70" width="8" height="180" fill="${GOLD}" stroke="#B8860B"/>` + T(236, 266, 'gold foil', { size: 11, bold: true });
+    s += `<path d="M380 40 A190 190 0 0 1 380 280" fill="none" stroke="${GREY}" stroke-width="3" stroke-dasharray="6 4"/>` + T(420, 160, 'screen', { size: 11, fill: GREY });
+    [130, 145, 160, 175, 190].forEach((y, i) => { s += `<line x1="76" y1="${y}" x2="380" y2="${y}" stroke="${BLUE}" stroke-width="2" class="sa a-flow" style="animation-delay:${i * 0.2}s"/>`; });
+    s += `<path d="M76 152 L236 152 L370 80" fill="none" stroke="${ORANGE}" stroke-width="2.2"/><path d="M76 168 L236 168 L360 250" fill="none" stroke="${ORANGE}" stroke-width="2.2"/><path d="M76 158 L234 158 L110 120" fill="none" stroke="${RED}" stroke-width="2.4"/>`;
+    s += T(240, 290, 'blue: most go straight through · orange: a few are deflected', { size: 11, fill: INK }) + T(240, 306, 'red: a very few bounce back', { size: 11, fill: RED });
+    return { svg: W(s), a: {} };
+  };
+
+  /* ---------------- Stage 8 Unit 6 Reactivity ---------------- */
+  // the reactivity series as a ladder; o.metals, o.mark = [names] highlighted, o.carbon true adds carbon and hydrogen markers
+  F.sciSeries = (o = {}) => {
+    const M = o.metals || ['potassium K', 'sodium Na', 'calcium Ca', 'magnesium Mg', 'aluminium Al', 'zinc Zn', 'iron Fe', 'lead Pb', 'copper Cu', 'silver Ag', 'gold Au'], n = M.length, mark = o.mark || [];
+    const top = 46, h = (276 - top) / n;
+    let s = T(240, 24, o.title || 'The reactivity series', { size: 15, bold: true });
+    M.forEach((m, i) => { const y = top + i * h, hi = mark.some(k => m.startsWith(k)), c = `rgb(${Math.round(214 - i * 14)},${Math.round(69 + i * 12)},${Math.round(69 + i * 9)})`;
+      s += `<rect x="150" y="${y}" width="180" height="${h - 3}" rx="5" fill="${hi ? GOLD : '#F4F7FB'}" stroke="${hi ? ORANGE : '#C9D4E3'}" stroke-width="${hi ? 2 : 1}"/><rect x="150" y="${y}" width="8" height="${h - 3}" fill="${c}"/>` + T(240, y + h / 2 + 3, m, { size: 12, bold: hi }); });
+    s += arrow(110, 276, 110, 52, RED) + T(96, 150, 'more reactive', { size: 12, bold: true, fill: RED, anchor: 'middle' }).replace('<text', `<text transform="rotate(-90 96 150)"`);
+    if (!o.metals) [[0, 2, 'react with cold water'], [3, 7, 'react with dilute acids'], [8, 10, 'no reaction with dilute acids']].forEach(([a, b, t]) => { const y0 = top + a * h, y1 = top + (b + 1) * h - 3;
+      s += `<path d="M338 ${y0} h8 V${y1} h-8" fill="none" stroke="${GREY}" stroke-width="1.5"/>` + lines(352, (y0 + y1) / 2, t, 16, { size: 11, fill: GREY, anchor: 'start' }); });
+    return { svg: W(s), a: {} };
+  };
+
+  /* ---------------- Stage 8 Unit 9 Pressure and diffusion ---------------- */
+  // a tall bottle of water with three holes: the jet from the lowest hole goes furthest
+  F.sciJets = () => {
+    let s = T(240, 24, 'Pressure increases with depth', { size: 15, bold: true });
+    s += `<path d="M120 50 V270 H200 V50" fill="none" stroke="${INK}" stroke-width="2.5"/><rect x="122" y="70" width="76" height="198" fill="${SKY}"/>` + `<rect x="40" y="270" width="420" height="8" fill="#C8B79A"/>`;
+    [[110, 60], [170, 120], [230, 190]].forEach(([y, r], i) => { const ex = 200 + r; s += `<path d="M200 ${y} Q${200 + r * 0.6} ${y} ${ex} 268" fill="none" stroke="${BLUE}" stroke-width="${3 + i}" class="sa a-flow"/>` + `<circle cx="200" cy="${y}" r="3" fill="${INK}"/>`; });
+    s += T(110, 116, 'shallow', { size: 11, anchor: 'end' }) + T(110, 236, 'deep', { size: 11, anchor: 'end' }) + T(240, 300, 'deepest hole: most water above, highest pressure', { size: 11.5, fill: GREY });
+    return { svg: W(s), a: {} };
+  };
+  // diffusion of a dye drop in cold and hot water; o.stage 0..1
+  F.sciDiffuse = (o = {}) => {
+    const st = o.stage == null ? 0.6 : o.stage, rn = q => ((Math.sin(q * 91.7) * 43758.5453) % 1 + 1) % 1;
+    const beaker = (cx, label, spread, col) => { let s = `<path d="M${cx - 70} 80 V260 Q${cx - 70} 272 ${cx - 58} 272 H${cx + 58} Q${cx + 70} 272 ${cx + 70} 260 V80" fill="${col}" stroke="${INK}" stroke-width="2.2"/>`;
+      for (let k = 0; k < 46; k++) { const a = rn(k) * Math.PI * 2, r = Math.sqrt(rn(k + 77)) * spread; s += `<circle cx="${(cx + Math.cos(a) * r * 1.1).toFixed(1)}" cy="${(180 + Math.sin(a) * r * 0.9).toFixed(1)}" r="3.4" fill="#8E24AA"/>`; }
+      return s + T(cx, 296, label, { size: 13, bold: true }); };
+    return { svg: W(T(240, 30, 'A drop of dye after a few minutes', { size: 15, bold: true }) + beaker(130, 'cold water', 18 + st * 28, '#E3F2FD') + beaker(350, 'hot water', 22 + st * 58, '#FDECEA')), a: {} };
+  };
+
+  /* ---------------- Stage 8 Unit 10 Light ---------------- */
+  // additive colour mixing: red, green and blue spotlights overlapping on a dark screen
+  F.sciColours = () => {
+    let s = `<rect x="60" y="20" width="360" height="280" rx="12" fill="#111"/>` + `<g style="mix-blend-mode:screen">` +
+      [[200, 130, '#FF0000'], [280, 130, '#00FF00'], [240, 200, '#0000FF']].map(([x, y, c]) => `<circle cx="${x}" cy="${y}" r="78" fill="${c}" style="mix-blend-mode:screen"/>`).join('') + '</g>';
+    s += T(150, 70, 'red', { size: 13, bold: true, fill: '#fff' }) + T(330, 70, 'green', { size: 13, bold: true, fill: '#fff' }) + T(240, 292, 'blue', { size: 13, bold: true, fill: '#fff' });
+    s += T(240, 112, 'yellow', { size: 11, bold: true, fill: '#111' }) + T(196, 196, 'magenta', { size: 11, bold: true, fill: '#111' }) + T(288, 196, 'cyan', { size: 11, bold: true, fill: '#111' }) + T(240, 160, 'white', { size: 11, bold: true, fill: '#111' });
+    return { svg: W(s).replace(/rgb\(255,0,0\)|rgb\(0,255,0\)|rgb\(0,0,255\)/g, m => m), a: {} };
+  };
+
+  /* ---------------- Stage 8 Unit 11 Magnetism ---------------- */
+  // magnetic field of a bar magnet with arrows from N to S; o.pair 'attract' | 'repel' shows two magnets
+  F.sciField = (o = {}) => {
+    const head = (x, y, dir) => `<path d="M${x + 6 * dir} ${y} L${x - 5 * dir} ${y - 5} L${x - 5 * dir} ${y + 5}Z" fill="${BLUE}"/>`;
+    const mag = (x, flip) => `<rect x="${x}" y="148" width="60" height="28" fill="${flip ? BLUE : RED}"/><rect x="${x + 60}" y="148" width="60" height="28" fill="${flip ? RED : BLUE}"/>` + T(x + 30, 167, flip ? 'S' : 'N', { size: 14, bold: true, fill: '#fff' }) + T(x + 90, 167, flip ? 'N' : 'S', { size: 14, bold: true, fill: '#fff' });
+    let s = '';
+    if (!o.pair) {
+      const x0 = 180, x1 = 300, cy = 162;
+      [30, 60, 95, 130].forEach((h, i) => { [-1, 1].forEach(sg => { const y = cy + sg * 14, cpy = cy + sg * (h + 20);
+        s += `<path d="M${x0} ${y} C${x0 - 40 - i * 20} ${cpy} ${x1 + 40 + i * 20} ${cpy} ${x1} ${y}" fill="none" stroke="${GREY}" stroke-width="1.6"/>` + head(240, cy + sg * (h * 0.75 + 15), 1); }); });
+      s += `<line x1="40" y1="${cy}" x2="${x0}" y2="${cy}" stroke="${GREY}" stroke-width="1.6"/>` + head(110, cy, -1) + `<line x1="${x1}" y1="${cy}" x2="440" y2="${cy}" stroke="${GREY}" stroke-width="1.6"/>` + head(380, cy, -1);
+      s += mag(x0, false) + T(240, 306, 'field lines go from N to S; closest together (strongest) at the poles', { size: 11.5, fill: GREY });
+    } else if (o.pair === 'attract') {
+      [-24, -8, 8, 24].forEach(d => { s += `<line x1="170" y1="${162 + d}" x2="310" y2="${162 + d}" stroke="${GREY}" stroke-width="1.6"/>` + head(240, 162 + d, -1); });
+      s += mag(50, false).replace(/S<\/text>/, 'S</text>') + mag(310, false) + T(240, 60, 'unlike poles attract: the field lines join up', { size: 13, bold: true });
+      s = s.replace(mag(310, false), '') + mag(310, false);
+    } else {
+      [-1, 1].forEach(sg => [20, 44].forEach(h => { s += `<path d="M170 ${162 + sg * 6} Q215 ${162 + sg * h} 222 ${162 + sg * (h + 60)}" fill="none" stroke="${GREY}" stroke-width="1.6"/><path d="M310 ${162 + sg * 6} Q265 ${162 + sg * h} 258 ${162 + sg * (h + 60)}" fill="none" stroke="${GREY}" stroke-width="1.6"/>`; }));
+      s += mag(50, false) + mag(310, true) + T(240, 40, 'like poles repel: the field lines push apart', { size: 13, bold: true }) + T(240, 290, 'a neutral point between the magnets', { size: 11, fill: GREY });
+    }
+    return { svg: W(s), a: {} };
+  };
+
+  /* ---------------- Stage 8 Unit 13 Climate ---------------- */
+  // the same beam of sunlight on the Earth near the equator (small bright patch) and near a pole (spread out)
+  F.sciSunAngle = () => {
+    const cx = 300, cy = 170, R = 120;
+    let s = T(240, 24, 'The same sunlight, spread over different areas', { size: 14, bold: true }) + `<circle cx="${cx}" cy="${cy}" r="${R}" fill="#66BB6A" stroke="${DGREEN}" stroke-width="2"/><line x1="${cx - R - 10}" y1="${cy}" x2="${cx + R + 10}" y2="${cy}" stroke="#fff" stroke-dasharray="5 4"/>`;
+    s += T(cx + R + 14, cy + 4, 'equator', { size: 11, anchor: 'start' });
+    const beam = (y, c) => `<path d="M30 ${y - 14} H${cx - Math.sqrt(R * R - (y - 14 - cy) ** 2)} L${cx - Math.sqrt(R * R - (y + 14 - cy) ** 2)} ${y + 14} H30Z" fill="${c}" opacity=".75"/>`;
+    s += beam(cy, GOLD) + beam(cy - 96, GOLD);
+    s += `<path d="M${cx - R + 2} ${cy - 14} A${R} ${R} 0 0 1 ${cx - R + 2} ${cy + 14}" stroke="${RED}" stroke-width="6" fill="none"/>`;
+    const a1 = Math.asin((cy - 110 - cy) / R), a2 = Math.asin((cy - 82 - cy) / R);
+    s += `<path d="M${cx - R * Math.cos(a1)} ${cy - 110} A${R} ${R} 0 0 1 ${cx - R * Math.cos(a2)} ${cy - 82}" stroke="${ORANGE}" stroke-width="6" fill="none"/>`;
+    s += T(24, cy + 40, 'equator: small, hot patch', { size: 11.5, bold: true, fill: RED, anchor: 'start' }) + T(24, 52, 'pole: spread out, cooler', { size: 11.5, bold: true, fill: ORANGE, anchor: 'start' });
+    return { svg: W(s), a: {} };
+  };
+  // the greenhouse effect: sunlight in, heat out, some heat trapped by greenhouse gases
+  F.sciGreenhouse = () => {
+    let s = `<rect x="0" y="230" width="480" height="90" fill="#8BC34A"/>` + T(240, 300, 'Earth', { size: 13, bold: true, fill: '#fff' });
+    s += `<rect x="0" y="70" width="480" height="40" fill="#B3E5FC" opacity=".6"/>` + T(400, 94, 'greenhouse gases', { size: 11.5, bold: true, fill: BLUE });
+    s += ICON.sun(50, 36) + arrow(80, 50, 170, 226, GOLD) + T(150, 150, 'sunlight passes in', { size: 11.5, bold: true, fill: '#B8860B', anchor: 'end' });
+    s += arrow(230, 226, 290, 20, RED) + T(300, 30, 'some heat escapes', { size: 11.5, fill: RED, anchor: 'start' });
+    s += `<path d="M330 226 L370 112 L410 226" fill="none" stroke="${RED}" stroke-width="2.4"/>` + arrow(390, 170, 410, 224, RED) + T(370, 256, 'some heat is trapped', { size: 11.5, bold: true, fill: '#fff' });
     return { svg: W(s), a: {} };
   };
 
