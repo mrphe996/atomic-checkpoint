@@ -3000,5 +3000,23 @@
     11
    ]
   }
+ },
+ "s7u01": {
+  "title": "Camday Science Stage 7 · Unit 1: Introducing Science",
+  "pages": 8,
+  "dir": "media/books/s7u01/",
+  "ext": "webp",
+  "pdf": "media/books/s7u01.pdf?v=b6daf01e83",
+  "v": "b6daf01e83",
+  "secs": {
+   "1.1": [
+    2,
+    7
+   ],
+   "answers": [
+    8,
+    8
+   ]
+  }
  }
 }

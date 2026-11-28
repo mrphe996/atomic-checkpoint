@@ -5,7 +5,9 @@ For each unit whose sections carry a `book` (maths_notes_v4 BK(...)), prints Cam
 then turns every page into an image for the on-site viewer:
   web/media/books/c{stage}u{NN}/p0001.webp …   web/media/books/c{stage}u{NN}.pdf   web/media/books/index.json
 and writes each section's `pdf` reference (book, p0, p1, label, note, look) into web/content/stage1N-unitNN.json.
-Run after tools/apply_notes_v3.py. Usage: python3 tools/build_books.py 7 [units …]"""
+Run after tools/apply_notes_v3.py. Usage: python3 tools/build_books.py 7 [units …]
+Science: python3 tools/build_books.py s7 [units …] takes each lesson's Read blocks and pages from content/authoring/science_read/s7_uNN.py
+(READ[sid] = L(blocks…, book=BK(…))), writes them as the section's `read` and `pdf`, books s{stage}u{NN}."""
 import glob, html, json, os, re, subprocess, sys, tempfile
 from playwright.sync_api import sync_playwright
 from pypdf import PdfReader, PdfWriter
@@ -71,6 +73,8 @@ def qtext(q):
         return md(q["prompt"]) + table({"head": q["head"], "rows": rows})
     if q.get("type") in ("mcq", "multi"):
         return md(q["prompt"]) + "<span style='display:block;margin:4px 0 0 10px;line-height:2.1'>" + "<br>".join(f"<b>{'ABCDEF'[i]}</b>  {md(o['t'])}" for i, o in enumerate(q["options"])) + "</span>"
+    if q.get("type") == "grid":
+        return md(q["prompt"]) + f" ({', '.join(md(c) for c in q['cols'])})<ol>" + "".join(f"<li>{md(r['l'])}</li>" for r in q["rows"]) + "</ol>"
     return md(q.get("prompt", ""))
 
 
@@ -107,7 +111,7 @@ def block(b, tries):
 
 
 def head(stage, unit_title, unit, s):
-    return (f"<div class='top'><img src='{LOGO}' alt='Camday'><span>Stage {stage} Mathematics · Unit {unit} {md(unit_title)}</span></div>"
+    return (f"<div class='top'><img src='{LOGO}' alt='Camday'><span>Stage {stage} {SUBJ} · Unit {unit} {md(unit_title)}</span></div>"
             f"<div class='title'><span class='chip'>Lesson {s['id']}</span><h1>{md(s['title'])}</h1></div>")
 
 
@@ -115,7 +119,7 @@ def section(stage, unit, s, d):
     b = s["book"]; tries = []
     goals = "".join(f"<p>• {md((d['objectives'].get(o) or {}).get('t', ''))}</p>" for o in s.get("objs", []))
     keys = "".join(f"<p><b>{md(k)}</b> – {md(v)}</p>" for k, v in b["keys"])
-    body = "".join(block(x, tries) for x in s.get("lesson", []))
+    body = "".join(block(x, tries) for x in s.get("lesson") or s.get("read") or [])
     qs = []
     for i, e in enumerate(b["exercise"], 1):
         parts = "".join(f"<li>{md(p['t'])}</li>" for p in e["parts"])
@@ -130,7 +134,7 @@ def section(stage, unit, s, d):
 
 
 def answers(stage, d, secs):
-    out = [f"<div class='top'><img src='{LOGO}' alt='Camday'><span>Stage {stage} Mathematics · Unit {d['unit']['n']} {md(d['unit']['title'])}</span></div><div class='anshead'><h2>Answers</h2>"]
+    out = [f"<div class='top'><img src='{LOGO}' alt='Camday'><span>Stage {stage} {SUBJ} · Unit {d['unit']['n']} {md(d['unit']['title'])}</span></div><div class='anshead'><h2>Answers</h2>"]
     letters = "abcdefghij"
     for s in secs:
         out.append(f"<h3>Lesson {s['id']} {md(s['title'])} – Try it</h3>")
@@ -153,24 +157,36 @@ def page_html(body):
             f"<script src='file://{os.path.join(WEB, 'mathtype.js')}'></script>"
             f"<script>document.querySelectorAll('[data-fig]').forEach(d=>{{const f=JSON.parse(d.dataset.fig);"
             f"const g=window.AtomicFig&&window.AtomicFig.get(f.kind,f);if(g)d.innerHTML=g.svg;}});"
-            f"try{{AtomicMath.typeset(document.body)}}catch(e){{}}</script></body></html>")
+            f"{'try{AtomicMath.typeset(document.body)}catch(e){}' if SUBJ == 'Mathematics' else ''}</script></body></html>")
 
 
-def build(stage, units):
+SUBJ = "Mathematics"
+
+
+def build(stage, units, sci=False):
+    global SUBJ
+    SUBJ = "Science" if sci else "Mathematics"
     out_dir = os.path.join(WEB, "media", "books"); os.makedirs(out_dir, exist_ok=True)
     idx_path = os.path.join(out_dir, "index.json")
     idx = json.load(open(idx_path)) if os.path.exists(idx_path) else {}
-    files = sorted(glob.glob(os.path.join(WEB, "content", f"stage{10 + stage}-unit[0-9][0-9].json")))
+    files = sorted(glob.glob(os.path.join(WEB, "content", f"stage{stage if sci else 10 + stage}-unit[0-9][0-9].json")))
     with sync_playwright() as p:
         br = p.chromium.launch(); pg = br.new_page()
         for f in files:
             d = json.load(open(f, encoding="utf-8")); n = d["unit"]["n"]
             if units and n not in units: continue
+            if sci:
+                rd = os.path.join(ROOT, "content", "authoring", "science_read", f"s{stage}_u{n:02d}.py")
+                if not os.path.exists(rd): continue
+                sys.path.insert(0, os.path.join(ROOT, "content", "authoring")); import importlib
+                READ = importlib.import_module(f"science_read.s{stage}_u{n:02d}").READ
+                for s in d["sections"]:
+                    if s["id"] in READ: s["read"] = READ[s["id"]]["blocks"]; s["book"] = READ[s["id"]]["book"]
             secs = [s for s in d["sections"] if s.get("book")]
             if not secs: continue
-            key = f"c{stage}u{n:02d}"; tmp = tempfile.mkdtemp(); parts = []
-            title = f"Camday Maths Stage {stage} · Unit {n}: {d['unit']['title']}"
-            cover = (f"<div class='cover'><img src='{LOGO}' alt='Camday'><p class='st'>STAGE {stage} MATHEMATICS</p><h1>Unit {n}<br>{md(d['unit']['title'])}</h1>"
+            key = f"{'s' if sci else 'c'}{stage}u{n:02d}"; tmp = tempfile.mkdtemp(); parts = []
+            title = f"Camday {'Science' if sci else 'Maths'} Stage {stage} · Unit {n}: {d['unit']['title']}"
+            cover = (f"<div class='cover'><img src='{LOGO}' alt='Camday'><p class='st'>STAGE {stage} {SUBJ.upper()}</p><h1>Unit {n}<br>{md(d['unit']['title'])}</h1>"
                      f"<p>Lesson notes and practice on paper</p><ol>" + "".join(f"<li>Lesson {s['id']} · {md(s['title'])}</li>" for s in secs) + "</ol><div class='bar'></div></div>")
             chunks = [("cover", cover, title)] + [(s["id"], section(stage, n, s, d), f"Lesson {s['id']} · {s['title']}") for s in secs]
             chunks.append(("answers", answers(stage, d, secs), "Answers"))
@@ -180,7 +196,7 @@ def build(stage, units):
                 pp = os.path.join(tmp, f"{len(parts):02d}.pdf")
                 pg.pdf(path=pp, format="A4", print_background=True, display_header_footer=True, header_template="<span></span>",
                        footer_template=(f"<div style='font-size:8px;width:100%;padding:0 10mm;display:flex;justify-content:space-between;align-items:center;color:#555;font-family:Arial'>"
-                                        f"<span><img src='{ICON}' style='height:10px;vertical-align:middle'> <b>Camday</b> · Stage {stage} Mathematics · {html.escape(label)}</span>"
+                                        f"<span><img src='{ICON}' style='height:10px;vertical-align:middle'> <b>Camday</b> · Stage {stage} {SUBJ} · {html.escape(label)}</span>"
                                         f"<span>page <span class='pageNumber'></span></span></div>"),
                        margin={"top": "12mm", "bottom": "16mm", "left": "10mm", "right": "10mm"})
                 parts.append((name, pp))
@@ -222,4 +238,5 @@ def build(stage, units):
 
 
 if __name__ == "__main__":
-    build(int(sys.argv[1]), [int(x) for x in sys.argv[2:]])
+    a = sys.argv[1]
+    build(int(a.lstrip("s")), [int(x) for x in sys.argv[2:]], sci=a.startswith("s"))

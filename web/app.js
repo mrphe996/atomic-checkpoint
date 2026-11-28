@@ -631,6 +631,7 @@
       el('div', { class: 'btnrow' }, el('a', { class: 'btn small', href: '#map' }, '🧠 Mind map'), el('a', { class: 'btn small', href: '#ws-' + R(sid) }, '📄 Worksheet')),
       el('div', { class: 'goal' }, el('span', { class: 'gi' }, svgI(I.bulb, 16, '#1C2A3A', 2)), el('span', {}, el('b', {}, 'Daily goal: '), `this video lasts ${fmt(s.video.dur)} with ${s.stops.length} pause questions – finish it to keep your streak going.`)));
     m.append(bar(`Unit ${Core.UNO} › ${s.id} › Video`), tocBtn(), el('div', { class: 'lesson' }, lessonMain, side));
+    if (s.read) lessonMain.append(sciRead(s, vs));
     const drawSide = () => {
       tabsBox.innerHTML = ''; [['chapters', 'Chapters'], ['transcript', 'Transcript'], ['words', '⭐ Words'], ['notes', 'My notes']].forEach(([k, t]) => tabsBox.append(el('button', { type: 'button', role: 'tab', 'aria-selected': String(UI.side === k), class: UI.side === k ? 'on' : '', onclick: () => { UI.side = k; drawSide(); } }, t)));
       sideBody.innerHTML = ''; const t = v.currentTime || 0;
@@ -870,6 +871,17 @@
       el('p', { class: 'muted', style: 'margin:8px 0 0' }, 'In Practice, “Review the PDF” opens the document again and keeps your answers.'));
   }
 
+  const liveTry = vs => (q, host, after) => { const rec = (vs.tries[q.id] = vs.tries[q.id] || { tries: 0 });
+    QE.practice(q, host, { rec, seed: st.id, nested: true, free: true, save: () => Core.persist(), onDone: () => { Core.persist(); after && after(); } });
+    if (rec.done && after) after(); };
+  // Science: the lesson to read under its video (s.read, v4 blocks with live "Your turn" questions), then the lesson document (PDF)
+  function sciRead(s, vs) {
+    vs.tries = vs.tries || {}; const live = liveTry(vs);
+    return el('div', { class: 'lessonbody v4 sciread', id: 'sciRead' }, el('h2', { class: 'lex', style: 'margin:18px 0 0' }, '📘 Read the lesson'),
+      ...s.read.map((b, bi) => { const kind = b.k || 'idea';
+        return fillBlock(el('section', { class: 'card lblock lb-' + kind, id: 'lb-' + bi }, el('div', { class: 'lbtop' }, el('span', { class: 'lbkind' }, LB_KIND[kind] || 'Key idea'), el('span', { class: 'lbcount' }, `Part ${bi + 1} of ${s.read.length}`)), el('h2', {}, b.t)), b, live); }),
+      s.pdf && s.pdf.length ? docPanel(s) : null);
+  }
   function noteBlock(b) {
     const kind = b.k || 'idea';
     const card = el('div', { class: 'lblock lb-' + kind }, el('h3', {}, el('span', { class: 'lbi', 'aria-hidden': 'true' }, LB_ICON[kind] || '💡'), ' ', (['example', 'mistake', 'method', 'tip', 'hook', 'recall', 'try', 'error', 'summary'].includes(kind) ? LB_KIND[kind] + ': ' : '') + b.t));
@@ -956,9 +968,7 @@
     (stopFor[-1] || []).forEach(addStop);   // "before you read on" questions that come before the first part
     // "Your turn" and "Spot the mistake" questions inside the notes: answers and tries are kept, they do not give XP or count as check questions
     vs.tries = vs.tries || {};
-    const live = (q, host, after) => { const rec = (vs.tries[q.id] = vs.tries[q.id] || { tries: 0 });
-      QE.practice(q, host, { rec, seed: st.id, nested: true, free: true, save: () => Core.persist(), onDone: () => { Core.persist(); after && after(); } });
-      if (rec.done && after) after(); };
+    const live = liveTry(vs);
     s.lesson.forEach((b, bi) => {
       const kind = b.k || 'idea';
       const card = el('section', { class: 'card lblock lb-' + kind, id: 'lb-' + bi }, el('div', { class: 'lbtop' }, el('span', { class: 'lbkind' }, LB_KIND[kind] || 'Key idea'), el('span', { class: 'lbcount' }, `Part ${bi + 1} of ${s.lesson.length}`)), el('h2', {}, b.t));
